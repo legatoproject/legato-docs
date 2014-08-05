@@ -1,0 +1,143 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<style type="text/css">
+<!--
+a, a:link, a:visited
+	{color:#978c16;
+	text-decoration:none}
+a:hover
+	{color:#e53b30;
+}
+h1
+	{font-weight:bold;
+	font-size:14pt;
+	font-family:Helvetica;
+	color:#e53b30}
+h2
+	{font-weight:bold;
+	font-size:11pt;
+	font-family:arial;
+	color:#000000}
+li
+	{margin-top:4pt;
+	font-style:normal;
+	font-weight:normal;
+	color:rgb(0,0,0);
+	font-size:11pt}
+p
+	{margin-top:4.0pt;
+	margin-right:.1in;
+	margin-bottom:.1in;
+	margin-left:.25in;
+	font-size:11.0pt;
+	font-family:arial;
+	color:#000000}
+ul
+	{margin-left:.2in;
+	font-size:11.0pt;
+	font-family:arial;
+	list-style:disc;
+	margin-bottom:3pt;
+	margin-top:2pt}
+-->
+</style>
+</head>
+<body>
+<p></p>
+<h1>Legato Beta Release Notes - 14.04</h1>
+<p>Copyright &copy; Sierra Wireless, Inc. 2014. All rights reserved. </p>
+<hr>
+<h2>Welcome to Legato</h2>
+<p>This page summarizes important information about the Legato Beta 14.04 release.</p>
+
+<p>On this page you'll find info on:<br>
+<a href="#Features">Legato 14.04 Features</a> <br>
+<a href="#Known">Known Issues</a>  <br>
+<a href="#Yocto">Yocto Updates</a>  <br>
+<br>
+Here's other info you made need to look at: <br>
+<a href="upgradeLegato.htm">Upgrade Legato</a> <br>
+<a href="legatoRelNotesBeta14_1.htm">Legato Beta 14.1 release notes</a>
+</p>
+<hr>
+<h2><a id="Features">Legato 14.04 Features</a></h2>
+<p>Legato Beta release 14.04 added the following new features:</p>
+
+<p><b>cgroups support</b> <br>
+CPU and memory limits can be specified in .adef files. See <a href="http://www.legato.io/legato-af/14_04/def_files_adef.html#memLimit">memLimit</a> 
+and <a href="http://www.legato.io/legato-af/14_04/def_files_adef.html#cpuShare">cpuShare</a>.</p>
+
+<p><b>Diagnostic tools</b> <br>
+A new on-target tool for examining the memory usage of a process has been added. See <a href="http://www.legato.io/legato-af/14_04/inspect_tool.html">Inspect Tool</a>.</p>
+
+<p><b>IPv6 data session</b> <br>
+IPv6 data connections are now supported where available. See <a href="http://www.legato.io/legato-af/14_04/c_mdc.html">Modem Data Control API</a> and 
+<a href="http://www.legato.io/legato-af/14_04/c_pa.html">Platform Adaptor API</a>. </p>
+
+<p><b>PLMN scan and selection</b>  <br>
+Scan and selection is now supported. See <a href="http://www.legato.io/legato-af/14_04/c_mrc.html#le_mrc_networkScan">Modem Radio Control</a>. </p>
+
+<p><b>WP7 voice call issues resolution</b>  <br>
+Audio voice calls can now be made on the WP7. See <a href="http://www.legato.io/legato-af/14_04/c_audio_apis.html">Audio Service</a></p>
+
+<p><b>Audio API for IS2 interface</b>  <br>
+Audio for IS2 is now supported. See <a href="http://www.legato.io/legato-af/14_04/c_audio_apis.html">Audio Service</a></p>
+
+<p><b>Config Tree API changes</b>  <br>
+The <a href="http://www.legato.io/legato-af/14_04/api_config.html">Config Tree API</a> has been refactored, and applications using the 
+old API will need some updates. 
+<br>When upgrading from a previous version of 
+Legato, you'll also need to remove your old database on the target - the file format has changed.</p>
+
+<p><b>Language independent type definition</b>  <br>
+The interface generation tool now supports enhanced type definitions. See <a href="http://www.legato.io/legato-af/14_04/language_independent_c.html#ifgen">language independent ifgen</a>.</p>
+ <br>
+<hr>
+<h2><a id="Known">Known Issues</a></h2>
+<p>Legato Beta release 14.04 has the following known issues:</p>
+
+<ul>
+<li>IPv4 and IPv6 - can't be supported on a single RMNET data connection. </li>
+
+<li>UART1 - is set to serial console and can't be re-tasked to an application serial port.</li>
+
+<li>IPC - does not gracefully handle invalid sessions. </li>
+
+<li>Link-time symbol - conflicts might result in runtime failures due to an incorrect variable or function.</li>
+
+<li>CDMA SMS - is not supported.</li>
+
+<li>SWIAPP - must be disabled for Legato audio feature to work. 
+See <a href="http://forum.sierrawireless.com/viewtopic.php?f=177&t=7854">Forum</a> post</li>
+
+<li>Legato framework supervisor - does not support real time processes. </li>
+
+<li>Modem profile - the data connection modem setting profile has to be entered in Config DB before the data 
+connection can be made from Legato (the default profile fails).</li>
+
+<li>.adef - using the .adef <font face="courier">files:</font> section to designate that files use a different display  
+ file name inside the sandbox results in an extra directory level being introduced (e.g., "[r] stuff/foo /usr/share/bar" will
+ result in a file "/usr/share/bar/foo" in the sandbox, but should be /usr/share/bar).</li>
+ 
+<li>Resource limits - only CPU and memory limits can be configured; other resources can only use default values.</li>
+</ul> <br>
+<hr>
+
+<h2><a id="Yocto">Yocto Updates</a></h2>
+<p>Yocto Linux Beta release 14.04 includes the following updates:</p>
+<ul>
+<li>The Yocto build now uses opkg (instead of RMP) on-target - this saves significant flash space.</li>
+<li>Generates version information into /etc/legato/version. </li>
+<li>Rolls-up product-related fixes for WP7 and AR7. </li></ul> <br>
+<hr>
+<p>For complete info, see the <a href="http://www.legato.io/legato-af/14_04/">Legato documentation</a>.</p>
+ <br>
+ <br>
+
+<HR>
+
+<p>Copyright (C) Sierra Wireless, Inc. 2014. All rights reserved. Use of this work is subject to license.</p>
+
+</body>
+</html>

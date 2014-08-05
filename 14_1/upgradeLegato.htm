@@ -1,0 +1,230 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<style type="text/css">
+<!--
+a, a:link, a:visited
+{
+	color: #978c16;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #e53b30;}
+
+h1
+	{font-weight:bold;
+	font-size:14pt;
+	font-family:Helvetica;
+	color:#e53b30}
+	h2
+	{font-weight:bold;
+	font-size:11pt;
+	font-family:arial;
+	color:#000000}
+		h3
+	{font-weight:bold;
+	font-size:10pt;
+	font-family:arial;
+	color:#000000}
+li
+	{margin-top:3.5pt;
+	font-style:normal;
+	font-weight:normal;
+	color:rgb(0,0,0);
+	font-size:11pt}
+p
+	{margin-top:4.0pt;
+	margin-right:.2in;
+	margin-bottom:.1in;
+	margin-left:.25in;
+	font-size:11.0pt;
+	font-family:arial;
+	color:#000000}
+ul
+	{margin-left:.42in;
+	font-size:11.0pt;
+	font-family:arial;
+	list-style:disc;
+	margin-bottom:3pt;
+	margin-top:2pt}
+-->
+</style>
+</head>
+<body>
+<p>
+</p>
+<h1>Upgrading Legato Beta</h1>
+<p> Copyright &#169; Sierra Wireless, Inc. 2014. All rights reserved. </p>
+
+<HR>
+
+<p><a href="#1">Upgrade Legato AlphaB to14.04 </a> <br>
+<a href="#2">Upgrade Legato Beta 14.1 to 14.04</a> <br>
+<a href="#3">Update Firmware</a></p>
+</ul>
+
+<HR>
+
+<h2><a id="1">Upgrade Legato AlphaB to14.04 </a></h2>
+<p>Complete these steps if you're upgrading from Legato Alpha-B:</p>
+
+<h3>Modem Upgrade</h3>
+
+<p>Use a Windows host (with something like HyperTerminal) to upgrade the device modem.</p>
+
+<p>First install the Sierra Wireless drivers from Drivers_Package.zip - Follow instructions in: <a href="http://www.legato.io/legato-af/14_04/getstarted_windows_host.html#instSWdrivers">install drivers topic</a>.</p>
+
+<p>If needed, backup NV parameters of the modem.</p>
+
+<p>Connect USB cable between AR7 and host.  Connect to the port "Sierra Wireless AT Command Port" with Hyperterminal. <br>
+Run <font face="courier">AT!NVBACKUP=0/1/2/3</font>. <br>
+Ensure parameters are saved and run <font face="courier">!RESET command AT!RESET</font>.</p>
+
+<p>If needed, set modem file system partitioning.</p>
+ 
+ <p>Execute the following: <br>
+ <font face="courier">AT!UNLOCK="A710" <br>
+AT!APPPARTCHG=768,50,19000,384,80000,300,38000,2560,120440,384 <br>
+AT!RESET </font><br>
+
+ <p>Note that backup and partitioning should already be done so you probably can skip those steps.</p>
+
+<p>Ensure the <a href="#3"> firmware is updated</a>.</p>
+
+<p>Wait for the AR7 to completely reset. After it's enumerated again, open an AT command port and run 
+<font face="courier">AT!NVRESTORE=0/1/2/3 </font></p>
+
+
+<h3> Legato toolchain Upgrade </h3>
+<p>General instructions for Legato toolchain installation available at <a href="http://www.legato.io/legato-af/14_04/getstarted_install_packages.html">Install Packages</a>.</p>
+
+<p>For Alpha-B customers, on Linux host machine, install python-jinja2 package:</p>
+
+ <p><font face="courier">$ sudo apt-get install python-jinja2 <br></font>
+
+<p>Go to the Alpha-B development directory (/opt/swi) and remove all files </p>
+<p><font face="courier">$ cd /opt/swi <br>
+$ sudo -s <br>
+# rm -r * <br>
+# exit <br></font>
+</p>
+
+<p>Installation packages are available at the <a href="http://developer.sierrawireless.com/Resources/Resources/Legato/Distribution.aspx">Dev Zone</a>.</p>
+
+<p>Select toolchain for Linux PC x86 64bits and copy it to /opt/swi <br>
+
+<p><font face="courier">$ cp [Legato-Toolchain-file-name]  /opt/swi  <br>
+$ cd /opt/swi  <br>
+$ sudo tar xvjf [Legato-Toolchain-file-name] </p></font>
+
+<p>See <a href="http://www.legato.io/legato-af/14_04/index.html">Legato documentation</a> for full information.
+</p>
+
+<HR>
+ 
+<h2><a id="2">Upgrade Legato Beta 14.1 to 14.04</a></h2>
+<p>The only requirement to upgrade from Beta 14.1 to 14.04 is to delete configDB as it's not backward compatible. <br> <br>
+Delete it configDB from /opt/legato.</p>
+
+<HR>
+
+<h2><a id="3">Update Firmware</a></h2>
+<p>
+
+<p>New firmware is included in the .EXE file that downloads it onto the device. </p>
+ <p>You'll need to download a few files depending on your device:</p>
+ 
+ <p>Copy the appropriate .exe file to your PC:</p>
+ <ul><li>SWI9X15W_06.03.00.00-wp-yocto-cwe.exe - for WP7100 and WP7102 modules</li>
+<li>SWI9X15W_06.02.14.00-wp-yocto-cwe.exe - for the WP7104 module</li></ul>
+<br>
+
+<p>Files are available from <a href="http://developer.sierrawireless.com/landing/legato.aspx">here</a>. </p>
+
+<p>Note: the firmware file also includes Yocto software. Older devices might need to be partitioned before completing the firmware update.</p>
+<br>
+<p>Turn the board BOOT switch to 'OFF' (Recovery mode). Depending on your dev kit, 'LOW' is the same as 'OFF'.   </p>
+
+<p>Connect the device. It will display in a Device Manager list as 'Sierra DM Port' located under Ports.  </p>
+
+<p>Run <font face="courier">SWI9X15W_06.xx.xx.00.exe</font>. (check above for versions). Wait until the firmware download process is complete and the app reports that it is resetting the device.</p>
+
+<p>Disconnect power from your device and turn your BOOT switch to 'ON' (or 'HIGH'). Reconnect power to your device; 
+ it should enumerate with other devices per AT Ports manager list.  </p>
+
+<p>Connect to the device (through HyperTerminal or Tera Term), and verify the following settings to 
+ensure the firmware has been updated successfully:
+</p>
+
+<p> Run <font face="courier">ati<br>
+<br>
+<font face="courier">Manufacturer: Sierra Wireless, Incorporated <br>
+Model: WP7102 <br>
+Revision: SWI9X15W_06.02.15.00 r21134 CNSHZ-AR-BUILD 2014/03/25 00:04:10 (version should match the file above) <br>
+IMEI: 355603050001488 <br>
+IMEI SV: 0 <br>
++GCAP: +CGSM,+DS,+ES <br>
+</font></p>
+<br>
+<p>Run <font face="courier">at!gstatus</font>.<br>
+
+Ensure 'Mode' is not 'LOW POWER MODE'.<br>
+<br>
+<font face="courier">at!gstatus? <br>
+!GSTATUS: <br>
+Current Time:  2160             Temperature: 29 <br>
+Bootup Time:   0                Mode:        ONLINE <br>
+System mode:   WCDMA            PS state:    Not attached <br>
+IMS Reg State: NO SRV <br>
+WCDMA band:    WCDMA 1900 <br>
+WCDMA channel: 437 <br>
+GMM (PS) state:DEREGISTERED     NO IMSI <br>
+MM (CS) state: IDLE             NO IMSI <br>
+</font></p>
+
+<p><font face="courier">WCDMA L1 State:L1M_PCH_SLEEP    LAC:         FEB0 (65200) <br>
+RRC State:     DISCONNECTED     Cell ID:     002AF1BB (2814395) <br>
+RxM RSSI C0:   -47              RxD RSSI C0: -106 <br>
+RxM RSSI C1:   -106             RxD RSSI C1: -106 <br>
+ current config name:    VZW_006.002_000 <br>
+</font></p>
+
+<p>If  is is set to 'LOW POWER MODE', check these things: </p>
+
+<p><font face="courier">at!unlock='A710'<br>
+at!custom?</font> <br>
+
+<p>If you see 'GOBIIMEN 0x1', remove it by running: <br>
+<font face="courier">at!custom="GOBIIMEN",0.</font><br>
+and then:<br>
+<font face="courier">at!reset</font>.</p> 
+
+<p>Go back to AT commands, if the device status is still 'LOW POWER MODE', run this:<br>
+<font face="courier">at!unlock="A710" <br>
+At!gobiimpref?</font>
+
+<p>Ensure 'preferred fw version' is the same as 'current fw version'. If not,  
+modify it manually using: <font face="courier">at!gobiimpref='current fw version'</font></p>
+
+<p><font face="courier">at!gobiimpref? <br>
+!GOBIIMPREF: <br>
+ preferred fw version:   06.02.14.00 <br>
+ preferred carrier name: VZW <br>
+ preferred config name:  VZW_006.002_000 <br>
+ current fw version:     06.02.15.00 <br>
+ current carrier name:   VZW <br>
+ current config name:    VZW_006.002_000 <br>
+<br>
+at!gobiimpref="06.02.15.00"'</font>
+</font>
+<p>Then reset the device using at!reset or reboot it.</p>
+<br>
+
+<HR>
+
+<p>Copyright (C) Sierra Wireless, Inc. 2014. All rights reserved. Use of this work is subject to license.</p>
+
+</body>
+</html>
