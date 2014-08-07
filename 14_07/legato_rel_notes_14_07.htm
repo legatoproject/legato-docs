@@ -45,23 +45,148 @@ ul
 </head>
 <body>
 <p></p>
-<h1>Legato Beta Release Notes - 14.07</h1>
+<h1>Legato 14.07 Beta Release Notes </h1>
 <p>Copyright &copy; Sierra Wireless, Inc. 2014. All rights reserved. </p>
 <hr>
 <h2>Welcome to Legato</h2>
-<p>This page summarizes important information about the Legato Beta 14.07 release.</p>
+<p>This page summarizes important information about the Legato 14.07 Beta release.</p>
 
 <p>On this page you'll find info on:<br>
-<a href="#Features">Legato 14.07 Features</a> <br>
+<a href="#Features">14.07 Features</a> <br>
 <a href="#Known">Known Issues</a>  <br>
 <a href="#Yocto">Yocto Updates</a>  <br>
 <br>
 Here's other info you made need to look at: <br>
-<a href="http://www.legato.io/legato-docs/14_04/upgradeLegato.htm">Upgrade Legato</a> <br>
+<a href="http://www.legato.io/legato-docs/14_07/upgradeLegato.htm">Upgrade Legato</a> <br>
 <a href="http://www.legato.io/legato-docs/14_04/legatoRelNotesBeta14_04.htm">Legato Beta 14.04 release notes</a>
 </p>
 <hr>
-info coming soon</p>
+<h2><a id="Features">14.07 Beta Features</a></h2>
+<p>Legato 14.07 Beta has the following new features or API changes:</p>
+
+ <ul>
+
+<li><b>IPv4v6 </b> Legato now supports the IPv4V6 data connection type.</li>
+
+<li><b>C++ support </b> has been enabled in the tooling. </li>
+
+<li><b>Modem Services</b> New functions for eCall, Audio (play and record audio), Modem Data Control have been added.
+See <a href="http://www.legato.io/legato-docs/14_07/legato_services_foundation.html"> Foundation Services</a></li>
+
+<li><b>fwupdate api </b> has been added to modem services including related fwupdate target and host tools.
+See <a href="http://www.legato.io/legato-docs/14_07/c_fwupdate.html">Firmware Update</a></li>
+
+<li><b>Modem Radio Control </b> now supports Home Network Information, 
+Neighboring Cells Information, and Voice Call application Service. 
+See <a href="http://www.legato.io/legato-docs/14_07/c_mrc.html">MRC</a></li>
+
+<li><b>Watchdog</b> New service to permit configuration of timeouts and actions to perform
+ where timeouts are done by the adef file (watchdogTimeout and watchdogAction).
+ See <a href="http://www.legato.io/legato-docs/14_07/api_wdog.html">watchdog</a></li>
+
+<li><b>ConfigTree</b> Implemented new security (user access permissions), support for JSON, 
+import/export features, ability to write/update data, and change notifications.
+See <a href="http://www.legato.io/legato-docs/14_07/legato_services_config_tree.html">Config Tree</a></li>
+
+<li><b>Host tools</b> now use an environment variable for target IP address and additional host tools 
+<b>stopapp, startapp, listapp, statapp</b> have been added.
+See <a href="http://www.legato.io/legato-docs/14_07/tools_host.html">host tools</a></li>
+ 
+<li><b>Support importing directories</b> has been added in sandboxed applications.
+See <a href="http://www.legato.io/legato-docs/14_07/sandbox_gen.html">sandbox</a> </li>
+ 
+<li><b>Target tools app and legato</b> now support getting app/framework status and getting an app list.
+See <a href="http://www.legato.io/legato-docs/14_07/tools_target.html">target tools</a></li>
+
+<li><b>Automatic gdb support</b> New tools fhave been added <b>execInApp, gdbCfg</b>  
+replacing previous debug options.
+See <a href="http://www.legato.io/legato-docs/14_07/tools_exec_in_app.html">execInApp</a></li>
+
+<li><b>App version number</b> support was added to the .adef.
+See <a href="http://www.legato.io/legato-docs/14_07/def_files_adef.html#version">app version</a></li>
+
+<li><b>Stderr</b> all Legato processes now go to /dev/console by default.
+See <a href="http://www.legato.io/legato-docs/14_07/c_logging.html">logging</a></li>
+
+<li><b>Access control restrictions </b>added to the IPC system. 
+See <a href="http://www.legato.io/legato-docs/14_07/def_files_adef.html#bindings">adef bindings</a></li>
+
+<li><b>New sdir tool </b>added to inspect the Service Directory and can be used to load IPC access 
+control configuration settings into the Service Directory (although app add/remove
+and the Supervisor do that automatically at the appropriate times.) 
+See <a href="http://www.legato.io/legato-docs/14_07/tools_sdir_tool.html"> sdir</a></li>
+ 
+<li><b>mkexe and mkapp</b> now accept the --source-search argument (-s) as an alias 
+of --component-search (-c) to make it consistent with the naming of source search path in the docs.
+See <a href="http://www.legato.io/legato-docs/14_07/build_toolsmkexe.html"> mkexe</a> and 
+<a href="http://www.legato.io/legato-docs/14_07/build_toolsmkapp.html"> mkapp</a></li>
+ 
+<li><b>New mkcomp tool</b> added that allows a component to be built into a shared library (.so) file.
+See <a href="http://www.legato.io/legato-docs/14_07/build_toolsmkcomp.html"> mkcomp</a></li>
+
+ <li><b>New cm tool </b> added that combines the previous sim, data, and apn tools into one tool 
+ for modem control functions. See <a href="http://www.legato.io/legato-docs/14_07/tools_cell_modem.html"> cm tool</a></li>
+ 
+<li><b>mk tools now support .api files </b>that use type definitions (via USETYPES) from other .api files. 
+See <a href="http://www.legato.io/legato-docs/14_07/build_tools.html#buildToolsOverview"> mk tools</a> </li>
+ 
+<li><b>Loads of new features </b>have been added to the adef and cdef files.
+See <a href="http://www.legato.io/legato-docs/14_07/def_files.html"> Definition files</a></li>
+</li>
+<li><b>Support for 'file' type </b> has been added to .api files (ifgen).
+See <a href="http://www.legato.io/legato-docs/14_07/language_independent_a_p_is.html"> Language Independent APIs</a> </li>
+
+</ul> <br>
+ 
+<hr>
+<h2><a id="Known">Known Issues</a></h2>
+<p>Legato 14.07 Beta has the following known issues:</p>
+<ul>
+<li><b> Network Scanning </b>  Modem Radio Control services 
+ incorrectly performing network scans under certain conditions.</li>
+
+<li><b> Delete Config tree with active requests</b> You have to restart the Legato framework if a 
+config tree with active requests is deleted. </li>
+
+<li><b> Release positioning service before app exit </b> If an app is called (registered) for the positioning 
+service, and doesn't release the service before exiting, the positioning service will remain active until the service is restarted. </li>
+
+<li><b> Resource limits for unsandboxed apps </b>  Resource limits can't be applied to unsandboxed apps while they are running as root. </li>
+
+<li><b>  GNSS enabled/disabled from embedded app</b>  GNSS can only be enabled/disabled through AT commands; 
+this is not available through the app itself. </li>
+
+<li><b>  Data session can't be stopped</b>  IPV4V6 sessions can't be stopped with le_mdc_StopSession().  
+You have to restart the service to reset the connection.  </li>
+
+<li><b> execInApp doesn't work for unsandboxed apps  </b> You can't create a process to run in an unsandboxed app. </li>
+
+<li><b> GPSOne XTRA from embedded app </b>  This feature can only be enabled/disabled through factory settings 
+or the level 3 AT command AT!NV. </li>
+
+<li><b> Data connection callback function being called twice </b>  After registering using le_data_AddConnectionStateHandler, 
+the callback function will be called twice when the data connection is started.  </li>
+
+<li><b>  Config tool import and delete functions</b> Import and delete functions can't be called in the same transaction from the config tool.  </li>
+
+<li><b>  No space in file path</b> The Legato Framework doesn't compile if the path contains a space.  </li>
+
+<li><b> Kernel panic occurs when removing and inserting USB under certain conditions </b>  You have to restart the target to recover.   </li>
+
+<li><b>  Data connection overwrites default gateway setting</b>  You have to restart the target to recover to the default setting. </li>
+
+<li><b> SMS service over CDMA </b> The SMS service will be supported on CDMA in the next release.   </li>
+
+<li><b> File permission in .adef and .cdef </b>  File permissions can't be changed in the .adef and .cdef specifications. </li>
+</ul> <br>
+<hr>
+
+<h2><a id="Yocto">Yocto Updates</a></h2>
+<p>Yocto Linux  update information for 14.07 Beta coming soon.</p>
+
+<HR>
+
+<p>For complete info, see the <a href="http://www.legato.io/legato-docs/14_07">Legato documentation</a>.</p>
  <br>
  <br>
 

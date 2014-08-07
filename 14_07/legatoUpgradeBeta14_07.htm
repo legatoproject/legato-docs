@@ -53,21 +53,47 @@ ul
 </style>
 </head>
 <body>
-<p>
-</p>
+
 <h1>Upgrading Legato Beta</h1>
 <p> Copyright &#169; Sierra Wireless, Inc. 2014. All rights reserved. </p>
 
 <HR>
 
-<p><a href="#1">Upgrade Legato AlphaB to14.04 </a> <br>
-<a href="#2">Upgrade ???Legato Beta 14.1 to 14.04</a> <br>
-<a href="#3">Update Firmware</a></p>
-</ul>
+<p><a href="#1">Upgrade Legato 14.04 to 14.07 </a> <br>
+
+<p>Here's other info you may need to look at: <br>
+<a href="http://www.legato.io/legato-docs/14_04/upgradeLegato.htm">Upgrade to 14.04 Beta </a> <br>
+<a href="legato_rel_notes_14_07.htm">Legato 14.07 Beta release notes </a></p>
+
+<HR>
+
+<h2><a id="1">Upgrade Legato Beta 14.04 to 14.07 </a></h2>
+<p>On your development host, go to the Beta 14.04 development directory (/opt/swi) and remove all files: </p>
+<p><font face="courier">$ cd /opt/swi <br>
+$ sudo rm -rf *<br>
+</p>
+
+<HR>
+
+<p>Installation packages (including toolchain downloads) are available at the 
+<a href="http://developer.sierrawireless.com/Resources/Resources/Legato/Distribution.aspx">Dev Zone</a>.</p>
 
 
-<p>Info coming soon.</p>
-<br>
+<p>Select toolchain for 32 or 64 bits and copy it to /opt/swi <br>
+
+<p><font face="courier">$ cp [Legato-Toolchain-file-name]  /opt/swi  <br>
+$ cd /opt/swi  <br>
+$ sudo tar xvjf [Legato-Toolchain-file-name] </p></font>
+
+<HR>
+
+<p>On your target device, delete <font face="courier">/opt/legato</font> and <font face="courier">/usr/local</font> to remove old versions of legato.</p>
+
+<p>Build and install Legato 14.07</p>
+
+<HR>
+
+<p>See <a href="http://www.legato.io/legato-docs/14_07/index.html">Legato documentation</a> for full information.</p>
 
 <HR>
 
