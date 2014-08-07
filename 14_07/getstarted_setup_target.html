@@ -104,7 +104,7 @@ Copy Startup Scripts to Target</h1>
 <p>Then create the startup directory: </p>
 <div class="fragment"><div class="line">mkdir -p  /mnt/flash/startup </div>
 </div><!-- fragment --><p>Then copy the startup files to the target by running the following from the dev host: </p>
-<div class="fragment"><div class="line">scp targetFiles/mdm-9x15/startup/fg_* root@&lt;device ip addr&gt;:/mnt/flash/startup</div>
+<div class="fragment"><div class="line">scp targetFiles/mdm-9x15/startup/fg_* root@&lt;target ip addr&gt;:/mnt/flash/startup</div>
 </div><!-- fragment --><p>Scripts beginning with <code>fg_</code> are run first during startup, and then everything else is runs in the background. You can add more scripts to customize your target. <code>fg_</code> scripts must have executable permissions or they will not run.</p>
 <p>See <a class="el" href="getstarted_install_notes.html">Yocto Install Notes</a> for helpful target setup tips.</p>
 <dl class="section note"><dt>Note</dt><dd>In the rare case you need to prevent legato starting automatically, run <div class="fragment"><div class="line">touch /mnt/flash/startup/STOPLEGATO </div>
