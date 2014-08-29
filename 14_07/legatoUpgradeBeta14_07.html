@@ -43,7 +43,7 @@ p
 	font-family:arial;
 	color:#000000}
 ul
-	{margin-left:.42in;
+	{margin-left:.2in;
 	font-size:11.0pt;
 	font-family:arial;
 	list-style:disc;
@@ -59,7 +59,9 @@ ul
 
 <HR>
 
-<p><a href="#1">Upgrade Legato 14.04 to 14.07 </a> <br>
+<p><a href="#1">Upgrade Legato Application Framework from 14.04 to 14.07 </a> <br>
+<a href="#2">Upgrade WP Firmware from 14.04 to 14.07 </a> <br>
+<a href="#3">Upgrade AP Firmware from 14.04 to 14.07 </a> <br>
 
 <p>Here's other info you may need to look at: <br>
 <a href="http://www.legato.io/legato-docs/14_04/upgradeLegato.htm">Upgrade to 14.04 Beta </a> <br>
@@ -67,13 +69,13 @@ ul
 
 <HR>
 
-<h2><a id="1">Upgrade Legato Beta 14.04 to 14.07 </a></h2>
+<h2><a id="1">Upgrade Legato Beta AF 14.04 to 14.07 </a></h2>
 <p>On your development host, go to the Beta 14.04 development directory (/opt/swi) and remove all files: </p>
 <p><font face="courier">$ cd /opt/swi <br>
 $ sudo rm -rf *<br>
 </p>
 
-<HR>
+<br>
 
 <p>Installation packages (including toolchain downloads) are available at the 
 <a href="http://developer.sierrawireless.com/Resources/Resources/Legato/Distribution.aspx">Dev Zone</a>.</p>
@@ -85,9 +87,9 @@ $ sudo rm -rf *<br>
 $ cd /opt/swi  <br>
 $ sudo tar xvjf [Legato-Toolchain-file-name] </p></font>
 
-<HR>
+<br>
 
-<p>On your target device, delete <font face="courier">/opt/legato</font> and 
+<p>On your target, delete <font face="courier">/opt/legato</font> and 
 <font face="courier">/usr/local</font> to remove old versions of legato. Ensure you run 
 <font face="courier">legato stop</font> before deleting /opt/legato.</p>
 
@@ -95,10 +97,156 @@ $ sudo tar xvjf [Legato-Toolchain-file-name] </p></font>
 
 <p>Build and install Legato 14.07</p>
 
-<HR>
-
 <p>See <a href="http://www.legato.io/legato-docs/14_07/index.html">Legato documentation</a> for full information.</p>
 
+<HR>
+
+<h2><a id="2">Upgrade WP Series Firmware</a></h2>
+
+<p>Upgrade the board to the latest firmware and Yocto:</p>
+
+<ul><li>Download <font face="courier">SWI9X15W_06.03.17.00-wp_yocto-cwe.exe</font> to your host. </li>
+
+<li>Turn the board BOOT switch to 'OFF' (Recovery mode). Depending on your dev kit, 'LOW' is 
+the same as 'OFF'. </li>
+
+<li>Connect the target: displays in Device Manager list as 'Sierra DM Port' under Ports. </li>
+
+<li>Run <font face="courier">SWI9X15W_06.xx.xx.00.exe</font> (based on the version needed). 
+After the firmware download process completes, the app advises it's resetting the target.</li>
+
+<li>Disconnect power from your target and turn your BOOT switch to 'ON' (or 'HIGH'). Reconnect power 
+to your target; it should enumerate with other targets under Ports in Window Device Manager. </li>
+
+<li>Connect to the target's AT Port (through HyperTerminal or Tera Term), and verify 
+settings to ensure the firmware update was successful. </li></ul>
+
+<p>Note: There's a chance Windows will ask whether your program has been 
+installed successfully. Ignore the message or select that the program 
+has been installed properly.</p>
+
+<h3>Verify WP Firmware Upgrade</h3>
+<p>You need to run <font face="courier">ati</font> and <font face="courier">at!gstatus</font>
+to verify your firmware upgrade was successful. </p>
+<p>Run <font face="courier">ati</font><br>
+Output will look like this:<br>
+
+<font face="courier">Manufacturer: Sierra Wireless, Incorporated<br>
+Model: WP7102<br>
+Revision: SWI9X15W_06.03.17.00 r23799 CNSHZ-AR-BUILD 2014/08/08 13:02:24<br>
+IMEI: (Your imei)<br>
+IMEI SV: 0<br>
++GCAP: +CGSM,+FCLASS,+DS</font></p>
+
+<p>Run <font face="courier">at!gstatus.</font><br>
+Mode should be ONLINE not 'LOW POWER MODE'<br>
+
+<font face="courier">!GSTATUS: <br>
+Current Time: 2160 Temperature: 29 <br>
+Bootup Time: 0 Mode: ONLINE <br>
+System mode: WCDMA PS state: Not attached <br>
+IMS Reg State: NO SRV <br>
+WCDMA band: WCDMA 1900<br> 
+WCDMA channel: 437 <br>
+GMM (PS) state:DEREGISTERED NO IMSI <br>
+MM (CS) state: IDLE NO IMSI <br>
+WCDMA L1 State:L1M_PCH_SLEEP LAC: FEB0 (65200) <br>
+RRC State: DISCONNECTED Cell ID: 002AF1BB (2814395) <br>
+RxM RSSI C0: -47 RxD RSSI C0: -106 <br>
+RxM RSSI C1: -106 RxD RSSI C1: -106 </font></p>
+
+<p>If you need to change to 'ONLINE from 'LOW POWER MODE', do this: <br>
+
+<font face="courier">at!unlock="A710"<br>
+at!gobiimdisabled=1<br>
+Reset the target using at!reset or reboot it.</font></p>
+
+<p>If ati revision returns SWI9X15W_06.03.17.00 and at!gstatus? shows that your modem is 'Online', the  
+target upgrade was successful.</p>
+
+<HR>
+
+<h2><a id="3">Upgrade AP Series Firmware</a></h2>
+<p><b>Contact your FAE to upgrade AP firmware</b> (unless you're an extremely advanced Yocto user).
+
+<p>Backup all your data:<br>
+<font face="courier">AT!UNLOCK="A710"<br>
+AT!NVBACKUP=0<br>
+AT!NVBACKUP=1<br>
+AT!NVBACKUP=2<br>'
+AT!NVBACKUP=3<br>
+AT!RESET</font></p>
+
+<p>Upgrade the board to the latest firmware and Yocto:</p>
+
+<ul><li>Download <font face="courier">upgrade_to_beta1.exe</font> and 
+<font face="courier">SWI9X15A_06.03.17.00-ar_yocto-cwe.exe</font> to your host.</li>
+
+<li>Turn the board BOOT switch to 'OFF' (Recovery mode). Depending on your dev kit, 
+<font face="courier">LOW</font> is the same as <font face="courier">OFF</font>. </li>
+
+<li> Connect the target: displays in evice Manager list as 'Sierra DM Port' under Ports. </li>
+
+<li>Run <font face="courier">upgrade_to_beta1.exe</font>. After the firmware download process completes, 
+the app advises it's resetting the target.</li>
+
+<li>Run <font face="courier">SWI9X15A_06.03.17.00-ar_yocto-cwe.exe</font>. After the firmware download process completes, 
+the app advises it's resetting the target.</li>
+
+<li>Disconnect power from your target and turn your BOOT switch to 'ON' (or 'HIGH'). Reconnect power to your target; 
+it should enumerate with other targets under Ports in Window Device Manager. </li>
+
+<li>Connect to the target's AT Port (through HyperTerminal or Tera Term), and verify  
+settings to ensure the firmware update was successful.</li></ul>
+
+<p>Restore all your data:<br>
+<font face="courier">AT!UNLOCK="A710"<br>
+AT!NVRESTORE=0<br>
+AT!NVRESTORE=1<br>
+AT!NVRESTORE=2<br>
+AT!NVRESTORE=3<br>
+AT!RESET</font></p>
+
+<h3>Verify AP Firmware Upgrade</h3>
+<p>You need to run <font face="courier">ati</font> and <font face="courier">at!gstatus</font>
+to verify your firmware upgrade was successful. </p>
+
+<p>Run <font face="courier">ati</font><br>
+
+<font face="courier">Manufacturer: Sierra Wireless, Incorporated<br>
+Model: WP7102<br>
+Revision: SWI9X15A_06.03.17.00 r23799 CNSHZ-AR-BUILD 2014/08/08 13:02:24<br>
+IMEI: (Your imei)<br>
+IMEI SV: 0<br>
++GCAP: +CGSM,+FCLASS,+DS</font></p>
+
+<p>Run <font face="courier">at!gstatus</font><br>
+ Mode must be set to ONLINE not LOW POWER MODE.<br>
+
+<font face="courier">!GSTATUS: <br>
+Current Time: 2160 Temperature: 29 <br>
+Bootup Time: 0 Mode: ONLINE <br>
+System mode: WCDMA PS state: Not attached <br>
+IMS Reg State: NO SRV <br>
+WCDMA band: WCDMA 1900 <br>
+WCDMA channel: 437 <br>
+GMM (PS) state:DEREGISTERED NO IMSI <br>
+MM (CS) state: IDLE NO IMSI <br>
+WCDMA L1 State:L1M_PCH_SLEEP LAC: FEB0 (65200) <br>
+RRC State: DISCONNECTED Cell ID: 002AF1BB (2814395) <br>
+RxM RSSI C0: -47 RxD RSSI C0: -106 <br>
+RxM RSSI C1: -106 RxD RSSI C1: -106 </font></p>
+
+<p>If it is set to 'LOW POWER MODE', do this to change it to 'Online':<br>
+
+<font face="courier">at!unlock="A710"<br>
+at!gobiimdisabled=1</font></p>
+
+<p>Reset the target using at!reset or reboot it.</p>
+
+<p>If ati revision returns SWI9X15A_06.03.17.00 and at!gstatus? shows that your modem is 'Online' the  
+target upgrade was successful.</p>
+<br>
 <HR>
 
 <p>Copyright (C) Sierra Wireless, Inc. 2014. All rights reserved. Use of this work is subject to license.</p>
