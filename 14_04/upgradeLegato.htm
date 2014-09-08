@@ -72,14 +72,14 @@ ul
 
 <h3>Modem Upgrade</h3>
 
-<p>Use a Windows host (with something like HyperTerminal) to upgrade the device modem.</p>
+<p>Use a Windows host (with something like HyperTerminal) to upgrade the target modem.</p>
 
 <p>First install the Sierra Wireless drivers from Drivers_Package.zip - Follow instructions in:
 <a href="http://www.legato.io/legato-docs/14_04/getstarted_windows_host.html#instSWdrivers">install drivers topic</a>.</p>
 
 <p>If needed, backup NV parameters of the modem.</p>
 
-<p>Connect USB cable between the device and host.  These instructions apply to both AR7 and WP7 modules. </p>
+<p>Connect USB cable between the target and host.  These instructions apply to both AR7 and WP7 modules. </p>
 <p>Connect to the port "Sierra Wireless AT Command Port" with Hyperterminal. <br>
 Run <font face="courier">AT!NVBACKUP=0/1/2/3</font>. <br>
 Ensure parameters are saved and run <font face="courier">!RESET command AT!RESET</font>.</p>
@@ -95,7 +95,7 @@ AT!RESET </font><br>
 
 <p>Ensure the <a href="#3"> firmware is updated</a>.</p>
 
-<p>Wait for the device to completely reset.</p>
+<p>Wait for the target to completely reset.</p>
 <p>After it's enumerated again, open an AT command port and run:<br> 
 <font face="courier">AT!NVRESTORE=0/1/2/3 </font></p>
 <p>Ensure nvrestore runs successfully; if it fails or you skip it, you won't be able to continue upgrading. 	
@@ -140,31 +140,33 @@ Delete it configDB from /opt/legato.</p>
 <h2><a id="3">Update Firmware</a></h2>
 <p>
 
-<p>New firmware is included in the .EXE file that downloads it onto the device. </p>
- <p>You'll need to download a few files depending on your device:</p>
+<p>New firmware is included in the .EXE file that downloads it onto the target. </p>
+ <p>You'll need to download a few files depending on your target:</p>
  
  <p>Copy the appropriate .exe file to your PC:</p>
- <ul><li>SWI9X15W_06.03.00.00-wp-yocto-cwe.exe - for WP7100 and WP7102 modules</li><li>SWI9X15W_06.02.14.00-wp-yocto-cwe.exe - for the WP7104 module</li></ul>
+ <ul><li>SWI9X15W_06.03.00.00-wp-yocto-cwe.exe - for WP7100 and WP7102 modules</li>
+ <li>SWI9X15W_06.02.14.00-wp-yocto-cwe.exe - for the WP7104 module</li></ul>
 
 <p>Download distribution, toolchain, drivers and firmware from the 
 <a href="http://developer.sierrawireless.com/Resources/Resources/Legato/Distribution.aspx">Dev Zone</a>.</p>
 
-<p>For AR7x modules, contact your Sierra Wireless Field Application Engineer (FAE) for details on how to proceed upgrading the firmware. </p>
+<p>For AR7x modules, contact your Sierra Wireless Field Application Engineer (FAE) for details 
+on how to proceed upgrading the firmware. </p>
 
 <p>Note: the firmware file also includes Yocto software. 
-Older devices might need to be partitioned before completing the firmware update.</p>
+Older targets might need to be partitioned before completing the firmware update.</p>
 <br>
 <p>Turn the board BOOT switch to 'OFF' (Recovery mode). Depending on your dev kit, 'LOW' is the same as 'OFF'.   </p>
 
-<p>Connect the device. It will display in a Device Manager list as 'Sierra DM Port' located under Ports.  </p>
+<p>Connect the target. It will display in a Device Manager list as 'Sierra DM Port' located under Ports.  </p>
 
 <p>Run <font face="courier">SWI9X15W_06.xx.xx.00.exe</font>. (check above for versions). 
-Wait until the firmware download process is complete and the app reports that it is resetting the device.</p>
+Wait until the firmware download process is complete and the app reports that it is resetting the target.</p>
 
-<p>Disconnect power from your device and turn your BOOT switch to 'ON' (or 'HIGH'). Reconnect power to your device; 
- it should enumerate with other devices per AT Ports manager list.  </p>
+<p>Disconnect power from your target and turn your BOOT switch to 'ON' (or 'HIGH'). 
+Reconnect power to your target;  it should enumerate with other targets per AT Ports manager list.  </p>
 
-<p>Connect to the device (through HyperTerminal or Tera Term), and verify the following settings to 
+<p>Connect to the target (through HyperTerminal or Tera Term), and verify the following settings to 
 ensure the firmware has been updated successfully:
 </p>
 
@@ -172,7 +174,8 @@ ensure the firmware has been updated successfully:
 <br>
 <font face="courier">Manufacturer: Sierra Wireless, Incorporated <br>
 Model: WP7102 <br>
-Revision: SWI9X15W_06.02.15.00 r21134 CNSHZ-AR-BUILD 2014/03/25 00:04:10 (version should match the file above) <br>
+Revision: SWI9X15W_06.02.15.00 r21134 CNSHZ-AR-BUILD 2014/03/25 00:04:10 
+(version should match the file above) <br>
 IMEI: 355603050001488 <br>
 IMEI SV: 0 <br>
 +GCAP: +CGSM,+DS,+ES <br>
@@ -211,12 +214,12 @@ at!custom?</font> <br>
 and then:<br>
 <font face="courier">at!reset</font>.</p> 
 
-<p>Go back to AT commands, if the device status is still 'LOW POWER MODE', run this:<br>
+<p>Go back to AT commands, if the target status is still 'LOW POWER MODE', run this:<br>
 <font face="courier">at!unlock="A710" <br>
 At!gobiimpref?</font>
 
 <p>Ensure 'preferred fw version' is the same as 'current fw version'. If not,  
-modify it manually using: <font face="courier">at!gobiimpref='current fw version'</font></p>
+modify it manually using: <font face="courier">at!gobiimpref="current fw version"</font></p>
 
 <p><font face="courier">at!gobiimpref? <br>
 !GOBIIMPREF: <br>
@@ -227,9 +230,9 @@ modify it manually using: <font face="courier">at!gobiimpref='current fw version
  current carrier name:   VZW <br>
  current config name:    VZW_006.002_000 <br>
 <br>
-at!gobiimpref="06.02.15.00"'</font>
+at!gobiimpref="06.02.15.00"</font>
 </font>
-<p>Then reset the device using at!reset or reboot it.</p>
+<p>Then reset the target using at!reset or reboot it.</p>
 <br>
 
 <HR>
