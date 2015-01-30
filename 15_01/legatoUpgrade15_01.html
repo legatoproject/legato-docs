@@ -57,17 +57,16 @@ ul
 <p><a href="#1">Upgrade WP Firmware </a><br>
 <a href="#2">Upgrade Legato Application Framework</a></p>
 <p>Here's other info you may need to look at: <br>
-<a href="redir.aspx?C=cciwgMb9oEi5xbLM2qxC2ZuaYVPPD9JI6ceiG5zGv-rd3wn7jEPe6AgTPWzAoshS3FXu-OPk-OE.&amp;URL=http%3a%2f%2fwww.legato.io%2flegato-docs%2f15_01%2flegato_rel_notes_15_01.html" target="_blank">Legato 15.01 Beta release notes</a></p>
+<a href="http://www.legato.io/legato-docs/15_01/legato_rel_notes_15_01.html">Legato 15.01 Beta release notes</a></p>
 <hr>
 <h2><a id="1">Upgrade WP Series Firmware</a></h2>
-<p>This WP firmware update requires you to use UART2 to communicate through the target's the serial port (instead of UART1) . See
-<a href="redir.aspx?C=cciwgMb9oEi5xbLM2qxC2ZuaYVPPD9JI6ceiG5zGv-rd3wn7jEPe6AgTPWzAoshS3FXu-OPk-OE.&amp;URL=http%3a%2f%2fwww.legato.io%2flegato-docs%2f15_01%2fgetstarted_connect_dev_kit.html" target="_blank">
-Prep Dev Kit Board</a> for complete info.</p>
+<p>This WP firmware update requires you to use UART2 to communicate through the target's the serial port (instead of UART1). See
+<a href="http://www.legato.io/legato-docs/15_01/getstarted_connect_dev_kit.html">Prep Dev Kit Board</a> for complete info.</p>
 <p><span style="font-weight:bold">Windows</span></p>
 <p>Follow these steps to upgrade the dev kit board to the latest firmware and Yocto using a Windows host:</p>
 <p>Download <font face="courier">SWI9X15W_06.03.38.00-wp_yocto-cwe.exe</font> to your host from
-<a href="redir.aspx?C=cciwgMb9oEi5xbLM2qxC2ZuaYVPPD9JI6ceiG5zGv-rd3wn7jEPe6AgTPWzAoshS3FXu-OPk-OE.&amp;URL=http%3a%2f%2fsource.sierrawireless.com%2fResources%2fResources%2fLegato%2fDistribution%2f" target="_blank">
-Legato Downloads</a>. </p>
+<a href="http://source.sierrawireless.com/resources/legato/distribution/">Legato Downloads</a>.</p>
+
 <p>Turn the board BOOT switch to 'OFF' (Recovery mode). Depending on your dev kit, 'LOW' is the same as 'OFF'.
 </p>
 <p>Connect the target: displays in Device Manager list as 'Sierra DM Port' under Ports.
@@ -98,9 +97,9 @@ Linux Version: 3.4.91-yocto-standard #1 PREEMPT Wed Jan 28 00:06:43 EST 2015 </f
 </p>
 <p>fwupdate won't work if you don't upgrade firmware and Yocto before upgrading the Legato AF.</p>
 <p>Download to your host the <font face="courier">spkgz-yocto.cwe </font>file containing the fota headers from
-<a href="redir.aspx?C=cciwgMb9oEi5xbLM2qxC2ZuaYVPPD9JI6ceiG5zGv-rd3wn7jEPe6AgTPWzAoshS3FXu-OPk-OE.&amp;URL=http%3a%2f%2fsource.sierrawireless.com%2fResources%2fResources%2fLegato%2fDistribution%2f" target="_blank">
+<a href="http://source.sierrawireless.com/resources/legato/distribution/">
 Legato Downloads</a>. </p>
-<p>Then run <font face="courier">fwupdate download &lt;file (spkgz-yocto.cwe</font>.</p>
+<p>Then run <font face="courier">fwupdate download &#60;file spkgz-yocto.cwe&#62;</font>.</p>
 <p>This message will display if fwupate was successful: <br>
 <font face="courier">(Download successful; please wait for modem to reset)&#8221;.</font></p>
 <br>
@@ -137,7 +136,7 @@ at!gobiimdisabled=1</font><br>
 Reset the target using <font face="courier">at!reset </font>or reboot it.</p>
 <p>If ati revision returns <font face="courier">SWI9X15W_06.03.38.00</font> and <font face="courier">
 at!gstatus?</font> shows that your modem is 'Online', the target upgrade was successful.</p>
-<p>If you encounter permission issues running the unlock command, contact the <a href="redir.aspx?C=cciwgMb9oEi5xbLM2qxC2ZuaYVPPD9JI6ceiG5zGv-rd3wn7jEPe6AgTPWzAoshS3FXu-OPk-OE.&amp;URL=https%3a%2f%2fforum.sierrawireless.com%2fviewforum.php%3ff%3d177" target="_blank">
+<p>If you encounter permission issues running the unlock command, contact the <a href="https://forum.sierrawireless.com/viewforum.php?f=177">
 Legato Forum</a> for assistance.</p>
 <hr>
 <h2><a id="2">Upgrade Legato Beta AF 14.10 to 15.01 </a></h2>
@@ -146,7 +145,7 @@ Legato Forum</a> for assistance.</p>
 <p><font face="courier">$ cd /opt/swi <br>
 $ sudo rm -rf *</font></p>
 <p>Installation packages (including toolchain downloads) are available at the Sierra Wireless Source
-<a href="redir.aspx?C=cciwgMb9oEi5xbLM2qxC2ZuaYVPPD9JI6ceiG5zGv-rd3wn7jEPe6AgTPWzAoshS3FXu-OPk-OE.&amp;URL=http%3a%2f%2fsource.sierrawireless.com%2fResources%2fResources%2fLegato%2fDistribution%2f" target="_blank">
+<a href="">
 Legato Downloads</a> page.</p>
 <p>Select toolchain for 32 or 64 bits and copy it to <font face="courier">/opt/swi</font></p>
 <p><font face="courier">$cp [Legato-Toolchain-file-name] /opt/swi <br>
@@ -155,10 +154,10 @@ $ sudo tar xvjf [Legato-Toolchain-file-name] </font></p>
 <p>On your target, delete <font face="courier">/opt/legato</font> and <font face="courier">
 /usr/local</font> to remove old versions of legato. Ensure you run <font face="courier">
 legato stop</font> before deleting <font face="courier">/opt/legato.</font></p>
-<p>Then <a href="redir.aspx?C=cciwgMb9oEi5xbLM2qxC2ZuaYVPPD9JI6ceiG5zGv-rd3wn7jEPe6AgTPWzAoshS3FXu-OPk-OE.&amp;URL=http%3a%2f%2fwww.legato.io%2flegato-docs%2f15_01%2fgetstarted_installand_build.html" target="_blank">
-install and build Legato</a> and <a href="redir.aspx?C=cciwgMb9oEi5xbLM2qxC2ZuaYVPPD9JI6ceiG5zGv-rd3wn7jEPe6AgTPWzAoshS3FXu-OPk-OE.&amp;URL=http%3a%2f%2fwww.legato.io%2flegato-docs%2f15_01%2fgetstarted_target_setup.html" target="_blank">
+<p>Then <a href="http://www.legato.io/legato-docs/15_01/getstarted_installand_build.html" target="_blank">
+install and build Legato</a> and <a href="http://www.legato.io/legato-docs/15_01/getstarted_target_setup.html" target="_blank">
 setup the target software</a>.</p>
-<p>See <a href="redir.aspx?C=cciwgMb9oEi5xbLM2qxC2ZuaYVPPD9JI6ceiG5zGv-rd3wn7jEPe6AgTPWzAoshS3FXu-OPk-OE.&amp;URL=http%3a%2f%2fwww.legato.io%2flegato-docs" target="_blank">
+<p>See <a href="http://www.legato.io/legato-docs/">
 Legato documentation</a> for full information.</p>
 <hr>
 </body>
