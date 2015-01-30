@@ -80,27 +80,26 @@ ul
 </p>
 <p>Note: There's a chance Windows will ask if your program has been installed successfully. Ignore the message or select that the program has been installed properly.</p>
 <br>
-<p style="font-weight:bold">Linux</p>
-<p style="font-weight:bold"><span style="font-weight:normal">To upgrade the dev kit board to the latest firmware and Yocto
-</span><span style="font-weight:normal">using a Linux host</span><span style="font-weight:normal">, Legato Beta 14.07 or higher must be installed on the target device,
-<br>
-and the fwupdate service must be running.&nbsp;</span></p>
-<p>To check if the fwupdate service is running, on a host run: <font face="courier">
+<p><b>Linux</b></p>
+<p>To upgrade the dev kit board to the latest firmware and Yocto using a Linux host, 
+Legato Beta 14.07 or higher must be installed on the target device, and the <font face="courier">fwupdate</font> service must be running.</p>
+
+<p>To check if <font face="courier">fwupdate</font>  is running, on a host run: <font face="courier">
 bin/legs</font> and then <font face="courier">fwupdate query $DEST_IP</font>. On a target run:
-<font face="courier">fwupdate query</font> </p>
-<p>If fwupdate is running properly, it'll return something like: <br>
+<font face="courier">fwupdate query</font>.</p>
+
+<p>If it's running properly, it'll return something like: <br>
 <font face="courier">root@swi-mdm9x15:~# fwupdate query <br>
 Firmware Version: SWI9X15W_06.03.38.00 r26558 CNSHZ-AR-BUILD 2015/01/27 09:49:10 <br>
-Bootloader Version: SWI9X15W_06.03.38.00 r26558 CNSHZ-AR-BUILD 2015/01/27 09:49:10
-<br>
+Bootloader Version: SWI9X15W_06.03.38.00 r26558 CNSHZ-AR-BUILD 2015/01/27 09:49:10<br>
 Linux Version: 3.4.91-yocto-standard #1 PREEMPT Wed Jan 28 00:06:43 EST 2015 </font>
 </p>
-<p>fwupdate won't work if you don't upgrade firmware and Yocto before upgrading the Legato AF.</p>
+<p><font face="courier">fwupdate</font> won't work if you don't upgrade firmware and Yocto before upgrading Legato AF.</p>
 <p>Download to your host the <font face="courier">spkgz-yocto.cwe </font>file containing the fota headers from
-<a href="http://source.sierrawireless.com/resources/legato/distribution/">
-Legato Downloads</a>. </p>
+<a href="http://source.sierrawireless.com/resources/legato/distribution/"> Legato Downloads</a>. </p>
+
 <p>Then run <font face="courier">fwupdate download &#60;file spkgz-yocto.cwe&#62;</font>.</p>
-<p>This message will display if fwupate was successful: <br>
+<p>This message will display if it was successful: <br>
 <font face="courier">(Download successful; please wait for modem to reset)&#8221;.</font></p>
 <br>
 <hr>
@@ -145,7 +144,8 @@ Legato Forum</a> for assistance.</p>
 <p><font face="courier">$ cd /opt/swi <br>
 $ sudo rm -rf *</font></p>
 <p>Installation packages (including toolchain downloads) are available at the Sierra Wireless Source 
-<a href="http://source.sierrawireless.com/resources/legato/distribution/">Legato Downloads</a> page.</p>
+<a href="http://source.sierrawireless.com/resources/legato/distribution/">
+Legato Downloads</a> page.</p>
 <p>Select toolchain for 32 or 64 bits and copy it to <font face="courier">/opt/swi</font></p>
 <p><font face="courier">$cp [Legato-Toolchain-file-name] /opt/swi <br>
 $ cd /opt/swi <br>
