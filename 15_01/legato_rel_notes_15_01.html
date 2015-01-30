@@ -1,0 +1,196 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<style type="text/css">
+<!--
+a, a:link, a:visited
+	{color:#978c16;
+	text-decoration:none}
+a:hover
+	{color:#e53b30}
+h1
+	{font-weight:bold;
+	font-size:14pt;
+	font-family:Helvetica;
+	color:#e53b30}
+h2
+	{font-weight:bold;
+	font-size:11pt;
+	font-family:arial;
+	color:#000000}
+li
+	{margin-top:4pt;
+	font-style:normal;
+	font-weight:normal;
+	color:#000000;
+	font-size:11pt}
+p
+	{margin:4pt 0.1in 0.1in 0.25in;
+	font-size:11pt;
+	font-family:arial;
+	color:#000000}
+ul
+	{margin-left:0.1in;
+	font-size:11pt;
+	font-family:arial;
+	list-style-position:outside;
+	margin-bottom:3pt;
+	margin-top:2pt;
+	list-style-type:circle}
+-->
+</style>
+</head>
+<body>
+<p></p>
+<h1>Legato Beta Release Notes - 15.01</h1>
+<p>Copyright &copy; Sierra Wireless Inc.&nbsp;All rights reserved. </p>
+<hr>
+<h2>Welcome to Legato</h2>
+<p></p>
+<p>This page summarizes important information about the Legato Beta 15.01 release:<br>
+<b><a href="#Downloads">Downloads</a></b><br>
+<b><a href="#Features">New Features</a></b> <br>
+<b><a href="#Mods">Modifications</a></b> <br>
+<b><a href="#Known">Known Issues</a></b> <br>
+<br>
+Here's other info you made need to look at: <br>
+<a href="redir.aspx?C=zP77iGom1k-SF0pKekZNWIUqApK3D9JI2uATtBfflQXmxowib28c3sjI-2krbPBALunDEayS0H4.&amp;URL=http%3a%2f%2fwww.legato.io%2flegato-docs%2f14_10%2flegatoUpgrade15_01.html" target="_blank">Upgrade Legato</a>
+<br>
+<a href="redir.aspx?C=zP77iGom1k-SF0pKekZNWIUqApK3D9JI2uATtBfflQXmxowib28c3sjI-2krbPBALunDEayS0H4.&amp;URL=http%3a%2f%2fwww.legato.io%2flegato-docs%2f14_10%2flegatoUpgrade14_10.html" target="_blank">Legato Beta 14.10 release notes</a>
+</p>
+<p>Here is the complete <a href="redir.aspx?C=zP77iGom1k-SF0pKekZNWIUqApK3D9JI2uATtBfflQXmxowib28c3sjI-2krbPBALunDEayS0H4.&amp;URL=http%3a%2f%2fwww.legato.io%2flegato-docs%2f" target="_blank">
+Legato documentation</a>.</p>
+<p></p>
+<hr>
+<br>
+<h2><a id="Downloads">Downloads</a></h2>
+<p>These are the Legato 14.10 source packages, available from: <a href="redir.aspx?C=zP77iGom1k-SF0pKekZNWIUqApK3D9JI2uATtBfflQXmxowib28c3sjI-2krbPBALunDEayS0H4.&amp;URL=http%3a%2f%2fsource.sierrawireless.com%2fresources%2flegato%2fdistribution%2f" target="_blank">
+Legato Source Downloads</a></p>
+<p>WP7 series pre-built distribution - <font face="courier" color="black">Legato-Dist-PreBuilt-mdm9x15-15.01.tar.bz2</font></p>
+<p>Sources package - <font face="courier" color="black">Legato-Dist-Source-mdm9x15-15.01.tar.bz2<font></p>
+<p>Toolchain for Linux PC i686 Legato - <font face="courier" color="black">Legato-Toolchain-mdm9x15-15.01-i686.sh<font></p>
+<p>Toolchain&nbsp; for Linux PC x86 64bits - <font face="courier" color="black">Legato-Toolchain-mdm9x15-15.01-x86_64.sh<font></p>
+<p>Windows drivers needed to upgrade WP7 Series firmware - <font face="courier" color="black">
+Drivers_Package.zip <font></p>
+<p>WP7 firmware package - <font face="courier" color="black">SWI9X15W_06.03.38.00-wp_yocto-cwe.exe<font></p>
+<p>Linux fwupdate tool package - <font face="courier" color="black">spkgz-yocto.cwe<font></p>
+<br>
+<h2><a id="Features">New Features</a></h2>
+<p>This release added the following new features:</p>
+<p>[Audio] Multimedia volume control.&nbsp;</p>
+<p>[eCall] Added ERA-GLONASS APIs, added support to MSD version 2. <br>
+</p>
+<p>[eCall] Added Voice connection events to eCall/ERA-GLONASS handler's notification.
+<br>
+</p>
+<p>[Location] Reset GPS engine to Cold Start API. <br>
+</p>
+<p>[Location] GPS Antenna Detection API (if applicable). <br>
+</p>
+<p>[Log] Store crash report (coredump &amp; syslog) to flash memory. <br>
+</p>
+<p>[Modem] Antenna Detection API (for cellular and diversity). <br>
+</p>
+<p>[Modem] Temperature monitoring API. <br>
+</p>
+<p>[Modem] Modem monitoring - Get voltage input API. <br>
+</p>
+<p>[Power Mgmt] Add Power Management service and epollwakeup. <br>
+</p>
+<p>[SMS] Simple SMS send function. <br>
+</p>
+<p>[Security] Added SMACK for mandatory access control. <br>
+</p>
+<p>[Tool] Change the machine name on target.</p>
+<br>
+<h2><a id="Mods">Modifications</a></h2>
+<p>This release has the following modifications:</p>
+<p><span style="font-weight:bold">Changes in Legato Framework since 14.10</span></p>
+<p>[AR7558] reserve profile 1 for OTA session.&nbsp;</p>
+<p>[Build] ifgen - Support passing a callback as function call parameter.</p>
+<p>[Build] Use new-style EVENT definitions.</p>
+<p>[Clib] le_arg API was updated. <br>
+</p>
+<p>[Data] Data Connection Service automatically drops requests for dead clients. <br>
+</p>
+<p>[eCall] Automatic termination of active calls. <br>
+</p>
+<p>[Modem]Move out IPS API from monitoring daemon. <br>
+</p>
+<p>[Modem] perform network scanning on home network. &nbsp;<br>
+</p>
+<p>[Modem] Get default RAT selection from modem firmware. <br>
+</p>
+<p>[Modem] Removed MRC settings from configuration tree.&nbsp;</p>
+<p>[Tool] Instlegato supports targets with IPv6 address.</p>
+<p>[SMS] Fixed memory leak in SMS service.</p>
+<p>[eCall] Allow &quot;&#43;&quot; character in PSAP number without overflowing.</p>
+<p>[Build] mksys &#8211;s option bug fix.&nbsp;</p>
+<p>[Clib] fdMon_DestructThread bug fix.</p>
+<p>[Config tree] SetNodeName API bug fix. </p>
+<p>[eCall] SetNadDeregistrationTime bug fix.&nbsp;</p>
+<p>[Location] GNSS &quot;xtra&quot; bug fix.</p>
+<p>[Modem] le_mrc_RemovePreferredOperator bug fix.</p>
+<p>[Modem] Set-Get preferred Radio Access Technology bug fix.</p>
+<p>[SIM] SIM control: Internal/External SIM Selection bug fix. <br>
+</p>
+<p>[SMS] Send SMS on Sprint LTE network bug fix.&nbsp;</p>
+<p>[Tool] log --help bug fix. </p>
+<p>Documentation update.</p>
+<p><span style="font-weight:bold">Changes in meta-swi since 14.10</span></p>
+<p><span style="font-weight:bold"></span>[Security] add patches CVE-2014-{9293,9294,9295,9296}.<br>
+</p>
+<p>[System] Use compressed Linux kernel. <br>
+</p>
+<p>[Yocto] Provide libproc headers in toolchain. <br>
+</p>
+<p>[Yocto] Prefer readline 5.2 (GPLv2). <br>
+</p>
+<p>[Yocto] Remove tcf dependency on bash (GPLv2). <br>
+</p>
+<p>[Yocto] Switch sysV init to busybox style init. <br>
+</p>
+<p>[Yocto] Added libcap-ng in rootfs &amp; toolchain.</p>
+<p><br>
+<span style="font-weight:bold">Changes in meta-swi-extras since 14.10</span><br>
+</p>
+<p>[Audio] Removed USB audio from default list of modes to enumerate. <br>
+</p>
+<p>[Power Mgmt] epollwakeup has been added to Yocto. <br>
+</p>
+<p>[Time service] check time service configuration before starting ntpd or DNS servers.
+<br>
+</p>
+<p>[Time service] time is synced at bootup when configured to use ntpd. <br>
+</p>
+<p>[System] Build Legato framework into mtd3. <br>
+</p>
+<p>[System] root partition should be mounted as Read Only. <br>
+</p>
+<p>[Yocto] Update usbsetup for diag. <br>
+</p>
+<p>[Yocto]Removed bash from image. <br>
+</p>
+<p>[Yocto] Switched sysV init to busybox style init.</p>
+<p>[Yocto] Resolved issue running &#8220;top&#8221; command.</p>
+<br>
+<h2><a id="Known">Known Issues</a></h2>
+<p>Legato Beta release 15.01 has the following known issues:</p>
+<p>[Audio] To play a file sound several times, it needs to be opened every times before using le_audio_OpenFilePlayback().</p>
+<p>[Audio] le_audio_SetGain() and le_audio_Mute() have no effect when a playback stream is connected to the external speaker.</p>
+<p>[Audio] Voice call: Missing termination causes.</p>
+<p>[eCall] le_ecall_GetPsapNumber can fail with -6.</p>
+<p>[LPM] Module can&#8217;t enter sleep automatically without USB connected.</p>
+<p>[LPM] Can't enter sleep mode while USB audio is enabled.</p>
+<p>[SMS] SMS Service: Missing sending failure causes (le_sms_Send). <br>
+</p>
+<p>[SMACK] When a new file is created it should inherit the SMACK label of the creator but, because this feature is missing from our current flash file systems, our current implementation of SMACK has the following limitations:</p>
+<ul>
+<li>Mqueue file system will always set new files to the &quot;_&quot; label.&nbsp; This means that access between apps that use MQueues will not be controlled.
+</li><li>Tmpfs always sets new files to the &quot;&quot; label.&nbsp; This becomes an issue when a file descriptor for the a file created in a sandbox is passed over IPC to another app.&nbsp; The other app can then pass that fd onto a third app and so on.
+</li><li>Yaffs2/UBIFS do not set any label for newly created files. This causes an issue with the config daemon that has the label &quot;framework&quot; but its created files do not have any labels. To work around this the config daemon must run as root and the 'onlycap'
+ SMACK label must not be set.<br>
+</li></ul>
+</font></font></font></font></font></font></font></font></font></font></font></font>
+</body>
+</html>
