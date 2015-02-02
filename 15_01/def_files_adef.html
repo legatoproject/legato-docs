@@ -459,7 +459,13 @@ Config Tree</h2>
         otherApp    // I need read access to another app's configuration data.
     }
 }
-</pre><dl class="section warning"><dt>Warning</dt><dd>Because configuration data can be saved to flash storage, granting write access to a configuration tree can make it possible for the app to wear out your flash device. Granting an app write access to another app's configuration settings creates a security hole, because it it's possible for one app to interfere with the operation of another app. It's especially dangerous to grant write access to the system tree, because it's possible to completely compromise the target device. Even read access may be dangerous if any kind of security key, including PIN and PUK codes, are kept in the system tree. <b>Apps should never be given direct access to the system tree.</b></dd></dl>
+</pre><dl class="section warning"><dt>Warning</dt><dd>Because config data can be saved to flash storage, granting write access to a config tree can make 
+it possible for the app to wear out your flash device. Granting an untrusted app write access to another app's config
+settings creates a security hole, because it makes it possible for the untrusted app to interfere with the other app's operation. 
+It's especially dangerous to grant write access to the system tree, because it's possible to completely compromise 
+the target device. Even read access may be dangerous if any kind of security key, including PIN and PUK codes, 
+are kept in the system tree.  Apps shouldn't be given direct access to the <code>system tree</code>; untrusted
+apps should <b>never</b> be given direct access to the <code>system tree</code>.</dd></dl>
 <h2><a class="anchor" id="defFilesAdef_requiresDir"></a>
 Dir</h2>
 <p>Used to declare that certain directories that reside on the target device outside of the app are to be made accessible to the app.</p>
