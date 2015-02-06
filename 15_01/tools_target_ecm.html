@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>LEGATO: Target</title>
+<title>LEGATO: configEcm</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="fonts.css" rel="stylesheet" type="text/css" />
 <link href="legato.css" rel="stylesheet" type="text/css" />
@@ -67,7 +67,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('tools_target.html','');});
+$(document).ready(function(){initNavTree('tools_target_ecm.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -86,22 +86,41 @@ $(document).ready(function(){initNavTree('tools_target.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Target </div>  </div>
+<div class="title">configEcm </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Legato has these tools to run on the target:</p>
-<p><a class="el" href="tools_target_app.html">app</a> <br/>
- <a class="el" href="tools_target_cm.html">cm</a> <br/>
- <a class="el" href="tools_target_config.html">config</a> <br/>
- <a class="el" href="tools_target_config_ecm.html">configEcm</a> <br/>
- <a class="el" href="tools_target_exec_in_app.html">execInApp</a> <br/>
- <a class="el" href="tools_target_fw_update.html">fwupdate</a> <br/>
- <a class="el" href="tools_target_inspect.html">inspect</a> <br/>
- <a class="el" href="tools_target_legato.html">legato</a> <br/>
- <a class="el" href="tools_target_log.html">log</a> <br/>
- <a class="el" href="tools_target_sdir.html">sdir</a> <br/>
- <a class="el" href="tools_target_set_net.html">setNet</a> <br/>
+<div class="textblock"><p>Use the <code>configEcm</code> tool to setup an ECM interface.</p>
+<h1>Usage</h1>
+<p><b><code> configEcm [show | off | on [target &lt;ipV4_addr&gt;] host &lt;ipV4_addr&gt; netmask &lt;ipV4_netmansk&gt;] </code></b></p>
+<pre class="fragment">configEcm show </pre><blockquote class="doxtable">
+<p>Displays current configuration.</p>
+<p></p>
+</blockquote>
+<pre class="fragment">configEcm off </pre><blockquote class="doxtable">
+<p>Deconfigures and turns off ECM.</p>
+<p></p>
+</blockquote>
+<pre class="fragment">configEcm on [target &lt;ipV4_addr&gt;] host &lt;ipV4_addr&gt; netmask &lt;ipV4_netmansk&gt;] </pre><blockquote class="doxtable">
+<p>Configures ECM: <br/>
+ enter target ipV4 address <br/>
+ enter host ipV4 address <br/>
+ enter connection ipV4 netmask <br/>
 </p>
+<p></p>
+</blockquote>
+<blockquote class="doxtable">
+<p>If no values are provided, defaults to: <br/>
+ target: 192.168.1.2 <br/>
+ host: 192.168.1.3 <br/>
+ netmask: 255.255.255.0 <br/>
+</p>
+<p></p>
+</blockquote>
+<blockquote class="doxtable">
+<p>If the provided address and netmask (or the defaults) conflicts <br/>
+ with an existing network connection, no change will be made.</p>
+<p></p>
+</blockquote>
 <hr/>
 <p>Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>
 </div></div><!-- contents -->
