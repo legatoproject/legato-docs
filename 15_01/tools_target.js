@@ -14,9 +14,11 @@ var tools_target =
       ] ],
       [ "Config Code Samples", "tools_target_config.html#toolsTarget_config_Samples", null ]
     ] ],
+    [ "configEcm", "tools_target_config_ecm.html", null ],
     [ "execInApp", "tools_target_exec_in_app.html", null ],
     [ "fwupdate", "tools_target_fw_update.html", null ],
     [ "inspect", "tools_target_inspect.html", null ],
+    [ "legato", "tools_target_legato.html", null ],
     [ "log", "tools_target_log.html", null ],
     [ "sdir", "tools_target_sdir.html", null ],
     [ "setNet", "tools_target_set_net.html", null ]
