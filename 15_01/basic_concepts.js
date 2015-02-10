@@ -26,6 +26,6 @@ var basic_concepts =
     [ "Event-driven Programming", "event_basics.html", null ],
     [ "Power Management", "basic_pwr_mgmt.html", null ],
     [ "Inter-process Communication", "basic_i_p_c.html", null ],
-    [ "lnternationalization", "basic_internationalization.html", null ],
+    [ "Internationalization", "basic_internationalization.html", null ],
     [ "Logging", "basic_log.html", null ]
 ];
