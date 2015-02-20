@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('event_basics.html','');});
 <p>Beware one drawback is that if a component blocks a shared thread, it blocks every component sharing that thread.</p>
 <p>Sometimes, the <em>judicious</em> use of threads can considerably simplify a program, so multi-threading is also supported by Legato along with the usual thread synchronization constructs (mutexes, semaphores, etc.).</p>
 <h1><a class="anchor" id="eventBasicsSection"></a>
-eventBasicsSection</h1>
+Event Loop API</h1>
 <p>Legato's Event Loop API uses a central <b> event loop </b> that calls <b> event handler </b> functions in response to <b>event reports</b>. See <a class="el" href="c_event_loop.html">Event Loop API</a></p>
 <p>Software components register their event handler functions with the event system (either directly through the Event Loop API or indirectly through other APIs that use the Event Loop API) so the central event loop knows the functions to call in response to defined events.</p>
 <p>Every event loop has an <b>event queue</b>, which is a queue of events waiting to be handled by that event loop.</p>

@@ -24,7 +24,7 @@ var basic_concepts =
       [ "Access Control", "basic_config.html#accessControl", null ]
     ] ],
     [ "Event-driven Programming", "event_basics.html", [
-      [ "eventBasicsSection", "event_basics.html#eventBasicsSection", null ]
+      [ "Event Loop API", "event_basics.html#eventBasicsSection", null ]
     ] ],
     [ "Power Management", "basic_pwr_mgmt.html", null ],
     [ "Inter-process Communication", "basic_i_p_c.html", null ],
