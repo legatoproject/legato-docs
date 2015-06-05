@@ -1,0 +1,393 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<style>
+<!--
+@font-face
+	{font-family:Wingdings}
+@font-face
+	{font-family:Wingdings}
+@font-face
+	{font-family:Calibri}
+@font-face
+	{font-family:Tahoma}
+@font-face
+	{font-family:"CMS Y 10"}
+@font-face
+	{font-family:"Arial Black"}
+@font-face
+	{font-family:Roboto}
+@font-face
+	{font-family:Consolas}
+@font-face
+	{font-family:"Roboto Light"}
+@font-face
+	{font-family:"\@CMS Y 10"}
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif"}
+h1
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:24.0pt;
+	font-family:"Arial","sans-serif";
+	font-variant:small-caps;
+	color:#E53B30;
+	font-weight:bold}
+h2
+	{margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:18.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold}
+h3
+	{margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Arial Black","sans-serif";
+	color:#E53B30;
+	font-weight:bold}
+a:link, span.MsoHyperlink
+	{font-family:"Arial","sans-serif";
+	color:#A09B25;
+	font-weight:bold;
+	text-decoration:none}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif"}
+p.BodyText, li.BodyText, div.BodyText
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	color:black}
+p.Bullet1, li.Bullet1, div.Bullet1
+	{margin-top:4.0pt;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	color:black}
+p.Bullet2, li.Bullet2, div.Bullet2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	color:black}
+p.Code, li.Code, div.Code
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:.25in;
+	line-height:110%;
+	font-size:10.0pt;
+	font-family:Consolas;
+	color:#404040;
+	font-weight:bold}
+p.filename, li.filename, div.filename
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.25in;
+	font-size:10.0pt;
+	font-family:Consolas;
+	color:black}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%}
+@page WordSection1
+	{margin:1.0in 1.0in 1.0in 1.0in}
+div.WordSection1
+	{}
+ol
+	{margin-bottom:0in}
+ul
+	{margin-bottom:0in}
+-->
+</style>
+</head>
+<body>
+<p></p>
+<h1>Legato Beta Release Notes - 15.05</h1>
+<p class="BodyText">Copyright &copy; Sierra Wireless Inc.&nbsp;All rights reserved. </p>
+<hr>
+<h2>Welcome to Legato</h2>
+<p class="BodyText">This page summarizes important information about the Legato Beta 15.05 release:<br>
+<b><a href="#Downloads">Downloads</a></b><br>
+<b><a href="#Services">Services APIs</a></b> <br>
+<b><a href="#ninja">Linux Host Package</a></b><br>
+<b><a href="#Features">New Features</a></b><br>
+<b><a href="#Mods">Modifications</a></b><br>
+<b><a href="#Known">Known Issues</a></b></br>
+<b><a href="#Docs">Documentation</a></b></p>
+<br>
+<p class="BodyText">Here's other info you may need to look at: <br>
+<a href="http://www.legato.io/legato-docs/15_05/legatoUpgrade15_05.html">Upgrade Legato</a><br>
+<a href="http://www.legato.io/legato-docs/15_01/legato_rel_notes_15_01.html">Legato Beta 15.01 release notes</a><br>
+Complete <a href="http://www.legato.io/legato-docs/"> Legato documentation</a></p>
+<p></p>
+<hr>
+<h2><a id="Downloads">Downloads</a></h2>
+<p class="BodyText">These are the Legato 15.05 source packages, available at: <a href="http://source.sierrawireless.com/resources/legato/downloads">
+Legato Downloads</a>:</p>
+<p class="BodyText">Sources package - <font face="courier" color="black">Legato-Dist-Source-mdm9x15-15.05.0.Beta.tar.bz2<font></p>
+<p class="BodyText">Toolchain for Linux PC i686 Legato - <font face="courier" color="black">Legato-Toolchain-mdm9x15-15.05-i686.sh<font></p>
+<p class="BodyText">Toolchain&nbsp; for Linux PC x86 64bits - <font face="courier" color="black">Legato-Toolchain-mdm9x15-15.05-x86_64.sh</font></p>
+<p class="BodyText">WP71x firmware package (with Legato) - <font face="courier" color="black">spkgz-yocto-legato-wp71-06.03.54.cwe</font></p>
+<p class="BodyText">WP71x firmware package (without Legato) - <font face="courier" color="black">spkgz-yocto-wp71-06.03.54.cwe</font></p>
+<hr>
+<h2><a id="Services">Service APIs Changes since 15.01</h2>
+<p class="BodyText">These Services APIs were modified for this release:</p>
+<h3>In SIM API (le_sim)</h3>
+<p class="BodyText">le_simType_t type has been replaced by le_sim_Id_t type.</p>
+<p class="BodyText">le_sim_Create() and le_sim_Delete() functions are deleted. Then, all the other le_sim functions don&#8217;t take a sim reference as an input argument but a le_sim_Id_t type parameter.</p>
+<h3>In Audio API (le_audio)</h3>
+<p class="BodyText">le_audio_OpenFilePlayback() changes to le_audio_OpenPlayer().</p>
+<p class="BodyText">le_audio_OpenFileRecording() changes to&nbsp; le_audio_OpenRecorder().</p>
+<p class="BodyText">le_audio_Play() changes to le_audio_PlayFile().</p>
+<p class="BodyText">le_audio_Record() changes to le_audio_RecordFile().</p>
+<p class="BodyText">le_audio_AddStreamEventHandler()/le_audio_RemoveStreamEventHandler() change to le_audio_AddMediaHandler()/le_audio_RemoveMediaHandler().</p>
+<p class="BodyText">FileEvent type changes to MediaEvent type.</p>
+<p class="BodyText">Le_audio_GetFileEvent() function deleted.</p>
+<h2><a id="ninja">Linux Command-line host packages</a></h2>
+<p class="BodyText">The <span class="LiteralChar">ninja-build</span> Linux package is now used with the Application Framework.</p>
+<h2><a id="Features">New Features</a></h2>
+<p class="BodyText">The following new features were included in this release:</p>
+<p class="BodyText">[App Mgmt] Implement Application Update over LWM2M.</p>
+<p class="BodyText">[App Mgmt] Implement Firmware Update over LWM2M.</p>
+<p class="BodyText">[App Mgmt] Add application fall back mechanism.</p>
+<p class="BodyText">[App Mgmt] Create an appInfo component.</p>
+<p class="BodyText">[App Mgmt] avcDaemon support for framework/app management with LWM2M.</p>
+<p class="BodyText">[App Mgmt] Added appCfg component to read the app configurations from the config DB's system tree.</p>
+<p class="BodyText">[App Mgmt] Added Install Status component to provide notifications of app install and uninstall.</p>
+<p class="BodyText">[App Mgmt] Tool support for the LWM2M management objects.</p>
+<p class="BodyText">[Audio] 'STOP' function for audio playback/recording.</p>
+<p class="BodyText">[Audio] Audio platform adapter for AR8652.</p>
+<p class="BodyText">[Audio] Added support for PCM insertion/extraction. </p>
+<p class="BodyText">[Audio] Added AMR codec support for playback.</p>
+<p class="BodyText">[DTMF] DTMF encoding APIs.</p>
+<p class="BodyText">[eCall] Added new event to indicate a MSD request is received from PSAP</p>
+<p class="BodyText">[FOTA] FOTA Control API.</p>
+<p class="BodyText">[Modem] API to get Manufacturer ID.</p>
+<p class="BodyText">[Modem] API to get PRI ID.</p>
+<p class="BodyText">[Modem] Added Signal Quality APIs.</p>
+<p class="BodyText">[Position] Added AGPS support to Positioning services.</p>
+<p class="BodyText">[Position] GNSS Engine Selection.</p>
+<p class="BodyText">[Ring Indicator] Added ring indicator control APIs.</p>
+<p class="BodyText">[Sandbox] Peripheral interfaces can be used from a sandbox app.</p>
+<p class="BodyText">[Security] Secure File Storage APIs.</p>
+<p class="BodyText">[SIM] Remote eUICC provisioning API.</p>
+<p class="BodyText">[SIM] SIM profile switch API.</p>
+<p class="BodyText">[SIM] Added le_sim_IsEmergencyCallSubscriptionSele<span style="font-size:13.5pt; font-family:&quot;Courier New&quot;">mkavpack<span class="apple-converted-space">&nbsp;</span></span></p>
+<p class="BodyText">cted() to get the current subscription.</p>
+<p class="BodyText">[SMS] SMS Inbox APIs </p>
+<p class="BodyText">[Tool] New, faster mk tools.</p>
+<p class="BodyText">[Tool] Added temperature threshold APIs to the cm tool.</p>
+<p class="BodyText">[Tool] Generate MDM9x15 Legato framework image.</p>
+<p class="BodyText">[Tool] Provide a way to list what processes/threads are running in an app.</p>
+<p class="BodyText">[Tool] SIM selection management to cm tool.</p>
+<p class="BodyText">[USB] Support USB CDC-EEM</p>
+<h2><a id="Mods">Modifications</a></h2>
+<p class="BodyText">The following modifications were included in this release:</p>
+<h3>Legato Framework</h3>
+<p class="BodyText">[App Mgmt] Apps OTA installation will retry after an installation failure</p>
+<p class="BodyText">[App Mgmt] Support deferral of application OTA download/installation</p>
+<p class="BodyText">[App Mgmt] Support user agreement procedure for application update/installation</p>
+<p class="BodyText">[Audio] Resolved muting issue with audio playback during a call</p>
+<p class="BodyText">[Audio] Resolved timeout issue during audio closure function pcm_close()</p>
+<p class="BodyText">[ADC] Access external ADC pins.</p>
+<p class="BodyText">[Audio] Updated audio platform adaptor for AR8652/AR6554RD.</p>
+<p class="BodyText">[Audio] Modify audio gain computation to correct le_audio_SetGain/le_audio_GetGain functions.</p>
+<p class="BodyText">[Audio] Properly handle call termination when voice call is terminated on the remote side.</p>
+<p class="BodyText">[Data] Resolved issue with 3GPP2 data connection on the CDMA network</p>
+<p class="BodyText">[Data Connection] Two RmNet interfaces can be supported concurrently.</p>
+<p class="BodyText">[eCall] le_ecall_ImportMsd: resolved MSD data input issue.</p>
+<p class="BodyText">[eCall] Resolved speaker handset voice issue when performing voice call under eCall.
+</p>
+<p class="BodyText">[eCall] Stop interval timer when eCall ends.</p>
+<p class="BodyText">[eCall] Usage clarification: le_ecall_GetPsapNumber will return LE_FAULT if le_ecall_SetPsapNumber has never been called before.</p>
+<p class="BodyText">[Event Loop] le_event_ServiceLoop() accepts epoll_wait() returning zero and returns LE_WOULD_BLOCK.</p>
+<p class="BodyText">[FW Update] Split fwupdate service daemon from mode services daemon.</p>
+<p class="BodyText">[Modem] Resolved reference count issue in le_sim_Ref_t quick create/delete.</p>
+<p class="BodyText">[RTC] Switch to BOOTTIME to preserve system time across suspend states.</p>
+<p class="BodyText">[Sandbox] /dev/input/mice is now accessible in sandbox</p>
+<p class="BodyText">[SIM] SIM selection is now consistent with modem setting.</p>
+<p class="BodyText">[SMS] Resolved issue with long SMS message.</p>
+<p class="BodyText">[SMS] le_sms_Send: added sending failure causes.</p>
+<p class="BodyText">[SMS] Resolved app crash when using the SMS message list.</p>
+<p class="BodyText">[Supervisor] Improved shutdown time </p>
+<p class="BodyText">[Supervisor] Resolved issue with supervisor failing to stop apps</p>
+<p class="BodyText">[Supervisor] Unsandboxed app can now be deleted with its processes.</p>
+<p class="BodyText">[Supervisor] stopLegato will now shutdown the supervisor and the framework.</p>
+<p class="BodyText">[System] Set file permission to 644 when creating system files</p>
+<p class="BodyText">[Tool] Improved code generation tool chain (ifgen).</p>
+<p class="BodyText">[Tool] Memory inspection tool now supports the display of subpools.</p>
+<p class="BodyText">[Tool] Resolved cm tool blocking issue due to apps not starting.</p>
+<p class="BodyText">[Tool] Resolved issue causing Legato framework reinstallation on every reboot.</p>
+<p class="BodyText">[Upgrade/Downgrade] Improved too chain to handle different packaging and upgrade/downgrade scenarios for the Legato framework
+</p>
+<p class="BodyText">[Voice Call] Added termination causes.</p>
+<h3>Yocto</h3>
+<p class="BodyText">[build] Ability to build Legato apps provided.</p>
+<p class="BodyText">[CDC-ECM] Fix ECM MAC address after initial generation.</p>
+<p class="BodyText">[Code] Link to codeaurora git (&#43;cache) rather than using tarballs.</p>
+<p class="BodyText">[CVE-2014-{9297,9298}] added.</p>
+<p class="BodyText">[ID] Tag identifier added to Linux kernel and LK bootloader.</p>
+<p class="BodyText">[iptables] Add xt_conntrack module to provide additional iptables config options.</p>
+<p class="BodyText">[Keys] home/end/delete/insert/page up/page down keys enabled.</p>
+<p class="BodyText">[libcap] Provide libcap in rootfs and toolchain</p>
+<p class="BodyText">[libcc] Added libgcc dep for lk</p>
+<p class="BodyText">[LPM] Enable the sleep mode by default<span class="apple-converted-space">.</span></p>
+<p class="BodyText">[Non-volatile ECM] (host) MAC address after initial generation added. [opencore-amr] Library in Yocto build added.</p>
+<p class="BodyText">[RFS] tc and iperf added to target root file system. [simple qmuxd] Process monitor added.</p>
+<p class="BodyText">[TCF Agent] Hostname to discovery string sent by TCF agent automatically added.</p>
+<p class="BodyText">[Start] Monitor and handle qmuxd restart during repetitive framework start/restart.<span class="apple-converted-space">&nbsp;</span></p>
+<p class="BodyText">[sysroot] Provide Fix sysroot to gcc and ld</p>
+<p class="BodyText">[Tool] Makefile update (external.mk).</p>
+<p class="BodyText">[tools] Yaffs tools in toolchain provided.</p>
+<p class="BodyText">[USB] Utils to rootfs added.</p>
+<p class="BodyText">[xt_conntrack] Module added.</p>
+<p class="BodyText">[USB] Support USB CDC-EEM</p>
+<p class="BodyText">[version] Platform/system/core to the version specified by latest 4.7 release in Codeaurora.org updated.</p>
+<p class="BodyText">[Virtual] Remove bash from virt image</p>
+<p class="BodyText">[Virtual] Do not include opencore-amr in virt toolchain</p>
+<p class="BodyText">[wm8944] Codec update to support local playback</p>
+<p class="BodyText">[yaffs2-utils] Make yaffs2-utils common</p>
+<h3>kernel</h3>
+<p class="BodyText">[ADB] support fix</p>
+<p class="BodyText">[alarmtimer] alarm_expires_remaining added.</p>
+<p class="BodyText">[alarmtimer] alarm_start_relative added.</p>
+<p class="BodyText">[alarmtimer] alarm_forward_now added.</p>
+<p class="BodyText">[alarmtimer] alarm_restart added.</p>
+<p class="BodyText">[alarmtimer] Use hrtimer per-alarm instead of per-base now used.</p>
+<p class="BodyText">[alarmtimer] Implement minimum alarm interval allowing suspend.</p>
+<p class="BodyText">[alarmtimer] Provide accessor to alarmtimer rtc deviceChanges to support 32-bit loff_t.</p>
+<p class="BodyText">[Checkpoint] Refactored checkpoint chunk and block offsetting.</p>
+<p class="BodyText">[Flash] Implement non-page aligned flash writes.</p>
+<p class="BodyText">[menuconfig] Removed repetitive entries in kernel menuconfig.</p>
+<p class="BodyText">[Module crash] After LTP stress test overnight fixed.</p>
+<p class="BodyText">[Nand Read] Nand read routine triggering &quot;undefined fixed.</p>
+<p class="BodyText">[RI] Export Ring Indicator as GPIO11 in kernel.</p>
+<p class="BodyText">[rtc-pm8xxx] Register device with alarmtimer.</p>
+<p class="BodyText">[timerfd] Support CLOCK_BOOTTIME clock.</p>
+<p class="BodyText">[timerfd] alarm timers added.</p>
+<p class="BodyText">[USB] support added.</p>
+<p class="BodyText">[userland] msm_otg notify userland on DISCONNECT.</p>
+<p class="BodyText">[WM8944] audio codec support added.</p>
+<p class="BodyText">[yaffs] Route all writes into the yaffs cache by default.</p>
+<p class="BodyText">[yaffsfs] yaffs_format function added.</p>
+<h3>Linux kernel configuration </h3>
+<p class="BodyText">[menuconfig] duplicate entries in kernel removed.</p>
+<p class="BodyText">[WM8944] codec added.</p>
+<h3>Updates from upstream Linux/Yocto </h3>
+<p class="BodyText">[build-appliance-image] Update to daisy head revision.</p>
+<p class="BodyText">[build-appliance-image] Update to daisy head revision.</p>
+<p class="BodyText">[curl] Security Advisory - curl - CVE-2014-3620 added.</p>
+<p class="BodyText">[curl] Security Advisory - curl - CVE-2014-3613 added.</p>
+<p class="BodyText">[dev-manual] &quot;Making Images More Secure&quot; section updated.</p>
+<p class="BodyText">[documentation] &quot;November 2014&quot; to manual history lists added.</p>
+<p class="BodyText">[gnupg] CVE-2013-4242 added.</p>
+<p class="BodyText">[gst-ffmpeg: Security Advisory - ffmpeg - CVE-2013-0869 added.</p>
+<p class="BodyText">[gst-ffmpeg] Security Advisory - ffmpeg - CVE-2013-4358 added.</p>
+<p class="BodyText">[libarchive] avoid dependency on e2fsprogs added.</p>
+<p class="BodyText">[ltp] zip-native as a DEPENDS added.</p>
+<p class="BodyText">[lttng-modules] Updated to version 2.4.2</p>
+<p class="BodyText">[openssh] screen sessions killed on disconnect with systemd fixed.</p>
+<p class="BodyText">[openssl: Upgraded to 1.0.1j.</p>
+<p class="BodyText">[poky-ent] YOCTO_RELEASE_NOTES variable updated.</p>
+<p class="BodyText">[poky.conf] Bumped DISTRO_VERISON for 1.6.2</p>
+<p class="BodyText">[pseudo.inc] backport of version update to 1.6.2 cleaned up.</p>
+<p class="BodyText">[pseudo*.bb] pseudo 1.6.2 update.</p>
+<p class="BodyText">[profile-manual] LTTng Documentation section updated.</p>
+<p class="BodyText">[python] force off_t size to 8 to enable large file support added.</p>
+<p class="BodyText">[readline] Patch for readline multikey dispatch issue.</p>
+<p class="BodyText">[readline] Security Advisory - readline - CVE-2014-2524 added.</p>
+<p class="BodyText">[wget] Fix for CVE-2014-4887.</p>
+<p class="BodyText">[yocto-bsp] qemu inclusion lists updated.</p>
+<h2><a id="Known">Known Issues</a></h2>
+<p class="BodyText">Legato 15.05 Beta has the following known issues:</p>
+<p class="BodyText">[App Mgmt] Apps OTA installation may not succeed if interrupted during download.</p>
+<p class="BodyText">[App Mgmt] If Apps OTA installation doesn't succeed, the app will first have to be deleted from AirVantage, and then reinstalled again.</p>
+<p class="BodyText">[Audio] le_audio_Play, le_audio_Record fail if called several times with the same file reference.</p>
+<p class="BodyText">[Config Tree] Floating point conversion may not be precise.</p>
+<p class="BodyText">[eCall] le_ecall_ExportMsd return erroneous msd.</p>
+<p class="BodyText">[eCall] Erroneous controls flags in MSD send in only Mode.</p>
+<p class="BodyText">[eUICC] BIP errors may be observed from Open Channel command.
+</p>
+<p class="BodyText">[Modem] le_mrc_SetManualRegisterMode fails with -6.</p>
+<p class="BodyText">[SMS] le_sms_CreateRxMsgList() returns NULL when SMS storage is full.</p>
+<p class="BodyText">[SMS] SMS service fails if an incoming message has non-numeric origination id.</p>
+<p class="BodyText">[Voice Call] Voice call notifications not properly handled.</p>
+<h3>Limitations &amp; Constraints</h3>
+<p class="BodyText">[Upgrade] When upgrading to the 15.05 from a previous version, user will be asked to reset the target after running instlegato; symbol look up error messages may be displayed after the reset. The target will start successfully, and the error
+ messages shouldn't be displayed again in the subsequent instlegato command.&nbsp; </p>
+<p class="BodyText">[Downgrade] When &quot;downgrading&quot; from a newer framework release to an older one, all apps should be removed from the target before installing the older framework.</p>
+<p class="BodyText">[Upgrade/Downgrade] Configdb is restored to default after each Legato framework upgrade/downgrade.&nbsp; App should make sure the configuration is initialized correctly.</p>
+<h2><a id="Docs">Documentation</a></h2>
+<h3>Services</h3>
+<p class="BodyText">The Services documentation was reorganized. </p>
+<p class="BodyText">The Application and Foundation sections were combined into one Services topic. The topic contains links to all Services, descriptions, and lists services that are already multi-app safe (meaning arbitration is fully managed among apps so
+ multiple apps can share the same resources).</p>
+<p class="BodyText">New Services were added for Ring Indicator, App Status and SMS Inbox Service.</p>
+<h3>How To topics</h3>
+<p class="BodyText">A new How To section has been added with these topics:</p>
+<p class="Bullet1"><span style="font-family:&quot;Courier New&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span></span>Customize Legato Yocto USB (moved from PDF version in 15.01)</p>
+<p class="Bullet1"><span style="font-family:&quot;Courier New&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span></span>Manage Device Power </p>
+<p class="Bullet1"><span style="font-family:&quot;Courier New&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span></span>Debug Apps</p>
+<p class="Bullet1"><span style="font-family:&quot;Courier New&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span></span>Port Legacy Apps General </p>
+<p class="Bullet1"><span style="font-family:&quot;Courier New&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span></span>Port Legacy Apps C Language.</p>
+<p class="Bullet1"><span style="font-family:&quot;Courier New&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span></span>Use Logs</p>
+<p class="Bullet1"><span style="font-family:&quot;Courier New&quot;">o<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span></span>NMEA Port Setup</p>
+<h3>Format and Navigation</h3>
+<p class="BodyText">Data Structure tree was removed (never used).</p>
+<p class="BodyText">About tree was moved to the top of left navigation tree. About Legato page now dynamically generates the release number (including tag). More details on using/searching the documentation and a Glossary were added.&nbsp;
+</p>
+<p class="BodyText">Stylesheet improvements: recognizing blank lines in code samples and left aligned graphics.
+</p>
+<h3>General</h3>
+<p class="BodyText">The Getting Started topics were reorganized to better reflect the installation process with new Target and Dev Host PC sections.</p>
+<p class="BodyText">Basics topics to create new apps and components were restructured following coding changes.
+</p>
+<p class="BodyText">Demo Apps topics were renamed to Sample Apps. Topics were split and more detail was added.</p>
+<p class="BodyText">Other Info topics: Platform Constraints was added with an Audio Limitations topic and Yocto topics were moved from Getting Started.</p>
+<p class="BodyText">Copyediting and various docs fixes were also included.</p>
+</div>
+</body>
+</html>
