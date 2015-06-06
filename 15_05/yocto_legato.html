@@ -93,9 +93,9 @@ $(document).ready(function(){initNavTree('yocto_legato.html','');});
 <p>Legato is compatible with Yocto 1.6.1</p>
 <h1><a class="anchor" id="getstartedYoctoLinux_yoctoDirectories"></a>
 Yocto Linux Directories</h1>
-<p>Untar the file <b>Legato-Dist-Source-mdm9x15-15.01.tar.bz2</b> to a directory: </p>
+<p>Untar the file <b>Legato-Dist-Source-mdm9x15-15.05.tar.bz2</b> to a directory: </p>
 <div class="fragment"><div class="line">$ cd &lt;some directory&gt;</div>
-<div class="line">$ tar xvjf Legato-Linux-Dist-mdm9x15-15.01.tar.bz2</div>
+<div class="line">$ tar xvjf Legato-Linux-Dist-mdm9x15-15.05.tar.bz2</div>
 </div><!-- fragment --><p>These file/directories will be extracted:</p>
 <ul>
 <li><b>linux-yocto-3.4.git</b> - Linux kernel - 14.1.0.Beta.rc2</li>
@@ -120,26 +120,6 @@ Rebuild Yocto Image</h1>
 <div class="fragment"><div class="line">../build/tmp/deploy/images </div>
 </div><!-- fragment --><p>Links are created at the end of the build to point to the latest kernel (kernel) and root file system (rootfs) </p>
 <dl class="section warning"><dt>Warning</dt><dd>You can’t rebuild Yocto images on Ubuntu 13.10.</dd></dl>
-<h1><a class="anchor" id="getstartedYoctoLinux_flashYoctoImagesWin"></a>
-Windows Flash Yocto</h1>
-<p>The easiest way to flash a Yocto image is through Windows. The steps are the same as upgrading to the latest firmware that includes flashing the Yocto image:</p>
-<ul>
-<li>Download <code>SWI9X15W_06.03.39.00-wp_yocto-cwe.exe</code> to your host. <br/>
- See <a href="http://source.sierrawireless.com/resources/resources/legato/downloads/">Legato Downloads</a></li>
-<li>Turn the board BOOT switch to 'OFF' (Recovery mode). Depending on your dev kit, 'LOW' is the same as 'OFF'.</li>
-<li>Connect the target: displays in Device Manager list as 'Sierra DM Port' under Ports.</li>
-<li>Run <code>SWI9X15W_06.03.39.00-wp_yocto-cwe.exe</code> by double-clicking the file. After the image flash process completes, it will advise it's resetting the target.</li>
-<li>Disconnect power from your target and turn your BOOT switch to 'ON' (or 'HIGH').</li>
-<li>Reconnect power to your target; it should enumerate (with other targets) under Ports in Window Device Manager.</li>
-</ul>
-<p>Connect to the target's AT Port (through HyperTerminal or Tera Term), and run <code>ati</code> to verify the flash update was successful. Output will look like this:</p>
-<pre class="fragment">Manufacturer: Sierra Wireless, Incorporated
-Model: WP7102
-Revision: SWI9X15W_06.03.39.00 r23799 CNSHZ-AR-BUILD 2014/xx/xx 13:02:24
-IMEI: (Your imei)
-IMEI SV: 0
-+GCAP: +CGSM,+FCLASS,+DS
-</pre><dl class="section note"><dt>Note</dt><dd>Flashing a new image will override existing settings. To easily keep your ecm on Linux, just temporarily rename your usbmode file; or you can always create a new one. <a class="el" href="yocto_install_notes.html#getstartedInstallNotes_yoctoCDC">CDC-ECM for IP vs Ethernet</a> and <a class="el" href="getstarted_config_i_pusb.html">Micro-USB</a></dd></dl>
 <h1><a class="anchor" id="getstartedYoctoLinux_flashYoctoImagesLin"></a>
 Linux Flash Yocto</h1>
 <p>You can flash the Yocto images on Linux;, the device must be in <em>fastboot</em> mode. From the shell prompt on the device run: </p>
