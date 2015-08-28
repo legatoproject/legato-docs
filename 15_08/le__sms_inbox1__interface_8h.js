@@ -1,0 +1,28 @@
+var le__sms_inbox1__interface_8h =
+[
+    [ "LE_SMSINBOX1_FORMAT_UNKNOWN", "le__sms_inbox1__interface_8h.html#af4a955f49ab155d2401a74b85a8d1a76", null ],
+    [ "LE_SMSINBOX1_MAX_MBOX_NAME_LEN", "le__sms_inbox1__interface_8h.html#ac47994ad2ef1c56bdb5348b269ac8139", null ],
+    [ "le_smsInbox1_RxMessageHandlerFunc_t", "le__sms_inbox1__interface_8h.html#a19b58278c1549e54f5af6ff2542c3458", null ],
+    [ "le_smsInbox1_RxMessageHandlerRef_t", "le__sms_inbox1__interface_8h.html#a8a995bec7afbcced5c0a7d0c3d6c8feb", null ],
+    [ "le_smsInbox1_SessionRef_t", "le__sms_inbox1__interface_8h.html#ae17eb9a61d395f3c0e4dacd2f135c074", null ],
+    [ "le_smsInbox1_AddRxMessageHandler", "le__sms_inbox1__interface_8h.html#ad1921790ff294865477be5508fc46f87", null ],
+    [ "le_smsInbox1_Close", "le__sms_inbox1__interface_8h.html#a2c3b0118016949b77df6bab31c3a986e", null ],
+    [ "le_smsInbox1_ConnectService", "le__sms_inbox1__interface_8h.html#a212dd8196dd4b265798466920331de11", null ],
+    [ "le_smsInbox1_DeleteMsg", "le__sms_inbox1__interface_8h.html#a2a426505848863678403f5b14c2ce16c", null ],
+    [ "le_smsInbox1_DisconnectService", "le__sms_inbox1__interface_8h.html#a8fef777c7e3c78c855fba53c47a97784", null ],
+    [ "le_smsInbox1_GetBinary", "le__sms_inbox1__interface_8h.html#a74a7caad34f457e0c3fb5a741f5089ae", null ],
+    [ "le_smsInbox1_GetFirst", "le__sms_inbox1__interface_8h.html#ae63652bebbdb65a29212bb7d5636b025", null ],
+    [ "le_smsInbox1_GetFormat", "le__sms_inbox1__interface_8h.html#a7daf191029452574c2f73be31745ddd5", null ],
+    [ "le_smsInbox1_GetImsi", "le__sms_inbox1__interface_8h.html#a47b7188457df57060544353824a722e5", null ],
+    [ "le_smsInbox1_GetMsgLen", "le__sms_inbox1__interface_8h.html#a99ac3b4b8d886a2c797c221a00f01bd6", null ],
+    [ "le_smsInbox1_GetNext", "le__sms_inbox1__interface_8h.html#a605986f7e80b0686841e9b3b5e9b2802", null ],
+    [ "le_smsInbox1_GetPdu", "le__sms_inbox1__interface_8h.html#ac1f8f65a60e406752394499ee3d60883", null ],
+    [ "le_smsInbox1_GetSenderTel", "le__sms_inbox1__interface_8h.html#a526785c35a6dcaabaff01b3959b25eb4", null ],
+    [ "le_smsInbox1_GetText", "le__sms_inbox1__interface_8h.html#aa35b73bd6e76889b4ab93e021e14c7a6", null ],
+    [ "le_smsInbox1_GetTimeStamp", "le__sms_inbox1__interface_8h.html#aea859f08a7d8115d4839a59ce1be987c", null ],
+    [ "le_smsInbox1_IsUnread", "le__sms_inbox1__interface_8h.html#a9f7be15b8e499a305efdcbed8a009255", null ],
+    [ "le_smsInbox1_MarkRead", "le__sms_inbox1__interface_8h.html#a19c1e0e3e27a2d44374a1774b582b1ff", null ],
+    [ "le_smsInbox1_MarkUnread", "le__sms_inbox1__interface_8h.html#a82ad6e7eb4ced962f6205acb87a8f62a", null ],
+    [ "le_smsInbox1_Open", "le__sms_inbox1__interface_8h.html#ab5c07622b824f8af32de8a7c6f6aaf53", null ],
+    [ "le_smsInbox1_RemoveRxMessageHandler", "le__sms_inbox1__interface_8h.html#a58587948e7bf5612bcb38164edfa4fee", null ]
+];
