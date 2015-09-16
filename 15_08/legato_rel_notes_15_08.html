@@ -168,16 +168,26 @@ Legato Downloads</a>:</p>
 <span style="font-size:11.0pt; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">WP71x firmware package (without Legato) - <font face="courier" color="black"> spkgz-yocto-wp71-07030500.cwe</font></p>
 <hr>
 
-<h2><a id="upgradeReq">Upgrade Requirement</h2>
+<h2><a id="upgradeReq">Upgrade Requirements</h2>
 <br>
-<span style="font-size:11.0pt; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">[AVC - LWM2M] Non Legato apps not present after Legato FOTA update</p>
+<h3>AVC - LWM2M</h3>
+ <span style="font-size:11.0pt; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Non Legato apps not present after Legato FOTA update</p>
 <span style="font-size:11.0pt; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">By default, all apps are removed during a framework update.</p>
 <span style="font-size:11.0pt; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Normally, all apps should be rebuilt against the new framework and reinstalled on the target after an update.</p>
 <span style="font-size:11.0pt; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">If currently installed apps on the target have been tested to work reliably under the new framework (proven compatible), the apps can be listed in the
 <span style="font-size:10.0pt">/targetFiles/shared/bin/whitelist</span></span> file and they will be retained during the framework update.</p>
-
-
+<h3>Sharing Symbols</h3>
+<span style="font-size:11.0pt; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Previous Legato build tools exported all symbols from all libraries by default. 
+This could cause failure if multiple .so files use the same symbol.</p>
+ 
+<span style="font-size:11.0pt; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">The current build tools hide all symbols by default except those used in APIs provided or required by a component.</p>
+<span style="font-size:11.0pt; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">To export any other symbol, you can put <span style="font-family:&quot;Courier New&quot;">LE_SHARED</span> in front of its declaration like this:</p>
+ 
+<span style="font-family:&quot;Courier New&quot;">LE_SHARED void my_function(int x); </span></p>
+<h2><a id="upgradeReq">Upgrade Requirement</h2>
+<br>
 <h2><a id="Services">Service APIs Changes since 15.05</h2>
+
 <span style="font-size:11.0pt; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">These Services APIs were modified for this release:</p>
 <h3>eCall</h3>
 <p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal">
@@ -346,8 +356,7 @@ le_audio_OpenModemVoiceTx()</i> </b></span>from le_audio API.</span></p>
  le_sms_ClearCellBroadcastIds() API locks Cell broadcast service</span></a></span></p>
 <p class="MsoNormal" style="margin-top:0in; margin-right:0in; margin-bottom:0in; margin-left:1.0in; margin-bottom:.0001pt; line-height:normal">
 <span style="font-family:&quot;Courier New&quot;">&nbsp;</span></p>
-
-
+ 
 <h2><a id="Features">New Features</a></h2>
 
 <p class="MsoNormal"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">The following new features were included in this release:</span></p>
@@ -420,8 +429,7 @@ See <a href="http://www.legato.io/legato-docs/15_08/le__rtc__interface_8h.html">
 <p class="TableContents" style="margin-bottom:4.0pt"><span style="font-size:11.0pt; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">[Tools] G</span><span style="font-size:11.0pt; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; color:windowtext">enerate-code
  (-g) option added to the mk tools. See <a href="http://www.legato.io/legato-docs/15_08/build_tools.html">Build Tools</a></span></a><span style="font-size:11.0pt; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"></span></p>
 <p class="TableContents" style="margin-bottom:4.0pt"><span style="font-size:11.0pt; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">[Tools]
-</span><span style="font-size:11.0pt; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Component
- initialization moved to library constructor</span></p>
+</span>
 <p class="BodyText">&nbsp;</p>
 
 
