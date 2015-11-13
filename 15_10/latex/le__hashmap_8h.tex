@@ -1,0 +1,621 @@
+\hypertarget{le__hashmap_8h}{}\section{framework/c/inc/le\+\_\+hashmap.h File Reference}
+\label{le__hashmap_8h}\index{framework/c/inc/le\+\_\+hashmap.\+h@{framework/c/inc/le\+\_\+hashmap.\+h}}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct le\+\_\+hashmap $\ast$ \hyperlink{le__hashmap_8h_ae81c60860dbdb8c59beaf25985e5605a}{le\+\_\+hashmap\+\_\+\+Ref\+\_\+t}
+\item 
+typedef struct le\+\_\+hashmap\+\_\+\+It $\ast$ \hyperlink{le__hashmap_8h_a8ab2021261a368add28c1be14f248459}{le\+\_\+hashmap\+\_\+\+It\+\_\+\+Ref\+\_\+t}
+\item 
+typedef size\+\_\+t($\ast$ \hyperlink{le__hashmap_8h_a354b7f0a30dd40266d367351a4b248b7}{le\+\_\+hashmap\+\_\+\+Hash\+Func\+\_\+t}) (const void $\ast$key\+To\+Hash\+Ptr)
+\item 
+typedef bool($\ast$ \hyperlink{le__hashmap_8h_adfe15673aeaa2400d3147d62abffee40}{le\+\_\+hashmap\+\_\+\+Equals\+Func\+\_\+t}) (const void $\ast$first\+Key\+Ptr, const void $\ast$second\+Key\+Ptr)
+\item 
+typedef bool($\ast$ \hyperlink{le__hashmap_8h_acae181524ccab8958e1c8fd5855995b1}{le\+\_\+hashmap\+\_\+\+For\+Each\+Handler\+\_\+t}) (const void $\ast$key\+Ptr, const void $\ast$value\+Ptr, void $\ast$context\+Ptr)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{le__hashmap_8h_ae81c60860dbdb8c59beaf25985e5605a}{le\+\_\+hashmap\+\_\+\+Ref\+\_\+t} \hyperlink{le__hashmap_8h_ade79896a5b2ceec82c570fe21f7efe3a}{le\+\_\+hashmap\+\_\+\+Create} (const char $\ast$name\+Str, size\+\_\+t capacity, \hyperlink{le__hashmap_8h_a354b7f0a30dd40266d367351a4b248b7}{le\+\_\+hashmap\+\_\+\+Hash\+Func\+\_\+t} hash\+Func, \hyperlink{le__hashmap_8h_adfe15673aeaa2400d3147d62abffee40}{le\+\_\+hashmap\+\_\+\+Equals\+Func\+\_\+t} equals\+Func)
+\item 
+void $\ast$ \hyperlink{le__hashmap_8h_a68759fb8291c487a507eae6d92710fc7}{le\+\_\+hashmap\+\_\+\+Put} (\hyperlink{le__hashmap_8h_ae81c60860dbdb8c59beaf25985e5605a}{le\+\_\+hashmap\+\_\+\+Ref\+\_\+t} map\+Ref, const void $\ast$key\+Ptr, const void $\ast$value\+Ptr)
+\item 
+void $\ast$ \hyperlink{le__hashmap_8h_a4322a312a2e4b00112022c2cb04eb416}{le\+\_\+hashmap\+\_\+\+Get} (\hyperlink{le__hashmap_8h_ae81c60860dbdb8c59beaf25985e5605a}{le\+\_\+hashmap\+\_\+\+Ref\+\_\+t} map\+Ref, const void $\ast$key\+Ptr)
+\item 
+void $\ast$ \hyperlink{le__hashmap_8h_a9645e5b363c335e1dd324f536e2b754c}{le\+\_\+hashmap\+\_\+\+Get\+Stored\+Key} (\hyperlink{le__hashmap_8h_ae81c60860dbdb8c59beaf25985e5605a}{le\+\_\+hashmap\+\_\+\+Ref\+\_\+t} map\+Ref, const void $\ast$key\+Ptr)
+\item 
+void $\ast$ \hyperlink{le__hashmap_8h_a64eab4c096da5b66aa54c70ec5d5a776}{le\+\_\+hashmap\+\_\+\+Remove} (\hyperlink{le__hashmap_8h_ae81c60860dbdb8c59beaf25985e5605a}{le\+\_\+hashmap\+\_\+\+Ref\+\_\+t} map\+Ref, const void $\ast$key\+Ptr)
+\item 
+bool \hyperlink{le__hashmap_8h_a5530fc9656f5e49f891541900bc21f34}{le\+\_\+hashmap\+\_\+is\+Empty} (\hyperlink{le__hashmap_8h_ae81c60860dbdb8c59beaf25985e5605a}{le\+\_\+hashmap\+\_\+\+Ref\+\_\+t} map\+Ref)
+\item 
+size\+\_\+t \hyperlink{le__hashmap_8h_a481e3fa6b0fe8319074140a2cb2ae1cc}{le\+\_\+hashmap\+\_\+\+Size} (\hyperlink{le__hashmap_8h_ae81c60860dbdb8c59beaf25985e5605a}{le\+\_\+hashmap\+\_\+\+Ref\+\_\+t} map\+Ref)
+\item 
+bool \hyperlink{le__hashmap_8h_af42bc33eaed4e6183edfbded3203beb4}{le\+\_\+hashmap\+\_\+\+Contains\+Key} (\hyperlink{le__hashmap_8h_ae81c60860dbdb8c59beaf25985e5605a}{le\+\_\+hashmap\+\_\+\+Ref\+\_\+t} map\+Ref, const void $\ast$key\+Ptr)
+\item 
+void \hyperlink{le__hashmap_8h_a27e3af23871a2f9e8adffb748111aab2}{le\+\_\+hashmap\+\_\+\+Remove\+All} (\hyperlink{le__hashmap_8h_ae81c60860dbdb8c59beaf25985e5605a}{le\+\_\+hashmap\+\_\+\+Ref\+\_\+t} map\+Ref)
+\item 
+void \hyperlink{le__hashmap_8h_a2fc335fffcf59a677ac2ac4e5733cdda}{le\+\_\+hashmap\+\_\+\+For\+Each} (\hyperlink{le__hashmap_8h_ae81c60860dbdb8c59beaf25985e5605a}{le\+\_\+hashmap\+\_\+\+Ref\+\_\+t} map\+Ref, \hyperlink{le__hashmap_8h_acae181524ccab8958e1c8fd5855995b1}{le\+\_\+hashmap\+\_\+\+For\+Each\+Handler\+\_\+t} for\+Each\+Fn, void $\ast$context\+Ptr)
+\item 
+\hyperlink{le__hashmap_8h_a8ab2021261a368add28c1be14f248459}{le\+\_\+hashmap\+\_\+\+It\+\_\+\+Ref\+\_\+t} \hyperlink{le__hashmap_8h_a8fb1d3a3d4c4b1b52a45205ac11a12c1}{le\+\_\+hashmap\+\_\+\+Get\+Iterator} (\hyperlink{le__hashmap_8h_ae81c60860dbdb8c59beaf25985e5605a}{le\+\_\+hashmap\+\_\+\+Ref\+\_\+t} map\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__hashmap_8h_a601b7d3e5d92e91e4090d726e5b190ca}{le\+\_\+hashmap\+\_\+\+Next\+Node} (\hyperlink{le__hashmap_8h_a8ab2021261a368add28c1be14f248459}{le\+\_\+hashmap\+\_\+\+It\+\_\+\+Ref\+\_\+t} iterator\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__hashmap_8h_aad5cdb7a6d36d28699b255814c0d639d}{le\+\_\+hashmap\+\_\+\+Prev\+Node} (\hyperlink{le__hashmap_8h_a8ab2021261a368add28c1be14f248459}{le\+\_\+hashmap\+\_\+\+It\+\_\+\+Ref\+\_\+t} iterator\+Ref)
+\item 
+void const $\ast$ \hyperlink{le__hashmap_8h_a8c983aea3bfa393419b4ea26cfe35f42}{le\+\_\+hashmap\+\_\+\+Get\+Key} (\hyperlink{le__hashmap_8h_a8ab2021261a368add28c1be14f248459}{le\+\_\+hashmap\+\_\+\+It\+\_\+\+Ref\+\_\+t} iterator\+Ref)
+\item 
+void const $\ast$ \hyperlink{le__hashmap_8h_aefd09b502200c3260a047cb12097e8ad}{le\+\_\+hashmap\+\_\+\+Get\+Value} (\hyperlink{le__hashmap_8h_a8ab2021261a368add28c1be14f248459}{le\+\_\+hashmap\+\_\+\+It\+\_\+\+Ref\+\_\+t} iterator\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__hashmap_8h_aeec5d4c2a49b8d0304efdfd469a1b2a4}{le\+\_\+hashmap\+\_\+\+Get\+First\+Node} (\hyperlink{le__hashmap_8h_ae81c60860dbdb8c59beaf25985e5605a}{le\+\_\+hashmap\+\_\+\+Ref\+\_\+t} map\+Ref, void $\ast$$\ast$first\+Key\+Ptr, void $\ast$$\ast$first\+Value\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__hashmap_8h_a6a30f4e7da8135ef0274b24a86b7fcb7}{le\+\_\+hashmap\+\_\+\+Get\+Node\+After} (\hyperlink{le__hashmap_8h_ae81c60860dbdb8c59beaf25985e5605a}{le\+\_\+hashmap\+\_\+\+Ref\+\_\+t} map\+Ref, const void $\ast$key\+Ptr, void $\ast$$\ast$next\+Key\+Ptr, void $\ast$$\ast$next\+Value\+Ptr)
+\item 
+size\+\_\+t \hyperlink{le__hashmap_8h_ad31a0f34a74f765998467fa30096e46b}{le\+\_\+hashmap\+\_\+\+Count\+Collisions} (\hyperlink{le__hashmap_8h_ae81c60860dbdb8c59beaf25985e5605a}{le\+\_\+hashmap\+\_\+\+Ref\+\_\+t} map\+Ref)
+\item 
+size\+\_\+t \hyperlink{le__hashmap_8h_a3ff75de814b38d4c4283379acb406b65}{le\+\_\+hashmap\+\_\+\+Hash\+String} (const void $\ast$string\+To\+Hash\+Ptr)
+\item 
+bool \hyperlink{le__hashmap_8h_a63d2b6c0689ece50ce979557029b8483}{le\+\_\+hashmap\+\_\+\+Equals\+String} (const void $\ast$first\+String\+Ptr, const void $\ast$second\+String\+Ptr)
+\item 
+size\+\_\+t \hyperlink{le__hashmap_8h_a1bcf5d26bec7e15b6ec30fec4701ce03}{le\+\_\+hashmap\+\_\+\+Hash\+U\+Int32} (const void $\ast$int\+To\+Hash\+Ptr)
+\item 
+bool \hyperlink{le__hashmap_8h_ab3e3edfdbd30d06729486060a75a77c7}{le\+\_\+hashmap\+\_\+\+Equals\+U\+Int32} (const void $\ast$first\+Int\+Ptr, const void $\ast$second\+Int\+Ptr)
+\item 
+size\+\_\+t \hyperlink{le__hashmap_8h_a2c9fc51c9f65c44f6c78cdaf101ab0e4}{le\+\_\+hashmap\+\_\+\+Hash\+Void\+Pointer} (const void $\ast$void\+To\+Hash\+Ptr)
+\item 
+bool \hyperlink{le__hashmap_8h_a8ecdbbdb5cc0773f0f9946e6e4dec89c}{le\+\_\+hashmap\+\_\+\+Equals\+Void\+Pointer} (const void $\ast$first\+Void\+Ptr, const void $\ast$second\+Void\+Ptr)
+\item 
+void \hyperlink{le__hashmap_8h_a853082500b05e57d899606cfc0e34fab}{le\+\_\+hashmap\+\_\+\+Make\+Traceable} (\hyperlink{le__hashmap_8h_ae81c60860dbdb8c59beaf25985e5605a}{le\+\_\+hashmap\+\_\+\+Ref\+\_\+t} map\+Ref)
+\item 
+void \hyperlink{le__hashmap_8h_a10b30e794df1c866fe39c40c7949eb29}{le\+\_\+hashmap\+\_\+\+Enable\+Trace} (\hyperlink{le__hashmap_8h_ae81c60860dbdb8c59beaf25985e5605a}{le\+\_\+hashmap\+\_\+\+Ref\+\_\+t} map\+Ref)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_hashmap}{Hash\+Map A\+P\+I} include file.
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Typedef Documentation}
+\hypertarget{le__hashmap_8h_adfe15673aeaa2400d3147d62abffee40}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Equals\+Func\+\_\+t@{le\+\_\+hashmap\+\_\+\+Equals\+Func\+\_\+t}}
+\index{le\+\_\+hashmap\+\_\+\+Equals\+Func\+\_\+t@{le\+\_\+hashmap\+\_\+\+Equals\+Func\+\_\+t}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Equals\+Func\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef bool($\ast$ le\+\_\+hashmap\+\_\+\+Equals\+Func\+\_\+t) (const void $\ast$first\+Key\+Ptr, const void $\ast$second\+Key\+Ptr)}\label{le__hashmap_8h_adfe15673aeaa2400d3147d62abffee40}
+Prototype for equality functions. The equality function returns true if the the keys point to values are equivalent. The Hash\+Map doesn\textquotesingle{}t know in advance which types are to be stored so this function must be supplied by the caller.
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+Key\+Ptr} & Pointer to the first key for comparing. \\
+\hline
+{\em second\+Key\+Ptr} & Pointer to the second key for comparing. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the values are the same, false otherwise 
+\end{DoxyReturn}
+\hypertarget{le__hashmap_8h_acae181524ccab8958e1c8fd5855995b1}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+For\+Each\+Handler\+\_\+t@{le\+\_\+hashmap\+\_\+\+For\+Each\+Handler\+\_\+t}}
+\index{le\+\_\+hashmap\+\_\+\+For\+Each\+Handler\+\_\+t@{le\+\_\+hashmap\+\_\+\+For\+Each\+Handler\+\_\+t}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+For\+Each\+Handler\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef bool($\ast$ le\+\_\+hashmap\+\_\+\+For\+Each\+Handler\+\_\+t) (const void $\ast$key\+Ptr, const void $\ast$value\+Ptr, void $\ast$context\+Ptr)}\label{le__hashmap_8h_acae181524ccab8958e1c8fd5855995b1}
+Prototype for callback functions for the iterator function \hyperlink{le__hashmap_8h_a2fc335fffcf59a677ac2ac4e5733cdda}{le\+\_\+hashmap\+\_\+\+For\+Each()}. This function should return true in order to continue iterating, or false to stop.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\+Ptr} & Pointer to the key at the current position in the map \\
+\hline
+{\em value\+Ptr} & Pointer to the value associated to this key \\
+\hline
+{\em context\+Ptr} & Pointer to the context supplied to \hyperlink{le__hashmap_8h_a2fc335fffcf59a677ac2ac4e5733cdda}{le\+\_\+hashmap\+\_\+\+For\+Each()} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true to continue, false to stop 
+\end{DoxyReturn}
+\hypertarget{le__hashmap_8h_a354b7f0a30dd40266d367351a4b248b7}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Hash\+Func\+\_\+t@{le\+\_\+hashmap\+\_\+\+Hash\+Func\+\_\+t}}
+\index{le\+\_\+hashmap\+\_\+\+Hash\+Func\+\_\+t@{le\+\_\+hashmap\+\_\+\+Hash\+Func\+\_\+t}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Hash\+Func\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef size\+\_\+t($\ast$ le\+\_\+hashmap\+\_\+\+Hash\+Func\+\_\+t) (const void $\ast$key\+To\+Hash\+Ptr)}\label{le__hashmap_8h_a354b7f0a30dd40266d367351a4b248b7}
+Prototype for hash functions. The hash function must generate a good spread of hashes without consuming lots of processing power.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\+To\+Hash\+Ptr} & Pointer to the key which will be hashed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated hash value 
+\end{DoxyReturn}
+\hypertarget{le__hashmap_8h_a8ab2021261a368add28c1be14f248459}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+It\+\_\+\+Ref\+\_\+t@{le\+\_\+hashmap\+\_\+\+It\+\_\+\+Ref\+\_\+t}}
+\index{le\+\_\+hashmap\+\_\+\+It\+\_\+\+Ref\+\_\+t@{le\+\_\+hashmap\+\_\+\+It\+\_\+\+Ref\+\_\+t}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+It\+\_\+\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+hashmap\+\_\+\+It$\ast$ {\bf le\+\_\+hashmap\+\_\+\+It\+\_\+\+Ref\+\_\+t}}\label{le__hashmap_8h_a8ab2021261a368add28c1be14f248459}
+Reference to a Hash\+Map Iterator. \hypertarget{le__hashmap_8h_ae81c60860dbdb8c59beaf25985e5605a}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Ref\+\_\+t@{le\+\_\+hashmap\+\_\+\+Ref\+\_\+t}}
+\index{le\+\_\+hashmap\+\_\+\+Ref\+\_\+t@{le\+\_\+hashmap\+\_\+\+Ref\+\_\+t}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+hashmap$\ast$ {\bf le\+\_\+hashmap\+\_\+\+Ref\+\_\+t}}\label{le__hashmap_8h_ae81c60860dbdb8c59beaf25985e5605a}
+Reference to a Hash\+Map. 
+
+\subsection{Function Documentation}
+\hypertarget{le__hashmap_8h_af42bc33eaed4e6183edfbded3203beb4}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Contains\+Key@{le\+\_\+hashmap\+\_\+\+Contains\+Key}}
+\index{le\+\_\+hashmap\+\_\+\+Contains\+Key@{le\+\_\+hashmap\+\_\+\+Contains\+Key}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Contains\+Key}]{\setlength{\rightskip}{0pt plus 5cm}bool le\+\_\+hashmap\+\_\+\+Contains\+Key (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+hashmap\+\_\+\+Ref\+\_\+t}}]{map\+Ref, }
+\item[{const void $\ast$}]{key\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_af42bc33eaed4e6183edfbded3203beb4}
+Tests if the Hash\+Map contains a particular key.
+
+\begin{DoxyReturn}{Returns}
+Returns true if the key is found, false otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em map\+Ref} & Reference to the map. \\
+\hline
+\mbox{\tt in}  & {\em key\+Ptr} & Pointer to the key to be searched. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_ad31a0f34a74f765998467fa30096e46b}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Count\+Collisions@{le\+\_\+hashmap\+\_\+\+Count\+Collisions}}
+\index{le\+\_\+hashmap\+\_\+\+Count\+Collisions@{le\+\_\+hashmap\+\_\+\+Count\+Collisions}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Count\+Collisions}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t le\+\_\+hashmap\+\_\+\+Count\+Collisions (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+hashmap\+\_\+\+Ref\+\_\+t}}]{map\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_ad31a0f34a74f765998467fa30096e46b}
+Counts the total number of collisions in the map. A collision occurs when more than one entry is stored in the map at the same index.
+
+\begin{DoxyReturn}{Returns}
+Returns the total collisions in the map. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em map\+Ref} & Reference to the map. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_ade79896a5b2ceec82c570fe21f7efe3a}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Create@{le\+\_\+hashmap\+\_\+\+Create}}
+\index{le\+\_\+hashmap\+\_\+\+Create@{le\+\_\+hashmap\+\_\+\+Create}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+hashmap\+\_\+\+Ref\+\_\+t} le\+\_\+hashmap\+\_\+\+Create (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name\+Str, }
+\item[{size\+\_\+t}]{capacity, }
+\item[{{\bf le\+\_\+hashmap\+\_\+\+Hash\+Func\+\_\+t}}]{hash\+Func, }
+\item[{{\bf le\+\_\+hashmap\+\_\+\+Equals\+Func\+\_\+t}}]{equals\+Func}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_ade79896a5b2ceec82c570fe21f7efe3a}
+Create a Hash\+Map.
+
+If you create a hashmap with a smaller capacity than you actually use, then the map will continue to work, but performance will degrade the more you put in the map.
+
+\begin{DoxyReturn}{Returns}
+Returns a reference to the map.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Terminates the process on failure, so no need to check the return value for errors. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name\+Str} & Name of the Hash\+Map \\
+\hline
+\mbox{\tt in}  & {\em capacity} & Size of the hashmap \\
+\hline
+\mbox{\tt in}  & {\em hash\+Func} & Hash function \\
+\hline
+\mbox{\tt in}  & {\em equals\+Func} & Equality function \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_a10b30e794df1c866fe39c40c7949eb29}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Enable\+Trace@{le\+\_\+hashmap\+\_\+\+Enable\+Trace}}
+\index{le\+\_\+hashmap\+\_\+\+Enable\+Trace@{le\+\_\+hashmap\+\_\+\+Enable\+Trace}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Enable\+Trace}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+hashmap\+\_\+\+Enable\+Trace (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+hashmap\+\_\+\+Ref\+\_\+t}}]{map\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_a10b30e794df1c866fe39c40c7949eb29}
+Immediately enables tracing on a particular hashmap object. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em map\+Ref} & Reference to the map. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_a63d2b6c0689ece50ce979557029b8483}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Equals\+String@{le\+\_\+hashmap\+\_\+\+Equals\+String}}
+\index{le\+\_\+hashmap\+\_\+\+Equals\+String@{le\+\_\+hashmap\+\_\+\+Equals\+String}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Equals\+String}]{\setlength{\rightskip}{0pt plus 5cm}bool le\+\_\+hashmap\+\_\+\+Equals\+String (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{first\+String\+Ptr, }
+\item[{const void $\ast$}]{second\+String\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_a63d2b6c0689ece50ce979557029b8483}
+String equality function. Can be used as a parameter to \hyperlink{le__hashmap_8h_ade79896a5b2ceec82c570fe21f7efe3a}{le\+\_\+hashmap\+\_\+\+Create()} if the key to the table is a string
+
+\begin{DoxyReturn}{Returns}
+Returns true if the strings are identical, false otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em first\+String\+Ptr} & Pointer to the first string for comparing. \\
+\hline
+\mbox{\tt in}  & {\em second\+String\+Ptr} & Pointer to the second string for comparing. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_ab3e3edfdbd30d06729486060a75a77c7}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Equals\+U\+Int32@{le\+\_\+hashmap\+\_\+\+Equals\+U\+Int32}}
+\index{le\+\_\+hashmap\+\_\+\+Equals\+U\+Int32@{le\+\_\+hashmap\+\_\+\+Equals\+U\+Int32}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Equals\+U\+Int32}]{\setlength{\rightskip}{0pt plus 5cm}bool le\+\_\+hashmap\+\_\+\+Equals\+U\+Int32 (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{first\+Int\+Ptr, }
+\item[{const void $\ast$}]{second\+Int\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_ab3e3edfdbd30d06729486060a75a77c7}
+Integer equality function. Can be used as a parameter to \hyperlink{le__hashmap_8h_ade79896a5b2ceec82c570fe21f7efe3a}{le\+\_\+hashmap\+\_\+\+Create()} if the key to the table is a uint32\+\_\+t.
+
+\begin{DoxyReturn}{Returns}
+Returns true if the integers are equal, false otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em first\+Int\+Ptr} & Pointer to the first integer for comparing. \\
+\hline
+\mbox{\tt in}  & {\em second\+Int\+Ptr} & Pointer to the second integer for comparing. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_a8ecdbbdb5cc0773f0f9946e6e4dec89c}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Equals\+Void\+Pointer@{le\+\_\+hashmap\+\_\+\+Equals\+Void\+Pointer}}
+\index{le\+\_\+hashmap\+\_\+\+Equals\+Void\+Pointer@{le\+\_\+hashmap\+\_\+\+Equals\+Void\+Pointer}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Equals\+Void\+Pointer}]{\setlength{\rightskip}{0pt plus 5cm}bool le\+\_\+hashmap\+\_\+\+Equals\+Void\+Pointer (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{first\+Void\+Ptr, }
+\item[{const void $\ast$}]{second\+Void\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_a8ecdbbdb5cc0773f0f9946e6e4dec89c}
+Pointer equality function. Can be used as a parameter to \hyperlink{le__hashmap_8h_ade79896a5b2ceec82c570fe21f7efe3a}{le\+\_\+hashmap\+\_\+\+Create()} if the key to the table is an pointer or reference.
+
+\begin{DoxyReturn}{Returns}
+Returns true if the pointers are equal, false otherwise 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em first\+Void\+Ptr} & First pointer for comparing. \\
+\hline
+\mbox{\tt in}  & {\em second\+Void\+Ptr} & Second pointer for comparing. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_a2fc335fffcf59a677ac2ac4e5733cdda}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+For\+Each@{le\+\_\+hashmap\+\_\+\+For\+Each}}
+\index{le\+\_\+hashmap\+\_\+\+For\+Each@{le\+\_\+hashmap\+\_\+\+For\+Each}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+For\+Each}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+hashmap\+\_\+\+For\+Each (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+hashmap\+\_\+\+Ref\+\_\+t}}]{map\+Ref, }
+\item[{{\bf le\+\_\+hashmap\+\_\+\+For\+Each\+Handler\+\_\+t}}]{for\+Each\+Fn, }
+\item[{void $\ast$}]{context\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_a2fc335fffcf59a677ac2ac4e5733cdda}
+Iterates over the whole map, calling the supplied callback with each key-\/value pair. If the callback returns false for any key then this function will return.
+
+\begin{DoxyReturn}{Returns}
+Returns nothing 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em map\+Ref} & Reference to the map. \\
+\hline
+\mbox{\tt in}  & {\em for\+Each\+Fn} & Callback function to be called with each pair. \\
+\hline
+\mbox{\tt in}  & {\em context\+Ptr} & Pointer to a context to be supplied to the callback. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_a4322a312a2e4b00112022c2cb04eb416}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Get@{le\+\_\+hashmap\+\_\+\+Get}}
+\index{le\+\_\+hashmap\+\_\+\+Get@{le\+\_\+hashmap\+\_\+\+Get}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Get}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ le\+\_\+hashmap\+\_\+\+Get (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+hashmap\+\_\+\+Ref\+\_\+t}}]{map\+Ref, }
+\item[{const void $\ast$}]{key\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_a4322a312a2e4b00112022c2cb04eb416}
+Retrieve a value from a Hash\+Map.
+
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the value or N\+U\+L\+L if the key is not found. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em map\+Ref} & Reference to the map. \\
+\hline
+\mbox{\tt in}  & {\em key\+Ptr} & Pointer to the key to be retrieved. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_aeec5d4c2a49b8d0304efdfd469a1b2a4}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Get\+First\+Node@{le\+\_\+hashmap\+\_\+\+Get\+First\+Node}}
+\index{le\+\_\+hashmap\+\_\+\+Get\+First\+Node@{le\+\_\+hashmap\+\_\+\+Get\+First\+Node}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Get\+First\+Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+hashmap\+\_\+\+Get\+First\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+hashmap\+\_\+\+Ref\+\_\+t}}]{map\+Ref, }
+\item[{void $\ast$$\ast$}]{first\+Key\+Ptr, }
+\item[{void $\ast$$\ast$}]{first\+Value\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_aeec5d4c2a49b8d0304efdfd469a1b2a4}
+Retrieves the key and value of the first node stored in the hashmap. The hashmap is not sorted so this will simply return the first node stored in the map. There is no guarantee that a subsequent call to this function will return the same pair if new keys have been added to the map. If N\+U\+L\+L is passed as the first\+Value\+Pointer then only the key will be returned.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+O\+K if the first node is returned or L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D if the map is empty. L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R if the key is N\+U\+L\+L. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em map\+Ref} & Reference to the map \\
+\hline
+\mbox{\tt out}  & {\em first\+Key\+Ptr} & Pointer to the first key \\
+\hline
+\mbox{\tt out}  & {\em first\+Value\+Ptr} & Pointer to the first value \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_a8fb1d3a3d4c4b1b52a45205ac11a12c1}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Get\+Iterator@{le\+\_\+hashmap\+\_\+\+Get\+Iterator}}
+\index{le\+\_\+hashmap\+\_\+\+Get\+Iterator@{le\+\_\+hashmap\+\_\+\+Get\+Iterator}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Get\+Iterator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+hashmap\+\_\+\+It\+\_\+\+Ref\+\_\+t} le\+\_\+hashmap\+\_\+\+Get\+Iterator (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+hashmap\+\_\+\+Ref\+\_\+t}}]{map\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_a8fb1d3a3d4c4b1b52a45205ac11a12c1}
+Gets an iterator for step-\/by-\/step iteration over the map. In this mode, the iteration is controlled by the calling function using the \hyperlink{le__hashmap_8h_a601b7d3e5d92e91e4090d726e5b190ca}{le\+\_\+hashmap\+\_\+\+Next\+Node()} function. There is one iterator per map, and calling this function resets the iterator position to the start of the map. The iterator is not ready for data access until \hyperlink{le__hashmap_8h_a601b7d3e5d92e91e4090d726e5b190ca}{le\+\_\+hashmap\+\_\+\+Next\+Node()} has been called at least once.
+
+\begin{DoxyReturn}{Returns}
+Returns A reference to a hashmap iterator which is ready for \hyperlink{le__hashmap_8h_a601b7d3e5d92e91e4090d726e5b190ca}{le\+\_\+hashmap\+\_\+\+Next\+Node()} to be called on it 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em map\+Ref} & Reference to the map. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_a8c983aea3bfa393419b4ea26cfe35f42}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Get\+Key@{le\+\_\+hashmap\+\_\+\+Get\+Key}}
+\index{le\+\_\+hashmap\+\_\+\+Get\+Key@{le\+\_\+hashmap\+\_\+\+Get\+Key}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Get\+Key}]{\setlength{\rightskip}{0pt plus 5cm}void const$\ast$ le\+\_\+hashmap\+\_\+\+Get\+Key (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+hashmap\+\_\+\+It\+\_\+\+Ref\+\_\+t}}]{iterator\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_a8c983aea3bfa393419b4ea26cfe35f42}
+Retrieves a pointer to the key where the iterator is currently pointing. If the iterator has just been initialized and \hyperlink{le__hashmap_8h_a601b7d3e5d92e91e4090d726e5b190ca}{le\+\_\+hashmap\+\_\+\+Next\+Node()} has not been called, or if the iterator has been invalidated, this will return N\+U\+L\+L.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the current key, or N\+U\+L\+L if the iterator has been invalidated or is not ready. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em iterator\+Ref} & Reference to the iterator. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_a6a30f4e7da8135ef0274b24a86b7fcb7}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Get\+Node\+After@{le\+\_\+hashmap\+\_\+\+Get\+Node\+After}}
+\index{le\+\_\+hashmap\+\_\+\+Get\+Node\+After@{le\+\_\+hashmap\+\_\+\+Get\+Node\+After}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Get\+Node\+After}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+hashmap\+\_\+\+Get\+Node\+After (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+hashmap\+\_\+\+Ref\+\_\+t}}]{map\+Ref, }
+\item[{const void $\ast$}]{key\+Ptr, }
+\item[{void $\ast$$\ast$}]{next\+Key\+Ptr, }
+\item[{void $\ast$$\ast$}]{next\+Value\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_a6a30f4e7da8135ef0274b24a86b7fcb7}
+Retrieves the key and value of the node after the passed in key. The hashmap is not sorted so this will simply return the next node stored in the map. There is no guarantee that a subsequent call to this function will return the same pair if new keys have been added to the map. If N\+U\+L\+L is passed as the next\+Value\+Ptr then only the key will be returned.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+O\+K if the next node is returned. If the key\+Ptr is not found in the map then L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R is returned. L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D is returned if the passed in key is the last one in the map. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em map\+Ref} & Reference to the map \\
+\hline
+\mbox{\tt in}  & {\em key\+Ptr} & Pointer to the key to be searched for \\
+\hline
+\mbox{\tt out}  & {\em next\+Key\+Ptr} & Pointer to the first key \\
+\hline
+\mbox{\tt out}  & {\em next\+Value\+Ptr} & Pointer to the first value \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_a9645e5b363c335e1dd324f536e2b754c}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Get\+Stored\+Key@{le\+\_\+hashmap\+\_\+\+Get\+Stored\+Key}}
+\index{le\+\_\+hashmap\+\_\+\+Get\+Stored\+Key@{le\+\_\+hashmap\+\_\+\+Get\+Stored\+Key}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Get\+Stored\+Key}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ le\+\_\+hashmap\+\_\+\+Get\+Stored\+Key (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+hashmap\+\_\+\+Ref\+\_\+t}}]{map\+Ref, }
+\item[{const void $\ast$}]{key\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_a9645e5b363c335e1dd324f536e2b754c}
+Retrieve a stored key from a Hash\+Map.
+
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the key that was stored in the Hash\+Map by \hyperlink{le__hashmap_8h_a68759fb8291c487a507eae6d92710fc7}{le\+\_\+hashmap\+\_\+\+Put()} or N\+U\+L\+L if the key is not found. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em map\+Ref} & Reference to the map. \\
+\hline
+\mbox{\tt in}  & {\em key\+Ptr} & Pointer to the key to be retrieved. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_aefd09b502200c3260a047cb12097e8ad}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Get\+Value@{le\+\_\+hashmap\+\_\+\+Get\+Value}}
+\index{le\+\_\+hashmap\+\_\+\+Get\+Value@{le\+\_\+hashmap\+\_\+\+Get\+Value}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Get\+Value}]{\setlength{\rightskip}{0pt plus 5cm}void const$\ast$ le\+\_\+hashmap\+\_\+\+Get\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+hashmap\+\_\+\+It\+\_\+\+Ref\+\_\+t}}]{iterator\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_aefd09b502200c3260a047cb12097e8ad}
+Retrieves a pointer to the value where the iterator is currently pointing. If the iterator has just been initialized and \hyperlink{le__hashmap_8h_a601b7d3e5d92e91e4090d726e5b190ca}{le\+\_\+hashmap\+\_\+\+Next\+Node()} has not been called, or if the iterator has been invalidated, this will return N\+U\+L\+L.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the current value, or N\+U\+L\+L if the iterator has been invalidated or is not ready. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em iterator\+Ref} & Reference to the iterator. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_a3ff75de814b38d4c4283379acb406b65}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Hash\+String@{le\+\_\+hashmap\+\_\+\+Hash\+String}}
+\index{le\+\_\+hashmap\+\_\+\+Hash\+String@{le\+\_\+hashmap\+\_\+\+Hash\+String}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Hash\+String}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t le\+\_\+hashmap\+\_\+\+Hash\+String (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{string\+To\+Hash\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_a3ff75de814b38d4c4283379acb406b65}
+String hashing function. Can be used as a parameter to \hyperlink{le__hashmap_8h_ade79896a5b2ceec82c570fe21f7efe3a}{le\+\_\+hashmap\+\_\+\+Create()} if the key to the table is a string.
+
+\begin{DoxyReturn}{Returns}
+Returns the hash value of the string pointed to by string\+To\+Hash. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em string\+To\+Hash\+Ptr} & Pointer to the string to be hashed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_a1bcf5d26bec7e15b6ec30fec4701ce03}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Hash\+U\+Int32@{le\+\_\+hashmap\+\_\+\+Hash\+U\+Int32}}
+\index{le\+\_\+hashmap\+\_\+\+Hash\+U\+Int32@{le\+\_\+hashmap\+\_\+\+Hash\+U\+Int32}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Hash\+U\+Int32}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t le\+\_\+hashmap\+\_\+\+Hash\+U\+Int32 (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{int\+To\+Hash\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_a1bcf5d26bec7e15b6ec30fec4701ce03}
+Integer hashing function. Can be used as a parameter to \hyperlink{le__hashmap_8h_ade79896a5b2ceec82c570fe21f7efe3a}{le\+\_\+hashmap\+\_\+\+Create()} if the key to the table is a uint32\+\_\+t.
+
+\begin{DoxyReturn}{Returns}
+Returns the hash value of the uint32\+\_\+t pointed to by int\+To\+Hash. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em int\+To\+Hash\+Ptr} & Pointer to the integer to be hashed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_a2c9fc51c9f65c44f6c78cdaf101ab0e4}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Hash\+Void\+Pointer@{le\+\_\+hashmap\+\_\+\+Hash\+Void\+Pointer}}
+\index{le\+\_\+hashmap\+\_\+\+Hash\+Void\+Pointer@{le\+\_\+hashmap\+\_\+\+Hash\+Void\+Pointer}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Hash\+Void\+Pointer}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t le\+\_\+hashmap\+\_\+\+Hash\+Void\+Pointer (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{void\+To\+Hash\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_a2c9fc51c9f65c44f6c78cdaf101ab0e4}
+Pointer hashing function. Can be used as a parameter to \hyperlink{le__hashmap_8h_ade79896a5b2ceec82c570fe21f7efe3a}{le\+\_\+hashmap\+\_\+\+Create()} if the key to the table is an pointer or reference. Simply pass in the address as the key.
+
+\begin{DoxyReturn}{Returns}
+Returns the hash value of the pointer pointed to by void\+To\+Hash\+Ptr 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em void\+To\+Hash\+Ptr} & Pointer to be hashed \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_a5530fc9656f5e49f891541900bc21f34}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+is\+Empty@{le\+\_\+hashmap\+\_\+is\+Empty}}
+\index{le\+\_\+hashmap\+\_\+is\+Empty@{le\+\_\+hashmap\+\_\+is\+Empty}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+is\+Empty}]{\setlength{\rightskip}{0pt plus 5cm}bool le\+\_\+hashmap\+\_\+is\+Empty (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+hashmap\+\_\+\+Ref\+\_\+t}}]{map\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_a5530fc9656f5e49f891541900bc21f34}
+Tests if the Hash\+Map is empty (i.\+e. contains zero keys).
+
+\begin{DoxyReturn}{Returns}
+Returns true if empty, false otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em map\+Ref} & Reference to the map. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_a853082500b05e57d899606cfc0e34fab}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Make\+Traceable@{le\+\_\+hashmap\+\_\+\+Make\+Traceable}}
+\index{le\+\_\+hashmap\+\_\+\+Make\+Traceable@{le\+\_\+hashmap\+\_\+\+Make\+Traceable}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Make\+Traceable}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+hashmap\+\_\+\+Make\+Traceable (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+hashmap\+\_\+\+Ref\+\_\+t}}]{map\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_a853082500b05e57d899606cfc0e34fab}
+Makes a particular hashmap traceable without enabling the tracing. After this is called, when the trace keyword for this hashmap (the hashmap\textquotesingle{}s name) is enabled for the \char`\"{}framework\char`\"{} component in the process, tracing will start. If that keyword was enabled before this function was called, tracing will start immediately when it is called. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em map\+Ref} & Reference to the map. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_a601b7d3e5d92e91e4090d726e5b190ca}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Next\+Node@{le\+\_\+hashmap\+\_\+\+Next\+Node}}
+\index{le\+\_\+hashmap\+\_\+\+Next\+Node@{le\+\_\+hashmap\+\_\+\+Next\+Node}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Next\+Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+hashmap\+\_\+\+Next\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+hashmap\+\_\+\+It\+\_\+\+Ref\+\_\+t}}]{iterator\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_a601b7d3e5d92e91e4090d726e5b190ca}
+Moves the iterator to the next key/value pair in the map. Order is dependent on the hash algorithm and the order of inserts, and is not sorted at all.
+
+\begin{DoxyReturn}{Returns}
+Returns L\+E\+\_\+\+O\+K unless you go past the end of the map, then returns L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em iterator\+Ref} & Reference to the iterator. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_aad5cdb7a6d36d28699b255814c0d639d}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Prev\+Node@{le\+\_\+hashmap\+\_\+\+Prev\+Node}}
+\index{le\+\_\+hashmap\+\_\+\+Prev\+Node@{le\+\_\+hashmap\+\_\+\+Prev\+Node}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Prev\+Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+hashmap\+\_\+\+Prev\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+hashmap\+\_\+\+It\+\_\+\+Ref\+\_\+t}}]{iterator\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_aad5cdb7a6d36d28699b255814c0d639d}
+Moves the iterator to the previous key/value pair in the map. Order is dependent on the hash algorithm and the order of inserts, and is not sorted at all.
+
+\begin{DoxyReturn}{Returns}
+Returns L\+E\+\_\+\+O\+K unless you go past the beginning of the map, then returns L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em iterator\+Ref} & Reference to the iterator \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_a68759fb8291c487a507eae6d92710fc7}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Put@{le\+\_\+hashmap\+\_\+\+Put}}
+\index{le\+\_\+hashmap\+\_\+\+Put@{le\+\_\+hashmap\+\_\+\+Put}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Put}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ le\+\_\+hashmap\+\_\+\+Put (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+hashmap\+\_\+\+Ref\+\_\+t}}]{map\+Ref, }
+\item[{const void $\ast$}]{key\+Ptr, }
+\item[{const void $\ast$}]{value\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_a68759fb8291c487a507eae6d92710fc7}
+Add a key-\/value pair to a Hash\+Map. If the key already exists in the map, the previous value will be replaced with the new value passed into this function.
+
+\begin{DoxyReturn}{Returns}
+Returns N\+U\+L\+L for a new entry or a pointer to the old value if it is replaced. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em map\+Ref} & Reference to the map. \\
+\hline
+\mbox{\tt in}  & {\em key\+Ptr} & Pointer to the key to be stored. \\
+\hline
+\mbox{\tt in}  & {\em value\+Ptr} & Pointer to the value to be stored. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_a64eab4c096da5b66aa54c70ec5d5a776}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Remove@{le\+\_\+hashmap\+\_\+\+Remove}}
+\index{le\+\_\+hashmap\+\_\+\+Remove@{le\+\_\+hashmap\+\_\+\+Remove}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Remove}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ le\+\_\+hashmap\+\_\+\+Remove (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+hashmap\+\_\+\+Ref\+\_\+t}}]{map\+Ref, }
+\item[{const void $\ast$}]{key\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_a64eab4c096da5b66aa54c70ec5d5a776}
+Remove a value from a Hash\+Map.
+
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the value or N\+U\+L\+L if the key is not found. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em map\+Ref} & Reference to the map. \\
+\hline
+\mbox{\tt in}  & {\em key\+Ptr} & Pointer to the key to be removed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_a27e3af23871a2f9e8adffb748111aab2}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Remove\+All@{le\+\_\+hashmap\+\_\+\+Remove\+All}}
+\index{le\+\_\+hashmap\+\_\+\+Remove\+All@{le\+\_\+hashmap\+\_\+\+Remove\+All}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Remove\+All}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+hashmap\+\_\+\+Remove\+All (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+hashmap\+\_\+\+Ref\+\_\+t}}]{map\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_a27e3af23871a2f9e8adffb748111aab2}
+Deletes all the entries held in the hashmap. This will not delete the data pointed to by the key and value pointers. That cleanup is the responsibility of the caller. This allows the map to be re-\/used. Currently maps can\textquotesingle{}t be deleted. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em map\+Ref} & Reference to the map. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hashmap_8h_a481e3fa6b0fe8319074140a2cb2ae1cc}{}\index{le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}!le\+\_\+hashmap\+\_\+\+Size@{le\+\_\+hashmap\+\_\+\+Size}}
+\index{le\+\_\+hashmap\+\_\+\+Size@{le\+\_\+hashmap\+\_\+\+Size}!le\+\_\+hashmap.\+h@{le\+\_\+hashmap.\+h}}
+\subsubsection[{le\+\_\+hashmap\+\_\+\+Size}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t le\+\_\+hashmap\+\_\+\+Size (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+hashmap\+\_\+\+Ref\+\_\+t}}]{map\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__hashmap_8h_a481e3fa6b0fe8319074140a2cb2ae1cc}
+Calculates the number of keys in the Hash\+Map.
+
+\begin{DoxyReturn}{Returns}
+The number of keys in the Hash\+Map. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em map\+Ref} & Reference to the map. \\
+\hline
+\end{DoxyParams}

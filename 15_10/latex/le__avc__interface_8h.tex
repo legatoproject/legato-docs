@@ -1,0 +1,420 @@
+\hypertarget{le__avc__interface_8h}{}\section{build/localhost/interfaces/le\+\_\+avc\+\_\+interface.h File Reference}
+\label{le__avc__interface_8h}\index{build/localhost/interfaces/le\+\_\+avc\+\_\+interface.\+h@{build/localhost/interfaces/le\+\_\+avc\+\_\+interface.\+h}}
+{\ttfamily \#include \char`\"{}legato.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}le\+\_\+limit\+\_\+interface.\+h\char`\"{}}\\*
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct le\+\_\+avc\+\_\+\+Status\+Event\+Handler $\ast$ \hyperlink{le__avc__interface_8h_aa4848ef1adefe1f273d67d4211233a1f}{le\+\_\+avc\+\_\+\+Status\+Event\+Handler\+Ref\+\_\+t}
+\item 
+typedef struct le\+\_\+avc\+\_\+\+Block\+Request $\ast$ \hyperlink{le__avc__interface_8h_af331b7d2433e312ee2b6fde1c93c2979}{le\+\_\+avc\+\_\+\+Block\+Request\+Ref\+\_\+t}
+\item 
+typedef void($\ast$ \hyperlink{le__avc__interface_8h_aafeac33fdfce140b8bf33683cd7d9d18}{le\+\_\+avc\+\_\+\+Status\+Handler\+Func\+\_\+t}) (\hyperlink{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cff}{le\+\_\+avc\+\_\+\+Status\+\_\+t} update\+Status, int32\+\_\+t total\+Num\+Bytes, int32\+\_\+t dload\+Progress, void $\ast$context\+Ptr)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cff}{le\+\_\+avc\+\_\+\+Status\+\_\+t} \{ \\*
+\hyperlink{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa1f3c54330817d9ea3f0f2d921f6aaa61}{L\+E\+\_\+\+A\+V\+C\+\_\+\+N\+O\+\_\+\+U\+P\+D\+A\+T\+E}, 
+\hyperlink{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa466215ed9308f7ffa06280ea9b11342a}{L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+P\+E\+N\+D\+I\+N\+G}, 
+\hyperlink{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffaf0d46a35a5e0308c40c238611a793b34}{L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S}, 
+\hyperlink{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa13cafab97db914a705923e0fb3d0b864}{L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E}, 
+\\*
+\hyperlink{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa1d002c2c2b3344f3ca252e34557bd0c1}{L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+F\+A\+I\+L\+E\+D}, 
+\hyperlink{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa8e8517a1f269a3c24b133e070f41c182}{L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+P\+E\+N\+D\+I\+N\+G}, 
+\hyperlink{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffaed27813e7aa84f9f853f17bf36ca5bf3}{L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S}, 
+\hyperlink{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa0730c0add28d8e0adc992d5259052b8d}{L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E}, 
+\\*
+\hyperlink{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa804a229abe688cbe91e65fd8cfa532e8}{L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+F\+A\+I\+L\+E\+D}, 
+\hyperlink{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa1bf857f3a557baf4a34ae184e88a1510}{L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+P\+E\+N\+D\+I\+N\+G}, 
+\hyperlink{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa339bce11b1eed576f74107514d4ad7be}{L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S}, 
+\hyperlink{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa2fdeb6f0e01f90750212a97a3b2bbbb8}{L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E}, 
+\\*
+\hyperlink{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa2534439c4b73ec8cb8816b7241bed15b}{L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+F\+A\+I\+L\+E\+D}, 
+\hyperlink{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffafbb67dce39511535897ad23f847cafc1}{L\+E\+\_\+\+A\+V\+C\+\_\+\+S\+E\+S\+S\+I\+O\+N\+\_\+\+S\+T\+A\+R\+T\+E\+D}, 
+\hyperlink{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffae8f54bfa941cac982ce845cb0b682ab0}{L\+E\+\_\+\+A\+V\+C\+\_\+\+S\+E\+S\+S\+I\+O\+N\+\_\+\+S\+T\+O\+P\+P\+E\+D}
+ \}
+\item 
+enum \hyperlink{le__avc__interface_8h_af541450f0cbf512f28be786d79a61865}{le\+\_\+avc\+\_\+\+Update\+Type\+\_\+t} \{ {\bfseries L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+U\+P\+D\+A\+T\+E}, 
+{\bfseries L\+E\+\_\+\+A\+V\+C\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+U\+P\+D\+A\+T\+E}, 
+{\bfseries L\+E\+\_\+\+A\+V\+C\+\_\+\+F\+R\+A\+M\+E\+W\+O\+R\+K\+\_\+\+U\+P\+D\+A\+T\+E}, 
+{\bfseries L\+E\+\_\+\+A\+V\+C\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+O\+N\+\_\+\+U\+P\+D\+A\+T\+E}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{le__avc__interface_8h_a65ddf265fb3236f8035fb0c475a23bd7}{le\+\_\+avc\+\_\+\+Connect\+Service} (void)
+\item 
+void \hyperlink{le__avc__interface_8h_ac2b017103029c74d4be4cad63eb9dceb}{le\+\_\+avc\+\_\+\+Disconnect\+Service} (void)
+\item 
+\hyperlink{le__avc__interface_8h_aa4848ef1adefe1f273d67d4211233a1f}{le\+\_\+avc\+\_\+\+Status\+Event\+Handler\+Ref\+\_\+t} \hyperlink{le__avc__interface_8h_ac5443791a6e4b8db75342f45fa2f91dc}{le\+\_\+avc\+\_\+\+Add\+Status\+Event\+Handler} (\hyperlink{le__avc__interface_8h_aafeac33fdfce140b8bf33683cd7d9d18}{le\+\_\+avc\+\_\+\+Status\+Handler\+Func\+\_\+t} handler\+Ptr, void $\ast$context\+Ptr)
+\item 
+void \hyperlink{le__avc__interface_8h_a11e325085dadb01bbefffd0b899eb207}{le\+\_\+avc\+\_\+\+Remove\+Status\+Event\+Handler} (\hyperlink{le__avc__interface_8h_aa4848ef1adefe1f273d67d4211233a1f}{le\+\_\+avc\+\_\+\+Status\+Event\+Handler\+Ref\+\_\+t} add\+Handler\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__avc__interface_8h_aee17b1de43cf946b59a965e6077e7b03}{le\+\_\+avc\+\_\+\+Start\+Session} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__avc__interface_8h_a5b3e21858181bb972e982046bced1182}{le\+\_\+avc\+\_\+\+Stop\+Session} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__avc__interface_8h_a3f7dea04dd1e9c456fe24a5eb98d2592}{le\+\_\+avc\+\_\+\+Accept\+Download} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__avc__interface_8h_a0c50c8ce89e21cbd9d0bfa431389b780}{le\+\_\+avc\+\_\+\+Defer\+Download} (uint32\+\_\+t defer\+Minutes)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__avc__interface_8h_ab3ff8076bb7b36ca58efc0ae240efedb}{le\+\_\+avc\+\_\+\+Accept\+Install} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__avc__interface_8h_a068f714a110bfa4cac179731a17798f3}{le\+\_\+avc\+\_\+\+Defer\+Install} (uint32\+\_\+t defer\+Minutes)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__avc__interface_8h_aa5b34a29de899b0f333769cd86078e9e}{le\+\_\+avc\+\_\+\+Accept\+Uninstall} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__avc__interface_8h_a4da465033b4438cdc75fdba894fd890f}{le\+\_\+avc\+\_\+\+Defer\+Uninstall} (uint32\+\_\+t defer\+Minutes)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__avc__interface_8h_a1f085c5986e7c473ed70cff32320ce11}{le\+\_\+avc\+\_\+\+Get\+Update\+Type} (\hyperlink{le__avc__interface_8h_af541450f0cbf512f28be786d79a61865}{le\+\_\+avc\+\_\+\+Update\+Type\+\_\+t} $\ast$update\+Type\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__avc__interface_8h_abf50df00e1df25c4eabfc6b3a004280a}{le\+\_\+avc\+\_\+\+Get\+App\+Update\+Name} (char $\ast$update\+Name, size\+\_\+t update\+Name\+Num\+Elements)
+\item 
+\hyperlink{le__avc__interface_8h_af331b7d2433e312ee2b6fde1c93c2979}{le\+\_\+avc\+\_\+\+Block\+Request\+Ref\+\_\+t} \hyperlink{le__avc__interface_8h_a4d298bc6d814481205c4db5d24812694}{le\+\_\+avc\+\_\+\+Block\+Install} (void)
+\item 
+void \hyperlink{le__avc__interface_8h_af5b3dffdd29b7de3288ea1a88c0ecd4e}{le\+\_\+avc\+\_\+\+Unblock\+Install} (\hyperlink{le__avc__interface_8h_af331b7d2433e312ee2b6fde1c93c2979}{le\+\_\+avc\+\_\+\+Block\+Request\+Ref\+\_\+t} block\+Ref)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_le_avc}{Air\+Vantage Connector} include file.
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Typedef Documentation}
+\hypertarget{le__avc__interface_8h_af331b7d2433e312ee2b6fde1c93c2979}{}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!le\+\_\+avc\+\_\+\+Block\+Request\+Ref\+\_\+t@{le\+\_\+avc\+\_\+\+Block\+Request\+Ref\+\_\+t}}
+\index{le\+\_\+avc\+\_\+\+Block\+Request\+Ref\+\_\+t@{le\+\_\+avc\+\_\+\+Block\+Request\+Ref\+\_\+t}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+avc\+\_\+\+Block\+Request\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+avc\+\_\+\+Block\+Request$\ast$ {\bf le\+\_\+avc\+\_\+\+Block\+Request\+Ref\+\_\+t}}\label{le__avc__interface_8h_af331b7d2433e312ee2b6fde1c93c2979}
+Reference returned by Block\+Install function and used by Unblock\+Install function \hypertarget{le__avc__interface_8h_aa4848ef1adefe1f273d67d4211233a1f}{}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!le\+\_\+avc\+\_\+\+Status\+Event\+Handler\+Ref\+\_\+t@{le\+\_\+avc\+\_\+\+Status\+Event\+Handler\+Ref\+\_\+t}}
+\index{le\+\_\+avc\+\_\+\+Status\+Event\+Handler\+Ref\+\_\+t@{le\+\_\+avc\+\_\+\+Status\+Event\+Handler\+Ref\+\_\+t}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+avc\+\_\+\+Status\+Event\+Handler\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+avc\+\_\+\+Status\+Event\+Handler$\ast$ {\bf le\+\_\+avc\+\_\+\+Status\+Event\+Handler\+Ref\+\_\+t}}\label{le__avc__interface_8h_aa4848ef1adefe1f273d67d4211233a1f}
+Reference type used by Add/\+Remove functions for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+avc\+\_\+\+Status\+Event\textquotesingle{} \hypertarget{le__avc__interface_8h_aafeac33fdfce140b8bf33683cd7d9d18}{}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!le\+\_\+avc\+\_\+\+Status\+Handler\+Func\+\_\+t@{le\+\_\+avc\+\_\+\+Status\+Handler\+Func\+\_\+t}}
+\index{le\+\_\+avc\+\_\+\+Status\+Handler\+Func\+\_\+t@{le\+\_\+avc\+\_\+\+Status\+Handler\+Func\+\_\+t}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+avc\+\_\+\+Status\+Handler\+Func\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ le\+\_\+avc\+\_\+\+Status\+Handler\+Func\+\_\+t) ({\bf le\+\_\+avc\+\_\+\+Status\+\_\+t} update\+Status, int32\+\_\+t total\+Num\+Bytes, int32\+\_\+t dload\+Progress, void $\ast$context\+Ptr)}\label{le__avc__interface_8h_aafeac33fdfce140b8bf33683cd7d9d18}
+Handler for update availability status
+
+
+\begin{DoxyParams}{Parameters}
+{\em update\+Status} & status of pending update, if available \\
+\hline
+{\em total\+Num\+Bytes} & Total number of bytes to be downloaded only valid when update\+Status is one of D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+P\+E\+N\+D\+I\+N\+G, D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S or D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E. returns -\/1 if value is unknown \\
+\hline
+{\em dload\+Progress} & download completion in percentage only valid when update\+Status is one of D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+P\+E\+N\+D\+I\+N\+G, D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S or D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E. returns -\/1 if value is unknown \\
+\hline
+{\em context\+Ptr} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cff}{}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!le\+\_\+avc\+\_\+\+Status\+\_\+t@{le\+\_\+avc\+\_\+\+Status\+\_\+t}}
+\index{le\+\_\+avc\+\_\+\+Status\+\_\+t@{le\+\_\+avc\+\_\+\+Status\+\_\+t}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+avc\+\_\+\+Status\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+avc\+\_\+\+Status\+\_\+t}}\label{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cff}
+Status of session or update
+
+If an update is pending, it must first be downloaded and then installed. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+A\+V\+C\+\_\+\+N\+O\+\_\+\+U\+P\+D\+A\+T\+E@{L\+E\+\_\+\+A\+V\+C\+\_\+\+N\+O\+\_\+\+U\+P\+D\+A\+T\+E}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!L\+E\+\_\+\+A\+V\+C\+\_\+\+N\+O\+\_\+\+U\+P\+D\+A\+T\+E@{L\+E\+\_\+\+A\+V\+C\+\_\+\+N\+O\+\_\+\+U\+P\+D\+A\+T\+E}}\item[{\em 
+\hypertarget{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa1f3c54330817d9ea3f0f2d921f6aaa61}{}L\+E\+\_\+\+A\+V\+C\+\_\+\+N\+O\+\_\+\+U\+P\+D\+A\+T\+E\label{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa1f3c54330817d9ea3f0f2d921f6aaa61}
+}]No updates pending. \index{L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+P\+E\+N\+D\+I\+N\+G@{L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+P\+E\+N\+D\+I\+N\+G}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+P\+E\+N\+D\+I\+N\+G@{L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+P\+E\+N\+D\+I\+N\+G}}\item[{\em 
+\hypertarget{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa466215ed9308f7ffa06280ea9b11342a}{}L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+P\+E\+N\+D\+I\+N\+G\label{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa466215ed9308f7ffa06280ea9b11342a}
+}]Update pending download. \index{L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S@{L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S@{L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S}}\item[{\em 
+\hypertarget{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffaf0d46a35a5e0308c40c238611a793b34}{}L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S\label{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffaf0d46a35a5e0308c40c238611a793b34}
+}]Download in progress. \index{L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E@{L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E@{L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E}}\item[{\em 
+\hypertarget{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa13cafab97db914a705923e0fb3d0b864}{}L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\label{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa13cafab97db914a705923e0fb3d0b864}
+}]Download has completed. \index{L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+F\+A\+I\+L\+E\+D@{L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+F\+A\+I\+L\+E\+D}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+F\+A\+I\+L\+E\+D@{L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+F\+A\+I\+L\+E\+D}}\item[{\em 
+\hypertarget{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa1d002c2c2b3344f3ca252e34557bd0c1}{}L\+E\+\_\+\+A\+V\+C\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+F\+A\+I\+L\+E\+D\label{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa1d002c2c2b3344f3ca252e34557bd0c1}
+}]An error occurred downloading the update. \index{L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+P\+E\+N\+D\+I\+N\+G@{L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+P\+E\+N\+D\+I\+N\+G}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+P\+E\+N\+D\+I\+N\+G@{L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+P\+E\+N\+D\+I\+N\+G}}\item[{\em 
+\hypertarget{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa8e8517a1f269a3c24b133e070f41c182}{}L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+P\+E\+N\+D\+I\+N\+G\label{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa8e8517a1f269a3c24b133e070f41c182}
+}]Install is pending (implies download complete) \index{L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S@{L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S@{L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S}}\item[{\em 
+\hypertarget{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffaed27813e7aa84f9f853f17bf36ca5bf3}{}L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S\label{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffaed27813e7aa84f9f853f17bf36ca5bf3}
+}]Install in progress. \index{L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E@{L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E@{L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E}}\item[{\em 
+\hypertarget{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa0730c0add28d8e0adc992d5259052b8d}{}L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\label{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa0730c0add28d8e0adc992d5259052b8d}
+}]Update has been successfully installed. \index{L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+F\+A\+I\+L\+E\+D@{L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+F\+A\+I\+L\+E\+D}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+F\+A\+I\+L\+E\+D@{L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+F\+A\+I\+L\+E\+D}}\item[{\em 
+\hypertarget{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa804a229abe688cbe91e65fd8cfa532e8}{}L\+E\+\_\+\+A\+V\+C\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+F\+A\+I\+L\+E\+D\label{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa804a229abe688cbe91e65fd8cfa532e8}
+}]An error occurred installing the update. \index{L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+P\+E\+N\+D\+I\+N\+G@{L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+P\+E\+N\+D\+I\+N\+G}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+P\+E\+N\+D\+I\+N\+G@{L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+P\+E\+N\+D\+I\+N\+G}}\item[{\em 
+\hypertarget{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa1bf857f3a557baf4a34ae184e88a1510}{}L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+P\+E\+N\+D\+I\+N\+G\label{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa1bf857f3a557baf4a34ae184e88a1510}
+}]Uninstall is pending. \index{L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S@{L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S@{L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S}}\item[{\em 
+\hypertarget{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa339bce11b1eed576f74107514d4ad7be}{}L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+I\+N\+\_\+\+P\+R\+O\+G\+R\+E\+S\+S\label{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa339bce11b1eed576f74107514d4ad7be}
+}]Uninstall in progress. \index{L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E@{L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E@{L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E}}\item[{\em 
+\hypertarget{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa2fdeb6f0e01f90750212a97a3b2bbbb8}{}L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\label{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa2fdeb6f0e01f90750212a97a3b2bbbb8}
+}]App has been successfully uninstalled. \index{L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+F\+A\+I\+L\+E\+D@{L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+F\+A\+I\+L\+E\+D}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+F\+A\+I\+L\+E\+D@{L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+F\+A\+I\+L\+E\+D}}\item[{\em 
+\hypertarget{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa2534439c4b73ec8cb8816b7241bed15b}{}L\+E\+\_\+\+A\+V\+C\+\_\+\+U\+N\+I\+N\+S\+T\+A\+L\+L\+\_\+\+F\+A\+I\+L\+E\+D\label{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffa2534439c4b73ec8cb8816b7241bed15b}
+}]An error occurred uninstalling the update. \index{L\+E\+\_\+\+A\+V\+C\+\_\+\+S\+E\+S\+S\+I\+O\+N\+\_\+\+S\+T\+A\+R\+T\+E\+D@{L\+E\+\_\+\+A\+V\+C\+\_\+\+S\+E\+S\+S\+I\+O\+N\+\_\+\+S\+T\+A\+R\+T\+E\+D}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!L\+E\+\_\+\+A\+V\+C\+\_\+\+S\+E\+S\+S\+I\+O\+N\+\_\+\+S\+T\+A\+R\+T\+E\+D@{L\+E\+\_\+\+A\+V\+C\+\_\+\+S\+E\+S\+S\+I\+O\+N\+\_\+\+S\+T\+A\+R\+T\+E\+D}}\item[{\em 
+\hypertarget{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffafbb67dce39511535897ad23f847cafc1}{}L\+E\+\_\+\+A\+V\+C\+\_\+\+S\+E\+S\+S\+I\+O\+N\+\_\+\+S\+T\+A\+R\+T\+E\+D\label{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffafbb67dce39511535897ad23f847cafc1}
+}]Session with A\+V server started. \index{L\+E\+\_\+\+A\+V\+C\+\_\+\+S\+E\+S\+S\+I\+O\+N\+\_\+\+S\+T\+O\+P\+P\+E\+D@{L\+E\+\_\+\+A\+V\+C\+\_\+\+S\+E\+S\+S\+I\+O\+N\+\_\+\+S\+T\+O\+P\+P\+E\+D}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!L\+E\+\_\+\+A\+V\+C\+\_\+\+S\+E\+S\+S\+I\+O\+N\+\_\+\+S\+T\+O\+P\+P\+E\+D@{L\+E\+\_\+\+A\+V\+C\+\_\+\+S\+E\+S\+S\+I\+O\+N\+\_\+\+S\+T\+O\+P\+P\+E\+D}}\item[{\em 
+\hypertarget{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffae8f54bfa941cac982ce845cb0b682ab0}{}L\+E\+\_\+\+A\+V\+C\+\_\+\+S\+E\+S\+S\+I\+O\+N\+\_\+\+S\+T\+O\+P\+P\+E\+D\label{le__avc__interface_8h_ae45dee5277c9340c8bb083a09ef30cffae8f54bfa941cac982ce845cb0b682ab0}
+}]Session with A\+V server stopped. \end{description}
+\end{Desc}
+\hypertarget{le__avc__interface_8h_af541450f0cbf512f28be786d79a61865}{}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!le\+\_\+avc\+\_\+\+Update\+Type\+\_\+t@{le\+\_\+avc\+\_\+\+Update\+Type\+\_\+t}}
+\index{le\+\_\+avc\+\_\+\+Update\+Type\+\_\+t@{le\+\_\+avc\+\_\+\+Update\+Type\+\_\+t}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+avc\+\_\+\+Update\+Type\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+avc\+\_\+\+Update\+Type\+\_\+t}}\label{le__avc__interface_8h_af541450f0cbf512f28be786d79a61865}
+The type of pending update 
+
+\subsection{Function Documentation}
+\hypertarget{le__avc__interface_8h_a3f7dea04dd1e9c456fe24a5eb98d2592}{}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!le\+\_\+avc\+\_\+\+Accept\+Download@{le\+\_\+avc\+\_\+\+Accept\+Download}}
+\index{le\+\_\+avc\+\_\+\+Accept\+Download@{le\+\_\+avc\+\_\+\+Accept\+Download}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+avc\+\_\+\+Accept\+Download}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+avc\+\_\+\+Accept\+Download (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__avc__interface_8h_a3f7dea04dd1e9c456fe24a5eb98d2592}
+Accept the currently pending download
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{le__avc__interface_8h_ab3ff8076bb7b36ca58efc0ae240efedb}{}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!le\+\_\+avc\+\_\+\+Accept\+Install@{le\+\_\+avc\+\_\+\+Accept\+Install}}
+\index{le\+\_\+avc\+\_\+\+Accept\+Install@{le\+\_\+avc\+\_\+\+Accept\+Install}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+avc\+\_\+\+Accept\+Install}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+avc\+\_\+\+Accept\+Install (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__avc__interface_8h_ab3ff8076bb7b36ca58efc0ae240efedb}
+Accept the currently pending install
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{le__avc__interface_8h_aa5b34a29de899b0f333769cd86078e9e}{}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!le\+\_\+avc\+\_\+\+Accept\+Uninstall@{le\+\_\+avc\+\_\+\+Accept\+Uninstall}}
+\index{le\+\_\+avc\+\_\+\+Accept\+Uninstall@{le\+\_\+avc\+\_\+\+Accept\+Uninstall}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+avc\+\_\+\+Accept\+Uninstall}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+avc\+\_\+\+Accept\+Uninstall (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__avc__interface_8h_aa5b34a29de899b0f333769cd86078e9e}
+Accept the currently pending uninstall
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{le__avc__interface_8h_ac5443791a6e4b8db75342f45fa2f91dc}{}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!le\+\_\+avc\+\_\+\+Add\+Status\+Event\+Handler@{le\+\_\+avc\+\_\+\+Add\+Status\+Event\+Handler}}
+\index{le\+\_\+avc\+\_\+\+Add\+Status\+Event\+Handler@{le\+\_\+avc\+\_\+\+Add\+Status\+Event\+Handler}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+avc\+\_\+\+Add\+Status\+Event\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+avc\+\_\+\+Status\+Event\+Handler\+Ref\+\_\+t} le\+\_\+avc\+\_\+\+Add\+Status\+Event\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+avc\+\_\+\+Status\+Handler\+Func\+\_\+t}}]{handler\+Ptr, }
+\item[{void $\ast$}]{context\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__avc__interface_8h_ac5443791a6e4b8db75342f45fa2f91dc}
+Add handler function for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+avc\+\_\+\+Status\+Event\textquotesingle{}
+
+This event provides information on update availability status 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handler\+Ptr} & \\
+\hline
+\mbox{\tt in}  & {\em context\+Ptr} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__avc__interface_8h_a4d298bc6d814481205c4db5d24812694}{}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!le\+\_\+avc\+\_\+\+Block\+Install@{le\+\_\+avc\+\_\+\+Block\+Install}}
+\index{le\+\_\+avc\+\_\+\+Block\+Install@{le\+\_\+avc\+\_\+\+Block\+Install}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+avc\+\_\+\+Block\+Install}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+avc\+\_\+\+Block\+Request\+Ref\+\_\+t} le\+\_\+avc\+\_\+\+Block\+Install (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__avc__interface_8h_a4d298bc6d814481205c4db5d24812694}
+Prevent any pending updates from being installed.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item Reference for block update request (to be used later for unblocking updates)
+\item N\+U\+L\+L if the operation was not successful 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{le__avc__interface_8h_a65ddf265fb3236f8035fb0c475a23bd7}{}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!le\+\_\+avc\+\_\+\+Connect\+Service@{le\+\_\+avc\+\_\+\+Connect\+Service}}
+\index{le\+\_\+avc\+\_\+\+Connect\+Service@{le\+\_\+avc\+\_\+\+Connect\+Service}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+avc\+\_\+\+Connect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+avc\+\_\+\+Connect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__avc__interface_8h_a65ddf265fb3236f8035fb0c475a23bd7}
+Connect the client to the service \hypertarget{le__avc__interface_8h_a0c50c8ce89e21cbd9d0bfa431389b780}{}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!le\+\_\+avc\+\_\+\+Defer\+Download@{le\+\_\+avc\+\_\+\+Defer\+Download}}
+\index{le\+\_\+avc\+\_\+\+Defer\+Download@{le\+\_\+avc\+\_\+\+Defer\+Download}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+avc\+\_\+\+Defer\+Download}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+avc\+\_\+\+Defer\+Download (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{defer\+Minutes}
+\end{DoxyParamCaption}
+)}\label{le__avc__interface_8h_a0c50c8ce89e21cbd9d0bfa431389b780}
+Defer the currently pending download, for the given number of minutes
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em defer\+Minutes} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__avc__interface_8h_a068f714a110bfa4cac179731a17798f3}{}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!le\+\_\+avc\+\_\+\+Defer\+Install@{le\+\_\+avc\+\_\+\+Defer\+Install}}
+\index{le\+\_\+avc\+\_\+\+Defer\+Install@{le\+\_\+avc\+\_\+\+Defer\+Install}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+avc\+\_\+\+Defer\+Install}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+avc\+\_\+\+Defer\+Install (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{defer\+Minutes}
+\end{DoxyParamCaption}
+)}\label{le__avc__interface_8h_a068f714a110bfa4cac179731a17798f3}
+Defer the currently pending install
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em defer\+Minutes} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__avc__interface_8h_a4da465033b4438cdc75fdba894fd890f}{}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!le\+\_\+avc\+\_\+\+Defer\+Uninstall@{le\+\_\+avc\+\_\+\+Defer\+Uninstall}}
+\index{le\+\_\+avc\+\_\+\+Defer\+Uninstall@{le\+\_\+avc\+\_\+\+Defer\+Uninstall}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+avc\+\_\+\+Defer\+Uninstall}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+avc\+\_\+\+Defer\+Uninstall (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{defer\+Minutes}
+\end{DoxyParamCaption}
+)}\label{le__avc__interface_8h_a4da465033b4438cdc75fdba894fd890f}
+Defer the currently pending uninstall
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em defer\+Minutes} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__avc__interface_8h_ac2b017103029c74d4be4cad63eb9dceb}{}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!le\+\_\+avc\+\_\+\+Disconnect\+Service@{le\+\_\+avc\+\_\+\+Disconnect\+Service}}
+\index{le\+\_\+avc\+\_\+\+Disconnect\+Service@{le\+\_\+avc\+\_\+\+Disconnect\+Service}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+avc\+\_\+\+Disconnect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+avc\+\_\+\+Disconnect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__avc__interface_8h_ac2b017103029c74d4be4cad63eb9dceb}
+Disconnect the client from the service \hypertarget{le__avc__interface_8h_abf50df00e1df25c4eabfc6b3a004280a}{}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!le\+\_\+avc\+\_\+\+Get\+App\+Update\+Name@{le\+\_\+avc\+\_\+\+Get\+App\+Update\+Name}}
+\index{le\+\_\+avc\+\_\+\+Get\+App\+Update\+Name@{le\+\_\+avc\+\_\+\+Get\+App\+Update\+Name}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+avc\+\_\+\+Get\+App\+Update\+Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+avc\+\_\+\+Get\+App\+Update\+Name (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{update\+Name, }
+\item[{size\+\_\+t}]{update\+Name\+Num\+Elements}
+\end{DoxyParamCaption}
+)}\label{le__avc__interface_8h_abf50df00e1df25c4eabfc6b3a004280a}
+Get the name for the currently pending app update
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T if not available, or isn\textquotesingle{}t A\+P\+P\+L\+\_\+\+U\+P\+D\+A\+T\+E type 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em update\+Name} & \\
+\hline
+\mbox{\tt in}  & {\em update\+Name\+Num\+Elements} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__avc__interface_8h_a1f085c5986e7c473ed70cff32320ce11}{}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!le\+\_\+avc\+\_\+\+Get\+Update\+Type@{le\+\_\+avc\+\_\+\+Get\+Update\+Type}}
+\index{le\+\_\+avc\+\_\+\+Get\+Update\+Type@{le\+\_\+avc\+\_\+\+Get\+Update\+Type}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+avc\+\_\+\+Get\+Update\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+avc\+\_\+\+Get\+Update\+Type (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+avc\+\_\+\+Update\+Type\+\_\+t} $\ast$}]{update\+Type\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__avc__interface_8h_a1f085c5986e7c473ed70cff32320ce11}
+Get the update type of the currently pending update
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T if not available 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em update\+Type\+Ptr} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__avc__interface_8h_a11e325085dadb01bbefffd0b899eb207}{}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!le\+\_\+avc\+\_\+\+Remove\+Status\+Event\+Handler@{le\+\_\+avc\+\_\+\+Remove\+Status\+Event\+Handler}}
+\index{le\+\_\+avc\+\_\+\+Remove\+Status\+Event\+Handler@{le\+\_\+avc\+\_\+\+Remove\+Status\+Event\+Handler}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+avc\+\_\+\+Remove\+Status\+Event\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+avc\+\_\+\+Remove\+Status\+Event\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+avc\+\_\+\+Status\+Event\+Handler\+Ref\+\_\+t}}]{add\+Handler\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__avc__interface_8h_a11e325085dadb01bbefffd0b899eb207}
+Remove handler function for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+avc\+\_\+\+Status\+Event\textquotesingle{} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em add\+Handler\+Ref} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__avc__interface_8h_aee17b1de43cf946b59a965e6077e7b03}{}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!le\+\_\+avc\+\_\+\+Start\+Session@{le\+\_\+avc\+\_\+\+Start\+Session}}
+\index{le\+\_\+avc\+\_\+\+Start\+Session@{le\+\_\+avc\+\_\+\+Start\+Session}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+avc\+\_\+\+Start\+Session}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+avc\+\_\+\+Start\+Session (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__avc__interface_8h_aee17b1de43cf946b59a965e6077e7b03}
+Start a session with the Air\+Vantage server
+
+This will cause a query to be sent to the server, for pending updates. If a download was previously suspended, then this resumes the download.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{le__avc__interface_8h_a5b3e21858181bb972e982046bced1182}{}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!le\+\_\+avc\+\_\+\+Stop\+Session@{le\+\_\+avc\+\_\+\+Stop\+Session}}
+\index{le\+\_\+avc\+\_\+\+Stop\+Session@{le\+\_\+avc\+\_\+\+Stop\+Session}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+avc\+\_\+\+Stop\+Session}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+avc\+\_\+\+Stop\+Session (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__avc__interface_8h_a5b3e21858181bb972e982046bced1182}
+Stop a session with the Air\+Vantage server
+
+If a download is in progress, then this suspends the download.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{le__avc__interface_8h_af5b3dffdd29b7de3288ea1a88c0ecd4e}{}\index{le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}!le\+\_\+avc\+\_\+\+Unblock\+Install@{le\+\_\+avc\+\_\+\+Unblock\+Install}}
+\index{le\+\_\+avc\+\_\+\+Unblock\+Install@{le\+\_\+avc\+\_\+\+Unblock\+Install}!le\+\_\+avc\+\_\+interface.\+h@{le\+\_\+avc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+avc\+\_\+\+Unblock\+Install}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+avc\+\_\+\+Unblock\+Install (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+avc\+\_\+\+Block\+Request\+Ref\+\_\+t}}]{block\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__avc__interface_8h_af5b3dffdd29b7de3288ea1a88c0ecd4e}
+Allow any pending updates to be installed 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em block\+Ref} & block request ref returned by le\+\_\+avc\+\_\+\+Block\+Install \\
+\hline
+\end{DoxyParams}

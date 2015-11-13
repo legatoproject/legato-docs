@@ -1,0 +1,522 @@
+\hypertarget{le__gnss__interface_8h}{}\section{build/localhost/interfaces/le\+\_\+gnss\+\_\+interface.h File Reference}
+\label{le__gnss__interface_8h}\index{build/localhost/interfaces/le\+\_\+gnss\+\_\+interface.\+h@{build/localhost/interfaces/le\+\_\+gnss\+\_\+interface.\+h}}
+{\ttfamily \#include \char`\"{}legato.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{le__gnss__interface_8h_aad83794e1452ffce131332a7d5d615f0}{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+A\+X\+\_\+\+S\+U\+P\+L\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+U\+R\+L\+\_\+\+L\+E\+N}~256
+\item 
+\#define \hyperlink{le__gnss__interface_8h_a55a09e781cec3a35c15fd88e17bdbad1}{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+A\+X\+\_\+\+S\+U\+P\+L\+\_\+\+C\+E\+R\+T\+I\+F\+I\+C\+A\+T\+E\+\_\+\+L\+E\+N}~2000
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{le__gnss__interface_8h_a70085fe9ff78ec5c7426fd4c9dc2f9dc}{le\+\_\+gnss\+\_\+\+Assisted\+Mode\+\_\+t} \{ \hyperlink{le__gnss__interface_8h_a70085fe9ff78ec5c7426fd4c9dc2f9dca32336a5d9f3cf42251c081fbc0ae7b36}{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+S\+T\+A\+N\+D\+A\+L\+O\+N\+E\+\_\+\+M\+O\+D\+E}, 
+\hyperlink{le__gnss__interface_8h_a70085fe9ff78ec5c7426fd4c9dc2f9dca4d21852db64fad5ca5c90b35efaaefff}{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+S\+\_\+\+B\+A\+S\+E\+D\+\_\+\+M\+O\+D\+E}, 
+\hyperlink{le__gnss__interface_8h_a70085fe9ff78ec5c7426fd4c9dc2f9dca185c89cade65e4e40dc69c55327c726a}{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+S\+\_\+\+A\+S\+S\+I\+S\+T\+E\+D\+\_\+\+M\+O\+D\+E}
+ \}
+\item 
+enum \hyperlink{le__gnss__interface_8h_adac6fdd4f73229bc9af14e0a11335efc}{le\+\_\+gnss\+\_\+\+Constellation\+Bit\+Mask\+\_\+t} \{ \hyperlink{le__gnss__interface_8h_adac6fdd4f73229bc9af14e0a11335efcad8f92688bcc53bb744cb1466609d49a7}{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+C\+O\+N\+S\+T\+E\+L\+L\+A\+T\+I\+O\+N\+\_\+\+G\+P\+S} = 0x1, 
+\hyperlink{le__gnss__interface_8h_adac6fdd4f73229bc9af14e0a11335efca8031dcacac5aac40d2b2e1b574c5b878}{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+C\+O\+N\+S\+T\+E\+L\+L\+A\+T\+I\+O\+N\+\_\+\+G\+L\+O\+N\+A\+S\+S} = 0x2
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{le__gnss__interface_8h_a3b352251c2764092c56f20592f5894ca}{le\+\_\+gnss\+\_\+\+Connect\+Service} (void)
+\item 
+void \hyperlink{le__gnss__interface_8h_aeb249461b02547251a5b5e1e8bb28a95}{le\+\_\+gnss\+\_\+\+Disconnect\+Service} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gnss__interface_8h_a6dbdc58f23e480e65ea16c583ef5340f}{le\+\_\+gnss\+\_\+\+Set\+Constellation} (\hyperlink{le__gnss__interface_8h_adac6fdd4f73229bc9af14e0a11335efc}{le\+\_\+gnss\+\_\+\+Constellation\+Bit\+Mask\+\_\+t} constellation\+Mask)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gnss__interface_8h_a150835481ab3751e3ab1821362e34e84}{le\+\_\+gnss\+\_\+\+Get\+Constellation} (\hyperlink{le__gnss__interface_8h_adac6fdd4f73229bc9af14e0a11335efc}{le\+\_\+gnss\+\_\+\+Constellation\+Bit\+Mask\+\_\+t} $\ast$constellation\+Mask\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gnss__interface_8h_a3474bb912febeca6e258c6039144f39f}{le\+\_\+gnss\+\_\+\+Enable\+Extended\+Ephemeris\+File} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gnss__interface_8h_a49d596f01c010f7828c949f1436246df}{le\+\_\+gnss\+\_\+\+Disable\+Extended\+Ephemeris\+File} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gnss__interface_8h_aea1811e39dfae1516b08404adfbaec22}{le\+\_\+gnss\+\_\+\+Load\+Extended\+Ephemeris\+File} (int fd)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gnss__interface_8h_a1fbfc55e9e7585646fb312d7017061ff}{le\+\_\+gnss\+\_\+\+Get\+Extended\+Ephemeris\+Validity} (\hyperlink{structle__clk___time__t}{le\+\_\+clk\+\_\+\+Time\+\_\+t} $\ast$start\+Time\+Ptr, \hyperlink{structle__clk___time__t}{le\+\_\+clk\+\_\+\+Time\+\_\+t} $\ast$stop\+Time\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gnss__interface_8h_add90639835a531c4b9d15554e4f3ba16}{le\+\_\+gnss\+\_\+\+Start} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gnss__interface_8h_a93d63fdc76dbced071956b87de2abff7}{le\+\_\+gnss\+\_\+\+Stop} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gnss__interface_8h_a29ff5b1e5bada1a9d15d19b3a0d2d4d1}{le\+\_\+gnss\+\_\+\+Force\+Hot\+Restart} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gnss__interface_8h_a1f5b3008db50d34c7962fb73c306f3d1}{le\+\_\+gnss\+\_\+\+Force\+Warm\+Restart} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gnss__interface_8h_aa702703bbeebbefd65dd51b1f9fd4ce5}{le\+\_\+gnss\+\_\+\+Force\+Cold\+Restart} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gnss__interface_8h_a18219097f3e8c8e6e613462a5467f546}{le\+\_\+gnss\+\_\+\+Force\+Factory\+Restart} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gnss__interface_8h_a6b2fbb3902c9fd3336b5940b2abacb12}{le\+\_\+gnss\+\_\+\+Get\+Ttff} (uint32\+\_\+t $\ast$ttff\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gnss__interface_8h_a8e1d96b1b64055b298a74cad1acfbbf8}{le\+\_\+gnss\+\_\+\+Enable} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gnss__interface_8h_aa2cd87c616f968370e9e2113570437ea}{le\+\_\+gnss\+\_\+\+Disable} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gnss__interface_8h_a5d74c2ad91a504a1d0ac35b4f4f2c382}{le\+\_\+gnss\+\_\+\+Set\+Supl\+Assisted\+Mode} (\hyperlink{le__gnss__interface_8h_a70085fe9ff78ec5c7426fd4c9dc2f9dc}{le\+\_\+gnss\+\_\+\+Assisted\+Mode\+\_\+t} assisted\+Mode)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gnss__interface_8h_a2b5eb5e1efbc31683e717dd7181ff1d3}{le\+\_\+gnss\+\_\+\+Get\+Supl\+Assisted\+Mode} (\hyperlink{le__gnss__interface_8h_a70085fe9ff78ec5c7426fd4c9dc2f9dc}{le\+\_\+gnss\+\_\+\+Assisted\+Mode\+\_\+t} $\ast$assisted\+Mode\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gnss__interface_8h_abff6d8ae251972df157b5b38829230ed}{le\+\_\+gnss\+\_\+\+Set\+Supl\+Server\+Url} (const char $\ast$supl\+Server\+Url)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gnss__interface_8h_a3bd8f5067d4bba2e7ed5fce95c2c1a74}{le\+\_\+gnss\+\_\+\+Inject\+Supl\+Certificate} (uint8\+\_\+t supl\+Certificate\+Id, uint16\+\_\+t supl\+Certificate\+Len, const char $\ast$supl\+Certificate)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gnss__interface_8h_aec8d50c209ce21a979b7e9f552353aec}{le\+\_\+gnss\+\_\+\+Delete\+Supl\+Certificate} (uint8\+\_\+t supl\+Certificate\+Id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_gnss}{G\+N\+S\+S} include file.
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{le__gnss__interface_8h_a55a09e781cec3a35c15fd88e17bdbad1}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+A\+X\+\_\+\+S\+U\+P\+L\+\_\+\+C\+E\+R\+T\+I\+F\+I\+C\+A\+T\+E\+\_\+\+L\+E\+N@{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+A\+X\+\_\+\+S\+U\+P\+L\+\_\+\+C\+E\+R\+T\+I\+F\+I\+C\+A\+T\+E\+\_\+\+L\+E\+N}}
+\index{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+A\+X\+\_\+\+S\+U\+P\+L\+\_\+\+C\+E\+R\+T\+I\+F\+I\+C\+A\+T\+E\+\_\+\+L\+E\+N@{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+A\+X\+\_\+\+S\+U\+P\+L\+\_\+\+C\+E\+R\+T\+I\+F\+I\+C\+A\+T\+E\+\_\+\+L\+E\+N}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+A\+X\+\_\+\+S\+U\+P\+L\+\_\+\+C\+E\+R\+T\+I\+F\+I\+C\+A\+T\+E\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+A\+X\+\_\+\+S\+U\+P\+L\+\_\+\+C\+E\+R\+T\+I\+F\+I\+C\+A\+T\+E\+\_\+\+L\+E\+N~2000}\label{le__gnss__interface_8h_a55a09e781cec3a35c15fd88e17bdbad1}
+Maximum S\+U\+P\+L certificate size. \hypertarget{le__gnss__interface_8h_aad83794e1452ffce131332a7d5d615f0}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+A\+X\+\_\+\+S\+U\+P\+L\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+U\+R\+L\+\_\+\+L\+E\+N@{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+A\+X\+\_\+\+S\+U\+P\+L\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+U\+R\+L\+\_\+\+L\+E\+N}}
+\index{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+A\+X\+\_\+\+S\+U\+P\+L\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+U\+R\+L\+\_\+\+L\+E\+N@{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+A\+X\+\_\+\+S\+U\+P\+L\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+U\+R\+L\+\_\+\+L\+E\+N}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+A\+X\+\_\+\+S\+U\+P\+L\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+U\+R\+L\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+A\+X\+\_\+\+S\+U\+P\+L\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+U\+R\+L\+\_\+\+L\+E\+N~256}\label{le__gnss__interface_8h_aad83794e1452ffce131332a7d5d615f0}
+Maximum length of the S\+U\+P Server U\+R\+L string. 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{le__gnss__interface_8h_a70085fe9ff78ec5c7426fd4c9dc2f9dc}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Assisted\+Mode\+\_\+t@{le\+\_\+gnss\+\_\+\+Assisted\+Mode\+\_\+t}}
+\index{le\+\_\+gnss\+\_\+\+Assisted\+Mode\+\_\+t@{le\+\_\+gnss\+\_\+\+Assisted\+Mode\+\_\+t}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Assisted\+Mode\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+gnss\+\_\+\+Assisted\+Mode\+\_\+t}}\label{le__gnss__interface_8h_a70085fe9ff78ec5c7426fd4c9dc2f9dc}
+Assisted-\/\+G\+N\+S\+S mode \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+S\+T\+A\+N\+D\+A\+L\+O\+N\+E\+\_\+\+M\+O\+D\+E@{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+S\+T\+A\+N\+D\+A\+L\+O\+N\+E\+\_\+\+M\+O\+D\+E}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+S\+T\+A\+N\+D\+A\+L\+O\+N\+E\+\_\+\+M\+O\+D\+E@{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+S\+T\+A\+N\+D\+A\+L\+O\+N\+E\+\_\+\+M\+O\+D\+E}}\item[{\em 
+\hypertarget{le__gnss__interface_8h_a70085fe9ff78ec5c7426fd4c9dc2f9dca32336a5d9f3cf42251c081fbc0ae7b36}{}L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+S\+T\+A\+N\+D\+A\+L\+O\+N\+E\+\_\+\+M\+O\+D\+E\label{le__gnss__interface_8h_a70085fe9ff78ec5c7426fd4c9dc2f9dca32336a5d9f3cf42251c081fbc0ae7b36}
+}]Standalone mode. \index{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+S\+\_\+\+B\+A\+S\+E\+D\+\_\+\+M\+O\+D\+E@{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+S\+\_\+\+B\+A\+S\+E\+D\+\_\+\+M\+O\+D\+E}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+S\+\_\+\+B\+A\+S\+E\+D\+\_\+\+M\+O\+D\+E@{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+S\+\_\+\+B\+A\+S\+E\+D\+\_\+\+M\+O\+D\+E}}\item[{\em 
+\hypertarget{le__gnss__interface_8h_a70085fe9ff78ec5c7426fd4c9dc2f9dca4d21852db64fad5ca5c90b35efaaefff}{}L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+S\+\_\+\+B\+A\+S\+E\+D\+\_\+\+M\+O\+D\+E\label{le__gnss__interface_8h_a70085fe9ff78ec5c7426fd4c9dc2f9dca4d21852db64fad5ca5c90b35efaaefff}
+}]M\+S-\/\+Based mode. \index{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+S\+\_\+\+A\+S\+S\+I\+S\+T\+E\+D\+\_\+\+M\+O\+D\+E@{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+S\+\_\+\+A\+S\+S\+I\+S\+T\+E\+D\+\_\+\+M\+O\+D\+E}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+S\+\_\+\+A\+S\+S\+I\+S\+T\+E\+D\+\_\+\+M\+O\+D\+E@{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+S\+\_\+\+A\+S\+S\+I\+S\+T\+E\+D\+\_\+\+M\+O\+D\+E}}\item[{\em 
+\hypertarget{le__gnss__interface_8h_a70085fe9ff78ec5c7426fd4c9dc2f9dca185c89cade65e4e40dc69c55327c726a}{}L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+M\+S\+\_\+\+A\+S\+S\+I\+S\+T\+E\+D\+\_\+\+M\+O\+D\+E\label{le__gnss__interface_8h_a70085fe9ff78ec5c7426fd4c9dc2f9dca185c89cade65e4e40dc69c55327c726a}
+}]M\+S-\/\+Assisted mode. \end{description}
+\end{Desc}
+\hypertarget{le__gnss__interface_8h_adac6fdd4f73229bc9af14e0a11335efc}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Constellation\+Bit\+Mask\+\_\+t@{le\+\_\+gnss\+\_\+\+Constellation\+Bit\+Mask\+\_\+t}}
+\index{le\+\_\+gnss\+\_\+\+Constellation\+Bit\+Mask\+\_\+t@{le\+\_\+gnss\+\_\+\+Constellation\+Bit\+Mask\+\_\+t}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Constellation\+Bit\+Mask\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+gnss\+\_\+\+Constellation\+Bit\+Mask\+\_\+t}}\label{le__gnss__interface_8h_adac6fdd4f73229bc9af14e0a11335efc}
+G\+N\+S\+S constellation Bit Mask (8 bits) indicating the G\+N\+S\+S constellation(s) used in solution. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+C\+O\+N\+S\+T\+E\+L\+L\+A\+T\+I\+O\+N\+\_\+\+G\+P\+S@{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+C\+O\+N\+S\+T\+E\+L\+L\+A\+T\+I\+O\+N\+\_\+\+G\+P\+S}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+C\+O\+N\+S\+T\+E\+L\+L\+A\+T\+I\+O\+N\+\_\+\+G\+P\+S@{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+C\+O\+N\+S\+T\+E\+L\+L\+A\+T\+I\+O\+N\+\_\+\+G\+P\+S}}\item[{\em 
+\hypertarget{le__gnss__interface_8h_adac6fdd4f73229bc9af14e0a11335efcad8f92688bcc53bb744cb1466609d49a7}{}L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+C\+O\+N\+S\+T\+E\+L\+L\+A\+T\+I\+O\+N\+\_\+\+G\+P\+S\label{le__gnss__interface_8h_adac6fdd4f73229bc9af14e0a11335efcad8f92688bcc53bb744cb1466609d49a7}
+}]G\+P\+S constellation used in solution. \index{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+C\+O\+N\+S\+T\+E\+L\+L\+A\+T\+I\+O\+N\+\_\+\+G\+L\+O\+N\+A\+S\+S@{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+C\+O\+N\+S\+T\+E\+L\+L\+A\+T\+I\+O\+N\+\_\+\+G\+L\+O\+N\+A\+S\+S}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+C\+O\+N\+S\+T\+E\+L\+L\+A\+T\+I\+O\+N\+\_\+\+G\+L\+O\+N\+A\+S\+S@{L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+C\+O\+N\+S\+T\+E\+L\+L\+A\+T\+I\+O\+N\+\_\+\+G\+L\+O\+N\+A\+S\+S}}\item[{\em 
+\hypertarget{le__gnss__interface_8h_adac6fdd4f73229bc9af14e0a11335efca8031dcacac5aac40d2b2e1b574c5b878}{}L\+E\+\_\+\+G\+N\+S\+S\+\_\+\+C\+O\+N\+S\+T\+E\+L\+L\+A\+T\+I\+O\+N\+\_\+\+G\+L\+O\+N\+A\+S\+S\label{le__gnss__interface_8h_adac6fdd4f73229bc9af14e0a11335efca8031dcacac5aac40d2b2e1b574c5b878}
+}]G\+L\+O\+N\+A\+S\+S constellation used in solution. \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{le__gnss__interface_8h_a3b352251c2764092c56f20592f5894ca}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Connect\+Service@{le\+\_\+gnss\+\_\+\+Connect\+Service}}
+\index{le\+\_\+gnss\+\_\+\+Connect\+Service@{le\+\_\+gnss\+\_\+\+Connect\+Service}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Connect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+gnss\+\_\+\+Connect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__gnss__interface_8h_a3b352251c2764092c56f20592f5894ca}
+Connect the client to the service \hypertarget{le__gnss__interface_8h_aec8d50c209ce21a979b7e9f552353aec}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Delete\+Supl\+Certificate@{le\+\_\+gnss\+\_\+\+Delete\+Supl\+Certificate}}
+\index{le\+\_\+gnss\+\_\+\+Delete\+Supl\+Certificate@{le\+\_\+gnss\+\_\+\+Delete\+Supl\+Certificate}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Delete\+Supl\+Certificate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gnss\+\_\+\+Delete\+Supl\+Certificate (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{supl\+Certificate\+Id}
+\end{DoxyParamCaption}
+)}\label{le__gnss__interface_8h_aec8d50c209ce21a979b7e9f552353aec}
+This function deletes the S\+U\+P\+L certificate.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure
+\item L\+E\+\_\+\+B\+U\+S\+Y service is busy
+\item L\+E\+\_\+\+T\+I\+M\+E\+O\+U\+T a time-\/out occurred 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em supl\+Certificate\+Id} & Certificate I\+D of the S\+U\+P\+L certificate. Certificate I\+D range is 0 to 9 \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__gnss__interface_8h_aa2cd87c616f968370e9e2113570437ea}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Disable@{le\+\_\+gnss\+\_\+\+Disable}}
+\index{le\+\_\+gnss\+\_\+\+Disable@{le\+\_\+gnss\+\_\+\+Disable}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Disable}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gnss\+\_\+\+Disable (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__gnss__interface_8h_aa2cd87c616f968370e9e2113570437ea}
+This function disables the G\+N\+S\+S device.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T The function failed. 
+
+L\+E\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+E If the G\+N\+S\+S device is already disabled. 
+
+L\+E\+\_\+\+N\+O\+T\+\_\+\+P\+E\+R\+M\+I\+T\+T\+E\+D If the G\+N\+S\+S device is not initialized or started. 
+
+L\+E\+\_\+\+O\+K The function succeeded. 
+\end{DoxyReturn}
+\hypertarget{le__gnss__interface_8h_a49d596f01c010f7828c949f1436246df}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Disable\+Extended\+Ephemeris\+File@{le\+\_\+gnss\+\_\+\+Disable\+Extended\+Ephemeris\+File}}
+\index{le\+\_\+gnss\+\_\+\+Disable\+Extended\+Ephemeris\+File@{le\+\_\+gnss\+\_\+\+Disable\+Extended\+Ephemeris\+File}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Disable\+Extended\+Ephemeris\+File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gnss\+\_\+\+Disable\+Extended\+Ephemeris\+File (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__gnss__interface_8h_a49d596f01c010f7828c949f1436246df}
+This function disables the use of the \textquotesingle{}Extended Ephemeris\textquotesingle{} file into the G\+N\+S\+S device.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T The function failed. 
+
+L\+E\+\_\+\+O\+K The function succeeded. 
+\end{DoxyReturn}
+\hypertarget{le__gnss__interface_8h_aeb249461b02547251a5b5e1e8bb28a95}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Disconnect\+Service@{le\+\_\+gnss\+\_\+\+Disconnect\+Service}}
+\index{le\+\_\+gnss\+\_\+\+Disconnect\+Service@{le\+\_\+gnss\+\_\+\+Disconnect\+Service}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Disconnect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+gnss\+\_\+\+Disconnect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__gnss__interface_8h_aeb249461b02547251a5b5e1e8bb28a95}
+Disconnect the client from the service \hypertarget{le__gnss__interface_8h_a8e1d96b1b64055b298a74cad1acfbbf8}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Enable@{le\+\_\+gnss\+\_\+\+Enable}}
+\index{le\+\_\+gnss\+\_\+\+Enable@{le\+\_\+gnss\+\_\+\+Enable}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Enable}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gnss\+\_\+\+Enable (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__gnss__interface_8h_a8e1d96b1b64055b298a74cad1acfbbf8}
+This function enables the G\+N\+S\+S device.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T The function failed. 
+
+L\+E\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+E If the G\+N\+S\+S device is already enabled. 
+
+L\+E\+\_\+\+N\+O\+T\+\_\+\+P\+E\+R\+M\+I\+T\+T\+E\+D If the G\+N\+S\+S device is not initialized. 
+
+L\+E\+\_\+\+O\+K The function succeeded. 
+\end{DoxyReturn}
+\hypertarget{le__gnss__interface_8h_a3474bb912febeca6e258c6039144f39f}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Enable\+Extended\+Ephemeris\+File@{le\+\_\+gnss\+\_\+\+Enable\+Extended\+Ephemeris\+File}}
+\index{le\+\_\+gnss\+\_\+\+Enable\+Extended\+Ephemeris\+File@{le\+\_\+gnss\+\_\+\+Enable\+Extended\+Ephemeris\+File}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Enable\+Extended\+Ephemeris\+File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gnss\+\_\+\+Enable\+Extended\+Ephemeris\+File (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__gnss__interface_8h_a3474bb912febeca6e258c6039144f39f}
+This function enables the use of the \textquotesingle{}Extended Ephemeris\textquotesingle{} file into the G\+N\+S\+S device.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T The function failed. 
+
+L\+E\+\_\+\+O\+K The function succeeded. 
+\end{DoxyReturn}
+\hypertarget{le__gnss__interface_8h_aa702703bbeebbefd65dd51b1f9fd4ce5}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Force\+Cold\+Restart@{le\+\_\+gnss\+\_\+\+Force\+Cold\+Restart}}
+\index{le\+\_\+gnss\+\_\+\+Force\+Cold\+Restart@{le\+\_\+gnss\+\_\+\+Force\+Cold\+Restart}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Force\+Cold\+Restart}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gnss\+\_\+\+Force\+Cold\+Restart (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__gnss__interface_8h_aa702703bbeebbefd65dd51b1f9fd4ce5}
+This function performs a \char`\"{}\+C\+O\+L\+D\char`\"{} restart of the G\+N\+S\+S device.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T The function failed. 
+
+L\+E\+\_\+\+N\+O\+T\+\_\+\+P\+E\+R\+M\+I\+T\+T\+E\+D If the G\+N\+S\+S device is not enabled or not started. 
+
+L\+E\+\_\+\+O\+K The function succeeded. 
+\end{DoxyReturn}
+\hypertarget{le__gnss__interface_8h_a18219097f3e8c8e6e613462a5467f546}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Force\+Factory\+Restart@{le\+\_\+gnss\+\_\+\+Force\+Factory\+Restart}}
+\index{le\+\_\+gnss\+\_\+\+Force\+Factory\+Restart@{le\+\_\+gnss\+\_\+\+Force\+Factory\+Restart}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Force\+Factory\+Restart}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gnss\+\_\+\+Force\+Factory\+Restart (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__gnss__interface_8h_a18219097f3e8c8e6e613462a5467f546}
+This function performs a \char`\"{}\+F\+A\+C\+T\+O\+R\+Y\char`\"{} restart of the G\+N\+S\+S device.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T The function failed. 
+
+L\+E\+\_\+\+N\+O\+T\+\_\+\+P\+E\+R\+M\+I\+T\+T\+E\+D If the G\+N\+S\+S device is not enabled or not started. 
+
+L\+E\+\_\+\+O\+K The function succeeded. 
+\end{DoxyReturn}
+\hypertarget{le__gnss__interface_8h_a29ff5b1e5bada1a9d15d19b3a0d2d4d1}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Force\+Hot\+Restart@{le\+\_\+gnss\+\_\+\+Force\+Hot\+Restart}}
+\index{le\+\_\+gnss\+\_\+\+Force\+Hot\+Restart@{le\+\_\+gnss\+\_\+\+Force\+Hot\+Restart}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Force\+Hot\+Restart}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gnss\+\_\+\+Force\+Hot\+Restart (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__gnss__interface_8h_a29ff5b1e5bada1a9d15d19b3a0d2d4d1}
+This function performs a \char`\"{}\+H\+O\+T\char`\"{} restart of the G\+N\+S\+S device.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T The function failed. 
+
+L\+E\+\_\+\+N\+O\+T\+\_\+\+P\+E\+R\+M\+I\+T\+T\+E\+D If the G\+N\+S\+S device is not enabled or not started. 
+
+L\+E\+\_\+\+O\+K The function succeeded. 
+\end{DoxyReturn}
+\hypertarget{le__gnss__interface_8h_a1f5b3008db50d34c7962fb73c306f3d1}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Force\+Warm\+Restart@{le\+\_\+gnss\+\_\+\+Force\+Warm\+Restart}}
+\index{le\+\_\+gnss\+\_\+\+Force\+Warm\+Restart@{le\+\_\+gnss\+\_\+\+Force\+Warm\+Restart}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Force\+Warm\+Restart}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gnss\+\_\+\+Force\+Warm\+Restart (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__gnss__interface_8h_a1f5b3008db50d34c7962fb73c306f3d1}
+This function performs a \char`\"{}\+W\+A\+R\+M\char`\"{} restart of the G\+N\+S\+S device.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T The function failed. 
+
+L\+E\+\_\+\+N\+O\+T\+\_\+\+P\+E\+R\+M\+I\+T\+T\+E\+D If the G\+N\+S\+S device is not enabled or not started. 
+
+L\+E\+\_\+\+O\+K The function succeeded. 
+\end{DoxyReturn}
+\hypertarget{le__gnss__interface_8h_a150835481ab3751e3ab1821362e34e84}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Get\+Constellation@{le\+\_\+gnss\+\_\+\+Get\+Constellation}}
+\index{le\+\_\+gnss\+\_\+\+Get\+Constellation@{le\+\_\+gnss\+\_\+\+Get\+Constellation}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Get\+Constellation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gnss\+\_\+\+Get\+Constellation (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+gnss\+\_\+\+Constellation\+Bit\+Mask\+\_\+t} $\ast$}]{constellation\+Mask\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__gnss__interface_8h_a150835481ab3751e3ab1821362e34e84}
+Get the G\+N\+S\+S constellation bit mask
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em constellation\+Mask\+Ptr} & G\+N\+S\+S constellation used in solution. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__gnss__interface_8h_a1fbfc55e9e7585646fb312d7017061ff}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Get\+Extended\+Ephemeris\+Validity@{le\+\_\+gnss\+\_\+\+Get\+Extended\+Ephemeris\+Validity}}
+\index{le\+\_\+gnss\+\_\+\+Get\+Extended\+Ephemeris\+Validity@{le\+\_\+gnss\+\_\+\+Get\+Extended\+Ephemeris\+Validity}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Get\+Extended\+Ephemeris\+Validity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gnss\+\_\+\+Get\+Extended\+Ephemeris\+Validity (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+clk\+\_\+\+Time\+\_\+t} $\ast$}]{start\+Time\+Ptr, }
+\item[{{\bf le\+\_\+clk\+\_\+\+Time\+\_\+t} $\ast$}]{stop\+Time\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__gnss__interface_8h_a1fbfc55e9e7585646fb312d7017061ff}
+This function must be called to get the validity of the last injected Extended Ephemeris.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T The function failed to get the validity 
+
+L\+E\+\_\+\+O\+K The function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em start\+Time\+Ptr} & Start time \\
+\hline
+\mbox{\tt out}  & {\em stop\+Time\+Ptr} & Stop time \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__gnss__interface_8h_a2b5eb5e1efbc31683e717dd7181ff1d3}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Get\+Supl\+Assisted\+Mode@{le\+\_\+gnss\+\_\+\+Get\+Supl\+Assisted\+Mode}}
+\index{le\+\_\+gnss\+\_\+\+Get\+Supl\+Assisted\+Mode@{le\+\_\+gnss\+\_\+\+Get\+Supl\+Assisted\+Mode}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Get\+Supl\+Assisted\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gnss\+\_\+\+Get\+Supl\+Assisted\+Mode (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+gnss\+\_\+\+Assisted\+Mode\+\_\+t} $\ast$}]{assisted\+Mode\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__gnss__interface_8h_a2b5eb5e1efbc31683e717dd7181ff1d3}
+This function gets the S\+U\+P\+L Assisted-\/\+G\+N\+S\+S mode.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em assisted\+Mode\+Ptr} & Assisted-\/\+G\+N\+S\+S mode. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__gnss__interface_8h_a6b2fbb3902c9fd3336b5940b2abacb12}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Get\+Ttff@{le\+\_\+gnss\+\_\+\+Get\+Ttff}}
+\index{le\+\_\+gnss\+\_\+\+Get\+Ttff@{le\+\_\+gnss\+\_\+\+Get\+Ttff}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Get\+Ttff}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gnss\+\_\+\+Get\+Ttff (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{ttff\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__gnss__interface_8h_a6b2fbb3902c9fd3336b5940b2abacb12}
+Get the T\+T\+F\+F in milliseconds
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+B\+U\+S\+Y The position is not fixed and T\+T\+F\+F can\textquotesingle{}t be measured. 
+
+L\+E\+\_\+\+N\+O\+T\+\_\+\+P\+E\+R\+M\+I\+T\+T\+E\+D If the G\+N\+S\+S device is not enabled or not started. 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em ttff\+Ptr} & T\+T\+F\+F in milliseconds \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__gnss__interface_8h_a3bd8f5067d4bba2e7ed5fce95c2c1a74}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Inject\+Supl\+Certificate@{le\+\_\+gnss\+\_\+\+Inject\+Supl\+Certificate}}
+\index{le\+\_\+gnss\+\_\+\+Inject\+Supl\+Certificate@{le\+\_\+gnss\+\_\+\+Inject\+Supl\+Certificate}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Inject\+Supl\+Certificate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gnss\+\_\+\+Inject\+Supl\+Certificate (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{supl\+Certificate\+Id, }
+\item[{uint16\+\_\+t}]{supl\+Certificate\+Len, }
+\item[{const char $\ast$}]{supl\+Certificate}
+\end{DoxyParamCaption}
+)}\label{le__gnss__interface_8h_a3bd8f5067d4bba2e7ed5fce95c2c1a74}
+This function injects the S\+U\+P\+L certificate to be used in A-\/\+G\+N\+S\+S sessions.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure
+\item L\+E\+\_\+\+B\+U\+S\+Y service is busy
+\item L\+E\+\_\+\+T\+I\+M\+E\+O\+U\+T a time-\/out occurred 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em supl\+Certificate\+Id} & Certificate I\+D of the S\+U\+P\+L certificate. Certificate I\+D range is 0 to 9 \\
+\hline
+\mbox{\tt in}  & {\em supl\+Certificate\+Len} & S\+U\+P\+L certificate size in Bytes. \\
+\hline
+\mbox{\tt in}  & {\em supl\+Certificate} & S\+U\+P\+L certificate contents. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__gnss__interface_8h_aea1811e39dfae1516b08404adfbaec22}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Load\+Extended\+Ephemeris\+File@{le\+\_\+gnss\+\_\+\+Load\+Extended\+Ephemeris\+File}}
+\index{le\+\_\+gnss\+\_\+\+Load\+Extended\+Ephemeris\+File@{le\+\_\+gnss\+\_\+\+Load\+Extended\+Ephemeris\+File}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Load\+Extended\+Ephemeris\+File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gnss\+\_\+\+Load\+Extended\+Ephemeris\+File (
+\begin{DoxyParamCaption}
+\item[{int}]{fd}
+\end{DoxyParamCaption}
+)}\label{le__gnss__interface_8h_aea1811e39dfae1516b08404adfbaec22}
+This function must be called to load an \textquotesingle{}Extended Ephemeris\textquotesingle{} file into the G\+N\+S\+S device.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T The function failed to inject the \textquotesingle{}Extended Ephemeris\textquotesingle{} file. 
+
+L\+E\+\_\+\+T\+I\+M\+E\+O\+U\+T A time-\/out occurred. 
+
+L\+E\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+E\+R\+R\+O\+R \textquotesingle{}Extended Ephemeris\textquotesingle{} file format error. 
+
+L\+E\+\_\+\+O\+K The function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fd} & Extended ephemeris file descriptor \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__gnss__interface_8h_a6dbdc58f23e480e65ea16c583ef5340f}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Set\+Constellation@{le\+\_\+gnss\+\_\+\+Set\+Constellation}}
+\index{le\+\_\+gnss\+\_\+\+Set\+Constellation@{le\+\_\+gnss\+\_\+\+Set\+Constellation}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Set\+Constellation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gnss\+\_\+\+Set\+Constellation (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+gnss\+\_\+\+Constellation\+Bit\+Mask\+\_\+t}}]{constellation\+Mask}
+\end{DoxyParamCaption}
+)}\label{le__gnss__interface_8h_a6dbdc58f23e480e65ea16c583ef5340f}
+Set the G\+N\+S\+S constellation bit mask
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T The function failed. 
+
+L\+E\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D If the request is not supported. 
+
+L\+E\+\_\+\+N\+O\+T\+\_\+\+P\+E\+R\+M\+I\+T\+T\+E\+D If the G\+N\+S\+S device is not initialized, disabled or active. 
+
+L\+E\+\_\+\+O\+K The function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em constellation\+Mask} & G\+N\+S\+S constellation used in solution. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__gnss__interface_8h_a5d74c2ad91a504a1d0ac35b4f4f2c382}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Set\+Supl\+Assisted\+Mode@{le\+\_\+gnss\+\_\+\+Set\+Supl\+Assisted\+Mode}}
+\index{le\+\_\+gnss\+\_\+\+Set\+Supl\+Assisted\+Mode@{le\+\_\+gnss\+\_\+\+Set\+Supl\+Assisted\+Mode}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Set\+Supl\+Assisted\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gnss\+\_\+\+Set\+Supl\+Assisted\+Mode (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+gnss\+\_\+\+Assisted\+Mode\+\_\+t}}]{assisted\+Mode}
+\end{DoxyParamCaption}
+)}\label{le__gnss__interface_8h_a5d74c2ad91a504a1d0ac35b4f4f2c382}
+This function sets the S\+U\+P\+L Assisted-\/\+G\+N\+S\+S mode.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure
+\item L\+E\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D request not supported
+\item L\+E\+\_\+\+T\+I\+M\+E\+O\+U\+T a time-\/out occurred 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em assisted\+Mode} & Assisted-\/\+G\+N\+S\+S mode. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__gnss__interface_8h_abff6d8ae251972df157b5b38829230ed}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Set\+Supl\+Server\+Url@{le\+\_\+gnss\+\_\+\+Set\+Supl\+Server\+Url}}
+\index{le\+\_\+gnss\+\_\+\+Set\+Supl\+Server\+Url@{le\+\_\+gnss\+\_\+\+Set\+Supl\+Server\+Url}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Set\+Supl\+Server\+Url}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gnss\+\_\+\+Set\+Supl\+Server\+Url (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{supl\+Server\+Url}
+\end{DoxyParamCaption}
+)}\label{le__gnss__interface_8h_abff6d8ae251972df157b5b38829230ed}
+This function sets the S\+U\+P\+L server U\+R\+L. That server U\+R\+L is a N\+U\+L\+L-\/terminated string with a maximum string length (including N\+U\+L\+L terminator) equal to 256. Optionally the port number is specified after a colon.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure
+\item L\+E\+\_\+\+B\+U\+S\+Y service is busy
+\item L\+E\+\_\+\+T\+I\+M\+E\+O\+U\+T a time-\/out occurred 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em supl\+Server\+Url} & S\+U\+P\+L server U\+R\+L. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__gnss__interface_8h_add90639835a531c4b9d15554e4f3ba16}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Start@{le\+\_\+gnss\+\_\+\+Start}}
+\index{le\+\_\+gnss\+\_\+\+Start@{le\+\_\+gnss\+\_\+\+Start}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gnss\+\_\+\+Start (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__gnss__interface_8h_add90639835a531c4b9d15554e4f3ba16}
+This function starts the G\+N\+S\+S device.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T The function failed. 
+
+L\+E\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+E If the G\+N\+S\+S device is already started. 
+
+L\+E\+\_\+\+N\+O\+T\+\_\+\+P\+E\+R\+M\+I\+T\+T\+E\+D If the G\+N\+S\+S device is not initialized or disabled. 
+
+L\+E\+\_\+\+O\+K The function succeeded. 
+\end{DoxyReturn}
+\hypertarget{le__gnss__interface_8h_a93d63fdc76dbced071956b87de2abff7}{}\index{le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}!le\+\_\+gnss\+\_\+\+Stop@{le\+\_\+gnss\+\_\+\+Stop}}
+\index{le\+\_\+gnss\+\_\+\+Stop@{le\+\_\+gnss\+\_\+\+Stop}!le\+\_\+gnss\+\_\+interface.\+h@{le\+\_\+gnss\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gnss\+\_\+\+Stop}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gnss\+\_\+\+Stop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__gnss__interface_8h_a93d63fdc76dbced071956b87de2abff7}
+This function stops the G\+N\+S\+S device.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T The function failed. 
+
+L\+E\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+E If the G\+N\+S\+S device is already stopped. 
+
+L\+E\+\_\+\+N\+O\+T\+\_\+\+P\+E\+R\+M\+I\+T\+T\+E\+D If the G\+N\+S\+S device is not initialized or disabled. 
+
+L\+E\+\_\+\+O\+K The function succeeded. 
+\end{DoxyReturn}

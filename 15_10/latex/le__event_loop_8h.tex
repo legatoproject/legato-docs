@@ -1,0 +1,422 @@
+\hypertarget{le__event_loop_8h}{}\section{framework/c/inc/le\+\_\+event\+Loop.h File Reference}
+\label{le__event_loop_8h}\index{framework/c/inc/le\+\_\+event\+Loop.\+h@{framework/c/inc/le\+\_\+event\+Loop.\+h}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{le__event_loop_8h_a3973e227dd6ff4e79b2f97c42b105662}{L\+E\+\_\+\+C\+I\+\_\+\+L\+I\+N\+K\+A\+G\+E}
+\item 
+\#define \hyperlink{le__event_loop_8h_abdb9187a56836a93d19cc793cbd4b7ec}{C\+O\+M\+P\+O\+N\+E\+N\+T\+\_\+\+I\+N\+I\+T}~\hyperlink{le__event_loop_8h_a3973e227dd6ff4e79b2f97c42b105662}{L\+E\+\_\+\+C\+I\+\_\+\+L\+I\+N\+K\+A\+G\+E} \hyperlink{le__basics_8h_a1661bfbb29c2e0372ca9f0c556a8fc24}{L\+E\+\_\+\+S\+H\+A\+R\+E\+D} void \+\_\+le\+\_\+event\+\_\+\+Initialize\+Component(void)
+\item 
+\hypertarget{le__event_loop_8h_a47faa85db57fa5243f12a4a1e55fbfec}{}\#define \hyperlink{le__event_loop_8h_a47faa85db57fa5243f12a4a1e55fbfec}{L\+E\+\_\+\+E\+V\+E\+N\+T\+\_\+\+I\+N\+I\+T\+\_\+\+H\+A\+N\+D\+L\+E\+R}~\hyperlink{le__event_loop_8h_abdb9187a56836a93d19cc793cbd4b7ec}{C\+O\+M\+P\+O\+N\+E\+N\+T\+\_\+\+I\+N\+I\+T}\label{le__event_loop_8h_a47faa85db57fa5243f12a4a1e55fbfec}
+
+\begin{DoxyCompactList}\small\item\em Deprecated name for \hyperlink{le__event_loop_8h_abdb9187a56836a93d19cc793cbd4b7ec}{C\+O\+M\+P\+O\+N\+E\+N\+T\+\_\+\+I\+N\+I\+T}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct le\+\_\+event\+\_\+\+Id $\ast$ \hyperlink{le__event_loop_8h_ae6e351b38bc95954f159d16d19d2d55c}{le\+\_\+event\+\_\+\+Id\+\_\+t}
+\item 
+typedef void($\ast$ \hyperlink{le__event_loop_8h_ada421dec46f51fcb3421ef7058f16944}{le\+\_\+event\+\_\+\+Handler\+Func\+\_\+t}) (void $\ast$report\+Ptr)
+\item 
+typedef void($\ast$ \hyperlink{le__event_loop_8h_a325afcc96343fde371e4c63639ace2ef}{le\+\_\+event\+\_\+\+Layered\+Handler\+Func\+\_\+t}) (void $\ast$report\+Ptr, void $\ast$second\+Layer\+Func)
+\item 
+typedef void($\ast$ \hyperlink{le__event_loop_8h_a6f86581d4d2bf24647d5efaff1046d5d}{le\+\_\+event\+\_\+\+Deferred\+Func\+\_\+t}) (void $\ast$param1\+Ptr, void $\ast$param2\+Ptr)
+\item 
+typedef struct le\+\_\+event\+\_\+\+Handler $\ast$ \hyperlink{le__event_loop_8h_ae7ab96b8e3441b3d484fcf52aa7a9dad}{le\+\_\+event\+\_\+\+Handler\+Ref\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{le__event_loop_8h_ae6e351b38bc95954f159d16d19d2d55c}{le\+\_\+event\+\_\+\+Id\+\_\+t} \hyperlink{le__event_loop_8h_a41a96eb3affb07184b519164cf54e213}{le\+\_\+event\+\_\+\+Create\+Id} (const char $\ast$name, size\+\_\+t payload\+Size)
+\item 
+\hyperlink{le__event_loop_8h_ae6e351b38bc95954f159d16d19d2d55c}{le\+\_\+event\+\_\+\+Id\+\_\+t} \hyperlink{le__event_loop_8h_a31bef8276ad0e911fd84fb710d58ca2b}{le\+\_\+event\+\_\+\+Create\+Id\+With\+Ref\+Counting} (const char $\ast$name)
+\item 
+\hyperlink{le__event_loop_8h_ae7ab96b8e3441b3d484fcf52aa7a9dad}{le\+\_\+event\+\_\+\+Handler\+Ref\+\_\+t} \hyperlink{le__event_loop_8h_ae65a65b4111618f47d7e6d57a48289e5}{le\+\_\+event\+\_\+\+Add\+Handler} (const char $\ast$name, \hyperlink{le__event_loop_8h_ae6e351b38bc95954f159d16d19d2d55c}{le\+\_\+event\+\_\+\+Id\+\_\+t} event\+Id, \hyperlink{le__event_loop_8h_ada421dec46f51fcb3421ef7058f16944}{le\+\_\+event\+\_\+\+Handler\+Func\+\_\+t} handler\+Func)
+\item 
+\hyperlink{le__event_loop_8h_ae7ab96b8e3441b3d484fcf52aa7a9dad}{le\+\_\+event\+\_\+\+Handler\+Ref\+\_\+t} \hyperlink{le__event_loop_8h_a8b906d38935f64953482f42c745e1c18}{le\+\_\+event\+\_\+\+Add\+Layered\+Handler} (const char $\ast$name, \hyperlink{le__event_loop_8h_ae6e351b38bc95954f159d16d19d2d55c}{le\+\_\+event\+\_\+\+Id\+\_\+t} event\+Id, \hyperlink{le__event_loop_8h_a325afcc96343fde371e4c63639ace2ef}{le\+\_\+event\+\_\+\+Layered\+Handler\+Func\+\_\+t} first\+Layer\+Func, void $\ast$second\+Layer\+Func)
+\item 
+void \hyperlink{le__event_loop_8h_ae31a85d4acbef72451b5411a613eea58}{le\+\_\+event\+\_\+\+Remove\+Handler} (\hyperlink{le__event_loop_8h_ae7ab96b8e3441b3d484fcf52aa7a9dad}{le\+\_\+event\+\_\+\+Handler\+Ref\+\_\+t} handler\+Ref)
+\item 
+void \hyperlink{le__event_loop_8h_ae3ffe6990b70fb572b4eef06739b4f54}{le\+\_\+event\+\_\+\+Report} (\hyperlink{le__event_loop_8h_ae6e351b38bc95954f159d16d19d2d55c}{le\+\_\+event\+\_\+\+Id\+\_\+t} event\+Id, void $\ast$payload\+Ptr, size\+\_\+t payload\+Size)
+\item 
+void \hyperlink{le__event_loop_8h_af0277165493b512216fabb6086ec7d9c}{le\+\_\+event\+\_\+\+Report\+With\+Ref\+Counting} (\hyperlink{le__event_loop_8h_ae6e351b38bc95954f159d16d19d2d55c}{le\+\_\+event\+\_\+\+Id\+\_\+t} event\+Id, void $\ast$object\+Ptr)
+\item 
+void \hyperlink{le__event_loop_8h_ae0c4307a9715794c720e525032aa0bfd}{le\+\_\+event\+\_\+\+Set\+Context\+Ptr} (\hyperlink{le__event_loop_8h_ae7ab96b8e3441b3d484fcf52aa7a9dad}{le\+\_\+event\+\_\+\+Handler\+Ref\+\_\+t} handler\+Ref, void $\ast$context\+Ptr)
+\item 
+void $\ast$ \hyperlink{le__event_loop_8h_a1c73916295cc9e17af07e02756aa86c9}{le\+\_\+event\+\_\+\+Get\+Context\+Ptr} (void)
+\item 
+void \hyperlink{le__event_loop_8h_a6dcc88f96060c5bc107a81a978132f38}{le\+\_\+event\+\_\+\+Queue\+Function} (\hyperlink{le__event_loop_8h_a6f86581d4d2bf24647d5efaff1046d5d}{le\+\_\+event\+\_\+\+Deferred\+Func\+\_\+t} func, void $\ast$param1\+Ptr, void $\ast$param2\+Ptr)
+\item 
+void \hyperlink{le__event_loop_8h_a228da2d1f53ffa74517f108b0dcfa4d9}{le\+\_\+event\+\_\+\+Queue\+Function\+To\+Thread} (\hyperlink{le__thread_8h_a32121104c6b4ca39008eb79a4d6862f2}{le\+\_\+thread\+\_\+\+Ref\+\_\+t} thread, \hyperlink{le__event_loop_8h_a6f86581d4d2bf24647d5efaff1046d5d}{le\+\_\+event\+\_\+\+Deferred\+Func\+\_\+t} func, void $\ast$param1\+Ptr, void $\ast$param2\+Ptr)
+\item 
+void \hyperlink{le__event_loop_8h_ae313b457994371c658be9fe0494a01ff}{le\+\_\+event\+\_\+\+Run\+Loop} (void)
+\item 
+int \hyperlink{le__event_loop_8h_a12ce7f92f4bc6f5167d5a6ef86d7d0b1}{le\+\_\+event\+\_\+\+Get\+Fd} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__event_loop_8h_a096222e98f6a0d92a79722018a752b58}{le\+\_\+event\+\_\+\+Service\+Loop} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_eventLoop}{Event Loop A\+P\+I} include file.
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{le__event_loop_8h_abdb9187a56836a93d19cc793cbd4b7ec}{}\index{le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}!C\+O\+M\+P\+O\+N\+E\+N\+T\+\_\+\+I\+N\+I\+T@{C\+O\+M\+P\+O\+N\+E\+N\+T\+\_\+\+I\+N\+I\+T}}
+\index{C\+O\+M\+P\+O\+N\+E\+N\+T\+\_\+\+I\+N\+I\+T@{C\+O\+M\+P\+O\+N\+E\+N\+T\+\_\+\+I\+N\+I\+T}!le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}}
+\subsubsection[{C\+O\+M\+P\+O\+N\+E\+N\+T\+\_\+\+I\+N\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+M\+P\+O\+N\+E\+N\+T\+\_\+\+I\+N\+I\+T~{\bf L\+E\+\_\+\+C\+I\+\_\+\+L\+I\+N\+K\+A\+G\+E} {\bf L\+E\+\_\+\+S\+H\+A\+R\+E\+D} void \+\_\+le\+\_\+event\+\_\+\+Initialize\+Component(void)}\label{le__event_loop_8h_abdb9187a56836a93d19cc793cbd4b7ec}
+Initialization event handler function. \hypertarget{le__event_loop_8h_a3973e227dd6ff4e79b2f97c42b105662}{}\index{le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}!L\+E\+\_\+\+C\+I\+\_\+\+L\+I\+N\+K\+A\+G\+E@{L\+E\+\_\+\+C\+I\+\_\+\+L\+I\+N\+K\+A\+G\+E}}
+\index{L\+E\+\_\+\+C\+I\+\_\+\+L\+I\+N\+K\+A\+G\+E@{L\+E\+\_\+\+C\+I\+\_\+\+L\+I\+N\+K\+A\+G\+E}!le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}}
+\subsubsection[{L\+E\+\_\+\+C\+I\+\_\+\+L\+I\+N\+K\+A\+G\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+C\+I\+\_\+\+L\+I\+N\+K\+A\+G\+E}\label{le__event_loop_8h_a3973e227dd6ff4e79b2f97c42b105662}
+Initialization event handler function declaration macro.
+
+Use this macro instead of a normal function prototype to create an Initialization Event Handler function. E.\+g.,
+
+
+\begin{DoxyCode}
+1 COMPONENT\_INIT
+2 \{
+3     // Do my initialization here...
+4 \}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Nothing. 
+\end{DoxyReturn}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{le__event_loop_8h_a6f86581d4d2bf24647d5efaff1046d5d}{}\index{le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}!le\+\_\+event\+\_\+\+Deferred\+Func\+\_\+t@{le\+\_\+event\+\_\+\+Deferred\+Func\+\_\+t}}
+\index{le\+\_\+event\+\_\+\+Deferred\+Func\+\_\+t@{le\+\_\+event\+\_\+\+Deferred\+Func\+\_\+t}!le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}}
+\subsubsection[{le\+\_\+event\+\_\+\+Deferred\+Func\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ le\+\_\+event\+\_\+\+Deferred\+Func\+\_\+t) (void $\ast$param1\+Ptr, void $\ast$param2\+Ptr)}\label{le__event_loop_8h_a6f86581d4d2bf24647d5efaff1046d5d}
+Prototype for deferred functions look like this\+: 
+\begin{DoxyParams}{Parameters}
+{\em param1\+Ptr} & \mbox{[}in\mbox{]} Value passed in as param1\+Ptr to \hyperlink{le__event_loop_8h_a6dcc88f96060c5bc107a81a978132f38}{le\+\_\+event\+\_\+\+Queue\+Function()}. \\
+\hline
+{\em param2\+Ptr} & \mbox{[}in\mbox{]} Value passed in as param2\+Ptr to \hyperlink{le__event_loop_8h_a6dcc88f96060c5bc107a81a978132f38}{le\+\_\+event\+\_\+\+Queue\+Function()}.\\
+\hline
+\end{DoxyParams}
+See \hyperlink{c_event_loop_c_event_deferredFunctionCalls}{Deferred Function Calls} for more information. \hypertarget{le__event_loop_8h_ada421dec46f51fcb3421ef7058f16944}{}\index{le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}!le\+\_\+event\+\_\+\+Handler\+Func\+\_\+t@{le\+\_\+event\+\_\+\+Handler\+Func\+\_\+t}}
+\index{le\+\_\+event\+\_\+\+Handler\+Func\+\_\+t@{le\+\_\+event\+\_\+\+Handler\+Func\+\_\+t}!le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}}
+\subsubsection[{le\+\_\+event\+\_\+\+Handler\+Func\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ le\+\_\+event\+\_\+\+Handler\+Func\+\_\+t) (void $\ast$report\+Ptr)}\label{le__event_loop_8h_ada421dec46f51fcb3421ef7058f16944}
+Prototype for publish-\/subscribe event handler functions look like this\+:
+
+
+\begin{DoxyParams}{Parameters}
+{\em report\+Ptr} & \mbox{[}in\mbox{]} Pointer to the event report payload.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+The report\+Ptr is only valid until the handler function returns. 
+\end{DoxyWarning}
+\hypertarget{le__event_loop_8h_ae7ab96b8e3441b3d484fcf52aa7a9dad}{}\index{le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}!le\+\_\+event\+\_\+\+Handler\+Ref\+\_\+t@{le\+\_\+event\+\_\+\+Handler\+Ref\+\_\+t}}
+\index{le\+\_\+event\+\_\+\+Handler\+Ref\+\_\+t@{le\+\_\+event\+\_\+\+Handler\+Ref\+\_\+t}!le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}}
+\subsubsection[{le\+\_\+event\+\_\+\+Handler\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+event\+\_\+\+Handler$\ast$ {\bf le\+\_\+event\+\_\+\+Handler\+Ref\+\_\+t}}\label{le__event_loop_8h_ae7ab96b8e3441b3d484fcf52aa7a9dad}
+Handler reference.
+
+Used to refer to handlers that have been added for events. Only needed if you want to set the handler\textquotesingle{}s context pointer or need to remove the handler later. \hypertarget{le__event_loop_8h_ae6e351b38bc95954f159d16d19d2d55c}{}\index{le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}!le\+\_\+event\+\_\+\+Id\+\_\+t@{le\+\_\+event\+\_\+\+Id\+\_\+t}}
+\index{le\+\_\+event\+\_\+\+Id\+\_\+t@{le\+\_\+event\+\_\+\+Id\+\_\+t}!le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}}
+\subsubsection[{le\+\_\+event\+\_\+\+Id\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+event\+\_\+\+Id$\ast$ {\bf le\+\_\+event\+\_\+\+Id\+\_\+t}}\label{le__event_loop_8h_ae6e351b38bc95954f159d16d19d2d55c}
+Event I\+D.
+
+An Event I\+D ties event reports to event handlers. See \hyperlink{c_event_loop_c_event_publishSubscribe}{Publish-\/\+Subscribe Events} for more details. \hypertarget{le__event_loop_8h_a325afcc96343fde371e4c63639ace2ef}{}\index{le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}!le\+\_\+event\+\_\+\+Layered\+Handler\+Func\+\_\+t@{le\+\_\+event\+\_\+\+Layered\+Handler\+Func\+\_\+t}}
+\index{le\+\_\+event\+\_\+\+Layered\+Handler\+Func\+\_\+t@{le\+\_\+event\+\_\+\+Layered\+Handler\+Func\+\_\+t}!le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}}
+\subsubsection[{le\+\_\+event\+\_\+\+Layered\+Handler\+Func\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ le\+\_\+event\+\_\+\+Layered\+Handler\+Func\+\_\+t) (void $\ast$report\+Ptr, void $\ast$second\+Layer\+Func)}\label{le__event_loop_8h_a325afcc96343fde371e4c63639ace2ef}
+Prototype for the first layer of a layered publish-\/subscribe event handler function look like this\+:
+
+
+\begin{DoxyParams}{Parameters}
+{\em report\+Ptr} & \mbox{[}in\mbox{]} Pointer to the event report payload.\\
+\hline
+{\em second\+Layer\+Func} & \mbox{[}in\mbox{]} Address of the second layer handler function.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+The report\+Ptr is only valid until the handler function returns. 
+\end{DoxyWarning}
+
+
+\subsection{Function Documentation}
+\hypertarget{le__event_loop_8h_ae65a65b4111618f47d7e6d57a48289e5}{}\index{le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}!le\+\_\+event\+\_\+\+Add\+Handler@{le\+\_\+event\+\_\+\+Add\+Handler}}
+\index{le\+\_\+event\+\_\+\+Add\+Handler@{le\+\_\+event\+\_\+\+Add\+Handler}!le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}}
+\subsubsection[{le\+\_\+event\+\_\+\+Add\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+event\+\_\+\+Handler\+Ref\+\_\+t} le\+\_\+event\+\_\+\+Add\+Handler (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{{\bf le\+\_\+event\+\_\+\+Id\+\_\+t}}]{event\+Id, }
+\item[{{\bf le\+\_\+event\+\_\+\+Handler\+Func\+\_\+t}}]{handler\+Func}
+\end{DoxyParamCaption}
+)}\label{le__event_loop_8h_ae65a65b4111618f47d7e6d57a48289e5}
+Adds a handler function for a publish-\/subscribe event I\+D.
+
+Tells the calling thread event loop to call a specified handler function when a defined event reaches the front of the event queue.
+
+\begin{DoxyReturn}{Returns}
+Handler reference, only needed to remove the handler (using \hyperlink{le__event_loop_8h_ae31a85d4acbef72451b5411a613eea58}{le\+\_\+event\+\_\+\+Remove\+Handler()} ). Can be ignored if the handler will never be removed.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Doesn\textquotesingle{}t return on failure, there\textquotesingle{}s no need to check the return value for errors. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & Handler name. \\
+\hline
+\mbox{\tt in}  & {\em event\+Id} & Event I\+D. \\
+\hline
+\mbox{\tt in}  & {\em handler\+Func} & Handler function. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__event_loop_8h_a8b906d38935f64953482f42c745e1c18}{}\index{le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}!le\+\_\+event\+\_\+\+Add\+Layered\+Handler@{le\+\_\+event\+\_\+\+Add\+Layered\+Handler}}
+\index{le\+\_\+event\+\_\+\+Add\+Layered\+Handler@{le\+\_\+event\+\_\+\+Add\+Layered\+Handler}!le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}}
+\subsubsection[{le\+\_\+event\+\_\+\+Add\+Layered\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+event\+\_\+\+Handler\+Ref\+\_\+t} le\+\_\+event\+\_\+\+Add\+Layered\+Handler (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{{\bf le\+\_\+event\+\_\+\+Id\+\_\+t}}]{event\+Id, }
+\item[{{\bf le\+\_\+event\+\_\+\+Layered\+Handler\+Func\+\_\+t}}]{first\+Layer\+Func, }
+\item[{void $\ast$}]{second\+Layer\+Func}
+\end{DoxyParamCaption}
+)}\label{le__event_loop_8h_a8b906d38935f64953482f42c745e1c18}
+Adds a layered handler function for a publish-\/subscribe event I\+D.
+
+Tells the calling thread event loop to call a specified handler function when a defined event reaches the front of the event queue. Passes the required handler functions when called.
+
+This is intended for use in implementing \hyperlink{c_event_loop_c_event_layeredPublishSubscribe}{Layered Publish-\/\+Subscribe Handlers}.
+
+\begin{DoxyReturn}{Returns}
+Handler reference, only needed for later removal of the handler (using \hyperlink{le__event_loop_8h_ae31a85d4acbef72451b5411a613eea58}{le\+\_\+event\+\_\+\+Remove\+Handler()} ). Can be ignored if the handler will never be removed.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Doesn\textquotesingle{}t return on failure, there\textquotesingle{}s no need to check the return value for errors. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & Handler name. \\
+\hline
+\mbox{\tt in}  & {\em event\+Id} & Event I\+D. \\
+\hline
+\mbox{\tt in}  & {\em first\+Layer\+Func} & Pointer to first-\/layer handler func. \\
+\hline
+\mbox{\tt in}  & {\em second\+Layer\+Func} & Pointer to second-\/layer handler func. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__event_loop_8h_a41a96eb3affb07184b519164cf54e213}{}\index{le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}!le\+\_\+event\+\_\+\+Create\+Id@{le\+\_\+event\+\_\+\+Create\+Id}}
+\index{le\+\_\+event\+\_\+\+Create\+Id@{le\+\_\+event\+\_\+\+Create\+Id}!le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}}
+\subsubsection[{le\+\_\+event\+\_\+\+Create\+Id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+event\+\_\+\+Id\+\_\+t} le\+\_\+event\+\_\+\+Create\+Id (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{size\+\_\+t}]{payload\+Size}
+\end{DoxyParamCaption}
+)}\label{le__event_loop_8h_a41a96eb3affb07184b519164cf54e213}
+Create a new event I\+D.
+
+\begin{DoxyReturn}{Returns}
+Event I\+D.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Doesn\textquotesingle{}t return on failure, there\textquotesingle{}s no need to check the return value for errors. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & Name of the event I\+D. (Named for diagnostic purposes.) \\
+\hline
+\mbox{\tt in}  & {\em payload\+Size} & Data payload size (in bytes) of the event reports (can be 0). \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__event_loop_8h_a31bef8276ad0e911fd84fb710d58ca2b}{}\index{le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}!le\+\_\+event\+\_\+\+Create\+Id\+With\+Ref\+Counting@{le\+\_\+event\+\_\+\+Create\+Id\+With\+Ref\+Counting}}
+\index{le\+\_\+event\+\_\+\+Create\+Id\+With\+Ref\+Counting@{le\+\_\+event\+\_\+\+Create\+Id\+With\+Ref\+Counting}!le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}}
+\subsubsection[{le\+\_\+event\+\_\+\+Create\+Id\+With\+Ref\+Counting}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+event\+\_\+\+Id\+\_\+t} le\+\_\+event\+\_\+\+Create\+Id\+With\+Ref\+Counting (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\label{le__event_loop_8h_a31bef8276ad0e911fd84fb710d58ca2b}
+Create a new event I\+D to report events where the payload is a pointer to a reference-\/counted memory pool object allocated using the \hyperlink{c_memory}{Dynamic Memory Allocation A\+P\+I}.
+
+\begin{DoxyReturn}{Returns}
+Event I\+D.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Doesn\textquotesingle{}t return on failure, there\textquotesingle{}s no need to check the return value for errors. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & Name of the event I\+D. (Named for diagnostic purposes.) \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__event_loop_8h_a1c73916295cc9e17af07e02756aa86c9}{}\index{le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}!le\+\_\+event\+\_\+\+Get\+Context\+Ptr@{le\+\_\+event\+\_\+\+Get\+Context\+Ptr}}
+\index{le\+\_\+event\+\_\+\+Get\+Context\+Ptr@{le\+\_\+event\+\_\+\+Get\+Context\+Ptr}!le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}}
+\subsubsection[{le\+\_\+event\+\_\+\+Get\+Context\+Ptr}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ le\+\_\+event\+\_\+\+Get\+Context\+Ptr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__event_loop_8h_a1c73916295cc9e17af07e02756aa86c9}
+Fetches the context pointer for the currently running event handler.
+
+Can only be called from within an event handler function.
+
+\begin{DoxyReturn}{Returns}
+Context pointer that was set using \hyperlink{le__event_loop_8h_ae0c4307a9715794c720e525032aa0bfd}{le\+\_\+event\+\_\+\+Set\+Context\+Ptr()}, or N\+U\+L\+L if \hyperlink{le__event_loop_8h_ae0c4307a9715794c720e525032aa0bfd}{le\+\_\+event\+\_\+\+Set\+Context\+Ptr()} was not called. 
+\end{DoxyReturn}
+\hypertarget{le__event_loop_8h_a12ce7f92f4bc6f5167d5a6ef86d7d0b1}{}\index{le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}!le\+\_\+event\+\_\+\+Get\+Fd@{le\+\_\+event\+\_\+\+Get\+Fd}}
+\index{le\+\_\+event\+\_\+\+Get\+Fd@{le\+\_\+event\+\_\+\+Get\+Fd}!le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}}
+\subsubsection[{le\+\_\+event\+\_\+\+Get\+Fd}]{\setlength{\rightskip}{0pt plus 5cm}int le\+\_\+event\+\_\+\+Get\+Fd (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__event_loop_8h_a12ce7f92f4bc6f5167d5a6ef86d7d0b1}
+Fetches a file descriptor that will appear readable to poll(), select(), epoll\+\_\+wait(), etc. when the calling thread\textquotesingle{}s Event Loop needs servicing (via a call to \hyperlink{le__event_loop_8h_a096222e98f6a0d92a79722018a752b58}{le\+\_\+event\+\_\+\+Service\+Loop()}).
+
+\begin{DoxyWarning}{Warning}
+Only intended for use when integrating with legacy P\+O\+S\+I\+X-\/based software that cannot be easily refactored to use the Legato Event Loop. The preferred approach is to call \hyperlink{le__event_loop_8h_ae313b457994371c658be9fe0494a01ff}{le\+\_\+event\+\_\+\+Run\+Loop()}.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+The file descriptor. 
+\end{DoxyReturn}
+\hypertarget{le__event_loop_8h_a6dcc88f96060c5bc107a81a978132f38}{}\index{le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}!le\+\_\+event\+\_\+\+Queue\+Function@{le\+\_\+event\+\_\+\+Queue\+Function}}
+\index{le\+\_\+event\+\_\+\+Queue\+Function@{le\+\_\+event\+\_\+\+Queue\+Function}!le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}}
+\subsubsection[{le\+\_\+event\+\_\+\+Queue\+Function}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+event\+\_\+\+Queue\+Function (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+event\+\_\+\+Deferred\+Func\+\_\+t}}]{func, }
+\item[{void $\ast$}]{param1\+Ptr, }
+\item[{void $\ast$}]{param2\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__event_loop_8h_a6dcc88f96060c5bc107a81a978132f38}
+Queue a function onto the calling thread\textquotesingle{}s Event Queue. When it reaches the head of the Event Queue, it will be called by the calling thread\textquotesingle{}s Event Loop. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em func} & Function to be called later. \\
+\hline
+\mbox{\tt in}  & {\em param1\+Ptr} & Value to be passed to the function when called. \\
+\hline
+\mbox{\tt in}  & {\em param2\+Ptr} & Value to be passed to the function when called. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__event_loop_8h_a228da2d1f53ffa74517f108b0dcfa4d9}{}\index{le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}!le\+\_\+event\+\_\+\+Queue\+Function\+To\+Thread@{le\+\_\+event\+\_\+\+Queue\+Function\+To\+Thread}}
+\index{le\+\_\+event\+\_\+\+Queue\+Function\+To\+Thread@{le\+\_\+event\+\_\+\+Queue\+Function\+To\+Thread}!le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}}
+\subsubsection[{le\+\_\+event\+\_\+\+Queue\+Function\+To\+Thread}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+event\+\_\+\+Queue\+Function\+To\+Thread (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+thread\+\_\+\+Ref\+\_\+t}}]{thread, }
+\item[{{\bf le\+\_\+event\+\_\+\+Deferred\+Func\+\_\+t}}]{func, }
+\item[{void $\ast$}]{param1\+Ptr, }
+\item[{void $\ast$}]{param2\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__event_loop_8h_a228da2d1f53ffa74517f108b0dcfa4d9}
+Queue a function onto a specific thread\textquotesingle{}s Event Queue. When it reaches the head of that Event Queue, it will be called by that thread\textquotesingle{}s Event Loop. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em thread} & Thread to queue the function to. \\
+\hline
+\mbox{\tt in}  & {\em func} & The function. \\
+\hline
+\mbox{\tt in}  & {\em param1\+Ptr} & Value to be passed to the function when called. \\
+\hline
+\mbox{\tt in}  & {\em param2\+Ptr} & Value to be passed to the function when called. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__event_loop_8h_ae31a85d4acbef72451b5411a613eea58}{}\index{le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}!le\+\_\+event\+\_\+\+Remove\+Handler@{le\+\_\+event\+\_\+\+Remove\+Handler}}
+\index{le\+\_\+event\+\_\+\+Remove\+Handler@{le\+\_\+event\+\_\+\+Remove\+Handler}!le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}}
+\subsubsection[{le\+\_\+event\+\_\+\+Remove\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+event\+\_\+\+Remove\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+event\+\_\+\+Handler\+Ref\+\_\+t}}]{handler\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__event_loop_8h_ae31a85d4acbef72451b5411a613eea58}
+Remove Handler
+
+Removes a previously added event handler function. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handler\+Ref} & Handler reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__event_loop_8h_ae3ffe6990b70fb572b4eef06739b4f54}{}\index{le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}!le\+\_\+event\+\_\+\+Report@{le\+\_\+event\+\_\+\+Report}}
+\index{le\+\_\+event\+\_\+\+Report@{le\+\_\+event\+\_\+\+Report}!le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}}
+\subsubsection[{le\+\_\+event\+\_\+\+Report}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+event\+\_\+\+Report (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+event\+\_\+\+Id\+\_\+t}}]{event\+Id, }
+\item[{void $\ast$}]{payload\+Ptr, }
+\item[{size\+\_\+t}]{payload\+Size}
+\end{DoxyParamCaption}
+)}\label{le__event_loop_8h_ae3ffe6990b70fb572b4eef06739b4f54}
+Report an Event
+
+Queues an Event Report to any and all event loops that have handlers for that event.
+
+\begin{DoxyNote}{Note}
+Copies the event report payload, so it is safe to release or reuse the buffer that payload\+Ptr points to as soon as \hyperlink{le__event_loop_8h_ae3ffe6990b70fb572b4eef06739b4f54}{le\+\_\+event\+\_\+\+Report()} returns. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em event\+Id} & Event I\+D created using \hyperlink{le__event_loop_8h_a41a96eb3affb07184b519164cf54e213}{le\+\_\+event\+\_\+\+Create\+Id()}. \\
+\hline
+\mbox{\tt in}  & {\em payload\+Ptr} & Pointer to the payload bytes to be copied into the report. \\
+\hline
+\mbox{\tt in}  & {\em payload\+Size} & Number of bytes of payload to copy into the report. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__event_loop_8h_af0277165493b512216fabb6086ec7d9c}{}\index{le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}!le\+\_\+event\+\_\+\+Report\+With\+Ref\+Counting@{le\+\_\+event\+\_\+\+Report\+With\+Ref\+Counting}}
+\index{le\+\_\+event\+\_\+\+Report\+With\+Ref\+Counting@{le\+\_\+event\+\_\+\+Report\+With\+Ref\+Counting}!le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}}
+\subsubsection[{le\+\_\+event\+\_\+\+Report\+With\+Ref\+Counting}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+event\+\_\+\+Report\+With\+Ref\+Counting (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+event\+\_\+\+Id\+\_\+t}}]{event\+Id, }
+\item[{void $\ast$}]{object\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__event_loop_8h_af0277165493b512216fabb6086ec7d9c}
+Sends an Event Report with a pointer to a reference-\/counted object as its payload. The pointer must have been obtained from a memory pool using the \hyperlink{c_memory}{Dynamic Memory Allocation A\+P\+I}.
+
+Calling this function passes ownership of the reference to the Event Loop A\+P\+I. The Event Loop A\+P\+I will ensure that the reference is properly counted while it passes through the event report dispatching system. Each handler will receive one counted reference to the object, so the handler is responsible for releasing the object when it is finished with it. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em event\+Id} & Event I\+D created using \hyperlink{le__event_loop_8h_a31bef8276ad0e911fd84fb710d58ca2b}{le\+\_\+event\+\_\+\+Create\+Id\+With\+Ref\+Counting()}. \\
+\hline
+\mbox{\tt in}  & {\em object\+Ptr} & Pointer to an object allocated from a memory pool (using the \hyperlink{c_memory}{Dynamic Memory Allocation A\+P\+I}). \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__event_loop_8h_ae313b457994371c658be9fe0494a01ff}{}\index{le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}!le\+\_\+event\+\_\+\+Run\+Loop@{le\+\_\+event\+\_\+\+Run\+Loop}}
+\index{le\+\_\+event\+\_\+\+Run\+Loop@{le\+\_\+event\+\_\+\+Run\+Loop}!le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}}
+\subsubsection[{le\+\_\+event\+\_\+\+Run\+Loop}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+event\+\_\+\+Run\+Loop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__event_loop_8h_ae313b457994371c658be9fe0494a01ff}
+Runs the event loop for the calling thread.
+
+This starts processing events by the calling thread.
+
+Can only be called once for each thread, and must never be called in the process\textquotesingle{}s main thread.
+
+\begin{DoxyNote}{Note}
+Function never returns. 
+\end{DoxyNote}
+\hypertarget{le__event_loop_8h_a096222e98f6a0d92a79722018a752b58}{}\index{le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}!le\+\_\+event\+\_\+\+Service\+Loop@{le\+\_\+event\+\_\+\+Service\+Loop}}
+\index{le\+\_\+event\+\_\+\+Service\+Loop@{le\+\_\+event\+\_\+\+Service\+Loop}!le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}}
+\subsubsection[{le\+\_\+event\+\_\+\+Service\+Loop}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+event\+\_\+\+Service\+Loop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__event_loop_8h_a096222e98f6a0d92a79722018a752b58}
+Services the calling thread\textquotesingle{}s Event Loop.
+
+\begin{DoxyWarning}{Warning}
+Only intended for use when integrating with legacy P\+O\+S\+I\+X-\/based software that can\textquotesingle{}t be easily refactored to use the Legato Event Loop. The preferred approach is to call \hyperlink{le__event_loop_8h_ae313b457994371c658be9fe0494a01ff}{le\+\_\+event\+\_\+\+Run\+Loop()}.
+\end{DoxyWarning}
+See also\+: \hyperlink{le__event_loop_8h_a12ce7f92f4bc6f5167d5a6ef86d7d0b1}{le\+\_\+event\+\_\+\+Get\+Fd()}.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K if there is more to be done. D\+O N\+O\+T G\+O B\+A\+C\+K T\+O S\+L\+E\+E\+P without calling \hyperlink{le__event_loop_8h_a096222e98f6a0d92a79722018a752b58}{le\+\_\+event\+\_\+\+Service\+Loop()} again.
+\item L\+E\+\_\+\+W\+O\+U\+L\+D\+\_\+\+B\+L\+O\+C\+K if there is nothing left to do for now and it is safe to go back to sleep. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{le__event_loop_8h_ae0c4307a9715794c720e525032aa0bfd}{}\index{le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}!le\+\_\+event\+\_\+\+Set\+Context\+Ptr@{le\+\_\+event\+\_\+\+Set\+Context\+Ptr}}
+\index{le\+\_\+event\+\_\+\+Set\+Context\+Ptr@{le\+\_\+event\+\_\+\+Set\+Context\+Ptr}!le\+\_\+event\+Loop.\+h@{le\+\_\+event\+Loop.\+h}}
+\subsubsection[{le\+\_\+event\+\_\+\+Set\+Context\+Ptr}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+event\+\_\+\+Set\+Context\+Ptr (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+event\+\_\+\+Handler\+Ref\+\_\+t}}]{handler\+Ref, }
+\item[{void $\ast$}]{context\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__event_loop_8h_ae0c4307a9715794c720e525032aa0bfd}
+Sets the context pointer for a given event handler.
+
+This can later be retrieved using \hyperlink{le__event_loop_8h_a1c73916295cc9e17af07e02756aa86c9}{le\+\_\+event\+\_\+\+Get\+Context\+Ptr()} from within the handler function when it is called. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handler\+Ref} & Handler where context pointer is to be set. \\
+\hline
+\mbox{\tt in}  & {\em context\+Ptr} & Context pointer value. \\
+\hline
+\end{DoxyParams}

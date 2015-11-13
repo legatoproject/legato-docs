@@ -1,0 +1,387 @@
+\hypertarget{le__file_lock_8h}{}\section{framework/c/inc/le\+\_\+file\+Lock.h File Reference}
+\label{le__file_lock_8h}\index{framework/c/inc/le\+\_\+file\+Lock.\+h@{framework/c/inc/le\+\_\+file\+Lock.\+h}}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280}{le\+\_\+flock\+\_\+\+Access\+Mode\+\_\+t} \{ \\*
+\hyperlink{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280a887421ec0def966e3ffc65e6bde1f1fc}{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D}, 
+\hyperlink{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280a058867728a1de4773023f009c2934188}{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+W\+R\+I\+T\+E}, 
+\hyperlink{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280adbaa029b7f107f436b170f7c5035420f}{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+A\+P\+P\+E\+N\+D}, 
+\hyperlink{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280ac7513bddc0e05c2fff33b25cdd7c73ec}{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+\_\+\+A\+N\+D\+\_\+\+W\+R\+I\+T\+E}, 
+\\*
+\hyperlink{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280ab92a5dd07207a051c58d0bddafa34bf8}{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+\_\+\+A\+N\+D\+\_\+\+A\+P\+P\+E\+N\+D}
+ \}
+\item 
+enum \hyperlink{le__file_lock_8h_a35d8c575df68d1da52a1048916f7e7d9}{le\+\_\+flock\+\_\+\+Create\+Mode\+\_\+t} \{ \hyperlink{le__file_lock_8h_a35d8c575df68d1da52a1048916f7e7d9a1bc49344dc291a19f7860fc850376153}{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+O\+P\+E\+N\+\_\+\+I\+F\+\_\+\+E\+X\+I\+S\+T}, 
+\hyperlink{le__file_lock_8h_a35d8c575df68d1da52a1048916f7e7d9a73c2002338a96be2845fece4bedc1006}{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+I\+F\+\_\+\+E\+X\+I\+S\+T}, 
+\hyperlink{le__file_lock_8h_a35d8c575df68d1da52a1048916f7e7d9abc9e73482c03ad0dddf99cf85dba79ad}{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+F\+A\+I\+L\+\_\+\+I\+F\+\_\+\+E\+X\+I\+S\+T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{le__file_lock_8h_aac3e11a6f7f363d29b8dbb1eb6c2c287}{le\+\_\+flock\+\_\+\+Open} (const char $\ast$path\+Name\+Ptr, \hyperlink{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280}{le\+\_\+flock\+\_\+\+Access\+Mode\+\_\+t} access\+Mode)
+\item 
+int \hyperlink{le__file_lock_8h_a8fdca3e28190ef85e4457ebf009410b5}{le\+\_\+flock\+\_\+\+Create} (const char $\ast$path\+Name\+Ptr, \hyperlink{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280}{le\+\_\+flock\+\_\+\+Access\+Mode\+\_\+t} access\+Mode, \hyperlink{le__file_lock_8h_a35d8c575df68d1da52a1048916f7e7d9}{le\+\_\+flock\+\_\+\+Create\+Mode\+\_\+t} create\+Mode, mode\+\_\+t permissions)
+\item 
+int \hyperlink{le__file_lock_8h_add7b73f75a8e7956a397081987458590}{le\+\_\+flock\+\_\+\+Try\+Open} (const char $\ast$path\+Name\+Ptr, \hyperlink{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280}{le\+\_\+flock\+\_\+\+Access\+Mode\+\_\+t} access\+Mode)
+\item 
+int \hyperlink{le__file_lock_8h_a4f7b134b467adb749401f2ef2ccd92d2}{le\+\_\+flock\+\_\+\+Try\+Create} (const char $\ast$path\+Name\+Ptr, \hyperlink{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280}{le\+\_\+flock\+\_\+\+Access\+Mode\+\_\+t} access\+Mode, \hyperlink{le__file_lock_8h_a35d8c575df68d1da52a1048916f7e7d9}{le\+\_\+flock\+\_\+\+Create\+Mode\+\_\+t} create\+Mode, mode\+\_\+t permissions)
+\item 
+void \hyperlink{le__file_lock_8h_a457a07dbf8967757322f531d5beb10b6}{le\+\_\+flock\+\_\+\+Close} (int fd)
+\item 
+F\+I\+L\+E $\ast$ \hyperlink{le__file_lock_8h_ae9a845ef8afe7cb7c4767573a974e5a0}{le\+\_\+flock\+\_\+\+Open\+Stream} (const char $\ast$path\+Name\+Ptr, \hyperlink{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280}{le\+\_\+flock\+\_\+\+Access\+Mode\+\_\+t} access\+Mode, \hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} $\ast$result\+Ptr)
+\item 
+F\+I\+L\+E $\ast$ \hyperlink{le__file_lock_8h_a6444d5e3d885a7c346cba6993534020b}{le\+\_\+flock\+\_\+\+Create\+Stream} (const char $\ast$path\+Name\+Ptr, \hyperlink{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280}{le\+\_\+flock\+\_\+\+Access\+Mode\+\_\+t} access\+Mode, \hyperlink{le__file_lock_8h_a35d8c575df68d1da52a1048916f7e7d9}{le\+\_\+flock\+\_\+\+Create\+Mode\+\_\+t} create\+Mode, mode\+\_\+t permissions, \hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} $\ast$result\+Ptr)
+\item 
+F\+I\+L\+E $\ast$ \hyperlink{le__file_lock_8h_aa4712b501c620401a3f269c5cb34d91a}{le\+\_\+flock\+\_\+\+Try\+Open\+Stream} (const char $\ast$path\+Name\+Ptr, \hyperlink{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280}{le\+\_\+flock\+\_\+\+Access\+Mode\+\_\+t} access\+Mode, \hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} $\ast$result\+Ptr)
+\item 
+F\+I\+L\+E $\ast$ \hyperlink{le__file_lock_8h_aa1c3c10f1f72a5541f31855b5c2eed98}{le\+\_\+flock\+\_\+\+Try\+Create\+Stream} (const char $\ast$path\+Name\+Ptr, \hyperlink{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280}{le\+\_\+flock\+\_\+\+Access\+Mode\+\_\+t} access\+Mode, \hyperlink{le__file_lock_8h_a35d8c575df68d1da52a1048916f7e7d9}{le\+\_\+flock\+\_\+\+Create\+Mode\+\_\+t} create\+Mode, mode\+\_\+t permissions, \hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} $\ast$result\+Ptr)
+\item 
+void \hyperlink{le__file_lock_8h_a8cd7aad1d732c6719097daf0359bf32f}{le\+\_\+flock\+\_\+\+Close\+Stream} (F\+I\+L\+E $\ast$file\+Stream\+Ptr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_flock}{File Locking A\+P\+I} include file.
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280}{}\index{le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}!le\+\_\+flock\+\_\+\+Access\+Mode\+\_\+t@{le\+\_\+flock\+\_\+\+Access\+Mode\+\_\+t}}
+\index{le\+\_\+flock\+\_\+\+Access\+Mode\+\_\+t@{le\+\_\+flock\+\_\+\+Access\+Mode\+\_\+t}!le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}}
+\subsubsection[{le\+\_\+flock\+\_\+\+Access\+Mode\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+flock\+\_\+\+Access\+Mode\+\_\+t}}\label{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280}
+File access modes.
+
+\begin{DoxyNote}{Note}
+When writing to a file, the writes are always appended to the end of the file by default. When reading from a file, the reads always starts at the beginning of the file by default. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D@{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D}!le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}}\index{le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}!L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D@{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D}}\item[{\em 
+\hypertarget{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280a887421ec0def966e3ffc65e6bde1f1fc}{}L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\label{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280a887421ec0def966e3ffc65e6bde1f1fc}
+}]Opens the file for reading. \index{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+W\+R\+I\+T\+E@{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+W\+R\+I\+T\+E}!le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}}\index{le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}!L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+W\+R\+I\+T\+E@{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+W\+R\+I\+T\+E}}\item[{\em 
+\hypertarget{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280a058867728a1de4773023f009c2934188}{}L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+W\+R\+I\+T\+E\label{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280a058867728a1de4773023f009c2934188}
+}]Opens the file for writing. \index{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+A\+P\+P\+E\+N\+D@{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+A\+P\+P\+E\+N\+D}!le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}}\index{le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}!L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+A\+P\+P\+E\+N\+D@{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+A\+P\+P\+E\+N\+D}}\item[{\em 
+\hypertarget{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280adbaa029b7f107f436b170f7c5035420f}{}L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+A\+P\+P\+E\+N\+D\label{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280adbaa029b7f107f436b170f7c5035420f}
+}]Opens the file for writing. Writes will be appended to the end of the file. \index{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+\_\+\+A\+N\+D\+\_\+\+W\+R\+I\+T\+E@{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+\_\+\+A\+N\+D\+\_\+\+W\+R\+I\+T\+E}!le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}}\index{le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}!L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+\_\+\+A\+N\+D\+\_\+\+W\+R\+I\+T\+E@{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+\_\+\+A\+N\+D\+\_\+\+W\+R\+I\+T\+E}}\item[{\em 
+\hypertarget{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280ac7513bddc0e05c2fff33b25cdd7c73ec}{}L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+\_\+\+A\+N\+D\+\_\+\+W\+R\+I\+T\+E\label{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280ac7513bddc0e05c2fff33b25cdd7c73ec}
+}]Opens the file for reading and writing. \index{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+\_\+\+A\+N\+D\+\_\+\+A\+P\+P\+E\+N\+D@{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+\_\+\+A\+N\+D\+\_\+\+A\+P\+P\+E\+N\+D}!le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}}\index{le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}!L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+\_\+\+A\+N\+D\+\_\+\+A\+P\+P\+E\+N\+D@{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+\_\+\+A\+N\+D\+\_\+\+A\+P\+P\+E\+N\+D}}\item[{\em 
+\hypertarget{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280ab92a5dd07207a051c58d0bddafa34bf8}{}L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+\_\+\+A\+N\+D\+\_\+\+A\+P\+P\+E\+N\+D\label{le__file_lock_8h_a5e5400e33a5e10b7c624748a9ce11280ab92a5dd07207a051c58d0bddafa34bf8}
+}]Opens the file for reading and writing. Writes will be appended to the end of the file. \end{description}
+\end{Desc}
+\hypertarget{le__file_lock_8h_a35d8c575df68d1da52a1048916f7e7d9}{}\index{le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}!le\+\_\+flock\+\_\+\+Create\+Mode\+\_\+t@{le\+\_\+flock\+\_\+\+Create\+Mode\+\_\+t}}
+\index{le\+\_\+flock\+\_\+\+Create\+Mode\+\_\+t@{le\+\_\+flock\+\_\+\+Create\+Mode\+\_\+t}!le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}}
+\subsubsection[{le\+\_\+flock\+\_\+\+Create\+Mode\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+flock\+\_\+\+Create\+Mode\+\_\+t}}\label{le__file_lock_8h_a35d8c575df68d1da52a1048916f7e7d9}
+File creation modes specify the action to take when creating a file that already exists. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+O\+P\+E\+N\+\_\+\+I\+F\+\_\+\+E\+X\+I\+S\+T@{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+O\+P\+E\+N\+\_\+\+I\+F\+\_\+\+E\+X\+I\+S\+T}!le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}}\index{le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}!L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+O\+P\+E\+N\+\_\+\+I\+F\+\_\+\+E\+X\+I\+S\+T@{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+O\+P\+E\+N\+\_\+\+I\+F\+\_\+\+E\+X\+I\+S\+T}}\item[{\em 
+\hypertarget{le__file_lock_8h_a35d8c575df68d1da52a1048916f7e7d9a1bc49344dc291a19f7860fc850376153}{}L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+O\+P\+E\+N\+\_\+\+I\+F\+\_\+\+E\+X\+I\+S\+T\label{le__file_lock_8h_a35d8c575df68d1da52a1048916f7e7d9a1bc49344dc291a19f7860fc850376153}
+}]Opens the file if it already exists. \index{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+I\+F\+\_\+\+E\+X\+I\+S\+T@{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+I\+F\+\_\+\+E\+X\+I\+S\+T}!le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}}\index{le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}!L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+I\+F\+\_\+\+E\+X\+I\+S\+T@{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+I\+F\+\_\+\+E\+X\+I\+S\+T}}\item[{\em 
+\hypertarget{le__file_lock_8h_a35d8c575df68d1da52a1048916f7e7d9a73c2002338a96be2845fece4bedc1006}{}L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+P\+L\+A\+C\+E\+\_\+\+I\+F\+\_\+\+E\+X\+I\+S\+T\label{le__file_lock_8h_a35d8c575df68d1da52a1048916f7e7d9a73c2002338a96be2845fece4bedc1006}
+}]Replaces the file if it already exists. \index{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+F\+A\+I\+L\+\_\+\+I\+F\+\_\+\+E\+X\+I\+S\+T@{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+F\+A\+I\+L\+\_\+\+I\+F\+\_\+\+E\+X\+I\+S\+T}!le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}}\index{le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}!L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+F\+A\+I\+L\+\_\+\+I\+F\+\_\+\+E\+X\+I\+S\+T@{L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+F\+A\+I\+L\+\_\+\+I\+F\+\_\+\+E\+X\+I\+S\+T}}\item[{\em 
+\hypertarget{le__file_lock_8h_a35d8c575df68d1da52a1048916f7e7d9abc9e73482c03ad0dddf99cf85dba79ad}{}L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+F\+A\+I\+L\+\_\+\+I\+F\+\_\+\+E\+X\+I\+S\+T\label{le__file_lock_8h_a35d8c575df68d1da52a1048916f7e7d9abc9e73482c03ad0dddf99cf85dba79ad}
+}]Fails if the file already exists. \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{le__file_lock_8h_a457a07dbf8967757322f531d5beb10b6}{}\index{le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}!le\+\_\+flock\+\_\+\+Close@{le\+\_\+flock\+\_\+\+Close}}
+\index{le\+\_\+flock\+\_\+\+Close@{le\+\_\+flock\+\_\+\+Close}!le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}}
+\subsubsection[{le\+\_\+flock\+\_\+\+Close}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+flock\+\_\+\+Close (
+\begin{DoxyParamCaption}
+\item[{int}]{fd}
+\end{DoxyParamCaption}
+)}\label{le__file_lock_8h_a457a07dbf8967757322f531d5beb10b6}
+Closes the file and releases the lock. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fd} & File descriptor of the file to close. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__file_lock_8h_a8cd7aad1d732c6719097daf0359bf32f}{}\index{le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}!le\+\_\+flock\+\_\+\+Close\+Stream@{le\+\_\+flock\+\_\+\+Close\+Stream}}
+\index{le\+\_\+flock\+\_\+\+Close\+Stream@{le\+\_\+flock\+\_\+\+Close\+Stream}!le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}}
+\subsubsection[{le\+\_\+flock\+\_\+\+Close\+Stream}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+flock\+\_\+\+Close\+Stream (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{file\+Stream\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__file_lock_8h_a8cd7aad1d732c6719097daf0359bf32f}
+Closes the file stream and releases the lock. \hypertarget{le__file_lock_8h_a8fdca3e28190ef85e4457ebf009410b5}{}\index{le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}!le\+\_\+flock\+\_\+\+Create@{le\+\_\+flock\+\_\+\+Create}}
+\index{le\+\_\+flock\+\_\+\+Create@{le\+\_\+flock\+\_\+\+Create}!le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}}
+\subsubsection[{le\+\_\+flock\+\_\+\+Create}]{\setlength{\rightskip}{0pt plus 5cm}int le\+\_\+flock\+\_\+\+Create (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path\+Name\+Ptr, }
+\item[{{\bf le\+\_\+flock\+\_\+\+Access\+Mode\+\_\+t}}]{access\+Mode, }
+\item[{{\bf le\+\_\+flock\+\_\+\+Create\+Mode\+\_\+t}}]{create\+Mode, }
+\item[{mode\+\_\+t}]{permissions}
+\end{DoxyParamCaption}
+)}\label{le__file_lock_8h_a8fdca3e28190ef85e4457ebf009410b5}
+Creates, opens and locks file.
+
+If the file does not exist, it will be created with the file permissions specified in the arugment permissions (modified by the process\textquotesingle{}s umask). Refer to the P\+O\+S\+I\+X function open(2) for details of mode\+\_\+t\+:
+
+\href{http://man7.org/linux/man-pages/man2/open.2.html}{\tt http\+://man7.\+org/linux/man-\/pages/man2/open.\+2.\+html}
+
+If the file already exists, then this function will either replace the existing file, open the existing file or fail depending on the create\+Mode argument. The permissions argument is ignored if the file already exists.
+
+The file can be opened for reading, writing or both as specified in the access\+Mode argument. If access\+Mode is either L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+W\+R\+I\+T\+E or L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+\_\+\+A\+N\+D\+\_\+\+W\+R\+I\+T\+E, a write lock will be placed on the file, otherwise a read lock will be placed on the file.
+
+If attempting to lock a file that already has an incompatible lock on it, this function will block until the lock can be obtained. This function may block even if it creates the file because creating the file and locking it is not atomic.
+
+\begin{DoxyReturn}{Returns}
+File descriptor to the file specified in path\+Name\+Ptr. L\+E\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+E if the file already exists and L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+F\+A\+I\+L\+\_\+\+I\+F\+\_\+\+E\+X\+I\+S\+T is specified in create\+Mode L\+E\+\_\+\+F\+A\+U\+L\+T if there was an error. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em path\+Name\+Ptr} & Pointer to the path name of the file to open. \\
+\hline
+\mbox{\tt in}  & {\em access\+Mode} & Access mode to open the file. \\
+\hline
+\mbox{\tt in}  & {\em create\+Mode} & Action to take if the file already exists. \\
+\hline
+\mbox{\tt in}  & {\em permissions} & File permissions used when creating the file. See the function header comments for more details. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__file_lock_8h_a6444d5e3d885a7c346cba6993534020b}{}\index{le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}!le\+\_\+flock\+\_\+\+Create\+Stream@{le\+\_\+flock\+\_\+\+Create\+Stream}}
+\index{le\+\_\+flock\+\_\+\+Create\+Stream@{le\+\_\+flock\+\_\+\+Create\+Stream}!le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}}
+\subsubsection[{le\+\_\+flock\+\_\+\+Create\+Stream}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ le\+\_\+flock\+\_\+\+Create\+Stream (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path\+Name\+Ptr, }
+\item[{{\bf le\+\_\+flock\+\_\+\+Access\+Mode\+\_\+t}}]{access\+Mode, }
+\item[{{\bf le\+\_\+flock\+\_\+\+Create\+Mode\+\_\+t}}]{create\+Mode, }
+\item[{mode\+\_\+t}]{permissions, }
+\item[{{\bf le\+\_\+result\+\_\+t} $\ast$}]{result\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__file_lock_8h_a6444d5e3d885a7c346cba6993534020b}
+Creates a file, locks it and opens a C standard library buffered file stream to it.
+
+If the file does not exist it will be created with the file permissions specified in the arugment permissions (modified by the process\textquotesingle{}s umask). Refer to the P\+O\+S\+I\+X function open(2) for details of mode\+\_\+t\+:
+
+\href{http://man7.org/linux/man-pages/man2/open.2.html}{\tt http\+://man7.\+org/linux/man-\/pages/man2/open.\+2.\+html}
+
+If the file already exists then this function will either replace the existing file, open the existing file or fail depending on the create\+Mode argument.
+
+The file can be opened for reading, writing or both as specified in the access\+Mode argument. If access\+Mode is either L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+W\+R\+I\+T\+E or L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+\_\+\+A\+N\+D\+\_\+\+W\+R\+I\+T\+E then a write lock will be placed on the file, otherwise a read lock will be placed on the file.
+
+If attempting to lock a file that already has an incompatible lock on it this function will block until the lock can be obtained. This function may block even if it creates the file because creating the file and locking it is not atomic.
+
+If there was an error N\+U\+L\+L is returned and result\+Ptr is set to\+:
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+E if the file already exists and L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+F\+A\+I\+L\+\_\+\+I\+F\+\_\+\+E\+X\+I\+S\+T is specified in create\+Mode.
+\item L\+E\+\_\+\+F\+A\+U\+L\+T if there was an error.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+Buffered file stream handle to the file if successful. N\+U\+L\+L if there was an error. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em path\+Name\+Ptr} & Pointer to the path name of the file to open. \\
+\hline
+\mbox{\tt in}  & {\em access\+Mode} & Access mode to open the file. \\
+\hline
+\mbox{\tt in}  & {\em create\+Mode} & Action to take if the file already exists. \\
+\hline
+\mbox{\tt in}  & {\em permissions} & File permissions used when creating the file. See the function header comments for more details. \\
+\hline
+\mbox{\tt out}  & {\em result\+Ptr} & Pointer to result code. This can be N\+U\+L\+L if the result code is not wanted. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__file_lock_8h_aac3e11a6f7f363d29b8dbb1eb6c2c287}{}\index{le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}!le\+\_\+flock\+\_\+\+Open@{le\+\_\+flock\+\_\+\+Open}}
+\index{le\+\_\+flock\+\_\+\+Open@{le\+\_\+flock\+\_\+\+Open}!le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}}
+\subsubsection[{le\+\_\+flock\+\_\+\+Open}]{\setlength{\rightskip}{0pt plus 5cm}int le\+\_\+flock\+\_\+\+Open (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path\+Name\+Ptr, }
+\item[{{\bf le\+\_\+flock\+\_\+\+Access\+Mode\+\_\+t}}]{access\+Mode}
+\end{DoxyParamCaption}
+)}\label{le__file_lock_8h_aac3e11a6f7f363d29b8dbb1eb6c2c287}
+Opens and locks an existing file.
+
+The file can be open for reading, writing or both as specified in the access\+Mode argument. If access\+Mode is either L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+W\+R\+I\+T\+E or L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+\_\+\+A\+N\+D\+\_\+\+W\+R\+I\+T\+E then a write lock will be placed on the file, otherwise a read lock will be placed on the file.
+
+If attempting to lock a file that already has an incompatible lock on it this function will block until the lock can be obtained.
+
+\begin{DoxyReturn}{Returns}
+File descriptor to the file specified in path\+Name\+Ptr. L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D if the file does not exist. L\+E\+\_\+\+F\+A\+U\+L\+T if there was an error. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em path\+Name\+Ptr} & Pointer to the path name of the file to open. \\
+\hline
+\mbox{\tt in}  & {\em access\+Mode} & Access mode to open the file. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__file_lock_8h_ae9a845ef8afe7cb7c4767573a974e5a0}{}\index{le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}!le\+\_\+flock\+\_\+\+Open\+Stream@{le\+\_\+flock\+\_\+\+Open\+Stream}}
+\index{le\+\_\+flock\+\_\+\+Open\+Stream@{le\+\_\+flock\+\_\+\+Open\+Stream}!le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}}
+\subsubsection[{le\+\_\+flock\+\_\+\+Open\+Stream}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ le\+\_\+flock\+\_\+\+Open\+Stream (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path\+Name\+Ptr, }
+\item[{{\bf le\+\_\+flock\+\_\+\+Access\+Mode\+\_\+t}}]{access\+Mode, }
+\item[{{\bf le\+\_\+result\+\_\+t} $\ast$}]{result\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__file_lock_8h_ae9a845ef8afe7cb7c4767573a974e5a0}
+Locks an existing file and opens a C standard library buffered file stream to it.
+
+The file can be open for reading, writing or both read and write as specified in the access\+Mode argument. If access\+Mode is either L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+W\+R\+I\+T\+E or L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+\_\+\+A\+N\+D\+\_\+\+W\+R\+I\+T\+E then a write lock will be placed on the file, otherwise a read lock will be placed on the file.
+
+If attempting to lock a file that already has an incompatible lock on it, this function will block until the lock can be obtained.
+
+If there was an error N\+U\+L\+L is returned and result\+Ptr is set to\+:
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D if the file does not exist.
+\item L\+E\+\_\+\+F\+A\+U\+L\+T if there was an error.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+Buffered file stream handle to the file if successful. N\+U\+L\+L if there was an error. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em path\+Name\+Ptr} & Pointer to the path name of the file to open. \\
+\hline
+\mbox{\tt in}  & {\em access\+Mode} & Access mode to open the file. \\
+\hline
+\mbox{\tt out}  & {\em result\+Ptr} & Pointer to result code. This can be N\+U\+L\+L if the result code is not wanted. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__file_lock_8h_a4f7b134b467adb749401f2ef2ccd92d2}{}\index{le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}!le\+\_\+flock\+\_\+\+Try\+Create@{le\+\_\+flock\+\_\+\+Try\+Create}}
+\index{le\+\_\+flock\+\_\+\+Try\+Create@{le\+\_\+flock\+\_\+\+Try\+Create}!le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}}
+\subsubsection[{le\+\_\+flock\+\_\+\+Try\+Create}]{\setlength{\rightskip}{0pt plus 5cm}int le\+\_\+flock\+\_\+\+Try\+Create (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path\+Name\+Ptr, }
+\item[{{\bf le\+\_\+flock\+\_\+\+Access\+Mode\+\_\+t}}]{access\+Mode, }
+\item[{{\bf le\+\_\+flock\+\_\+\+Create\+Mode\+\_\+t}}]{create\+Mode, }
+\item[{mode\+\_\+t}]{permissions}
+\end{DoxyParamCaption}
+)}\label{le__file_lock_8h_a4f7b134b467adb749401f2ef2ccd92d2}
+Creates, opens and locks file.
+
+If the file does not exist, it will be created with the file permissions specified in the argument permissions (modified by the process\textquotesingle{}s umask). Refer to the P\+O\+S\+I\+X function open(2) for details of mode\+\_\+t\+:
+
+\href{http://man7.org/linux/man-pages/man2/open.2.html}{\tt http\+://man7.\+org/linux/man-\/pages/man2/open.\+2.\+html}
+
+If the file already exists, this function will either replace the existing file, open the existing file or fail depending on the create\+Mode argument. The permissions argument is ignored if the file already exists.
+
+The file can be opened for reading, writing or both as specified in the access\+Mode argument. f access\+Mode is either L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+W\+R\+I\+T\+E or L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+\_\+\+A\+N\+D\+\_\+\+W\+R\+I\+T\+E, a write lock will be placed on the file, otherwise a read lock will be placed on the file.
+
+If attempting to lock a file that already has an incompatible lock on it, this function will fail and return L\+E\+\_\+\+W\+O\+U\+L\+D\+\_\+\+B\+L\+O\+C\+K immediately. This function may fail with L\+E\+\_\+\+W\+O\+U\+L\+D\+\_\+\+B\+L\+O\+C\+K even if it creates the file because creating the file and locking it is not atomic.
+
+\begin{DoxyReturn}{Returns}
+File descriptor to the file specified in path\+Name\+Ptr. L\+E\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+E if the file already exists and L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+F\+A\+I\+L\+\_\+\+I\+F\+\_\+\+E\+X\+I\+S\+T is specified in create\+Mode L\+E\+\_\+\+W\+O\+U\+L\+D\+\_\+\+B\+L\+O\+C\+K if there is already an incompatible lock on the file. L\+E\+\_\+\+F\+A\+U\+L\+T if there was an error. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em path\+Name\+Ptr} & Pointer to the path name of the file to open. \\
+\hline
+\mbox{\tt in}  & {\em access\+Mode} & Access mode to open the file. \\
+\hline
+\mbox{\tt in}  & {\em create\+Mode} & Action to take if the file already exists. \\
+\hline
+\mbox{\tt in}  & {\em permissions} & File permissions used when creating the file. See the function header comments for more details. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__file_lock_8h_aa1c3c10f1f72a5541f31855b5c2eed98}{}\index{le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}!le\+\_\+flock\+\_\+\+Try\+Create\+Stream@{le\+\_\+flock\+\_\+\+Try\+Create\+Stream}}
+\index{le\+\_\+flock\+\_\+\+Try\+Create\+Stream@{le\+\_\+flock\+\_\+\+Try\+Create\+Stream}!le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}}
+\subsubsection[{le\+\_\+flock\+\_\+\+Try\+Create\+Stream}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ le\+\_\+flock\+\_\+\+Try\+Create\+Stream (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path\+Name\+Ptr, }
+\item[{{\bf le\+\_\+flock\+\_\+\+Access\+Mode\+\_\+t}}]{access\+Mode, }
+\item[{{\bf le\+\_\+flock\+\_\+\+Create\+Mode\+\_\+t}}]{create\+Mode, }
+\item[{mode\+\_\+t}]{permissions, }
+\item[{{\bf le\+\_\+result\+\_\+t} $\ast$}]{result\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__file_lock_8h_aa1c3c10f1f72a5541f31855b5c2eed98}
+Creates a file, locks it and opens a C standard library buffered file stream to it.
+
+If the file does not exist, it will be created with the file permissions specified in the arugment permissions (modified by the process\textquotesingle{}s umask). Refer to the P\+O\+S\+I\+X function open(2) for details of mode\+\_\+t\+:
+
+\href{http://man7.org/linux/man-pages/man2/open.2.html}{\tt http\+://man7.\+org/linux/man-\/pages/man2/open.\+2.\+html}
+
+If the file already exists, this function will either replace the existing file, open the existing file or fail depending on the create\+Mode argument.
+
+The file can be opened for reading, writing or both as specified in the access\+Mode argument. If access\+Mode is either L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+W\+R\+I\+T\+E or L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+\_\+\+A\+N\+D\+\_\+\+W\+R\+I\+T\+E then a write lock will be placed on the file, otherwise a read lock will be placed on the file.
+
+If attempting to lock a file that already has an incompatible lock on it, this function will return N\+U\+L\+L immediately and set result\+Ptr to L\+E\+\_\+\+W\+O\+U\+L\+D\+\_\+\+B\+L\+O\+C\+K. This function may fail with L\+E\+\_\+\+W\+O\+U\+L\+D\+\_\+\+B\+L\+O\+C\+K even if it creates the file because creating the file and locking it is not atomic.
+
+If there was an error N\+U\+L\+L is returned and result\+Ptr is set to\+:
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+E if the file already exists and L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+F\+A\+I\+L\+\_\+\+I\+F\+\_\+\+E\+X\+I\+S\+T is specified in create\+Mode.
+\item L\+E\+\_\+\+W\+O\+U\+L\+D\+\_\+\+B\+L\+O\+C\+K if there is already an incompatible lock on the file.
+\item L\+E\+\_\+\+F\+A\+U\+L\+T if there was an error.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+Buffered file stream handle to the file if successful. N\+U\+L\+L if there was an error. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em path\+Name\+Ptr} & Pointer to the path name of the file to open. \\
+\hline
+\mbox{\tt in}  & {\em access\+Mode} & Access mode to open the file. \\
+\hline
+\mbox{\tt in}  & {\em create\+Mode} & Action to take if the file already exists. \\
+\hline
+\mbox{\tt in}  & {\em permissions} & File permissions used when creating the file. See the function header comments for more details. \\
+\hline
+\mbox{\tt out}  & {\em result\+Ptr} & Pointer to result code. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__file_lock_8h_add7b73f75a8e7956a397081987458590}{}\index{le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}!le\+\_\+flock\+\_\+\+Try\+Open@{le\+\_\+flock\+\_\+\+Try\+Open}}
+\index{le\+\_\+flock\+\_\+\+Try\+Open@{le\+\_\+flock\+\_\+\+Try\+Open}!le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}}
+\subsubsection[{le\+\_\+flock\+\_\+\+Try\+Open}]{\setlength{\rightskip}{0pt plus 5cm}int le\+\_\+flock\+\_\+\+Try\+Open (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path\+Name\+Ptr, }
+\item[{{\bf le\+\_\+flock\+\_\+\+Access\+Mode\+\_\+t}}]{access\+Mode}
+\end{DoxyParamCaption}
+)}\label{le__file_lock_8h_add7b73f75a8e7956a397081987458590}
+Opens and locks an existing file.
+
+The file can be open for reading, writing or both as specified in the access\+Mode argument. If access\+Mode is either L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+W\+R\+I\+T\+E or L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+\_\+\+A\+N\+D\+\_\+\+W\+R\+I\+T\+E, a write lock will be placed on the file, otherwise a read lock will be placed on the file.
+
+If attempting to lock a file that already has an incompatible lock on it, this function will fail and return L\+E\+\_\+\+W\+O\+U\+L\+D\+\_\+\+B\+L\+O\+C\+K immediately.
+
+\begin{DoxyReturn}{Returns}
+File descriptor to the file specified in path\+Name\+Ptr. L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D if the file does not exist. L\+E\+\_\+\+W\+O\+U\+L\+D\+\_\+\+B\+L\+O\+C\+K if there is already an incompatible lock on the file. L\+E\+\_\+\+F\+A\+U\+L\+T if there was an error. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em path\+Name\+Ptr} & Pointer to the path name of the file to open. \\
+\hline
+\mbox{\tt in}  & {\em access\+Mode} & Access mode to open the file. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__file_lock_8h_aa4712b501c620401a3f269c5cb34d91a}{}\index{le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}!le\+\_\+flock\+\_\+\+Try\+Open\+Stream@{le\+\_\+flock\+\_\+\+Try\+Open\+Stream}}
+\index{le\+\_\+flock\+\_\+\+Try\+Open\+Stream@{le\+\_\+flock\+\_\+\+Try\+Open\+Stream}!le\+\_\+file\+Lock.\+h@{le\+\_\+file\+Lock.\+h}}
+\subsubsection[{le\+\_\+flock\+\_\+\+Try\+Open\+Stream}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ le\+\_\+flock\+\_\+\+Try\+Open\+Stream (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path\+Name\+Ptr, }
+\item[{{\bf le\+\_\+flock\+\_\+\+Access\+Mode\+\_\+t}}]{access\+Mode, }
+\item[{{\bf le\+\_\+result\+\_\+t} $\ast$}]{result\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__file_lock_8h_aa4712b501c620401a3f269c5cb34d91a}
+Locks an existing file and opens a C standard library buffered file stream to it.
+
+The file can be open for reading, writing or both read and write as specified in the access\+Mode argument. If access\+Mode is either L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+W\+R\+I\+T\+E or L\+E\+\_\+\+F\+L\+O\+C\+K\+\_\+\+R\+E\+A\+D\+\_\+\+A\+N\+D\+\_\+\+W\+R\+I\+T\+E then a write lock will be placed on the file, otherwise a read lock will be placed on the file.
+
+If attempting to lock a file that already has an incompatible lock on it, this function will return N\+U\+L\+L immediately and set result\+Ptr to L\+E\+\_\+\+W\+O\+U\+L\+D\+\_\+\+B\+L\+O\+C\+K.
+
+If there was an error N\+U\+L\+L is returned and result\+Ptr is set to\+:
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D if the file does not exist.
+\item L\+E\+\_\+\+W\+O\+U\+L\+D\+\_\+\+B\+L\+O\+C\+K if there is already an incompatible lock on the file.
+\item L\+E\+\_\+\+F\+A\+U\+L\+T if there was an error.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+Buffered file stream handle to the file if successful. N\+U\+L\+L if there was an error. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em path\+Name\+Ptr} & Pointer to the path name of the file to open. \\
+\hline
+\mbox{\tt in}  & {\em access\+Mode} & Access mode to open the file. \\
+\hline
+\mbox{\tt out}  & {\em result\+Ptr} & Pointer to result code. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,269 @@
+\hypertarget{le__fd_monitor_8h}{}\section{framework/c/inc/le\+\_\+fd\+Monitor.h File Reference}
+\label{le__fd_monitor_8h}\index{framework/c/inc/le\+\_\+fd\+Monitor.\+h@{framework/c/inc/le\+\_\+fd\+Monitor.\+h}}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct le\+\_\+fd\+Monitor $\ast$ \hyperlink{le__fd_monitor_8h_a85048556f0b95147af81e76907895d42}{le\+\_\+fd\+Monitor\+\_\+\+Ref\+\_\+t}
+\item 
+typedef void($\ast$ \hyperlink{le__fd_monitor_8h_ac2d5531f6fae37076c9a79682091a161}{le\+\_\+fd\+Monitor\+\_\+\+Handler\+Func\+\_\+t}) (int fd, short events)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{le__fd_monitor_8h_a85048556f0b95147af81e76907895d42}{le\+\_\+fd\+Monitor\+\_\+\+Ref\+\_\+t} \hyperlink{le__fd_monitor_8h_a52902d634d810f9b7a23c53c9c5164f0}{le\+\_\+fd\+Monitor\+\_\+\+Create} (const char $\ast$name, int fd, \hyperlink{le__fd_monitor_8h_ac2d5531f6fae37076c9a79682091a161}{le\+\_\+fd\+Monitor\+\_\+\+Handler\+Func\+\_\+t} handler\+Func, short events)
+\item 
+void \hyperlink{le__fd_monitor_8h_a497aee19dbedadf884f404958713b414}{le\+\_\+fd\+Monitor\+\_\+\+Enable} (\hyperlink{le__fd_monitor_8h_a85048556f0b95147af81e76907895d42}{le\+\_\+fd\+Monitor\+\_\+\+Ref\+\_\+t} monitor\+Ref, short events)
+\item 
+void \hyperlink{le__fd_monitor_8h_ada2b1023507b99e9247175dd3ffe5d48}{le\+\_\+fd\+Monitor\+\_\+\+Disable} (\hyperlink{le__fd_monitor_8h_a85048556f0b95147af81e76907895d42}{le\+\_\+fd\+Monitor\+\_\+\+Ref\+\_\+t} monitor\+Ref, short events)
+\item 
+void \hyperlink{le__fd_monitor_8h_a66a93ae01f1e6faf1d0c7645752d4442}{le\+\_\+fd\+Monitor\+\_\+\+Set\+Deferrable} (\hyperlink{le__fd_monitor_8h_a85048556f0b95147af81e76907895d42}{le\+\_\+fd\+Monitor\+\_\+\+Ref\+\_\+t} monitor\+Ref, bool is\+Deferrable)
+\item 
+void \hyperlink{le__fd_monitor_8h_af88e40be018bcd6cd47a64bde49a9f98}{le\+\_\+fd\+Monitor\+\_\+\+Set\+Context\+Ptr} (\hyperlink{le__fd_monitor_8h_a85048556f0b95147af81e76907895d42}{le\+\_\+fd\+Monitor\+\_\+\+Ref\+\_\+t} monitor\+Ref, void $\ast$context\+Ptr)
+\item 
+void $\ast$ \hyperlink{le__fd_monitor_8h_a3073205dc7ee7a054857119bc11c9dfc}{le\+\_\+fd\+Monitor\+\_\+\+Get\+Context\+Ptr} (void)
+\item 
+\hyperlink{le__fd_monitor_8h_a85048556f0b95147af81e76907895d42}{le\+\_\+fd\+Monitor\+\_\+\+Ref\+\_\+t} \hyperlink{le__fd_monitor_8h_a688da8b3627d20b01795dfa1ae46bb78}{le\+\_\+fd\+Monitor\+\_\+\+Get\+Monitor} (void)
+\item 
+void \hyperlink{le__fd_monitor_8h_ad7f0f1a0cd2f99b081403784f048aef0}{le\+\_\+fd\+Monitor\+\_\+\+Delete} (\hyperlink{le__fd_monitor_8h_a85048556f0b95147af81e76907895d42}{le\+\_\+fd\+Monitor\+\_\+\+Ref\+\_\+t} monitor\+Ref)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_fdMonitor}{File Descriptor Monitor A\+P\+I} include file.
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Typedef Documentation}
+\hypertarget{le__fd_monitor_8h_ac2d5531f6fae37076c9a79682091a161}{}\index{le\+\_\+fd\+Monitor.\+h@{le\+\_\+fd\+Monitor.\+h}!le\+\_\+fd\+Monitor\+\_\+\+Handler\+Func\+\_\+t@{le\+\_\+fd\+Monitor\+\_\+\+Handler\+Func\+\_\+t}}
+\index{le\+\_\+fd\+Monitor\+\_\+\+Handler\+Func\+\_\+t@{le\+\_\+fd\+Monitor\+\_\+\+Handler\+Func\+\_\+t}!le\+\_\+fd\+Monitor.\+h@{le\+\_\+fd\+Monitor.\+h}}
+\subsubsection[{le\+\_\+fd\+Monitor\+\_\+\+Handler\+Func\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ le\+\_\+fd\+Monitor\+\_\+\+Handler\+Func\+\_\+t) (int fd, short events)}\label{le__fd_monitor_8h_ac2d5531f6fae37076c9a79682091a161}
+Prototype for file descriptor event handler functions.
+
+Events that can be received\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily P\+O\+L\+L\+I\+N} = Data available to read.
+\item {\ttfamily P\+O\+L\+L\+P\+R\+I} = Urgent data available to read (e.\+g., out-\/of-\/band data on a socket).
+\item {\ttfamily P\+O\+L\+L\+O\+U\+T} = Writing to the fd should accept some data now.
+\item {\ttfamily P\+O\+L\+L\+R\+D\+H\+U\+P} = Other end of stream socket closed or shutdown.
+\item {\ttfamily P\+O\+L\+L\+E\+R\+R} = Error occurred.
+\item {\ttfamily P\+O\+L\+L\+H\+U\+P} = Hang up.
+\end{DoxyItemize}
+
+These are bitmask values that may appear in the {\ttfamily events} parameter. Use the bit-\/wise A\+N\+D operator (\textquotesingle{}\&\textquotesingle{}) to test for specific events.
+
+
+\begin{DoxyCode}
+1 if (events & POLLIN)
+2 \{
+3     // Data available to read.
+4     ...
+5 \}
+6 
+7 if (events & POLLERR)
+8 \{
+9     // An error occured.
+10     ...
+11 \}
+12 
+13 ...
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & \mbox{[}in\mbox{]} File descriptor.\\
+\hline
+{\em events} & \mbox{[}in\mbox{]} Bit map of events that occurred. Use bitwise A\+N\+D (\textquotesingle{}\&\textquotesingle{}) to test for events. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__fd_monitor_8h_a85048556f0b95147af81e76907895d42}{}\index{le\+\_\+fd\+Monitor.\+h@{le\+\_\+fd\+Monitor.\+h}!le\+\_\+fd\+Monitor\+\_\+\+Ref\+\_\+t@{le\+\_\+fd\+Monitor\+\_\+\+Ref\+\_\+t}}
+\index{le\+\_\+fd\+Monitor\+\_\+\+Ref\+\_\+t@{le\+\_\+fd\+Monitor\+\_\+\+Ref\+\_\+t}!le\+\_\+fd\+Monitor.\+h@{le\+\_\+fd\+Monitor.\+h}}
+\subsubsection[{le\+\_\+fd\+Monitor\+\_\+\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+fd\+Monitor$\ast$ {\bf le\+\_\+fd\+Monitor\+\_\+\+Ref\+\_\+t}}\label{le__fd_monitor_8h_a85048556f0b95147af81e76907895d42}
+File Descriptor Monitor reference.
+
+Used to refer to File Descriptor Monitor objects. 
+
+\subsection{Function Documentation}
+\hypertarget{le__fd_monitor_8h_a52902d634d810f9b7a23c53c9c5164f0}{}\index{le\+\_\+fd\+Monitor.\+h@{le\+\_\+fd\+Monitor.\+h}!le\+\_\+fd\+Monitor\+\_\+\+Create@{le\+\_\+fd\+Monitor\+\_\+\+Create}}
+\index{le\+\_\+fd\+Monitor\+\_\+\+Create@{le\+\_\+fd\+Monitor\+\_\+\+Create}!le\+\_\+fd\+Monitor.\+h@{le\+\_\+fd\+Monitor.\+h}}
+\subsubsection[{le\+\_\+fd\+Monitor\+\_\+\+Create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+fd\+Monitor\+\_\+\+Ref\+\_\+t} le\+\_\+fd\+Monitor\+\_\+\+Create (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{int}]{fd, }
+\item[{{\bf le\+\_\+fd\+Monitor\+\_\+\+Handler\+Func\+\_\+t}}]{handler\+Func, }
+\item[{short}]{events}
+\end{DoxyParamCaption}
+)}\label{le__fd_monitor_8h_a52902d634d810f9b7a23c53c9c5164f0}
+Creates a File Descriptor Monitor.
+
+Creates an object that will monitor a given file descriptor for events.
+
+The monitoring will be performed by the event loop of the thread that created the Monitor object. If that thread is blocked, no events will be detected for that file descriptor until that thread is unblocked and returns to its event loop.
+
+Events that can be enabled for monitoring\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily P\+O\+L\+L\+I\+N} = Data available to read.
+\item {\ttfamily P\+O\+L\+L\+P\+R\+I} = Urgent data available to read (e.\+g., out-\/of-\/band data on a socket).
+\item {\ttfamily P\+O\+L\+L\+O\+U\+T} = Writing to the fd should accept some data now.
+\end{DoxyItemize}
+
+These are bitmask values and can be combined using the bit-\/wise O\+R operator (\textquotesingle{}$\vert$\textquotesingle{}).
+
+The following events are always monitored, even if not requested\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily P\+O\+L\+L\+R\+D\+H\+U\+P} = Other end of stream socket closed or shutdown.
+\item {\ttfamily P\+O\+L\+L\+E\+R\+R} = Error occurred.
+\item {\ttfamily P\+O\+L\+L\+H\+U\+P} = Hang up.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+Reference to the object, which is needed for later deletion.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Doesn\textquotesingle{}t return on failure, there\textquotesingle{}s no need to check the return value for errors. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & Name of the object (for diagnostics). \\
+\hline
+\mbox{\tt in}  & {\em fd} & File descriptor to be monitored for events. \\
+\hline
+\mbox{\tt in}  & {\em handler\+Func} & Handler function. \\
+\hline
+\mbox{\tt in}  & {\em events} & Initial set of events to be monitored. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__fd_monitor_8h_ad7f0f1a0cd2f99b081403784f048aef0}{}\index{le\+\_\+fd\+Monitor.\+h@{le\+\_\+fd\+Monitor.\+h}!le\+\_\+fd\+Monitor\+\_\+\+Delete@{le\+\_\+fd\+Monitor\+\_\+\+Delete}}
+\index{le\+\_\+fd\+Monitor\+\_\+\+Delete@{le\+\_\+fd\+Monitor\+\_\+\+Delete}!le\+\_\+fd\+Monitor.\+h@{le\+\_\+fd\+Monitor.\+h}}
+\subsubsection[{le\+\_\+fd\+Monitor\+\_\+\+Delete}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+fd\+Monitor\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+fd\+Monitor\+\_\+\+Ref\+\_\+t}}]{monitor\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__fd_monitor_8h_ad7f0f1a0cd2f99b081403784f048aef0}
+Deletes a file descriptor monitor object. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em monitor\+Ref} & Reference to the File Descriptor Monitor object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__fd_monitor_8h_ada2b1023507b99e9247175dd3ffe5d48}{}\index{le\+\_\+fd\+Monitor.\+h@{le\+\_\+fd\+Monitor.\+h}!le\+\_\+fd\+Monitor\+\_\+\+Disable@{le\+\_\+fd\+Monitor\+\_\+\+Disable}}
+\index{le\+\_\+fd\+Monitor\+\_\+\+Disable@{le\+\_\+fd\+Monitor\+\_\+\+Disable}!le\+\_\+fd\+Monitor.\+h@{le\+\_\+fd\+Monitor.\+h}}
+\subsubsection[{le\+\_\+fd\+Monitor\+\_\+\+Disable}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+fd\+Monitor\+\_\+\+Disable (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+fd\+Monitor\+\_\+\+Ref\+\_\+t}}]{monitor\+Ref, }
+\item[{short}]{events}
+\end{DoxyParamCaption}
+)}\label{le__fd_monitor_8h_ada2b1023507b99e9247175dd3ffe5d48}
+Disables monitoring for events on a file descriptor.
+
+Events that can be disabled for monitoring\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily P\+O\+L\+L\+I\+N} = Data available to read.
+\item {\ttfamily P\+O\+L\+L\+P\+R\+I} = Urgent data available to read (e.\+g., out-\/of-\/band data on a socket).
+\item {\ttfamily P\+O\+L\+L\+O\+U\+T} = Writing to the fd should accept some data now.
+\end{DoxyItemize}
+
+These are bitmask values and can be combined using the bit-\/wise O\+R operator (\textquotesingle{}$\vert$\textquotesingle{}). 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em monitor\+Ref} & Reference to the File Descriptor Monitor object. \\
+\hline
+\mbox{\tt in}  & {\em events} & Bit map of events. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__fd_monitor_8h_a497aee19dbedadf884f404958713b414}{}\index{le\+\_\+fd\+Monitor.\+h@{le\+\_\+fd\+Monitor.\+h}!le\+\_\+fd\+Monitor\+\_\+\+Enable@{le\+\_\+fd\+Monitor\+\_\+\+Enable}}
+\index{le\+\_\+fd\+Monitor\+\_\+\+Enable@{le\+\_\+fd\+Monitor\+\_\+\+Enable}!le\+\_\+fd\+Monitor.\+h@{le\+\_\+fd\+Monitor.\+h}}
+\subsubsection[{le\+\_\+fd\+Monitor\+\_\+\+Enable}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+fd\+Monitor\+\_\+\+Enable (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+fd\+Monitor\+\_\+\+Ref\+\_\+t}}]{monitor\+Ref, }
+\item[{short}]{events}
+\end{DoxyParamCaption}
+)}\label{le__fd_monitor_8h_a497aee19dbedadf884f404958713b414}
+Enables monitoring for events on a file descriptor.
+
+Events that can be enabled for monitoring\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily P\+O\+L\+L\+I\+N} = Data available to read.
+\item {\ttfamily P\+O\+L\+L\+P\+R\+I} = Urgent data available to read (e.\+g., out-\/of-\/band data on a socket).
+\item {\ttfamily P\+O\+L\+L\+O\+U\+T} = Writing to the fd should accept some data now.
+\end{DoxyItemize}
+
+These are bitmask values and can be combined using the bit-\/wise O\+R operator (\textquotesingle{}$\vert$\textquotesingle{}). 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em monitor\+Ref} & Reference to the File Descriptor Monitor object. \\
+\hline
+\mbox{\tt in}  & {\em events} & Bit map of events. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__fd_monitor_8h_a3073205dc7ee7a054857119bc11c9dfc}{}\index{le\+\_\+fd\+Monitor.\+h@{le\+\_\+fd\+Monitor.\+h}!le\+\_\+fd\+Monitor\+\_\+\+Get\+Context\+Ptr@{le\+\_\+fd\+Monitor\+\_\+\+Get\+Context\+Ptr}}
+\index{le\+\_\+fd\+Monitor\+\_\+\+Get\+Context\+Ptr@{le\+\_\+fd\+Monitor\+\_\+\+Get\+Context\+Ptr}!le\+\_\+fd\+Monitor.\+h@{le\+\_\+fd\+Monitor.\+h}}
+\subsubsection[{le\+\_\+fd\+Monitor\+\_\+\+Get\+Context\+Ptr}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ le\+\_\+fd\+Monitor\+\_\+\+Get\+Context\+Ptr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__fd_monitor_8h_a3073205dc7ee7a054857119bc11c9dfc}
+Gets the Context Pointer for File Descriptor Monitor\textquotesingle{}s handler function.
+
+\begin{DoxyReturn}{Returns}
+The context pointer set using \hyperlink{le__fd_monitor_8h_af88e40be018bcd6cd47a64bde49a9f98}{le\+\_\+fd\+Monitor\+\_\+\+Set\+Context\+Ptr()}, or N\+U\+L\+L if it hasn\textquotesingle{}t been set.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This only works inside the handler function. The difference between this function and \hyperlink{le__event_loop_8h_a1c73916295cc9e17af07e02756aa86c9}{le\+\_\+event\+\_\+\+Get\+Context\+Ptr()} is that \hyperlink{le__fd_monitor_8h_a3073205dc7ee7a054857119bc11c9dfc}{le\+\_\+fd\+Monitor\+\_\+\+Get\+Context\+Ptr()} will double check that it\textquotesingle{}s being called inside of a File Descriptor Monitor\textquotesingle{}s handler function. 
+\end{DoxyNote}
+\hypertarget{le__fd_monitor_8h_a688da8b3627d20b01795dfa1ae46bb78}{}\index{le\+\_\+fd\+Monitor.\+h@{le\+\_\+fd\+Monitor.\+h}!le\+\_\+fd\+Monitor\+\_\+\+Get\+Monitor@{le\+\_\+fd\+Monitor\+\_\+\+Get\+Monitor}}
+\index{le\+\_\+fd\+Monitor\+\_\+\+Get\+Monitor@{le\+\_\+fd\+Monitor\+\_\+\+Get\+Monitor}!le\+\_\+fd\+Monitor.\+h@{le\+\_\+fd\+Monitor.\+h}}
+\subsubsection[{le\+\_\+fd\+Monitor\+\_\+\+Get\+Monitor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+fd\+Monitor\+\_\+\+Ref\+\_\+t} le\+\_\+fd\+Monitor\+\_\+\+Get\+Monitor (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__fd_monitor_8h_a688da8b3627d20b01795dfa1ae46bb78}
+Gets a reference to the File Descriptor Monitor whose handler function is currently running.
+
+\begin{DoxyReturn}{Returns}
+File Descriptor Monitor reference.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This only works inside the handler function. 
+\end{DoxyNote}
+\hypertarget{le__fd_monitor_8h_af88e40be018bcd6cd47a64bde49a9f98}{}\index{le\+\_\+fd\+Monitor.\+h@{le\+\_\+fd\+Monitor.\+h}!le\+\_\+fd\+Monitor\+\_\+\+Set\+Context\+Ptr@{le\+\_\+fd\+Monitor\+\_\+\+Set\+Context\+Ptr}}
+\index{le\+\_\+fd\+Monitor\+\_\+\+Set\+Context\+Ptr@{le\+\_\+fd\+Monitor\+\_\+\+Set\+Context\+Ptr}!le\+\_\+fd\+Monitor.\+h@{le\+\_\+fd\+Monitor.\+h}}
+\subsubsection[{le\+\_\+fd\+Monitor\+\_\+\+Set\+Context\+Ptr}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+fd\+Monitor\+\_\+\+Set\+Context\+Ptr (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+fd\+Monitor\+\_\+\+Ref\+\_\+t}}]{monitor\+Ref, }
+\item[{void $\ast$}]{context\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__fd_monitor_8h_af88e40be018bcd6cd47a64bde49a9f98}
+Sets the Context Pointer for File Descriptor Monitor\textquotesingle{}s handler function. This can be retrieved by the handler using \hyperlink{le__fd_monitor_8h_a3073205dc7ee7a054857119bc11c9dfc}{le\+\_\+fd\+Monitor\+\_\+\+Get\+Context\+Ptr()} (or \hyperlink{le__event_loop_8h_a1c73916295cc9e17af07e02756aa86c9}{le\+\_\+event\+\_\+\+Get\+Context\+Ptr()}) when the handler function is running. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em monitor\+Ref} & Reference to the File Descriptor Monitor. \\
+\hline
+\mbox{\tt in}  & {\em context\+Ptr} & Opaque context pointer value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__fd_monitor_8h_a66a93ae01f1e6faf1d0c7645752d4442}{}\index{le\+\_\+fd\+Monitor.\+h@{le\+\_\+fd\+Monitor.\+h}!le\+\_\+fd\+Monitor\+\_\+\+Set\+Deferrable@{le\+\_\+fd\+Monitor\+\_\+\+Set\+Deferrable}}
+\index{le\+\_\+fd\+Monitor\+\_\+\+Set\+Deferrable@{le\+\_\+fd\+Monitor\+\_\+\+Set\+Deferrable}!le\+\_\+fd\+Monitor.\+h@{le\+\_\+fd\+Monitor.\+h}}
+\subsubsection[{le\+\_\+fd\+Monitor\+\_\+\+Set\+Deferrable}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+fd\+Monitor\+\_\+\+Set\+Deferrable (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+fd\+Monitor\+\_\+\+Ref\+\_\+t}}]{monitor\+Ref, }
+\item[{bool}]{is\+Deferrable}
+\end{DoxyParamCaption}
+)}\label{le__fd_monitor_8h_a66a93ae01f1e6faf1d0c7645752d4442}
+Sets if processing of events on a given fd is deferrable (the system is allowed to go to sleep while there are monitored events pending for this fd) or urgent (the system will be kept awake until there are no monitored events waiting to be handled for this fd).
+
+If the process has {\ttfamily C\+A\+P\+\_\+\+E\+P\+O\+L\+L\+W\+A\+K\+E\+U\+P} (or {\ttfamily C\+A\+P\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+U\+S\+P\+E\+N\+D}) capability, then fd events are considered urgent by default.
+
+If the process doesn\textquotesingle{}t have {\ttfamily C\+A\+P\+\_\+\+E\+P\+O\+L\+L\+W\+A\+K\+E\+U\+P} (or {\ttfamily C\+A\+P\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+U\+S\+P\+E\+N\+D}) capability, then fd events are always deferrable, and calls to this function have no effect. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em monitor\+Ref} & Reference to the File Descriptor Monitor object. \\
+\hline
+\mbox{\tt in}  & {\em is\+Deferrable} & true (deferrable) or false (urgent). \\
+\hline
+\end{DoxyParams}

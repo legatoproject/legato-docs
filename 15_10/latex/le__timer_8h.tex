@@ -1,0 +1,342 @@
+\hypertarget{le__timer_8h}{}\section{framework/c/inc/le\+\_\+timer.h File Reference}
+\label{le__timer_8h}\index{framework/c/inc/le\+\_\+timer.\+h@{framework/c/inc/le\+\_\+timer.\+h}}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct le\+\_\+timer $\ast$ \hyperlink{le__timer_8h_a763fa6992488cdce3b5a820817094838}{le\+\_\+timer\+\_\+\+Ref\+\_\+t}
+\item 
+typedef void($\ast$ \hyperlink{le__timer_8h_a81ec5f8df2fbde873566e55489d8cedd}{le\+\_\+timer\+\_\+\+Expiry\+Handler\+\_\+t}) (\hyperlink{le__timer_8h_a763fa6992488cdce3b5a820817094838}{le\+\_\+timer\+\_\+\+Ref\+\_\+t} timer\+Ref)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{le__timer_8h_a763fa6992488cdce3b5a820817094838}{le\+\_\+timer\+\_\+\+Ref\+\_\+t} \hyperlink{le__timer_8h_aee41169a210378b369f440cf99146522}{le\+\_\+timer\+\_\+\+Create} (const char $\ast$name\+Str)
+\item 
+void \hyperlink{le__timer_8h_ae103f6736bf855e77e5e59bbad1e27a7}{le\+\_\+timer\+\_\+\+Delete} (\hyperlink{le__timer_8h_a763fa6992488cdce3b5a820817094838}{le\+\_\+timer\+\_\+\+Ref\+\_\+t} timer\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__timer_8h_abbf8d4c3c78d7bf5801b94071adcb6c6}{le\+\_\+timer\+\_\+\+Set\+Handler} (\hyperlink{le__timer_8h_a763fa6992488cdce3b5a820817094838}{le\+\_\+timer\+\_\+\+Ref\+\_\+t} timer\+Ref, \hyperlink{le__timer_8h_a81ec5f8df2fbde873566e55489d8cedd}{le\+\_\+timer\+\_\+\+Expiry\+Handler\+\_\+t} handler\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__timer_8h_a0a103d5cef5e83fc9088859d527bbd43}{le\+\_\+timer\+\_\+\+Set\+Interval} (\hyperlink{le__timer_8h_a763fa6992488cdce3b5a820817094838}{le\+\_\+timer\+\_\+\+Ref\+\_\+t} timer\+Ref, \hyperlink{structle__clk___time__t}{le\+\_\+clk\+\_\+\+Time\+\_\+t} interval)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__timer_8h_a292b0a7d6dc0796a36a54fd04c6a7eeb}{le\+\_\+timer\+\_\+\+Set\+Repeat} (\hyperlink{le__timer_8h_a763fa6992488cdce3b5a820817094838}{le\+\_\+timer\+\_\+\+Ref\+\_\+t} timer\+Ref, uint32\+\_\+t repeat\+Count)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__timer_8h_af6900bdb4653ff95f7f7be918b9e482d}{le\+\_\+timer\+\_\+\+Set\+Context\+Ptr} (\hyperlink{le__timer_8h_a763fa6992488cdce3b5a820817094838}{le\+\_\+timer\+\_\+\+Ref\+\_\+t} timer\+Ref, void $\ast$context\+Ptr)
+\item 
+void $\ast$ \hyperlink{le__timer_8h_aa0432dbabb32b546c0c0e6ced5ba9d3d}{le\+\_\+timer\+\_\+\+Get\+Context\+Ptr} (\hyperlink{le__timer_8h_a763fa6992488cdce3b5a820817094838}{le\+\_\+timer\+\_\+\+Ref\+\_\+t} timer\+Ref)
+\item 
+uint32\+\_\+t \hyperlink{le__timer_8h_a554cff1d11525bb60115291248f3ff53}{le\+\_\+timer\+\_\+\+Get\+Expiry\+Count} (\hyperlink{le__timer_8h_a763fa6992488cdce3b5a820817094838}{le\+\_\+timer\+\_\+\+Ref\+\_\+t} timer\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__timer_8h_ada2ce7f8cb1e76ed959e323ae94bbfc0}{le\+\_\+timer\+\_\+\+Start} (\hyperlink{le__timer_8h_a763fa6992488cdce3b5a820817094838}{le\+\_\+timer\+\_\+\+Ref\+\_\+t} timer\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__timer_8h_af310daa378bd6ca39373a47e073f2243}{le\+\_\+timer\+\_\+\+Stop} (\hyperlink{le__timer_8h_a763fa6992488cdce3b5a820817094838}{le\+\_\+timer\+\_\+\+Ref\+\_\+t} timer\+Ref)
+\item 
+void \hyperlink{le__timer_8h_ab6b83d6302095a46b6046160c0a479bb}{le\+\_\+timer\+\_\+\+Restart} (\hyperlink{le__timer_8h_a763fa6992488cdce3b5a820817094838}{le\+\_\+timer\+\_\+\+Ref\+\_\+t} timer\+Ref)
+\item 
+bool \hyperlink{le__timer_8h_ab33b8568fd394d38274b778130111f70}{le\+\_\+timer\+\_\+\+Is\+Running} (\hyperlink{le__timer_8h_a763fa6992488cdce3b5a820817094838}{le\+\_\+timer\+\_\+\+Ref\+\_\+t} timer\+Ref)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_timer}{Timer A\+P\+I} include file.
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Typedef Documentation}
+\hypertarget{le__timer_8h_a81ec5f8df2fbde873566e55489d8cedd}{}\index{le\+\_\+timer.\+h@{le\+\_\+timer.\+h}!le\+\_\+timer\+\_\+\+Expiry\+Handler\+\_\+t@{le\+\_\+timer\+\_\+\+Expiry\+Handler\+\_\+t}}
+\index{le\+\_\+timer\+\_\+\+Expiry\+Handler\+\_\+t@{le\+\_\+timer\+\_\+\+Expiry\+Handler\+\_\+t}!le\+\_\+timer.\+h@{le\+\_\+timer.\+h}}
+\subsubsection[{le\+\_\+timer\+\_\+\+Expiry\+Handler\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ le\+\_\+timer\+\_\+\+Expiry\+Handler\+\_\+t) ({\bf le\+\_\+timer\+\_\+\+Ref\+\_\+t} timer\+Ref)}\label{le__timer_8h_a81ec5f8df2fbde873566e55489d8cedd}
+Prototype for timer expiry handler function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em timer\+Ref} & Timer that has expired \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__timer_8h_a763fa6992488cdce3b5a820817094838}{}\index{le\+\_\+timer.\+h@{le\+\_\+timer.\+h}!le\+\_\+timer\+\_\+\+Ref\+\_\+t@{le\+\_\+timer\+\_\+\+Ref\+\_\+t}}
+\index{le\+\_\+timer\+\_\+\+Ref\+\_\+t@{le\+\_\+timer\+\_\+\+Ref\+\_\+t}!le\+\_\+timer.\+h@{le\+\_\+timer.\+h}}
+\subsubsection[{le\+\_\+timer\+\_\+\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+timer$\ast$ {\bf le\+\_\+timer\+\_\+\+Ref\+\_\+t}}\label{le__timer_8h_a763fa6992488cdce3b5a820817094838}
+Timer object. Created by \hyperlink{le__timer_8h_aee41169a210378b369f440cf99146522}{le\+\_\+timer\+\_\+\+Create()}. 
+
+\subsection{Function Documentation}
+\hypertarget{le__timer_8h_aee41169a210378b369f440cf99146522}{}\index{le\+\_\+timer.\+h@{le\+\_\+timer.\+h}!le\+\_\+timer\+\_\+\+Create@{le\+\_\+timer\+\_\+\+Create}}
+\index{le\+\_\+timer\+\_\+\+Create@{le\+\_\+timer\+\_\+\+Create}!le\+\_\+timer.\+h@{le\+\_\+timer.\+h}}
+\subsubsection[{le\+\_\+timer\+\_\+\+Create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+timer\+\_\+\+Ref\+\_\+t} le\+\_\+timer\+\_\+\+Create (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name\+Str}
+\end{DoxyParamCaption}
+)}\label{le__timer_8h_aee41169a210378b369f440cf99146522}
+Create the timer object.
+
+\begin{DoxyReturn}{Returns}
+Reference to the timer object. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name\+Str} & Name of the timer. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__timer_8h_ae103f6736bf855e77e5e59bbad1e27a7}{}\index{le\+\_\+timer.\+h@{le\+\_\+timer.\+h}!le\+\_\+timer\+\_\+\+Delete@{le\+\_\+timer\+\_\+\+Delete}}
+\index{le\+\_\+timer\+\_\+\+Delete@{le\+\_\+timer\+\_\+\+Delete}!le\+\_\+timer.\+h@{le\+\_\+timer.\+h}}
+\subsubsection[{le\+\_\+timer\+\_\+\+Delete}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+timer\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+timer\+\_\+\+Ref\+\_\+t}}]{timer\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__timer_8h_ae103f6736bf855e77e5e59bbad1e27a7}
+Delete the timer object.
+
+\begin{DoxyNote}{Note}
+If an invalid timer object is given, the process exits. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em timer\+Ref} & Delete this timer object \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__timer_8h_aa0432dbabb32b546c0c0e6ced5ba9d3d}{}\index{le\+\_\+timer.\+h@{le\+\_\+timer.\+h}!le\+\_\+timer\+\_\+\+Get\+Context\+Ptr@{le\+\_\+timer\+\_\+\+Get\+Context\+Ptr}}
+\index{le\+\_\+timer\+\_\+\+Get\+Context\+Ptr@{le\+\_\+timer\+\_\+\+Get\+Context\+Ptr}!le\+\_\+timer.\+h@{le\+\_\+timer.\+h}}
+\subsubsection[{le\+\_\+timer\+\_\+\+Get\+Context\+Ptr}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ le\+\_\+timer\+\_\+\+Get\+Context\+Ptr (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+timer\+\_\+\+Ref\+\_\+t}}]{timer\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__timer_8h_aa0432dbabb32b546c0c0e6ced5ba9d3d}
+Get context pointer for the timer.
+
+This can be used when the timer expires to retrieve data that was previously set.
+
+\begin{DoxyReturn}{Returns}
+Context pointer, which could be N\+U\+L\+L if it was not set.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If an invalid timer object is given, the process exits. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em timer\+Ref} & Set interval for this timer object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__timer_8h_a554cff1d11525bb60115291248f3ff53}{}\index{le\+\_\+timer.\+h@{le\+\_\+timer.\+h}!le\+\_\+timer\+\_\+\+Get\+Expiry\+Count@{le\+\_\+timer\+\_\+\+Get\+Expiry\+Count}}
+\index{le\+\_\+timer\+\_\+\+Get\+Expiry\+Count@{le\+\_\+timer\+\_\+\+Get\+Expiry\+Count}!le\+\_\+timer.\+h@{le\+\_\+timer.\+h}}
+\subsubsection[{le\+\_\+timer\+\_\+\+Get\+Expiry\+Count}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t le\+\_\+timer\+\_\+\+Get\+Expiry\+Count (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+timer\+\_\+\+Ref\+\_\+t}}]{timer\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__timer_8h_a554cff1d11525bb60115291248f3ff53}
+Get the expiry count of a timer.
+
+The count is returned for currently running and idle timers. The expiry count is reset every time the timer is (re)started.
+
+\begin{DoxyReturn}{Returns}
+Expiry count, or zero if the timer has never expired.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If an invalid timer object is given, the process exits. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em timer\+Ref} & Set interval for this timer object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__timer_8h_ab33b8568fd394d38274b778130111f70}{}\index{le\+\_\+timer.\+h@{le\+\_\+timer.\+h}!le\+\_\+timer\+\_\+\+Is\+Running@{le\+\_\+timer\+\_\+\+Is\+Running}}
+\index{le\+\_\+timer\+\_\+\+Is\+Running@{le\+\_\+timer\+\_\+\+Is\+Running}!le\+\_\+timer.\+h@{le\+\_\+timer.\+h}}
+\subsubsection[{le\+\_\+timer\+\_\+\+Is\+Running}]{\setlength{\rightskip}{0pt plus 5cm}bool le\+\_\+timer\+\_\+\+Is\+Running (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+timer\+\_\+\+Ref\+\_\+t}}]{timer\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__timer_8h_ab33b8568fd394d38274b778130111f70}
+Is the timer currently running?
+
+\begin{DoxyNote}{Note}
+If an invalid timer object is given, the process exits. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em timer\+Ref} & Is this timer object currently running? \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__timer_8h_ab6b83d6302095a46b6046160c0a479bb}{}\index{le\+\_\+timer.\+h@{le\+\_\+timer.\+h}!le\+\_\+timer\+\_\+\+Restart@{le\+\_\+timer\+\_\+\+Restart}}
+\index{le\+\_\+timer\+\_\+\+Restart@{le\+\_\+timer\+\_\+\+Restart}!le\+\_\+timer.\+h@{le\+\_\+timer.\+h}}
+\subsubsection[{le\+\_\+timer\+\_\+\+Restart}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+timer\+\_\+\+Restart (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+timer\+\_\+\+Ref\+\_\+t}}]{timer\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__timer_8h_ab6b83d6302095a46b6046160c0a479bb}
+Re-\/start the timer.
+
+Start the given timer. If the timer is currently running, it will be stopped and then started. If the timer is not currently running, it will be started.
+
+\begin{DoxyNote}{Note}
+If an invalid timer object is given, the process exits. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em timer\+Ref} & (Re)start this timer object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__timer_8h_af6900bdb4653ff95f7f7be918b9e482d}{}\index{le\+\_\+timer.\+h@{le\+\_\+timer.\+h}!le\+\_\+timer\+\_\+\+Set\+Context\+Ptr@{le\+\_\+timer\+\_\+\+Set\+Context\+Ptr}}
+\index{le\+\_\+timer\+\_\+\+Set\+Context\+Ptr@{le\+\_\+timer\+\_\+\+Set\+Context\+Ptr}!le\+\_\+timer.\+h@{le\+\_\+timer.\+h}}
+\subsubsection[{le\+\_\+timer\+\_\+\+Set\+Context\+Ptr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+timer\+\_\+\+Set\+Context\+Ptr (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+timer\+\_\+\+Ref\+\_\+t}}]{timer\+Ref, }
+\item[{void $\ast$}]{context\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__timer_8h_af6900bdb4653ff95f7f7be918b9e482d}
+Set context pointer for the timer.
+
+This can be used to pass data to the timer when it expires.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+B\+U\+S\+Y if the timer is currently running
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If an invalid timer object is given, the process exits. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em timer\+Ref} & Set interval for this timer object. \\
+\hline
+\mbox{\tt in}  & {\em context\+Ptr} & Context Pointer. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__timer_8h_abbf8d4c3c78d7bf5801b94071adcb6c6}{}\index{le\+\_\+timer.\+h@{le\+\_\+timer.\+h}!le\+\_\+timer\+\_\+\+Set\+Handler@{le\+\_\+timer\+\_\+\+Set\+Handler}}
+\index{le\+\_\+timer\+\_\+\+Set\+Handler@{le\+\_\+timer\+\_\+\+Set\+Handler}!le\+\_\+timer.\+h@{le\+\_\+timer.\+h}}
+\subsubsection[{le\+\_\+timer\+\_\+\+Set\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+timer\+\_\+\+Set\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+timer\+\_\+\+Ref\+\_\+t}}]{timer\+Ref, }
+\item[{{\bf le\+\_\+timer\+\_\+\+Expiry\+Handler\+\_\+t}}]{handler\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__timer_8h_abbf8d4c3c78d7bf5801b94071adcb6c6}
+Set the timer expiry handler function.
+
+If the handler is N\+U\+L\+L, then the previous handler will be removed.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+B\+U\+S\+Y if the timer is currently running
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If an invalid timer object is given, the process exits. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em timer\+Ref} & Set expiry handler for this timer object. \\
+\hline
+\mbox{\tt in}  & {\em handler\+Ref} & Handler function to call on expiry. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__timer_8h_a0a103d5cef5e83fc9088859d527bbd43}{}\index{le\+\_\+timer.\+h@{le\+\_\+timer.\+h}!le\+\_\+timer\+\_\+\+Set\+Interval@{le\+\_\+timer\+\_\+\+Set\+Interval}}
+\index{le\+\_\+timer\+\_\+\+Set\+Interval@{le\+\_\+timer\+\_\+\+Set\+Interval}!le\+\_\+timer.\+h@{le\+\_\+timer.\+h}}
+\subsubsection[{le\+\_\+timer\+\_\+\+Set\+Interval}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+timer\+\_\+\+Set\+Interval (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+timer\+\_\+\+Ref\+\_\+t}}]{timer\+Ref, }
+\item[{{\bf le\+\_\+clk\+\_\+\+Time\+\_\+t}}]{interval}
+\end{DoxyParamCaption}
+)}\label{le__timer_8h_a0a103d5cef5e83fc9088859d527bbd43}
+Set the timer interval.
+
+Timer will expire after the interval has elapsed.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+B\+U\+S\+Y if the timer is currently running
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If an invalid timer object is given, the process exits. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em timer\+Ref} & Set interval for this timer object. \\
+\hline
+\mbox{\tt in}  & {\em interval} & Timer interval. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__timer_8h_a292b0a7d6dc0796a36a54fd04c6a7eeb}{}\index{le\+\_\+timer.\+h@{le\+\_\+timer.\+h}!le\+\_\+timer\+\_\+\+Set\+Repeat@{le\+\_\+timer\+\_\+\+Set\+Repeat}}
+\index{le\+\_\+timer\+\_\+\+Set\+Repeat@{le\+\_\+timer\+\_\+\+Set\+Repeat}!le\+\_\+timer.\+h@{le\+\_\+timer.\+h}}
+\subsubsection[{le\+\_\+timer\+\_\+\+Set\+Repeat}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+timer\+\_\+\+Set\+Repeat (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+timer\+\_\+\+Ref\+\_\+t}}]{timer\+Ref, }
+\item[{uint32\+\_\+t}]{repeat\+Count}
+\end{DoxyParamCaption}
+)}\label{le__timer_8h_a292b0a7d6dc0796a36a54fd04c6a7eeb}
+Set how many times the timer will repeat.
+
+Timer will repeat the given number of times. A value of 0 means repeat indefinitely. The default is 1, so that a one-\/shot timer is the default.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+B\+U\+S\+Y if the timer is currently running
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If an invalid timer object is given, the process exits. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em timer\+Ref} & Set interval for this timer object. \\
+\hline
+\mbox{\tt in}  & {\em repeat\+Count} & Number of times the timer will repeat. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__timer_8h_ada2ce7f8cb1e76ed959e323ae94bbfc0}{}\index{le\+\_\+timer.\+h@{le\+\_\+timer.\+h}!le\+\_\+timer\+\_\+\+Start@{le\+\_\+timer\+\_\+\+Start}}
+\index{le\+\_\+timer\+\_\+\+Start@{le\+\_\+timer\+\_\+\+Start}!le\+\_\+timer.\+h@{le\+\_\+timer.\+h}}
+\subsubsection[{le\+\_\+timer\+\_\+\+Start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+timer\+\_\+\+Start (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+timer\+\_\+\+Ref\+\_\+t}}]{timer\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__timer_8h_ada2ce7f8cb1e76ed959e323ae94bbfc0}
+Start the timer.
+
+Start the given timer. The timer must not be currently running.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+B\+U\+S\+Y if the timer is already running
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If an invalid timer object is given, the process exits. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em timer\+Ref} & Start this timer object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__timer_8h_af310daa378bd6ca39373a47e073f2243}{}\index{le\+\_\+timer.\+h@{le\+\_\+timer.\+h}!le\+\_\+timer\+\_\+\+Stop@{le\+\_\+timer\+\_\+\+Stop}}
+\index{le\+\_\+timer\+\_\+\+Stop@{le\+\_\+timer\+\_\+\+Stop}!le\+\_\+timer.\+h@{le\+\_\+timer.\+h}}
+\subsubsection[{le\+\_\+timer\+\_\+\+Stop}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+timer\+\_\+\+Stop (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+timer\+\_\+\+Ref\+\_\+t}}]{timer\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__timer_8h_af310daa378bd6ca39373a47e073f2243}
+Stop the timer.
+
+Stop the given timer. The timer must be running.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T if the timer is not currently running
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If an invalid timer object is given, the process exits. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em timer\+Ref} & Stop this timer object. \\
+\hline
+\end{DoxyParams}

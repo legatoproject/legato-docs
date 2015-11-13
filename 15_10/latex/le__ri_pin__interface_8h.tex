@@ -1,0 +1,105 @@
+\hypertarget{le__ri_pin__interface_8h}{}\section{build/localhost/interfaces/le\+\_\+ri\+Pin\+\_\+interface.h File Reference}
+\label{le__ri_pin__interface_8h}\index{build/localhost/interfaces/le\+\_\+ri\+Pin\+\_\+interface.\+h@{build/localhost/interfaces/le\+\_\+ri\+Pin\+\_\+interface.\+h}}
+{\ttfamily \#include \char`\"{}legato.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{le__ri_pin__interface_8h_a91903d0e3fc425a64abd0dca89812a94}{le\+\_\+ri\+Pin\+\_\+\+Connect\+Service} (void)
+\item 
+void \hyperlink{le__ri_pin__interface_8h_a1484795f8fdaee569268a4bb0b1f3a07}{le\+\_\+ri\+Pin\+\_\+\+Disconnect\+Service} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ri_pin__interface_8h_a3fa556aaae988f3a835ac2bc89cbfd59}{le\+\_\+ri\+Pin\+\_\+\+Am\+I\+Owner\+Of\+Ring\+Signal} (bool $\ast$am\+I\+Owner\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ri_pin__interface_8h_a2cdbeb7aa773f498780058bea06c6553}{le\+\_\+ri\+Pin\+\_\+\+Take\+Ring\+Signal} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ri_pin__interface_8h_a7fd705c4c6ae5e70c076461b25379440}{le\+\_\+ri\+Pin\+\_\+\+Release\+Ring\+Signal} (void)
+\item 
+void \hyperlink{le__ri_pin__interface_8h_afdf9b77f43ec0cd8c7ceb91e5993d382}{le\+\_\+ri\+Pin\+\_\+\+Pulse\+Ring\+Signal} (uint32\+\_\+t duration)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_riPin}{Ring Indicator Signal} include file.
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Function Documentation}
+\hypertarget{le__ri_pin__interface_8h_a3fa556aaae988f3a835ac2bc89cbfd59}{}\index{le\+\_\+ri\+Pin\+\_\+interface.\+h@{le\+\_\+ri\+Pin\+\_\+interface.\+h}!le\+\_\+ri\+Pin\+\_\+\+Am\+I\+Owner\+Of\+Ring\+Signal@{le\+\_\+ri\+Pin\+\_\+\+Am\+I\+Owner\+Of\+Ring\+Signal}}
+\index{le\+\_\+ri\+Pin\+\_\+\+Am\+I\+Owner\+Of\+Ring\+Signal@{le\+\_\+ri\+Pin\+\_\+\+Am\+I\+Owner\+Of\+Ring\+Signal}!le\+\_\+ri\+Pin\+\_\+interface.\+h@{le\+\_\+ri\+Pin\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ri\+Pin\+\_\+\+Am\+I\+Owner\+Of\+Ring\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ri\+Pin\+\_\+\+Am\+I\+Owner\+Of\+Ring\+Signal (
+\begin{DoxyParamCaption}
+\item[{bool $\ast$}]{am\+I\+Owner\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__ri_pin__interface_8h_a3fa556aaae988f3a835ac2bc89cbfd59}
+Check whether the application core is the current owner of the Ring Indicator signal.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K The function succeeded.
+\item L\+E\+\_\+\+F\+A\+U\+L\+T The function failed. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em am\+I\+Owner\+Ptr} & true when application core is the owner of the Ring Indicator signal, \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ri_pin__interface_8h_a91903d0e3fc425a64abd0dca89812a94}{}\index{le\+\_\+ri\+Pin\+\_\+interface.\+h@{le\+\_\+ri\+Pin\+\_\+interface.\+h}!le\+\_\+ri\+Pin\+\_\+\+Connect\+Service@{le\+\_\+ri\+Pin\+\_\+\+Connect\+Service}}
+\index{le\+\_\+ri\+Pin\+\_\+\+Connect\+Service@{le\+\_\+ri\+Pin\+\_\+\+Connect\+Service}!le\+\_\+ri\+Pin\+\_\+interface.\+h@{le\+\_\+ri\+Pin\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ri\+Pin\+\_\+\+Connect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+ri\+Pin\+\_\+\+Connect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__ri_pin__interface_8h_a91903d0e3fc425a64abd0dca89812a94}
+Connect the client to the service \hypertarget{le__ri_pin__interface_8h_a1484795f8fdaee569268a4bb0b1f3a07}{}\index{le\+\_\+ri\+Pin\+\_\+interface.\+h@{le\+\_\+ri\+Pin\+\_\+interface.\+h}!le\+\_\+ri\+Pin\+\_\+\+Disconnect\+Service@{le\+\_\+ri\+Pin\+\_\+\+Disconnect\+Service}}
+\index{le\+\_\+ri\+Pin\+\_\+\+Disconnect\+Service@{le\+\_\+ri\+Pin\+\_\+\+Disconnect\+Service}!le\+\_\+ri\+Pin\+\_\+interface.\+h@{le\+\_\+ri\+Pin\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ri\+Pin\+\_\+\+Disconnect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+ri\+Pin\+\_\+\+Disconnect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__ri_pin__interface_8h_a1484795f8fdaee569268a4bb0b1f3a07}
+Disconnect the client from the service \hypertarget{le__ri_pin__interface_8h_afdf9b77f43ec0cd8c7ceb91e5993d382}{}\index{le\+\_\+ri\+Pin\+\_\+interface.\+h@{le\+\_\+ri\+Pin\+\_\+interface.\+h}!le\+\_\+ri\+Pin\+\_\+\+Pulse\+Ring\+Signal@{le\+\_\+ri\+Pin\+\_\+\+Pulse\+Ring\+Signal}}
+\index{le\+\_\+ri\+Pin\+\_\+\+Pulse\+Ring\+Signal@{le\+\_\+ri\+Pin\+\_\+\+Pulse\+Ring\+Signal}!le\+\_\+ri\+Pin\+\_\+interface.\+h@{le\+\_\+ri\+Pin\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ri\+Pin\+\_\+\+Pulse\+Ring\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+ri\+Pin\+\_\+\+Pulse\+Ring\+Signal (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{duration}
+\end{DoxyParamCaption}
+)}\label{le__ri_pin__interface_8h_afdf9b77f43ec0cd8c7ceb91e5993d382}
+Set the Ring Indicator signal to high for configurable duration of time before lowering it. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em duration} & \mbox{[}I\+N\mbox{]} Duration in ms \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ri_pin__interface_8h_a7fd705c4c6ae5e70c076461b25379440}{}\index{le\+\_\+ri\+Pin\+\_\+interface.\+h@{le\+\_\+ri\+Pin\+\_\+interface.\+h}!le\+\_\+ri\+Pin\+\_\+\+Release\+Ring\+Signal@{le\+\_\+ri\+Pin\+\_\+\+Release\+Ring\+Signal}}
+\index{le\+\_\+ri\+Pin\+\_\+\+Release\+Ring\+Signal@{le\+\_\+ri\+Pin\+\_\+\+Release\+Ring\+Signal}!le\+\_\+ri\+Pin\+\_\+interface.\+h@{le\+\_\+ri\+Pin\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ri\+Pin\+\_\+\+Release\+Ring\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ri\+Pin\+\_\+\+Release\+Ring\+Signal (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__ri_pin__interface_8h_a7fd705c4c6ae5e70c076461b25379440}
+Release control of the Ring Indicator signal.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K Function succeeded.
+\item L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{le__ri_pin__interface_8h_a2cdbeb7aa773f498780058bea06c6553}{}\index{le\+\_\+ri\+Pin\+\_\+interface.\+h@{le\+\_\+ri\+Pin\+\_\+interface.\+h}!le\+\_\+ri\+Pin\+\_\+\+Take\+Ring\+Signal@{le\+\_\+ri\+Pin\+\_\+\+Take\+Ring\+Signal}}
+\index{le\+\_\+ri\+Pin\+\_\+\+Take\+Ring\+Signal@{le\+\_\+ri\+Pin\+\_\+\+Take\+Ring\+Signal}!le\+\_\+ri\+Pin\+\_\+interface.\+h@{le\+\_\+ri\+Pin\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ri\+Pin\+\_\+\+Take\+Ring\+Signal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ri\+Pin\+\_\+\+Take\+Ring\+Signal (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__ri_pin__interface_8h_a2cdbeb7aa773f498780058bea06c6553}
+Take control of the Ring Indicator signal.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K Function succeeded.
+\item L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+\end{DoxyItemize}
+\end{DoxyReturn}

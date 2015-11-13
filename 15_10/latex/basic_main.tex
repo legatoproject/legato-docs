@@ -1,0 +1,2026 @@
+This section contains the essential basics to understand how Legato works including key development info and details on Legato\textquotesingle{}s sample apps.
+
+
+
+
+
+\hyperlink{basicConcepts}{Concepts} ~\newline
+ \hyperlink{basicApps}{Build Apps} ~\newline
+ \hyperlink{ccodingStdsMain}{C Language Standards} ~\newline
+ \hyperlink{sampleApps}{Sample Apps}
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{basicConcepts}{}\section{Concepts}\label{basicConcepts}
+\hyperlink{basicRuntimeArch}{Runtime Architecture} ~\newline
+ \hyperlink{basicSecurity}{Security} ~\newline
+ \hyperlink{basicComponents}{Components} ~\newline
+ \hyperlink{basicInterfaces}{Interfaces} ~\newline
+ \hyperlink{basicConfig}{Configuration} ~\newline
+ \hyperlink{basicEvents}{Event-\/driven Programming} ~\newline
+ \hyperlink{basicPwrMgmt}{Power Management} ~\newline
+ \hyperlink{basicIPC}{Inter-\/process Communication} ~\newline
+ \hyperlink{basicInternationalization}{Internationalization} ~\newline
+ \hyperlink{basicLog}{Logging} ~\newline
+ \hyperlink{basicLWM2MData}{L\+W\+M2\+M Data}
+
+\hyperlink{aboutDocsGlossary}{Glossary} ~\newline
+
+
+\subsection*{Overview}
+
+Legato is designed to make developing component-\/based software for embedded devices in the Internet-\/of-\/things (Io\+T) easier, faster, and less expensive.
+
+
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{basicRuntimeArch}{}\subsection{Runtime Architecture}\label{basicRuntimeArch}
+Legato\textquotesingle{}s runtime architecture manages each app in its own sandbox.
+
+
+
+Apps communicate with each other using access-\/controlled message-\/passing services. The Supervisor automatically creates sandboxes.\hypertarget{basic_runtime_arch_basicRuntimeArch_apps}{}\subsubsection{Applications}\label{basic_runtime_arch_basicRuntimeArch_apps}
+An application (we call them \textquotesingle{}apps\textquotesingle{}) is a collection of executable files, libraries, and/or other resource files (e.\+g., audio files, web pages) that can be deployed to a target device. Once installed on a device, an app can be started and stopped.
+
+By default, each app runs in its own sandbox. When an app is constructed, all the files and I\+P\+C services it needs to access are declared (these should be examined and approved before installed on the target). At runtime, the Supervisor and the Service Directory enforce that only approved files and I\+P\+C services are accessed by that app.
+
+\hyperlink{basicAppsCreate}{Create Apps}\hypertarget{basic_runtime_arch_basicRuntimeArch_supervisor}{}\subsubsection{Supervisor}\label{basic_runtime_arch_basicRuntimeArch_supervisor}
+The Supervisor is a privileged process running on the target device that\+:
+\begin{DoxyItemize}
+\item creates and destroys \hyperlink{basicSecuritySandbox}{Sandboxes} for apps
+\item starts and stops apps
+\item performs fault recovery when apps fail (e.\+g., restarting the app).
+\end{DoxyItemize}\hypertarget{basic_runtime_arch_basicRuntimeArch_serviceDirectory}{}\subsubsection{Service Directory}\label{basic_runtime_arch_basicRuntimeArch_serviceDirectory}
+Legato\textquotesingle{}s Service Directory provides a secure way for client processes to find servers offering services they need, which ensures only authorized connections are established.
+
+\hyperlink{legatoServices}{Services A\+P\+Is} ~\newline
+ \hyperlink{basicInterfaces}{Interfaces}\hypertarget{basic_runtime_arch_basicRuntimeArch_configTree}{}\subsubsection{Config Tree}\label{basic_runtime_arch_basicRuntimeArch_configTree}
+The Config Tree provides persistent \hyperlink{basicConfig}{Configuration} data storage organized in a tree structure.
+
+Command line \hyperlink{toolsTarget_config}{config} tool ~\newline
+ \hyperlink{c_config}{Config Tree A\+P\+I}\hypertarget{basic_runtime_arch_basicRuntimeArch_watchDog}{}\subsubsection{Watchdog}\label{basic_runtime_arch_basicRuntimeArch_watchDog}
+Legato kickable watchdog service provides a timeout that can be configured in {\ttfamily def\+Files\+Adef} or specified at run time. If a kick is not received in the specified time, the supervisor signals to perform the action specified in \hyperlink{def_files_adef_defFilesAdef_processWatchdogAction}{Watchdog Action}.
+
+\hyperlink{c_wdog}{Watchdog Service} ~\newline
+ \hyperlink{defFilesAdef}{Application Definition .adef}\hypertarget{basic_runtime_arch_basicRuntimeArch_logs}{}\subsubsection{Logs}\label{basic_runtime_arch_basicRuntimeArch_logs}
+Legato provides a user-\/friendly way to control log message filtering for running app processes.
+
+Command line \hyperlink{toolsTarget_log}{log} tool ~\newline
+ \hyperlink{c_logging}{Logging A\+P\+I}.
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{basicSecurity}{}\subsection{Security}\label{basicSecurity}
+\hyperlink{basicSecuritySandbox}{Sandboxes} ~\newline
+ \hyperlink{basicSecuritySmack}{S\+M\+A\+C\+K}
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{basicSecuritySandbox}{}\subsection{Sandboxes}\label{basicSecuritySandbox}
+Legato uses sandboxes to provide a security layer against untrusted apps running in the same system. Legato sandboxes isolate apps from the rest of the system. This allows O\+E\+M and I\+S\+V components to safely coexist on the same device without fear of interfering or breaking the stack.
+
+Access control for files is done using the underlying P\+O\+S\+I\+X access control mechanisms, based on users, permissions, and S\+M\+A\+C\+K labels.
+
+Legato app sandboxes are chroot jails, where each app has its own unique user I\+D, group I\+D, and root directory. Files are bound into the chroot jail using bind mounts. Chroot changes the root directory of a process to a specified location. The process then only has access to files and directories under its root directory. Only processes with certain capabilities can find their way outside of their {\ttfamily chrooted} root directory, and
+
+Legato sandboxes also provide resource limitations. Resource limitations place limits on the amount of system resources an app is allowed to consume. Without resource limits, an isolated app can still cause damage by consuming all available resources.
+
+All sandboxes are created in R\+A\+M, which provides the benefit of automatically removing all sandboxes during system shutdown. Legato sandboxes use bind mounts for importing files from the root file system into sandboxes (defined using the {\ttfamily }.adef and {\ttfamily }.sdef {\ttfamily requires} section). Bind-\/mounted files are updated when the file is updated in the root file system. Bind-\/mounted files are not copied so memory requirements are minimal.
+
+A Legato sandboxed app can access services outside its sandbox. All available services are advertised by the Service Directory. Apps connect to services through a request to the Service Directory. The Service Directory grants access only if the app has been explicitly bound to a service (using the {\ttfamily }.adef and {\ttfamily }.sdef {\ttfamily bindings} section).
+
+If you want to allow direct access to bind mount objects from the file system (e.\+g., files, directories, named sockets and pipes, etc.), explicitly allow it through app configuration in the {\ttfamily  .adef } and {\ttfamily  .cdef }files {\ttfamily requires} section.
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{basicSecuritySmack}{}\subsection{S\+M\+A\+C\+K}\label{basicSecuritySmack}
+Simplified Mandatory Access Control Kernel (S\+M\+A\+C\+K) provides a simple solution for mandatory access control (M\+A\+C). M\+A\+C provides the ability for a centralized entity to set access policy for system resources.
+
+The Linux default access control policy is governed by permission bits on system resources at the discretion of the resource owner\+: discretionary access control (D\+A\+C). Policies are set in a distributed way so different system users can set access policy for their own resources.
+
+M\+A\+C policies are often used to overcome D\+A\+C limitations for systems that require a higher level of security.
+
+S\+M\+A\+C\+K is used to supplement D\+A\+C. D\+A\+C permissions are checked first; if access is granted, S\+M\+A\+C\+K permissions are then checked. S\+M\+A\+C\+K can only limit access, it can\textquotesingle{}t grant access beyond D\+A\+C permissions.
+
+S\+M\+A\+C\+K uses \textquotesingle{}labels\textquotesingle{} on resources (objects in S\+M\+A\+C\+K terminology) and processes (subjects) to determine access. Labels on resources can only be set by a privileged process (the {\ttfamily C\+A\+P\+\_\+\+M\+A\+C\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E} label designates a process as {\itshape privileged})
+
+S\+M\+A\+C\+K policies are set by the Legato startup scripts, the Legato Installer and the Legato Supervisor.
+
+Here\textquotesingle{}s \hyperlink{basicSecuritySmackAdvanced}{Advanced S\+M\+A\+C\+K} info.
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{basicSecuritySmackAdvanced}{}\subsubsection{Advanced S\+M\+A\+C\+K}\label{basicSecuritySmackAdvanced}
+\hypertarget{basic_security_smack_advanced_basicSecuritySmackAdvanced_implementation}{}\subparagraph{Implementation}\label{basic_security_smack_advanced_basicSecuritySmackAdvanced_implementation}
+Simplified Mandatory Access Control Kernel (S\+M\+A\+C\+K) provides a simple solution for mandatory access control (M\+A\+C). M\+A\+C provides the ability for a centralized entity to set access policy for system resources.
+
+Linux\textquotesingle{}s default access control policy is governed by permission bits on system resources (files, directories, devices, etc.). Permission bits can be modified by the resource owner (process with the same user I\+D as the resource). The access control policy is at the discretion of the resource owner; this system is classified as D\+A\+C (discretionary access control). With D\+A\+C, policies are set in a distributed manner as there are often many system users, each setting the access policy for its own resources.
+
+In contrast, M\+A\+C policies are set for all system resources by a centralized entity.
+
+Linux\textquotesingle{}s D\+A\+C has known weaknesses that can lead to security leaks. M\+A\+C is often used to overcome some of the short comings of D\+A\+C for systems that require a higher level of security.
+
+S\+M\+A\+C\+K isn\textquotesingle{}t the only M\+A\+C solution available. Because it\textquotesingle{}s a simple solution, it\textquotesingle{}s not flexible enough to handle all use cases. For the majority of use cases, it will be easier to setup and maintain.
+
+S\+M\+A\+C\+K supplements Linux\textquotesingle{}s D\+A\+C system. D\+A\+C permissions are checked first; if access is granted, S\+M\+A\+C\+K permissions are then checked. Consequently, S\+M\+A\+C\+K can only limit access, it can\textquotesingle{}t grant access beyond D\+A\+C permissions.
+
+S\+M\+A\+C\+K uses \textquotesingle{}labels\textquotesingle{} on resources (objects in S\+M\+A\+C\+K terminology) and processes (subjects) to determine access. Labels on resources can only be set by a privileged process. A privileged process can only set it\textquotesingle{}s own label but not labels of other processes.
+
+There are a number of single character labels (\char`\"{}\+\_\+\char`\"{}, \char`\"{}$^\wedge$\char`\"{}, \char`\"{}$\ast$\char`\"{}, \char`\"{}?\char`\"{}, \char`\"{}@\char`\"{}) that have special meanings. S\+M\+A\+C\+K restricts read/write/execute access based on the subject label and the object label according to the following rules\+:
+
+
+\begin{DoxyEnumerate}
+\item Any access requested by a task labelled \char`\"{}$\ast$\char`\"{} is denied.
+\item A read or execute access requested by a task labelled \char`\"{}$^\wedge$\char`\"{} is permitted.
+\item A read or execute access requested on an object labelled \char`\"{}\+\_\+\char`\"{} is permitted.
+\item Any access requested on an object labelled \char`\"{}$\ast$\char`\"{} is permitted.
+\item Any access requested by a task on an object with the same label is permitted.
+\item Any access requested that is explicitly defined in the loaded rule set is permitted.
+\item Any other access is denied.
+\end{DoxyEnumerate}
+
+Rule 6 lets us use explicit rules through adding specific labels. Explicit rules define the access rights a subject label can have on an object label. Only privileged processes can set rules.\hypertarget{basic_security_smack_advanced_c_smack_privProcess}{}\subparagraph{Privileged Processess}\label{basic_security_smack_advanced_c_smack_privProcess}
+Privileged processes use the C\+A\+P\+\_\+\+M\+A\+C\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E capability. It\textquotesingle{}s also possible to configure the system so the C\+A\+P\+\_\+\+M\+A\+C\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E is honoured only for processes with a specific label. This configuration allows the system to restrict root processes (have C\+A\+P\+\_\+\+M\+A\+C\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E) that don\textquotesingle{}t have the proper S\+M\+A\+C\+K label.\hypertarget{basic_security_smack_advanced_c_smack_assignLabels}{}\subparagraph{Assigning Labels}\label{basic_security_smack_advanced_c_smack_assignLabels}
+Use smack\+\_\+\+Set\+My\+Label() to set the S\+M\+A\+C\+K label for the calling process. The calling process must be a privileged process. Setting S\+M\+A\+C\+K labels for other processes isn\textquotesingle{}t possible.
+
+To set the S\+M\+A\+C\+K label for file system objects use smack\+\_\+\+Set\+Label(), again the calling process must be privileged.\hypertarget{basic_security_smack_advanced_basicSecuritySmackAdvanced_setRules}{}\subparagraph{Set Rules}\label{basic_security_smack_advanced_basicSecuritySmackAdvanced_setRules}
+Use smack\+\_\+\+Set\+Rule() to set an explicit S\+M\+A\+C\+K rule that gives a specified subject access to a specified object.\hypertarget{basic_security_smack_advanced_basicSecuritySmackAdvanced_supervisor}{}\subparagraph{Supervisor}\label{basic_security_smack_advanced_basicSecuritySmackAdvanced_supervisor}
+S\+M\+A\+C\+K policies are set by the Legato startup scripts, the Legato Installer, and the Legato Supervisor.
+
+By default system files have the \char`\"{}\+\_\+\char`\"{} S\+M\+A\+C\+K label meaning everyone has read and execute access to them. The Legato startup scripts are responsible for setting S\+M\+A\+C\+K labels for system files that require special permission handling (e.\+g., {\ttfamily /dev/null} file is given the label \char`\"{}$\ast$\char`\"{} by the start up scripts so the file is fully accessible to everyone. The Legato startup scripts also ensure the Legato Supervisor and Installer have the \textquotesingle{}admin\textquotesingle{} S\+M\+A\+C\+K label.
+
+The Legato Installer sets S\+M\+A\+C\+K labels for all app bundled files. The S\+M\+A\+C\+K label for each app is unique to the app.
+
+The Supervisor sets S\+M\+A\+C\+K labels for framework daemons, processes for apps, sandbox directories and S\+M\+A\+C\+K rules for I\+P\+C bindings.
+
+Framework daemons are given the S\+M\+A\+C\+K label \char`\"{}framework\char`\"{}.
+
+All processes are given the same S\+M\+A\+C\+K label as their app. All app labels are unique.
+
+S\+M\+A\+C\+K rules are set so I\+P\+C bindings between apps work. Here\textquotesingle{}s a code sample of rules to set if a client app needs to access a server app\+:
+
+
+\begin{DoxyCode}
+\textcolor{stringliteral}{'clientAppLabel'} rw \textcolor{stringliteral}{'serverAppLabel'}     \textcolor{comment}{// client has read-write access to server.}
+\textcolor{stringliteral}{'serverAppLabel'} rw \textcolor{stringliteral}{'clientAppLabel'}     \textcolor{comment}{// server has read-write access to client.}
+\end{DoxyCode}
+
+
+Sandboxed directories are given labels corresponding to the app\textquotesingle{}s access rights to those directory. Generally, an app only has read and execute permission to its sandboxes /bin directory. Its properties look like this\+:
+
+owner = root group = root D\+A\+C permissions = -\/-\/-\/---r-\/x S\+M\+A\+C\+K label = \textquotesingle{}App\+Labelrx\textquotesingle{}
+
+The Supervisor also sets up the S\+M\+A\+C\+K rule so the app has the proper access to the directory\+:
+
+\textquotesingle{}App\+Label\textquotesingle{} rx \textquotesingle{}App\+Labelrx\textquotesingle{}
+
+App\textquotesingle{}s directories are given different labels than the app itself so that if an I\+P\+C binding is present, the remote app has access to the local app but doesn\textquotesingle{}t have direct access to the local app\textquotesingle{}s files.
+
+All bundled files within an app\textquotesingle{}s sandbox are given the app\textquotesingle{}s S\+M\+A\+C\+K label. This supports passing file descriptors from one app to another. However, the file descriptor can\textquotesingle{}t be passed onto a third app.\hypertarget{basic_security_smack_advanced_basicSecuritySmackAdvanced_limitations}{}\subparagraph{Limitations}\label{basic_security_smack_advanced_basicSecuritySmackAdvanced_limitations}
+Extended attributes used to store the S\+M\+A\+C\+K label are available on all file systems we currently use with one key feature is missing\+: when a new file is created, the file should inherit the S\+M\+A\+C\+K label of the creator. Because this feature is missing, our current implementation of S\+M\+A\+C\+K has the following limitations\+:
+
+
+\begin{DoxyItemize}
+\item Mqueue file system will always set new files to \char`\"{}\+\_\+\char`\"{} label. This means we can\textquotesingle{}t control access between apps that use M\+Queues.
+\item Tmpfs always sets new files to \char`\"{}$\ast$\char`\"{} label. This means we can\textquotesingle{}t totally control access to files created in sandboxes because sandboxes use tmpfs. It\textquotesingle{}s only an issue when file descriptors for the created files are passed over I\+P\+C to another app. The other app can then pass that fd onto a third app and so on.
+\item Yaffs2/\+U\+B\+I\+F\+S do not set any label for newly created files. This causes an issue with the config daemon that has the label \char`\"{}framework\char`\"{}, but its created files don\textquotesingle{}t have any labels. To work around this, the config daemon must run as root and the \textquotesingle{}onlycap\textquotesingle{} S\+M\+A\+C\+K file must not be set. This means there is limited protection because all root processes have the ability to change S\+M\+A\+C\+K labels on files.
+\item Q\+M\+I sockets are currently set to \char`\"{}$\ast$\char`\"{} because some apps need to write to them. Ideally, the Q\+M\+I socket file would be given a label such as \char`\"{}qmi\char`\"{} and a rule would be created to only allow access to the app that requires it. However, there currently isn\textquotesingle{}t a way to specify this in the xdef file.
+\end{DoxyItemize}
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{basicComponents}{}\subsection{Components}\label{basicComponents}
+In Legato, a component is a collection of code and other files that are functionally related, along with one or more licenses that apply to the components\textquotesingle{} files.
+
+Components can be \char`\"{}built\char`\"{} generating output like object code libraries and other files. These files can be incorporated into applications and run on a target device.
+
+Legato components can also have \hyperlink{basicInterfaces}{language-\/independent interfaces} and \hyperlink{basicConfig}{configuration data}.\hypertarget{basic_components_basicComponentsRationale}{}\subsubsection{Rationale}\label{basic_components_basicComponentsRationale}
+It\textquotesingle{}s important to manage complexity. The more complex a system becomes, the harder it is to ensure required behaviour without unwanted effects. However, the more complex the problem, the more complex the software, and there\textquotesingle{}s no avoiding this {\itshape necessary} {\itshape complexity}. But, if complexity is carefully compartmentalized (broken into smaller pieces with like behaviour requirements), human beings can still manage it.
+
+Many approaches have been devised to reduce complexity like \textquotesingle{}divide-\/and-\/conquer\textquotesingle{} where the system is broken down into small, manageable parts that together provide the complete system behaviour. It\textquotesingle{}s proven that decoupling parts from each other (minimizing interconnectedness) can dramatically improve correctness and maintainability. Modularization and packaging support this.
+
+Component-\/based software development separates implementation from interface, allowing software components to be swapped-\/out similar to hardware components E.\+g., a client component can be written to access a standard telephony interface without knowing the implementation of the interface; and this client can be used with different implementation components, depending on the underlying telephony network (cellular, P\+S\+T\+N, Vo\+I\+P, etc.) the product supports.
+
+Legato is designed to make it easier to build systems using a component-\/based model.
+
+Decoupling components and hiding implementation details within components (behind their interfaces) has a major impact on maintainability\+:
+
+
+\begin{DoxyItemize}
+\item Clearly defining interface and components\textquotesingle{} roles and responsibilities allow defect sources to be isolated more easily.
+\item Components can be swapped out with stubs, and interfaces can be instrumented to gather more troubleshooting information.
+\item Component changes that don\textquotesingle{}t affect its interfaces are constrained to that component. This supports {\ttfamily {\itshape refactoring}.} 
+\item Test suites can be applied to components implementing the same interface so test reuse is also supported.
+\end{DoxyItemize}
+
+Component-\/based software development also enables creative interconnection of components in previously unimagined ways to discover unique new solutions.
+
+Components designed for reuse with simple, clean interfaces using standard data types and methods can be recombined into different arrangements that exhibit different overall system behaviours. Web mashups can combine previously-\/constructed web services into completely new applications because those web services provide well-\/defined interfaces using standard access mechanisms and data formats. The mashup doesn\textquotesingle{}t care about how the web services are implemented; the mashup only cares about what the interfaces provide.
+
+A further potential of component-\/based development is the ease of sharing (for free or for pay) of these reusable components. If a component is very useful to others, it can be shared and reused in accordance with the license that the author has chosen to release it under.\hypertarget{basic_components_basicComponentsLegato}{}\subsubsection{Legato Components}\label{basic_components_basicComponentsLegato}
+In the Legato world, each component is kept in its own directory. The name of the directory is also the name of the component.
+
+The component can contain any number of source code files, pre-\/compiled binary files, resource files (e.\+g., audio files or images), or whatever files the component needs.
+
+Each component must have a {\ttfamily  \hyperlink{defFilesCdef}{Component.cdef} } file. This file describes the component to the Legato \hyperlink{buildTools}{Build}. It lists what source files the component includes, what interfaces it uses or implements, what resource files it includes, and what files it needs in the target host runtime environment.
+
+Components that have source code files can be included in executables inside apps. The build tools will generate the appropriate start-\/up code for the executable to ensure that the component gets initialized when the executable is started.\hypertarget{basic_components_basicComponentsProgrammingModel}{}\subsubsection{Component Programming Model}\label{basic_components_basicComponentsProgrammingModel}
+Generally, Legato components are written using an event-\/driven model. Callback functions called \char`\"{}event handlers\char`\"{} (or \char`\"{}handlers\char`\"{} for short) are attached to specific events, and when events occur, the thread\textquotesingle{}s event loop calls the appropriate handlers.
+
+Every component implements a special initialization function ({\ttfamily C\+O\+M\+P\+O\+N\+E\+N\+T\+\_\+\+I\+N\+I\+T} in C). That function does whatever initialization is required for that component (e.\+g., initializes data structures, registers event handlers, starts threads, etc.) and returns. The process\textquotesingle{}s main thread (auto-\/generated by the \hyperlink{buildTools}{Build}) runs all the component initializers for all components in the executable and then enters the Legato event loop. The event loop then reacts to events by and calling registered handlers.
+
+This model allows multiple components to be deployed to the same process and even share a single thread within that process, without having to know anything about each other. This reduces the risk of multi-\/threaded race conditions and saves stack memory space, while simplifying many programming tasks.
+
+Sometimes the {\itshape judicious} use of threads can considerably simplify a program, so multithreading is also supported by Legato, along with the usual thread synchronization tools (mutexes, semaphores, etc.) and the addition of \hyperlink{c_event_loop_c_event_dispatchingToOtherThreads}{queued function calls}.
+
+If a component blocks a shared thread, it blocks every component sharing that thread. So, to maximize a component\textquotesingle{}s reusability in different programs, it\textquotesingle{}s best to avoid blocking the main thread. Legato components can start their own, private threads to avoid this. And any thread can run its own event loop if an event-\/driven thread with blocking event handlers is desired.\hypertarget{basic_components_basicComponentsLegacyCode}{}\subsubsection{Legacy Code}\label{basic_components_basicComponentsLegacyCode}
+Sometimes you\textquotesingle{}ll have a legacy program you want to include in your app without rewriting it in the style of a Legato component. This can be done by building your legacy app using your normal build system (but using the appropriate cross-\/toolchain provided for your target device) and {\bfseries bundling} the built programs and libraries into the app.
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{basicInterfaces}{}\subsection{Interfaces}\label{basicInterfaces}
+To maximize component reuse, it\textquotesingle{}s vital components be designed for reuse. Reusability partly depends on portability, which the Legato framework provides, but it also depends largely on interoperability. Reusable components must be designed for interoperability with as many other things as possible, including things that don\textquotesingle{}t exist {\itshape -\/ yet! }
+
+Interface design is the most important factor to make something interoperable. Standardized data types and interaction methods must be used, and the simpler the interfaces, the better.
+
+Legato embraces the philosophy that developers should always be allowed to choose the implementation language best suited to the task at hand, regardless of the components used. Some developers are better at programming in certain languages, and some languages are better suited to solving certain problems. That\textquotesingle{}s why Legato provides developers with an easy way to interface components with each other, even if they have been written in different languages.
+
+A common example of a programming-\/language-\/independent interface is a networking protocol. But networking protocols come with pitfalls and overhead, things like endian issues, race conditions, protocol stack framing overheads and poor processing time. Networking protocols also tend to require a lot of hand coding specific to the protocol implementation.
+
+Legato supports networking, if that\textquotesingle{}s what\textquotesingle{}s needed, but it also has tools to implement much lighter-\/weight, language-\/independent communication between components that exist on the same host device or even running within the same process.\hypertarget{basic_interfaces_functionCallAPIs}{}\subsubsection{Function Call A\+P\+Is}\label{basic_interfaces_functionCallAPIs}
+Virtually all programmers are familiar with function calls. While Legato allows normal libraries to use their specific programming-\/language function call interfaces, Legato also supports language-\/independent function call interfaces.
+
+Using a simple interface definition language (I\+D\+L), you can create a function call A\+P\+I implemented in one language and called from another.
+
+The implementation code (the server) can run in a different process, or even in a different application (in a different sandbox), than the client code that uses that implementation. The Legato build system automatically generates the code needed to marshall parameters and return codes into messages, and send them over the I\+P\+C system.
+
+See \hyperlink{interfaceDefLang}{Interface Definition Language} for more information.
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{basicConfig}{}\subsection{Configuration}\label{basicConfig}
+This topic describes how target device configuration works in Legato.
+
+Also see \hyperlink{howToConfigTree}{Manage Config Tree}
+
+
+
+
+
+Device configuration data is vital for most applications. Seldom are all devices in an application identical. Usually, there\textquotesingle{}s some kind of customization on each device\+: it may be a complex set of user preferences, or it may be just a simple node name. Regardless of the device\textquotesingle{}s customization, the device needs to be\+:
+\begin{DoxyItemize}
+\item stored somewhere it can be retrieved quickly
+\item easy to modify programmatically from within the device application code
+\item easy to view and modify remotely via generic network or managed portal service
+\item protected from
+\begin{DoxyItemize}
+\item malicious snooping and vandalizm
+\item multi-\/threaded race conditions
+\item untimely device reset or power loss
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{basic_config_Tree}{}\subsubsection{Structure}\label{basic_config_Tree}
+Configuration data is stored in a tree structure, where each non-\/leaf node can contain any number of child nodes, each with its own name. At the leaves of the tree, the nodes can contain data.
+
+This tree structure allows configuration data items to be uniquely identified using path names, much like file system paths, which makes it much easier to access configuration data via H\+T\+T\+P, S\+N\+M\+P, O\+M\+A-\/\+D\+M, and other protocols. It also allows the configuration database to be explored using tree walking algorithms and tools.\hypertarget{basic_config_Transactions}{}\subsubsection{Transactions}\label{basic_config_Transactions}
+Configuration data can be shared by multiple processes and threads. This can sometimes result in race conditions that can threaten data integrity. For example, if threads A and B both use data fields X and Y, it could be bad if thread A interrupts thread B to read those fields just after thread B has updated field X and is about to update field Y to be consistent with the new value of field X.
+
+A possible reset or power loss may occur at any time, and we must be sure that would not corrupt the configuration data. For example, if power fails just after field X has been updated, but before field Y gets updated to match the new value of field X, then the configuration data could be in an invalid state. Transactions are used to prevent these sorts of problems.
+
+Before a change can be made to configuration data, a write transaction must be started. All changes are made in the context of such a transaction, and when the changes are complete, the transaction can be \char`\"{}committed\char`\"{}. If a fault prevents the entire set of changes from being applied on commit, or if the transaction is cancelled before it is committed, then none of that transaction\textquotesingle{}s changes will be applied.
+
+Transactions can also be started for reading only. A write transaction will be allowed to start while there is a read transaction in progress. But the commit process will block write transactions until the read transactions have finished. This ensures that anyone reading configuration data fields will see only field values that are consistent.
+
+To prevent denial of service problems (either accidental or malicious), transactions have a limited lifetime. If a transaction remains open for too long, it will be automatically terminated; the configration database will drop its connection to the offending client.\hypertarget{basic_config_backForwardCompatibility}{}\subsubsection{Backward/\+Forward Compatibility}\label{basic_config_backForwardCompatibility}
+For example, to support a new recurring wake-\/up schedule that supports waking on particular days of the week, the wake schedule configuration data may need to be completely re-\/structured. There are several ways to do this.
+
+One approach is to have a \char`\"{}configuration data upgrade\char`\"{} utility run when the new software is installed. However, if the new software upgrades the configuration data and then fails to fully boot, and the device is forced to fall-\/back to the old software, then the old software won\textquotesingle{}t be able to read its configuration data anymore. This can be mitigated by keeping a complete backup copy of the configuration data prior to the software upgrade, but this either consumes space in the device\textquotesingle{}s non-\/volatile memory or it consumes time and over-\/the-\/air bandwidth to make backup copies elsewhere in the network.
+
+However, the recommended approach is to\+:
+\begin{DoxyItemize}
+\item have newer software understand the configuration data structure used by previous versions of the software;
+\item never write to the configuration data unless settings are being changed;
+\item when changing settings, write the configuration data using the newest format;
+\item leave the older version of the configuration data along-\/side the newer version (in case of later software \char`\"{}downgrade\char`\"{});
+\item if both multiple versions of the same configuration data are found, use only the newest that is understood by the current running software.
+\end{DoxyItemize}\hypertarget{basic_config_configChangeNotification}{}\subsubsection{Configuration Change Notifications}\label{basic_config_configChangeNotification}
+Sometimes, action needs to be taken whenever a configuration data field changes value. The Configuration Data A\+P\+I allows client software to register for notification when changes are committed to a particular branch of the configuration tree.\hypertarget{basic_config_accessControl}{}\subsubsection{Access Control}\label{basic_config_accessControl}
+Because the behaviour of applications can be affected by the configuration data that they use, configuration data can be used as an attack vector for malicious software. As a result, access to configuration data must be strictly controlled when there is any possibility that malicious software may be allowed to run on a device.
+
+The Configuration Data system separates each applications\textquotesingle{} configration data only allowing access to its own data.
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{basicEvents}{}\subsection{Event-\/driven Programming}\label{basicEvents}
+In event-\/drivent programming, the flow of a program is determined by events triggered through a defined interaction (e.\+g., user interaction, exceeding threshold limit, etc. ). Usually, a main loop listens for events, and then triggers a callback function when an event is detected.
+
+Overall, Legato components are written using an event-\/driven model. Callback functions are attached to specific events, and when events occur, the thread\textquotesingle{}s event loop triggers the appropriate callbacks. Legato components can also start other threads that run their own Legato event loops.
+
+Every component implements an initialization function called at process start-\/up by the main thread. That function does whatever initialization is required for that component (e.\+g., initializes data structures, registers callbacks, starts threads, etc.) and returns. After all initialization functions have run to completion and returned, the main thread enters the Legato event loop and begins reacting to events and calling registered callbacks.
+
+This allows multiple components to be deployed to the same process and even share a single thread within that process, without having to know anything about each other. This reduces the risk of multi-\/threaded race conditions and saves stack memory space.
+
+Beware one drawback is that if a component blocks a shared thread, it blocks every component sharing that thread.
+
+Sometimes, the {\itshape judicious} use of threads can considerably simplify a program, so multi-\/threading is also supported by Legato along with the usual thread synchronization constructs (mutexes, semaphores, etc.).\hypertarget{basic_events_basicEvents_eventLoop}{}\subsubsection{Event Loop A\+P\+I}\label{basic_events_basicEvents_eventLoop}
+Legato\textquotesingle{}s Event Loop A\+P\+I uses a central {\bfseries  event loop } that calls {\bfseries  event handler } functions in response to {\bfseries event reports}. See \hyperlink{c_eventLoop}{Event Loop A\+P\+I}
+
+Software components register their event handler functions with the event system (either directly through the Event Loop A\+P\+I or indirectly through other A\+P\+Is that use the Event Loop A\+P\+I) so the central event loop knows the functions to call in response to defined events.
+
+Every event loop has an {\bfseries event queue}, which is a queue of events waiting to be handled by that event loop.
+
+The following different usage patterns are supported by the Event Loop A\+P\+I\+:
+
+\hyperlink{c_event_loop_c_event_deferredFunctionCalls}{Deferred Function Calls} ~\newline
+ \hyperlink{c_event_loop_c_event_publishSubscribe}{Publish-\/\+Subscribe Events} ~\newline
+ \hyperlink{c_event_loop_c_event_layeredPublishSubscribe}{Layered Publish-\/\+Subscribe Handlers} ~\newline
+ \hyperlink{c_event_loop_c_event_dispatchingToOtherThreads}{Dispatching Function Execution to Other Threads} ~\newline
+
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{basicPwrMgmt}{}\subsection{Power Management}\label{basicPwrMgmt}
+Peripheral device power management is usually handled by device drivers and the operating system. If a device isn\textquotesingle{}t in use, the driver automatically keeps that device in its lowest power state.
+
+App behaviour drives power consumption. If app code is uses a peripheral device when it doesn\textquotesingle{}t need to, power will be wasted. Power is also wasted if app code runs busy-\/wait loops or periodically polls for events.
+
+To conserve power, apps should register call-\/back functions only triggered when events occur. This way app code only runs when an event occurs, rather than waking up to check for events that haven\textquotesingle{}t happened. Every C\+P\+U cycle uses power, so when a power-\/sensitive app is woken up, it should execute as few instructions as possible before going back to sleep.
+
+When all threads are sleeping, the O/\+S will reduce the C\+P\+U power state automatically. When an event handler function returns back to the Legato event loop, it puts the thread to sleep (unless there\textquotesingle{}s another event waiting). If your thread isn\textquotesingle{}t running the Legato event loop, block your thread to put it to sleep when it\textquotesingle{}s not working through {\ttfamily poll()}, {\ttfamily select()}, {\ttfamily read()}, {\ttfamily write()}, {\ttfamily recv()}, etc.
+
+If you use a periodic timer (like \hyperlink{c_timer}{Timer A\+P\+I}) to wake up your app, it will consume power. Set the timer period as long possible to conserve power, and let the O/\+S go into deeper sleep states.
+
+To maximize power savings, the system can use the Linux auto-\/sleep feature. Unless the system is busy processing a non-\/deferrable event, this feature puts the hardware into a {\ttfamily S\+U\+S\+P\+E\+N\+D} state where all peripherals and the C\+P\+U are placed into low-\/power mode. Apps with the appropriate credentials have the option to control the system power state while performing critical operations.
+
+Use Legato\textquotesingle{}s \hyperlink{c_pm}{Power Manager} to control the system\textquotesingle{}s wake-\/up (powered) state. Operations needing fast response times or those resulting in high interrupt rates may benefit from keeping the system awake. This provides better performance, but worse power efficiency.
+
+See \hyperlink{howToPowerMgmt}{Manage Device Power} for info on how to write power-\/efficient apps.
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{basicIPC}{}\subsection{Inter-\/process Communication}\label{basicIPC}
+Inter-\/process communication (I\+P\+C) allows communication between different processes. A process is one or more threads running inside its own, isolated address space.
+
+Threads running inside the same process communicate easily with each other; they read and write the same data inside their shared address space.
+
+Threads running inside two different processes can\textquotesingle{}t access each other\textquotesingle{}s data; they need I\+P\+C to communicate.
+
+Legato\textquotesingle{}s \hyperlink{c_messaging}{Low-\/\+Level Messaging A\+P\+I} and \hyperlink{interfaceDefLang}{Interface Definition Language} provide I\+P\+C services without all the coding, packing/unpacking, and security headaches that come with using other methods directly (e.\+g., network sockets or named pipes).
+
+Legato has built-\/in I\+P\+C features. The language-\/independent, function-\/call-\/oriented I\+P\+C approach is automatically handled with the \hyperlink{buildToolsifgen}{ifgen} tool and the \hyperlink{buildTools}{Build}.
+
+By default, each app runs in its own sandbox. When an app is constructed, all the I\+P\+C services it needs are declared. At runtime, the Supervisor and the Service Directory enforce that only those approved I\+P\+C services are accessed by the app.
+
+Using language-\/independent I\+P\+C makes components inherently more reusable, creates opportunities for function isolation in different processes or different app sandboxes, and automatically creates debugging trace points.
+
+Another approach Legato uses for I\+P\+C is through low-\/level messaging A\+P\+Is\+: \hyperlink{c_APIs}{C Runtime Library}. This let\textquotesingle{}s you custom build I\+P\+C to suit your needs.
+
+Related info
+
+\hyperlink{interfaceDefLang}{Interface Definition Language} ~\newline
+ \hyperlink{basicAppsIPC}{Use I\+P\+C} ~\newline
+ \hyperlink{defFiles}{Definition Files} ~\newline
+ \hyperlink{legatoServices}{Services A\+P\+Is}
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{basicInternationalization}{}\subsection{Internationalization}\label{basicInternationalization}
+Legato provides string manipulation functions that support U\+T\+F-\/8 encoding.
+
+Other internationalization and localization features are left up to app developers.
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{basicLog}{}\subsection{Logging}\label{basicLog}
+Logging is a critical part of any embedded development framework. Most devices can\textquotesingle{}t display error or warning messages and don\textquotesingle{}t have a human user monitoring them. Even when a device does have a display and a user watching it, the log messages often don\textquotesingle{}t help the device\textquotesingle{}s primary user. Displaying messages on a screen doesn\textquotesingle{}t support remote troubleshooting; especially when the device is hidden from view inside a piece of equipment or located in remote geographic regions.
+
+\hyperlink{howToLogs}{Use Logs} ~\newline
+ Command line \hyperlink{toolsTarget_log}{log} tool ~\newline
+ \hyperlink{c_logging}{Logging A\+P\+I}
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{basicLWM2MData}{}\subsection{L\+W\+M2\+M Data}\label{basicLWM2MData}
+Legato supports the L\+W\+M2\+M standard, which specifies a set of common interfaces and data models to enable interoperability between devices and remote services.
+
+L\+W\+M2\+M provides necessary device management functions like secure device on-\/boarding and Over-\/\+The-\/\+Air (O\+T\+A) upgrade and configuration.
+
+Legato provides pre-\/built A\+P\+Is that use L\+W\+M2\+M standards to access the Air\+Vantage cloud service.
+
+\hyperlink{howToAVData}{Manage Air\+Vantage Data} ~\newline
+ \hyperlink{c_le_avdata}{Air\+Vantage Data} A\+P\+I ~\newline
+ \hyperlink{c_le_avc}{Air\+Vantage Connector} A\+P\+I ~\newline
+ Component defintion \hyperlink{def_files_cdef_defFilesCdef_assets}{Assets}
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{basicApps}{}\section{Build Apps}\label{basicApps}
+\hyperlink{basicAppsCreate}{Create Apps} ~\newline
+ \hyperlink{basicAppsIPC}{Use I\+P\+C} ~\newline
+ \hyperlink{basicAppsClientServer}{Client/\+Server} ~\newline
+ \hyperlink{basicAppsAddThings}{Add Things} ~\newline
+ \hyperlink{basicAppsCompMulti}{Deploy Multiple Components}\hypertarget{basic_apps_basicAppsCreate_overview}{}\subsection{Overview}\label{basic_apps_basicAppsCreate_overview}
+An application (app) is a collection of one or more processes running one or more executables. Each executable can make use of libraries and other resource files bundled into the app.
+
+Legato apps automatically run inside a secure sandbox, and don\textquotesingle{}t require any configuration. You just build an app, install it, and it automatically runs in a sandbox.
+
+Legato apps can automatically start at boot, and are monitored by the Supervisor daemon. If an app fails in the field, the Supervisor can perform autonomous fault-\/recovery actions like restarting a process or rebooting.
+
+Just like any embedded Linux platform, you can install individual executables, libraries, resource files, etc., you can write init scripts, and you can implement security sandboxes, fault monitoring, and fault recovery. But Legato provides the platform to do all that so you can focus on your business\textquotesingle{} unique value-\/add instead.
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{basicAppsCreate}{}\subsection{Create Apps}\label{basicAppsCreate}
+These are the basic steps to build an app written in C that logs {\ttfamily Hello World.} when the process it\textquotesingle{}s in starts up\+:
+
+
+\begin{DoxyItemize}
+\item \hyperlink{basic_apps_create_basicAppsCreate_component}{Create Component}
+\item \hyperlink{basic_apps_create_basicAppsCreate_adef}{Create App}
+\item \hyperlink{basic_apps_create_basicAppsCreate_buildApp}{Build App}
+\item \hyperlink{basic_apps_create_basicAppsCreate_instTarget}{Install App to Target}
+\item \hyperlink{basic_apps_create_basicAppsCreate_usage}{Use App}
+\end{DoxyItemize}
+
+Then you\textquotesingle{}re ready for the next level\+: \hyperlink{basicAppsAddThings}{Add Things}, \hyperlink{basicAppsIPC}{Use I\+P\+C}, and \hyperlink{basicAppsCompMulti}{Deploy Multiple Components}. \hypertarget{basic_apps_create_basicAppsCreate_sampleDir}{}\subsubsection{Sample Directories and Files}\label{basic_apps_create_basicAppsCreate_sampleDir}
+Typical apps have directories and files that look this\+: 
+\begin{DoxyCode}
+helloWorld/
+├── helloComp
+│   ├── Component.cdef
+│   └── hello.c
+└── helloWorld.adef
+\end{DoxyCode}
+\hypertarget{basic_apps_create_basicAppsCreate_component}{}\subsubsection{Create Component}\label{basic_apps_create_basicAppsCreate_component}
+Complete these steps to create a component\+: \hyperlink{basic_apps_create_basicAppsCreate_componentCreateDir}{Create Directory}, \hyperlink{basic_apps_create_basicAppsCreate_componentC}{Create C Source File}, and \hyperlink{basic_apps_create_basicAppsCreate_componentCdef}{Create cdef File}\hypertarget{basic_apps_create_basicAppsCreate_componentCreateDir}{}\paragraph{Create Directory}\label{basic_apps_create_basicAppsCreate_componentCreateDir}
+{\ttfamily 1}. Create a directory\+: the directory name will become the component name\+:
+
+\begin{DoxyVerb}$ mkdir helloComp
+\end{DoxyVerb}
+\hypertarget{basic_apps_create_basicAppsCreate_componentC}{}\paragraph{Create C Source File}\label{basic_apps_create_basicAppsCreate_componentC}
+{\ttfamily 2}. Create source (implementation) file {\ttfamily hello.\+c\+:} 
+
+\begin{DoxyVerb}$ gedit helloComp/hello.c
+\end{DoxyVerb}
+
+
+It should contain the following\+:
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "\hyperlink{legato_8h}{legato.h}"}
+
+\hyperlink{le__event_loop_8h_abdb9187a56836a93d19cc793cbd4b7ec}{COMPONENT\_INIT}
+\{
+    \hyperlink{le__log_8h_a23e6d206faa64f612045d688cdde5808}{LE\_INFO}(\textcolor{stringliteral}{"Hello world.\(\backslash\)n"});
+\}
+\end{DoxyCode}
+
+
+This looks similar to the original C {\ttfamily hello}, world program from Kernighan\textquotesingle{}s and Richie\textquotesingle{}s \char`\"{}\+The C Programming Language\char`\"{}, except that\+:
+\begin{DoxyItemize}
+\item \#include $<$stdio.\+h$>$ is replaced with \#include \char`\"{}legato.\+h\char`\"{}
+\item main() is replaced with C\+O\+M\+P\+O\+N\+E\+N\+T\+\_\+\+I\+N\+I\+T
+\end{DoxyItemize}
+
+In fact, \hyperlink{legato_8h}{legato.\+h} will include stdio.\+h, along with a bunch of other system headers and Legato framework headers. This reduces the amount of time you have to spend including header files to get access to the functions and data types you need.
+
+The build tools figure out what language the source code is written in by looking at the filename extension. So, because our file {\ttfamily hello.\+c} ends in {\ttfamily }.c, the build tools will try to use a C compiler to compile it into a library when it gets included in an executable.\hypertarget{basic_apps_create_basicAppsCreate_componentInit}{}\subparagraph{Component Initializer}\label{basic_apps_create_basicAppsCreate_componentInit}
+The {\ttfamily C\+O\+M\+P\+O\+N\+E\+N\+T\+\_\+\+I\+N\+I\+T} macro is used to identify your {\bfseries  component initializer}. Every component must have a component initializer.
+
+By using component initializers instead of having each component implement their own main() function, it\textquotesingle{}s possible to run multiple components in the same executable and even share a thread between those components.
+
+The main process thread (the main() function auto-\/generated by the build tools) will automatically call the component\textquotesingle{}s initializer at the appropriate time during the process start-\/up sequence (based on the inter-\/dependencies between components). If component A is used by component B, then component A\textquotesingle{}s initializer will be run before component B\textquotesingle{}s initializer. Then component B can safely call the A\+P\+I functions of component A knowing that component A has already been initialized. This won\textquotesingle{}t work if both components depend on each other (directly or indirectly through other components). That\textquotesingle{}s one reason why dependency loops are not permitted between components. The framework will detect inter-\/component dependency loops at build time and terminate the build.
+
+Component initializers don\textquotesingle{}t take any parameters and don\textquotesingle{}t return anything, but they {\bfseries  must always return } . Unless they experience a fatal error, in which case they {\bfseries  must terminate the process } with a non-\/zero exit code (which can be done using {\ttfamily \hyperlink{le__log_8h_a54b4b07f5396e19a8d9fca74238f4795}{L\+E\+\_\+\+F\+A\+T\+A\+L()}}, {\ttfamily \hyperlink{le__log_8h_ac0dbbef91dc0fed449d0092ff0557b39}{L\+E\+\_\+\+A\+S\+S\+E\+R\+T()}}, etc. ).
+
+\begin{DoxyNote}{Note}
+If a component\textquotesingle{}s initializer doesn\textquotesingle{}t return, the process will not be able to finish initializing all the components that have been deployed to it and the process\textquotesingle{}s main thread will never process any events that are queued to it.
+\end{DoxyNote}
+In our \char`\"{}\+Hello World\char`\"{} example, we just use our component initializer to print {\ttfamily Hello} world to the log using {\ttfamily \hyperlink{le__log_8h_a23e6d206faa64f612045d688cdde5808}{L\+E\+\_\+\+I\+N\+F\+O()}}.\hypertarget{basic_apps_create_basicAppsCreate_componentCdef}{}\paragraph{Create cdef File}\label{basic_apps_create_basicAppsCreate_componentCdef}
+{\ttfamily 3}. Create a {\ttfamily cdef} file called {\ttfamily Component.\+cdef} like this\+:
+
+\begin{DoxyVerb}$ gedit helloComp/Component.cdef
+\end{DoxyVerb}
+
+
+\begin{DoxyVerb} sources:
+ {
+     hello.c
+ }\end{DoxyVerb}
+
+
+See \hyperlink{defFiles}{Definition Files} for complete info.\hypertarget{basic_apps_create_basicAppsCreate_adef}{}\subsubsection{Create App}\label{basic_apps_create_basicAppsCreate_adef}
+You need to create an {\ttfamily adef} file before you can build you app.
+
+{\ttfamily 4}. Create an {\ttfamily adef} file called {\ttfamily hello\+World.\+adef} like this\+:
+
+\begin{DoxyVerb}executables:
+{
+    helloWorld = ( helloComp )
+}
+
+processes:
+{
+    run:
+    {
+        (helloWorld)
+    }
+}
+\end{DoxyVerb}
+
+
+This defines one executable called {\ttfamily hello\+World} implemented by {\ttfamily hello\+Comp} and then starts one instance of the hello\+World executable.
+
+If your executable has multiple components, add more components inside the parentheses after the executable name\+: \char`\"{}hello\+World = ( hello\+Comp foo bar )\char`\"{}.\hypertarget{basic_apps_create_basicAppsCreate_buildApp}{}\subsubsection{Build App}\label{basic_apps_create_basicAppsCreate_buildApp}
+{\ttfamily 5}. Run {\ttfamily mkapp} to build the executable and bundle it into an app\+:
+
+Use the {\ttfamily -\/t} option to build for a target other than the default \char`\"{}localhost\char`\"{} target.
+
+This is how to build the hello\+World app to install on the Sierra Wireless W\+P85 module\+:
+
+\begin{DoxyVerb}$ mkapp -t wp85 helloWorld.adef
+\end{DoxyVerb}
+
+
+\begin{DoxyNote}{Note}
+If you\textquotesingle{}re building an A\+R7 or W\+P7 app, substitute {\ttfamily ar7} or {\ttfamily wp7} in the mkapp run command.
+\end{DoxyNote}
+\hypertarget{basic_apps_create_basicAppsCreate_instTarget}{}\subsubsection{Install App to Target}\label{basic_apps_create_basicAppsCreate_instTarget}
+{\ttfamily 6}. Use {\ttfamily instapp} to install the app on your target\+:
+
+\begin{DoxyVerb}$ instapp helloWorld.wp85 <ip addr>
+\end{DoxyVerb}
+
+
+The second argument is the target device\textquotesingle{}s I\+P address where to install the app. This will connect to the target and install the app.\hypertarget{basic_apps_create_basicAppsCreate_usage}{}\subsubsection{Usage}\label{basic_apps_create_basicAppsCreate_usage}
+These usage tips are based on running a secure shell (S\+S\+H) to interface with the target. See \hyperlink{getstartedTargetMain}{Setup Target Device} if you need to setup your target device and communications.\hypertarget{basic_apps_create_basicAppsCreate_usageLogin}{}\paragraph{Target Login}\label{basic_apps_create_basicAppsCreate_usageLogin}
+Login to your target using a secure shell connection\+:
+
+\begin{DoxyVerb}ssh root@192.168.1.2
+\end{DoxyVerb}
+\hypertarget{basic_apps_create_basicAppsCreate_usageStartApp}{}\paragraph{Target Start App}\label{basic_apps_create_basicAppsCreate_usageStartApp}
+Start your application using the {\ttfamily app start} command\+:
+
+\begin{DoxyVerb}app start helloWorld
+\end{DoxyVerb}
+\hypertarget{basic_apps_create_basicAppsCreate_usageViewLogs}{}\paragraph{View Logs}\label{basic_apps_create_basicAppsCreate_usageViewLogs}
+Your installed app\textquotesingle{}s {\ttfamily L\+E\+\_\+\+I\+N\+F\+O} log message will appear in the system log (\char`\"{}syslog\char`\"{}) on the target device.
+
+Run {\ttfamily logread} (on the target) to view the system log.
+
+\begin{DoxyVerb}# logread
+\end{DoxyVerb}
+
+
+Use logread\textquotesingle{}s {\itshape -\/f} option to start monitoring the logs and display messages as they are logged.
+
+\begin{DoxyVerb}# logread -f
+\end{DoxyVerb}
+
+
+Here\textquotesingle{}s a code sample accessing the logs on a target device with I\+P address 192.\+168.\+1.\+2 through an ssh connection\+: \begin{DoxyVerb}ssh root@192.168.1.2 '/sbin/logread -f'
+\end{DoxyVerb}
+\hypertarget{basic_apps_create_basicAppsCreate_usageRmApp}{}\paragraph{Remove App}\label{basic_apps_create_basicAppsCreate_usageRmApp}
+From the host P\+C, run {\ttfamily rmapp} to uninstall the app\+:
+
+\begin{DoxyVerb}$ rmapp helloWorld.wp85 <ip addr>
+\end{DoxyVerb}
+
+
+From the target run\+: \begin{DoxyVerb}app remove <app name>
+\end{DoxyVerb}
+\hypertarget{basic_apps_create_basicAppsCreate_usageLsApp}{}\paragraph{List App}\label{basic_apps_create_basicAppsCreate_usageLsApp}
+Use {\ttfamily lsapp} to list the apps installed on a target.
+
+\begin{DoxyVerb}$ lsapp <ip addr>
+\end{DoxyVerb}
+
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{basicAppsIPC}{}\subsection{Use I\+P\+C}\label{basicAppsIPC}
+Lets explore how to use inter-\/process communication (I\+P\+C) between components\+:
+
+
+\begin{DoxyItemize}
+\item Define a simple interface protocol that clients can use to ask servers to \char`\"{}\+Greet\char`\"{}.
+\item Create a server that prints \char`\"{}\+Hello world\char`\"{} whenever a client asks it to \char`\"{}\+Greet\char`\"{},
+\item Create a client that asks the server to \char`\"{}\+Greet\char`\"{},
+\end{DoxyItemize}
+
+Here\textquotesingle{}s what it looks like at runtime\+:
+
+
+
+When we show the static view of components inside executables, it looks like this\+:
+
+
+
+Note that each interface has
+\begin{DoxyItemize}
+\item an interface protocol
+\item a friendly name.
+\end{DoxyItemize}
+
+In our example, the client and server both use the same friendly name \char`\"{}hello\char`\"{} for their interfaces, and must use the same protocol (or they wouldn\textquotesingle{}t be able to communicate with each other!).\hypertarget{basic_apps_i_p_c_helloIPCDefiningTheAPI}{}\subsubsection{Define Interface Protocol}\label{basic_apps_i_p_c_helloIPCDefiningTheAPI}
+First, create a directory for our little project and change directories\+:
+
+\begin{DoxyVerb}$ mkdir helloIPC
+$ cd helloIPC
+\end{DoxyVerb}
+
+
+Next, define the interface protocol to use between the client and the server.
+
+To create our greet function-\/call A\+P\+I, we create a definition file called \char`\"{}greet.\+api\char`\"{}.
+
+\begin{DoxyVerb}$ gedit greet.api
+\end{DoxyVerb}
+
+
+Add this inside greet.\+api\+:
+
+\begin{DoxyVerb}FUNCTION Greet
+(
+);
+\end{DoxyVerb}
+
+
+This will declare a function called {\ttfamily Greet} that takes no arguments and returns nothing.\hypertarget{basic_apps_i_p_c_basicAppsIPC_helloIPCCreateServer}{}\subsubsection{Create Server Component}\label{basic_apps_i_p_c_basicAppsIPC_helloIPCCreateServer}
+Next, create a server component called {\ttfamily greet\+Server} that offers a greeting service called \char`\"{}hello\char`\"{} to be accessed using our simple \char`\"{}greet\char`\"{} A\+P\+I. Do this by creating a file called \char`\"{}\+Component.\+cdef\char`\"{} in a new directory called \char`\"{}greet\+Server\char`\"{}.
+
+\begin{DoxyVerb}$ mkdir greetServer
+$ gedit greetServer/Component.cdef
+\end{DoxyVerb}
+
+
+\begin{DoxyNote}{Note}
+Keeping components in separate directories from each other is a requirement of the framework.
+\end{DoxyNote}
+greet\+Server/\+Component.\+cdef should contain the following\+:
+
+
+\begin{DoxyCode}
+provides:
+\{
+    api:
+    \{
+        hello = greet.api
+    \}
+\}
+
+sources:
+\{
+    greetServer.c
+\}
+\end{DoxyCode}
+
+
+This declares that the component named {\ttfamily greet\+Server} (the name of the directory is the name of the component) provides a service called {\ttfamily hello} accessed using the A\+P\+I defined in {\ttfamily greet.\+api} where the source code can be found in the file {\ttfamily greet\+Server.\+c}.
+
+\begin{DoxyNote}{Note}
+The source code file name extension is used to identify the programming language it\textquotesingle{}s written in.
+\end{DoxyNote}
+To implement the server (in C), create a file {\ttfamily greet\+Server/greet\+Server.\+c}\+:
+
+\begin{DoxyVerb}$ gedit greetServer/greetServer.c
+\end{DoxyVerb}
+
+
+Make it contain the following\+:
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "\hyperlink{legato_8h}{legato.h}"}
+\textcolor{preprocessor}{#include "interfaces.h"}
+
+\textcolor{keywordtype}{void} hello\_Greet(\textcolor{keywordtype}{void})
+\{
+    \hyperlink{le__log_8h_a23e6d206faa64f612045d688cdde5808}{LE\_INFO}(\textcolor{stringliteral}{"Hello world."});
+\}
+
+\hyperlink{le__event_loop_8h_abdb9187a56836a93d19cc793cbd4b7ec}{COMPONENT\_INIT}
+\{
+
+\}
+\end{DoxyCode}
+
+
+The file {\ttfamily interfaces.\+h} is auto-\/generated based on the contents of {\ttfamily greet.\+api} and greet\+Server\textquotesingle{}s {\ttfamily Component.\+cdef}. It\textquotesingle{}ll contain a prototype of the function {\ttfamily hello\+\_\+\+Greet()}, which we implemented in {\ttfamily greet\+Server.\+c}.
+
+The function {\ttfamily hello\+\_\+\+Greet()} will be called when a client binds to our {\ttfamily hello} service and calls the function {\ttfamily Greet()}. The name {\ttfamily hello\+\_\+\+Greet} follows this pattern\+:
+
+\begin{DoxyVerb}<interface-name> '_' <api-function-name>
+\end{DoxyVerb}
+
+
+The $<$interface-\/name$>$ is the name given to the provided interface. In our example, it\textquotesingle{}s the name {\ttfamily hello} before the {\ttfamily =} in the line {\ttfamily hello} {\ttfamily =} {\ttfamily greet.\+api}.
+
+\begin{DoxyNote}{Note}
+If you forget to implement a service function on the server or if you give it the wrong name, the link stage will fail and complain that the symbol is unresolved. You\textquotesingle{}ll know you missed a function, and you\textquotesingle{}ll be able to see what the correct name of the function should be.
+\end{DoxyNote}
+\hypertarget{basic_apps_i_p_c_basicAppsIPC_helloIPCCreatingTheClient}{}\subsubsection{Create Client Component}\label{basic_apps_i_p_c_basicAppsIPC_helloIPCCreatingTheClient}
+Now that we have a server, let\textquotesingle{}s create a client to use its service.
+
+First, create a directory for the {\ttfamily greet\+Client} component and a file in it called {\ttfamily Component.\+cdef\+:} 
+
+\begin{DoxyVerb}$ mkdir greetClient
+$ gedit greetClient/Component.cdef
+\end{DoxyVerb}
+
+
+greet\+Client/\+Component.\+cdef should contain\+:
+
+
+\begin{DoxyCode}
+requires:
+\{
+    api:
+    \{
+        hello = greet.api
+    \}
+\}
+
+sources:
+\{
+    greetClient.c
+\}
+\end{DoxyCode}
+
+
+To implement the client using C, create a file called {\ttfamily greet\+Client/greet\+Client.\+c}\+:
+
+\begin{DoxyVerb}$ gedit greetClient/greetClient.c
+\end{DoxyVerb}
+
+
+Make it contain the following\+:
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "\hyperlink{legato_8h}{legato.h}"}
+\textcolor{preprocessor}{#include "interfaces.h"}
+
+\hyperlink{le__event_loop_8h_abdb9187a56836a93d19cc793cbd4b7ec}{COMPONENT\_INIT}
+\{
+    hello\_Greet();
+\}
+\end{DoxyCode}
+
+
+The {\ttfamily interfaces.\+h} file the client includes is different than the one the server uses. This client one is specially generated based on the contents of {\ttfamily greet\+Client/\+Component.\+cdef} and {\ttfamily greet.\+api}.
+
+In the client, we use the component initializer to call {\ttfamily hello\+\_\+\+Greet()} at start-\/up.
+
+You can add a message to the C\+O\+M\+P\+O\+N\+E\+N\+T\+\_\+\+I\+N\+I\+T so the logs will show the client calling the server\+: 
+\begin{DoxyCode}
+ \{
+    \hyperlink{le__log_8h_a23e6d206faa64f612045d688cdde5808}{LE\_INFO}(\textcolor{stringliteral}{"greetClient is calling hello\_Greet \(\backslash\)n"});
+    hello\_Greet();
+\}
+\end{DoxyCode}
+\hypertarget{basic_apps_i_p_c_basicAppsIPC_createIPCadef}{}\subsubsection{Declare I\+P\+C Bindings}\label{basic_apps_i_p_c_basicAppsIPC_createIPCadef}
+You can create an \hyperlink{defFilesAdef}{Application Definition .adef} file with an \hyperlink{def_files_adef_defFilesAdef_extern}{Extern} section to declare it\textquotesingle{}s available for binding\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{extern}:
+\{
+    helloWorld.greetServer.greet.api
+\}
+\end{DoxyCode}
+
+
+You only need to do this if you want to leave your interface unbound, and bind it later in the \hyperlink{defFilesSdef}{System Definition .sdef} file \hyperlink{def_files_sdef_defFilesSdef_bindings}{Bindings} section.
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{basicAppsClientServer}{}\subsection{Client/\+Server}\label{basicAppsClientServer}
+After you\textquotesingle{}ve created your client and server programs with their interfaces bound to each other, this is how you create the app.
+
+
+
+Create an app definition file called {\ttfamily hello\+World.\+adef} like this\+:
+
+\begin{DoxyVerb}$ gedit helloWorld.adef
+\end{DoxyVerb}
+
+
+\begin{DoxyVerb}executables:
+{
+    myServer = ( greetServer )
+    myClient = ( greetClient )
+}
+
+processes:
+{
+    run:
+    {
+        (myServer)
+        (myClient)
+    }
+}
+
+bindings:
+{
+    myClient.greetClient.hello -> myServer.greetServer.hello
+}
+\end{DoxyVerb}
+
+
+This defines two executable programs called {\ttfamily my\+Server} (containing the greet\+Server component) and {\ttfamily my\+Client} (containing the greet\+Client component).
+
+It then starts one instance of {\ttfamily my\+Server} and one instance of {\ttfamily my\+Client}, and binds {\ttfamily my\+Client.\+greet\+Client.\+hello} to {\ttfamily my\+Server.\+greet\+Server.\+hello}.
+
+Then run {\ttfamily mkapp} to build everything and package it up into an app.
+
+\begin{DoxyVerb}$ mkapp helloWorld.adef -t wp85
+\end{DoxyVerb}
+
+
+You\textquotesingle{}ll now have a file called \char`\"{}hello\+World.\+wp85\char`\"{} that contains your app.
+
+You can install and run it using instapp, see \hyperlink{basic_apps_create_basicAppsCreate_instTarget}{Install App to Target} for details.
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{basicAppsAddThings}{}\subsection{Add Things}\label{basicAppsAddThings}
+After you\textquotesingle{}ve created your executable and turned it into an app (.adef), you can add others things you might need (e.\+g., a third-\/party library, some data files, a script or a legacy program built on another system).
+
+To add other files to applications, you add other sections to your application\textquotesingle{}s {\ttfamily }.adef file.
+
+Here\textquotesingle{}s a sample of how to add an audio file and a third-\/party library\+:
+
+
+\begin{DoxyCode}
+bundles:
+\{
+    file:
+    \{
+        [r]     audio/alert.wav     /usr/share/sounds/
+
+        [r]     third-party/foo/lib/foo.so.1 /lib
+    \}
+\}
+\end{DoxyCode}
+
+
+The {\ttfamily file\+:} subsection of the {\ttfamily bundles\+:} section will copy the file ./audio/alert.wav from the build host\textquotesingle{}s file system (relative to the current working directory in which {\ttfamily mkapp} is run), and bundle it into the application such that it appears under /usr/share/sounds (from the application\textquotesingle{}s point-\/of-\/view when it runs on the target).
+
+The letter inside the square brackets (e.\+g., \mbox{[}r\mbox{]}) contain the permissions flags for the file on the target\+:
+\begin{DoxyItemize}
+\item \textquotesingle{}r\textquotesingle{} = {\bfseries readable} 
+\item \textquotesingle{}w\textquotesingle{} = {\bfseries writeable} 
+\item \textquotesingle{}x\textquotesingle{} = {\bfseries executable} 
+\end{DoxyItemize}
+
+If you want to have a script or other executable run when the application starts, add that file to
+\begin{DoxyItemize}
+\item the \char`\"{}file\+:\char`\"{} subsection of a \char`\"{}bundles\+:\char`\"{} section (with the executable flag \mbox{[}x\mbox{]} set), and
+\item the list of executables in the processes section, \char`\"{}run\+:\char`\"{} subsection.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+bundles:
+\{
+    file:
+    \{
+        [x]     otherProject/bin/bar    /usr/bin/bar
+    \}
+\}
+
+processes:
+\{
+    run:
+    \{
+        (/usr/bin/bar)
+    \}
+\}
+\end{DoxyCode}
+
+
+This grabs a copy of ./other\+Project/bin/bar (relative to the directory where {\ttfamily mkapp} is run), puts it in the application sandbox\textquotesingle{}s /usr/bin/bar directory, and starts one instance of it when the application starts.
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{basicAppsCompMulti}{}\subsection{Deploy Multiple Components}\label{basicAppsCompMulti}
+Now that we have {\itshape componentized} the client and server functionality, we are free to deploy those components to any executables we want without having to change the components at all. In fact, multiple components can be included in a single executable.
+
+To demonstrate, we can put the two components {\ttfamily greet\+Client} and {\ttfamily greet\+Server} into the same executable. This is a simple change to hello\+World.\+adef like this\+:
+
+\begin{DoxyVerb}executables:
+{
+    helloWorld = ( greetServer greetClient )
+}
+
+processes:
+{
+    run:
+    {
+        (helloWorld)
+    }
+}
+
+bindings:
+{
+     helloWorld.greetClient.hello -> helloWorld.greetServer.hello
+ }
+\end{DoxyVerb}
+
+
+
+
+
+
+Now we can run {\ttfamily mkapp} to build the application.
+
+
+\begin{DoxyCode}
+$ mkapp helloWorld.adef -t wp85
+\end{DoxyCode}
+
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{ccodingStdsMain}{}\section{C Language Standards}\label{ccodingStdsMain}
+Legato follows the C Language standards outlined in this topic to help simplify coding and help in code reuse.
+
+
+
+
+
+There\textquotesingle{}s also detailed info on \hyperlink{ccodingStdsNaming}{Naming Standards} and \hyperlink{ccodingStdsAbbr}{Abbreviations}\hypertarget{ccoding_stds_main_cstdsparamCommenting}{}\subsection{Commenting}\label{ccoding_stds_main_cstdsparamCommenting}
+If it\textquotesingle{}s not completely obvious what\textquotesingle{}s going on, it must be documented clearly using comments.
+
+Comments should also be used to improve readability, wherever appropriate.
+
+However, there\textquotesingle{}s no point in commenting the obvious, like this\+: \begin{DoxyVerb}// Set the flag
+isReady = TRUE; \end{DoxyVerb}
+
+
+Comments should focus mainly on describing why something is happening, rather than what or how. Code should be written so that what it\textquotesingle{}s doing, and how it\textquotesingle{}s doing it, is obvious (because of the well named identifiers and cleanly structured code). If not, your should probably rewrite the code. If that\textquotesingle{}s not practical, then you should comment on what and how.
+
+The idea of why the code is doing what it\textquotesingle{}s doing can\textquotesingle{}t be conveyed well in the code itself. This is the most valuable information to have in comments to advise of pitfalls and help quickly identify whether design change options are viable. Often, the \textquotesingle{}\textquotesingle{}why\textquotesingle{}\textquotesingle{} was learned the hard way, so documenting it can save others from having to learn it the hard way, too. Also, sometimes things are done arbitrarily, which is good to know too so people don\textquotesingle{}t have to fear that making changes to it might break something in some subtle way.
+
+C++ style comments are permitted in C code. All modern compilers support them.
+
+Each module should contain a comment block at the top of the file that describes the module\textquotesingle{}s purpose. The header comment block should be formatted like this\+:
+
+\begin{DoxyVerb}/**
+ * @file le_basics.h
+ *
+ * There are certain cardinal types and commonly-used constants that form the most basic
+ * foundation upon which everything else is built.  These include things such as
+ * error codes, portable integer types, and helpful macros to make ugly things nicer to look
+ * at and easier to use.
+ *
+ * <HR>
+ *
+ * Copyright (C) Sierra Wireless Inc. Use of this work is subject to license.
+ */
+\end{DoxyVerb}
+
+
+Each function should be preceded by a comment block that describes the purpose of the function, its possible return values, and any side effects it may have. The function blocks should be formatted like this\+:
+
+\begin{DoxyVerb}//--------------------------------------------------------------------------------------------------
+/**
+ * Creates a sub-pool.
+ *
+ * See @ref sub_pools for more information.
+ *
+ * @return
+ *      A reference to the sub-pool.
+ */
+//--------------------------------------------------------------------------------------------------
+le_mem_PoolRef_t le_mem_CreateSubPool
+(
+    le_mem_PoolRef_t    pool,       ///< [IN] The super-pool.
+    const char*         name,       ///< [IN] Name of the sub-pool (will be copied into the
+                                    ///   sub-pool).
+    size_t              numObjects  ///< [IN] Number of objects to take from the super-pool.
+);
+\end{DoxyVerb}
+
+
+Function parameters should be documented with comments after the parameter like above. Placing the comments after the parameters (instead of in the function comment block) keeps the comments and parameters together making it easier to read. It also reminds the developer to update the comments when the parameters are changed.
+
+A struct should be documented in a similar manner where each field has comments proceeding it like this\+:
+
+\begin{DoxyVerb}//--------------------------------------------------------------------------------------------------
+/**
+ * List of memory pool statistics.
+ */
+//--------------------------------------------------------------------------------------------------
+typedef struct
+{
+    uint64_t    numAllocs;      ///< Number of times an object has been allocated from this pool.
+    size_t      numFree;        ///< Number of free objects currently available in this pool.
+    size_t      numOverflows;   ///< Number of times le_mem_ForceAlloc() had to expand the pool.
+}
+le_mem_PoolStats_t;
+\end{DoxyVerb}
+
+
+Enumerated types should be documented similarly.
+
+\begin{DoxyVerb}//--------------------------------------------------------------------------------------------------
+/**
+ * Example return codes.
+ *
+ * @note These return codes are only valid within the ExampleModule. Use realMeaning(eg_code_t) to
+ *       translate. The following is strictly fictional and created only to illustrate style.
+ */
+//--------------------------------------------------------------------------------------------------
+typedef enum
+{
+    EG_PERFECT = 0,             ///< Things went well. Nothing to worry about.
+    EG_TROUBLE = -1,            ///< We might want to think about packing our bags.
+    EG_PANIC = -2,              ///< Definitely not good.
+    EG_WARP_CORE_BREACH = -99   ///< Dilithium crystals defocused the anti-matter beam. Should never happen.
+}
+eg_code_t;
+\end{DoxyVerb}
+
+
+If the meaning of the constants in an enumerated type are obvious based on their names, comments could be omitted like this\+:
+
+\begin{DoxyVerb}//--------------------------------------------------------------------------------------------------
+/**
+ * Boolean type.
+ *
+ * 0 is false and 1 is true, in keeping with the C programming language's
+ * Boolean expression evaluation rules.
+ */
+//--------------------------------------------------------------------------------------------------
+typedef enum
+{
+    FALSE = 0,
+    TRUE = 1
+}
+bool;
+\end{DoxyVerb}
+\hypertarget{ccoding_stds_main_cstdsConstPointers}{}\subsection{Const Pointers}\label{ccoding_stds_main_cstdsConstPointers}
+Pointer type function parameters must be declared {\ttfamily const} if the object pointed to will not be modified by the function being passed.
+
+Pointer type return values must be declared {\ttfamily const} if the object being returned must not be modified by the caller.\hypertarget{ccoding_stds_main_cstdsCyclomatic}{}\subsection{Cyclomatic Complexity}\label{ccoding_stds_main_cstdsCyclomatic}
+\href{http://en.wikipedia.org/wiki/Cyclomatic_complexity}{\tt Cylcomatic Complexity} is a measurement of the complexity of code within a function. It\textquotesingle{}s measured by counting branches within a function.
+
+Each function gets a starting value of 1, and 1 is added for every \char`\"{}if\char`\"{} (or \char`\"{}?\char`\"{}), every loop (for, do, or while), and every \char`\"{}case\char`\"{}.
+
+The following code has a cyclomatic complexity of 3\+:
+
+\begin{DoxyVerb}int main(int argc, char** argv)
+{
+    int i;
+    int result = 0;
+
+    if (argc <= 0)
+    {
+        printf("No arguments provided.\n");
+        result = 1;
+    }
+    else
+    {
+        printf("argc = %d\n", argc);
+
+        for (i = 0; i < argc; i++)
+        {
+            printf("argv[%d] = '%s'\n", argv[i]);
+        }
+    }
+    return result;
+}
+\end{DoxyVerb}
+
+
+Higher levels of cyclomatic complexity are correlated with higher defect density.
+
+All functions should have a cyclomatic complexity of 10 or less.
+
+All functions must have a cyclomatic complexity of less than 15.\hypertarget{ccoding_stds_main_cstdsExistingCode}{}\subsection{Existing Code}\label{ccoding_stds_main_cstdsExistingCode}
+When modifying previously written code, the pre-\/existing style should be used over the Legato standards. But you should apply the Legato standards to the parts you modify unless you\textquotesingle{}re making a very small change.\hypertarget{ccoding_stds_main_cstdsExtern}{}\subsection{Extern}\label{ccoding_stds_main_cstdsExtern}
+When global variables aren\textquotesingle{}t used and all inter-\/module interfaces are defined in header files, the extern keyword isn\textquotesingle{}t needed; don\textquotesingle{}t use it. Using extern indicates poor coding practices.\hypertarget{ccoding_stds_main_cstdsFanOut}{}\subsection{Fan Out}\label{ccoding_stds_main_cstdsFanOut}
+Fan-\/out measures the number of different functions called by a function including the number of data structures it updates. High levels of fan-\/out indicate insufficient abstraction and results in higher defect density.
+
+The following function has a fan-\/out of 5\+: \begin{DoxyVerb}static int Log(int value)
+{
+    if (IsAboveThreshold(value))
+    {
+        LogEntry_t* entryPtr = AllocEntry();
+        if (entryPtr == NULL)
+        {
+            ReportError("Out of memory!");
+        }
+        else
+        {
+            entryPtr->value = value;
+            entryPtr->timestamp = GetTimestamp();
+
+            // Add the entry to the log entry list.
+            LogEntryList[NextEntryIndex++] = entryPtr;
+            if (NextExtryIndex >= LOG_SIZE)
+            {
+                NextEntryIndex = 0; // wrap around
+            }
+            if (NextEntryIndex == LastEntryIndex)
+            {
+                ReportError("Log overflow! Log entry discarded.");
+                LastEntryIndex = (LastEntryIndex + 1) % LOG_SIZE;
+            }
+        }
+    }
+}\end{DoxyVerb}
+
+
+The functions Is\+Above\+Threshold(), Alloc\+Entry(), Report\+Error(), and Get\+Timestamp() are called by the Log() function. The \char`\"{}\+Log\char`\"{} data structure (consisting of the variables Log\+Entry\+List, Next\+Entry\+Index, and Last\+Entry\+Index) is updated by the Log() function. The second and subsequent calls to the same function are not counted. Even though Report\+Error() is called twice by Log(), it only contributes 1 to the fan-\/out.
+
+Ideally, fan-\/out should be kept to 7 or less, and must be kept to 10 or less.\hypertarget{ccoding_stds_main_cstdsFunctionParameter}{}\subsection{Function Parameters}\label{ccoding_stds_main_cstdsFunctionParameter}
+The number of parameters passed to a function should be kept as low as possible. Functions with less parameters tend to be easier to understand and easier to use. C functions should have 3 parameters or less.\hypertarget{ccoding_stds_main_cstdsGlobalVariables}{}\subsection{Global Variables}\label{ccoding_stds_main_cstdsGlobalVariables}
+Global variables are variables that are exported to other modules (i.\+e., have a scope that spans multiple files).
+
+Global variables are dangerous because they don\textquotesingle{}t protect from multithreaded race conditions, and they reduce maintainability because of the increased coupling.
+
+Globals must not be used. Use accessor functions instead.
+
+N\+O\+T\+E\+: file-\/scope static variables are fine.\hypertarget{ccoding_stds_main_cstdsGotos}{}\subsection{Gotos}\label{ccoding_stds_main_cstdsGotos}
+{\ttfamily goto} statements should not be used. If it\textquotesingle{}s absolutely essential, use them sparingly only as a jump-\/to-\/exception-\/handling mechanism\+:
+
+\begin{DoxyVerb}{
+    Rec_t* recPtr = CreateRec();
+
+    ...
+
+    if (x > LIMIT)
+    {
+        goto fault;
+    }
+
+    ...
+
+    SaveRec(recPtr);
+    return SUCCESS;
+
+fault:
+
+    ReleaseRec(recPtr);
+    return FAILED;
+}\end{DoxyVerb}
+\hypertarget{ccoding_stds_main_cstdsHeap}{}\subsection{Heap}\label{ccoding_stds_main_cstdsHeap}
+Depending on the algorithm used, dynamic memory allocation using a memory heap (e.\+g., malloc, free, and variants like calloc, realloc, and strdup) can lead to heap fragmentation resulting in unexpected runtime failures. And heap allocation and deallocation can be very slow in some cases.
+
+Use memory pools instead. Memory pools eliminate internal fragmentation, run in O(1) time (for both allocation and deallocation), can be named for diagnostics purposes, allow finer-\/grained memory allocation statistics collection, and can provide O\+O constructor and destructor functionality.\hypertarget{ccoding_stds_main_cstdsInterfaceDocumentation}{}\subsection{Interface Documentation}\label{ccoding_stds_main_cstdsInterfaceDocumentation}
+Inter-\/component interfaces should be documented using Doxygen. This ensures documentation is inside the include (.h) files.\hypertarget{ccoding_stds_main_cstdsLineLength}{}\subsection{Line Length}\label{ccoding_stds_main_cstdsLineLength}
+Lines of code should not be longer than 100 columns.\hypertarget{ccoding_stds_main_cstdsMultipleInclusionGuards}{}\subsection{Multiple Inclusion Guards}\label{ccoding_stds_main_cstdsMultipleInclusionGuards}
+To prevent declaration errors due to multiple inclusion of the same header file, every header file must include a \char`\"{}multiple inclusion guard\char`\"{} like this\+:
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#ifndef UNIQUE\_INCLUDE\_GUARD}
+\textcolor{preprocessor}{#define UNIQUE\_INCLUDE\_GUARD}
+
+...
+
+#endif
+\end{DoxyCode}
+
+
+{\ttfamily U\+N\+I\+Q\+U\+E\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+G\+U\+A\+R\+D} must be replaced with a macro name unique to this header file. To ensure uniqueness, the macro name should\+:
+
+
+\begin{DoxyItemize}
+\item contain the name of the file (converted to all upper case, with underscores separating words)
+\item be prefixed with a name or abbreviation that\textquotesingle{}s unique to the module that the header file is a part of
+\item have \char`\"{}\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+G\+U\+A\+R\+D\char`\"{} as a suffix.
+\end{DoxyItemize}
+
+The Converter module\textquotesingle{}s inter-\/module interface file converter.\+h\textquotesingle{} in the Sierra Wireless (S\+W\+I) Transmogrifier component could contain a multiple inclusion guard macro named like this\+: 
+\begin{DoxyCode}
+SWI\_TMOG\_CONVERTER\_INCLUDE\_GUARD
+\end{DoxyCode}
+
+
+Code in a header file must be inside the file\textquotesingle{}s multiple inclusion guard (except for comments) like this\+:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Only comments allowed here.}
+
+\textcolor{preprocessor}{#ifndef SWI\_TMOG\_CONVERTER\_INCLUDE\_GUARD}
+\textcolor{preprocessor}{#define SWI\_TMOG\_CONVERTER\_INCLUDE\_GUARD}
+
+\textcolor{comment}{// Any code can go here.}
+
+\textcolor{preprocessor}{#endif // SWI\_TMOG\_CONVERTER\_INCLUDE\_GUARD}
+
+\textcolor{comment}{// Only comments allowed here, but preferably nothing but the end of file should be here.}
+\end{DoxyCode}
+
+
+To allow include guard macros to be renamed (in case the file is renamed, the code changes hands, a naming conflict is found, etc.) and to avoid maintenance confusion, these macros shouldn\textquotesingle{}t be used for anything else other than the multiple inclusion guard.
+
+\begin{DoxyNote}{Note}
+If you\textquotesingle{}re modifying existing code that uses multiple inclusion guard, follow the pre-\/existing code style instead of the Legato standard.
+\end{DoxyNote}
+\hypertarget{ccoding_stds_main_cstdsMultithreading}{}\subsection{Multithreading}\label{ccoding_stds_main_cstdsMultithreading}
+Sometimes multithreading can be a powerful tool to allow functionally-\/related code be grouped into a single control flow where it would otherwise be fragmented into small chunks that can run without blocking. But multithreading can easily create some of the most nasty bugs.
+
+What can we do in coding standards to help prevent bugs arising from multithreading? Perhaps defining how synchronization is performed? Can we have a standard macro definition for mutual exclusion for example? Maybe that\textquotesingle{}s outside of what coding standards normally define, but it could be useful.\hypertarget{ccoding_stds_main_cstdsRecursion}{}\subsection{Recursion}\label{ccoding_stds_main_cstdsRecursion}
+Recursion can be dangerous because it can result in stack overruns. {\bfseries Don\textquotesingle{}t use recursion} unless you can clearly highlight the recursion and prove that the recursion will be bounded well within the limits of even the smallest stack space that could reasonably be allocated to your thread.\hypertarget{ccoding_stds_main_cstdsSeparateInterfacefromImplementation}{}\subsection{Separating Interface from Implementation}\label{ccoding_stds_main_cstdsSeparateInterfacefromImplementation}
+Header files should contain only interface details. Implementation details should appear only in {\ttfamily }.c files.
+
+Separating interface from implementation reduces coupling, which increases quality.\hypertarget{ccoding_stds_main_cstdsTabs}{}\subsection{Tabs}\label{ccoding_stds_main_cstdsTabs}
+Tab characters are not handled in a consistent way in editors and browsers. Some put tab stops at the equivalent of 8 spaces, others use 4 or other variations. As a result, source code containing tab characters are not rendered properly in all cases.
+
+Avoid tab characters avoided in C source code. Use spaces to indent lines instead.
+
+The standard indentation distance is 4 spaces per indentation level.
+
+Configure your editor(s) now! (...and, while you\textquotesingle{}re at it, tell your editor not to automatically go and change pre-\/existing code.)
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{ccodingStdsNaming}{}\subsection{Naming Standards}\label{ccodingStdsNaming}
+Detailed info\+:
+
+\hyperlink{ccodingStdsNameTypes}{Types} ~\newline
+ \hyperlink{ccodingStdsNameFuncs}{Functions} ~\newline
+ \hyperlink{ccodingStdsParam}{Variables \& Function Parameters}
+
+Other C language standards\textquotesingle{} pages\+:
+
+\hyperlink{ccodingStdsAbbr}{Abbreviations} ~\newline
+ \hyperlink{ccodingStdsMain}{C Language Standards}\hypertarget{ccoding_stds_naming_cstdsNaming}{}\subsubsection{Naming Overview}\label{ccoding_stds_naming_cstdsNaming}
+Naming is arguably one of the most important aspects of coding. Good naming conventions have a huge impact on readability, which translates to easier code review and maintenance.
+
+Time spent carefully choosing names or correcting poor naming will almost certainly pay back several times in savings of time and effort in peer reviews, testing, troubleshooting, and renovations (refactoring, re-\/engineering, design and implementation of new requirements).\hypertarget{ccoding_stds_naming_descript}{}\paragraph{Be Descriptive}\label{ccoding_stds_naming_descript}
+The most important requirement for names of identifiers, files, etc. is that they describe what they are. Don\textquotesingle{}t call a pointer to a timer \char`\"{}p\char`\"{}, or \char`\"{}tp\char`\"{} (is that toilet paper?). Call it \char`\"{}timer\+Ptr\char`\"{} so at a glance, it\textquotesingle{}s extremely obvious what it is.
+
+It\textquotesingle{}s acceptable for loop counters to be numbered simply \char`\"{}i\char`\"{} (or \char`\"{}j\char`\"{} for a nested loop, or \char`\"{}k\char`\"{} for a nested nested loop), because this is common usage, not only in programming, but also in mathematics.
+
+It\textquotesingle{}s also acceptable for variables with \textquotesingle{}\textquotesingle{}very\textquotesingle{}\textquotesingle{} limited scope (i.\+e., limited to a handful of lines of code) to have very simplified names, if that improves readability through reduced clutter. For example, \char`\"{}t\char`\"{} becomes more acceptable for a timer reference if it\textquotesingle{}s used in a tiny code block like this\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{static} \textcolor{keywordtype}{void} StartTimer(\textcolor{keywordtype}{void})
+\{
+    \hyperlink{le__timer_8h_a763fa6992488cdce3b5a820817094838}{le\_timer\_Ref\_t} t = \hyperlink{le__timer_8h_aee41169a210378b369f440cf99146522}{le\_timer\_Create}(TimerPool);
+    \hyperlink{le__timer_8h_a0a103d5cef5e83fc9088859d527bbd43}{le\_timer\_SetInterval}(t, TIMER\_INTERVAL);
+    le\_timer\_SetExpiryHandler(t, TimerExpired, NULL);
+    \hyperlink{le__timer_8h_ada2ce7f8cb1e76ed959e323ae94bbfc0}{le\_timer\_Start}(t);
+\}
+\end{DoxyCode}
+\hypertarget{ccoding_stds_naming_prefix}{}\paragraph{Prefixes}\label{ccoding_stds_naming_prefix}
+\hyperlink{ccoding_stds_naming_cstdsInterComponentInterfaces}{Component Interfaces} ~\newline
+ \hyperlink{ccoding_stds_naming_cstdsInterModuleInterfaces}{Module Interfaces} ~\newline
+
+
+Often, an identifier prefix is needed to prevent naming conflicts between identifiers that are exported to other modules as a part of an interface. Two interfaces may each define a function called \char`\"{}\+Get\+Size\char`\"{}. To prevent naming conflicts (and avoid programmer confusion), each of those interfaces mut use a unique prefix. Prefixes are also needed for other things besides functions\+: types, variables, files, and macros.
+
+The structure of an interface-\/specific prefix differs based on the scope of the interface. The possible scopes are\+:
+
+
+\begin{DoxyItemize}
+\item inter-\/component -\/ interface implemented by one component and used by {\itshape other} components.
+\item inter-\/module -\/ interface implemented by one module used by other modules within the {\itshape same} component.
+\end{DoxyItemize}
+
+Inter-\/module interfaces are sometimes called intra-\/component interfaces, but \char`\"{}inter-\/module\char`\"{} is the preferred term.
+
+Each part of the prefix must start with a lower case letter (unless it is a macro prefix) and must be separated from other parts of the identifier using underscores.
+
+Underscores are used instead of capitalization to separate the parts of the prefix and to separate the prefix from the identifier for several reasons\+:
+
+
+\begin{DoxyItemize}
+\item To make the prefix clearly stand out from the rest of the identifier.
+\item Because abbreviations tend to often be acronyms, which sometimes get capitalized improperly when using camel case.
+\item To make machine parsing these identifiers easier.
+\end{DoxyItemize}\hypertarget{ccoding_stds_naming_cstdsInterComponentInterfaces}{}\paragraph{Component Interfaces}\label{ccoding_stds_naming_cstdsInterComponentInterfaces}
+Inter-\/component interfaces have prefixes containing at least two parts\+:
+
+
+\begin{DoxyItemize}
+\item company abbreviation
+\item interface name abbreviation
+\end{DoxyItemize}
+
+The company abbreviation indicates the company that owns the interface. For Sierra Wireless, this is usually \char`\"{}swi\char`\"{}. For open-\/source projects, the abbreviation indicates interface\textquotesingle{}s project, like the \char`\"{}\+Legato\char`\"{} project that starts with {\ttfamily le\+\_\+}.
+
+The interface name abbreviation is simply an abbreviation of the interface\textquotesingle{}s name. A memory management A\+P\+I might have {\ttfamily mem} as its abbreviation. This abbreviation should not be longer than 5 characters. Two to four characters is preferred.
+
+A timer A\+P\+I owned by Sierra Wireless might have the prefix {\ttfamily swi\+\_\+tmr\+\_\+} 
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{typedef} \textcolor{keyword}{struct }swi\_tmr* swi\_tmr\_Ref\_t;
+
+swi\_tmr\_Ref\_t swi\_tmr\_Create(\textcolor{keywordtype}{void});
+\textcolor{keywordtype}{void} swi\_tmr\_SetInterval(swi\_tmr\_Ref\_t timer, uint intervalInMs);
+\textcolor{keywordtype}{void} swi\_tmr\_Start(swi\_tmr\_Ref\_t timer);
+...
+\end{DoxyCode}
+
+
+while the Legato Memory Management A\+P\+I could have the prefix {\ttfamily le\+\_\+mem\+\_\+} 
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{typedef} \textcolor{keyword}{struct }le\_mem\_Pool* \hyperlink{le__mem_8h_a44a896f6a0a1a8c733e8038eb332989e}{le\_mem\_PoolRef\_t};
+
+le\_mem\_PoolRef\_t \hyperlink{le__mem_8h_ab91efaa2978c9c1c7b2427d25b33241c}{le\_mem\_CreatePool}(\textcolor{keywordtype}{size\_t} blockSizeInBytes);
+\end{DoxyCode}
+\hypertarget{ccoding_stds_naming_cstdsInterModuleInterfaces}{}\paragraph{Module Interfaces}\label{ccoding_stds_naming_cstdsInterModuleInterfaces}
+Inter-\/module interfaces have only one part to their prefix\+: an interface name abbreviation. A Registration List module could use the prefix {\ttfamily rlist\+\_\+}. A Registration Module that implements the registration objects that get stored in the Registration List might use the prefix {\ttfamily reg\+\_\+\+:} 
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} rlist\_Add(reg\_Ref\_t registration);
+\textcolor{keywordtype}{void} rlist\_Remove(reg\_Ref\_t registration);
+reg\_Ref\_t rlist\_FindByName(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* name);
+\end{DoxyCode}
+
+
+Because inter-\/module interfaces are not seen outside of the component where they\textquotesingle{}re defined, it\textquotesingle{}s impossible to have a naming conflict between an inter-\/module interface in one component and an inter-\/module interface in another component. Actually, there could still be a conflict at the link stage, if the symbols are allowed to leak out, but a linker script file can be used to prevent this quite easily.
+
+It\textquotesingle{}s also impossible to have a naming conflict between an inter-\/component interface and an inter-\/module interface, because all interfaces imported from outside a component will have both a company prefix and an interface name abbreviation. The difference in the prefixes also highlights the scope differences of the identifiers, whichincreases readability.\hypertarget{ccoding_stds_naming_cstdsFiles}{}\subsubsection{Files}\label{ccoding_stds_naming_cstdsFiles}
+Like other forms identifiers, the most important requirement for file names is they be descriptive; the name of the file must clearly describe what the file contains.
+
+The files must also be named in a way their names won\textquotesingle{}t conflict with names of other files. This is mainly important for include files. For example, don\textquotesingle{}t call one of your header files \char`\"{}time.\+h\char`\"{}, because that name will conflict with the C standard library file of the same name. That\textquotesingle{}s why inter-\/component interface headers must be prefixed with the company abbreviation. The Sierra Wireless Transmogrifier"A\+P\+I include file could be named something like {\ttfamily swi\+\_\+transmog.\+h}. Prefixes aren\textquotesingle{}t required for files only visible within a limited scope (e.\+g., implementation files or inter-\/module interfaces only visible inside a single software component).\hypertarget{ccoding_stds_naming_cstdsMacros}{}\subsubsection{Macros}\label{ccoding_stds_naming_cstdsMacros}
+Macros can be used in similar ways to variables and functions, but their behaviour has subtle differences that can result in bugs or code bloat if used incorrectly. Compiler errors and warnings resulting from macro substitution can also be somewhat cryptic and difficult to understand if it isn\textquotesingle{}t obvious that the code involved is a macro. That\textquotesingle{}s why it\textquotesingle{}s important to easily distinguish a macro from a non-\/macro when reading code. Macro names must be all uppercase, with words separated using underscores.
+
+Names of macros can also conflict with the names of macros defined in include files from other modules. To reduce the chances of a naming conflict, macros exported to other modules must have a prefix. Even macros only used within a single file should have a prefix if the names are likely to conflict with names defined in standard C libraries or other included code that doesn\textquotesingle{}t use prefixes.
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{ccodingStdsNameTypes}{}\subsubsection{Types}\label{ccodingStdsNameTypes}
+Other C language standards\textquotesingle{} pages\+:
+
+\hyperlink{ccodingStdsNaming}{Naming Standards} ~\newline
+ \hyperlink{ccodingStdsAbbr}{Abbreviations} ~\newline
+ \hyperlink{ccodingStdsMain}{C Language Standards}\hypertarget{ccoding_stds_name_types_cstdsNameSuffix}{}\paragraph{Suffix}\label{ccoding_stds_name_types_cstdsNameSuffix}
+Types are distinctly different from instances, but it\textquotesingle{}s possible to choose name so it\textquotesingle{}s hard to know whether something is a type or a variable. Naming conflicts can occur between types and variables and even between types and functions.
+
+Type names are always given {\ttfamily \+\_\+t} suffix.\hypertarget{ccoding_stds_name_types_cstdsNameTypesPrefix}{}\paragraph{Prefix}\label{ccoding_stds_name_types_cstdsNameTypesPrefix}
+If a type is defined in a header file, there\textquotesingle{}s a possibility its name will conflict with the name of another type defined elsewhere.
+
+All types defined inside header files must have a prefix.
+
+Types defined inside implementation (.c) files don\textquotesingle{}t need a prefix. They have file scope, and imported types will have prefixes, so naming conflicts are highly unlikely.
+
+The prefix (if any) must be all lower-\/case.\hypertarget{ccoding_stds_name_types_cstdsNameType}{}\paragraph{Name}\label{ccoding_stds_name_types_cstdsNameType}
+After the prefix (if any), the rest of the type name must be in Camel\+Case, beginning with an uppercase character. \begin{DoxyVerb}// Inside a .c file:
+typedef size_t ObjectCount_t;
+
+
+
+// Inside the Sierra Wireless "Foo" component's API .h file:
+typedef size_t swi_foo_ObjectCount_t;\end{DoxyVerb}
+\hypertarget{ccoding_stds_name_types_cstdsCardinalTypes}{}\paragraph{Cardinal Types}\label{ccoding_stds_name_types_cstdsCardinalTypes}
+Cardinal types (e.\+g., int, uint, int32, bool) are exempt from having a prefix or suffix because\+:
+
+
+\begin{DoxyItemize}
+\item naming a variable \char`\"{}bool\char`\"{} or \char`\"{}int\char`\"{} won\textquotesingle{}t be very descriptive, so there\textquotesingle{}s little point to include those.
+\item most cardinal types are built into the language and we\textquotesingle{}re not allowed to change their names (and we wouldn\textquotesingle{}t want to-\/imagine the confusion and the 3rd-\/party integration problems!).
+\end{DoxyItemize}\hypertarget{ccoding_stds_name_types_cstdsEnumerationMembers}{}\paragraph{Enumeration Members}\label{ccoding_stds_name_types_cstdsEnumerationMembers}
+Enumeration members are constants used in a similar way to macro constants. To clearly identify them as literal constants, they must be named using all upper-\/case with underscores separating words.
+
+Also like macros, names of enumeration members can also conflict with the names of macros and enumeration members defined in include files from other modules. Any members of enumerations exported to other modules must have a prefix. Even members of enumerations only used within a single file should have a prefix if the names are likely to conflict with names defined in standard C libraries or other included code that doesn\textquotesingle{}t use prefixes.\hypertarget{ccoding_stds_name_types_cstdsStructandUnionNamespaces}{}\paragraph{Struct and Union Namespaces}\label{ccoding_stds_name_types_cstdsStructandUnionNamespaces}
+When a structure or union is defined, it\textquotesingle{}s possible to give a name to that structure or union within a separate namespace. This example uses \char`\"{}\+Message\+Body\char`\"{} and \char`\"{}\+Message\char`\"{} in the union and struct namespaces, but \char`\"{}\+Message\+Body\+\_\+t\char`\"{} and \char`\"{}\+Message\+\_\+t\char`\"{} are not\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{typedef} \textcolor{keyword}{union }MessageBody
+\{
+    Request\_t request;
+    Response\_t response;
+\}
+MessageBody\_t;
+
+\textcolor{keyword}{typedef} \textcolor{keyword}{struct }Message
+\{
+    MessageType\_t type;
+    MessageBody\_t body;
+\}
+Message\_t;
+\end{DoxyCode}
+
+
+All names in the struct namespace must be preceded by the keyword \char`\"{}struct\char`\"{}. All names in the union namespace must be preceded by the keyword \char`\"{}union\char`\"{}. This way, there\textquotesingle{}s no confusion, and they\textquotesingle{}re in a separate namespace so there\textquotesingle{}s no possibility of naming conflicts with identifiers outside the namespaces. That\textquotesingle{}s why these names are exempt from having an \char`\"{}\+\_\+t\char`\"{} suffix. Athough if these are defined in a header file, they still need a prefix to prevent naming conflicts with other identifiers defined by other components in the same namespace.\hypertarget{ccoding_stds_name_types_cstdsStructandUnionMembers}{}\paragraph{Struct and Union Members}\label{ccoding_stds_name_types_cstdsStructandUnionMembers}
+The names of members of structures and unions must start with a lower-\/case letter and use Camel\+Case to separate words.
+
+Because structure and union member names are always used in context (in a dereference expression), there\textquotesingle{}s no confusing them with other types\textquotesingle{} members (assuming the structure or union reference identifier is well named). No prefix is needed on structure or union member names\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{typedef} \textcolor{keyword}{struct}
+\{
+    \textcolor{keywordtype}{char}* textBufferPtr;
+    \textcolor{keywordtype}{int}   textLength;
+
+    ...
+\}
+MyStructure\_t;
+
+\textcolor{keyword}{static} \textcolor{keywordtype}{void} PrintTextBuffer(MyStructure\_t* objectPtr)
+\{
+    \textcolor{keywordtype}{int} i;
+    \textcolor{keywordflow}{for} (i = 0; i < objectPtr->textLength; i++)
+    \{
+        PrintChar(objectPtr->textBufferPtr[i]);
+    \}
+\}
+\end{DoxyCode}
+
+
+\begin{DoxyNote}{Note}
+Only stack variable names and struct/union member names can (and {\itshape must}) start with lower-\/case letters.
+\end{DoxyNote}
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{ccodingStdsNameFuncs}{}\subsubsection{Functions}\label{ccodingStdsNameFuncs}
+Other C language standards\textquotesingle{} pages\+:
+
+\hyperlink{ccodingStdsNaming}{Naming Standards} ~\newline
+ \hyperlink{ccodingStdsAbbr}{Abbreviations} ~\newline
+ \hyperlink{ccodingStdsMain}{C Language Standards}\hypertarget{ccoding_stds_name_funcs_cstdsFuncsPrefix}{}\paragraph{Prefix}\label{ccoding_stds_name_funcs_cstdsFuncsPrefix}
+If a function is defined in a header file, there\textquotesingle{}s a possibility that its name may conflict with the name of another function defined elsewhere. To prevent these conflicts, all functions defined inside header files must have a prefix.
+
+Functions defined inside implementation (.c) files don\textquotesingle{}t need an inter-\/component or inter-\/module prefix. Functions defined inside .c files have file scope and any imported functions will have inter-\/component or inter-\/module prefixes, so naming conflicts are highly unlikely.
+
+Also, if a function belongs to a specific type of object (e.\+g., class) in an object oriented interface, its prefix must have an additional object name part. The object name part of a prefix must start with a lowercase letter and must be separated from other parts of the identifier using underscores. If the object name is made up of multiple words, they must be separated using capitalization of the first letter of the second and subsequent words in the object name (e.\+g., ip\+Route or sim\+Card).
+
+
+\begin{DoxyCode}
+pool = \hyperlink{le__mem_8h_ab91efaa2978c9c1c7b2427d25b33241c}{le\_mem\_CreatePool}(\textcolor{keyword}{sizeof}(MyObject\_t), \textcolor{stringliteral}{"My objects"});  \textcolor{comment}{// This function doesn't
+       belong to a class.}
+le\_mem\_pool\_Expand(pool, numObjects);  \textcolor{comment}{// This is one of the "pool" class's functions.}
+objPtr = le\_mem\_pool\_Alloc(pool); \textcolor{comment}{// This also belongs to the "pool" class.}
+objSize = le\_mem\_block\_GetSize(objPtr);  \textcolor{comment}{// This function belongs to the "block" class.}
+\end{DoxyCode}
+\hypertarget{ccoding_stds_name_funcs_cstdsCamelCaseName}{}\paragraph{Camel Case}\label{ccoding_stds_name_funcs_cstdsCamelCaseName}
+After the prefix (if any), the rest of the function name should be in Camel\+Case, starting with an uppercase letter.\hypertarget{ccoding_stds_name_funcs_cstdsVerbage}{}\paragraph{Verbage}\label{ccoding_stds_name_funcs_cstdsVerbage}
+Function names must contain a verb, because they are active. They should also contain an object, unless the object is obvious in the prefix.
+
+To be consistent with Java conventions, the verb should come before the object, like this\+:
+
+
+\begin{DoxyCode}
+GetTimeRemaining(), \hyperlink{le__mem_8h_ab91efaa2978c9c1c7b2427d25b33241c}{le\_mem\_CreatePool}(), and swi\_timer\_Start().
+\end{DoxyCode}
+
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{ccodingStdsParam}{}\subsubsection{Variables \& Function Parameters}\label{ccodingStdsParam}
+Other C language standards\textquotesingle{} pages\+:
+
+\hyperlink{ccodingStdsNaming}{Naming Standards} ~\newline
+ \hyperlink{ccodingStdsAbbr}{Abbreviations} ~\newline
+ \hyperlink{ccodingStdsMain}{C Language Standards}\hypertarget{ccoding_stds_param_cstdsparamCamelCase}{}\paragraph{Camel Case}\label{ccoding_stds_param_cstdsparamCamelCase}
+Variable names and function parameter names should be in Camel\+Case.\hypertarget{ccoding_stds_param_cstdsparamPrefix}{}\paragraph{Prefix}\label{ccoding_stds_param_cstdsparamPrefix}
+Variables are never defined inside header files so they never need prefixes.\hypertarget{ccoding_stds_param_cstdsparamPointers}{}\paragraph{Pointers}\label{ccoding_stds_param_cstdsparamPointers}
+Pointers are used differently than non-\/pointer variables. A range of new operators become available when you use pointers, and mathematical operations take on a whole new meaning. That\textquotesingle{}s why it\textquotesingle{}s important to distinguish pointer variables from non-\/pointer variables.
+
+Pointer variable names must end in \char`\"{}\+Ptr\char`\"{}.
+
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} index = 0;
+\textcolor{keywordtype}{int}* indexPtr = &index;
+\end{DoxyCode}
+
+
+There\textquotesingle{}s an exception when working with opaque types, because pointers are often used to implement opaque types in C. A header file might contain something like this\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{typedef} \textcolor{keyword}{struct }foo\_Sandwich* foo\_SandwichRef\_t;
+\end{DoxyCode}
+ This defines a type that can be used to refer to a \char`\"{}\+Sandwich\char`\"{} object. Note struct foo\+\_\+\+Sandwich is never defined outside of the \char`\"{}foo\char`\"{} module (and may not even be defined inside of the foo module). To all outsiders, this reference looks like a pointer to an incomplete type, and can\textquotesingle{}t be dereferenced. Inside the \char`\"{}foo\char`\"{} module, struct foo\+\_\+\+Sandwich could be defined or this pointer type could even be used to hold an integer, a char, or anything else that\textquotesingle{}s the same size or smaller than a pointer.
+
+A \char`\"{}file reference\char`\"{} could be implemented on some systems as an integer file descriptor. If the reference is an opaque type that\textquotesingle{}s never used as a pointer outside of the module that implements it, or might not be a pointer even inside the module that implements it, then variables of opaque pointer types don\textquotesingle{}t need a \char`\"{}\+Ptr\char`\"{} suffix.\hypertarget{ccoding_stds_param_cstdsparamStaticVariables}{}\paragraph{Static Variables}\label{ccoding_stds_param_cstdsparamStaticVariables}
+Variables that exist on the stack are function parameters and automatic variables (non-\/static variables declared inside of functions). When these variables go out of scope, they disappear; their memory is released so it can be used for other purposes. To make it obvious that these variables are stack variables and not static variables, they must start with a lower-\/case letter.
+
+Because the scope of these variables is limited to a specific function or compound block within a function, they don\textquotesingle{}t need a prefix to avoid naming conflicts\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{static} \textcolor{keywordtype}{void} Function(\textcolor{keywordtype}{int} numericParameter)
+\{
+    \textcolor{keywordtype}{char}* stringAutoVariable;
+
+
+    ...
+\}
+\end{DoxyCode}
+
+
+\begin{DoxyNote}{Note}
+Only stack variable names and struct/union member names can (and {\itshape must}) start with lower-\/case letters.
+\end{DoxyNote}
+Static variables aren\textquotesingle{}t stored in either the stack or the heap. They are statically allocated in the data segment of the process\textquotesingle{}s address space. They have scope limited to either a compound statement (if defined inside a function), or a file (if defined outside of all functions). Because these variables are never visible outside a file, they don\textquotesingle{}t need any special prefix to prevent naming conflicts. But they\textquotesingle{}re stored differently than variables on the stack (and don\textquotesingle{}t disappear when they go out of scope), so they start with an upper-\/case letter to distinguish them from stack variables\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{static} \textcolor{keywordtype}{int} CallCounter = 0;  \textcolor{comment}{// This is a file-scope variable.}
+
+\textcolor{keyword}{static} \textcolor{keywordtype}{void} Function(\textcolor{keywordtype}{int} numericParameter)
+\{
+    \textcolor{keyword}{static} \textcolor{keywordtype}{bool} WasCalledBefore = FALSE;
+    \textcolor{keywordtype}{char}* stringAutoVariable;
+
+    \textcolor{keywordflow}{if} (!WasCalledBefore)
+    \{
+        ...
+        WasCalledBefore = TRUE;
+    \}
+
+    CallCounter++;
+
+    ...
+\}
+\end{DoxyCode}
+\hypertarget{ccoding_stds_param_cstdsparamAbbreviations}{}\paragraph{Abbreviations}\label{ccoding_stds_param_cstdsparamAbbreviations}
+To keep identifiers a manageable length, developers often abbreviate. If these abbreviations aren\textquotesingle{}t carefully chosen, they can create confusion.
+
+See \hyperlink{ccodingStdsAbbr}{Abbreviations}. Other abbreviations should {\bfseries not} be used.
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{ccodingStdsAbbr}{}\subsection{Abbreviations}\label{ccodingStdsAbbr}
+To maintain manageable-\/length identifiers, developers often abbreviate words when constructing identifiers. If these abbreviations are not carefully chosen, they can create confusion.
+
+Following is a list of acceptable abbreviations (in alphabetical order of abbreviated word). \begin{DoxyWarning}{Warning}
+Don\textquotesingle{}t use other abbreviations.
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+Propose additions if you feel something\textquotesingle{}s missing.
+\end{DoxyNote}
+Original Word {\bfseries abbreviation} 
+
+
+\begin{DoxyItemize}
+\item acknowledge {\bfseries ack} 
+\item allocate {\bfseries alloc} 
+\item callback {\bfseries cb} 
+\item concatenate {\bfseries cat} 
+\item delete {\bfseries del} 
+\item file descriptor {\bfseries fd} 
+\item forward {\bfseries fwd} 
+\item handle {\bfseries hndl} 
+\item handler {\bfseries hdlr} 
+\item initialize {\bfseries init} 
+\item iterator {\bfseries it} 
+\item laugh out loud {\bfseries lol} \+:)
+\item message {\bfseries msg} 
+\item negative acknowledge {\bfseries nack} 
+\item number {\bfseries num} 
+\item number of count
+\item pointer {\bfseries ptr} 
+\item previous {\bfseries prev} 
+\item receive {\bfseries rx} 
+\item reference {\bfseries ref} 
+\item register {\bfseries reg} 
+\item timer {\bfseries tmr} 
+\item transaction {\bfseries txn} 
+\item transmit {\bfseries tx} 
+\end{DoxyItemize}
+
+Other C language standards\textquotesingle{} pages\+:
+
+\hyperlink{ccodingStdsNaming}{Naming Standards} ~\newline
+ \hyperlink{ccodingStdsParam}{Variables \& Function Parameters} ~\newline
+ \hyperlink{ccodingStdsMain}{C Language Standards}
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{sampleApps}{}\section{Sample Apps}\label{sampleApps}
+Legato has these sample apps\+:
+
+\hyperlink{sampleApps_commandLine}{command line} ~\newline
+ \hyperlink{sampleApps_eCall}{e\+Call} ~\newline
+ \hyperlink{sampleApps_gpioCf3}{G\+P\+I\+O for C\+F3} ~\newline
+ \hyperlink{sampleApps_helloIpc}{hello I\+P\+C} ~\newline
+ \hyperlink{sampleApps_helloWorld}{hello World} ~\newline
+ \hyperlink{sampleApps_legacy}{Legacy C} ~\newline
+ \hyperlink{sampleApps_AV}{Air\+Vantage Control} ~\newline
+ \hyperlink{sampleApps_modemDemo}{modem Demo} ~\newline
+ \hyperlink{sampleApps_shellPiping}{shell Piping} ~\newline
+ \hyperlink{sampleApps_sms}{S\+M\+S}
+
+All sample apps are located in {\ttfamily apps/sample/}. The built apps are located in {\ttfamily build/$<$target$>$/bin/samples}.\hypertarget{sample_apps_sampleApps_startApp}{}\subsection{Start App}\label{sample_apps_sampleApps_startApp}
+To start an app, run this on the target\+:
+
+\begin{DoxyVerb}root@swi-mdm9x15:~# app start <app name>
+\end{DoxyVerb}
+
+
+To stop an app on the target, run\+: \begin{DoxyVerb}root@swi-mdm9x15:~# app stop <app name>
+\end{DoxyVerb}
+
+
+Run {\ttfamily app} {\ttfamily help} for options.
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{sampleApps_commandLine}{}\subsection{command line}\label{sampleApps_commandLine}
+This sample demonstrates a simple app running inside a sandbox that prints information about files or directories specified from the command line. It has an {\ttfamily adef} with an executables section, and {\ttfamily cdef} with sources section.
+
+Run this to install the sample app\+:
+
+\begin{DoxyVerb}$ cd apps/sample/commandLine
+$ make wp85
+$ instapp fileInfo.wp85 <ip address>
+\end{DoxyVerb}
+
+
+If you\textquotesingle{}re using an A\+R7 or W\+P7 module in your target, substitute {\ttfamily ar7} or {\ttfamily wp7} for wp85.
+
+This sample app takes a command with a list of file/directory paths, and accepts additional options like {\ttfamily -\/x} or {\ttfamily --max-\/count}.
+
+\hyperlink{sample_apps_sampleApps_startApp}{Start App}
+
+
+
+
+
+See ~\newline
+ \hyperlink{basicAppsCreate}{Create Apps} 
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{sampleApps_eCall}{}\subsection{e\+Call}\label{sampleApps_eCall}
+This sample app demonstrates how to test an e\+Call session.
+
+Also see the \hyperlink{c_ecall}{e\+Call} Service
+
+
+
+
+
+The {\ttfamily e\+Call\+Demo} app starts a test e\+Call session using the Legato e\+Call A\+P\+I and the position data returned by the Legato Positioning A\+P\+I.
+
+The \textquotesingle{}trig\textquotesingle{} sample utility shows how to trigger the e\+Call\+Demo app to start the e\+Call session.\hypertarget{sample_apps_e_call_sampleApps_eCallSession}{}\subsubsection{e\+Call Session}\label{sample_apps_e_call_sampleApps_eCallSession}
+The sample app uses {\ttfamily ecall\+App\+\_\+\+Start\+Session()} A\+P\+I to start a test e\+Call session.
+
+You can call {\ttfamily ecall\+App\+\_\+\+Start\+Session()} with the number of passengers as a parameter to start the session.
+
+This App uses the configuration tree to retrieve the following data\+:
+
+\begin{DoxyVerb}$ config get eCallDemo:/
+
+/
+      settings/
+           psap<string> == <PSAP number>
+           hMinAccuracy<int> == <minimum horizontal accuracy value>
+           dirMinAccuracy<int> == <minimum direction accuracy value>
+\end{DoxyVerb}
+
+
+
+\begin{DoxyItemize}
+\item \textquotesingle{}psap\textquotesingle{} is the P\+S\+A\+P telephone number.
+\item \textquotesingle{}h\+Accuracy\textquotesingle{} is the minimum expected horizontal accuracy to trust the position (in meters).
+\item \textquotesingle{}dir\+Accuracy\textquotesingle{} is the minimum expected direction accuracy to trust the position (in degrees).
+\end{DoxyItemize}
+
+You can set them by issuing the commands\+: \begin{DoxyVerb}$ config set eCallDemo:/settings/psap <PSAP number>
+$ config set eCallDemo:/settings/hMinAccuracy <minimum horizontal accuracy value> int
+$ config set eCallDemo:/settings/dirMinAccuracy <minimum direction accuracy value> int
+\end{DoxyVerb}
+
+
+These are the config tree settings needed for the e\+Call sample app\+:
+
+\begin{DoxyVerb}config set eCallDemo:/settings/psap 0141081040
+config set eCallDemo:/settings/hMinAccuracy 100 int
+config set eCallDemo:/settings/dirMinAccuracy 100 int
+\end{DoxyVerb}
+\hypertarget{sample_apps_e_call_sampleApps_eCall_ConfigTreePath}{}\subsubsection{Config Tree Path}\label{sample_apps_e_call_sampleApps_eCall_ConfigTreePath}
+This is the config tree database path for the sample app\+:
+
+\begin{DoxyVerb}/
+    modemServices/
+        eCall/
+            systemStandard<string> = <eCall system>
+            msdVersion<int> = <MSD value>
+            vehicleType<string> = <vehicle type>
+            vin<string> = <VIN>
+            propulsionType/
+                0<string> = <propulsion type>
+                1<string> = <propulsion type>
+                ...
+\end{DoxyVerb}
+
+
+This is a config tree path setting example\+:
+
+\begin{DoxyVerb}config set /modemServices/eCall/systemStandard PAN-EUROPEAN
+config set /modemServices/eCall/msdVersion 1 int
+config set /modemServices/eCall/vehicleType Commercial-N1
+config set /modemServices/eCall/vin WM9VDSVDSYA123456
+config set /modemServices/eCall/propulsionType/0 Diesel
+\end{DoxyVerb}
+\hypertarget{sample_apps_e_call_sampleApps_eCallTrig}{}\subsubsection{trig utility}\label{sample_apps_e_call_sampleApps_eCallTrig}
+This utility triggers the e\+Call\+Demo application.
+
+Run {\ttfamily trig} like this\+: \begin{DoxyVerb}$ execInApp eCallDemo trig <number of passengers>
+\end{DoxyVerb}
+
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{sampleApps_gpioCf3}{}\subsection{G\+P\+I\+O for C\+F3}\label{sampleApps_gpioCf3}
+This prototype sample demonstrates a C\+F3 G\+P\+I\+O app using the \hyperlink{c_gpio}{G\+P\+I\+O A\+P\+I} Service. It uses {\ttfamily adef} executables, bindings, and processes sections, and {\ttfamily cdef} requires, cflag, and sources sections.
+
+Run this to install the sample app\+:
+
+\begin{DoxyVerb}$ cd apps/sample/gpioCf3Demo
+$ make wp85
+$ instapp gpioCf3Demo.wp85 <ip address>
+\end{DoxyVerb}
+
+
+If you\textquotesingle{}re using an A\+R7 or W\+P7 module in your target, substitute {\ttfamily ar7} or {\ttfamily wp7} for {\ttfamily wp85}.
+
+\hyperlink{sample_apps_sampleApps_startApp}{Start App}
+
+
+
+
+
+See ~\newline
+ \hyperlink{basicAppsCreate}{Create Apps}
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{sampleApps_helloIpc}{}\subsection{hello I\+P\+C}\label{sampleApps_helloIpc}
+This sample app demonstrates target and host are communicating with a hello\+World app that uses I\+P\+C. It has {\ttfamily }.adef bindings and related @ .cdef requires and provides sections.
+
+Run this to install the sample app\+: \begin{DoxyVerb}$ cd apps/sample/helloIpc
+$ make wp85
+$ instapp helloIpc.wp85 <ip address>
+\end{DoxyVerb}
+
+
+If you\textquotesingle{}re using an A\+R7 or W\+P7 module in your target, substitute {\ttfamily ar7} or {\ttfamily wp7} for {\ttfamily wp85}.
+
+\hyperlink{sample_apps_sampleApps_startApp}{Start App}
+
+
+
+
+
+See ~\newline
+ \hyperlink{basicAppsIPC}{Use I\+P\+C}
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{sampleApps_helloWorld}{}\subsection{hello World}\label{sampleApps_helloWorld}
+This sample app demonstrates target and host are communicating using a hello\+World app. It has an {\ttfamily }.adef with executables and processes sections.
+
+Run this to install the sample app\+:
+
+\begin{DoxyVerb}$ cd apps/sample/helloWorld
+$ make wp85
+$ instapp helloWorld.wp85 <ip address>
+\end{DoxyVerb}
+
+
+If you\textquotesingle{}re using an A\+R7 or W\+P7 module in your target, substitute {\ttfamily ar7} or {\ttfamily wp7} for {\ttfamily wp85}.
+
+\hyperlink{sample_apps_sampleApps_startApp}{Start App}
+
+
+
+
+
+See ~\newline
+ \hyperlink{basicAppsCreate}{Create Apps}
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{sampleApps_legacy}{}\subsection{Legacy C}\label{sampleApps_legacy}
+This sample app demonstrates the steps to port a legacy C language app to Legato.
+
+The {\ttfamily apps/sample/legacy} folder contains sample apps that demonstrate\+:
+\begin{DoxyItemize}
+\item cross-\/building a legacy C program.
+\item bundling a legacy app into a Legato app bundle.
+\item using Legato A\+P\+Is from a legacy C program bundled as a Legato app.
+\item receiving callbacks from Legato A\+P\+Is in a legacy C program.
+\end{DoxyItemize}
+
+See ~\newline
+ \hyperlink{howToPortLegacyC}{Port Legacy C App} ~\newline
+ \hyperlink{defFiles}{Definition Files}
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{sampleApps_AV}{}\subsection{Air\+Vantage Control}\label{sampleApps_AV}
+This sample demonstrates an L\+W\+M2\+M Control app communicating with Air\+Vantage. It has an {\ttfamily }.adef file with executables, processes, and bindings sections, and @ .cdef file with requires and sources sections.
+
+Run this to install the sample app\+: \begin{DoxyVerb}$ cd apps/sample/lwm2mAirVantageControl
+$ make wp85
+$ instapp lwm2mAirVantageControl.wp85 <ip address>
+\end{DoxyVerb}
+
+
+\hyperlink{sample_apps_sampleApps_startApp}{Start App}
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{sampleApps_modemDemo}{}\subsection{modem Demo}\label{sampleApps_modemDemo}
+This sample app demonstrates a modem app. It uses modem services with {\ttfamily }.adef bindings and related @ .cdef requires provides, and sources sections.
+
+Before you install this sample app\+:
+\begin{DoxyItemize}
+\item register your S\+I\+M network. See \hyperlink{tools_target_cm_toolsTarget_cm_sim}{S\+I\+M}.
+\item set an A\+P\+N name. See \hyperlink{tools_target_cm_toolsTarget_cm_data}{Data}.
+\end{DoxyItemize}
+
+Run this to install the sample app\+:
+
+\begin{DoxyVerb}$ cd apps/sample/modemDemo
+$ make wp85
+$ instapp modemDemo.wp85 <ip address>
+\end{DoxyVerb}
+
+
+where {\itshape ip address} is the address of your target device.
+
+If you\textquotesingle{}re using an A\+R7 or W\+P7 module in your target, substitute {\ttfamily ar7} or {\ttfamily wp7} for {\ttfamily wp85}.
+
+\hyperlink{sample_apps_sampleApps_startApp}{Start App}\hypertarget{sample_apps_modem_demo_sampleApps_modemDemoCmds}{}\subsubsection{Commands}\label{sample_apps_modem_demo_sampleApps_modemDemoCmds}
+The {\bfseries modem\+Demo} app accepts several commands (through sending the target a S\+M\+S message) and will reply with the results\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Status} -\/ return some status information of the target like radio is on/off and signal strength
+\item {\bfseries Sim} -\/ returns sim state/info (iccid and imsi)
+\item {\bfseries Online} -\/ turns on data connection
+\item {\bfseries Netinfo} -\/ network information like gateway address
+\item {\bfseries Offline} -\/ turns off data connection
+\item {\bfseries Test\+Data\+Connection\+V4} -\/ Test I\+Pv4 data connection
+\item {\bfseries Test\+Data\+Connection\+V6} -\/ Test I\+Pv6 data connection
+\item {\bfseries Data\+Info} -\/ Show data flow statistics
+\item {\bfseries Data\+Reset} -\/ Reset data flow statistics
+\end{DoxyItemize}\hypertarget{sample_apps_modem_demo_sampleApps_modemDemoCustom}{}\subsubsection{Customization}\label{sample_apps_modem_demo_sampleApps_modemDemoCustom}
+The sample app can be customized by editing the {\ttfamily modem\+Demo.\+adef} and related C source files.
+
+In {\ttfamily modem\+Demo.\+adef}, you can add a {\ttfamily send} execution on start-\/up to notify you when the app is running. Uncomment the {\ttfamily run} line and replace {\ttfamily +18005550199} by your own cell number.
+
+
+\begin{DoxyCode}
+processes:
+\{
+    run:
+    \{
+        ( modemDemo )
+        ( send \textcolor{stringliteral}{"+18005550199"} \textcolor{stringliteral}{"Welcome to modemDemo app"})
+    \}
+\}
+\end{DoxyCode}
+
+
+In {\ttfamily modem\+Demo/demo.\+c}, it\textquotesingle{}s also possible to extend the list of processed commands.
+
+See ~\newline
+ \hyperlink{c_mdc}{Modem Data Control}
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{sampleApps_shellPiping}{}\subsection{shell Piping}\label{sampleApps_shellPiping}
+This sample app demonstrates using a shell script and some common utilities within a sandboxed app. The script echos some messages out to the stdout and then calls \textquotesingle{}ls\textquotesingle{} piping the result to \textquotesingle{}grep\textquotesingle{}. The output of the script can be read from syslog by using \textquotesingle{}logread\textquotesingle{}.
+
+
+\begin{DoxyCode}
+start: manual
+
+bundles:
+\{
+    file:
+    \{
+        \textcolor{comment}{// Bundling the script into the sandbox with the permissions needed to run it.}
+        [rx] utilPipes    /
+    \}
+\}
+
+requires:
+\{
+    file:
+    \{
+        \textcolor{comment}{// Adding sh (shell), ls, grep and echo utilities into the sandbox.}
+        /bin/sh     /usr/local/bin/
+        /bin/ls     /usr/local/bin/
+        /bin/grep   /usr/local/bin/
+        /bin/echo   /usr/local/bin/
+    \}
+\}
+
+processes:
+\{
+    run:
+    \{
+        \textcolor{comment}{// Run sh (shell) and pass it the script for it to run.}
+        (sh utilPipes)
+    \}
+\}
+\end{DoxyCode}
+
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{sampleApps_sms}{}\subsection{S\+M\+S}\label{sampleApps_sms}
+This sample app demonstrates S\+M\+S messaging. It uses {\ttfamily }.adef bindings and related @ .cdef requires and sources sections.
+
+Before you install this sample app, register your S\+I\+M network. See \hyperlink{tools_target_cm_toolsTarget_cm_sim}{S\+I\+M}.
+
+Run this to install the sample app\+: \begin{DoxyVerb}$ cd apps/sample/sms
+$ make wp85
+$ instapp sms.wp85 <ip address>
+\end{DoxyVerb}
+
+
+If you\textquotesingle{}re using an A\+R7 or W\+P7 module in your target, substitute {\ttfamily ar7} or {\ttfamily wp7} for {\ttfamily wp85}.
+
+\hyperlink{sample_apps_sampleApps_startApp}{Start App}
+
+See ~\newline
+ \hyperlink{c_sms}{S\+M\+S}
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 

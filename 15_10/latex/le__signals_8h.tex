@@ -1,0 +1,78 @@
+\hypertarget{le__signals_8h}{}\section{framework/c/inc/le\+\_\+signals.h File Reference}
+\label{le__signals_8h}\index{framework/c/inc/le\+\_\+signals.\+h@{framework/c/inc/le\+\_\+signals.\+h}}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{le__signals_8h_a89301bf64254cdb071c5277c7762f32d}{le\+\_\+sig\+\_\+\+Event\+Handler\+Func\+\_\+t}) (int sig\+Num)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{le__signals_8h_a095ec12deab6b6ed0475583586a6c4d7}{le\+\_\+sig\+\_\+\+Block} (int sig\+Num)
+\item 
+void \hyperlink{le__signals_8h_a421910132f193dae70e8309dc86a86c4}{le\+\_\+sig\+\_\+\+Set\+Event\+Handler} (int sig\+Num, \hyperlink{le__signals_8h_a89301bf64254cdb071c5277c7762f32d}{le\+\_\+sig\+\_\+\+Event\+Handler\+Func\+\_\+t} sig\+Event\+Handler)
+\item 
+void \hyperlink{le__signals_8h_ae921df0e028ec66f4920cf3ed655d398}{le\+\_\+sig\+\_\+\+Delete\+All} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_signals}{Signals A\+P\+I} include file.
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Typedef Documentation}
+\hypertarget{le__signals_8h_a89301bf64254cdb071c5277c7762f32d}{}\index{le\+\_\+signals.\+h@{le\+\_\+signals.\+h}!le\+\_\+sig\+\_\+\+Event\+Handler\+Func\+\_\+t@{le\+\_\+sig\+\_\+\+Event\+Handler\+Func\+\_\+t}}
+\index{le\+\_\+sig\+\_\+\+Event\+Handler\+Func\+\_\+t@{le\+\_\+sig\+\_\+\+Event\+Handler\+Func\+\_\+t}!le\+\_\+signals.\+h@{le\+\_\+signals.\+h}}
+\subsubsection[{le\+\_\+sig\+\_\+\+Event\+Handler\+Func\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ le\+\_\+sig\+\_\+\+Event\+Handler\+Func\+\_\+t) (int sig\+Num)}\label{le__signals_8h_a89301bf64254cdb071c5277c7762f32d}
+Prototype for the signal event handler functions. 
+
+\subsection{Function Documentation}
+\hypertarget{le__signals_8h_a095ec12deab6b6ed0475583586a6c4d7}{}\index{le\+\_\+signals.\+h@{le\+\_\+signals.\+h}!le\+\_\+sig\+\_\+\+Block@{le\+\_\+sig\+\_\+\+Block}}
+\index{le\+\_\+sig\+\_\+\+Block@{le\+\_\+sig\+\_\+\+Block}!le\+\_\+signals.\+h@{le\+\_\+signals.\+h}}
+\subsubsection[{le\+\_\+sig\+\_\+\+Block}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+sig\+\_\+\+Block (
+\begin{DoxyParamCaption}
+\item[{int}]{sig\+Num}
+\end{DoxyParamCaption}
+)}\label{le__signals_8h_a095ec12deab6b6ed0475583586a6c4d7}
+Blocks a signal in the calling thread.
+
+Signals that an event handler will be set for must be blocked for all threads in the process. To ensure that the signals are blocked in all threads call this function in the process\textquotesingle{} first thread, all subsequent threads will inherit the signal mask.
+
+\begin{DoxyNote}{Note}
+Does not return on failure. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sig\+Num} & Signal to block. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__signals_8h_ae921df0e028ec66f4920cf3ed655d398}{}\index{le\+\_\+signals.\+h@{le\+\_\+signals.\+h}!le\+\_\+sig\+\_\+\+Delete\+All@{le\+\_\+sig\+\_\+\+Delete\+All}}
+\index{le\+\_\+sig\+\_\+\+Delete\+All@{le\+\_\+sig\+\_\+\+Delete\+All}!le\+\_\+signals.\+h@{le\+\_\+signals.\+h}}
+\subsubsection[{le\+\_\+sig\+\_\+\+Delete\+All}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+sig\+\_\+\+Delete\+All (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__signals_8h_ae921df0e028ec66f4920cf3ed655d398}
+Removes all signal event handlers for the calling thread and cleans up any resources used for signal events. This should be called before the thread exits. \hypertarget{le__signals_8h_a421910132f193dae70e8309dc86a86c4}{}\index{le\+\_\+signals.\+h@{le\+\_\+signals.\+h}!le\+\_\+sig\+\_\+\+Set\+Event\+Handler@{le\+\_\+sig\+\_\+\+Set\+Event\+Handler}}
+\index{le\+\_\+sig\+\_\+\+Set\+Event\+Handler@{le\+\_\+sig\+\_\+\+Set\+Event\+Handler}!le\+\_\+signals.\+h@{le\+\_\+signals.\+h}}
+\subsubsection[{le\+\_\+sig\+\_\+\+Set\+Event\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+sig\+\_\+\+Set\+Event\+Handler (
+\begin{DoxyParamCaption}
+\item[{int}]{sig\+Num, }
+\item[{{\bf le\+\_\+sig\+\_\+\+Event\+Handler\+Func\+\_\+t}}]{sig\+Event\+Handler}
+\end{DoxyParamCaption}
+)}\label{le__signals_8h_a421910132f193dae70e8309dc86a86c4}
+Sets a signal event handler for the calling thread. Each signal can only have a single event handler per thread. The most recent event handler set will be called when the signal is received. sig\+Event\+Handler can be set to N\+U\+L\+L to remove a previously set handler.
+
+\begin{DoxyNote}{Note}
+sig\+Num Cannot be S\+I\+G\+K\+I\+L\+L or S\+I\+G\+S\+T\+O\+P or any program error signals\+: S\+I\+G\+F\+P\+E, S\+I\+G\+I\+L\+L, S\+I\+G\+S\+E\+G\+V, S\+I\+G\+B\+U\+S, S\+I\+G\+A\+B\+R\+T, S\+I\+G\+I\+O\+T, S\+I\+G\+T\+R\+A\+P, S\+I\+G\+E\+M\+T, S\+I\+G\+S\+Y\+S.
+
+Does not return on failure. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sig\+Num} & Signal to set the event handler for. See parameter documentation in comments above. \\
+\hline
+\mbox{\tt in}  & {\em sig\+Event\+Handler} & Event handler to call when a signal is received. \\
+\hline
+\end{DoxyParams}

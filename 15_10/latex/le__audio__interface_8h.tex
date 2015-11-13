@@ -1,0 +1,1852 @@
+\hypertarget{le__audio__interface_8h}{}\section{build/localhost/interfaces/le\+\_\+audio\+\_\+interface.h File Reference}
+\label{le__audio__interface_8h}\index{build/localhost/interfaces/le\+\_\+audio\+\_\+interface.\+h@{build/localhost/interfaces/le\+\_\+audio\+\_\+interface.\+h}}
+{\ttfamily \#include \char`\"{}legato.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{le__audio__interface_8h_a33201f88acf34e8c5cb612ac9f4a8bb6}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+D\+T\+M\+F\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N}~100
+\item 
+\#define \hyperlink{le__audio__interface_8h_aafdf655a188e290502c2a909c3b37104}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+D\+T\+M\+F\+\_\+\+M\+A\+X\+\_\+\+B\+Y\+T\+E\+S}~101
+\item 
+\#define \hyperlink{le__audio__interface_8h_a374c2f62ec5b8a92dd1de6fcb449fafe}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+N\+O\+\_\+\+F\+D}~-\/1
+\item 
+\#define \hyperlink{le__audio__interface_8h_a92688388540a067fe0a3c5b5d096363b}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+G\+A\+I\+N\+\_\+\+N\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N}~100
+\item 
+\#define \hyperlink{le__audio__interface_8h_a4711f6c5e075efd984c81713479e5434}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+G\+A\+I\+N\+\_\+\+N\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+B\+Y\+T\+E\+S}~101
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct le\+\_\+audio\+\_\+\+Stream $\ast$ \hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}
+\item 
+typedef struct le\+\_\+audio\+\_\+\+Connector $\ast$ \hyperlink{le__audio__interface_8h_ab819480f4ce3f36e62b6a4e327668304}{le\+\_\+audio\+\_\+\+Connector\+Ref\+\_\+t}
+\item 
+typedef struct le\+\_\+audio\+\_\+\+Media\+Handler $\ast$ \hyperlink{le__audio__interface_8h_a390b011cbb6f745c46e861d315af0bbe}{le\+\_\+audio\+\_\+\+Media\+Handler\+Ref\+\_\+t}
+\item 
+typedef struct le\+\_\+audio\+\_\+\+Dtmf\+Detector\+Handler $\ast$ \hyperlink{le__audio__interface_8h_a2db60899cdaa84759075a7955ed24511}{le\+\_\+audio\+\_\+\+Dtmf\+Detector\+Handler\+Ref\+\_\+t}
+\item 
+typedef void($\ast$ \hyperlink{le__audio__interface_8h_aa1176ea658084237635f4e7e437f1f7b}{le\+\_\+audio\+\_\+\+Media\+Handler\+Func\+\_\+t}) (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, \hyperlink{le__audio__interface_8h_aaf870f5f30f4f6f65efb873c5d0cb5f1}{le\+\_\+audio\+\_\+\+Media\+Event\+\_\+t} event, void $\ast$context\+Ptr)
+\item 
+typedef void($\ast$ \hyperlink{le__audio__interface_8h_a3c6bc837c07ecf1545eadc7f1813bddb}{le\+\_\+audio\+\_\+\+Dtmf\+Detector\+Handler\+Func\+\_\+t}) (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, char dtmf, void $\ast$context\+Ptr)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{le__audio__interface_8h_aaf870f5f30f4f6f65efb873c5d0cb5f1}{le\+\_\+audio\+\_\+\+Media\+Event\+\_\+t} \{ \hyperlink{le__audio__interface_8h_aaf870f5f30f4f6f65efb873c5d0cb5f1a7dbc0c9a2c3839d3db974c5aa5be344d}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+E\+N\+D\+E\+D}, 
+\hyperlink{le__audio__interface_8h_aaf870f5f30f4f6f65efb873c5d0cb5f1a06883432159e9e69637fbe5eefd59159}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+N\+O\+\_\+\+M\+O\+R\+E\+\_\+\+S\+A\+M\+P\+L\+E\+S}, 
+\hyperlink{le__audio__interface_8h_aaf870f5f30f4f6f65efb873c5d0cb5f1a5f7de6714ea54f09d036a87dd1c63a50}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+O\+R}, 
+\hyperlink{le__audio__interface_8h_aaf870f5f30f4f6f65efb873c5d0cb5f1a0d7192558212ce592db643ee43bd1054}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+M\+A\+X}
+ \}
+\item 
+enum \hyperlink{le__audio__interface_8h_a3d396e4c3ed914277e81c39f3c423ed5}{le\+\_\+audio\+\_\+\+Profile\+\_\+t} \{ \\*
+\hyperlink{le__audio__interface_8h_a3d396e4c3ed914277e81c39f3c423ed5a0b2baa1a1db29f3ef78d31e6ca9b7648}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+H\+A\+N\+D\+S\+F\+R\+E\+E}, 
+\hyperlink{le__audio__interface_8h_a3d396e4c3ed914277e81c39f3c423ed5aed17351c74da18eea646b52432621bbf}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+H\+A\+N\+D\+S\+E\+T}, 
+\hyperlink{le__audio__interface_8h_a3d396e4c3ed914277e81c39f3c423ed5a28b615e66b45a58709c6389f905f606e}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+H\+E\+A\+D\+S\+E\+T}, 
+\hyperlink{le__audio__interface_8h_a3d396e4c3ed914277e81c39f3c423ed5a7de255a63a21334b4b792c33bfdfa8a9}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+T\+T\+Y}, 
+\\*
+\hyperlink{le__audio__interface_8h_a3d396e4c3ed914277e81c39f3c423ed5a3fbcc52b25d4c6053f687bb155b30abd}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+U\+S\+B}
+ \}
+\item 
+enum \hyperlink{le__audio__interface_8h_a5b07d59ec1067a4d81250a46f93715b8}{le\+\_\+audio\+\_\+\+Companding\+\_\+t} \{ \hyperlink{le__audio__interface_8h_a5b07d59ec1067a4d81250a46f93715b8a271c71620c5ea0a607c5372f4c650519}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+M\+P\+A\+N\+D\+I\+N\+G\+\_\+\+A\+L\+A\+W}, 
+\hyperlink{le__audio__interface_8h_a5b07d59ec1067a4d81250a46f93715b8ad8a49ed29e9bf3077127ec237c742753}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+M\+P\+A\+N\+D\+I\+N\+G\+\_\+\+U\+L\+A\+W}, 
+\hyperlink{le__audio__interface_8h_a5b07d59ec1067a4d81250a46f93715b8ae40f3183883d0e0e3c35733326ac9733}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+M\+P\+A\+N\+D\+I\+N\+G\+\_\+\+N\+O\+N\+E}
+ \}
+\item 
+enum \hyperlink{le__audio__interface_8h_a94794180ed71a84bd26a1f525858f252}{le\+\_\+audio\+\_\+\+I2\+S\+Channel\+\_\+t} \{ \\*
+\hyperlink{le__audio__interface_8h_a94794180ed71a84bd26a1f525858f252a0a0279115b994448752f8a7ca03a9d08}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+L\+E\+F\+T}, 
+\hyperlink{le__audio__interface_8h_a94794180ed71a84bd26a1f525858f252a346b13f5c03c3c6337f70adedbe99e4c}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+R\+I\+G\+H\+T}, 
+\hyperlink{le__audio__interface_8h_a94794180ed71a84bd26a1f525858f252aac9b211c4afe16b4db9e9f437eab0a5d}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+M\+O\+N\+O}, 
+\hyperlink{le__audio__interface_8h_a94794180ed71a84bd26a1f525858f252a6ce77f5f956b203e15f662900a5103dd}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+S\+T\+E\+R\+E\+O}, 
+\\*
+\hyperlink{le__audio__interface_8h_a94794180ed71a84bd26a1f525858f252a32b9663e69f498538708a913476b26f2}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+R\+E\+V\+E\+R\+S\+E}
+ \}
+\item 
+enum \hyperlink{le__audio__interface_8h_a0ad2f5012ed700af1892f82e4af5989d}{le\+\_\+audio\+\_\+\+Format\+\_\+t} \{ \hyperlink{le__audio__interface_8h_a0ad2f5012ed700af1892f82e4af5989daacfeef297c63db7626c586ebe4d5e1c2}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+W\+A\+V\+E}, 
+\hyperlink{le__audio__interface_8h_a0ad2f5012ed700af1892f82e4af5989da51bd6de676a1d6a82923c7383b047893}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R}, 
+{\bfseries L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+M\+A\+X}
+ \}
+\item 
+enum \hyperlink{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7}{le\+\_\+audio\+\_\+\+Amr\+Mode\+\_\+t} \{ \\*
+\hyperlink{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a51d289424c42c53aff800659871cbe3f}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+O\+N\+E}, 
+\hyperlink{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a757a18a9f17e6152f77645bcc05c8dfb}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+4\+\_\+75\+\_\+\+K\+B\+P\+S}, 
+\hyperlink{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a4c4726438b37dd61e090707c6bd060b3}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+5\+\_\+15\+\_\+\+K\+B\+P\+S}, 
+\hyperlink{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7aa8375f69558e2ac515b5a74e336ad78c}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+5\+\_\+9\+\_\+\+K\+B\+P\+S}, 
+\\*
+\hyperlink{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a4a5f21fde04b81e01474d289a31ae169}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+6\+\_\+7\+\_\+\+K\+B\+P\+S}, 
+\hyperlink{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a70510d805a435c524dbe16bb52836914}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+7\+\_\+4\+\_\+\+K\+B\+P\+S}, 
+\hyperlink{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a785a7b08f33e1cad391a229a8638bc02}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+7\+\_\+95\+\_\+\+K\+B\+P\+S}, 
+\hyperlink{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a9a067aec590278814137733cc91ddf00}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+10\+\_\+2\+\_\+\+K\+B\+P\+S}, 
+\\*
+\hyperlink{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7aba8db156fffb89bcb98e6a2cb762d04c}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+12\+\_\+2\+\_\+\+K\+B\+P\+S}, 
+\hyperlink{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a8056bae72d2abccfa4a3df9f5250fc3f}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+6\+\_\+6\+\_\+\+K\+B\+P\+S}, 
+\hyperlink{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7aa7129e4022538c178641bddab468e955}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+8\+\_\+85\+\_\+\+K\+B\+P\+S}, 
+\hyperlink{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7ac9a2144d8bc2842e4fa16e5d80633ac2}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+12\+\_\+65\+\_\+\+K\+B\+P\+S}, 
+\\*
+\hyperlink{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a0e68d866b1cf9e0fe13884efe3d2b4f0}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+14\+\_\+25\+\_\+\+K\+B\+P\+S}, 
+\hyperlink{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7ae5850c4d2022d20fa09436c9efb943ee}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+15\+\_\+85\+\_\+\+K\+B\+P\+S}, 
+\hyperlink{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7ad227fd120289c6d2c0b711e31dbfbae1}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+18\+\_\+25\+\_\+\+K\+B\+P\+S}, 
+\hyperlink{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a53fad07cad340900588ee1b68b959260}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+19\+\_\+85\+\_\+\+K\+B\+P\+S}, 
+\\*
+\hyperlink{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7ae846f84f4c7c11645a0a5690370c020c}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+23\+\_\+05\+\_\+\+K\+B\+P\+S}, 
+\hyperlink{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a27cfc7c374b62900edfea1393091cd00}{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+23\+\_\+85\+\_\+\+K\+B\+P\+S}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{le__audio__interface_8h_a65a8844fc6d2e1b7ed78f33bef1b9990}{le\+\_\+audio\+\_\+\+Connect\+Service} (void)
+\item 
+void \hyperlink{le__audio__interface_8h_af72a5338e5fd23d17e0274e43642c77a}{le\+\_\+audio\+\_\+\+Disconnect\+Service} (void)
+\item 
+\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} \hyperlink{le__audio__interface_8h_a74f1ef979329f6c2bd56ea622f4d05b2}{le\+\_\+audio\+\_\+\+Open\+Mic} (void)
+\item 
+\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} \hyperlink{le__audio__interface_8h_a5c19afce44021c4abf6193707317f8de}{le\+\_\+audio\+\_\+\+Open\+Speaker} (void)
+\item 
+\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} \hyperlink{le__audio__interface_8h_acd8be89289067cef9441a8ed1d891146}{le\+\_\+audio\+\_\+\+Open\+Usb\+Rx} (void)
+\item 
+\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} \hyperlink{le__audio__interface_8h_adb38f11ac78cf99160c19f69b4db0eb8}{le\+\_\+audio\+\_\+\+Open\+Usb\+Tx} (void)
+\item 
+\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} \hyperlink{le__audio__interface_8h_aa0f0b5fcab8844c67a936d88fa050cf5}{le\+\_\+audio\+\_\+\+Open\+Pcm\+Rx} (uint32\+\_\+t timeslot)
+\item 
+\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} \hyperlink{le__audio__interface_8h_a5e112543e8525775aa670dc71b320766}{le\+\_\+audio\+\_\+\+Open\+Pcm\+Tx} (uint32\+\_\+t timeslot)
+\item 
+\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} \hyperlink{le__audio__interface_8h_a9e7d0042c4f422554eb10d64535608e5}{le\+\_\+audio\+\_\+\+Open\+I2s\+Rx} (\hyperlink{le__audio__interface_8h_a94794180ed71a84bd26a1f525858f252}{le\+\_\+audio\+\_\+\+I2\+S\+Channel\+\_\+t} mode)
+\item 
+\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} \hyperlink{le__audio__interface_8h_a2633c1368adf60e342d7cadbbfa6278b}{le\+\_\+audio\+\_\+\+Open\+I2s\+Tx} (\hyperlink{le__audio__interface_8h_a94794180ed71a84bd26a1f525858f252}{le\+\_\+audio\+\_\+\+I2\+S\+Channel\+\_\+t} mode)
+\item 
+\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} \hyperlink{le__audio__interface_8h_a92eb1b6377f50ff07b97c5b8546f01ec}{le\+\_\+audio\+\_\+\+Open\+Player} (void)
+\item 
+\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} \hyperlink{le__audio__interface_8h_aeac35459c36748a4471b6d45f1ebeb24}{le\+\_\+audio\+\_\+\+Open\+Recorder} (void)
+\item 
+\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} \hyperlink{le__audio__interface_8h_ae3ed568ba4d2763ea77e17e77b20ff02}{le\+\_\+audio\+\_\+\+Open\+Modem\+Voice\+Rx} (void)
+\item 
+\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} \hyperlink{le__audio__interface_8h_ad745f008bb04873c817da7af3daf783d}{le\+\_\+audio\+\_\+\+Open\+Modem\+Voice\+Tx} (void)
+\item 
+\hyperlink{le__audio__interface_8h_a390b011cbb6f745c46e861d315af0bbe}{le\+\_\+audio\+\_\+\+Media\+Handler\+Ref\+\_\+t} \hyperlink{le__audio__interface_8h_a9996ac9d23333cf8219f28b69cac4f81}{le\+\_\+audio\+\_\+\+Add\+Media\+Handler} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, \hyperlink{le__audio__interface_8h_aa1176ea658084237635f4e7e437f1f7b}{le\+\_\+audio\+\_\+\+Media\+Handler\+Func\+\_\+t} handler\+Ptr, void $\ast$context\+Ptr)
+\item 
+void \hyperlink{le__audio__interface_8h_a60442c840a69155110ae878e03e16059}{le\+\_\+audio\+\_\+\+Remove\+Media\+Handler} (\hyperlink{le__audio__interface_8h_a390b011cbb6f745c46e861d315af0bbe}{le\+\_\+audio\+\_\+\+Media\+Handler\+Ref\+\_\+t} add\+Handler\+Ref)
+\item 
+void \hyperlink{le__audio__interface_8h_abafeb411da7b1a14b2d5777fc1d3e394}{le\+\_\+audio\+\_\+\+Close} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_ad62587dacf0cb087697a62fb9f41d938}{le\+\_\+audio\+\_\+\+Set\+Gain} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, uint32\+\_\+t gain)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a51a86829cdd6f27234f482e5dbb6c933}{le\+\_\+audio\+\_\+\+Get\+Gain} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, uint32\+\_\+t $\ast$gain\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a147e97c49dbc003f63df78f97d5fca32}{le\+\_\+audio\+\_\+\+Mute} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_adad24547293481964039efe56bc14e2b}{le\+\_\+audio\+\_\+\+Unmute} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref)
+\item 
+\hyperlink{le__audio__interface_8h_ab819480f4ce3f36e62b6a4e327668304}{le\+\_\+audio\+\_\+\+Connector\+Ref\+\_\+t} \hyperlink{le__audio__interface_8h_a570aaf85086f00aca592acfbaaa237be}{le\+\_\+audio\+\_\+\+Create\+Connector} (void)
+\item 
+void \hyperlink{le__audio__interface_8h_a3f40b13ff980040503927f59bb3e86a9}{le\+\_\+audio\+\_\+\+Delete\+Connector} (\hyperlink{le__audio__interface_8h_ab819480f4ce3f36e62b6a4e327668304}{le\+\_\+audio\+\_\+\+Connector\+Ref\+\_\+t} connector\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a338df65b2fb1ae0140d86880adbcf0de}{le\+\_\+audio\+\_\+\+Connect} (\hyperlink{le__audio__interface_8h_ab819480f4ce3f36e62b6a4e327668304}{le\+\_\+audio\+\_\+\+Connector\+Ref\+\_\+t} connector\+Ref, \hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref)
+\item 
+void \hyperlink{le__audio__interface_8h_a6b88df9301038375701e4c15a4c8aaf0}{le\+\_\+audio\+\_\+\+Disconnect} (\hyperlink{le__audio__interface_8h_ab819480f4ce3f36e62b6a4e327668304}{le\+\_\+audio\+\_\+\+Connector\+Ref\+\_\+t} connector\+Ref, \hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref)
+\item 
+\hyperlink{le__audio__interface_8h_a2db60899cdaa84759075a7955ed24511}{le\+\_\+audio\+\_\+\+Dtmf\+Detector\+Handler\+Ref\+\_\+t} \hyperlink{le__audio__interface_8h_a6e65275798c0db287fc1b540cdc0db8b}{le\+\_\+audio\+\_\+\+Add\+Dtmf\+Detector\+Handler} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, \hyperlink{le__audio__interface_8h_a3c6bc837c07ecf1545eadc7f1813bddb}{le\+\_\+audio\+\_\+\+Dtmf\+Detector\+Handler\+Func\+\_\+t} handler\+Ptr, void $\ast$context\+Ptr)
+\item 
+void \hyperlink{le__audio__interface_8h_a7fd6191ed6ff512407bfe01d20a51459}{le\+\_\+audio\+\_\+\+Remove\+Dtmf\+Detector\+Handler} (\hyperlink{le__audio__interface_8h_a2db60899cdaa84759075a7955ed24511}{le\+\_\+audio\+\_\+\+Dtmf\+Detector\+Handler\+Ref\+\_\+t} add\+Handler\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_ac1af23c9febed1378620370a6961ce89}{le\+\_\+audio\+\_\+\+Enable\+Noise\+Suppressor} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a3d3d52002fe6bf95271db1a16b1573f7}{le\+\_\+audio\+\_\+\+Disable\+Noise\+Suppressor} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a54df27e4ab733a1f50e17903d7a9ae88}{le\+\_\+audio\+\_\+\+Enable\+Echo\+Canceller} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_afc413a569b1e7eb877a3f98c2b52b05d}{le\+\_\+audio\+\_\+\+Disable\+Echo\+Canceller} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_adedb3bb7e372fffa406f001bdb353e96}{le\+\_\+audio\+\_\+\+Enable\+Fir\+Filter} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_ae5be820a7a167c307d64ea2c15b0abb4}{le\+\_\+audio\+\_\+\+Disable\+Fir\+Filter} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_ad5eee81a34cc554ddef8a29c64bcd498}{le\+\_\+audio\+\_\+\+Enable\+Iir\+Filter} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_af7958cd14c83c479ede6ae7a7953461b}{le\+\_\+audio\+\_\+\+Disable\+Iir\+Filter} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_ac4978d8d632269730c67e27d66fba818}{le\+\_\+audio\+\_\+\+Enable\+Automatic\+Gain\+Control} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a364cdff3d9fa7b2ced00ef92c0c4e9f7}{le\+\_\+audio\+\_\+\+Disable\+Automatic\+Gain\+Control} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_ae2e6553f8125a30676d31f5cbd43a3b8}{le\+\_\+audio\+\_\+\+Set\+Profile} (\hyperlink{le__audio__interface_8h_a3d396e4c3ed914277e81c39f3c423ed5}{le\+\_\+audio\+\_\+\+Profile\+\_\+t} profile)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a1bf9091e0068a75a34fdf638ce0f2bc3}{le\+\_\+audio\+\_\+\+Get\+Profile} (\hyperlink{le__audio__interface_8h_a3d396e4c3ed914277e81c39f3c423ed5}{le\+\_\+audio\+\_\+\+Profile\+\_\+t} $\ast$profile\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_ae7c9d76c5377ad5fae13b24477827f45}{le\+\_\+audio\+\_\+\+Set\+Pcm\+Sampling\+Rate} (uint32\+\_\+t rate)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_ab3678e77c8d69f248cd339042bd824cc}{le\+\_\+audio\+\_\+\+Set\+Pcm\+Sampling\+Resolution} (uint32\+\_\+t bits\+Per\+Sample)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a593682daa95aec349e48144f5b46c658}{le\+\_\+audio\+\_\+\+Set\+Pcm\+Companding} (\hyperlink{le__audio__interface_8h_a5b07d59ec1067a4d81250a46f93715b8}{le\+\_\+audio\+\_\+\+Companding\+\_\+t} companding)
+\item 
+uint32\+\_\+t \hyperlink{le__audio__interface_8h_a36779982278d3f965286582f38917247}{le\+\_\+audio\+\_\+\+Get\+Pcm\+Sampling\+Rate} (void)
+\item 
+uint32\+\_\+t \hyperlink{le__audio__interface_8h_a70fbe5e1ae02033e89ad04bbf1ed2b39}{le\+\_\+audio\+\_\+\+Get\+Pcm\+Sampling\+Resolution} (void)
+\item 
+\hyperlink{le__audio__interface_8h_a5b07d59ec1067a4d81250a46f93715b8}{le\+\_\+audio\+\_\+\+Companding\+\_\+t} \hyperlink{le__audio__interface_8h_aab9a28f3c695b90f8b9f622eb401f6cf}{le\+\_\+audio\+\_\+\+Get\+Pcm\+Companding} (void)
+\item 
+uint32\+\_\+t \hyperlink{le__audio__interface_8h_a3f87e41dabde5bfb1170df527c380b9d}{le\+\_\+audio\+\_\+\+Get\+Default\+Pcm\+Time\+Slot} (void)
+\item 
+\hyperlink{le__audio__interface_8h_a94794180ed71a84bd26a1f525858f252}{le\+\_\+audio\+\_\+\+I2\+S\+Channel\+\_\+t} \hyperlink{le__audio__interface_8h_a0b727e15c16fffe10cdd5d345b297194}{le\+\_\+audio\+\_\+\+Get\+Default\+I2s\+Mode} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_aea2c5d0b394cfab87503639c534300c9}{le\+\_\+audio\+\_\+\+Play\+File} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, int fd)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_afd37d59ab8207338da197554f49d7ff0}{le\+\_\+audio\+\_\+\+Play\+Samples} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, int fd)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a393a26f6cff7fe05c1813fcafeef50f3}{le\+\_\+audio\+\_\+\+Record\+File} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, int fd)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a9c55a59849afcbb2ccef88cd4265782e}{le\+\_\+audio\+\_\+\+Get\+Samples} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, int fd)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a4aebc6e8cdc4389c375e93418823af71}{le\+\_\+audio\+\_\+\+Stop} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a80343ca9800ab80f818bbe0361bb226b}{le\+\_\+audio\+\_\+\+Pause} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a7a5855b7be77110eaca1846b17792597}{le\+\_\+audio\+\_\+\+Flush} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a1dba6618bd8fc9835869ee72c3fbd850}{le\+\_\+audio\+\_\+\+Resume} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_aae7db9f0933119fb5a61162722b3274a}{le\+\_\+audio\+\_\+\+Set\+Sample\+Pcm\+Channel\+Number} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, uint32\+\_\+t nb\+Channel)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a40bf3633c3050a7526a100562edc97f9}{le\+\_\+audio\+\_\+\+Get\+Sample\+Pcm\+Channel\+Number} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, uint32\+\_\+t $\ast$nb\+Channel\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a04adfcc0e8f5796eca53c31cd5dd6528}{le\+\_\+audio\+\_\+\+Set\+Sample\+Pcm\+Sampling\+Rate} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, uint32\+\_\+t rate)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a80fb48632ce8f638cea4a3e5d333d66f}{le\+\_\+audio\+\_\+\+Get\+Sample\+Pcm\+Sampling\+Rate} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, uint32\+\_\+t $\ast$rate\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_aae37b46c13f76144dd94c48bfe94998b}{le\+\_\+audio\+\_\+\+Set\+Sample\+Pcm\+Sampling\+Resolution} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, uint32\+\_\+t sampling\+Res)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a70b9f904ce225aad4fb80b8b24a1f92a}{le\+\_\+audio\+\_\+\+Get\+Sample\+Pcm\+Sampling\+Resolution} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, uint32\+\_\+t $\ast$sampling\+Res\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a8b1546842a6e917db9a9458aceb77c82}{le\+\_\+audio\+\_\+\+Play\+Dtmf} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, const char $\ast$dtmf, uint32\+\_\+t duration, uint32\+\_\+t pause)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a852728586cacfcbf63ae59b6f80847eb}{le\+\_\+audio\+\_\+\+Play\+Signalling\+Dtmf} (const char $\ast$dtmf, uint32\+\_\+t duration, uint32\+\_\+t pause)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_aead87ec16d317bb4e4a8e7e9ea37550b}{le\+\_\+audio\+\_\+\+Set\+Encoding\+Format} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, \hyperlink{le__audio__interface_8h_a0ad2f5012ed700af1892f82e4af5989d}{le\+\_\+audio\+\_\+\+Format\+\_\+t} format)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a62e45a441a7d7ab5b7d20b41849331a2}{le\+\_\+audio\+\_\+\+Get\+Encoding\+Format} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, \hyperlink{le__audio__interface_8h_a0ad2f5012ed700af1892f82e4af5989d}{le\+\_\+audio\+\_\+\+Format\+\_\+t} $\ast$format\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a18600cdbd3995c9c2ca24f9b15991f7d}{le\+\_\+audio\+\_\+\+Set\+Sample\+Amr\+Mode} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, \hyperlink{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7}{le\+\_\+audio\+\_\+\+Amr\+Mode\+\_\+t} mode)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_aa293e15d41f7c1c384053947b5a4dbea}{le\+\_\+audio\+\_\+\+Get\+Sample\+Amr\+Mode} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, \hyperlink{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7}{le\+\_\+audio\+\_\+\+Amr\+Mode\+\_\+t} $\ast$mode\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a5932f51fb1398cc2442c8bb765ca4071}{le\+\_\+audio\+\_\+\+Set\+Sample\+Amr\+Dtx} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, bool dtx)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_ab26d633ee83aed52dae838cb9d721f87}{le\+\_\+audio\+\_\+\+Get\+Sample\+Amr\+Dtx} (\hyperlink{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, bool $\ast$dtx\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_ad9235b668cc80f33bc5045327be8bffb}{le\+\_\+audio\+\_\+\+Set\+Platform\+Specific\+Gain} (const char $\ast$gain\+Name, uint32\+\_\+t gain)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__audio__interface_8h_a56269b13844a1e90be4e4c86f50bed5a}{le\+\_\+audio\+\_\+\+Get\+Platform\+Specific\+Gain} (const char $\ast$gain\+Name, uint32\+\_\+t $\ast$gain\+Ptr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_audio}{Audio} include file.
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{le__audio__interface_8h_aafdf655a188e290502c2a909c3b37104}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+D\+T\+M\+F\+\_\+\+M\+A\+X\+\_\+\+B\+Y\+T\+E\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+D\+T\+M\+F\+\_\+\+M\+A\+X\+\_\+\+B\+Y\+T\+E\+S}}
+\index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+D\+T\+M\+F\+\_\+\+M\+A\+X\+\_\+\+B\+Y\+T\+E\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+D\+T\+M\+F\+\_\+\+M\+A\+X\+\_\+\+B\+Y\+T\+E\+S}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+D\+T\+M\+F\+\_\+\+M\+A\+X\+\_\+\+B\+Y\+T\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+D\+T\+M\+F\+\_\+\+M\+A\+X\+\_\+\+B\+Y\+T\+E\+S~101}\label{le__audio__interface_8h_aafdf655a188e290502c2a909c3b37104}
+Maximum D\+T\+M\+F string length. One extra byte is added for the null character. \hypertarget{le__audio__interface_8h_a33201f88acf34e8c5cb612ac9f4a8bb6}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+D\+T\+M\+F\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+D\+T\+M\+F\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N}}
+\index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+D\+T\+M\+F\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+D\+T\+M\+F\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+D\+T\+M\+F\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+D\+T\+M\+F\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N~100}\label{le__audio__interface_8h_a33201f88acf34e8c5cb612ac9f4a8bb6}
+Maximum D\+T\+M\+F string length. \hypertarget{le__audio__interface_8h_a4711f6c5e075efd984c81713479e5434}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+G\+A\+I\+N\+\_\+\+N\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+B\+Y\+T\+E\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+G\+A\+I\+N\+\_\+\+N\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+B\+Y\+T\+E\+S}}
+\index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+G\+A\+I\+N\+\_\+\+N\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+B\+Y\+T\+E\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+G\+A\+I\+N\+\_\+\+N\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+B\+Y\+T\+E\+S}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+G\+A\+I\+N\+\_\+\+N\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+B\+Y\+T\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+G\+A\+I\+N\+\_\+\+N\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+B\+Y\+T\+E\+S~101}\label{le__audio__interface_8h_a4711f6c5e075efd984c81713479e5434}
+Maximum gain\textquotesingle{}s name string length. One extra byte is added for the null character. \hypertarget{le__audio__interface_8h_a92688388540a067fe0a3c5b5d096363b}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+G\+A\+I\+N\+\_\+\+N\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+G\+A\+I\+N\+\_\+\+N\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N}}
+\index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+G\+A\+I\+N\+\_\+\+N\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+G\+A\+I\+N\+\_\+\+N\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+G\+A\+I\+N\+\_\+\+N\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+G\+A\+I\+N\+\_\+\+N\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N~100}\label{le__audio__interface_8h_a92688388540a067fe0a3c5b5d096363b}
+Maximum gain\textquotesingle{}s name string length. \hypertarget{le__audio__interface_8h_a374c2f62ec5b8a92dd1de6fcb449fafe}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+N\+O\+\_\+\+F\+D@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+N\+O\+\_\+\+F\+D}}
+\index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+N\+O\+\_\+\+F\+D@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+N\+O\+\_\+\+F\+D}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+N\+O\+\_\+\+F\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+N\+O\+\_\+\+F\+D~-\/1}\label{le__audio__interface_8h_a374c2f62ec5b8a92dd1de6fcb449fafe}
+No file descriptor define 
+
+\subsection{Typedef Documentation}
+\hypertarget{le__audio__interface_8h_ab819480f4ce3f36e62b6a4e327668304}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Connector\+Ref\+\_\+t@{le\+\_\+audio\+\_\+\+Connector\+Ref\+\_\+t}}
+\index{le\+\_\+audio\+\_\+\+Connector\+Ref\+\_\+t@{le\+\_\+audio\+\_\+\+Connector\+Ref\+\_\+t}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Connector\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+audio\+\_\+\+Connector$\ast$ {\bf le\+\_\+audio\+\_\+\+Connector\+Ref\+\_\+t}}\label{le__audio__interface_8h_ab819480f4ce3f36e62b6a4e327668304}
+Reference type for Audio Connector \hypertarget{le__audio__interface_8h_a3c6bc837c07ecf1545eadc7f1813bddb}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Dtmf\+Detector\+Handler\+Func\+\_\+t@{le\+\_\+audio\+\_\+\+Dtmf\+Detector\+Handler\+Func\+\_\+t}}
+\index{le\+\_\+audio\+\_\+\+Dtmf\+Detector\+Handler\+Func\+\_\+t@{le\+\_\+audio\+\_\+\+Dtmf\+Detector\+Handler\+Func\+\_\+t}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Dtmf\+Detector\+Handler\+Func\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ le\+\_\+audio\+\_\+\+Dtmf\+Detector\+Handler\+Func\+\_\+t) ({\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, char dtmf, void $\ast$context\+Ptr)}\label{le__audio__interface_8h_a3c6bc837c07ecf1545eadc7f1813bddb}
+Handler for D\+T\+M\+F decoding.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream\+Ref} & Audio stream reference. \\
+\hline
+{\em dtmf} & Detected D\+T\+M\+F. \\
+\hline
+{\em context\+Ptr} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a2db60899cdaa84759075a7955ed24511}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Dtmf\+Detector\+Handler\+Ref\+\_\+t@{le\+\_\+audio\+\_\+\+Dtmf\+Detector\+Handler\+Ref\+\_\+t}}
+\index{le\+\_\+audio\+\_\+\+Dtmf\+Detector\+Handler\+Ref\+\_\+t@{le\+\_\+audio\+\_\+\+Dtmf\+Detector\+Handler\+Ref\+\_\+t}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Dtmf\+Detector\+Handler\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+audio\+\_\+\+Dtmf\+Detector\+Handler$\ast$ {\bf le\+\_\+audio\+\_\+\+Dtmf\+Detector\+Handler\+Ref\+\_\+t}}\label{le__audio__interface_8h_a2db60899cdaa84759075a7955ed24511}
+Reference type used by Add/\+Remove functions for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+audio\+\_\+\+Dtmf\+Detector\textquotesingle{} \hypertarget{le__audio__interface_8h_aa1176ea658084237635f4e7e437f1f7b}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Media\+Handler\+Func\+\_\+t@{le\+\_\+audio\+\_\+\+Media\+Handler\+Func\+\_\+t}}
+\index{le\+\_\+audio\+\_\+\+Media\+Handler\+Func\+\_\+t@{le\+\_\+audio\+\_\+\+Media\+Handler\+Func\+\_\+t}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Media\+Handler\+Func\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ le\+\_\+audio\+\_\+\+Media\+Handler\+Func\+\_\+t) ({\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} stream\+Ref, {\bf le\+\_\+audio\+\_\+\+Media\+Event\+\_\+t} event, void $\ast$context\+Ptr)}\label{le__audio__interface_8h_aa1176ea658084237635f4e7e437f1f7b}
+Handler for audio stream event.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream\+Ref} & Audio stream reference. \\
+\hline
+{\em event} & Event value. \\
+\hline
+{\em context\+Ptr} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a390b011cbb6f745c46e861d315af0bbe}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Media\+Handler\+Ref\+\_\+t@{le\+\_\+audio\+\_\+\+Media\+Handler\+Ref\+\_\+t}}
+\index{le\+\_\+audio\+\_\+\+Media\+Handler\+Ref\+\_\+t@{le\+\_\+audio\+\_\+\+Media\+Handler\+Ref\+\_\+t}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Media\+Handler\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+audio\+\_\+\+Media\+Handler$\ast$ {\bf le\+\_\+audio\+\_\+\+Media\+Handler\+Ref\+\_\+t}}\label{le__audio__interface_8h_a390b011cbb6f745c46e861d315af0bbe}
+Reference type used by Add/\+Remove functions for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+audio\+\_\+\+Media\textquotesingle{} \hypertarget{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t@{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}
+\index{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t@{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+audio\+\_\+\+Stream$\ast$ {\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}\label{le__audio__interface_8h_a9a46ff5a5afa61f1bc76120ab9e4da0a}
+Reference type for Audio Stream 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Amr\+Mode\+\_\+t@{le\+\_\+audio\+\_\+\+Amr\+Mode\+\_\+t}}
+\index{le\+\_\+audio\+\_\+\+Amr\+Mode\+\_\+t@{le\+\_\+audio\+\_\+\+Amr\+Mode\+\_\+t}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Amr\+Mode\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+audio\+\_\+\+Amr\+Mode\+\_\+t}}\label{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7}
+A\+M\+R mode. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+O\+N\+E@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+O\+N\+E}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+O\+N\+E@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+O\+N\+E}}\item[{\em 
+\hypertarget{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a51d289424c42c53aff800659871cbe3f}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+O\+N\+E\label{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a51d289424c42c53aff800659871cbe3f}
+}]Not set. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+4\+\_\+75\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+4\+\_\+75\+\_\+\+K\+B\+P\+S}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+4\+\_\+75\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+4\+\_\+75\+\_\+\+K\+B\+P\+S}}\item[{\em 
+\hypertarget{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a757a18a9f17e6152f77645bcc05c8dfb}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+4\+\_\+75\+\_\+\+K\+B\+P\+S\label{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a757a18a9f17e6152f77645bcc05c8dfb}
+}]A\+M\+R Narrowband in 4.\+75kbps. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+5\+\_\+15\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+5\+\_\+15\+\_\+\+K\+B\+P\+S}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+5\+\_\+15\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+5\+\_\+15\+\_\+\+K\+B\+P\+S}}\item[{\em 
+\hypertarget{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a4c4726438b37dd61e090707c6bd060b3}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+5\+\_\+15\+\_\+\+K\+B\+P\+S\label{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a4c4726438b37dd61e090707c6bd060b3}
+}]A\+M\+R Narrowband in 5.\+15kbps. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+5\+\_\+9\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+5\+\_\+9\+\_\+\+K\+B\+P\+S}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+5\+\_\+9\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+5\+\_\+9\+\_\+\+K\+B\+P\+S}}\item[{\em 
+\hypertarget{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7aa8375f69558e2ac515b5a74e336ad78c}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+5\+\_\+9\+\_\+\+K\+B\+P\+S\label{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7aa8375f69558e2ac515b5a74e336ad78c}
+}]A\+M\+R Narrowband in 5.\+9kbps. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+6\+\_\+7\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+6\+\_\+7\+\_\+\+K\+B\+P\+S}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+6\+\_\+7\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+6\+\_\+7\+\_\+\+K\+B\+P\+S}}\item[{\em 
+\hypertarget{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a4a5f21fde04b81e01474d289a31ae169}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+6\+\_\+7\+\_\+\+K\+B\+P\+S\label{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a4a5f21fde04b81e01474d289a31ae169}
+}]A\+M\+R Narrowband in 6.\+7kbps. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+7\+\_\+4\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+7\+\_\+4\+\_\+\+K\+B\+P\+S}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+7\+\_\+4\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+7\+\_\+4\+\_\+\+K\+B\+P\+S}}\item[{\em 
+\hypertarget{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a70510d805a435c524dbe16bb52836914}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+7\+\_\+4\+\_\+\+K\+B\+P\+S\label{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a70510d805a435c524dbe16bb52836914}
+}]A\+M\+R Narrowband in 7.\+4kbps (default value) \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+7\+\_\+95\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+7\+\_\+95\+\_\+\+K\+B\+P\+S}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+7\+\_\+95\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+7\+\_\+95\+\_\+\+K\+B\+P\+S}}\item[{\em 
+\hypertarget{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a785a7b08f33e1cad391a229a8638bc02}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+7\+\_\+95\+\_\+\+K\+B\+P\+S\label{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a785a7b08f33e1cad391a229a8638bc02}
+}]A\+M\+R Narrowband in 7.\+95kbps. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+10\+\_\+2\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+10\+\_\+2\+\_\+\+K\+B\+P\+S}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+10\+\_\+2\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+10\+\_\+2\+\_\+\+K\+B\+P\+S}}\item[{\em 
+\hypertarget{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a9a067aec590278814137733cc91ddf00}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+10\+\_\+2\+\_\+\+K\+B\+P\+S\label{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a9a067aec590278814137733cc91ddf00}
+}]A\+M\+R Narrowband in 10.\+3kbps. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+12\+\_\+2\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+12\+\_\+2\+\_\+\+K\+B\+P\+S}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+12\+\_\+2\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+12\+\_\+2\+\_\+\+K\+B\+P\+S}}\item[{\em 
+\hypertarget{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7aba8db156fffb89bcb98e6a2cb762d04c}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+N\+B\+\_\+12\+\_\+2\+\_\+\+K\+B\+P\+S\label{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7aba8db156fffb89bcb98e6a2cb762d04c}
+}]A\+M\+R Narrowband in 12.\+2kbps. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+6\+\_\+6\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+6\+\_\+6\+\_\+\+K\+B\+P\+S}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+6\+\_\+6\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+6\+\_\+6\+\_\+\+K\+B\+P\+S}}\item[{\em 
+\hypertarget{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a8056bae72d2abccfa4a3df9f5250fc3f}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+6\+\_\+6\+\_\+\+K\+B\+P\+S\label{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a8056bae72d2abccfa4a3df9f5250fc3f}
+}]A\+M\+R Wideband in 6.\+6kbps. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+8\+\_\+85\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+8\+\_\+85\+\_\+\+K\+B\+P\+S}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+8\+\_\+85\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+8\+\_\+85\+\_\+\+K\+B\+P\+S}}\item[{\em 
+\hypertarget{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7aa7129e4022538c178641bddab468e955}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+8\+\_\+85\+\_\+\+K\+B\+P\+S\label{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7aa7129e4022538c178641bddab468e955}
+}]A\+M\+R Wideband in 8.\+85kbps. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+12\+\_\+65\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+12\+\_\+65\+\_\+\+K\+B\+P\+S}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+12\+\_\+65\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+12\+\_\+65\+\_\+\+K\+B\+P\+S}}\item[{\em 
+\hypertarget{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7ac9a2144d8bc2842e4fa16e5d80633ac2}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+12\+\_\+65\+\_\+\+K\+B\+P\+S\label{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7ac9a2144d8bc2842e4fa16e5d80633ac2}
+}]A\+M\+R Wideband in 12.\+65kbps. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+14\+\_\+25\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+14\+\_\+25\+\_\+\+K\+B\+P\+S}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+14\+\_\+25\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+14\+\_\+25\+\_\+\+K\+B\+P\+S}}\item[{\em 
+\hypertarget{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a0e68d866b1cf9e0fe13884efe3d2b4f0}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+14\+\_\+25\+\_\+\+K\+B\+P\+S\label{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a0e68d866b1cf9e0fe13884efe3d2b4f0}
+}]A\+M\+R Wideband in 14.\+25kbps. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+15\+\_\+85\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+15\+\_\+85\+\_\+\+K\+B\+P\+S}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+15\+\_\+85\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+15\+\_\+85\+\_\+\+K\+B\+P\+S}}\item[{\em 
+\hypertarget{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7ae5850c4d2022d20fa09436c9efb943ee}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+15\+\_\+85\+\_\+\+K\+B\+P\+S\label{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7ae5850c4d2022d20fa09436c9efb943ee}
+}]A\+M\+R Wideband in 15.\+85kbps. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+18\+\_\+25\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+18\+\_\+25\+\_\+\+K\+B\+P\+S}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+18\+\_\+25\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+18\+\_\+25\+\_\+\+K\+B\+P\+S}}\item[{\em 
+\hypertarget{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7ad227fd120289c6d2c0b711e31dbfbae1}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+18\+\_\+25\+\_\+\+K\+B\+P\+S\label{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7ad227fd120289c6d2c0b711e31dbfbae1}
+}]A\+M\+R Wideband in 18.\+25kbps. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+19\+\_\+85\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+19\+\_\+85\+\_\+\+K\+B\+P\+S}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+19\+\_\+85\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+19\+\_\+85\+\_\+\+K\+B\+P\+S}}\item[{\em 
+\hypertarget{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a53fad07cad340900588ee1b68b959260}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+19\+\_\+85\+\_\+\+K\+B\+P\+S\label{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a53fad07cad340900588ee1b68b959260}
+}]A\+M\+R Wideband in 19.\+85kbps. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+23\+\_\+05\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+23\+\_\+05\+\_\+\+K\+B\+P\+S}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+23\+\_\+05\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+23\+\_\+05\+\_\+\+K\+B\+P\+S}}\item[{\em 
+\hypertarget{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7ae846f84f4c7c11645a0a5690370c020c}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+23\+\_\+05\+\_\+\+K\+B\+P\+S\label{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7ae846f84f4c7c11645a0a5690370c020c}
+}]A\+M\+R Wideband in 23.\+05kbps. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+23\+\_\+85\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+23\+\_\+85\+\_\+\+K\+B\+P\+S}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+23\+\_\+85\+\_\+\+K\+B\+P\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+23\+\_\+85\+\_\+\+K\+B\+P\+S}}\item[{\em 
+\hypertarget{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a27cfc7c374b62900edfea1393091cd00}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\+\_\+\+W\+B\+\_\+23\+\_\+85\+\_\+\+K\+B\+P\+S\label{le__audio__interface_8h_accd7fae61b50dcd68bf722e243bc5cb7a27cfc7c374b62900edfea1393091cd00}
+}]A\+M\+R Wideband in 23.\+85kbps. \end{description}
+\end{Desc}
+\hypertarget{le__audio__interface_8h_a5b07d59ec1067a4d81250a46f93715b8}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Companding\+\_\+t@{le\+\_\+audio\+\_\+\+Companding\+\_\+t}}
+\index{le\+\_\+audio\+\_\+\+Companding\+\_\+t@{le\+\_\+audio\+\_\+\+Companding\+\_\+t}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Companding\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+audio\+\_\+\+Companding\+\_\+t}}\label{le__audio__interface_8h_a5b07d59ec1067a4d81250a46f93715b8}
+Companding. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+M\+P\+A\+N\+D\+I\+N\+G\+\_\+\+A\+L\+A\+W@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+M\+P\+A\+N\+D\+I\+N\+G\+\_\+\+A\+L\+A\+W}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+M\+P\+A\+N\+D\+I\+N\+G\+\_\+\+A\+L\+A\+W@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+M\+P\+A\+N\+D\+I\+N\+G\+\_\+\+A\+L\+A\+W}}\item[{\em 
+\hypertarget{le__audio__interface_8h_a5b07d59ec1067a4d81250a46f93715b8a271c71620c5ea0a607c5372f4c650519}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+M\+P\+A\+N\+D\+I\+N\+G\+\_\+\+A\+L\+A\+W\label{le__audio__interface_8h_a5b07d59ec1067a4d81250a46f93715b8a271c71620c5ea0a607c5372f4c650519}
+}]A-\/law P\+C\+M (i.\+e. Europe and most of the rest of the world). \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+M\+P\+A\+N\+D\+I\+N\+G\+\_\+\+U\+L\+A\+W@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+M\+P\+A\+N\+D\+I\+N\+G\+\_\+\+U\+L\+A\+W}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+M\+P\+A\+N\+D\+I\+N\+G\+\_\+\+U\+L\+A\+W@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+M\+P\+A\+N\+D\+I\+N\+G\+\_\+\+U\+L\+A\+W}}\item[{\em 
+\hypertarget{le__audio__interface_8h_a5b07d59ec1067a4d81250a46f93715b8ad8a49ed29e9bf3077127ec237c742753}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+M\+P\+A\+N\+D\+I\+N\+G\+\_\+\+U\+L\+A\+W\label{le__audio__interface_8h_a5b07d59ec1067a4d81250a46f93715b8ad8a49ed29e9bf3077127ec237c742753}
+}]M\+U-\/law P\+C\+M (i.\+e. North America and Japan). \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+M\+P\+A\+N\+D\+I\+N\+G\+\_\+\+N\+O\+N\+E@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+M\+P\+A\+N\+D\+I\+N\+G\+\_\+\+N\+O\+N\+E}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+M\+P\+A\+N\+D\+I\+N\+G\+\_\+\+N\+O\+N\+E@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+M\+P\+A\+N\+D\+I\+N\+G\+\_\+\+N\+O\+N\+E}}\item[{\em 
+\hypertarget{le__audio__interface_8h_a5b07d59ec1067a4d81250a46f93715b8ae40f3183883d0e0e3c35733326ac9733}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+C\+O\+M\+P\+A\+N\+D\+I\+N\+G\+\_\+\+N\+O\+N\+E\label{le__audio__interface_8h_a5b07d59ec1067a4d81250a46f93715b8ae40f3183883d0e0e3c35733326ac9733}
+}]Linear P\+C\+M. \end{description}
+\end{Desc}
+\hypertarget{le__audio__interface_8h_a0ad2f5012ed700af1892f82e4af5989d}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Format\+\_\+t@{le\+\_\+audio\+\_\+\+Format\+\_\+t}}
+\index{le\+\_\+audio\+\_\+\+Format\+\_\+t@{le\+\_\+audio\+\_\+\+Format\+\_\+t}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Format\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+audio\+\_\+\+Format\+\_\+t}}\label{le__audio__interface_8h_a0ad2f5012ed700af1892f82e4af5989d}
+Audio format. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+W\+A\+V\+E@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+W\+A\+V\+E}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+W\+A\+V\+E@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+W\+A\+V\+E}}\item[{\em 
+\hypertarget{le__audio__interface_8h_a0ad2f5012ed700af1892f82e4af5989daacfeef297c63db7626c586ebe4d5e1c2}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+W\+A\+V\+E\label{le__audio__interface_8h_a0ad2f5012ed700af1892f82e4af5989daacfeef297c63db7626c586ebe4d5e1c2}
+}]Waveform audio file. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R}}\item[{\em 
+\hypertarget{le__audio__interface_8h_a0ad2f5012ed700af1892f82e4af5989da51bd6de676a1d6a82923c7383b047893}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+A\+M\+R\label{le__audio__interface_8h_a0ad2f5012ed700af1892f82e4af5989da51bd6de676a1d6a82923c7383b047893}
+}]Adaptive Multi Rate. \end{description}
+\end{Desc}
+\hypertarget{le__audio__interface_8h_a94794180ed71a84bd26a1f525858f252}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+I2\+S\+Channel\+\_\+t@{le\+\_\+audio\+\_\+\+I2\+S\+Channel\+\_\+t}}
+\index{le\+\_\+audio\+\_\+\+I2\+S\+Channel\+\_\+t@{le\+\_\+audio\+\_\+\+I2\+S\+Channel\+\_\+t}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+I2\+S\+Channel\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+audio\+\_\+\+I2\+S\+Channel\+\_\+t}}\label{le__audio__interface_8h_a94794180ed71a84bd26a1f525858f252}
+I2\+S channel mode. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+L\+E\+F\+T@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+L\+E\+F\+T}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+L\+E\+F\+T@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+L\+E\+F\+T}}\item[{\em 
+\hypertarget{le__audio__interface_8h_a94794180ed71a84bd26a1f525858f252a0a0279115b994448752f8a7ca03a9d08}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+L\+E\+F\+T\label{le__audio__interface_8h_a94794180ed71a84bd26a1f525858f252a0a0279115b994448752f8a7ca03a9d08}
+}]Left channel. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+R\+I\+G\+H\+T@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+R\+I\+G\+H\+T}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+R\+I\+G\+H\+T@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+R\+I\+G\+H\+T}}\item[{\em 
+\hypertarget{le__audio__interface_8h_a94794180ed71a84bd26a1f525858f252a346b13f5c03c3c6337f70adedbe99e4c}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+R\+I\+G\+H\+T\label{le__audio__interface_8h_a94794180ed71a84bd26a1f525858f252a346b13f5c03c3c6337f70adedbe99e4c}
+}]Right channel. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+M\+O\+N\+O@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+M\+O\+N\+O}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+M\+O\+N\+O@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+M\+O\+N\+O}}\item[{\em 
+\hypertarget{le__audio__interface_8h_a94794180ed71a84bd26a1f525858f252aac9b211c4afe16b4db9e9f437eab0a5d}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+M\+O\+N\+O\label{le__audio__interface_8h_a94794180ed71a84bd26a1f525858f252aac9b211c4afe16b4db9e9f437eab0a5d}
+}]Mono mode. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+S\+T\+E\+R\+E\+O@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+S\+T\+E\+R\+E\+O}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+S\+T\+E\+R\+E\+O@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+S\+T\+E\+R\+E\+O}}\item[{\em 
+\hypertarget{le__audio__interface_8h_a94794180ed71a84bd26a1f525858f252a6ce77f5f956b203e15f662900a5103dd}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+S\+T\+E\+R\+E\+O\label{le__audio__interface_8h_a94794180ed71a84bd26a1f525858f252a6ce77f5f956b203e15f662900a5103dd}
+}]Stereo mode. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+R\+E\+V\+E\+R\+S\+E@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+R\+E\+V\+E\+R\+S\+E}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+R\+E\+V\+E\+R\+S\+E@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+R\+E\+V\+E\+R\+S\+E}}\item[{\em 
+\hypertarget{le__audio__interface_8h_a94794180ed71a84bd26a1f525858f252a32b9663e69f498538708a913476b26f2}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I2\+S\+\_\+\+R\+E\+V\+E\+R\+S\+E\label{le__audio__interface_8h_a94794180ed71a84bd26a1f525858f252a32b9663e69f498538708a913476b26f2}
+}]Reverse mode (left \& right reversed). \end{description}
+\end{Desc}
+\hypertarget{le__audio__interface_8h_aaf870f5f30f4f6f65efb873c5d0cb5f1}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Media\+Event\+\_\+t@{le\+\_\+audio\+\_\+\+Media\+Event\+\_\+t}}
+\index{le\+\_\+audio\+\_\+\+Media\+Event\+\_\+t@{le\+\_\+audio\+\_\+\+Media\+Event\+\_\+t}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Media\+Event\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+audio\+\_\+\+Media\+Event\+\_\+t}}\label{le__audio__interface_8h_aaf870f5f30f4f6f65efb873c5d0cb5f1}
+Audio recording/playback events. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+E\+N\+D\+E\+D@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+E\+N\+D\+E\+D}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+E\+N\+D\+E\+D@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+E\+N\+D\+E\+D}}\item[{\em 
+\hypertarget{le__audio__interface_8h_aaf870f5f30f4f6f65efb873c5d0cb5f1a7dbc0c9a2c3839d3db974c5aa5be344d}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+E\+N\+D\+E\+D\label{le__audio__interface_8h_aaf870f5f30f4f6f65efb873c5d0cb5f1a7dbc0c9a2c3839d3db974c5aa5be344d}
+}]Playback has reached the end of file. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+N\+O\+\_\+\+M\+O\+R\+E\+\_\+\+S\+A\+M\+P\+L\+E\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+N\+O\+\_\+\+M\+O\+R\+E\+\_\+\+S\+A\+M\+P\+L\+E\+S}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+N\+O\+\_\+\+M\+O\+R\+E\+\_\+\+S\+A\+M\+P\+L\+E\+S@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+N\+O\+\_\+\+M\+O\+R\+E\+\_\+\+S\+A\+M\+P\+L\+E\+S}}\item[{\em 
+\hypertarget{le__audio__interface_8h_aaf870f5f30f4f6f65efb873c5d0cb5f1a06883432159e9e69637fbe5eefd59159}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+N\+O\+\_\+\+M\+O\+R\+E\+\_\+\+S\+A\+M\+P\+L\+E\+S\label{le__audio__interface_8h_aaf870f5f30f4f6f65efb873c5d0cb5f1a06883432159e9e69637fbe5eefd59159}
+}]No more audio samples to play. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+O\+R@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+O\+R}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+O\+R@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+O\+R}}\item[{\em 
+\hypertarget{le__audio__interface_8h_aaf870f5f30f4f6f65efb873c5d0cb5f1a5f7de6714ea54f09d036a87dd1c63a50}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+E\+R\+R\+O\+R\label{le__audio__interface_8h_aaf870f5f30f4f6f65efb873c5d0cb5f1a5f7de6714ea54f09d036a87dd1c63a50}
+}]Recording/playback has encountered an error. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+M\+A\+X@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+M\+A\+X}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+M\+A\+X@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+M\+A\+X}}\item[{\em 
+\hypertarget{le__audio__interface_8h_aaf870f5f30f4f6f65efb873c5d0cb5f1a0d7192558212ce592db643ee43bd1054}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+M\+E\+D\+I\+A\+\_\+\+M\+A\+X\label{le__audio__interface_8h_aaf870f5f30f4f6f65efb873c5d0cb5f1a0d7192558212ce592db643ee43bd1054}
+}]Enumerate max value. \end{description}
+\end{Desc}
+\hypertarget{le__audio__interface_8h_a3d396e4c3ed914277e81c39f3c423ed5}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Profile\+\_\+t@{le\+\_\+audio\+\_\+\+Profile\+\_\+t}}
+\index{le\+\_\+audio\+\_\+\+Profile\+\_\+t@{le\+\_\+audio\+\_\+\+Profile\+\_\+t}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Profile\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+audio\+\_\+\+Profile\+\_\+t}}\label{le__audio__interface_8h_a3d396e4c3ed914277e81c39f3c423ed5}
+Audio profiles. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+H\+A\+N\+D\+S\+F\+R\+E\+E@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+H\+A\+N\+D\+S\+F\+R\+E\+E}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+H\+A\+N\+D\+S\+F\+R\+E\+E@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+H\+A\+N\+D\+S\+F\+R\+E\+E}}\item[{\em 
+\hypertarget{le__audio__interface_8h_a3d396e4c3ed914277e81c39f3c423ed5a0b2baa1a1db29f3ef78d31e6ca9b7648}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+H\+A\+N\+D\+S\+F\+R\+E\+E\label{le__audio__interface_8h_a3d396e4c3ed914277e81c39f3c423ed5a0b2baa1a1db29f3ef78d31e6ca9b7648}
+}]Handsfree profile. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+H\+A\+N\+D\+S\+E\+T@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+H\+A\+N\+D\+S\+E\+T}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+H\+A\+N\+D\+S\+E\+T@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+H\+A\+N\+D\+S\+E\+T}}\item[{\em 
+\hypertarget{le__audio__interface_8h_a3d396e4c3ed914277e81c39f3c423ed5aed17351c74da18eea646b52432621bbf}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+H\+A\+N\+D\+S\+E\+T\label{le__audio__interface_8h_a3d396e4c3ed914277e81c39f3c423ed5aed17351c74da18eea646b52432621bbf}
+}]Handset profile. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+H\+E\+A\+D\+S\+E\+T@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+H\+E\+A\+D\+S\+E\+T}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+H\+E\+A\+D\+S\+E\+T@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+H\+E\+A\+D\+S\+E\+T}}\item[{\em 
+\hypertarget{le__audio__interface_8h_a3d396e4c3ed914277e81c39f3c423ed5a28b615e66b45a58709c6389f905f606e}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+H\+E\+A\+D\+S\+E\+T\label{le__audio__interface_8h_a3d396e4c3ed914277e81c39f3c423ed5a28b615e66b45a58709c6389f905f606e}
+}]Headset profile. \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+T\+T\+Y@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+T\+T\+Y}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+T\+T\+Y@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+T\+T\+Y}}\item[{\em 
+\hypertarget{le__audio__interface_8h_a3d396e4c3ed914277e81c39f3c423ed5a7de255a63a21334b4b792c33bfdfa8a9}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+T\+T\+Y\label{le__audio__interface_8h_a3d396e4c3ed914277e81c39f3c423ed5a7de255a63a21334b4b792c33bfdfa8a9}
+}]Teletypewriter profile (for hearing impaired use cases). \index{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+U\+S\+B@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+U\+S\+B}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+U\+S\+B@{L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+U\+S\+B}}\item[{\em 
+\hypertarget{le__audio__interface_8h_a3d396e4c3ed914277e81c39f3c423ed5a3fbcc52b25d4c6053f687bb155b30abd}{}L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+U\+S\+B\label{le__audio__interface_8h_a3d396e4c3ed914277e81c39f3c423ed5a3fbcc52b25d4c6053f687bb155b30abd}
+}]U\+S\+B profile. \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{le__audio__interface_8h_a6e65275798c0db287fc1b540cdc0db8b}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Add\+Dtmf\+Detector\+Handler@{le\+\_\+audio\+\_\+\+Add\+Dtmf\+Detector\+Handler}}
+\index{le\+\_\+audio\+\_\+\+Add\+Dtmf\+Detector\+Handler@{le\+\_\+audio\+\_\+\+Add\+Dtmf\+Detector\+Handler}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Add\+Dtmf\+Detector\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+audio\+\_\+\+Dtmf\+Detector\+Handler\+Ref\+\_\+t} le\+\_\+audio\+\_\+\+Add\+Dtmf\+Detector\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref, }
+\item[{{\bf le\+\_\+audio\+\_\+\+Dtmf\+Detector\+Handler\+Func\+\_\+t}}]{handler\+Ptr, }
+\item[{void $\ast$}]{context\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a6e65275798c0db287fc1b540cdc0db8b}
+Add handler function for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+audio\+\_\+\+Dtmf\+Detector\textquotesingle{}
+
+This event provides information on D\+T\+M\+F decoding for the specified stream\+Ref 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\mbox{\tt in}  & {\em handler\+Ptr} & \\
+\hline
+\mbox{\tt in}  & {\em context\+Ptr} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a9996ac9d23333cf8219f28b69cac4f81}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Add\+Media\+Handler@{le\+\_\+audio\+\_\+\+Add\+Media\+Handler}}
+\index{le\+\_\+audio\+\_\+\+Add\+Media\+Handler@{le\+\_\+audio\+\_\+\+Add\+Media\+Handler}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Add\+Media\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+audio\+\_\+\+Media\+Handler\+Ref\+\_\+t} le\+\_\+audio\+\_\+\+Add\+Media\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref, }
+\item[{{\bf le\+\_\+audio\+\_\+\+Media\+Handler\+Func\+\_\+t}}]{handler\+Ptr, }
+\item[{void $\ast$}]{context\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a9996ac9d23333cf8219f28b69cac4f81}
+Add handler function for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+audio\+\_\+\+Media\textquotesingle{}
+
+This event provides information on player / recorder stream events. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & The audio stream reference. \\
+\hline
+\mbox{\tt in}  & {\em handler\+Ptr} & \\
+\hline
+\mbox{\tt in}  & {\em context\+Ptr} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_abafeb411da7b1a14b2d5777fc1d3e394}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Close@{le\+\_\+audio\+\_\+\+Close}}
+\index{le\+\_\+audio\+\_\+\+Close@{le\+\_\+audio\+\_\+\+Close}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Close}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+audio\+\_\+\+Close (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_abafeb411da7b1a14b2d5777fc1d3e394}
+Close an audio stream. If several users own the stream reference, the interface closes only after the last user closes the audio stream.
+
+\begin{DoxyNote}{Note}
+If the caller is passing a bad reference into this function, it is a fatal error, the function will not return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a338df65b2fb1ae0140d86880adbcf0de}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Connect@{le\+\_\+audio\+\_\+\+Connect}}
+\index{le\+\_\+audio\+\_\+\+Connect@{le\+\_\+audio\+\_\+\+Connect}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Connect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Connect (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Connector\+Ref\+\_\+t}}]{connector\+Ref, }
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a338df65b2fb1ae0140d86880adbcf0de}
+Connect an audio stream to the connector reference.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+B\+U\+S\+Y Insufficient D\+S\+P resources available. 
+
+L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R Connector and/or the audio stream references are invalid. 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad reference into this function, it is a fatal error, the function will not return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em connector\+Ref} & Connector reference. \\
+\hline
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a65a8844fc6d2e1b7ed78f33bef1b9990}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Connect\+Service@{le\+\_\+audio\+\_\+\+Connect\+Service}}
+\index{le\+\_\+audio\+\_\+\+Connect\+Service@{le\+\_\+audio\+\_\+\+Connect\+Service}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Connect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+audio\+\_\+\+Connect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a65a8844fc6d2e1b7ed78f33bef1b9990}
+Connect the client to the service \hypertarget{le__audio__interface_8h_a570aaf85086f00aca592acfbaaa237be}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Create\+Connector@{le\+\_\+audio\+\_\+\+Create\+Connector}}
+\index{le\+\_\+audio\+\_\+\+Create\+Connector@{le\+\_\+audio\+\_\+\+Create\+Connector}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Create\+Connector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+audio\+\_\+\+Connector\+Ref\+\_\+t} le\+\_\+audio\+\_\+\+Create\+Connector (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a570aaf85086f00aca592acfbaaa237be}
+Create an audio connector reference.
+
+\begin{DoxyReturn}{Returns}
+Reference to the audio connector, N\+U\+L\+L if the function fails. 
+\end{DoxyReturn}
+\hypertarget{le__audio__interface_8h_a3f40b13ff980040503927f59bb3e86a9}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Delete\+Connector@{le\+\_\+audio\+\_\+\+Delete\+Connector}}
+\index{le\+\_\+audio\+\_\+\+Delete\+Connector@{le\+\_\+audio\+\_\+\+Delete\+Connector}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Delete\+Connector}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+audio\+\_\+\+Delete\+Connector (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Connector\+Ref\+\_\+t}}]{connector\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a3f40b13ff980040503927f59bb3e86a9}
+Delete an audio connector reference.
+
+\begin{DoxyNote}{Note}
+If the caller is passing a bad reference into this function, it is a fatal error, the function will not return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em connector\+Ref} & Connector reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a364cdff3d9fa7b2ced00ef92c0c4e9f7}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Disable\+Automatic\+Gain\+Control@{le\+\_\+audio\+\_\+\+Disable\+Automatic\+Gain\+Control}}
+\index{le\+\_\+audio\+\_\+\+Disable\+Automatic\+Gain\+Control@{le\+\_\+audio\+\_\+\+Disable\+Automatic\+Gain\+Control}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Disable\+Automatic\+Gain\+Control}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Disable\+Automatic\+Gain\+Control (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a364cdff3d9fa7b2ced00ef92c0c4e9f7}
+This function must be called to disable the automatic gain control on the selected audio stream.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The process exits, if an invalid audio stream reference is given. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_afc413a569b1e7eb877a3f98c2b52b05d}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Disable\+Echo\+Canceller@{le\+\_\+audio\+\_\+\+Disable\+Echo\+Canceller}}
+\index{le\+\_\+audio\+\_\+\+Disable\+Echo\+Canceller@{le\+\_\+audio\+\_\+\+Disable\+Echo\+Canceller}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Disable\+Echo\+Canceller}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Disable\+Echo\+Canceller (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_afc413a569b1e7eb877a3f98c2b52b05d}
+This function must be called to disable the Echo Canceller.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The process exits, if an invalid audio stream reference is given. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_ae5be820a7a167c307d64ea2c15b0abb4}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Disable\+Fir\+Filter@{le\+\_\+audio\+\_\+\+Disable\+Fir\+Filter}}
+\index{le\+\_\+audio\+\_\+\+Disable\+Fir\+Filter@{le\+\_\+audio\+\_\+\+Disable\+Fir\+Filter}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Disable\+Fir\+Filter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Disable\+Fir\+Filter (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_ae5be820a7a167c307d64ea2c15b0abb4}
+This function must be called to disable the F\+I\+R (Finite Impulse Response) filter.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The process exits, if an invalid audio stream reference is given. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_af7958cd14c83c479ede6ae7a7953461b}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Disable\+Iir\+Filter@{le\+\_\+audio\+\_\+\+Disable\+Iir\+Filter}}
+\index{le\+\_\+audio\+\_\+\+Disable\+Iir\+Filter@{le\+\_\+audio\+\_\+\+Disable\+Iir\+Filter}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Disable\+Iir\+Filter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Disable\+Iir\+Filter (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_af7958cd14c83c479ede6ae7a7953461b}
+This function must be called to disable the I\+I\+R (Infinite Impulse Response) filter.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The process exits, if an invalid audio stream reference is given. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a3d3d52002fe6bf95271db1a16b1573f7}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Disable\+Noise\+Suppressor@{le\+\_\+audio\+\_\+\+Disable\+Noise\+Suppressor}}
+\index{le\+\_\+audio\+\_\+\+Disable\+Noise\+Suppressor@{le\+\_\+audio\+\_\+\+Disable\+Noise\+Suppressor}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Disable\+Noise\+Suppressor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Disable\+Noise\+Suppressor (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a3d3d52002fe6bf95271db1a16b1573f7}
+This function must be called to disable the Noise Suppressor.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The process exits, if an invalid audio stream reference is given. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a6b88df9301038375701e4c15a4c8aaf0}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Disconnect@{le\+\_\+audio\+\_\+\+Disconnect}}
+\index{le\+\_\+audio\+\_\+\+Disconnect@{le\+\_\+audio\+\_\+\+Disconnect}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Disconnect}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+audio\+\_\+\+Disconnect (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Connector\+Ref\+\_\+t}}]{connector\+Ref, }
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a6b88df9301038375701e4c15a4c8aaf0}
+Disconnect an audio stream from the connector reference.
+
+\begin{DoxyNote}{Note}
+If the caller is passing a bad reference into this function, it is a fatal error, the function will not return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em connector\+Ref} & Connector reference. \\
+\hline
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_af72a5338e5fd23d17e0274e43642c77a}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Disconnect\+Service@{le\+\_\+audio\+\_\+\+Disconnect\+Service}}
+\index{le\+\_\+audio\+\_\+\+Disconnect\+Service@{le\+\_\+audio\+\_\+\+Disconnect\+Service}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Disconnect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+audio\+\_\+\+Disconnect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_af72a5338e5fd23d17e0274e43642c77a}
+Disconnect the client from the service \hypertarget{le__audio__interface_8h_ac4978d8d632269730c67e27d66fba818}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Enable\+Automatic\+Gain\+Control@{le\+\_\+audio\+\_\+\+Enable\+Automatic\+Gain\+Control}}
+\index{le\+\_\+audio\+\_\+\+Enable\+Automatic\+Gain\+Control@{le\+\_\+audio\+\_\+\+Enable\+Automatic\+Gain\+Control}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Enable\+Automatic\+Gain\+Control}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Enable\+Automatic\+Gain\+Control (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_ac4978d8d632269730c67e27d66fba818}
+This function must be called to enable the automatic gain control on the selected audio stream.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The process exits, if an invalid audio stream reference is given. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a54df27e4ab733a1f50e17903d7a9ae88}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Enable\+Echo\+Canceller@{le\+\_\+audio\+\_\+\+Enable\+Echo\+Canceller}}
+\index{le\+\_\+audio\+\_\+\+Enable\+Echo\+Canceller@{le\+\_\+audio\+\_\+\+Enable\+Echo\+Canceller}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Enable\+Echo\+Canceller}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Enable\+Echo\+Canceller (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a54df27e4ab733a1f50e17903d7a9ae88}
+This function must be called to enable the Echo Canceller.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The process exits, if an invalid audio stream reference is given. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_adedb3bb7e372fffa406f001bdb353e96}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Enable\+Fir\+Filter@{le\+\_\+audio\+\_\+\+Enable\+Fir\+Filter}}
+\index{le\+\_\+audio\+\_\+\+Enable\+Fir\+Filter@{le\+\_\+audio\+\_\+\+Enable\+Fir\+Filter}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Enable\+Fir\+Filter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Enable\+Fir\+Filter (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_adedb3bb7e372fffa406f001bdb353e96}
+This function must be called to enable the F\+I\+R (Finite Impulse Response) filter.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The process exits, if an invalid audio stream reference is given. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_ad5eee81a34cc554ddef8a29c64bcd498}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Enable\+Iir\+Filter@{le\+\_\+audio\+\_\+\+Enable\+Iir\+Filter}}
+\index{le\+\_\+audio\+\_\+\+Enable\+Iir\+Filter@{le\+\_\+audio\+\_\+\+Enable\+Iir\+Filter}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Enable\+Iir\+Filter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Enable\+Iir\+Filter (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_ad5eee81a34cc554ddef8a29c64bcd498}
+This function must be called to enable the I\+I\+R (Infinite Impulse Response) filter.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The process exits, if an invalid audio stream reference is given. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_ac1af23c9febed1378620370a6961ce89}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Enable\+Noise\+Suppressor@{le\+\_\+audio\+\_\+\+Enable\+Noise\+Suppressor}}
+\index{le\+\_\+audio\+\_\+\+Enable\+Noise\+Suppressor@{le\+\_\+audio\+\_\+\+Enable\+Noise\+Suppressor}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Enable\+Noise\+Suppressor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Enable\+Noise\+Suppressor (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_ac1af23c9febed1378620370a6961ce89}
+This function must be called to enable the Noise Suppressor.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The process exits, if an invalid audio stream reference is given. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a7a5855b7be77110eaca1846b17792597}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Flush@{le\+\_\+audio\+\_\+\+Flush}}
+\index{le\+\_\+audio\+\_\+\+Flush@{le\+\_\+audio\+\_\+\+Flush}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Flush}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Flush (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a7a5855b7be77110eaca1846b17792597}
+Flush the remaining audio samples.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a0b727e15c16fffe10cdd5d345b297194}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Get\+Default\+I2s\+Mode@{le\+\_\+audio\+\_\+\+Get\+Default\+I2s\+Mode}}
+\index{le\+\_\+audio\+\_\+\+Get\+Default\+I2s\+Mode@{le\+\_\+audio\+\_\+\+Get\+Default\+I2s\+Mode}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Get\+Default\+I2s\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+audio\+\_\+\+I2\+S\+Channel\+\_\+t} le\+\_\+audio\+\_\+\+Get\+Default\+I2s\+Mode (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a0b727e15c16fffe10cdd5d345b297194}
+Get the default I2\+S channel mode used on the current platform.
+
+\begin{DoxyReturn}{Returns}
+the I2\+S channel mode. 
+\end{DoxyReturn}
+\hypertarget{le__audio__interface_8h_a3f87e41dabde5bfb1170df527c380b9d}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Get\+Default\+Pcm\+Time\+Slot@{le\+\_\+audio\+\_\+\+Get\+Default\+Pcm\+Time\+Slot}}
+\index{le\+\_\+audio\+\_\+\+Get\+Default\+Pcm\+Time\+Slot@{le\+\_\+audio\+\_\+\+Get\+Default\+Pcm\+Time\+Slot}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Get\+Default\+Pcm\+Time\+Slot}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t le\+\_\+audio\+\_\+\+Get\+Default\+Pcm\+Time\+Slot (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a3f87e41dabde5bfb1170df527c380b9d}
+Get the default P\+C\+M time slot used on the current platform.
+
+\begin{DoxyReturn}{Returns}
+the time slot number. 
+\end{DoxyReturn}
+\hypertarget{le__audio__interface_8h_a62e45a441a7d7ab5b7d20b41849331a2}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Get\+Encoding\+Format@{le\+\_\+audio\+\_\+\+Get\+Encoding\+Format}}
+\index{le\+\_\+audio\+\_\+\+Get\+Encoding\+Format@{le\+\_\+audio\+\_\+\+Get\+Encoding\+Format}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Get\+Encoding\+Format}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Get\+Encoding\+Format (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref, }
+\item[{{\bf le\+\_\+audio\+\_\+\+Format\+\_\+t} $\ast$}]{format\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a62e45a441a7d7ab5b7d20b41849331a2}
+Get the encoding format of a recorder stream.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\mbox{\tt out}  & {\em format\+Ptr} & Encoding format. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a51a86829cdd6f27234f482e5dbb6c933}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Get\+Gain@{le\+\_\+audio\+\_\+\+Get\+Gain}}
+\index{le\+\_\+audio\+\_\+\+Get\+Gain@{le\+\_\+audio\+\_\+\+Get\+Gain}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Get\+Gain}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Get\+Gain (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref, }
+\item[{uint32\+\_\+t $\ast$}]{gain\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a51a86829cdd6f27234f482e5dbb6c933}
+Get the Gain value of an input or output stream.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R Audio stream reference is invalid. 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The hardware may or may not support the full 0-\/100 resolution, and if you want to see what was actually set call \hyperlink{le__audio__interface_8h_a51a86829cdd6f27234f482e5dbb6c933}{le\+\_\+audio\+\_\+\+Get\+Gain()} after \hyperlink{le__audio__interface_8h_ad62587dacf0cb087697a62fb9f41d938}{le\+\_\+audio\+\_\+\+Set\+Gain()} to get the real value.
+
+If the caller is passing a bad reference into this function, it is a fatal error, the function will not return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\mbox{\tt out}  & {\em gain\+Ptr} & Gain value \mbox{[}0..100\mbox{]} (0 means \textquotesingle{}muted\textquotesingle{}, 100 is the maximum gain value) \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_aab9a28f3c695b90f8b9f622eb401f6cf}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Get\+Pcm\+Companding@{le\+\_\+audio\+\_\+\+Get\+Pcm\+Companding}}
+\index{le\+\_\+audio\+\_\+\+Get\+Pcm\+Companding@{le\+\_\+audio\+\_\+\+Get\+Pcm\+Companding}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Get\+Pcm\+Companding}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+audio\+\_\+\+Companding\+\_\+t} le\+\_\+audio\+\_\+\+Get\+Pcm\+Companding (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_aab9a28f3c695b90f8b9f622eb401f6cf}
+Retrieve the P\+C\+M Companding.
+
+\begin{DoxyReturn}{Returns}
+The P\+C\+M companding. 
+\end{DoxyReturn}
+\hypertarget{le__audio__interface_8h_a36779982278d3f965286582f38917247}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Get\+Pcm\+Sampling\+Rate@{le\+\_\+audio\+\_\+\+Get\+Pcm\+Sampling\+Rate}}
+\index{le\+\_\+audio\+\_\+\+Get\+Pcm\+Sampling\+Rate@{le\+\_\+audio\+\_\+\+Get\+Pcm\+Sampling\+Rate}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Get\+Pcm\+Sampling\+Rate}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t le\+\_\+audio\+\_\+\+Get\+Pcm\+Sampling\+Rate (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a36779982278d3f965286582f38917247}
+Retrieve the P\+C\+M Sampling Rate.
+
+\begin{DoxyReturn}{Returns}
+The sampling rate in Hz. 
+\end{DoxyReturn}
+\hypertarget{le__audio__interface_8h_a70fbe5e1ae02033e89ad04bbf1ed2b39}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Get\+Pcm\+Sampling\+Resolution@{le\+\_\+audio\+\_\+\+Get\+Pcm\+Sampling\+Resolution}}
+\index{le\+\_\+audio\+\_\+\+Get\+Pcm\+Sampling\+Resolution@{le\+\_\+audio\+\_\+\+Get\+Pcm\+Sampling\+Resolution}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Get\+Pcm\+Sampling\+Resolution}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t le\+\_\+audio\+\_\+\+Get\+Pcm\+Sampling\+Resolution (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a70fbe5e1ae02033e89ad04bbf1ed2b39}
+Retrieve the P\+C\+M Sampling Resolution.
+
+\begin{DoxyReturn}{Returns}
+The sampling resolution (bits/sample). 
+\end{DoxyReturn}
+\hypertarget{le__audio__interface_8h_a56269b13844a1e90be4e4c86f50bed5a}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Get\+Platform\+Specific\+Gain@{le\+\_\+audio\+\_\+\+Get\+Platform\+Specific\+Gain}}
+\index{le\+\_\+audio\+\_\+\+Get\+Platform\+Specific\+Gain@{le\+\_\+audio\+\_\+\+Get\+Platform\+Specific\+Gain}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Get\+Platform\+Specific\+Gain}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Get\+Platform\+Specific\+Gain (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{gain\+Name, }
+\item[{uint32\+\_\+t $\ast$}]{gain\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a56269b13844a1e90be4e4c86f50bed5a}
+Get the value of a platform specific gain in the audio subsystem.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T The function failed. 
+
+L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D The specified gain\textquotesingle{}s name is not recognized in your audio subsystem. 
+
+L\+E\+\_\+\+O\+K The function succeeded.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Ensure to check the names of supported gains for your specific platform. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em gain\+Name} & Name of the platform specific gain. \\
+\hline
+\mbox{\tt out}  & {\em gain\+Ptr} & The gain value (specific to the platform) \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a1bf9091e0068a75a34fdf638ce0f2bc3}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Get\+Profile@{le\+\_\+audio\+\_\+\+Get\+Profile}}
+\index{le\+\_\+audio\+\_\+\+Get\+Profile@{le\+\_\+audio\+\_\+\+Get\+Profile}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Get\+Profile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Get\+Profile (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Profile\+\_\+t} $\ast$}]{profile\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a1bf9091e0068a75a34fdf638ce0f2bc3}
+This function must be called to get the audio profile in use.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em profile\+Ptr} & Audio profile. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_ab26d633ee83aed52dae838cb9d721f87}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Get\+Sample\+Amr\+Dtx@{le\+\_\+audio\+\_\+\+Get\+Sample\+Amr\+Dtx}}
+\index{le\+\_\+audio\+\_\+\+Get\+Sample\+Amr\+Dtx@{le\+\_\+audio\+\_\+\+Get\+Sample\+Amr\+Dtx}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Get\+Sample\+Amr\+Dtx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Get\+Sample\+Amr\+Dtx (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref, }
+\item[{bool $\ast$}]{dtx\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_ab26d633ee83aed52dae838cb9d721f87}
+Get the A\+M\+R discontinuous transmission (D\+T\+X) value.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\mbox{\tt out}  & {\em dtx\+Ptr} & D\+T\+X. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_aa293e15d41f7c1c384053947b5a4dbea}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Get\+Sample\+Amr\+Mode@{le\+\_\+audio\+\_\+\+Get\+Sample\+Amr\+Mode}}
+\index{le\+\_\+audio\+\_\+\+Get\+Sample\+Amr\+Mode@{le\+\_\+audio\+\_\+\+Get\+Sample\+Amr\+Mode}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Get\+Sample\+Amr\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Get\+Sample\+Amr\+Mode (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref, }
+\item[{{\bf le\+\_\+audio\+\_\+\+Amr\+Mode\+\_\+t} $\ast$}]{mode\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_aa293e15d41f7c1c384053947b5a4dbea}
+Get the A\+M\+R mode for A\+M\+R encoder.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\mbox{\tt out}  & {\em mode\+Ptr} & A\+M\+R mode. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a40bf3633c3050a7526a100562edc97f9}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Get\+Sample\+Pcm\+Channel\+Number@{le\+\_\+audio\+\_\+\+Get\+Sample\+Pcm\+Channel\+Number}}
+\index{le\+\_\+audio\+\_\+\+Get\+Sample\+Pcm\+Channel\+Number@{le\+\_\+audio\+\_\+\+Get\+Sample\+Pcm\+Channel\+Number}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Get\+Sample\+Pcm\+Channel\+Number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Get\+Sample\+Pcm\+Channel\+Number (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref, }
+\item[{uint32\+\_\+t $\ast$}]{nb\+Channel\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a40bf3633c3050a7526a100562edc97f9}
+Get the channel number of a P\+C\+M sample.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\mbox{\tt out}  & {\em nb\+Channel\+Ptr} & Channel Number \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a80fb48632ce8f638cea4a3e5d333d66f}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Get\+Sample\+Pcm\+Sampling\+Rate@{le\+\_\+audio\+\_\+\+Get\+Sample\+Pcm\+Sampling\+Rate}}
+\index{le\+\_\+audio\+\_\+\+Get\+Sample\+Pcm\+Sampling\+Rate@{le\+\_\+audio\+\_\+\+Get\+Sample\+Pcm\+Sampling\+Rate}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Get\+Sample\+Pcm\+Sampling\+Rate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Get\+Sample\+Pcm\+Sampling\+Rate (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref, }
+\item[{uint32\+\_\+t $\ast$}]{rate\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a80fb48632ce8f638cea4a3e5d333d66f}
+Get the P\+C\+M sampling rate of a P\+C\+M sample.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\mbox{\tt out}  & {\em rate\+Ptr} & P\+C\+M sampling Rate. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a70b9f904ce225aad4fb80b8b24a1f92a}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Get\+Sample\+Pcm\+Sampling\+Resolution@{le\+\_\+audio\+\_\+\+Get\+Sample\+Pcm\+Sampling\+Resolution}}
+\index{le\+\_\+audio\+\_\+\+Get\+Sample\+Pcm\+Sampling\+Resolution@{le\+\_\+audio\+\_\+\+Get\+Sample\+Pcm\+Sampling\+Resolution}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Get\+Sample\+Pcm\+Sampling\+Resolution}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Get\+Sample\+Pcm\+Sampling\+Resolution (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref, }
+\item[{uint32\+\_\+t $\ast$}]{sampling\+Res\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a70b9f904ce225aad4fb80b8b24a1f92a}
+Get the sampling resolution (in bits per sample) of a P\+C\+M sample.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\mbox{\tt out}  & {\em sampling\+Res\+Ptr} & Sampling resolution (in bits per sample). \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a9c55a59849afcbb2ccef88cd4265782e}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Get\+Samples@{le\+\_\+audio\+\_\+\+Get\+Samples}}
+\index{le\+\_\+audio\+\_\+\+Get\+Samples@{le\+\_\+audio\+\_\+\+Get\+Samples}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Get\+Samples}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Get\+Samples (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref, }
+\item[{int}]{fd}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a9c55a59849afcbb2ccef88cd4265782e}
+Get samples from a recorder stream.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+B\+U\+S\+Y Recorder interface is already active. 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+the fd is closed by the A\+P\+I. To use again the same pipe, the fd parameter can be set to L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+N\+O\+\_\+\+F\+D\+: in this case, the previous file descriptor is re-\/used. If the fd as to be kept on its side, the application should duplicate the fd (e.\+g., using dup() ) before calling the A\+P\+I. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\mbox{\tt in}  & {\em fd} & File descriptor. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a147e97c49dbc003f63df78f97d5fca32}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Mute@{le\+\_\+audio\+\_\+\+Mute}}
+\index{le\+\_\+audio\+\_\+\+Mute@{le\+\_\+audio\+\_\+\+Mute}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Mute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Mute (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a147e97c49dbc003f63df78f97d5fca32}
+Mute an audio stream.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R Audio stream reference is invalid. 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad reference into this function, it is a fatal error, the function will not return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a9e7d0042c4f422554eb10d64535608e5}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Open\+I2s\+Rx@{le\+\_\+audio\+\_\+\+Open\+I2s\+Rx}}
+\index{le\+\_\+audio\+\_\+\+Open\+I2s\+Rx@{le\+\_\+audio\+\_\+\+Open\+I2s\+Rx}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Open\+I2s\+Rx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} le\+\_\+audio\+\_\+\+Open\+I2s\+Rx (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+I2\+S\+Channel\+\_\+t}}]{mode}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a9e7d0042c4f422554eb10d64535608e5}
+Open the received audio stream of the I2\+S interface.
+
+\begin{DoxyReturn}{Returns}
+Reference to the input audio stream, N\+U\+L\+L if the function fails. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mode} & The channel mode. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a2633c1368adf60e342d7cadbbfa6278b}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Open\+I2s\+Tx@{le\+\_\+audio\+\_\+\+Open\+I2s\+Tx}}
+\index{le\+\_\+audio\+\_\+\+Open\+I2s\+Tx@{le\+\_\+audio\+\_\+\+Open\+I2s\+Tx}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Open\+I2s\+Tx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} le\+\_\+audio\+\_\+\+Open\+I2s\+Tx (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+I2\+S\+Channel\+\_\+t}}]{mode}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a2633c1368adf60e342d7cadbbfa6278b}
+Open the transmitted audio stream of the I2\+S interface.
+
+\begin{DoxyReturn}{Returns}
+Reference to the output audio stream, N\+U\+L\+L if the function fails. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mode} & The channel mode. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a74f1ef979329f6c2bd56ea622f4d05b2}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Open\+Mic@{le\+\_\+audio\+\_\+\+Open\+Mic}}
+\index{le\+\_\+audio\+\_\+\+Open\+Mic@{le\+\_\+audio\+\_\+\+Open\+Mic}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Open\+Mic}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} le\+\_\+audio\+\_\+\+Open\+Mic (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a74f1ef979329f6c2bd56ea622f4d05b2}
+Open the Microphone.
+
+\begin{DoxyReturn}{Returns}
+Reference to the input audio stream, N\+U\+L\+L if the function fails. 
+\end{DoxyReturn}
+\hypertarget{le__audio__interface_8h_ae3ed568ba4d2763ea77e17e77b20ff02}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Open\+Modem\+Voice\+Rx@{le\+\_\+audio\+\_\+\+Open\+Modem\+Voice\+Rx}}
+\index{le\+\_\+audio\+\_\+\+Open\+Modem\+Voice\+Rx@{le\+\_\+audio\+\_\+\+Open\+Modem\+Voice\+Rx}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Open\+Modem\+Voice\+Rx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} le\+\_\+audio\+\_\+\+Open\+Modem\+Voice\+Rx (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_ae3ed568ba4d2763ea77e17e77b20ff02}
+Open the received audio stream of a voice call.
+
+\begin{DoxyReturn}{Returns}
+Reference to the input audio stream, N\+U\+L\+L if the function fails. 
+\end{DoxyReturn}
+\hypertarget{le__audio__interface_8h_ad745f008bb04873c817da7af3daf783d}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Open\+Modem\+Voice\+Tx@{le\+\_\+audio\+\_\+\+Open\+Modem\+Voice\+Tx}}
+\index{le\+\_\+audio\+\_\+\+Open\+Modem\+Voice\+Tx@{le\+\_\+audio\+\_\+\+Open\+Modem\+Voice\+Tx}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Open\+Modem\+Voice\+Tx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} le\+\_\+audio\+\_\+\+Open\+Modem\+Voice\+Tx (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_ad745f008bb04873c817da7af3daf783d}
+Open the transmitted audio stream of a voice call.
+
+\begin{DoxyReturn}{Returns}
+Reference to the output audio stream, N\+U\+L\+L if the function fails. 
+\end{DoxyReturn}
+\hypertarget{le__audio__interface_8h_aa0f0b5fcab8844c67a936d88fa050cf5}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Open\+Pcm\+Rx@{le\+\_\+audio\+\_\+\+Open\+Pcm\+Rx}}
+\index{le\+\_\+audio\+\_\+\+Open\+Pcm\+Rx@{le\+\_\+audio\+\_\+\+Open\+Pcm\+Rx}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Open\+Pcm\+Rx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} le\+\_\+audio\+\_\+\+Open\+Pcm\+Rx (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{timeslot}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_aa0f0b5fcab8844c67a936d88fa050cf5}
+Open the received audio stream of the P\+C\+M interface.
+
+\begin{DoxyReturn}{Returns}
+Reference to the input audio stream, N\+U\+L\+L if the function fails. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em timeslot} & The time slot number. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a5e112543e8525775aa670dc71b320766}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Open\+Pcm\+Tx@{le\+\_\+audio\+\_\+\+Open\+Pcm\+Tx}}
+\index{le\+\_\+audio\+\_\+\+Open\+Pcm\+Tx@{le\+\_\+audio\+\_\+\+Open\+Pcm\+Tx}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Open\+Pcm\+Tx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} le\+\_\+audio\+\_\+\+Open\+Pcm\+Tx (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{timeslot}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a5e112543e8525775aa670dc71b320766}
+Open the transmitted audio stream of the P\+C\+M interface.
+
+\begin{DoxyReturn}{Returns}
+Reference to the output audio stream, N\+U\+L\+L if the function fails. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em timeslot} & The time slot number. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a92eb1b6377f50ff07b97c5b8546f01ec}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Open\+Player@{le\+\_\+audio\+\_\+\+Open\+Player}}
+\index{le\+\_\+audio\+\_\+\+Open\+Player@{le\+\_\+audio\+\_\+\+Open\+Player}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Open\+Player}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} le\+\_\+audio\+\_\+\+Open\+Player (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a92eb1b6377f50ff07b97c5b8546f01ec}
+Open the audio stream for playback.
+
+\begin{DoxyReturn}{Returns}
+Reference to the audio stream, N\+U\+L\+L if the function fails. 
+\end{DoxyReturn}
+\hypertarget{le__audio__interface_8h_aeac35459c36748a4471b6d45f1ebeb24}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Open\+Recorder@{le\+\_\+audio\+\_\+\+Open\+Recorder}}
+\index{le\+\_\+audio\+\_\+\+Open\+Recorder@{le\+\_\+audio\+\_\+\+Open\+Recorder}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Open\+Recorder}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} le\+\_\+audio\+\_\+\+Open\+Recorder (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_aeac35459c36748a4471b6d45f1ebeb24}
+Open the audio stream for recording.
+
+\begin{DoxyReturn}{Returns}
+Reference to the audio stream, N\+U\+L\+L if the function fails. 
+\end{DoxyReturn}
+\hypertarget{le__audio__interface_8h_a5c19afce44021c4abf6193707317f8de}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Open\+Speaker@{le\+\_\+audio\+\_\+\+Open\+Speaker}}
+\index{le\+\_\+audio\+\_\+\+Open\+Speaker@{le\+\_\+audio\+\_\+\+Open\+Speaker}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Open\+Speaker}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} le\+\_\+audio\+\_\+\+Open\+Speaker (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a5c19afce44021c4abf6193707317f8de}
+Open the Speakerphone.
+
+\begin{DoxyReturn}{Returns}
+Reference to the output audio stream, N\+U\+L\+L if the function fails. 
+\end{DoxyReturn}
+\hypertarget{le__audio__interface_8h_acd8be89289067cef9441a8ed1d891146}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Open\+Usb\+Rx@{le\+\_\+audio\+\_\+\+Open\+Usb\+Rx}}
+\index{le\+\_\+audio\+\_\+\+Open\+Usb\+Rx@{le\+\_\+audio\+\_\+\+Open\+Usb\+Rx}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Open\+Usb\+Rx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} le\+\_\+audio\+\_\+\+Open\+Usb\+Rx (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_acd8be89289067cef9441a8ed1d891146}
+Open the received audio stream of an U\+S\+B audio class.
+
+\begin{DoxyReturn}{Returns}
+Reference to the input audio stream, N\+U\+L\+L if the function fails. 
+\end{DoxyReturn}
+\hypertarget{le__audio__interface_8h_adb38f11ac78cf99160c19f69b4db0eb8}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Open\+Usb\+Tx@{le\+\_\+audio\+\_\+\+Open\+Usb\+Tx}}
+\index{le\+\_\+audio\+\_\+\+Open\+Usb\+Tx@{le\+\_\+audio\+\_\+\+Open\+Usb\+Tx}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Open\+Usb\+Tx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t} le\+\_\+audio\+\_\+\+Open\+Usb\+Tx (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_adb38f11ac78cf99160c19f69b4db0eb8}
+Open the transmitted audio stream of an U\+S\+B audio class.
+
+\begin{DoxyReturn}{Returns}
+Reference to the output audio stream, N\+U\+L\+L if the function fails. 
+\end{DoxyReturn}
+\hypertarget{le__audio__interface_8h_a80343ca9800ab80f818bbe0361bb226b}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Pause@{le\+\_\+audio\+\_\+\+Pause}}
+\index{le\+\_\+audio\+\_\+\+Pause@{le\+\_\+audio\+\_\+\+Pause}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Pause}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Pause (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a80343ca9800ab80f818bbe0361bb226b}
+Pause the file playback/recording.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a8b1546842a6e917db9a9458aceb77c82}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Play\+Dtmf@{le\+\_\+audio\+\_\+\+Play\+Dtmf}}
+\index{le\+\_\+audio\+\_\+\+Play\+Dtmf@{le\+\_\+audio\+\_\+\+Play\+Dtmf}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Play\+Dtmf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Play\+Dtmf (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref, }
+\item[{const char $\ast$}]{dtmf, }
+\item[{uint32\+\_\+t}]{duration, }
+\item[{uint32\+\_\+t}]{pause}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a8b1546842a6e917db9a9458aceb77c82}
+This function must be called to play a D\+T\+M\+F on a specific audio stream.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+E\+R\+R\+O\+R The D\+T\+M\+F characters are invalid. 
+
+L\+E\+\_\+\+B\+U\+S\+Y A D\+T\+M\+F playback is already in progress on the playback stream. 
+
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed to play the D\+T\+M\+Fs. 
+
+L\+E\+\_\+\+O\+K Funtion succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the D\+T\+M\+F string is too long (max D\+T\+M\+F\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N characters), it is a fatal error, the function will not return. 
+
+The process exits, if an invalid audio stream reference is given. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\mbox{\tt in}  & {\em dtmf} & D\+T\+M\+Fs to play. \\
+\hline
+\mbox{\tt in}  & {\em duration} & D\+T\+M\+F duration in milliseconds. \\
+\hline
+\mbox{\tt in}  & {\em pause} & Pause duration between tones in milliseconds. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_aea2c5d0b394cfab87503639c534300c9}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Play\+File@{le\+\_\+audio\+\_\+\+Play\+File}}
+\index{le\+\_\+audio\+\_\+\+Play\+File@{le\+\_\+audio\+\_\+\+Play\+File}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Play\+File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Play\+File (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref, }
+\item[{int}]{fd}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_aea2c5d0b394cfab87503639c534300c9}
+Play a file on a playback stream.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R Audio stream reference is invalid. 
+
+L\+E\+\_\+\+B\+U\+S\+Y Player interface is already active. 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item The fd is closed by the I\+P\+C A\+P\+I. To play again the same file, the fd parameter can be set to L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+N\+O\+\_\+\+F\+D\+: in this case, the previous file descriptor is re-\/used. If the fd as to be kept on its side, the application should duplicate the fd (e.\+g., using dup() ) before calling the A\+P\+I.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Calling le\+\_\+audio\+\_\+\+Play\+File($<$..$>$, L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+N\+O\+\_\+\+F\+D) will rewind the audio file to the beginning when a playback is already in progress. 
+\end{DoxyItemize}
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\mbox{\tt in}  & {\em fd} & File descriptor. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_afd37d59ab8207338da197554f49d7ff0}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Play\+Samples@{le\+\_\+audio\+\_\+\+Play\+Samples}}
+\index{le\+\_\+audio\+\_\+\+Play\+Samples@{le\+\_\+audio\+\_\+\+Play\+Samples}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Play\+Samples}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Play\+Samples (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref, }
+\item[{int}]{fd}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_afd37d59ab8207338da197554f49d7ff0}
+Initiate a playback sending samples over a pipe.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+B\+U\+S\+Y Player interface is already active. 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+the fd is closed by the I\+P\+C A\+P\+I. To use again the same pipe, the fd parameter can be set to L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+N\+O\+\_\+\+F\+D\+: in this case, the previous file descriptor is re-\/used. If the fd as to be kept on its side, the application should duplicate the fd (e.\+g., using dup() ) before calling the A\+P\+I. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\mbox{\tt in}  & {\em fd} & File descriptor. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a852728586cacfcbf63ae59b6f80847eb}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Play\+Signalling\+Dtmf@{le\+\_\+audio\+\_\+\+Play\+Signalling\+Dtmf}}
+\index{le\+\_\+audio\+\_\+\+Play\+Signalling\+Dtmf@{le\+\_\+audio\+\_\+\+Play\+Signalling\+Dtmf}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Play\+Signalling\+Dtmf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Play\+Signalling\+Dtmf (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{dtmf, }
+\item[{uint32\+\_\+t}]{duration, }
+\item[{uint32\+\_\+t}]{pause}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a852728586cacfcbf63ae59b6f80847eb}
+This function must be called to ask to the Mobile Network to generate on the remote audio party the D\+T\+M\+Fs.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+E\+R\+R\+O\+R The D\+T\+M\+F characters are invalid. 
+
+L\+E\+\_\+\+B\+U\+S\+Y A D\+T\+M\+F playback is in progress. 
+
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Funtion succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the D\+T\+M\+F string is too long (max D\+T\+M\+F\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N characters), it is a fatal error, the function will not return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dtmf} & D\+T\+M\+Fs to play. \\
+\hline
+\mbox{\tt in}  & {\em duration} & D\+T\+M\+F duration in milliseconds. \\
+\hline
+\mbox{\tt in}  & {\em pause} & Pause duration between tones in milliseconds. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a393a26f6cff7fe05c1813fcafeef50f3}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Record\+File@{le\+\_\+audio\+\_\+\+Record\+File}}
+\index{le\+\_\+audio\+\_\+\+Record\+File@{le\+\_\+audio\+\_\+\+Record\+File}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Record\+File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Record\+File (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref, }
+\item[{int}]{fd}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a393a26f6cff7fe05c1813fcafeef50f3}
+Record a file on a recorder stream.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R The audio stream reference is invalid. 
+
+L\+E\+\_\+\+B\+U\+S\+Y Recorder interface is already active. 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+the fd is closed by the A\+P\+I. To record again the same file, the fd parameter can be set to L\+E\+\_\+\+A\+U\+D\+I\+O\+\_\+\+N\+O\+\_\+\+F\+D\+: in this case, the previous file descriptor is re-\/used. If the fd as to be kept on its side, the application should duplicate the fd (e.\+g., using dup() ) before calling the A\+P\+I. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\mbox{\tt in}  & {\em fd} & File descriptor. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a7fd6191ed6ff512407bfe01d20a51459}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Remove\+Dtmf\+Detector\+Handler@{le\+\_\+audio\+\_\+\+Remove\+Dtmf\+Detector\+Handler}}
+\index{le\+\_\+audio\+\_\+\+Remove\+Dtmf\+Detector\+Handler@{le\+\_\+audio\+\_\+\+Remove\+Dtmf\+Detector\+Handler}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Remove\+Dtmf\+Detector\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+audio\+\_\+\+Remove\+Dtmf\+Detector\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Dtmf\+Detector\+Handler\+Ref\+\_\+t}}]{add\+Handler\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a7fd6191ed6ff512407bfe01d20a51459}
+Remove handler function for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+audio\+\_\+\+Dtmf\+Detector\textquotesingle{} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em add\+Handler\+Ref} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a60442c840a69155110ae878e03e16059}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Remove\+Media\+Handler@{le\+\_\+audio\+\_\+\+Remove\+Media\+Handler}}
+\index{le\+\_\+audio\+\_\+\+Remove\+Media\+Handler@{le\+\_\+audio\+\_\+\+Remove\+Media\+Handler}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Remove\+Media\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+audio\+\_\+\+Remove\+Media\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Media\+Handler\+Ref\+\_\+t}}]{add\+Handler\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a60442c840a69155110ae878e03e16059}
+Remove handler function for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+audio\+\_\+\+Media\textquotesingle{} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em add\+Handler\+Ref} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a1dba6618bd8fc9835869ee72c3fbd850}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Resume@{le\+\_\+audio\+\_\+\+Resume}}
+\index{le\+\_\+audio\+\_\+\+Resume@{le\+\_\+audio\+\_\+\+Resume}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Resume}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Resume (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a1dba6618bd8fc9835869ee72c3fbd850}
+Resume a file playback/recording (need to be in pause state).
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_aead87ec16d317bb4e4a8e7e9ea37550b}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Set\+Encoding\+Format@{le\+\_\+audio\+\_\+\+Set\+Encoding\+Format}}
+\index{le\+\_\+audio\+\_\+\+Set\+Encoding\+Format@{le\+\_\+audio\+\_\+\+Set\+Encoding\+Format}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Set\+Encoding\+Format}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Set\+Encoding\+Format (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref, }
+\item[{{\bf le\+\_\+audio\+\_\+\+Format\+\_\+t}}]{format}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_aead87ec16d317bb4e4a8e7e9ea37550b}
+Set the encoding format of a recorder stream.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\mbox{\tt in}  & {\em format} & Encoding format. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_ad62587dacf0cb087697a62fb9f41d938}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Set\+Gain@{le\+\_\+audio\+\_\+\+Set\+Gain}}
+\index{le\+\_\+audio\+\_\+\+Set\+Gain@{le\+\_\+audio\+\_\+\+Set\+Gain}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Set\+Gain}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Set\+Gain (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref, }
+\item[{uint32\+\_\+t}]{gain}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_ad62587dacf0cb087697a62fb9f41d938}
+Set the Gain value of an input or output stream.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R Audio stream reference is invalid. 
+
+L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E Gain parameter is not between 0 and 100 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The hardware may or may not support the full 0-\/100 resolution, and if you want to see what was actually set call \hyperlink{le__audio__interface_8h_a51a86829cdd6f27234f482e5dbb6c933}{le\+\_\+audio\+\_\+\+Get\+Gain()} after \hyperlink{le__audio__interface_8h_ad62587dacf0cb087697a62fb9f41d938}{le\+\_\+audio\+\_\+\+Set\+Gain()} to get the real value.
+
+If the caller is passing a bad reference into this function, it is a fatal error, the function will not return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\mbox{\tt in}  & {\em gain} & Gain value \mbox{[}0..100\mbox{]} (0 means \textquotesingle{}muted\textquotesingle{}, 100 is the maximum gain value) \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a593682daa95aec349e48144f5b46c658}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Set\+Pcm\+Companding@{le\+\_\+audio\+\_\+\+Set\+Pcm\+Companding}}
+\index{le\+\_\+audio\+\_\+\+Set\+Pcm\+Companding@{le\+\_\+audio\+\_\+\+Set\+Pcm\+Companding}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Set\+Pcm\+Companding}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Set\+Pcm\+Companding (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Companding\+\_\+t}}]{companding}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a593682daa95aec349e48144f5b46c658}
+Configure the P\+C\+M Companding.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E Your platform does not support the setting\textquotesingle{}s value. 
+
+L\+E\+\_\+\+B\+U\+S\+Y P\+C\+M interface is already active. 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em companding} & Companding. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_ae7c9d76c5377ad5fae13b24477827f45}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Set\+Pcm\+Sampling\+Rate@{le\+\_\+audio\+\_\+\+Set\+Pcm\+Sampling\+Rate}}
+\index{le\+\_\+audio\+\_\+\+Set\+Pcm\+Sampling\+Rate@{le\+\_\+audio\+\_\+\+Set\+Pcm\+Sampling\+Rate}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Set\+Pcm\+Sampling\+Rate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Set\+Pcm\+Sampling\+Rate (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{rate}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_ae7c9d76c5377ad5fae13b24477827f45}
+Configure the P\+C\+M Sampling Rate.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E Your platform does not support the setting\textquotesingle{}s value. 
+
+L\+E\+\_\+\+B\+U\+S\+Y P\+C\+M interface is already active. 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em rate} & Sampling rate in Hz. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_ab3678e77c8d69f248cd339042bd824cc}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Set\+Pcm\+Sampling\+Resolution@{le\+\_\+audio\+\_\+\+Set\+Pcm\+Sampling\+Resolution}}
+\index{le\+\_\+audio\+\_\+\+Set\+Pcm\+Sampling\+Resolution@{le\+\_\+audio\+\_\+\+Set\+Pcm\+Sampling\+Resolution}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Set\+Pcm\+Sampling\+Resolution}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Set\+Pcm\+Sampling\+Resolution (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{bits\+Per\+Sample}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_ab3678e77c8d69f248cd339042bd824cc}
+Configure the P\+C\+M Sampling Resolution.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E Your platform does not support the setting\textquotesingle{}s value. 
+
+L\+E\+\_\+\+B\+U\+S\+Y P\+C\+M interface is already active. 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em bits\+Per\+Sample} & Sampling resolution (bits/sample). \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_ad9235b668cc80f33bc5045327be8bffb}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Set\+Platform\+Specific\+Gain@{le\+\_\+audio\+\_\+\+Set\+Platform\+Specific\+Gain}}
+\index{le\+\_\+audio\+\_\+\+Set\+Platform\+Specific\+Gain@{le\+\_\+audio\+\_\+\+Set\+Platform\+Specific\+Gain}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Set\+Platform\+Specific\+Gain}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Set\+Platform\+Specific\+Gain (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{gain\+Name, }
+\item[{uint32\+\_\+t}]{gain}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_ad9235b668cc80f33bc5045327be8bffb}
+Set the value of a platform specific gain in the audio subsystem.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T The function failed. 
+
+L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D The specified gain\textquotesingle{}s name is not recognized in your audio subsystem. 
+
+L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E The gain parameter is out of range 
+
+L\+E\+\_\+\+O\+K The function succeeded.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Ensure to check the names of supported gains for your specific platform. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em gain\+Name} & Name of the platform specific gain. \\
+\hline
+\mbox{\tt in}  & {\em gain} & The gain value (specific to the platform) \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_ae2e6553f8125a30676d31f5cbd43a3b8}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Set\+Profile@{le\+\_\+audio\+\_\+\+Set\+Profile}}
+\index{le\+\_\+audio\+\_\+\+Set\+Profile@{le\+\_\+audio\+\_\+\+Set\+Profile}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Set\+Profile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Set\+Profile (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Profile\+\_\+t}}]{profile}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_ae2e6553f8125a30676d31f5cbd43a3b8}
+This function must be called to set the audio profile.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em profile} & Audio profile. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a5932f51fb1398cc2442c8bb765ca4071}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Set\+Sample\+Amr\+Dtx@{le\+\_\+audio\+\_\+\+Set\+Sample\+Amr\+Dtx}}
+\index{le\+\_\+audio\+\_\+\+Set\+Sample\+Amr\+Dtx@{le\+\_\+audio\+\_\+\+Set\+Sample\+Amr\+Dtx}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Set\+Sample\+Amr\+Dtx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Set\+Sample\+Amr\+Dtx (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref, }
+\item[{bool}]{dtx}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a5932f51fb1398cc2442c8bb765ca4071}
+Set the A\+M\+R discontinuous transmission (D\+T\+X). The D\+T\+X is activated by default.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\mbox{\tt in}  & {\em dtx} & D\+T\+X. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a18600cdbd3995c9c2ca24f9b15991f7d}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Set\+Sample\+Amr\+Mode@{le\+\_\+audio\+\_\+\+Set\+Sample\+Amr\+Mode}}
+\index{le\+\_\+audio\+\_\+\+Set\+Sample\+Amr\+Mode@{le\+\_\+audio\+\_\+\+Set\+Sample\+Amr\+Mode}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Set\+Sample\+Amr\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Set\+Sample\+Amr\+Mode (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref, }
+\item[{{\bf le\+\_\+audio\+\_\+\+Amr\+Mode\+\_\+t}}]{mode}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a18600cdbd3995c9c2ca24f9b15991f7d}
+Set the A\+M\+R mode for A\+M\+R encoder.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\mbox{\tt in}  & {\em mode} & A\+M\+R mode. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_aae7db9f0933119fb5a61162722b3274a}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Set\+Sample\+Pcm\+Channel\+Number@{le\+\_\+audio\+\_\+\+Set\+Sample\+Pcm\+Channel\+Number}}
+\index{le\+\_\+audio\+\_\+\+Set\+Sample\+Pcm\+Channel\+Number@{le\+\_\+audio\+\_\+\+Set\+Sample\+Pcm\+Channel\+Number}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Set\+Sample\+Pcm\+Channel\+Number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Set\+Sample\+Pcm\+Channel\+Number (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref, }
+\item[{uint32\+\_\+t}]{nb\+Channel}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_aae7db9f0933119fb5a61162722b3274a}
+Set the channel number of a P\+C\+M sample.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\mbox{\tt in}  & {\em nb\+Channel} & Channel Number \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a04adfcc0e8f5796eca53c31cd5dd6528}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Set\+Sample\+Pcm\+Sampling\+Rate@{le\+\_\+audio\+\_\+\+Set\+Sample\+Pcm\+Sampling\+Rate}}
+\index{le\+\_\+audio\+\_\+\+Set\+Sample\+Pcm\+Sampling\+Rate@{le\+\_\+audio\+\_\+\+Set\+Sample\+Pcm\+Sampling\+Rate}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Set\+Sample\+Pcm\+Sampling\+Rate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Set\+Sample\+Pcm\+Sampling\+Rate (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref, }
+\item[{uint32\+\_\+t}]{rate}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a04adfcc0e8f5796eca53c31cd5dd6528}
+Set the P\+C\+M sampling rate of a P\+C\+M sample.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\mbox{\tt in}  & {\em rate} & P\+C\+M sampling Rate. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_aae37b46c13f76144dd94c48bfe94998b}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Set\+Sample\+Pcm\+Sampling\+Resolution@{le\+\_\+audio\+\_\+\+Set\+Sample\+Pcm\+Sampling\+Resolution}}
+\index{le\+\_\+audio\+\_\+\+Set\+Sample\+Pcm\+Sampling\+Resolution@{le\+\_\+audio\+\_\+\+Set\+Sample\+Pcm\+Sampling\+Resolution}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Set\+Sample\+Pcm\+Sampling\+Resolution}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Set\+Sample\+Pcm\+Sampling\+Resolution (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref, }
+\item[{uint32\+\_\+t}]{sampling\+Res}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_aae37b46c13f76144dd94c48bfe94998b}
+Set the sampling resolution (in bits per sample) of a P\+C\+M sample.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\mbox{\tt in}  & {\em sampling\+Res} & Sampling resolution (in bits per sample). \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_a4aebc6e8cdc4389c375e93418823af71}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Stop@{le\+\_\+audio\+\_\+\+Stop}}
+\index{le\+\_\+audio\+\_\+\+Stop@{le\+\_\+audio\+\_\+\+Stop}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Stop}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Stop (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_a4aebc6e8cdc4389c375e93418823af71}
+Stop the file playback/recording.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The used file descriptor is not deallocated, but is is rewound to the beginning. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__audio__interface_8h_adad24547293481964039efe56bc14e2b}{}\index{le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}!le\+\_\+audio\+\_\+\+Unmute@{le\+\_\+audio\+\_\+\+Unmute}}
+\index{le\+\_\+audio\+\_\+\+Unmute@{le\+\_\+audio\+\_\+\+Unmute}!le\+\_\+audio\+\_\+interface.\+h@{le\+\_\+audio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+audio\+\_\+\+Unmute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+audio\+\_\+\+Unmute (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+audio\+\_\+\+Stream\+Ref\+\_\+t}}]{stream\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__audio__interface_8h_adad24547293481964039efe56bc14e2b}
+Unmute an audio stream.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R Audio stream reference is invalid. 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad reference into this function, it is a fatal error, the function will not return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stream\+Ref} & Audio stream reference. \\
+\hline
+\end{DoxyParams}

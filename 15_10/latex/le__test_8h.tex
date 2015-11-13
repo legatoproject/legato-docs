@@ -1,0 +1,119 @@
+\hypertarget{le__test_8h}{}\section{framework/c/inc/le\+\_\+test.h File Reference}
+\label{le__test_8h}\index{framework/c/inc/le\+\_\+test.\+h@{framework/c/inc/le\+\_\+test.\+h}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{le__test_8h_a219d49d27a2a5a1a6dc63f31b0b66c23}{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+I\+N\+I\+T}~\+\_\+le\+\_\+test\+\_\+\+Init()
+\item 
+\#define \hyperlink{le__test_8h_a555300c0c5b3442572fbcafa6dd7994b}{L\+E\+\_\+\+T\+E\+S\+T}(test\+Result)
+\item 
+\#define \hyperlink{le__test_8h_a5f0517641049c368d0a55658c4f4ddec}{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+E\+X\+I\+T}~exit(\+\_\+le\+\_\+test\+\_\+\+Get\+Num\+Failures());
+\item 
+\hypertarget{le__test_8h_a6854a523683637eaf983472360d6a275}{}\#define \hyperlink{le__test_8h_a6854a523683637eaf983472360d6a275}{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+S\+U\+M\+M\+A\+R\+Y}~\hyperlink{le__test_8h_a5f0517641049c368d0a55658c4f4ddec}{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+E\+X\+I\+T}\label{le__test_8h_a6854a523683637eaf983472360d6a275}
+
+\begin{DoxyCompactList}\small\item\em {\bfseries  {\itshape D\+E\+P\+R\+E\+C\+A\+T\+E\+D} } old name for L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+E\+X\+I\+T. \end{DoxyCompactList}\item 
+\#define \hyperlink{le__test_8h_ac0c538ca3dfcd072464385b2f7e2776f}{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+F\+O\+R\+K}(exe\+Path, ...)~\+\_\+le\+\_\+test\+\_\+\+Fork(exe\+Path, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+, N\+U\+L\+L)
+\item 
+\#define \hyperlink{le__test_8h_ad6045dfae96da7c326024c784de3d207}{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+J\+O\+I\+N}(child)~\+\_\+le\+\_\+test\+\_\+\+Join(child)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct le\+\_\+test\+\_\+\+Child $\ast$ \hyperlink{le__test_8h_ab2de7b7c51414646bad2bc4ec2dda444}{le\+\_\+test\+\_\+\+Child\+Ref\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{Indent}{\bf Local definitions that should not be used directly.}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{le__test_8h_adae44bbfa6299b76dc232116908a8045}{}void {\bfseries \+\_\+le\+\_\+test\+\_\+\+Init} (void)\label{le__test_8h_adae44bbfa6299b76dc232116908a8045}
+
+\item 
+\hypertarget{le__test_8h_ad793449c43650807ff598c2806074c11}{}void {\bfseries \+\_\+le\+\_\+test\+\_\+\+Fail} (void)\label{le__test_8h_ad793449c43650807ff598c2806074c11}
+
+\item 
+\hypertarget{le__test_8h_af25acd8593c2fe66f5b5c30804cb862c}{}int {\bfseries \+\_\+le\+\_\+test\+\_\+\+Get\+Num\+Failures} (void)\label{le__test_8h_af25acd8593c2fe66f5b5c30804cb862c}
+
+\item 
+\hypertarget{le__test_8h_a567cce7d9f3d3a66f1bca3575f4ef846}{}\hyperlink{le__test_8h_ab2de7b7c51414646bad2bc4ec2dda444}{le\+\_\+test\+\_\+\+Child\+Ref\+\_\+t} {\bfseries \+\_\+le\+\_\+test\+\_\+\+Fork} (const char $\ast$exe\+Path,...)\label{le__test_8h_a567cce7d9f3d3a66f1bca3575f4ef846}
+
+\item 
+\hypertarget{le__test_8h_a11f2785e8f09904c788cc847d1efde3a}{}void {\bfseries \+\_\+le\+\_\+test\+\_\+\+Join} (\hyperlink{le__test_8h_ab2de7b7c51414646bad2bc4ec2dda444}{le\+\_\+test\+\_\+\+Child\+Ref\+\_\+t} child)\label{le__test_8h_a11f2785e8f09904c788cc847d1efde3a}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_test}{Unit Testing A\+P\+I} include file.
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{le__test_8h_a555300c0c5b3442572fbcafa6dd7994b}{}\index{le\+\_\+test.\+h@{le\+\_\+test.\+h}!L\+E\+\_\+\+T\+E\+S\+T@{L\+E\+\_\+\+T\+E\+S\+T}}
+\index{L\+E\+\_\+\+T\+E\+S\+T@{L\+E\+\_\+\+T\+E\+S\+T}!le\+\_\+test.\+h@{le\+\_\+test.\+h}}
+\subsubsection[{L\+E\+\_\+\+T\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+T\+E\+S\+T(
+\begin{DoxyParamCaption}
+\item[{}]{test\+Result}
+\end{DoxyParamCaption}
+)}\label{le__test_8h_a555300c0c5b3442572fbcafa6dd7994b}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (testResult) \(\backslash\)
+                                    \{ \hyperlink{le__log_8h_a23e6d206faa64f612045d688cdde5808}{\(\backslash\)}
+\hyperlink{le__log_8h_a23e6d206faa64f612045d688cdde5808}{                                        LE\_INFO}(\textcolor{stringliteral}{"Unit Test
+       Passed: '%s'"}, #testResult); \(\backslash\)
+                                    \} \(\backslash\)
+                                    else \(\backslash\)
+                                    \{ \hyperlink{le__log_8h_a353590f91b3143a7ba3a416ae5a50c3d}{\(\backslash\)}
+\hyperlink{le__log_8h_a353590f91b3143a7ba3a416ae5a50c3d}{                                        LE\_ERROR}(\textcolor{stringliteral}{"Unit Test
+       Failed: '%s'"}, #testResult); \(\backslash\)
+                                        \_le\_test\_Fail(); \(\backslash\)
+                                    \}
+\end{DoxyCode}
+Performs the test. If the test fails (test\+Result == false) then an error message is logged and the process either exits or the number of test failures is incremented depending on the operating mode. If the test passes (test\+Result == true) then an info message is logged and this macro just returns. \hypertarget{le__test_8h_a5f0517641049c368d0a55658c4f4ddec}{}\index{le\+\_\+test.\+h@{le\+\_\+test.\+h}!L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+E\+X\+I\+T@{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+E\+X\+I\+T}}
+\index{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+E\+X\+I\+T@{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+E\+X\+I\+T}!le\+\_\+test.\+h@{le\+\_\+test.\+h}}
+\subsubsection[{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+E\+X\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+E\+X\+I\+T~exit(\+\_\+le\+\_\+test\+\_\+\+Get\+Num\+Failures());}\label{le__test_8h_a5f0517641049c368d0a55658c4f4ddec}
+Exits the process and returns the number of failed tests. \hypertarget{le__test_8h_ac0c538ca3dfcd072464385b2f7e2776f}{}\index{le\+\_\+test.\+h@{le\+\_\+test.\+h}!L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+F\+O\+R\+K@{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+F\+O\+R\+K}}
+\index{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+F\+O\+R\+K@{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+F\+O\+R\+K}!le\+\_\+test.\+h@{le\+\_\+test.\+h}}
+\subsubsection[{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+F\+O\+R\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+F\+O\+R\+K(
+\begin{DoxyParamCaption}
+\item[{}]{exe\+Path, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~\+\_\+le\+\_\+test\+\_\+\+Fork(exe\+Path, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+, N\+U\+L\+L)}\label{le__test_8h_ac0c538ca3dfcd072464385b2f7e2776f}
+Fork a child process and have it execute a given program.
+
+
+\begin{DoxyParams}{Parameters}
+{\em exe\+Path} & \mbox{[}in\mbox{]} String containing the path to the program to be executed. If this is not an absolute path (doesn\textquotesingle{}t start with a slash \textquotesingle{}/\textquotesingle{}), then the P\+A\+T\+H environment variable will be used to search for the executable.\\
+\hline
+\end{DoxyParams}
+A variable list of subsequent parameters is allowed, each of which will be passed as a command-\/line argument to the child program when it is executed.
+
+\begin{DoxyReturn}{Returns}
+A reference to the child process (see \hyperlink{le__test_8h_ad6045dfae96da7c326024c784de3d207}{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+J\+O\+I\+N()}). 
+\end{DoxyReturn}
+\hypertarget{le__test_8h_a219d49d27a2a5a1a6dc63f31b0b66c23}{}\index{le\+\_\+test.\+h@{le\+\_\+test.\+h}!L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+I\+N\+I\+T@{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+I\+N\+I\+T}}
+\index{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+I\+N\+I\+T@{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+I\+N\+I\+T}!le\+\_\+test.\+h@{le\+\_\+test.\+h}}
+\subsubsection[{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+I\+N\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+I\+N\+I\+T~\+\_\+le\+\_\+test\+\_\+\+Init()}\label{le__test_8h_a219d49d27a2a5a1a6dc63f31b0b66c23}
+Initializes the testing framework. Must be called once before any tests are performed. \hypertarget{le__test_8h_ad6045dfae96da7c326024c784de3d207}{}\index{le\+\_\+test.\+h@{le\+\_\+test.\+h}!L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+J\+O\+I\+N@{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+J\+O\+I\+N}}
+\index{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+J\+O\+I\+N@{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+J\+O\+I\+N}!le\+\_\+test.\+h@{le\+\_\+test.\+h}}
+\subsubsection[{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+J\+O\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+J\+O\+I\+N(
+\begin{DoxyParamCaption}
+\item[{}]{child}
+\end{DoxyParamCaption}
+)~\+\_\+le\+\_\+test\+\_\+\+Join(child)}\label{le__test_8h_ad6045dfae96da7c326024c784de3d207}
+Wait for a given child process to terminate and add its results to the running test summary.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & \mbox{[}I\+N\mbox{]} Child process reference returned by \hyperlink{le__test_8h_ac0c538ca3dfcd072464385b2f7e2776f}{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+F\+O\+R\+K()}. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{le__test_8h_ab2de7b7c51414646bad2bc4ec2dda444}{}\index{le\+\_\+test.\+h@{le\+\_\+test.\+h}!le\+\_\+test\+\_\+\+Child\+Ref\+\_\+t@{le\+\_\+test\+\_\+\+Child\+Ref\+\_\+t}}
+\index{le\+\_\+test\+\_\+\+Child\+Ref\+\_\+t@{le\+\_\+test\+\_\+\+Child\+Ref\+\_\+t}!le\+\_\+test.\+h@{le\+\_\+test.\+h}}
+\subsubsection[{le\+\_\+test\+\_\+\+Child\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+test\+\_\+\+Child$\ast$ {\bf le\+\_\+test\+\_\+\+Child\+Ref\+\_\+t}}\label{le__test_8h_ab2de7b7c51414646bad2bc4ec2dda444}
+Reference to a forked child process. See \hyperlink{le__test_8h_ac0c538ca3dfcd072464385b2f7e2776f}{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+F\+O\+R\+K()} and \hyperlink{le__test_8h_ad6045dfae96da7c326024c784de3d207}{L\+E\+\_\+\+T\+E\+S\+T\+\_\+\+J\+O\+I\+N()}. 

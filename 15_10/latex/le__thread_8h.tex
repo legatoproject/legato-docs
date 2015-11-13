@@ -1,0 +1,522 @@
+\hypertarget{le__thread_8h}{}\section{framework/c/inc/le\+\_\+thread.h File Reference}
+\label{le__thread_8h}\index{framework/c/inc/le\+\_\+thread.\+h@{framework/c/inc/le\+\_\+thread.\+h}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{le__thread_8h_a5b989a1262268b0671f847d4d18cca65}{}\#define \hyperlink{le__thread_8h_a5b989a1262268b0671f847d4d18cca65}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+\+L\+O\+W\+E\+S\+T}~\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a37b1c0a99fc3b979afa091911e2f43d6}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+1}\label{le__thread_8h_a5b989a1262268b0671f847d4d18cca65}
+
+\begin{DoxyCompactList}\small\item\em Lowest real-\/time priority. \end{DoxyCompactList}\item 
+\hypertarget{le__thread_8h_a9a249dc73c81435b2557d61cce888dfe}{}\#define \hyperlink{le__thread_8h_a9a249dc73c81435b2557d61cce888dfe}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+\+H\+I\+G\+H\+E\+S\+T}~\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a24095b646efb07792a6c2e0dbb259740}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+32}\label{le__thread_8h_a9a249dc73c81435b2557d61cce888dfe}
+
+\begin{DoxyCompactList}\small\item\em Highest real-\/time priority. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct le\+\_\+thread $\ast$ \hyperlink{le__thread_8h_a32121104c6b4ca39008eb79a4d6862f2}{le\+\_\+thread\+\_\+\+Ref\+\_\+t}
+\item 
+typedef void $\ast$($\ast$ \hyperlink{le__thread_8h_a9210663fea7283e32a6e988ebcf75126}{le\+\_\+thread\+\_\+\+Main\+Func\+\_\+t}) (void $\ast$context)
+\item 
+typedef void($\ast$ \hyperlink{le__thread_8h_ac0c2e7ab0a7da9fc00c2c546bfc6b0fd}{le\+\_\+thread\+\_\+\+Destructor\+\_\+t}) (void $\ast$context)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07}{le\+\_\+thread\+\_\+\+Priority\+\_\+t} \{ \\*
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a8237422b4c3d3df0ffcdbc9981c45d98}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+I\+D\+L\+E} = 0, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07aa0e16c2e450b0510087487a06318a2bb}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+N\+O\+R\+M\+A\+L}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a37b1c0a99fc3b979afa091911e2f43d6}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+1}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a6d3958846ce89c25aad1f16db34549c7}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+2}, 
+\\*
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a5fce739981e752cb447f5f79b967670e}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+3}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a872a9ad09f7fa8ddf9364e604f096da7}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+4}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07ac8b001c3b50da24d990dd6b46e1efe68}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+5}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a9fc138e30eefdcb4e76714eb24640970}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+6}, 
+\\*
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07ae2c4e9e3acde0b3fdccae600a8fb1495}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+7}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a8f32fd7602abadccad57458154a36818}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+8}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a5d80b49943d3cf26e93c256fcb2f92f9}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+9}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a7cf4f6e4bcc28631edce76a0a3dff459}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+10}, 
+\\*
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a7adffd6b46009a0b66e464d04fc33076}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+11}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a6606e780b0fc8d1a0d06b1ead1f87e69}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+12}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a1cf7e4ae2011e1a823435bafceca1ec5}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+13}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a5b36cb29ff41620721ead1d7b4ce7e5c}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+14}, 
+\\*
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a8583464ddd0ac106fba090f37500f082}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+15}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07aafa2b78749f6b1e4fe740948f7d0ddc5}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+16}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07ade2e01a416dc1595ab3d9dde3da10b47}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+17}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07aad88067a95684c10cf1b13153629f2a2}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+18}, 
+\\*
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07af671e9ef5c65873cb716562b10fc7aa4}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+19}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a3f75659013e4bc38c572bd1db744f5ee}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+20}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a50ea42702ed027e7c662115f90083385}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+21}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07afce77d999f1b4c976e2249e744063b8e}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+22}, 
+\\*
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a34ff5071e5335d38e2a122873404ddff}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+23}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a41c0476895c8ca5c68688f875ff653e1}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+24}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07ab9c1770678cfce99e82e3d1bdbf5de4e}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+25}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a22b20d8ac127832cca00cf13232bf6a2}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+26}, 
+\\*
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07ac6a719f611dd43eb4b8da8ecfab5066e}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+27}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07ad7aab0c671c44c412c20f16020152da1}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+28}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07ac906028e6cb4515a6821424353dfb82a}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+29}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a14d161ef18fc3d3ef9d2bc512936e3bf}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+30}, 
+\\*
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a4cad36377869bf2ee3e83d7c84a738b4}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+31}, 
+\hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a24095b646efb07792a6c2e0dbb259740}{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+32}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{le__thread_8h_a32121104c6b4ca39008eb79a4d6862f2}{le\+\_\+thread\+\_\+\+Ref\+\_\+t} \hyperlink{le__thread_8h_a87e02a46f92e9e3e11ed28a2b265872f}{le\+\_\+thread\+\_\+\+Create} (const char $\ast$name, \hyperlink{le__thread_8h_a9210663fea7283e32a6e988ebcf75126}{le\+\_\+thread\+\_\+\+Main\+Func\+\_\+t} main\+Func, void $\ast$context)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__thread_8h_a95257a2f60cacdadc787647453b77356}{le\+\_\+thread\+\_\+\+Set\+Priority} (\hyperlink{le__thread_8h_a32121104c6b4ca39008eb79a4d6862f2}{le\+\_\+thread\+\_\+\+Ref\+\_\+t} thread, \hyperlink{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07}{le\+\_\+thread\+\_\+\+Priority\+\_\+t} priority)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__thread_8h_a91d0476fe2ddd834c39b194164a665b7}{le\+\_\+thread\+\_\+\+Set\+Stack\+Size} (\hyperlink{le__thread_8h_a32121104c6b4ca39008eb79a4d6862f2}{le\+\_\+thread\+\_\+\+Ref\+\_\+t} thread, size\+\_\+t size)
+\item 
+void \hyperlink{le__thread_8h_a8959f09f66f365916a6a4fbdaf36cf65}{le\+\_\+thread\+\_\+\+Set\+Joinable} (\hyperlink{le__thread_8h_a32121104c6b4ca39008eb79a4d6862f2}{le\+\_\+thread\+\_\+\+Ref\+\_\+t} thread)
+\item 
+void \hyperlink{le__thread_8h_a38df3877ee5ab9fac17b2fc0be46c27e}{le\+\_\+thread\+\_\+\+Start} (\hyperlink{le__thread_8h_a32121104c6b4ca39008eb79a4d6862f2}{le\+\_\+thread\+\_\+\+Ref\+\_\+t} thread)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__thread_8h_adf7f24fec4859ca12a52b16ce43fd9b8}{le\+\_\+thread\+\_\+\+Join} (\hyperlink{le__thread_8h_a32121104c6b4ca39008eb79a4d6862f2}{le\+\_\+thread\+\_\+\+Ref\+\_\+t} thread, void $\ast$$\ast$result\+Value\+Ptr)
+\item 
+void \hyperlink{le__thread_8h_a6b8e349107ae6628ed8807588f044faa}{le\+\_\+thread\+\_\+\+Exit} (void $\ast$result\+Value)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__thread_8h_a0f1c1b98f354a96e6e31e55a71b58f6a}{le\+\_\+thread\+\_\+\+Cancel} (\hyperlink{le__thread_8h_a32121104c6b4ca39008eb79a4d6862f2}{le\+\_\+thread\+\_\+\+Ref\+\_\+t} thread\+To\+Cancel)
+\item 
+\hyperlink{le__thread_8h_a32121104c6b4ca39008eb79a4d6862f2}{le\+\_\+thread\+\_\+\+Ref\+\_\+t} \hyperlink{le__thread_8h_a90a9d67db26f816fd1e1032d74a24fcd}{le\+\_\+thread\+\_\+\+Get\+Current} (void)
+\item 
+void \hyperlink{le__thread_8h_ab4834a35f1afc1f353fc3c808a5ab6a2}{le\+\_\+thread\+\_\+\+Get\+Name} (\hyperlink{le__thread_8h_a32121104c6b4ca39008eb79a4d6862f2}{le\+\_\+thread\+\_\+\+Ref\+\_\+t} thread\+Ref, char $\ast$buff\+Ptr, size\+\_\+t buff\+Size)
+\item 
+const char $\ast$ \hyperlink{le__thread_8h_a41c366f881ee31d38de011adb44af12b}{le\+\_\+thread\+\_\+\+Get\+My\+Name} (void)
+\item 
+void \hyperlink{le__thread_8h_aa85ee32cc06f219f3c619104f4d97932}{le\+\_\+thread\+\_\+\+Add\+Destructor} (\hyperlink{le__thread_8h_ac0c2e7ab0a7da9fc00c2c546bfc6b0fd}{le\+\_\+thread\+\_\+\+Destructor\+\_\+t} destructor, void $\ast$context)
+\item 
+void \hyperlink{le__thread_8h_a671dbe2927a3b2a13c5150476398f34f}{le\+\_\+thread\+\_\+\+Add\+Child\+Destructor} (\hyperlink{le__thread_8h_a32121104c6b4ca39008eb79a4d6862f2}{le\+\_\+thread\+\_\+\+Ref\+\_\+t} thread, \hyperlink{le__thread_8h_ac0c2e7ab0a7da9fc00c2c546bfc6b0fd}{le\+\_\+thread\+\_\+\+Destructor\+\_\+t} destructor, void $\ast$context)
+\item 
+void \hyperlink{le__thread_8h_a3e35d530ce76e97a627dc60100fc1475}{le\+\_\+thread\+\_\+\+Init\+Legato\+Thread\+Data} (const char $\ast$name)
+\item 
+void \hyperlink{le__thread_8h_aef59d0ded85da6ddd169a661824670d0}{le\+\_\+thread\+\_\+\+Cleanup\+Legato\+Thread\+Data} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_threading}{Thread Control A\+P\+I} include file.
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Typedef Documentation}
+\hypertarget{le__thread_8h_ac0c2e7ab0a7da9fc00c2c546bfc6b0fd}{}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!le\+\_\+thread\+\_\+\+Destructor\+\_\+t@{le\+\_\+thread\+\_\+\+Destructor\+\_\+t}}
+\index{le\+\_\+thread\+\_\+\+Destructor\+\_\+t@{le\+\_\+thread\+\_\+\+Destructor\+\_\+t}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}
+\subsubsection[{le\+\_\+thread\+\_\+\+Destructor\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$  le\+\_\+thread\+\_\+\+Destructor\+\_\+t) (void $\ast$context)}\label{le__thread_8h_ac0c2e7ab0a7da9fc00c2c546bfc6b0fd}
+Destructor functions for threads must look like this\+:
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & \mbox{[}I\+N\mbox{]} Context parameter that was passed into le\+\_\+thread\+\_\+\+Set\+Destructor() when this destructor was registered. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__thread_8h_a9210663fea7283e32a6e988ebcf75126}{}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!le\+\_\+thread\+\_\+\+Main\+Func\+\_\+t@{le\+\_\+thread\+\_\+\+Main\+Func\+\_\+t}}
+\index{le\+\_\+thread\+\_\+\+Main\+Func\+\_\+t@{le\+\_\+thread\+\_\+\+Main\+Func\+\_\+t}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}
+\subsubsection[{le\+\_\+thread\+\_\+\+Main\+Func\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$($\ast$  le\+\_\+thread\+\_\+\+Main\+Func\+\_\+t) (void $\ast$context)}\label{le__thread_8h_a9210663fea7283e32a6e988ebcf75126}
+Main functions for threads must look like this\+:
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & \mbox{[}I\+N\mbox{]} Context value that was passed to \hyperlink{le__thread_8h_a87e02a46f92e9e3e11ed28a2b265872f}{le\+\_\+thread\+\_\+\+Create()}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Thread result value. If the thread is joinable, then this value can be obtained by another thread through a call to vt\+\_\+thread\+\_\+\+Join(). Otherwise, the return value is ignored. 
+\end{DoxyReturn}
+\hypertarget{le__thread_8h_a32121104c6b4ca39008eb79a4d6862f2}{}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!le\+\_\+thread\+\_\+\+Ref\+\_\+t@{le\+\_\+thread\+\_\+\+Ref\+\_\+t}}
+\index{le\+\_\+thread\+\_\+\+Ref\+\_\+t@{le\+\_\+thread\+\_\+\+Ref\+\_\+t}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}
+\subsubsection[{le\+\_\+thread\+\_\+\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+thread$\ast$ {\bf le\+\_\+thread\+\_\+\+Ref\+\_\+t}}\label{le__thread_8h_a32121104c6b4ca39008eb79a4d6862f2}
+Reference to a thread of execution.
+
+\begin{DoxyNote}{Note}
+N\+U\+L\+L can be used as an invalid value. 
+\end{DoxyNote}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07}{}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!le\+\_\+thread\+\_\+\+Priority\+\_\+t@{le\+\_\+thread\+\_\+\+Priority\+\_\+t}}
+\index{le\+\_\+thread\+\_\+\+Priority\+\_\+t@{le\+\_\+thread\+\_\+\+Priority\+\_\+t}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}
+\subsubsection[{le\+\_\+thread\+\_\+\+Priority\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+thread\+\_\+\+Priority\+\_\+t}}\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07}
+Thread priority levels.
+
+Real-\/time priority levels should be avoided unless absolutely necessary for the application. They are privileged levels and will therefore not be allowed unless the application is executed by an identity with the appropriate permissions. If a thread running at a real-\/time priority level does not block, no other thread at a lower priority level will run, so be careful with these.
+
+\begin{DoxyNote}{Note}
+Higher numbers are higher priority. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+I\+D\+L\+E@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+I\+D\+L\+E}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+I\+D\+L\+E@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+I\+D\+L\+E}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a8237422b4c3d3df0ffcdbc9981c45d98}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+I\+D\+L\+E\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a8237422b4c3d3df0ffcdbc9981c45d98}
+}]Lowest priority level. Only runs when nothing else to do. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+N\+O\+R\+M\+A\+L@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+N\+O\+R\+M\+A\+L}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+N\+O\+R\+M\+A\+L@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+N\+O\+R\+M\+A\+L}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07aa0e16c2e450b0510087487a06318a2bb}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+N\+O\+R\+M\+A\+L\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07aa0e16c2e450b0510087487a06318a2bb}
+}]Normal, non-\/real-\/time priority level. T\+H\+I\+S I\+S T\+H\+E D\+E\+F\+A\+U\+L\+T. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+1@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+1}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+1@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+1}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a37b1c0a99fc3b979afa091911e2f43d6}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+1\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a37b1c0a99fc3b979afa091911e2f43d6}
+}]Real-\/time priority level 1. The lowest realtime priority level. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+2@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+2}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+2@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+2}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a6d3958846ce89c25aad1f16db34549c7}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+2\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a6d3958846ce89c25aad1f16db34549c7}
+}]Real-\/time priority level 2. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+3@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+3}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+3@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+3}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a5fce739981e752cb447f5f79b967670e}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+3\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a5fce739981e752cb447f5f79b967670e}
+}]Real-\/time priority level 3. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+4@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+4}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+4@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+4}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a872a9ad09f7fa8ddf9364e604f096da7}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+4\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a872a9ad09f7fa8ddf9364e604f096da7}
+}]Real-\/time priority level 4. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+5@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+5}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+5@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+5}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07ac8b001c3b50da24d990dd6b46e1efe68}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+5\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07ac8b001c3b50da24d990dd6b46e1efe68}
+}]Real-\/time priority level 5. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+6@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+6}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+6@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+6}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a9fc138e30eefdcb4e76714eb24640970}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+6\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a9fc138e30eefdcb4e76714eb24640970}
+}]Real-\/time priority level 6. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+7@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+7}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+7@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+7}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07ae2c4e9e3acde0b3fdccae600a8fb1495}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+7\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07ae2c4e9e3acde0b3fdccae600a8fb1495}
+}]Real-\/time priority level 7. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+8@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+8}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+8@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+8}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a8f32fd7602abadccad57458154a36818}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+8\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a8f32fd7602abadccad57458154a36818}
+}]Real-\/time priority level 8. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+9@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+9}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+9@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+9}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a5d80b49943d3cf26e93c256fcb2f92f9}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+9\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a5d80b49943d3cf26e93c256fcb2f92f9}
+}]Real-\/time priority level 9. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+10@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+10}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+10@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+10}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a7cf4f6e4bcc28631edce76a0a3dff459}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+10\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a7cf4f6e4bcc28631edce76a0a3dff459}
+}]Real-\/time priority level 10. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+11@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+11}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+11@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+11}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a7adffd6b46009a0b66e464d04fc33076}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+11\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a7adffd6b46009a0b66e464d04fc33076}
+}]Real-\/time priority level 11. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+12@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+12}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+12@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+12}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a6606e780b0fc8d1a0d06b1ead1f87e69}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+12\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a6606e780b0fc8d1a0d06b1ead1f87e69}
+}]Real-\/time priority level 12. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+13@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+13}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+13@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+13}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a1cf7e4ae2011e1a823435bafceca1ec5}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+13\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a1cf7e4ae2011e1a823435bafceca1ec5}
+}]Real-\/time priority level 13. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+14@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+14}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+14@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+14}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a5b36cb29ff41620721ead1d7b4ce7e5c}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+14\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a5b36cb29ff41620721ead1d7b4ce7e5c}
+}]Real-\/time priority level 14. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+15@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+15}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+15@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+15}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a8583464ddd0ac106fba090f37500f082}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+15\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a8583464ddd0ac106fba090f37500f082}
+}]Real-\/time priority level 15. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+16@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+16}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+16@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+16}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07aafa2b78749f6b1e4fe740948f7d0ddc5}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+16\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07aafa2b78749f6b1e4fe740948f7d0ddc5}
+}]Real-\/time priority level 16. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+17@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+17}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+17@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+17}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07ade2e01a416dc1595ab3d9dde3da10b47}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+17\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07ade2e01a416dc1595ab3d9dde3da10b47}
+}]Real-\/time priority level 17. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+18@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+18}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+18@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+18}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07aad88067a95684c10cf1b13153629f2a2}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+18\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07aad88067a95684c10cf1b13153629f2a2}
+}]Real-\/time priority level 18. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+19@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+19}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+19@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+19}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07af671e9ef5c65873cb716562b10fc7aa4}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+19\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07af671e9ef5c65873cb716562b10fc7aa4}
+}]Real-\/time priority level 19. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+20@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+20}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+20@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+20}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a3f75659013e4bc38c572bd1db744f5ee}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+20\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a3f75659013e4bc38c572bd1db744f5ee}
+}]Real-\/time priority level 20. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+21@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+21}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+21@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+21}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a50ea42702ed027e7c662115f90083385}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+21\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a50ea42702ed027e7c662115f90083385}
+}]Real-\/time priority level 21. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+22@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+22}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+22@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+22}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07afce77d999f1b4c976e2249e744063b8e}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+22\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07afce77d999f1b4c976e2249e744063b8e}
+}]Real-\/time priority level 22. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+23@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+23}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+23@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+23}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a34ff5071e5335d38e2a122873404ddff}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+23\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a34ff5071e5335d38e2a122873404ddff}
+}]Real-\/time priority level 23. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+24@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+24}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+24@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+24}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a41c0476895c8ca5c68688f875ff653e1}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+24\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a41c0476895c8ca5c68688f875ff653e1}
+}]Real-\/time priority level 24. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+25@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+25}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+25@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+25}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07ab9c1770678cfce99e82e3d1bdbf5de4e}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+25\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07ab9c1770678cfce99e82e3d1bdbf5de4e}
+}]Real-\/time priority level 25. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+26@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+26}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+26@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+26}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a22b20d8ac127832cca00cf13232bf6a2}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+26\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a22b20d8ac127832cca00cf13232bf6a2}
+}]Real-\/time priority level 26. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+27@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+27}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+27@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+27}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07ac6a719f611dd43eb4b8da8ecfab5066e}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+27\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07ac6a719f611dd43eb4b8da8ecfab5066e}
+}]Real-\/time priority level 27. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+28@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+28}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+28@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+28}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07ad7aab0c671c44c412c20f16020152da1}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+28\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07ad7aab0c671c44c412c20f16020152da1}
+}]Real-\/time priority level 28. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+29@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+29}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+29@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+29}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07ac906028e6cb4515a6821424353dfb82a}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+29\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07ac906028e6cb4515a6821424353dfb82a}
+}]Real-\/time priority level 29. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+30@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+30}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+30@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+30}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a14d161ef18fc3d3ef9d2bc512936e3bf}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+30\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a14d161ef18fc3d3ef9d2bc512936e3bf}
+}]Real-\/time priority level 30. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+31@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+31}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+31@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+31}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a4cad36377869bf2ee3e83d7c84a738b4}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+31\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a4cad36377869bf2ee3e83d7c84a738b4}
+}]Real-\/time priority level 31. \index{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+32@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+32}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+32@{L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+32}}\item[{\em 
+\hypertarget{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a24095b646efb07792a6c2e0dbb259740}{}L\+E\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+P\+R\+I\+O\+R\+I\+T\+Y\+\_\+\+R\+T\+\_\+32\label{le__thread_8h_a653b0f17cd4d4567c86a25e23d004f07a24095b646efb07792a6c2e0dbb259740}
+}]Real-\/time priority level 32. \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{le__thread_8h_a671dbe2927a3b2a13c5150476398f34f}{}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!le\+\_\+thread\+\_\+\+Add\+Child\+Destructor@{le\+\_\+thread\+\_\+\+Add\+Child\+Destructor}}
+\index{le\+\_\+thread\+\_\+\+Add\+Child\+Destructor@{le\+\_\+thread\+\_\+\+Add\+Child\+Destructor}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}
+\subsubsection[{le\+\_\+thread\+\_\+\+Add\+Child\+Destructor}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+thread\+\_\+\+Add\+Child\+Destructor (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+thread\+\_\+\+Ref\+\_\+t}}]{thread, }
+\item[{{\bf le\+\_\+thread\+\_\+\+Destructor\+\_\+t}}]{destructor, }
+\item[{void $\ast$}]{context}
+\end{DoxyParamCaption}
+)}\label{le__thread_8h_a671dbe2927a3b2a13c5150476398f34f}
+Registers a destructor function for a child thread. The destructor will be called by the child thread just before it terminates.
+
+This can only be done before the child thread is started. After that, only the child thread can add its own destructors.
+
+The reason for allowing another thread to register a destructor function is to avoid a race condition that can cause resource leakage when a parent thread passes dynamically allocated resources to threads that they create. This is only a problem if the child thread is expected to release the resources when they are finished with them, and the child thread may get cancelled at any time.
+
+For example, a thread {\itshape T1} could allocate an object from a memory pool, create a thread {\itshape T2}, and pass that object to {\itshape T2} for processing and release. {\itshape T2} could register a destructor function to release the resource whenever it terminates, whether through cancellation or normal exit. But, if it\textquotesingle{}s possible that {\itshape T2} could get cancelled before it even has a chance to register a destructor function for itself, the memory pool object could never get released. So, we allow {\itshape T1} to register a destructor function for {\itshape T2} before starting {\itshape T2}.
+
+See \hyperlink{c_threading_threadDestructors}{Thread Destructors} for more information on destructors. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em thread} & Thread to attach the destructor to. \\
+\hline
+\mbox{\tt in}  & {\em destructor} & Function to be called. \\
+\hline
+\mbox{\tt in}  & {\em context} & Parameter to pass to the destructor. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__thread_8h_aa85ee32cc06f219f3c619104f4d97932}{}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!le\+\_\+thread\+\_\+\+Add\+Destructor@{le\+\_\+thread\+\_\+\+Add\+Destructor}}
+\index{le\+\_\+thread\+\_\+\+Add\+Destructor@{le\+\_\+thread\+\_\+\+Add\+Destructor}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}
+\subsubsection[{le\+\_\+thread\+\_\+\+Add\+Destructor}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+thread\+\_\+\+Add\+Destructor (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+thread\+\_\+\+Destructor\+\_\+t}}]{destructor, }
+\item[{void $\ast$}]{context}
+\end{DoxyParamCaption}
+)}\label{le__thread_8h_aa85ee32cc06f219f3c619104f4d97932}
+Registers a destructor function for the calling thread. The destructor will be called by that thread just before it terminates.
+
+A thread can register its own destructor functions any time.
+
+See \hyperlink{c_threading_threadDestructors}{Thread Destructors} for more information on destructors. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em destructor} & Function to be called. \\
+\hline
+\mbox{\tt in}  & {\em context} & Parameter to pass to the destructor. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__thread_8h_a0f1c1b98f354a96e6e31e55a71b58f6a}{}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!le\+\_\+thread\+\_\+\+Cancel@{le\+\_\+thread\+\_\+\+Cancel}}
+\index{le\+\_\+thread\+\_\+\+Cancel@{le\+\_\+thread\+\_\+\+Cancel}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}
+\subsubsection[{le\+\_\+thread\+\_\+\+Cancel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+thread\+\_\+\+Cancel (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+thread\+\_\+\+Ref\+\_\+t}}]{thread\+To\+Cancel}
+\end{DoxyParamCaption}
+)}\label{le__thread_8h_a0f1c1b98f354a96e6e31e55a71b58f6a}
+Tells another thread to terminate. Returns immediately, but the termination of the thread happens asynchronously and is not guaranteed to occur when this function returns.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K if successful.
+\item L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D if the thread doesn\textquotesingle{}t exist. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em thread\+To\+Cancel} & Thread to cancel. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__thread_8h_aef59d0ded85da6ddd169a661824670d0}{}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!le\+\_\+thread\+\_\+\+Cleanup\+Legato\+Thread\+Data@{le\+\_\+thread\+\_\+\+Cleanup\+Legato\+Thread\+Data}}
+\index{le\+\_\+thread\+\_\+\+Cleanup\+Legato\+Thread\+Data@{le\+\_\+thread\+\_\+\+Cleanup\+Legato\+Thread\+Data}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}
+\subsubsection[{le\+\_\+thread\+\_\+\+Cleanup\+Legato\+Thread\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+thread\+\_\+\+Cleanup\+Legato\+Thread\+Data (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__thread_8h_aef59d0ded85da6ddd169a661824670d0}
+Clean-\/up the thread-\/specific data that was initialized using \hyperlink{le__thread_8h_a3e35d530ce76e97a627dc60100fc1475}{le\+\_\+thread\+\_\+\+Init\+Legato\+Thread\+Data()}.
+
+To prevent memory leaks, this must be called by the thread when it dies (unless the whole process is dying).
+
+\begin{DoxyNote}{Note}
+This is not needed if the thread was started using \hyperlink{le__thread_8h_a38df3877ee5ab9fac17b2fc0be46c27e}{le\+\_\+thread\+\_\+\+Start()}. 
+\end{DoxyNote}
+\hypertarget{le__thread_8h_a87e02a46f92e9e3e11ed28a2b265872f}{}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!le\+\_\+thread\+\_\+\+Create@{le\+\_\+thread\+\_\+\+Create}}
+\index{le\+\_\+thread\+\_\+\+Create@{le\+\_\+thread\+\_\+\+Create}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}
+\subsubsection[{le\+\_\+thread\+\_\+\+Create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+thread\+\_\+\+Ref\+\_\+t} le\+\_\+thread\+\_\+\+Create (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{{\bf le\+\_\+thread\+\_\+\+Main\+Func\+\_\+t}}]{main\+Func, }
+\item[{void $\ast$}]{context}
+\end{DoxyParamCaption}
+)}\label{le__thread_8h_a87e02a46f92e9e3e11ed28a2b265872f}
+Creates a new Legato thread of execution. After creating the thread, you have the opportunity to set attributes before it starts. It won\textquotesingle{}t start until \hyperlink{le__thread_8h_a38df3877ee5ab9fac17b2fc0be46c27e}{le\+\_\+thread\+\_\+\+Start()} is called.
+
+\begin{DoxyReturn}{Returns}
+A reference to the thread (doesn\textquotesingle{}t return if fails). 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & Thread name (will be copied, so can be temporary). \\
+\hline
+\mbox{\tt in}  & {\em main\+Func} & Thread\textquotesingle{}s main function. \\
+\hline
+\mbox{\tt in}  & {\em context} & Value to pass to main\+Func when it is called. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__thread_8h_a6b8e349107ae6628ed8807588f044faa}{}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!le\+\_\+thread\+\_\+\+Exit@{le\+\_\+thread\+\_\+\+Exit}}
+\index{le\+\_\+thread\+\_\+\+Exit@{le\+\_\+thread\+\_\+\+Exit}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}
+\subsubsection[{le\+\_\+thread\+\_\+\+Exit}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+thread\+\_\+\+Exit (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{result\+Value}
+\end{DoxyParamCaption}
+)}\label{le__thread_8h_a6b8e349107ae6628ed8807588f044faa}
+Terminates the calling thread. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em result\+Value} & Result value. If this thread is joinable, this result can be obtained by another thread calling \hyperlink{le__thread_8h_adf7f24fec4859ca12a52b16ce43fd9b8}{le\+\_\+thread\+\_\+\+Join()} on this thread. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__thread_8h_a90a9d67db26f816fd1e1032d74a24fcd}{}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!le\+\_\+thread\+\_\+\+Get\+Current@{le\+\_\+thread\+\_\+\+Get\+Current}}
+\index{le\+\_\+thread\+\_\+\+Get\+Current@{le\+\_\+thread\+\_\+\+Get\+Current}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}
+\subsubsection[{le\+\_\+thread\+\_\+\+Get\+Current}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+thread\+\_\+\+Ref\+\_\+t} le\+\_\+thread\+\_\+\+Get\+Current (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__thread_8h_a90a9d67db26f816fd1e1032d74a24fcd}
+Gets the calling thread\textquotesingle{}s thread reference.
+
+\begin{DoxyReturn}{Returns}
+Calling thread\textquotesingle{}s thread reference. 
+\end{DoxyReturn}
+\hypertarget{le__thread_8h_a41c366f881ee31d38de011adb44af12b}{}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!le\+\_\+thread\+\_\+\+Get\+My\+Name@{le\+\_\+thread\+\_\+\+Get\+My\+Name}}
+\index{le\+\_\+thread\+\_\+\+Get\+My\+Name@{le\+\_\+thread\+\_\+\+Get\+My\+Name}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}
+\subsubsection[{le\+\_\+thread\+\_\+\+Get\+My\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ le\+\_\+thread\+\_\+\+Get\+My\+Name (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__thread_8h_a41c366f881ee31d38de011adb44af12b}
+Gets the name of the calling thread. \hypertarget{le__thread_8h_ab4834a35f1afc1f353fc3c808a5ab6a2}{}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!le\+\_\+thread\+\_\+\+Get\+Name@{le\+\_\+thread\+\_\+\+Get\+Name}}
+\index{le\+\_\+thread\+\_\+\+Get\+Name@{le\+\_\+thread\+\_\+\+Get\+Name}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}
+\subsubsection[{le\+\_\+thread\+\_\+\+Get\+Name}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+thread\+\_\+\+Get\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+thread\+\_\+\+Ref\+\_\+t}}]{thread\+Ref, }
+\item[{char $\ast$}]{buff\+Ptr, }
+\item[{size\+\_\+t}]{buff\+Size}
+\end{DoxyParamCaption}
+)}\label{le__thread_8h_ab4834a35f1afc1f353fc3c808a5ab6a2}
+Gets the name of a given thread. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em thread\+Ref} & Thread to get the name for. \\
+\hline
+\mbox{\tt out}  & {\em buff\+Ptr} & Buffer to store the name of the thread. \\
+\hline
+\mbox{\tt in}  & {\em buff\+Size} & Size of the buffer. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__thread_8h_a3e35d530ce76e97a627dc60100fc1475}{}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!le\+\_\+thread\+\_\+\+Init\+Legato\+Thread\+Data@{le\+\_\+thread\+\_\+\+Init\+Legato\+Thread\+Data}}
+\index{le\+\_\+thread\+\_\+\+Init\+Legato\+Thread\+Data@{le\+\_\+thread\+\_\+\+Init\+Legato\+Thread\+Data}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}
+\subsubsection[{le\+\_\+thread\+\_\+\+Init\+Legato\+Thread\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+thread\+\_\+\+Init\+Legato\+Thread\+Data (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\label{le__thread_8h_a3e35d530ce76e97a627dc60100fc1475}
+Initialize the thread-\/specific data needed by the Legato framework for the calling thread.
+
+This is used to turn a non-\/\+Legato thread (a thread that was created using a non-\/\+Legato A\+P\+I, such as pthread\+\_\+create() ) into a Legato thread.
+
+\begin{DoxyNote}{Note}
+This is not needed if the thread was started using \hyperlink{le__thread_8h_a38df3877ee5ab9fac17b2fc0be46c27e}{le\+\_\+thread\+\_\+\+Start()}. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & A name for the thread (will be copied, so can be temporary). \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__thread_8h_adf7f24fec4859ca12a52b16ce43fd9b8}{}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!le\+\_\+thread\+\_\+\+Join@{le\+\_\+thread\+\_\+\+Join}}
+\index{le\+\_\+thread\+\_\+\+Join@{le\+\_\+thread\+\_\+\+Join}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}
+\subsubsection[{le\+\_\+thread\+\_\+\+Join}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+thread\+\_\+\+Join (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+thread\+\_\+\+Ref\+\_\+t}}]{thread, }
+\item[{void $\ast$$\ast$}]{result\+Value\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__thread_8h_adf7f24fec4859ca12a52b16ce43fd9b8}
+\char`\"{}\+Joins\char`\"{} the calling thread with another thread. Blocks the calling thread until the other thread finishes.
+
+After a thread has been joined with, its thread reference is no longer valid and must never be used again.
+
+The other thread\textquotesingle{}s result value (the value it returned from its main function or passed into \hyperlink{le__thread_8h_a6b8e349107ae6628ed8807588f044faa}{le\+\_\+thread\+\_\+\+Exit()}) can be obtained.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K if successful.
+\item L\+E\+\_\+\+D\+E\+A\+D\+L\+O\+C\+K if a thread tries to join with itself or two threads try to join each other.
+\item L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D if the other thread doesn\textquotesingle{}t exist.
+\item L\+E\+\_\+\+N\+O\+T\+\_\+\+P\+O\+S\+S\+I\+B\+L\+E if the other thread can\textquotesingle{}t be joined with. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+\begin{DoxyWarning}{Warning}
+The other thread must be \char`\"{}joinable\char`\"{}. See \hyperlink{le__thread_8h_a8959f09f66f365916a6a4fbdaf36cf65}{le\+\_\+thread\+\_\+\+Set\+Joinable()};
+
+It\textquotesingle{}s an error for two or more threads try to join with the same thread. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em thread} & \\
+\hline
+\mbox{\tt out}  & {\em result\+Value\+Ptr} & Ptr to where the finished thread\textquotesingle{}s result value will be stored. Can be N\+U\+L\+L if the result is not needed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__thread_8h_a8959f09f66f365916a6a4fbdaf36cf65}{}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!le\+\_\+thread\+\_\+\+Set\+Joinable@{le\+\_\+thread\+\_\+\+Set\+Joinable}}
+\index{le\+\_\+thread\+\_\+\+Set\+Joinable@{le\+\_\+thread\+\_\+\+Set\+Joinable}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}
+\subsubsection[{le\+\_\+thread\+\_\+\+Set\+Joinable}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+thread\+\_\+\+Set\+Joinable (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+thread\+\_\+\+Ref\+\_\+t}}]{thread}
+\end{DoxyParamCaption}
+)}\label{le__thread_8h_a8959f09f66f365916a6a4fbdaf36cf65}
+Makes a thread \char`\"{}joinable\char`\"{}, meaning that when it finishes, it will remain in existence until another thread \char`\"{}joins\char`\"{} with it by calling \hyperlink{le__thread_8h_adf7f24fec4859ca12a52b16ce43fd9b8}{le\+\_\+thread\+\_\+\+Join()}. By default, threads are not joinable and will be destroyed automatically when they finish. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em thread} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__thread_8h_a95257a2f60cacdadc787647453b77356}{}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!le\+\_\+thread\+\_\+\+Set\+Priority@{le\+\_\+thread\+\_\+\+Set\+Priority}}
+\index{le\+\_\+thread\+\_\+\+Set\+Priority@{le\+\_\+thread\+\_\+\+Set\+Priority}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}
+\subsubsection[{le\+\_\+thread\+\_\+\+Set\+Priority}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+thread\+\_\+\+Set\+Priority (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+thread\+\_\+\+Ref\+\_\+t}}]{thread, }
+\item[{{\bf le\+\_\+thread\+\_\+\+Priority\+\_\+t}}]{priority}
+\end{DoxyParamCaption}
+)}\label{le__thread_8h_a95257a2f60cacdadc787647453b77356}
+Sets the priority of a thread.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K if successful.
+\item L\+E\+\_\+\+N\+O\+T\+\_\+\+P\+E\+R\+M\+I\+T\+T\+E\+D if the calling thread doesn\textquotesingle{}t have the necessary permission levels to use the requested priority level.
+\item L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E if the priority level requested is out of range. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em thread} & \\
+\hline
+\mbox{\tt in}  & {\em priority} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__thread_8h_a91d0476fe2ddd834c39b194164a665b7}{}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!le\+\_\+thread\+\_\+\+Set\+Stack\+Size@{le\+\_\+thread\+\_\+\+Set\+Stack\+Size}}
+\index{le\+\_\+thread\+\_\+\+Set\+Stack\+Size@{le\+\_\+thread\+\_\+\+Set\+Stack\+Size}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}
+\subsubsection[{le\+\_\+thread\+\_\+\+Set\+Stack\+Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+thread\+\_\+\+Set\+Stack\+Size (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+thread\+\_\+\+Ref\+\_\+t}}]{thread, }
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}\label{le__thread_8h_a91d0476fe2ddd834c39b194164a665b7}
+Sets the stack size of a thread.
+
+\begin{DoxyNote}{Note}
+It\textquotesingle{}s generally not necessary to set the stack size. Some reasons why you might are\+:
+\begin{DoxyItemize}
+\item to increase it beyond the system\textquotesingle{}s default stack size to prevent overflow for a thread that makes extremely heavy use of the stack;
+\item to decrease it to save memory when\+:
+\begin{DoxyItemize}
+\item running in a system that does not support virtual memory
+\item the thread has very tight real-\/time constraints that require that the stack memory be locked into physical memory to avoid page faults.
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K if successful.
+\item L\+E\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W if the stack size requested is too small.
+\item L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E if the stack size requested is too large. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em thread} & \\
+\hline
+\mbox{\tt in}  & {\em size} & Stack size, in bytes. May be rounded up to the nearest virtual memory page size. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__thread_8h_a38df3877ee5ab9fac17b2fc0be46c27e}{}\index{le\+\_\+thread.\+h@{le\+\_\+thread.\+h}!le\+\_\+thread\+\_\+\+Start@{le\+\_\+thread\+\_\+\+Start}}
+\index{le\+\_\+thread\+\_\+\+Start@{le\+\_\+thread\+\_\+\+Start}!le\+\_\+thread.\+h@{le\+\_\+thread.\+h}}
+\subsubsection[{le\+\_\+thread\+\_\+\+Start}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+thread\+\_\+\+Start (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+thread\+\_\+\+Ref\+\_\+t}}]{thread}
+\end{DoxyParamCaption}
+)}\label{le__thread_8h_a38df3877ee5ab9fac17b2fc0be46c27e}
+Starts a new Legato execution thread. After creating the thread, you have the opportunity to set attributes before it starts. It won\textquotesingle{}t start until \hyperlink{le__thread_8h_a38df3877ee5ab9fac17b2fc0be46c27e}{le\+\_\+thread\+\_\+\+Start()} is called. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em thread} & \\
+\hline
+\end{DoxyParams}

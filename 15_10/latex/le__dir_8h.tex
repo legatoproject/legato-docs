@@ -1,0 +1,103 @@
+\hypertarget{le__dir_8h}{}\section{framework/c/inc/le\+\_\+dir.h File Reference}
+\label{le__dir_8h}\index{framework/c/inc/le\+\_\+dir.\+h@{framework/c/inc/le\+\_\+dir.\+h}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__dir_8h_a7ac7d25b67f2e47127084677626d5344}{le\+\_\+dir\+\_\+\+Make} (const char $\ast$path\+Name\+Ptr, mode\+\_\+t mode)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__dir_8h_a41fc915e2a21ea91dabe335f1316df74}{le\+\_\+dir\+\_\+\+Make\+Path} (const char $\ast$path\+Name\+Ptr, mode\+\_\+t mode)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__dir_8h_a9eca51d0e3031f9dee7b875a62c8b1e0}{le\+\_\+dir\+\_\+\+Remove\+Recursive} (const char $\ast$path\+Name\+Ptr)
+\item 
+bool \hyperlink{le__dir_8h_a21759e0bd1e3aeae2664b955c36baa58}{le\+\_\+dir\+\_\+\+Is\+Dir} (const char $\ast$path\+Name\+Ptr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_dir}{Directory A\+P\+I} include file.
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Function Documentation}
+\hypertarget{le__dir_8h_a21759e0bd1e3aeae2664b955c36baa58}{}\index{le\+\_\+dir.\+h@{le\+\_\+dir.\+h}!le\+\_\+dir\+\_\+\+Is\+Dir@{le\+\_\+dir\+\_\+\+Is\+Dir}}
+\index{le\+\_\+dir\+\_\+\+Is\+Dir@{le\+\_\+dir\+\_\+\+Is\+Dir}!le\+\_\+dir.\+h@{le\+\_\+dir.\+h}}
+\subsubsection[{le\+\_\+dir\+\_\+\+Is\+Dir}]{\setlength{\rightskip}{0pt plus 5cm}bool le\+\_\+dir\+\_\+\+Is\+Dir (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path\+Name\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__dir_8h_a21759e0bd1e3aeae2664b955c36baa58}
+Checks if the path refers to a directory.
+
+\begin{DoxyReturn}{Returns}
+true if the path refers to a directory. false otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em path\+Name\+Ptr} & The path to the directory. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__dir_8h_a7ac7d25b67f2e47127084677626d5344}{}\index{le\+\_\+dir.\+h@{le\+\_\+dir.\+h}!le\+\_\+dir\+\_\+\+Make@{le\+\_\+dir\+\_\+\+Make}}
+\index{le\+\_\+dir\+\_\+\+Make@{le\+\_\+dir\+\_\+\+Make}!le\+\_\+dir.\+h@{le\+\_\+dir.\+h}}
+\subsubsection[{le\+\_\+dir\+\_\+\+Make}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+dir\+\_\+\+Make (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path\+Name\+Ptr, }
+\item[{mode\+\_\+t}]{mode}
+\end{DoxyParamCaption}
+)}\label{le__dir_8h_a7ac7d25b67f2e47127084677626d5344}
+Creates a directory with permissions specified in mode.
+
+\begin{DoxyNote}{Note}
+Permissions for the created directory will depend on the calling process\textquotesingle{} umask.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+O\+K if successful. L\+E\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+E if the directory already exists. L\+E\+\_\+\+F\+A\+U\+L\+T if there was an error. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em path\+Name\+Ptr} & Path name to the directory to create. \\
+\hline
+\mbox{\tt in}  & {\em mode} & Permissions for the directory. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__dir_8h_a41fc915e2a21ea91dabe335f1316df74}{}\index{le\+\_\+dir.\+h@{le\+\_\+dir.\+h}!le\+\_\+dir\+\_\+\+Make\+Path@{le\+\_\+dir\+\_\+\+Make\+Path}}
+\index{le\+\_\+dir\+\_\+\+Make\+Path@{le\+\_\+dir\+\_\+\+Make\+Path}!le\+\_\+dir.\+h@{le\+\_\+dir.\+h}}
+\subsubsection[{le\+\_\+dir\+\_\+\+Make\+Path}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+dir\+\_\+\+Make\+Path (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path\+Name\+Ptr, }
+\item[{mode\+\_\+t}]{mode}
+\end{DoxyParamCaption}
+)}\label{le__dir_8h_a41fc915e2a21ea91dabe335f1316df74}
+Creates all directories in the path. If some (or all) directories in the path already exist, those directories are left as is. All created directories have the same permissions (specified in mode).
+
+\begin{DoxyNote}{Note}
+Permissions for the created directories will depend on the calling process\textquotesingle{} umask.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+O\+K if successful. L\+E\+\_\+\+F\+A\+U\+L\+T if there was an error. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em path\+Name\+Ptr} & Path containing all the directories to create. \\
+\hline
+\mbox{\tt in}  & {\em mode} & Permissions for all created directories. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__dir_8h_a9eca51d0e3031f9dee7b875a62c8b1e0}{}\index{le\+\_\+dir.\+h@{le\+\_\+dir.\+h}!le\+\_\+dir\+\_\+\+Remove\+Recursive@{le\+\_\+dir\+\_\+\+Remove\+Recursive}}
+\index{le\+\_\+dir\+\_\+\+Remove\+Recursive@{le\+\_\+dir\+\_\+\+Remove\+Recursive}!le\+\_\+dir.\+h@{le\+\_\+dir.\+h}}
+\subsubsection[{le\+\_\+dir\+\_\+\+Remove\+Recursive}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+dir\+\_\+\+Remove\+Recursive (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path\+Name\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__dir_8h_a9eca51d0e3031f9dee7b875a62c8b1e0}
+Removes a directory by first recursively removing sub-\/directories, files, symlinks, hardlinks, devices, etc. Symlinks are not followed; only the links themselves are deleted.
+
+A file or device may not be able to be removed if it is busy, in which case an error message is logged and L\+E\+\_\+\+F\+A\+U\+L\+T is returned.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+O\+K if successful. L\+E\+\_\+\+F\+A\+U\+L\+T if there was an error. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em path\+Name\+Ptr} & Path to the directory to remove. \\
+\hline
+\end{DoxyParams}

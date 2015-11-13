@@ -1,0 +1,1638 @@
+This section contains info about tools available for the target and host, as well as info on tools to build your Legato apps.
+
+
+
+
+
+\hyperlink{toolsTarget}{Target} ~\newline
+ \hyperlink{toolsHost}{Host} ~\newline
+ \hyperlink{buildTools}{Build} ~\newline
+
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsTarget}{}\section{Target}\label{toolsTarget}
+Legato has these tools to run on the target\+:
+
+\hyperlink{toolsTarget_app}{app} ~\newline
+ \hyperlink{toolsTarget_cm}{cm} ~\newline
+ \hyperlink{toolsTarget_config}{config} ~\newline
+ \hyperlink{toolsTarget_configEcm}{config\+Ecm} ~\newline
+ \hyperlink{toolsTarget_execInApp}{exec\+In\+App} ~\newline
+ \hyperlink{toolsTarget_fwUpdate}{fwupdate} ~\newline
+ \hyperlink{toolsTarget_inspect}{inspect} ~\newline
+ \hyperlink{toolsTarget_legato}{legato} ~\newline
+ \hyperlink{toolsTarget_log}{log} ~\newline
+ \hyperlink{toolsTarget_sdir}{sdir} ~\newline
+ \hyperlink{toolsTarget_setNet}{set\+Net} ~\newline
+
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsTarget_app}{}\subsection{app}\label{toolsTarget_app}
+Use the Application tool for an easy method to run the most commonly needed target functions.
+
+\section*{Usage}
+
+{\bfseries {\ttfamily app \mbox{[}start$\vert$stop$\vert$restart$\vert$remove$\vert$status$\vert$version$\vert$info\mbox{]} A\+P\+P\+\_\+\+N\+A\+M\+E \mbox{[} A\+P\+P\+\_\+\+N\+A\+M\+E ... \mbox{]} ~\newline
+ app \mbox{[}start$\vert$stop$\vert$restart$\vert$remove$\vert$status$\vert$version$\vert$info\mbox{]} \textquotesingle{}$\ast$\textquotesingle{} ~\newline
+ app \mbox{[}list$\vert$status$\vert$info\mbox{]} ~\newline
+ app install A\+P\+P\+\_\+\+N\+A\+M\+E ~\newline
+ }}
+
+\begin{DoxyVerb}app [start|stop|restart|remove|status|version|info] APP_NAME [ APP_NAME ... ]\end{DoxyVerb}
+ \begin{quote}
+Multiple app names can be specified. \end{quote}
+
+
+\begin{DoxyVerb}app [start|stop|restart|remove|status|version|info] '*'\end{DoxyVerb}
+ \begin{quote}
+A wildcard \textquotesingle{}$\ast$\textquotesingle{} can be used to apply action to all apps. \end{quote}
+
+
+\begin{DoxyWarning}{Warning}
+Be careful not to accidentally remove system services apps that you might need (e.\+g., modem\+Service app).
+\end{DoxyWarning}
+\begin{DoxyVerb}app list\end{DoxyVerb}
+ \begin{quote}
+Lists apps. \end{quote}
+
+
+\begin{DoxyVerb}app status\end{DoxyVerb}
+ \begin{quote}
+List apps and their current status. \end{quote}
+
+
+\begin{DoxyVerb}app info \end{DoxyVerb}
+ \begin{quote}
+Provides info on one or more apps\textquotesingle{} running state and processes\textquotesingle{} state (stopped or never started, running, paused). \end{quote}
+
+
+\begin{DoxyVerb}app install APP_NAME \end{DoxyVerb}
+ \begin{quote}
+Install app. Specify one app name; must be provided on {\ttfamily stdin}. \end{quote}
+
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsTarget_cm}{}\subsection{cm}\label{toolsTarget_cm}
+Use the Cellular Modem tool to control modem functions.
+
+\section*{Usage}
+
+{\bfseries {\ttfamily  cm \mbox{[}S\+E\+R\+V\+I\+C\+E\+S\mbox{]} \mbox{[}C\+O\+M\+M\+A\+N\+D\+S\mbox{]} }}\hypertarget{tools_target_cm_toolsTarget_cm_adc}{}\subsubsection{A\+D\+C}\label{tools_target_cm_toolsTarget_cm_adc}
+\begin{DoxyVerb}cm adc list \end{DoxyVerb}
+ \begin{quote}
+Print known {\ttfamily adc} channels. \end{quote}
+
+
+\begin{DoxyVerb}cm adc read channel \end{DoxyVerb}
+ \begin{quote}
+Read and print the value from an adc channel (where {\ttfamily channel} is one of the names returned). \end{quote}
+\hypertarget{tools_target_cm_toolsTarget_cm_data}{}\subsubsection{Data}\label{tools_target_cm_toolsTarget_cm_data}
+\begin{DoxyVerb}cm data
+cm data info \end{DoxyVerb}
+ \begin{quote}
+Get info on profile in use. \end{quote}
+
+
+\begin{DoxyVerb}cm data profile <index> \end{DoxyVerb}
+ \begin{quote}
+Set profile in use. \end{quote}
+
+
+\begin{DoxyVerb}cm data apn <apn> \end{DoxyVerb}
+ \begin{quote}
+Set apn for profile in use. \end{quote}
+
+
+\begin{DoxyVerb}cm data pdp <pdp> \end{DoxyVerb}
+ \begin{quote}
+Set pdp type for profile in use. \end{quote}
+
+
+\begin{DoxyVerb}cm data auth <none/pap/chap> <username> <password> \end{DoxyVerb}
+ \begin{quote}
+Set authentication for profile in use. \end{quote}
+
+
+\begin{DoxyVerb}cm data connect <optional timeout (secs)> \end{DoxyVerb}
+ \begin{quote}
+Start a data connection. \end{quote}
+
+
+\begin{DoxyVerb}cm data watch \end{DoxyVerb}
+ \begin{quote}
+Monitor the data connection. \end{quote}
+
+
+To start a data connection, ensure that your profile is configured correctly. Also ensure your modem is registered to the network. To verify, use {\ttfamily cm radio} and check {\ttfamily Status}.
+
+If you specify a time-\/out timer when starting a data connection, it will try to start a data connection until the timer expires.
+
+When starting a data connection, currently it only uses profile 1. Any configuration set for other profiles can\textquotesingle{}t be used to start a data connection through the cm tool.\hypertarget{tools_target_cm_toolsTarget_cm_info}{}\subsubsection{Info}\label{tools_target_cm_toolsTarget_cm_info}
+\begin{DoxyVerb}cm info
+cm info all \end{DoxyVerb}
+ \begin{quote}
+Print all known info. \end{quote}
+
+
+\begin{DoxyVerb}cm info device \end{DoxyVerb}
+ \begin{quote}
+Print the device model. \end{quote}
+
+
+\begin{DoxyVerb}cm info imei \end{DoxyVerb}
+ \begin{quote}
+Print the I\+M\+E\+I. \end{quote}
+
+
+\begin{DoxyVerb}cm info firmware \end{DoxyVerb}
+ \begin{quote}
+Print the firmware version. \end{quote}
+
+
+\begin{DoxyVerb}cm info bootloader \end{DoxyVerb}
+ \begin{quote}
+Print the bootloader version. \end{quote}
+\hypertarget{tools_target_cm_toolsTarget_cm_radio}{}\subsubsection{Radio}\label{tools_target_cm_toolsTarget_cm_radio}
+\begin{DoxyVerb}cm radio
+cm radio status \end{DoxyVerb}
+ \begin{quote}
+Get modem status. \end{quote}
+
+
+\begin{DoxyVerb}cm radio <on/off> \end{DoxyVerb}
+ \begin{quote}
+Enable/disable radio. \end{quote}
+
+
+\begin{DoxyVerb}cm radio rat <CDMA | GSM/UMTS | LTE> \end{DoxyVerb}
+ \begin{quote}
+Set radio access technology. \end{quote}
+
+
+\begin{DoxyVerb}cm radio rat AUTO \end{DoxyVerb}
+ \begin{quote}
+Resume automatic R\+A\+T selection. \end{quote}
+
+
+After setting the radio access technology, you\textquotesingle{}ll need to do a {\ttfamily legato restart} before it\textquotesingle{}s effective.\hypertarget{tools_target_cm_toolsTarget_cm_sim}{}\subsubsection{S\+I\+M}\label{tools_target_cm_toolsTarget_cm_sim}
+Regardless if security is enabled or not, the S\+I\+M card P\+I\+N code must be entered for every operation. The only ways to change the P\+I\+N code are through {\ttfamily changepin} and {\ttfamily unblock}.
+
+\begin{DoxyVerb}cm sim
+cm sim status \end{DoxyVerb}
+ \begin{quote}
+Get sim status \end{quote}
+
+
+\begin{DoxyVerb}cm sim info \end{DoxyVerb}
+ \begin{quote}
+Get sim information. \end{quote}
+
+
+\begin{DoxyVerb}cm sim imsi \end{DoxyVerb}
+ \begin{quote}
+Get the sim imsi. \end{quote}
+
+
+\begin{DoxyVerb}cm sim iccid \end{DoxyVerb}
+ \begin{quote}
+Get the sim iccid. \end{quote}
+
+
+\begin{DoxyVerb}cm sim number \end{DoxyVerb}
+ \begin{quote}
+Get the sim phone number. Often M2\+M S\+I\+M cards don\textquotesingle{}t know their number (will return nothing). \end{quote}
+
+
+\begin{DoxyVerb}cm sim enterpin <pin> \end{DoxyVerb}
+ \begin{quote}
+Enter pin code that\textquotesingle{}s required before any mobile equipment functionality can be used. \end{quote}
+
+
+\begin{DoxyVerb}cm sim changepin <oldpin> <newpin> \end{DoxyVerb}
+ \begin{quote}
+Change the P\+I\+N code of the S\+I\+M card. \end{quote}
+
+
+\begin{DoxyVerb}cm sim lock <pin> \end{DoxyVerb}
+ \begin{quote}
+Lock S\+I\+M\+: enables S\+I\+M card security, will request for a P\+I\+N code when inserted. \end{quote}
+
+
+\begin{DoxyVerb}cm sim unlock <pin> \end{DoxyVerb}
+ \begin{quote}
+Unlock S\+I\+M\+: disables S\+I\+M card security, won\textquotesingle{}t request a P\+I\+N code when inserted (unsafe). \end{quote}
+
+
+\begin{DoxyVerb}cm sim unblock <puk> <newpin> \end{DoxyVerb}
+ \begin{quote}
+Unblocks the S\+I\+M card. The S\+I\+M card is blocked after X unsuccessful attempts to enter the P\+I\+N. \end{quote}
+
+
+\begin{DoxyVerb}cm sim storepin <pin> \end{DoxyVerb}
+ \begin{quote}
+Stores P\+I\+N. Whether security is enabled or not, the S\+I\+M card has a P\+I\+N code that must be entered for every operation. You can change the P\+I\+N code through {\ttfamily changepin} and {\ttfamily unblock}. \end{quote}
+
+
+\begin{DoxyVerb}cm sim select <EMBEDDED | EXTERNAL_SLOT_1 | EXTERNAL_SLOT_2 | REMOTE> \end{DoxyVerb}
+ \begin{quote}
+Select the S\+I\+M type. \end{quote}
+
+
+Whether security is enabled or not, the S\+I\+M card has a P\+I\+N code that must be entered for every operations. Only ways to change this P\+I\+N code are through \textquotesingle{}changepin\textquotesingle{} and \textquotesingle{}unblock\textquotesingle{} operations.\hypertarget{tools_target_cm_toolsTarget_cm_sms}{}\subsubsection{S\+M\+S}\label{tools_target_cm_toolsTarget_cm_sms}
+\begin{DoxyVerb}cm sms monitor \end{DoxyVerb}
+ \begin{quote}
+Monitor incoming S\+M\+S. \end{quote}
+
+
+\begin{DoxyVerb}cm sms send <number> <content> \end{DoxyVerb}
+ \begin{quote}
+Send a text S\+M\+S. \end{quote}
+
+
+\begin{DoxyVerb}cm sms sendbin <number> <file> <optional max sms> \end{DoxyVerb}
+ \begin{quote}
+Send a binary S\+M\+S \end{quote}
+
+
+Options\+:
+\begin{DoxyItemize}
+\item $<$number$>$\+: Destination number
+\item $<$content$>$\+: Content as text supported by G\+S\+M 03.\+38 alphabet
+\item $<$file$>$\+: File path O\+R -\/ for standard input (stdin)
+\item $<$optional max=\char`\"{}\char`\"{} sms$>$=\char`\"{}\char`\"{}$>$\+: (Optional) Limit for the number of S\+M\+S the file is split in
+\end{DoxyItemize}
+
+\begin{DoxyVerb}cm sms list \end{DoxyVerb}
+ \begin{quote}
+List all stored S\+M\+S \end{quote}
+
+
+\begin{DoxyVerb}cm sms get <idx> \end{DoxyVerb}
+ \begin{quote}
+Get specific stored S\+M\+S. \end{quote}
+
+
+\begin{DoxyVerb}cm sms clear \end{DoxyVerb}
+ \begin{quote}
+Clear stored S\+M\+S. \end{quote}
+
+
+\begin{DoxyVerb}cm sms count \end{DoxyVerb}
+ \begin{quote}
+Count stored S\+M\+S. \end{quote}
+\hypertarget{tools_target_cm_toolsTarget_cm_temp}{}\subsubsection{Temperature}\label{tools_target_cm_toolsTarget_cm_temp}
+\begin{DoxyVerb}cm temp
+cm temp all \end{DoxyVerb}
+ \begin{quote}
+Print all known temperatures. \end{quote}
+
+
+\begin{DoxyVerb}cm temp thresholds \end{DoxyVerb}
+ \begin{quote}
+Print all thresholds. \end{quote}
+
+
+\begin{DoxyVerb}cm temp radio \end{DoxyVerb}
+ \begin{quote}
+Print the radio temperature. \end{quote}
+
+
+\begin{DoxyVerb}cm temp platform \end{DoxyVerb}
+ \begin{quote}
+Print the platform temperature. \end{quote}
+
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsTarget_config}{}\subsection{config}\label{toolsTarget_config}
+Use the Config tool to change a target\textquotesingle{}s configuration database.
+
+Also see \hyperlink{howToConfigTree}{Manage Config Tree}
+
+Functions supported include\+: inspect a tree, read/write values, and import/export enitre tree sections.
+
+\section*{Usage}
+
+{\bfseries {\ttfamily  config \mbox{[}O\+P\+T\+I\+O\+N\+S\mbox{]} }}
+
+\begin{DoxyVerb}config get <tree path> [--format=json] \end{DoxyVerb}
+ \begin{quote}
+Read a value. \end{quote}
+
+
+\begin{DoxyVerb}config set <tree path> <new value> [<type>] \end{DoxyVerb}
+ \begin{quote}
+Write a value. \end{quote}
+
+
+\begin{DoxyVerb}config move <node path> <new name> \end{DoxyVerb}
+ \begin{quote}
+Move a node. \end{quote}
+
+
+\begin{DoxyVerb}config copy <node path> <new name> \end{DoxyVerb}
+ \begin{quote}
+Copy a node. \end{quote}
+
+
+\begin{DoxyVerb}config delete <tree path> \end{DoxyVerb}
+ \begin{quote}
+Delete a node. \end{quote}
+
+
+\begin{DoxyVerb}config clear <tree path> \end{DoxyVerb}
+ \begin{quote}
+Clear a node. Or create a new empty node if it didn\textquotesingle{}t previously exist. \end{quote}
+
+
+\begin{DoxyVerb}config import <tree path> <file path> [--format=json] \end{DoxyVerb}
+ \begin{quote}
+Import config data. \end{quote}
+
+
+\begin{DoxyVerb}config export <tree path> <file path> [--format=json] \end{DoxyVerb}
+ \begin{quote}
+Export config data. \end{quote}
+
+
+\begin{DoxyVerb}config list \end{DoxyVerb}
+ \begin{quote}
+List all config trees. \end{quote}
+
+
+\begin{DoxyVerb}config rmtree <tree name> \end{DoxyVerb}
+ \begin{quote}
+Delete a tree. \end{quote}
+
+
+\begin{DoxyVerb}config help \end{DoxyVerb}
+ \begin{quote}
+Display help. \end{quote}
+
+
+\subsection*{Options}
+
+\begin{DoxyVerb}<tree path> \end{DoxyVerb}
+ \begin{quote}
+Path to the tree and node to configure. \end{quote}
+
+
+\begin{DoxyVerb}<tree name> \end{DoxyVerb}
+ \begin{quote}
+Is the name of a tree in the system, but without a path. \end{quote}
+
+
+\begin{DoxyVerb}<file path> \end{DoxyVerb}
+ \begin{quote}
+Path to the file for import/export. \end{quote}
+
+
+\begin{DoxyVerb}<new value> \end{DoxyVerb}
+ \begin{quote}
+String value to write to the config tree. \end{quote}
+
+
+\begin{DoxyVerb}<type> \end{DoxyVerb}
+ \begin{quote}
+Optional, must be bool, int, float, or string. If tool, must be true or false. If unspecified, default type is string. \end{quote}
+
+
+\begin{DoxyVerb}--format=json \end{DoxyVerb}
+ \begin{quote}
+For imports, then properly formatted J\+S\+O\+N will be expected. For exports, then the data will be generated as well. It is also possible to specify J\+S\+O\+N for the get sub-\/command. \end{quote}
+\hypertarget{tools_target_config_toolsTarget_config_treePaths}{}\subsubsection{Tree Paths}\label{tools_target_config_toolsTarget_config_treePaths}
+A tree path is specified similar to a {\ttfamily $\ast$nix} path. With the beginning slash being optional. \begin{DoxyVerb}For example:
+
+    /a/path/to/somewhere
+or
+    a/path/to/somewhere
+\end{DoxyVerb}
+
+
+The config\+Tree supports multiple trees\+: a default tree is assigned per user. If the config tool is run as root, then alternative trees can be specified in the path by entering a tree name, then a colon and the value path.
+
+Here\textquotesingle{}s an example using the tree named \textquotesingle{}foo\textquotesingle{} instead of the default tree\+: \begin{DoxyVerb}  foo:/a/path/to/somewhere
+\end{DoxyVerb}
+\hypertarget{tools_target_config_configtoolsTarget_config_TreeLocation}{}\paragraph{Tree location}\label{tools_target_config_configtoolsTarget_config_TreeLocation}
+The trees themselves are stored in the file system at\+: \begin{DoxyVerb}/opt/legato/configTree \end{DoxyVerb}
+
+
+The config\+Tree cycles through the extensions, .rock, .paper, and .scissors to differentiate between versions of the tree file. The base file name is the same as the tree.
+
+A listing for /opt/legato/config\+Tree where the system tree and the user trees are foo and bar looks like this\+:
+
+\begin{DoxyVerb}$ ls /opt/legato/configTree/ -l
+total 32
+-rw------- 1 user user  3456 May 12 11:02 bar.rock
+-rw------- 1 user user  3456 May  9 11:04 foo.scissors
+-rw------- 1 user user 21037 May  9 11:04 system.paper
+\end{DoxyVerb}
+
+
+The system, or root user, has its own tree; each application has a separate tree.\hypertarget{tools_target_config_toolsTarget_config_Samples}{}\subsubsection{Config Code Samples}\label{tools_target_config_toolsTarget_config_Samples}
+To dump a tree, run this to get the default tree for the current user\+:
+
+\begin{DoxyVerb}config get / \end{DoxyVerb}
+
+
+Or to get a specific tree\+:
+
+\begin{DoxyVerb}$ config get foo:/
+/
+  helloWorld/
+    greeted<bool> == true
+    ignored<bool> == false
+\end{DoxyVerb}
+
+
+The config tool can also read and write individual values. You can read the value of greeted like this\+:
+
+\begin{DoxyVerb}$ config get /helloWorld/greeted
+true
+\end{DoxyVerb}
+
+
+If you want to see everything under hello\+World\+: \begin{DoxyVerb}$ config get /helloWorld
+helloWorld/
+  greeted<bool> == true
+  ignored<bool> == false
+\end{DoxyVerb}
+
+
+If you want to change the value of ignored\+: \begin{DoxyVerb}$ config set /helloWorld/ignored true bool
+\end{DoxyVerb}
+
+
+You can check it by running\+: \begin{DoxyVerb}$ config get /helloWorld/ignored
+true
+\end{DoxyVerb}
+
+
+If the config tool is listing a tree, it will display the node name and a / if the current node has children (except for the root node, as the root node does not have a name.)
+
+For leaf nodes, the config tool will display the value type in angle brackets, $<$$>$, as well as its name and actual value\+:
+
+\begin{DoxyVerb}/
+  testValues/
+    aBoolValue<bool> == true
+    aStringValue<string> == This is some text I saved.
+    anIntValue<int> == 1024
+    afloatValue<float> == 10.24
+\end{DoxyVerb}
+
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsTarget_configEcm}{}\subsection{config\+Ecm}\label{toolsTarget_configEcm}
+Use the {\ttfamily config\+Ecm} tool to setup an E\+C\+M interface.
+
+\section*{Usage}
+
+{\bfseries {\ttfamily  config\+Ecm \mbox{[}show $\vert$ off $\vert$ on \mbox{[}target $<$ip\+V4\+\_\+addr$>$\mbox{]} host $<$ip\+V4\+\_\+addr$>$ netmask $<$ip\+V4\+\_\+netmansk$>$\mbox{]} }}
+
+\begin{DoxyVerb}configEcm show \end{DoxyVerb}
+
+
+\begin{quote}
+Displays current configuration. \end{quote}
+
+
+\begin{DoxyVerb}configEcm off \end{DoxyVerb}
+
+
+\begin{quote}
+Deconfigures and turns off E\+C\+M. \end{quote}
+
+
+\begin{DoxyVerb}configEcm on [target <ipV4_addr>] host <ipV4_addr> netmask <ipV4_netmask>] \end{DoxyVerb}
+
+
+\begin{quote}
+Configures E\+C\+M\+: ~\newline
+ enter target ip\+V4 address ~\newline
+ enter host ip\+V4 address ~\newline
+ enter connection ip\+V4 netmask ~\newline
+ \end{quote}
+
+
+\begin{quote}
+If no values are provided, defaults to\+: ~\newline
+ target\+: 192.\+168.\+1.\+2 ~\newline
+ host\+: 192.\+168.\+1.\+3 ~\newline
+ netmask\+: 255.\+255.\+255.\+0 ~\newline
+ \end{quote}
+
+
+\begin{quote}
+If the provided address and netmask (or the defaults) conflicts ~\newline
+ with an existing network connection, no change will be made. \end{quote}
+
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsTarget_execInApp}{}\subsection{exec\+In\+App}\label{toolsTarget_execInApp}
+Use the Execute In App tool to execute a process in a running app\textquotesingle{}s sandbox.
+
+The executed process will inherit the terminal\textquotesingle{}s environment variables and file descriptors. The executable and all required libraries, resources, etc. must already be in the app\textquotesingle{}s sandbox before the executed process can be started.
+
+\section*{Usage}
+
+{\bfseries {\ttfamily  exec\+In\+App \mbox{[}O\+P\+T\+I\+O\+N\+S\mbox{]} exec\+Path \mbox{[}A\+R\+G\+S\mbox{]} }}
+
+\begin{DoxyVerb}appName \end{DoxyVerb}
+ \begin{quote}
+Name of the running app where the process should start (can\textquotesingle{}t start with dash -\/ ). \end{quote}
+
+
+\begin{DoxyVerb}execPath \end{DoxyVerb}
+ \begin{quote}
+Path in the sandbox to the file that will be executed (can\textquotesingle{}t start with dash -\/ ). \end{quote}
+
+
+\section*{Options}
+
+\begin{DoxyVerb}--procName=NAME \end{DoxyVerb}
+ \begin{quote}
+Gives the executed process the name N\+A\+M\+E. If not specified, will be the name of the executable file. \end{quote}
+
+
+\begin{DoxyVerb}--priority=PRIORITY \end{DoxyVerb}
+ \begin{quote}
+Sets the process priority, either\+: idle, low, medium, high, rt1, rt2, through to rt32. \end{quote}
+
+
+\begin{DoxyVerb}--help \end{DoxyVerb}
+ \begin{quote}
+Displays help and exits. \end{quote}
+
+
+\begin{DoxyVerb}[ARGS] \end{DoxyVerb}
+ \begin{quote}
+List of arguments to be passed to the executed process. \end{quote}
+
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsTarget_fwUpdate}{}\subsection{fwupdate}\label{toolsTarget_fwUpdate}
+Use the target-\/based Firmware Update tool to download image files directly to the device (e.\+g., firmware or Linux image with a bootloader, kernel and root file system).
+
+\section*{Usage}
+
+{\bfseries {\ttfamily  fwupdate \mbox{[}O\+P\+T\+I\+O\+N\mbox{]} }}
+
+\begin{DoxyVerb}fwupdate help \end{DoxyVerb}
+ \begin{quote}
+Print help message and exit \end{quote}
+
+
+\begin{DoxyVerb}fwupdate download FILE \end{DoxyVerb}
+ \begin{quote}
+Download the given C\+W\+E file. After a successful download, the modem will reset. \end{quote}
+
+
+\begin{DoxyVerb}fwupdate query \end{DoxyVerb}
+ \begin{quote}
+Query the current firmware version.~\newline
+ This includes the modem firmware version, the bootloader version, and the Linux kernel version.~\newline
+ This can be used after a download and modem reset, to confirm the firmware version. \end{quote}
+
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsTarget_inspect}{}\subsection{inspect}\label{toolsTarget_inspect}
+Use the Inspect tool to examine running Legato processes. Currently, only memory pools are supported; later versions will add more capabilities.
+
+Prints memory pools\textquotesingle{} usage to stdout for the specified process.
+
+\section*{Usage}
+
+{\bfseries {\ttfamily inspect \mbox{[}O\+P\+T\+I\+O\+N\+S\mbox{]} P\+I\+D}}
+
+\section*{Options}
+
+\begin{DoxyVerb}-f \end{DoxyVerb}
+ \begin{quote}
+Update process memory usage information every 3 seconds. \end{quote}
+
+
+\begin{DoxyVerb}--interval=SECONDS \end{DoxyVerb}
+ \begin{quote}
+Update process memory usage information every S\+E\+C\+O\+N\+D\+S. \end{quote}
+
+
+\begin{DoxyVerb}--help \end{DoxyVerb}
+ \begin{quote}
+Display help and exit. \end{quote}
+
+
+\section*{Output Sample}
+
+\begin{DoxyVerb}Legato Memory Pools Inspector
+Inspecting process 759
+TOTAL BLKS  USED BLKS   MAX USED  OVERFLOWS     ALLOCS  MEMORY POOL
+         8          0          0          0          0  SubPools
+        10          5          5          0          5  TraceKeys
+        10          2          2          0          2  LogSession
+         0          0          0          0          0  SigMonitor
+         0          0          0          0          0  SigHandler
+        10          7          7          0          7  SafeRef-Map
+         0          0          0          0          0  PathIteratorPool
+         8          0          0          0          0  safeRefPathIteratorMap
+         4          0          0          0          0  mutex
+         4          0          0          0          0  semaphore
+         4          1          1          0          1  Thread Pool
+         4          1          1          0          1  safeRefThreadRef
+         0          0          0          0          0  DestructorObjs
+        10          0          1          0       1568  QueuedFunction
+        10          0          0          0          0  EventHandler
+         5          0          0          0          0  Events
+         4          0          0          0          0  safeRefEvents
+         8          0          0          0          0  safeRefEventHandlers
+        10          2          2          0          2  FdMonitor
+         8          2          2          0          2  safeRefFdMonitors
+        64          5          5          0          5  safeRefFdEventHandlers
+         1          1          1          0          1  Default Timer Pool
+         5          1          1          0          1  Protocol
+        32          1          1          0          1  MessagingServices
+        32          1          1          0          1  MessagingServices
+        10          1          1          0          1  Session
+        32          0          1          0          2  safeRefMsgTxnIDs
+        10          0          2          0          4  LogControlProtocol-Msgs
+      1567       1567       1567       1567       1567  EmployeePool
+\end{DoxyVerb}
+
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsTarget_legato}{}\subsection{legato}\label{toolsTarget_legato}
+Use the {\ttfamily legato} tool to run the Legato framework.
+
+\section*{Usage}
+
+{\bfseries {\ttfamily  legato \mbox{[}start $\vert$ stop $\vert$ restart $\vert$ version $\vert$ help\mbox{]}}}
+
+\begin{DoxyVerb}legato start \end{DoxyVerb}
+
+
+\begin{quote}
+Starts the Legato framework. \end{quote}
+
+
+\begin{DoxyVerb}legato stop \end{DoxyVerb}
+
+
+\begin{quote}
+Stops the Legato framework. \end{quote}
+
+
+\begin{DoxyVerb}legato restart \end{DoxyVerb}
+
+
+\begin{quote}
+Restarts the Legato framework. \end{quote}
+
+
+\begin{DoxyVerb}legato version \end{DoxyVerb}
+
+
+\begin{quote}
+Displays the intstalled Legato framework version. \end{quote}
+
+
+\begin{DoxyVerb}legato help \end{DoxyVerb}
+
+
+\begin{quote}
+Displays usage help. \end{quote}
+
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsTarget_log}{}\subsection{log}\label{toolsTarget_log}
+Use the Log tool tool to set logging variables for components. Also see \hyperlink{howToLogs}{Use Logs}.
+
+Here\textquotesingle{}s more detailed info on the \hyperlink{c_logging}{Logging A\+P\+I}.
+
+\section*{Usage}
+
+{\bfseries {\ttfamily  log list ~\newline
+ log level F\+I\+L\+T\+E\+R\+\_\+\+S\+T\+R \mbox{[}D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\mbox{]} ~\newline
+ log trace K\+E\+Y\+W\+O\+R\+D\+\_\+\+S\+T\+R \mbox{[}D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\mbox{]} ~\newline
+ log stoptrace K\+E\+Y\+W\+O\+R\+D\+\_\+\+S\+T\+R \mbox{[}D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\mbox{]} ~\newline
+ log forget P\+R\+O\+C\+E\+S\+S\+\_\+\+N\+A\+M\+E ~\newline
+ log help }}
+
+\begin{DoxyVerb}log list \end{DoxyVerb}
+ \begin{quote}
+Lists all processes/components registered with the log daemon. \end{quote}
+
+
+\begin{DoxyVerb}log level FILTER_STR [DESTINATION] \end{DoxyVerb}
+ \begin{quote}
+Sets the log filter level. Log messages that are less severe than the filter are ignored. ~\newline
+ Must be one of E\+M\+E\+R\+G\+E\+N\+C\+Y $\vert$ C\+R\+I\+T\+I\+C\+A\+L $\vert$ E\+R\+R\+O\+R $\vert$ W\+A\+R\+N\+I\+N\+G $\vert$ I\+N\+F\+O $\vert$ D\+E\+B\+U\+G \end{quote}
+
+
+\begin{DoxyVerb}log trace KEYWORD_STR [DESTINATION] \end{DoxyVerb}
+ \begin{quote}
+Enables a trace by keyword. Any traces with a matching keyword are logged. The K\+E\+Y\+W\+O\+R\+D\+\_\+\+S\+T\+R is a trace keyword. \end{quote}
+
+
+\begin{DoxyVerb}log stoptrace KEYWORD_STR [DESTINATION] \end{DoxyVerb}
+ \begin{quote}
+Disables a trace keyword. Any traces with this keyword are not logged. The K\+E\+Y\+W\+O\+R\+D\+\_\+\+S\+T\+R is a trace keyword. \end{quote}
+
+
+\begin{DoxyVerb}log forget PROCESS_NAME\end{DoxyVerb}
+ \begin{quote}
+Forgets all settings for processes for the specified name. \end{quote}
+
+
+\begin{DoxyVerb}log help \end{DoxyVerb}
+ \begin{quote}
+Displays help for log commands. \end{quote}
+
+
+\begin{DoxyVerb}[DESTINATION] \end{DoxyVerb}
+
+
+ Optional, specifies the process and component where to send the command.
+
+The optional {\ttfamily }\mbox{[}D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\mbox{]} must be in this format\+:
+
+\begin{DoxyVerb}process/componentName \end{DoxyVerb}
+
+
+\textquotesingle{}process\textquotesingle{} can be a process\+Name or a P\+I\+D. If it\textquotesingle{}s a process\+Name, the command will apply to all processes with the same name. If it\textquotesingle{}s a P\+I\+D, it only apply to the process with the matching P\+I\+D. ~\newline
+
+
+Both the \textquotesingle{}process\textquotesingle{} and the \textquotesingle{}component\+Name\textquotesingle{} can be replaced with an asterix (\char`\"{}$\ast$)\char`\"{} to mean all processes and/or all components.
+
+If the {\ttfamily }\mbox{[}D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\mbox{]} is omitted, a default destination is used and applies to all processes and all components\+: \begin{DoxyVerb}"*/*" \end{DoxyVerb}
+
+
+A command can be sent to a process/component that doesn\textquotesingle{}t exist yet. It\textquotesingle{}ll be saved and applied to the process/component when available. This way, you can pre-\/configure processes/components before they are spawned, but it\textquotesingle{}s only valid if the \mbox{[}D\+E\+S\+T\+I\+N\+A\+T\+I\+O\+N\mbox{]} is a process name. Otherwise, the \textquotesingle{}process\textquotesingle{} will be dropped."
+
+
+
+Here are some command samples\+:
+
+\begin{DoxyVerb}$ log level INFO "processName/componentName"
+\end{DoxyVerb}
+ \begin{quote}
+Set the log level to I\+N\+F\+O for a component in a process. \end{quote}
+
+
+\begin{DoxyVerb}$ log trace "keyword" "processName/componentName"
+\end{DoxyVerb}
+ \begin{quote}
+Enable a trace. \end{quote}
+
+
+\begin{DoxyVerb}$ log stoptrace "keyword" "processName/componentName"
+\end{DoxyVerb}
+ \begin{quote}
+Disable a trace. \end{quote}
+
+
+All can use \char`\"{}$\ast$\char`\"{} in place of process\+Name and component\+Name for all processes and/or all components. If the \char`\"{}process\+Name/component\+Name\char`\"{} is omitted, the default destination is set for all processes and all components.
+
+Translated command to send to the log daemon\+:
+
+\begin{DoxyVerb}   | cmd | destination | commandParameter |
+\end{DoxyVerb}
+
+
+\begin{quote}
+where {\itshape cmd} is a command code, one byte long. destination is the {\ttfamily process\+Name/component\+Name} followed by a {\ttfamily \textquotesingle{}/\textquotesingle{}} character. command\+Parameter is the string specific to the command. \end{quote}
+
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsTarget_sdir}{}\subsection{sdir}\label{toolsTarget_sdir}
+Use the Service Directory tool to interact with the Service Directory to control I\+P\+C bindings and do troubleshooting.
+
+\section*{Usage}
+
+{\bfseries {\ttfamily  sdir \mbox{[}O\+P\+T\+I\+O\+N\mbox{]}}}
+
+\begin{DoxyVerb}sdir list \end{DoxyVerb}
+
+
+\begin{quote}
+{\ttfamily list} command generates a list of all the I\+P\+C services known by the Service Directory including servers advertising, users waiting for servers to advertise, and I\+P\+C bindings in effect. \end{quote}
+
+
+\begin{DoxyVerb}sdir load \end{DoxyVerb}
+
+
+\begin{quote}
+{\ttfamily load} command updates the Service Directory\textquotesingle{}s bindings to match the binding\+Config settings found in the {\ttfamily system} configuration tree. \end{quote}
+
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsTarget_setNet}{}\subsection{set\+Net}\label{toolsTarget_setNet}
+Use the Set M\+A\+C Address tool to set your M\+A\+C address and optionally a static I\+P address.
+
+The dev kit board Ethernet port doesn\textquotesingle{}t have a permanent M\+A\+C address. Each time the target starts, a locally administered M\+A\+C address is generated. With D\+H\+C\+P, this will likely also cause your I\+P address to change. With a static I\+P address, the I\+P address won\textquotesingle{}t change, but switching equipment may result in errors because the I\+P address is being used by a new target.
+
+If you\textquotesingle{}re confident editing the {\ttfamily /etc/network/interfaces} file (e.\+g., created some up/down rules for {\ttfamily eth0}), then you probably don\textquotesingle{}t want to use {\ttfamily set\+Net} (it won\textquotesingle{}t merge well). You can restore your {\ttfamily /etc/network/interfaces} file after running {\ttfamily set\+Net\+:} {\ttfamily /etc/network/interfaces} is renamed with a date and time suffix.
+
+\section*{Usage}
+
+{\bfseries {\ttfamily  set\+Net \mbox{[}macrandom$\vert$macfixed\mbox{]} \mbox{[}dhcp$\vert$static\mbox{]} \mbox{[}address $<$address$>$\mbox{]} \mbox{[}netmask $<$netmask$>$\mbox{]} }}
+
+Use {\ttfamily macfixed} to set the dev board to use the M\+A\+C provided at boot time, and continue to use D\+H\+C\+P for the I\+P address.
+
+Use {\ttfamily static} to set a fixed M\+A\+C regardless of whether {\ttfamily macrandom} is provided ({\ttfamily set\+Net} {\ttfamily static} is equivalent to {\ttfamily set\+Net} {\ttfamily macfixed} {\ttfamily static}).
+
+If logged in over {\ttfamily ssh}, close the session quickly as ssh tends to hang. Then run ssh like this\+: \begin{DoxyVerb}ssh root@<ip address> 'setNet <commands>'
+\end{DoxyVerb}
+
+
+\begin{DoxyNote}{Note}
+{\ttfamily set\+Net} only supports I\+Pv4 addresses at the moment. No address, gateway or netmask values validation is done.
+\end{DoxyNote}
+To display usage, run \begin{DoxyVerb}setNet --help \end{DoxyVerb}
+
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsHost}{}\section{Host}\label{toolsHost}
+Host tools are available to help manage the target\+: adding/removing apps, starting/stopping apps and updating firmware.
+
+Run {\ttfamily bin/legs} to add the host tools to the shell\textquotesingle{}s executable path.
+
+\hyperlink{toolsHost_av-pack}{av-\/pack} ~\newline
+ \hyperlink{toolsHost_configtargetssh}{configtargetssh} ~\newline
+ \hyperlink{toolsHost_createsdk}{createsdk} ~\newline
+ \hyperlink{toolsHost_fwupdate}{fwupdate} ~\newline
+ \hyperlink{toolsHost_gettargettype}{gettargettype} ~\newline
+ \hyperlink{toolsHost_instapp}{instapp} ~\newline
+ \hyperlink{toolsHost_instlegato}{instlegato} ~\newline
+ \hyperlink{toolsHost_instsys}{instsys} ~\newline
+ \hyperlink{toolsHost_legato-qemu}{legato-\/qemu} ~\newline
+ \hyperlink{toolsHost_lsapp}{lsapp} ~\newline
+ \hyperlink{toolsHost_mklegatoimg}{mklegatoimg} ~\newline
+ \hyperlink{toolsHost_releaselegato}{releaselegato} ~\newline
+ \hyperlink{toolsHost_rmapp}{rmapp} ~\newline
+ \hyperlink{toolsHost_security-pack}{security-\/pack} ~\newline
+ \hyperlink{toolsHost_setname}{setname} ~\newline
+ \hyperlink{toolsHost_settime}{settime} ~\newline
+ \hyperlink{toolsHost_settz}{settz} ~\newline
+ \hyperlink{toolsHost_simu}{simu} ~\newline
+ \hyperlink{toolsHost_startapp}{startapp} ~\newline
+ \hyperlink{toolsHost_startlegato}{startlegato} ~\newline
+ \hyperlink{toolsHost_statapp}{statapp} ~\newline
+ \hyperlink{toolsHost_stopapp}{stopapp} ~\newline
+ \hyperlink{toolsHost_stoplegato}{stoplegato} ~\newline
+
+
+To display usage, run \begin{DoxyVerb}[toolname] --help \end{DoxyVerb}
+
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsHost_av-pack}{}\subsection{av-\/pack}\label{toolsHost_av-pack}
+\section*{N\+A\+M\+E}
+
+{\bfseries av-\/pack} -\/ Generate package for upload to Air Vantage.
+
+\section*{S\+Y\+N\+O\+P\+S\+I\+S}
+
+{\ttfamily av-\/pack \mbox{[}O\+P\+T\+I\+O\+N\+S\mbox{]} T\+Y\+P\+E \mbox{[}B\+U\+I\+L\+D\+\_\+\+D\+I\+R\mbox{]}}~\newline
+ {\ttfamily av-\/pack -\/h}~\newline
+ {\ttfamily av-\/pack --help}~\newline
+
+
+\section*{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N}
+
+Generates a Z\+I\+P-\/compressed package containing a manifest file generated by mkapp, with the Air Vantage application \char`\"{}type\char`\"{} set to T\+Y\+P\+E.
+
+T\+Y\+P\+E must be globally unique among all applications on the Air Vantage service. Multiple versions of the same application should have the same T\+Y\+P\+E.
+
+B\+U\+I\+L\+D\+\_\+\+D\+I\+R is the file system path of the build directory to be searched for the manifest.\+app file. If not specified, the current directory (and its subdirectories) will be searched. Only one manifest file can be used. If multiple are found, the command will abort with an error message.
+
+Options\+:
+
+-\/f, --full-\/update=F\+I\+L\+E Include a full application update file. This gets pushed to the device when an \char`\"{}upgrade firmware\char`\"{} is requested for this application.
+
+-\/h, --help Display this help text. (Cannot be used with other options.)
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsHost_configtargetssh}{}\subsection{configtargetssh}\label{toolsHost_configtargetssh}
+\section*{N\+A\+M\+E}
+
+{\bfseries configtargetssh} -\/ Configure secure shell access to target device.
+
+\section*{S\+Y\+N\+O\+P\+S\+I\+S}
+
+{\ttfamily configtargetssh \mbox{[}T\+A\+R\+G\+E\+T\+\_\+\+I\+P\mbox{]}}~\newline
+
+
+\section*{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N}
+
+configtargetssh generates a key pair, configures the local user\textquotesingle{}s account to use that key to talk to the specified I\+P address, and installs the public key in that target device\textquotesingle{}s root account\textquotesingle{}s list of authorized keys.
+
+Follow the interactive instructions provided by the tool.
+
+\section*{E\+N\+V\+I\+R\+O\+N\+M\+E\+N\+T}
+
+\begin{DoxyVerb}If the TARGET_IP value is not given and the environment variable DEST_IP
+is set then DEST_IP will be used as TARGET_IP
+\end{DoxyVerb}
+
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsHost_createsdk}{}\subsection{createsdk}\label{toolsHost_createsdk}
+\section*{N\+A\+M\+E}
+
+{\bfseries createsdk} -\/ release legato project
+
+\section*{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N}
+
+Once Legato tools have been built this script stages files and produces a tarball.
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsHost_fwupdate}{}\subsection{fwupdate}\label{toolsHost_fwupdate}
+\section*{N\+A\+M\+E}
+
+{\bfseries fwupdate} -\/ download or query modem firmware
+
+\section*{S\+Y\+N\+O\+P\+S\+I\+S}
+
+{\ttfamily fwupdate help}~\newline
+ {\ttfamily fwupdate download F\+I\+L\+E \mbox{[}T\+A\+R\+G\+E\+T\+\_\+\+I\+P\mbox{]}}~\newline
+ {\ttfamily fwupdate query \mbox{[}T\+A\+R\+G\+E\+T\+\_\+\+I\+P\mbox{]}}~\newline
+
+
+\section*{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N}
+
+fwupdate help
+\begin{DoxyItemize}
+\item Print this help message and exit
+\end{DoxyItemize}
+
+fwupdate download F\+I\+L\+E \mbox{[}T\+A\+R\+G\+E\+T\+\_\+\+I\+P\mbox{]}
+\begin{DoxyItemize}
+\item Download the given C\+W\+E file. After a successful download, the modem will reset.
+\end{DoxyItemize}
+
+fwupdate query \mbox{[}T\+A\+R\+G\+E\+T\+\_\+\+I\+P\mbox{]}
+\begin{DoxyItemize}
+\item Query the current firmware version. This includes the modem firmware version, the bootloader version, and the linux kernel version. This can be used after a download and modem reset, to confirm the firmware version.
+\end{DoxyItemize}
+
+\section*{E\+N\+V\+I\+R\+O\+N\+M\+E\+N\+T}
+
+\begin{DoxyVerb}If the TARGET_IP value is not given and the environment variable DEST_IP
+is set then DEST_IP will be used as TARGET_IP
+\end{DoxyVerb}
+
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsHost_gettargettype}{}\subsection{gettargettype}\label{toolsHost_gettargettype}
+\section*{N\+A\+M\+E}
+
+{\bfseries gettargettype} -\/ determine target type from target model
+
+\section*{S\+Y\+N\+O\+P\+S\+I\+S}
+
+{\ttfamily gettargettype T\+A\+R\+G\+E\+T\+\_\+\+M\+O\+D\+E\+L}~\newline
+
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsHost_instapp}{}\subsection{instapp}\label{toolsHost_instapp}
+\section*{N\+A\+M\+E}
+
+{\bfseries instapp} -\/ install app on target
+
+\section*{S\+Y\+N\+O\+P\+S\+I\+S}
+
+{\ttfamily instapp A\+P\+P\+\_\+\+F\+I\+L\+E \mbox{[}T\+A\+R\+G\+E\+T\+\_\+\+I\+P\mbox{]}}~\newline
+
+
+\section*{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N}
+
+Install the given app on the target at T\+A\+R\+G\+E\+T\+\_\+\+I\+P A\+P\+P\+\_\+\+F\+I\+L\+E is the file containing theapplication to be installed. E.\+g., \textquotesingle{}my\+App.\+ar7\textquotesingle{}.
+
+\section*{E\+N\+V\+I\+R\+O\+N\+M\+E\+N\+T}
+
+\begin{DoxyVerb}If the TARGET_IP value is not given and the environment variable DEST_IP
+is set then DEST_IP will be used as TARGET_IP
+\end{DoxyVerb}
+
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsHost_instlegato}{}\subsection{instlegato}\label{toolsHost_instlegato}
+\section*{N\+A\+M\+E}
+
+{\bfseries instlegato} -\/ install legato on target
+
+\section*{S\+Y\+N\+O\+P\+S\+I\+S}
+
+{\ttfamily instlegato B\+U\+I\+L\+D\+\_\+\+D\+I\+R \mbox{[}T\+A\+R\+G\+E\+T\+\_\+\+I\+P\mbox{]}}~\newline
+
+
+\section*{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N}
+
+Once Legato has been built, instlegato can be used to install it on the target at the I\+P address specified by T\+A\+R\+G\+E\+T\+\_\+\+I\+P. B\+U\+I\+L\+D\+\_\+\+D\+I\+R is the path to the directory to which Legato was built. If the target Legato directory is in the normal build location, i.\+e. Inside \$\+L\+E\+G\+A\+T\+O\+\_\+\+R\+O\+O\+T/build, then you only need to specify the target platform, e.\+g. ar7, otherwise a full path is required.
+
+\section*{E\+N\+V\+I\+R\+O\+N\+M\+E\+N\+T}
+
+\begin{DoxyVerb}If the TARGET_IP value is not given and the environment variable DEST_IP
+is set then DEST_IP will be used as TARGET_IP
+\end{DoxyVerb}
+
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsHost_instsys}{}\subsection{instsys}\label{toolsHost_instsys}
+\section*{N\+A\+M\+E}
+
+{\bfseries instsys} -\/ install system on target
+
+\section*{S\+Y\+N\+O\+P\+S\+I\+S}
+
+{\ttfamily instsys S\+Y\+S\+T\+E\+M\+\_\+\+F\+I\+L\+E \mbox{[}T\+A\+R\+G\+E\+T\+\_\+\+I\+P\mbox{]}}~\newline
+
+
+\section*{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N}
+
+Install the given system on the target at T\+A\+R\+G\+E\+T\+\_\+\+I\+P S\+Y\+S\+T\+E\+M\+\_\+\+F\+I\+L\+E is the file containing the system(collection of apps) to be installed. E.\+g., \textquotesingle{}my\+Sys.\+ar7\+\_\+sys\textquotesingle{}.
+
+\section*{E\+N\+V\+I\+R\+O\+N\+M\+E\+N\+T}
+
+\begin{DoxyVerb}If the TARGET_IP value is not given and the environment variable DEST_IP
+is set then DEST_IP will be used as TARGET_IP
+\end{DoxyVerb}
+
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsHost_legato-qemu}{}\subsection{legato-\/qemu}\label{toolsHost_legato-qemu}
+\begin{DoxyVerb}NAME
+    legato-qemu - launch qemu
+
+DESCRIPTION
+    Prepare an launch qemu to host an instance of Legato.
+    Also fetch qemu images and check for updates.
+
+ENVIRONMENT
+    This script is parametrized through environment variables.
+        OPT_TARGET: Platform to emulate
+        OPT_PERSIST: Make changes to the image persistant or not
+        OPT_KMESG: Kernel messages to console
+        OPT_GDB: Launch GDB server to qemu
+        OPT_SERIAL: Bearer for serial port
+                    - (blank, default) = Serial to console
+                    - telnet = Serial to telnet
+        OPT_NET: Networking interface
+                 - user (default) = simulated internal qemu networking
+                 - tap = Uses a tap interface (requires priviledges)
+\end{DoxyVerb}
+ \hypertarget{toolsHost_lsapp}{}\subsection{lsapp}\label{toolsHost_lsapp}
+\section*{N\+A\+M\+E}
+
+{\bfseries lsapp} -\/ list apps on target
+
+\section*{S\+Y\+N\+O\+P\+S\+I\+S}
+
+{\ttfamily lsapp \mbox{[}T\+A\+R\+G\+E\+T\+\_\+\+I\+P\mbox{]}}~\newline
+
+
+\section*{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N}
+
+List all apps on the target at T\+A\+R\+G\+E\+T\+\_\+\+I\+P
+
+\section*{E\+N\+V\+I\+R\+O\+N\+M\+E\+N\+T}
+
+\begin{DoxyVerb}If the TARGET_IP value is not given and the environment variable DEST_IP
+is set then DEST_IP will be used as TARGET_IP
+\end{DoxyVerb}
+
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsHost_mklegatoimg}{}\subsection{mklegatoimg}\label{toolsHost_mklegatoimg}
+\section*{N\+A\+M\+E}
+
+{\bfseries mklegatoimg} -\/ create Legato image partition
+
+\section*{S\+Y\+N\+O\+P\+S\+I\+S}
+
+{\ttfamily mklegatoimg \mbox{[}O\+P\+T\+I\+O\+N\+S\mbox{]}}~\newline
+
+
+\section*{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N}
+
+Generate a partition for a Legato target.
+
+Options\+:
+\begin{DoxyItemize}
+\item -\/t \mbox{[}T\+A\+R\+G\+E\+T\mbox{]}\+: target the image should be generated for (ar7, ...)
+\item -\/d \mbox{[}S\+T\+A\+G\+I\+N\+G\+\_\+\+D\+I\+R\mbox{]}\+: staging directory for that platform
+\item -\/o \mbox{[}O\+U\+T\+P\+U\+T\+\_\+\+D\+I\+R\mbox{]}\+: output directory where the image will be stored
+\end{DoxyItemize}
+
+For ar7/ar86/wp7/ap85 targets\+:
+
+This creates a partition that you can use with fwupdate or airvantage to update the legato within your target.
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsHost_releaselegato}{}\subsection{releaselegato}\label{toolsHost_releaselegato}
+\section*{N\+A\+M\+E}
+
+{\bfseries releaselegato} -\/ release legato project
+
+\section*{S\+Y\+N\+O\+P\+S\+I\+S}
+
+{\ttfamily releaselegato \mbox{[}O\+P\+T\+I\+O\+N\+S\mbox{]}}~\newline
+
+
+\section*{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N}
+
+Once Legato has been built for selected targets, this script stages files and produces a tarball.
+
+Options\+:
+\begin{DoxyItemize}
+\item -\/t \mbox{[}T\+A\+R\+G\+E\+T\+S\mbox{]}\+: comma-\/separated list of targets the package should be generated for (eg \textquotesingle{}ar7,wp85\textquotesingle{})
+\end{DoxyItemize}
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsHost_rmapp}{}\subsection{rmapp}\label{toolsHost_rmapp}
+\section*{N\+A\+M\+E}
+
+{\bfseries rmapp} -\/ remove app from target
+
+\section*{S\+Y\+N\+O\+P\+S\+I\+S}
+
+{\ttfamily rmapp A\+P\+P\+\_\+\+N\+A\+M\+E \mbox{[}T\+A\+R\+G\+E\+T\+\_\+\+I\+P\mbox{]}}~\newline
+
+
+\section*{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N}
+
+Remove the app given by A\+P\+P\+\_\+\+N\+A\+M\+E from the I\+P address of the target, T\+A\+R\+G\+E\+T\+\_\+\+I\+P If A\+P\+P\+\_\+\+N\+A\+M\+E is given as \char`\"{}$\ast$\char`\"{} (including the quotes) then remove all apps
+
+\section*{E\+N\+V\+I\+R\+O\+N\+M\+E\+N\+T}
+
+\begin{DoxyVerb}If the TARGET_IP value is not given and the environment variable DEST_IP
+is set then DEST_IP will be used as TARGET_IP
+\end{DoxyVerb}
+
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsHost_security-pack}{}\subsection{security-\/pack}\label{toolsHost_security-pack}
+\section*{N\+A\+M\+E}
+
+{\bfseries security-\/pack} -\/ Encrypts the application package
+
+\section*{S\+Y\+N\+O\+P\+S\+I\+S}
+
+{\ttfamily security-\/pack A\+P\+P\+\_\+\+F\+I\+L\+E}~\newline
+
+
+\section*{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N}
+
+This tool encrypts a given application package. The default security-\/pack script renames the received file without encrypting it. Customers have to rewrite this script as per their requirement. Secure installation also requires a corresponding security-\/unpack tool on the device to decrypt the received image.
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsHost_setname}{}\subsection{setname}\label{toolsHost_setname}
+\section*{N\+A\+M\+E}
+
+{\bfseries setname} -\/ change the hostname of the target
+
+\section*{S\+Y\+N\+O\+P\+S\+I\+S}
+
+{\ttfamily setname N\+A\+M\+E \mbox{[}T\+A\+R\+G\+E\+T\+\_\+\+I\+P\mbox{]}}~\newline
+
+
+\section*{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N}
+
+With a default prompt set, when you log into the target by U\+A\+R\+T or ssh, the commandline prompt will be root@swi-\/mdm9x15. If you are logged into multiple targets or you have multiple targets on your network, it can be helpful to give each its own hostname so its easy to tell which device you have connected to. After running this command, the hostname of the target will be changed to the name given in N\+A\+M\+E.
+
+\section*{E\+N\+V\+I\+R\+O\+N\+M\+E\+N\+T}
+
+\begin{DoxyVerb}If the TARGET_IP value is not given and the environment variable DEST_IP
+is set then DEST_IP will be used as TARGET_IP
+\end{DoxyVerb}
+
+
+\section*{N\+O\+T\+E\+S}
+
+Unfortunately, due to the way shells set up their internal variables only the prompt of new shells will manifest the new hostname. Currently open shells will continue to show the previous hostname.
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsHost_settime}{}\subsection{settime}\label{toolsHost_settime}
+\section*{N\+A\+M\+E}
+
+{\bfseries settime} -\/ set the time on target
+
+\section*{S\+Y\+N\+O\+P\+S\+I\+S}
+
+{\ttfamily settime \mbox{[}T\+A\+R\+G\+E\+T\+\_\+\+I\+P\mbox{]}}~\newline
+
+
+\section*{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N}
+
+Sets the target time to be the same as the host time. The time is synchronized on the basis of U\+T\+C time but the time displayed by date or the time stamps in syslog will use timezone information if set by settz.
+
+\section*{E\+N\+V\+I\+R\+O\+N\+M\+E\+N\+T}
+
+\begin{DoxyVerb}If the TARGET_IP value is not given and the environment variable DEST_IP
+is set then DEST_IP will be used as TARGET_IP
+\end{DoxyVerb}
+
+
+\section*{N\+O\+T\+E\+S}
+
+This tool creates a master ssh socket named root@$<$T\+A\+R\+G\+E\+T\+\_\+\+I\+P$>$\+\_\+legato\+\_\+tools in .ssh/ so that it can open subsequent connections quickly. The socket is deleted if the script ends normally.
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsHost_settz}{}\subsection{settz}\label{toolsHost_settz}
+\section*{N\+A\+M\+E}
+
+{\bfseries settz} -\/ set the timezone on target
+
+\section*{S\+Y\+N\+O\+P\+S\+I\+S}
+
+{\ttfamily settz \mbox{[}T\+A\+R\+G\+E\+T\+\_\+\+I\+P\mbox{]}}~\newline
+ {\ttfamily settz -\/u$\vert$utc \mbox{[}T\+A\+R\+G\+E\+T\+\_\+\+I\+P\mbox{]}}~\newline
+ {\ttfamily settz -\/s$\vert$select \mbox{[}T\+A\+R\+G\+E\+T\+\_\+\+I\+P\mbox{]}}~\newline
+
+
+\section*{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N}
+
+settz \mbox{[}T\+A\+R\+G\+E\+T\+\_\+\+I\+P\mbox{]}
+\begin{DoxyItemize}
+\item Set target to the same timezone as the host machine
+\end{DoxyItemize}
+
+settz -\/u$\vert$utc \mbox{[}T\+A\+R\+G\+E\+T\+\_\+\+I\+P\mbox{]}
+\begin{DoxyItemize}
+\item Set target to U\+T\+C timezone
+\end{DoxyItemize}
+
+settz -\/s$\vert$select \mbox{[}T\+A\+R\+G\+E\+T\+\_\+\+I\+P\mbox{]}
+\begin{DoxyItemize}
+\item Use tzselect to pick a timezone from the known timezones
+\end{DoxyItemize}
+
+\section*{E\+N\+V\+I\+R\+O\+N\+M\+E\+N\+T}
+
+\begin{DoxyVerb}If the TARGET_IP value is not given and the environment variable DEST_IP
+is set then DEST_IP will be used as TARGET_IP
+\end{DoxyVerb}
+
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsHost_simu}{}\subsection{simu}\label{toolsHost_simu}
+\section*{N\+A\+M\+E}
+
+{\bfseries simu} -\/ helper script to use the simulation environement
+
+\section*{S\+Y\+N\+O\+P\+S\+I\+S}
+
+{\ttfamily simu start}~\newline
+ {\ttfamily simu stop}~\newline
+ {\ttfamily simu shell $\vert$ ssh $\vert$ sh}~\newline
+ {\ttfamily simu push \mbox{[}L\+O\+C\+A\+L\mbox{]} \mbox{[}R\+E\+M\+O\+T\+E\mbox{]}}~\newline
+ {\ttfamily simu pull \mbox{[}L\+O\+C\+A\+L\mbox{]} \mbox{[}R\+E\+M\+O\+T\+E\mbox{]}}~\newline
+ {\ttfamily simu instlegato}~\newline
+ {\ttfamily simu instapp \mbox{[}A\+P\+P\+\_\+\+P\+A\+T\+H\mbox{]}}~\newline
+
+
+\section*{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N}
+
+simu start
+\begin{DoxyItemize}
+\item Start Q\+Emu.
+\end{DoxyItemize}
+
+simu stop
+\begin{DoxyItemize}
+\item Stop Q\+Emu.
+\end{DoxyItemize}
+
+simu shell simu sh simu ssh
+\begin{DoxyItemize}
+\item Get into a shell on the target.
+\end{DoxyItemize}
+
+simu push \mbox{[}L\+O\+C\+A\+L\mbox{]} \mbox{[}R\+E\+M\+O\+T\+E\mbox{]} simu pull \mbox{[}L\+O\+C\+A\+L\mbox{]} \mbox{[}R\+E\+M\+O\+T\+E\mbox{]}
+\begin{DoxyItemize}
+\item Transmit a file or directory to/from the target.
+\end{DoxyItemize}
+
+simu instlegato
+\begin{DoxyItemize}
+\item Install Legato on the virtual target.
+\end{DoxyItemize}
+
+simu instapp \mbox{[}A\+P\+P\+\_\+\+P\+A\+T\+H\mbox{]}
+\begin{DoxyItemize}
+\item Install application from A\+P\+P\+\_\+\+P\+A\+T\+H on the virtual target.
+\end{DoxyItemize}
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsHost_startapp}{}\subsection{startapp}\label{toolsHost_startapp}
+\section*{N\+A\+M\+E}
+
+{\bfseries startapp} -\/ show status of apps on target
+
+\section*{S\+Y\+N\+O\+P\+S\+I\+S}
+
+{\ttfamily startapp A\+P\+P\+\_\+\+N\+A\+M\+E \mbox{[}T\+A\+R\+G\+E\+T\+\_\+\+I\+P\mbox{]}}~\newline
+
+
+\section*{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N}
+
+If the application A\+P\+P\+\_\+\+N\+A\+M\+E is installed on the target at T\+A\+R\+G\+E\+T\+\_\+\+I\+P then the app will be started. If the A\+P\+P\+\_\+\+N\+A\+M\+E is given as \char`\"{}$\ast$\char`\"{} (including the quotes) then all apps on the target will be started.
+
+\section*{E\+N\+V\+I\+R\+O\+N\+M\+E\+N\+T}
+
+\begin{DoxyVerb}If the TARGET_IP value is not given and the environment variable DEST_IP
+is set then DEST_IP will be used as TARGET_IP
+\end{DoxyVerb}
+
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsHost_startlegato}{}\subsection{startlegato}\label{toolsHost_startlegato}
+\section*{N\+A\+M\+E}
+
+{\bfseries startlegato} -\/ start legato on the localhost
+
+\section*{S\+Y\+N\+O\+P\+S\+I\+S}
+
+{\ttfamily startlegato \mbox{[}L\+O\+G\+\_\+\+F\+I\+L\+E\mbox{]}}~\newline
+
+
+\section*{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N}
+
+startlegato launches the Legato Service Directory, Log Control Daemon and Config Tree on the localhost machine. This provides a legato environmnet in which you can run and test apps on the localhost that have been built for the localhost target.
+
+If given, L\+O\+G\+\_\+\+F\+I\+L\+E specifies the name of a file to output the legato log messages to.
+
+Exit code\+:
+\begin{DoxyItemize}
+\item 0 if the services started successfully
+\item 1 if the services were already running
+\item 2 if an error occurred
+\end{DoxyItemize}
+
+Currently running supervisor on localhost is not supported so apps requiring the services of the supervisor or the associated watchdog service cannot be run on localhost at this time.
+
+To stop legato see stoplegato
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsHost_statapp}{}\subsection{statapp}\label{toolsHost_statapp}
+\section*{N\+A\+M\+E}
+
+{\bfseries statapp} -\/ show status of apps on target
+
+\section*{S\+Y\+N\+O\+P\+S\+I\+S}
+
+{\ttfamily statapp \mbox{[}T\+A\+R\+G\+E\+T\+\_\+\+I\+P\mbox{]}}~\newline
+
+
+\section*{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N}
+
+The target at T\+A\+R\+G\+E\+T\+\_\+\+I\+P will be queried to find out the status of all installed applications and a list of all running and stopped apps will be returned
+
+\section*{E\+N\+V\+I\+R\+O\+N\+M\+E\+N\+T}
+
+\begin{DoxyVerb}If the TARGET_IP value is not given and the environment variable DEST_IP
+is set then DEST_IP will be used as TARGET_IP
+\end{DoxyVerb}
+
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsHost_stopapp}{}\subsection{stopapp}\label{toolsHost_stopapp}
+\section*{N\+A\+M\+E}
+
+{\bfseries stopapp} -\/ stop an app that is currently running on target
+
+\section*{S\+Y\+N\+O\+P\+S\+I\+S}
+
+{\ttfamily stopapp A\+P\+P\+\_\+\+N\+A\+M\+E \mbox{[}T\+A\+R\+G\+E\+T\+\_\+\+I\+P\mbox{]}}~\newline
+
+
+\section*{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N}
+
+If A\+P\+P\+\_\+\+N\+A\+M\+E is currently running on the target at T\+A\+R\+G\+E\+T\+\_\+\+I\+P, stopapp will cause the app to cease execution. If A\+P\+P\+\_\+\+N\+A\+M\+E is not currently running or is not installed, a message to that effect will be printed. If the A\+P\+P\+\_\+\+N\+A\+M\+E is given as \char`\"{}$\ast$\char`\"{} (including the quotes) then all apps on the target will be stopped.
+
+\section*{E\+N\+V\+I\+R\+O\+N\+M\+E\+N\+T}
+
+\begin{DoxyVerb}If the TARGET_IP value is not given and the environment variable DEST_IP
+is set then DEST_IP will be used as TARGET_IP
+\end{DoxyVerb}
+
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{toolsHost_stoplegato}{}\subsection{stoplegato}\label{toolsHost_stoplegato}
+\section*{N\+A\+M\+E}
+
+{\bfseries stoplegato} -\/ stop legato on the localhost
+
+\section*{S\+Y\+N\+O\+P\+S\+I\+S}
+
+{\ttfamily stoplegato }~\newline
+
+
+\section*{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N}
+
+stoplegato stops the Legato Service Directory, Log Control Daemon and Config Tree on the localhost machine (started by startlegato).
+
+The exit code will be 1 if the script failed to stop any of the components. An exit code of 0 indicates that legato is now not running either because it was successfully stopped or it was not running in the first place.
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{buildTools}{}\section{Build}\label{buildTools}
+\hypertarget{build_tools_buildTools_mktoolsOverview}{}\subsection{Overview}\label{build_tools_buildTools_mktoolsOverview}
+Legato has tools to build components, executables, apps and app systems. They all that start with {\ttfamily mk} (we call them {\ttfamily mktools})\+: ~\newline
+
+
+\hyperlink{buildToolsmkapp}{mkapp} -\/ generate an app bundle to install and run on a target. ~\newline
+ \hyperlink{buildToolsmksys}{mksys} -\/ generate a system bundle to install and run on a target. ~\newline
+ \hyperlink{buildToolsmkexe}{mkexe} -\/ create an executable program. ~\newline
+ \hyperlink{buildToolsmkcomp}{mkcomp} -\/ pre-\/build a component library ({\ttfamily .so}) file. ~\newline
+
+
+These build tools are used to\+:
+\begin{DoxyItemize}
+\item generate boiler-\/plate code
+\item simplify component-\/based software development
+\item package apps and config settings to deploy to targets.
+\end{DoxyItemize}
+
+Most developers will usually only need \hyperlink{buildToolsmkapp}{mkapp} and \hyperlink{buildToolsmksys}{mksys}.
+
+\hyperlink{buildToolsmkexe}{mkexe} is only needed to build an executable for a target without packaging it as an app. This can be useful to build command-\/line tools to copy to a target or bundle in a root file system image.
+
+\hyperlink{buildToolsmkcomp}{mkcomp} can be used to build libraries from component sources, if a separate step is needed as a part of a complex, custom, staged build system (instead of letting mksys, mkapp, or mkexe handle it).
+
+\subsection*{Interface Generation Tool}
+
+The \hyperlink{buildToolsifgen}{ifgen} tool is used to parse interface def .api files and generate include files and I\+P\+C code. The {\ttfamily ifgen} tool is usually run automatically by the {\ttfamily mktools}.
+
+
+
+ Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{buildToolsmkapp}{}\subsection{mkapp}\label{buildToolsmkapp}
+Make Application\+: run {\ttfamily mkapp} to generate an app bundle to install and run on a target.
+
+Application bundles are compressed archives containing everything that needs to be sent to your target device to install your app.
+
+The main input for {\ttfamily mkapp} is an \hyperlink{defFilesAdef}{Application Definition .adef} file that contains these definitions\+:
+
+
+\begin{DoxyItemize}
+\item executables to build when the app is built
+\item components and/or other files to build into those executables
+\item other files to be included as a part of the app
+\item if the app will run in a sandbox, files to access outside the sandbox
+\item executables to run when the app is started
+\item command-\/line arguments and environment variables to pass to those apps
+\item limits to place on the app (C\+P\+U, memory, etc.)
+\end{DoxyItemize}
+
+{\ttfamily mkapp} will parse the .adef file, determine which components, interface definitions, and other source files are needed, build those into the libraries and executables required, generate the on-\/target configuration data needed, and add everything to an app bundle ready for installation on the target.
+
+To display usage, run \begin{DoxyVerb}mkapp --help\end{DoxyVerb}
+
+
+\begin{DoxyNote}{Note}
+{\ttfamily mkapp} only knows about the app it\textquotesingle{}s building. Typos in binding values won\textquotesingle{}t be detected, but your app will hang. The note in \hyperlink{buildToolsmksys}{mksys} has details how to troubleshoot.
+\end{DoxyNote}
+See \hyperlink{defFilesAdef}{Application Definition .adef} files for details on app def files.
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{buildToolsmksys}{}\subsection{mksys}\label{buildToolsmksys}
+{\itshape Support for {\ttfamily mksys} is incomplete.} ~\newline
+
+
+Make System\+: run {\ttfamily mksys} to generate a system bundle to install and run on a target.
+
+System bundles are compressed archives containing a collection of apps and access control configuration settings that allow them to interact with each other, as defined within an \hyperlink{defFilesSdef}{.sdef file}.
+
+The main input for {\ttfamily mksys} is an \hyperlink{defFilesSdef}{System Definition .sdef} file that contains these definitions\+:
+\begin{DoxyItemize}
+\item apps to deploy to the target device
+\item permitted inter-\/app communication
+\item limits, environment variables, and configuration settings to add or override.
+\end{DoxyItemize}
+
+{\ttfamily mksys} will parse the .sdef file, find the .adef files for the apps, build the apps, generate on-\/target access control configuration settings, and bundle everything into a system bundle for installation on the target device.
+
+\begin{DoxyNote}{Note}
+{\ttfamily mksys} can also help to validate target bindings. {\ttfamily mkapp} only knows about the app it\textquotesingle{}s building. Things like typos in binding values won\textquotesingle{}t be detected, but will show up with your app hanging. After running mksys, if your app hangs, run {\ttfamily sdir list} (\hyperlink{toolsTarget_sdir}{sdir}) to determine if it\textquotesingle{}s failing because it\textquotesingle{}s unbound, or the server isn\textquotesingle{}t running\+: {\ttfamily sdir} list shows services that are running.
+\end{DoxyNote}
+To display usage, run \begin{DoxyVerb}mksys --help\end{DoxyVerb}
+
+
+\hyperlink{defFilesSdef}{System Definition .sdef} files for more info.
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{buildToolsmkexe}{}\subsection{mkexe}\label{buildToolsmkexe}
+Make Executable\+: run {\ttfamily mkexe} to create an executable program.
+
+{\ttfamily mkexe} is normally not needed. The \hyperlink{buildToolsmkapp}{mkapp} or \hyperlink{buildToolsmksys}{mksys} should be used to build an entire app or system of interacting apps to deploy to a target device.
+
+{\ttfamily mkexe} is only needed to build an executable program to copy to a target device and run outside of any app. This sometimes comes in handy to build\+:
+\begin{DoxyItemize}
+\item command-\/line tools that can be run by the root user through {\ttfamily ssh} or
+\item programs executed by other on-\/target programs after the Legato framework has started (e.\+g., scripts to run when a D\+H\+C\+P client is granted or loses a D\+H\+C\+P lease).
+\end{DoxyItemize}
+
+To display usage, run \begin{DoxyVerb}mkexe --help\end{DoxyVerb}
+
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{buildToolsmkcomp}{}\subsection{mkcomp}\label{buildToolsmkcomp}
+Make Component\+: run {\ttfamily mkcomp} to pre-\/build a component library ({\ttfamily .so}) file.
+
+{\ttfamily mkcomp} is normally not needed when building through the command line.
+
+When using the command line, an entire app or system of interacting apps can be built using \hyperlink{buildToolsmkapp}{mkapp} or \hyperlink{buildToolsmksys}{mksys}. Those tools also build the component libraries as needed.
+
+{\ttfamily mkcomp} is primarily a workaround to support integration with some legacy programs that implement their own {\ttfamily main()} function. In such cases, {\ttfamily mkcomp} can be used to build component libraries for use by the legacy program.
+
+To display usage, run \begin{DoxyVerb}mkcomp --help\end{DoxyVerb}
+
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{buildToolsifgen}{}\subsection{ifgen}\label{buildToolsifgen}
+The {\ttfamily ifgen} Interface Generation tool parses interface definition ({\ttfamily .api}) files, and generates include files and I\+P\+C code (as needed).
+
+{\ttfamily ifgen} can be run manually, but it\textquotesingle{}s usually run automatically by the {\ttfamily mktools}.
+
+{\ttfamily ifgen} usage details are displayed using the {\ttfamily -\/h} or {\ttfamily --help} options\+:
+
+Related info about ifgen\+: \hyperlink{interfaceDefLang}{Interface Definition Language}.
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 

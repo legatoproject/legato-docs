@@ -1,0 +1,117 @@
+\hypertarget{le__sec_store__interface_8h}{}\section{build/localhost/interfaces/le\+\_\+sec\+Store\+\_\+interface.h File Reference}
+\label{le__sec_store__interface_8h}\index{build/localhost/interfaces/le\+\_\+sec\+Store\+\_\+interface.\+h@{build/localhost/interfaces/le\+\_\+sec\+Store\+\_\+interface.\+h}}
+{\ttfamily \#include \char`\"{}legato.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{le__sec_store__interface_8h_a81d6ba9fca59a629259d5d45bd48b091}{L\+E\+\_\+\+S\+E\+C\+S\+T\+O\+R\+E\+\_\+\+M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+Z\+E}~255
+\item 
+\#define \hyperlink{le__sec_store__interface_8h_ae398ccb382fe59fce5c07fa339629ae8}{L\+E\+\_\+\+S\+E\+C\+S\+T\+O\+R\+E\+\_\+\+M\+A\+X\+\_\+\+I\+T\+E\+M\+\_\+\+S\+I\+Z\+E}~8192
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{le__sec_store__interface_8h_aff3449babb2af88f6fdf0440ebd0b6c1}{le\+\_\+sec\+Store\+\_\+\+Connect\+Service} (void)
+\item 
+void \hyperlink{le__sec_store__interface_8h_ae3bad5e625173f32735b398095392b1d}{le\+\_\+sec\+Store\+\_\+\+Disconnect\+Service} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__sec_store__interface_8h_acb8b225d19e1bd1ebde45cddcd962edc}{le\+\_\+sec\+Store\+\_\+\+Write} (const char $\ast$name, const uint8\+\_\+t $\ast$buf\+Ptr, size\+\_\+t buf\+Num\+Elements)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__sec_store__interface_8h_aa09cc29c6c645ae272583c1e23a3c33c}{le\+\_\+sec\+Store\+\_\+\+Read} (const char $\ast$name, uint8\+\_\+t $\ast$buf\+Ptr, size\+\_\+t $\ast$buf\+Num\+Elements\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__sec_store__interface_8h_a8d6a2676272cca0a26e9e5d634a39cce}{le\+\_\+sec\+Store\+\_\+\+Delete} (const char $\ast$name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_secStore}{Secure Storage} A\+P\+I
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{le__sec_store__interface_8h_ae398ccb382fe59fce5c07fa339629ae8}{}\index{le\+\_\+sec\+Store\+\_\+interface.\+h@{le\+\_\+sec\+Store\+\_\+interface.\+h}!L\+E\+\_\+\+S\+E\+C\+S\+T\+O\+R\+E\+\_\+\+M\+A\+X\+\_\+\+I\+T\+E\+M\+\_\+\+S\+I\+Z\+E@{L\+E\+\_\+\+S\+E\+C\+S\+T\+O\+R\+E\+\_\+\+M\+A\+X\+\_\+\+I\+T\+E\+M\+\_\+\+S\+I\+Z\+E}}
+\index{L\+E\+\_\+\+S\+E\+C\+S\+T\+O\+R\+E\+\_\+\+M\+A\+X\+\_\+\+I\+T\+E\+M\+\_\+\+S\+I\+Z\+E@{L\+E\+\_\+\+S\+E\+C\+S\+T\+O\+R\+E\+\_\+\+M\+A\+X\+\_\+\+I\+T\+E\+M\+\_\+\+S\+I\+Z\+E}!le\+\_\+sec\+Store\+\_\+interface.\+h@{le\+\_\+sec\+Store\+\_\+interface.\+h}}
+\subsubsection[{L\+E\+\_\+\+S\+E\+C\+S\+T\+O\+R\+E\+\_\+\+M\+A\+X\+\_\+\+I\+T\+E\+M\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+S\+E\+C\+S\+T\+O\+R\+E\+\_\+\+M\+A\+X\+\_\+\+I\+T\+E\+M\+\_\+\+S\+I\+Z\+E~8192}\label{le__sec_store__interface_8h_ae398ccb382fe59fce5c07fa339629ae8}
+Maximum number of bytes for each item in secure storage. \hypertarget{le__sec_store__interface_8h_a81d6ba9fca59a629259d5d45bd48b091}{}\index{le\+\_\+sec\+Store\+\_\+interface.\+h@{le\+\_\+sec\+Store\+\_\+interface.\+h}!L\+E\+\_\+\+S\+E\+C\+S\+T\+O\+R\+E\+\_\+\+M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+Z\+E@{L\+E\+\_\+\+S\+E\+C\+S\+T\+O\+R\+E\+\_\+\+M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+Z\+E}}
+\index{L\+E\+\_\+\+S\+E\+C\+S\+T\+O\+R\+E\+\_\+\+M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+Z\+E@{L\+E\+\_\+\+S\+E\+C\+S\+T\+O\+R\+E\+\_\+\+M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+Z\+E}!le\+\_\+sec\+Store\+\_\+interface.\+h@{le\+\_\+sec\+Store\+\_\+interface.\+h}}
+\subsubsection[{L\+E\+\_\+\+S\+E\+C\+S\+T\+O\+R\+E\+\_\+\+M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+S\+E\+C\+S\+T\+O\+R\+E\+\_\+\+M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+Z\+E~255}\label{le__sec_store__interface_8h_a81d6ba9fca59a629259d5d45bd48b091}
+Maximum number of characters permited for a secure storage item name. 
+
+\subsection{Function Documentation}
+\hypertarget{le__sec_store__interface_8h_aff3449babb2af88f6fdf0440ebd0b6c1}{}\index{le\+\_\+sec\+Store\+\_\+interface.\+h@{le\+\_\+sec\+Store\+\_\+interface.\+h}!le\+\_\+sec\+Store\+\_\+\+Connect\+Service@{le\+\_\+sec\+Store\+\_\+\+Connect\+Service}}
+\index{le\+\_\+sec\+Store\+\_\+\+Connect\+Service@{le\+\_\+sec\+Store\+\_\+\+Connect\+Service}!le\+\_\+sec\+Store\+\_\+interface.\+h@{le\+\_\+sec\+Store\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+sec\+Store\+\_\+\+Connect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+sec\+Store\+\_\+\+Connect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__sec_store__interface_8h_aff3449babb2af88f6fdf0440ebd0b6c1}
+Connect the client to the service \hypertarget{le__sec_store__interface_8h_a8d6a2676272cca0a26e9e5d634a39cce}{}\index{le\+\_\+sec\+Store\+\_\+interface.\+h@{le\+\_\+sec\+Store\+\_\+interface.\+h}!le\+\_\+sec\+Store\+\_\+\+Delete@{le\+\_\+sec\+Store\+\_\+\+Delete}}
+\index{le\+\_\+sec\+Store\+\_\+\+Delete@{le\+\_\+sec\+Store\+\_\+\+Delete}!le\+\_\+sec\+Store\+\_\+interface.\+h@{le\+\_\+sec\+Store\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+sec\+Store\+\_\+\+Delete}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+sec\+Store\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\label{le__sec_store__interface_8h_a8d6a2676272cca0a26e9e5d634a39cce}
+Deletes an item from secure storage.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+O\+K if successful. L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D if the item doesn\textquotesingle{}t exist. L\+E\+\_\+\+U\+N\+A\+V\+A\+I\+L\+A\+B\+L\+E if the secure storage is currently unavailable. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & Name of the secure storage item. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__sec_store__interface_8h_ae3bad5e625173f32735b398095392b1d}{}\index{le\+\_\+sec\+Store\+\_\+interface.\+h@{le\+\_\+sec\+Store\+\_\+interface.\+h}!le\+\_\+sec\+Store\+\_\+\+Disconnect\+Service@{le\+\_\+sec\+Store\+\_\+\+Disconnect\+Service}}
+\index{le\+\_\+sec\+Store\+\_\+\+Disconnect\+Service@{le\+\_\+sec\+Store\+\_\+\+Disconnect\+Service}!le\+\_\+sec\+Store\+\_\+interface.\+h@{le\+\_\+sec\+Store\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+sec\+Store\+\_\+\+Disconnect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+sec\+Store\+\_\+\+Disconnect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__sec_store__interface_8h_ae3bad5e625173f32735b398095392b1d}
+Disconnect the client from the service \hypertarget{le__sec_store__interface_8h_aa09cc29c6c645ae272583c1e23a3c33c}{}\index{le\+\_\+sec\+Store\+\_\+interface.\+h@{le\+\_\+sec\+Store\+\_\+interface.\+h}!le\+\_\+sec\+Store\+\_\+\+Read@{le\+\_\+sec\+Store\+\_\+\+Read}}
+\index{le\+\_\+sec\+Store\+\_\+\+Read@{le\+\_\+sec\+Store\+\_\+\+Read}!le\+\_\+sec\+Store\+\_\+interface.\+h@{le\+\_\+sec\+Store\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+sec\+Store\+\_\+\+Read}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+sec\+Store\+\_\+\+Read (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{uint8\+\_\+t $\ast$}]{buf\+Ptr, }
+\item[{size\+\_\+t $\ast$}]{buf\+Num\+Elements\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__sec_store__interface_8h_aa09cc29c6c645ae272583c1e23a3c33c}
+Reads an item from secure storage.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+O\+K if successful. L\+E\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W if the buffer is too small to hold the entire item. No data will be written to the buffer in this case. L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D if the item doesn\textquotesingle{}t exist. L\+E\+\_\+\+U\+N\+A\+V\+A\+I\+L\+A\+B\+L\+E if the secure storage is currently unavailable. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & Name of the secure storage item. \\
+\hline
+\mbox{\tt out}  & {\em buf\+Ptr} & Buffer to store the data in. \\
+\hline
+\mbox{\tt in,out}  & {\em buf\+Num\+Elements\+Ptr} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__sec_store__interface_8h_acb8b225d19e1bd1ebde45cddcd962edc}{}\index{le\+\_\+sec\+Store\+\_\+interface.\+h@{le\+\_\+sec\+Store\+\_\+interface.\+h}!le\+\_\+sec\+Store\+\_\+\+Write@{le\+\_\+sec\+Store\+\_\+\+Write}}
+\index{le\+\_\+sec\+Store\+\_\+\+Write@{le\+\_\+sec\+Store\+\_\+\+Write}!le\+\_\+sec\+Store\+\_\+interface.\+h@{le\+\_\+sec\+Store\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+sec\+Store\+\_\+\+Write}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+sec\+Store\+\_\+\+Write (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{const uint8\+\_\+t $\ast$}]{buf\+Ptr, }
+\item[{size\+\_\+t}]{buf\+Num\+Elements}
+\end{DoxyParamCaption}
+)}\label{le__sec_store__interface_8h_acb8b225d19e1bd1ebde45cddcd962edc}
+Writes an item to secure storage. If the item already exists, it\textquotesingle{}ll be overwritten with the new value. If the item doesn\textquotesingle{}t already exist, it\textquotesingle{}ll be created.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+O\+K if successful. L\+E\+\_\+\+N\+O\+\_\+\+M\+E\+M\+O\+R\+Y if there isn\textquotesingle{}t enough memory to store the item. L\+E\+\_\+\+U\+N\+A\+V\+A\+I\+L\+A\+B\+L\+E if the secure storage is currently unavailable. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & Name of the secure storage item. \\
+\hline
+\mbox{\tt in}  & {\em buf\+Ptr} & Buffer contain the data to store. \\
+\hline
+\mbox{\tt in}  & {\em buf\+Num\+Elements} & \\
+\hline
+\end{DoxyParams}

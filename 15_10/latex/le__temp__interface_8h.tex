@@ -1,0 +1,296 @@
+\hypertarget{le__temp__interface_8h}{}\section{build/localhost/interfaces/le\+\_\+temp\+\_\+interface.h File Reference}
+\label{le__temp__interface_8h}\index{build/localhost/interfaces/le\+\_\+temp\+\_\+interface.\+h@{build/localhost/interfaces/le\+\_\+temp\+\_\+interface.\+h}}
+{\ttfamily \#include \char`\"{}legato.\+h\char`\"{}}\\*
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct le\+\_\+temp\+\_\+\+Threshold\+Event\+Handler $\ast$ \hyperlink{le__temp__interface_8h_a10c66144cf9c183f133ddb36595615e0}{le\+\_\+temp\+\_\+\+Threshold\+Event\+Handler\+Ref\+\_\+t}
+\item 
+typedef void($\ast$ \hyperlink{le__temp__interface_8h_a8cab8ce89aab9f4d5fb31fd9626ee794}{le\+\_\+temp\+\_\+\+Threshold\+Event\+Handler\+Func\+\_\+t}) (\hyperlink{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905e}{le\+\_\+temp\+\_\+\+Threshold\+Status\+\_\+t} event, void $\ast$context\+Ptr)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905e}{le\+\_\+temp\+\_\+\+Threshold\+Status\+\_\+t} \{ \\*
+\hyperlink{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905ea565d203087bb1044117e61b5b05e7b97}{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+H\+I\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L}, 
+\hyperlink{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905eacdf5c64703a61def1adff875f3c11a29}{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+R\+A\+D\+I\+O\+\_\+\+H\+I\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L}, 
+\hyperlink{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905ea52d96799c77f5275247a29cfb047617e}{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+H\+I\+\_\+\+W\+A\+R\+N\+I\+N\+G}, 
+\hyperlink{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905ea61e277bbe61d39c30ac7e5e29ba9b680}{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+R\+A\+D\+I\+O\+\_\+\+H\+I\+\_\+\+W\+A\+R\+N\+I\+N\+G}, 
+\\*
+\hyperlink{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905ea632c047a2d07add0f67f8f20d0e26659}{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+N\+O\+R\+M\+A\+L}, 
+\hyperlink{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905ea3e67f0903ccece25242a794256b70f49}{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+R\+A\+D\+I\+O\+\_\+\+N\+O\+R\+M\+A\+L}, 
+\hyperlink{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905ea19335201bad274b4ed157d3beee15d15}{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+W\+\_\+\+W\+A\+R\+N\+I\+N\+G}, 
+\hyperlink{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905ea44e0ed21d7212db80ebd461b35eb330a}{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+W\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{le__temp__interface_8h_ab23dc70f44db65ba89d1fcf63dee8296}{le\+\_\+temp\+\_\+\+Connect\+Service} (void)
+\item 
+void \hyperlink{le__temp__interface_8h_a74eab024a7cb29e99488686f26be2595}{le\+\_\+temp\+\_\+\+Disconnect\+Service} (void)
+\item 
+\hyperlink{le__temp__interface_8h_a10c66144cf9c183f133ddb36595615e0}{le\+\_\+temp\+\_\+\+Threshold\+Event\+Handler\+Ref\+\_\+t} \hyperlink{le__temp__interface_8h_acb2ef2d56777133835b843a786103268}{le\+\_\+temp\+\_\+\+Add\+Threshold\+Event\+Handler} (\hyperlink{le__temp__interface_8h_a8cab8ce89aab9f4d5fb31fd9626ee794}{le\+\_\+temp\+\_\+\+Threshold\+Event\+Handler\+Func\+\_\+t} handler\+Ptr, void $\ast$context\+Ptr)
+\item 
+void \hyperlink{le__temp__interface_8h_a29fa7d59baed8a6ee058e32e2cddbd74}{le\+\_\+temp\+\_\+\+Remove\+Threshold\+Event\+Handler} (\hyperlink{le__temp__interface_8h_a10c66144cf9c183f133ddb36595615e0}{le\+\_\+temp\+\_\+\+Threshold\+Event\+Handler\+Ref\+\_\+t} add\+Handler\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__temp__interface_8h_ad5a5d27181c71928e3b8a5a0476e8b08}{le\+\_\+temp\+\_\+\+Get\+Platform\+Temperature} (int32\+\_\+t $\ast$platform\+Temp\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__temp__interface_8h_af02a78a861bb30c2b17049da34b30409}{le\+\_\+temp\+\_\+\+Get\+Radio\+Temperature} (int32\+\_\+t $\ast$radio\+Temp\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__temp__interface_8h_aea0cace31c93751db6d48be522e073b8}{le\+\_\+temp\+\_\+\+Set\+Platform\+Thresholds} (int32\+\_\+t low\+Critical\+Temp, int32\+\_\+t low\+Warning\+Temp, int32\+\_\+t hi\+Warning\+Temp, int32\+\_\+t hi\+Critical\+Temp)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__temp__interface_8h_a00a364d667662c110b51fa1475dcc39f}{le\+\_\+temp\+\_\+\+Get\+Platform\+Thresholds} (int32\+\_\+t $\ast$low\+Critical\+Temp\+Ptr, int32\+\_\+t $\ast$low\+Warning\+Temp\+Ptr, int32\+\_\+t $\ast$hi\+Warning\+Temp\+Ptr, int32\+\_\+t $\ast$hi\+Critical\+Temp\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__temp__interface_8h_a476e20b815d3df88ff00ebe1fab42792}{le\+\_\+temp\+\_\+\+Set\+Radio\+Thresholds} (int32\+\_\+t hi\+Warning\+Temp, int32\+\_\+t hi\+Critical\+Temp)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__temp__interface_8h_a275ce92a6ed5376a978b5be5687f6cd1}{le\+\_\+temp\+\_\+\+Get\+Radio\+Thresholds} (int32\+\_\+t $\ast$hi\+Warning\+Temp\+Ptr, int32\+\_\+t $\ast$hi\+Critical\+Temp\+Ptr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_temp}{Temperature Monitoring} include file.
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Typedef Documentation}
+\hypertarget{le__temp__interface_8h_a8cab8ce89aab9f4d5fb31fd9626ee794}{}\index{le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}!le\+\_\+temp\+\_\+\+Threshold\+Event\+Handler\+Func\+\_\+t@{le\+\_\+temp\+\_\+\+Threshold\+Event\+Handler\+Func\+\_\+t}}
+\index{le\+\_\+temp\+\_\+\+Threshold\+Event\+Handler\+Func\+\_\+t@{le\+\_\+temp\+\_\+\+Threshold\+Event\+Handler\+Func\+\_\+t}!le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+temp\+\_\+\+Threshold\+Event\+Handler\+Func\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ le\+\_\+temp\+\_\+\+Threshold\+Event\+Handler\+Func\+\_\+t) ({\bf le\+\_\+temp\+\_\+\+Threshold\+Status\+\_\+t} event, void $\ast$context\+Ptr)}\label{le__temp__interface_8h_a8cab8ce89aab9f4d5fb31fd9626ee794}
+Handler for Temperature event.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Temperature threshold event reached. \\
+\hline
+{\em context\+Ptr} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__temp__interface_8h_a10c66144cf9c183f133ddb36595615e0}{}\index{le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}!le\+\_\+temp\+\_\+\+Threshold\+Event\+Handler\+Ref\+\_\+t@{le\+\_\+temp\+\_\+\+Threshold\+Event\+Handler\+Ref\+\_\+t}}
+\index{le\+\_\+temp\+\_\+\+Threshold\+Event\+Handler\+Ref\+\_\+t@{le\+\_\+temp\+\_\+\+Threshold\+Event\+Handler\+Ref\+\_\+t}!le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+temp\+\_\+\+Threshold\+Event\+Handler\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+temp\+\_\+\+Threshold\+Event\+Handler$\ast$ {\bf le\+\_\+temp\+\_\+\+Threshold\+Event\+Handler\+Ref\+\_\+t}}\label{le__temp__interface_8h_a10c66144cf9c183f133ddb36595615e0}
+Reference type used by Add/\+Remove functions for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+temp\+\_\+\+Threshold\+Event\textquotesingle{} 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905e}{}\index{le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}!le\+\_\+temp\+\_\+\+Threshold\+Status\+\_\+t@{le\+\_\+temp\+\_\+\+Threshold\+Status\+\_\+t}}
+\index{le\+\_\+temp\+\_\+\+Threshold\+Status\+\_\+t@{le\+\_\+temp\+\_\+\+Threshold\+Status\+\_\+t}!le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+temp\+\_\+\+Threshold\+Status\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+temp\+\_\+\+Threshold\+Status\+\_\+t}}\label{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905e}
+Temperature event type. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+H\+I\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L@{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+H\+I\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L}!le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}}\index{le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}!L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+H\+I\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L@{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+H\+I\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L}}\item[{\em 
+\hypertarget{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905ea565d203087bb1044117e61b5b05e7b97}{}L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+H\+I\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\label{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905ea565d203087bb1044117e61b5b05e7b97}
+}]High Platform Critical temperature threshold is reached. \index{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+R\+A\+D\+I\+O\+\_\+\+H\+I\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L@{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+R\+A\+D\+I\+O\+\_\+\+H\+I\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L}!le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}}\index{le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}!L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+R\+A\+D\+I\+O\+\_\+\+H\+I\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L@{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+R\+A\+D\+I\+O\+\_\+\+H\+I\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L}}\item[{\em 
+\hypertarget{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905eacdf5c64703a61def1adff875f3c11a29}{}L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+R\+A\+D\+I\+O\+\_\+\+H\+I\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\label{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905eacdf5c64703a61def1adff875f3c11a29}
+}]High Radio Critical temperature threshold is reached. \index{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+H\+I\+\_\+\+W\+A\+R\+N\+I\+N\+G@{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+H\+I\+\_\+\+W\+A\+R\+N\+I\+N\+G}!le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}}\index{le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}!L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+H\+I\+\_\+\+W\+A\+R\+N\+I\+N\+G@{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+H\+I\+\_\+\+W\+A\+R\+N\+I\+N\+G}}\item[{\em 
+\hypertarget{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905ea52d96799c77f5275247a29cfb047617e}{}L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+H\+I\+\_\+\+W\+A\+R\+N\+I\+N\+G\label{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905ea52d96799c77f5275247a29cfb047617e}
+}]High Platform Warning temperature threshold is reached. \index{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+R\+A\+D\+I\+O\+\_\+\+H\+I\+\_\+\+W\+A\+R\+N\+I\+N\+G@{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+R\+A\+D\+I\+O\+\_\+\+H\+I\+\_\+\+W\+A\+R\+N\+I\+N\+G}!le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}}\index{le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}!L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+R\+A\+D\+I\+O\+\_\+\+H\+I\+\_\+\+W\+A\+R\+N\+I\+N\+G@{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+R\+A\+D\+I\+O\+\_\+\+H\+I\+\_\+\+W\+A\+R\+N\+I\+N\+G}}\item[{\em 
+\hypertarget{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905ea61e277bbe61d39c30ac7e5e29ba9b680}{}L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+R\+A\+D\+I\+O\+\_\+\+H\+I\+\_\+\+W\+A\+R\+N\+I\+N\+G\label{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905ea61e277bbe61d39c30ac7e5e29ba9b680}
+}]High Radio Warning temperature threshold is reached. \index{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+N\+O\+R\+M\+A\+L@{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+N\+O\+R\+M\+A\+L}!le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}}\index{le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}!L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+N\+O\+R\+M\+A\+L@{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+N\+O\+R\+M\+A\+L}}\item[{\em 
+\hypertarget{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905ea632c047a2d07add0f67f8f20d0e26659}{}L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+N\+O\+R\+M\+A\+L\label{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905ea632c047a2d07add0f67f8f20d0e26659}
+}]Normal Platform temperature threshold is reached. \index{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+R\+A\+D\+I\+O\+\_\+\+N\+O\+R\+M\+A\+L@{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+R\+A\+D\+I\+O\+\_\+\+N\+O\+R\+M\+A\+L}!le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}}\index{le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}!L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+R\+A\+D\+I\+O\+\_\+\+N\+O\+R\+M\+A\+L@{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+R\+A\+D\+I\+O\+\_\+\+N\+O\+R\+M\+A\+L}}\item[{\em 
+\hypertarget{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905ea3e67f0903ccece25242a794256b70f49}{}L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+R\+A\+D\+I\+O\+\_\+\+N\+O\+R\+M\+A\+L\label{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905ea3e67f0903ccece25242a794256b70f49}
+}]Normal Radio temperature threshold is reached. \index{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+W\+\_\+\+W\+A\+R\+N\+I\+N\+G@{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+W\+\_\+\+W\+A\+R\+N\+I\+N\+G}!le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}}\index{le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}!L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+W\+\_\+\+W\+A\+R\+N\+I\+N\+G@{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+W\+\_\+\+W\+A\+R\+N\+I\+N\+G}}\item[{\em 
+\hypertarget{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905ea19335201bad274b4ed157d3beee15d15}{}L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+W\+\_\+\+W\+A\+R\+N\+I\+N\+G\label{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905ea19335201bad274b4ed157d3beee15d15}
+}]Low Platform Warning temperature threshold is reached. \index{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+W\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L@{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+W\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L}!le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}}\index{le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}!L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+W\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L@{L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+W\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L}}\item[{\em 
+\hypertarget{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905ea44e0ed21d7212db80ebd461b35eb330a}{}L\+E\+\_\+\+T\+E\+M\+P\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+O\+W\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\label{le__temp__interface_8h_a2c535dc58fa4f9d63fb50621ec87905ea44e0ed21d7212db80ebd461b35eb330a}
+}]Low Platform Critical temperature threshold is reached. \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{le__temp__interface_8h_acb2ef2d56777133835b843a786103268}{}\index{le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}!le\+\_\+temp\+\_\+\+Add\+Threshold\+Event\+Handler@{le\+\_\+temp\+\_\+\+Add\+Threshold\+Event\+Handler}}
+\index{le\+\_\+temp\+\_\+\+Add\+Threshold\+Event\+Handler@{le\+\_\+temp\+\_\+\+Add\+Threshold\+Event\+Handler}!le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+temp\+\_\+\+Add\+Threshold\+Event\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+temp\+\_\+\+Threshold\+Event\+Handler\+Ref\+\_\+t} le\+\_\+temp\+\_\+\+Add\+Threshold\+Event\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+temp\+\_\+\+Threshold\+Event\+Handler\+Func\+\_\+t}}]{handler\+Ptr, }
+\item[{void $\ast$}]{context\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__temp__interface_8h_acb2ef2d56777133835b843a786103268}
+Add handler function for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+temp\+\_\+\+Threshold\+Event\textquotesingle{}
+
+This event provides information on Threshold reached. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handler\+Ptr} & \\
+\hline
+\mbox{\tt in}  & {\em context\+Ptr} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__temp__interface_8h_ab23dc70f44db65ba89d1fcf63dee8296}{}\index{le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}!le\+\_\+temp\+\_\+\+Connect\+Service@{le\+\_\+temp\+\_\+\+Connect\+Service}}
+\index{le\+\_\+temp\+\_\+\+Connect\+Service@{le\+\_\+temp\+\_\+\+Connect\+Service}!le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+temp\+\_\+\+Connect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+temp\+\_\+\+Connect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__temp__interface_8h_ab23dc70f44db65ba89d1fcf63dee8296}
+Connect the client to the service \hypertarget{le__temp__interface_8h_a74eab024a7cb29e99488686f26be2595}{}\index{le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}!le\+\_\+temp\+\_\+\+Disconnect\+Service@{le\+\_\+temp\+\_\+\+Disconnect\+Service}}
+\index{le\+\_\+temp\+\_\+\+Disconnect\+Service@{le\+\_\+temp\+\_\+\+Disconnect\+Service}!le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+temp\+\_\+\+Disconnect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+temp\+\_\+\+Disconnect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__temp__interface_8h_a74eab024a7cb29e99488686f26be2595}
+Disconnect the client from the service \hypertarget{le__temp__interface_8h_ad5a5d27181c71928e3b8a5a0476e8b08}{}\index{le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}!le\+\_\+temp\+\_\+\+Get\+Platform\+Temperature@{le\+\_\+temp\+\_\+\+Get\+Platform\+Temperature}}
+\index{le\+\_\+temp\+\_\+\+Get\+Platform\+Temperature@{le\+\_\+temp\+\_\+\+Get\+Platform\+Temperature}!le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+temp\+\_\+\+Get\+Platform\+Temperature}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+temp\+\_\+\+Get\+Platform\+Temperature (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{platform\+Temp\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__temp__interface_8h_ad5a5d27181c71928e3b8a5a0476e8b08}
+Get the Platform temperature level in degree celsius.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K The function succeeded.
+\item L\+E\+\_\+\+F\+A\+U\+L\+T The function failed to get the temperature. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em platform\+Temp\+Ptr} & \mbox{[}O\+U\+T\mbox{]} The Platform temperature level in degree celsius. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__temp__interface_8h_a00a364d667662c110b51fa1475dcc39f}{}\index{le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}!le\+\_\+temp\+\_\+\+Get\+Platform\+Thresholds@{le\+\_\+temp\+\_\+\+Get\+Platform\+Thresholds}}
+\index{le\+\_\+temp\+\_\+\+Get\+Platform\+Thresholds@{le\+\_\+temp\+\_\+\+Get\+Platform\+Thresholds}!le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+temp\+\_\+\+Get\+Platform\+Thresholds}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+temp\+\_\+\+Get\+Platform\+Thresholds (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{low\+Critical\+Temp\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{low\+Warning\+Temp\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{hi\+Warning\+Temp\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{hi\+Critical\+Temp\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__temp__interface_8h_a00a364d667662c110b51fa1475dcc39f}
+Get the Platform warning and critical temperature thresholds in degree celsius.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K The function succeeded.
+\item L\+E\+\_\+\+F\+A\+U\+L\+T The function failed to get the thresholds. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em low\+Critical\+Temp\+Ptr} & \mbox{[}O\+U\+T\mbox{]} The low critical temperature threshold in degree celsius. \\
+\hline
+\mbox{\tt out}  & {\em low\+Warning\+Temp\+Ptr} & \mbox{[}O\+U\+T\mbox{]} The low warning temperature threshold in degree celsius. \\
+\hline
+\mbox{\tt out}  & {\em hi\+Warning\+Temp\+Ptr} & \mbox{[}O\+U\+T\mbox{]} The high warning temperature threshold in degree celsius. \\
+\hline
+\mbox{\tt out}  & {\em hi\+Critical\+Temp\+Ptr} & \mbox{[}O\+U\+T\mbox{]} The high critical temperature threshold in degree celsius. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__temp__interface_8h_af02a78a861bb30c2b17049da34b30409}{}\index{le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}!le\+\_\+temp\+\_\+\+Get\+Radio\+Temperature@{le\+\_\+temp\+\_\+\+Get\+Radio\+Temperature}}
+\index{le\+\_\+temp\+\_\+\+Get\+Radio\+Temperature@{le\+\_\+temp\+\_\+\+Get\+Radio\+Temperature}!le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+temp\+\_\+\+Get\+Radio\+Temperature}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+temp\+\_\+\+Get\+Radio\+Temperature (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{radio\+Temp\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__temp__interface_8h_af02a78a861bb30c2b17049da34b30409}
+Get the Radio temperature level in degree celsius.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K The function succeeded.
+\item L\+E\+\_\+\+F\+A\+U\+L\+T The function failed to get the temperature. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em radio\+Temp\+Ptr} & \mbox{[}O\+U\+T\mbox{]} The Radio temperature level in degree celsius. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__temp__interface_8h_a275ce92a6ed5376a978b5be5687f6cd1}{}\index{le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}!le\+\_\+temp\+\_\+\+Get\+Radio\+Thresholds@{le\+\_\+temp\+\_\+\+Get\+Radio\+Thresholds}}
+\index{le\+\_\+temp\+\_\+\+Get\+Radio\+Thresholds@{le\+\_\+temp\+\_\+\+Get\+Radio\+Thresholds}!le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+temp\+\_\+\+Get\+Radio\+Thresholds}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+temp\+\_\+\+Get\+Radio\+Thresholds (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{hi\+Warning\+Temp\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{hi\+Critical\+Temp\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__temp__interface_8h_a275ce92a6ed5376a978b5be5687f6cd1}
+Get the Radio warning and critical temperature thresholds in degree celsius.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K The function succeeded.
+\item L\+E\+\_\+\+F\+A\+U\+L\+T The function failed to get the thresholds. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em hi\+Warning\+Temp\+Ptr} & \mbox{[}O\+U\+T\mbox{]} The high warning temperature threshold in degree celsius. \\
+\hline
+\mbox{\tt out}  & {\em hi\+Critical\+Temp\+Ptr} & \mbox{[}O\+U\+T\mbox{]} The high critical temperature threshold in degree celsius. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__temp__interface_8h_a29fa7d59baed8a6ee058e32e2cddbd74}{}\index{le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}!le\+\_\+temp\+\_\+\+Remove\+Threshold\+Event\+Handler@{le\+\_\+temp\+\_\+\+Remove\+Threshold\+Event\+Handler}}
+\index{le\+\_\+temp\+\_\+\+Remove\+Threshold\+Event\+Handler@{le\+\_\+temp\+\_\+\+Remove\+Threshold\+Event\+Handler}!le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+temp\+\_\+\+Remove\+Threshold\+Event\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+temp\+\_\+\+Remove\+Threshold\+Event\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+temp\+\_\+\+Threshold\+Event\+Handler\+Ref\+\_\+t}}]{add\+Handler\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__temp__interface_8h_a29fa7d59baed8a6ee058e32e2cddbd74}
+Remove handler function for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+temp\+\_\+\+Threshold\+Event\textquotesingle{} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em add\+Handler\+Ref} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__temp__interface_8h_aea0cace31c93751db6d48be522e073b8}{}\index{le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}!le\+\_\+temp\+\_\+\+Set\+Platform\+Thresholds@{le\+\_\+temp\+\_\+\+Set\+Platform\+Thresholds}}
+\index{le\+\_\+temp\+\_\+\+Set\+Platform\+Thresholds@{le\+\_\+temp\+\_\+\+Set\+Platform\+Thresholds}!le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+temp\+\_\+\+Set\+Platform\+Thresholds}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+temp\+\_\+\+Set\+Platform\+Thresholds (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{low\+Critical\+Temp, }
+\item[{int32\+\_\+t}]{low\+Warning\+Temp, }
+\item[{int32\+\_\+t}]{hi\+Warning\+Temp, }
+\item[{int32\+\_\+t}]{hi\+Critical\+Temp}
+\end{DoxyParamCaption}
+)}\label{le__temp__interface_8h_aea0cace31c93751db6d48be522e073b8}
+Set the Platform warning and critical temperature thresholds in degree celsius. When thresholds temperature are reached, a temperature event is triggered.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K The function succeeded.
+\item L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R The hi\+Warning threshold + 1 is equal to or higher than the hi\+Critical threshold. The lo\+Wwarning threshold is equal to or higher than the hi\+Warning threshold. The lo\+Wwarning threshold is equal to or lower than the lo\+Critical threshold.
+\item L\+E\+\_\+\+F\+A\+U\+L\+T The function failed to set the thresholds. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em low\+Critical\+Temp} & \mbox{[}I\+N\mbox{]} The low critical temperature threshold in degree celsius. \\
+\hline
+\mbox{\tt in}  & {\em low\+Warning\+Temp} & \mbox{[}I\+N\mbox{]} The low warning temperature threshold in degree celsius. \\
+\hline
+\mbox{\tt in}  & {\em hi\+Warning\+Temp} & \mbox{[}I\+N\mbox{]} The high warning temperature threshold in degree celsius. \\
+\hline
+\mbox{\tt in}  & {\em hi\+Critical\+Temp} & \mbox{[}I\+N\mbox{]} The high critical temperature threshold in degree celsius. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__temp__interface_8h_a476e20b815d3df88ff00ebe1fab42792}{}\index{le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}!le\+\_\+temp\+\_\+\+Set\+Radio\+Thresholds@{le\+\_\+temp\+\_\+\+Set\+Radio\+Thresholds}}
+\index{le\+\_\+temp\+\_\+\+Set\+Radio\+Thresholds@{le\+\_\+temp\+\_\+\+Set\+Radio\+Thresholds}!le\+\_\+temp\+\_\+interface.\+h@{le\+\_\+temp\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+temp\+\_\+\+Set\+Radio\+Thresholds}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+temp\+\_\+\+Set\+Radio\+Thresholds (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{hi\+Warning\+Temp, }
+\item[{int32\+\_\+t}]{hi\+Critical\+Temp}
+\end{DoxyParamCaption}
+)}\label{le__temp__interface_8h_a476e20b815d3df88ff00ebe1fab42792}
+Set the Radio warning and critical temperature thresholds in degree celsius. When thresholds temperature are reached, a temperature event is triggered.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K The function succeeded.
+\item L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R The hi\+Warning threshold + 1 is equal to or higher than the hi\+Critical threshold.
+\item L\+E\+\_\+\+F\+A\+U\+L\+T The function failed to set the thresholds. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em hi\+Warning\+Temp} & \mbox{[}I\+N\mbox{]} The high warning temperature threshold in degree celsius. \\
+\hline
+\mbox{\tt in}  & {\em hi\+Critical\+Temp} & \mbox{[}I\+N\mbox{]} The high critical temperature threshold in degree celsius. \\
+\hline
+\end{DoxyParams}

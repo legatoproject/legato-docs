@@ -1,0 +1,111 @@
+\hypertarget{app_smack__interface_8h}{}\section{build/localhost/interfaces/app\+Smack\+\_\+interface.h File Reference}
+\label{app_smack__interface_8h}\index{build/localhost/interfaces/app\+Smack\+\_\+interface.\+h@{build/localhost/interfaces/app\+Smack\+\_\+interface.\+h}}
+{\ttfamily \#include \char`\"{}legato.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}le\+\_\+limit\+\_\+interface.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{app_smack__interface_8h_a85a91187e19bedb818fc29ef4bba1722}{A\+P\+P\+S\+M\+A\+C\+K\+\_\+\+L\+A\+B\+E\+L\+\_\+\+L\+E\+N}~23
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{app_smack__interface_8h_a333d2301d2d23e6b74bd6bb9b383aa3d}{app\+Smack\+\_\+\+Access\+Flags\+\_\+t} \{ {\bfseries A\+P\+P\+S\+M\+A\+C\+K\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+R\+E\+A\+D} = 0x1, 
+{\bfseries A\+P\+P\+S\+M\+A\+C\+K\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+W\+R\+I\+T\+E} = 0x2, 
+{\bfseries A\+P\+P\+S\+M\+A\+C\+K\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+E\+X\+E\+C\+U\+T\+E} = 0x4
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{app_smack__interface_8h_ad3e19b9a4a9634d3c12ef9c40a036567}{app\+Smack\+\_\+\+Connect\+Service} (void)
+\item 
+void \hyperlink{app_smack__interface_8h_a5106468b3ff13d029ed868c13e297c7a}{app\+Smack\+\_\+\+Disconnect\+Service} (void)
+\item 
+void \hyperlink{app_smack__interface_8h_adb46c9612a7e4af419e8144e6567c2fd}{app\+Smack\+\_\+\+Get\+Label} (const char $\ast$app\+Name, char $\ast$label, size\+\_\+t label\+Num\+Elements)
+\item 
+void \hyperlink{app_smack__interface_8h_aa9283290ed50347a040dcd88997088ae}{app\+Smack\+\_\+\+Get\+Access\+Label} (const char $\ast$app\+Name, \hyperlink{app_smack__interface_8h_a333d2301d2d23e6b74bd6bb9b383aa3d}{app\+Smack\+\_\+\+Access\+Flags\+\_\+t} access\+Mode, char $\ast$label, size\+\_\+t label\+Num\+Elements)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_app_smack}{Application S\+M\+A\+C\+K A\+P\+I} include file.
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{app_smack__interface_8h_a85a91187e19bedb818fc29ef4bba1722}{}\index{app\+Smack\+\_\+interface.\+h@{app\+Smack\+\_\+interface.\+h}!A\+P\+P\+S\+M\+A\+C\+K\+\_\+\+L\+A\+B\+E\+L\+\_\+\+L\+E\+N@{A\+P\+P\+S\+M\+A\+C\+K\+\_\+\+L\+A\+B\+E\+L\+\_\+\+L\+E\+N}}
+\index{A\+P\+P\+S\+M\+A\+C\+K\+\_\+\+L\+A\+B\+E\+L\+\_\+\+L\+E\+N@{A\+P\+P\+S\+M\+A\+C\+K\+\_\+\+L\+A\+B\+E\+L\+\_\+\+L\+E\+N}!app\+Smack\+\_\+interface.\+h@{app\+Smack\+\_\+interface.\+h}}
+\subsubsection[{A\+P\+P\+S\+M\+A\+C\+K\+\_\+\+L\+A\+B\+E\+L\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+P\+P\+S\+M\+A\+C\+K\+\_\+\+L\+A\+B\+E\+L\+\_\+\+L\+E\+N~23}\label{app_smack__interface_8h_a85a91187e19bedb818fc29ef4bba1722}
+Maximum length of S\+M\+A\+C\+K labels. 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{app_smack__interface_8h_a333d2301d2d23e6b74bd6bb9b383aa3d}{}\index{app\+Smack\+\_\+interface.\+h@{app\+Smack\+\_\+interface.\+h}!app\+Smack\+\_\+\+Access\+Flags\+\_\+t@{app\+Smack\+\_\+\+Access\+Flags\+\_\+t}}
+\index{app\+Smack\+\_\+\+Access\+Flags\+\_\+t@{app\+Smack\+\_\+\+Access\+Flags\+\_\+t}!app\+Smack\+\_\+interface.\+h@{app\+Smack\+\_\+interface.\+h}}
+\subsubsection[{app\+Smack\+\_\+\+Access\+Flags\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf app\+Smack\+\_\+\+Access\+Flags\+\_\+t}}\label{app_smack__interface_8h_a333d2301d2d23e6b74bd6bb9b383aa3d}
+Access flags. 
+
+\subsection{Function Documentation}
+\hypertarget{app_smack__interface_8h_ad3e19b9a4a9634d3c12ef9c40a036567}{}\index{app\+Smack\+\_\+interface.\+h@{app\+Smack\+\_\+interface.\+h}!app\+Smack\+\_\+\+Connect\+Service@{app\+Smack\+\_\+\+Connect\+Service}}
+\index{app\+Smack\+\_\+\+Connect\+Service@{app\+Smack\+\_\+\+Connect\+Service}!app\+Smack\+\_\+interface.\+h@{app\+Smack\+\_\+interface.\+h}}
+\subsubsection[{app\+Smack\+\_\+\+Connect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void app\+Smack\+\_\+\+Connect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{app_smack__interface_8h_ad3e19b9a4a9634d3c12ef9c40a036567}
+Connect the client to the service \hypertarget{app_smack__interface_8h_a5106468b3ff13d029ed868c13e297c7a}{}\index{app\+Smack\+\_\+interface.\+h@{app\+Smack\+\_\+interface.\+h}!app\+Smack\+\_\+\+Disconnect\+Service@{app\+Smack\+\_\+\+Disconnect\+Service}}
+\index{app\+Smack\+\_\+\+Disconnect\+Service@{app\+Smack\+\_\+\+Disconnect\+Service}!app\+Smack\+\_\+interface.\+h@{app\+Smack\+\_\+interface.\+h}}
+\subsubsection[{app\+Smack\+\_\+\+Disconnect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void app\+Smack\+\_\+\+Disconnect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{app_smack__interface_8h_a5106468b3ff13d029ed868c13e297c7a}
+Disconnect the client from the service \hypertarget{app_smack__interface_8h_aa9283290ed50347a040dcd88997088ae}{}\index{app\+Smack\+\_\+interface.\+h@{app\+Smack\+\_\+interface.\+h}!app\+Smack\+\_\+\+Get\+Access\+Label@{app\+Smack\+\_\+\+Get\+Access\+Label}}
+\index{app\+Smack\+\_\+\+Get\+Access\+Label@{app\+Smack\+\_\+\+Get\+Access\+Label}!app\+Smack\+\_\+interface.\+h@{app\+Smack\+\_\+interface.\+h}}
+\subsubsection[{app\+Smack\+\_\+\+Get\+Access\+Label}]{\setlength{\rightskip}{0pt plus 5cm}void app\+Smack\+\_\+\+Get\+Access\+Label (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{app\+Name, }
+\item[{{\bf app\+Smack\+\_\+\+Access\+Flags\+\_\+t}}]{access\+Mode, }
+\item[{char $\ast$}]{label, }
+\item[{size\+\_\+t}]{label\+Num\+Elements}
+\end{DoxyParamCaption}
+)}\label{app_smack__interface_8h_aa9283290ed50347a040dcd88997088ae}
+Get\textquotesingle{}s the application\textquotesingle{}s S\+M\+A\+C\+K label with the access mode appended to it as a string. For example, if the access\+Mode is A\+C\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+R\+E\+A\+D $\vert$ A\+C\+C\+E\+S\+S\+\_\+\+F\+L\+A\+G\+\_\+\+W\+R\+I\+T\+E then \char`\"{}rw\char`\"{} will be appended to the application\textquotesingle{}s S\+M\+A\+C\+K label. If the access\+Mode is 0 (empty) then \char`\"{}-\/\char`\"{} will be appended to the app\textquotesingle{}s S\+M\+A\+C\+K label.
+
+\begin{DoxyNote}{Note}
+The application need not be installed for this function to succeed. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em app\+Name} & Application name \\
+\hline
+\mbox{\tt in}  & {\em access\+Mode} & Access mode flags \\
+\hline
+\mbox{\tt out}  & {\em label} & S\+M\+A\+C\+K label for the application \\
+\hline
+\mbox{\tt in}  & {\em label\+Num\+Elements} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{app_smack__interface_8h_adb46c9612a7e4af419e8144e6567c2fd}{}\index{app\+Smack\+\_\+interface.\+h@{app\+Smack\+\_\+interface.\+h}!app\+Smack\+\_\+\+Get\+Label@{app\+Smack\+\_\+\+Get\+Label}}
+\index{app\+Smack\+\_\+\+Get\+Label@{app\+Smack\+\_\+\+Get\+Label}!app\+Smack\+\_\+interface.\+h@{app\+Smack\+\_\+interface.\+h}}
+\subsubsection[{app\+Smack\+\_\+\+Get\+Label}]{\setlength{\rightskip}{0pt plus 5cm}void app\+Smack\+\_\+\+Get\+Label (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{app\+Name, }
+\item[{char $\ast$}]{label, }
+\item[{size\+\_\+t}]{label\+Num\+Elements}
+\end{DoxyParamCaption}
+)}\label{app_smack__interface_8h_adb46c9612a7e4af419e8144e6567c2fd}
+Gets the application\textquotesingle{}s S\+M\+A\+C\+K label.
+
+\begin{DoxyNote}{Note}
+The app doesn\textquotesingle{}t need to be installed for this function to succeed. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em app\+Name} & Application name \\
+\hline
+\mbox{\tt out}  & {\em label} & S\+M\+A\+C\+K label for the application \\
+\hline
+\mbox{\tt in}  & {\em label\+Num\+Elements} & \\
+\hline
+\end{DoxyParams}

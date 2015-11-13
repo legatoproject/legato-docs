@@ -1,0 +1,96 @@
+Also see \hyperlink{appInstallAirVantage}{Install apps}
+
+
+
+
+
+This topic covers how to create an Air\+Vantage connection to your Legato device.
+
+Detailed Air\+Vantage documentation\+: \href{https://doc.airvantage.net/display/USERGUIDE/Getting+Started}{\tt Air\+Vantage Getting Started}
+
+\begin{DoxyNote}{Note}
+You\textquotesingle{}ll need an account on Air\+Vantage Server, you can check with your Sierra Wireless contact.
+\end{DoxyNote}
+After you connect to your Air\+Vantage account, you can create system and app.\hypertarget{how_to_a_v_connect_connectingAirVantage_createSys}{}\section{Create System}\label{how_to_a_v_connect_connectingAirVantage_createSys}
+Create a new System in Air\+Vantage Server\+:
+\begin{DoxyItemize}
+\item From the {\ttfamily Inventory menu}, choose {\ttfamily Systems}.
+\item Click the Create button (+ symbol)\+: enter a Name (used for retrieval).
+\item In the {\ttfamily Gateway} tab, click Create a New Gateway (+ symbol), a new windows will appear\+: enter your device\textquotesingle{}s I\+M\+E\+I and Serial Number.
+\item Click {\ttfamily Create}.
+\item After you return to the system creation window, click the Application field and select the ‘\+Legato\+\_\+\+L\+W\+M2\+M’ (firmware and application update over the air) application model. An application model is an X\+M\+L file defining the communication contract between Air\+Vantage and the embedded app.
+\item Select \char`\"{}\+I want to activate my system after creating it\char`\"{}.
+\item Click {\ttfamily Create}.
+\end{DoxyItemize}\hypertarget{how_to_a_v_connect_connectingAirVantage_lwm2m}{}\section{L\+W\+M2\+M}\label{how_to_a_v_connect_connectingAirVantage_lwm2m}
+Legato provides L\+W\+M2\+M support to connect to Air\+Vantage.
+
+See \hyperlink{c_le_avc}{Air\+Vantage Connector}, \hyperlink{c_le_avdata}{Air\+Vantage Data} and \hyperlink{def_files_cdef_defFilesCdef_assets}{Assets} for details.\hypertarget{how_to_a_v_connect_connectingAirVantage_checkDeviceStatus}{}\section{Device Status}\label{how_to_a_v_connect_connectingAirVantage_checkDeviceStatus}
+Check device status on the Air\+Vantage Server\+:
+
+
+\begin{DoxyItemize}
+\item From the {\ttfamily Monitor} menu, choose {\ttfamily Systems}
+\item Browse to your device (by the name you created or the I\+M\+E\+I).
+\item Click Details.
+\end{DoxyItemize}
+
+The {\ttfamily Last seen} field should be updated with a recent date. You can also see the initial data exchange in the Timeline screen.
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. \hypertarget{appInstallAirVantage}{}\section{Install apps}\label{appInstallAirVantage}
+This page explains how to build your app, configure the Air\+Vantage platform, and then deploy your app remotely to your device.\hypertarget{how_to_a_v_install_app_appInstallAirVantage_buildapp}{}\subsection{Build app}\label{how_to_a_v_install_app_appInstallAirVantage_buildapp}
+Before you build your target app, ensure Legato is built and your shell environment is setup to use command-\/line tools (i.\+e., run {\ttfamily bin/legs}).
+
+Then, run the following sample on your build host replacing {\ttfamily \$\{T\+A\+R\+G\+E\+T\+\_\+\+T\+Y\+P\+E\}} with your target device type (e.\+g., {\ttfamily wp85} or {\ttfamily ar7})\+:
+
+\begin{DoxyVerb}Legato $ cd apps/sample/helloWorld
+Legato $ mkapp -t ${TARGET_TYPE} helloWorld.adef
+Legato $ update-pack ${TARGET_TYPE} –ai helloWorld.${TARGET_TYPE} –o helloWorld.update
+Legato $ av-pack –f helloWorld.${TARGET_TYPE} <type name> _build_helloWorld/${TARGET_TYPE}
+\end{DoxyVerb}
+
+
+Where \char`\"{}$<$type name$>$\char`\"{} must be a globally-\/unique app type identifier, unique among all apps in all companies anywhere on Air\+Vantage. It should include company name, or user name if it\textquotesingle{}s a developer\textquotesingle{}s sample app. It should look like this\+:
+
+\begin{DoxyVerb} av-pack -f helloWorld.wp85 abcCo.jsmith.helloWorld _build_helloWorld/wp85
+\end{DoxyVerb}
+\hypertarget{how_to_a_v_install_app_appInstallAirVantage_usingAv}{}\subsection{Using Air\+Vantage Platform}\label{how_to_a_v_install_app_appInstallAirVantage_usingAv}
+This part assumes you\textquotesingle{}ve already created your target/device on the platform using the section \hyperlink{connecting_air_vantage}{Connect to Air\+Vantage}
+
+{\bfseries Upload app}
+
+\begin{DoxyVerb}Upload `<uniqueAppName.targetType.zip>`
+\end{DoxyVerb}
+
+
+Zip file name will be something like {\ttfamily hello\+Worldabc\+Co.\+wp85.\+zip}.
+
+See \href{https://doc.airvantage.net/display/USERGUIDE/Getting+Started}{\tt Air\+Vantage Getting Started} Develop+\+Activity \+: \char`\"{}\+My
+\+Apps\char`\"{} Section -\/$>$ action Release ( select publish) for details.
+
+{\bfseries Create app installation job}
+
+You need to create the app install job on the platform\+: on the \char`\"{}\+Monitor\char`\"{} view for your system, use the \char`\"{}\+More\char`\"{} menu, and select \char`\"{}\+Install app\char`\"{} and then select the app you just uploaded,released and published in previous step.\hypertarget{how_to_a_v_install_app_appInstallAirVantage_rcvAppAgent}{}\subsection{Receive app on Air\+Vantage agent}\label{how_to_a_v_install_app_appInstallAirVantage_rcvAppAgent}
+{\bfseries Connect to server to receive app installation job}
+
+This requires an {\ttfamily avc} control app using the L\+W\+M2\+M A\+V\+C A\+P\+I that accepts the download and installation. See \hyperlink{c_le_avc}{Air\+Vantage Connector} A\+P\+I for details.
+
+{\bfseries Check Success Status}
+
+If the installation was successful, you should find hello\+World in the installed apps and on the devices\textquotesingle{} Monitor view app list.\hypertarget{how_to_a_v_install_app_appInstallAirVantage_goingFurther}{}\subsection{Going further}\label{how_to_a_v_install_app_appInstallAirVantage_goingFurther}
+Start, stop, uninstall jobs can be created using corresponding U\+I buttons on the \char`\"{}\+Monitor\char`\"{} view for your system, in the \char`\"{}\+Applications\char`\"{} section, next to the app name you choose.
+
+
+
+
+
+See \href{https://doc.airvantage.net/display/USERGUIDE/Getting+Started}{\tt Air\+Vantage Getting Started} more details.
+
+
+
+
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 

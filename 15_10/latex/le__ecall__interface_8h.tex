@@ -1,0 +1,1396 @@
+\hypertarget{le__ecall__interface_8h}{}\section{build/localhost/interfaces/le\+\_\+ecall\+\_\+interface.h File Reference}
+\label{le__ecall__interface_8h}\index{build/localhost/interfaces/le\+\_\+ecall\+\_\+interface.\+h@{build/localhost/interfaces/le\+\_\+ecall\+\_\+interface.\+h}}
+{\ttfamily \#include \char`\"{}legato.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}le\+\_\+mdm\+Defs\+\_\+interface.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}le\+\_\+mcc\+\_\+interface.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{le__ecall__interface_8h_a287eeec0c34e2566297839227109fa62}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+M\+S\+D\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N}~140
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct le\+\_\+ecall\+\_\+\+Call $\ast$ \hyperlink{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}
+\item 
+typedef struct le\+\_\+ecall\+\_\+\+State\+Change\+Handler $\ast$ \hyperlink{le__ecall__interface_8h_a7e915557fce85b9b82017a80c0d32ddd}{le\+\_\+ecall\+\_\+\+State\+Change\+Handler\+Ref\+\_\+t}
+\item 
+typedef void($\ast$ \hyperlink{le__ecall__interface_8h_a33defe07c6bf58180a89b87fc5b6a5e1}{le\+\_\+ecall\+\_\+\+State\+Change\+Handler\+Func\+\_\+t}) (\hyperlink{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t} ecall\+Ref, \hyperlink{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dd}{le\+\_\+ecall\+\_\+\+State\+\_\+t} state, void $\ast$context\+Ptr)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{le__ecall__interface_8h_af762f89b222e4cc18e9646c6e4b945b9}{le\+\_\+ecall\+\_\+\+Op\+Mode\+\_\+t} \{ \hyperlink{le__ecall__interface_8h_af762f89b222e4cc18e9646c6e4b945b9a9d8e54c64e4796257880e146b15521f5}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+M\+O\+D\+E}, 
+\hyperlink{le__ecall__interface_8h_af762f89b222e4cc18e9646c6e4b945b9a841847f485e780277e11d1e942d8800d}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+O\+N\+L\+Y\+\_\+\+M\+O\+D\+E}, 
+\hyperlink{le__ecall__interface_8h_af762f89b222e4cc18e9646c6e4b945b9a6d328d963d60c73e04af260f8dae7257}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+F\+O\+R\+C\+E\+D\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+T\+\_\+\+O\+N\+L\+Y\+\_\+\+M\+O\+D\+E}
+ \}
+\item 
+enum \hyperlink{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dd}{le\+\_\+ecall\+\_\+\+State\+\_\+t} \{ \\*
+\hyperlink{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda5c06f82cbeeebb121ab56920a67dbc91}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+U\+N\+K\+N\+O\+W\+N}, 
+\hyperlink{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda94ba7aacca9dfe74c4733515a7ba2c5e}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+A\+R\+T\+E\+D}, 
+\hyperlink{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda974a4cdcc060be69502b2eae59962a45}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D}, 
+\hyperlink{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda085024eb3cca6b48f024f368c6b0f757}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+E\+D}, 
+\\*
+\hyperlink{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07ddafeaa941937f098a5d6cc913f9ee2b32f}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+W\+A\+I\+T\+I\+N\+G\+\_\+\+P\+S\+A\+P\+\_\+\+S\+T\+A\+R\+T\+\_\+\+I\+N\+D}, 
+\hyperlink{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda2660c7eedfd850b845f0ece7899d5454}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+S\+A\+P\+\_\+\+S\+T\+A\+R\+T\+\_\+\+I\+N\+D\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D}, 
+\hyperlink{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda0e8c495854c6fe3f9fe9285554704572}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+S\+D\+\_\+\+T\+X\+\_\+\+S\+T\+A\+R\+T\+E\+D}, 
+\hyperlink{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda8699c87772e74835e38573fc9830dba5}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+L\+L\+N\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D}, 
+\\*
+\hyperlink{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda0410bf309197a2f26910062efb56ed0e}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+L\+L\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D}, 
+\hyperlink{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07ddae9346b115da82c9583f057ba12d8faa9}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+S\+D\+\_\+\+T\+X\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\+D}, 
+\hyperlink{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda3654bda55c075297e9111acafa90a2bb}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+S\+D\+\_\+\+T\+X\+\_\+\+F\+A\+I\+L\+E\+D}, 
+\hyperlink{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda5a54611736c5cf7131cc196c694d8060}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+A\+L\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D\+\_\+\+P\+O\+S\+I\+T\+I\+V\+E}, 
+\\*
+\hyperlink{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda2b28ed16149c54b6b3d9c57dea4a748f}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+A\+L\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D\+\_\+\+C\+L\+E\+A\+R\+\_\+\+D\+O\+W\+N}, 
+\hyperlink{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda28740cfb795561c243501bff53343175}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+E\+D}, 
+\hyperlink{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda71a12603e5a05716c7579e12f6f85734}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+E\+S\+E\+T}, 
+\hyperlink{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda40cb68755482f2068f414e4bd1d2bf13}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\+D}, 
+\\*
+\hyperlink{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda5275385371c51e441a9eb97626c271b4}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+F\+A\+I\+L\+E\+D}, 
+\hyperlink{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07ddac5c297a2a70f2490f4f65d72b3a74481}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+R\+E\+D\+I\+A\+L\+\_\+\+P\+E\+R\+I\+O\+D}
+ \}
+\item 
+enum \hyperlink{le__ecall__interface_8h_adbaa600a7ab66371afddb909b1a113bd}{le\+\_\+ecall\+\_\+\+Msd\+Tx\+Mode\+\_\+t} \{ \hyperlink{le__ecall__interface_8h_adbaa600a7ab66371afddb909b1a113bdaaf6827f8890a733143bd2c01e6afdfef}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+T\+X\+\_\+\+M\+O\+D\+E\+\_\+\+P\+U\+L\+L}, 
+\hyperlink{le__ecall__interface_8h_adbaa600a7ab66371afddb909b1a113bdafe1cddc2df801a67c7f02020c0dd1127}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+T\+X\+\_\+\+M\+O\+D\+E\+\_\+\+P\+U\+S\+H}
+ \}
+\item 
+enum \hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cf}{le\+\_\+ecall\+\_\+\+Diagnostic\+Result\+Bit\+Mask\+\_\+t} \{ \\*
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa3a666c50c2a85411eb7d723a9553144e}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+M\+I\+C\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x1, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa5ea3221dec67d321994be4a7b1a28dd9}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+M\+I\+C\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x2, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfaee3053c076f08c5ded4120c3fa69fe32}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+M\+I\+C\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x4, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa1040d9724404f0cfacb8415ca6d9b4aa}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+M\+I\+C\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x8, 
+\\*
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfad461d767378af8ee304347821ea927a0}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+R\+I\+G\+H\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x10, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfaa42ad4d6b44146c65bb2c25d26113565}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+R\+I\+G\+H\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x20, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa37adae3ab192525db0848a626869f9bf}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+L\+E\+F\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x40, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfaaa165a78a5db94f7f4976584931667f2}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+L\+E\+F\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x80, 
+\\*
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfab5c2abf0e14fee9d545c2087b702cc1c}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+S\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x100, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfab997fde1541446d2a99c598cd91fc270}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+S\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x200, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa39edbd2d426729ea02e7495c19abe89b}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+I\+G\+N\+I\+T\+I\+O\+N\+\_\+\+L\+I\+N\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x400, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa84ea0c7a83231ee13d9f93e3b3041edb}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+G\+N\+I\+T\+I\+O\+N\+\_\+\+L\+I\+N\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x800, 
+\\*
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfab67b956ebcf642aad76b46c8b7bfeba0}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+U\+I\+M\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x1000, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa46cba969c2abd641309d791019e1e3e0}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+U\+I\+M\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x2000, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa5ed346638d49d6e107999803da6336e3}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+D\+I\+C\+A\+T\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x4000, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa8116de4b851ecdd34a0b907e947c9c29}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+D\+I\+C\+A\+T\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x8000, 
+\\*
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa4ab7b54d47733d8d8471a396333ceaaa}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x10000, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa6acf3de2c51fec3cb50da9f8566985c2}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x20000, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa0fee651e0bdf4c009d615af2a61101f1}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+V\+O\+L\+T\+A\+G\+E\+\_\+\+L\+O\+W} = 0x40000, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa27a91439e027be0cad4cf6345af6b7a9}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+V\+O\+L\+T\+A\+G\+E\+\_\+\+L\+O\+W} = 0x80000, 
+\\*
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfacc384f30e34c8528c3058eb61b9a4708}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x100000, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfae172bd8bbf4b6a19e24acf5b703ef347}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x200000, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfacd5438b99a54bf7c30ea057daf777c15}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+C\+O\+R\+R\+U\+P\+T\+I\+O\+N} = 0x400000, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa178e487741cf7289e8970fdda75befbc}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+C\+O\+R\+R\+U\+P\+T\+I\+O\+N} = 0x800000, 
+\\*
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa178938e58755295751613022ae84cd0e}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x1000000, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa3d7c345c8e047c525e3d37a343c61101}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x2000000, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfaa0602ef741555db93005d4b2b6ab4b1a}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+G\+N\+S\+S\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x4000000, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa0b442f6f7927c2d7d5042ffc1a39ab2a}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+G\+N\+S\+S\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x8000000, 
+\\*
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfaab73c6c71cb79f7730bb13648c7bce04}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+R\+A\+I\+M\+\_\+\+P\+R\+O\+B\+L\+E\+M} = 0x10000000, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa019a86c400d606429062b2a90099a8ac}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+R\+A\+I\+M\+\_\+\+P\+R\+O\+B\+L\+E\+M} = 0x20000000, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfab3fd7f550aa416093c4f7888808371c8}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+G\+N\+S\+S\+\_\+\+A\+N\+T\+E\+N\+N\+A\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x40000000, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa9f235ce7e3ba41d7a8380d32165bafa5}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+G\+N\+S\+S\+\_\+\+A\+N\+T\+E\+N\+N\+A\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x80000000, 
+\\*
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa59c26e2657b9f5bcd8dd81e5080b9e8d}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x100000000, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa9104e4fafa6bdb8b1a0239ade55f4f48}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E} = 0x200000000, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa0c22c7756946acb06740ba652f7bcb67}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+E\+V\+E\+N\+T\+S\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W} = 0x400000000, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa1c06faec14254dcf384ca99395507f5a}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+E\+V\+E\+N\+T\+S\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W} = 0x800000000, 
+\\*
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa9cc1d793f1374111d50db04e1be0b5db}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+P\+R\+O\+F\+I\+L\+E\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W} = 0x1000000000, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa06e757db30ca5070dc36157dee395889}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+P\+R\+O\+F\+I\+L\+E\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W} = 0x2000000000, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa81b05ff958f8bdcd51c8d386cf854112}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S} = 0x4000000000, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa5e8787b4834125e76f87b6c4ae582851}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S} = 0x8000000000, 
+\\*
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa326d1385df2ad0e731d2a4b5b66bbacb}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+N\+O\+T\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S} = 0x10000000000, 
+\hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa2deff70e9effd8b7174f898019c05f1c}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+N\+O\+T\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S} = 0x20000000000
+ \}
+\item 
+enum \hyperlink{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318}{le\+\_\+ecall\+\_\+\+Crash\+Info\+Bit\+Mask\+\_\+t} \{ \\*
+\hyperlink{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a01da8764c695658c5901990e6a9cf860}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T} = 0x1, 
+\hyperlink{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a360460c02abe6e1ac2896dc03abcebe7}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T} = 0x2, 
+\hyperlink{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318aed1f753fce57a99984fc740955ffff8e}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+L\+E\+F\+T} = 0x4, 
+\hyperlink{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a7345e320441ab4646d229df53c0c29f3}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+L\+E\+F\+T} = 0x8, 
+\\*
+\hyperlink{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a7f125c55a9565122c2346400d92703a0}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+I\+G\+H\+T} = 0x10, 
+\hyperlink{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318af00ca9da5f0ac3cdb4e0b3679b629371}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+I\+G\+H\+T} = 0x20, 
+\hyperlink{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318ab876870a81ddabb3741405599caa0f90}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+E\+A\+R} = 0x40, 
+\hyperlink{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a282336188e8b142cbe5e126c3482637a}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+E\+A\+R} = 0x80, 
+\\*
+\hyperlink{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318aec2f6f4993180c4c8dd94b44e3b52639}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+O\+L\+L\+O\+V\+E\+R} = 0x100, 
+\hyperlink{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318ae4a8372808b6c0710bc409c956c4d008}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+O\+L\+L\+O\+V\+E\+R} = 0x200, 
+\hyperlink{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a59e5e8a717d5ea271a37de187ddd8c63}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+I\+D\+E} = 0x400, 
+\hyperlink{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a690446965965ed340406dffd21a136c9}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+I\+D\+E} = 0x800, 
+\\*
+\hyperlink{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a7139e97473edb9bca67b01d3d4f6d5c9}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T\+\_\+\+O\+R\+\_\+\+S\+I\+D\+E} = 0x1000, 
+\hyperlink{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a0e26e57771f2628a39f1c88a5ef08f1b}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T\+\_\+\+O\+R\+\_\+\+S\+I\+D\+E} = 0x2000, 
+\hyperlink{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a135e85f717fcec7fd8146d9882bbb3ec}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+A\+N\+O\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E} = 0x4000, 
+\hyperlink{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a69ff594dda0b4097ed2732ca30d73a80}{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+A\+N\+O\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E} = 0x8000
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{le__ecall__interface_8h_ab1863bdc62d46e8cf945b3e2fa92f556}{le\+\_\+ecall\+\_\+\+Connect\+Service} (void)
+\item 
+void \hyperlink{le__ecall__interface_8h_a3a4b00c07659de15e5e31da7d2703fd9}{le\+\_\+ecall\+\_\+\+Disconnect\+Service} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_a042d52c84b5b679ab32dd814c5b0be9e}{le\+\_\+ecall\+\_\+\+Force\+Only\+Mode} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_ad468828b0024de378d91ea9c30fd6f3f}{le\+\_\+ecall\+\_\+\+Force\+Persistent\+Only\+Mode} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_a924114fa7fab10c3f351766a76134f34}{le\+\_\+ecall\+\_\+\+Exit\+Only\+Mode} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_a8e245065491b14f46405e415ea17b6b8}{le\+\_\+ecall\+\_\+\+Get\+Configured\+Operation\+Mode} (\hyperlink{le__ecall__interface_8h_af762f89b222e4cc18e9646c6e4b945b9}{le\+\_\+ecall\+\_\+\+Op\+Mode\+\_\+t} $\ast$op\+Mode\+Ptr)
+\item 
+\hyperlink{le__ecall__interface_8h_a7e915557fce85b9b82017a80c0d32ddd}{le\+\_\+ecall\+\_\+\+State\+Change\+Handler\+Ref\+\_\+t} \hyperlink{le__ecall__interface_8h_a453b64579f2884f1d26981bca38a201c}{le\+\_\+ecall\+\_\+\+Add\+State\+Change\+Handler} (\hyperlink{le__ecall__interface_8h_a33defe07c6bf58180a89b87fc5b6a5e1}{le\+\_\+ecall\+\_\+\+State\+Change\+Handler\+Func\+\_\+t} handler\+Ptr, void $\ast$context\+Ptr)
+\item 
+void \hyperlink{le__ecall__interface_8h_a6be1fd10666da25882a2c6f78c82664d}{le\+\_\+ecall\+\_\+\+Remove\+State\+Change\+Handler} (\hyperlink{le__ecall__interface_8h_a7e915557fce85b9b82017a80c0d32ddd}{le\+\_\+ecall\+\_\+\+State\+Change\+Handler\+Ref\+\_\+t} add\+Handler\+Ref)
+\item 
+\hyperlink{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t} \hyperlink{le__ecall__interface_8h_aad7fa3b34d9d72a2f1d4baa681ba25cc}{le\+\_\+ecall\+\_\+\+Create} (void)
+\item 
+void \hyperlink{le__ecall__interface_8h_af1221deb68c46912748f65505b3e4919}{le\+\_\+ecall\+\_\+\+Delete} (\hyperlink{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t} ecall\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_a00d3dbc99884375cf2487d6640767c40}{le\+\_\+ecall\+\_\+\+Set\+Msd\+Tx\+Mode} (\hyperlink{le__ecall__interface_8h_adbaa600a7ab66371afddb909b1a113bd}{le\+\_\+ecall\+\_\+\+Msd\+Tx\+Mode\+\_\+t} mode)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_a4319df67dc451fecb72e4e60ba7b6f6e}{le\+\_\+ecall\+\_\+\+Get\+Msd\+Tx\+Mode} (\hyperlink{le__ecall__interface_8h_adbaa600a7ab66371afddb909b1a113bd}{le\+\_\+ecall\+\_\+\+Msd\+Tx\+Mode\+\_\+t} $\ast$mode\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_a2b56b7b7fd7f936c144d30eba7815908}{le\+\_\+ecall\+\_\+\+Set\+Msd\+Position} (\hyperlink{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t} ecall\+Ref, bool is\+Trusted, int32\+\_\+t latitude, int32\+\_\+t longitude, int32\+\_\+t direction)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_a8c009bb03d61dcd0ffbd9e986b692a85}{le\+\_\+ecall\+\_\+\+Set\+Msd\+Passengers\+Count} (\hyperlink{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t} ecall\+Ref, uint32\+\_\+t pax\+Count)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_a85c4c3b921b9a6b0bc10f9400e58113e}{le\+\_\+ecall\+\_\+\+Import\+Msd} (\hyperlink{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t} ecall\+Ref, const uint8\+\_\+t $\ast$msd\+Ptr, size\+\_\+t msd\+Num\+Elements)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_aebdb7744c37081fda6398031d3ee1198}{le\+\_\+ecall\+\_\+\+Export\+Msd} (\hyperlink{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t} ecall\+Ref, uint8\+\_\+t $\ast$msd\+Ptr, size\+\_\+t $\ast$msd\+Num\+Elements\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_a344e4c29208e576e81dda113f786529e}{le\+\_\+ecall\+\_\+\+Send\+Msd} (\hyperlink{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t} ecall\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_aa25256eeacefcf00c14763ef294c7667}{le\+\_\+ecall\+\_\+\+Start\+Automatic} (\hyperlink{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t} ecall\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_ab106c3ca87fc8dd8239d2849df932122}{le\+\_\+ecall\+\_\+\+Start\+Manual} (\hyperlink{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t} ecall\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_aa5d23a1bea370b1ae29fc52d7a89d947}{le\+\_\+ecall\+\_\+\+Start\+Test} (\hyperlink{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t} ecall\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_a85800c86f9709fb7baa7219cc762181c}{le\+\_\+ecall\+\_\+\+End} (\hyperlink{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t} ecall\+Ref)
+\item 
+\hyperlink{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dd}{le\+\_\+ecall\+\_\+\+State\+\_\+t} \hyperlink{le__ecall__interface_8h_a7881e794b9249222edde10f76d7663c9}{le\+\_\+ecall\+\_\+\+Get\+State} (\hyperlink{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t} ecall\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_a9c13a8582bca84c4ae77643e1f4cfd71}{le\+\_\+ecall\+\_\+\+Set\+Psap\+Number} (const char $\ast$psap)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_a91c84ca3f4bb27844bfd2d14859bf31a}{le\+\_\+ecall\+\_\+\+Get\+Psap\+Number} (char $\ast$psap, size\+\_\+t psap\+Num\+Elements)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_a034c442fd7c6650ed956822a561c0104}{le\+\_\+ecall\+\_\+\+Use\+U\+Sim\+Numbers} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_a66e454e84db7d337d76bc867b57891a1}{le\+\_\+ecall\+\_\+\+Set\+Nad\+Deregistration\+Time} (uint16\+\_\+t dereg\+Time)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_a0f24b673049d51baf132ace25e2fa161}{le\+\_\+ecall\+\_\+\+Get\+Nad\+Deregistration\+Time} (uint16\+\_\+t $\ast$dereg\+Time\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_af90a8602d4b1d0cacaa3971c508dd188}{le\+\_\+ecall\+\_\+\+Set\+Interval\+Between\+Dial\+Attempts} (uint16\+\_\+t pause)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_a3a24ae5a007d0c43db2bc55caa43c19d}{le\+\_\+ecall\+\_\+\+Get\+Interval\+Between\+Dial\+Attempts} (uint16\+\_\+t $\ast$pause\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_a15127a7b0500796257795aaf64acd1e2}{le\+\_\+ecall\+\_\+\+Set\+Era\+Glonass\+Manual\+Dial\+Attempts} (uint16\+\_\+t attempts)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_a836aaf195c0648d41f4a13f8c7ced736}{le\+\_\+ecall\+\_\+\+Set\+Era\+Glonass\+Auto\+Dial\+Attempts} (uint16\+\_\+t attempts)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_a6c934a9e5aad11eb6f009a6bf34fca19}{le\+\_\+ecall\+\_\+\+Set\+Era\+Glonass\+Dial\+Duration} (uint16\+\_\+t duration)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_a579169dbcb91369caa156d2c0e3462c1}{le\+\_\+ecall\+\_\+\+Get\+Era\+Glonass\+Manual\+Dial\+Attempts} (uint16\+\_\+t $\ast$attempts\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_af8beed56bd3be9bee8a771e05c498ac8}{le\+\_\+ecall\+\_\+\+Get\+Era\+Glonass\+Auto\+Dial\+Attempts} (uint16\+\_\+t $\ast$attempts\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_afeb92d26dd8a2c092e96b07f3dc0391d}{le\+\_\+ecall\+\_\+\+Get\+Era\+Glonass\+Dial\+Duration} (uint16\+\_\+t $\ast$duration\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_a577f3dcd16e53c8a14295ec58c6d2b9a}{le\+\_\+ecall\+\_\+\+Set\+Msd\+Era\+Glonass\+Crash\+Severity} (\hyperlink{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t} ecall\+Ref, uint32\+\_\+t crash\+Severity)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_addb2874aacaffba2731354c4ac9428bf}{le\+\_\+ecall\+\_\+\+Reset\+Msd\+Era\+Glonass\+Crash\+Severity} (\hyperlink{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t} ecall\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_a51ad61edf379cfe07f03fbd71b56df9d}{le\+\_\+ecall\+\_\+\+Set\+Msd\+Era\+Glonass\+Diagnostic\+Result} (\hyperlink{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t} ecall\+Ref, \hyperlink{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cf}{le\+\_\+ecall\+\_\+\+Diagnostic\+Result\+Bit\+Mask\+\_\+t} diagnostic\+Result\+Mask)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_ad3e06b90843a480d68dc99ead29ae8d0}{le\+\_\+ecall\+\_\+\+Reset\+Msd\+Era\+Glonass\+Diagnostic\+Result} (\hyperlink{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t} ecall\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_a08c613df57d34eb2a1309738bced5d76}{le\+\_\+ecall\+\_\+\+Set\+Msd\+Era\+Glonass\+Crash\+Info} (\hyperlink{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t} ecall\+Ref, \hyperlink{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318}{le\+\_\+ecall\+\_\+\+Crash\+Info\+Bit\+Mask\+\_\+t} crash\+Info\+Mask)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__ecall__interface_8h_ab883aa41416ada9746acfbb75a0039a8}{le\+\_\+ecall\+\_\+\+Reset\+Msd\+Era\+Glonass\+Crash\+Info} (\hyperlink{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t} ecall\+Ref)
+\item 
+\hyperlink{le__mcc__interface_8h_abda706f723ba619f9bc460bcc9a4960d}{le\+\_\+mcc\+\_\+\+Termination\+Reason\+\_\+t} \hyperlink{le__ecall__interface_8h_a771b2ef399a8fbf3b80c4eb11152c06a}{le\+\_\+ecall\+\_\+\+Get\+Termination\+Reason} (\hyperlink{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t} ecall\+Ref)
+\item 
+int32\+\_\+t \hyperlink{le__ecall__interface_8h_a8ffb7fb207537ea4574823285ebb6ca1}{le\+\_\+ecall\+\_\+\+Get\+Platform\+Specific\+Termination\+Code} (\hyperlink{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t} ecall\+Ref)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_ecall}{e\+Call} include file.
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{le__ecall__interface_8h_a287eeec0c34e2566297839227109fa62}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+M\+S\+D\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+M\+S\+D\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N}}
+\index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+M\+S\+D\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+M\+S\+D\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+M\+S\+D\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+M\+S\+D\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N~140}\label{le__ecall__interface_8h_a287eeec0c34e2566297839227109fa62}
+M\+S\+D message length in bytes. 
+
+\subsection{Typedef Documentation}
+\hypertarget{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t@{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}}
+\index{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t@{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+ecall\+\_\+\+Call$\ast$ {\bf le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}}\label{le__ecall__interface_8h_a8536728653b7b3cdd6b298c6e7b67705}
+Reference returned by Create function and used by other functions \hypertarget{le__ecall__interface_8h_a33defe07c6bf58180a89b87fc5b6a5e1}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+State\+Change\+Handler\+Func\+\_\+t@{le\+\_\+ecall\+\_\+\+State\+Change\+Handler\+Func\+\_\+t}}
+\index{le\+\_\+ecall\+\_\+\+State\+Change\+Handler\+Func\+\_\+t@{le\+\_\+ecall\+\_\+\+State\+Change\+Handler\+Func\+\_\+t}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+State\+Change\+Handler\+Func\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ le\+\_\+ecall\+\_\+\+State\+Change\+Handler\+Func\+\_\+t) ({\bf le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t} ecall\+Ref, {\bf le\+\_\+ecall\+\_\+\+State\+\_\+t} state, void $\ast$context\+Ptr)}\label{le__ecall__interface_8h_a33defe07c6bf58180a89b87fc5b6a5e1}
+Handler for e\+Call state changes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecall\+Ref} & e\+Call reference \\
+\hline
+{\em state} & e\+Call state \\
+\hline
+{\em context\+Ptr} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a7e915557fce85b9b82017a80c0d32ddd}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+State\+Change\+Handler\+Ref\+\_\+t@{le\+\_\+ecall\+\_\+\+State\+Change\+Handler\+Ref\+\_\+t}}
+\index{le\+\_\+ecall\+\_\+\+State\+Change\+Handler\+Ref\+\_\+t@{le\+\_\+ecall\+\_\+\+State\+Change\+Handler\+Ref\+\_\+t}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+State\+Change\+Handler\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+ecall\+\_\+\+State\+Change\+Handler$\ast$ {\bf le\+\_\+ecall\+\_\+\+State\+Change\+Handler\+Ref\+\_\+t}}\label{le__ecall__interface_8h_a7e915557fce85b9b82017a80c0d32ddd}
+Reference type used by Add/\+Remove functions for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+ecall\+\_\+\+State\+Change\textquotesingle{} 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Crash\+Info\+Bit\+Mask\+\_\+t@{le\+\_\+ecall\+\_\+\+Crash\+Info\+Bit\+Mask\+\_\+t}}
+\index{le\+\_\+ecall\+\_\+\+Crash\+Info\+Bit\+Mask\+\_\+t@{le\+\_\+ecall\+\_\+\+Crash\+Info\+Bit\+Mask\+\_\+t}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Crash\+Info\+Bit\+Mask\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+ecall\+\_\+\+Crash\+Info\+Bit\+Mask\+\_\+t}}\label{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318}
+Crash information Bit Mask (16 bits) indicating the type of road accident. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a01da8764c695658c5901990e6a9cf860}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T\label{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a01da8764c695658c5901990e6a9cf860}
+}]Present Front collision indicator. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a360460c02abe6e1ac2896dc03abcebe7}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T\label{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a360460c02abe6e1ac2896dc03abcebe7}
+}]Front collision indicator. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+L\+E\+F\+T@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+L\+E\+F\+T}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+L\+E\+F\+T@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+L\+E\+F\+T}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318aed1f753fce57a99984fc740955ffff8e}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+L\+E\+F\+T\label{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318aed1f753fce57a99984fc740955ffff8e}
+}]Present Left collision indicator. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+L\+E\+F\+T@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+L\+E\+F\+T}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+L\+E\+F\+T@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+L\+E\+F\+T}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a7345e320441ab4646d229df53c0c29f3}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+L\+E\+F\+T\label{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a7345e320441ab4646d229df53c0c29f3}
+}]Left collision indicator. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+I\+G\+H\+T@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+I\+G\+H\+T}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+I\+G\+H\+T@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+I\+G\+H\+T}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a7f125c55a9565122c2346400d92703a0}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+I\+G\+H\+T\label{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a7f125c55a9565122c2346400d92703a0}
+}]Present Right collision indicator. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+I\+G\+H\+T@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+I\+G\+H\+T}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+I\+G\+H\+T@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+I\+G\+H\+T}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318af00ca9da5f0ac3cdb4e0b3679b629371}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+I\+G\+H\+T\label{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318af00ca9da5f0ac3cdb4e0b3679b629371}
+}]Right collision indicator. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+E\+A\+R@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+E\+A\+R}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+E\+A\+R@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+E\+A\+R}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318ab876870a81ddabb3741405599caa0f90}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+E\+A\+R\label{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318ab876870a81ddabb3741405599caa0f90}
+}]Present indicator. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+E\+A\+R@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+E\+A\+R}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+E\+A\+R@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+E\+A\+R}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a282336188e8b142cbe5e126c3482637a}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+E\+A\+R\label{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a282336188e8b142cbe5e126c3482637a}
+}]Rear impact indicator. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+O\+L\+L\+O\+V\+E\+R@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+O\+L\+L\+O\+V\+E\+R}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+O\+L\+L\+O\+V\+E\+R@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+O\+L\+L\+O\+V\+E\+R}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318aec2f6f4993180c4c8dd94b44e3b52639}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+O\+L\+L\+O\+V\+E\+R\label{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318aec2f6f4993180c4c8dd94b44e3b52639}
+}]Present Rollover indicator. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+O\+L\+L\+O\+V\+E\+R@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+O\+L\+L\+O\+V\+E\+R}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+O\+L\+L\+O\+V\+E\+R@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+O\+L\+L\+O\+V\+E\+R}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318ae4a8372808b6c0710bc409c956c4d008}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+R\+O\+L\+L\+O\+V\+E\+R\label{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318ae4a8372808b6c0710bc409c956c4d008}
+}]Rollover indicator. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+I\+D\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+I\+D\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+I\+D\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+I\+D\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a59e5e8a717d5ea271a37de187ddd8c63}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+I\+D\+E\label{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a59e5e8a717d5ea271a37de187ddd8c63}
+}]Present Side collision indicator. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+I\+D\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+I\+D\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+I\+D\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+I\+D\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a690446965965ed340406dffd21a136c9}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+I\+D\+E\label{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a690446965965ed340406dffd21a136c9}
+}]Side collision indicator. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T\+\_\+\+O\+R\+\_\+\+S\+I\+D\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T\+\_\+\+O\+R\+\_\+\+S\+I\+D\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T\+\_\+\+O\+R\+\_\+\+S\+I\+D\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T\+\_\+\+O\+R\+\_\+\+S\+I\+D\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a7139e97473edb9bca67b01d3d4f6d5c9}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T\+\_\+\+O\+R\+\_\+\+S\+I\+D\+E\label{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a7139e97473edb9bca67b01d3d4f6d5c9}
+}]Present Front or side collision indicator. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T\+\_\+\+O\+R\+\_\+\+S\+I\+D\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T\+\_\+\+O\+R\+\_\+\+S\+I\+D\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T\+\_\+\+O\+R\+\_\+\+S\+I\+D\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T\+\_\+\+O\+R\+\_\+\+S\+I\+D\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a0e26e57771f2628a39f1c88a5ef08f1b}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+F\+R\+O\+N\+T\+\_\+\+O\+R\+\_\+\+S\+I\+D\+E\label{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a0e26e57771f2628a39f1c88a5ef08f1b}
+}]Front or side collision indicator. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+A\+N\+O\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+A\+N\+O\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+A\+N\+O\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+A\+N\+O\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a135e85f717fcec7fd8146d9882bbb3ec}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+A\+N\+O\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\label{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a135e85f717fcec7fd8146d9882bbb3ec}
+}]Present Other types of damage indicator. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+A\+N\+O\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+A\+N\+O\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+A\+N\+O\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+A\+N\+O\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a69ff594dda0b4097ed2732ca30d73a80}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+C\+R\+A\+S\+H\+\_\+\+I\+N\+F\+O\+\_\+\+C\+R\+A\+S\+H\+\_\+\+A\+N\+O\+T\+H\+E\+R\+\_\+\+T\+Y\+P\+E\label{le__ecall__interface_8h_ae95239490ffd1ee40a9dfcfe02cbd318a69ff594dda0b4097ed2732ca30d73a80}
+}]Other types of damage indicator. \end{description}
+\end{Desc}
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cf}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Diagnostic\+Result\+Bit\+Mask\+\_\+t@{le\+\_\+ecall\+\_\+\+Diagnostic\+Result\+Bit\+Mask\+\_\+t}}
+\index{le\+\_\+ecall\+\_\+\+Diagnostic\+Result\+Bit\+Mask\+\_\+t@{le\+\_\+ecall\+\_\+\+Diagnostic\+Result\+Bit\+Mask\+\_\+t}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Diagnostic\+Result\+Bit\+Mask\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+ecall\+\_\+\+Diagnostic\+Result\+Bit\+Mask\+\_\+t}}\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cf}
+Diagnostic result Bit Mask (64 bits) \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+M\+I\+C\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+M\+I\+C\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+M\+I\+C\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+M\+I\+C\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa3a666c50c2a85411eb7d723a9553144e}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+M\+I\+C\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa3a666c50c2a85411eb7d723a9553144e}
+}]Present Mic connection failure. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+M\+I\+C\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+M\+I\+C\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+M\+I\+C\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+M\+I\+C\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa5ea3221dec67d321994be4a7b1a28dd9}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+M\+I\+C\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa5ea3221dec67d321994be4a7b1a28dd9}
+}]Mic connection failure status. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+M\+I\+C\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+M\+I\+C\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+M\+I\+C\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+M\+I\+C\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfaee3053c076f08c5ded4120c3fa69fe32}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+M\+I\+C\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfaee3053c076f08c5ded4120c3fa69fe32}
+}]Present Mic failure. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+M\+I\+C\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+M\+I\+C\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+M\+I\+C\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+M\+I\+C\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa1040d9724404f0cfacb8415ca6d9b4aa}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+M\+I\+C\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa1040d9724404f0cfacb8415ca6d9b4aa}
+}]Mic failure status. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+R\+I\+G\+H\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+R\+I\+G\+H\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+R\+I\+G\+H\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+R\+I\+G\+H\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfad461d767378af8ee304347821ea927a0}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+R\+I\+G\+H\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfad461d767378af8ee304347821ea927a0}
+}]Present Right speaker failure. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+R\+I\+G\+H\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+R\+I\+G\+H\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+R\+I\+G\+H\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+R\+I\+G\+H\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfaa42ad4d6b44146c65bb2c25d26113565}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+R\+I\+G\+H\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfaa42ad4d6b44146c65bb2c25d26113565}
+}]Right speaker failure status. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+L\+E\+F\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+L\+E\+F\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+L\+E\+F\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+L\+E\+F\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa37adae3ab192525db0848a626869f9bf}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+L\+E\+F\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa37adae3ab192525db0848a626869f9bf}
+}]Present Left speaker failure. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+L\+E\+F\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+L\+E\+F\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+L\+E\+F\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+L\+E\+F\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfaaa165a78a5db94f7f4976584931667f2}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+L\+E\+F\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfaaa165a78a5db94f7f4976584931667f2}
+}]Left speaker failure status. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+S\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+S\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+S\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+S\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfab5c2abf0e14fee9d545c2087b702cc1c}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+S\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfab5c2abf0e14fee9d545c2087b702cc1c}
+}]Present Speaker failure. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+S\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+S\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+S\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+S\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfab997fde1541446d2a99c598cd91fc270}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+S\+P\+E\+A\+K\+E\+R\+S\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfab997fde1541446d2a99c598cd91fc270}
+}]Speaker failure status. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+I\+G\+N\+I\+T\+I\+O\+N\+\_\+\+L\+I\+N\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+I\+G\+N\+I\+T\+I\+O\+N\+\_\+\+L\+I\+N\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+I\+G\+N\+I\+T\+I\+O\+N\+\_\+\+L\+I\+N\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+I\+G\+N\+I\+T\+I\+O\+N\+\_\+\+L\+I\+N\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa39edbd2d426729ea02e7495c19abe89b}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+I\+G\+N\+I\+T\+I\+O\+N\+\_\+\+L\+I\+N\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa39edbd2d426729ea02e7495c19abe89b}
+}]Present Ignition line failure. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+G\+N\+I\+T\+I\+O\+N\+\_\+\+L\+I\+N\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+G\+N\+I\+T\+I\+O\+N\+\_\+\+L\+I\+N\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+G\+N\+I\+T\+I\+O\+N\+\_\+\+L\+I\+N\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+G\+N\+I\+T\+I\+O\+N\+\_\+\+L\+I\+N\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa84ea0c7a83231ee13d9f93e3b3041edb}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+G\+N\+I\+T\+I\+O\+N\+\_\+\+L\+I\+N\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa84ea0c7a83231ee13d9f93e3b3041edb}
+}]Ignition line failure status. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+U\+I\+M\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+U\+I\+M\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+U\+I\+M\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+U\+I\+M\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfab67b956ebcf642aad76b46c8b7bfeba0}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+U\+I\+M\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfab67b956ebcf642aad76b46c8b7bfeba0}
+}]Present U\+I\+M failure. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+U\+I\+M\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+U\+I\+M\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+U\+I\+M\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+U\+I\+M\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa46cba969c2abd641309d791019e1e3e0}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+U\+I\+M\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa46cba969c2abd641309d791019e1e3e0}
+}]U\+I\+M failure status. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+D\+I\+C\+A\+T\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+D\+I\+C\+A\+T\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+D\+I\+C\+A\+T\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+D\+I\+C\+A\+T\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa5ed346638d49d6e107999803da6336e3}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+D\+I\+C\+A\+T\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa5ed346638d49d6e107999803da6336e3}
+}]Present Status indicator failure. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+D\+I\+C\+A\+T\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+D\+I\+C\+A\+T\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+D\+I\+C\+A\+T\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+D\+I\+C\+A\+T\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa8116de4b851ecdd34a0b907e947c9c29}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+D\+I\+C\+A\+T\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa8116de4b851ecdd34a0b907e947c9c29}
+}]Status indicator failure status. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa4ab7b54d47733d8d8471a396333ceaaa}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa4ab7b54d47733d8d8471a396333ceaaa}
+}]Present Battery failure. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa6acf3de2c51fec3cb50da9f8566985c2}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa6acf3de2c51fec3cb50da9f8566985c2}
+}]Battery failure status. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+V\+O\+L\+T\+A\+G\+E\+\_\+\+L\+O\+W@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+V\+O\+L\+T\+A\+G\+E\+\_\+\+L\+O\+W}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+V\+O\+L\+T\+A\+G\+E\+\_\+\+L\+O\+W@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+V\+O\+L\+T\+A\+G\+E\+\_\+\+L\+O\+W}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa0fee651e0bdf4c009d615af2a61101f1}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+V\+O\+L\+T\+A\+G\+E\+\_\+\+L\+O\+W\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa0fee651e0bdf4c009d615af2a61101f1}
+}]Present Battery voltage low failure. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+V\+O\+L\+T\+A\+G\+E\+\_\+\+L\+O\+W@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+V\+O\+L\+T\+A\+G\+E\+\_\+\+L\+O\+W}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+V\+O\+L\+T\+A\+G\+E\+\_\+\+L\+O\+W@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+V\+O\+L\+T\+A\+G\+E\+\_\+\+L\+O\+W}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa27a91439e027be0cad4cf6345af6b7a9}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+V\+O\+L\+T\+A\+G\+E\+\_\+\+L\+O\+W\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa27a91439e027be0cad4cf6345af6b7a9}
+}]Battery voltage low failure status. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfacc384f30e34c8528c3058eb61b9a4708}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfacc384f30e34c8528c3058eb61b9a4708}
+}]Present Crash sensor failure. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfae172bd8bbf4b6a19e24acf5b703ef347}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfae172bd8bbf4b6a19e24acf5b703ef347}
+}]Crash sensor failure status. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+C\+O\+R\+R\+U\+P\+T\+I\+O\+N@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+C\+O\+R\+R\+U\+P\+T\+I\+O\+N}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+C\+O\+R\+R\+U\+P\+T\+I\+O\+N@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+C\+O\+R\+R\+U\+P\+T\+I\+O\+N}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfacd5438b99a54bf7c30ea057daf777c15}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+C\+O\+R\+R\+U\+P\+T\+I\+O\+N\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfacd5438b99a54bf7c30ea057daf777c15}
+}]Present Firmware image corruption failure. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+C\+O\+R\+R\+U\+P\+T\+I\+O\+N@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+C\+O\+R\+R\+U\+P\+T\+I\+O\+N}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+C\+O\+R\+R\+U\+P\+T\+I\+O\+N@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+C\+O\+R\+R\+U\+P\+T\+I\+O\+N}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa178e487741cf7289e8970fdda75befbc}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+I\+M\+A\+G\+E\+\_\+\+C\+O\+R\+R\+U\+P\+T\+I\+O\+N\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa178e487741cf7289e8970fdda75befbc}
+}]Firmware image corruption failure status. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa178938e58755295751613022ae84cd0e}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa178938e58755295751613022ae84cd0e}
+}]Present Comm module interface failure. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa3d7c345c8e047c525e3d37a343c61101}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa3d7c345c8e047c525e3d37a343c61101}
+}]Comm module interface failure status. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+G\+N\+S\+S\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+G\+N\+S\+S\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+G\+N\+S\+S\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+G\+N\+S\+S\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfaa0602ef741555db93005d4b2b6ab4b1a}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+G\+N\+S\+S\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfaa0602ef741555db93005d4b2b6ab4b1a}
+}]Present G\+N\+S\+S receiver failure. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+G\+N\+S\+S\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+G\+N\+S\+S\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+G\+N\+S\+S\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+G\+N\+S\+S\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa0b442f6f7927c2d7d5042ffc1a39ab2a}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+G\+N\+S\+S\+\_\+\+R\+E\+C\+E\+I\+V\+E\+R\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa0b442f6f7927c2d7d5042ffc1a39ab2a}
+}]G\+N\+S\+S receiver failure status. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+R\+A\+I\+M\+\_\+\+P\+R\+O\+B\+L\+E\+M@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+R\+A\+I\+M\+\_\+\+P\+R\+O\+B\+L\+E\+M}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+R\+A\+I\+M\+\_\+\+P\+R\+O\+B\+L\+E\+M@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+R\+A\+I\+M\+\_\+\+P\+R\+O\+B\+L\+E\+M}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfaab73c6c71cb79f7730bb13648c7bce04}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+R\+A\+I\+M\+\_\+\+P\+R\+O\+B\+L\+E\+M\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfaab73c6c71cb79f7730bb13648c7bce04}
+}]Present R\+A\+I\+M problem. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+R\+A\+I\+M\+\_\+\+P\+R\+O\+B\+L\+E\+M@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+R\+A\+I\+M\+\_\+\+P\+R\+O\+B\+L\+E\+M}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+R\+A\+I\+M\+\_\+\+P\+R\+O\+B\+L\+E\+M@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+R\+A\+I\+M\+\_\+\+P\+R\+O\+B\+L\+E\+M}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa019a86c400d606429062b2a90099a8ac}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+R\+A\+I\+M\+\_\+\+P\+R\+O\+B\+L\+E\+M\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa019a86c400d606429062b2a90099a8ac}
+}]R\+A\+I\+M problem status. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+G\+N\+S\+S\+\_\+\+A\+N\+T\+E\+N\+N\+A\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+G\+N\+S\+S\+\_\+\+A\+N\+T\+E\+N\+N\+A\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+G\+N\+S\+S\+\_\+\+A\+N\+T\+E\+N\+N\+A\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+G\+N\+S\+S\+\_\+\+A\+N\+T\+E\+N\+N\+A\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfab3fd7f550aa416093c4f7888808371c8}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+G\+N\+S\+S\+\_\+\+A\+N\+T\+E\+N\+N\+A\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfab3fd7f550aa416093c4f7888808371c8}
+}]Present G\+N\+S\+S antenna failure. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+G\+N\+S\+S\+\_\+\+A\+N\+T\+E\+N\+N\+A\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+G\+N\+S\+S\+\_\+\+A\+N\+T\+E\+N\+N\+A\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+G\+N\+S\+S\+\_\+\+A\+N\+T\+E\+N\+N\+A\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+G\+N\+S\+S\+\_\+\+A\+N\+T\+E\+N\+N\+A\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa9f235ce7e3ba41d7a8380d32165bafa5}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+G\+N\+S\+S\+\_\+\+A\+N\+T\+E\+N\+N\+A\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa9f235ce7e3ba41d7a8380d32165bafa5}
+}]G\+N\+S\+S antenna failure status. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa59c26e2657b9f5bcd8dd81e5080b9e8d}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa59c26e2657b9f5bcd8dd81e5080b9e8d}
+}]Present Comm module failure. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa9104e4fafa6bdb8b1a0239ade55f4f48}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+O\+M\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+F\+A\+I\+L\+U\+R\+E\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa9104e4fafa6bdb8b1a0239ade55f4f48}
+}]Comm module failure status. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+E\+V\+E\+N\+T\+S\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+E\+V\+E\+N\+T\+S\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+E\+V\+E\+N\+T\+S\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+E\+V\+E\+N\+T\+S\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa0c22c7756946acb06740ba652f7bcb67}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+E\+V\+E\+N\+T\+S\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa0c22c7756946acb06740ba652f7bcb67}
+}]Present Events memory overflow. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+E\+V\+E\+N\+T\+S\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+E\+V\+E\+N\+T\+S\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+E\+V\+E\+N\+T\+S\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+E\+V\+E\+N\+T\+S\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa1c06faec14254dcf384ca99395507f5a}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+E\+V\+E\+N\+T\+S\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa1c06faec14254dcf384ca99395507f5a}
+}]Events memory overflow status. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+P\+R\+O\+F\+I\+L\+E\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+P\+R\+O\+F\+I\+L\+E\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+P\+R\+O\+F\+I\+L\+E\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+P\+R\+O\+F\+I\+L\+E\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa9cc1d793f1374111d50db04e1be0b5db}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+P\+R\+O\+F\+I\+L\+E\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa9cc1d793f1374111d50db04e1be0b5db}
+}]Present Crash profile memory overflow. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+P\+R\+O\+F\+I\+L\+E\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+P\+R\+O\+F\+I\+L\+E\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+P\+R\+O\+F\+I\+L\+E\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+P\+R\+O\+F\+I\+L\+E\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa06e757db30ca5070dc36157dee395889}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+R\+A\+S\+H\+\_\+\+P\+R\+O\+F\+I\+L\+E\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa06e757db30ca5070dc36157dee395889}
+}]Crash profile memory overflow status. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa81b05ff958f8bdcd51c8d386cf854112}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa81b05ff958f8bdcd51c8d386cf854112}
+}]Present Other critical failures. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa5e8787b4834125e76f87b6c4ae582851}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa5e8787b4834125e76f87b6c4ae582851}
+}]Other critical failures status. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+N\+O\+T\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+N\+O\+T\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+N\+O\+T\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+N\+O\+T\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa326d1385df2ad0e731d2a4b5b66bbacb}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+R\+E\+S\+E\+N\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+N\+O\+T\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa326d1385df2ad0e731d2a4b5b66bbacb}
+}]Present Other not critical failures. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+N\+O\+T\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+N\+O\+T\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+N\+O\+T\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+N\+O\+T\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa2deff70e9effd8b7174f898019c05f1c}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+G\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+O\+T\+H\+E\+R\+\_\+\+N\+O\+T\+\_\+\+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+F\+A\+I\+L\+U\+R\+E\+S\label{le__ecall__interface_8h_a777e8d6608b5e40f73696904471519cfa2deff70e9effd8b7174f898019c05f1c}
+}]Other not critical failures status. \end{description}
+\end{Desc}
+\hypertarget{le__ecall__interface_8h_adbaa600a7ab66371afddb909b1a113bd}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Msd\+Tx\+Mode\+\_\+t@{le\+\_\+ecall\+\_\+\+Msd\+Tx\+Mode\+\_\+t}}
+\index{le\+\_\+ecall\+\_\+\+Msd\+Tx\+Mode\+\_\+t@{le\+\_\+ecall\+\_\+\+Msd\+Tx\+Mode\+\_\+t}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Msd\+Tx\+Mode\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+ecall\+\_\+\+Msd\+Tx\+Mode\+\_\+t}}\label{le__ecall__interface_8h_adbaa600a7ab66371afddb909b1a113bd}
+e\+Call M\+S\+D transmission mode. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+T\+X\+\_\+\+M\+O\+D\+E\+\_\+\+P\+U\+L\+L@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+T\+X\+\_\+\+M\+O\+D\+E\+\_\+\+P\+U\+L\+L}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+T\+X\+\_\+\+M\+O\+D\+E\+\_\+\+P\+U\+L\+L@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+T\+X\+\_\+\+M\+O\+D\+E\+\_\+\+P\+U\+L\+L}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_adbaa600a7ab66371afddb909b1a113bdaaf6827f8890a733143bd2c01e6afdfef}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+T\+X\+\_\+\+M\+O\+D\+E\+\_\+\+P\+U\+L\+L\label{le__ecall__interface_8h_adbaa600a7ab66371afddb909b1a113bdaaf6827f8890a733143bd2c01e6afdfef}
+}]Pull mode (modem/host waits for M\+S\+D request from P\+S\+A\+P to send M\+S\+D). \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+T\+X\+\_\+\+M\+O\+D\+E\+\_\+\+P\+U\+S\+H@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+T\+X\+\_\+\+M\+O\+D\+E\+\_\+\+P\+U\+S\+H}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+T\+X\+\_\+\+M\+O\+D\+E\+\_\+\+P\+U\+S\+H@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+T\+X\+\_\+\+M\+O\+D\+E\+\_\+\+P\+U\+S\+H}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_adbaa600a7ab66371afddb909b1a113bdafe1cddc2df801a67c7f02020c0dd1127}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+T\+X\+\_\+\+M\+O\+D\+E\+\_\+\+P\+U\+S\+H\label{le__ecall__interface_8h_adbaa600a7ab66371afddb909b1a113bdafe1cddc2df801a67c7f02020c0dd1127}
+}]Push mode (modem/host sends M\+S\+D to P\+S\+A\+P right after e\+Call is connected). \end{description}
+\end{Desc}
+\hypertarget{le__ecall__interface_8h_af762f89b222e4cc18e9646c6e4b945b9}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Op\+Mode\+\_\+t@{le\+\_\+ecall\+\_\+\+Op\+Mode\+\_\+t}}
+\index{le\+\_\+ecall\+\_\+\+Op\+Mode\+\_\+t@{le\+\_\+ecall\+\_\+\+Op\+Mode\+\_\+t}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Op\+Mode\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+ecall\+\_\+\+Op\+Mode\+\_\+t}}\label{le__ecall__interface_8h_af762f89b222e4cc18e9646c6e4b945b9}
+Configured operation modes. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+M\+O\+D\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+M\+O\+D\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+M\+O\+D\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+M\+O\+D\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_af762f89b222e4cc18e9646c6e4b945b9a9d8e54c64e4796257880e146b15521f5}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+N\+O\+R\+M\+A\+L\+\_\+\+M\+O\+D\+E\label{le__ecall__interface_8h_af762f89b222e4cc18e9646c6e4b945b9a9d8e54c64e4796257880e146b15521f5}
+}]Normal mode. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+O\+N\+L\+Y\+\_\+\+M\+O\+D\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+O\+N\+L\+Y\+\_\+\+M\+O\+D\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+O\+N\+L\+Y\+\_\+\+M\+O\+D\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+O\+N\+L\+Y\+\_\+\+M\+O\+D\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_af762f89b222e4cc18e9646c6e4b945b9a841847f485e780277e11d1e942d8800d}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+O\+N\+L\+Y\+\_\+\+M\+O\+D\+E\label{le__ecall__interface_8h_af762f89b222e4cc18e9646c6e4b945b9a841847f485e780277e11d1e942d8800d}
+}]e\+Call only mode according to U/\+S\+I\+M operation mode or forced by application through the \hyperlink{le__ecall__interface_8h_a042d52c84b5b679ab32dd814c5b0be9e}{le\+\_\+ecall\+\_\+\+Force\+Only\+Mode()} function. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+F\+O\+R\+C\+E\+D\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+T\+\_\+\+O\+N\+L\+Y\+\_\+\+M\+O\+D\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+F\+O\+R\+C\+E\+D\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+T\+\_\+\+O\+N\+L\+Y\+\_\+\+M\+O\+D\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+F\+O\+R\+C\+E\+D\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+T\+\_\+\+O\+N\+L\+Y\+\_\+\+M\+O\+D\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+F\+O\+R\+C\+E\+D\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+T\+\_\+\+O\+N\+L\+Y\+\_\+\+M\+O\+D\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_af762f89b222e4cc18e9646c6e4b945b9a6d328d963d60c73e04af260f8dae7257}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+F\+O\+R\+C\+E\+D\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+T\+\_\+\+O\+N\+L\+Y\+\_\+\+M\+O\+D\+E\label{le__ecall__interface_8h_af762f89b222e4cc18e9646c6e4b945b9a6d328d963d60c73e04af260f8dae7257}
+}]Persistent e\+Call only mode. \end{description}
+\end{Desc}
+\hypertarget{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dd}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+State\+\_\+t@{le\+\_\+ecall\+\_\+\+State\+\_\+t}}
+\index{le\+\_\+ecall\+\_\+\+State\+\_\+t@{le\+\_\+ecall\+\_\+\+State\+\_\+t}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+State\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+ecall\+\_\+\+State\+\_\+t}}\label{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dd}
+e\+Call session states. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+U\+N\+K\+N\+O\+W\+N@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+U\+N\+K\+N\+O\+W\+N}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+U\+N\+K\+N\+O\+W\+N@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+U\+N\+K\+N\+O\+W\+N}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda5c06f82cbeeebb121ab56920a67dbc91}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+U\+N\+K\+N\+O\+W\+N\label{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda5c06f82cbeeebb121ab56920a67dbc91}
+}]Unknown state. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+A\+R\+T\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+A\+R\+T\+E\+D}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+A\+R\+T\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+A\+R\+T\+E\+D}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda94ba7aacca9dfe74c4733515a7ba2c5e}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+A\+R\+T\+E\+D\label{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda94ba7aacca9dfe74c4733515a7ba2c5e}
+}]e\+Call session started. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda974a4cdcc060be69502b2eae59962a45}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D\label{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda974a4cdcc060be69502b2eae59962a45}
+}]Emergency call is established. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+E\+D}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+E\+D}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda085024eb3cca6b48f024f368c6b0f757}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+E\+D\label{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda085024eb3cca6b48f024f368c6b0f757}
+}]Emergency call is disconnected. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+W\+A\+I\+T\+I\+N\+G\+\_\+\+P\+S\+A\+P\+\_\+\+S\+T\+A\+R\+T\+\_\+\+I\+N\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+W\+A\+I\+T\+I\+N\+G\+\_\+\+P\+S\+A\+P\+\_\+\+S\+T\+A\+R\+T\+\_\+\+I\+N\+D}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+W\+A\+I\+T\+I\+N\+G\+\_\+\+P\+S\+A\+P\+\_\+\+S\+T\+A\+R\+T\+\_\+\+I\+N\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+W\+A\+I\+T\+I\+N\+G\+\_\+\+P\+S\+A\+P\+\_\+\+S\+T\+A\+R\+T\+\_\+\+I\+N\+D}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07ddafeaa941937f098a5d6cc913f9ee2b32f}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+W\+A\+I\+T\+I\+N\+G\+\_\+\+P\+S\+A\+P\+\_\+\+S\+T\+A\+R\+T\+\_\+\+I\+N\+D\label{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07ddafeaa941937f098a5d6cc913f9ee2b32f}
+}]Waiting for P\+S\+A\+P start indication. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+S\+A\+P\+\_\+\+S\+T\+A\+R\+T\+\_\+\+I\+N\+D\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+S\+A\+P\+\_\+\+S\+T\+A\+R\+T\+\_\+\+I\+N\+D\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+S\+A\+P\+\_\+\+S\+T\+A\+R\+T\+\_\+\+I\+N\+D\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+S\+A\+P\+\_\+\+S\+T\+A\+R\+T\+\_\+\+I\+N\+D\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda2660c7eedfd850b845f0ece7899d5454}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+S\+A\+P\+\_\+\+S\+T\+A\+R\+T\+\_\+\+I\+N\+D\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D\label{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda2660c7eedfd850b845f0ece7899d5454}
+}]P\+S\+A\+P start indication received. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+S\+D\+\_\+\+T\+X\+\_\+\+S\+T\+A\+R\+T\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+S\+D\+\_\+\+T\+X\+\_\+\+S\+T\+A\+R\+T\+E\+D}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+S\+D\+\_\+\+T\+X\+\_\+\+S\+T\+A\+R\+T\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+S\+D\+\_\+\+T\+X\+\_\+\+S\+T\+A\+R\+T\+E\+D}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda0e8c495854c6fe3f9fe9285554704572}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+S\+D\+\_\+\+T\+X\+\_\+\+S\+T\+A\+R\+T\+E\+D\label{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda0e8c495854c6fe3f9fe9285554704572}
+}]M\+S\+D transmission is started. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+L\+L\+N\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+L\+L\+N\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+L\+L\+N\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+L\+L\+N\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda8699c87772e74835e38573fc9830dba5}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+L\+L\+N\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D\label{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda8699c87772e74835e38573fc9830dba5}
+}]L\+L-\/\+N\+A\+C\+K received. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+L\+L\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+L\+L\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+L\+L\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+L\+L\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda0410bf309197a2f26910062efb56ed0e}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+L\+L\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D\label{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda0410bf309197a2f26910062efb56ed0e}
+}]L\+L-\/\+A\+C\+K received. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+S\+D\+\_\+\+T\+X\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+S\+D\+\_\+\+T\+X\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\+D}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+S\+D\+\_\+\+T\+X\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+S\+D\+\_\+\+T\+X\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\+D}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07ddae9346b115da82c9583f057ba12d8faa9}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+S\+D\+\_\+\+T\+X\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\+D\label{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07ddae9346b115da82c9583f057ba12d8faa9}
+}]M\+S\+D transmission is complete. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+S\+D\+\_\+\+T\+X\+\_\+\+F\+A\+I\+L\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+S\+D\+\_\+\+T\+X\+\_\+\+F\+A\+I\+L\+E\+D}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+S\+D\+\_\+\+T\+X\+\_\+\+F\+A\+I\+L\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+S\+D\+\_\+\+T\+X\+\_\+\+F\+A\+I\+L\+E\+D}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda3654bda55c075297e9111acafa90a2bb}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+S\+D\+\_\+\+T\+X\+\_\+\+F\+A\+I\+L\+E\+D\label{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda3654bda55c075297e9111acafa90a2bb}
+}]M\+S\+D transmission has failed. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+A\+L\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D\+\_\+\+P\+O\+S\+I\+T\+I\+V\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+A\+L\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D\+\_\+\+P\+O\+S\+I\+T\+I\+V\+E}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+A\+L\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D\+\_\+\+P\+O\+S\+I\+T\+I\+V\+E@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+A\+L\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D\+\_\+\+P\+O\+S\+I\+T\+I\+V\+E}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda5a54611736c5cf7131cc196c694d8060}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+A\+L\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D\+\_\+\+P\+O\+S\+I\+T\+I\+V\+E\label{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda5a54611736c5cf7131cc196c694d8060}
+}]A\+L-\/\+A\+C\+K received. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+A\+L\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D\+\_\+\+C\+L\+E\+A\+R\+\_\+\+D\+O\+W\+N@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+A\+L\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D\+\_\+\+C\+L\+E\+A\+R\+\_\+\+D\+O\+W\+N}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+A\+L\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D\+\_\+\+C\+L\+E\+A\+R\+\_\+\+D\+O\+W\+N@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+A\+L\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D\+\_\+\+C\+L\+E\+A\+R\+\_\+\+D\+O\+W\+N}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda2b28ed16149c54b6b3d9c57dea4a748f}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+A\+L\+A\+C\+K\+\_\+\+R\+E\+C\+E\+I\+V\+E\+D\+\_\+\+C\+L\+E\+A\+R\+\_\+\+D\+O\+W\+N\label{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda2b28ed16149c54b6b3d9c57dea4a748f}
+}]A\+L-\/\+A\+C\+K clear-\/down received. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+E\+D}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+E\+D}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda28740cfb795561c243501bff53343175}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+T\+O\+P\+P\+E\+D\label{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda28740cfb795561c243501bff53343175}
+}]e\+Call session has been stopped by P\+S\+A\+P or I\+V\+S \hyperlink{le__ecall__interface_8h_a85800c86f9709fb7baa7219cc762181c}{le\+\_\+ecall\+\_\+\+End()}. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+E\+S\+E\+T@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+E\+S\+E\+T}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+E\+S\+E\+T@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+E\+S\+E\+T}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda71a12603e5a05716c7579e12f6f85734}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+E\+S\+E\+T\label{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda71a12603e5a05716c7579e12f6f85734}
+}]e\+Call session has lost synchronization and starts over. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\+D}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\+D}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda40cb68755482f2068f414e4bd1d2bf13}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\+D\label{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda40cb68755482f2068f414e4bd1d2bf13}
+}]e\+Call session completed. The modem successfully completed the M\+S\+D transmission and received two A\+L-\/\+A\+C\+Ks (positive). Can now switch to voice path. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+F\+A\+I\+L\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+F\+A\+I\+L\+E\+D}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+F\+A\+I\+L\+E\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+F\+A\+I\+L\+E\+D}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda5275385371c51e441a9eb97626c271b4}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+F\+A\+I\+L\+E\+D\label{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07dda5275385371c51e441a9eb97626c271b4}
+}]Unsuccessful e\+Call session. \index{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+R\+E\+D\+I\+A\+L\+\_\+\+P\+E\+R\+I\+O\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+R\+E\+D\+I\+A\+L\+\_\+\+P\+E\+R\+I\+O\+D}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+R\+E\+D\+I\+A\+L\+\_\+\+P\+E\+R\+I\+O\+D@{L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+R\+E\+D\+I\+A\+L\+\_\+\+P\+E\+R\+I\+O\+D}}\item[{\em 
+\hypertarget{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07ddac5c297a2a70f2490f4f65d72b3a74481}{}L\+E\+\_\+\+E\+C\+A\+L\+L\+\_\+\+S\+T\+A\+T\+E\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+R\+E\+D\+I\+A\+L\+\_\+\+P\+E\+R\+I\+O\+D\label{le__ecall__interface_8h_a233609e4724e549a1405f9177c0a07ddac5c297a2a70f2490f4f65d72b3a74481}
+}]End of the redial period. \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{le__ecall__interface_8h_a453b64579f2884f1d26981bca38a201c}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Add\+State\+Change\+Handler@{le\+\_\+ecall\+\_\+\+Add\+State\+Change\+Handler}}
+\index{le\+\_\+ecall\+\_\+\+Add\+State\+Change\+Handler@{le\+\_\+ecall\+\_\+\+Add\+State\+Change\+Handler}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Add\+State\+Change\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+ecall\+\_\+\+State\+Change\+Handler\+Ref\+\_\+t} le\+\_\+ecall\+\_\+\+Add\+State\+Change\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+State\+Change\+Handler\+Func\+\_\+t}}]{handler\+Ptr, }
+\item[{void $\ast$}]{context\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a453b64579f2884f1d26981bca38a201c}
+Add handler function for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+ecall\+\_\+\+State\+Change\textquotesingle{}
+
+This event provides information on e\+Call state changes. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handler\+Ptr} & \\
+\hline
+\mbox{\tt in}  & {\em context\+Ptr} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_ab1863bdc62d46e8cf945b3e2fa92f556}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Connect\+Service@{le\+\_\+ecall\+\_\+\+Connect\+Service}}
+\index{le\+\_\+ecall\+\_\+\+Connect\+Service@{le\+\_\+ecall\+\_\+\+Connect\+Service}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Connect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+ecall\+\_\+\+Connect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_ab1863bdc62d46e8cf945b3e2fa92f556}
+Connect the client to the service \hypertarget{le__ecall__interface_8h_aad7fa3b34d9d72a2f1d4baa681ba25cc}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Create@{le\+\_\+ecall\+\_\+\+Create}}
+\index{le\+\_\+ecall\+\_\+\+Create@{le\+\_\+ecall\+\_\+\+Create}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t} le\+\_\+ecall\+\_\+\+Create (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_aad7fa3b34d9d72a2f1d4baa681ba25cc}
+Create a new e\+Call object
+
+The e\+Call is not actually established at this point. It\textquotesingle{}s still up to the caller to call le\+\_\+ecall\+\_\+\+Start() when ready.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item A reference to the new Call object.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+On failure, the process exits; you don\textquotesingle{}t have to worry about checking the returned reference for validity. 
+\end{DoxyNote}
+\hypertarget{le__ecall__interface_8h_af1221deb68c46912748f65505b3e4919}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Delete@{le\+\_\+ecall\+\_\+\+Delete}}
+\index{le\+\_\+ecall\+\_\+\+Delete@{le\+\_\+ecall\+\_\+\+Delete}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Delete}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+ecall\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}}]{ecall\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_af1221deb68c46912748f65505b3e4919}
+Call to free up a call reference.
+
+\begin{DoxyNote}{Note}
+This will free the reference, but not necessarily stop an active e\+Call. If there are other holders of this reference the e\+Call will remain active. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ecall\+Ref} & e\+Call reference \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a3a4b00c07659de15e5e31da7d2703fd9}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Disconnect\+Service@{le\+\_\+ecall\+\_\+\+Disconnect\+Service}}
+\index{le\+\_\+ecall\+\_\+\+Disconnect\+Service@{le\+\_\+ecall\+\_\+\+Disconnect\+Service}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Disconnect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+ecall\+\_\+\+Disconnect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a3a4b00c07659de15e5e31da7d2703fd9}
+Disconnect the client from the service \hypertarget{le__ecall__interface_8h_a85800c86f9709fb7baa7219cc762181c}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+End@{le\+\_\+ecall\+\_\+\+End}}
+\index{le\+\_\+ecall\+\_\+\+End@{le\+\_\+ecall\+\_\+\+End}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+End}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+End (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}}]{ecall\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a85800c86f9709fb7baa7219cc762181c}
+End the current e\+Call session
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R bad e\+Call reference
+\item L\+E\+\_\+\+F\+A\+U\+L\+T for other failures 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ecall\+Ref} & e\+Call reference \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a924114fa7fab10c3f351766a76134f34}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Exit\+Only\+Mode@{le\+\_\+ecall\+\_\+\+Exit\+Only\+Mode}}
+\index{le\+\_\+ecall\+\_\+\+Exit\+Only\+Mode@{le\+\_\+ecall\+\_\+\+Exit\+Only\+Mode}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Exit\+Only\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Exit\+Only\+Mode (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a924114fa7fab10c3f351766a76134f34}
+This function exits from e\+Call Only mode. It configures the e\+Call operation mode to Normal mode, the modem uses the default operation mode at power up (or after U/\+S\+I\+M hotswap). The modem behaves following the U/\+S\+I\+M e\+Call operation mode; for example the U/\+S\+I\+M can be configured only for e\+Call, or a combination of e\+Call and commercial service provision.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T for other failures 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{le__ecall__interface_8h_aebdb7744c37081fda6398031d3ee1198}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Export\+Msd@{le\+\_\+ecall\+\_\+\+Export\+Msd}}
+\index{le\+\_\+ecall\+\_\+\+Export\+Msd@{le\+\_\+ecall\+\_\+\+Export\+Msd}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Export\+Msd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Export\+Msd (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}}]{ecall\+Ref, }
+\item[{uint8\+\_\+t $\ast$}]{msd\+Ptr, }
+\item[{size\+\_\+t $\ast$}]{msd\+Num\+Elements\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_aebdb7744c37081fda6398031d3ee1198}
+Export the encoded M\+S\+D.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W The encoded M\+S\+D length exceeds the user\textquotesingle{}s buffer length.
+\item L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D No encoded M\+S\+D is available.
+\item L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R bad e\+Call reference.
+\item L\+E\+\_\+\+F\+A\+U\+L\+T for other failures.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ecall\+Ref} & e\+Call reference \\
+\hline
+\mbox{\tt out}  & {\em msd\+Ptr} & the encoded M\+S\+D \\
+\hline
+\mbox{\tt in,out}  & {\em msd\+Num\+Elements\+Ptr} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a042d52c84b5b679ab32dd814c5b0be9e}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Force\+Only\+Mode@{le\+\_\+ecall\+\_\+\+Force\+Only\+Mode}}
+\index{le\+\_\+ecall\+\_\+\+Force\+Only\+Mode@{le\+\_\+ecall\+\_\+\+Force\+Only\+Mode}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Force\+Only\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Force\+Only\+Mode (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a042d52c84b5b679ab32dd814c5b0be9e}
+This function configures the e\+Call operation mode to e\+Call only, only emergency number can be used to start an e\+Call session. The modem doesn\textquotesingle{}t try to register on the Cellular network. This function forces the modem to behave as e\+Call only mode whatever U/\+S\+I\+M operation mode. The change doesn\textquotesingle{}t persist over power cycles. This function can be called before making an e\+Call.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T for other failures 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{le__ecall__interface_8h_ad468828b0024de378d91ea9c30fd6f3f}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Force\+Persistent\+Only\+Mode@{le\+\_\+ecall\+\_\+\+Force\+Persistent\+Only\+Mode}}
+\index{le\+\_\+ecall\+\_\+\+Force\+Persistent\+Only\+Mode@{le\+\_\+ecall\+\_\+\+Force\+Persistent\+Only\+Mode}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Force\+Persistent\+Only\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Force\+Persistent\+Only\+Mode (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_ad468828b0024de378d91ea9c30fd6f3f}
+Same as \hyperlink{le__ecall__interface_8h_a042d52c84b5b679ab32dd814c5b0be9e}{le\+\_\+ecall\+\_\+\+Force\+Only\+Mode()}, but the change persists over power cycles.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T for other failures 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{le__ecall__interface_8h_a8e245065491b14f46405e415ea17b6b8}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Get\+Configured\+Operation\+Mode@{le\+\_\+ecall\+\_\+\+Get\+Configured\+Operation\+Mode}}
+\index{le\+\_\+ecall\+\_\+\+Get\+Configured\+Operation\+Mode@{le\+\_\+ecall\+\_\+\+Get\+Configured\+Operation\+Mode}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Get\+Configured\+Operation\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Get\+Configured\+Operation\+Mode (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+Op\+Mode\+\_\+t} $\ast$}]{op\+Mode\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a8e245065491b14f46405e415ea17b6b8}
+Get the configured Operation mode.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T for other failures 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em op\+Mode\+Ptr} & Operation mode \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_af8beed56bd3be9bee8a771e05c498ac8}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Get\+Era\+Glonass\+Auto\+Dial\+Attempts@{le\+\_\+ecall\+\_\+\+Get\+Era\+Glonass\+Auto\+Dial\+Attempts}}
+\index{le\+\_\+ecall\+\_\+\+Get\+Era\+Glonass\+Auto\+Dial\+Attempts@{le\+\_\+ecall\+\_\+\+Get\+Era\+Glonass\+Auto\+Dial\+Attempts}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Get\+Era\+Glonass\+Auto\+Dial\+Attempts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Get\+Era\+Glonass\+Auto\+Dial\+Attempts (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t $\ast$}]{attempts\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_af8beed56bd3be9bee8a771e05c498ac8}
+Get the A\+U\+T\+O\+\_\+\+D\+I\+A\+L\+\_\+\+A\+T\+T\+E\+M\+P\+T\+S value.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em attempts\+Ptr} & the A\+U\+T\+O\+\_\+\+D\+I\+A\+L\+\_\+\+A\+T\+T\+E\+M\+P\+T\+S value \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_afeb92d26dd8a2c092e96b07f3dc0391d}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Get\+Era\+Glonass\+Dial\+Duration@{le\+\_\+ecall\+\_\+\+Get\+Era\+Glonass\+Dial\+Duration}}
+\index{le\+\_\+ecall\+\_\+\+Get\+Era\+Glonass\+Dial\+Duration@{le\+\_\+ecall\+\_\+\+Get\+Era\+Glonass\+Dial\+Duration}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Get\+Era\+Glonass\+Dial\+Duration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Get\+Era\+Glonass\+Dial\+Duration (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t $\ast$}]{duration\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_afeb92d26dd8a2c092e96b07f3dc0391d}
+Get the E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+L\+\_\+\+D\+U\+R\+A\+T\+I\+O\+N time.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em duration\+Ptr} & the E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+L\+\_\+\+D\+U\+R\+A\+T\+I\+O\+N time value (in seconds) \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a579169dbcb91369caa156d2c0e3462c1}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Get\+Era\+Glonass\+Manual\+Dial\+Attempts@{le\+\_\+ecall\+\_\+\+Get\+Era\+Glonass\+Manual\+Dial\+Attempts}}
+\index{le\+\_\+ecall\+\_\+\+Get\+Era\+Glonass\+Manual\+Dial\+Attempts@{le\+\_\+ecall\+\_\+\+Get\+Era\+Glonass\+Manual\+Dial\+Attempts}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Get\+Era\+Glonass\+Manual\+Dial\+Attempts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Get\+Era\+Glonass\+Manual\+Dial\+Attempts (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t $\ast$}]{attempts\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a579169dbcb91369caa156d2c0e3462c1}
+Get the M\+A\+N\+U\+A\+L\+\_\+\+D\+I\+A\+L\+\_\+\+A\+T\+T\+E\+M\+P\+T\+S value.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em attempts\+Ptr} & the M\+A\+N\+U\+A\+L\+\_\+\+D\+I\+A\+L\+\_\+\+A\+T\+T\+E\+M\+P\+T\+S value \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a3a24ae5a007d0c43db2bc55caa43c19d}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Get\+Interval\+Between\+Dial\+Attempts@{le\+\_\+ecall\+\_\+\+Get\+Interval\+Between\+Dial\+Attempts}}
+\index{le\+\_\+ecall\+\_\+\+Get\+Interval\+Between\+Dial\+Attempts@{le\+\_\+ecall\+\_\+\+Get\+Interval\+Between\+Dial\+Attempts}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Get\+Interval\+Between\+Dial\+Attempts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Get\+Interval\+Between\+Dial\+Attempts (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t $\ast$}]{pause\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a3a24ae5a007d0c43db2bc55caa43c19d}
+Get the minimum interval value between dial attempts.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T for other failures 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em pause\+Ptr} & the minimum interval value in seconds \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a4319df67dc451fecb72e4e60ba7b6f6e}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Get\+Msd\+Tx\+Mode@{le\+\_\+ecall\+\_\+\+Get\+Msd\+Tx\+Mode}}
+\index{le\+\_\+ecall\+\_\+\+Get\+Msd\+Tx\+Mode@{le\+\_\+ecall\+\_\+\+Get\+Msd\+Tx\+Mode}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Get\+Msd\+Tx\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Get\+Msd\+Tx\+Mode (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+Msd\+Tx\+Mode\+\_\+t} $\ast$}]{mode\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a4319df67dc451fecb72e4e60ba7b6f6e}
+Get the push/pull transmission mode.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T for other failures 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em mode\+Ptr} & Transmission mode \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a0f24b673049d51baf132ace25e2fa161}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Get\+Nad\+Deregistration\+Time@{le\+\_\+ecall\+\_\+\+Get\+Nad\+Deregistration\+Time}}
+\index{le\+\_\+ecall\+\_\+\+Get\+Nad\+Deregistration\+Time@{le\+\_\+ecall\+\_\+\+Get\+Nad\+Deregistration\+Time}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Get\+Nad\+Deregistration\+Time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Get\+Nad\+Deregistration\+Time (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t $\ast$}]{dereg\+Time\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a0f24b673049d51baf132ace25e2fa161}
+Get the N\+A\+D\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+R\+A\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E value.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em dereg\+Time\+Ptr} & the N\+A\+D\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+R\+A\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E value (in minutes). \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a8ffb7fb207537ea4574823285ebb6ca1}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Get\+Platform\+Specific\+Termination\+Code@{le\+\_\+ecall\+\_\+\+Get\+Platform\+Specific\+Termination\+Code}}
+\index{le\+\_\+ecall\+\_\+\+Get\+Platform\+Specific\+Termination\+Code@{le\+\_\+ecall\+\_\+\+Get\+Platform\+Specific\+Termination\+Code}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Get\+Platform\+Specific\+Termination\+Code}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t le\+\_\+ecall\+\_\+\+Get\+Platform\+Specific\+Termination\+Code (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}}]{ecall\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a8ffb7fb207537ea4574823285ebb6ca1}
+Called to get the platform specific termination code.
+
+\begin{DoxyReturn}{Returns}
+The platform specific termination code.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ecall\+Ref} & e\+Call reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a91c84ca3f4bb27844bfd2d14859bf31a}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Get\+Psap\+Number@{le\+\_\+ecall\+\_\+\+Get\+Psap\+Number}}
+\index{le\+\_\+ecall\+\_\+\+Get\+Psap\+Number@{le\+\_\+ecall\+\_\+\+Get\+Psap\+Number}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Get\+Psap\+Number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Get\+Psap\+Number (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{psap, }
+\item[{size\+\_\+t}]{psap\+Num\+Elements}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a91c84ca3f4bb27844bfd2d14859bf31a}
+Get the Public Safely Answering Point telephone number set with \hyperlink{le__ecall__interface_8h_a9c13a8582bca84c4ae77643e1f4cfd71}{le\+\_\+ecall\+\_\+\+Set\+Psap\+Number()} function.
+
+\begin{DoxyNote}{Note}
+Important! This function doesn\textquotesingle{}t read the U/\+S\+I\+M content.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failures or if \hyperlink{le__ecall__interface_8h_a9c13a8582bca84c4ae77643e1f4cfd71}{le\+\_\+ecall\+\_\+\+Set\+Psap\+Number()} has never been called before. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em psap} & Public Safely Answering Point telephone number \\
+\hline
+\mbox{\tt in}  & {\em psap\+Num\+Elements} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a7881e794b9249222edde10f76d7663c9}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Get\+State@{le\+\_\+ecall\+\_\+\+Get\+State}}
+\index{le\+\_\+ecall\+\_\+\+Get\+State@{le\+\_\+ecall\+\_\+\+Get\+State}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Get\+State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+ecall\+\_\+\+State\+\_\+t} le\+\_\+ecall\+\_\+\+Get\+State (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}}]{ecall\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a7881e794b9249222edde10f76d7663c9}
+Get the current state for the given e\+Call
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item The current state for the given e\+Call
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The process exits, if an invalid e\+Call reference is given 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ecall\+Ref} & e\+Call reference \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a771b2ef399a8fbf3b80c4eb11152c06a}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Get\+Termination\+Reason@{le\+\_\+ecall\+\_\+\+Get\+Termination\+Reason}}
+\index{le\+\_\+ecall\+\_\+\+Get\+Termination\+Reason@{le\+\_\+ecall\+\_\+\+Get\+Termination\+Reason}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Get\+Termination\+Reason}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+mcc\+\_\+\+Termination\+Reason\+\_\+t} le\+\_\+ecall\+\_\+\+Get\+Termination\+Reason (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}}]{ecall\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a771b2ef399a8fbf3b80c4eb11152c06a}
+Called to get the termination reason.
+
+\begin{DoxyReturn}{Returns}
+The termination reason.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ecall\+Ref} & e\+Call reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a85c4c3b921b9a6b0bc10f9400e58113e}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Import\+Msd@{le\+\_\+ecall\+\_\+\+Import\+Msd}}
+\index{le\+\_\+ecall\+\_\+\+Import\+Msd@{le\+\_\+ecall\+\_\+\+Import\+Msd}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Import\+Msd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Import\+Msd (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}}]{ecall\+Ref, }
+\item[{const uint8\+\_\+t $\ast$}]{msd\+Ptr, }
+\item[{size\+\_\+t}]{msd\+Num\+Elements}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a85c4c3b921b9a6b0bc10f9400e58113e}
+Import an already prepared M\+S\+D.
+
+M\+S\+D is transmitted only after an emergency call has been established.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W The imported M\+S\+D length exceeds the M\+S\+D\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N maximum length.
+\item L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R bad e\+Call reference
+\item L\+E\+\_\+\+F\+A\+U\+L\+T for other failures
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+On failure, the process exits; you don\textquotesingle{}t have to worry about checking the returned reference for validity. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ecall\+Ref} & e\+Call reference \\
+\hline
+\mbox{\tt in}  & {\em msd\+Ptr} & the prepared M\+S\+D \\
+\hline
+\mbox{\tt in}  & {\em msd\+Num\+Elements} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a6be1fd10666da25882a2c6f78c82664d}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Remove\+State\+Change\+Handler@{le\+\_\+ecall\+\_\+\+Remove\+State\+Change\+Handler}}
+\index{le\+\_\+ecall\+\_\+\+Remove\+State\+Change\+Handler@{le\+\_\+ecall\+\_\+\+Remove\+State\+Change\+Handler}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Remove\+State\+Change\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+ecall\+\_\+\+Remove\+State\+Change\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+State\+Change\+Handler\+Ref\+\_\+t}}]{add\+Handler\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a6be1fd10666da25882a2c6f78c82664d}
+Remove handler function for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+ecall\+\_\+\+State\+Change\textquotesingle{} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em add\+Handler\+Ref} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_ab883aa41416ada9746acfbb75a0039a8}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Reset\+Msd\+Era\+Glonass\+Crash\+Info@{le\+\_\+ecall\+\_\+\+Reset\+Msd\+Era\+Glonass\+Crash\+Info}}
+\index{le\+\_\+ecall\+\_\+\+Reset\+Msd\+Era\+Glonass\+Crash\+Info@{le\+\_\+ecall\+\_\+\+Reset\+Msd\+Era\+Glonass\+Crash\+Info}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Reset\+Msd\+Era\+Glonass\+Crash\+Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Reset\+Msd\+Era\+Glonass\+Crash\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}}]{ecall\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_ab883aa41416ada9746acfbb75a0039a8}
+Reset the E\+R\+A-\/\+G\+L\+O\+N\+A\+S\+S crash type bit mask. Optional parameter is not included in the M\+S\+D message.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+E an M\+S\+D has been already imported
+\item L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R bad e\+Call reference 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ecall\+Ref} & e\+Call reference \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_addb2874aacaffba2731354c4ac9428bf}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Reset\+Msd\+Era\+Glonass\+Crash\+Severity@{le\+\_\+ecall\+\_\+\+Reset\+Msd\+Era\+Glonass\+Crash\+Severity}}
+\index{le\+\_\+ecall\+\_\+\+Reset\+Msd\+Era\+Glonass\+Crash\+Severity@{le\+\_\+ecall\+\_\+\+Reset\+Msd\+Era\+Glonass\+Crash\+Severity}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Reset\+Msd\+Era\+Glonass\+Crash\+Severity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Reset\+Msd\+Era\+Glonass\+Crash\+Severity (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}}]{ecall\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_addb2874aacaffba2731354c4ac9428bf}
+Reset the E\+R\+A-\/\+G\+L\+O\+N\+A\+S\+S crash severity parameter. Therefore that optional parameter is not included in the M\+S\+D message.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+E an M\+S\+D has been already imported
+\item L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R bad e\+Call reference 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ecall\+Ref} & e\+Call reference \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_ad3e06b90843a480d68dc99ead29ae8d0}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Reset\+Msd\+Era\+Glonass\+Diagnostic\+Result@{le\+\_\+ecall\+\_\+\+Reset\+Msd\+Era\+Glonass\+Diagnostic\+Result}}
+\index{le\+\_\+ecall\+\_\+\+Reset\+Msd\+Era\+Glonass\+Diagnostic\+Result@{le\+\_\+ecall\+\_\+\+Reset\+Msd\+Era\+Glonass\+Diagnostic\+Result}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Reset\+Msd\+Era\+Glonass\+Diagnostic\+Result}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Reset\+Msd\+Era\+Glonass\+Diagnostic\+Result (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}}]{ecall\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_ad3e06b90843a480d68dc99ead29ae8d0}
+Reset the E\+R\+A-\/\+G\+L\+O\+N\+A\+S\+S diagnostic result bit mask. Optional parameter is not included in the M\+S\+D message.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+E an M\+S\+D has been already imported
+\item L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R bad e\+Call reference 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ecall\+Ref} & e\+Call reference \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a344e4c29208e576e81dda113f786529e}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Send\+Msd@{le\+\_\+ecall\+\_\+\+Send\+Msd}}
+\index{le\+\_\+ecall\+\_\+\+Send\+Msd@{le\+\_\+ecall\+\_\+\+Send\+Msd}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Send\+Msd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Send\+Msd (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}}]{ecall\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a344e4c29208e576e81dda113f786529e}
+Send the M\+S\+D.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R bad e\+Call reference
+\item L\+E\+\_\+\+F\+A\+U\+L\+T for other failures
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+On failure, the process exits, so you don\textquotesingle{}t have to worry about checking the returned reference for validity. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ecall\+Ref} & e\+Call reference \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a836aaf195c0648d41f4a13f8c7ced736}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Set\+Era\+Glonass\+Auto\+Dial\+Attempts@{le\+\_\+ecall\+\_\+\+Set\+Era\+Glonass\+Auto\+Dial\+Attempts}}
+\index{le\+\_\+ecall\+\_\+\+Set\+Era\+Glonass\+Auto\+Dial\+Attempts@{le\+\_\+ecall\+\_\+\+Set\+Era\+Glonass\+Auto\+Dial\+Attempts}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Set\+Era\+Glonass\+Auto\+Dial\+Attempts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Set\+Era\+Glonass\+Auto\+Dial\+Attempts (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{attempts}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a836aaf195c0648d41f4a13f8c7ced736}
+Set tthe A\+U\+T\+O\+\_\+\+D\+I\+A\+L\+\_\+\+A\+T\+T\+E\+M\+P\+T\+S value. If a dial attempt under automatic emergency call initiation failed, it should be repeated maximally E\+C\+A\+L\+L\+\_\+\+A\+U\+T\+O\+\_\+\+D\+I\+A\+L\+\_\+\+A\+T\+T\+E\+M\+P\+T\+S-\/1 times within the maximal time limit of E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+L\+\_\+\+D\+U\+R\+A\+T\+I\+O\+N. The default value is 10. Redial attempts stop once the call has been cleared down correctly, or if counter/timer reached their limits.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em attempts} & the A\+U\+T\+O\+\_\+\+D\+I\+A\+L\+\_\+\+A\+T\+T\+E\+M\+P\+T\+S value \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a6c934a9e5aad11eb6f009a6bf34fca19}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Set\+Era\+Glonass\+Dial\+Duration@{le\+\_\+ecall\+\_\+\+Set\+Era\+Glonass\+Dial\+Duration}}
+\index{le\+\_\+ecall\+\_\+\+Set\+Era\+Glonass\+Dial\+Duration@{le\+\_\+ecall\+\_\+\+Set\+Era\+Glonass\+Dial\+Duration}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Set\+Era\+Glonass\+Dial\+Duration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Set\+Era\+Glonass\+Dial\+Duration (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{duration}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a6c934a9e5aad11eb6f009a6bf34fca19}
+Set the E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+L\+\_\+\+D\+U\+R\+A\+T\+I\+O\+N time. It\textquotesingle{}s the maximum time the I\+V\+S have to connect the emergency call to the P\+S\+A\+P, including all redial attempts. If the call is not connected within this time (or Manual\+Dial\+Attempts/\+Auto\+Dial\+Attempts dial attempts), it will stop.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em duration} & the E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+L\+\_\+\+D\+U\+R\+A\+T\+I\+O\+N time value (in seconds) \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a15127a7b0500796257795aaf64acd1e2}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Set\+Era\+Glonass\+Manual\+Dial\+Attempts@{le\+\_\+ecall\+\_\+\+Set\+Era\+Glonass\+Manual\+Dial\+Attempts}}
+\index{le\+\_\+ecall\+\_\+\+Set\+Era\+Glonass\+Manual\+Dial\+Attempts@{le\+\_\+ecall\+\_\+\+Set\+Era\+Glonass\+Manual\+Dial\+Attempts}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Set\+Era\+Glonass\+Manual\+Dial\+Attempts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Set\+Era\+Glonass\+Manual\+Dial\+Attempts (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{attempts}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a15127a7b0500796257795aaf64acd1e2}
+Set the M\+A\+N\+U\+A\+L\+\_\+\+D\+I\+A\+L\+\_\+\+A\+T\+T\+E\+M\+P\+T\+S value. If a dial attempt under manual emergency call initiation failed, it should be repeated maximally E\+C\+A\+L\+L\+\_\+\+M\+A\+N\+U\+A\+L\+\_\+\+D\+I\+A\+L\+\_\+\+A\+T\+T\+E\+M\+P\+T\+S-\/1 times within the maximal time limit of E\+C\+A\+L\+L\+\_\+\+D\+I\+A\+L\+\_\+\+D\+U\+R\+A\+T\+I\+O\+N. The default value is 10. Redial attempts stop once the call has been cleared down correctly, or if counter/timer reached their limits.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em attempts} & the M\+A\+N\+U\+A\+L\+\_\+\+D\+I\+A\+L\+\_\+\+A\+T\+T\+E\+M\+P\+T\+S value \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_af90a8602d4b1d0cacaa3971c508dd188}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Set\+Interval\+Between\+Dial\+Attempts@{le\+\_\+ecall\+\_\+\+Set\+Interval\+Between\+Dial\+Attempts}}
+\index{le\+\_\+ecall\+\_\+\+Set\+Interval\+Between\+Dial\+Attempts@{le\+\_\+ecall\+\_\+\+Set\+Interval\+Between\+Dial\+Attempts}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Set\+Interval\+Between\+Dial\+Attempts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Set\+Interval\+Between\+Dial\+Attempts (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{pause}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_af90a8602d4b1d0cacaa3971c508dd188}
+Set the minimum interval value between dial attempts.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T for other failures 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pause} & the minimum interval value in seconds \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a08c613df57d34eb2a1309738bced5d76}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Set\+Msd\+Era\+Glonass\+Crash\+Info@{le\+\_\+ecall\+\_\+\+Set\+Msd\+Era\+Glonass\+Crash\+Info}}
+\index{le\+\_\+ecall\+\_\+\+Set\+Msd\+Era\+Glonass\+Crash\+Info@{le\+\_\+ecall\+\_\+\+Set\+Msd\+Era\+Glonass\+Crash\+Info}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Set\+Msd\+Era\+Glonass\+Crash\+Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Set\+Msd\+Era\+Glonass\+Crash\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}}]{ecall\+Ref, }
+\item[{{\bf le\+\_\+ecall\+\_\+\+Crash\+Info\+Bit\+Mask\+\_\+t}}]{crash\+Info\+Mask}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a08c613df57d34eb2a1309738bced5d76}
+Set the E\+R\+A-\/\+G\+L\+O\+N\+A\+S\+S crash type bit mask
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+E an M\+S\+D has been already imported
+\item L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R bad e\+Call reference 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ecall\+Ref} & e\+Call reference \\
+\hline
+\mbox{\tt in}  & {\em crash\+Info\+Mask} & E\+R\+A-\/\+G\+L\+O\+N\+A\+S\+S crash type bit mask. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a577f3dcd16e53c8a14295ec58c6d2b9a}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Set\+Msd\+Era\+Glonass\+Crash\+Severity@{le\+\_\+ecall\+\_\+\+Set\+Msd\+Era\+Glonass\+Crash\+Severity}}
+\index{le\+\_\+ecall\+\_\+\+Set\+Msd\+Era\+Glonass\+Crash\+Severity@{le\+\_\+ecall\+\_\+\+Set\+Msd\+Era\+Glonass\+Crash\+Severity}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Set\+Msd\+Era\+Glonass\+Crash\+Severity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Set\+Msd\+Era\+Glonass\+Crash\+Severity (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}}]{ecall\+Ref, }
+\item[{uint32\+\_\+t}]{crash\+Severity}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a577f3dcd16e53c8a14295ec58c6d2b9a}
+Set the E\+R\+A-\/\+G\+L\+O\+N\+A\+S\+S crash severity parameter.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+E an M\+S\+D has been already imported
+\item L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R bad e\+Call reference 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ecall\+Ref} & e\+Call reference \\
+\hline
+\mbox{\tt in}  & {\em crash\+Severity} & the E\+R\+A-\/\+G\+L\+O\+N\+A\+S\+S crash severity parameter \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a51ad61edf379cfe07f03fbd71b56df9d}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Set\+Msd\+Era\+Glonass\+Diagnostic\+Result@{le\+\_\+ecall\+\_\+\+Set\+Msd\+Era\+Glonass\+Diagnostic\+Result}}
+\index{le\+\_\+ecall\+\_\+\+Set\+Msd\+Era\+Glonass\+Diagnostic\+Result@{le\+\_\+ecall\+\_\+\+Set\+Msd\+Era\+Glonass\+Diagnostic\+Result}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Set\+Msd\+Era\+Glonass\+Diagnostic\+Result}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Set\+Msd\+Era\+Glonass\+Diagnostic\+Result (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}}]{ecall\+Ref, }
+\item[{{\bf le\+\_\+ecall\+\_\+\+Diagnostic\+Result\+Bit\+Mask\+\_\+t}}]{diagnostic\+Result\+Mask}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a51ad61edf379cfe07f03fbd71b56df9d}
+Set the E\+R\+A-\/\+G\+L\+O\+N\+A\+S\+S diagnostic result using a bit mask.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+E an M\+S\+D has been already imported
+\item L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R bad e\+Call reference 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ecall\+Ref} & e\+Call reference \\
+\hline
+\mbox{\tt in}  & {\em diagnostic\+Result\+Mask} & E\+R\+A-\/\+G\+L\+O\+N\+A\+S\+S diagnostic result bit mask. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a8c009bb03d61dcd0ffbd9e986b692a85}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Set\+Msd\+Passengers\+Count@{le\+\_\+ecall\+\_\+\+Set\+Msd\+Passengers\+Count}}
+\index{le\+\_\+ecall\+\_\+\+Set\+Msd\+Passengers\+Count@{le\+\_\+ecall\+\_\+\+Set\+Msd\+Passengers\+Count}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Set\+Msd\+Passengers\+Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Set\+Msd\+Passengers\+Count (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}}]{ecall\+Ref, }
+\item[{uint32\+\_\+t}]{pax\+Count}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a8c009bb03d61dcd0ffbd9e986b692a85}
+Set the number of passengers transmitted by the M\+S\+D.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+E an M\+S\+D has been already imported
+\item L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R bad e\+Call reference
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The process exits, if an invalid e\+Call reference is given 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ecall\+Ref} & e\+Call reference \\
+\hline
+\mbox{\tt in}  & {\em pax\+Count} & number of passengers \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a2b56b7b7fd7f936c144d30eba7815908}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Set\+Msd\+Position@{le\+\_\+ecall\+\_\+\+Set\+Msd\+Position}}
+\index{le\+\_\+ecall\+\_\+\+Set\+Msd\+Position@{le\+\_\+ecall\+\_\+\+Set\+Msd\+Position}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Set\+Msd\+Position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Set\+Msd\+Position (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}}]{ecall\+Ref, }
+\item[{bool}]{is\+Trusted, }
+\item[{int32\+\_\+t}]{latitude, }
+\item[{int32\+\_\+t}]{longitude, }
+\item[{int32\+\_\+t}]{direction}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a2b56b7b7fd7f936c144d30eba7815908}
+Set the position transmitted by the M\+S\+D.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+E an M\+S\+D has been already imported
+\item L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R bad e\+Call reference
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The process exits, if an invalid e\+Call reference is given 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ecall\+Ref} & e\+Call reference \\
+\hline
+\mbox{\tt in}  & {\em is\+Trusted} & true if the position is accurate, false otherwise \\
+\hline
+\mbox{\tt in}  & {\em latitude} & latitude in degrees with 6 decimal places, positive North \\
+\hline
+\mbox{\tt in}  & {\em longitude} & longitude in degrees with 6 decimal places, positive East \\
+\hline
+\mbox{\tt in}  & {\em direction} & direction in degrees (where 0 is True North) \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a00d3dbc99884375cf2487d6640767c40}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Set\+Msd\+Tx\+Mode@{le\+\_\+ecall\+\_\+\+Set\+Msd\+Tx\+Mode}}
+\index{le\+\_\+ecall\+\_\+\+Set\+Msd\+Tx\+Mode@{le\+\_\+ecall\+\_\+\+Set\+Msd\+Tx\+Mode}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Set\+Msd\+Tx\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Set\+Msd\+Tx\+Mode (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+Msd\+Tx\+Mode\+\_\+t}}]{mode}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a00d3dbc99884375cf2487d6640767c40}
+Set the push/pull transmission mode.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T for other failures 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mode} & Transmission mode \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a66e454e84db7d337d76bc867b57891a1}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Set\+Nad\+Deregistration\+Time@{le\+\_\+ecall\+\_\+\+Set\+Nad\+Deregistration\+Time}}
+\index{le\+\_\+ecall\+\_\+\+Set\+Nad\+Deregistration\+Time@{le\+\_\+ecall\+\_\+\+Set\+Nad\+Deregistration\+Time}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Set\+Nad\+Deregistration\+Time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Set\+Nad\+Deregistration\+Time (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{dereg\+Time}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a66e454e84db7d337d76bc867b57891a1}
+Set the N\+A\+D\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+R\+A\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E value. After termination of an emergency call the in-\/vehicle system remains registered on the network for the period of time, defined by the installation parameter N\+A\+D\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+R\+A\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dereg\+Time} & the N\+A\+D\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+R\+A\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E value (in minutes). \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a9c13a8582bca84c4ae77643e1f4cfd71}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Set\+Psap\+Number@{le\+\_\+ecall\+\_\+\+Set\+Psap\+Number}}
+\index{le\+\_\+ecall\+\_\+\+Set\+Psap\+Number@{le\+\_\+ecall\+\_\+\+Set\+Psap\+Number}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Set\+Psap\+Number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Set\+Psap\+Number (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{psap}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a9c13a8582bca84c4ae77643e1f4cfd71}
+Set the Public Safely Answering Point telephone number.
+
+\begin{DoxyNote}{Note}
+Important! This function doesn\textquotesingle{}t modified the U/\+S\+I\+M content.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T for other failures
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If P\+S\+A\+P number is too long (max L\+E\+\_\+\+M\+D\+M\+D\+E\+F\+S\+\_\+\+P\+H\+O\+N\+E\+\_\+\+N\+U\+M\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N digits), it is a fatal error, the function will not return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em psap} & Public Safely Answering Point number \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_aa25256eeacefcf00c14763ef294c7667}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Start\+Automatic@{le\+\_\+ecall\+\_\+\+Start\+Automatic}}
+\index{le\+\_\+ecall\+\_\+\+Start\+Automatic@{le\+\_\+ecall\+\_\+\+Start\+Automatic}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Start\+Automatic}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Start\+Automatic (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}}]{ecall\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_aa25256eeacefcf00c14763ef294c7667}
+Start an automatic e\+Call session
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+B\+U\+S\+Y an e\+Call session is already in progress
+\item L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R bad e\+Call reference
+\item L\+E\+\_\+\+F\+A\+U\+L\+T for other failures
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The process exits, if an invalid e\+Call reference is given 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ecall\+Ref} & e\+Call reference \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_ab106c3ca87fc8dd8239d2849df932122}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Start\+Manual@{le\+\_\+ecall\+\_\+\+Start\+Manual}}
+\index{le\+\_\+ecall\+\_\+\+Start\+Manual@{le\+\_\+ecall\+\_\+\+Start\+Manual}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Start\+Manual}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Start\+Manual (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}}]{ecall\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_ab106c3ca87fc8dd8239d2849df932122}
+Start a manual e\+Call session
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+B\+U\+S\+Y an e\+Call session is already in progress
+\item L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R bad e\+Call reference
+\item L\+E\+\_\+\+F\+A\+U\+L\+T for other failures
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The process exits, if an invalid e\+Call reference is given 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ecall\+Ref} & e\+Call reference \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_aa5d23a1bea370b1ae29fc52d7a89d947}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Start\+Test@{le\+\_\+ecall\+\_\+\+Start\+Test}}
+\index{le\+\_\+ecall\+\_\+\+Start\+Test@{le\+\_\+ecall\+\_\+\+Start\+Test}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Start\+Test}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Start\+Test (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+ecall\+\_\+\+Call\+Ref\+\_\+t}}]{ecall\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_aa5d23a1bea370b1ae29fc52d7a89d947}
+Start a test e\+Call session
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+B\+U\+S\+Y an e\+Call session is already in progress
+\item L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R bad e\+Call reference
+\item L\+E\+\_\+\+F\+A\+U\+L\+T for other failures
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The process exits, if an invalid e\+Call reference is given 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ecall\+Ref} & e\+Call reference \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__ecall__interface_8h_a034c442fd7c6650ed956822a561c0104}{}\index{le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}!le\+\_\+ecall\+\_\+\+Use\+U\+Sim\+Numbers@{le\+\_\+ecall\+\_\+\+Use\+U\+Sim\+Numbers}}
+\index{le\+\_\+ecall\+\_\+\+Use\+U\+Sim\+Numbers@{le\+\_\+ecall\+\_\+\+Use\+U\+Sim\+Numbers}!le\+\_\+ecall\+\_\+interface.\+h@{le\+\_\+ecall\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+ecall\+\_\+\+Use\+U\+Sim\+Numbers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+ecall\+\_\+\+Use\+U\+Sim\+Numbers (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__ecall__interface_8h_a034c442fd7c6650ed956822a561c0104}
+This function can be recalled to indicate the modem to read the number to dial from the F\+D\+N/\+S\+D\+N of the U/\+S\+I\+M, depending upon the e\+Call operating mode.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T for other failures 
+\end{DoxyItemize}
+\end{DoxyReturn}

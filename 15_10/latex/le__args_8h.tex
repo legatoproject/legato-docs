@@ -1,0 +1,469 @@
+\hypertarget{le__args_8h}{}\section{framework/c/inc/le\+\_\+args.h File Reference}
+\label{le__args_8h}\index{framework/c/inc/le\+\_\+args.\+h@{framework/c/inc/le\+\_\+args.\+h}}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{le__args_8h_af08d8d2301f23074eefa8a61de92b1a6}{le\+\_\+arg\+\_\+\+Flag\+Callback\+Func\+\_\+t}) (void)
+\item 
+typedef void($\ast$ \hyperlink{le__args_8h_a9deffd3e2d689aa47a3253ecde42551d}{le\+\_\+arg\+\_\+\+Int\+Callback\+Func\+\_\+t}) (int value)
+\item 
+typedef void($\ast$ \hyperlink{le__args_8h_a6069a3f8abaa2b43dd89d84c356bf796}{le\+\_\+arg\+\_\+\+String\+Callback\+Func\+\_\+t}) (const char $\ast$value)
+\item 
+typedef size\+\_\+t($\ast$ \hyperlink{le__args_8h_a52331d81cc8f4a20089598b0ab362786}{le\+\_\+arg\+\_\+\+Error\+Handler\+Func\+\_\+t}) (size\+\_\+t arg\+Index, \hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} error\+Code)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{le__args_8h_add0db0cb93135a6f18f336bd7885cf75}{le\+\_\+arg\+\_\+\+Get\+Program\+Name} (void)
+\item 
+size\+\_\+t \hyperlink{le__args_8h_a6fbbeb423104e6eb92fe47ef42b7310a}{le\+\_\+arg\+\_\+\+Num\+Args} (void)
+\item 
+const char $\ast$ \hyperlink{le__args_8h_a5ebca8229facd069785639cb3c1e273a}{le\+\_\+arg\+\_\+\+Get\+Arg} (size\+\_\+t arg\+Index)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__args_8h_af3b6949dd9d93b8461f3bb64d565fa93}{le\+\_\+arg\+\_\+\+Get\+Flag\+Option} (const char $\ast$short\+Name, const char $\ast$long\+Name)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__args_8h_aac66ccbb038e10c117a685d6eae5a684}{le\+\_\+arg\+\_\+\+Get\+Int\+Option} (int $\ast$var\+Ptr, const char $\ast$short\+Name, const char $\ast$long\+Name)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__args_8h_af096ac39dfa56aedaa4490653891c222}{le\+\_\+arg\+\_\+\+Get\+String\+Option} (const char $\ast$$\ast$var\+Ptr, const char $\ast$short\+Name, const char $\ast$long\+Name)
+\item 
+void \hyperlink{le__args_8h_a889bb72c62d8590d61170a069219e852}{le\+\_\+arg\+\_\+\+Set\+Flag\+Var} (bool $\ast$var\+Ptr, const char $\ast$short\+Name, const char $\ast$long\+Name)
+\item 
+void \hyperlink{le__args_8h_a27f1486b1e855559158e218a7d93ce73}{le\+\_\+arg\+\_\+\+Set\+Int\+Var} (int $\ast$var\+Ptr, const char $\ast$short\+Name, const char $\ast$long\+Name)
+\item 
+void \hyperlink{le__args_8h_a56d0b80e404966a00c87ec662fea23a8}{le\+\_\+arg\+\_\+\+Set\+String\+Var} (const char $\ast$$\ast$var\+Ptr, const char $\ast$short\+Name, const char $\ast$long\+Name)
+\item 
+void \hyperlink{le__args_8h_a4594892b35d4e0a6d7551e9c371919fc}{le\+\_\+arg\+\_\+\+Set\+Flag\+Callback} (\hyperlink{le__args_8h_af08d8d2301f23074eefa8a61de92b1a6}{le\+\_\+arg\+\_\+\+Flag\+Callback\+Func\+\_\+t} func, const char $\ast$short\+Name, const char $\ast$long\+Name)
+\item 
+void \hyperlink{le__args_8h_a40e96c54132708b0637c3d696e3d060d}{le\+\_\+arg\+\_\+\+Set\+Int\+Callback} (\hyperlink{le__args_8h_a9deffd3e2d689aa47a3253ecde42551d}{le\+\_\+arg\+\_\+\+Int\+Callback\+Func\+\_\+t} func, const char $\ast$short\+Name, const char $\ast$long\+Name)
+\item 
+void \hyperlink{le__args_8h_a41b845bab467f4b1e7fcae3d600e88b2}{le\+\_\+arg\+\_\+\+Set\+String\+Callback} (\hyperlink{le__args_8h_a6069a3f8abaa2b43dd89d84c356bf796}{le\+\_\+arg\+\_\+\+String\+Callback\+Func\+\_\+t} func, const char $\ast$short\+Name, const char $\ast$long\+Name)
+\item 
+void \hyperlink{le__args_8h_a525bef6095a4655e97008e27a4829d44}{le\+\_\+arg\+\_\+\+Add\+Positional\+Callback} (\hyperlink{le__args_8h_a6069a3f8abaa2b43dd89d84c356bf796}{le\+\_\+arg\+\_\+\+String\+Callback\+Func\+\_\+t} func)
+\item 
+void \hyperlink{le__args_8h_ab646cfcb831e13312bff496221e74acc}{le\+\_\+arg\+\_\+\+Allow\+More\+Positional\+Args\+Than\+Callbacks} (void)
+\item 
+void \hyperlink{le__args_8h_aedcaae9ee7e7cc9cf83c30435f6ae653}{le\+\_\+arg\+\_\+\+Allow\+Less\+Positional\+Args\+Than\+Callbacks} (void)
+\item 
+void \hyperlink{le__args_8h_a5128be1cbe2c7b30f1f697f8b5594479}{le\+\_\+arg\+\_\+\+Set\+Error\+Handler} (\hyperlink{le__args_8h_a52331d81cc8f4a20089598b0ab362786}{le\+\_\+arg\+\_\+\+Error\+Handler\+Func\+\_\+t} error\+Handler\+Func)
+\item 
+void \hyperlink{le__args_8h_af44485fc914a7ac6f562d23d66c3410c}{le\+\_\+arg\+\_\+\+Scan} (void)
+\item 
+void \hyperlink{le__args_8h_aefd062c124811c5de122a06907e19b56}{le\+\_\+arg\+\_\+\+Set\+Args} (const size\+\_\+t argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_args}{Command Line Arguments A\+P\+I} include file.
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Typedef Documentation}
+\hypertarget{le__args_8h_a52331d81cc8f4a20089598b0ab362786}{}\index{le\+\_\+args.\+h@{le\+\_\+args.\+h}!le\+\_\+arg\+\_\+\+Error\+Handler\+Func\+\_\+t@{le\+\_\+arg\+\_\+\+Error\+Handler\+Func\+\_\+t}}
+\index{le\+\_\+arg\+\_\+\+Error\+Handler\+Func\+\_\+t@{le\+\_\+arg\+\_\+\+Error\+Handler\+Func\+\_\+t}!le\+\_\+args.\+h@{le\+\_\+args.\+h}}
+\subsubsection[{le\+\_\+arg\+\_\+\+Error\+Handler\+Func\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef size\+\_\+t($\ast$ le\+\_\+arg\+\_\+\+Error\+Handler\+Func\+\_\+t) (size\+\_\+t arg\+Index,{\bf le\+\_\+result\+\_\+t} error\+Code)}\label{le__args_8h_a52331d81cc8f4a20089598b0ab362786}
+Error handler function prototype. All argument error handler functions (passed into \hyperlink{le__args_8h_a5128be1cbe2c7b30f1f697f8b5594479}{le\+\_\+arg\+\_\+\+Set\+Error\+Handler()} ) must conform to this prototype.
+
+Errors that can be reported to this function are\+:
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R -\/ The argument is not expected.
+\item L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D -\/ The argument should have a value, but no value was given.
+\item L\+E\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+E\+R\+R\+O\+R -\/ The argument should have a numerical value, but was given something else.
+\item L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E -\/ Magnitude of numerical argument too big to be stored in chosen data type.
+\item L\+E\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W -\/ Too many positional arguments found on command line.
+\item L\+E\+\_\+\+U\+N\+D\+E\+R\+F\+L\+O\+W -\/ Too few positional arguments found on command line.
+\item L\+E\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D -\/ The argument should not have a value but was given one.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+The number of arguments to skip before resuming argument scanning. 0 = resume scanning at arg\+Index + 1; 1 = resume at arg\+Index + 2; etc.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em arg\+Index} & Index of argument that is bad (0 = first arg after program name).\\
+\hline
+{\em error\+Code} & Code indicating the type of error that was encountered. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__args_8h_af08d8d2301f23074eefa8a61de92b1a6}{}\index{le\+\_\+args.\+h@{le\+\_\+args.\+h}!le\+\_\+arg\+\_\+\+Flag\+Callback\+Func\+\_\+t@{le\+\_\+arg\+\_\+\+Flag\+Callback\+Func\+\_\+t}}
+\index{le\+\_\+arg\+\_\+\+Flag\+Callback\+Func\+\_\+t@{le\+\_\+arg\+\_\+\+Flag\+Callback\+Func\+\_\+t}!le\+\_\+args.\+h@{le\+\_\+args.\+h}}
+\subsubsection[{le\+\_\+arg\+\_\+\+Flag\+Callback\+Func\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ le\+\_\+arg\+\_\+\+Flag\+Callback\+Func\+\_\+t) (void)}\label{le__args_8h_af08d8d2301f23074eefa8a61de92b1a6}
+Flag argument callback functions registered using \hyperlink{le__args_8h_a4594892b35d4e0a6d7551e9c371919fc}{le\+\_\+arg\+\_\+\+Set\+Flag\+Callback()} must conform to this prototype.
+
+If the flag appears N times on the command line, the callback will be called N times. \hypertarget{le__args_8h_a9deffd3e2d689aa47a3253ecde42551d}{}\index{le\+\_\+args.\+h@{le\+\_\+args.\+h}!le\+\_\+arg\+\_\+\+Int\+Callback\+Func\+\_\+t@{le\+\_\+arg\+\_\+\+Int\+Callback\+Func\+\_\+t}}
+\index{le\+\_\+arg\+\_\+\+Int\+Callback\+Func\+\_\+t@{le\+\_\+arg\+\_\+\+Int\+Callback\+Func\+\_\+t}!le\+\_\+args.\+h@{le\+\_\+args.\+h}}
+\subsubsection[{le\+\_\+arg\+\_\+\+Int\+Callback\+Func\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ le\+\_\+arg\+\_\+\+Int\+Callback\+Func\+\_\+t) (int value)}\label{le__args_8h_a9deffd3e2d689aa47a3253ecde42551d}
+Integer argument callback functions registered using \hyperlink{le__args_8h_a40e96c54132708b0637c3d696e3d060d}{le\+\_\+arg\+\_\+\+Set\+Int\+Callback()} must conform to this prototype.
+
+If the option appears N times on the command line, the callback will be called N times.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value of the integer option. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__args_8h_a6069a3f8abaa2b43dd89d84c356bf796}{}\index{le\+\_\+args.\+h@{le\+\_\+args.\+h}!le\+\_\+arg\+\_\+\+String\+Callback\+Func\+\_\+t@{le\+\_\+arg\+\_\+\+String\+Callback\+Func\+\_\+t}}
+\index{le\+\_\+arg\+\_\+\+String\+Callback\+Func\+\_\+t@{le\+\_\+arg\+\_\+\+String\+Callback\+Func\+\_\+t}!le\+\_\+args.\+h@{le\+\_\+args.\+h}}
+\subsubsection[{le\+\_\+arg\+\_\+\+String\+Callback\+Func\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ le\+\_\+arg\+\_\+\+String\+Callback\+Func\+\_\+t) (const char $\ast$value)}\label{le__args_8h_a6069a3f8abaa2b43dd89d84c356bf796}
+String argument callback functions registered using \hyperlink{le__args_8h_a41b845bab467f4b1e7fcae3d600e88b2}{le\+\_\+arg\+\_\+\+Set\+String\+Callback()} or \hyperlink{le__args_8h_a525bef6095a4655e97008e27a4829d44}{le\+\_\+arg\+\_\+\+Add\+Positional\+Callback()} must conform to this prototype.
+
+If the option appears N times on the command line, the callback will be called N times.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Pointer to the value of the string option. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Function Documentation}
+\hypertarget{le__args_8h_a525bef6095a4655e97008e27a4829d44}{}\index{le\+\_\+args.\+h@{le\+\_\+args.\+h}!le\+\_\+arg\+\_\+\+Add\+Positional\+Callback@{le\+\_\+arg\+\_\+\+Add\+Positional\+Callback}}
+\index{le\+\_\+arg\+\_\+\+Add\+Positional\+Callback@{le\+\_\+arg\+\_\+\+Add\+Positional\+Callback}!le\+\_\+args.\+h@{le\+\_\+args.\+h}}
+\subsubsection[{le\+\_\+arg\+\_\+\+Add\+Positional\+Callback}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+arg\+\_\+\+Add\+Positional\+Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+arg\+\_\+\+String\+Callback\+Func\+\_\+t}}]{func}
+\end{DoxyParamCaption}
+)}\label{le__args_8h_a525bef6095a4655e97008e27a4829d44}
+Register a callback function to be called if an argument appears outside of any options. For example, in the following command-\/line, \char`\"{}foo\char`\"{} and \char`\"{}bar\char`\"{} are positional arguments (while \char`\"{}-\/l\char`\"{} is a flag option and \char`\"{}ls\char`\"{} is the program name)\+:
+
+
+\begin{DoxyCode}
+1 $ ls -l foo bar
+\end{DoxyCode}
+
+
+Each callback function registered using this method is added to the positional callback list. When the first positional argument is encountered, the first positional callback function is called. When the Nth positional argument is encountered, the Nth positional callback is called. If there are N positional arguments and M positional callbacks, and N $>$ M, then the last positional callback will be called once for each positional argument from M through N, inclusive. 
+\begin{DoxyParams}{Parameters}
+{\em func} & The callback function address. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__args_8h_aedcaae9ee7e7cc9cf83c30435f6ae653}{}\index{le\+\_\+args.\+h@{le\+\_\+args.\+h}!le\+\_\+arg\+\_\+\+Allow\+Less\+Positional\+Args\+Than\+Callbacks@{le\+\_\+arg\+\_\+\+Allow\+Less\+Positional\+Args\+Than\+Callbacks}}
+\index{le\+\_\+arg\+\_\+\+Allow\+Less\+Positional\+Args\+Than\+Callbacks@{le\+\_\+arg\+\_\+\+Allow\+Less\+Positional\+Args\+Than\+Callbacks}!le\+\_\+args.\+h@{le\+\_\+args.\+h}}
+\subsubsection[{le\+\_\+arg\+\_\+\+Allow\+Less\+Positional\+Args\+Than\+Callbacks}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+arg\+\_\+\+Allow\+Less\+Positional\+Args\+Than\+Callbacks (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__args_8h_aedcaae9ee7e7cc9cf83c30435f6ae653}
+Tell the argument parser to allow less positional arguments than positional callbacks.
+
+If less positional arguments are encountered than the number of positional callbacks when this is allowed, any positional callbacks that don\textquotesingle{}t have arguments won\textquotesingle{}t be called. If this is not allowed, \hyperlink{le__args_8h_af44485fc914a7ac6f562d23d66c3410c}{le\+\_\+arg\+\_\+\+Scan()} will print an error message to the standard error stream and exit the process with E\+X\+I\+T\+\_\+\+F\+A\+I\+L\+U\+R\+E if there are less positional arguments than there are positional callbacks. \hypertarget{le__args_8h_ab646cfcb831e13312bff496221e74acc}{}\index{le\+\_\+args.\+h@{le\+\_\+args.\+h}!le\+\_\+arg\+\_\+\+Allow\+More\+Positional\+Args\+Than\+Callbacks@{le\+\_\+arg\+\_\+\+Allow\+More\+Positional\+Args\+Than\+Callbacks}}
+\index{le\+\_\+arg\+\_\+\+Allow\+More\+Positional\+Args\+Than\+Callbacks@{le\+\_\+arg\+\_\+\+Allow\+More\+Positional\+Args\+Than\+Callbacks}!le\+\_\+args.\+h@{le\+\_\+args.\+h}}
+\subsubsection[{le\+\_\+arg\+\_\+\+Allow\+More\+Positional\+Args\+Than\+Callbacks}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+arg\+\_\+\+Allow\+More\+Positional\+Args\+Than\+Callbacks (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__args_8h_ab646cfcb831e13312bff496221e74acc}
+Tell the argument parser to allow more positional arguments than positional callbacks.
+
+If more positional arguments are encountered than the number of positional callbacks when this is allowed, \hyperlink{le__args_8h_af44485fc914a7ac6f562d23d66c3410c}{le\+\_\+arg\+\_\+\+Scan()} will call the last positional callback again for each extra positional argument it finds. If this is not allowed, \hyperlink{le__args_8h_af44485fc914a7ac6f562d23d66c3410c}{le\+\_\+arg\+\_\+\+Scan()} will print an error message to the standard error stream and exit the process with E\+X\+I\+T\+\_\+\+F\+A\+I\+L\+U\+R\+E if there are more positional arguments than there are positional callbacks. \hypertarget{le__args_8h_a5ebca8229facd069785639cb3c1e273a}{}\index{le\+\_\+args.\+h@{le\+\_\+args.\+h}!le\+\_\+arg\+\_\+\+Get\+Arg@{le\+\_\+arg\+\_\+\+Get\+Arg}}
+\index{le\+\_\+arg\+\_\+\+Get\+Arg@{le\+\_\+arg\+\_\+\+Get\+Arg}!le\+\_\+args.\+h@{le\+\_\+args.\+h}}
+\subsubsection[{le\+\_\+arg\+\_\+\+Get\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ le\+\_\+arg\+\_\+\+Get\+Arg (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{arg\+Index}
+\end{DoxyParamCaption}
+)}\label{le__args_8h_a5ebca8229facd069785639cb3c1e273a}
+Gets a command line argument by index.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the argument string (null-\/terminated), or N\+U\+L\+L if the index is out of range. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em arg\+Index} & Index of the argument (0 = first argument after the program name). \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__args_8h_af3b6949dd9d93b8461f3bb64d565fa93}{}\index{le\+\_\+args.\+h@{le\+\_\+args.\+h}!le\+\_\+arg\+\_\+\+Get\+Flag\+Option@{le\+\_\+arg\+\_\+\+Get\+Flag\+Option}}
+\index{le\+\_\+arg\+\_\+\+Get\+Flag\+Option@{le\+\_\+arg\+\_\+\+Get\+Flag\+Option}!le\+\_\+args.\+h@{le\+\_\+args.\+h}}
+\subsubsection[{le\+\_\+arg\+\_\+\+Get\+Flag\+Option}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+arg\+\_\+\+Get\+Flag\+Option (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{short\+Name, }
+\item[{const char $\ast$}]{long\+Name}
+\end{DoxyParamCaption}
+)}\label{le__args_8h_af3b6949dd9d93b8461f3bb64d565fa93}
+Searches the argument list for a flag option. Can search for a short name (e.\+g., {\ttfamily -\/f}) or a long name (e.\+g., {\ttfamily --flag}) for the same flag at the same time.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K if found,
+\item L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D if not found,
+\item L\+E\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+E\+R\+R\+O\+R if found but has a value (e.\+g., {\ttfamily --flag=foo}).
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If both short\+Name and long\+Name are N\+U\+L\+L, L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D will be returned. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em short\+Name} & Name that appears after a single \textquotesingle{}-\/\textquotesingle{} (can be N\+U\+L\+L). \\
+\hline
+\mbox{\tt in}  & {\em long\+Name} & Name that appears afer a \char`\"{}-\/-\/\char`\"{} (can be N\+U\+L\+L). \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__args_8h_aac66ccbb038e10c117a685d6eae5a684}{}\index{le\+\_\+args.\+h@{le\+\_\+args.\+h}!le\+\_\+arg\+\_\+\+Get\+Int\+Option@{le\+\_\+arg\+\_\+\+Get\+Int\+Option}}
+\index{le\+\_\+arg\+\_\+\+Get\+Int\+Option@{le\+\_\+arg\+\_\+\+Get\+Int\+Option}!le\+\_\+args.\+h@{le\+\_\+args.\+h}}
+\subsubsection[{le\+\_\+arg\+\_\+\+Get\+Int\+Option}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+arg\+\_\+\+Get\+Int\+Option (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{var\+Ptr, }
+\item[{const char $\ast$}]{short\+Name, }
+\item[{const char $\ast$}]{long\+Name}
+\end{DoxyParamCaption}
+)}\label{le__args_8h_aac66ccbb038e10c117a685d6eae5a684}
+Searches the argument list for an option with an integer value. Can search for a short name (e.\+g., {\ttfamily -\/c 1234}) or a long name (e.\+g., {\ttfamily --count=1234}) form of the same option at the same time.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K if found and successfully converted to an integer.
+\item L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D if not found.
+\item L\+E\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+E\+R\+R\+O\+R if the option wasn\textquotesingle{}t provided with an integer value.
+\item L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E -\/ Magnitude of integer value too big to be stored in an int.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If both short\+Name and long\+Name are N\+U\+L\+L, L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D will be returned. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em var\+Ptr} & Variable into which the value will be stored if found. \\
+\hline
+\mbox{\tt in}  & {\em short\+Name} & Name that appears after a single \textquotesingle{}-\/\textquotesingle{} (can be N\+U\+L\+L). \\
+\hline
+\mbox{\tt in}  & {\em long\+Name} & Name that appears afer a \char`\"{}-\/-\/\char`\"{} (can be N\+U\+L\+L). \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__args_8h_add0db0cb93135a6f18f336bd7885cf75}{}\index{le\+\_\+args.\+h@{le\+\_\+args.\+h}!le\+\_\+arg\+\_\+\+Get\+Program\+Name@{le\+\_\+arg\+\_\+\+Get\+Program\+Name}}
+\index{le\+\_\+arg\+\_\+\+Get\+Program\+Name@{le\+\_\+arg\+\_\+\+Get\+Program\+Name}!le\+\_\+args.\+h@{le\+\_\+args.\+h}}
+\subsubsection[{le\+\_\+arg\+\_\+\+Get\+Program\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ le\+\_\+arg\+\_\+\+Get\+Program\+Name (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__args_8h_add0db0cb93135a6f18f336bd7885cf75}
+Gets the program name.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the null-\/terminated program name string. 
+\end{DoxyReturn}
+\hypertarget{le__args_8h_af096ac39dfa56aedaa4490653891c222}{}\index{le\+\_\+args.\+h@{le\+\_\+args.\+h}!le\+\_\+arg\+\_\+\+Get\+String\+Option@{le\+\_\+arg\+\_\+\+Get\+String\+Option}}
+\index{le\+\_\+arg\+\_\+\+Get\+String\+Option@{le\+\_\+arg\+\_\+\+Get\+String\+Option}!le\+\_\+args.\+h@{le\+\_\+args.\+h}}
+\subsubsection[{le\+\_\+arg\+\_\+\+Get\+String\+Option}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+arg\+\_\+\+Get\+String\+Option (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$$\ast$}]{var\+Ptr, }
+\item[{const char $\ast$}]{short\+Name, }
+\item[{const char $\ast$}]{long\+Name}
+\end{DoxyParamCaption}
+)}\label{le__args_8h_af096ac39dfa56aedaa4490653891c222}
+Searches the argument list for an option with a string value. Can search for a short name (e.\+g., {\ttfamily -\/f foo}) or a long name (e.\+g., {\ttfamily --file=foo}) form of the same option at the same time.
+
+\begin{DoxyNote}{Note}
+{\ttfamily --file=} is a valid string option with an empty string (\char`\"{}\char`\"{}) value. The equivalent short name version of that option would be something like {\ttfamily -\/f \char`\"{}\char`\"{}}.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K if found.
+\item L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D if not found.
+\item L\+E\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+E\+R\+R\+O\+R if the option wasn\textquotesingle{}t provided with a value.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If both short\+Name and long\+Name are N\+U\+L\+L, L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D will be returned. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em var\+Ptr} & Variable into which to store a pointer to the value if found. \\
+\hline
+\mbox{\tt in}  & {\em short\+Name} & Name that appears after a single \textquotesingle{}-\/\textquotesingle{} (can be N\+U\+L\+L). \\
+\hline
+\mbox{\tt in}  & {\em long\+Name} & Name that appears afer a \char`\"{}-\/-\/\char`\"{} (can be N\+U\+L\+L). \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__args_8h_a6fbbeb423104e6eb92fe47ef42b7310a}{}\index{le\+\_\+args.\+h@{le\+\_\+args.\+h}!le\+\_\+arg\+\_\+\+Num\+Args@{le\+\_\+arg\+\_\+\+Num\+Args}}
+\index{le\+\_\+arg\+\_\+\+Num\+Args@{le\+\_\+arg\+\_\+\+Num\+Args}!le\+\_\+args.\+h@{le\+\_\+args.\+h}}
+\subsubsection[{le\+\_\+arg\+\_\+\+Num\+Args}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t le\+\_\+arg\+\_\+\+Num\+Args (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__args_8h_a6fbbeb423104e6eb92fe47ef42b7310a}
+Gets the number of command line arguments available not including the program name.
+
+\begin{DoxyReturn}{Returns}
+Number of command line arguments available. 
+\end{DoxyReturn}
+\hypertarget{le__args_8h_af44485fc914a7ac6f562d23d66c3410c}{}\index{le\+\_\+args.\+h@{le\+\_\+args.\+h}!le\+\_\+arg\+\_\+\+Scan@{le\+\_\+arg\+\_\+\+Scan}}
+\index{le\+\_\+arg\+\_\+\+Scan@{le\+\_\+arg\+\_\+\+Scan}!le\+\_\+args.\+h@{le\+\_\+args.\+h}}
+\subsubsection[{le\+\_\+arg\+\_\+\+Scan}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+arg\+\_\+\+Scan (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__args_8h_af44485fc914a7ac6f562d23d66c3410c}
+Scans the argument list, setting variables and calling callbacks registered using the le\+\_\+arg\+\_\+\+Set\+Xxx\+Var(), le\+\_\+arg\+\_\+\+Set\+Xxx\+Callback(), and le\+\_\+arg\+\_\+\+Add\+Positional\+Parameters() functions. \hypertarget{le__args_8h_aefd062c124811c5de122a06907e19b56}{}\index{le\+\_\+args.\+h@{le\+\_\+args.\+h}!le\+\_\+arg\+\_\+\+Set\+Args@{le\+\_\+arg\+\_\+\+Set\+Args}}
+\index{le\+\_\+arg\+\_\+\+Set\+Args@{le\+\_\+arg\+\_\+\+Set\+Args}!le\+\_\+args.\+h@{le\+\_\+args.\+h}}
+\subsubsection[{le\+\_\+arg\+\_\+\+Set\+Args}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+arg\+\_\+\+Set\+Args (
+\begin{DoxyParamCaption}
+\item[{const size\+\_\+t}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}\label{le__args_8h_aefd062c124811c5de122a06907e19b56}
+Passes argc and argv to the argument parser for later use by \hyperlink{le__args_8h_af44485fc914a7ac6f562d23d66c3410c}{le\+\_\+arg\+\_\+\+Scan()}.
+
+\begin{DoxyNote}{Note}
+This function is normally called by main(). If the Legato application framework is automatically generating main() for you, then you can just ignore this function. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em argc} & argc from main(). \\
+\hline
+\mbox{\tt in}  & {\em argv} & argv from main(). \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__args_8h_a5128be1cbe2c7b30f1f697f8b5594479}{}\index{le\+\_\+args.\+h@{le\+\_\+args.\+h}!le\+\_\+arg\+\_\+\+Set\+Error\+Handler@{le\+\_\+arg\+\_\+\+Set\+Error\+Handler}}
+\index{le\+\_\+arg\+\_\+\+Set\+Error\+Handler@{le\+\_\+arg\+\_\+\+Set\+Error\+Handler}!le\+\_\+args.\+h@{le\+\_\+args.\+h}}
+\subsubsection[{le\+\_\+arg\+\_\+\+Set\+Error\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+arg\+\_\+\+Set\+Error\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+arg\+\_\+\+Error\+Handler\+Func\+\_\+t}}]{error\+Handler\+Func}
+\end{DoxyParamCaption}
+)}\label{le__args_8h_a5128be1cbe2c7b30f1f697f8b5594479}
+Register an error handler function to be called by \hyperlink{le__args_8h_af44485fc914a7ac6f562d23d66c3410c}{le\+\_\+arg\+\_\+\+Scan()} whenever an unexpected argument is encountered or an option\textquotesingle{}s value cannot be converted to the correct data type. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em error\+Handler\+Func} & The error handler function. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__args_8h_a4594892b35d4e0a6d7551e9c371919fc}{}\index{le\+\_\+args.\+h@{le\+\_\+args.\+h}!le\+\_\+arg\+\_\+\+Set\+Flag\+Callback@{le\+\_\+arg\+\_\+\+Set\+Flag\+Callback}}
+\index{le\+\_\+arg\+\_\+\+Set\+Flag\+Callback@{le\+\_\+arg\+\_\+\+Set\+Flag\+Callback}!le\+\_\+args.\+h@{le\+\_\+args.\+h}}
+\subsubsection[{le\+\_\+arg\+\_\+\+Set\+Flag\+Callback}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+arg\+\_\+\+Set\+Flag\+Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+arg\+\_\+\+Flag\+Callback\+Func\+\_\+t}}]{func, }
+\item[{const char $\ast$}]{short\+Name, }
+\item[{const char $\ast$}]{long\+Name}
+\end{DoxyParamCaption}
+)}\label{le__args_8h_a4594892b35d4e0a6d7551e9c371919fc}
+Register a callback function to be called if a given flag option appears on the argument list.
+
+No value is expected after the option name.
+
+One or the other of short\+Name or long\+Name may be N\+U\+L\+L. If not N\+U\+L\+L, these M\+U\+S\+T be pointers to strings that are never deallocated or changed. 
+\begin{DoxyParams}{Parameters}
+{\em func} & The callback function address. \\
+\hline
+{\em short\+Name} & Short form of option name (e.\+g., \char`\"{}h\char`\"{} will match \char`\"{}-\/h\char`\"{}). \\
+\hline
+{\em long\+Name} & Long form of option name (e.\+g., \char`\"{}help\char`\"{} will match \char`\"{}-\/-\/help\char`\"{}). \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__args_8h_a889bb72c62d8590d61170a069219e852}{}\index{le\+\_\+args.\+h@{le\+\_\+args.\+h}!le\+\_\+arg\+\_\+\+Set\+Flag\+Var@{le\+\_\+arg\+\_\+\+Set\+Flag\+Var}}
+\index{le\+\_\+arg\+\_\+\+Set\+Flag\+Var@{le\+\_\+arg\+\_\+\+Set\+Flag\+Var}!le\+\_\+args.\+h@{le\+\_\+args.\+h}}
+\subsubsection[{le\+\_\+arg\+\_\+\+Set\+Flag\+Var}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+arg\+\_\+\+Set\+Flag\+Var (
+\begin{DoxyParamCaption}
+\item[{bool $\ast$}]{var\+Ptr, }
+\item[{const char $\ast$}]{short\+Name, }
+\item[{const char $\ast$}]{long\+Name}
+\end{DoxyParamCaption}
+)}\label{le__args_8h_a889bb72c62d8590d61170a069219e852}
+Register a boolean variable to be set if a given flag option appears on the argument list.
+
+No value is expected after the option name.
+
+One or the other of short\+Name or long\+Name may be N\+U\+L\+L. If not N\+U\+L\+L, these M\+U\+S\+T be pointers to strings that are never deallocated or changed. 
+\begin{DoxyParams}{Parameters}
+{\em var\+Ptr} & Ptr to the variable to be set true if the flag option is found. \\
+\hline
+{\em short\+Name} & Short form of option name (e.\+g., \char`\"{}h\char`\"{} will match \char`\"{}-\/h\char`\"{}). \\
+\hline
+{\em long\+Name} & Long form of option name (e.\+g., \char`\"{}help\char`\"{} will match \char`\"{}-\/-\/help\char`\"{}). \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__args_8h_a40e96c54132708b0637c3d696e3d060d}{}\index{le\+\_\+args.\+h@{le\+\_\+args.\+h}!le\+\_\+arg\+\_\+\+Set\+Int\+Callback@{le\+\_\+arg\+\_\+\+Set\+Int\+Callback}}
+\index{le\+\_\+arg\+\_\+\+Set\+Int\+Callback@{le\+\_\+arg\+\_\+\+Set\+Int\+Callback}!le\+\_\+args.\+h@{le\+\_\+args.\+h}}
+\subsubsection[{le\+\_\+arg\+\_\+\+Set\+Int\+Callback}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+arg\+\_\+\+Set\+Int\+Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+arg\+\_\+\+Int\+Callback\+Func\+\_\+t}}]{func, }
+\item[{const char $\ast$}]{short\+Name, }
+\item[{const char $\ast$}]{long\+Name}
+\end{DoxyParamCaption}
+)}\label{le__args_8h_a40e96c54132708b0637c3d696e3d060d}
+Register a callback function to be called if a given integer value option appears on the argument list.
+
+An integer value is expected after the option name.
+
+One or the other of short\+Name or long\+Name may be N\+U\+L\+L. If not N\+U\+L\+L, these M\+U\+S\+T be pointers to strings that are never deallocated or changed. 
+\begin{DoxyParams}{Parameters}
+{\em func} & The callback function address. \\
+\hline
+{\em short\+Name} & Short form of option name (e.\+g., \char`\"{}n\char`\"{} will match \char`\"{}-\/n 1234\char`\"{}). \\
+\hline
+{\em long\+Name} & Long form of name (\char`\"{}max-\/count\char`\"{} matches \char`\"{}-\/-\/max-\/count=1234\char`\"{}). \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__args_8h_a27f1486b1e855559158e218a7d93ce73}{}\index{le\+\_\+args.\+h@{le\+\_\+args.\+h}!le\+\_\+arg\+\_\+\+Set\+Int\+Var@{le\+\_\+arg\+\_\+\+Set\+Int\+Var}}
+\index{le\+\_\+arg\+\_\+\+Set\+Int\+Var@{le\+\_\+arg\+\_\+\+Set\+Int\+Var}!le\+\_\+args.\+h@{le\+\_\+args.\+h}}
+\subsubsection[{le\+\_\+arg\+\_\+\+Set\+Int\+Var}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+arg\+\_\+\+Set\+Int\+Var (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{var\+Ptr, }
+\item[{const char $\ast$}]{short\+Name, }
+\item[{const char $\ast$}]{long\+Name}
+\end{DoxyParamCaption}
+)}\label{le__args_8h_a27f1486b1e855559158e218a7d93ce73}
+Register an integer variable to be set if a given option appears on the argument list.
+
+An integer value is expected after the option name.
+
+One or the other of short\+Name or long\+Name may be N\+U\+L\+L. If not N\+U\+L\+L, these M\+U\+S\+T be pointers to strings that are never deallocated or changed. 
+\begin{DoxyParams}{Parameters}
+{\em var\+Ptr} & Ptr to the variable to be set if the option is found. \\
+\hline
+{\em short\+Name} & Short form of option name (e.\+g., \char`\"{}n\char`\"{} will match \char`\"{}-\/n 1234\char`\"{}). \\
+\hline
+{\em long\+Name} & Long form of name (\char`\"{}max-\/count\char`\"{} matches \char`\"{}-\/-\/max-\/count=1234\char`\"{}). \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__args_8h_a41b845bab467f4b1e7fcae3d600e88b2}{}\index{le\+\_\+args.\+h@{le\+\_\+args.\+h}!le\+\_\+arg\+\_\+\+Set\+String\+Callback@{le\+\_\+arg\+\_\+\+Set\+String\+Callback}}
+\index{le\+\_\+arg\+\_\+\+Set\+String\+Callback@{le\+\_\+arg\+\_\+\+Set\+String\+Callback}!le\+\_\+args.\+h@{le\+\_\+args.\+h}}
+\subsubsection[{le\+\_\+arg\+\_\+\+Set\+String\+Callback}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+arg\+\_\+\+Set\+String\+Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+arg\+\_\+\+String\+Callback\+Func\+\_\+t}}]{func, }
+\item[{const char $\ast$}]{short\+Name, }
+\item[{const char $\ast$}]{long\+Name}
+\end{DoxyParamCaption}
+)}\label{le__args_8h_a41b845bab467f4b1e7fcae3d600e88b2}
+Register a callback function to be called if a given string option appears on the argument list.
+
+A string value is expected after the option name.
+
+One or the other of short\+Name or long\+Name may be N\+U\+L\+L. If not N\+U\+L\+L, these M\+U\+S\+T be pointers to strings that are never deallocated or changed. 
+\begin{DoxyParams}{Parameters}
+{\em func} & The callback function address. \\
+\hline
+{\em short\+Name} & Short form of option name (e.\+g., \char`\"{}n\char`\"{} will match \char`\"{}-\/n foo\char`\"{}). \\
+\hline
+{\em long\+Name} & Long form of name (\char`\"{}name\char`\"{} matches \char`\"{}-\/-\/name=foo\char`\"{}). \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__args_8h_a56d0b80e404966a00c87ec662fea23a8}{}\index{le\+\_\+args.\+h@{le\+\_\+args.\+h}!le\+\_\+arg\+\_\+\+Set\+String\+Var@{le\+\_\+arg\+\_\+\+Set\+String\+Var}}
+\index{le\+\_\+arg\+\_\+\+Set\+String\+Var@{le\+\_\+arg\+\_\+\+Set\+String\+Var}!le\+\_\+args.\+h@{le\+\_\+args.\+h}}
+\subsubsection[{le\+\_\+arg\+\_\+\+Set\+String\+Var}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+arg\+\_\+\+Set\+String\+Var (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$$\ast$}]{var\+Ptr, }
+\item[{const char $\ast$}]{short\+Name, }
+\item[{const char $\ast$}]{long\+Name}
+\end{DoxyParamCaption}
+)}\label{le__args_8h_a56d0b80e404966a00c87ec662fea23a8}
+Register a string variable to be set if a given option appears on the argument list.
+
+A value is expected after the option name.
+
+
+\begin{DoxyCode}
+1 const char* namePtr = "default";
+2 le\_arg\_SetStringVar(&namePtr, "n", "name");
+\end{DoxyCode}
+
+
+One or the other of short\+Name or long\+Name may be N\+U\+L\+L. If not N\+U\+L\+L, these M\+U\+S\+T be pointers to strings that are never deallocated or changed. 
+\begin{DoxyParams}{Parameters}
+{\em var\+Ptr} & Ptr to the variable to be set if the option is found. \\
+\hline
+{\em short\+Name} & Short form of option name (e.\+g., \char`\"{}n\char`\"{} will match \char`\"{}-\/n foo\char`\"{}). \\
+\hline
+{\em long\+Name} & Long form of name (\char`\"{}name\char`\"{} matches \char`\"{}-\/-\/name=foo\char`\"{}). \\
+\hline
+\end{DoxyParams}

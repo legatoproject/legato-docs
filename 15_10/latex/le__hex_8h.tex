@@ -1,0 +1,85 @@
+\hypertarget{le__hex_8h}{}\section{framework/c/inc/le\+\_\+hex.h File Reference}
+\label{le__hex_8h}\index{framework/c/inc/le\+\_\+hex.\+h@{framework/c/inc/le\+\_\+hex.\+h}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \hyperlink{le__hex_8h_a2ad2c35d567e8fc3fc962a58272b093d}{le\+\_\+hex\+\_\+\+String\+To\+Binary} (const char $\ast$string\+Ptr, uint32\+\_\+t string\+Length, uint8\+\_\+t $\ast$binary\+Ptr, uint32\+\_\+t binary\+Size)
+\item 
+int32\+\_\+t \hyperlink{le__hex_8h_a2482e5240d47b176e41369fc5a654551}{le\+\_\+hex\+\_\+\+Binary\+To\+String} (const uint8\+\_\+t $\ast$binary\+Ptr, uint32\+\_\+t binary\+Size, char $\ast$string\+Ptr, uint32\+\_\+t string\+Size)
+\item 
+int \hyperlink{le__hex_8h_a7dec6b9dc93d709033e2caf2a8e77500}{le\+\_\+hex\+\_\+\+Hexa\+To\+Integer} (char s\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_hex}{Hex string A\+P\+I} include file.
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Function Documentation}
+\hypertarget{le__hex_8h_a2482e5240d47b176e41369fc5a654551}{}\index{le\+\_\+hex.\+h@{le\+\_\+hex.\+h}!le\+\_\+hex\+\_\+\+Binary\+To\+String@{le\+\_\+hex\+\_\+\+Binary\+To\+String}}
+\index{le\+\_\+hex\+\_\+\+Binary\+To\+String@{le\+\_\+hex\+\_\+\+Binary\+To\+String}!le\+\_\+hex.\+h@{le\+\_\+hex.\+h}}
+\subsubsection[{le\+\_\+hex\+\_\+\+Binary\+To\+String}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t le\+\_\+hex\+\_\+\+Binary\+To\+String (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{binary\+Ptr, }
+\item[{uint32\+\_\+t}]{binary\+Size, }
+\item[{char $\ast$}]{string\+Ptr, }
+\item[{uint32\+\_\+t}]{string\+Size}
+\end{DoxyParamCaption}
+)}\label{le__hex_8h_a2482e5240d47b176e41369fc5a654551}
+Converts binary to hex string format.
+
+\begin{DoxyReturn}{Returns}
+size of hex string, if $<$ 0 it has failed 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em binary\+Ptr} & binary array to convert \\
+\hline
+\mbox{\tt in}  & {\em binary\+Size} & size of binary array \\
+\hline
+\mbox{\tt out}  & {\em string\+Ptr} & hex string array, terminated with \textquotesingle{}\textbackslash{}0\textquotesingle{}. \\
+\hline
+\mbox{\tt in}  & {\em string\+Size} & size of string array \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__hex_8h_a7dec6b9dc93d709033e2caf2a8e77500}{}\index{le\+\_\+hex.\+h@{le\+\_\+hex.\+h}!le\+\_\+hex\+\_\+\+Hexa\+To\+Integer@{le\+\_\+hex\+\_\+\+Hexa\+To\+Integer}}
+\index{le\+\_\+hex\+\_\+\+Hexa\+To\+Integer@{le\+\_\+hex\+\_\+\+Hexa\+To\+Integer}!le\+\_\+hex.\+h@{le\+\_\+hex.\+h}}
+\subsubsection[{le\+\_\+hex\+\_\+\+Hexa\+To\+Integer}]{\setlength{\rightskip}{0pt plus 5cm}int le\+\_\+hex\+\_\+\+Hexa\+To\+Integer (
+\begin{DoxyParamCaption}
+\item[{char}]{s\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{le__hex_8h_a7dec6b9dc93d709033e2caf2a8e77500}
+This function convert hexa string into integer
+
+\begin{DoxyReturn}{Returns}
+
+
+return the value or -\/1 if not possible. 
+\end{DoxyReturn}
+\hypertarget{le__hex_8h_a2ad2c35d567e8fc3fc962a58272b093d}{}\index{le\+\_\+hex.\+h@{le\+\_\+hex.\+h}!le\+\_\+hex\+\_\+\+String\+To\+Binary@{le\+\_\+hex\+\_\+\+String\+To\+Binary}}
+\index{le\+\_\+hex\+\_\+\+String\+To\+Binary@{le\+\_\+hex\+\_\+\+String\+To\+Binary}!le\+\_\+hex.\+h@{le\+\_\+hex.\+h}}
+\subsubsection[{le\+\_\+hex\+\_\+\+String\+To\+Binary}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t le\+\_\+hex\+\_\+\+String\+To\+Binary (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{string\+Ptr, }
+\item[{uint32\+\_\+t}]{string\+Length, }
+\item[{uint8\+\_\+t $\ast$}]{binary\+Ptr, }
+\item[{uint32\+\_\+t}]{binary\+Size}
+\end{DoxyParamCaption}
+)}\label{le__hex_8h_a2ad2c35d567e8fc3fc962a58272b093d}
+Converts hex string to binary format.
+
+\begin{DoxyReturn}{Returns}
+size of binary, if $<$ 0 it has failed 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em string\+Ptr} & string to convert, terminated with \textquotesingle{}\textbackslash{}0\textquotesingle{}. \\
+\hline
+\mbox{\tt in}  & {\em string\+Length} & string length \\
+\hline
+\mbox{\tt out}  & {\em binary\+Ptr} & binary result \\
+\hline
+\mbox{\tt in}  & {\em binary\+Size} & size of the binary table \\
+\hline
+\end{DoxyParams}

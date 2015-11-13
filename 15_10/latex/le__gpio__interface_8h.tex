@@ -1,0 +1,295 @@
+\hypertarget{le__gpio__interface_8h}{}\section{build/localhost/interfaces/le\+\_\+gpio\+\_\+interface.h File Reference}
+\label{le__gpio__interface_8h}\index{build/localhost/interfaces/le\+\_\+gpio\+\_\+interface.\+h@{build/localhost/interfaces/le\+\_\+gpio\+\_\+interface.\+h}}
+{\ttfamily \#include \char`\"{}legato.\+h\char`\"{}}\\*
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct le\+\_\+gpio\+\_\+\+Change\+Event\+Handler $\ast$ \hyperlink{le__gpio__interface_8h_ae31b2ef95699c2ff52fe445c834c3b7c}{le\+\_\+gpio\+\_\+\+Change\+Event\+Handler\+Ref\+\_\+t}
+\item 
+typedef void($\ast$ \hyperlink{le__gpio__interface_8h_a3103cae6899a6016312b648adaef8305}{le\+\_\+gpio\+\_\+\+Change\+Callback\+Func\+\_\+t}) (bool state, void $\ast$context\+Ptr)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{le__gpio__interface_8h_a85a1094e232be17c0d81491e9ab2a411}{le\+\_\+gpio\+\_\+\+Polarity\+\_\+t} \{ \hyperlink{le__gpio__interface_8h_a85a1094e232be17c0d81491e9ab2a411a9f85e182a82dc7e5fcc63bcc5aca173a}{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+A\+C\+T\+I\+V\+E\+\_\+\+H\+I\+G\+H}, 
+\hyperlink{le__gpio__interface_8h_a85a1094e232be17c0d81491e9ab2a411a3c1caf29524d2a41daa624d81526ea4b}{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+A\+C\+T\+I\+V\+E\+\_\+\+L\+O\+W}
+ \}
+\item 
+enum \hyperlink{le__gpio__interface_8h_aba036e04f8a3ae939cabfbfa5a45e240}{le\+\_\+gpio\+\_\+\+Edge\+\_\+t} \{ \hyperlink{le__gpio__interface_8h_aba036e04f8a3ae939cabfbfa5a45e240a3afa4ffad60324eb1e84daa1170f289b}{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+N\+O\+N\+E}, 
+\hyperlink{le__gpio__interface_8h_aba036e04f8a3ae939cabfbfa5a45e240a0a4a3cd49c0b8e1e101e94466f3c0747}{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+R\+I\+S\+I\+N\+G}, 
+\hyperlink{le__gpio__interface_8h_aba036e04f8a3ae939cabfbfa5a45e240a77ab7d89d1fbb9e1ea13a305a9c553c2}{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+F\+A\+L\+L\+I\+N\+G}, 
+\hyperlink{le__gpio__interface_8h_aba036e04f8a3ae939cabfbfa5a45e240aa12e93f351edc641537358254fec369e}{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+B\+O\+T\+H}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{le__gpio__interface_8h_a4201e8ba400539c1716635c85f235f45}{le\+\_\+gpio\+\_\+\+Connect\+Service} (void)
+\item 
+void \hyperlink{le__gpio__interface_8h_adc225a1c41003b3dfd4f81149b7f919c}{le\+\_\+gpio\+\_\+\+Disconnect\+Service} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gpio__interface_8h_aa9575365b0d7f3c63ab7a82f4106040b}{le\+\_\+gpio\+\_\+\+Set\+Input} (\hyperlink{le__gpio__interface_8h_a85a1094e232be17c0d81491e9ab2a411}{le\+\_\+gpio\+\_\+\+Polarity\+\_\+t} polarity)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gpio__interface_8h_a8b868ea1ec60fec2cc21a8f010f1ce24}{le\+\_\+gpio\+\_\+\+Set\+Push\+Pull\+Output} (\hyperlink{le__gpio__interface_8h_a85a1094e232be17c0d81491e9ab2a411}{le\+\_\+gpio\+\_\+\+Polarity\+\_\+t} polarity, bool value)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gpio__interface_8h_a24ac042e9f77c27d490ac0f7c03e64f3}{le\+\_\+gpio\+\_\+\+Set\+Tri\+State\+Output} (\hyperlink{le__gpio__interface_8h_a85a1094e232be17c0d81491e9ab2a411}{le\+\_\+gpio\+\_\+\+Polarity\+\_\+t} polarity)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gpio__interface_8h_ae2f18371b5d1cec66dfc44d01951e3ac}{le\+\_\+gpio\+\_\+\+Set\+Open\+Drain\+Output} (\hyperlink{le__gpio__interface_8h_a85a1094e232be17c0d81491e9ab2a411}{le\+\_\+gpio\+\_\+\+Polarity\+\_\+t} polarity, bool value)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gpio__interface_8h_a8fcd5688f756766216f8ba003c6e2cb7}{le\+\_\+gpio\+\_\+\+Enable\+Pull\+Up} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gpio__interface_8h_ab09de404e7e76c89709c1e5a41074c98}{le\+\_\+gpio\+\_\+\+Enable\+Pull\+Down} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gpio__interface_8h_a7b8f80ad137d6deda9d7568cbfe293db}{le\+\_\+gpio\+\_\+\+Disable\+Resistors} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gpio__interface_8h_ab9043b9f3cd91a8a6d168d5e998107bb}{le\+\_\+gpio\+\_\+\+Activate} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gpio__interface_8h_afc2a7e73453babb24b114ab621959e21}{le\+\_\+gpio\+\_\+\+Deactivate} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__gpio__interface_8h_a34b25c4717f044e74ecba8c624c1e51e}{le\+\_\+gpio\+\_\+\+Set\+High\+Z} (void)
+\item 
+bool \hyperlink{le__gpio__interface_8h_adaf4a736b849f8c76ce0cd029e9ea59d}{le\+\_\+gpio\+\_\+\+Read} (void)
+\item 
+\hyperlink{le__gpio__interface_8h_ae31b2ef95699c2ff52fe445c834c3b7c}{le\+\_\+gpio\+\_\+\+Change\+Event\+Handler\+Ref\+\_\+t} \hyperlink{le__gpio__interface_8h_ae6fc799fa2d2497bb2fe158e3090649f}{le\+\_\+gpio\+\_\+\+Add\+Change\+Event\+Handler} (\hyperlink{le__gpio__interface_8h_aba036e04f8a3ae939cabfbfa5a45e240}{le\+\_\+gpio\+\_\+\+Edge\+\_\+t} trigger, \hyperlink{le__gpio__interface_8h_a3103cae6899a6016312b648adaef8305}{le\+\_\+gpio\+\_\+\+Change\+Callback\+Func\+\_\+t} handler\+Ptr, void $\ast$context\+Ptr, int32\+\_\+t sample\+Ms)
+\item 
+void \hyperlink{le__gpio__interface_8h_aabc149f60e9bea74d0357bfabe278602}{le\+\_\+gpio\+\_\+\+Remove\+Change\+Event\+Handler} (\hyperlink{le__gpio__interface_8h_ae31b2ef95699c2ff52fe445c834c3b7c}{le\+\_\+gpio\+\_\+\+Change\+Event\+Handler\+Ref\+\_\+t} add\+Handler\+Ref)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_gpio}{G\+P\+I\+O A\+P\+I} include file.
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Typedef Documentation}
+\hypertarget{le__gpio__interface_8h_a3103cae6899a6016312b648adaef8305}{}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!le\+\_\+gpio\+\_\+\+Change\+Callback\+Func\+\_\+t@{le\+\_\+gpio\+\_\+\+Change\+Callback\+Func\+\_\+t}}
+\index{le\+\_\+gpio\+\_\+\+Change\+Callback\+Func\+\_\+t@{le\+\_\+gpio\+\_\+\+Change\+Callback\+Func\+\_\+t}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gpio\+\_\+\+Change\+Callback\+Func\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ le\+\_\+gpio\+\_\+\+Change\+Callback\+Func\+\_\+t) (bool state, void $\ast$context\+Ptr)}\label{le__gpio__interface_8h_a3103cae6899a6016312b648adaef8305}
+State change event handler (callback).
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & New state of pin (true = active, false = inactive). \\
+\hline
+{\em context\+Ptr} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__gpio__interface_8h_ae31b2ef95699c2ff52fe445c834c3b7c}{}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!le\+\_\+gpio\+\_\+\+Change\+Event\+Handler\+Ref\+\_\+t@{le\+\_\+gpio\+\_\+\+Change\+Event\+Handler\+Ref\+\_\+t}}
+\index{le\+\_\+gpio\+\_\+\+Change\+Event\+Handler\+Ref\+\_\+t@{le\+\_\+gpio\+\_\+\+Change\+Event\+Handler\+Ref\+\_\+t}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gpio\+\_\+\+Change\+Event\+Handler\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+gpio\+\_\+\+Change\+Event\+Handler$\ast$ {\bf le\+\_\+gpio\+\_\+\+Change\+Event\+Handler\+Ref\+\_\+t}}\label{le__gpio__interface_8h_ae31b2ef95699c2ff52fe445c834c3b7c}
+Reference type used by Add/\+Remove functions for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+gpio\+\_\+\+Change\+Event\textquotesingle{} 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{le__gpio__interface_8h_aba036e04f8a3ae939cabfbfa5a45e240}{}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!le\+\_\+gpio\+\_\+\+Edge\+\_\+t@{le\+\_\+gpio\+\_\+\+Edge\+\_\+t}}
+\index{le\+\_\+gpio\+\_\+\+Edge\+\_\+t@{le\+\_\+gpio\+\_\+\+Edge\+\_\+t}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gpio\+\_\+\+Edge\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+gpio\+\_\+\+Edge\+\_\+t}}\label{le__gpio__interface_8h_aba036e04f8a3ae939cabfbfa5a45e240}
+Edge transitions. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+N\+O\+N\+E@{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+N\+O\+N\+E}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+N\+O\+N\+E@{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+N\+O\+N\+E}}\item[{\em 
+\hypertarget{le__gpio__interface_8h_aba036e04f8a3ae939cabfbfa5a45e240a3afa4ffad60324eb1e84daa1170f289b}{}L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+N\+O\+N\+E\label{le__gpio__interface_8h_aba036e04f8a3ae939cabfbfa5a45e240a3afa4ffad60324eb1e84daa1170f289b}
+}]No edge detection. \index{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+R\+I\+S\+I\+N\+G@{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+R\+I\+S\+I\+N\+G}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+R\+I\+S\+I\+N\+G@{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+R\+I\+S\+I\+N\+G}}\item[{\em 
+\hypertarget{le__gpio__interface_8h_aba036e04f8a3ae939cabfbfa5a45e240a0a4a3cd49c0b8e1e101e94466f3c0747}{}L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+R\+I\+S\+I\+N\+G\label{le__gpio__interface_8h_aba036e04f8a3ae939cabfbfa5a45e240a0a4a3cd49c0b8e1e101e94466f3c0747}
+}]Notify when voltage goes from low to high. \index{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+F\+A\+L\+L\+I\+N\+G@{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+F\+A\+L\+L\+I\+N\+G}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+F\+A\+L\+L\+I\+N\+G@{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+F\+A\+L\+L\+I\+N\+G}}\item[{\em 
+\hypertarget{le__gpio__interface_8h_aba036e04f8a3ae939cabfbfa5a45e240a77ab7d89d1fbb9e1ea13a305a9c553c2}{}L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+F\+A\+L\+L\+I\+N\+G\label{le__gpio__interface_8h_aba036e04f8a3ae939cabfbfa5a45e240a77ab7d89d1fbb9e1ea13a305a9c553c2}
+}]Notify when voltage goes from high to low. \index{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+B\+O\+T\+H@{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+B\+O\+T\+H}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+B\+O\+T\+H@{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+B\+O\+T\+H}}\item[{\em 
+\hypertarget{le__gpio__interface_8h_aba036e04f8a3ae939cabfbfa5a45e240aa12e93f351edc641537358254fec369e}{}L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+E\+D\+G\+E\+\_\+\+B\+O\+T\+H\label{le__gpio__interface_8h_aba036e04f8a3ae939cabfbfa5a45e240aa12e93f351edc641537358254fec369e}
+}]Notify when pin voltage changes state in either direction. \end{description}
+\end{Desc}
+\hypertarget{le__gpio__interface_8h_a85a1094e232be17c0d81491e9ab2a411}{}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!le\+\_\+gpio\+\_\+\+Polarity\+\_\+t@{le\+\_\+gpio\+\_\+\+Polarity\+\_\+t}}
+\index{le\+\_\+gpio\+\_\+\+Polarity\+\_\+t@{le\+\_\+gpio\+\_\+\+Polarity\+\_\+t}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gpio\+\_\+\+Polarity\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+gpio\+\_\+\+Polarity\+\_\+t}}\label{le__gpio__interface_8h_a85a1094e232be17c0d81491e9ab2a411}
+Pin polarities. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+A\+C\+T\+I\+V\+E\+\_\+\+H\+I\+G\+H@{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+A\+C\+T\+I\+V\+E\+\_\+\+H\+I\+G\+H}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+A\+C\+T\+I\+V\+E\+\_\+\+H\+I\+G\+H@{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+A\+C\+T\+I\+V\+E\+\_\+\+H\+I\+G\+H}}\item[{\em 
+\hypertarget{le__gpio__interface_8h_a85a1094e232be17c0d81491e9ab2a411a9f85e182a82dc7e5fcc63bcc5aca173a}{}L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+A\+C\+T\+I\+V\+E\+\_\+\+H\+I\+G\+H\label{le__gpio__interface_8h_a85a1094e232be17c0d81491e9ab2a411a9f85e182a82dc7e5fcc63bcc5aca173a}
+}]G\+P\+I\+O active-\/high, output is 1. \index{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+A\+C\+T\+I\+V\+E\+\_\+\+L\+O\+W@{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+A\+C\+T\+I\+V\+E\+\_\+\+L\+O\+W}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+A\+C\+T\+I\+V\+E\+\_\+\+L\+O\+W@{L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+A\+C\+T\+I\+V\+E\+\_\+\+L\+O\+W}}\item[{\em 
+\hypertarget{le__gpio__interface_8h_a85a1094e232be17c0d81491e9ab2a411a3c1caf29524d2a41daa624d81526ea4b}{}L\+E\+\_\+\+G\+P\+I\+O\+\_\+\+A\+C\+T\+I\+V\+E\+\_\+\+L\+O\+W\label{le__gpio__interface_8h_a85a1094e232be17c0d81491e9ab2a411a3c1caf29524d2a41daa624d81526ea4b}
+}]G\+P\+I\+O active-\/low, output is 0. \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{le__gpio__interface_8h_ab9043b9f3cd91a8a6d168d5e998107bb}{}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!le\+\_\+gpio\+\_\+\+Activate@{le\+\_\+gpio\+\_\+\+Activate}}
+\index{le\+\_\+gpio\+\_\+\+Activate@{le\+\_\+gpio\+\_\+\+Activate}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gpio\+\_\+\+Activate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gpio\+\_\+\+Activate (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__gpio__interface_8h_ab9043b9f3cd91a8a6d168d5e998107bb}
+Set output pin to active state.
+
+\begin{DoxyWarning}{Warning}
+Only valid for output pins. 
+\end{DoxyWarning}
+\hypertarget{le__gpio__interface_8h_ae6fc799fa2d2497bb2fe158e3090649f}{}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!le\+\_\+gpio\+\_\+\+Add\+Change\+Event\+Handler@{le\+\_\+gpio\+\_\+\+Add\+Change\+Event\+Handler}}
+\index{le\+\_\+gpio\+\_\+\+Add\+Change\+Event\+Handler@{le\+\_\+gpio\+\_\+\+Add\+Change\+Event\+Handler}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gpio\+\_\+\+Add\+Change\+Event\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+gpio\+\_\+\+Change\+Event\+Handler\+Ref\+\_\+t} le\+\_\+gpio\+\_\+\+Add\+Change\+Event\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+gpio\+\_\+\+Edge\+\_\+t}}]{trigger, }
+\item[{{\bf le\+\_\+gpio\+\_\+\+Change\+Callback\+Func\+\_\+t}}]{handler\+Ptr, }
+\item[{void $\ast$}]{context\+Ptr, }
+\item[{int32\+\_\+t}]{sample\+Ms}
+\end{DoxyParamCaption}
+)}\label{le__gpio__interface_8h_ae6fc799fa2d2497bb2fe158e3090649f}
+Add handler function for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+gpio\+\_\+\+Change\+Event\textquotesingle{}
+
+Register a callback function to be called when an input pin changes state.
+
+If the pin is not capable of interrupt-\/driven operation, then it will be sampled every sample\+Ms milliseconds. Otherwise, sample\+Ms will be ignored. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em trigger} & Change(s) that should trigger the callback to be called. \\
+\hline
+\mbox{\tt in}  & {\em handler\+Ptr} & \\
+\hline
+\mbox{\tt in}  & {\em context\+Ptr} & \\
+\hline
+\mbox{\tt in}  & {\em sample\+Ms} & If not interrupt capable, sample the input this often (ms). \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__gpio__interface_8h_a4201e8ba400539c1716635c85f235f45}{}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!le\+\_\+gpio\+\_\+\+Connect\+Service@{le\+\_\+gpio\+\_\+\+Connect\+Service}}
+\index{le\+\_\+gpio\+\_\+\+Connect\+Service@{le\+\_\+gpio\+\_\+\+Connect\+Service}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gpio\+\_\+\+Connect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+gpio\+\_\+\+Connect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__gpio__interface_8h_a4201e8ba400539c1716635c85f235f45}
+Connect the client to the service \hypertarget{le__gpio__interface_8h_afc2a7e73453babb24b114ab621959e21}{}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!le\+\_\+gpio\+\_\+\+Deactivate@{le\+\_\+gpio\+\_\+\+Deactivate}}
+\index{le\+\_\+gpio\+\_\+\+Deactivate@{le\+\_\+gpio\+\_\+\+Deactivate}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gpio\+\_\+\+Deactivate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gpio\+\_\+\+Deactivate (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__gpio__interface_8h_afc2a7e73453babb24b114ab621959e21}
+Set output pin to inactive state.
+
+\begin{DoxyWarning}{Warning}
+Only valid for output pins. 
+\end{DoxyWarning}
+\hypertarget{le__gpio__interface_8h_a7b8f80ad137d6deda9d7568cbfe293db}{}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!le\+\_\+gpio\+\_\+\+Disable\+Resistors@{le\+\_\+gpio\+\_\+\+Disable\+Resistors}}
+\index{le\+\_\+gpio\+\_\+\+Disable\+Resistors@{le\+\_\+gpio\+\_\+\+Disable\+Resistors}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gpio\+\_\+\+Disable\+Resistors}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gpio\+\_\+\+Disable\+Resistors (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__gpio__interface_8h_a7b8f80ad137d6deda9d7568cbfe293db}
+Disable the pull-\/up and pull-\/down resistors. Does nothing if both are already disabled. \hypertarget{le__gpio__interface_8h_adc225a1c41003b3dfd4f81149b7f919c}{}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!le\+\_\+gpio\+\_\+\+Disconnect\+Service@{le\+\_\+gpio\+\_\+\+Disconnect\+Service}}
+\index{le\+\_\+gpio\+\_\+\+Disconnect\+Service@{le\+\_\+gpio\+\_\+\+Disconnect\+Service}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gpio\+\_\+\+Disconnect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+gpio\+\_\+\+Disconnect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__gpio__interface_8h_adc225a1c41003b3dfd4f81149b7f919c}
+Disconnect the client from the service \hypertarget{le__gpio__interface_8h_ab09de404e7e76c89709c1e5a41074c98}{}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!le\+\_\+gpio\+\_\+\+Enable\+Pull\+Down@{le\+\_\+gpio\+\_\+\+Enable\+Pull\+Down}}
+\index{le\+\_\+gpio\+\_\+\+Enable\+Pull\+Down@{le\+\_\+gpio\+\_\+\+Enable\+Pull\+Down}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gpio\+\_\+\+Enable\+Pull\+Down}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gpio\+\_\+\+Enable\+Pull\+Down (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__gpio__interface_8h_ab09de404e7e76c89709c1e5a41074c98}
+Enable the pull-\/down resistor (disables pull-\/up if previously enabled). \hypertarget{le__gpio__interface_8h_a8fcd5688f756766216f8ba003c6e2cb7}{}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!le\+\_\+gpio\+\_\+\+Enable\+Pull\+Up@{le\+\_\+gpio\+\_\+\+Enable\+Pull\+Up}}
+\index{le\+\_\+gpio\+\_\+\+Enable\+Pull\+Up@{le\+\_\+gpio\+\_\+\+Enable\+Pull\+Up}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gpio\+\_\+\+Enable\+Pull\+Up}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gpio\+\_\+\+Enable\+Pull\+Up (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__gpio__interface_8h_a8fcd5688f756766216f8ba003c6e2cb7}
+Enable the pull-\/up resistor (disables pull-\/down if previously enabled). \hypertarget{le__gpio__interface_8h_adaf4a736b849f8c76ce0cd029e9ea59d}{}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!le\+\_\+gpio\+\_\+\+Read@{le\+\_\+gpio\+\_\+\+Read}}
+\index{le\+\_\+gpio\+\_\+\+Read@{le\+\_\+gpio\+\_\+\+Read}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gpio\+\_\+\+Read}]{\setlength{\rightskip}{0pt plus 5cm}bool le\+\_\+gpio\+\_\+\+Read (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__gpio__interface_8h_adaf4a736b849f8c76ce0cd029e9ea59d}
+Read value of G\+P\+I\+O input pin.
+
+\begin{DoxyReturn}{Returns}
+true = active, false = inactive.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+It is invalid to read an output pin. 
+\end{DoxyNote}
+\hypertarget{le__gpio__interface_8h_aabc149f60e9bea74d0357bfabe278602}{}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!le\+\_\+gpio\+\_\+\+Remove\+Change\+Event\+Handler@{le\+\_\+gpio\+\_\+\+Remove\+Change\+Event\+Handler}}
+\index{le\+\_\+gpio\+\_\+\+Remove\+Change\+Event\+Handler@{le\+\_\+gpio\+\_\+\+Remove\+Change\+Event\+Handler}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gpio\+\_\+\+Remove\+Change\+Event\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+gpio\+\_\+\+Remove\+Change\+Event\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+gpio\+\_\+\+Change\+Event\+Handler\+Ref\+\_\+t}}]{add\+Handler\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__gpio__interface_8h_aabc149f60e9bea74d0357bfabe278602}
+Remove handler function for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+gpio\+\_\+\+Change\+Event\textquotesingle{} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em add\+Handler\+Ref} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__gpio__interface_8h_a34b25c4717f044e74ecba8c624c1e51e}{}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!le\+\_\+gpio\+\_\+\+Set\+High\+Z@{le\+\_\+gpio\+\_\+\+Set\+High\+Z}}
+\index{le\+\_\+gpio\+\_\+\+Set\+High\+Z@{le\+\_\+gpio\+\_\+\+Set\+High\+Z}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gpio\+\_\+\+Set\+High\+Z}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gpio\+\_\+\+Set\+High\+Z (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__gpio__interface_8h_a34b25c4717f044e74ecba8c624c1e51e}
+Set output pin to high impedance state.
+
+\begin{DoxyWarning}{Warning}
+Only valid for tri-\/state or open-\/drain output pins. 
+\end{DoxyWarning}
+\hypertarget{le__gpio__interface_8h_aa9575365b0d7f3c63ab7a82f4106040b}{}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!le\+\_\+gpio\+\_\+\+Set\+Input@{le\+\_\+gpio\+\_\+\+Set\+Input}}
+\index{le\+\_\+gpio\+\_\+\+Set\+Input@{le\+\_\+gpio\+\_\+\+Set\+Input}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gpio\+\_\+\+Set\+Input}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gpio\+\_\+\+Set\+Input (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+gpio\+\_\+\+Polarity\+\_\+t}}]{polarity}
+\end{DoxyParamCaption}
+)}\label{le__gpio__interface_8h_aa9575365b0d7f3c63ab7a82f4106040b}
+Configure the pin as an input pin. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em polarity} & Active-\/high or active-\/low. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__gpio__interface_8h_ae2f18371b5d1cec66dfc44d01951e3ac}{}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!le\+\_\+gpio\+\_\+\+Set\+Open\+Drain\+Output@{le\+\_\+gpio\+\_\+\+Set\+Open\+Drain\+Output}}
+\index{le\+\_\+gpio\+\_\+\+Set\+Open\+Drain\+Output@{le\+\_\+gpio\+\_\+\+Set\+Open\+Drain\+Output}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gpio\+\_\+\+Set\+Open\+Drain\+Output}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gpio\+\_\+\+Set\+Open\+Drain\+Output (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+gpio\+\_\+\+Polarity\+\_\+t}}]{polarity, }
+\item[{bool}]{value}
+\end{DoxyParamCaption}
+)}\label{le__gpio__interface_8h_ae2f18371b5d1cec66dfc44d01951e3ac}
+Configure the pin as an open-\/drain output pin. \char`\"{}\+High\char`\"{} is a high-\/impedance state, while \char`\"{}\+Low\char`\"{} pulls the pin to ground. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em polarity} & Active-\/high or active-\/low. \\
+\hline
+\mbox{\tt in}  & {\em value} & Initial value to drive (true = active, false = inactive) \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__gpio__interface_8h_a8b868ea1ec60fec2cc21a8f010f1ce24}{}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!le\+\_\+gpio\+\_\+\+Set\+Push\+Pull\+Output@{le\+\_\+gpio\+\_\+\+Set\+Push\+Pull\+Output}}
+\index{le\+\_\+gpio\+\_\+\+Set\+Push\+Pull\+Output@{le\+\_\+gpio\+\_\+\+Set\+Push\+Pull\+Output}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gpio\+\_\+\+Set\+Push\+Pull\+Output}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gpio\+\_\+\+Set\+Push\+Pull\+Output (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+gpio\+\_\+\+Polarity\+\_\+t}}]{polarity, }
+\item[{bool}]{value}
+\end{DoxyParamCaption}
+)}\label{le__gpio__interface_8h_a8b868ea1ec60fec2cc21a8f010f1ce24}
+Configure the pin as a push-\/pull output pin. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em polarity} & Active-\/high or active-\/low. \\
+\hline
+\mbox{\tt in}  & {\em value} & Initial value to drive (true = active, false = inactive) \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__gpio__interface_8h_a24ac042e9f77c27d490ac0f7c03e64f3}{}\index{le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}!le\+\_\+gpio\+\_\+\+Set\+Tri\+State\+Output@{le\+\_\+gpio\+\_\+\+Set\+Tri\+State\+Output}}
+\index{le\+\_\+gpio\+\_\+\+Set\+Tri\+State\+Output@{le\+\_\+gpio\+\_\+\+Set\+Tri\+State\+Output}!le\+\_\+gpio\+\_\+interface.\+h@{le\+\_\+gpio\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+gpio\+\_\+\+Set\+Tri\+State\+Output}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+gpio\+\_\+\+Set\+Tri\+State\+Output (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+gpio\+\_\+\+Polarity\+\_\+t}}]{polarity}
+\end{DoxyParamCaption}
+)}\label{le__gpio__interface_8h_a24ac042e9f77c27d490ac0f7c03e64f3}
+Configure the pin as a tri-\/state output pin.
+
+\begin{DoxyNote}{Note}
+The initial state will be high-\/impedance. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em polarity} & Active-\/high or active-\/low. \\
+\hline
+\end{DoxyParams}

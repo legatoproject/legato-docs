@@ -1,0 +1,618 @@
+\hypertarget{le__pos__interface_8h}{}\section{build/localhost/interfaces/le\+\_\+pos\+\_\+interface.h File Reference}
+\label{le__pos__interface_8h}\index{build/localhost/interfaces/le\+\_\+pos\+\_\+interface.\+h@{build/localhost/interfaces/le\+\_\+pos\+\_\+interface.\+h}}
+{\ttfamily \#include \char`\"{}legato.\+h\char`\"{}}\\*
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct le\+\_\+pos\+\_\+\+Sample $\ast$ \hyperlink{le__pos__interface_8h_a69a38f7e650f581bb5e2b5ce7e339202}{le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t}
+\item 
+typedef struct le\+\_\+pos\+\_\+\+Movement\+Handler $\ast$ \hyperlink{le__pos__interface_8h_a5a6f639c1293ba027109b40be3ab21bd}{le\+\_\+pos\+\_\+\+Movement\+Handler\+Ref\+\_\+t}
+\item 
+typedef void($\ast$ \hyperlink{le__pos__interface_8h_a52ec35470a43299a2c6850927c2c5090}{le\+\_\+pos\+\_\+\+Movement\+Handler\+Func\+\_\+t}) (\hyperlink{le__pos__interface_8h_a69a38f7e650f581bb5e2b5ce7e339202}{le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t} position\+Sample\+Ref, void $\ast$context\+Ptr)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{le__pos__interface_8h_aecea99c52e78dc7ecc3402339fc20ddf}{le\+\_\+pos\+\_\+\+Connect\+Service} (void)
+\item 
+void \hyperlink{le__pos__interface_8h_aeeb3c52f69727372526718e51bec0e0e}{le\+\_\+pos\+\_\+\+Disconnect\+Service} (void)
+\item 
+\hyperlink{le__pos__interface_8h_a5a6f639c1293ba027109b40be3ab21bd}{le\+\_\+pos\+\_\+\+Movement\+Handler\+Ref\+\_\+t} \hyperlink{le__pos__interface_8h_a17e99072772110c1609c53247d663ed3}{le\+\_\+pos\+\_\+\+Add\+Movement\+Handler} (uint32\+\_\+t horizontal\+Magnitude, uint32\+\_\+t vertical\+Magnitude, \hyperlink{le__pos__interface_8h_a52ec35470a43299a2c6850927c2c5090}{le\+\_\+pos\+\_\+\+Movement\+Handler\+Func\+\_\+t} handler\+Ptr, void $\ast$context\+Ptr)
+\item 
+void \hyperlink{le__pos__interface_8h_a3c1b616489fc29fc578e58c6b570f14b}{le\+\_\+pos\+\_\+\+Remove\+Movement\+Handler} (\hyperlink{le__pos__interface_8h_a5a6f639c1293ba027109b40be3ab21bd}{le\+\_\+pos\+\_\+\+Movement\+Handler\+Ref\+\_\+t} add\+Handler\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__pos__interface_8h_a0aefc90df207f2e20286ea1be88e70d4}{le\+\_\+pos\+\_\+\+Get2\+D\+Location} (int32\+\_\+t $\ast$latitude\+Ptr, int32\+\_\+t $\ast$longitude\+Ptr, int32\+\_\+t $\ast$h\+Accuracy\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__pos__interface_8h_ad2e96a853c9e3d4daa351494ff2070ba}{le\+\_\+pos\+\_\+\+Get3\+D\+Location} (int32\+\_\+t $\ast$latitude\+Ptr, int32\+\_\+t $\ast$longitude\+Ptr, int32\+\_\+t $\ast$h\+Accuracy\+Ptr, int32\+\_\+t $\ast$altitude\+Ptr, int32\+\_\+t $\ast$v\+Accuracy\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__pos__interface_8h_a7f8c37ad14a3375eb9b5d6954916be41}{le\+\_\+pos\+\_\+\+Get\+Time} (uint16\+\_\+t $\ast$hours\+Ptr, uint16\+\_\+t $\ast$minutes\+Ptr, uint16\+\_\+t $\ast$seconds\+Ptr, uint16\+\_\+t $\ast$milliseconds\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__pos__interface_8h_a190d242995bb06518b5a064df5578c85}{le\+\_\+pos\+\_\+\+Get\+Date} (uint16\+\_\+t $\ast$year\+Ptr, uint16\+\_\+t $\ast$month\+Ptr, uint16\+\_\+t $\ast$day\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__pos__interface_8h_a5b483fdcd812f4da7bdda284e9bb18b6}{le\+\_\+pos\+\_\+\+Get\+Motion} (uint32\+\_\+t $\ast$h\+Speed\+Ptr\+Ptr, int32\+\_\+t $\ast$h\+Speed\+Accuracy\+Ptr\+Ptr, int32\+\_\+t $\ast$v\+Speed\+Ptr\+Ptr, int32\+\_\+t $\ast$v\+Speed\+Accuracy\+Ptr\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__pos__interface_8h_ae06eaad71c152ade96d9b3f2e87a2053}{le\+\_\+pos\+\_\+\+Get\+Heading} (int32\+\_\+t $\ast$heading\+Ptr, int32\+\_\+t $\ast$heading\+Accuracy\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__pos__interface_8h_a2b5b4e4ce66c4f1653d6f0982bbd5feb}{le\+\_\+pos\+\_\+\+Get\+Direction} (int32\+\_\+t $\ast$direction\+Ptr, int32\+\_\+t $\ast$direction\+Accuracy\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__pos__interface_8h_ae7b3b16601465b663b468f12c63ea485}{le\+\_\+pos\+\_\+sample\+\_\+\+Get2\+D\+Location} (\hyperlink{le__pos__interface_8h_a69a38f7e650f581bb5e2b5ce7e339202}{le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t} position\+Sample\+Ref, int32\+\_\+t $\ast$latitude\+Ptr, int32\+\_\+t $\ast$longitude\+Ptr, int32\+\_\+t $\ast$horizontal\+Accuracy\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__pos__interface_8h_a47171bf14bf4f249d3b76a8ed204f13c}{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Time} (\hyperlink{le__pos__interface_8h_a69a38f7e650f581bb5e2b5ce7e339202}{le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t} position\+Sample\+Ref, uint16\+\_\+t $\ast$hours\+Ptr, uint16\+\_\+t $\ast$minutes\+Ptr, uint16\+\_\+t $\ast$seconds\+Ptr, uint16\+\_\+t $\ast$milliseconds\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__pos__interface_8h_a8249f20e9d5020aaa23e54ccf6bbeb9d}{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Date} (\hyperlink{le__pos__interface_8h_a69a38f7e650f581bb5e2b5ce7e339202}{le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t} position\+Sample\+Ref, uint16\+\_\+t $\ast$year\+Ptr, uint16\+\_\+t $\ast$month\+Ptr, uint16\+\_\+t $\ast$day\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__pos__interface_8h_ac6c6868fdc51ce14492adfcd0d7274c0}{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Altitude} (\hyperlink{le__pos__interface_8h_a69a38f7e650f581bb5e2b5ce7e339202}{le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t} position\+Sample\+Ref, int32\+\_\+t $\ast$altitude\+Ptr, int32\+\_\+t $\ast$altitude\+Accuracy\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__pos__interface_8h_a0bb7a30675f1dd7891b22c7753d7caec}{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Horizontal\+Speed} (\hyperlink{le__pos__interface_8h_a69a38f7e650f581bb5e2b5ce7e339202}{le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t} position\+Sample\+Ref, uint32\+\_\+t $\ast$hspeed\+Ptr, int32\+\_\+t $\ast$hspeed\+Accuracy\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__pos__interface_8h_a18162e15ad9a61696312745ec0bec1fd}{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Vertical\+Speed} (\hyperlink{le__pos__interface_8h_a69a38f7e650f581bb5e2b5ce7e339202}{le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t} position\+Sample\+Ref, int32\+\_\+t $\ast$vspeed\+Ptr, int32\+\_\+t $\ast$vspeed\+Accuracy\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__pos__interface_8h_a181f453d46f8b5440d91f2af1b4ebbfb}{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Heading} (\hyperlink{le__pos__interface_8h_a69a38f7e650f581bb5e2b5ce7e339202}{le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t} position\+Sample\+Ref, int32\+\_\+t $\ast$heading\+Ptr, int32\+\_\+t $\ast$heading\+Accuracy\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__pos__interface_8h_ae42d09bb5146b52dd1f628a93611bc31}{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Direction} (\hyperlink{le__pos__interface_8h_a69a38f7e650f581bb5e2b5ce7e339202}{le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t} position\+Sample\+Ref, int32\+\_\+t $\ast$direction\+Ptr, int32\+\_\+t $\ast$direction\+Accuracy\+Ptr)
+\item 
+void \hyperlink{le__pos__interface_8h_af2999e2e4f7eca899b2af1125547e3ea}{le\+\_\+pos\+\_\+sample\+\_\+\+Release} (\hyperlink{le__pos__interface_8h_a69a38f7e650f581bb5e2b5ce7e339202}{le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t} position\+Sample\+Ref)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_pos}{Positioning} include file.
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Typedef Documentation}
+\hypertarget{le__pos__interface_8h_a52ec35470a43299a2c6850927c2c5090}{}\index{le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}!le\+\_\+pos\+\_\+\+Movement\+Handler\+Func\+\_\+t@{le\+\_\+pos\+\_\+\+Movement\+Handler\+Func\+\_\+t}}
+\index{le\+\_\+pos\+\_\+\+Movement\+Handler\+Func\+\_\+t@{le\+\_\+pos\+\_\+\+Movement\+Handler\+Func\+\_\+t}!le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+pos\+\_\+\+Movement\+Handler\+Func\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ le\+\_\+pos\+\_\+\+Movement\+Handler\+Func\+\_\+t) ({\bf le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t} position\+Sample\+Ref, void $\ast$context\+Ptr)}\label{le__pos__interface_8h_a52ec35470a43299a2c6850927c2c5090}
+Handler for Movement changes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position\+Sample\+Ref} & Position\textquotesingle{}s sample reference \\
+\hline
+{\em context\+Ptr} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__pos__interface_8h_a5a6f639c1293ba027109b40be3ab21bd}{}\index{le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}!le\+\_\+pos\+\_\+\+Movement\+Handler\+Ref\+\_\+t@{le\+\_\+pos\+\_\+\+Movement\+Handler\+Ref\+\_\+t}}
+\index{le\+\_\+pos\+\_\+\+Movement\+Handler\+Ref\+\_\+t@{le\+\_\+pos\+\_\+\+Movement\+Handler\+Ref\+\_\+t}!le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+pos\+\_\+\+Movement\+Handler\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+pos\+\_\+\+Movement\+Handler$\ast$ {\bf le\+\_\+pos\+\_\+\+Movement\+Handler\+Ref\+\_\+t}}\label{le__pos__interface_8h_a5a6f639c1293ba027109b40be3ab21bd}
+Reference type used by Add/\+Remove functions for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+pos\+\_\+\+Movement\textquotesingle{} \hypertarget{le__pos__interface_8h_a69a38f7e650f581bb5e2b5ce7e339202}{}\index{le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}!le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t@{le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t}}
+\index{le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t@{le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t}!le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+pos\+\_\+\+Sample$\ast$ {\bf le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t}}\label{le__pos__interface_8h_a69a38f7e650f581bb5e2b5ce7e339202}
+Reference type for dealing with Position samples. 
+
+\subsection{Function Documentation}
+\hypertarget{le__pos__interface_8h_a17e99072772110c1609c53247d663ed3}{}\index{le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}!le\+\_\+pos\+\_\+\+Add\+Movement\+Handler@{le\+\_\+pos\+\_\+\+Add\+Movement\+Handler}}
+\index{le\+\_\+pos\+\_\+\+Add\+Movement\+Handler@{le\+\_\+pos\+\_\+\+Add\+Movement\+Handler}!le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+pos\+\_\+\+Add\+Movement\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+pos\+\_\+\+Movement\+Handler\+Ref\+\_\+t} le\+\_\+pos\+\_\+\+Add\+Movement\+Handler (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{horizontal\+Magnitude, }
+\item[{uint32\+\_\+t}]{vertical\+Magnitude, }
+\item[{{\bf le\+\_\+pos\+\_\+\+Movement\+Handler\+Func\+\_\+t}}]{handler\+Ptr, }
+\item[{void $\ast$}]{context\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__pos__interface_8h_a17e99072772110c1609c53247d663ed3}
+Add handler function for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+pos\+\_\+\+Movement\textquotesingle{}
+
+This event provides information on movement changes. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em horizontal\+Magnitude} & Horizontal magnitude in metres. 0 means that I don\textquotesingle{}t care about changes in the latitude and longitude. \\
+\hline
+\mbox{\tt in}  & {\em vertical\+Magnitude} & Vertical magnitude in metres. 0 means that I don\textquotesingle{}t care about changes in the altitude. \\
+\hline
+\mbox{\tt in}  & {\em handler\+Ptr} & \\
+\hline
+\mbox{\tt in}  & {\em context\+Ptr} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__pos__interface_8h_aecea99c52e78dc7ecc3402339fc20ddf}{}\index{le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}!le\+\_\+pos\+\_\+\+Connect\+Service@{le\+\_\+pos\+\_\+\+Connect\+Service}}
+\index{le\+\_\+pos\+\_\+\+Connect\+Service@{le\+\_\+pos\+\_\+\+Connect\+Service}!le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+pos\+\_\+\+Connect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+pos\+\_\+\+Connect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__pos__interface_8h_aecea99c52e78dc7ecc3402339fc20ddf}
+Connect the client to the service \hypertarget{le__pos__interface_8h_aeeb3c52f69727372526718e51bec0e0e}{}\index{le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}!le\+\_\+pos\+\_\+\+Disconnect\+Service@{le\+\_\+pos\+\_\+\+Disconnect\+Service}}
+\index{le\+\_\+pos\+\_\+\+Disconnect\+Service@{le\+\_\+pos\+\_\+\+Disconnect\+Service}!le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+pos\+\_\+\+Disconnect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+pos\+\_\+\+Disconnect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__pos__interface_8h_aeeb3c52f69727372526718e51bec0e0e}
+Disconnect the client from the service \hypertarget{le__pos__interface_8h_a0aefc90df207f2e20286ea1be88e70d4}{}\index{le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}!le\+\_\+pos\+\_\+\+Get2\+D\+Location@{le\+\_\+pos\+\_\+\+Get2\+D\+Location}}
+\index{le\+\_\+pos\+\_\+\+Get2\+D\+Location@{le\+\_\+pos\+\_\+\+Get2\+D\+Location}!le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+pos\+\_\+\+Get2\+D\+Location}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+pos\+\_\+\+Get2\+D\+Location (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{latitude\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{longitude\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{h\+Accuracy\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__pos__interface_8h_a0aefc90df207f2e20286ea1be88e70d4}
+Get the 2\+D location\textquotesingle{}s data (Latitude, Longitude, Horizontal accuracy).
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed to get the 2\+D location\textquotesingle{}s data 
+
+L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E One of the retrieved parameter is invalid (set to I\+N\+T32\+\_\+\+M\+A\+X). 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+latitude\+Ptr, longitude\+Ptr, h\+Accuracy\+Ptr can be set to N\+U\+L\+L if not needed. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em latitude\+Ptr} & Latitude in degrees, positive North. \\
+\hline
+\mbox{\tt out}  & {\em longitude\+Ptr} & Longitude in degrees, positive East. \\
+\hline
+\mbox{\tt out}  & {\em h\+Accuracy\+Ptr} & Horizontal position\textquotesingle{}s accuracy in metres. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__pos__interface_8h_ad2e96a853c9e3d4daa351494ff2070ba}{}\index{le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}!le\+\_\+pos\+\_\+\+Get3\+D\+Location@{le\+\_\+pos\+\_\+\+Get3\+D\+Location}}
+\index{le\+\_\+pos\+\_\+\+Get3\+D\+Location@{le\+\_\+pos\+\_\+\+Get3\+D\+Location}!le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+pos\+\_\+\+Get3\+D\+Location}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+pos\+\_\+\+Get3\+D\+Location (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{latitude\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{longitude\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{h\+Accuracy\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{altitude\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{v\+Accuracy\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__pos__interface_8h_ad2e96a853c9e3d4daa351494ff2070ba}
+Get the 3\+D location\textquotesingle{}s data (Latitude, Longitude, Altitude, Horizontal accuracy, Vertical accuracy).
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed to get the 3\+D location\textquotesingle{}s data 
+
+L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E One of the retrieved parameter is invalid (set to I\+N\+T32\+\_\+\+M\+A\+X). 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+latitude\+Ptr, longitude\+Ptr,h\+Accuracy\+Ptr, altitude\+Ptr, v\+Accuracy\+Ptr can be set to N\+U\+L\+L if not needed. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em latitude\+Ptr} & Latitude in degrees, positive North. \\
+\hline
+\mbox{\tt out}  & {\em longitude\+Ptr} & Longitude in degrees, positive East. \\
+\hline
+\mbox{\tt out}  & {\em h\+Accuracy\+Ptr} & Horizontal position\textquotesingle{}s accuracy in metres. \\
+\hline
+\mbox{\tt out}  & {\em altitude\+Ptr} & Altitude in metres, above Mean Sea Level. \\
+\hline
+\mbox{\tt out}  & {\em v\+Accuracy\+Ptr} & Vertical position\textquotesingle{}s accuracy in metres. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__pos__interface_8h_a190d242995bb06518b5a064df5578c85}{}\index{le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}!le\+\_\+pos\+\_\+\+Get\+Date@{le\+\_\+pos\+\_\+\+Get\+Date}}
+\index{le\+\_\+pos\+\_\+\+Get\+Date@{le\+\_\+pos\+\_\+\+Get\+Date}!le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+pos\+\_\+\+Get\+Date}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+pos\+\_\+\+Get\+Date (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t $\ast$}]{year\+Ptr, }
+\item[{uint16\+\_\+t $\ast$}]{month\+Ptr, }
+\item[{uint16\+\_\+t $\ast$}]{day\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__pos__interface_8h_a190d242995bb06518b5a064df5578c85}
+Get the date of the last updated location
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed to get the date. 
+
+L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E The retrieved date is invalid (all fields are set to 0). 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em year\+Ptr} & U\+T\+C Year A.\+D. \mbox{[}e.\+g. 2014\mbox{]}. \\
+\hline
+\mbox{\tt out}  & {\em month\+Ptr} & U\+T\+C Month into the year \mbox{[}range 1...12\mbox{]}. \\
+\hline
+\mbox{\tt out}  & {\em day\+Ptr} & U\+T\+C Days into the month \mbox{[}range 1...31\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__pos__interface_8h_a2b5b4e4ce66c4f1653d6f0982bbd5feb}{}\index{le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}!le\+\_\+pos\+\_\+\+Get\+Direction@{le\+\_\+pos\+\_\+\+Get\+Direction}}
+\index{le\+\_\+pos\+\_\+\+Get\+Direction@{le\+\_\+pos\+\_\+\+Get\+Direction}!le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+pos\+\_\+\+Get\+Direction}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+pos\+\_\+\+Get\+Direction (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{direction\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{direction\+Accuracy\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__pos__interface_8h_a2b5b4e4ce66c4f1653d6f0982bbd5feb}
+Get the direction indication. Direction of movement is the direction that the vehicle/person is actually moving.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed to get the direction indication. 
+
+L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E One of the retrieved parameter is invalid (set to I\+N\+T32\+\_\+\+M\+A\+X). 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+direction\+Ptr, direction\+Accuracy\+Ptr can be set to N\+U\+L\+L if not needed. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em direction\+Ptr} & Direction indication in degrees (where 0 is True North). \\
+\hline
+\mbox{\tt out}  & {\em direction\+Accuracy\+Ptr} & Direction\textquotesingle{}s accuracy in degrees. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__pos__interface_8h_ae06eaad71c152ade96d9b3f2e87a2053}{}\index{le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}!le\+\_\+pos\+\_\+\+Get\+Heading@{le\+\_\+pos\+\_\+\+Get\+Heading}}
+\index{le\+\_\+pos\+\_\+\+Get\+Heading@{le\+\_\+pos\+\_\+\+Get\+Heading}!le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+pos\+\_\+\+Get\+Heading}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+pos\+\_\+\+Get\+Heading (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{heading\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{heading\+Accuracy\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__pos__interface_8h_ae06eaad71c152ade96d9b3f2e87a2053}
+Get the heading indication.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed to get the heading indication. 
+
+L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E One of the retrieved parameter is invalid (set to I\+N\+T32\+\_\+\+M\+A\+X). 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+heading\+Ptr, heading\+Accuracy\+Ptr can be set to N\+U\+L\+L if not needed. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em heading\+Ptr} & Heading in degrees (where 0 is True North). \\
+\hline
+\mbox{\tt out}  & {\em heading\+Accuracy\+Ptr} & Heading\textquotesingle{}s accuracy in degrees. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__pos__interface_8h_a5b483fdcd812f4da7bdda284e9bb18b6}{}\index{le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}!le\+\_\+pos\+\_\+\+Get\+Motion@{le\+\_\+pos\+\_\+\+Get\+Motion}}
+\index{le\+\_\+pos\+\_\+\+Get\+Motion@{le\+\_\+pos\+\_\+\+Get\+Motion}!le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+pos\+\_\+\+Get\+Motion}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+pos\+\_\+\+Get\+Motion (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{h\+Speed\+Ptr\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{h\+Speed\+Accuracy\+Ptr\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{v\+Speed\+Ptr\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{v\+Speed\+Accuracy\+Ptr\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__pos__interface_8h_a5b483fdcd812f4da7bdda284e9bb18b6}
+Get the motion\textquotesingle{}s data (Horizontal Speed, Horizontal Speed\textquotesingle{}s accuracy, Vertical Speed, Vertical Speed\textquotesingle{}s accuracy).
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed to get the motion\textquotesingle{}s data. 
+
+L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E One of the retrieved parameter is invalid (set to I\+N\+T32\+\_\+\+M\+A\+X, U\+I\+N\+T32\+\_\+\+M\+A\+X). 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+h\+Speed\+Ptr, h\+Speed\+Accuracy\+Ptr, v\+Speed\+Ptr, v\+Speed\+Accuracy\+Ptr can be set to N\+U\+L\+L if not needed. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em h\+Speed\+Ptr\+Ptr} & Horizontal Speed in m/sec. \\
+\hline
+\mbox{\tt out}  & {\em h\+Speed\+Accuracy\+Ptr\+Ptr} & Horizontal Speed\textquotesingle{}s accuracy in m/sec. \\
+\hline
+\mbox{\tt out}  & {\em v\+Speed\+Ptr\+Ptr} & Vertical Speed in m/sec, positive up. \\
+\hline
+\mbox{\tt out}  & {\em v\+Speed\+Accuracy\+Ptr\+Ptr} & Vertical Speed\textquotesingle{}s accuracy in m/sec. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__pos__interface_8h_a7f8c37ad14a3375eb9b5d6954916be41}{}\index{le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}!le\+\_\+pos\+\_\+\+Get\+Time@{le\+\_\+pos\+\_\+\+Get\+Time}}
+\index{le\+\_\+pos\+\_\+\+Get\+Time@{le\+\_\+pos\+\_\+\+Get\+Time}!le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+pos\+\_\+\+Get\+Time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+pos\+\_\+\+Get\+Time (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t $\ast$}]{hours\+Ptr, }
+\item[{uint16\+\_\+t $\ast$}]{minutes\+Ptr, }
+\item[{uint16\+\_\+t $\ast$}]{seconds\+Ptr, }
+\item[{uint16\+\_\+t $\ast$}]{milliseconds\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__pos__interface_8h_a7f8c37ad14a3375eb9b5d6954916be41}
+Get the time of the last updated location
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed to get the time. 
+
+L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E The retrieved time is invalid (all fields are set to 0). 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em hours\+Ptr} & U\+T\+C Hours into the day \mbox{[}range 0..23\mbox{]}. \\
+\hline
+\mbox{\tt out}  & {\em minutes\+Ptr} & U\+T\+C Minutes into the hour \mbox{[}range 0..59\mbox{]}. \\
+\hline
+\mbox{\tt out}  & {\em seconds\+Ptr} & U\+T\+C Seconds into the minute \mbox{[}range 0..59\mbox{]}. \\
+\hline
+\mbox{\tt out}  & {\em milliseconds\+Ptr} & U\+T\+C Milliseconds into the second \mbox{[}range 0..999\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__pos__interface_8h_a3c1b616489fc29fc578e58c6b570f14b}{}\index{le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}!le\+\_\+pos\+\_\+\+Remove\+Movement\+Handler@{le\+\_\+pos\+\_\+\+Remove\+Movement\+Handler}}
+\index{le\+\_\+pos\+\_\+\+Remove\+Movement\+Handler@{le\+\_\+pos\+\_\+\+Remove\+Movement\+Handler}!le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+pos\+\_\+\+Remove\+Movement\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+pos\+\_\+\+Remove\+Movement\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+pos\+\_\+\+Movement\+Handler\+Ref\+\_\+t}}]{add\+Handler\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__pos__interface_8h_a3c1b616489fc29fc578e58c6b570f14b}
+Remove handler function for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+pos\+\_\+\+Movement\textquotesingle{} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em add\+Handler\+Ref} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__pos__interface_8h_ae7b3b16601465b663b468f12c63ea485}{}\index{le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}!le\+\_\+pos\+\_\+sample\+\_\+\+Get2\+D\+Location@{le\+\_\+pos\+\_\+sample\+\_\+\+Get2\+D\+Location}}
+\index{le\+\_\+pos\+\_\+sample\+\_\+\+Get2\+D\+Location@{le\+\_\+pos\+\_\+sample\+\_\+\+Get2\+D\+Location}!le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+pos\+\_\+sample\+\_\+\+Get2\+D\+Location}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+pos\+\_\+sample\+\_\+\+Get2\+D\+Location (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t}}]{position\+Sample\+Ref, }
+\item[{int32\+\_\+t $\ast$}]{latitude\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{longitude\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{horizontal\+Accuracy\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__pos__interface_8h_ae7b3b16601465b663b468f12c63ea485}
+Get the position sample\textquotesingle{}s 2\+D location (latitude, longitude, horizontal accuracy).
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed to find the position\+Sample. 
+
+L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E One of the retrieved parameter is invalid (set to I\+N\+T32\+\_\+\+M\+A\+X). 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing an invalid Position reference into this function, it is a fatal error, the function will not return.
+
+latitude\+Ptr, longitude\+Ptr, horizontal\+Accuracy\+Ptr can be set to N\+U\+L\+L if not needed. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em position\+Sample\+Ref} & Position sample\textquotesingle{}s reference. \\
+\hline
+\mbox{\tt out}  & {\em latitude\+Ptr} & Latitude in degrees. \\
+\hline
+\mbox{\tt out}  & {\em longitude\+Ptr} & Longitude in degrees. \\
+\hline
+\mbox{\tt out}  & {\em horizontal\+Accuracy\+Ptr} & Horizontal\textquotesingle{}s accuracy estimate in metres. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__pos__interface_8h_ac6c6868fdc51ce14492adfcd0d7274c0}{}\index{le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}!le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Altitude@{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Altitude}}
+\index{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Altitude@{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Altitude}!le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Altitude}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Altitude (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t}}]{position\+Sample\+Ref, }
+\item[{int32\+\_\+t $\ast$}]{altitude\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{altitude\+Accuracy\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__pos__interface_8h_ac6c6868fdc51ce14492adfcd0d7274c0}
+Get the position sample\textquotesingle{}s altitude.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed to find the position\+Sample. 
+
+L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E One of the retrieved parameter is invalid (set to I\+N\+T32\+\_\+\+M\+A\+X). 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing an invalid Position reference into this function, it is a fatal error, the function will not return.
+
+altitude\+Ptr, altitude\+Accuracy\+Ptr can be set to N\+U\+L\+L if not needed. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em position\+Sample\+Ref} & Position sample\textquotesingle{}s reference. \\
+\hline
+\mbox{\tt out}  & {\em altitude\+Ptr} & Altitude in metres. \\
+\hline
+\mbox{\tt out}  & {\em altitude\+Accuracy\+Ptr} & Altitude\textquotesingle{}s accuracy estimate in metres. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__pos__interface_8h_a8249f20e9d5020aaa23e54ccf6bbeb9d}{}\index{le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}!le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Date@{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Date}}
+\index{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Date@{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Date}!le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Date}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Date (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t}}]{position\+Sample\+Ref, }
+\item[{uint16\+\_\+t $\ast$}]{year\+Ptr, }
+\item[{uint16\+\_\+t $\ast$}]{month\+Ptr, }
+\item[{uint16\+\_\+t $\ast$}]{day\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__pos__interface_8h_a8249f20e9d5020aaa23e54ccf6bbeb9d}
+Get the position sample\textquotesingle{}s date.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed to get the date. 
+
+L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E The retrieved date is invalid (all fields are set to 0). 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em position\+Sample\+Ref} & Position sample\textquotesingle{}s reference. \\
+\hline
+\mbox{\tt out}  & {\em year\+Ptr} & U\+T\+C Year A.\+D. \mbox{[}e.\+g. 2014\mbox{]}. \\
+\hline
+\mbox{\tt out}  & {\em month\+Ptr} & U\+T\+C Month into the year \mbox{[}range 1...12\mbox{]}. \\
+\hline
+\mbox{\tt out}  & {\em day\+Ptr} & U\+T\+C Days into the month \mbox{[}range 1...31\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__pos__interface_8h_ae42d09bb5146b52dd1f628a93611bc31}{}\index{le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}!le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Direction@{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Direction}}
+\index{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Direction@{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Direction}!le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Direction}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Direction (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t}}]{position\+Sample\+Ref, }
+\item[{int32\+\_\+t $\ast$}]{direction\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{direction\+Accuracy\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__pos__interface_8h_ae42d09bb5146b52dd1f628a93611bc31}
+Get the position sample\textquotesingle{}s direction. Direction of movement is the direction that the vehicle/person is actually moving.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed to find the position\+Sample. 
+
+L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E One of the retrieved parameter is invalid (set to I\+N\+T32\+\_\+\+M\+A\+X). 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing an invalid Position reference into this function, it is a fatal error, the function will not return.
+
+direction\+Ptr, direction\+Accuracy\+Ptr can be set to N\+U\+L\+L if not needed. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em position\+Sample\+Ref} & Position sample\textquotesingle{}s reference. \\
+\hline
+\mbox{\tt out}  & {\em direction\+Ptr} & Direction in degrees (where 0 is True North). \\
+\hline
+\mbox{\tt out}  & {\em direction\+Accuracy\+Ptr} & Direction\textquotesingle{}s accuracy estimate in degrees. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__pos__interface_8h_a181f453d46f8b5440d91f2af1b4ebbfb}{}\index{le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}!le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Heading@{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Heading}}
+\index{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Heading@{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Heading}!le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Heading}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Heading (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t}}]{position\+Sample\+Ref, }
+\item[{int32\+\_\+t $\ast$}]{heading\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{heading\+Accuracy\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__pos__interface_8h_a181f453d46f8b5440d91f2af1b4ebbfb}
+Get the position sample\textquotesingle{}s heading. Heading is the direction that the vehicle/person is facing.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed to find the position\+Sample. 
+
+L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E One of the retrieved parameter is invalid (set to I\+N\+T32\+\_\+\+M\+A\+X). 
+
+L\+E\+\_\+\+O\+K T\+Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing an invalid Position reference into this function, it is a fatal error, the function will not return.
+
+heading\+Ptr, heading\+Accuracy\+Ptr can be set to N\+U\+L\+L if not needed. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em position\+Sample\+Ref} & Position sample\textquotesingle{}s reference. \\
+\hline
+\mbox{\tt out}  & {\em heading\+Ptr} & Heading in degrees (where 0 is True North). \\
+\hline
+\mbox{\tt out}  & {\em heading\+Accuracy\+Ptr} & Heading\textquotesingle{}s accuracy estimate in degrees. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__pos__interface_8h_a0bb7a30675f1dd7891b22c7753d7caec}{}\index{le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}!le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Horizontal\+Speed@{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Horizontal\+Speed}}
+\index{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Horizontal\+Speed@{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Horizontal\+Speed}!le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Horizontal\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Horizontal\+Speed (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t}}]{position\+Sample\+Ref, }
+\item[{uint32\+\_\+t $\ast$}]{hspeed\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{hspeed\+Accuracy\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__pos__interface_8h_a0bb7a30675f1dd7891b22c7753d7caec}
+Get the position sample\textquotesingle{}s horizontal speed.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed to find the position\+Sample. 
+
+L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E One of the retrieved parameter is invalid (set to I\+N\+T32\+\_\+\+M\+A\+X, U\+I\+N\+T32\+\_\+\+M\+A\+X). 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing an invalid Position reference into this function, it is a fatal error, the function will not return.
+
+h\+Speed\+Ptr, h\+Speed\+Accuracy\+Ptr can be set to N\+U\+L\+L if not needed. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em position\+Sample\+Ref} & Position sample\textquotesingle{}s reference. \\
+\hline
+\mbox{\tt out}  & {\em hspeed\+Ptr} & Horizontal speed. \\
+\hline
+\mbox{\tt out}  & {\em hspeed\+Accuracy\+Ptr} & Horizontal speed\textquotesingle{}s accuracy estimate. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__pos__interface_8h_a47171bf14bf4f249d3b76a8ed204f13c}{}\index{le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}!le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Time@{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Time}}
+\index{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Time@{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Time}!le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Time (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t}}]{position\+Sample\+Ref, }
+\item[{uint16\+\_\+t $\ast$}]{hours\+Ptr, }
+\item[{uint16\+\_\+t $\ast$}]{minutes\+Ptr, }
+\item[{uint16\+\_\+t $\ast$}]{seconds\+Ptr, }
+\item[{uint16\+\_\+t $\ast$}]{milliseconds\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__pos__interface_8h_a47171bf14bf4f249d3b76a8ed204f13c}
+Get the position sample\textquotesingle{}s time.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed to get the time. 
+
+L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E The retrieved time is invalid (all fields are set to 0). 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em position\+Sample\+Ref} & Position sample\textquotesingle{}s reference. \\
+\hline
+\mbox{\tt out}  & {\em hours\+Ptr} & U\+T\+C Hours into the day \mbox{[}range 0..23\mbox{]}. \\
+\hline
+\mbox{\tt out}  & {\em minutes\+Ptr} & U\+T\+C Minutes into the hour \mbox{[}range 0..59\mbox{]}. \\
+\hline
+\mbox{\tt out}  & {\em seconds\+Ptr} & U\+T\+C Seconds into the minute \mbox{[}range 0..59\mbox{]}. \\
+\hline
+\mbox{\tt out}  & {\em milliseconds\+Ptr} & U\+T\+C Milliseconds into the second \mbox{[}range 0..999\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__pos__interface_8h_a18162e15ad9a61696312745ec0bec1fd}{}\index{le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}!le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Vertical\+Speed@{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Vertical\+Speed}}
+\index{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Vertical\+Speed@{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Vertical\+Speed}!le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Vertical\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+pos\+\_\+sample\+\_\+\+Get\+Vertical\+Speed (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t}}]{position\+Sample\+Ref, }
+\item[{int32\+\_\+t $\ast$}]{vspeed\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{vspeed\+Accuracy\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__pos__interface_8h_a18162e15ad9a61696312745ec0bec1fd}
+Get the position sample\textquotesingle{}s vertical speed.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T The function failed to find the position\+Sample. 
+
+L\+E\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E One of the retrieved parameter is not valid (set to I\+N\+T32\+\_\+\+M\+A\+X). 
+
+L\+E\+\_\+\+O\+K The function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing an invalid Position reference into this function, it is a fatal error, the function will not return.
+
+v\+Speed\+Ptr, v\+Speed\+Accuracy\+Ptr can be set to N\+U\+L\+L if not needed. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em position\+Sample\+Ref} & Position sample\textquotesingle{}s reference. \\
+\hline
+\mbox{\tt out}  & {\em vspeed\+Ptr} & Vertical speed. \\
+\hline
+\mbox{\tt out}  & {\em vspeed\+Accuracy\+Ptr} & Vertical speed\textquotesingle{}s accuracy estimate. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__pos__interface_8h_af2999e2e4f7eca899b2af1125547e3ea}{}\index{le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}!le\+\_\+pos\+\_\+sample\+\_\+\+Release@{le\+\_\+pos\+\_\+sample\+\_\+\+Release}}
+\index{le\+\_\+pos\+\_\+sample\+\_\+\+Release@{le\+\_\+pos\+\_\+sample\+\_\+\+Release}!le\+\_\+pos\+\_\+interface.\+h@{le\+\_\+pos\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+pos\+\_\+sample\+\_\+\+Release}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+pos\+\_\+sample\+\_\+\+Release (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+pos\+\_\+\+Sample\+Ref\+\_\+t}}]{position\+Sample\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__pos__interface_8h_af2999e2e4f7eca899b2af1125547e3ea}
+Release the position sample.
+
+\begin{DoxyNote}{Note}
+If the caller is passing an invalid Position reference into this function, it is a fatal error, the function will not return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em position\+Sample\+Ref} & Position sample\textquotesingle{}s reference. \\
+\hline
+\end{DoxyParams}

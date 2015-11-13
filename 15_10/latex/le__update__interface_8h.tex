@@ -1,0 +1,319 @@
+\hypertarget{le__update__interface_8h}{}\section{build/localhost/interfaces/le\+\_\+update\+\_\+interface.h File Reference}
+\label{le__update__interface_8h}\index{build/localhost/interfaces/le\+\_\+update\+\_\+interface.\+h@{build/localhost/interfaces/le\+\_\+update\+\_\+interface.\+h}}
+{\ttfamily \#include \char`\"{}legato.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{le__update__interface_8h_a0b366a441a1c7383a07bc6bab99b0c20}{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+I\+D\+\_\+\+S\+T\+R\+\_\+\+L\+E\+N}~64
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct le\+\_\+update\+\_\+\+Handle $\ast$ \hyperlink{le__update__interface_8h_a70c1de2e80807cdac13cec80456cc929}{le\+\_\+update\+\_\+\+Handle\+Ref\+\_\+t}
+\item 
+typedef struct le\+\_\+update\+\_\+\+Progress\+Handler $\ast$ \hyperlink{le__update__interface_8h_a20a94b986a9ba0e6772b146f98b95f92}{le\+\_\+update\+\_\+\+Progress\+Handler\+Ref\+\_\+t}
+\item 
+typedef void($\ast$ \hyperlink{le__update__interface_8h_a6926f0dc18bfe5bfe23e1cea26d464c2}{le\+\_\+update\+\_\+\+Progress\+Handler\+Func\+\_\+t}) (\hyperlink{le__update__interface_8h_ae9758536ebaf1842cdaaddd6cf95a672}{le\+\_\+update\+\_\+\+State\+\_\+t} update\+State, uint percent\+Done, void $\ast$context\+Ptr)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{le__update__interface_8h_a02f53457a4929cdb62270ca0c6fc75b1}{le\+\_\+update\+\_\+\+Command\+\_\+t} \{ \hyperlink{le__update__interface_8h_a02f53457a4929cdb62270ca0c6fc75b1a5b094573c81d04a714d0b59f0d6b62aa}{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+C\+M\+D\+\_\+\+I\+N\+S\+T\+A\+L\+L}, 
+\hyperlink{le__update__interface_8h_a02f53457a4929cdb62270ca0c6fc75b1a3f20e3ee60a049e2096526c56a2f72c3}{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+C\+M\+D\+\_\+\+R\+E\+M\+O\+V\+E}
+ \}
+\item 
+enum \hyperlink{le__update__interface_8h_a65dc43f8d83511d0efa01fd3bdaefd28}{le\+\_\+update\+\_\+\+Item\+Type\+\_\+t} \{ \hyperlink{le__update__interface_8h_a65dc43f8d83511d0efa01fd3bdaefd28a9e400aff386723c01cf8a37e30964243}{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+A\+P\+P}, 
+\hyperlink{le__update__interface_8h_a65dc43f8d83511d0efa01fd3bdaefd28a44650a5fccb66484fa7edf7d9dd7beae}{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E}
+ \}
+\item 
+enum \hyperlink{le__update__interface_8h_ae9758536ebaf1842cdaaddd6cf95a672}{le\+\_\+update\+\_\+\+State\+\_\+t} \{ \\*
+\hyperlink{le__update__interface_8h_ae9758536ebaf1842cdaaddd6cf95a672a789b71810ab23da9ec3b7d373c16ae08}{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+N\+E\+W}, 
+\hyperlink{le__update__interface_8h_ae9758536ebaf1842cdaaddd6cf95a672a01cdf8340b000eb108dd8d9a350147db}{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+U\+N\+P\+A\+C\+K\+I\+N\+G}, 
+\hyperlink{le__update__interface_8h_ae9758536ebaf1842cdaaddd6cf95a672ae950e649ac258bc23ba0c315904bca77}{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+A\+P\+P\+L\+Y\+I\+N\+G}, 
+\hyperlink{le__update__interface_8h_ae9758536ebaf1842cdaaddd6cf95a672ae18d6a3b4f86d5cbfc693cb054d91845}{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+U\+C\+C\+E\+S\+S}, 
+\\*
+\hyperlink{le__update__interface_8h_ae9758536ebaf1842cdaaddd6cf95a672a67f0990e9adccbc2cda0ad78ab98d894}{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+F\+A\+I\+L\+E\+D}
+ \}
+\item 
+enum \hyperlink{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20}{le\+\_\+update\+\_\+\+Error\+Code\+\_\+t} \{ \\*
+\hyperlink{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20a5473b80d9e60fc1a8fd5f78a47b1c69e}{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+N\+O\+N\+E}, 
+\hyperlink{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20ae60744a769a562311f391d0869d1445c}{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+B\+A\+D\+\_\+\+M\+A\+N\+I\+F\+E\+S\+T}, 
+\hyperlink{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20a66c830d183613b7e744d2111197c43a0}{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+I\+O\+\_\+\+E\+R\+R\+O\+R}, 
+\hyperlink{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20a9dfcb8ef952d81438c5bc07ed7a15171}{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+E\+R\+R\+O\+R}, 
+\\*
+\hyperlink{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20a41c44fb1d050b43fe1f817baa6e14d9d}{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+R\+Y}, 
+\hyperlink{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20a0871224ae55a5ad4c58d4613f90accf8}{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+S\+M\+A\+T\+C\+H}, 
+\hyperlink{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20a489899dc472c10bbf14cbd4498f9ff6c}{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+W\+R\+O\+N\+G\+\_\+\+T\+A\+R\+G\+E\+T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{le__update__interface_8h_a338754ee167108f8da4a6023487e4d78}{le\+\_\+update\+\_\+\+Connect\+Service} (void)
+\item 
+void \hyperlink{le__update__interface_8h_a5e49e9b047c622ab7e3f617336907f1d}{le\+\_\+update\+\_\+\+Disconnect\+Service} (void)
+\item 
+\hyperlink{le__update__interface_8h_a70c1de2e80807cdac13cec80456cc929}{le\+\_\+update\+\_\+\+Handle\+Ref\+\_\+t} \hyperlink{le__update__interface_8h_a10d047c2901fcd00c6f4b4785ba76284}{le\+\_\+update\+\_\+\+Create} (int file\+Desc)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__update__interface_8h_a7b300c8944da0fe9a919bc6bb14157dd}{le\+\_\+update\+\_\+\+Start} (\hyperlink{le__update__interface_8h_a70c1de2e80807cdac13cec80456cc929}{le\+\_\+update\+\_\+\+Handle\+Ref\+\_\+t} handle)
+\item 
+void \hyperlink{le__update__interface_8h_a64e880b8225cd80571c3f277bbc33137}{le\+\_\+update\+\_\+\+Delete} (\hyperlink{le__update__interface_8h_a70c1de2e80807cdac13cec80456cc929}{le\+\_\+update\+\_\+\+Handle\+Ref\+\_\+t} handle)
+\item 
+\hyperlink{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20}{le\+\_\+update\+\_\+\+Error\+Code\+\_\+t} \hyperlink{le__update__interface_8h_a09df8a83ae1fe0b57d34f2afca7ec008}{le\+\_\+update\+\_\+\+Get\+Error\+Code} (\hyperlink{le__update__interface_8h_a70c1de2e80807cdac13cec80456cc929}{le\+\_\+update\+\_\+\+Handle\+Ref\+\_\+t} handle)
+\item 
+\hyperlink{le__update__interface_8h_a20a94b986a9ba0e6772b146f98b95f92}{le\+\_\+update\+\_\+\+Progress\+Handler\+Ref\+\_\+t} \hyperlink{le__update__interface_8h_acc7319e6d8e02dd1e4e06d800d76c235}{le\+\_\+update\+\_\+\+Add\+Progress\+Handler} (\hyperlink{le__update__interface_8h_a70c1de2e80807cdac13cec80456cc929}{le\+\_\+update\+\_\+\+Handle\+Ref\+\_\+t} handle, \hyperlink{le__update__interface_8h_a6926f0dc18bfe5bfe23e1cea26d464c2}{le\+\_\+update\+\_\+\+Progress\+Handler\+Func\+\_\+t} handler\+Ptr, void $\ast$context\+Ptr)
+\item 
+void \hyperlink{le__update__interface_8h_a5c0b5527aaa493f05612f85926d71400}{le\+\_\+update\+\_\+\+Remove\+Progress\+Handler} (\hyperlink{le__update__interface_8h_a20a94b986a9ba0e6772b146f98b95f92}{le\+\_\+update\+\_\+\+Progress\+Handler\+Ref\+\_\+t} add\+Handler\+Ref)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_update}{Software Update} include file.
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{le__update__interface_8h_a0b366a441a1c7383a07bc6bab99b0c20}{}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+I\+D\+\_\+\+S\+T\+R\+\_\+\+L\+E\+N@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+I\+D\+\_\+\+S\+T\+R\+\_\+\+L\+E\+N}}
+\index{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+I\+D\+\_\+\+S\+T\+R\+\_\+\+L\+E\+N@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+I\+D\+\_\+\+S\+T\+R\+\_\+\+L\+E\+N}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}
+\subsubsection[{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+I\+D\+\_\+\+S\+T\+R\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+I\+D\+\_\+\+S\+T\+R\+\_\+\+L\+E\+N~64}\label{le__update__interface_8h_a0b366a441a1c7383a07bc6bab99b0c20}
+Length of the I\+D string. I\+D string is used to identify update item underway, e.\+g. for app update/remove I\+D string will contain app\+Name, for firmware it will contain firmware version. 
+
+\subsection{Typedef Documentation}
+\hypertarget{le__update__interface_8h_a70c1de2e80807cdac13cec80456cc929}{}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!le\+\_\+update\+\_\+\+Handle\+Ref\+\_\+t@{le\+\_\+update\+\_\+\+Handle\+Ref\+\_\+t}}
+\index{le\+\_\+update\+\_\+\+Handle\+Ref\+\_\+t@{le\+\_\+update\+\_\+\+Handle\+Ref\+\_\+t}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+update\+\_\+\+Handle\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+update\+\_\+\+Handle$\ast$ {\bf le\+\_\+update\+\_\+\+Handle\+Ref\+\_\+t}}\label{le__update__interface_8h_a70c1de2e80807cdac13cec80456cc929}
+Reference to update task. Used to identify an update task. \hypertarget{le__update__interface_8h_a6926f0dc18bfe5bfe23e1cea26d464c2}{}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!le\+\_\+update\+\_\+\+Progress\+Handler\+Func\+\_\+t@{le\+\_\+update\+\_\+\+Progress\+Handler\+Func\+\_\+t}}
+\index{le\+\_\+update\+\_\+\+Progress\+Handler\+Func\+\_\+t@{le\+\_\+update\+\_\+\+Progress\+Handler\+Func\+\_\+t}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+update\+\_\+\+Progress\+Handler\+Func\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ le\+\_\+update\+\_\+\+Progress\+Handler\+Func\+\_\+t) ({\bf le\+\_\+update\+\_\+\+State\+\_\+t} update\+State, uint percent\+Done, void $\ast$context\+Ptr)}\label{le__update__interface_8h_a6926f0dc18bfe5bfe23e1cea26d464c2}
+Client callback function to notify status of underway update task.
+
+
+\begin{DoxyParams}{Parameters}
+{\em update\+State} & Current State of underway update process in state machine. \\
+\hline
+{\em percent\+Done} & Percent done for current state. As example\+: at state L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+U\+N\+P\+A\+C\+K\+I\+N\+G, percent\+Done=80 means, 80\% of the update file data is already transferred to unpack process. \\
+\hline
+{\em context\+Ptr} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__update__interface_8h_a20a94b986a9ba0e6772b146f98b95f92}{}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!le\+\_\+update\+\_\+\+Progress\+Handler\+Ref\+\_\+t@{le\+\_\+update\+\_\+\+Progress\+Handler\+Ref\+\_\+t}}
+\index{le\+\_\+update\+\_\+\+Progress\+Handler\+Ref\+\_\+t@{le\+\_\+update\+\_\+\+Progress\+Handler\+Ref\+\_\+t}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+update\+\_\+\+Progress\+Handler\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+update\+\_\+\+Progress\+Handler$\ast$ {\bf le\+\_\+update\+\_\+\+Progress\+Handler\+Ref\+\_\+t}}\label{le__update__interface_8h_a20a94b986a9ba0e6772b146f98b95f92}
+Reference type used by Add/\+Remove functions for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+update\+\_\+\+Progress\textquotesingle{} 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{le__update__interface_8h_a02f53457a4929cdb62270ca0c6fc75b1}{}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!le\+\_\+update\+\_\+\+Command\+\_\+t@{le\+\_\+update\+\_\+\+Command\+\_\+t}}
+\index{le\+\_\+update\+\_\+\+Command\+\_\+t@{le\+\_\+update\+\_\+\+Command\+\_\+t}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+update\+\_\+\+Command\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+update\+\_\+\+Command\+\_\+t}}\label{le__update__interface_8h_a02f53457a4929cdb62270ca0c6fc75b1}
+Supported commands inside manifest.
+
+\begin{DoxyNote}{Note}
+Subject to change. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+C\+M\+D\+\_\+\+I\+N\+S\+T\+A\+L\+L@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+C\+M\+D\+\_\+\+I\+N\+S\+T\+A\+L\+L}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+C\+M\+D\+\_\+\+I\+N\+S\+T\+A\+L\+L@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+C\+M\+D\+\_\+\+I\+N\+S\+T\+A\+L\+L}}\item[{\em 
+\hypertarget{le__update__interface_8h_a02f53457a4929cdb62270ca0c6fc75b1a5b094573c81d04a714d0b59f0d6b62aa}{}L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+C\+M\+D\+\_\+\+I\+N\+S\+T\+A\+L\+L\label{le__update__interface_8h_a02f53457a4929cdb62270ca0c6fc75b1a5b094573c81d04a714d0b59f0d6b62aa}
+}]Install tasks. This includes installation of apps, firmware. \index{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+C\+M\+D\+\_\+\+R\+E\+M\+O\+V\+E@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+C\+M\+D\+\_\+\+R\+E\+M\+O\+V\+E}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+C\+M\+D\+\_\+\+R\+E\+M\+O\+V\+E@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+C\+M\+D\+\_\+\+R\+E\+M\+O\+V\+E}}\item[{\em 
+\hypertarget{le__update__interface_8h_a02f53457a4929cdb62270ca0c6fc75b1a3f20e3ee60a049e2096526c56a2f72c3}{}L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+C\+M\+D\+\_\+\+R\+E\+M\+O\+V\+E\label{le__update__interface_8h_a02f53457a4929cdb62270ca0c6fc75b1a3f20e3ee60a049e2096526c56a2f72c3}
+}]Removal tasks. This includes removal of apps. \end{description}
+\end{Desc}
+\hypertarget{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20}{}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!le\+\_\+update\+\_\+\+Error\+Code\+\_\+t@{le\+\_\+update\+\_\+\+Error\+Code\+\_\+t}}
+\index{le\+\_\+update\+\_\+\+Error\+Code\+\_\+t@{le\+\_\+update\+\_\+\+Error\+Code\+\_\+t}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+update\+\_\+\+Error\+Code\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+update\+\_\+\+Error\+Code\+\_\+t}}\label{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20}
+Error code used to provide diagnostic information after a failed update.
+
+\begin{DoxyNote}{Note}
+Subject to change. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+N\+O\+N\+E@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+N\+O\+N\+E}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+N\+O\+N\+E@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+N\+O\+N\+E}}\item[{\em 
+\hypertarget{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20a5473b80d9e60fc1a8fd5f78a47b1c69e}{}L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+N\+O\+N\+E\label{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20a5473b80d9e60fc1a8fd5f78a47b1c69e}
+}]No error. \index{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+B\+A\+D\+\_\+\+M\+A\+N\+I\+F\+E\+S\+T@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+B\+A\+D\+\_\+\+M\+A\+N\+I\+F\+E\+S\+T}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+B\+A\+D\+\_\+\+M\+A\+N\+I\+F\+E\+S\+T@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+B\+A\+D\+\_\+\+M\+A\+N\+I\+F\+E\+S\+T}}\item[{\em 
+\hypertarget{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20ae60744a769a562311f391d0869d1445c}{}L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+B\+A\+D\+\_\+\+M\+A\+N\+I\+F\+E\+S\+T\label{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20ae60744a769a562311f391d0869d1445c}
+}]Found bad manifest in supplied update package. \index{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+I\+O\+\_\+\+E\+R\+R\+O\+R@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+I\+O\+\_\+\+E\+R\+R\+O\+R}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+I\+O\+\_\+\+E\+R\+R\+O\+R@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+I\+O\+\_\+\+E\+R\+R\+O\+R}}\item[{\em 
+\hypertarget{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20a66c830d183613b7e744d2111197c43a0}{}L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+I\+O\+\_\+\+E\+R\+R\+O\+R\label{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20a66c830d183613b7e744d2111197c43a0}
+}]Encountered I\+O error. \index{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+E\+R\+R\+O\+R@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+E\+R\+R\+O\+R}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+E\+R\+R\+O\+R@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+E\+R\+R\+O\+R}}\item[{\em 
+\hypertarget{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20a9dfcb8ef952d81438c5bc07ed7a15171}{}L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+E\+R\+R\+O\+R\label{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20a9dfcb8ef952d81438c5bc07ed7a15171}
+}]Something wrong happened while doing update. \index{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+R\+Y@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+R\+Y}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+R\+Y@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+R\+Y}}\item[{\em 
+\hypertarget{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20a41c44fb1d050b43fe1f817baa6e14d9d}{}L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+R\+Y\label{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20a41c44fb1d050b43fe1f817baa6e14d9d}
+}]Not enough memory available to install update. \index{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+S\+M\+A\+T\+C\+H@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+S\+M\+A\+T\+C\+H}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+S\+M\+A\+T\+C\+H@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+S\+M\+A\+T\+C\+H}}\item[{\em 
+\hypertarget{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20a0871224ae55a5ad4c58d4613f90accf8}{}L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+S\+M\+A\+T\+C\+H\label{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20a0871224ae55a5ad4c58d4613f90accf8}
+}]Software version mismatch. \index{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+W\+R\+O\+N\+G\+\_\+\+T\+A\+R\+G\+E\+T@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+W\+R\+O\+N\+G\+\_\+\+T\+A\+R\+G\+E\+T}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+W\+R\+O\+N\+G\+\_\+\+T\+A\+R\+G\+E\+T@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+W\+R\+O\+N\+G\+\_\+\+T\+A\+R\+G\+E\+T}}\item[{\em 
+\hypertarget{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20a489899dc472c10bbf14cbd4498f9ff6c}{}L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+E\+R\+R\+\_\+\+W\+R\+O\+N\+G\+\_\+\+T\+A\+R\+G\+E\+T\label{le__update__interface_8h_a24bac90fc939c561c64d13608cc78a20a489899dc472c10bbf14cbd4498f9ff6c}
+}]Detected wrong target. \end{description}
+\end{Desc}
+\hypertarget{le__update__interface_8h_a65dc43f8d83511d0efa01fd3bdaefd28}{}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!le\+\_\+update\+\_\+\+Item\+Type\+\_\+t@{le\+\_\+update\+\_\+\+Item\+Type\+\_\+t}}
+\index{le\+\_\+update\+\_\+\+Item\+Type\+\_\+t@{le\+\_\+update\+\_\+\+Item\+Type\+\_\+t}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+update\+\_\+\+Item\+Type\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+update\+\_\+\+Item\+Type\+\_\+t}}\label{le__update__interface_8h_a65dc43f8d83511d0efa01fd3bdaefd28}
+Supported platform types to be updated (inside manifest).
+
+\begin{DoxyNote}{Note}
+Subject to change.
+\end{DoxyNote}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+A\+P\+P@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+A\+P\+P}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+A\+P\+P@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+A\+P\+P}}\item[{\em 
+\hypertarget{le__update__interface_8h_a65dc43f8d83511d0efa01fd3bdaefd28a9e400aff386723c01cf8a37e30964243}{}L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+A\+P\+P\label{le__update__interface_8h_a65dc43f8d83511d0efa01fd3bdaefd28a9e400aff386723c01cf8a37e30964243}
+}]App item. \index{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E}}\item[{\em 
+\hypertarget{le__update__interface_8h_a65dc43f8d83511d0efa01fd3bdaefd28a44650a5fccb66484fa7edf7d9dd7beae}{}L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\label{le__update__interface_8h_a65dc43f8d83511d0efa01fd3bdaefd28a44650a5fccb66484fa7edf7d9dd7beae}
+}]Firmware item. \end{description}
+\end{Desc}
+\hypertarget{le__update__interface_8h_ae9758536ebaf1842cdaaddd6cf95a672}{}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!le\+\_\+update\+\_\+\+State\+\_\+t@{le\+\_\+update\+\_\+\+State\+\_\+t}}
+\index{le\+\_\+update\+\_\+\+State\+\_\+t@{le\+\_\+update\+\_\+\+State\+\_\+t}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+update\+\_\+\+State\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+update\+\_\+\+State\+\_\+t}}\label{le__update__interface_8h_ae9758536ebaf1842cdaaddd6cf95a672}
+Different states in the update state machine. The state machine is maintained to track the update task underway.
+
+Example\+: for successful installation task, state transitions look like\+: S\+T\+A\+T\+E\+\_\+\+N\+E\+W--$>$S\+T\+A\+T\+E\+\_\+\+U\+N\+P\+A\+C\+K\+I\+N\+G--$>$S\+T\+A\+T\+E\+\_\+\+A\+P\+P\+L\+Y\+I\+N\+G--$>$S\+T\+A\+T\+E\+\_\+\+S\+U\+C\+C\+E\+S\+S.
+
+\begin{DoxyNote}{Note}
+Subject to change. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+N\+E\+W@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+N\+E\+W}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+N\+E\+W@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+N\+E\+W}}\item[{\em 
+\hypertarget{le__update__interface_8h_ae9758536ebaf1842cdaaddd6cf95a672a789b71810ab23da9ec3b7d373c16ae08}{}L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+N\+E\+W\label{le__update__interface_8h_ae9758536ebaf1842cdaaddd6cf95a672a789b71810ab23da9ec3b7d373c16ae08}
+}]Requested new update task. \index{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+U\+N\+P\+A\+C\+K\+I\+N\+G@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+U\+N\+P\+A\+C\+K\+I\+N\+G}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+U\+N\+P\+A\+C\+K\+I\+N\+G@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+U\+N\+P\+A\+C\+K\+I\+N\+G}}\item[{\em 
+\hypertarget{le__update__interface_8h_ae9758536ebaf1842cdaaddd6cf95a672a01cdf8340b000eb108dd8d9a350147db}{}L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+U\+N\+P\+A\+C\+K\+I\+N\+G\label{le__update__interface_8h_ae9758536ebaf1842cdaaddd6cf95a672a01cdf8340b000eb108dd8d9a350147db}
+}]Unpacking update data. \index{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+A\+P\+P\+L\+Y\+I\+N\+G@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+A\+P\+P\+L\+Y\+I\+N\+G}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+A\+P\+P\+L\+Y\+I\+N\+G@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+A\+P\+P\+L\+Y\+I\+N\+G}}\item[{\em 
+\hypertarget{le__update__interface_8h_ae9758536ebaf1842cdaaddd6cf95a672ae950e649ac258bc23ba0c315904bca77}{}L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+A\+P\+P\+L\+Y\+I\+N\+G\label{le__update__interface_8h_ae9758536ebaf1842cdaaddd6cf95a672ae950e649ac258bc23ba0c315904bca77}
+}]Applying update(i.\+e. installation/removal operation going on). \index{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+U\+C\+C\+E\+S\+S@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+U\+C\+C\+E\+S\+S}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+U\+C\+C\+E\+S\+S@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+U\+C\+C\+E\+S\+S}}\item[{\em 
+\hypertarget{le__update__interface_8h_ae9758536ebaf1842cdaaddd6cf95a672ae18d6a3b4f86d5cbfc693cb054d91845}{}L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+U\+C\+C\+E\+S\+S\label{le__update__interface_8h_ae9758536ebaf1842cdaaddd6cf95a672ae18d6a3b4f86d5cbfc693cb054d91845}
+}]Successfully completed all update task. \index{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+F\+A\+I\+L\+E\+D@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+F\+A\+I\+L\+E\+D}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+F\+A\+I\+L\+E\+D@{L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+F\+A\+I\+L\+E\+D}}\item[{\em 
+\hypertarget{le__update__interface_8h_ae9758536ebaf1842cdaaddd6cf95a672a67f0990e9adccbc2cda0ad78ab98d894}{}L\+E\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+E\+\_\+\+F\+A\+I\+L\+E\+D\label{le__update__interface_8h_ae9758536ebaf1842cdaaddd6cf95a672a67f0990e9adccbc2cda0ad78ab98d894}
+}]Update failed due to some error or deletion request. \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{le__update__interface_8h_acc7319e6d8e02dd1e4e06d800d76c235}{}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!le\+\_\+update\+\_\+\+Add\+Progress\+Handler@{le\+\_\+update\+\_\+\+Add\+Progress\+Handler}}
+\index{le\+\_\+update\+\_\+\+Add\+Progress\+Handler@{le\+\_\+update\+\_\+\+Add\+Progress\+Handler}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+update\+\_\+\+Add\+Progress\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+update\+\_\+\+Progress\+Handler\+Ref\+\_\+t} le\+\_\+update\+\_\+\+Add\+Progress\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+update\+\_\+\+Handle\+Ref\+\_\+t}}]{handle, }
+\item[{{\bf le\+\_\+update\+\_\+\+Progress\+Handler\+Func\+\_\+t}}]{handler\+Ptr, }
+\item[{void $\ast$}]{context\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__update__interface_8h_acc7319e6d8e02dd1e4e06d800d76c235}
+Add handler function for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+update\+\_\+\+Progress\textquotesingle{}
+
+Shows the status of the underway update process. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handle} & Update object reference. \\
+\hline
+\mbox{\tt in}  & {\em handler\+Ptr} & \\
+\hline
+\mbox{\tt in}  & {\em context\+Ptr} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__update__interface_8h_a338754ee167108f8da4a6023487e4d78}{}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!le\+\_\+update\+\_\+\+Connect\+Service@{le\+\_\+update\+\_\+\+Connect\+Service}}
+\index{le\+\_\+update\+\_\+\+Connect\+Service@{le\+\_\+update\+\_\+\+Connect\+Service}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+update\+\_\+\+Connect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+update\+\_\+\+Connect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__update__interface_8h_a338754ee167108f8da4a6023487e4d78}
+Connect the client to the service \hypertarget{le__update__interface_8h_a10d047c2901fcd00c6f4b4785ba76284}{}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!le\+\_\+update\+\_\+\+Create@{le\+\_\+update\+\_\+\+Create}}
+\index{le\+\_\+update\+\_\+\+Create@{le\+\_\+update\+\_\+\+Create}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+update\+\_\+\+Create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+update\+\_\+\+Handle\+Ref\+\_\+t} le\+\_\+update\+\_\+\+Create (
+\begin{DoxyParamCaption}
+\item[{int}]{file\+Desc}
+\end{DoxyParamCaption}
+)}\label{le__update__interface_8h_a10d047c2901fcd00c6f4b4785ba76284}
+Creates an update handle. This handle needs to be used in subsequent api calls.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item Null if already an update is going on.
+\item Handle reference if successful. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em file\+Desc} & File descriptor containing the update package. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__update__interface_8h_a64e880b8225cd80571c3f277bbc33137}{}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!le\+\_\+update\+\_\+\+Delete@{le\+\_\+update\+\_\+\+Delete}}
+\index{le\+\_\+update\+\_\+\+Delete@{le\+\_\+update\+\_\+\+Delete}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+update\+\_\+\+Delete}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+update\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+update\+\_\+\+Handle\+Ref\+\_\+t}}]{handle}
+\end{DoxyParamCaption}
+)}\label{le__update__interface_8h_a64e880b8225cd80571c3f277bbc33137}
+Deletes an update task that\textquotesingle{}s underway. Either deletes the update task (if safe) or marks to delete it after current update current task is finished. If manifest contains multiple update items, all of the subsequent update items are cancelled as part of deletion process.
+
+\begin{DoxyNote}{Note}
+The handle becomes invalid after it has been deleted.. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handle} & Handle of the underway update task. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__update__interface_8h_a5e49e9b047c622ab7e3f617336907f1d}{}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!le\+\_\+update\+\_\+\+Disconnect\+Service@{le\+\_\+update\+\_\+\+Disconnect\+Service}}
+\index{le\+\_\+update\+\_\+\+Disconnect\+Service@{le\+\_\+update\+\_\+\+Disconnect\+Service}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+update\+\_\+\+Disconnect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+update\+\_\+\+Disconnect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__update__interface_8h_a5e49e9b047c622ab7e3f617336907f1d}
+Disconnect the client from the service \hypertarget{le__update__interface_8h_a09df8a83ae1fe0b57d34f2afca7ec008}{}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!le\+\_\+update\+\_\+\+Get\+Error\+Code@{le\+\_\+update\+\_\+\+Get\+Error\+Code}}
+\index{le\+\_\+update\+\_\+\+Get\+Error\+Code@{le\+\_\+update\+\_\+\+Get\+Error\+Code}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+update\+\_\+\+Get\+Error\+Code}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+update\+\_\+\+Error\+Code\+\_\+t} le\+\_\+update\+\_\+\+Get\+Error\+Code (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+update\+\_\+\+Handle\+Ref\+\_\+t}}]{handle}
+\end{DoxyParamCaption}
+)}\label{le__update__interface_8h_a09df8a83ae1fe0b57d34f2afca7ec008}
+Function to get error code when update fails.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item Error code of encountered error.
+\item E\+R\+R\+\_\+\+N\+O\+N\+E if update is in any other state. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handle} & Handle of the underway update task. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__update__interface_8h_a5c0b5527aaa493f05612f85926d71400}{}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!le\+\_\+update\+\_\+\+Remove\+Progress\+Handler@{le\+\_\+update\+\_\+\+Remove\+Progress\+Handler}}
+\index{le\+\_\+update\+\_\+\+Remove\+Progress\+Handler@{le\+\_\+update\+\_\+\+Remove\+Progress\+Handler}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+update\+\_\+\+Remove\+Progress\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+update\+\_\+\+Remove\+Progress\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+update\+\_\+\+Progress\+Handler\+Ref\+\_\+t}}]{add\+Handler\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__update__interface_8h_a5c0b5527aaa493f05612f85926d71400}
+Remove handler function for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+update\+\_\+\+Progress\textquotesingle{} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em add\+Handler\+Ref} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__update__interface_8h_a7b300c8944da0fe9a919bc6bb14157dd}{}\index{le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}!le\+\_\+update\+\_\+\+Start@{le\+\_\+update\+\_\+\+Start}}
+\index{le\+\_\+update\+\_\+\+Start@{le\+\_\+update\+\_\+\+Start}!le\+\_\+update\+\_\+interface.\+h@{le\+\_\+update\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+update\+\_\+\+Start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+update\+\_\+\+Start (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+update\+\_\+\+Handle\+Ref\+\_\+t}}]{handle}
+\end{DoxyParamCaption}
+)}\label{le__update__interface_8h_a7b300c8944da0fe9a919bc6bb14157dd}
+Starts update process(i.\+e. parsing manifest, doing update as per manifest). This is an asynchronous function (it returns after the update process has started, but doesn\textquotesingle{}t verify if it finishes). Client will get status through registered call back function.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K if update starts successfully.
+\item L\+E\+\_\+\+F\+A\+U\+L\+T if update failed to start. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handle} & Handle of requested update task. \\
+\hline
+\end{DoxyParams}

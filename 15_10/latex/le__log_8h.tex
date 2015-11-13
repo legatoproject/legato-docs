@@ -1,0 +1,439 @@
+\hypertarget{le__log_8h}{}\section{framework/c/inc/le\+\_\+log.h File Reference}
+\label{le__log_8h}\index{framework/c/inc/le\+\_\+log.\+h@{framework/c/inc/le\+\_\+log.\+h}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{le__log_8h_a3e5304f08cf8d2be855a75a5ce133c2f}{\+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}(level,  format\+String, ...)
+\item 
+\#define \hyperlink{le__log_8h_a2a91ea8857cf190fde71d85ba930a498}{L\+E\+\_\+\+D\+E\+B\+U\+G}(format\+String, ...)~\hyperlink{le__log_8h_a3e5304f08cf8d2be855a75a5ce133c2f}{\+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}(\hyperlink{le__log_8h_aa3de78c088c398afb23c0b582deabc0aa1a5c0e9f9bcf857faad0cc4187002479}{L\+E\+\_\+\+L\+O\+G\+\_\+\+D\+E\+B\+U\+G}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Debug message. \end{DoxyCompactList}\item 
+\#define \hyperlink{le__log_8h_a23e6d206faa64f612045d688cdde5808}{L\+E\+\_\+\+I\+N\+F\+O}(format\+String, ...)~\hyperlink{le__log_8h_a3e5304f08cf8d2be855a75a5ce133c2f}{\+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}(\hyperlink{le__log_8h_aa3de78c088c398afb23c0b582deabc0aa83ea376539849ee701096fdb022e74b3}{L\+E\+\_\+\+L\+O\+G\+\_\+\+I\+N\+F\+O}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Informational message. Normally expected. \end{DoxyCompactList}\item 
+\#define \hyperlink{le__log_8h_a0201b2f60ee0e945479f91e181bf04b6}{L\+E\+\_\+\+W\+A\+R\+N}(format\+String, ...)~\hyperlink{le__log_8h_a3e5304f08cf8d2be855a75a5ce133c2f}{\+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}(\hyperlink{le__log_8h_aa3de78c088c398afb23c0b582deabc0aae0f565809442f7de555d36f76c36627c}{L\+E\+\_\+\+L\+O\+G\+\_\+\+W\+A\+R\+N}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Warning. Possibly indicates a problem. Should be addressed. \end{DoxyCompactList}\item 
+\#define \hyperlink{le__log_8h_a353590f91b3143a7ba3a416ae5a50c3d}{L\+E\+\_\+\+E\+R\+R\+O\+R}(format\+String, ...)~\hyperlink{le__log_8h_a3e5304f08cf8d2be855a75a5ce133c2f}{\+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}(\hyperlink{le__log_8h_aa3de78c088c398afb23c0b582deabc0aaf1203f512370bfec7a05f8adae13c7d9}{L\+E\+\_\+\+L\+O\+G\+\_\+\+E\+R\+R}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{le__log_8h_a5efa1e4b6292c820c8555b4066a5c10d}{L\+E\+\_\+\+C\+R\+I\+T}(format\+String, ...)~\hyperlink{le__log_8h_a3e5304f08cf8d2be855a75a5ce133c2f}{\+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}(\hyperlink{le__log_8h_aa3de78c088c398afb23c0b582deabc0aa298894fe77b90cb9b28f25817a620df8}{L\+E\+\_\+\+L\+O\+G\+\_\+\+C\+R\+I\+T}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{le__log_8h_a651e75cb4ec9d59f5ddc7bae2fbdde88}{L\+E\+\_\+\+E\+M\+E\+R\+G}(format\+String, ...)~\hyperlink{le__log_8h_a3e5304f08cf8d2be855a75a5ce133c2f}{\+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}(\hyperlink{le__log_8h_aa3de78c088c398afb23c0b582deabc0aa6843cc8d9fb10d02cad1834b236dd5cb}{L\+E\+\_\+\+L\+O\+G\+\_\+\+E\+M\+E\+R\+G}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Emergency. A fatal error has occurred. A process is being terminated. \end{DoxyCompactList}\item 
+\#define \hyperlink{le__log_8h_a4c689f24157ca91e6d39827c967de734}{L\+E\+\_\+\+D\+E\+B\+U\+G\+\_\+\+I\+F}(condition,  format\+String, ...)~if (condition) \{ \hyperlink{le__log_8h_a3e5304f08cf8d2be855a75a5ce133c2f}{\+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}(\hyperlink{le__log_8h_aa3de78c088c398afb23c0b582deabc0aa1a5c0e9f9bcf857faad0cc4187002479}{L\+E\+\_\+\+L\+O\+G\+\_\+\+D\+E\+B\+U\+G}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+); \}
+\item 
+\#define \hyperlink{le__log_8h_ad98222f9a0871cde1893eac589841f17}{L\+E\+\_\+\+I\+N\+F\+O\+\_\+\+I\+F}(condition,  format\+String, ...)~if (condition) \{ \hyperlink{le__log_8h_a3e5304f08cf8d2be855a75a5ce133c2f}{\+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}(\hyperlink{le__log_8h_aa3de78c088c398afb23c0b582deabc0aa83ea376539849ee701096fdb022e74b3}{L\+E\+\_\+\+L\+O\+G\+\_\+\+I\+N\+F\+O}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+); \}
+\item 
+\#define \hyperlink{le__log_8h_a8d8f204806cd5fc0455fe3caacf1d251}{L\+E\+\_\+\+W\+A\+R\+N\+\_\+\+I\+F}(condition,  format\+String, ...)~if (condition) \{ \hyperlink{le__log_8h_a3e5304f08cf8d2be855a75a5ce133c2f}{\+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}(\hyperlink{le__log_8h_aa3de78c088c398afb23c0b582deabc0aae0f565809442f7de555d36f76c36627c}{L\+E\+\_\+\+L\+O\+G\+\_\+\+W\+A\+R\+N}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+); \}
+\item 
+\#define \hyperlink{le__log_8h_aceaf11a11691d6c676e36dd317b38dbd}{L\+E\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+F}(condition,  format\+String, ...)~if (condition) \{ \hyperlink{le__log_8h_a3e5304f08cf8d2be855a75a5ce133c2f}{\+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}(\hyperlink{le__log_8h_aa3de78c088c398afb23c0b582deabc0aaf1203f512370bfec7a05f8adae13c7d9}{L\+E\+\_\+\+L\+O\+G\+\_\+\+E\+R\+R}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+); \}
+\item 
+\#define \hyperlink{le__log_8h_ae507036675ece2d77e8e285cf864a6f4}{L\+E\+\_\+\+C\+R\+I\+T\+\_\+\+I\+F}(condition,  format\+String, ...)~if (condition) \{ \hyperlink{le__log_8h_a3e5304f08cf8d2be855a75a5ce133c2f}{\+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}(\hyperlink{le__log_8h_aa3de78c088c398afb23c0b582deabc0aa298894fe77b90cb9b28f25817a620df8}{L\+E\+\_\+\+L\+O\+G\+\_\+\+C\+R\+I\+T}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+); \}
+\item 
+\#define \hyperlink{le__log_8h_a5dcf8dc55407a8f41ada2e85ff8131fe}{L\+E\+\_\+\+E\+M\+E\+R\+G\+\_\+\+I\+F}(condition,  format\+String, ...)~if (condition) \{ \hyperlink{le__log_8h_a3e5304f08cf8d2be855a75a5ce133c2f}{\+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}(\hyperlink{le__log_8h_aa3de78c088c398afb23c0b582deabc0aa6843cc8d9fb10d02cad1834b236dd5cb}{L\+E\+\_\+\+L\+O\+G\+\_\+\+E\+M\+E\+R\+G}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+); \}
+\item 
+\#define \hyperlink{le__log_8h_a54b4b07f5396e19a8d9fca74238f4795}{L\+E\+\_\+\+F\+A\+T\+A\+L}(format\+String, ...)~\{ \hyperlink{le__log_8h_a651e75cb4ec9d59f5ddc7bae2fbdde88}{L\+E\+\_\+\+E\+M\+E\+R\+G}(format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+); exit(E\+X\+I\+T\+\_\+\+F\+A\+I\+L\+U\+R\+E); \}
+\item 
+\#define \hyperlink{le__log_8h_a7a3e66a87026cc9e57bcb748840ab41b}{L\+E\+\_\+\+F\+A\+T\+A\+L\+\_\+\+I\+F}(condition,  format\+String, ...)~if (condition) \{ \hyperlink{le__log_8h_a54b4b07f5396e19a8d9fca74238f4795}{L\+E\+\_\+\+F\+A\+T\+A\+L}(format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+) \}
+\item 
+\#define \hyperlink{le__log_8h_ac0dbbef91dc0fed449d0092ff0557b39}{L\+E\+\_\+\+A\+S\+S\+E\+R\+T}(condition)~if (!(condition)) \{ \hyperlink{le__log_8h_a54b4b07f5396e19a8d9fca74238f4795}{L\+E\+\_\+\+F\+A\+T\+A\+L}(\char`\"{}Assert Failed\+: \textquotesingle{}\%s\textquotesingle{}\char`\"{}, \#condition) \}
+\item 
+\#define \hyperlink{le__log_8h_a99402d6a983f318e5b8bfcdf5dfe9024}{L\+E\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+T\+X\+T}(v)~\hyperlink{le__log_8h_a9402d78fa0ea7040ec3574b227b639ca}{\+\_\+le\+\_\+log\+\_\+\+Get\+Result\+Code\+String}(v)
+\item 
+\#define \hyperlink{le__log_8h_a0746e2e37585f61ccdf7ce4976909936}{L\+E\+\_\+\+I\+S\+\_\+\+T\+R\+A\+C\+E\+\_\+\+E\+N\+A\+B\+L\+E\+D}(trace\+Ref)~(\hyperlink{le__log_8h_a9b0f9fed08a2bc5d6563540e4b3be490}{le\+\_\+log\+\_\+\+Is\+Trace\+Enabled}(trace\+Ref))
+\item 
+\#define \hyperlink{le__log_8h_a331fb6c78ccddeafc455ad9c64e42008}{L\+E\+\_\+\+T\+R\+A\+C\+E}(trace\+Ref,  string, ...)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{le__log_8h_aa3de78c088c398afb23c0b582deabc0a}{le\+\_\+log\+\_\+\+Level\+\_\+t} \{ \\*
+\hyperlink{le__log_8h_aa3de78c088c398afb23c0b582deabc0aa1a5c0e9f9bcf857faad0cc4187002479}{L\+E\+\_\+\+L\+O\+G\+\_\+\+D\+E\+B\+U\+G}, 
+\hyperlink{le__log_8h_aa3de78c088c398afb23c0b582deabc0aa83ea376539849ee701096fdb022e74b3}{L\+E\+\_\+\+L\+O\+G\+\_\+\+I\+N\+F\+O}, 
+\hyperlink{le__log_8h_aa3de78c088c398afb23c0b582deabc0aae0f565809442f7de555d36f76c36627c}{L\+E\+\_\+\+L\+O\+G\+\_\+\+W\+A\+R\+N}, 
+\hyperlink{le__log_8h_aa3de78c088c398afb23c0b582deabc0aaf1203f512370bfec7a05f8adae13c7d9}{L\+E\+\_\+\+L\+O\+G\+\_\+\+E\+R\+R}, 
+\\*
+\hyperlink{le__log_8h_aa3de78c088c398afb23c0b582deabc0aa298894fe77b90cb9b28f25817a620df8}{L\+E\+\_\+\+L\+O\+G\+\_\+\+C\+R\+I\+T}, 
+\hyperlink{le__log_8h_aa3de78c088c398afb23c0b582deabc0aa6843cc8d9fb10d02cad1834b236dd5cb}{L\+E\+\_\+\+L\+O\+G\+\_\+\+E\+M\+E\+R\+G}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{le__log_8h_a9402d78fa0ea7040ec3574b227b639ca}{\+\_\+le\+\_\+log\+\_\+\+Get\+Result\+Code\+String} (\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} result\+Code)
+\begin{DoxyCompactList}\small\item\em Function that does the real work of translating result codes. See \hyperlink{le__log_8h_a99402d6a983f318e5b8bfcdf5dfe9024}{L\+E\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+T\+X\+T}. \end{DoxyCompactList}\item 
+static le\+\_\+log\+\_\+\+Trace\+Ref\+\_\+t \hyperlink{le__log_8h_a6d99d8147bcdcd1ed3848c9fdb72afe5}{le\+\_\+log\+\_\+\+Get\+Trace\+Ref} (const char $\ast$keyword\+Ptr)
+\item 
+static bool \hyperlink{le__log_8h_a9b0f9fed08a2bc5d6563540e4b3be490}{le\+\_\+log\+\_\+\+Is\+Trace\+Enabled} (const le\+\_\+log\+\_\+\+Trace\+Ref\+\_\+t trace\+Ref)
+\item 
+static void \hyperlink{le__log_8h_a06856e82ef8dc28a964d84db1aeee517}{le\+\_\+log\+\_\+\+Set\+Filter\+Level} (\hyperlink{le__log_8h_aa3de78c088c398afb23c0b582deabc0a}{le\+\_\+log\+\_\+\+Level\+\_\+t} level)
+\item 
+static \hyperlink{le__log_8h_aa3de78c088c398afb23c0b582deabc0a}{le\+\_\+log\+\_\+\+Level\+\_\+t} \hyperlink{le__log_8h_abb2a75e476fdc54dbd64c46c4853ab9d}{le\+\_\+log\+\_\+\+Get\+Filter\+Level} (void)
+\item 
+static void \hyperlink{le__log_8h_a7dfe7c6d02a68b473d94d83ae71ff2b3}{le\+\_\+log\+\_\+\+Enable\+Trace} (const le\+\_\+log\+\_\+\+Trace\+Ref\+\_\+t trace\+Ref)
+\item 
+static void \hyperlink{le__log_8h_a15495177d8e9bf1fe4603cbc6bade8fc}{le\+\_\+log\+\_\+\+Disable\+Trace} (const le\+\_\+log\+\_\+\+Trace\+Ref\+\_\+t trace\+Ref)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_logging}{Logging A\+P\+I} include file.
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{le__log_8h_a3e5304f08cf8d2be855a75a5ce133c2f}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!\+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G@{\+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}}
+\index{\+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G@{\+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{\+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G(
+\begin{DoxyParamCaption}
+\item[{}]{level, }
+\item[{}]{format\+String, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{le__log_8h_a3e5304f08cf8d2be855a75a5ce133c2f}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{ \(\backslash\)
+        if ((LE\_LOG\_LEVEL\_FILTER\_PTR == NULL) || (level >= *LE\_LOG\_LEVEL\_FILTER\_PTR)) \(\backslash\)
+            \_le\_log\_Send(level, NULL, LE\_LOG\_SESSION, \_\_FILE\_\_, \_\_func\_\_, \_\_LINE\_\_, \(\backslash\)
+                    formatString, ##\_\_VA\_ARGS\_\_); \(\backslash\)
+    \} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+Internal macro to filter out messages that do not meet the current filtering level. \hypertarget{le__log_8h_ac0dbbef91dc0fed449d0092ff0557b39}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+A\+S\+S\+E\+R\+T@{L\+E\+\_\+\+A\+S\+S\+E\+R\+T}}
+\index{L\+E\+\_\+\+A\+S\+S\+E\+R\+T@{L\+E\+\_\+\+A\+S\+S\+E\+R\+T}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{L\+E\+\_\+\+A\+S\+S\+E\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+A\+S\+S\+E\+R\+T(
+\begin{DoxyParamCaption}
+\item[{}]{condition}
+\end{DoxyParamCaption}
+)~if (!(condition)) \{ {\bf L\+E\+\_\+\+F\+A\+T\+A\+L}(\char`\"{}Assert Failed\+: \textquotesingle{}\%s\textquotesingle{}\char`\"{}, \#condition) \}}\label{le__log_8h_ac0dbbef91dc0fed449d0092ff0557b39}
+This macro does nothing if the condition is true, otherwise it logs the condition expression as a message at E\+M\+E\+R\+G\+E\+N\+C\+Y level and then kills the calling process. \hypertarget{le__log_8h_a5efa1e4b6292c820c8555b4066a5c10d}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+C\+R\+I\+T@{L\+E\+\_\+\+C\+R\+I\+T}}
+\index{L\+E\+\_\+\+C\+R\+I\+T@{L\+E\+\_\+\+C\+R\+I\+T}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{L\+E\+\_\+\+C\+R\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+C\+R\+I\+T(
+\begin{DoxyParamCaption}
+\item[{}]{format\+String, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~{\bf \+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}({\bf L\+E\+\_\+\+L\+O\+G\+\_\+\+C\+R\+I\+T}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)}\label{le__log_8h_a5efa1e4b6292c820c8555b4066a5c10d}
+
+
+
+
+Critical error. Fault that almost certainly has or will result in a system failure. \hypertarget{le__log_8h_ae507036675ece2d77e8e285cf864a6f4}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+C\+R\+I\+T\+\_\+\+I\+F@{L\+E\+\_\+\+C\+R\+I\+T\+\_\+\+I\+F}}
+\index{L\+E\+\_\+\+C\+R\+I\+T\+\_\+\+I\+F@{L\+E\+\_\+\+C\+R\+I\+T\+\_\+\+I\+F}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{L\+E\+\_\+\+C\+R\+I\+T\+\_\+\+I\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+C\+R\+I\+T\+\_\+\+I\+F(
+\begin{DoxyParamCaption}
+\item[{}]{condition, }
+\item[{}]{format\+String, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~if (condition) \{ {\bf \+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}({\bf L\+E\+\_\+\+L\+O\+G\+\_\+\+C\+R\+I\+T}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+); \}}\label{le__log_8h_ae507036675ece2d77e8e285cf864a6f4}
+\hyperlink{le__log_8h_a5efa1e4b6292c820c8555b4066a5c10d}{L\+E\+\_\+\+C\+R\+I\+T} if condition is met. \hypertarget{le__log_8h_a2a91ea8857cf190fde71d85ba930a498}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+D\+E\+B\+U\+G@{L\+E\+\_\+\+D\+E\+B\+U\+G}}
+\index{L\+E\+\_\+\+D\+E\+B\+U\+G@{L\+E\+\_\+\+D\+E\+B\+U\+G}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{L\+E\+\_\+\+D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+D\+E\+B\+U\+G(
+\begin{DoxyParamCaption}
+\item[{}]{format\+String, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~{\bf \+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}({\bf L\+E\+\_\+\+L\+O\+G\+\_\+\+D\+E\+B\+U\+G}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)}\label{le__log_8h_a2a91ea8857cf190fde71d85ba930a498}
+
+
+Debug message. 
+
+\hypertarget{le__log_8h_a4c689f24157ca91e6d39827c967de734}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+D\+E\+B\+U\+G\+\_\+\+I\+F@{L\+E\+\_\+\+D\+E\+B\+U\+G\+\_\+\+I\+F}}
+\index{L\+E\+\_\+\+D\+E\+B\+U\+G\+\_\+\+I\+F@{L\+E\+\_\+\+D\+E\+B\+U\+G\+\_\+\+I\+F}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{L\+E\+\_\+\+D\+E\+B\+U\+G\+\_\+\+I\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+D\+E\+B\+U\+G\+\_\+\+I\+F(
+\begin{DoxyParamCaption}
+\item[{}]{condition, }
+\item[{}]{format\+String, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~if (condition) \{ {\bf \+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}({\bf L\+E\+\_\+\+L\+O\+G\+\_\+\+D\+E\+B\+U\+G}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+); \}}\label{le__log_8h_a4c689f24157ca91e6d39827c967de734}
+\hyperlink{le__log_8h_a2a91ea8857cf190fde71d85ba930a498}{L\+E\+\_\+\+D\+E\+B\+U\+G} if condition is met. \hypertarget{le__log_8h_a651e75cb4ec9d59f5ddc7bae2fbdde88}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+E\+M\+E\+R\+G@{L\+E\+\_\+\+E\+M\+E\+R\+G}}
+\index{L\+E\+\_\+\+E\+M\+E\+R\+G@{L\+E\+\_\+\+E\+M\+E\+R\+G}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{L\+E\+\_\+\+E\+M\+E\+R\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+E\+M\+E\+R\+G(
+\begin{DoxyParamCaption}
+\item[{}]{format\+String, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~{\bf \+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}({\bf L\+E\+\_\+\+L\+O\+G\+\_\+\+E\+M\+E\+R\+G}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)}\label{le__log_8h_a651e75cb4ec9d59f5ddc7bae2fbdde88}
+
+
+Emergency. A fatal error has occurred. A process is being terminated. 
+
+\hypertarget{le__log_8h_a5dcf8dc55407a8f41ada2e85ff8131fe}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+E\+M\+E\+R\+G\+\_\+\+I\+F@{L\+E\+\_\+\+E\+M\+E\+R\+G\+\_\+\+I\+F}}
+\index{L\+E\+\_\+\+E\+M\+E\+R\+G\+\_\+\+I\+F@{L\+E\+\_\+\+E\+M\+E\+R\+G\+\_\+\+I\+F}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{L\+E\+\_\+\+E\+M\+E\+R\+G\+\_\+\+I\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+E\+M\+E\+R\+G\+\_\+\+I\+F(
+\begin{DoxyParamCaption}
+\item[{}]{condition, }
+\item[{}]{format\+String, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~if (condition) \{ {\bf \+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}({\bf L\+E\+\_\+\+L\+O\+G\+\_\+\+E\+M\+E\+R\+G}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+); \}}\label{le__log_8h_a5dcf8dc55407a8f41ada2e85ff8131fe}
+\hyperlink{le__log_8h_a651e75cb4ec9d59f5ddc7bae2fbdde88}{L\+E\+\_\+\+E\+M\+E\+R\+G} if condition is met. \hypertarget{le__log_8h_a353590f91b3143a7ba3a416ae5a50c3d}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+E\+R\+R\+O\+R@{L\+E\+\_\+\+E\+R\+R\+O\+R}}
+\index{L\+E\+\_\+\+E\+R\+R\+O\+R@{L\+E\+\_\+\+E\+R\+R\+O\+R}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{L\+E\+\_\+\+E\+R\+R\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+E\+R\+R\+O\+R(
+\begin{DoxyParamCaption}
+\item[{}]{format\+String, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~{\bf \+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}({\bf L\+E\+\_\+\+L\+O\+G\+\_\+\+E\+R\+R}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)}\label{le__log_8h_a353590f91b3143a7ba3a416ae5a50c3d}
+
+
+
+
+Error. Definitely indicates a fault that needs to be addressed. Possibly resulted in a system failure. \hypertarget{le__log_8h_aceaf11a11691d6c676e36dd317b38dbd}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+F@{L\+E\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+F}}
+\index{L\+E\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+F@{L\+E\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+F}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{L\+E\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+F(
+\begin{DoxyParamCaption}
+\item[{}]{condition, }
+\item[{}]{format\+String, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~if (condition) \{ {\bf \+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}({\bf L\+E\+\_\+\+L\+O\+G\+\_\+\+E\+R\+R}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+); \}}\label{le__log_8h_aceaf11a11691d6c676e36dd317b38dbd}
+\hyperlink{le__log_8h_a353590f91b3143a7ba3a416ae5a50c3d}{L\+E\+\_\+\+E\+R\+R\+O\+R} if condition is met. \hypertarget{le__log_8h_a54b4b07f5396e19a8d9fca74238f4795}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+F\+A\+T\+A\+L@{L\+E\+\_\+\+F\+A\+T\+A\+L}}
+\index{L\+E\+\_\+\+F\+A\+T\+A\+L@{L\+E\+\_\+\+F\+A\+T\+A\+L}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{L\+E\+\_\+\+F\+A\+T\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+F\+A\+T\+A\+L(
+\begin{DoxyParamCaption}
+\item[{}]{format\+String, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~\{ {\bf L\+E\+\_\+\+E\+M\+E\+R\+G}(format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+); exit(E\+X\+I\+T\+\_\+\+F\+A\+I\+L\+U\+R\+E); \}}\label{le__log_8h_a54b4b07f5396e19a8d9fca74238f4795}
+Log fatal errors by killing the calling process after logging the message at E\+M\+E\+R\+G\+E\+N\+C\+Y level. This macro never returns.
+
+Accepts printf-\/style arguments, consisting of a format string followed by zero or more parameters to be printed (depending on the contents of the format string). \hypertarget{le__log_8h_a7a3e66a87026cc9e57bcb748840ab41b}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+F\+A\+T\+A\+L\+\_\+\+I\+F@{L\+E\+\_\+\+F\+A\+T\+A\+L\+\_\+\+I\+F}}
+\index{L\+E\+\_\+\+F\+A\+T\+A\+L\+\_\+\+I\+F@{L\+E\+\_\+\+F\+A\+T\+A\+L\+\_\+\+I\+F}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{L\+E\+\_\+\+F\+A\+T\+A\+L\+\_\+\+I\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+F\+A\+T\+A\+L\+\_\+\+I\+F(
+\begin{DoxyParamCaption}
+\item[{}]{condition, }
+\item[{}]{format\+String, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~if (condition) \{ {\bf L\+E\+\_\+\+F\+A\+T\+A\+L}(format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+) \}}\label{le__log_8h_a7a3e66a87026cc9e57bcb748840ab41b}
+This macro does nothing if the condition is false, otherwise it logs the message at E\+M\+E\+R\+G\+E\+N\+C\+Y level and then kills the calling process.
+
+Accepts printf-\/style arguments, consisting of a format string followed by zero or more parameters to be printed (depending on the contents of the format string). \hypertarget{le__log_8h_a23e6d206faa64f612045d688cdde5808}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+I\+N\+F\+O@{L\+E\+\_\+\+I\+N\+F\+O}}
+\index{L\+E\+\_\+\+I\+N\+F\+O@{L\+E\+\_\+\+I\+N\+F\+O}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{L\+E\+\_\+\+I\+N\+F\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+I\+N\+F\+O(
+\begin{DoxyParamCaption}
+\item[{}]{format\+String, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~{\bf \+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}({\bf L\+E\+\_\+\+L\+O\+G\+\_\+\+I\+N\+F\+O}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)}\label{le__log_8h_a23e6d206faa64f612045d688cdde5808}
+
+
+Informational message. Normally expected. 
+
+\hypertarget{le__log_8h_ad98222f9a0871cde1893eac589841f17}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+I\+N\+F\+O\+\_\+\+I\+F@{L\+E\+\_\+\+I\+N\+F\+O\+\_\+\+I\+F}}
+\index{L\+E\+\_\+\+I\+N\+F\+O\+\_\+\+I\+F@{L\+E\+\_\+\+I\+N\+F\+O\+\_\+\+I\+F}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{L\+E\+\_\+\+I\+N\+F\+O\+\_\+\+I\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+I\+N\+F\+O\+\_\+\+I\+F(
+\begin{DoxyParamCaption}
+\item[{}]{condition, }
+\item[{}]{format\+String, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~if (condition) \{ {\bf \+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}({\bf L\+E\+\_\+\+L\+O\+G\+\_\+\+I\+N\+F\+O}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+); \}}\label{le__log_8h_ad98222f9a0871cde1893eac589841f17}
+\hyperlink{le__log_8h_a23e6d206faa64f612045d688cdde5808}{L\+E\+\_\+\+I\+N\+F\+O} if condition is met. \hypertarget{le__log_8h_a0746e2e37585f61ccdf7ce4976909936}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+I\+S\+\_\+\+T\+R\+A\+C\+E\+\_\+\+E\+N\+A\+B\+L\+E\+D@{L\+E\+\_\+\+I\+S\+\_\+\+T\+R\+A\+C\+E\+\_\+\+E\+N\+A\+B\+L\+E\+D}}
+\index{L\+E\+\_\+\+I\+S\+\_\+\+T\+R\+A\+C\+E\+\_\+\+E\+N\+A\+B\+L\+E\+D@{L\+E\+\_\+\+I\+S\+\_\+\+T\+R\+A\+C\+E\+\_\+\+E\+N\+A\+B\+L\+E\+D}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{L\+E\+\_\+\+I\+S\+\_\+\+T\+R\+A\+C\+E\+\_\+\+E\+N\+A\+B\+L\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+I\+S\+\_\+\+T\+R\+A\+C\+E\+\_\+\+E\+N\+A\+B\+L\+E\+D(
+\begin{DoxyParamCaption}
+\item[{}]{trace\+Ref}
+\end{DoxyParamCaption}
+)~({\bf le\+\_\+log\+\_\+\+Is\+Trace\+Enabled}(trace\+Ref))}\label{le__log_8h_a0746e2e37585f61ccdf7ce4976909936}
+Queries whether or not a trace keyword is enabled.
+
+\begin{DoxyReturn}{Returns}
+true if the keyword is enabled. false otherwise. 
+\end{DoxyReturn}
+\hypertarget{le__log_8h_a99402d6a983f318e5b8bfcdf5dfe9024}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+T\+X\+T@{L\+E\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+T\+X\+T}}
+\index{L\+E\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+T\+X\+T@{L\+E\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+T\+X\+T}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{L\+E\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+T\+X\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+T\+X\+T(
+\begin{DoxyParamCaption}
+\item[{}]{v}
+\end{DoxyParamCaption}
+)~{\bf \+\_\+le\+\_\+log\+\_\+\+Get\+Result\+Code\+String}(v)}\label{le__log_8h_a99402d6a983f318e5b8bfcdf5dfe9024}
+Get a null-\/terminated, printable string representing an le\+\_\+result\+\_\+t value.
+
+For example, \hyperlink{le__log_8h_a99402d6a983f318e5b8bfcdf5dfe9024}{L\+E\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+T\+X\+T(\+L\+E\+\_\+\+N\+O\+T\+\_\+\+P\+E\+R\+M\+I\+T\+T\+E\+D)} would return a pointer to a string containing \char`\"{}\+L\+E\+\_\+\+N\+O\+T\+\_\+\+P\+E\+R\+M\+I\+T\+T\+E\+D\char`\"{}.
+
+\char`\"{}(unknown)\char`\"{} will be returned if the value given is out of range.
+
+\begin{DoxyReturn}{Returns}
+Pointer to a string constant. 
+\end{DoxyReturn}
+\hypertarget{le__log_8h_a331fb6c78ccddeafc455ad9c64e42008}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+T\+R\+A\+C\+E@{L\+E\+\_\+\+T\+R\+A\+C\+E}}
+\index{L\+E\+\_\+\+T\+R\+A\+C\+E@{L\+E\+\_\+\+T\+R\+A\+C\+E}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{L\+E\+\_\+\+T\+R\+A\+C\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+T\+R\+A\+C\+E(
+\begin{DoxyParamCaption}
+\item[{}]{trace\+Ref, }
+\item[{}]{string, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{le__log_8h_a331fb6c78ccddeafc455ad9c64e42008}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (\hyperlink{le__log_8h_a9b0f9fed08a2bc5d6563540e4b3be490}{le\_log\_IsTraceEnabled}(traceRef))                                                  
+            \(\backslash\)
+        \{                                                                                           \(\backslash\)
+            \_le\_log\_Send((\hyperlink{le__log_8h_aa3de78c088c398afb23c0b582deabc0a}{le\_log\_Level\_t})-1,                                                 
+             \(\backslash\)
+                    traceRef,                                                                       \(\backslash\)
+                    LE\_LOG\_SESSION,                                                                 \(\backslash\)
+                    \_\_FILE\_\_,                                                                       \(\backslash\)
+                    \_\_func\_\_,                                                                       \(\backslash\)
+                    \_\_LINE\_\_,                                                                       \(\backslash\)
+                    \textcolor{keywordtype}{string},                                                                         \(\backslash\)
+                    ##\_\_VA\_ARGS\_\_);                                                                 \(\backslash\)
+        \}
+\end{DoxyCode}
+Logs the string if the keyword has been enabled by a runtime tool or configuration setting. \hypertarget{le__log_8h_a0201b2f60ee0e945479f91e181bf04b6}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+W\+A\+R\+N@{L\+E\+\_\+\+W\+A\+R\+N}}
+\index{L\+E\+\_\+\+W\+A\+R\+N@{L\+E\+\_\+\+W\+A\+R\+N}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{L\+E\+\_\+\+W\+A\+R\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+W\+A\+R\+N(
+\begin{DoxyParamCaption}
+\item[{}]{format\+String, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~{\bf \+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}({\bf L\+E\+\_\+\+L\+O\+G\+\_\+\+W\+A\+R\+N}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)}\label{le__log_8h_a0201b2f60ee0e945479f91e181bf04b6}
+
+
+Warning. Possibly indicates a problem. Should be addressed. 
+
+\hypertarget{le__log_8h_a8d8f204806cd5fc0455fe3caacf1d251}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+W\+A\+R\+N\+\_\+\+I\+F@{L\+E\+\_\+\+W\+A\+R\+N\+\_\+\+I\+F}}
+\index{L\+E\+\_\+\+W\+A\+R\+N\+\_\+\+I\+F@{L\+E\+\_\+\+W\+A\+R\+N\+\_\+\+I\+F}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{L\+E\+\_\+\+W\+A\+R\+N\+\_\+\+I\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+W\+A\+R\+N\+\_\+\+I\+F(
+\begin{DoxyParamCaption}
+\item[{}]{condition, }
+\item[{}]{format\+String, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~if (condition) \{ {\bf \+\_\+\+L\+E\+\_\+\+L\+O\+G\+\_\+\+M\+S\+G}({\bf L\+E\+\_\+\+L\+O\+G\+\_\+\+W\+A\+R\+N}, format\+String, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+); \}}\label{le__log_8h_a8d8f204806cd5fc0455fe3caacf1d251}
+\hyperlink{le__log_8h_a0201b2f60ee0e945479f91e181bf04b6}{L\+E\+\_\+\+W\+A\+R\+N} if condition is met. 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{le__log_8h_aa3de78c088c398afb23c0b582deabc0a}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!le\+\_\+log\+\_\+\+Level\+\_\+t@{le\+\_\+log\+\_\+\+Level\+\_\+t}}
+\index{le\+\_\+log\+\_\+\+Level\+\_\+t@{le\+\_\+log\+\_\+\+Level\+\_\+t}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{le\+\_\+log\+\_\+\+Level\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+log\+\_\+\+Level\+\_\+t}}\label{le__log_8h_aa3de78c088c398afb23c0b582deabc0a}
+Local definitions that should not be used directly. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+L\+O\+G\+\_\+\+D\+E\+B\+U\+G@{L\+E\+\_\+\+L\+O\+G\+\_\+\+D\+E\+B\+U\+G}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+L\+O\+G\+\_\+\+D\+E\+B\+U\+G@{L\+E\+\_\+\+L\+O\+G\+\_\+\+D\+E\+B\+U\+G}}\item[{\em 
+\hypertarget{le__log_8h_aa3de78c088c398afb23c0b582deabc0aa1a5c0e9f9bcf857faad0cc4187002479}{}L\+E\+\_\+\+L\+O\+G\+\_\+\+D\+E\+B\+U\+G\label{le__log_8h_aa3de78c088c398afb23c0b582deabc0aa1a5c0e9f9bcf857faad0cc4187002479}
+}]Debug message. \index{L\+E\+\_\+\+L\+O\+G\+\_\+\+I\+N\+F\+O@{L\+E\+\_\+\+L\+O\+G\+\_\+\+I\+N\+F\+O}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+L\+O\+G\+\_\+\+I\+N\+F\+O@{L\+E\+\_\+\+L\+O\+G\+\_\+\+I\+N\+F\+O}}\item[{\em 
+\hypertarget{le__log_8h_aa3de78c088c398afb23c0b582deabc0aa83ea376539849ee701096fdb022e74b3}{}L\+E\+\_\+\+L\+O\+G\+\_\+\+I\+N\+F\+O\label{le__log_8h_aa3de78c088c398afb23c0b582deabc0aa83ea376539849ee701096fdb022e74b3}
+}]Informational message. Normally expected. \index{L\+E\+\_\+\+L\+O\+G\+\_\+\+W\+A\+R\+N@{L\+E\+\_\+\+L\+O\+G\+\_\+\+W\+A\+R\+N}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+L\+O\+G\+\_\+\+W\+A\+R\+N@{L\+E\+\_\+\+L\+O\+G\+\_\+\+W\+A\+R\+N}}\item[{\em 
+\hypertarget{le__log_8h_aa3de78c088c398afb23c0b582deabc0aae0f565809442f7de555d36f76c36627c}{}L\+E\+\_\+\+L\+O\+G\+\_\+\+W\+A\+R\+N\label{le__log_8h_aa3de78c088c398afb23c0b582deabc0aae0f565809442f7de555d36f76c36627c}
+}]Warning. Possibly indicates a problem. Should be addressed. \index{L\+E\+\_\+\+L\+O\+G\+\_\+\+E\+R\+R@{L\+E\+\_\+\+L\+O\+G\+\_\+\+E\+R\+R}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+L\+O\+G\+\_\+\+E\+R\+R@{L\+E\+\_\+\+L\+O\+G\+\_\+\+E\+R\+R}}\item[{\em 
+\hypertarget{le__log_8h_aa3de78c088c398afb23c0b582deabc0aaf1203f512370bfec7a05f8adae13c7d9}{}L\+E\+\_\+\+L\+O\+G\+\_\+\+E\+R\+R\label{le__log_8h_aa3de78c088c398afb23c0b582deabc0aaf1203f512370bfec7a05f8adae13c7d9}
+}]Error. Definitely indicates a fault that needs to be addressed. Possibly resulted in a system failure. \index{L\+E\+\_\+\+L\+O\+G\+\_\+\+C\+R\+I\+T@{L\+E\+\_\+\+L\+O\+G\+\_\+\+C\+R\+I\+T}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+L\+O\+G\+\_\+\+C\+R\+I\+T@{L\+E\+\_\+\+L\+O\+G\+\_\+\+C\+R\+I\+T}}\item[{\em 
+\hypertarget{le__log_8h_aa3de78c088c398afb23c0b582deabc0aa298894fe77b90cb9b28f25817a620df8}{}L\+E\+\_\+\+L\+O\+G\+\_\+\+C\+R\+I\+T\label{le__log_8h_aa3de78c088c398afb23c0b582deabc0aa298894fe77b90cb9b28f25817a620df8}
+}]Critical error. Fault that almost certainly has or will result in a system failure. \index{L\+E\+\_\+\+L\+O\+G\+\_\+\+E\+M\+E\+R\+G@{L\+E\+\_\+\+L\+O\+G\+\_\+\+E\+M\+E\+R\+G}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!L\+E\+\_\+\+L\+O\+G\+\_\+\+E\+M\+E\+R\+G@{L\+E\+\_\+\+L\+O\+G\+\_\+\+E\+M\+E\+R\+G}}\item[{\em 
+\hypertarget{le__log_8h_aa3de78c088c398afb23c0b582deabc0aa6843cc8d9fb10d02cad1834b236dd5cb}{}L\+E\+\_\+\+L\+O\+G\+\_\+\+E\+M\+E\+R\+G\label{le__log_8h_aa3de78c088c398afb23c0b582deabc0aa6843cc8d9fb10d02cad1834b236dd5cb}
+}]Emergency. A fatal error has occurred. A process is being terminated. \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{le__log_8h_a9402d78fa0ea7040ec3574b227b639ca}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!\+\_\+le\+\_\+log\+\_\+\+Get\+Result\+Code\+String@{\+\_\+le\+\_\+log\+\_\+\+Get\+Result\+Code\+String}}
+\index{\+\_\+le\+\_\+log\+\_\+\+Get\+Result\+Code\+String@{\+\_\+le\+\_\+log\+\_\+\+Get\+Result\+Code\+String}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{\+\_\+le\+\_\+log\+\_\+\+Get\+Result\+Code\+String}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ \+\_\+le\+\_\+log\+\_\+\+Get\+Result\+Code\+String (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+result\+\_\+t}}]{result\+Code}
+\end{DoxyParamCaption}
+)}\label{le__log_8h_a9402d78fa0ea7040ec3574b227b639ca}
+
+
+Function that does the real work of translating result codes. See \hyperlink{le__log_8h_a99402d6a983f318e5b8bfcdf5dfe9024}{L\+E\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+T\+X\+T}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em result\+Code} & Result code value to be translated. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__log_8h_a15495177d8e9bf1fe4603cbc6bade8fc}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!le\+\_\+log\+\_\+\+Disable\+Trace@{le\+\_\+log\+\_\+\+Disable\+Trace}}
+\index{le\+\_\+log\+\_\+\+Disable\+Trace@{le\+\_\+log\+\_\+\+Disable\+Trace}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{le\+\_\+log\+\_\+\+Disable\+Trace}]{\setlength{\rightskip}{0pt plus 5cm}static void le\+\_\+log\+\_\+\+Disable\+Trace (
+\begin{DoxyParamCaption}
+\item[{const le\+\_\+log\+\_\+\+Trace\+Ref\+\_\+t}]{trace\+Ref}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{le__log_8h_a15495177d8e9bf1fe4603cbc6bade8fc}
+Disables a trace.
+
+\begin{DoxyNote}{Note}
+Normally, this is not necessary, since traces can be enabled at runtime using the log control tool and can be persistently configured. See \hyperlink{c_logging_c_log_controlling}{Log Controls}. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em trace\+Ref} & Trace reference obtained from \hyperlink{le__log_8h_a6d99d8147bcdcd1ed3848c9fdb72afe5}{le\+\_\+log\+\_\+\+Get\+Trace\+Ref()} \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__log_8h_a7dfe7c6d02a68b473d94d83ae71ff2b3}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!le\+\_\+log\+\_\+\+Enable\+Trace@{le\+\_\+log\+\_\+\+Enable\+Trace}}
+\index{le\+\_\+log\+\_\+\+Enable\+Trace@{le\+\_\+log\+\_\+\+Enable\+Trace}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{le\+\_\+log\+\_\+\+Enable\+Trace}]{\setlength{\rightskip}{0pt plus 5cm}static void le\+\_\+log\+\_\+\+Enable\+Trace (
+\begin{DoxyParamCaption}
+\item[{const le\+\_\+log\+\_\+\+Trace\+Ref\+\_\+t}]{trace\+Ref}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{le__log_8h_a7dfe7c6d02a68b473d94d83ae71ff2b3}
+Enables a trace.
+
+\begin{DoxyNote}{Note}
+Normally, this is not necessary, since traces can be enabled at runtime using the log control tool and can be persistently configured. See \hyperlink{c_logging_c_log_controlling}{Log Controls}. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em trace\+Ref} & Trace reference obtained from \hyperlink{le__log_8h_a6d99d8147bcdcd1ed3848c9fdb72afe5}{le\+\_\+log\+\_\+\+Get\+Trace\+Ref()}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__log_8h_abb2a75e476fdc54dbd64c46c4853ab9d}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!le\+\_\+log\+\_\+\+Get\+Filter\+Level@{le\+\_\+log\+\_\+\+Get\+Filter\+Level}}
+\index{le\+\_\+log\+\_\+\+Get\+Filter\+Level@{le\+\_\+log\+\_\+\+Get\+Filter\+Level}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{le\+\_\+log\+\_\+\+Get\+Filter\+Level}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf le\+\_\+log\+\_\+\+Level\+\_\+t} le\+\_\+log\+\_\+\+Get\+Filter\+Level (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{le__log_8h_abb2a75e476fdc54dbd64c46c4853ab9d}
+Gets the log filter level for the calling component. \hypertarget{le__log_8h_a6d99d8147bcdcd1ed3848c9fdb72afe5}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!le\+\_\+log\+\_\+\+Get\+Trace\+Ref@{le\+\_\+log\+\_\+\+Get\+Trace\+Ref}}
+\index{le\+\_\+log\+\_\+\+Get\+Trace\+Ref@{le\+\_\+log\+\_\+\+Get\+Trace\+Ref}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{le\+\_\+log\+\_\+\+Get\+Trace\+Ref}]{\setlength{\rightskip}{0pt plus 5cm}static le\+\_\+log\+\_\+\+Trace\+Ref\+\_\+t le\+\_\+log\+\_\+\+Get\+Trace\+Ref (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{keyword\+Ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{le__log_8h_a6d99d8147bcdcd1ed3848c9fdb72afe5}
+Gets a reference to a trace keyword\textquotesingle{}s settings.
+
+\begin{DoxyReturn}{Returns}
+Trace reference. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em keyword\+Ptr} & Pointer to the keyword string. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__log_8h_a9b0f9fed08a2bc5d6563540e4b3be490}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!le\+\_\+log\+\_\+\+Is\+Trace\+Enabled@{le\+\_\+log\+\_\+\+Is\+Trace\+Enabled}}
+\index{le\+\_\+log\+\_\+\+Is\+Trace\+Enabled@{le\+\_\+log\+\_\+\+Is\+Trace\+Enabled}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{le\+\_\+log\+\_\+\+Is\+Trace\+Enabled}]{\setlength{\rightskip}{0pt plus 5cm}static bool le\+\_\+log\+\_\+\+Is\+Trace\+Enabled (
+\begin{DoxyParamCaption}
+\item[{const le\+\_\+log\+\_\+\+Trace\+Ref\+\_\+t}]{trace\+Ref}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{le__log_8h_a9b0f9fed08a2bc5d6563540e4b3be490}
+Determines if a trace is currently enabled.
+
+\begin{DoxyReturn}{Returns}
+true if enabled, false if not. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em trace\+Ref} & Trace reference obtained from \hyperlink{le__log_8h_a6d99d8147bcdcd1ed3848c9fdb72afe5}{le\+\_\+log\+\_\+\+Get\+Trace\+Ref()}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__log_8h_a06856e82ef8dc28a964d84db1aeee517}{}\index{le\+\_\+log.\+h@{le\+\_\+log.\+h}!le\+\_\+log\+\_\+\+Set\+Filter\+Level@{le\+\_\+log\+\_\+\+Set\+Filter\+Level}}
+\index{le\+\_\+log\+\_\+\+Set\+Filter\+Level@{le\+\_\+log\+\_\+\+Set\+Filter\+Level}!le\+\_\+log.\+h@{le\+\_\+log.\+h}}
+\subsubsection[{le\+\_\+log\+\_\+\+Set\+Filter\+Level}]{\setlength{\rightskip}{0pt plus 5cm}static void le\+\_\+log\+\_\+\+Set\+Filter\+Level (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+log\+\_\+\+Level\+\_\+t}}]{level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{le__log_8h_a06856e82ef8dc28a964d84db1aeee517}
+Sets the log filter level for the calling component.
+
+\begin{DoxyNote}{Note}
+Normally not necessary as the log filter level can be controlled at runtime using the log control tool, and can be persistently configured. See \hyperlink{c_logging_c_log_controlling}{Log Controls}. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em level} & Log filter level to apply to the current log session. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,1927 @@
+\hypertarget{le__mrc__interface_8h}{}\section{build/localhost/interfaces/le\+\_\+mrc\+\_\+interface.h File Reference}
+\label{le__mrc__interface_8h}\index{build/localhost/interfaces/le\+\_\+mrc\+\_\+interface.\+h@{build/localhost/interfaces/le\+\_\+mrc\+\_\+interface.\+h}}
+{\ttfamily \#include \char`\"{}legato.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{le__mrc__interface_8h_aa50ed3f6d70185be4a35c811518895cf}{L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+C\+C\+\_\+\+L\+E\+N}~3
+\item 
+\#define \hyperlink{le__mrc__interface_8h_aec88b97b54a45f86e6cb34f65b2d0afd}{L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+C\+C\+\_\+\+B\+Y\+T\+E\+S}~4
+\item 
+\#define \hyperlink{le__mrc__interface_8h_a0550a0420d5f13f4b68a6c880473e768}{L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+N\+C\+\_\+\+L\+E\+N}~3
+\item 
+\#define \hyperlink{le__mrc__interface_8h_aeae0e240c77730be724ad7ac42596469}{L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+N\+C\+\_\+\+B\+Y\+T\+E\+S}~4
+\item 
+\#define \hyperlink{le__mrc__interface_8h_a5f5edf129f254904b22595af86cdeaa7}{L\+E\+\_\+\+M\+R\+C\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+N\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N}~100
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct le\+\_\+mrc\+\_\+\+Scan\+Information $\ast$ \hyperlink{le__mrc__interface_8h_a3e7fe3e0d8f10fe7853f00eb254529ea}{le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t}
+\item 
+typedef struct le\+\_\+mrc\+\_\+\+Scan\+Information\+List $\ast$ \hyperlink{le__mrc__interface_8h_a25a9e79cc9078e22cec22444fd959c61}{le\+\_\+mrc\+\_\+\+Scan\+Information\+List\+Ref\+\_\+t}
+\item 
+typedef struct le\+\_\+mrc\+\_\+\+Preferred\+Operator $\ast$ \hyperlink{le__mrc__interface_8h_add1c18b20b02f57f3d4d1510a2d2d62c}{le\+\_\+mrc\+\_\+\+Preferred\+Operator\+Ref\+\_\+t}
+\item 
+typedef struct le\+\_\+mrc\+\_\+\+Preferred\+Operator\+List $\ast$ \hyperlink{le__mrc__interface_8h_ae9f0c124121ac480535d0fd7fd9e452b}{le\+\_\+mrc\+\_\+\+Preferred\+Operator\+List\+Ref\+\_\+t}
+\item 
+typedef struct le\+\_\+mrc\+\_\+\+Cell\+Info $\ast$ \hyperlink{le__mrc__interface_8h_a8fbb2523c254ba473a3f59efa452355e}{le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t}
+\item 
+typedef struct le\+\_\+mrc\+\_\+\+Neighbor\+Cells $\ast$ \hyperlink{le__mrc__interface_8h_a672ea94ad892bb95f43836b5fbd24188}{le\+\_\+mrc\+\_\+\+Neighbor\+Cells\+Ref\+\_\+t}
+\item 
+typedef struct le\+\_\+mrc\+\_\+\+Metrics $\ast$ \hyperlink{le__mrc__interface_8h_a6ad5afb123492b2e249f3ecd414d6e83}{le\+\_\+mrc\+\_\+\+Metrics\+Ref\+\_\+t}
+\item 
+typedef struct le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Event\+Handler $\ast$ \hyperlink{le__mrc__interface_8h_a709ab9eb31ffa85aa85b8b2aaec22a6d}{le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Event\+Handler\+Ref\+\_\+t}
+\item 
+typedef struct le\+\_\+mrc\+\_\+\+Rat\+Change\+Handler $\ast$ \hyperlink{le__mrc__interface_8h_a5ac252acd68a64b336ae9a98ca6113ac}{le\+\_\+mrc\+\_\+\+Rat\+Change\+Handler\+Ref\+\_\+t}
+\item 
+typedef struct le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\+Handler $\ast$ \hyperlink{le__mrc__interface_8h_aac0e41200cd6bd03c178aeb7e3646744}{le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\+Handler\+Ref\+\_\+t}
+\item 
+typedef void($\ast$ \hyperlink{le__mrc__interface_8h_acf72270c80a8f8e8e216d314c5bb9ab5}{le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Handler\+Func\+\_\+t}) (\hyperlink{le__mrc__interface_8h_ae2877a1e1252ac79e6c9cae3d3c25a61}{le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+\_\+t} state, void $\ast$context\+Ptr)
+\item 
+typedef void($\ast$ \hyperlink{le__mrc__interface_8h_a40fddaea0c8a3695000b2679931fbfb2}{le\+\_\+mrc\+\_\+\+Rat\+Change\+Handler\+Func\+\_\+t}) (\hyperlink{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43}{le\+\_\+mrc\+\_\+\+Rat\+\_\+t} rat, void $\ast$context\+Ptr)
+\item 
+typedef void($\ast$ \hyperlink{le__mrc__interface_8h_aad70b8ec8988256ac39f5d04bc078a34}{le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\+Handler\+Func\+\_\+t}) (int32\+\_\+t ss, void $\ast$context\+Ptr)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{le__mrc__interface_8h_a048374324f72ee7df52c2e0521c0dda3}{le\+\_\+mrc\+\_\+\+Band\+Bit\+Mask\+\_\+t} \{ \\*
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+C\+L\+A\+S\+S\+\_\+0\+\_\+\+A\+\_\+\+S\+Y\+S\+T\+E\+M} = 0x1, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+C\+L\+A\+S\+S\+\_\+0\+\_\+\+B\+\_\+\+S\+Y\+S\+T\+E\+M} = 0x2, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+C\+L\+A\+S\+S\+\_\+1\+\_\+\+A\+L\+L\+\_\+\+B\+L\+O\+C\+K\+S} = 0x4, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+C\+L\+A\+S\+S\+\_\+2\+\_\+\+P\+L\+A\+C\+E\+H\+O\+L\+D\+E\+R} = 0x8, 
+\\*
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+C\+L\+A\+S\+S\+\_\+3\+\_\+\+A\+\_\+\+S\+Y\+S\+T\+E\+M} = 0x10, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+C\+L\+A\+S\+S\+\_\+4\+\_\+\+A\+L\+L\+\_\+\+B\+L\+O\+C\+K\+S} = 0x20, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+C\+L\+A\+S\+S\+\_\+5\+\_\+\+A\+L\+L\+\_\+\+B\+L\+O\+C\+K\+S} = 0x40, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+C\+L\+A\+S\+S\+\_\+6} = 0x80, 
+\\*
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+C\+L\+A\+S\+S\+\_\+7} = 0x100, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+C\+L\+A\+S\+S\+\_\+8} = 0x200, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+C\+L\+A\+S\+S\+\_\+9} = 0x400, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+C\+L\+A\+S\+S\+\_\+10} = 0x800, 
+\\*
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+C\+L\+A\+S\+S\+\_\+11} = 0x1000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+C\+L\+A\+S\+S\+\_\+12} = 0x2000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+C\+L\+A\+S\+S\+\_\+14} = 0x4000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+C\+L\+A\+S\+S\+\_\+15} = 0x8000, 
+\\*
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+C\+L\+A\+S\+S\+\_\+16} = 0x10000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+C\+L\+A\+S\+S\+\_\+17} = 0x20000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+C\+L\+A\+S\+S\+\_\+18} = 0x40000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+C\+L\+A\+S\+S\+\_\+19} = 0x80000, 
+\\*
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+G\+S\+M\+\_\+\+D\+C\+S\+\_\+1800} = 0x100000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+E\+G\+S\+M\+\_\+900} = 0x200000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+P\+R\+I\+\_\+\+G\+S\+M\+\_\+900} = 0x400000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+G\+S\+M\+\_\+450} = 0x800000, 
+\\*
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+G\+S\+M\+\_\+480} = 0x1000000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+G\+S\+M\+\_\+750} = 0x2000000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+G\+S\+M\+\_\+850} = 0x4000000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+G\+S\+M\+R\+\_\+900} = 0x8000000, 
+\\*
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+G\+S\+M\+\_\+\+P\+C\+S\+\_\+1900} = 0x10000000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+W\+C\+D\+M\+A\+\_\+\+E\+U\+\_\+\+J\+\_\+\+C\+H\+\_\+\+I\+M\+T\+\_\+2100} = 0x20000000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+W\+C\+D\+M\+A\+\_\+\+U\+S\+\_\+\+P\+C\+S\+\_\+1900} = 0x40000000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+W\+C\+D\+M\+A\+\_\+\+E\+U\+\_\+\+C\+H\+\_\+\+D\+C\+S\+\_\+1800} = 0x80000000, 
+\\*
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+W\+C\+D\+M\+A\+\_\+\+U\+S\+\_\+1700} = 0x100000000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+W\+C\+D\+M\+A\+\_\+\+U\+S\+\_\+850} = 0x200000000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+W\+C\+D\+M\+A\+\_\+\+J\+\_\+800} = 0x400000000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+W\+C\+D\+M\+A\+\_\+\+E\+U\+\_\+2600} = 0x800000000, 
+\\*
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+W\+C\+D\+M\+A\+\_\+\+E\+U\+\_\+\+J\+\_\+900} = 0x1000000000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+B\+A\+N\+D\+\_\+\+W\+C\+D\+M\+A\+\_\+\+J\+\_\+1700} = 0x2000000000
+ \}
+\item 
+enum \hyperlink{le__mrc__interface_8h_a81d705d61ee7ee56eab6aafb1af92579}{le\+\_\+mrc\+\_\+\+Lte\+Band\+Bit\+Mask\+\_\+t} \{ \\*
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+1} = 0x1, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+2} = 0x2, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+3} = 0x4, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+4} = 0x8, 
+\\*
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+5} = 0x10, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+6} = 0x20, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+7} = 0x40, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+8} = 0x80, 
+\\*
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+9} = 0x100, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+10} = 0x200, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+11} = 0x400, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+12} = 0x800, 
+\\*
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+13} = 0x1000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+14} = 0x2000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+17} = 0x4000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+18} = 0x8000, 
+\\*
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+19} = 0x10000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+20} = 0x20000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+21} = 0x40000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+24} = 0x80000, 
+\\*
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+25} = 0x100000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+33} = 0x200000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+34} = 0x400000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+35} = 0x800000, 
+\\*
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+36} = 0x1000000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+37} = 0x2000000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+38} = 0x4000000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+39} = 0x8000000, 
+\\*
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+40} = 0x10000000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+41} = 0x20000000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+42} = 0x40000000, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+L\+T\+E\+\_\+\+B\+A\+N\+D\+\_\+\+E\+\_\+\+U\+T\+R\+A\+\_\+\+O\+P\+\_\+\+B\+A\+N\+D\+\_\+43} = 0x80000000
+ \}
+\item 
+enum \hyperlink{le__mrc__interface_8h_a418a508a9a6dbd3a4a68458f0c64a00e}{le\+\_\+mrc\+\_\+\+Td\+Scdma\+Band\+Bit\+Mask\+\_\+t} \{ \\*
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+T\+D\+S\+C\+D\+M\+A\+\_\+\+B\+A\+N\+D\+\_\+\+A} = 0x1, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+T\+D\+S\+C\+D\+M\+A\+\_\+\+B\+A\+N\+D\+\_\+\+B} = 0x2, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+T\+D\+S\+C\+D\+M\+A\+\_\+\+B\+A\+N\+D\+\_\+\+C} = 0x4, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+T\+D\+S\+C\+D\+M\+A\+\_\+\+B\+A\+N\+D\+\_\+\+D} = 0x8, 
+\\*
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+T\+D\+S\+C\+D\+M\+A\+\_\+\+B\+A\+N\+D\+\_\+\+E} = 0x10, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+T\+D\+S\+C\+D\+M\+A\+\_\+\+B\+A\+N\+D\+\_\+\+F} = 0x20
+ \}
+\item 
+enum \hyperlink{le__mrc__interface_8h_ae2877a1e1252ac79e6c9cae3d3c25a61}{le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+\_\+t} \{ \\*
+\hyperlink{le__mrc__interface_8h_ae2877a1e1252ac79e6c9cae3d3c25a61affdd881b043ba92f868ffef52b0b9124}{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+N\+O\+N\+E}, 
+\hyperlink{le__mrc__interface_8h_ae2877a1e1252ac79e6c9cae3d3c25a61a90fd9c8ee7f965840af2536e2a33316a}{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+H\+O\+M\+E}, 
+\hyperlink{le__mrc__interface_8h_ae2877a1e1252ac79e6c9cae3d3c25a61afe4b6da8ae01273d2188456660452eda}{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+S\+E\+A\+R\+C\+H\+I\+N\+G}, 
+\hyperlink{le__mrc__interface_8h_ae2877a1e1252ac79e6c9cae3d3c25a61af6b1505fb7f90fa379a9dd8d031e9814}{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+D\+E\+N\+I\+E\+D}, 
+\\*
+\hyperlink{le__mrc__interface_8h_ae2877a1e1252ac79e6c9cae3d3c25a61a9f5ddbf3dcdceb8e24e46aea83ba4e7f}{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+R\+O\+A\+M\+I\+N\+G}, 
+\hyperlink{le__mrc__interface_8h_ae2877a1e1252ac79e6c9cae3d3c25a61acdba928b7dfb851adfa0211acccabb65}{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+U\+N\+K\+N\+O\+W\+N}
+ \}
+\item 
+enum \hyperlink{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43}{le\+\_\+mrc\+\_\+\+Rat\+\_\+t} \{ \\*
+\hyperlink{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43a6088198c65a39429fe6a67f322df0480}{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N}, 
+\hyperlink{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43ae19505d98b78ac22398bce06605dd1a4}{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+G\+S\+M}, 
+\hyperlink{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43afe34c4f3a53aa717f5ecb94dd59bf728}{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+U\+M\+T\+S}, 
+\hyperlink{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43aaf2b25a8ec75f9bacb51967f23247176}{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+L\+T\+E}, 
+\\*
+\hyperlink{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43a1634a4ab71f130dd2aae46aa09ca0771}{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+C\+D\+M\+A}
+ \}
+\item 
+enum \hyperlink{le__mrc__interface_8h_af643c7005da7f2466302eebdf7a29d93}{le\+\_\+mrc\+\_\+\+Rat\+Bit\+Mask\+\_\+t} \{ \\*
+\hyperlink{le__mrc__interface_8h_af643c7005da7f2466302eebdf7a29d93adefd7fd440669e204ca96f3af84bb629}{L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+G\+S\+M} = 0x1, 
+\hyperlink{le__mrc__interface_8h_af643c7005da7f2466302eebdf7a29d93a4d0e1bc92e81266f57c6c275234a0ed9}{L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+U\+M\+T\+S} = 0x2, 
+\hyperlink{le__mrc__interface_8h_af643c7005da7f2466302eebdf7a29d93a3994580fe36cd392a2e517b8cc1c3108}{L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+L\+T\+E} = 0x4, 
+\hyperlink{le__mrc__interface_8h_af643c7005da7f2466302eebdf7a29d93a1ca9ac815a59af6c10a4f759cef4df3c}{L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+C\+D\+M\+A} = 0x8, 
+\\*
+\hyperlink{le__mrc__interface_8h_af643c7005da7f2466302eebdf7a29d93aa6e87ad274b7f5011413ea0e8375300b}{L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+A\+L\+L} = 0x10, 
+{\bfseries L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+M\+A\+X} = 0x20
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{le__mrc__interface_8h_aa19103931ad3974ee014f0ce2705a4ff}{le\+\_\+mrc\+\_\+\+Connect\+Service} (void)
+\item 
+void \hyperlink{le__mrc__interface_8h_af09497272480dfee6d0e75e4b98d22b9}{le\+\_\+mrc\+\_\+\+Disconnect\+Service} (void)
+\item 
+\hyperlink{le__mrc__interface_8h_a709ab9eb31ffa85aa85b8b2aaec22a6d}{le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Event\+Handler\+Ref\+\_\+t} \hyperlink{le__mrc__interface_8h_a929745b84719754d28f539540f71a552}{le\+\_\+mrc\+\_\+\+Add\+Net\+Reg\+State\+Event\+Handler} (\hyperlink{le__mrc__interface_8h_acf72270c80a8f8e8e216d314c5bb9ab5}{le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Handler\+Func\+\_\+t} handler\+Ptr, void $\ast$context\+Ptr)
+\item 
+void \hyperlink{le__mrc__interface_8h_a4fc57a5a5bc1f4b6617c895c98a09f15}{le\+\_\+mrc\+\_\+\+Remove\+Net\+Reg\+State\+Event\+Handler} (\hyperlink{le__mrc__interface_8h_a709ab9eb31ffa85aa85b8b2aaec22a6d}{le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Event\+Handler\+Ref\+\_\+t} add\+Handler\+Ref)
+\item 
+\hyperlink{le__mrc__interface_8h_a5ac252acd68a64b336ae9a98ca6113ac}{le\+\_\+mrc\+\_\+\+Rat\+Change\+Handler\+Ref\+\_\+t} \hyperlink{le__mrc__interface_8h_aedd9c526588a8298322525cfba6f875d}{le\+\_\+mrc\+\_\+\+Add\+Rat\+Change\+Handler} (\hyperlink{le__mrc__interface_8h_a40fddaea0c8a3695000b2679931fbfb2}{le\+\_\+mrc\+\_\+\+Rat\+Change\+Handler\+Func\+\_\+t} handler\+Ptr, void $\ast$context\+Ptr)
+\item 
+void \hyperlink{le__mrc__interface_8h_aed4f1730c99a1a9204a198e3df3cf6f5}{le\+\_\+mrc\+\_\+\+Remove\+Rat\+Change\+Handler} (\hyperlink{le__mrc__interface_8h_a5ac252acd68a64b336ae9a98ca6113ac}{le\+\_\+mrc\+\_\+\+Rat\+Change\+Handler\+Ref\+\_\+t} add\+Handler\+Ref)
+\item 
+\hyperlink{le__mrc__interface_8h_aac0e41200cd6bd03c178aeb7e3646744}{le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\+Handler\+Ref\+\_\+t} \hyperlink{le__mrc__interface_8h_ab62b444715b2b530efe5d397eb86a6e8}{le\+\_\+mrc\+\_\+\+Add\+Signal\+Strength\+Change\+Handler} (\hyperlink{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43}{le\+\_\+mrc\+\_\+\+Rat\+\_\+t} rat, int32\+\_\+t lower\+Range\+Threshold, int32\+\_\+t upper\+Range\+Threshold, \hyperlink{le__mrc__interface_8h_aad70b8ec8988256ac39f5d04bc078a34}{le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\+Handler\+Func\+\_\+t} handler\+Ptr, void $\ast$context\+Ptr)
+\item 
+void \hyperlink{le__mrc__interface_8h_a789dca8360ddf32a0ea1bfdd24efc6d4}{le\+\_\+mrc\+\_\+\+Remove\+Signal\+Strength\+Change\+Handler} (\hyperlink{le__mrc__interface_8h_aac0e41200cd6bd03c178aeb7e3646744}{le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\+Handler\+Ref\+\_\+t} add\+Handler\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_acb434a9f91afb5b6639baf3678ee9388}{le\+\_\+mrc\+\_\+\+Set\+Automatic\+Register\+Mode} (void)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_a09b890f05a20f4b007d60e595026631f}{le\+\_\+mrc\+\_\+\+Set\+Manual\+Register\+Mode} (const char $\ast$mcc, const char $\ast$mnc)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_a283c0c092c5a135a8e95f9f091655cb1}{le\+\_\+mrc\+\_\+\+Get\+Register\+Mode} (bool $\ast$is\+Manual\+Ptr\+Ptr, char $\ast$mcc\+Ptr, size\+\_\+t mcc\+Ptr\+Num\+Elements, char $\ast$mnc\+Ptr, size\+\_\+t mnc\+Ptr\+Num\+Elements)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_a2d4abd391bc69c218538f5d8e1be4e01}{le\+\_\+mrc\+\_\+\+Set\+Rat\+Preferences} (\hyperlink{le__mrc__interface_8h_af643c7005da7f2466302eebdf7a29d93}{le\+\_\+mrc\+\_\+\+Rat\+Bit\+Mask\+\_\+t} rat\+Mask)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_ae9fa8655738c63e392c8dcc862bdb1d5}{le\+\_\+mrc\+\_\+\+Get\+Rat\+Preferences} (\hyperlink{le__mrc__interface_8h_af643c7005da7f2466302eebdf7a29d93}{le\+\_\+mrc\+\_\+\+Rat\+Bit\+Mask\+\_\+t} $\ast$rat\+Mask\+Ptr\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_ac808b4dc721e031566da92e00663c027}{le\+\_\+mrc\+\_\+\+Set\+Band\+Preferences} (\hyperlink{le__mrc__interface_8h_a048374324f72ee7df52c2e0521c0dda3}{le\+\_\+mrc\+\_\+\+Band\+Bit\+Mask\+\_\+t} band\+Mask)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_a04418f56480070ba6c4f3d176dafaa37}{le\+\_\+mrc\+\_\+\+Get\+Band\+Preferences} (\hyperlink{le__mrc__interface_8h_a048374324f72ee7df52c2e0521c0dda3}{le\+\_\+mrc\+\_\+\+Band\+Bit\+Mask\+\_\+t} $\ast$band\+Mask\+Ptr\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_a21d2fe7c736e9a4a342dcc461a5d6e02}{le\+\_\+mrc\+\_\+\+Set\+Lte\+Band\+Preferences} (\hyperlink{le__mrc__interface_8h_a81d705d61ee7ee56eab6aafb1af92579}{le\+\_\+mrc\+\_\+\+Lte\+Band\+Bit\+Mask\+\_\+t} band\+Mask)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_af4ec5bd36ba8df68bc12a10618268742}{le\+\_\+mrc\+\_\+\+Get\+Lte\+Band\+Preferences} (\hyperlink{le__mrc__interface_8h_a81d705d61ee7ee56eab6aafb1af92579}{le\+\_\+mrc\+\_\+\+Lte\+Band\+Bit\+Mask\+\_\+t} $\ast$band\+Mask\+Ptr\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_a8765511597189b64e486fa8f17bcddcd}{le\+\_\+mrc\+\_\+\+Set\+Td\+Scdma\+Band\+Preferences} (\hyperlink{le__mrc__interface_8h_a418a508a9a6dbd3a4a68458f0c64a00e}{le\+\_\+mrc\+\_\+\+Td\+Scdma\+Band\+Bit\+Mask\+\_\+t} band\+Mask)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_aed41544004ed7df9de8e874b8bb09d3b}{le\+\_\+mrc\+\_\+\+Get\+Td\+Scdma\+Band\+Preferences} (\hyperlink{le__mrc__interface_8h_a418a508a9a6dbd3a4a68458f0c64a00e}{le\+\_\+mrc\+\_\+\+Td\+Scdma\+Band\+Bit\+Mask\+\_\+t} $\ast$band\+Mask\+Ptr\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_ac476a122ab91d3607c4eb016e93a3bde}{le\+\_\+mrc\+\_\+\+Add\+Preferred\+Operator} (const char $\ast$mcc, const char $\ast$mnc, \hyperlink{le__mrc__interface_8h_af643c7005da7f2466302eebdf7a29d93}{le\+\_\+mrc\+\_\+\+Rat\+Bit\+Mask\+\_\+t} rat\+Mask)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_a0c2d65eb8cdb200aa4bce8766530c39f}{le\+\_\+mrc\+\_\+\+Remove\+Preferred\+Operator} (const char $\ast$mcc, const char $\ast$mnc)
+\item 
+\hyperlink{le__mrc__interface_8h_ae9f0c124121ac480535d0fd7fd9e452b}{le\+\_\+mrc\+\_\+\+Preferred\+Operator\+List\+Ref\+\_\+t} \hyperlink{le__mrc__interface_8h_a1ea0d2943accd51d3b428e0e6c94d297}{le\+\_\+mrc\+\_\+\+Get\+Preferred\+Operators\+List} (void)
+\item 
+\hyperlink{le__mrc__interface_8h_add1c18b20b02f57f3d4d1510a2d2d62c}{le\+\_\+mrc\+\_\+\+Preferred\+Operator\+Ref\+\_\+t} \hyperlink{le__mrc__interface_8h_a9648b653b7551cd065ec323b96a0aa1b}{le\+\_\+mrc\+\_\+\+Get\+First\+Preferred\+Operator} (\hyperlink{le__mrc__interface_8h_ae9f0c124121ac480535d0fd7fd9e452b}{le\+\_\+mrc\+\_\+\+Preferred\+Operator\+List\+Ref\+\_\+t} preferred\+Operator\+List\+Ref)
+\item 
+\hyperlink{le__mrc__interface_8h_add1c18b20b02f57f3d4d1510a2d2d62c}{le\+\_\+mrc\+\_\+\+Preferred\+Operator\+Ref\+\_\+t} \hyperlink{le__mrc__interface_8h_a896703cabaacf97a70708d944cfbfc87}{le\+\_\+mrc\+\_\+\+Get\+Next\+Preferred\+Operator} (\hyperlink{le__mrc__interface_8h_ae9f0c124121ac480535d0fd7fd9e452b}{le\+\_\+mrc\+\_\+\+Preferred\+Operator\+List\+Ref\+\_\+t} preferred\+Operator\+List\+Ref)
+\item 
+void \hyperlink{le__mrc__interface_8h_a60679f563ffecc8f107425b806edcdf0}{le\+\_\+mrc\+\_\+\+Delete\+Preferred\+Operators\+List} (\hyperlink{le__mrc__interface_8h_ae9f0c124121ac480535d0fd7fd9e452b}{le\+\_\+mrc\+\_\+\+Preferred\+Operator\+List\+Ref\+\_\+t} preferred\+Operator\+List\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_ab2204081bc04a108194e1dd915c35acf}{le\+\_\+mrc\+\_\+\+Get\+Preferred\+Operator\+Details} (\hyperlink{le__mrc__interface_8h_add1c18b20b02f57f3d4d1510a2d2d62c}{le\+\_\+mrc\+\_\+\+Preferred\+Operator\+Ref\+\_\+t} preferred\+Operator\+Ref, char $\ast$mcc\+Ptr, size\+\_\+t mcc\+Ptr\+Num\+Elements, char $\ast$mnc\+Ptr, size\+\_\+t mnc\+Ptr\+Num\+Elements, \hyperlink{le__mrc__interface_8h_af643c7005da7f2466302eebdf7a29d93}{le\+\_\+mrc\+\_\+\+Rat\+Bit\+Mask\+\_\+t} $\ast$rat\+Mask\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_a4f11e27862fef384c0023f5b538e543d}{le\+\_\+mrc\+\_\+\+Get\+Net\+Reg\+State} (\hyperlink{le__mrc__interface_8h_ae2877a1e1252ac79e6c9cae3d3c25a61}{le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+\_\+t} $\ast$state\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_a717aa0f4e4dc9a83b6adc2f26f3f0258}{le\+\_\+mrc\+\_\+\+Get\+Signal\+Qual} (uint32\+\_\+t $\ast$quality\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_a78bd27d92337e2122320f41bcaa5480f}{le\+\_\+mrc\+\_\+\+Set\+Radio\+Power} (\hyperlink{le__basics_8h_ae2138c90c41d30e2d510be01d8b374da}{le\+\_\+onoff\+\_\+t} power)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_aac51332c6c84e460746eb1ad45c064d6}{le\+\_\+mrc\+\_\+\+Get\+Radio\+Power} (\hyperlink{le__basics_8h_ae2138c90c41d30e2d510be01d8b374da}{le\+\_\+onoff\+\_\+t} $\ast$power\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_a578262185e6c0514e4ad5ba584c360ca}{le\+\_\+mrc\+\_\+\+Register\+Cellular\+Network} (const char $\ast$mcc, const char $\ast$mnc)
+\item 
+\hyperlink{le__mrc__interface_8h_a25a9e79cc9078e22cec22444fd959c61}{le\+\_\+mrc\+\_\+\+Scan\+Information\+List\+Ref\+\_\+t} \hyperlink{le__mrc__interface_8h_ab4a246dd466fa8175aca0158e0cab227}{le\+\_\+mrc\+\_\+\+Perform\+Cellular\+Network\+Scan} (\hyperlink{le__mrc__interface_8h_af643c7005da7f2466302eebdf7a29d93}{le\+\_\+mrc\+\_\+\+Rat\+Bit\+Mask\+\_\+t} rat\+Mask)
+\item 
+\hyperlink{le__mrc__interface_8h_a3e7fe3e0d8f10fe7853f00eb254529ea}{le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t} \hyperlink{le__mrc__interface_8h_ae006d053b037cec589aa85053472a2af}{le\+\_\+mrc\+\_\+\+Get\+First\+Cellular\+Network\+Scan} (\hyperlink{le__mrc__interface_8h_a25a9e79cc9078e22cec22444fd959c61}{le\+\_\+mrc\+\_\+\+Scan\+Information\+List\+Ref\+\_\+t} scan\+Information\+List\+Ref)
+\item 
+\hyperlink{le__mrc__interface_8h_a3e7fe3e0d8f10fe7853f00eb254529ea}{le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t} \hyperlink{le__mrc__interface_8h_ae0ca9f0c1c106d6ddeef784c6bb0d69b}{le\+\_\+mrc\+\_\+\+Get\+Next\+Cellular\+Network\+Scan} (\hyperlink{le__mrc__interface_8h_a25a9e79cc9078e22cec22444fd959c61}{le\+\_\+mrc\+\_\+\+Scan\+Information\+List\+Ref\+\_\+t} scan\+Information\+List\+Ref)
+\item 
+void \hyperlink{le__mrc__interface_8h_ac45ce335b3fa063b83bb925e67eeaeb3}{le\+\_\+mrc\+\_\+\+Delete\+Cellular\+Network\+Scan} (\hyperlink{le__mrc__interface_8h_a25a9e79cc9078e22cec22444fd959c61}{le\+\_\+mrc\+\_\+\+Scan\+Information\+List\+Ref\+\_\+t} scan\+Information\+List\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_af4fa2d3f3c9a664b8e46478dba048f2e}{le\+\_\+mrc\+\_\+\+Get\+Cellular\+Network\+Mcc\+Mnc} (\hyperlink{le__mrc__interface_8h_a3e7fe3e0d8f10fe7853f00eb254529ea}{le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t} scan\+Information\+Ref, char $\ast$mcc\+Ptr, size\+\_\+t mcc\+Ptr\+Num\+Elements, char $\ast$mnc\+Ptr, size\+\_\+t mnc\+Ptr\+Num\+Elements)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_a82cb12c5f02baccbb04b0af1be4eb031}{le\+\_\+mrc\+\_\+\+Get\+Cellular\+Network\+Name} (\hyperlink{le__mrc__interface_8h_a3e7fe3e0d8f10fe7853f00eb254529ea}{le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t} scan\+Information\+Ref, char $\ast$name\+Ptr, size\+\_\+t name\+Ptr\+Num\+Elements)
+\item 
+\hyperlink{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43}{le\+\_\+mrc\+\_\+\+Rat\+\_\+t} \hyperlink{le__mrc__interface_8h_ad33fbe1d2b7acee0e47f3e54cab78274}{le\+\_\+mrc\+\_\+\+Get\+Cellular\+Network\+Rat} (\hyperlink{le__mrc__interface_8h_a3e7fe3e0d8f10fe7853f00eb254529ea}{le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t} scan\+Information\+Ref)
+\item 
+bool \hyperlink{le__mrc__interface_8h_a4c859fc1364c183aa1d26a022db365c6}{le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+In\+Use} (\hyperlink{le__mrc__interface_8h_a3e7fe3e0d8f10fe7853f00eb254529ea}{le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t} scan\+Information\+Ref)
+\item 
+bool \hyperlink{le__mrc__interface_8h_a72ca8072f90d453169baff44441c41c0}{le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+Available} (\hyperlink{le__mrc__interface_8h_a3e7fe3e0d8f10fe7853f00eb254529ea}{le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t} scan\+Information\+Ref)
+\item 
+bool \hyperlink{le__mrc__interface_8h_a7333dfc638f50524f9c6fd81457828ba}{le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+Home} (\hyperlink{le__mrc__interface_8h_a3e7fe3e0d8f10fe7853f00eb254529ea}{le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t} scan\+Information\+Ref)
+\item 
+bool \hyperlink{le__mrc__interface_8h_a699a52d014550124a5b3362ee888a780}{le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+Forbidden} (\hyperlink{le__mrc__interface_8h_a3e7fe3e0d8f10fe7853f00eb254529ea}{le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t} scan\+Information\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_a27e5eaddd6df34e4bfcee7d25775591e}{le\+\_\+mrc\+\_\+\+Get\+Current\+Network\+Name} (char $\ast$name\+Str, size\+\_\+t name\+Str\+Num\+Elements)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_a2e476636ca33c40ce18b73b11a6f9f55}{le\+\_\+mrc\+\_\+\+Get\+Current\+Network\+Mcc\+Mnc} (char $\ast$mcc\+Str, size\+\_\+t mcc\+Str\+Num\+Elements, char $\ast$mnc\+Str, size\+\_\+t mnc\+Str\+Num\+Elements)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_a3ad9533c467cec0902d5d165bb32d67b}{le\+\_\+mrc\+\_\+\+Get\+Radio\+Access\+Tech\+In\+Use} (\hyperlink{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43}{le\+\_\+mrc\+\_\+\+Rat\+\_\+t} $\ast$rat\+Ptr)
+\item 
+\hyperlink{le__mrc__interface_8h_a672ea94ad892bb95f43836b5fbd24188}{le\+\_\+mrc\+\_\+\+Neighbor\+Cells\+Ref\+\_\+t} \hyperlink{le__mrc__interface_8h_a8d44fe46e61f3399c5e0dd6002b042ae}{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cells\+Info} (void)
+\item 
+void \hyperlink{le__mrc__interface_8h_a101343359e8d36ab41180aede2891b07}{le\+\_\+mrc\+\_\+\+Delete\+Neighbor\+Cells\+Info} (\hyperlink{le__mrc__interface_8h_a672ea94ad892bb95f43836b5fbd24188}{le\+\_\+mrc\+\_\+\+Neighbor\+Cells\+Ref\+\_\+t} ngbr\+Cells\+Ref)
+\item 
+\hyperlink{le__mrc__interface_8h_a8fbb2523c254ba473a3f59efa452355e}{le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t} \hyperlink{le__mrc__interface_8h_ab50724fd74818d71da1dfcd2217dd795}{le\+\_\+mrc\+\_\+\+Get\+First\+Neighbor\+Cell\+Info} (\hyperlink{le__mrc__interface_8h_a672ea94ad892bb95f43836b5fbd24188}{le\+\_\+mrc\+\_\+\+Neighbor\+Cells\+Ref\+\_\+t} ngbr\+Cells\+Ref)
+\item 
+\hyperlink{le__mrc__interface_8h_a8fbb2523c254ba473a3f59efa452355e}{le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t} \hyperlink{le__mrc__interface_8h_a0baede61d9b260a3ec83e3ab320d0715}{le\+\_\+mrc\+\_\+\+Get\+Next\+Neighbor\+Cell\+Info} (\hyperlink{le__mrc__interface_8h_a672ea94ad892bb95f43836b5fbd24188}{le\+\_\+mrc\+\_\+\+Neighbor\+Cells\+Ref\+\_\+t} ngbr\+Cells\+Ref)
+\item 
+uint32\+\_\+t \hyperlink{le__mrc__interface_8h_abdbc94e474235417d8610e2eb95558eb}{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Id} (\hyperlink{le__mrc__interface_8h_a8fbb2523c254ba473a3f59efa452355e}{le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t} ngbr\+Cell\+Info\+Ref)
+\item 
+uint32\+\_\+t \hyperlink{le__mrc__interface_8h_a70ba0ca70367bc673a6bca1e246bb88f}{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Loc\+Area\+Code} (\hyperlink{le__mrc__interface_8h_a8fbb2523c254ba473a3f59efa452355e}{le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t} ngbr\+Cell\+Info\+Ref)
+\item 
+int32\+\_\+t \hyperlink{le__mrc__interface_8h_aeae116235802afd041afd9df009642aa}{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Rx\+Level} (\hyperlink{le__mrc__interface_8h_a8fbb2523c254ba473a3f59efa452355e}{le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t} ngbr\+Cell\+Info\+Ref)
+\item 
+\hyperlink{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43}{le\+\_\+mrc\+\_\+\+Rat\+\_\+t} \hyperlink{le__mrc__interface_8h_a5bb3e75b74260a9cee57247e1968a31f}{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Rat} (\hyperlink{le__mrc__interface_8h_a8fbb2523c254ba473a3f59efa452355e}{le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t} ngbr\+Cell\+Info\+Ref)
+\item 
+int32\+\_\+t \hyperlink{le__mrc__interface_8h_a94e452e3d7063d3359dcbb97a31b984b}{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Umts\+Ec\+Io} (\hyperlink{le__mrc__interface_8h_a8fbb2523c254ba473a3f59efa452355e}{le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t} ngbr\+Cell\+Info\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_a7754836120c34cd2610b9777bd56409f}{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Lte\+Intra\+Freq} (\hyperlink{le__mrc__interface_8h_a8fbb2523c254ba473a3f59efa452355e}{le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t} ngbr\+Cell\+Info\+Ref, int32\+\_\+t $\ast$rsrq\+Ptr, int32\+\_\+t $\ast$rsrp\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_a331545d4e396c513bba028db981c016b}{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Lte\+Inter\+Freq} (\hyperlink{le__mrc__interface_8h_a8fbb2523c254ba473a3f59efa452355e}{le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t} ngbr\+Cell\+Info\+Ref, int32\+\_\+t $\ast$rsrq\+Ptr, int32\+\_\+t $\ast$rsrp\+Ptr)
+\item 
+\hyperlink{le__mrc__interface_8h_a6ad5afb123492b2e249f3ecd414d6e83}{le\+\_\+mrc\+\_\+\+Metrics\+Ref\+\_\+t} \hyperlink{le__mrc__interface_8h_ad3662723a7ed47cf45d9a2eaaa1fb16e}{le\+\_\+mrc\+\_\+\+Measure\+Signal\+Metrics} (void)
+\item 
+void \hyperlink{le__mrc__interface_8h_a20addd98ee6cb07f9ee1a45be01b5203}{le\+\_\+mrc\+\_\+\+Delete\+Signal\+Metrics} (\hyperlink{le__mrc__interface_8h_a6ad5afb123492b2e249f3ecd414d6e83}{le\+\_\+mrc\+\_\+\+Metrics\+Ref\+\_\+t} Metrics\+Ref)
+\item 
+\hyperlink{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43}{le\+\_\+mrc\+\_\+\+Rat\+\_\+t} \hyperlink{le__mrc__interface_8h_a5564bace31c937bcef096e597f33d3a4}{le\+\_\+mrc\+\_\+\+Get\+Rat\+Of\+Signal\+Metrics} (\hyperlink{le__mrc__interface_8h_a6ad5afb123492b2e249f3ecd414d6e83}{le\+\_\+mrc\+\_\+\+Metrics\+Ref\+\_\+t} Metrics\+Ref)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_a9d7243b29bf4c705c4eba83fa3799582}{le\+\_\+mrc\+\_\+\+Get\+Gsm\+Signal\+Metrics} (\hyperlink{le__mrc__interface_8h_a6ad5afb123492b2e249f3ecd414d6e83}{le\+\_\+mrc\+\_\+\+Metrics\+Ref\+\_\+t} Metrics\+Ref, int32\+\_\+t $\ast$rssi\+Ptr, uint32\+\_\+t $\ast$ber\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_a456648564abfc8e9711b60a5d8bddc9b}{le\+\_\+mrc\+\_\+\+Get\+Umts\+Signal\+Metrics} (\hyperlink{le__mrc__interface_8h_a6ad5afb123492b2e249f3ecd414d6e83}{le\+\_\+mrc\+\_\+\+Metrics\+Ref\+\_\+t} Metrics\+Ref, int32\+\_\+t $\ast$ss\+Ptr, uint32\+\_\+t $\ast$bler\+Ptr, int32\+\_\+t $\ast$ecio\+Ptr, int32\+\_\+t $\ast$rscp\+Ptr, int32\+\_\+t $\ast$sinr\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_a030880c064afbf2686726fd2e538adfe}{le\+\_\+mrc\+\_\+\+Get\+Lte\+Signal\+Metrics} (\hyperlink{le__mrc__interface_8h_a6ad5afb123492b2e249f3ecd414d6e83}{le\+\_\+mrc\+\_\+\+Metrics\+Ref\+\_\+t} Metrics\+Ref, int32\+\_\+t $\ast$ss\+Ptr, uint32\+\_\+t $\ast$bler\+Ptr, int32\+\_\+t $\ast$rsrq\+Ptr, int32\+\_\+t $\ast$rsrp\+Ptr, int32\+\_\+t $\ast$snr\+Ptr)
+\item 
+\hyperlink{le__basics_8h_a1cca095ed6ebab24b57a636382a6c86c}{le\+\_\+result\+\_\+t} \hyperlink{le__mrc__interface_8h_a09ff33b24fd01be18a145b2b3f1f579a}{le\+\_\+mrc\+\_\+\+Get\+Cdma\+Signal\+Metrics} (\hyperlink{le__mrc__interface_8h_a6ad5afb123492b2e249f3ecd414d6e83}{le\+\_\+mrc\+\_\+\+Metrics\+Ref\+\_\+t} Metrics\+Ref, int32\+\_\+t $\ast$ss\+Ptr, uint32\+\_\+t $\ast$er\+Ptr, int32\+\_\+t $\ast$ecio\+Ptr, int32\+\_\+t $\ast$sinr\+Ptr, int32\+\_\+t $\ast$io\+Ptr)
+\item 
+uint32\+\_\+t \hyperlink{le__mrc__interface_8h_aafc9fb71c3013b7b26dc386b13ca4a85}{le\+\_\+mrc\+\_\+\+Get\+Serving\+Cell\+Id} (void)
+\item 
+uint32\+\_\+t \hyperlink{le__mrc__interface_8h_a8ba03765e7595f85783f6f6a022311f8}{le\+\_\+mrc\+\_\+\+Get\+Serving\+Cell\+Loc\+Area\+Code} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Legato \hyperlink{c_mrc}{Modem Radio Control} include file.
+
+Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{le__mrc__interface_8h_aec88b97b54a45f86e6cb34f65b2d0afd}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+C\+C\+\_\+\+B\+Y\+T\+E\+S@{L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+C\+C\+\_\+\+B\+Y\+T\+E\+S}}
+\index{L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+C\+C\+\_\+\+B\+Y\+T\+E\+S@{L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+C\+C\+\_\+\+B\+Y\+T\+E\+S}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+C\+C\+\_\+\+B\+Y\+T\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+C\+C\+\_\+\+B\+Y\+T\+E\+S~4}\label{le__mrc__interface_8h_aec88b97b54a45f86e6cb34f65b2d0afd}
+Mobile Country Code length One extra byte is added for the null character. \hypertarget{le__mrc__interface_8h_aa50ed3f6d70185be4a35c811518895cf}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+C\+C\+\_\+\+L\+E\+N@{L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+C\+C\+\_\+\+L\+E\+N}}
+\index{L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+C\+C\+\_\+\+L\+E\+N@{L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+C\+C\+\_\+\+L\+E\+N}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+C\+C\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+C\+C\+\_\+\+L\+E\+N~3}\label{le__mrc__interface_8h_aa50ed3f6d70185be4a35c811518895cf}
+Mobile Country Code length \hypertarget{le__mrc__interface_8h_aeae0e240c77730be724ad7ac42596469}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+N\+C\+\_\+\+B\+Y\+T\+E\+S@{L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+N\+C\+\_\+\+B\+Y\+T\+E\+S}}
+\index{L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+N\+C\+\_\+\+B\+Y\+T\+E\+S@{L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+N\+C\+\_\+\+B\+Y\+T\+E\+S}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+N\+C\+\_\+\+B\+Y\+T\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+N\+C\+\_\+\+B\+Y\+T\+E\+S~4}\label{le__mrc__interface_8h_aeae0e240c77730be724ad7ac42596469}
+Mobile Network Code length One extra byte is added for the null character. \hypertarget{le__mrc__interface_8h_a0550a0420d5f13f4b68a6c880473e768}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+N\+C\+\_\+\+L\+E\+N@{L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+N\+C\+\_\+\+L\+E\+N}}
+\index{L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+N\+C\+\_\+\+L\+E\+N@{L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+N\+C\+\_\+\+L\+E\+N}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+N\+C\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+N\+C\+\_\+\+L\+E\+N~3}\label{le__mrc__interface_8h_a0550a0420d5f13f4b68a6c880473e768}
+Mobile Network Code length \hypertarget{le__mrc__interface_8h_a5f5edf129f254904b22595af86cdeaa7}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!L\+E\+\_\+\+M\+R\+C\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+N\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N@{L\+E\+\_\+\+M\+R\+C\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+N\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N}}
+\index{L\+E\+\_\+\+M\+R\+C\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+N\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N@{L\+E\+\_\+\+M\+R\+C\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+N\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{L\+E\+\_\+\+M\+R\+C\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+N\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+E\+\_\+\+M\+R\+C\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+N\+A\+M\+E\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N~100}\label{le__mrc__interface_8h_a5f5edf129f254904b22595af86cdeaa7}
+Cellular Network length. 
+
+\subsection{Typedef Documentation}
+\hypertarget{le__mrc__interface_8h_a8fbb2523c254ba473a3f59efa452355e}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t@{le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t}}
+\index{le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t@{le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+mrc\+\_\+\+Cell\+Info$\ast$ {\bf le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t}}\label{le__mrc__interface_8h_a8fbb2523c254ba473a3f59efa452355e}
+Reference type for one Cell Information. \hypertarget{le__mrc__interface_8h_a6ad5afb123492b2e249f3ecd414d6e83}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Metrics\+Ref\+\_\+t@{le\+\_\+mrc\+\_\+\+Metrics\+Ref\+\_\+t}}
+\index{le\+\_\+mrc\+\_\+\+Metrics\+Ref\+\_\+t@{le\+\_\+mrc\+\_\+\+Metrics\+Ref\+\_\+t}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Metrics\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+mrc\+\_\+\+Metrics$\ast$ {\bf le\+\_\+mrc\+\_\+\+Metrics\+Ref\+\_\+t}}\label{le__mrc__interface_8h_a6ad5afb123492b2e249f3ecd414d6e83}
+Reference type for the signal metrics. \hypertarget{le__mrc__interface_8h_a672ea94ad892bb95f43836b5fbd24188}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Neighbor\+Cells\+Ref\+\_\+t@{le\+\_\+mrc\+\_\+\+Neighbor\+Cells\+Ref\+\_\+t}}
+\index{le\+\_\+mrc\+\_\+\+Neighbor\+Cells\+Ref\+\_\+t@{le\+\_\+mrc\+\_\+\+Neighbor\+Cells\+Ref\+\_\+t}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Neighbor\+Cells\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+mrc\+\_\+\+Neighbor\+Cells$\ast$ {\bf le\+\_\+mrc\+\_\+\+Neighbor\+Cells\+Ref\+\_\+t}}\label{le__mrc__interface_8h_a672ea94ad892bb95f43836b5fbd24188}
+Reference type for all Neighboring Cells Information. \hypertarget{le__mrc__interface_8h_a709ab9eb31ffa85aa85b8b2aaec22a6d}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Event\+Handler\+Ref\+\_\+t@{le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Event\+Handler\+Ref\+\_\+t}}
+\index{le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Event\+Handler\+Ref\+\_\+t@{le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Event\+Handler\+Ref\+\_\+t}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Event\+Handler\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Event\+Handler$\ast$ {\bf le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Event\+Handler\+Ref\+\_\+t}}\label{le__mrc__interface_8h_a709ab9eb31ffa85aa85b8b2aaec22a6d}
+Reference type used by Add/\+Remove functions for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Event\textquotesingle{} \hypertarget{le__mrc__interface_8h_acf72270c80a8f8e8e216d314c5bb9ab5}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Handler\+Func\+\_\+t@{le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Handler\+Func\+\_\+t}}
+\index{le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Handler\+Func\+\_\+t@{le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Handler\+Func\+\_\+t}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Handler\+Func\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Handler\+Func\+\_\+t) ({\bf le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+\_\+t} state, void $\ast$context\+Ptr)}\label{le__mrc__interface_8h_acf72270c80a8f8e8e216d314c5bb9ab5}
+Handler for Network registration state changes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Parameter ready to receive the Network Registration state. \\
+\hline
+{\em context\+Ptr} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_ae9f0c124121ac480535d0fd7fd9e452b}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Preferred\+Operator\+List\+Ref\+\_\+t@{le\+\_\+mrc\+\_\+\+Preferred\+Operator\+List\+Ref\+\_\+t}}
+\index{le\+\_\+mrc\+\_\+\+Preferred\+Operator\+List\+Ref\+\_\+t@{le\+\_\+mrc\+\_\+\+Preferred\+Operator\+List\+Ref\+\_\+t}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Preferred\+Operator\+List\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+mrc\+\_\+\+Preferred\+Operator\+List$\ast$ {\bf le\+\_\+mrc\+\_\+\+Preferred\+Operator\+List\+Ref\+\_\+t}}\label{le__mrc__interface_8h_ae9f0c124121ac480535d0fd7fd9e452b}
+Reference type for Preferred Operator Listing. \hypertarget{le__mrc__interface_8h_add1c18b20b02f57f3d4d1510a2d2d62c}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Preferred\+Operator\+Ref\+\_\+t@{le\+\_\+mrc\+\_\+\+Preferred\+Operator\+Ref\+\_\+t}}
+\index{le\+\_\+mrc\+\_\+\+Preferred\+Operator\+Ref\+\_\+t@{le\+\_\+mrc\+\_\+\+Preferred\+Operator\+Ref\+\_\+t}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Preferred\+Operator\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+mrc\+\_\+\+Preferred\+Operator$\ast$ {\bf le\+\_\+mrc\+\_\+\+Preferred\+Operator\+Ref\+\_\+t}}\label{le__mrc__interface_8h_add1c18b20b02f57f3d4d1510a2d2d62c}
+Reference type for referring to the Preferred Operator objects. \hypertarget{le__mrc__interface_8h_a40fddaea0c8a3695000b2679931fbfb2}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Rat\+Change\+Handler\+Func\+\_\+t@{le\+\_\+mrc\+\_\+\+Rat\+Change\+Handler\+Func\+\_\+t}}
+\index{le\+\_\+mrc\+\_\+\+Rat\+Change\+Handler\+Func\+\_\+t@{le\+\_\+mrc\+\_\+\+Rat\+Change\+Handler\+Func\+\_\+t}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Rat\+Change\+Handler\+Func\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ le\+\_\+mrc\+\_\+\+Rat\+Change\+Handler\+Func\+\_\+t) ({\bf le\+\_\+mrc\+\_\+\+Rat\+\_\+t} rat, void $\ast$context\+Ptr)}\label{le__mrc__interface_8h_a40fddaea0c8a3695000b2679931fbfb2}
+Handler for Radio Access Technology changes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rat} & Parameter ready to receive the Radio Access Technology. \\
+\hline
+{\em context\+Ptr} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a5ac252acd68a64b336ae9a98ca6113ac}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Rat\+Change\+Handler\+Ref\+\_\+t@{le\+\_\+mrc\+\_\+\+Rat\+Change\+Handler\+Ref\+\_\+t}}
+\index{le\+\_\+mrc\+\_\+\+Rat\+Change\+Handler\+Ref\+\_\+t@{le\+\_\+mrc\+\_\+\+Rat\+Change\+Handler\+Ref\+\_\+t}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Rat\+Change\+Handler\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+mrc\+\_\+\+Rat\+Change\+Handler$\ast$ {\bf le\+\_\+mrc\+\_\+\+Rat\+Change\+Handler\+Ref\+\_\+t}}\label{le__mrc__interface_8h_a5ac252acd68a64b336ae9a98ca6113ac}
+Reference type used by Add/\+Remove functions for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+mrc\+\_\+\+Rat\+Change\textquotesingle{} \hypertarget{le__mrc__interface_8h_a25a9e79cc9078e22cec22444fd959c61}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Scan\+Information\+List\+Ref\+\_\+t@{le\+\_\+mrc\+\_\+\+Scan\+Information\+List\+Ref\+\_\+t}}
+\index{le\+\_\+mrc\+\_\+\+Scan\+Information\+List\+Ref\+\_\+t@{le\+\_\+mrc\+\_\+\+Scan\+Information\+List\+Ref\+\_\+t}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Scan\+Information\+List\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+mrc\+\_\+\+Scan\+Information\+List$\ast$ {\bf le\+\_\+mrc\+\_\+\+Scan\+Information\+List\+Ref\+\_\+t}}\label{le__mrc__interface_8h_a25a9e79cc9078e22cec22444fd959c61}
+Reference type for Scan Information Listing. \hypertarget{le__mrc__interface_8h_a3e7fe3e0d8f10fe7853f00eb254529ea}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t@{le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t}}
+\index{le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t@{le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+mrc\+\_\+\+Scan\+Information$\ast$ {\bf le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t}}\label{le__mrc__interface_8h_a3e7fe3e0d8f10fe7853f00eb254529ea}
+Reference type for referring to M\+R\+C Scan Information objects. \hypertarget{le__mrc__interface_8h_aad70b8ec8988256ac39f5d04bc078a34}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\+Handler\+Func\+\_\+t@{le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\+Handler\+Func\+\_\+t}}
+\index{le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\+Handler\+Func\+\_\+t@{le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\+Handler\+Func\+\_\+t}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\+Handler\+Func\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\+Handler\+Func\+\_\+t) (int32\+\_\+t ss, void $\ast$context\+Ptr)}\label{le__mrc__interface_8h_aad70b8ec8988256ac39f5d04bc078a34}
+Handler for Signal Strength value changes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ss} & Signal strength in d\+Bm \\
+\hline
+{\em context\+Ptr} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_aac0e41200cd6bd03c178aeb7e3646744}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\+Handler\+Ref\+\_\+t@{le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\+Handler\+Ref\+\_\+t}}
+\index{le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\+Handler\+Ref\+\_\+t@{le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\+Handler\+Ref\+\_\+t}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\+Handler\+Ref\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\+Handler$\ast$ {\bf le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\+Handler\+Ref\+\_\+t}}\label{le__mrc__interface_8h_aac0e41200cd6bd03c178aeb7e3646744}
+Reference type used by Add/\+Remove functions for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\textquotesingle{} 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{le__mrc__interface_8h_a048374324f72ee7df52c2e0521c0dda3}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Band\+Bit\+Mask\+\_\+t@{le\+\_\+mrc\+\_\+\+Band\+Bit\+Mask\+\_\+t}}
+\index{le\+\_\+mrc\+\_\+\+Band\+Bit\+Mask\+\_\+t@{le\+\_\+mrc\+\_\+\+Band\+Bit\+Mask\+\_\+t}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Band\+Bit\+Mask\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+mrc\+\_\+\+Band\+Bit\+Mask\+\_\+t}}\label{le__mrc__interface_8h_a048374324f72ee7df52c2e0521c0dda3}
+2\+G/3\+G Band Bit Mask (64 bits) \hypertarget{le__mrc__interface_8h_a81d705d61ee7ee56eab6aafb1af92579}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Lte\+Band\+Bit\+Mask\+\_\+t@{le\+\_\+mrc\+\_\+\+Lte\+Band\+Bit\+Mask\+\_\+t}}
+\index{le\+\_\+mrc\+\_\+\+Lte\+Band\+Bit\+Mask\+\_\+t@{le\+\_\+mrc\+\_\+\+Lte\+Band\+Bit\+Mask\+\_\+t}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Lte\+Band\+Bit\+Mask\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+mrc\+\_\+\+Lte\+Band\+Bit\+Mask\+\_\+t}}\label{le__mrc__interface_8h_a81d705d61ee7ee56eab6aafb1af92579}
+L\+T\+E Band Bit Mask (32bits) \hypertarget{le__mrc__interface_8h_ae2877a1e1252ac79e6c9cae3d3c25a61}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+\_\+t@{le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+\_\+t}}
+\index{le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+\_\+t@{le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+\_\+t}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+\_\+t}}\label{le__mrc__interface_8h_ae2877a1e1252ac79e6c9cae3d3c25a61}
+Network Registration states. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+N\+O\+N\+E@{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+N\+O\+N\+E}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+N\+O\+N\+E@{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+N\+O\+N\+E}}\item[{\em 
+\hypertarget{le__mrc__interface_8h_ae2877a1e1252ac79e6c9cae3d3c25a61affdd881b043ba92f868ffef52b0b9124}{}L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+N\+O\+N\+E\label{le__mrc__interface_8h_ae2877a1e1252ac79e6c9cae3d3c25a61affdd881b043ba92f868ffef52b0b9124}
+}]Not registered and not currently searching for new operator. \index{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+H\+O\+M\+E@{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+H\+O\+M\+E}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+H\+O\+M\+E@{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+H\+O\+M\+E}}\item[{\em 
+\hypertarget{le__mrc__interface_8h_ae2877a1e1252ac79e6c9cae3d3c25a61a90fd9c8ee7f965840af2536e2a33316a}{}L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+H\+O\+M\+E\label{le__mrc__interface_8h_ae2877a1e1252ac79e6c9cae3d3c25a61a90fd9c8ee7f965840af2536e2a33316a}
+}]Registered, home network. \index{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+S\+E\+A\+R\+C\+H\+I\+N\+G@{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+S\+E\+A\+R\+C\+H\+I\+N\+G}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+S\+E\+A\+R\+C\+H\+I\+N\+G@{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+S\+E\+A\+R\+C\+H\+I\+N\+G}}\item[{\em 
+\hypertarget{le__mrc__interface_8h_ae2877a1e1252ac79e6c9cae3d3c25a61afe4b6da8ae01273d2188456660452eda}{}L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+S\+E\+A\+R\+C\+H\+I\+N\+G\label{le__mrc__interface_8h_ae2877a1e1252ac79e6c9cae3d3c25a61afe4b6da8ae01273d2188456660452eda}
+}]Not registered but currently searching for a new operator. \index{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+D\+E\+N\+I\+E\+D@{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+D\+E\+N\+I\+E\+D}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+D\+E\+N\+I\+E\+D@{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+D\+E\+N\+I\+E\+D}}\item[{\em 
+\hypertarget{le__mrc__interface_8h_ae2877a1e1252ac79e6c9cae3d3c25a61af6b1505fb7f90fa379a9dd8d031e9814}{}L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+D\+E\+N\+I\+E\+D\label{le__mrc__interface_8h_ae2877a1e1252ac79e6c9cae3d3c25a61af6b1505fb7f90fa379a9dd8d031e9814}
+}]Registration was denied, usually because of invalid access credentials. \index{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+R\+O\+A\+M\+I\+N\+G@{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+R\+O\+A\+M\+I\+N\+G}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+R\+O\+A\+M\+I\+N\+G@{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+R\+O\+A\+M\+I\+N\+G}}\item[{\em 
+\hypertarget{le__mrc__interface_8h_ae2877a1e1252ac79e6c9cae3d3c25a61a9f5ddbf3dcdceb8e24e46aea83ba4e7f}{}L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+R\+O\+A\+M\+I\+N\+G\label{le__mrc__interface_8h_ae2877a1e1252ac79e6c9cae3d3c25a61a9f5ddbf3dcdceb8e24e46aea83ba4e7f}
+}]Registered to a roaming network. \index{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+U\+N\+K\+N\+O\+W\+N@{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+U\+N\+K\+N\+O\+W\+N}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+U\+N\+K\+N\+O\+W\+N@{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+U\+N\+K\+N\+O\+W\+N}}\item[{\em 
+\hypertarget{le__mrc__interface_8h_ae2877a1e1252ac79e6c9cae3d3c25a61acdba928b7dfb851adfa0211acccabb65}{}L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+E\+G\+\_\+\+U\+N\+K\+N\+O\+W\+N\label{le__mrc__interface_8h_ae2877a1e1252ac79e6c9cae3d3c25a61acdba928b7dfb851adfa0211acccabb65}
+}]Unknown state. \end{description}
+\end{Desc}
+\hypertarget{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Rat\+\_\+t@{le\+\_\+mrc\+\_\+\+Rat\+\_\+t}}
+\index{le\+\_\+mrc\+\_\+\+Rat\+\_\+t@{le\+\_\+mrc\+\_\+\+Rat\+\_\+t}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Rat\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+mrc\+\_\+\+Rat\+\_\+t}}\label{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43}
+Radio Access Technology enum \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N@{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N@{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N}}\item[{\em 
+\hypertarget{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43a6088198c65a39429fe6a67f322df0480}{}L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N\label{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43a6088198c65a39429fe6a67f322df0480}
+}]Unknown. \index{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+G\+S\+M@{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+G\+S\+M}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+G\+S\+M@{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+G\+S\+M}}\item[{\em 
+\hypertarget{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43ae19505d98b78ac22398bce06605dd1a4}{}L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+G\+S\+M\label{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43ae19505d98b78ac22398bce06605dd1a4}
+}]G\+S\+M network. \index{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+U\+M\+T\+S@{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+U\+M\+T\+S}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+U\+M\+T\+S@{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+U\+M\+T\+S}}\item[{\em 
+\hypertarget{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43afe34c4f3a53aa717f5ecb94dd59bf728}{}L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+U\+M\+T\+S\label{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43afe34c4f3a53aa717f5ecb94dd59bf728}
+}]U\+M\+T\+S network. \index{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+L\+T\+E@{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+L\+T\+E}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+L\+T\+E@{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+L\+T\+E}}\item[{\em 
+\hypertarget{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43aaf2b25a8ec75f9bacb51967f23247176}{}L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+L\+T\+E\label{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43aaf2b25a8ec75f9bacb51967f23247176}
+}]L\+T\+E network. \index{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+C\+D\+M\+A@{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+C\+D\+M\+A}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+C\+D\+M\+A@{L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+C\+D\+M\+A}}\item[{\em 
+\hypertarget{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43a1634a4ab71f130dd2aae46aa09ca0771}{}L\+E\+\_\+\+M\+R\+C\+\_\+\+R\+A\+T\+\_\+\+C\+D\+M\+A\label{le__mrc__interface_8h_aaf23906c37ad59fb96a8a48f7fab5b43a1634a4ab71f130dd2aae46aa09ca0771}
+}]C\+D\+M\+A network. \end{description}
+\end{Desc}
+\hypertarget{le__mrc__interface_8h_af643c7005da7f2466302eebdf7a29d93}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Rat\+Bit\+Mask\+\_\+t@{le\+\_\+mrc\+\_\+\+Rat\+Bit\+Mask\+\_\+t}}
+\index{le\+\_\+mrc\+\_\+\+Rat\+Bit\+Mask\+\_\+t@{le\+\_\+mrc\+\_\+\+Rat\+Bit\+Mask\+\_\+t}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Rat\+Bit\+Mask\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+mrc\+\_\+\+Rat\+Bit\+Mask\+\_\+t}}\label{le__mrc__interface_8h_af643c7005da7f2466302eebdf7a29d93}
+Radio Bitmask Access Technology Bit Mask \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+G\+S\+M@{L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+G\+S\+M}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+G\+S\+M@{L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+G\+S\+M}}\item[{\em 
+\hypertarget{le__mrc__interface_8h_af643c7005da7f2466302eebdf7a29d93adefd7fd440669e204ca96f3af84bb629}{}L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+G\+S\+M\label{le__mrc__interface_8h_af643c7005da7f2466302eebdf7a29d93adefd7fd440669e204ca96f3af84bb629}
+}]G\+S\+M R\+A\+T Bit Mask. \index{L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+U\+M\+T\+S@{L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+U\+M\+T\+S}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+U\+M\+T\+S@{L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+U\+M\+T\+S}}\item[{\em 
+\hypertarget{le__mrc__interface_8h_af643c7005da7f2466302eebdf7a29d93a4d0e1bc92e81266f57c6c275234a0ed9}{}L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+U\+M\+T\+S\label{le__mrc__interface_8h_af643c7005da7f2466302eebdf7a29d93a4d0e1bc92e81266f57c6c275234a0ed9}
+}]U\+M\+T\+S R\+A\+T Bit Mask. \index{L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+L\+T\+E@{L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+L\+T\+E}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+L\+T\+E@{L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+L\+T\+E}}\item[{\em 
+\hypertarget{le__mrc__interface_8h_af643c7005da7f2466302eebdf7a29d93a3994580fe36cd392a2e517b8cc1c3108}{}L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+L\+T\+E\label{le__mrc__interface_8h_af643c7005da7f2466302eebdf7a29d93a3994580fe36cd392a2e517b8cc1c3108}
+}]L\+T\+E R\+A\+T Bit Mask. \index{L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+C\+D\+M\+A@{L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+C\+D\+M\+A}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+C\+D\+M\+A@{L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+C\+D\+M\+A}}\item[{\em 
+\hypertarget{le__mrc__interface_8h_af643c7005da7f2466302eebdf7a29d93a1ca9ac815a59af6c10a4f759cef4df3c}{}L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+C\+D\+M\+A\label{le__mrc__interface_8h_af643c7005da7f2466302eebdf7a29d93a1ca9ac815a59af6c10a4f759cef4df3c}
+}]C\+D\+M\+A R\+A\+T Bit Mask. \index{L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+A\+L\+L@{L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+A\+L\+L}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+A\+L\+L@{L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+A\+L\+L}}\item[{\em 
+\hypertarget{le__mrc__interface_8h_af643c7005da7f2466302eebdf7a29d93aa6e87ad274b7f5011413ea0e8375300b}{}L\+E\+\_\+\+M\+R\+C\+\_\+\+B\+I\+T\+M\+A\+S\+K\+\_\+\+R\+A\+T\+\_\+\+A\+L\+L\label{le__mrc__interface_8h_af643c7005da7f2466302eebdf7a29d93aa6e87ad274b7f5011413ea0e8375300b}
+}]To Set all R\+A\+T preference Bit Mask. \end{description}
+\end{Desc}
+\hypertarget{le__mrc__interface_8h_a418a508a9a6dbd3a4a68458f0c64a00e}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Td\+Scdma\+Band\+Bit\+Mask\+\_\+t@{le\+\_\+mrc\+\_\+\+Td\+Scdma\+Band\+Bit\+Mask\+\_\+t}}
+\index{le\+\_\+mrc\+\_\+\+Td\+Scdma\+Band\+Bit\+Mask\+\_\+t@{le\+\_\+mrc\+\_\+\+Td\+Scdma\+Band\+Bit\+Mask\+\_\+t}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Td\+Scdma\+Band\+Bit\+Mask\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf le\+\_\+mrc\+\_\+\+Td\+Scdma\+Band\+Bit\+Mask\+\_\+t}}\label{le__mrc__interface_8h_a418a508a9a6dbd3a4a68458f0c64a00e}
+T\+D\+S\+C\+D\+M\+A Band Bit Mask 
+
+\subsection{Function Documentation}
+\hypertarget{le__mrc__interface_8h_a929745b84719754d28f539540f71a552}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Add\+Net\+Reg\+State\+Event\+Handler@{le\+\_\+mrc\+\_\+\+Add\+Net\+Reg\+State\+Event\+Handler}}
+\index{le\+\_\+mrc\+\_\+\+Add\+Net\+Reg\+State\+Event\+Handler@{le\+\_\+mrc\+\_\+\+Add\+Net\+Reg\+State\+Event\+Handler}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Add\+Net\+Reg\+State\+Event\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Event\+Handler\+Ref\+\_\+t} le\+\_\+mrc\+\_\+\+Add\+Net\+Reg\+State\+Event\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Handler\+Func\+\_\+t}}]{handler\+Ptr, }
+\item[{void $\ast$}]{context\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a929745b84719754d28f539540f71a552}
+Add handler function for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Event\textquotesingle{}
+
+This event provides information on network registration state changes. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handler\+Ptr} & \\
+\hline
+\mbox{\tt in}  & {\em context\+Ptr} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_ac476a122ab91d3607c4eb016e93a3bde}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Add\+Preferred\+Operator@{le\+\_\+mrc\+\_\+\+Add\+Preferred\+Operator}}
+\index{le\+\_\+mrc\+\_\+\+Add\+Preferred\+Operator@{le\+\_\+mrc\+\_\+\+Add\+Preferred\+Operator}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Add\+Preferred\+Operator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Add\+Preferred\+Operator (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{mcc, }
+\item[{const char $\ast$}]{mnc, }
+\item[{{\bf le\+\_\+mrc\+\_\+\+Rat\+Bit\+Mask\+\_\+t}}]{rat\+Mask}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_ac476a122ab91d3607c4eb016e93a3bde}
+Add a preferred operator by specifying the M\+C\+C/\+M\+N\+C and the Radio Access Technology.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D User Preferred operator list is not available.
+\item L\+E\+\_\+\+F\+A\+U\+L\+T Function failed.
+\item L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R R\+A\+T mask is invalid.
+\item L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If one code is too long (max L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+C\+C\+\_\+\+L\+E\+N/\+L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+N\+C\+\_\+\+L\+E\+N digits), it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mcc} & Mobile Country Code \\
+\hline
+\mbox{\tt in}  & {\em mnc} & Mobile Network Code \\
+\hline
+\mbox{\tt in}  & {\em rat\+Mask} & Bit mask for the Radio Access Technology preferences. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_aedd9c526588a8298322525cfba6f875d}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Add\+Rat\+Change\+Handler@{le\+\_\+mrc\+\_\+\+Add\+Rat\+Change\+Handler}}
+\index{le\+\_\+mrc\+\_\+\+Add\+Rat\+Change\+Handler@{le\+\_\+mrc\+\_\+\+Add\+Rat\+Change\+Handler}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Add\+Rat\+Change\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+mrc\+\_\+\+Rat\+Change\+Handler\+Ref\+\_\+t} le\+\_\+mrc\+\_\+\+Add\+Rat\+Change\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Rat\+Change\+Handler\+Func\+\_\+t}}]{handler\+Ptr, }
+\item[{void $\ast$}]{context\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_aedd9c526588a8298322525cfba6f875d}
+Add handler function for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+mrc\+\_\+\+Rat\+Change\textquotesingle{}
+
+This event provides information on Radio Access Technology changes. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handler\+Ptr} & \\
+\hline
+\mbox{\tt in}  & {\em context\+Ptr} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_ab62b444715b2b530efe5d397eb86a6e8}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Add\+Signal\+Strength\+Change\+Handler@{le\+\_\+mrc\+\_\+\+Add\+Signal\+Strength\+Change\+Handler}}
+\index{le\+\_\+mrc\+\_\+\+Add\+Signal\+Strength\+Change\+Handler@{le\+\_\+mrc\+\_\+\+Add\+Signal\+Strength\+Change\+Handler}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Add\+Signal\+Strength\+Change\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\+Handler\+Ref\+\_\+t} le\+\_\+mrc\+\_\+\+Add\+Signal\+Strength\+Change\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Rat\+\_\+t}}]{rat, }
+\item[{int32\+\_\+t}]{lower\+Range\+Threshold, }
+\item[{int32\+\_\+t}]{upper\+Range\+Threshold, }
+\item[{{\bf le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\+Handler\+Func\+\_\+t}}]{handler\+Ptr, }
+\item[{void $\ast$}]{context\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_ab62b444715b2b530efe5d397eb86a6e8}
+Add handler function for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\textquotesingle{}
+
+This event provides information on Signal Strength value changes. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em rat} & Radio Access Technology \\
+\hline
+\mbox{\tt in}  & {\em lower\+Range\+Threshold} & lower-\/range Signal strength threshold in d\+Bm \\
+\hline
+\mbox{\tt in}  & {\em upper\+Range\+Threshold} & upper-\/range Signal strength threshold in d\+Bm \\
+\hline
+\mbox{\tt in}  & {\em handler\+Ptr} & \\
+\hline
+\mbox{\tt in}  & {\em context\+Ptr} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_aa19103931ad3974ee014f0ce2705a4ff}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Connect\+Service@{le\+\_\+mrc\+\_\+\+Connect\+Service}}
+\index{le\+\_\+mrc\+\_\+\+Connect\+Service@{le\+\_\+mrc\+\_\+\+Connect\+Service}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Connect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+mrc\+\_\+\+Connect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_aa19103931ad3974ee014f0ce2705a4ff}
+Connect the client to the service \hypertarget{le__mrc__interface_8h_ac45ce335b3fa063b83bb925e67eeaeb3}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Delete\+Cellular\+Network\+Scan@{le\+\_\+mrc\+\_\+\+Delete\+Cellular\+Network\+Scan}}
+\index{le\+\_\+mrc\+\_\+\+Delete\+Cellular\+Network\+Scan@{le\+\_\+mrc\+\_\+\+Delete\+Cellular\+Network\+Scan}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Delete\+Cellular\+Network\+Scan}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+mrc\+\_\+\+Delete\+Cellular\+Network\+Scan (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Scan\+Information\+List\+Ref\+\_\+t}}]{scan\+Information\+List\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_ac45ce335b3fa063b83bb925e67eeaeb3}
+This function must be called to delete the list of the Scan Information retrieved with le\+\_\+mrc\+\_\+\+Perform\+Network\+Scan().
+
+\begin{DoxyNote}{Note}
+On failure, the process exits, so you don\textquotesingle{}t have to worry about checking the returned reference for validity. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em scan\+Information\+List\+Ref} & The list of scan information. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a101343359e8d36ab41180aede2891b07}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Delete\+Neighbor\+Cells\+Info@{le\+\_\+mrc\+\_\+\+Delete\+Neighbor\+Cells\+Info}}
+\index{le\+\_\+mrc\+\_\+\+Delete\+Neighbor\+Cells\+Info@{le\+\_\+mrc\+\_\+\+Delete\+Neighbor\+Cells\+Info}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Delete\+Neighbor\+Cells\+Info}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+mrc\+\_\+\+Delete\+Neighbor\+Cells\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Neighbor\+Cells\+Ref\+\_\+t}}]{ngbr\+Cells\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a101343359e8d36ab41180aede2891b07}
+This function must be called to delete the Neighboring Cells information.
+
+\begin{DoxyNote}{Note}
+On failure, the process exits, so you don\textquotesingle{}t have to worry about checking the returned reference for validity. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ngbr\+Cells\+Ref} & Neighboring Cells reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a60679f563ffecc8f107425b806edcdf0}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Delete\+Preferred\+Operators\+List@{le\+\_\+mrc\+\_\+\+Delete\+Preferred\+Operators\+List}}
+\index{le\+\_\+mrc\+\_\+\+Delete\+Preferred\+Operators\+List@{le\+\_\+mrc\+\_\+\+Delete\+Preferred\+Operators\+List}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Delete\+Preferred\+Operators\+List}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+mrc\+\_\+\+Delete\+Preferred\+Operators\+List (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Preferred\+Operator\+List\+Ref\+\_\+t}}]{preferred\+Operator\+List\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a60679f563ffecc8f107425b806edcdf0}
+This function must be called to delete the list of the preferred operators retrieved with le\+\_\+mrc\+\_\+\+Get\+Preferred\+Operators().
+
+\begin{DoxyNote}{Note}
+On failure, the process exits, so you don\textquotesingle{}t have to worry about checking the returned reference for validity. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em preferred\+Operator\+List\+Ref} & The list of the preferred operators. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a20addd98ee6cb07f9ee1a45be01b5203}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Delete\+Signal\+Metrics@{le\+\_\+mrc\+\_\+\+Delete\+Signal\+Metrics}}
+\index{le\+\_\+mrc\+\_\+\+Delete\+Signal\+Metrics@{le\+\_\+mrc\+\_\+\+Delete\+Signal\+Metrics}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Delete\+Signal\+Metrics}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+mrc\+\_\+\+Delete\+Signal\+Metrics (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Metrics\+Ref\+\_\+t}}]{Metrics\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a20addd98ee6cb07f9ee1a45be01b5203}
+This function must be called to delete the the signal metrics.
+
+\begin{DoxyNote}{Note}
+On failure, the process exits, so you don\textquotesingle{}t have to worry about checking the returned reference for validity. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Metrics\+Ref} & Signal metrics reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_af09497272480dfee6d0e75e4b98d22b9}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Disconnect\+Service@{le\+\_\+mrc\+\_\+\+Disconnect\+Service}}
+\index{le\+\_\+mrc\+\_\+\+Disconnect\+Service@{le\+\_\+mrc\+\_\+\+Disconnect\+Service}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Disconnect\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+mrc\+\_\+\+Disconnect\+Service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_af09497272480dfee6d0e75e4b98d22b9}
+Disconnect the client from the service \hypertarget{le__mrc__interface_8h_a04418f56480070ba6c4f3d176dafaa37}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Band\+Preferences@{le\+\_\+mrc\+\_\+\+Get\+Band\+Preferences}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Band\+Preferences@{le\+\_\+mrc\+\_\+\+Get\+Band\+Preferences}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Band\+Preferences}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Band\+Preferences (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Band\+Bit\+Mask\+\_\+t} $\ast$}]{band\+Mask\+Ptr\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a04418f56480070ba6c4f3d176dafaa37}
+Get the Bit mask for 2\+G/3\+G Band preferences.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+F\+A\+U\+L\+T Function failed.
+\item L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em band\+Mask\+Ptr\+Ptr} & Bit mask for 2\+G/3\+G Band preferences. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a09ff33b24fd01be18a145b2b3f1f579a}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Cdma\+Signal\+Metrics@{le\+\_\+mrc\+\_\+\+Get\+Cdma\+Signal\+Metrics}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Cdma\+Signal\+Metrics@{le\+\_\+mrc\+\_\+\+Get\+Cdma\+Signal\+Metrics}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Cdma\+Signal\+Metrics}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Cdma\+Signal\+Metrics (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Metrics\+Ref\+\_\+t}}]{Metrics\+Ref, }
+\item[{int32\+\_\+t $\ast$}]{ss\+Ptr, }
+\item[{uint32\+\_\+t $\ast$}]{er\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{ecio\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{sinr\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{io\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a09ff33b24fd01be18a145b2b3f1f579a}
+This function returns the signal metrics measured on C\+D\+M\+A network.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure
+\item rscp\+Ptr and sinr\+Ptr return 0x\+F\+F\+F\+F\+F\+F\+F\+F when the value isn\textquotesingle{}t available.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Metrics\+Ref} & Signal metrics reference. \\
+\hline
+\mbox{\tt out}  & {\em ss\+Ptr} & Signal strength in d\+Bm \\
+\hline
+\mbox{\tt out}  & {\em er\+Ptr} & Frame/\+Packet error rate \\
+\hline
+\mbox{\tt out}  & {\em ecio\+Ptr} & E\+C\+I\+O value in d\+B with 1 decimal place (15 = 1.\+5 d\+B) \\
+\hline
+\mbox{\tt out}  & {\em sinr\+Ptr} & S\+I\+N\+R level in d\+B with 1 decimal place, (only applicable for 1x\+E\+V-\/\+D\+O). \\
+\hline
+\mbox{\tt out}  & {\em io\+Ptr} & Received I\+O in d\+Bm (only applicable for 1x\+E\+V-\/\+D\+O) \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_af4fa2d3f3c9a664b8e46478dba048f2e}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Cellular\+Network\+Mcc\+Mnc@{le\+\_\+mrc\+\_\+\+Get\+Cellular\+Network\+Mcc\+Mnc}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Cellular\+Network\+Mcc\+Mnc@{le\+\_\+mrc\+\_\+\+Get\+Cellular\+Network\+Mcc\+Mnc}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Cellular\+Network\+Mcc\+Mnc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Cellular\+Network\+Mcc\+Mnc (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t}}]{scan\+Information\+Ref, }
+\item[{char $\ast$}]{mcc\+Ptr, }
+\item[{size\+\_\+t}]{mcc\+Ptr\+Num\+Elements, }
+\item[{char $\ast$}]{mnc\+Ptr, }
+\item[{size\+\_\+t}]{mnc\+Ptr\+Num\+Elements}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_af4fa2d3f3c9a664b8e46478dba048f2e}
+This function must be called to get the Cellular Network Code \mbox{[}mcc\+:mnc\mbox{]}
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W if the mcc or mnc would not fit in buffer
+\item L\+E\+\_\+\+F\+A\+U\+L\+T for all other errors
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+On failure, the process exits, so you don\textquotesingle{}t have to worry about checking the returned reference for validity. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em scan\+Information\+Ref} & Scan information reference \\
+\hline
+\mbox{\tt out}  & {\em mcc\+Ptr} & Mobile Country Code \\
+\hline
+\mbox{\tt in}  & {\em mcc\+Ptr\+Num\+Elements} & \\
+\hline
+\mbox{\tt out}  & {\em mnc\+Ptr} & Mobile Network Code \\
+\hline
+\mbox{\tt in}  & {\em mnc\+Ptr\+Num\+Elements} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a82cb12c5f02baccbb04b0af1be4eb031}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Cellular\+Network\+Name@{le\+\_\+mrc\+\_\+\+Get\+Cellular\+Network\+Name}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Cellular\+Network\+Name@{le\+\_\+mrc\+\_\+\+Get\+Cellular\+Network\+Name}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Cellular\+Network\+Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Cellular\+Network\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t}}]{scan\+Information\+Ref, }
+\item[{char $\ast$}]{name\+Ptr, }
+\item[{size\+\_\+t}]{name\+Ptr\+Num\+Elements}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a82cb12c5f02baccbb04b0af1be4eb031}
+This function must be called to get the Cellular Network Name.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W if the operator name would not fit in buffer
+\item L\+E\+\_\+\+F\+A\+U\+L\+T for all other errors
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+On failure, the process exits, so you don\textquotesingle{}t have to worry about checking the returned reference for validity. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em scan\+Information\+Ref} & Scan information reference \\
+\hline
+\mbox{\tt out}  & {\em name\+Ptr} & Name of operator \\
+\hline
+\mbox{\tt in}  & {\em name\+Ptr\+Num\+Elements} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_ad33fbe1d2b7acee0e47f3e54cab78274}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Cellular\+Network\+Rat@{le\+\_\+mrc\+\_\+\+Get\+Cellular\+Network\+Rat}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Cellular\+Network\+Rat@{le\+\_\+mrc\+\_\+\+Get\+Cellular\+Network\+Rat}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Cellular\+Network\+Rat}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+mrc\+\_\+\+Rat\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Cellular\+Network\+Rat (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t}}]{scan\+Information\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_ad33fbe1d2b7acee0e47f3e54cab78274}
+This function must be called to get the radio access technology of a scan\+Information\+Ref.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item the radio access technology
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+On failure, the process exits. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em scan\+Information\+Ref} & Scan information reference \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a2e476636ca33c40ce18b73b11a6f9f55}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Current\+Network\+Mcc\+Mnc@{le\+\_\+mrc\+\_\+\+Get\+Current\+Network\+Mcc\+Mnc}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Current\+Network\+Mcc\+Mnc@{le\+\_\+mrc\+\_\+\+Get\+Current\+Network\+Mcc\+Mnc}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Current\+Network\+Mcc\+Mnc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Current\+Network\+Mcc\+Mnc (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{mcc\+Str, }
+\item[{size\+\_\+t}]{mcc\+Str\+Num\+Elements, }
+\item[{char $\ast$}]{mnc\+Str, }
+\item[{size\+\_\+t}]{mnc\+Str\+Num\+Elements}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a2e476636ca33c40ce18b73b11a6f9f55}
+This function must be called to get the current network P\+L\+M\+N information.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on any other failure 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em mcc\+Str} & the mobile country code \\
+\hline
+\mbox{\tt in}  & {\em mcc\+Str\+Num\+Elements} & \\
+\hline
+\mbox{\tt out}  & {\em mnc\+Str} & the mobile network code \\
+\hline
+\mbox{\tt in}  & {\em mnc\+Str\+Num\+Elements} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a27e5eaddd6df34e4bfcee7d25775591e}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Current\+Network\+Name@{le\+\_\+mrc\+\_\+\+Get\+Current\+Network\+Name}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Current\+Network\+Name@{le\+\_\+mrc\+\_\+\+Get\+Current\+Network\+Name}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Current\+Network\+Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Current\+Network\+Name (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name\+Str, }
+\item[{size\+\_\+t}]{name\+Str\+Num\+Elements}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a27e5eaddd6df34e4bfcee7d25775591e}
+This function must be called to get the current network name information.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R if name\+Str is N\+U\+L\+L
+\item L\+E\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W if the Home Network Name can\textquotesingle{}t fit in name\+Str
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on any other failure
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em name\+Str} & the home network Name \\
+\hline
+\mbox{\tt in}  & {\em name\+Str\+Num\+Elements} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_ae006d053b037cec589aa85053472a2af}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+First\+Cellular\+Network\+Scan@{le\+\_\+mrc\+\_\+\+Get\+First\+Cellular\+Network\+Scan}}
+\index{le\+\_\+mrc\+\_\+\+Get\+First\+Cellular\+Network\+Scan@{le\+\_\+mrc\+\_\+\+Get\+First\+Cellular\+Network\+Scan}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+First\+Cellular\+Network\+Scan}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+First\+Cellular\+Network\+Scan (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Scan\+Information\+List\+Ref\+\_\+t}}]{scan\+Information\+List\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_ae006d053b037cec589aa85053472a2af}
+This function must be called to get the first Scan Information object reference in the list of scan Information retrieved with le\+\_\+mrc\+\_\+\+Perform\+Network\+Scan().
+
+\begin{DoxyReturn}{Returns}
+N\+U\+L\+L No scan information found. 
+
+le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t The Scan Information object reference.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em scan\+Information\+List\+Ref} & The list of scan information. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_ab50724fd74818d71da1dfcd2217dd795}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+First\+Neighbor\+Cell\+Info@{le\+\_\+mrc\+\_\+\+Get\+First\+Neighbor\+Cell\+Info}}
+\index{le\+\_\+mrc\+\_\+\+Get\+First\+Neighbor\+Cell\+Info@{le\+\_\+mrc\+\_\+\+Get\+First\+Neighbor\+Cell\+Info}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+First\+Neighbor\+Cell\+Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+First\+Neighbor\+Cell\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Neighbor\+Cells\+Ref\+\_\+t}}]{ngbr\+Cells\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_ab50724fd74818d71da1dfcd2217dd795}
+This function must be called to get the first Cell Information reference in the list of Neighboring Cells information retrieved with \hyperlink{le__mrc__interface_8h_a8d44fe46e61f3399c5e0dd6002b042ae}{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cells\+Info()}.
+
+\begin{DoxyReturn}{Returns}
+N\+U\+L\+L No Cell information object found. 
+
+le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t The Cell information object reference.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ngbr\+Cells\+Ref} & Neighboring Cells reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a9648b653b7551cd065ec323b96a0aa1b}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+First\+Preferred\+Operator@{le\+\_\+mrc\+\_\+\+Get\+First\+Preferred\+Operator}}
+\index{le\+\_\+mrc\+\_\+\+Get\+First\+Preferred\+Operator@{le\+\_\+mrc\+\_\+\+Get\+First\+Preferred\+Operator}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+First\+Preferred\+Operator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+mrc\+\_\+\+Preferred\+Operator\+Ref\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+First\+Preferred\+Operator (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Preferred\+Operator\+List\+Ref\+\_\+t}}]{preferred\+Operator\+List\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a9648b653b7551cd065ec323b96a0aa1b}
+This function must be called to get the first Operator object reference in the list of the preferred operators retrieved with le\+\_\+mrc\+\_\+\+Get\+Preferred\+Operators().
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item N\+U\+L\+L No operator information found.
+\item le\+\_\+mrc\+\_\+\+Preferred\+Operator\+Ref The Operator object reference.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad reference into this function, it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em preferred\+Operator\+List\+Ref} & The list of the preferred operators. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a9d7243b29bf4c705c4eba83fa3799582}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Gsm\+Signal\+Metrics@{le\+\_\+mrc\+\_\+\+Get\+Gsm\+Signal\+Metrics}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Gsm\+Signal\+Metrics@{le\+\_\+mrc\+\_\+\+Get\+Gsm\+Signal\+Metrics}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Gsm\+Signal\+Metrics}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Gsm\+Signal\+Metrics (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Metrics\+Ref\+\_\+t}}]{Metrics\+Ref, }
+\item[{int32\+\_\+t $\ast$}]{rssi\+Ptr, }
+\item[{uint32\+\_\+t $\ast$}]{ber\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a9d7243b29bf4c705c4eba83fa3799582}
+This function returns the signal strength in d\+Bm and the bit error rate measured on G\+S\+M network.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Metrics\+Ref} & Signal metrics reference. \\
+\hline
+\mbox{\tt out}  & {\em rssi\+Ptr} & Signal strength in d\+Bm \\
+\hline
+\mbox{\tt out}  & {\em ber\+Ptr} & Bit error rate. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_af4ec5bd36ba8df68bc12a10618268742}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Lte\+Band\+Preferences@{le\+\_\+mrc\+\_\+\+Get\+Lte\+Band\+Preferences}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Lte\+Band\+Preferences@{le\+\_\+mrc\+\_\+\+Get\+Lte\+Band\+Preferences}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Lte\+Band\+Preferences}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Lte\+Band\+Preferences (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Lte\+Band\+Bit\+Mask\+\_\+t} $\ast$}]{band\+Mask\+Ptr\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_af4ec5bd36ba8df68bc12a10618268742}
+Get the Bit mask for L\+T\+E Band preferences.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+F\+A\+U\+L\+T Function failed.
+\item L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em band\+Mask\+Ptr\+Ptr} & Bit mask for L\+T\+E Band preferences. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a030880c064afbf2686726fd2e538adfe}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Lte\+Signal\+Metrics@{le\+\_\+mrc\+\_\+\+Get\+Lte\+Signal\+Metrics}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Lte\+Signal\+Metrics@{le\+\_\+mrc\+\_\+\+Get\+Lte\+Signal\+Metrics}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Lte\+Signal\+Metrics}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Lte\+Signal\+Metrics (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Metrics\+Ref\+\_\+t}}]{Metrics\+Ref, }
+\item[{int32\+\_\+t $\ast$}]{ss\+Ptr, }
+\item[{uint32\+\_\+t $\ast$}]{bler\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{rsrq\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{rsrp\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{snr\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a030880c064afbf2686726fd2e538adfe}
+This function returns the signal metrics measured on L\+T\+E network.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure
+\item sinr\+Ptr and io\+Ptr return 0x\+F\+F\+F\+F\+F\+F\+F\+F when the value isn\textquotesingle{}t available.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Metrics\+Ref} & Signal metrics reference. \\
+\hline
+\mbox{\tt out}  & {\em ss\+Ptr} & Signal strength in d\+Bm \\
+\hline
+\mbox{\tt out}  & {\em bler\+Ptr} & Block error rate \\
+\hline
+\mbox{\tt out}  & {\em rsrq\+Ptr} & R\+S\+R\+Q value in d\+B as measured by L1 with 1 decimal place \\
+\hline
+\mbox{\tt out}  & {\em rsrp\+Ptr} & Current R\+S\+R\+P in d\+Bm as measured by L1 with 1 decimal place \\
+\hline
+\mbox{\tt out}  & {\em snr\+Ptr} & S\+N\+R level in d\+B with 1 decimal place (15 = 1.\+5 d\+B) \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_abdbc94e474235417d8610e2eb95558eb}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Id@{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Id}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Id@{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Id}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Id}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Id (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t}}]{ngbr\+Cell\+Info\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_abdbc94e474235417d8610e2eb95558eb}
+This function must be called to get the Cell Identifier.
+
+\begin{DoxyReturn}{Returns}
+The Cell Identifier.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ngbr\+Cell\+Info\+Ref} & Cell information reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a70ba0ca70367bc673a6bca1e246bb88f}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Loc\+Area\+Code@{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Loc\+Area\+Code}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Loc\+Area\+Code@{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Loc\+Area\+Code}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Loc\+Area\+Code}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Loc\+Area\+Code (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t}}]{ngbr\+Cell\+Info\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a70ba0ca70367bc673a6bca1e246bb88f}
+This function must be called to get the Location Area Code of a cell.
+
+\begin{DoxyReturn}{Returns}
+The Location Area Code of a cell. 0x\+F\+F\+F\+F value is returned if the value is not available.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ngbr\+Cell\+Info\+Ref} & Cell information reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a331545d4e396c513bba028db981c016b}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Lte\+Inter\+Freq@{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Lte\+Inter\+Freq}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Lte\+Inter\+Freq@{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Lte\+Inter\+Freq}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Lte\+Inter\+Freq}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Lte\+Inter\+Freq (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t}}]{ngbr\+Cell\+Info\+Ref, }
+\item[{int32\+\_\+t $\ast$}]{rsrq\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{rsrp\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a331545d4e396c513bba028db981c016b}
+This function must be called to get the R\+S\+R\+P and R\+S\+R\+Q of the Interfrequency of a L\+T\+E cell.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ngbr\+Cell\+Info\+Ref} & Cell information reference. \\
+\hline
+\mbox{\tt out}  & {\em rsrq\+Ptr} & Reference Signal Received Quality value in d\+B with 1 decimal place \\
+\hline
+\mbox{\tt out}  & {\em rsrp\+Ptr} & Reference Signal Receiver Power value in d\+Bm with 1 decimal place \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a7754836120c34cd2610b9777bd56409f}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Lte\+Intra\+Freq@{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Lte\+Intra\+Freq}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Lte\+Intra\+Freq@{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Lte\+Intra\+Freq}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Lte\+Intra\+Freq}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Lte\+Intra\+Freq (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t}}]{ngbr\+Cell\+Info\+Ref, }
+\item[{int32\+\_\+t $\ast$}]{rsrq\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{rsrp\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a7754836120c34cd2610b9777bd56409f}
+This function must be called to get the R\+S\+R\+P and R\+S\+R\+Q of the Intrafrequency of a L\+T\+E cell.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ngbr\+Cell\+Info\+Ref} & Cell information reference. \\
+\hline
+\mbox{\tt out}  & {\em rsrq\+Ptr} & Reference Signal Received Quality value in d\+B with 1 decimal place \\
+\hline
+\mbox{\tt out}  & {\em rsrp\+Ptr} & Reference Signal Receiver Power value in d\+Bm with 1 decimal place \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a5bb3e75b74260a9cee57247e1968a31f}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Rat@{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Rat}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Rat@{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Rat}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Rat}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+mrc\+\_\+\+Rat\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Rat (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t}}]{ngbr\+Cell\+Info\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a5bb3e75b74260a9cee57247e1968a31f}
+This function must be called to get the Radio Access Technology of a cell.
+
+\begin{DoxyReturn}{Returns}
+The Radio Access Technology of a cell.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ngbr\+Cell\+Info\+Ref} & Cell information reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_aeae116235802afd041afd9df009642aa}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Rx\+Level@{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Rx\+Level}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Rx\+Level@{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Rx\+Level}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Rx\+Level}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Rx\+Level (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t}}]{ngbr\+Cell\+Info\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_aeae116235802afd041afd9df009642aa}
+This function must be called to get the signal strength of a cell.
+
+\begin{DoxyReturn}{Returns}
+The signal strength of a cell in d\+Bm.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ngbr\+Cell\+Info\+Ref} & Cell information reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a8d44fe46e61f3399c5e0dd6002b042ae}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cells\+Info@{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cells\+Info}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cells\+Info@{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cells\+Info}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cells\+Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+mrc\+\_\+\+Neighbor\+Cells\+Ref\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cells\+Info (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a8d44fe46e61f3399c5e0dd6002b042ae}
+This function must be called to retrieve the Neighboring Cells information. It creates and returns a reference to the Neighboring Cells information.
+
+\begin{DoxyReturn}{Returns}
+A reference to the Neighboring Cells information. 
+
+N\+U\+L\+L if no Cells Information are available. 
+\end{DoxyReturn}
+\hypertarget{le__mrc__interface_8h_a94e452e3d7063d3359dcbb97a31b984b}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Umts\+Ec\+Io@{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Umts\+Ec\+Io}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Umts\+Ec\+Io@{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Umts\+Ec\+Io}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Umts\+Ec\+Io}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cell\+Umts\+Ec\+Io (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t}}]{ngbr\+Cell\+Info\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a94e452e3d7063d3359dcbb97a31b984b}
+This function must be called to get the Ec/\+Io; the received energy per chip divided by the power density in the band measured in d\+Bm on the primary C\+P\+I\+C\+H channel of serving cell.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item The Ec/\+Io of a cell given in d\+B with 1 decimal place. (only applicable for U\+M\+T\+S network).
+\item 0x\+F\+F\+F\+F\+F\+F\+F\+F when the value isn\textquotesingle{}t available.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ngbr\+Cell\+Info\+Ref} & Cell information reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a4f11e27862fef384c0023f5b538e543d}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Net\+Reg\+State@{le\+\_\+mrc\+\_\+\+Get\+Net\+Reg\+State}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Net\+Reg\+State@{le\+\_\+mrc\+\_\+\+Get\+Net\+Reg\+State}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Net\+Reg\+State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Net\+Reg\+State (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+\_\+t} $\ast$}]{state\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a4f11e27862fef384c0023f5b538e543d}
+Get the network registration state.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T The function failed to get the Network registration state. 
+
+L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R A bad parameter was passed. 
+
+L\+E\+\_\+\+O\+K The function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em state\+Ptr} & Network Registration state. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_ae0ca9f0c1c106d6ddeef784c6bb0d69b}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Next\+Cellular\+Network\+Scan@{le\+\_\+mrc\+\_\+\+Get\+Next\+Cellular\+Network\+Scan}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Next\+Cellular\+Network\+Scan@{le\+\_\+mrc\+\_\+\+Get\+Next\+Cellular\+Network\+Scan}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Next\+Cellular\+Network\+Scan}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Next\+Cellular\+Network\+Scan (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Scan\+Information\+List\+Ref\+\_\+t}}]{scan\+Information\+List\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_ae0ca9f0c1c106d6ddeef784c6bb0d69b}
+This function must be called to get the next Scan Information object reference in the list of scan Information retrieved with le\+\_\+mrc\+\_\+\+Perform\+Network\+Scan().
+
+\begin{DoxyReturn}{Returns}
+N\+U\+L\+L No scan information found. 
+
+le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t The Scan Information object reference.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em scan\+Information\+List\+Ref} & The list of scan information. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a0baede61d9b260a3ec83e3ab320d0715}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Next\+Neighbor\+Cell\+Info@{le\+\_\+mrc\+\_\+\+Get\+Next\+Neighbor\+Cell\+Info}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Next\+Neighbor\+Cell\+Info@{le\+\_\+mrc\+\_\+\+Get\+Next\+Neighbor\+Cell\+Info}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Next\+Neighbor\+Cell\+Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Next\+Neighbor\+Cell\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Neighbor\+Cells\+Ref\+\_\+t}}]{ngbr\+Cells\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a0baede61d9b260a3ec83e3ab320d0715}
+This function must be called to get the next Cell Information reference in the list of Neighboring Cells information retrieved with \hyperlink{le__mrc__interface_8h_a8d44fe46e61f3399c5e0dd6002b042ae}{le\+\_\+mrc\+\_\+\+Get\+Neighbor\+Cells\+Info()}.
+
+\begin{DoxyReturn}{Returns}
+N\+U\+L\+L No Cell information object found. 
+
+le\+\_\+mrc\+\_\+\+Cell\+Info\+Ref\+\_\+t Cell information object reference.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ngbr\+Cells\+Ref} & Neighboring Cells reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a896703cabaacf97a70708d944cfbfc87}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Next\+Preferred\+Operator@{le\+\_\+mrc\+\_\+\+Get\+Next\+Preferred\+Operator}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Next\+Preferred\+Operator@{le\+\_\+mrc\+\_\+\+Get\+Next\+Preferred\+Operator}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Next\+Preferred\+Operator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+mrc\+\_\+\+Preferred\+Operator\+Ref\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Next\+Preferred\+Operator (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Preferred\+Operator\+List\+Ref\+\_\+t}}]{preferred\+Operator\+List\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a896703cabaacf97a70708d944cfbfc87}
+This function must be called to get the next Operator object reference in the list of the preferred operators retrieved with le\+\_\+mrc\+\_\+\+Get\+Preferred\+Operators().
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item N\+U\+L\+L No operator information found.
+\item le\+\_\+mrc\+\_\+\+Preferred\+Operator\+Ref The Operator object reference.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad reference into this function, it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em preferred\+Operator\+List\+Ref} & The list of the preferred operators. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_ab2204081bc04a108194e1dd915c35acf}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Preferred\+Operator\+Details@{le\+\_\+mrc\+\_\+\+Get\+Preferred\+Operator\+Details}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Preferred\+Operator\+Details@{le\+\_\+mrc\+\_\+\+Get\+Preferred\+Operator\+Details}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Preferred\+Operator\+Details}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Preferred\+Operator\+Details (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Preferred\+Operator\+Ref\+\_\+t}}]{preferred\+Operator\+Ref, }
+\item[{char $\ast$}]{mcc\+Ptr, }
+\item[{size\+\_\+t}]{mcc\+Ptr\+Num\+Elements, }
+\item[{char $\ast$}]{mnc\+Ptr, }
+\item[{size\+\_\+t}]{mnc\+Ptr\+Num\+Elements, }
+\item[{{\bf le\+\_\+mrc\+\_\+\+Rat\+Bit\+Mask\+\_\+t} $\ast$}]{rat\+Mask\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_ab2204081bc04a108194e1dd915c35acf}
+This function must be called to get the Operator information details.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em preferred\+Operator\+Ref} & Operator object reference. \\
+\hline
+\mbox{\tt out}  & {\em mcc\+Ptr} & Mobile Country Code. \\
+\hline
+\mbox{\tt in}  & {\em mcc\+Ptr\+Num\+Elements} & \\
+\hline
+\mbox{\tt out}  & {\em mnc\+Ptr} & Mobile Network Code. \\
+\hline
+\mbox{\tt in}  & {\em mnc\+Ptr\+Num\+Elements} & \\
+\hline
+\mbox{\tt out}  & {\em rat\+Mask\+Ptr} & Bit mask for the R\+A\+T preferences. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a1ea0d2943accd51d3b428e0e6c94d297}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Preferred\+Operators\+List@{le\+\_\+mrc\+\_\+\+Get\+Preferred\+Operators\+List}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Preferred\+Operators\+List@{le\+\_\+mrc\+\_\+\+Get\+Preferred\+Operators\+List}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Preferred\+Operators\+List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+mrc\+\_\+\+Preferred\+Operator\+List\+Ref\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Preferred\+Operators\+List (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a1ea0d2943accd51d3b428e0e6c94d297}
+This function must be called to retrieve a list of the preferred operators.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item Reference to the List object.
+\item Null pointer if there is no preferences list. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{le__mrc__interface_8h_a3ad9533c467cec0902d5d165bb32d67b}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Radio\+Access\+Tech\+In\+Use@{le\+\_\+mrc\+\_\+\+Get\+Radio\+Access\+Tech\+In\+Use}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Radio\+Access\+Tech\+In\+Use@{le\+\_\+mrc\+\_\+\+Get\+Radio\+Access\+Tech\+In\+Use}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Radio\+Access\+Tech\+In\+Use}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Radio\+Access\+Tech\+In\+Use (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Rat\+\_\+t} $\ast$}]{rat\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a3ad9533c467cec0902d5d165bb32d67b}
+This function must be called to get the current Radio Access Technology in use.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed to get the Radio Access Technology. 
+
+L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R A bad parameter was passed. 
+
+L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em rat\+Ptr} & The Radio Access Technology. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_aac51332c6c84e460746eb1ad45c064d6}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Radio\+Power@{le\+\_\+mrc\+\_\+\+Get\+Radio\+Power}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Radio\+Power@{le\+\_\+mrc\+\_\+\+Get\+Radio\+Power}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Radio\+Power}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Radio\+Power (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+onoff\+\_\+t} $\ast$}]{power\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_aac51332c6c84e460746eb1ad45c064d6}
+Must be called to get the Radio Module power state.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T The function failed to get the Radio Module power state. 
+
+L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R if power\+Ptr is N\+U\+L\+L. 
+
+L\+E\+\_\+\+O\+K The function succeed.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em power\+Ptr} & Power state. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a5564bace31c937bcef096e597f33d3a4}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Rat\+Of\+Signal\+Metrics@{le\+\_\+mrc\+\_\+\+Get\+Rat\+Of\+Signal\+Metrics}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Rat\+Of\+Signal\+Metrics@{le\+\_\+mrc\+\_\+\+Get\+Rat\+Of\+Signal\+Metrics}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Rat\+Of\+Signal\+Metrics}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+mrc\+\_\+\+Rat\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Rat\+Of\+Signal\+Metrics (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Metrics\+Ref\+\_\+t}}]{Metrics\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a5564bace31c937bcef096e597f33d3a4}
+This function returns the Radio Access Technology of the signal metrics.
+
+\begin{DoxyReturn}{Returns}
+The Radio Access Technology of the signal measure.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Metrics\+Ref} & Signal metrics reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_ae9fa8655738c63e392c8dcc862bdb1d5}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Rat\+Preferences@{le\+\_\+mrc\+\_\+\+Get\+Rat\+Preferences}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Rat\+Preferences@{le\+\_\+mrc\+\_\+\+Get\+Rat\+Preferences}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Rat\+Preferences}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Rat\+Preferences (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Rat\+Bit\+Mask\+\_\+t} $\ast$}]{rat\+Mask\+Ptr\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_ae9fa8655738c63e392c8dcc862bdb1d5}
+Get the Radio Access Technology preferences
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+F\+A\+U\+L\+T Function failed.
+\item L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em rat\+Mask\+Ptr\+Ptr} & Bit mask for the Radio Access Technology preferences. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a283c0c092c5a135a8e95f9f091655cb1}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Register\+Mode@{le\+\_\+mrc\+\_\+\+Get\+Register\+Mode}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Register\+Mode@{le\+\_\+mrc\+\_\+\+Get\+Register\+Mode}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Register\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Register\+Mode (
+\begin{DoxyParamCaption}
+\item[{bool $\ast$}]{is\+Manual\+Ptr\+Ptr, }
+\item[{char $\ast$}]{mcc\+Ptr, }
+\item[{size\+\_\+t}]{mcc\+Ptr\+Num\+Elements, }
+\item[{char $\ast$}]{mnc\+Ptr, }
+\item[{size\+\_\+t}]{mnc\+Ptr\+Num\+Elements}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a283c0c092c5a135a8e95f9f091655cb1}
+Get the selected Selection Register mode.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+F\+A\+U\+L\+T Function failed.
+\item L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em is\+Manual\+Ptr\+Ptr} & true if the scan mode is manual, false if the scan mode is automatic. \\
+\hline
+\mbox{\tt out}  & {\em mcc\+Ptr} & Mobile Country Code \\
+\hline
+\mbox{\tt in}  & {\em mcc\+Ptr\+Num\+Elements} & \\
+\hline
+\mbox{\tt out}  & {\em mnc\+Ptr} & Mobile Network Code \\
+\hline
+\mbox{\tt in}  & {\em mnc\+Ptr\+Num\+Elements} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_aafc9fb71c3013b7b26dc386b13ca4a85}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Serving\+Cell\+Id@{le\+\_\+mrc\+\_\+\+Get\+Serving\+Cell\+Id}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Serving\+Cell\+Id@{le\+\_\+mrc\+\_\+\+Get\+Serving\+Cell\+Id}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Serving\+Cell\+Id}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t le\+\_\+mrc\+\_\+\+Get\+Serving\+Cell\+Id (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_aafc9fb71c3013b7b26dc386b13ca4a85}
+This function must be called to get the serving Cell Identifier.
+
+\begin{DoxyReturn}{Returns}
+The Cell Identifier. 0x\+F\+F\+F\+F\+F\+F\+F\+F value is returned if the value is not available. 
+\end{DoxyReturn}
+\hypertarget{le__mrc__interface_8h_a8ba03765e7595f85783f6f6a022311f8}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Serving\+Cell\+Loc\+Area\+Code@{le\+\_\+mrc\+\_\+\+Get\+Serving\+Cell\+Loc\+Area\+Code}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Serving\+Cell\+Loc\+Area\+Code@{le\+\_\+mrc\+\_\+\+Get\+Serving\+Cell\+Loc\+Area\+Code}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Serving\+Cell\+Loc\+Area\+Code}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t le\+\_\+mrc\+\_\+\+Get\+Serving\+Cell\+Loc\+Area\+Code (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a8ba03765e7595f85783f6f6a022311f8}
+This function must be called to get the Location Area Code of the serving cell.
+
+\begin{DoxyReturn}{Returns}
+The Location Area Code. 0x\+F\+F\+F\+F\+F\+F\+F\+F value is returned if the value is not available. 
+\end{DoxyReturn}
+\hypertarget{le__mrc__interface_8h_a717aa0f4e4dc9a83b6adc2f26f3f0258}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Signal\+Qual@{le\+\_\+mrc\+\_\+\+Get\+Signal\+Qual}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Signal\+Qual@{le\+\_\+mrc\+\_\+\+Get\+Signal\+Qual}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Signal\+Qual}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Signal\+Qual (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{quality\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a717aa0f4e4dc9a83b6adc2f26f3f0258}
+Get the signal quality.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T The function failed to get the Signal Quality information. 
+
+L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R A bad parameter was passed. 
+
+L\+E\+\_\+\+O\+K The function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em quality\+Ptr} & \mbox{[}O\+U\+T\mbox{]} Received signal strength quality (0 = no signal strength, 5 = very good signal strength). \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_aed41544004ed7df9de8e874b8bb09d3b}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Td\+Scdma\+Band\+Preferences@{le\+\_\+mrc\+\_\+\+Get\+Td\+Scdma\+Band\+Preferences}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Td\+Scdma\+Band\+Preferences@{le\+\_\+mrc\+\_\+\+Get\+Td\+Scdma\+Band\+Preferences}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Td\+Scdma\+Band\+Preferences}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Td\+Scdma\+Band\+Preferences (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Td\+Scdma\+Band\+Bit\+Mask\+\_\+t} $\ast$}]{band\+Mask\+Ptr\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_aed41544004ed7df9de8e874b8bb09d3b}
+Get the Bit mask for T\+D-\/\+S\+C\+D\+M\+A Band preferences.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+F\+A\+U\+L\+T Function failed.
+\item L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em band\+Mask\+Ptr\+Ptr} & Bit mask for T\+D-\/\+S\+C\+D\+M\+A Band preferences. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a456648564abfc8e9711b60a5d8bddc9b}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Get\+Umts\+Signal\+Metrics@{le\+\_\+mrc\+\_\+\+Get\+Umts\+Signal\+Metrics}}
+\index{le\+\_\+mrc\+\_\+\+Get\+Umts\+Signal\+Metrics@{le\+\_\+mrc\+\_\+\+Get\+Umts\+Signal\+Metrics}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Get\+Umts\+Signal\+Metrics}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Get\+Umts\+Signal\+Metrics (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Metrics\+Ref\+\_\+t}}]{Metrics\+Ref, }
+\item[{int32\+\_\+t $\ast$}]{ss\+Ptr, }
+\item[{uint32\+\_\+t $\ast$}]{bler\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{ecio\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{rscp\+Ptr, }
+\item[{int32\+\_\+t $\ast$}]{sinr\+Ptr}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a456648564abfc8e9711b60a5d8bddc9b}
+This function returns the signal metrics measured on U\+M\+T\+S network.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+O\+K on success
+\item L\+E\+\_\+\+F\+A\+U\+L\+T on failure
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the caller is passing a bad pointer into this function, it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Metrics\+Ref} & Signal metrics reference. \\
+\hline
+\mbox{\tt out}  & {\em ss\+Ptr} & Signal strength in d\+Bm \\
+\hline
+\mbox{\tt out}  & {\em bler\+Ptr} & Block error rate \\
+\hline
+\mbox{\tt out}  & {\em ecio\+Ptr} & Ec/\+Io value in d\+B with 1 decimal place (15 = 1.\+5 d\+B) \\
+\hline
+\mbox{\tt out}  & {\em rscp\+Ptr} & Measured R\+S\+C\+P in d\+Bm (only applicable for T\+D-\/\+S\+C\+D\+M\+A network) \\
+\hline
+\mbox{\tt out}  & {\em sinr\+Ptr} & Measured S\+I\+N\+R in d\+B (only applicable for T\+D-\/\+S\+C\+D\+M\+A network) \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a72ca8072f90d453169baff44441c41c0}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+Available@{le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+Available}}
+\index{le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+Available@{le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+Available}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+Available}]{\setlength{\rightskip}{0pt plus 5cm}bool le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+Available (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t}}]{scan\+Information\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a72ca8072f90d453169baff44441c41c0}
+This function must be called to check if a cellular network is available.
+
+\begin{DoxyReturn}{Returns}
+true The network is available 
+
+false The network isn\textquotesingle{}t available
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+On failure, the process exits, so you don\textquotesingle{}t have to worry about checking the returned reference for validity. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em scan\+Information\+Ref} & Scan information reference \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a699a52d014550124a5b3362ee888a780}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+Forbidden@{le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+Forbidden}}
+\index{le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+Forbidden@{le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+Forbidden}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+Forbidden}]{\setlength{\rightskip}{0pt plus 5cm}bool le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+Forbidden (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t}}]{scan\+Information\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a699a52d014550124a5b3362ee888a780}
+This function must be called to check if a cellular network is forbidden by the operator.
+
+\begin{DoxyReturn}{Returns}
+true The network is forbidden 
+
+false The network is allowed
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+On failure, the process exits, so you don\textquotesingle{}t have to worry about checking the returned reference for validity. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em scan\+Information\+Ref} & Scan information reference \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a7333dfc638f50524f9c6fd81457828ba}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+Home@{le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+Home}}
+\index{le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+Home@{le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+Home}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+Home}]{\setlength{\rightskip}{0pt plus 5cm}bool le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+Home (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t}}]{scan\+Information\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a7333dfc638f50524f9c6fd81457828ba}
+This function must be called to check if a cellular network is currently in home mode.
+
+\begin{DoxyReturn}{Returns}
+true The network is home 
+
+false The network is roaming
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+On failure, the process exits, so you don\textquotesingle{}t have to worry about checking the returned reference for validity. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em scan\+Information\+Ref} & Scan information reference \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a4c859fc1364c183aa1d26a022db365c6}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+In\+Use@{le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+In\+Use}}
+\index{le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+In\+Use@{le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+In\+Use}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+In\+Use}]{\setlength{\rightskip}{0pt plus 5cm}bool le\+\_\+mrc\+\_\+\+Is\+Cellular\+Network\+In\+Use (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Scan\+Information\+Ref\+\_\+t}}]{scan\+Information\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a4c859fc1364c183aa1d26a022db365c6}
+This function must be called to check if a cellular network is currently in use.
+
+\begin{DoxyReturn}{Returns}
+true The network is in use 
+
+false The network isn\textquotesingle{}t in use
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+On failure, the process exits, so you don\textquotesingle{}t have to worry about checking the returned reference for validity. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em scan\+Information\+Ref} & Scan information reference \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_ad3662723a7ed47cf45d9a2eaaa1fb16e}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Measure\+Signal\+Metrics@{le\+\_\+mrc\+\_\+\+Measure\+Signal\+Metrics}}
+\index{le\+\_\+mrc\+\_\+\+Measure\+Signal\+Metrics@{le\+\_\+mrc\+\_\+\+Measure\+Signal\+Metrics}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Measure\+Signal\+Metrics}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+mrc\+\_\+\+Metrics\+Ref\+\_\+t} le\+\_\+mrc\+\_\+\+Measure\+Signal\+Metrics (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_ad3662723a7ed47cf45d9a2eaaa1fb16e}
+This function must be called to measure the signal metrics. It creates and returns a reference to the signal metrics.
+
+\begin{DoxyReturn}{Returns}
+A reference to the signal metrics. 
+
+N\+U\+L\+L if no signal metrics are available. 
+\end{DoxyReturn}
+\hypertarget{le__mrc__interface_8h_ab4a246dd466fa8175aca0158e0cab227}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Perform\+Cellular\+Network\+Scan@{le\+\_\+mrc\+\_\+\+Perform\+Cellular\+Network\+Scan}}
+\index{le\+\_\+mrc\+\_\+\+Perform\+Cellular\+Network\+Scan@{le\+\_\+mrc\+\_\+\+Perform\+Cellular\+Network\+Scan}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Perform\+Cellular\+Network\+Scan}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+mrc\+\_\+\+Scan\+Information\+List\+Ref\+\_\+t} le\+\_\+mrc\+\_\+\+Perform\+Cellular\+Network\+Scan (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Rat\+Bit\+Mask\+\_\+t}}]{rat\+Mask}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_ab4a246dd466fa8175aca0158e0cab227}
+This function must be called to perform a cellular network scan.
+
+\begin{DoxyReturn}{Returns}
+Reference to the List object. Null pointer if the scan failed. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em rat\+Mask} & Radio Access Technology mask \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a578262185e6c0514e4ad5ba584c360ca}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Register\+Cellular\+Network@{le\+\_\+mrc\+\_\+\+Register\+Cellular\+Network}}
+\index{le\+\_\+mrc\+\_\+\+Register\+Cellular\+Network@{le\+\_\+mrc\+\_\+\+Register\+Cellular\+Network}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Register\+Cellular\+Network}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Register\+Cellular\+Network (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{mcc, }
+\item[{const char $\ast$}]{mnc}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a578262185e6c0514e4ad5ba584c360ca}
+This function must be called to register on a cellular network \mbox{[}mcc;mnc\mbox{]}
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+F\+A\+U\+L\+T The function failed to register on the network. 
+
+L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R A bad parameter was passed. 
+
+L\+E\+\_\+\+O\+K The function succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If one code is too long (max L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+C\+C\+\_\+\+L\+E\+N/\+L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+N\+C\+\_\+\+L\+E\+N digits), it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mcc} & Mobile Country Code \\
+\hline
+\mbox{\tt in}  & {\em mnc} & Mobile Network Code \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a4fc57a5a5bc1f4b6617c895c98a09f15}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Remove\+Net\+Reg\+State\+Event\+Handler@{le\+\_\+mrc\+\_\+\+Remove\+Net\+Reg\+State\+Event\+Handler}}
+\index{le\+\_\+mrc\+\_\+\+Remove\+Net\+Reg\+State\+Event\+Handler@{le\+\_\+mrc\+\_\+\+Remove\+Net\+Reg\+State\+Event\+Handler}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Remove\+Net\+Reg\+State\+Event\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+mrc\+\_\+\+Remove\+Net\+Reg\+State\+Event\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Event\+Handler\+Ref\+\_\+t}}]{add\+Handler\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a4fc57a5a5bc1f4b6617c895c98a09f15}
+Remove handler function for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+mrc\+\_\+\+Net\+Reg\+State\+Event\textquotesingle{} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em add\+Handler\+Ref} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a0c2d65eb8cdb200aa4bce8766530c39f}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Remove\+Preferred\+Operator@{le\+\_\+mrc\+\_\+\+Remove\+Preferred\+Operator}}
+\index{le\+\_\+mrc\+\_\+\+Remove\+Preferred\+Operator@{le\+\_\+mrc\+\_\+\+Remove\+Preferred\+Operator}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Remove\+Preferred\+Operator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Remove\+Preferred\+Operator (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{mcc, }
+\item[{const char $\ast$}]{mnc}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a0c2d65eb8cdb200aa4bce8766530c39f}
+Remove a preferred operator by specifying the M\+C\+C/\+M\+N\+C.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+N\+D User Preferred operator list is not available.
+\item L\+E\+\_\+\+F\+A\+U\+L\+T Function failed.
+\item L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If one code is too long (max L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+C\+C\+\_\+\+L\+E\+N/\+L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+N\+C\+\_\+\+L\+E\+N digits), it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mcc} & Mobile Country Code \\
+\hline
+\mbox{\tt in}  & {\em mnc} & Mobile Network Code \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_aed4f1730c99a1a9204a198e3df3cf6f5}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Remove\+Rat\+Change\+Handler@{le\+\_\+mrc\+\_\+\+Remove\+Rat\+Change\+Handler}}
+\index{le\+\_\+mrc\+\_\+\+Remove\+Rat\+Change\+Handler@{le\+\_\+mrc\+\_\+\+Remove\+Rat\+Change\+Handler}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Remove\+Rat\+Change\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+mrc\+\_\+\+Remove\+Rat\+Change\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Rat\+Change\+Handler\+Ref\+\_\+t}}]{add\+Handler\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_aed4f1730c99a1a9204a198e3df3cf6f5}
+Remove handler function for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+mrc\+\_\+\+Rat\+Change\textquotesingle{} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em add\+Handler\+Ref} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a789dca8360ddf32a0ea1bfdd24efc6d4}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Remove\+Signal\+Strength\+Change\+Handler@{le\+\_\+mrc\+\_\+\+Remove\+Signal\+Strength\+Change\+Handler}}
+\index{le\+\_\+mrc\+\_\+\+Remove\+Signal\+Strength\+Change\+Handler@{le\+\_\+mrc\+\_\+\+Remove\+Signal\+Strength\+Change\+Handler}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Remove\+Signal\+Strength\+Change\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void le\+\_\+mrc\+\_\+\+Remove\+Signal\+Strength\+Change\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\+Handler\+Ref\+\_\+t}}]{add\+Handler\+Ref}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a789dca8360ddf32a0ea1bfdd24efc6d4}
+Remove handler function for E\+V\+E\+N\+T \textquotesingle{}le\+\_\+mrc\+\_\+\+Signal\+Strength\+Change\textquotesingle{} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em add\+Handler\+Ref} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_acb434a9f91afb5b6639baf3678ee9388}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Set\+Automatic\+Register\+Mode@{le\+\_\+mrc\+\_\+\+Set\+Automatic\+Register\+Mode}}
+\index{le\+\_\+mrc\+\_\+\+Set\+Automatic\+Register\+Mode@{le\+\_\+mrc\+\_\+\+Set\+Automatic\+Register\+Mode}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Set\+Automatic\+Register\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Set\+Automatic\+Register\+Mode (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_acb434a9f91afb5b6639baf3678ee9388}
+Enable the automatic Selection Register mode.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+F\+A\+U\+L\+T Function failed.
+\item L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{le__mrc__interface_8h_ac808b4dc721e031566da92e00663c027}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Set\+Band\+Preferences@{le\+\_\+mrc\+\_\+\+Set\+Band\+Preferences}}
+\index{le\+\_\+mrc\+\_\+\+Set\+Band\+Preferences@{le\+\_\+mrc\+\_\+\+Set\+Band\+Preferences}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Set\+Band\+Preferences}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Set\+Band\+Preferences (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Band\+Bit\+Mask\+\_\+t}}]{band\+Mask}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_ac808b4dc721e031566da92e00663c027}
+Set the 2\+G/3\+G Band preferences by using a bit mask.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+F\+A\+U\+L\+T Function failed.
+\item L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em band\+Mask} & Bit mask for 2\+G/3\+G Band preferences. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a21d2fe7c736e9a4a342dcc461a5d6e02}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Set\+Lte\+Band\+Preferences@{le\+\_\+mrc\+\_\+\+Set\+Lte\+Band\+Preferences}}
+\index{le\+\_\+mrc\+\_\+\+Set\+Lte\+Band\+Preferences@{le\+\_\+mrc\+\_\+\+Set\+Lte\+Band\+Preferences}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Set\+Lte\+Band\+Preferences}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Set\+Lte\+Band\+Preferences (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Lte\+Band\+Bit\+Mask\+\_\+t}}]{band\+Mask}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a21d2fe7c736e9a4a342dcc461a5d6e02}
+Set the L\+T\+E Band preferences by using a bit mask.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+F\+A\+U\+L\+T Function failed.
+\item L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em band\+Mask} & Bit mask for L\+T\+E Band preferences. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a09b890f05a20f4b007d60e595026631f}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Set\+Manual\+Register\+Mode@{le\+\_\+mrc\+\_\+\+Set\+Manual\+Register\+Mode}}
+\index{le\+\_\+mrc\+\_\+\+Set\+Manual\+Register\+Mode@{le\+\_\+mrc\+\_\+\+Set\+Manual\+Register\+Mode}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Set\+Manual\+Register\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Set\+Manual\+Register\+Mode (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{mcc, }
+\item[{const char $\ast$}]{mnc}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a09b890f05a20f4b007d60e595026631f}
+Set the manual Selection Register mode with the M\+C\+C/\+M\+N\+C parameters.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+F\+A\+U\+L\+T Function failed.
+\item L\+E\+\_\+\+O\+K Function succeeded.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If one code is too long (max L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+C\+C\+\_\+\+L\+E\+N/\+L\+E\+\_\+\+M\+R\+C\+\_\+\+M\+N\+C\+\_\+\+L\+E\+N digits), it\textquotesingle{}s a fatal error, the function won\textquotesingle{}t return. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mcc} & Mobile Country Code \\
+\hline
+\mbox{\tt in}  & {\em mnc} & Mobile Network Code \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a78bd27d92337e2122320f41bcaa5480f}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Set\+Radio\+Power@{le\+\_\+mrc\+\_\+\+Set\+Radio\+Power}}
+\index{le\+\_\+mrc\+\_\+\+Set\+Radio\+Power@{le\+\_\+mrc\+\_\+\+Set\+Radio\+Power}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Set\+Radio\+Power}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Set\+Radio\+Power (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+onoff\+\_\+t}}]{power}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a78bd27d92337e2122320f41bcaa5480f}
+Set the power of the Radio Module.
+
+\begin{DoxyReturn}{Returns}
+L\+E\+\_\+\+B\+A\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R Bad power mode specified. 
+
+L\+E\+\_\+\+F\+A\+U\+L\+T Function failed. 
+
+L\+E\+\_\+\+O\+K Function succeed. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em power} & The power state. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a2d4abd391bc69c218538f5d8e1be4e01}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Set\+Rat\+Preferences@{le\+\_\+mrc\+\_\+\+Set\+Rat\+Preferences}}
+\index{le\+\_\+mrc\+\_\+\+Set\+Rat\+Preferences@{le\+\_\+mrc\+\_\+\+Set\+Rat\+Preferences}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Set\+Rat\+Preferences}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Set\+Rat\+Preferences (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Rat\+Bit\+Mask\+\_\+t}}]{rat\+Mask}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a2d4abd391bc69c218538f5d8e1be4e01}
+Set the Radio Access Technology preferences by using a bit mask.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+F\+A\+U\+L\+T Function failed.
+\item L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em rat\+Mask} & Bit mask for the Radio Access Technology preferences. \\
+\hline
+\end{DoxyParams}
+\hypertarget{le__mrc__interface_8h_a8765511597189b64e486fa8f17bcddcd}{}\index{le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}!le\+\_\+mrc\+\_\+\+Set\+Td\+Scdma\+Band\+Preferences@{le\+\_\+mrc\+\_\+\+Set\+Td\+Scdma\+Band\+Preferences}}
+\index{le\+\_\+mrc\+\_\+\+Set\+Td\+Scdma\+Band\+Preferences@{le\+\_\+mrc\+\_\+\+Set\+Td\+Scdma\+Band\+Preferences}!le\+\_\+mrc\+\_\+interface.\+h@{le\+\_\+mrc\+\_\+interface.\+h}}
+\subsubsection[{le\+\_\+mrc\+\_\+\+Set\+Td\+Scdma\+Band\+Preferences}]{\setlength{\rightskip}{0pt plus 5cm}{\bf le\+\_\+result\+\_\+t} le\+\_\+mrc\+\_\+\+Set\+Td\+Scdma\+Band\+Preferences (
+\begin{DoxyParamCaption}
+\item[{{\bf le\+\_\+mrc\+\_\+\+Td\+Scdma\+Band\+Bit\+Mask\+\_\+t}}]{band\+Mask}
+\end{DoxyParamCaption}
+)}\label{le__mrc__interface_8h_a8765511597189b64e486fa8f17bcddcd}
+Set the T\+D-\/\+S\+C\+D\+M\+A Band preferences by using a bit mask.
+
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item L\+E\+\_\+\+F\+A\+U\+L\+T Function failed.
+\item L\+E\+\_\+\+O\+K Function succeeded. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em band\+Mask} & Bit mask for T\+D-\/\+S\+C\+D\+M\+A Band preferences. \\
+\hline
+\end{DoxyParams}
