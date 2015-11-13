@@ -5,8 +5,12 @@ var legato_services_update =
       [ "IPC interfaces binding", "c_fwupdate.html#le_fwupdate_binding", null ],
       [ "Update Firmware Image", "c_fwupdate.html#le_fwupdate_image", null ]
     ] ],
-    [ "Software Update", "c_update.html", [
-      [ "API Usage Guideline", "c_update.html#API_Usage_Guideline", null ],
+    [ "Update API", "c_update.html", [
+      [ "API Usage Guidelines", "c_update.html#API_Usage_Guideline", null ],
       [ "Sample Code", "c_update.html#update_example", null ]
+    ] ],
+    [ "Update Control API", "c_update_ctrl.html", [
+      [ "Preventing Updates During Critical Operations", "c_update_ctrl.html#le_updateCtrl_prevention", null ],
+      [ "Controlling the Probation Period", "c_update_ctrl.html#le_updateCtrl_probation", null ]
     ] ]
 ];

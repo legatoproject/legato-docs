@@ -36,6 +36,7 @@ var dir_76d54db58f442deed506da8d72e3106f =
     [ "le_sup_wdog_interface.h", "le__sup__wdog__interface_8h.html", "le__sup__wdog__interface_8h" ],
     [ "le_temp_interface.h", "le__temp__interface_8h.html", "le__temp__interface_8h" ],
     [ "le_update_interface.h", "le__update__interface_8h.html", "le__update__interface_8h" ],
+    [ "le_updateCtrl_interface.h", "le__update_ctrl__interface_8h.html", "le__update_ctrl__interface_8h" ],
     [ "le_voicecall_interface.h", "le__voicecall__interface_8h.html", "le__voicecall__interface_8h" ],
     [ "le_wdog_interface.h", "le__wdog__interface_8h.html", "le__wdog__interface_8h" ],
     [ "logFd_interface.h", "log_fd__interface_8h.html", "log_fd__interface_8h" ]

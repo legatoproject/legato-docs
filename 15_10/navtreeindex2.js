@@ -1,5 +1,8 @@
 var NAVTREEINDEX2 =
 {
+"ccoding_stds_name_funcs.html":[0,1,2,17,4],
+"ccoding_stds_name_funcs.html#cstdsCamelCaseName":[0,1,2,17,4,1],
+"ccoding_stds_name_funcs.html#cstdsFuncsPrefix":[0,1,2,17,4,0],
 "ccoding_stds_name_funcs.html#cstdsVerbage":[0,1,2,17,4,2],
 "ccoding_stds_name_types.html":[0,1,2,17,3],
 "ccoding_stds_name_types.html#cstdsCardinalTypes":[0,1,2,17,3,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX2 =
 "how_to_power_mgmt.html#howToPowerMgmt_troubleshooting":[0,3,6,3],
 "how_to_power_mgmt.html#howToPowerMgmt_wakeupAndDeferrable":[0,3,6,1],
 "how_to_power_mgmt.html#howToPowerMgmt_wakeupSources":[0,3,6,0],
-"how_to_set_user_timebase.html":[0,3,9],
-"how_to_set_user_timebase.html#howToSetUserTimebase_background":[0,3,9,2],
-"how_to_set_user_timebase.html#howToSetUserTimebase_getandset":[0,3,9,1],
-"how_to_set_user_timebase.html#howToSetUserTimebase_overview":[0,3,9,0]
+"how_to_set_user_timebase.html":[0,3,9]
 };

@@ -1,5 +1,8 @@
 var NAVTREEINDEX3 =
 {
+"how_to_set_user_timebase.html#howToSetUserTimebase_background":[0,3,9,2],
+"how_to_set_user_timebase.html#howToSetUserTimebase_getandset":[0,3,9,1],
+"how_to_set_user_timebase.html#howToSetUserTimebase_overview":[0,3,9,0],
 "index.html":[],
 "index.html":[0],
 "interface_def_lang.html":[0,4,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX3 =
 "le__avc__interface_8h.html#a11e325085dadb01bbefffd0b899eb207":[1,0,0,0,5,17],
 "le__avc__interface_8h.html#a1f085c5986e7c473ed70cff32320ce11":[1,0,0,0,5,16],
 "le__avc__interface_8h.html#a3f7dea04dd1e9c456fe24a5eb98d2592":[1,0,0,0,5,5],
-"le__avc__interface_8h.html#a4d298bc6d814481205c4db5d24812694":[1,0,0,0,5,9],
-"le__avc__interface_8h.html#a4da465033b4438cdc75fdba894fd890f":[1,0,0,0,5,13],
-"le__avc__interface_8h.html#a5b3e21858181bb972e982046bced1182":[1,0,0,0,5,19],
-"le__avc__interface_8h.html#a65ddf265fb3236f8035fb0c475a23bd7":[1,0,0,0,5,10]
+"le__avc__interface_8h.html#a4d298bc6d814481205c4db5d24812694":[1,0,0,0,5,9]
 };

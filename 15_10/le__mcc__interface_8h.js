@@ -8,11 +8,10 @@ var le__mcc__interface_8h =
       [ "LE_MCC_EVENT_INCOMING", "le__mcc__interface_8h.html#aefc4679ffa76d0e04c578572c22f06cfab37936f33d31259ea0c16169ba852bd0", null ],
       [ "LE_MCC_EVENT_ORIGINATING", "le__mcc__interface_8h.html#aefc4679ffa76d0e04c578572c22f06cfa1fa56f470ae87b06edb532f9e2b593e0", null ],
       [ "LE_MCC_EVENT_ALERTING", "le__mcc__interface_8h.html#aefc4679ffa76d0e04c578572c22f06cfa05261a9fdb7ee59a0dae1cc27bb30e07", null ],
-      [ "LE_MCC_EVENT_EARLY_MEDIA", "le__mcc__interface_8h.html#aefc4679ffa76d0e04c578572c22f06cfae7b873c301bb878f337094b49e5edfc3", null ],
       [ "LE_MCC_EVENT_CONNECTED", "le__mcc__interface_8h.html#aefc4679ffa76d0e04c578572c22f06cfa86702531207c50314b10ae3278c7ca0d", null ],
       [ "LE_MCC_EVENT_TERMINATED", "le__mcc__interface_8h.html#aefc4679ffa76d0e04c578572c22f06cfa38b7c4ab21fa9828be8169372e41ae98", null ],
+      [ "LE_MCC_EVENT_WAITING", "le__mcc__interface_8h.html#aefc4679ffa76d0e04c578572c22f06cfaaeed6c549d3cdc9353a9c80d3b893800", null ],
       [ "LE_MCC_EVENT_ON_HOLD", "le__mcc__interface_8h.html#aefc4679ffa76d0e04c578572c22f06cfa11c957908799cc338bf6d700e4677200", null ],
-      [ "LE_MCC_EVENT_TRANSFERED", "le__mcc__interface_8h.html#aefc4679ffa76d0e04c578572c22f06cfa34a9ad66dff5e71d2ad95d668f22525b", null ],
       [ "LE_MCC_EVENT_MAX", "le__mcc__interface_8h.html#aefc4679ffa76d0e04c578572c22f06cfa8f0eb84e9153674494832b002929c0e1", null ]
     ] ],
     [ "le_mcc_TerminationReason_t", "le__mcc__interface_8h.html#abda706f723ba619f9bc460bcc9a4960d", [

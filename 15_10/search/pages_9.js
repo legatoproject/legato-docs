@@ -4,7 +4,7 @@ var searchData=
   ['logging',['Logging',['../basic_log.html',1,'basicConcepts']]],
   ['lwm2m_20data',['LWM2M Data',['../basic_l_w_m2_m_data.html',1,'basicConcepts']]],
   ['legato_20build_20configuration',['Legato Build Configuration',['../c_le_build_cfg.html',1,'c_APIs']]],
-  ['limit_20definitions',['Limit Definitions',['../c_limit.html',1,'legatoServices']]],
+  ['limit_20definitions',['Limit Definitions',['../c_limit.html',1,'']]],
   ['logging_20api',['Logging API',['../c_logging.html',1,'c_APIs']]],
   ['low_2dlevel_20messaging_20api',['Low-Level Messaging API',['../c_messaging.html',1,'c_APIs']]],
   ['linux_20host',['Linux Host',['../getstarted_d_slinux.html',1,'getstartedDSinstall']]],

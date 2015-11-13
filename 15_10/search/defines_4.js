@@ -124,7 +124,6 @@ var searchData=
   ['le_5fthread_5fpriority_5frt_5fhighest',['LE_THREAD_PRIORITY_RT_HIGHEST',['../le__thread_8h.html#a9a249dc73c81435b2557d61cce888dfe',1,'le_thread.h']]],
   ['le_5fthread_5fpriority_5frt_5flowest',['LE_THREAD_PRIORITY_RT_LOWEST',['../le__thread_8h.html#a5b989a1262268b0671f847d4d18cca65',1,'le_thread.h']]],
   ['le_5ftrace',['LE_TRACE',['../le__log_8h.html#a331fb6c78ccddeafc455ad9c64e42008',1,'le_log.h']]],
-  ['le_5fupdate_5fid_5fstr_5flen',['LE_UPDATE_ID_STR_LEN',['../le__update__interface_8h.html#a0b366a441a1c7383a07bc6bab99b0c20',1,'le_update_interface.h']]],
   ['le_5fwarn',['LE_WARN',['../le__log_8h.html#a0201b2f60ee0e945479f91e181bf04b6',1,'le_log.h']]],
   ['le_5fwarn_5fif',['LE_WARN_IF',['../le__log_8h.html#a8d8f204806cd5fc0455fe3caacf1d251',1,'le_log.h']]],
   ['le_5fwdog_5ftimeout_5fnever',['LE_WDOG_TIMEOUT_NEVER',['../le__wdog__interface_8h.html#a562f74a2b07130836630d84a9ab8152c',1,'le_wdog_interface.h']]],

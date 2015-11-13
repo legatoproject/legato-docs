@@ -112,12 +112,13 @@ $(document).ready(function(){initNavTree('yocto_legato.html','');});
 <div class="title">Yocto Legato Builds </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The Yocto Project is an open source collaboration project that provides templates, tools and methods to help you create custom Linux-based systems for embedded products regardless of the hardware architecture.</p>
+<div class="textblock"><p>This topic provides info about working with Legato and Yocto.</p>
+<p>The Yocto Project is an open source collaboration project that provides templates, tools and methods to help you create custom Linux-based systems for embedded products regardless of the hardware architecture.</p>
 <p>Legato is compatible with Yocto 1.6.1</p>
 <h1><a class="anchor" id="getstartedYoctoLinux_yoctoDirectories"></a>
 Yocto Linux Directories</h1>
-<p>Untar the file <b>Legato-Dist-Source-mdm9x15-15.05.tar.bz2</b> to a directory: </p><div class="fragment"><div class="line">$ cd &lt;some directory&gt;</div>
-<div class="line">$ tar xvjf Legato-Linux-Dist-mdm9x15-15.05.tar.bz2</div>
+<p>Untar the file <b>Legato-Dist-Source-mdm9x15-07.04.06.00.tar.bz2</b> to a directory: </p><div class="fragment"><div class="line">$ cd &lt;some directory&gt;</div>
+<div class="line">$ tar xvjf Legato-Dist-Source-mdm9x15-07.04.06.00.tar.bz2</div>
 </div><!-- fragment --><p>These file/directories will be extracted:</p><ul>
 <li><b>linux-yocto-3.4.git</b> - Linux kernel - 14.1.0.Beta.rc2</li>
 <li><b>Legato-Yocto1_6</b> - Sierra Wireless specific layers</li>
@@ -126,6 +127,37 @@ Yocto Linux Directories</h1>
 </ul>
 <p>Yocto uses a layered model for its build system. In Legato, device-specific layers are <code>meta-swi-</code>[target] and <code>meta-swi-bin</code>.</p>
 <p>Yocto 1.6.1 and poky environment documentation is available at <a href="https://www.yoctoproject.org/documentation/archived?keys=&amp;field_version_tid=45">Yocto docs</a></p>
+<h1><a class="anchor" id="yoctoWP85"></a>
+WP85 and Yocto</h1>
+<p>The following table lists details about Yocto support for the WP85 module:</p>
+<table class="doxtable">
+<tr>
+<th>File Type </th><th>Partition </th><th>Filename </th><th>Def. </th><th>Description  </th></tr>
+<tr>
+<td>bootloader image </td><td>mtd0 </td><td>appsboot.mbn </td><td>* </td><td>LK (little-kernel), provides fastboot </td></tr>
+<tr>
+<td>kernel image </td><td>mtd1 </td><td>boot-yocto-mdm9x15.2k.img </td><td>* </td><td>kernel (uncompressed) + mdm9x15-image-initramfs </td></tr>
+<tr>
+<td>rootfs image </td><td>mtd2 </td><td>mdm9x15-image-minimal-swi-mdm9x15.2k.ubi </td><td>* </td><td>rootfs as ubi (actual rootfs filesystem is squashfs, read-only) </td></tr>
+<tr>
+<td></td><td></td><td>mdm9x15-image-minimal-swi-mdm9x15.2k.yaffs2 </td><td></td><td>rootfs as yaffs2 format (not working) </td></tr>
+<tr>
+<td>legato image </td><td>mtd3 </td><td>legato-image.wp85.ubi </td><td>* </td><td>legato as ubi (actual filesystem is squashfs, require fakeroot &gt; 1.10.2 for generation) </td></tr>
+<tr>
+<td></td><td></td><td>legato-image.wp85.yaffs2 </td><td></td><td>legato as yaffs2 (not working) </td></tr>
+<tr>
+<td>packages </td><td></td><td>boot_wp85.cwe </td><td></td><td>package with bootloader </td></tr>
+<tr>
+<td></td><td></td><td>boot-yocto_wp85.cwe </td><td></td><td>package with bootloader + yocto (= kernel + rootfs) </td></tr>
+<tr>
+<td></td><td></td><td>boot-yocto-legato_wp85.cwe </td><td></td><td>package with bootloader + yocto (= kernel + rootfs) + legato </td></tr>
+<tr>
+<td></td><td></td><td>legato-image.wp85.cwe </td><td></td><td>package with legato </td></tr>
+<tr>
+<td></td><td></td><td>yocto_wp85.cwe </td><td></td><td>package with yocto (= kernel + rootfs) </td></tr>
+<tr>
+<td></td><td></td><td>yocto-legato_wp85.cwe </td><td></td><td>package with yocto (= kernel + rootfs) + legato </td></tr>
+</table>
 <h1><a class="anchor" id="getstartedYoctoLinux_prebuiltYoctoImages"></a>
 Pre-built Yocto Image</h1>
 <p>The prebuilt directory contains a kernel and root file system that can be built using the command below. It's the same as what's flashed on the device, and can be used to return to a known state.</p>

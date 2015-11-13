@@ -6,7 +6,8 @@ var basic_concepts =
       [ "Service Directory", "basic_runtime_arch.html#basicRuntimeArch_serviceDirectory", null ],
       [ "Config Tree", "basic_runtime_arch.html#basicRuntimeArch_configTree", null ],
       [ "Watchdog", "basic_runtime_arch.html#basicRuntimeArch_watchDog", null ],
-      [ "Logs", "basic_runtime_arch.html#basicRuntimeArch_logs", null ]
+      [ "Logs", "basic_runtime_arch.html#basicRuntimeArch_logs", null ],
+      [ "Update Daemon", "basic_runtime_arch.html#basicRuntimeArch_updateDaemon", null ]
     ] ],
     [ "Security", "basic_security.html", "basic_security" ],
     [ "Components", "basic_components.html", [

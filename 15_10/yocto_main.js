@@ -2,6 +2,7 @@ var yocto_main =
 [
     [ "Yocto Legato Builds", "yocto_legato.html", [
       [ "Yocto Linux Directories", "yocto_legato.html#getstartedYoctoLinux_yoctoDirectories", null ],
+      [ "WP85 and Yocto", "yocto_legato.html#yoctoWP85", null ],
       [ "Pre-built Yocto Image", "yocto_legato.html#getstartedYoctoLinux_prebuiltYoctoImages", null ],
       [ "Rebuild Yocto Image", "yocto_legato.html#getstartedYoctoLinux_rebuildYoctoImages", null ],
       [ "Linux Flash Yocto", "yocto_legato.html#getstartedYoctoLinux_flashYoctoImagesLin", null ],

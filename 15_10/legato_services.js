@@ -26,8 +26,7 @@ var legato_services =
       [ "Configuration tree", "c_le_data.html#c_le_data_configdb", null ],
       [ "Data Connection Options", "c_le_data.html#c_le_data_options", null ]
     ] ],
-    [ "GPIO API", "c_gpio.html", null ],
-    [ "Limit Definitions", "c_limit.html", null ],
+    [ "GPIO", "c_gpio.html", null ],
     [ "Modem", "legato_services_modem.html", "legato_services_modem" ],
     [ "Positioning", "legato_services_positioning.html", "legato_services_positioning" ],
     [ "Power Manager", "c_pm.html", [

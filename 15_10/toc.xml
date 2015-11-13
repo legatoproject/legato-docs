@@ -108,6 +108,7 @@
           <topic label="Config Tree" href="basic_runtime_arch.html#basicRuntimeArch_configTree"/>
           <topic label="Watchdog" href="basic_runtime_arch.html#basicRuntimeArch_watchDog"/>
           <topic label="Logs" href="basic_runtime_arch.html#basicRuntimeArch_logs"/>
+          <topic label="Update Daemon" href="basic_runtime_arch.html#basicRuntimeArch_updateDaemon"/>
         </topic>
         <topic label="Security" href="basic_security.html">
           <topic label="Sandboxes" href="basic_security_sandbox.html"/>
@@ -279,29 +280,30 @@
         <topic label="setNet" href="tools_target_set_net.html"/>
       </topic>
       <topic label="Host" href="tools_host.html">
-        <topic label="av-pack" href="tools_host_av-pack.html"/>
-        <topic label="configtargetssh" href="tools_host_configtargetssh.html"/>
-        <topic label="createsdk" href="tools_host_createsdk.html"/>
-        <topic label="fwupdate" href="tools_host_fwupdate.html"/>
+        <topic label="update-pack" href="tools_host_update-pack.html"/>
         <topic label="gettargettype" href="tools_host_gettargettype.html"/>
-        <topic label="instapp" href="tools_host_instapp.html"/>
-        <topic label="instlegato" href="tools_host_instlegato.html"/>
-        <topic label="instsys" href="tools_host_instsys.html"/>
-        <topic label="legato-qemu" href="tools_host_legato-qemu.html"/>
-        <topic label="lsapp" href="tools_host_lsapp.html"/>
-        <topic label="mklegatoimg" href="tools_host_mklegatoimg.html"/>
-        <topic label="releaselegato" href="tools_host_releaselegato.html"/>
-        <topic label="rmapp" href="tools_host_rmapp.html"/>
-        <topic label="security-pack" href="tools_host_security-pack.html"/>
-        <topic label="setname" href="tools_host_setname.html"/>
-        <topic label="settime" href="tools_host_settime.html"/>
-        <topic label="settz" href="tools_host_settz.html"/>
-        <topic label="simu" href="tools_host_simu.html"/>
-        <topic label="startapp" href="tools_host_startapp.html"/>
         <topic label="startlegato" href="tools_host_startlegato.html"/>
-        <topic label="statapp" href="tools_host_statapp.html"/>
-        <topic label="stopapp" href="tools_host_stopapp.html"/>
+        <topic label="startapp" href="tools_host_startapp.html"/>
         <topic label="stoplegato" href="tools_host_stoplegato.html"/>
+        <topic label="releaselegato" href="tools_host_releaselegato.html"/>
+        <topic label="statapp" href="tools_host_statapp.html"/>
+        <topic label="instlegato" href="tools_host_instlegato.html"/>
+        <topic label="setname" href="tools_host_setname.html"/>
+        <topic label="simu" href="tools_host_simu.html"/>
+        <topic label="security-pack" href="tools_host_security-pack.html"/>
+        <topic label="av-pack" href="tools_host_av-pack.html"/>
+        <topic label="fwupdate" href="tools_host_fwupdate.html"/>
+        <topic label="instsys" href="tools_host_instsys.html"/>
+        <topic label="lsapp" href="tools_host_lsapp.html"/>
+        <topic label="legato-qemu" href="tools_host_legato-qemu.html"/>
+        <topic label="mklegatoimg" href="tools_host_mklegatoimg.html"/>
+        <topic label="stopapp" href="tools_host_stopapp.html"/>
+        <topic label="settz" href="tools_host_settz.html"/>
+        <topic label="createsdk" href="tools_host_createsdk.html"/>
+        <topic label="configtargetssh" href="tools_host_configtargetssh.html"/>
+        <topic label="rmapp" href="tools_host_rmapp.html"/>
+        <topic label="instapp" href="tools_host_instapp.html"/>
+        <topic label="settime" href="tools_host_settime.html"/>
       </topic>
       <topic label="Build" href="build_tools.html">
         <topic label="Overview" href="build_tools.html#buildTools_mktoolsOverview"/>
@@ -575,8 +577,7 @@
         <topic label="Configuration tree" href="c_le_data.html#c_le_data_configdb"/>
         <topic label="Data Connection Options" href="c_le_data.html#c_le_data_options"/>
       </topic>
-      <topic label="GPIO API" href="c_gpio.html"/>
-      <topic label="Limit Definitions" href="c_limit.html"/>
+      <topic label="GPIO" href="c_gpio.html"/>
       <topic label="Modem" href="legato_services_modem.html">
         <topic label="ADC Channel API" href="c_adc.html"/>
         <topic label="Antenna Monitoring" href="c_antenna.html">
@@ -747,9 +748,13 @@
           <topic label="IPC interfaces binding" href="c_fwupdate.html#le_fwupdate_binding"/>
           <topic label="Update Firmware Image" href="c_fwupdate.html#le_fwupdate_image"/>
         </topic>
-        <topic label="Software Update" href="c_update.html">
-          <topic label="API Usage Guideline" href="c_update.html#API_Usage_Guideline"/>
+        <topic label="Update API" href="c_update.html">
+          <topic label="API Usage Guidelines" href="c_update.html#API_Usage_Guideline"/>
           <topic label="Sample Code" href="c_update.html#update_example"/>
+        </topic>
+        <topic label="Update Control API" href="c_update_ctrl.html">
+          <topic label="Preventing Updates During Critical Operations" href="c_update_ctrl.html#le_updateCtrl_prevention"/>
+          <topic label="Controlling the Probation Period" href="c_update_ctrl.html#le_updateCtrl_probation"/>
         </topic>
       </topic>
       <topic label="Voice Call Service" href="c_le_voicecall.html">
@@ -996,6 +1001,7 @@
       </topic>
     </topic>
     <topic label="Other Info" href="other_info.html">
+      <topic label="Software Update" href="software_update.html"/>
       <topic label="Platform Constraints" href="platform_constraints.html">
         <topic label="Audio" href="platform_constraints_audio.html"/>
         <topic label="Secure Storage" href="platform_constraints_sec_storage.html"/>
@@ -1003,6 +1009,7 @@
       <topic label="Yocto Info" href="yocto_main.html">
         <topic label="Yocto Legato Builds" href="yocto_legato.html">
           <topic label="Yocto Linux Directories" href="yocto_legato.html#getstartedYoctoLinux_yoctoDirectories"/>
+          <topic label="WP85 and Yocto" href="yocto_legato.html#yoctoWP85"/>
           <topic label="Pre-built Yocto Image" href="yocto_legato.html#getstartedYoctoLinux_prebuiltYoctoImages"/>
           <topic label="Rebuild Yocto Image" href="yocto_legato.html#getstartedYoctoLinux_rebuildYoctoImages"/>
           <topic label="Linux Flash Yocto" href="yocto_legato.html#getstartedYoctoLinux_flashYoctoImagesLin"/>
@@ -1694,11 +1701,10 @@
               <topic label="LE_MCC_EVENT_INCOMING" href="le__mcc__interface_8h.html#aefc4679ffa76d0e04c578572c22f06cfab37936f33d31259ea0c16169ba852bd0"/>
               <topic label="LE_MCC_EVENT_ORIGINATING" href="le__mcc__interface_8h.html#aefc4679ffa76d0e04c578572c22f06cfa1fa56f470ae87b06edb532f9e2b593e0"/>
               <topic label="LE_MCC_EVENT_ALERTING" href="le__mcc__interface_8h.html#aefc4679ffa76d0e04c578572c22f06cfa05261a9fdb7ee59a0dae1cc27bb30e07"/>
-              <topic label="LE_MCC_EVENT_EARLY_MEDIA" href="le__mcc__interface_8h.html#aefc4679ffa76d0e04c578572c22f06cfae7b873c301bb878f337094b49e5edfc3"/>
               <topic label="LE_MCC_EVENT_CONNECTED" href="le__mcc__interface_8h.html#aefc4679ffa76d0e04c578572c22f06cfa86702531207c50314b10ae3278c7ca0d"/>
               <topic label="LE_MCC_EVENT_TERMINATED" href="le__mcc__interface_8h.html#aefc4679ffa76d0e04c578572c22f06cfa38b7c4ab21fa9828be8169372e41ae98"/>
+              <topic label="LE_MCC_EVENT_WAITING" href="le__mcc__interface_8h.html#aefc4679ffa76d0e04c578572c22f06cfaaeed6c549d3cdc9353a9c80d3b893800"/>
               <topic label="LE_MCC_EVENT_ON_HOLD" href="le__mcc__interface_8h.html#aefc4679ffa76d0e04c578572c22f06cfa11c957908799cc338bf6d700e4677200"/>
-              <topic label="LE_MCC_EVENT_TRANSFERED" href="le__mcc__interface_8h.html#aefc4679ffa76d0e04c578572c22f06cfa34a9ad66dff5e71d2ad95d668f22525b"/>
               <topic label="LE_MCC_EVENT_MAX" href="le__mcc__interface_8h.html#aefc4679ffa76d0e04c578572c22f06cfa8f0eb84e9153674494832b002929c0e1"/>
             </topic>
             <topic label="le_mcc_TerminationReason_t" href="le__mcc__interface_8h.html#abda706f723ba619f9bc460bcc9a4960d">
@@ -2525,26 +2531,17 @@
             <topic label="le_temp_SetRadioThresholds" href="le__temp__interface_8h.html#a476e20b815d3df88ff00ebe1fab42792"/>
           </topic>
           <topic label="le_update_interface.h" href="le__update__interface_8h.html">
-            <topic label="LE_UPDATE_ID_STR_LEN" href="le__update__interface_8h.html#a0b366a441a1c7383a07bc6bab99b0c20"/>
             <topic label="le_update_HandleRef_t" href="le__update__interface_8h.html#a70c1de2e80807cdac13cec80456cc929"/>
             <topic label="le_update_ProgressHandlerFunc_t" href="le__update__interface_8h.html#a6926f0dc18bfe5bfe23e1cea26d464c2"/>
             <topic label="le_update_ProgressHandlerRef_t" href="le__update__interface_8h.html#a20a94b986a9ba0e6772b146f98b95f92"/>
-            <topic label="le_update_Command_t" href="le__update__interface_8h.html#a02f53457a4929cdb62270ca0c6fc75b1">
-              <topic label="LE_UPDATE_CMD_INSTALL" href="le__update__interface_8h.html#a02f53457a4929cdb62270ca0c6fc75b1a5b094573c81d04a714d0b59f0d6b62aa"/>
-              <topic label="LE_UPDATE_CMD_REMOVE" href="le__update__interface_8h.html#a02f53457a4929cdb62270ca0c6fc75b1a3f20e3ee60a049e2096526c56a2f72c3"/>
-            </topic>
             <topic label="le_update_ErrorCode_t" href="le__update__interface_8h.html#a24bac90fc939c561c64d13608cc78a20">
               <topic label="LE_UPDATE_ERR_NONE" href="le__update__interface_8h.html#a24bac90fc939c561c64d13608cc78a20a5473b80d9e60fc1a8fd5f78a47b1c69e"/>
-              <topic label="LE_UPDATE_ERR_BAD_MANIFEST" href="le__update__interface_8h.html#a24bac90fc939c561c64d13608cc78a20ae60744a769a562311f391d0869d1445c"/>
+              <topic label="LE_UPDATE_ERR_FORMAT_ERROR" href="le__update__interface_8h.html#a24bac90fc939c561c64d13608cc78a20abb057bc9e0ed3299f291b552b78319ba"/>
               <topic label="LE_UPDATE_ERR_IO_ERROR" href="le__update__interface_8h.html#a24bac90fc939c561c64d13608cc78a20a66c830d183613b7e744d2111197c43a0"/>
               <topic label="LE_UPDATE_ERR_INTERNAL_ERROR" href="le__update__interface_8h.html#a24bac90fc939c561c64d13608cc78a20a9dfcb8ef952d81438c5bc07ed7a15171"/>
               <topic label="LE_UPDATE_ERR_OUT_OF_MEMORY" href="le__update__interface_8h.html#a24bac90fc939c561c64d13608cc78a20a41c44fb1d050b43fe1f817baa6e14d9d"/>
               <topic label="LE_UPDATE_ERR_VERSION_MISMATCH" href="le__update__interface_8h.html#a24bac90fc939c561c64d13608cc78a20a0871224ae55a5ad4c58d4613f90accf8"/>
               <topic label="LE_UPDATE_ERR_WRONG_TARGET" href="le__update__interface_8h.html#a24bac90fc939c561c64d13608cc78a20a489899dc472c10bbf14cbd4498f9ff6c"/>
-            </topic>
-            <topic label="le_update_ItemType_t" href="le__update__interface_8h.html#a65dc43f8d83511d0efa01fd3bdaefd28">
-              <topic label="LE_UPDATE_APP" href="le__update__interface_8h.html#a65dc43f8d83511d0efa01fd3bdaefd28a9e400aff386723c01cf8a37e30964243"/>
-              <topic label="LE_UPDATE_FIRMWARE" href="le__update__interface_8h.html#a65dc43f8d83511d0efa01fd3bdaefd28a44650a5fccb66484fa7edf7d9dd7beae"/>
             </topic>
             <topic label="le_update_State_t" href="le__update__interface_8h.html#ae9758536ebaf1842cdaaddd6cf95a672">
               <topic label="LE_UPDATE_STATE_NEW" href="le__update__interface_8h.html#ae9758536ebaf1842cdaaddd6cf95a672a789b71810ab23da9ec3b7d373c16ae08"/>
@@ -2561,6 +2558,16 @@
             <topic label="le_update_GetErrorCode" href="le__update__interface_8h.html#a09df8a83ae1fe0b57d34f2afca7ec008"/>
             <topic label="le_update_RemoveProgressHandler" href="le__update__interface_8h.html#a5c0b5527aaa493f05612f85926d71400"/>
             <topic label="le_update_Start" href="le__update__interface_8h.html#a7b300c8944da0fe9a919bc6bb14157dd"/>
+          </topic>
+          <topic label="le_updateCtrl_interface.h" href="le__update_ctrl__interface_8h.html">
+            <topic label="le_updateCtrl_Allow" href="le__update_ctrl__interface_8h.html#ab3955f0e34df43a5fbe3e9eae16040d4"/>
+            <topic label="le_updateCtrl_ConnectService" href="le__update_ctrl__interface_8h.html#a1e59368455d91b7bf8a1e6bf4a04b672"/>
+            <topic label="le_updateCtrl_Defer" href="le__update_ctrl__interface_8h.html#acdbc9dcc05455f0dd1020b875909c3ed"/>
+            <topic label="le_updateCtrl_DisconnectService" href="le__update_ctrl__interface_8h.html#afaa9e08b6a161e3107c7f328d8dee1ed"/>
+            <topic label="le_updateCtrl_FailProbation" href="le__update_ctrl__interface_8h.html#a9f6a3bf7a830eb04823ea6188c12109c"/>
+            <topic label="le_updateCtrl_LockProbation" href="le__update_ctrl__interface_8h.html#afe4f9e002058e3c74488a28f7c76e47a"/>
+            <topic label="le_updateCtrl_MarkGood" href="le__update_ctrl__interface_8h.html#add52f13de9853da8259799ad689be4fd"/>
+            <topic label="le_updateCtrl_UnlockProbation" href="le__update_ctrl__interface_8h.html#a4ba5ace59bfe352c518c3f1eae6d0448"/>
           </topic>
           <topic label="le_voicecall_interface.h" href="le__voicecall__interface_8h.html">
             <topic label="le_voicecall_CallRef_t" href="le__voicecall__interface_8h.html#a74c8b6a9f13f7a8ef47b6b1d57d8ab56"/>

@@ -56,9 +56,7 @@ var searchData=
   ['le_5fsms_5ftype_5ft',['le_sms_Type_t',['../le__sms__interface_8h.html#a9001c5bc939bda5d5865e363bdf7662c',1,'le_sms_interface.h']]],
   ['le_5ftemp_5fthresholdstatus_5ft',['le_temp_ThresholdStatus_t',['../le__temp__interface_8h.html#a2c535dc58fa4f9d63fb50621ec87905e',1,'le_temp_interface.h']]],
   ['le_5fthread_5fpriority_5ft',['le_thread_Priority_t',['../le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07',1,'le_thread.h']]],
-  ['le_5fupdate_5fcommand_5ft',['le_update_Command_t',['../le__update__interface_8h.html#a02f53457a4929cdb62270ca0c6fc75b1',1,'le_update_interface.h']]],
   ['le_5fupdate_5ferrorcode_5ft',['le_update_ErrorCode_t',['../le__update__interface_8h.html#a24bac90fc939c561c64d13608cc78a20',1,'le_update_interface.h']]],
-  ['le_5fupdate_5fitemtype_5ft',['le_update_ItemType_t',['../le__update__interface_8h.html#a65dc43f8d83511d0efa01fd3bdaefd28',1,'le_update_interface.h']]],
   ['le_5fupdate_5fstate_5ft',['le_update_State_t',['../le__update__interface_8h.html#ae9758536ebaf1842cdaaddd6cf95a672',1,'le_update_interface.h']]],
   ['le_5fvoicecall_5fevent_5ft',['le_voicecall_Event_t',['../le__voicecall__interface_8h.html#a51066eb84677e4d4c5447aaf8dd18ff1',1,'le_voicecall_interface.h']]],
   ['le_5fvoicecall_5fterminationreason_5ft',['le_voicecall_TerminationReason_t',['../le__voicecall__interface_8h.html#a752ba5dba19137e6d92e25450894bb13',1,'le_voicecall_interface.h']]]
