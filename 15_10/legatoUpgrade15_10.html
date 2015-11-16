@@ -68,46 +68,44 @@ can be used to create a copy of config trees and reinstate settings after instal
 
 <p>Connect your target device to your host using a serial port over USB in Windows (the upgrade packages are one-click .exe files). </p>
 
-<p>Go to Device Manager and check that the target has enumerated as "DM" serial port. </p>
+<p>Go to Device Manager and check that the target has enumerated as a "DM" serial port. </p>
 
 <p>To determine the upgrade package for your board, connect to the target (through HyperTerminal or Tera Term),
  and run the AT command <font face="courier">AT!PRIID?</font>. It will return the PRI number, which should be one of these: </p>
 
-<p>PRI Part Number: 5501011 - mangOH board</p>
+<p>PRI Part Number: 5501011 (SKU 9101011)</p>
 
-<p>PRI Part Number: 9904889 - generic board</p>
-
+<p>PRI Part Number: 9904889 - (SKU 1102621)</p>
  
 <p>The board update packages include Legato 15.10.0.Beta and important platform related configuration. 
 The target will boot in Airplane mode after the upgrade if this is the first use of this configuration. </p>
-
  
-<p>Download and run the configuration package applicable to your board: </p>
+<p>Download and run the configuration package applicable to your SKU: </p>
 
-<p><b>mangOH</b></p>
-<p>PRI Part Number: 5501011</p>
+<p><b>SKU 9101011</b></p>
 <p>File: 9101011_5501011_WP8548-G_07.04.06.00_00_DevKit_001.013_000-field.exe</p>
-<p><a href="http://source.sierrawireless.com/resources/legato/wp85updatemangoh/">download Beta mangOH configuration</a></p> 
+<p><a href="http://source.sierrawireless.com/resources/legato/wp85update9101011/">download 9101011 configuration</a></p> 
 
-<p><b>Generic</b></p>
+<p><b>SKU 1102621</b></p>
 <p>PRI Part Number: 9904889</p>
 <p>File: 1102621_9904889_WP8548-G_07.04.06.00_00_Generic_001.000_000-field.exe
-<p><a href="http://source.sierrawireless.com/resources/legato/wp85updategeneric/">download Beta generic configuration</a></p> 
+<p><a href="http://source.sierrawireless.com/resources/legato/wp85update1102621">download 1102621 configuration</a></p> 
 
+<p>Double-click the .exe file to run the upgrade.</p>
+<br>
 <p><b>Carrier</b></p>
 <p>The carrier update package includes the modem and application processor firmware and carrier-specific 
 configuration. The target will boot in Online mode after the upgrade. </p>
 
- <p>Download and run the carrier configuration tool: </p>
-
-<p>File: 1102621_9904889_WP8548-G_07.04.06.00_00_Generic_001.000_000-field.exe</p>
+<p>Download and run the generic carrier configuration tool: </p>
+<p>File: 9999999_9904559_SWI9X15Y_07.04.06.00_00_GENERIC_001.010_000-field.exe</p>
 <p><a href="http://source.sierrawireless.com/resources/legato/wp85updatecarrier/">download Beta carrier configuration</a></p>
- 
-<p><b>Not Enumerating as DM Port?</b></p>
+<p>Double-click the .exe file to run the upgrade.</p>
 
+<br>
+<p><b>Not Enumerating as DM Port?</b></p>
 <p>If the target is enumerating as an ECM device only (i.e., Ethernet over USB), 
 use the command <font face="courier">configEcm</font> off in the Linux shell to allow DM to enumerate in the USB port. </p>
-
 <p>If ECM-only enumeration is preferred, access the A5 console via UART, Ethernet, or 
 USB (ADB), and run command <font face="courier">configEcm on</font>. Alternatively use <font face="courier">configEcm</font> to 
 list optional parameters for the ECM configuration. </p>
