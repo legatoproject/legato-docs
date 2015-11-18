@@ -114,11 +114,11 @@ $(document).ready(function(){initNavTree('yocto_legato.html','');});
 <div class="contents">
 <div class="textblock"><p>This topic provides info about working with Legato and Yocto.</p>
 <p>The Yocto Project is an open source collaboration project that provides templates, tools and methods to help you create custom Linux-based systems for embedded products regardless of the hardware architecture.</p>
-<p>Legato is compatible with Yocto 1.6.1</p>
+<p>Legato is compatible with Yocto 1.7.2</p>
 <h1><a class="anchor" id="getstartedYoctoLinux_yoctoDirectories"></a>
 Yocto Linux Directories</h1>
-<p>Untar the file <b>Legato-Dist-Source-mdm9x15-07.04.06.00.tar.bz2</b> to a directory: </p><div class="fragment"><div class="line">$ cd &lt;some directory&gt;</div>
-<div class="line">$ tar xvjf Legato-Dist-Source-mdm9x15-07.04.06.00.tar.bz2</div>
+<p>Untar the file <b>Legato-Dist-Source-mdm9x15-SWI9X15Y_07.04.06.00.tar.bz2</b> to a directory: </p><div class="fragment"><div class="line">$ cd &lt;some directory&gt;</div>
+<div class="line">$ tar xvjfLegato-Dist-Source-mdm9x15-SWI9X15Y_07.04.06.00.tar.bz2</div>
 </div><!-- fragment --><p>These file/directories will be extracted:</p><ul>
 <li><b>linux-yocto-3.4.git</b> - Linux kernel - 14.1.0.Beta.rc2</li>
 <li><b>Legato-Yocto1_6</b> - Sierra Wireless specific layers</li>
@@ -129,7 +129,8 @@ Yocto Linux Directories</h1>
 <p>Yocto 1.6.1 and poky environment documentation is available at <a href="https://www.yoctoproject.org/documentation/archived?keys=&amp;field_version_tid=45">Yocto docs</a></p>
 <h1><a class="anchor" id="yoctoWP85"></a>
 WP85 and Yocto</h1>
-<p>The following table lists details about Yocto support for the WP85 module:</p>
+<p>The following table lists details about Yocto support for the WP85 module.</p>
+<dl class="section warning"><dt>Warning</dt><dd><code>legato-image.wp85.ubi</code> requires fakeroot 1.10.2 for generation.</dd></dl>
 <table class="doxtable">
 <tr>
 <th>File Type </th><th>Partition </th><th>Filename </th><th>Def. </th><th>Description  </th></tr>
