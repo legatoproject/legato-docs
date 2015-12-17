@@ -89,18 +89,20 @@ File: 1102621_9904889_WP8548-G_07.04.06.00_00_Generic_001.000_000-field.exe<br>
 <a href="http://source.sierrawireless.com/resources/legato/wp85upgrade1102621">download 1102621 configuration</a></p> 
 <p>Double-click the .exe file to run the upgrade.</p>
 <p>The target will boot in Airplane mode after the upgrade if this is the first use of this configuration.</p>
-
 <h3><a id="carFw">Carrier Configuration</a></h3>
 <p>The carrier configuration package includes the modem and application processor firmware and carrier-specific 
 configuration.</p>
 
-<p>Download and run the generic carrier configuration tool: </p>
+<p>Download the generic carrier configuration tool: </p>
 <p>File: 9999999_9904559_SWI9X15Y_07.05.01.00_00_GENERIC_001.013_000-field.exe<br>
 <a href="http://source.sierrawireless.com/resources/legato/wp85upgradeCarrier/">download Beta carrier configuration</a></p>
-<p>Double-click the .exe file to run the upgrade.</p>
+<p>File: legatocwe-15.10.1.exe<br>
+<a href="http://source.sierrawireless.com/resources/legato/wp85upgradecarrierlegato/">download Beta legato upgrade tool</a></p>
+<p>Double-click the 9999999_9904559_SWI9X15Y_07.05.01.00_00_GENERIC_001.013_000-field.exe file to run the carrier upgrade.</p>
 
 <p>The target will boot in Online mode after the upgrade. </p>
-<br>
+<p>Double-click the Legato upgrade legatocwe-15.10.1.exe to upgrade Legato on the target.<br>
+
 <h3><a id="noDM">Not Enumerating as DM Port?</a></h3>
 <p>If the target is enumerating as an ECM device only (i.e., Ethernet over USB), 
 use the command <font face="courier">configEcm off </font> in a Linux shell to allow DM to enumerate in the USB port. </p>
@@ -108,6 +110,10 @@ use the command <font face="courier">configEcm off </font> in a Linux shell to a
 USB (ADB), and run command <font face="courier">configEcm on</font>. Alternatively use <font face="courier">configEcm</font> to 
 list optional parameters for the ECM configuration. </p>
 
+<h3><a id="moreInfo">More Info</a></h3><p>For complete WP85 release notes, see the 
+<a href="http://source.sierrawireless.com/resources/legato/WP85crn/">SWI9X15Y 7.0 r01.04 Customer Release Notes PDF.</a></p>
+<p>For more info about the WP85 firmware downloads, see the 
+<a href="http://source.sierrawireless.com/resources/legato/wp85firmware/#sthash.wyWcd88O.dpuf">WP85 Legato Source page</a></p>
 <hr>
 <h2><a id="2">Upgrade Legato Beta AF 15.08 to 15.10 </a></h2>
 <p>Ensure you <a href="#1">upgrade firmware</a> before upgrading Legato AF. Also, ensure you have the latest
