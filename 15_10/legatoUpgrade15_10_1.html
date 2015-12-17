@@ -1,0 +1,137 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<style type="text/css">
+<!--
+a, a:link, a:visited
+	{color:#978c16;
+	text-decoration:none}
+a:hover
+	{color:#e53b30}
+h1
+	{font-weight:bold;
+	font-size:14pt;
+	font-family:Helvetica;
+	color:#e53b30}
+h2
+	{font-weight:bold;
+	font-size:11pt;
+	font-family:arial;
+	color:#000000}
+h3
+	{font-weight:bold;
+	font-size:10pt;
+	font-family:arial;
+	color:#000000}
+li
+	{margin-top:3.5pt;
+	font-style:normal;
+	font-weight:normal;
+	color:rgb(0,0,0);
+	font-size:11pt}
+p
+	{margin-top:4.0pt;
+	margin-right:.2in;
+	margin-bottom:.18in;
+	margin-left:.25in;
+	font-size:11.0pt;
+	font-family:arial;
+	color:#000000}
+ul
+	{margin-left:.2in;
+	font-size:11.0pt;
+	font-family:arial;
+	list-style:disc;
+	margin-bottom:3pt;
+	margin-top:2pt}
+-->
+</style>
+</head>
+<body>
+<h1>Upgrading Legato </h1>
+<p>Copyright &copy; Sierra Wireless Inc. Use of this work is subject to license. </p>
+<hr>
+<p><b>Important:</b> Upgrade the firmware before upgrading the Legato application framework.</p>
+
+<p><b>Config Trees: </b>Legato currently overwrites private config trees during upgrading. An 
+<a href="http://www.legato.io/legato-docs/15_10/how_to_config_tree_import_export.html">import/export script</a>
+can be used to create a copy of config trees and reinstate settings after installation.</p>
+<hr>
+<p>Contact your Field Application Engineer (FAE) to upgrade AR series targets.</p>
+<p><a href="#1">Upgrade WP Firmware </a><br>
+<a href="#2">Upgrade Legato Application Framework</a></p>
+<p>Here's other info you may need to look at: <br>
+<a href="http://www.legato.io/legato-docs/15_10/Legato_15_10_ReleaseNotes.pdf">Legato 15.10 Beta release notes</a></p>
+<hr>
+<h2><a id="1">Upgrade WP85 Firmware</a></h2>
+<p>These instructions are for the Legato 15.10.1 Beta release; this release provided new downloads only. 
+The firmware requires both <a href="#custFw">customer</a> and <a href="#carFw">carrier</a> configurations to be upgraded.</p>
+<p>Connect your target device to your host PC using a serial port over USB in Windows (the upgrade packages are one-click .exe files). </p>
+<p>Go to Device Manager and check that the target has enumerated as a "DM" serial port.  See <a href="#noDM">Not Enumerating as DM Port?</a> 
+if your target isn't displayed in the list.</p>
+
+<h3><a id="custFw">Customer Configuration</a></h3>
+<p>To determine the correct customer configuration package for your upgrade, connect to the target (through HyperTerminal or Tera Term),
+ and run the AT command <font face="courier">AT!PRIID?</font>. It will return the PRI number, which should be one of these: </p>
+<ul><li>PRI Part Number: 5501011 (SKU 9101011 v001.013_000)</li>
+<li>PRI Part Number: 9904889 (SKU 1102621 v001.000_000)</li></ul>
+<br>
+<p>The hardware upgrade package includes Legato 15.10.0.Beta and important platform related configuration.</p>
+ 
+<p>Download and run the configuration package applicable to your SKU (corresponding to the PN above): </p>
+
+<p><b>SKU 9101011 v001.013_000</b><br>
+File: 9101011_5501011_WP8548-G_07.04.06.00_00_DevKit_001.013_000-field.exe<br>
+<a href="http://source.sierrawireless.com/resources/legato/wp85upgrade9101011/">download 9101011 configuration</a></p> 
+
+<p><b>SKU 1102621 v001.000_000</b><br>
+File: 1102621_9904889_WP8548-G_07.04.06.00_00_Generic_001.000_000-field.exe<br>
+<a href="http://source.sierrawireless.com/resources/legato/wp85upgrade1102621">download 1102621 configuration</a></p> 
+<p>Double-click the .exe file to run the upgrade.</p>
+<p>The target will boot in Airplane mode after the upgrade if this is the first use of this configuration.</p>
+
+<h3><a id="carFw">Carrier Configuration</a></h3>
+<p>The carrier configuration package includes the modem and application processor firmware and carrier-specific 
+configuration.</p>
+
+<p>Download and run the generic carrier configuration tool: </p>
+<p>File: 9999999_9904559_SWI9X15Y_07.05.01.00_00_GENERIC_001.013_000-field.exe<br>
+<a href="http://source.sierrawireless.com/resources/legato/wp85upgradeCarrier/">download Beta carrier configuration</a></p>
+<p>Double-click the .exe file to run the upgrade.</p>
+
+<p>The target will boot in Online mode after the upgrade. </p>
+<br>
+<h3><a id="noDM">Not Enumerating as DM Port?</a></h3>
+<p>If the target is enumerating as an ECM device only (i.e., Ethernet over USB), 
+use the command <font face="courier">configEcm off </font> in a Linux shell to allow DM to enumerate in the USB port. </p>
+<p>If ECM-only enumeration is preferred, access the A5 console via UART, Ethernet, or 
+USB (ADB), and run command <font face="courier">configEcm on</font>. Alternatively use <font face="courier">configEcm</font> to 
+list optional parameters for the ECM configuration. </p>
+
+<hr>
+<h2><a id="2">Upgrade Legato Beta AF 15.08 to 15.10 </a></h2>
+<p>Ensure you <a href="#1">upgrade firmware</a> before upgrading Legato AF. Also, ensure you have the latest
+ <a href="https://github.com/legatoproject/legato-af ">source code</a> from GitHub.</p>
+ <br>
+<p>On your development host, go to the Legato build toolchain installation directory (/opt/swi) and remove all files:
+</p>
+<p><font face="courier">$ cd /opt/swi <br>
+$ sudo rm -rf *</font></p>
+<p>Installation packages (including toolchain downloads) are available at the Sierra Wireless Source 
+<a href="http://source.sierrawireless.com/resources/legato/downloads/">
+Legato Downloads</a> page.</p>
+<p>Select toolchain for either 32 or 64 bits and copy it to <font face="courier">/opt/swi</font></p>
+<p><font face="courier">$ mkdir -p /opt/swi <br>
+$ chmod u+x [toolchain.sh file] <br>
+$ [toolchain.sh file]</font></p>
+<p>You may need to use <font face="courier">sudo</font> to run <font face="courier">mkdir</font>.</p>
+
+<p>Then <a href="http://www.legato.io/legato-docs/15_10/getstarted_c_linstall.html">install</a> and
+<a href="http://www.legato.io/legato-docs/15_10/getstarted_c_lbuild.html">build</a> Legato, and then
+ <a href="http://www.legato.io/legato-docs/15_10/getstarted_target_s_w.html" target="_blank">
+set up the target software</a>.</p>
+<p>See <a href="http://www.legato.io/legato-docs/">
+Legato documentation</a> for full information.</p>
+<hr>
+</body>
+</html>
