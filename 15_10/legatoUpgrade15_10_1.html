@@ -66,11 +66,19 @@ can be used to create a copy of config trees and reinstate settings after instal
 <h2><a id="1">Upgrade WP85 Firmware</a></h2>
 <p>These instructions are for the Legato 15.10.1 Beta release; this release provided new downloads only. 
 The firmware requires both <a href="#custFw">customer</a> and <a href="#carFw">carrier</a> configurations to be upgraded.</p>
+
+<p>Follow these steps:</p>
+<p><a href="#conDev">Connect to your target device.</a><br>
+<a href="#custFw">Upgrade the customer configuration</a><br>
+<a href="#carFw">Upgrade the carrier configuration - this is a two step process.</a><br>
+
+</p>
+<h3><a id="conDev">1. Connect Device</a></h3>
 <p>Connect your target device to your host PC using a serial port over USB in Windows (the upgrade packages are one-click .exe files). </p>
 <p>Go to Device Manager and check that the target has enumerated as a "DM" serial port.  See <a href="#noDM">Not Enumerating as DM Port?</a> 
 if your target isn't displayed in the list.</p>
 
-<h3><a id="custFw">Customer Configuration</a></h3>
+<h3><a id="custFw">2. Upgrade Customer Configuration</a></h3>
 <p>To determine the correct customer configuration package for your upgrade, connect to the target (through HyperTerminal or Tera Term),
  and run the AT command <font face="courier">AT!PRIID?</font>. It will return the PRI number, which should be one of these: </p>
 <ul><li>PRI Part Number: 5501011 (SKU 9101011 v001.013_000)</li>
@@ -89,7 +97,8 @@ File: 1102621_9904889_WP8548-G_07.04.06.00_00_Generic_001.000_000-field.exe<br>
 <a href="http://source.sierrawireless.com/resources/legato/wp85upgrade1102621">download 1102621 configuration</a></p> 
 <p>Double-click the .exe file to run the upgrade.</p>
 <p>The target will boot in Airplane mode after the upgrade if this is the first use of this configuration.</p>
-<h3><a id="carFw">Carrier Configuration</a></h3>
+
+<h3><a id="carFw">3. Upgrade Carrier Configuration</a></h3>
 <p>The carrier configuration package includes the modem and application processor firmware and carrier-specific 
 configuration.</p>
 
