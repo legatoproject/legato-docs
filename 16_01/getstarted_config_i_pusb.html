@@ -80,7 +80,7 @@ lo        Link encap:Local Loopback
           RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
 
 usb0      Link encap:Ethernet  HWaddr 32:E4:5E:6F:C4:3C
-          inet addr:192.168.1.2  Bcast:192.168.1.255  Mask:255.255.255.0
+          inet addr:192.168.2.2  Bcast:192.168.2.255  Mask:255.255.255.0
           inet6 addr: fe80::30e4:5eff:fe6f:c43c/64 Scope:Link
           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
           RX packets:197 errors:0 dropped:0 overruns:0 frame:0
@@ -95,7 +95,7 @@ Host</h1>
 <p>Run <code>bin/legs</code> to set the Legato environment.</p>
 <p>Run: </p><div class="fragment"><div class="line">ifconfig usb0 <target ip addr> up </div></div><!-- fragment --><p>where the IP address <b>subnet</b> matches the target.</p>
 <p>You may have to use <code>sudo</code> </p>
-<pre class="fragment">local@LocalLinux:~$ sudo ifconfig usb0 192.168.1.20 up
+<pre class="fragment">local@LocalLinux:~$ sudo ifconfig usb0 192.168.2.20 up
 [sudo] password for local:
 local@LocalLinux:~$
 </pre><p>Run <code>ifconfig</code> again, it should look something like this:</p>
