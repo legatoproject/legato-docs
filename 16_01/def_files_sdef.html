@@ -96,7 +96,7 @@ Max Priority</h2>
 <p>Here's a code sample where a process in the app's .adef is configured to start at high priority, and the .sdef section for that app has maxPriority set to <code>medium</code> so the process will start at medium priority.</p>
 <div class="fragment"><div class="line">apps:</div><div class="line">{</div><div class="line">    foo</div><div class="line">    {</div><div class="line">        maxPriority: high</div><div class="line">    }</div><div class="line">}</div></div><!-- fragment --><p>Another process in the same .adef configured to start at low priority will still start at low priority.</p>
 <h2><a class="anchor" id="defFilesSdef_appsPreloaded"></a>
-Preloaded</h2>
+preloaded</h2>
 <p>Indicates whether or not an app must be preloaded onto the target device separately from the rest of the system.</p>
 <p>The legato AF supports being installed in a read-only partition, mounted as <code>/mnt/legato</code> in the target file system. Writeable files will be kept in another file system mounted as <code>/legato</code> in the target file system.</p>
 <p>If the read-only partition must be updated, but there are other (possibly very large) apps in the writeable file system, it may be impossible to deliver an update containing the apps over-the-air at the same time that the read-only partition is updated.</p>
