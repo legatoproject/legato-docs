@@ -1,29 +1,29 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>le_thread.h File Reference - Legato Docs</title>
-<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description" />
-<meta content="#keywords" name="keywords" />
-<meta content="noindex, nofollow" name="robots" />
-<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-<link href="/resources/images/legato.ico" rel="shortcut icon" />
-<link href="/resources/images/legato.ico" rel="icon" type="image/x-icon" />
-<link href="/resources/images/legato.ico" rel="shortcut icon" type="image/x-icon" />
-<link href="#" rel="apple-touch-icon" />
-<link href="#" rel="apple-touch-icon" sizes="72x72" />
-<link href="#" rel="apple-touch-icon" sizes="114x114" />
-<link href="/resources/css/style.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="/resources/css/font-awesome.css" rel="stylesheet" type="text/css" />
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
 <!--[if IE]>
-        <script src="/resources/js/html5shiv.js"></script>
-        <script src="/resources/js/respond.js"></script>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
         <![endif]-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script src="/resources/js/main.js"></script>
-<link href="/resources/css/jqtree.css" rel="stylesheet" type="text/css" />
-<script src="/resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="/resources/js/jquery.cookie.js"></script>
+<script src="resources/js/main.js"></script>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 <script>
         setupTree("tocs/Build Apps Reference.json");
         </script>
@@ -34,27 +34,27 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink" href="getstarted_main.html">Build Apps</a><a class="subnavlink" href="getstarted_main.html">Get started</a><a class="subnavlink" href="build_apps_documentation.html">Documentation</a><a class="subnavlink" href="files.html">Reference</a><a class="navlink" href="platform_constraints.html">Build Platform</a><a class="subnavlink" href="platform_constraints.html">Platform Constraints</a><a class="subnavlink" href="yocto_main.html">Yocto Info</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink" href="build_apps_main.html">Build Apps</a><a class="subnavlink" href="getstarted_main.html">Get started</a><a class="subnavlink" href="build_apps_documentation.html">Documentation</a><a class="subnavlink" href="files.html">Reference</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="subnavlink" href="how_to_customize_u_s_b.html">Customize Legato Yocto USB</a><a class="subnavlink" href="platform_constraints.html">Platform Constraints</a><a class="subnavlink" href="getstarted_setup_host.html">Setup Dev Host PC</a><a class="subnavlink" href="yocto_main.html">Yocto Info</a><a class="navlink" href="about_main.html">About</a>
 </nav>
 </header>
 </div>
-<div class="orange" id="menudocumentation">
+<div class="white" id="menudocumentation">
 <header>
-<h1><a class="navlink" href="/" title="back to Legato homepage">Legato</a></h1>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo_192.png"/></a>
 <h2>/ Build Apps</h2>
-<nav class="ui-front" id="searchresult">
-<i class="fa fa-search"></i>
-<input id="autocomplete" onkeyup="getdata('Build Apps')" placeholder="Search..." /> <!-- <input id="category" type="checkbox" onclick="checkbox()"> <label for="category">API Search</label> -->
-</nav>
-</header>
-</div>
-<div class="orange" id="topMenu">
-<nav>
+<nav class="secondary">
 <a href="getstarted_main.html">Get Started</a><a href="build_apps_documentation.html">Documentation</a><a class="link-selected" href="files.html">Reference</a>
 </nav>
+<nav class="ui-front" id="searchresult">
+<i class="fa fa-search"></i>
+<input id="autocomplete" onkeyup="getdata('Build Apps')" placeholder="Search..."/> <!-- <input id="category" type="checkbox" onclick="checkbox()"> <label for="category">API Search</label> -->
+</nav>
+</header>
 </div>
+<div id="resizable">
 <div id="left">
 <div id="tree1"></div>
+</div>
 </div>
 <div class="content">
 <div class="header">
@@ -72,11 +72,11 @@
 Macros</h2></td></tr>
 <tr class="memitem:a5b989a1262268b0671f847d4d18cca65"><td align="right" class="memItemLeft" valign="top"><a class="anchor" id="a5b989a1262268b0671f847d4d18cca65"></a>
 #define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__thread_8h.html#a5b989a1262268b0671f847d4d18cca65">LE_THREAD_PRIORITY_RT_LOWEST</a>   <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a37b1c0a99fc3b979afa091911e2f43d6">LE_THREAD_PRIORITY_RT_1</a></td></tr>
-<tr class="memdesc:a5b989a1262268b0671f847d4d18cca65"><td class="mdescLeft"> </td><td class="mdescRight">Lowest real-time priority. <br /></td></tr>
+<tr class="memdesc:a5b989a1262268b0671f847d4d18cca65"><td class="mdescLeft"> </td><td class="mdescRight">Lowest real-time priority. <br/></td></tr>
 <tr class="separator:a5b989a1262268b0671f847d4d18cca65"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a9a249dc73c81435b2557d61cce888dfe"><td align="right" class="memItemLeft" valign="top"><a class="anchor" id="a9a249dc73c81435b2557d61cce888dfe"></a>
 #define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__thread_8h.html#a9a249dc73c81435b2557d61cce888dfe">LE_THREAD_PRIORITY_RT_HIGHEST</a>   <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a24095b646efb07792a6c2e0dbb259740">LE_THREAD_PRIORITY_RT_32</a></td></tr>
-<tr class="memdesc:a9a249dc73c81435b2557d61cce888dfe"><td class="mdescLeft"> </td><td class="mdescRight">Highest real-time priority. <br /></td></tr>
+<tr class="memdesc:a9a249dc73c81435b2557d61cce888dfe"><td class="mdescLeft"> </td><td class="mdescRight">Highest real-time priority. <br/></td></tr>
 <tr class="separator:a9a249dc73c81435b2557d61cce888dfe"><td class="memSeparator" colspan="2"> </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -92,50 +92,50 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a653b0f17cd4d4567c86a25e23d004f07"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07">le_thread_Priority_t</a> { <br />
+<tr class="memitem:a653b0f17cd4d4567c86a25e23d004f07"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07">le_thread_Priority_t</a> { <br/>
   <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a8237422b4c3d3df0ffcdbc9981c45d98">LE_THREAD_PRIORITY_IDLE</a> = 0, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07aa0e16c2e450b0510087487a06318a2bb">LE_THREAD_PRIORITY_NORMAL</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a37b1c0a99fc3b979afa091911e2f43d6">LE_THREAD_PRIORITY_RT_1</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a6d3958846ce89c25aad1f16db34549c7">LE_THREAD_PRIORITY_RT_2</a>, 
-<br />
+<br/>
   <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a5fce739981e752cb447f5f79b967670e">LE_THREAD_PRIORITY_RT_3</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a872a9ad09f7fa8ddf9364e604f096da7">LE_THREAD_PRIORITY_RT_4</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07ac8b001c3b50da24d990dd6b46e1efe68">LE_THREAD_PRIORITY_RT_5</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a9fc138e30eefdcb4e76714eb24640970">LE_THREAD_PRIORITY_RT_6</a>, 
-<br />
+<br/>
   <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07ae2c4e9e3acde0b3fdccae600a8fb1495">LE_THREAD_PRIORITY_RT_7</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a8f32fd7602abadccad57458154a36818">LE_THREAD_PRIORITY_RT_8</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a5d80b49943d3cf26e93c256fcb2f92f9">LE_THREAD_PRIORITY_RT_9</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a7cf4f6e4bcc28631edce76a0a3dff459">LE_THREAD_PRIORITY_RT_10</a>, 
-<br />
+<br/>
   <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a7adffd6b46009a0b66e464d04fc33076">LE_THREAD_PRIORITY_RT_11</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a6606e780b0fc8d1a0d06b1ead1f87e69">LE_THREAD_PRIORITY_RT_12</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a1cf7e4ae2011e1a823435bafceca1ec5">LE_THREAD_PRIORITY_RT_13</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a5b36cb29ff41620721ead1d7b4ce7e5c">LE_THREAD_PRIORITY_RT_14</a>, 
-<br />
+<br/>
   <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a8583464ddd0ac106fba090f37500f082">LE_THREAD_PRIORITY_RT_15</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07aafa2b78749f6b1e4fe740948f7d0ddc5">LE_THREAD_PRIORITY_RT_16</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07ade2e01a416dc1595ab3d9dde3da10b47">LE_THREAD_PRIORITY_RT_17</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07aad88067a95684c10cf1b13153629f2a2">LE_THREAD_PRIORITY_RT_18</a>, 
-<br />
+<br/>
   <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07af671e9ef5c65873cb716562b10fc7aa4">LE_THREAD_PRIORITY_RT_19</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a3f75659013e4bc38c572bd1db744f5ee">LE_THREAD_PRIORITY_RT_20</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a50ea42702ed027e7c662115f90083385">LE_THREAD_PRIORITY_RT_21</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07afce77d999f1b4c976e2249e744063b8e">LE_THREAD_PRIORITY_RT_22</a>, 
-<br />
+<br/>
   <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a34ff5071e5335d38e2a122873404ddff">LE_THREAD_PRIORITY_RT_23</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a41c0476895c8ca5c68688f875ff653e1">LE_THREAD_PRIORITY_RT_24</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07ab9c1770678cfce99e82e3d1bdbf5de4e">LE_THREAD_PRIORITY_RT_25</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a22b20d8ac127832cca00cf13232bf6a2">LE_THREAD_PRIORITY_RT_26</a>, 
-<br />
+<br/>
   <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07ac6a719f611dd43eb4b8da8ecfab5066e">LE_THREAD_PRIORITY_RT_27</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07ad7aab0c671c44c412c20f16020152da1">LE_THREAD_PRIORITY_RT_28</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07ac906028e6cb4515a6821424353dfb82a">LE_THREAD_PRIORITY_RT_29</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a14d161ef18fc3d3ef9d2bc512936e3bf">LE_THREAD_PRIORITY_RT_30</a>, 
-<br />
+<br/>
   <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a4cad36377869bf2ee3e83d7c84a738b4">LE_THREAD_PRIORITY_RT_31</a>, 
 <a class="el" href="le__thread_8h.html#a653b0f17cd4d4567c86a25e23d004f07a24095b646efb07792a6c2e0dbb259740">LE_THREAD_PRIORITY_RT_32</a>
-<br />
+<br/>
  }</td></tr>
 <tr class="separator:a653b0f17cd4d4567c86a25e23d004f07"><td class="memSeparator" colspan="2"> </td></tr>
 </table><table class="memberdecls">
@@ -844,7 +844,7 @@ It's an error for two or more threads try to join with the same thread. </dd></d
 </div>
 </div>
 </div>
-<br clear="left" />
+<br clear="left"/>
 </div>
 <div id="footer">
 </div>

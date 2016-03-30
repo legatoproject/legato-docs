@@ -1,29 +1,29 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>C Language Support  - Legato Docs</title>
-<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description" />
-<meta content="#keywords" name="keywords" />
-<meta content="noindex, nofollow" name="robots" />
-<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-<link href="/resources/images/legato.ico" rel="shortcut icon" />
-<link href="/resources/images/legato.ico" rel="icon" type="image/x-icon" />
-<link href="/resources/images/legato.ico" rel="shortcut icon" type="image/x-icon" />
-<link href="#" rel="apple-touch-icon" />
-<link href="#" rel="apple-touch-icon" sizes="72x72" />
-<link href="#" rel="apple-touch-icon" sizes="114x114" />
-<link href="/resources/css/style.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="/resources/css/font-awesome.css" rel="stylesheet" type="text/css" />
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
 <!--[if IE]>
-        <script src="/resources/js/html5shiv.js"></script>
-        <script src="/resources/js/respond.js"></script>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
         <![endif]-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script src="/resources/js/main.js"></script>
-<link href="/resources/css/jqtree.css" rel="stylesheet" type="text/css" />
-<script src="/resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="/resources/js/jquery.cookie.js"></script>
+<script src="resources/js/main.js"></script>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 <script>
         setupTree("tocs/Build Apps Documentation.json");
         </script>
@@ -34,27 +34,27 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink" href="getstarted_main.html">Build Apps</a><a class="subnavlink" href="getstarted_main.html">Get started</a><a class="subnavlink" href="build_apps_documentation.html">Documentation</a><a class="subnavlink" href="files.html">Reference</a><a class="navlink" href="platform_constraints.html">Build Platform</a><a class="subnavlink" href="platform_constraints.html">Platform Constraints</a><a class="subnavlink" href="yocto_main.html">Yocto Info</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink" href="build_apps_main.html">Build Apps</a><a class="subnavlink" href="getstarted_main.html">Get started</a><a class="subnavlink" href="build_apps_documentation.html">Documentation</a><a class="subnavlink" href="files.html">Reference</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="subnavlink" href="how_to_customize_u_s_b.html">Customize Legato Yocto USB</a><a class="subnavlink" href="platform_constraints.html">Platform Constraints</a><a class="subnavlink" href="getstarted_setup_host.html">Setup Dev Host PC</a><a class="subnavlink" href="yocto_main.html">Yocto Info</a><a class="navlink" href="about_main.html">About</a>
 </nav>
 </header>
 </div>
-<div class="orange" id="menudocumentation">
+<div class="white" id="menudocumentation">
 <header>
-<h1><a class="navlink" href="/" title="back to Legato homepage">Legato</a></h1>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo_192.png"/></a>
 <h2>/ Build Apps</h2>
-<nav class="ui-front" id="searchresult">
-<i class="fa fa-search"></i>
-<input id="autocomplete" onkeyup="getdata('Build Apps')" placeholder="Search..." /> <!-- <input id="category" type="checkbox" onclick="checkbox()"> <label for="category">API Search</label> -->
-</nav>
-</header>
-</div>
-<div class="orange" id="topMenu">
-<nav>
+<nav class="secondary">
 <a href="getstarted_main.html">Get Started</a><a class="link-selected" href="build_apps_documentation.html">Documentation</a><a href="files.html">Reference</a>
 </nav>
+<nav class="ui-front" id="searchresult">
+<i class="fa fa-search"></i>
+<input id="autocomplete" onkeyup="getdata('Build Apps')" placeholder="Search..."/> <!-- <input id="category" type="checkbox" onclick="checkbox()"> <label for="category">API Search</label> -->
+</nav>
+</header>
 </div>
+<div id="resizable">
 <div id="left">
 <div id="tree1"></div>
+</div>
 </div>
 <div class="content">
 <div class="header">
@@ -259,16 +259,16 @@ typedef struct common_OpaqueReference* common_OpaqueReferenceRef_t;
 typedef enum
 {
     COMMON_ZERO,
-        ///< first enum
+        ///&lt; first enum
 
     COMMON_ONE,
-        ///< second enum
+        ///&lt; second enum
 
     COMMON_TWO,
-        ///< third enum
+        ///&lt; third enum
 
     COMMON_THREE
-        ///< fourth enum
+        ///&lt; fourth enum
 }
 common_EnumExample_t;
 
@@ -281,13 +281,13 @@ common_EnumExample_t;
 typedef enum
 {
     COMMON_BIT0 = 0x1,
-        ///< first
+        ///&lt; first
 
     COMMON_BIT1 = 0x2,
-        ///< second
+        ///&lt; second
 
     COMMON_BIT2 = 0x4
-        ///< third
+        ///&lt; third
 }
 common_BitMaskExample_t;
 
@@ -392,15 +392,15 @@ typedef void (*example_TestAHandlerFunc_t)
 example_TestAHandlerRef_t example_AddTestAHandler
 (
     uint32_t data,
-        ///< [IN]
-        ///< Used when registering the handler i.e. it is
-        ///< passed into the generated ADD_HANDLER function.
+        ///&lt; [IN]
+        ///&lt; Used when registering the handler i.e. it is
+        ///&lt; passed into the generated ADD_HANDLER function.
 
     example_TestAHandlerFunc_t handlerPtr,
-        ///< [IN]
+        ///&lt; [IN]
 
     void* contextPtr
-        ///< [IN]
+        ///&lt; [IN]
 );
 
 //--------------------------------------------------------------------------------------------------
@@ -411,7 +411,7 @@ example_TestAHandlerRef_t example_AddTestAHandler
 void example_RemoveTestAHandler
 (
     example_TestAHandlerRef_t addHandlerRef
-        ///< [IN]
+        ///&lt; [IN]
 );
 
 //--------------------------------------------------------------------------------------------------
@@ -422,37 +422,37 @@ void example_RemoveTestAHandler
 void example_AllParameters
 (
     common_EnumExample_t a,
-        ///< [IN]
-        ///< first one-line comment
-        ///< second one-line comment
+        ///&lt; [IN]
+        ///&lt; first one-line comment
+        ///&lt; second one-line comment
 
     uint32_t* bPtr,
-        ///< [OUT]
+        ///&lt; [OUT]
 
     const uint32_t* dataPtr,
-        ///< [IN]
+        ///&lt; [IN]
 
     size_t dataNumElements,
-        ///< [IN]
+        ///&lt; [IN]
 
     uint32_t* outputPtr,
-        ///< [OUT]
-        ///< some more comments here
-        ///< and some comments here as well
+        ///&lt; [OUT]
+        ///&lt; some more comments here
+        ///&lt; and some comments here as well
 
     size_t* outputNumElementsPtr,
-        ///< [INOUT]
+        ///&lt; [INOUT]
 
     const char* label,
-        ///< [IN]
+        ///&lt; [IN]
 
     char* response,
-        ///< [OUT]
-        ///< comments on final parameter, first line
-        ///< and more comments
+        ///&lt; [OUT]
+        ///&lt; comments on final parameter, first line
+        ///&lt; and more comments
 
     size_t responseNumElements
-        ///< [IN]
+        ///&lt; [IN]
 );
 
 //--------------------------------------------------------------------------------------------------
@@ -463,12 +463,12 @@ void example_AllParameters
 void example_FileTest
 (
     int dataFile,
-        ///< [IN]
-        ///< file descriptor as IN parameter
+        ///&lt; [IN]
+        ///&lt; file descriptor as IN parameter
 
     int* dataOutPtr
-        ///< [OUT]
-        ///< file descriptor as OUT parameter
+        ///&lt; [OUT]
+        ///&lt; file descriptor as OUT parameter
 );
 
 //--------------------------------------------------------------------------------------------------
@@ -479,22 +479,22 @@ void example_FileTest
 int32_t example_UseCallback
 (
     uint32_t someParm,
-        ///< [IN]
+        ///&lt; [IN]
 
     example_TestAHandlerFunc_t handlerPtr,
-        ///< [IN]
+        ///&lt; [IN]
 
     void* contextPtr
-        ///< [IN]
+        ///&lt; [IN]
 );
 
 
 #endif // EXAMPLE_H_INCLUDE_GUARD
 
-</pre><hr />
+</pre><hr/>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>
 </div></div>
-<br clear="left" />
+<br clear="left"/>
 </div>
 <div id="footer">
 </div>

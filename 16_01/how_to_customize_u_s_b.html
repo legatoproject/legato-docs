@@ -1,29 +1,29 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Customize Legato Yocto USB  - Legato Docs</title>
-<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description" />
-<meta content="#keywords" name="keywords" />
-<meta content="noindex, nofollow" name="robots" />
-<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-<link href="/resources/images/legato.ico" rel="shortcut icon" />
-<link href="/resources/images/legato.ico" rel="icon" type="image/x-icon" />
-<link href="/resources/images/legato.ico" rel="shortcut icon" type="image/x-icon" />
-<link href="#" rel="apple-touch-icon" />
-<link href="#" rel="apple-touch-icon" sizes="72x72" />
-<link href="#" rel="apple-touch-icon" sizes="114x114" />
-<link href="/resources/css/style.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="/resources/css/font-awesome.css" rel="stylesheet" type="text/css" />
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
 <!--[if IE]>
-        <script src="/resources/js/html5shiv.js"></script>
-        <script src="/resources/js/respond.js"></script>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
         <![endif]-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script src="/resources/js/main.js"></script>
-<link href="/resources/css/jqtree.css" rel="stylesheet" type="text/css" />
-<script src="/resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="/resources/js/jquery.cookie.js"></script>
+<script src="resources/js/main.js"></script>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 <script>
         setupTree("tocs/Build Apps Documentation.json");
         </script>
@@ -34,27 +34,27 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink" href="getstarted_main.html">Build Apps</a><a class="subnavlink" href="getstarted_main.html">Get started</a><a class="subnavlink" href="build_apps_documentation.html">Documentation</a><a class="subnavlink" href="files.html">Reference</a><a class="navlink" href="platform_constraints.html">Build Platform</a><a class="subnavlink" href="platform_constraints.html">Platform Constraints</a><a class="subnavlink" href="yocto_main.html">Yocto Info</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink" href="build_apps_main.html">Build Apps</a><a class="subnavlink" href="getstarted_main.html">Get started</a><a class="subnavlink" href="build_apps_documentation.html">Documentation</a><a class="subnavlink" href="files.html">Reference</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="subnavlink link-selected" href="how_to_customize_u_s_b.html">Customize Legato Yocto USB</a><a class="subnavlink" href="platform_constraints.html">Platform Constraints</a><a class="subnavlink" href="getstarted_setup_host.html">Setup Dev Host PC</a><a class="subnavlink" href="yocto_main.html">Yocto Info</a><a class="navlink" href="about_main.html">About</a>
 </nav>
 </header>
 </div>
-<div class="orange" id="menudocumentation">
+<div class="white" id="menudocumentation">
 <header>
-<h1><a class="navlink" href="/" title="back to Legato homepage">Legato</a></h1>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo_192.png"/></a>
 <h2>/ Build Apps</h2>
-<nav class="ui-front" id="searchresult">
-<i class="fa fa-search"></i>
-<input id="autocomplete" onkeyup="getdata('Build Apps')" placeholder="Search..." /> <!-- <input id="category" type="checkbox" onclick="checkbox()"> <label for="category">API Search</label> -->
-</nav>
-</header>
-</div>
-<div class="orange" id="topMenu">
-<nav>
+<nav class="secondary">
 <a href="getstarted_main.html">Get Started</a><a class="link-selected" href="build_apps_documentation.html">Documentation</a><a href="files.html">Reference</a>
 </nav>
+<nav class="ui-front" id="searchresult">
+<i class="fa fa-search"></i>
+<input id="autocomplete" onkeyup="getdata('Build Apps')" placeholder="Search..."/> <!-- <input id="category" type="checkbox" onclick="checkbox()"> <label for="category">API Search</label> -->
+</nav>
+</header>
 </div>
+<div id="resizable">
 <div id="left">
 <div id="tree1"></div>
+</div>
 </div>
 <div class="content">
 <div class="header">
@@ -79,11 +79,11 @@ ELSE setup default composition
 Default Endpoints</h1>
 <p>The table shows all the possible USB interfaces available on the AR7 family.</p>
 <div class="image">
-<img alt="USB_interfaces_AR7.png" src="USB_interfaces_AR7.png" />
+<img alt="USB_interfaces_AR7.png" src="USB_interfaces_AR7.png"/>
 </div>
 <p>These endpoints are grouped into compositions, and a fixed set of compositions is provided as shown in the next table. Switching between these compositions is done using the <code>AT!USBCOMP</code> command. The default composition for the AR7 is composition 2.</p>
 <div class="image">
-<img alt="USB_endpointCompositions_AR7.png" src="USB_endpointCompositions_AR7.png" />
+<img alt="USB_endpointCompositions_AR7.png" src="USB_endpointCompositions_AR7.png"/>
 </div>
 <h1><a class="anchor" id="howToCustomizeUSB_customizeEndpoints"></a>
 Customize Endpoints</h1>
@@ -104,19 +104,19 @@ nmea
 <tr>
 <td>nmea </td><td>serial </td><td>NMEA strings when positioning is enabled </td><td>N/A </td><td>/dev/ttyUSB0 </td></tr>
 <tr>
-<td>audio </td><td>USB audio </td><td>Expose the target as a sound card </td><td>N/A </td><td>pcmC2D0c <br />
+<td>audio </td><td>USB audio </td><td>Expose the target as a sound card </td><td>N/A </td><td>pcmC2D0c <br/>
  pcmC2D0p </td></tr>
 <tr>
 <td>serial </td><td>serial </td><td>A serial interface to the embedded Linux </td><td>/dev/ttyGS0 </td><td>/dev/ttyUSB0 </td></tr>
 <tr>
-<td>usb_mbim </td><td>CDC-MBIM </td><td>Mobile Broadband Interface Model <br />
- (an extension of CDC-NCM) </td><td>N/A </td><td>NIC (eg wwp0s20u6i12) <br />
+<td>usb_mbim </td><td>CDC-MBIM </td><td>Mobile Broadband Interface Model <br/>
+ (an extension of CDC-NCM) </td><td>N/A </td><td>NIC (eg wwp0s20u6i12) <br/>
  + cdc-wdm0 </td></tr>
 </table>
-<hr />
+<hr/>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>
 </div></div>
-<br clear="left" />
+<br clear="left"/>
 </div>
 <div id="footer">
 </div>

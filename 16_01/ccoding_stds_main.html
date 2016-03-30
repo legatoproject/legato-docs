@@ -1,29 +1,29 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>C Language Standards  - Legato Docs</title>
-<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description" />
-<meta content="#keywords" name="keywords" />
-<meta content="noindex, nofollow" name="robots" />
-<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-<link href="/resources/images/legato.ico" rel="shortcut icon" />
-<link href="/resources/images/legato.ico" rel="icon" type="image/x-icon" />
-<link href="/resources/images/legato.ico" rel="shortcut icon" type="image/x-icon" />
-<link href="#" rel="apple-touch-icon" />
-<link href="#" rel="apple-touch-icon" sizes="72x72" />
-<link href="#" rel="apple-touch-icon" sizes="114x114" />
-<link href="/resources/css/style.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="/resources/css/font-awesome.css" rel="stylesheet" type="text/css" />
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
 <!--[if IE]>
-        <script src="/resources/js/html5shiv.js"></script>
-        <script src="/resources/js/respond.js"></script>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
         <![endif]-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script src="/resources/js/main.js"></script>
-<link href="/resources/css/jqtree.css" rel="stylesheet" type="text/css" />
-<script src="/resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="/resources/js/jquery.cookie.js"></script>
+<script src="resources/js/main.js"></script>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 <script>
         setupTree("tocs/Build Apps Documentation.json");
         </script>
@@ -34,27 +34,27 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink" href="getstarted_main.html">Build Apps</a><a class="subnavlink" href="getstarted_main.html">Get started</a><a class="subnavlink" href="build_apps_documentation.html">Documentation</a><a class="subnavlink" href="files.html">Reference</a><a class="navlink" href="platform_constraints.html">Build Platform</a><a class="subnavlink" href="platform_constraints.html">Platform Constraints</a><a class="subnavlink" href="yocto_main.html">Yocto Info</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink" href="build_apps_main.html">Build Apps</a><a class="subnavlink" href="getstarted_main.html">Get started</a><a class="subnavlink" href="build_apps_documentation.html">Documentation</a><a class="subnavlink" href="files.html">Reference</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="subnavlink" href="how_to_customize_u_s_b.html">Customize Legato Yocto USB</a><a class="subnavlink" href="platform_constraints.html">Platform Constraints</a><a class="subnavlink" href="getstarted_setup_host.html">Setup Dev Host PC</a><a class="subnavlink" href="yocto_main.html">Yocto Info</a><a class="navlink" href="about_main.html">About</a>
 </nav>
 </header>
 </div>
-<div class="orange" id="menudocumentation">
+<div class="white" id="menudocumentation">
 <header>
-<h1><a class="navlink" href="/" title="back to Legato homepage">Legato</a></h1>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo_192.png"/></a>
 <h2>/ Build Apps</h2>
-<nav class="ui-front" id="searchresult">
-<i class="fa fa-search"></i>
-<input id="autocomplete" onkeyup="getdata('Build Apps')" placeholder="Search..." /> <!-- <input id="category" type="checkbox" onclick="checkbox()"> <label for="category">API Search</label> -->
-</nav>
-</header>
-</div>
-<div class="orange" id="topMenu">
-<nav>
+<nav class="secondary">
 <a href="getstarted_main.html">Get Started</a><a class="link-selected" href="build_apps_documentation.html">Documentation</a><a href="files.html">Reference</a>
 </nav>
+<nav class="ui-front" id="searchresult">
+<i class="fa fa-search"></i>
+<input id="autocomplete" onkeyup="getdata('Build Apps')" placeholder="Search..."/> <!-- <input id="category" type="checkbox" onclick="checkbox()"> <label for="category">API Search</label> -->
+</nav>
+</header>
 </div>
+<div id="resizable">
 <div id="left">
 <div id="tree1"></div>
+</div>
 </div>
 <div class="content">
 <div class="header">
@@ -62,7 +62,7 @@
 <h1 class="title">C Language Standards </h1> </div>
 </div><div class="contents">
 <div class="textblock"><p>Legato follows the C Language standards outlined in this topic to help simplify coding and help in code reuse.</p>
-<hr />
+<hr/>
 <p>There's also detailed info on <a class="el" href="ccoding_stds_naming.html">Naming Standards</a> and <a class="el" href="ccoding_stds_abbr.html">Abbreviations</a></p>
 <h1><a class="anchor" id="cstdsparamCommenting"></a>
 Commenting</h1>
@@ -73,7 +73,7 @@ isReady = TRUE; </pre><p>Comments should focus mainly on describing why somethin
 <p>The idea of why the code is doing what it's doing can't be conveyed well in the code itself. This is the most valuable information to have in comments to advise of pitfalls and help quickly identify whether design change options are viable. Often, the ''why'' was learned the hard way, so documenting it can save others from having to learn it the hard way, too. Also, sometimes things are done arbitrarily, which is good to know too so people don't have to fear that making changes to it might break something in some subtle way.</p>
 <p>C++ style comments are permitted in C code. All modern compilers support them.</p>
 <p>Each module should contain a comment block at the top of the file that describes the module's purpose. The header comment block should be formatted like this:</p>
-<pre class="copyright">/**
+<pre class="fragment">/**
  * @file le_basics.h
  *
  * There are certain cardinal types and commonly-used constants that form the most basic
@@ -81,7 +81,7 @@ isReady = TRUE; </pre><p>Comments should focus mainly on describing why somethin
  * error codes, portable integer types, and helpful macros to make ugly things nicer to look
  * at and easier to use.
  *
- * <HR>
+ * &lt;HR&gt;
  *
  * Copyright (C) Sierra Wireless Inc. Use of this work is subject to license.
  */
@@ -98,10 +98,10 @@ isReady = TRUE; </pre><p>Comments should focus mainly on describing why somethin
 //--------------------------------------------------------------------------------------------------
 le_mem_PoolRef_t le_mem_CreateSubPool
 (
-    le_mem_PoolRef_t    pool,       ///< [IN] The super-pool.
-    const char*         name,       ///< [IN] Name of the sub-pool (will be copied into the
+    le_mem_PoolRef_t    pool,       ///&lt; [IN] The super-pool.
+    const char*         name,       ///&lt; [IN] Name of the sub-pool (will be copied into the
                                     ///   sub-pool).
-    size_t              numObjects  ///< [IN] Number of objects to take from the super-pool.
+    size_t              numObjects  ///&lt; [IN] Number of objects to take from the super-pool.
 );
 </pre><p>Function parameters should be documented with comments after the parameter like above. Placing the comments after the parameters (instead of in the function comment block) keeps the comments and parameters together making it easier to read. It also reminds the developer to update the comments when the parameters are changed.</p>
 <p>A struct should be documented in a similar manner where each field has comments proceeding it like this:</p>
@@ -112,9 +112,9 @@ le_mem_PoolRef_t le_mem_CreateSubPool
 //--------------------------------------------------------------------------------------------------
 typedef struct
 {
-    uint64_t    numAllocs;      ///< Number of times an object has been allocated from this pool.
-    size_t      numFree;        ///< Number of free objects currently available in this pool.
-    size_t      numOverflows;   ///< Number of times le_mem_ForceAlloc() had to expand the pool.
+    uint64_t    numAllocs;      ///&lt; Number of times an object has been allocated from this pool.
+    size_t      numFree;        ///&lt; Number of free objects currently available in this pool.
+    size_t      numOverflows;   ///&lt; Number of times le_mem_ForceAlloc() had to expand the pool.
 }
 le_mem_PoolStats_t;
 </pre><p>Enumerated types should be documented similarly.</p>
@@ -128,10 +128,10 @@ le_mem_PoolStats_t;
 //--------------------------------------------------------------------------------------------------
 typedef enum
 {
-    EG_PERFECT = 0,             ///< Things went well. Nothing to worry about.
-    EG_TROUBLE = -1,            ///< We might want to think about packing our bags.
-    EG_PANIC = -2,              ///< Definitely not good.
-    EG_WARP_CORE_BREACH = -99   ///< Dilithium crystals defocused the anti-matter beam. Should never happen.
+    EG_PERFECT = 0,             ///&lt; Things went well. Nothing to worry about.
+    EG_TROUBLE = -1,            ///&lt; We might want to think about packing our bags.
+    EG_PANIC = -2,              ///&lt; Definitely not good.
+    EG_WARP_CORE_BREACH = -99   ///&lt; Dilithium crystals defocused the anti-matter beam. Should never happen.
 }
 eg_code_t;
 </pre><p>If the meaning of the constants in an enumerated type are obvious based on their names, comments could be omitted like this:</p>
@@ -163,7 +163,7 @@ Cyclomatic Complexity</h1>
     int i;
     int result = 0;
 
-    if (argc <= 0)
+    if (argc &lt;= 0)
     {
         printf("No arguments provided.\n");
         result = 1;
@@ -172,7 +172,7 @@ Cyclomatic Complexity</h1>
     {
         printf("argc = %d\n", argc);
 
-        for (i = 0; i < argc; i++)
+        for (i = 0; i &lt; argc; i++)
         {
             printf("argv[%d] = '%s'\n", argv[i]);
         }
@@ -202,12 +202,12 @@ Fan Out</h1>
         }
         else
         {
-            entryPtr->value = value;
-            entryPtr->timestamp = GetTimestamp();
+            entryPtr-&gt;value = value;
+            entryPtr-&gt;timestamp = GetTimestamp();
 
             // Add the entry to the log entry list.
             LogEntryList[NextEntryIndex++] = entryPtr;
-            if (NextExtryIndex >= LOG_SIZE)
+            if (NextExtryIndex &gt;= LOG_SIZE)
             {
                 NextEntryIndex = 0; // wrap around
             }
@@ -237,7 +237,7 @@ Gotos</h1>
 
     ...
 
-    if (x > LIMIT)
+    if (x &gt; LIMIT)
     {
         goto fault;
     }
@@ -264,14 +264,14 @@ Line Length</h1>
 <h1><a class="anchor" id="cstdsMultipleInclusionGuards"></a>
 Multiple Inclusion Guards</h1>
 <p>To prevent declaration errors due to multiple inclusion of the same header file, every header file must include a "multiple inclusion guard" like this:</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#ifndef UNIQUE_INCLUDE_GUARD</span></div><div class="line"><span class="preprocessor">#define UNIQUE_INCLUDE_GUARD</span></div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line">#endif</div></div><!-- fragment --><p><code>UNIQUE_INCLUDE_GUARD</code> must be replaced with a macro name unique to this header file. To ensure uniqueness, the macro name should:</p>
+<pre class="fragment"><div class="line"><span class="preprocessor">#ifndef UNIQUE_INCLUDE_GUARD</span></div><div class="line"><span class="preprocessor">#define UNIQUE_INCLUDE_GUARD</span></div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line">#endif</div></pre><!-- fragment --><p><code>UNIQUE_INCLUDE_GUARD</code> must be replaced with a macro name unique to this header file. To ensure uniqueness, the macro name should:</p>
 <ul>
 <li>contain the name of the file (converted to all upper case, with underscores separating words)</li>
 <li>be prefixed with a name or abbreviation that's unique to the module that the header file is a part of</li>
 <li>have "_INCLUDE_GUARD" as a suffix.</li>
 </ul>
-<p>The Converter module's inter-module interface file converter.h' in the Sierra Wireless (SWI) Transmogrifier component could contain a multiple inclusion guard macro named like this: </p><div class="fragment"><div class="line">SWI_TMOG_CONVERTER_INCLUDE_GUARD</div></div><!-- fragment --><p>Code in a header file must be inside the file's multiple inclusion guard (except for comments) like this:</p>
-<div class="fragment"><div class="line"><span class="comment">// Only comments allowed here.</span></div><div class="line"></div><div class="line"><span class="preprocessor">#ifndef SWI_TMOG_CONVERTER_INCLUDE_GUARD</span></div><div class="line"><span class="preprocessor">#define SWI_TMOG_CONVERTER_INCLUDE_GUARD</span></div><div class="line"></div><div class="line"><span class="comment">// Any code can go here.</span></div><div class="line"></div><div class="line"><span class="preprocessor">#endif // SWI_TMOG_CONVERTER_INCLUDE_GUARD</span></div><div class="line"></div><div class="line"><span class="comment">// Only comments allowed here, but preferably nothing but the end of file should be here.</span></div></div><!-- fragment --><p>To allow include guard macros to be renamed (in case the file is renamed, the code changes hands, a naming conflict is found, etc.) and to avoid maintenance confusion, these macros shouldn't be used for anything else other than the multiple inclusion guard.</p>
+<p>The Converter module's inter-module interface file converter.h' in the Sierra Wireless (SWI) Transmogrifier component could contain a multiple inclusion guard macro named like this: </p><pre class="fragment"><div class="line">SWI_TMOG_CONVERTER_INCLUDE_GUARD</div></pre><!-- fragment --><p>Code in a header file must be inside the file's multiple inclusion guard (except for comments) like this:</p>
+<pre class="fragment"><div class="line"><span class="comment">// Only comments allowed here.</span></div><div class="line"></div><div class="line"><span class="preprocessor">#ifndef SWI_TMOG_CONVERTER_INCLUDE_GUARD</span></div><div class="line"><span class="preprocessor">#define SWI_TMOG_CONVERTER_INCLUDE_GUARD</span></div><div class="line"></div><div class="line"><span class="comment">// Any code can go here.</span></div><div class="line"></div><div class="line"><span class="preprocessor">#endif // SWI_TMOG_CONVERTER_INCLUDE_GUARD</span></div><div class="line"></div><div class="line"><span class="comment">// Only comments allowed here, but preferably nothing but the end of file should be here.</span></div></pre><!-- fragment --><p>To allow include guard macros to be renamed (in case the file is renamed, the code changes hands, a naming conflict is found, etc.) and to avoid maintenance confusion, these macros shouldn't be used for anything else other than the multiple inclusion guard.</p>
 <dl class="section note"><dt>Note</dt><dd>If you're modifying existing code that uses multiple inclusion guard, follow the pre-existing code style instead of the Legato standard.</dd></dl>
 <h1><a class="anchor" id="cstdsMultithreading"></a>
 Multithreading</h1>
@@ -290,10 +290,10 @@ Tabs</h1>
 <p>Avoid tab characters avoided in C source code. Use spaces to indent lines instead.</p>
 <p>The standard indentation distance is 4 spaces per indentation level.</p>
 <p>Configure your editor(s) now! (...and, while you're at it, tell your editor not to automatically go and change pre-existing code.)</p>
-<hr />
+<hr/>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>
 </div></div>
-<br clear="left" />
+<br clear="left"/>
 </div>
 <div id="footer">
 </div>

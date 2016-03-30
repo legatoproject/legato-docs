@@ -1,29 +1,29 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>le_ecall_interface.h File Reference - Legato Docs</title>
-<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description" />
-<meta content="#keywords" name="keywords" />
-<meta content="noindex, nofollow" name="robots" />
-<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-<link href="/resources/images/legato.ico" rel="shortcut icon" />
-<link href="/resources/images/legato.ico" rel="icon" type="image/x-icon" />
-<link href="/resources/images/legato.ico" rel="shortcut icon" type="image/x-icon" />
-<link href="#" rel="apple-touch-icon" />
-<link href="#" rel="apple-touch-icon" sizes="72x72" />
-<link href="#" rel="apple-touch-icon" sizes="114x114" />
-<link href="/resources/css/style.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="/resources/css/font-awesome.css" rel="stylesheet" type="text/css" />
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
 <!--[if IE]>
-        <script src="/resources/js/html5shiv.js"></script>
-        <script src="/resources/js/respond.js"></script>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
         <![endif]-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script src="/resources/js/main.js"></script>
-<link href="/resources/css/jqtree.css" rel="stylesheet" type="text/css" />
-<script src="/resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="/resources/js/jquery.cookie.js"></script>
+<script src="resources/js/main.js"></script>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 <script>
         setupTree("tocs/Build Apps Reference.json");
         </script>
@@ -34,27 +34,27 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink" href="getstarted_main.html">Build Apps</a><a class="subnavlink" href="getstarted_main.html">Get started</a><a class="subnavlink" href="build_apps_documentation.html">Documentation</a><a class="subnavlink" href="files.html">Reference</a><a class="navlink" href="platform_constraints.html">Build Platform</a><a class="subnavlink" href="platform_constraints.html">Platform Constraints</a><a class="subnavlink" href="yocto_main.html">Yocto Info</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink" href="build_apps_main.html">Build Apps</a><a class="subnavlink" href="getstarted_main.html">Get started</a><a class="subnavlink" href="build_apps_documentation.html">Documentation</a><a class="subnavlink" href="files.html">Reference</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="subnavlink" href="how_to_customize_u_s_b.html">Customize Legato Yocto USB</a><a class="subnavlink" href="platform_constraints.html">Platform Constraints</a><a class="subnavlink" href="getstarted_setup_host.html">Setup Dev Host PC</a><a class="subnavlink" href="yocto_main.html">Yocto Info</a><a class="navlink" href="about_main.html">About</a>
 </nav>
 </header>
 </div>
-<div class="orange" id="menudocumentation">
+<div class="white" id="menudocumentation">
 <header>
-<h1><a class="navlink" href="/" title="back to Legato homepage">Legato</a></h1>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo_192.png"/></a>
 <h2>/ Build Apps</h2>
-<nav class="ui-front" id="searchresult">
-<i class="fa fa-search"></i>
-<input id="autocomplete" onkeyup="getdata('Build Apps')" placeholder="Search..." /> <!-- <input id="category" type="checkbox" onclick="checkbox()"> <label for="category">API Search</label> -->
-</nav>
-</header>
-</div>
-<div class="orange" id="topMenu">
-<nav>
+<nav class="secondary">
 <a href="getstarted_main.html">Get Started</a><a href="build_apps_documentation.html">Documentation</a><a class="link-selected" href="files.html">Reference</a>
 </nav>
+<nav class="ui-front" id="searchresult">
+<i class="fa fa-search"></i>
+<input id="autocomplete" onkeyup="getdata('Build Apps')" placeholder="Search..."/> <!-- <input id="category" type="checkbox" onclick="checkbox()"> <label for="category">API Search</label> -->
+</nav>
+</header>
 </div>
+<div id="resizable">
 <div id="left">
 <div id="tree1"></div>
+</div>
 </div>
 <div class="content">
 <div class="header">
@@ -66,9 +66,9 @@
 <div class="headertitle">
 <h1 class="title">le_ecall_interface.h File Reference</h1> </div>
 </div><div class="contents">
-<div class="textblock"><code>#include "<a class="el" href="legato_8h_source.html">legato.h</a>"</code><br />
-<code>#include "<a class="el" href="le__mdm_defs__interface_8h_source.html">le_mdmDefs_interface.h</a>"</code><br />
-<code>#include "<a class="el" href="le__mcc__interface_8h_source.html">le_mcc_interface.h</a>"</code><br />
+<div class="textblock"><code>#include "<a class="el" href="legato_8h_source.html">legato.h</a>"</code><br/>
+<code>#include "<a class="el" href="le__mdm_defs__interface_8h_source.html">le_mdmDefs_interface.h</a>"</code><br/>
+<code>#include "<a class="el" href="le__mcc__interface_8h_source.html">le_mcc_interface.h</a>"</code><br/>
 </div>
 <p><a href="le__ecall__interface_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -93,122 +93,122 @@ Enumerations</h2></td></tr>
 <a class="el" href="le__ecall__interface_8h.html#af762f89b222e4cc18e9646c6e4b945b9a6d328d963d60c73e04af260f8dae7257">LE_ECALL_FORCED_PERSISTENT_ONLY_MODE</a>
  }</td></tr>
 <tr class="separator:af762f89b222e4cc18e9646c6e4b945b9"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a233609e4724e549a1405f9177c0a07dd"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07dd">le_ecall_State_t</a> { <br />
+<tr class="memitem:a233609e4724e549a1405f9177c0a07dd"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07dd">le_ecall_State_t</a> { <br/>
   <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07dda5c06f82cbeeebb121ab56920a67dbc91">LE_ECALL_STATE_UNKNOWN</a>, 
 <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07dda94ba7aacca9dfe74c4733515a7ba2c5e">LE_ECALL_STATE_STARTED</a>, 
 <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07dda974a4cdcc060be69502b2eae59962a45">LE_ECALL_STATE_CONNECTED</a>, 
 <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07dda085024eb3cca6b48f024f368c6b0f757">LE_ECALL_STATE_DISCONNECTED</a>, 
-<br />
+<br/>
   <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07ddafeaa941937f098a5d6cc913f9ee2b32f">LE_ECALL_STATE_WAITING_PSAP_START_IND</a>, 
 <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07dda2660c7eedfd850b845f0ece7899d5454">LE_ECALL_STATE_PSAP_START_IND_RECEIVED</a>, 
 <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07dda0e8c495854c6fe3f9fe9285554704572">LE_ECALL_STATE_MSD_TX_STARTED</a>, 
 <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07dda8699c87772e74835e38573fc9830dba5">LE_ECALL_STATE_LLNACK_RECEIVED</a>, 
-<br />
+<br/>
   <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07dda0410bf309197a2f26910062efb56ed0e">LE_ECALL_STATE_LLACK_RECEIVED</a>, 
 <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07ddae9346b115da82c9583f057ba12d8faa9">LE_ECALL_STATE_MSD_TX_COMPLETED</a>, 
 <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07dda3654bda55c075297e9111acafa90a2bb">LE_ECALL_STATE_MSD_TX_FAILED</a>, 
 <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07dda5a54611736c5cf7131cc196c694d8060">LE_ECALL_STATE_ALACK_RECEIVED_POSITIVE</a>, 
-<br />
+<br/>
   <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07dda2b28ed16149c54b6b3d9c57dea4a748f">LE_ECALL_STATE_ALACK_RECEIVED_CLEAR_DOWN</a>, 
 <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07dda28740cfb795561c243501bff53343175">LE_ECALL_STATE_STOPPED</a>, 
 <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07dda71a12603e5a05716c7579e12f6f85734">LE_ECALL_STATE_RESET</a>, 
 <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07dda40cb68755482f2068f414e4bd1d2bf13">LE_ECALL_STATE_COMPLETED</a>, 
-<br />
+<br/>
   <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07dda5275385371c51e441a9eb97626c271b4">LE_ECALL_STATE_FAILED</a>, 
 <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07ddac5c297a2a70f2490f4f65d72b3a74481">LE_ECALL_STATE_END_OF_REDIAL_PERIOD</a>, 
 <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07dda2bc4a965f7112a791ea78349420cf300">LE_ECALL_STATE_TIMEOUT_T2</a>, 
 <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07ddaaae288051a0819498e16ef5d9d669d14">LE_ECALL_STATE_TIMEOUT_T3</a>, 
-<br />
+<br/>
   <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07dda6660bb4b2b35f139f2c7e2b27b60ff53">LE_ECALL_STATE_TIMEOUT_T5</a>, 
 <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07ddaef70f5b0bc5649f2f143b44a234c794e">LE_ECALL_STATE_TIMEOUT_T6</a>, 
 <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07dda031431553d4a41a245df3fc9e8a528d3">LE_ECALL_STATE_TIMEOUT_T7</a>, 
 <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07dda445e9365be6aac0b3403568d423ce6c5">LE_ECALL_STATE_TIMEOUT_T9</a>, 
-<br />
+<br/>
   <a class="el" href="le__ecall__interface_8h.html#a233609e4724e549a1405f9177c0a07ddadafcb8d0490beb3d2778fadcbaeb8c11">LE_ECALL_STATE_TIMEOUT_T10</a>
-<br />
+<br/>
  }</td></tr>
 <tr class="separator:a233609e4724e549a1405f9177c0a07dd"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:adbaa600a7ab66371afddb909b1a113bd"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#adbaa600a7ab66371afddb909b1a113bd">le_ecall_MsdTxMode_t</a> { <a class="el" href="le__ecall__interface_8h.html#adbaa600a7ab66371afddb909b1a113bdaaf6827f8890a733143bd2c01e6afdfef">LE_ECALL_TX_MODE_PULL</a>, 
 <a class="el" href="le__ecall__interface_8h.html#adbaa600a7ab66371afddb909b1a113bdafe1cddc2df801a67c7f02020c0dd1127">LE_ECALL_TX_MODE_PUSH</a>
  }</td></tr>
 <tr class="separator:adbaa600a7ab66371afddb909b1a113bd"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a777e8d6608b5e40f73696904471519cf"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cf">le_ecall_DiagnosticResultBitMask_t</a> { <br />
+<tr class="memitem:a777e8d6608b5e40f73696904471519cf"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cf">le_ecall_DiagnosticResultBitMask_t</a> { <br/>
   <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa3a666c50c2a85411eb7d723a9553144e">LE_ECALL_DIAG_RESULT_PRESENT_MIC_CONNECTION_FAILURE</a> = 0x1, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa5ea3221dec67d321994be4a7b1a28dd9">LE_ECALL_DIAG_RESULT_MIC_CONNECTION_FAILURE</a> = 0x2, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfaee3053c076f08c5ded4120c3fa69fe32">LE_ECALL_DIAG_RESULT_PRESENT_MIC_FAILURE</a> = 0x4, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa1040d9724404f0cfacb8415ca6d9b4aa">LE_ECALL_DIAG_RESULT_MIC_FAILURE</a> = 0x8, 
-<br />
+<br/>
   <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfad461d767378af8ee304347821ea927a0">LE_ECALL_DIAG_RESULT_PRESENT_RIGHT_SPEAKER_FAILURE</a> = 0x10, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfaa42ad4d6b44146c65bb2c25d26113565">LE_ECALL_DIAG_RESULT_RIGHT_SPEAKER_FAILURE</a> = 0x20, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa37adae3ab192525db0848a626869f9bf">LE_ECALL_DIAG_RESULT_PRESENT_LEFT_SPEAKER_FAILURE</a> = 0x40, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfaaa165a78a5db94f7f4976584931667f2">LE_ECALL_DIAG_RESULT_LEFT_SPEAKER_FAILURE</a> = 0x80, 
-<br />
+<br/>
   <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfab5c2abf0e14fee9d545c2087b702cc1c">LE_ECALL_DIAG_RESULT_PRESENT_SPEAKERS_FAILURE</a> = 0x100, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfab997fde1541446d2a99c598cd91fc270">LE_ECALL_DIAG_RESULT_SPEAKERS_FAILURE</a> = 0x200, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa39edbd2d426729ea02e7495c19abe89b">LE_ECALL_DIAG_RESULT_PRESENT_IGNITION_LINE_FAILURE</a> = 0x400, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa84ea0c7a83231ee13d9f93e3b3041edb">LE_ECALL_DIAG_RESULT_IGNITION_LINE_FAILURE</a> = 0x800, 
-<br />
+<br/>
   <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfab67b956ebcf642aad76b46c8b7bfeba0">LE_ECALL_DIAG_RESULT_PRESENT_UIM_FAILURE</a> = 0x1000, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa46cba969c2abd641309d791019e1e3e0">LE_ECALL_DIAG_RESULT_UIM_FAILURE</a> = 0x2000, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa5ed346638d49d6e107999803da6336e3">LE_ECALL_DIAG_RESULT_PRESENT_STATUS_INDICATOR_FAILURE</a> = 0x4000, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa8116de4b851ecdd34a0b907e947c9c29">LE_ECALL_DIAG_RESULT_STATUS_INDICATOR_FAILURE</a> = 0x8000, 
-<br />
+<br/>
   <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa4ab7b54d47733d8d8471a396333ceaaa">LE_ECALL_DIAG_RESULT_PRESENT_BATTERY_FAILURE</a> = 0x10000, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa6acf3de2c51fec3cb50da9f8566985c2">LE_ECALL_DIAG_RESULT_BATTERY_FAILURE</a> = 0x20000, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa0fee651e0bdf4c009d615af2a61101f1">LE_ECALL_DIAG_RESULT_PRESENT_BATTERY_VOLTAGE_LOW</a> = 0x40000, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa27a91439e027be0cad4cf6345af6b7a9">LE_ECALL_DIAG_RESULT_BATTERY_VOLTAGE_LOW</a> = 0x80000, 
-<br />
+<br/>
   <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfacc384f30e34c8528c3058eb61b9a4708">LE_ECALL_DIAG_RESULT_PRESENT_CRASH_SENSOR_FAILURE</a> = 0x100000, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfae172bd8bbf4b6a19e24acf5b703ef347">LE_ECALL_DIAG_RESULT_CRASH_SENSOR_FAILURE</a> = 0x200000, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfacd5438b99a54bf7c30ea057daf777c15">LE_ECALL_DIAG_RESULT_PRESENT_FIRMWARE_IMAGE_CORRUPTION</a> = 0x400000, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa178e487741cf7289e8970fdda75befbc">LE_ECALL_DIAG_RESULT_FIRMWARE_IMAGE_CORRUPTION</a> = 0x800000, 
-<br />
+<br/>
   <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa178938e58755295751613022ae84cd0e">LE_ECALL_DIAG_RESULT_PRESENT_COMM_MODULE_INTERFACE_FAILURE</a> = 0x1000000, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa3d7c345c8e047c525e3d37a343c61101">LE_ECALL_DIAG_RESULT_COMM_MODULE_INTERFACE_FAILURE</a> = 0x2000000, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfaa0602ef741555db93005d4b2b6ab4b1a">LE_ECALL_DIAG_RESULT_PRESENT_GNSS_RECEIVER_FAILURE</a> = 0x4000000, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa0b442f6f7927c2d7d5042ffc1a39ab2a">LE_ECALL_DIAG_RESULT_GNSS_RECEIVER_FAILURE</a> = 0x8000000, 
-<br />
+<br/>
   <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfaab73c6c71cb79f7730bb13648c7bce04">LE_ECALL_DIAG_RESULT_PRESENT_RAIM_PROBLEM</a> = 0x10000000, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa019a86c400d606429062b2a90099a8ac">LE_ECALL_DIAG_RESULT_RAIM_PROBLEM</a> = 0x20000000, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfab3fd7f550aa416093c4f7888808371c8">LE_ECALL_DIAG_RESULT_PRESENT_GNSS_ANTENNA_FAILURE</a> = 0x40000000, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa9f235ce7e3ba41d7a8380d32165bafa5">LE_ECALL_DIAG_RESULT_GNSS_ANTENNA_FAILURE</a> = 0x80000000, 
-<br />
+<br/>
   <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa59c26e2657b9f5bcd8dd81e5080b9e8d">LE_ECALL_DIAG_RESULT_PRESENT_COMM_MODULE_FAILURE</a> = 0x100000000, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa9104e4fafa6bdb8b1a0239ade55f4f48">LE_ECALL_DIAG_RESULT_COMM_MODULE_FAILURE</a> = 0x200000000, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa0c22c7756946acb06740ba652f7bcb67">LE_ECALL_DIAG_RESULT_PRESENT_EVENTS_MEMORY_OVERFLOW</a> = 0x400000000, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa1c06faec14254dcf384ca99395507f5a">LE_ECALL_DIAG_RESULT_EVENTS_MEMORY_OVERFLOW</a> = 0x800000000, 
-<br />
+<br/>
   <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa9cc1d793f1374111d50db04e1be0b5db">LE_ECALL_DIAG_RESULT_PRESENT_CRASH_PROFILE_MEMORY_OVERFLOW</a> = 0x1000000000, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa06e757db30ca5070dc36157dee395889">LE_ECALL_DIAG_RESULT_CRASH_PROFILE_MEMORY_OVERFLOW</a> = 0x2000000000, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa81b05ff958f8bdcd51c8d386cf854112">LE_ECALL_DIAG_RESULT_PRESENT_OTHER_CRITICAL_FAILURES</a> = 0x4000000000, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa5e8787b4834125e76f87b6c4ae582851">LE_ECALL_DIAG_RESULT_OTHER_CRITICAL_FAILURES</a> = 0x8000000000, 
-<br />
+<br/>
   <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa326d1385df2ad0e731d2a4b5b66bbacb">LE_ECALL_DIAG_RESULT_PRESENT_OTHER_NOT_CRITICAL_FAILURES</a> = 0x10000000000, 
 <a class="el" href="le__ecall__interface_8h.html#a777e8d6608b5e40f73696904471519cfa2deff70e9effd8b7174f898019c05f1c">LE_ECALL_DIAG_RESULT_OTHER_NOT_CRITICAL_FAILURES</a> = 0x20000000000
-<br />
+<br/>
  }</td></tr>
 <tr class="separator:a777e8d6608b5e40f73696904471519cf"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:ae95239490ffd1ee40a9dfcfe02cbd318"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#ae95239490ffd1ee40a9dfcfe02cbd318">le_ecall_CrashInfoBitMask_t</a> { <br />
+<tr class="memitem:ae95239490ffd1ee40a9dfcfe02cbd318"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#ae95239490ffd1ee40a9dfcfe02cbd318">le_ecall_CrashInfoBitMask_t</a> { <br/>
   <a class="el" href="le__ecall__interface_8h.html#ae95239490ffd1ee40a9dfcfe02cbd318a01da8764c695658c5901990e6a9cf860">LE_ECALL_CRASH_INFO_PRESENT_CRASH_FRONT</a> = 0x1, 
 <a class="el" href="le__ecall__interface_8h.html#ae95239490ffd1ee40a9dfcfe02cbd318a360460c02abe6e1ac2896dc03abcebe7">LE_ECALL_CRASH_INFO_CRASH_FRONT</a> = 0x2, 
 <a class="el" href="le__ecall__interface_8h.html#ae95239490ffd1ee40a9dfcfe02cbd318aed1f753fce57a99984fc740955ffff8e">LE_ECALL_CRASH_INFO_PRESENT_CRASH_LEFT</a> = 0x4, 
 <a class="el" href="le__ecall__interface_8h.html#ae95239490ffd1ee40a9dfcfe02cbd318a7345e320441ab4646d229df53c0c29f3">LE_ECALL_CRASH_INFO_CRASH_LEFT</a> = 0x8, 
-<br />
+<br/>
   <a class="el" href="le__ecall__interface_8h.html#ae95239490ffd1ee40a9dfcfe02cbd318a7f125c55a9565122c2346400d92703a0">LE_ECALL_CRASH_INFO_PRESENT_CRASH_RIGHT</a> = 0x10, 
 <a class="el" href="le__ecall__interface_8h.html#ae95239490ffd1ee40a9dfcfe02cbd318af00ca9da5f0ac3cdb4e0b3679b629371">LE_ECALL_CRASH_INFO_CRASH_RIGHT</a> = 0x20, 
 <a class="el" href="le__ecall__interface_8h.html#ae95239490ffd1ee40a9dfcfe02cbd318ab876870a81ddabb3741405599caa0f90">LE_ECALL_CRASH_INFO_PRESENT_CRASH_REAR</a> = 0x40, 
 <a class="el" href="le__ecall__interface_8h.html#ae95239490ffd1ee40a9dfcfe02cbd318a282336188e8b142cbe5e126c3482637a">LE_ECALL_CRASH_INFO_CRASH_REAR</a> = 0x80, 
-<br />
+<br/>
   <a class="el" href="le__ecall__interface_8h.html#ae95239490ffd1ee40a9dfcfe02cbd318aec2f6f4993180c4c8dd94b44e3b52639">LE_ECALL_CRASH_INFO_PRESENT_CRASH_ROLLOVER</a> = 0x100, 
 <a class="el" href="le__ecall__interface_8h.html#ae95239490ffd1ee40a9dfcfe02cbd318ae4a8372808b6c0710bc409c956c4d008">LE_ECALL_CRASH_INFO_CRASH_ROLLOVER</a> = 0x200, 
 <a class="el" href="le__ecall__interface_8h.html#ae95239490ffd1ee40a9dfcfe02cbd318a59e5e8a717d5ea271a37de187ddd8c63">LE_ECALL_CRASH_INFO_PRESENT_CRASH_SIDE</a> = 0x400, 
 <a class="el" href="le__ecall__interface_8h.html#ae95239490ffd1ee40a9dfcfe02cbd318a690446965965ed340406dffd21a136c9">LE_ECALL_CRASH_INFO_CRASH_SIDE</a> = 0x800, 
-<br />
+<br/>
   <a class="el" href="le__ecall__interface_8h.html#ae95239490ffd1ee40a9dfcfe02cbd318a7139e97473edb9bca67b01d3d4f6d5c9">LE_ECALL_CRASH_INFO_PRESENT_CRASH_FRONT_OR_SIDE</a> = 0x1000, 
 <a class="el" href="le__ecall__interface_8h.html#ae95239490ffd1ee40a9dfcfe02cbd318a0e26e57771f2628a39f1c88a5ef08f1b">LE_ECALL_CRASH_INFO_CRASH_FRONT_OR_SIDE</a> = 0x2000, 
 <a class="el" href="le__ecall__interface_8h.html#ae95239490ffd1ee40a9dfcfe02cbd318a135e85f717fcec7fd8146d9882bbb3ec">LE_ECALL_CRASH_INFO_PRESENT_CRASH_ANOTHER_TYPE</a> = 0x4000, 
 <a class="el" href="le__ecall__interface_8h.html#ae95239490ffd1ee40a9dfcfe02cbd318a69ff594dda0b4097ed2732ca30d73a80">LE_ECALL_CRASH_INFO_CRASH_ANOTHER_TYPE</a> = 0x8000
-<br />
+<br/>
  }</td></tr>
 <tr class="separator:ae95239490ffd1ee40a9dfcfe02cbd318"><td class="memSeparator" colspan="2"> </td></tr>
 </table><table class="memberdecls">
@@ -1964,7 +1964,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 </div>
-<br clear="left" />
+<br clear="left"/>
 </div>
 <div id="footer">
 </div>
