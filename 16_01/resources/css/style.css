@@ -25,7 +25,7 @@ body {
 }
 
 /*NO PDF START*/
-.anchor {
+.anchor, .groupheader>a {
     font-size:16px;  /* doxygen sticks anchor tags inside h2, p, etc so we need a consistent fontsize*/
     display: block;
     height: 4.5em; /*same height as header*/
@@ -983,14 +983,11 @@ div.usecase a.usecase03-bg {
 
 }
 .contents td.memname {
-    font-weight: 600;
+/*    font-weight: 600;*/
+color:#000;
     font-size: 110%;
+        display: flex;
 }
-.contents p {
-    /*
-    margin: 0;
-    padding: 0;
-*/}
 
 .contents a {
   -webkit-transition: all 0s;
@@ -1032,7 +1029,8 @@ pre.fragment{
 .memproto>table.memname, .memproto>table.mlabels
 {
     padding: 0.7em;
-  /*  background: rgba(130, 130, 130, 0.1);*/
+    border-spacing: 2em 0;
+    font-family: monospace;
 }
 .memitem{
  margin-bottom: 1.5em;
@@ -1040,12 +1038,16 @@ pre.fragment{
 }
 .memitem + .anchor + .memitem{
     /*box-shadow: 0px 68px 98px 43px #ffffff inset, 0px -17px 11px -19px #CCC inset; */ /* bottom */
-    box-shadow: 0px -68px 98px 43px #ffffff inset, 0px 17px 11px -19px #BBB inset; /* top */
-    padding-top:1em;
+/*    box-shadow: 0px -68px 98px 43px #ffffff inset, 0px 17px 11px -19px #999 inset; */  /* top */
+border-top:2px rgba(106, 142, 154,0.15) solid;
+    padding-top: 1em;
 }
 .memdoc{
-
     padding-left: 1em;
+}
+.fielddoc p {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
 }
 /* SYNTAX HIGHLIGHTING */
 span.keyword {
