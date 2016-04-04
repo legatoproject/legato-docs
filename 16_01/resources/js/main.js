@@ -24,10 +24,15 @@ $(document).ready(function() {
 
 
     var $content = $('.content');
-    var is_mobile = ((/Mobile|iPhone|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera) ? true : false);
+    var is_mobile = screen.width <= 719;
 
     if (!is_mobile) {
         $("#left").perfectScrollbar();
+    }
+    else
+    {
+        $("#left").detach().appendTo('#top');
+        $("#resizable").remove();
     }
 
     nav_altitude();

@@ -28,8 +28,8 @@ body {
 .anchor, .groupheader>a {
     font-size:16px;  /* doxygen sticks anchor tags inside h2, p, etc so we need a consistent fontsize*/
     display: block;
-    height: 4.5em; /*same height as header*/
-    margin-top: -4.5em; /*same height as header*/
+    height: 3.6em; /*same height as header*/
+    margin-top: -3.6em; /*same height as header*/
     visibility: hidden;
 }
 /*NO PDF END*/
@@ -54,7 +54,7 @@ a img {
 table{
     border-spacing: 2em 0.5em;
     color:#2B3B40;
-
+    margin-left: -2em;
 }
 table.memname, table.memberdecls{
         margin-left: -2em;
@@ -215,14 +215,22 @@ nav {
     font-weight: 400;
 }
 
-nav a.navlink {
-    color: #F7781E;
-    font-size: 14px;
-    text-transform: uppercase;
-    padding: 15px 0px 5px 20px; 
+#top nav a.navlink {
+    color: #7395A0;
+    font-size: 16px;
+    padding: 1em 0em 1em 1em;
     display: block;
-    border-bottom: 3px solid transparent;
 
+}
+#top nav a:hover {
+    /* font-weight: bold; */
+    background: #F7781E;
+    -webkit-transition: all 0s;
+    -moz-transition: all 0s;
+    -o-transition: all 0s;
+    -ms-transition: all 0s;
+    transition: all 0s;
+    color: white;
 }
 
 nav a.subnavlink {
@@ -235,14 +243,6 @@ nav a.subnavlink {
 
 }
 
-#top nav a:hover {
-    font-weight:bold;
-    -webkit-transition: all 0s;
-    -moz-transition: all 0s;
-    -o-transition: all 0s;
-    -ms-transition: all 0s;
-    transition: all 0s;
-}
 
 #menudocumentation {
     position: fixed;
@@ -560,24 +560,6 @@ nav.secondary{
     padding-right:1px;
 
 }
-/* mobile tweaks */
-@media only screen and (max-width : 719px) {
-   #resizable {
- /*       display: none !important;
-        width: 0 !important;*/
-            position: fixed;
-            z-index:700;
-            padding-top:3em;
-            margin-top:0;
-    }
-    .content{
-        padding-left: 2em !important;
-    }
-    #menudocumentation{
-        position: absolute;
-    }   
-}
-
 #left {
     width: 100%;
     height: 100%;
@@ -586,6 +568,9 @@ nav.secondary{
     overflow-x: hidden;
     position:relative;
 }
+
+
+
 
 #tree1{
     padding-bottom:1em;
@@ -1095,4 +1080,32 @@ span.vhdlkeyword {
 
 span.vhdllogic {
     color: #ff0000
+}
+
+
+
+/* mobile tweaks */
+@media only screen and (max-width : 719px) {
+   #resizable {
+ /*       display: none !important;
+        width: 0 !important;*/
+            position: fixed;
+            z-index:700;
+            padding-top:3em;
+            margin-top:0;
+    }
+    .content{
+        padding-left: 2em !important;
+    }
+    #menudocumentation{
+        position: absolute;
+    }   
+    #left{
+        border-top: 2px rgba(130, 130, 130, 0.1) solid;
+        height:initial;
+
+    }
+    #top{
+        overflow-y:auto;
+    }
 }
