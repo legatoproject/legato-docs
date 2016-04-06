@@ -22,7 +22,10 @@ function nav_altitude() {
 $(document).ready(function() {
 
 
-
+     $("#autocomplete").click(function(){
+        $("#search_result").show();
+    });
+     
     var $content = $('.content');
     var is_mobile = screen.width <= 719;
 
