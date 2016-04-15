@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Platform" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<title>Yocto Install Notes  - Legato Docs</title>
+<title>Legato Yocto Install Notes  - Legato Docs</title>
 <meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
 <meta content="legato, iot" name="keywords"/>
 <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
@@ -16,7 +16,7 @@
         <script src="resources/js/html5shiv.js"></script>
         <script src="resources/js/respond.js"></script>
         <![endif]-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
 <link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
 <script src="resources/js/tree.jquery.js" type="text/javascript"></script>
@@ -29,12 +29,20 @@
         </script>
 </head>
 <body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
 <div class="wrapper">
 <div class="fa fa-bars documentation" id="menu-trigger"></div>
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink" href="build_apps_main.html">Build Apps</a><a class="subnavlink" href="getstarted_main.html">Get started</a><a class="subnavlink" href="build_apps_documentation.html">Documentation</a><a class="subnavlink" href="files.html">Reference</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="subnavlink" href="how_to_customize_u_s_b.html">Customize Legato Yocto USB</a><a class="subnavlink" href="platform_constraints.html">Platform Constraints</a><a class="subnavlink" href="getstarted_setup_host.html">Setup Dev Host PC</a><a class="subnavlink" href="yocto_main.html">Yocto Info</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink" href="build_apps_main.html">Build Apps</a><a class="navlink selected" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
 </nav>
 </header>
 </div>
@@ -45,9 +53,9 @@
 <nav class="secondary">
 <a href="platform_constraints.html">Platform Constraints</a><a class="link-selected" href="yocto_main.html">Yocto Info</a>
 </nav>
-<nav class="ui-front" id="searchresult">
-<i class="fa fa-search"></i>
-<input id="autocomplete" onkeyup="getdata('Build Apps')" placeholder="Search..."/> <!-- <input id="category" type="checkbox" onclick="checkbox()"> <label for="category">API Search</label> -->
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search..."/>
 </nav>
 </header>
 </div>
@@ -59,7 +67,7 @@
 <div class="content">
 <div class="header">
 <div class="headertitle">
-<h1 class="title">Yocto Install Notes </h1> </div>
+<h1 class="title">Legato Yocto Install Notes </h1> </div>
 </div><div class="contents">
 <div class="textblock"><p>Here are some helpful tips for Yocto Linux working with Sierra Wireless devices.</p>
 <h1><a class="anchor" id="getstartedInstallNotes_yoctoNoPwd"></a>
@@ -67,7 +75,7 @@ Log on Without Password</h1>
 <p>To log onto the target through the serial interface, log on as <b>root</b> with no password. This allows manual changes to other interfaces (e.g., USB if you want to run CDC-ECM).</p>
 <h1><a class="anchor" id="getstartedInstallNotes_yoctoCDC"></a>
 CDC-ECM for IP vs Ethernet</h1>
-<p>Using CDC-ECM for IP connections will cause the MAC address to change every reboot because the kernel allocates software-defined MAC addresses to interfaces. This may cause new connections to be detected by your host every time you reboot the device. See <a class="el" href="getstarted_config_i_p.html">Configure IP Address</a> and <a class="el" href="tools_target_set_net.html">setNet</a></p>
+<p>Using CDC-ECM for IP connections will cause the MAC address to change every reboot because the kernel allocates software-defined MAC addresses to interfaces. This may cause new connections to be detected by your host every time you reboot the device. See <a class="el" href="how_to_config_i_p.html">Configure IP Address</a> and <a class="el" href="tools_target_set_net.html">setNet</a></p>
 <h1><a class="anchor" id="getstartedInstallNotes_yoctoPrefIP"></a>
 Setup Preferred IP</h1>
 <p>Either boot with an Ethernet cable plugged in and let the device obtain an IP address using DHCP, or enable CDC-ECM and the micro-USB cable. You can then determine the IP address using <code>ifconfig</code> on the console or provide a fixed IP from your DHCP server. Then use <code>ssh</code> and <code>scp</code> to access the device and transfer files.</p>
@@ -78,7 +86,7 @@ Change Default USB Classes</h1>
 <h1><a class="anchor" id="getstartedInstallNotes_yoctoStaticIP"></a>
 Setup Target Static IP</h1>
 <p>You can configure your target and development PC so it doesn't prompt for a password, run: <b>bin/configtargetssh</b> </p>
-<p>It'll look like this: </p><pre class="fragment">dave@devbox:~/legato$ bin/configtargetssh 192.168.1.2
+<p>It'll look like this: </p><pre class="fragment">dave@devbox:~/legato$ bin/configtargetssh 192.168.2.2
 Generating new key pair... ---&gt;&gt;&gt; LEAVE THE PASSPHRASE EMPTY &lt;&lt;&lt;---
 Generating public/private rsa key pair.
 Enter passphrase (empty for no passphrase):
@@ -105,11 +113,11 @@ Original contents retained as /home/dave/.ssh/known_hosts.old
 Connecting to the target...  (ENTER TARGET'S ROOT PASSWORD WHENEVER
 PROMPTED FOR A PASSWORD)
 (press ENTER if your target doesn't have a root password)
-The authenticity of host '192.168.1.2 (192.168.1.2)' can't be established.
+The authenticity of host '192.168.2.2 (192.168.2.2)' can't be established.
 RSA key fingerprint is f2:2f:66:a5:14:20:bd:46:8f:a2:02:b3:99:6f:72:24.
 Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added '192.168.1.2' (RSA) to the list of known hosts.
-root@192.168.1.2's password:
+Warning: Permanently added '192.168.2.2' (RSA) to the list of known hosts.
+root@192.168.2.2's password:
 dave@devpc:~/legato$
 </pre><h1><a class="anchor" id="getstartedInstallNotes_yoctoReadWrite"></a>
 Read/Write rootfs</h1>
@@ -128,8 +136,6 @@ Use nfs root</h1>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>
 </div></div>
 <br clear="left"/>
-</div>
-<div id="footer">
 </div>
 </div>
 </body>

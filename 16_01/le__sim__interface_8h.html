@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>le_sim_interface.h File Reference - Legato Docs</title>
@@ -16,7 +16,7 @@
         <script src="resources/js/html5shiv.js"></script>
         <script src="resources/js/respond.js"></script>
         <![endif]-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
 <link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
 <script src="resources/js/tree.jquery.js" type="text/javascript"></script>
@@ -25,16 +25,24 @@
 <link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
 <script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 <script>
-        setupTree("tocs/Build Apps Reference.json");
+        setupTree("tocs/Build Apps API Guides.json");
         </script>
 </head>
 <body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
 <div class="wrapper">
 <div class="fa fa-bars documentation" id="menu-trigger"></div>
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink" href="build_apps_main.html">Build Apps</a><a class="subnavlink" href="getstarted_main.html">Get started</a><a class="subnavlink" href="build_apps_documentation.html">Documentation</a><a class="subnavlink" href="files.html">Reference</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="subnavlink" href="how_to_customize_u_s_b.html">Customize Legato Yocto USB</a><a class="subnavlink" href="platform_constraints.html">Platform Constraints</a><a class="subnavlink" href="getstarted_setup_host.html">Setup Dev Host PC</a><a class="subnavlink" href="yocto_main.html">Yocto Info</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
 </nav>
 </header>
 </div>
@@ -43,11 +51,11 @@
 <a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo_192.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="getstarted_main.html">Get Started</a><a href="build_apps_documentation.html">Documentation</a><a class="link-selected" href="files.html">Reference</a>
+<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a>
 </nav>
-<nav class="ui-front" id="searchresult">
-<i class="fa fa-search"></i>
-<input id="autocomplete" onkeyup="getdata('Build Apps')" placeholder="Search..."/> <!-- <input id="category" type="checkbox" onclick="checkbox()"> <label for="category">API Search</label> -->
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search..."/>
 </nav>
 </header>
 </div>
@@ -91,6 +99,20 @@ Macros</h2></td></tr>
 <tr class="separator:a233b68cf33721539c2bf3ba52bbd7ff2"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:af25612258426b8b806ab4128e5b055b6"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sim__interface_8h.html#af25612258426b8b806ab4128e5b055b6">LE_SIM_IMSI_BYTES</a>   16</td></tr>
 <tr class="separator:af25612258426b8b806ab4128e5b055b6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab54084e23152ffffad76b8cdfec91bf2"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sim__interface_8h.html#ab54084e23152ffffad76b8cdfec91bf2">LE_SIM_APDU_MAX_BYTES</a>   255</td></tr>
+<tr class="separator:ab54084e23152ffffad76b8cdfec91bf2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a155be383d76069564b6ced6c18b8b712"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sim__interface_8h.html#a155be383d76069564b6ced6c18b8b712">LE_SIM_RESPONSE_MAX_BYTES</a>   256</td></tr>
+<tr class="separator:a155be383d76069564b6ced6c18b8b712"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a869290ea48dc472465345af6e3f1ed65"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sim__interface_8h.html#a869290ea48dc472465345af6e3f1ed65">LE_SIM_FILE_ID_LEN</a>   4</td></tr>
+<tr class="separator:a869290ea48dc472465345af6e3f1ed65"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af172bc75589c693533af5cf55e33555e"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sim__interface_8h.html#af172bc75589c693533af5cf55e33555e">LE_SIM_FILE_ID_BYTES</a>   5</td></tr>
+<tr class="separator:af172bc75589c693533af5cf55e33555e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5674824ab605e6e521544a887c4ce024"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sim__interface_8h.html#a5674824ab605e6e521544a887c4ce024">LE_SIM_DATA_MAX_BYTES</a>   100</td></tr>
+<tr class="separator:a5674824ab605e6e521544a887c4ce024"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1e28c18e1e1c28123ced4d9485b7f5c6"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sim__interface_8h.html#a1e28c18e1e1c28123ced4d9485b7f5c6">LE_SIM_PATH_MAX_LEN</a>   100</td></tr>
+<tr class="separator:a1e28c18e1e1c28123ced4d9485b7f5c6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aad33f4de709b3b095fddbf8956e82d5a"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sim__interface_8h.html#aad33f4de709b3b095fddbf8956e82d5a">LE_SIM_PATH_MAX_BYTES</a>   101</td></tr>
+<tr class="separator:aad33f4de709b3b095fddbf8956e82d5a"><td class="memSeparator" colspan="2"> </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -136,6 +158,16 @@ Enumerations</h2></td></tr>
 <br/>
  }</td></tr>
 <tr class="separator:ac9719aa7561f79bc0b51eca9447ff37e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac1a708ba305c36e33383073ec7f0e331"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331">le_sim_Command_t</a> { <br/>
+  <a class="el" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331aa2d4ea6bc380cab183fb215911a39f14">LE_SIM_READ_RECORD</a>, 
+<a class="el" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331ae4a619ba58f2cd503103b397b717b16f">LE_SIM_READ_BINARY</a>, 
+<a class="el" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331a73f253861a66d9f1689fbdb97263019e">LE_SIM_UPDATE_RECORD</a>, 
+<a class="el" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331a68f83c3e207642ec4153b67c51cd3cd6">LE_SIM_UPDATE_BINARY</a>, 
+<br/>
+  <a class="el" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331a882fe099761cbf51a4a7bc82cc6cfaa6">LE_SIM_COMMAND_MAX</a>
+<br/>
+ }</td></tr>
+<tr class="separator:ac1a708ba305c36e33383073ec7f0e331"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a7c53ab7f9f004387ef41e80df1121da2"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sim__interface_8h.html#a7c53ab7f9f004387ef41e80df1121da2">le_sim_StkEvent_t</a> { <a class="el" href="le__sim__interface_8h.html#a7c53ab7f9f004387ef41e80df1121da2a7207480abc036ae29469da1801033b2d">LE_SIM_OPEN_CHANNEL</a>, 
 <a class="el" href="le__sim__interface_8h.html#a7c53ab7f9f004387ef41e80df1121da2a4e4be9cfce6ef2e0832d707820cd106d">LE_SIM_REFRESH</a>, 
 <a class="el" href="le__sim__interface_8h.html#a7c53ab7f9f004387ef41e80df1121da2aa086ea0a94ca7065b6baf974e11ed707">LE_SIM_STK_EVENT_MAX</a>
@@ -198,11 +230,63 @@ Functions</h2></td></tr>
 <tr class="separator:a8cc75a17466446c19c5bd941b1360e0e"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a8cbdc50d62ddd5ea80386d27e16d954f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sim__interface_8h.html#a8cbdc50d62ddd5ea80386d27e16d954f">le_sim_RejectSimToolkitCommand</a> (<a class="el" href="le__sim__interface_8h.html#aace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId)</td></tr>
 <tr class="separator:a8cbdc50d62ddd5ea80386d27e16d954f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad72df795270776e68e473f34c0264ecb"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sim__interface_8h.html#ad72df795270776e68e473f34c0264ecb">le_sim_SendApdu</a> (<a class="el" href="le__sim__interface_8h.html#aace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, const uint8_t *commandApduPtr, size_t commandApduNumElements, uint8_t *responseApduPtr, size_t *responseApduNumElementsPtr)</td></tr>
+<tr class="separator:ad72df795270776e68e473f34c0264ecb"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:acc0760cfa301adeb917b171b32973de3"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sim__interface_8h.html#acc0760cfa301adeb917b171b32973de3">le_sim_SendCommand</a> (<a class="el" href="le__sim__interface_8h.html#aace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, <a class="el" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331">le_sim_Command_t</a> command, const char *fileIdentifier, uint8_t p1, uint8_t p2, uint8_t p3, const uint8_t *dataPtr, size_t dataNumElements, const char *path, uint8_t *sw1Ptr, uint8_t *sw2Ptr, uint8_t *responsePtr, size_t *responseNumElementsPtr)</td></tr>
+<tr class="separator:acc0760cfa301adeb917b171b32973de3"><td class="memSeparator" colspan="2"> </td></tr>
 </table>
 <a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Legato <a class="el" href="c_sim.html">SIM</a> include file.</p>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="ab54084e23152ffffad76b8cdfec91bf2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_APDU_MAX_BYTES   255</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>APDU length </p>
+</div>
+</div>
+<a class="anchor" id="a5674824ab605e6e521544a887c4ce024"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_DATA_MAX_BYTES   100</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>SIM data command length </p>
+</div>
+</div>
+<a class="anchor" id="af172bc75589c693533af5cf55e33555e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_FILE_ID_BYTES   5</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>SIM file identifier length One extra byte is added for the null character. </p>
+</div>
+</div>
+<a class="anchor" id="a869290ea48dc472465345af6e3f1ed65"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_FILE_ID_LEN   4</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>SIM file identifier length </p>
+</div>
+</div>
 <a class="anchor" id="a70c33c93f96c8376220b123909654d61"></a>
 <div class="memitem">
 <div class="memproto">
@@ -249,6 +333,30 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>IMSI length </p>
+</div>
+</div>
+<a class="anchor" id="aad33f4de709b3b095fddbf8956e82d5a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_PATH_MAX_BYTES   101</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>SIM file path length One extra byte is added for the null character. </p>
+</div>
+</div>
+<a class="anchor" id="a1e28c18e1e1c28123ced4d9485b7f5c6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_PATH_MAX_LEN   100</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>SIM file path length </p>
 </div>
 </div>
 <a class="anchor" id="aceddc12f8f1ec75fc733daa77991ce16"></a>
@@ -309,6 +417,18 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>PUK length (8 digits) </p>
+</div>
+</div>
+<a class="anchor" id="a155be383d76069564b6ced6c18b8b712"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_RESPONSE_MAX_BYTES   256</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>SIM response length </p>
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -377,6 +497,35 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="ac1a708ba305c36e33383073ec7f0e331"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">enum <a class="el" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331">le_sim_Command_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>SIM commands. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="ac1a708ba305c36e33383073ec7f0e331aa2d4ea6bc380cab183fb215911a39f14"></a>LE_SIM_READ_RECORD </td><td class="fielddoc">
+<p>Read a file record. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ac1a708ba305c36e33383073ec7f0e331ae4a619ba58f2cd503103b397b717b16f"></a>LE_SIM_READ_BINARY </td><td class="fielddoc">
+<p>Read a transparent elementary file. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ac1a708ba305c36e33383073ec7f0e331a73f253861a66d9f1689fbdb97263019e"></a>LE_SIM_UPDATE_RECORD </td><td class="fielddoc">
+<p>Update a file record. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ac1a708ba305c36e33383073ec7f0e331a68f83c3e207642ec4153b67c51cd3cd6"></a>LE_SIM_UPDATE_BINARY </td><td class="fielddoc">
+<p>Update a transparent elementary file. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ac1a708ba305c36e33383073ec7f0e331a882fe099761cbf51a4a7bc82cc6cfaa6"></a>LE_SIM_COMMAND_MAX </td><td class="fielddoc">
+<p>Max value. </p>
+</td></tr>
+</table>
+</div>
+</div>
 <a class="anchor" id="aace49df88426119626fb1ef4e544ccdd"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1346,6 +1495,188 @@ LE_OK Function succeeded. </dd></dl>
 </dl>
 </div>
 </div>
+<a class="anchor" id="ad72df795270776e68e473f34c0264ecb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_SendApdu </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__sim__interface_8h.html#aace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>commandApduPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>commandApduNumElements</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>responseApduPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>responseApduNumElementsPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Send APDU command to the SIM.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeeded.</li>
+<li>LE_FAULT The function failed.</li>
+<li>LE_BAD_PARAMETER A parameter is invalid.</li>
+<li>LE_NOT_FOUND The function failed to select the SIM card for this operation. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">commandApduPtr</td><td>APDU command. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">commandApduNumElements</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">responseApduPtr</td><td>SIM response. </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">responseApduNumElementsPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="acc0760cfa301adeb917b171b32973de3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_SendCommand </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__sim__interface_8h.html#aace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331">le_sim_Command_t</a> </td>
+<td class="paramname"><em>command</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>fileIdentifier</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t </td>
+<td class="paramname"><em>p1</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t </td>
+<td class="paramname"><em>p2</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t </td>
+<td class="paramname"><em>p3</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>dataPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>dataNumElements</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>path</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>sw1Ptr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>sw2Ptr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>responsePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>responseNumElementsPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Send a command to the SIM.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeeded.</li>
+<li>LE_FAULT The function failed.</li>
+<li>LE_BAD_PARAMETER A parameter is invalid.</li>
+<li>LE_NOT_FOUND - The function failed to select the SIM card for this operation<ul>
+<li>The requested SIM file is not found</li>
+</ul>
+</li>
+<li>LE_OVERFLOW Response buffer is too small to copy the SIM answer. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">command</td><td>The SIM command. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fileIdentifier</td><td>File identifier </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">p1</td><td>Parameter P1 passed to the SIM </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">p2</td><td>Parameter P2 passed to the SIM </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">p3</td><td>Parameter P3 passed to the SIM </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">dataPtr</td><td>data command. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">dataNumElements</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>path of the elementary file </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">sw1Ptr</td><td>Status Word 1 received from the SIM </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">sw2Ptr</td><td>Status Word 2 received from the SIM </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">responsePtr</td><td>SIM response. </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">responseNumElementsPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
 <a class="anchor" id="a77293780d1e14f291418181c7c3c11f0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1443,8 +1774,6 @@ If the caller is passing a bad pointer into this function, it is a fatal error, 
 </div>
 </div>
 <br clear="left"/>
-</div>
-<div id="footer">
 </div>
 </div>
 </body>

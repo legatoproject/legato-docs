@@ -1,3 +1,8 @@
+/*** get rid of ?sq= parameter ASAP ***/
+var sq = getUrlParameter('sq');
+var re = new RegExp("(\\?|&)sq=" + sq);
+window.history.replaceState({}, '', location.href.replace(re,''));
+
 /****** DOM STUFF *********/
 
 // adjusts altitude of content and navbar, in case header size changes.
@@ -20,20 +25,19 @@ function nav_altitude() {
 }
 
 $(document).ready(function() {
-
-
-     $("#autocomplete").click(function(){
-        $("#search_result").show();
+    $("#searchbox").val(sq);
+    $("#searchbox").keyup(function() {
+        getdata();
     });
-     
+    $("#searchbox").click(function() {
+        getdata();
+    });
     var $content = $('.content');
     var is_mobile = screen.width <= 719;
 
     if (!is_mobile) {
         $("#left").perfectScrollbar();
-    }
-    else
-    {
+    } else {
         $("#left").detach().appendTo('#top');
         $("#resizable").remove();
     }
@@ -109,13 +113,14 @@ $(document).ready(function() {
 
 // perform a search.
 // ctx: context of current page, e.g. "Build Apps"
-function getdata(ctx) {
+function getdata() {
+    ctx = $('html').data('context');
     var domain = "";
     var invoke_url = "https://x6khds7mia.execute-api.us-west-2.amazonaws.com/prod";
     if (ctx == "Legato Documentation")
         ctx = "";
-    var keyword = $('#autocomplete').val();
-    var ac = $("#autocomplete").autocomplete({
+    var keyword = $('#searchbox').val();
+    var ac = $("#searchbox").autocomplete({
         delay: 10,
         autoFocus: true,
         source: function(request, response) {
@@ -124,7 +129,7 @@ function getdata(ctx) {
                 dataType: "json",
                 data: new function() {
                     this.q = request.term;
-                    this.size = 15;
+                    this.size = 25;
                     if (ctx != "")
                         this.fq = "context:'" + ctx + "'"; //only include "context:" filter if ctx isnt empty
                     this.sort = "_score desc";
@@ -133,6 +138,7 @@ function getdata(ctx) {
                 change: function(e, ui) {
                     console.log(e.target.value);
                 },
+
                 success: function(data) {
                     var hits = data.hits.hit;
                     var results = []
@@ -144,7 +150,8 @@ function getdata(ctx) {
                     } else
                         for (i = 0; i < hits.length; i++) {
                             var result = new Object();
-                            result.value = hits[i].id;
+
+                            result.value = addParameter(hits[i].id, 'sq', request.term, false);
                             result.cat = hits[i].fields.category;
                             if (result.cat === undefined)
                                 result.cat = "Root"
@@ -172,6 +179,7 @@ function getdata(ctx) {
         },
         open: function() {
             $(this).removeClass("ui-corner-all").addClass("ui-corner-top");
+
         },
         close: function() {
             $(this).removeClass("ui-corner-top").addClass("ui-corner-all");
@@ -189,10 +197,12 @@ function getdata(ctx) {
         var that = this;
         ul.attr('id', "search_result");
         ul.attr('class', "ui-autocomplete ui-front ui-menu ui-widget ui-widget-content");
+        //ul.attr('data-resultcount',items.length + " results.");
         $.each(items, function(index, item) {
             that._renderItemData(ul, item);
         });
     };
+    $("#searchbox").autocomplete("search", keyword);
 
 }
 /***** NAVIGATION TREE ******/
@@ -213,7 +223,7 @@ function setupTree(treeURL) {
                         data: data.children ? data.children : data,
                         saveState: false,
                         useContextMenu: false,
-                        slide:false,
+                        slide: false,
                         closedIcon: "+",
                         openedIcon: "-",
                         keyboardSupport: false,
@@ -225,7 +235,7 @@ function setupTree(treeURL) {
 
 
                     });
-    
+
                     $tree.tree('selectNode', null); //unselect nodes
 
                     $("#left").perfectScrollbar('update');
@@ -247,14 +257,14 @@ function setupTree(treeURL) {
                     var path = window.location.pathname; // path = /docs/filename.html
                     var page = path.split("/").pop(); // page = filename.html
                     var anchor = window.location.hash.substr(1); // anchor = section
-                    if(anchor)
+                    if (anchor)
                         page += "#" + anchor; // page = filename.html#section
 
                     // find node of current page and select it
                     $tree.tree('getTree').iterate(
                         function(node, level) {
                             if (node.href === page) {
-                                $tree.tree('openNode', node); 
+                                $tree.tree('openNode', node);
                                 $tree.tree('selectNode', node);
                                 return false;
                             }
@@ -266,18 +276,77 @@ function setupTree(treeURL) {
                     $tree.bind(
                         'tree.click',
                         function(event) {
-                             $tree.tree('setOption', 'selectable', true);
-                             $tree.tree('selectNode', event.node);
-                             $tree.tree('setOption', 'selectable', false);
+                            $tree.tree('setOption', 'selectable', true);
+                            $tree.tree('selectNode', event.node);
+                            $tree.tree('setOption', 'selectable', false);
                         }
                     );
 
                     $('#tree1').tree('setOption', 'selectable', false);
-                    
+
 
                 }
             );
 
         });
+    }
+}
+
+/*** utils ***/
+
+// http://stackoverflow.com/a/6954277/765210
+function addParameter(url, parameterName, parameterValue, atStart /*Add param before others*/ ) {
+    replaceDuplicates = true;
+    if (url.indexOf('#') > 0) {
+        var cl = url.indexOf('#');
+        urlhash = url.substring(url.indexOf('#'), url.length);
+    } else {
+        urlhash = '';
+        cl = url.length;
+    }
+    sourceUrl = url.substring(0, cl);
+
+    var urlParts = sourceUrl.split("?");
+    var newQueryString = "";
+
+    if (urlParts.length > 1) {
+        var parameters = urlParts[1].split("&");
+        for (var i = 0;
+            (i < parameters.length); i++) {
+            var parameterParts = parameters[i].split("=");
+            if (!(replaceDuplicates && parameterParts[0] == parameterName)) {
+                if (newQueryString == "")
+                    newQueryString = "?";
+                else
+                    newQueryString += "&";
+                newQueryString += parameterParts[0] + "=" + (parameterParts[1] ? parameterParts[1] : '');
+            }
+        }
+    }
+    if (newQueryString == "")
+        newQueryString = "?";
+
+    if (atStart) {
+        newQueryString = '?' + parameterName + "=" + parameterValue + (newQueryString.length > 1 ? '&' + newQueryString.substring(1) : '');
+    } else {
+        if (newQueryString !== "" && newQueryString != '?')
+            newQueryString += "&";
+        newQueryString += parameterName + "=" + (parameterValue ? parameterValue : '');
+    }
+    return urlParts[0] + newQueryString + urlhash;
+};
+// http://stackoverflow.com/a/21903119/765210
+function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
     }
 }

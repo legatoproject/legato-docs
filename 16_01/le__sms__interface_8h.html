@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>le_sms_interface.h File Reference - Legato Docs</title>
@@ -16,7 +16,7 @@
         <script src="resources/js/html5shiv.js"></script>
         <script src="resources/js/respond.js"></script>
         <![endif]-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
 <link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
 <script src="resources/js/tree.jquery.js" type="text/javascript"></script>
@@ -25,16 +25,24 @@
 <link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
 <script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 <script>
-        setupTree("tocs/Build Apps Reference.json");
+        setupTree("tocs/Build Apps API Guides.json");
         </script>
 </head>
 <body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
 <div class="wrapper">
 <div class="fa fa-bars documentation" id="menu-trigger"></div>
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink" href="build_apps_main.html">Build Apps</a><a class="subnavlink" href="getstarted_main.html">Get started</a><a class="subnavlink" href="build_apps_documentation.html">Documentation</a><a class="subnavlink" href="files.html">Reference</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="subnavlink" href="how_to_customize_u_s_b.html">Customize Legato Yocto USB</a><a class="subnavlink" href="platform_constraints.html">Platform Constraints</a><a class="subnavlink" href="getstarted_setup_host.html">Setup Dev Host PC</a><a class="subnavlink" href="yocto_main.html">Yocto Info</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
 </nav>
 </header>
 </div>
@@ -43,11 +51,11 @@
 <a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo_192.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="getstarted_main.html">Get Started</a><a href="build_apps_documentation.html">Documentation</a><a class="link-selected" href="files.html">Reference</a>
+<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a>
 </nav>
-<nav class="ui-front" id="searchresult">
-<i class="fa fa-search"></i>
-<input id="autocomplete" onkeyup="getdata('Build Apps')" placeholder="Search..."/> <!-- <input id="category" type="checkbox" onclick="checkbox()"> <label for="category">API Search</label> -->
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search..."/>
 </nav>
 </header>
 </div>
@@ -83,6 +91,10 @@ Macros</h2></td></tr>
 <tr class="separator:a0dc5c2cec7c1fb166c47393fbb07e43f"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a5bf62f998e950de37b56813d8c5d9b95"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a5bf62f998e950de37b56813d8c5d9b95">LE_SMS_BINARY_MAX_BYTES</a>   140</td></tr>
 <tr class="separator:a5bf62f998e950de37b56813d8c5d9b95"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af493fd4a06e32bd984c22005c9c938ee"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#af493fd4a06e32bd984c22005c9c938ee">LE_SMS_UCS2_MAX_BYTES</a>   140</td></tr>
+<tr class="separator:af493fd4a06e32bd984c22005c9c938ee"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8026a1caf6d8b759972785ebefafaf94"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a8026a1caf6d8b759972785ebefafaf94">LE_SMS_UCS2_MAX_CHARS</a>   70</td></tr>
+<tr class="separator:a8026a1caf6d8b759972785ebefafaf94"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:afda7337666a02e3404152412acb89f75"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#afda7337666a02e3404152412acb89f75">LE_SMS_PDU_MAX_PAYLOAD</a>   140</td></tr>
 <tr class="separator:afda7337666a02e3404152412acb89f75"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:aaa740f36bbc6d13d0b355d3dc2d8d4dc"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#aaa740f36bbc6d13d0b355d3dc2d8d4dc">LE_SMS_PDU_MAX_BYTES</a>   176</td></tr>
@@ -103,10 +115,14 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a337778c44e63660c44fa2116699296c0"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a337778c44e63660c44fa2116699296c0">le_sms_Format_t</a> { <a class="el" href="le__sms__interface_8h.html#a337778c44e63660c44fa2116699296c0a3f6a4a63acbf7aec5a498017ff53a6e8">LE_SMS_FORMAT_PDU</a>, 
+<tr class="memitem:a337778c44e63660c44fa2116699296c0"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a337778c44e63660c44fa2116699296c0">le_sms_Format_t</a> { <br/>
+  <a class="el" href="le__sms__interface_8h.html#a337778c44e63660c44fa2116699296c0a3f6a4a63acbf7aec5a498017ff53a6e8">LE_SMS_FORMAT_PDU</a>, 
 <a class="el" href="le__sms__interface_8h.html#a337778c44e63660c44fa2116699296c0a1bb6a0d76a622b1185ee879e1595dff8">LE_SMS_FORMAT_TEXT</a>, 
 <a class="el" href="le__sms__interface_8h.html#a337778c44e63660c44fa2116699296c0ac70333fc9281ed10aa405d585689c000">LE_SMS_FORMAT_BINARY</a>, 
-<a class="el" href="le__sms__interface_8h.html#a337778c44e63660c44fa2116699296c0abea80bb6058e34a427c02b80bfede497">LE_SMS_FORMAT_UNKNOWN</a>
+<a class="el" href="le__sms__interface_8h.html#a337778c44e63660c44fa2116699296c0afe08800134fe4f54c84439cb2d323a77">LE_SMS_FORMAT_UCS2</a>, 
+<br/>
+  <a class="el" href="le__sms__interface_8h.html#a337778c44e63660c44fa2116699296c0abea80bb6058e34a427c02b80bfede497">LE_SMS_FORMAT_UNKNOWN</a>
+<br/>
  }</td></tr>
 <tr class="separator:a337778c44e63660c44fa2116699296c0"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a9001c5bc939bda5d5865e363bdf7662c"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a9001c5bc939bda5d5865e363bdf7662c">le_sms_Type_t</a> { <a class="el" href="le__sms__interface_8h.html#a9001c5bc939bda5d5865e363bdf7662ca29050c2aa56f58a199d292d51be4fa01">LE_SMS_TYPE_RX</a>, 
@@ -321,6 +337,8 @@ Functions</h2></td></tr>
 <tr class="separator:a34dc999430c46530d6c9067f800c5d72"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a2abf46b6d57c473bb06caf701a04183e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a2abf46b6d57c473bb06caf701a04183e">le_sms_SetBinary</a> (<a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> msgRef, const uint8_t *binPtr, size_t binNumElements)</td></tr>
 <tr class="separator:a2abf46b6d57c473bb06caf701a04183e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a66b82d0120635bbf25a7fed301a84609"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a66b82d0120635bbf25a7fed301a84609">le_sms_SetUCS2</a> (<a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> msgRef, const uint16_t *ucs2Ptr, size_t ucs2NumElements)</td></tr>
+<tr class="separator:a66b82d0120635bbf25a7fed301a84609"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:ab7295e1cdf2adb865135d657ec8bde09"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#ab7295e1cdf2adb865135d657ec8bde09">le_sms_SetPDU</a> (<a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> msgRef, const uint8_t *pduPtr, size_t pduNumElements)</td></tr>
 <tr class="separator:ab7295e1cdf2adb865135d657ec8bde09"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:ab7dee7d2c74cfcadd9ea0d5fe1786dfc"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#ab7dee7d2c74cfcadd9ea0d5fe1786dfc">le_sms_Send</a> (<a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> msgRef)</td></tr>
@@ -357,6 +375,8 @@ Functions</h2></td></tr>
 <tr class="separator:ac598dec158aed1e9fa134daf22c704db"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a0de50069a9df99adac983385106d9c09"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a0de50069a9df99adac983385106d9c09">le_sms_GetBinary</a> (<a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> msgRef, uint8_t *binPtr, size_t *binNumElementsPtr)</td></tr>
 <tr class="separator:a0de50069a9df99adac983385106d9c09"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6bd382c896103d4136c163e58f1ee0d7"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a6bd382c896103d4136c163e58f1ee0d7">le_sms_GetUCS2</a> (<a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> msgRef, uint16_t *ucs2Ptr, size_t *ucs2NumElementsPtr)</td></tr>
+<tr class="separator:a6bd382c896103d4136c163e58f1ee0d7"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:ae4b284d427ab7ec637056a6208fdd89e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#ae4b284d427ab7ec637056a6208fdd89e">le_sms_GetPDU</a> (<a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> msgRef, uint8_t *pduPtr, size_t *pduNumElementsPtr)</td></tr>
 <tr class="separator:ae4b284d427ab7ec637056a6208fdd89e"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:abb89b302e564f3d55d604bb0c0dda022"><td align="right" class="memItemLeft" valign="top">size_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#abb89b302e564f3d55d604bb0c0dda022">le_sms_GetPDULen</a> (<a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> msgRef)</td></tr>
@@ -488,6 +508,30 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Time stamp string length. The string format is "yy/MM/dd,hh:mm:ss+/-zz" (Year/Month/Day,Hour:Min:Seconds+/-TimeZone). One extra byte is added for the null character. </p>
+</div>
+</div>
+<a class="anchor" id="af493fd4a06e32bd984c22005c9c938ee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SMS_UCS2_MAX_BYTES   140</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>The UCS2 message can be up to 140 bytes long (70 characters). </p>
+</div>
+</div>
+<a class="anchor" id="a8026a1caf6d8b759972785ebefafaf94"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SMS_UCS2_MAX_CHARS   70</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>The UCS2 message can be up to 70 characters (140 bytes long). </p>
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -973,6 +1017,9 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="a337778c44e63660c44fa2116699296c0ac70333fc9281ed10aa405d585689c000"></a>LE_SMS_FORMAT_BINARY </td><td class="fielddoc">
 <p>Binary message format. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a337778c44e63660c44fa2116699296c0afe08800134fe4f54c84439cb2d323a77"></a>LE_SMS_FORMAT_UCS2 </td><td class="fielddoc">
+<p>UCS2 message format. </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="a337778c44e63660c44fa2116699296c0abea80bb6058e34a427c02b80bfede497"></a>LE_SMS_FORMAT_UNKNOWN </td><td class="fielddoc">
 <p>Unknown message format. </p>
@@ -2064,6 +2111,53 @@ LE_OK Function succeeded.</dd></dl>
 </dl>
 </div>
 </div>
+<a class="anchor" id="a6bd382c896103d4136c163e58f1ee0d7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sms_GetUCS2 </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> </td>
+<td class="paramname"><em>msgRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint16_t * </td>
+<td class="paramname"><em>ucs2Ptr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>ucs2NumElementsPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the UCS2 Message (16-bit format).</p>
+<p>Output parameters are updated with the UCS2 message content and the number of characters. If the UCS2 data exceed the value of the length input parameter, a LE_OVERFLOW error code is returned and 'ucs2Ptr' is filled until of the number of chars specified.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_FORMAT_ERROR Message is not in binary format</li>
+<li>LE_OVERFLOW Message length exceed the maximum length.</li>
+<li>LE_OK Function succeeded. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">msgRef</td><td>Reference to the message object. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">ucs2Ptr</td><td>UCS2 message. </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">ucs2NumElementsPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
 <a class="anchor" id="a6165464dd3502b3c76b79b32206ba10f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2078,7 +2172,7 @@ LE_OK Function succeeded.</dd></dl>
 </table>
 </div><div class="memdoc">
 <p>Get the message Length value.</p>
-<dl class="section return"><dt>Returns</dt><dd>Number of characters for text messages, or the length of the data in bytes for raw binary messages.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of characters for text and UCS2 messages, or the length of the data in bytes for raw binary messages.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
@@ -2669,10 +2763,57 @@ If the caller is passing a bad pointer into this function, it is a fatal error, 
 </dl>
 </div>
 </div>
+<a class="anchor" id="a66b82d0120635bbf25a7fed301a84609"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sms_SetUCS2 </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> </td>
+<td class="paramname"><em>msgRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint16_t * </td>
+<td class="paramname"><em>ucs2Ptr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>ucs2NumElements</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the UCS2 message content (16-bit format).</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_NOT_PERMITTED Message is Read-Only.</li>
+<li>LE_BAD_PARAMETER Length of the data is equal to zero.</li>
+<li>LE_OK Function succeeded.</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If length of the data is too long (max LE_SMS_UCS2_MAX_CHARS), it is a fatal error, the function will not return.</dd>
+<dd>
+If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">msgRef</td><td>Reference to the message object. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">ucs2Ptr</td><td>UCS2 message. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">ucs2NumElements</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
 </div>
 <br clear="left"/>
-</div>
-<div id="footer">
 </div>
 </div>
 </body>

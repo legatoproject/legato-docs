@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>le_mrc_interface.h File Reference - Legato Docs</title>
@@ -16,7 +16,7 @@
         <script src="resources/js/html5shiv.js"></script>
         <script src="resources/js/respond.js"></script>
         <![endif]-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
 <link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
 <script src="resources/js/tree.jquery.js" type="text/javascript"></script>
@@ -25,16 +25,24 @@
 <link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
 <script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 <script>
-        setupTree("tocs/Build Apps Reference.json");
+        setupTree("tocs/Build Apps API Guides.json");
         </script>
 </head>
 <body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
 <div class="wrapper">
 <div class="fa fa-bars documentation" id="menu-trigger"></div>
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink" href="build_apps_main.html">Build Apps</a><a class="subnavlink" href="getstarted_main.html">Get started</a><a class="subnavlink" href="build_apps_documentation.html">Documentation</a><a class="subnavlink" href="files.html">Reference</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="subnavlink" href="how_to_customize_u_s_b.html">Customize Legato Yocto USB</a><a class="subnavlink" href="platform_constraints.html">Platform Constraints</a><a class="subnavlink" href="getstarted_setup_host.html">Setup Dev Host PC</a><a class="subnavlink" href="yocto_main.html">Yocto Info</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
 </nav>
 </header>
 </div>
@@ -43,11 +51,11 @@
 <a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo_192.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="getstarted_main.html">Get Started</a><a href="build_apps_documentation.html">Documentation</a><a class="link-selected" href="files.html">Reference</a>
+<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a>
 </nav>
-<nav class="ui-front" id="searchresult">
-<i class="fa fa-search"></i>
-<input id="autocomplete" onkeyup="getdata('Build Apps')" placeholder="Search..."/> <!-- <input id="category" type="checkbox" onclick="checkbox()"> <label for="category">API Search</label> -->
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search..."/>
 </nav>
 </header>
 </div>
@@ -111,6 +119,10 @@ Typedefs</h2></td></tr>
 <tr class="separator:a40fddaea0c8a3695000b2679931fbfb2"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:aad70b8ec8988256ac39f5d04bc078a34"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#aad70b8ec8988256ac39f5d04bc078a34">le_mrc_SignalStrengthChangeHandlerFunc_t</a>) (int32_t ss, void *contextPtr)</td></tr>
 <tr class="separator:aad70b8ec8988256ac39f5d04bc078a34"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a32b46b705cd7d45d76606b6c609df627"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#a32b46b705cd7d45d76606b6c609df627">le_mrc_CellularNetworkScanHandlerFunc_t</a>) (<a class="el" href="le__mrc__interface_8h.html#a25a9e79cc9078e22cec22444fd959c61">le_mrc_ScanInformationListRef_t</a> listRef, void *contextPtr)</td></tr>
+<tr class="separator:a32b46b705cd7d45d76606b6c609df627"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aed3784a1d6f94a5b4b15baf3cc89555a"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#aed3784a1d6f94a5b4b15baf3cc89555a">le_mrc_ManualSelectionHandlerFunc_t</a>) (<a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> result, void *contextPtr)</td></tr>
+<tr class="separator:aed3784a1d6f94a5b4b15baf3cc89555a"><td class="memSeparator" colspan="2"> </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -274,6 +286,8 @@ Functions</h2></td></tr>
 <tr class="separator:acb434a9f91afb5b6639baf3678ee9388"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a09b890f05a20f4b007d60e595026631f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#a09b890f05a20f4b007d60e595026631f">le_mrc_SetManualRegisterMode</a> (const char *mcc, const char *mnc)</td></tr>
 <tr class="separator:a09b890f05a20f4b007d60e595026631f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac342382a54168e032be59e886b4d3262"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#ac342382a54168e032be59e886b4d3262">le_mrc_SetManualRegisterModeAsync</a> (const char *mcc, const char *mnc, <a class="el" href="le__mrc__interface_8h.html#aed3784a1d6f94a5b4b15baf3cc89555a">le_mrc_ManualSelectionHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:ac342382a54168e032be59e886b4d3262"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a283c0c092c5a135a8e95f9f091655cb1"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#a283c0c092c5a135a8e95f9f091655cb1">le_mrc_GetRegisterMode</a> (bool *isManualPtrPtr, char *mccPtr, size_t mccPtrNumElements, char *mncPtr, size_t mncPtrNumElements)</td></tr>
 <tr class="separator:a283c0c092c5a135a8e95f9f091655cb1"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a2d4abd391bc69c218538f5d8e1be4e01"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#a2d4abd391bc69c218538f5d8e1be4e01">le_mrc_SetRatPreferences</a> (<a class="el" href="le__mrc__interface_8h.html#af643c7005da7f2466302eebdf7a29d93">le_mrc_RatBitMask_t</a> ratMask)</td></tr>
@@ -316,6 +330,8 @@ Functions</h2></td></tr>
 <tr class="separator:aac51332c6c84e460746eb1ad45c064d6"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:ab4a246dd466fa8175aca0158e0cab227"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__mrc__interface_8h.html#a25a9e79cc9078e22cec22444fd959c61">le_mrc_ScanInformationListRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#ab4a246dd466fa8175aca0158e0cab227">le_mrc_PerformCellularNetworkScan</a> (<a class="el" href="le__mrc__interface_8h.html#af643c7005da7f2466302eebdf7a29d93">le_mrc_RatBitMask_t</a> ratMask)</td></tr>
 <tr class="separator:ab4a246dd466fa8175aca0158e0cab227"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab66e29d054d7902c61f87e79fd6d987f"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#ab66e29d054d7902c61f87e79fd6d987f">le_mrc_PerformCellularNetworkScanAsync</a> (<a class="el" href="le__mrc__interface_8h.html#af643c7005da7f2466302eebdf7a29d93">le_mrc_RatBitMask_t</a> ratMask, <a class="el" href="le__mrc__interface_8h.html#a32b46b705cd7d45d76606b6c609df627">le_mrc_CellularNetworkScanHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:ab66e29d054d7902c61f87e79fd6d987f"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:ae006d053b037cec589aa85053472a2af"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__mrc__interface_8h.html#a3e7fe3e0d8f10fe7853f00eb254529ea">le_mrc_ScanInformationRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#ae006d053b037cec589aa85053472a2af">le_mrc_GetFirstCellularNetworkScan</a> (<a class="el" href="le__mrc__interface_8h.html#a25a9e79cc9078e22cec22444fd959c61">le_mrc_ScanInformationListRef_t</a> scanInformationListRef)</td></tr>
 <tr class="separator:ae006d053b037cec589aa85053472a2af"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:ae0ca9f0c1c106d6ddeef784c6bb0d69b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__mrc__interface_8h.html#a3e7fe3e0d8f10fe7853f00eb254529ea">le_mrc_ScanInformationRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#ae0ca9f0c1c106d6ddeef784c6bb0d69b">le_mrc_GetNextCellularNetworkScan</a> (<a class="el" href="le__mrc__interface_8h.html#a25a9e79cc9078e22cec22444fd959c61">le_mrc_ScanInformationListRef_t</a> scanInformationListRef)</td></tr>
@@ -382,6 +398,8 @@ Functions</h2></td></tr>
 <tr class="separator:aafc9fb71c3013b7b26dc386b13ca4a85"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a8ba03765e7595f85783f6f6a022311f8"><td align="right" class="memItemLeft" valign="top">uint32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#a8ba03765e7595f85783f6f6a022311f8">le_mrc_GetServingCellLocAreaCode</a> (void)</td></tr>
 <tr class="separator:a8ba03765e7595f85783f6f6a022311f8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a856dc7825b4fa8de095f26020e03f015"><td align="right" class="memItemLeft" valign="top">uint16_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#a856dc7825b4fa8de095f26020e03f015">le_mrc_GetServingCellLteTracAreaCode</a> (void)</td></tr>
+<tr class="separator:a856dc7825b4fa8de095f26020e03f015"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a7cb0a206729c652692701cd24226d34f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#a7cb0a206729c652692701cd24226d34f">le_mrc_GetBandCapabilities</a> (<a class="el" href="le__mrc__interface_8h.html#a048374324f72ee7df52c2e0521c0dda3">le_mrc_BandBitMask_t</a> *bandMaskPtrPtr)</td></tr>
 <tr class="separator:a7cb0a206729c652692701cd24226d34f"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:ad6b44639b1d9755b92720d5184ee2515"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#ad6b44639b1d9755b92720d5184ee2515">le_mrc_GetLteBandCapabilities</a> (<a class="el" href="le__mrc__interface_8h.html#a81d705d61ee7ee56eab6aafb1af92579">le_mrc_LteBandBitMask_t</a> *bandMaskPtrPtr)</td></tr>
@@ -464,6 +482,44 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Reference type for one Cell Information. </p>
+</div>
+</div>
+<a class="anchor" id="a32b46b705cd7d45d76606b6c609df627"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_mrc_CellularNetworkScanHandlerFunc_t) (<a class="el" href="le__mrc__interface_8h.html#a25a9e79cc9078e22cec22444fd959c61">le_mrc_ScanInformationListRef_t</a> listRef, void *contextPtr)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Handler for cellular asynchronous network scan Sending result. Returns the reference to the List object. Null pointer if the scan failed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramname">listRef</td><td>Reference to the List object. Null pointer if the scan failed. </td></tr>
+<tr><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="aed3784a1d6f94a5b4b15baf3cc89555a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_mrc_ManualSelectionHandlerFunc_t) (<a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> result, void *contextPtr)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Handler for asynchronous manual selection response</p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramname">result</td><td>Manual selection response </td></tr>
+<tr><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="a6ad5afb123492b2e249f3ecd414d6e83"></a>
@@ -783,7 +839,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Add handler function for EVENT 'le_mrc_NetRegStateEvent'</p>
-<p>This event provides information on network registration state changes. </p>
+<p>This event provides information on network registration state changes.</p>
+<dl class="section note"><dt>Note</dt><dd><b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td></td></tr>
@@ -830,7 +887,9 @@ Functions</h2></td></tr>
 <li>LE_OK Function succeeded.</li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If one code is too long (max LE_MRC_MCC_LEN/LE_MRC_MNC_LEN digits), it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If one code is too long (max LE_MRC_MCC_LEN/LE_MRC_MNC_LEN digits), it's a fatal error, the function won't return.</dd>
+<dd>
+<b>NOT multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">mcc</td><td>Mobile Country Code </td></tr>
@@ -865,7 +924,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Add handler function for EVENT 'le_mrc_RatChange'</p>
-<p>This event provides information on Radio Access Technology changes. </p>
+<p>This event provides information on Radio Access Technology changes.</p>
+<dl class="section note"><dt>Note</dt><dd><b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td></td></tr>
@@ -917,7 +977,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Add handler function for EVENT 'le_mrc_SignalStrengthChange'</p>
-<p>This event provides information on Signal Strength value changes. </p>
+<p>This event provides information on Signal Strength value changes.</p>
+<dl class="section note"><dt>Note</dt><dd><b>NOT multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">rat</td><td>Radio Access Technology </td></tr>
@@ -962,7 +1023,9 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>This function must be called to delete the list of the Scan Information retrieved with le_mrc_PerformNetworkScan().</p>
-<dl class="section note"><dt>Note</dt><dd>On failure, the process exits, so you don't have to worry about checking the returned reference for validity. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>On failure, the process exits, so you don't have to worry about checking the returned reference for validity.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">scanInformationListRef</td><td>The list of scan information. </td></tr>
@@ -985,7 +1048,9 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>This function must be called to delete the Neighboring Cells information.</p>
-<dl class="section note"><dt>Note</dt><dd>On failure, the process exits, so you don't have to worry about checking the returned reference for validity. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>On failure, the process exits, so you don't have to worry about checking the returned reference for validity.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">ngbrCellsRef</td><td>Neighboring Cells reference. </td></tr>
@@ -1008,7 +1073,9 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>This function must be called to delete the list of the preferred operators retrieved with le_mrc_GetPreferredOperators().</p>
-<dl class="section note"><dt>Note</dt><dd>On failure, the process exits, so you don't have to worry about checking the returned reference for validity. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>On failure, the process exits, so you don't have to worry about checking the returned reference for validity.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">preferredOperatorListRef</td><td>The list of the preferred operators. </td></tr>
@@ -1031,7 +1098,9 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>This function must be called to delete the the signal metrics.</p>
-<dl class="section note"><dt>Note</dt><dd>On failure, the process exits, so you don't have to worry about checking the returned reference for validity. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>On failure, the process exits, so you don't have to worry about checking the returned reference for validity.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">MetricsRef</td><td>Signal metrics reference. </td></tr>
@@ -1074,9 +1143,10 @@ Functions</h2></td></tr>
 <p>Get the Bit mask for 2G/3G Band capabilities.</p>
 <dl class="section return"><dt>Returns</dt><dd><ul>
 <li>LE_FAULT Function failed.</li>
-<li>LE_OK Function succeeded. </li>
+<li>LE_OK Function succeeded.</li>
 </ul>
 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[out]</td><td class="paramname">bandMaskPtrPtr</td><td>Bit mask for 2G/3G Band capabilities. </td></tr>
@@ -1101,9 +1171,10 @@ Functions</h2></td></tr>
 <p>Get the Bit mask for 2G/3G Band preferences.</p>
 <dl class="section return"><dt>Returns</dt><dd><ul>
 <li>LE_FAULT Function failed.</li>
-<li>LE_OK Function succeeded. </li>
+<li>LE_OK Function succeeded.</li>
 </ul>
 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[out]</td><td class="paramname">bandMaskPtrPtr</td><td>Bit mask for 2G/3G Band preferences. </td></tr>
@@ -1166,7 +1237,9 @@ Functions</h2></td></tr>
 <li>rscpPtr and sinrPtr return 0xFFFFFFFF when the value isn't available.</li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">MetricsRef</td><td>Signal metrics reference. </td></tr>
@@ -1228,7 +1301,9 @@ Functions</h2></td></tr>
 <li>LE_FAULT for all other errors</li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>On failure, the process exits, so you don't have to worry about checking the returned reference for validity. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>On failure, the process exits, so you don't have to worry about checking the returned reference for validity.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">scanInformationRef</td><td>Scan information reference </td></tr>
@@ -1277,7 +1352,9 @@ Functions</h2></td></tr>
 <li>LE_FAULT for all other errors</li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>On failure, the process exits, so you don't have to worry about checking the returned reference for validity. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>On failure, the process exits, so you don't have to worry about checking the returned reference for validity.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">scanInformationRef</td><td>Scan information reference </td></tr>
@@ -1302,11 +1379,10 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>This function must be called to get the radio access technology of a scanInformationRef.</p>
-<dl class="section return"><dt>Returns</dt><dd><ul>
-<li>the radio access technology</li>
-</ul>
-</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>On failure, the process exits. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the radio access technology</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>On failure, the process exits.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">scanInformationRef</td><td>Scan information reference </td></tr>
@@ -1353,9 +1429,10 @@ Functions</h2></td></tr>
 <p>This function must be called to get the current network PLMN information.</p>
 <dl class="section return"><dt>Returns</dt><dd><ul>
 <li>LE_OK on success</li>
-<li>LE_FAULT on any other failure </li>
+<li>LE_FAULT on any other failure</li>
 </ul>
 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[out]</td><td class="paramname">mccStr</td><td>the mobile country code </td></tr>
@@ -1398,7 +1475,9 @@ Functions</h2></td></tr>
 <li>LE_FAULT on any other failure</li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[out]</td><td class="paramname">nameStr</td><td>the home network Name </td></tr>
@@ -1425,7 +1504,9 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>NULL No scan information found. </dd>
 <dd>
 le_mrc_ScanInformationRef_t The Scan Information object reference.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">scanInformationListRef</td><td>The list of scan information. </td></tr>
@@ -1451,7 +1532,9 @@ le_mrc_ScanInformationRef_t The Scan Information object reference.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>NULL No Cell information object found. </dd>
 <dd>
 le_mrc_CellInfoRef_t The Cell information object reference.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">ngbrCellsRef</td><td>Neighboring Cells reference. </td></tr>
@@ -1479,7 +1562,9 @@ le_mrc_CellInfoRef_t The Cell information object reference.</dd></dl>
 <li>le_mrc_PreferredOperatorRef The Operator object reference.</li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad reference into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad reference into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">preferredOperatorListRef</td><td>The list of the preferred operators. </td></tr>
@@ -1523,7 +1608,9 @@ le_mrc_CellInfoRef_t The Cell information object reference.</dd></dl>
 <li>LE_FAULT on failure</li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">MetricsRef</td><td>Signal metrics reference. </td></tr>
@@ -1550,9 +1637,10 @@ le_mrc_CellInfoRef_t The Cell information object reference.</dd></dl>
 <p>Get the Bit mask for LTE Band capabilities.</p>
 <dl class="section return"><dt>Returns</dt><dd><ul>
 <li>LE_FAULT Function failed.</li>
-<li>LE_OK Function succeeded. </li>
+<li>LE_OK Function succeeded.</li>
 </ul>
 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[out]</td><td class="paramname">bandMaskPtrPtr</td><td>Bit mask for LTE Band capabilities. </td></tr>
@@ -1577,9 +1665,10 @@ le_mrc_CellInfoRef_t The Cell information object reference.</dd></dl>
 <p>Get the Bit mask for LTE Band preferences.</p>
 <dl class="section return"><dt>Returns</dt><dd><ul>
 <li>LE_FAULT Function failed.</li>
-<li>LE_OK Function succeeded. </li>
+<li>LE_OK Function succeeded.</li>
 </ul>
 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[out]</td><td class="paramname">bandMaskPtrPtr</td><td>Bit mask for LTE Band preferences. </td></tr>
@@ -1642,7 +1731,9 @@ le_mrc_CellInfoRef_t The Cell information object reference.</dd></dl>
 <li>sinrPtr and ioPtr return 0xFFFFFFFF when the value isn't available.</li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">MetricsRef</td><td>Signal metrics reference. </td></tr>
@@ -1671,7 +1762,9 @@ le_mrc_CellInfoRef_t The Cell information object reference.</dd></dl>
 </div><div class="memdoc">
 <p>This function must be called to get the Cell Identifier.</p>
 <dl class="section return"><dt>Returns</dt><dd>The Cell Identifier.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">ngbrCellInfoRef</td><td>Cell information reference. </td></tr>
@@ -1695,7 +1788,9 @@ le_mrc_CellInfoRef_t The Cell information object reference.</dd></dl>
 </div><div class="memdoc">
 <p>This function must be called to get the Location Area Code of a cell.</p>
 <dl class="section return"><dt>Returns</dt><dd>The Location Area Code of a cell. 0xFFFF value is returned if the value is not available.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">ngbrCellInfoRef</td><td>Cell information reference. </td></tr>
@@ -1739,7 +1834,9 @@ le_mrc_CellInfoRef_t The Cell information object reference.</dd></dl>
 <li>LE_FAULT on failure</li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">ngbrCellInfoRef</td><td>Cell information reference. </td></tr>
@@ -1785,7 +1882,9 @@ le_mrc_CellInfoRef_t The Cell information object reference.</dd></dl>
 <li>LE_FAULT on failure</li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">ngbrCellInfoRef</td><td>Cell information reference. </td></tr>
@@ -1811,7 +1910,9 @@ le_mrc_CellInfoRef_t The Cell information object reference.</dd></dl>
 </div><div class="memdoc">
 <p>This function must be called to get the Radio Access Technology of a cell.</p>
 <dl class="section return"><dt>Returns</dt><dd>The Radio Access Technology of a cell.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">ngbrCellInfoRef</td><td>Cell information reference. </td></tr>
@@ -1835,7 +1936,9 @@ le_mrc_CellInfoRef_t The Cell information object reference.</dd></dl>
 </div><div class="memdoc">
 <p>This function must be called to get the signal strength of a cell.</p>
 <dl class="section return"><dt>Returns</dt><dd>The signal strength of a cell in dBm.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">ngbrCellInfoRef</td><td>Cell information reference. </td></tr>
@@ -1860,7 +1963,8 @@ le_mrc_CellInfoRef_t The Cell information object reference.</dd></dl>
 <p>This function must be called to retrieve the Neighboring Cells information. It creates and returns a reference to the Neighboring Cells information.</p>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the Neighboring Cells information. </dd>
 <dd>
-NULL if no Cells Information are available. </dd></dl>
+NULL if no Cells Information are available.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>multi-app safe</b> </dd></dl>
 </div>
 </div>
 <a class="anchor" id="a94e452e3d7063d3359dcbb97a31b984b"></a>
@@ -1882,7 +1986,9 @@ NULL if no Cells Information are available. </dd></dl>
 <li>0xFFFFFFFF when the value isn't available.</li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">ngbrCellInfoRef</td><td>Cell information reference. </td></tr>
@@ -1910,7 +2016,9 @@ NULL if no Cells Information are available. </dd></dl>
 LE_BAD_PARAMETER A bad parameter was passed. </dd>
 <dd>
 LE_OK The function succeeded.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[out]</td><td class="paramname">statePtr</td><td>Network Registration state. </td></tr>
@@ -1936,7 +2044,9 @@ LE_OK The function succeeded.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>NULL No scan information found. </dd>
 <dd>
 le_mrc_ScanInformationRef_t The Scan Information object reference.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">scanInformationListRef</td><td>The list of scan information. </td></tr>
@@ -1962,7 +2072,9 @@ le_mrc_ScanInformationRef_t The Scan Information object reference.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>NULL No Cell information object found. </dd>
 <dd>
 le_mrc_CellInfoRef_t Cell information object reference.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">ngbrCellsRef</td><td>Neighboring Cells reference. </td></tr>
@@ -1990,7 +2102,9 @@ le_mrc_CellInfoRef_t Cell information object reference.</dd></dl>
 <li>le_mrc_PreferredOperatorRef The Operator object reference.</li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad reference into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad reference into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">preferredOperatorListRef</td><td>The list of the preferred operators. </td></tr>
@@ -2049,7 +2163,8 @@ le_mrc_CellInfoRef_t Cell information object reference.</dd></dl>
 <p>This function must be called to get the Operator information details.</p>
 <dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
 <dd>
-LE_OK Function succeeded. </dd></dl>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">preferredOperatorRef</td><td>Operator object reference. </td></tr>
@@ -2079,9 +2194,10 @@ LE_OK Function succeeded. </dd></dl>
 <p>This function must be called to retrieve a list of the preferred operators.</p>
 <dl class="section return"><dt>Returns</dt><dd><ul>
 <li>Reference to the List object.</li>
-<li>Null pointer if there is no preferences list. </li>
+<li>Null pointer if there is no preferences list.</li>
 </ul>
 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>multi-app safe</b> </dd></dl>
 </div>
 </div>
 <a class="anchor" id="a3ad9533c467cec0902d5d165bb32d67b"></a>
@@ -2103,7 +2219,9 @@ LE_OK Function succeeded. </dd></dl>
 LE_BAD_PARAMETER A bad parameter was passed. </dd>
 <dd>
 LE_OK Function succeeded.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[out]</td><td class="paramname">ratPtr</td><td>The Radio Access Technology. </td></tr>
@@ -2131,7 +2249,9 @@ LE_OK Function succeeded.</dd></dl>
 LE_BAD_PARAMETER if powerPtr is NULL. </dd>
 <dd>
 LE_OK The function succeed.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[out]</td><td class="paramname">powerPtr</td><td>Power state. </td></tr>
@@ -2155,7 +2275,9 @@ LE_OK The function succeed.</dd></dl>
 </div><div class="memdoc">
 <p>This function returns the Radio Access Technology of the signal metrics.</p>
 <dl class="section return"><dt>Returns</dt><dd>The Radio Access Technology of the signal measure.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">MetricsRef</td><td>Signal metrics reference. </td></tr>
@@ -2180,9 +2302,10 @@ LE_OK The function succeed.</dd></dl>
 <p>Get the Radio Access Technology preferences</p>
 <dl class="section return"><dt>Returns</dt><dd><ul>
 <li>LE_FAULT Function failed.</li>
-<li>LE_OK Function succeeded. </li>
+<li>LE_OK Function succeeded.</li>
 </ul>
 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[out]</td><td class="paramname">ratMaskPtrPtr</td><td>Bit mask for the Radio Access Technology preferences. </td></tr>
@@ -2235,9 +2358,10 @@ LE_OK The function succeed.</dd></dl>
 <p>Get the selected Selection Register mode.</p>
 <dl class="section return"><dt>Returns</dt><dd><ul>
 <li>LE_FAULT Function failed.</li>
-<li>LE_OK Function succeeded. </li>
+<li>LE_OK Function succeeded.</li>
 </ul>
 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[out]</td><td class="paramname">isManualPtrPtr</td><td>true if the scan mode is manual, false if the scan mode is automatic. </td></tr>
@@ -2264,7 +2388,8 @@ LE_OK The function succeed.</dd></dl>
 </table>
 </div><div class="memdoc">
 <p>This function must be called to get the serving Cell Identifier.</p>
-<dl class="section return"><dt>Returns</dt><dd>The Cell Identifier. 0xFFFFFFFF value is returned if the value is not available. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The Cell Identifier. 0xFFFFFFFF value is returned if the value is not available.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>multi-app safe</b> </dd></dl>
 </div>
 </div>
 <a class="anchor" id="a8ba03765e7595f85783f6f6a022311f8"></a>
@@ -2281,7 +2406,26 @@ LE_OK The function succeed.</dd></dl>
 </table>
 </div><div class="memdoc">
 <p>This function must be called to get the Location Area Code of the serving cell.</p>
-<dl class="section return"><dt>Returns</dt><dd>The Location Area Code. 0xFFFFFFFF value is returned if the value is not available. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The Location Area Code. 0xFFFFFFFF value is returned if the value is not available.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>multi-app safe</b> </dd></dl>
+</div>
+</div>
+<a class="anchor" id="a856dc7825b4fa8de095f26020e03f015"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">uint16_t le_mrc_GetServingCellLteTracAreaCode </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to get the Tracking Area Code of the serving cell (LTE only).</p>
+<dl class="section return"><dt>Returns</dt><dd>The Tracking Area Code. 0xFFFF value is returned if the value is not available.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>multi-app safe</b> </dd></dl>
 </div>
 </div>
 <a class="anchor" id="a717aa0f4e4dc9a83b6adc2f26f3f0258"></a>
@@ -2303,7 +2447,9 @@ LE_OK The function succeed.</dd></dl>
 LE_BAD_PARAMETER A bad parameter was passed. </dd>
 <dd>
 LE_OK The function succeeded.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[out]</td><td class="paramname">qualityPtr</td><td>[OUT] Received signal strength quality (0 = no signal strength, 5 = very good signal strength). </td></tr>
@@ -2328,9 +2474,10 @@ LE_OK The function succeeded.</dd></dl>
 <p>Get the Bit mask for TD-SCDMA Band capabilities.</p>
 <dl class="section return"><dt>Returns</dt><dd><ul>
 <li>LE_FAULT Function failed.</li>
-<li>LE_OK Function succeeded. </li>
+<li>LE_OK Function succeeded.</li>
 </ul>
 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[out]</td><td class="paramname">bandMaskPtrPtr</td><td>Bit mask for TD-SCDMA Band capabilities. </td></tr>
@@ -2355,9 +2502,10 @@ LE_OK The function succeeded.</dd></dl>
 <p>Get the Bit mask for TD-SCDMA Band preferences.</p>
 <dl class="section return"><dt>Returns</dt><dd><ul>
 <li>LE_FAULT Function failed.</li>
-<li>LE_OK Function succeeded. </li>
+<li>LE_OK Function succeeded.</li>
 </ul>
 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[out]</td><td class="paramname">bandMaskPtrPtr</td><td>Bit mask for TD-SCDMA Band preferences. </td></tr>
@@ -2419,7 +2567,9 @@ LE_OK The function succeeded.</dd></dl>
 <li>LE_FAULT on failure</li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">MetricsRef</td><td>Signal metrics reference. </td></tr>
@@ -2450,7 +2600,9 @@ LE_OK The function succeeded.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>true The network is available </dd>
 <dd>
 false The network isn't available</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>On failure, the process exits, so you don't have to worry about checking the returned reference for validity. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>On failure, the process exits, so you don't have to worry about checking the returned reference for validity.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">scanInformationRef</td><td>Scan information reference </td></tr>
@@ -2476,7 +2628,9 @@ false The network isn't available</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>true The network is forbidden </dd>
 <dd>
 false The network is allowed</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>On failure, the process exits, so you don't have to worry about checking the returned reference for validity. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>On failure, the process exits, so you don't have to worry about checking the returned reference for validity.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">scanInformationRef</td><td>Scan information reference </td></tr>
@@ -2502,7 +2656,9 @@ false The network is allowed</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>true The network is home </dd>
 <dd>
 false The network is roaming</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>On failure, the process exits, so you don't have to worry about checking the returned reference for validity. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>On failure, the process exits, so you don't have to worry about checking the returned reference for validity.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">scanInformationRef</td><td>Scan information reference </td></tr>
@@ -2528,7 +2684,9 @@ false The network is roaming</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>true The network is in use </dd>
 <dd>
 false The network isn't in use</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>On failure, the process exits, so you don't have to worry about checking the returned reference for validity. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>On failure, the process exits, so you don't have to worry about checking the returned reference for validity.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">scanInformationRef</td><td>Scan information reference </td></tr>
@@ -2553,7 +2711,8 @@ false The network isn't in use</dd></dl>
 <p>This function must be called to measure the signal metrics. It creates and returns a reference to the signal metrics.</p>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the signal metrics. </dd>
 <dd>
-NULL if no signal metrics are available. </dd></dl>
+NULL if no signal metrics are available.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>multi-app safe</b> </dd></dl>
 </div>
 </div>
 <a class="anchor" id="ab4a246dd466fa8175aca0158e0cab227"></a>
@@ -2570,10 +2729,52 @@ NULL if no signal metrics are available. </dd></dl>
 </table>
 </div><div class="memdoc">
 <p>This function must be called to perform a cellular network scan.</p>
-<dl class="section return"><dt>Returns</dt><dd>Reference to the List object. Null pointer if the scan failed. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the List object. Null pointer if the scan failed.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">ratMask</td><td>Radio Access Technology mask </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ab66e29d054d7902c61f87e79fd6d987f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_mrc_PerformCellularNetworkScanAsync </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__mrc__interface_8h.html#af643c7005da7f2466302eebdf7a29d93">le_mrc_RatBitMask_t</a> </td>
+<td class="paramname"><em>ratMask</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__mrc__interface_8h.html#a32b46b705cd7d45d76606b6c609df627">le_mrc_CellularNetworkScanHandlerFunc_t</a> </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to perform a cellular network scan asynchronously. This function is not blocking, the response will be returned with a handler function.</p>
+<dl class="section note"><dt>Note</dt><dd><b>multi-app safe</b> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ratMask</td><td>Radio Access Technology mask </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
 </table>
 </dd>
 </dl>
@@ -2631,7 +2832,9 @@ NULL if no signal metrics are available. </dd></dl>
 <li>LE_OK Function succeeded.</li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If one code is too long (max LE_MRC_MCC_LEN/LE_MRC_MNC_LEN digits), it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If one code is too long (max LE_MRC_MCC_LEN/LE_MRC_MNC_LEN digits), it's a fatal error, the function won't return.</dd>
+<dd>
+<b>NOT multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">mcc</td><td>Mobile Country Code </td></tr>
@@ -2701,9 +2904,10 @@ NULL if no signal metrics are available. </dd></dl>
 <p>Enable the automatic Selection Register mode.</p>
 <dl class="section return"><dt>Returns</dt><dd><ul>
 <li>LE_FAULT Function failed.</li>
-<li>LE_OK Function succeeded. </li>
+<li>LE_OK Function succeeded.</li>
 </ul>
 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>NOT multi-app safe</b> </dd></dl>
 </div>
 </div>
 <a class="anchor" id="ac808b4dc721e031566da92e00663c027"></a>
@@ -2722,9 +2926,10 @@ NULL if no signal metrics are available. </dd></dl>
 <p>Set the 2G/3G Band preferences by using a bit mask.</p>
 <dl class="section return"><dt>Returns</dt><dd><ul>
 <li>LE_FAULT Function failed.</li>
-<li>LE_OK Function succeeded. </li>
+<li>LE_OK Function succeeded.</li>
 </ul>
 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>NOT multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">bandMask</td><td>Bit mask for 2G/3G Band preferences. </td></tr>
@@ -2749,9 +2954,10 @@ NULL if no signal metrics are available. </dd></dl>
 <p>Set the LTE Band preferences by using a bit mask.</p>
 <dl class="section return"><dt>Returns</dt><dd><ul>
 <li>LE_FAULT Function failed.</li>
-<li>LE_OK Function succeeded. </li>
+<li>LE_OK Function succeeded.</li>
 </ul>
 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>NOT multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">bandMask</td><td>Bit mask for LTE Band preferences. </td></tr>
@@ -2789,11 +2995,63 @@ NULL if no signal metrics are available. </dd></dl>
 <li>LE_OK Function succeeded.</li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If one code is too long (max LE_MRC_MCC_LEN/LE_MRC_MNC_LEN digits), it's a fatal error, the function won't return. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If one code is too long (max LE_MRC_MCC_LEN/LE_MRC_MNC_LEN digits), it's a fatal error, the function won't return.</dd>
+<dd>
+<b>NOT multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">mcc</td><td>Mobile Country Code </td></tr>
 <tr><td class="paramdir">[in]</td><td class="paramname">mnc</td><td>Mobile Network Code </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ac342382a54168e032be59e886b4d3262"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_mrc_SetManualRegisterModeAsync </td>
+<td>(</td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>mcc</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>mnc</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__mrc__interface_8h.html#aed3784a1d6f94a5b4b15baf3cc89555a">le_mrc_ManualSelectionHandlerFunc_t</a> </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the manual selection register mode asynchronously. This function is not blocking, the response will be returned with a handler function.</p>
+<dl class="section note"><dt>Note</dt><dd>If one code is too long (max LE_MRC_MCC_LEN/LE_MRC_MNC_LEN digits), it's a fatal error, the function won't return.</dd>
+<dd>
+<b>NOT multi-app safe</b> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">mcc</td><td>Mobile Country Code </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">mnc</td><td>Mobile Network Code </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
 </table>
 </dd>
 </dl>
@@ -2817,7 +3075,8 @@ NULL if no signal metrics are available. </dd></dl>
 <dd>
 LE_FAULT Function failed. </dd>
 <dd>
-LE_OK Function succeed. </dd></dl>
+LE_OK Function succeed.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>NOT multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">power</td><td>The power state. </td></tr>
@@ -2842,9 +3101,10 @@ LE_OK Function succeed. </dd></dl>
 <p>Set the Radio Access Technology preferences by using a bit mask.</p>
 <dl class="section return"><dt>Returns</dt><dd><ul>
 <li>LE_FAULT Function failed.</li>
-<li>LE_OK Function succeeded. </li>
+<li>LE_OK Function succeeded.</li>
 </ul>
 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>NOT multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">ratMask</td><td>Bit mask for the Radio Access Technology preferences. </td></tr>
@@ -2869,9 +3129,10 @@ LE_OK Function succeed. </dd></dl>
 <p>Set the TD-SCDMA Band preferences by using a bit mask.</p>
 <dl class="section return"><dt>Returns</dt><dd><ul>
 <li>LE_FAULT Function failed.</li>
-<li>LE_OK Function succeeded. </li>
+<li>LE_OK Function succeeded.</li>
 </ul>
 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>NOT multi-app safe</b> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">bandMask</td><td>Bit mask for TD-SCDMA Band preferences. </td></tr>
@@ -2882,8 +3143,6 @@ LE_OK Function succeed. </dd></dl>
 </div>
 </div>
 <br clear="left"/>
-</div>
-<div id="footer">
 </div>
 </div>
 </body>

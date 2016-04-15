@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Port Legacy C App  - Legato Docs</title>
@@ -16,7 +16,7 @@
         <script src="resources/js/html5shiv.js"></script>
         <script src="resources/js/respond.js"></script>
         <![endif]-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
 <link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
 <script src="resources/js/tree.jquery.js" type="text/javascript"></script>
@@ -25,16 +25,24 @@
 <link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
 <script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 <script>
-        setupTree("tocs/Build Apps Documentation.json");
+        setupTree("tocs/Build Apps Concepts.json");
         </script>
 </head>
 <body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
 <div class="wrapper">
 <div class="fa fa-bars documentation" id="menu-trigger"></div>
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink" href="build_apps_main.html">Build Apps</a><a class="subnavlink" href="getstarted_main.html">Get started</a><a class="subnavlink" href="build_apps_documentation.html">Documentation</a><a class="subnavlink" href="files.html">Reference</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="subnavlink" href="how_to_customize_u_s_b.html">Customize Legato Yocto USB</a><a class="subnavlink" href="platform_constraints.html">Platform Constraints</a><a class="subnavlink" href="getstarted_setup_host.html">Setup Dev Host PC</a><a class="subnavlink" href="yocto_main.html">Yocto Info</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
 </nav>
 </header>
 </div>
@@ -43,11 +51,11 @@
 <a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo_192.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="getstarted_main.html">Get Started</a><a class="link-selected" href="build_apps_documentation.html">Documentation</a><a href="files.html">Reference</a>
+<a class="link-selected" href="build_apps_concepts.html">Concepts</a><a href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a>
 </nav>
-<nav class="ui-front" id="searchresult">
-<i class="fa fa-search"></i>
-<input id="autocomplete" onkeyup="getdata('Build Apps')" placeholder="Search..."/> <!-- <input id="category" type="checkbox" onclick="checkbox()"> <label for="category">API Search</label> -->
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search..."/>
 </nav>
 </header>
 </div>
@@ -70,7 +78,7 @@ Cross-Build</h1>
 <p>The most basic way to get your legacy app running on a Legato target device is to recompile it using the provided cross-build tool chain and copy it onto the device using a tool like <code>scp</code>.</p>
 <p><code>1</code>. Build a legacy app executable for your target device using the cross tool chain provided.</p>
 <pre class="fragment"><div class="line">$ $WP85_TOOLCHAIN_DIR/arm-poky-linux-gnueabi-gcc -o legacyProgram main.c</div></pre><!-- fragment --><p><code>2</code>. Copy the legacy app executable onto the target using a tool like <code>scp:</code> </p>
-<pre class="fragment"><div class="line">$ scp legacyProgram 192.168.1.2:</div><div class="line"></div><div class="line">legacyProgram                100% 9366     9.2KB/s   00:00</div></pre><!-- fragment --><p><code>3</code>. Run the legacy app from the target command-line:</p>
+<pre class="fragment"><div class="line">$ scp legacyProgram 192.168.2.2:</div><div class="line"></div><div class="line">legacyProgram                100% 9366     9.2KB/s   00:00</div></pre><!-- fragment --><p><code>3</code>. Run the legacy app from the target command-line:</p>
 <pre class="fragment"><div class="line">root@swi-mdm9x15:~# ./legacyProgram</div><div class="line">Hello world.</div></pre><!-- fragment --><h1><a class="anchor" id="howtoPortingLegacyC_UseLegatoAppManagementTools"></a>
 Use Legato App Management Tools</h1>
 <p>By bundling your program as a Legato app, you gain access to a wealth of valuable features:</p><ul>
@@ -85,7 +93,7 @@ Use Legato App Management Tools</h1>
 <pre class="fragment"><div class="line"><span class="comment">// Disable the sandbox security to make things a little easier.</span></div><div class="line">sandboxed: <span class="keyword">false</span></div><div class="line"></div><div class="line"><span class="comment">// Put the cross-compiled legacy program in the app's bin directory.</span></div><div class="line"><span class="comment">// [x] = make it executable.</span></div><div class="line">bundles:</div><div class="line">{</div><div class="line">    file:</div><div class="line">    {</div><div class="line">        [x] legacyProgram /bin/</div><div class="line">    }</div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">// Tell the Supervisor to start this program when the application is started.</span></div><div class="line">processes:</div><div class="line">{</div><div class="line">    run:</div><div class="line">    {</div><div class="line">        ( legacyProgram )</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p><code>2</code>. Run <code>mkapp</code> to generate an application bundle for your target:</p>
 <pre class="fragment"><div class="line">$ mkapp -t wp85 legacyProgram.adef</div></pre><!-- fragment --><p><code>3</code>. Install the app bundle on the target using <code>instapp:</code> </p>
 <pre class="fragment"><div class="line">$ instapp legacyProgram.wp85.update</div><div class="line">Installing application <span class="stringliteral">'legacyProgram'</span> from file <span class="stringliteral">'legacyProgram.wp85'</span>.</div><div class="line">Installing app <span class="stringliteral">'legacyProgram'</span>...</div><div class="line">Created user <span class="stringliteral">'applegacyProgram'</span> (uid 1011, gid 1011).</div><div class="line">DONE</div></pre><!-- fragment --><p><code>4</code>. From the target's command line, use <code>app start</code> to run the program:</p>
-<pre class="fragment"><div class="line">$ ssh root@192.168.1.2</div><div class="line">Linux swi-mdm9x15 3.4.91-8fcd3d08ac_7e84772e18 #1 PREEMPT Wed Jun 3 23:59:46 PDT 2015 armv7l GNU/Linux</div><div class="line">root@swi-mdm9x15:~# app start legacyProgram</div><div class="line">Starting app <span class="stringliteral">'legacyProgram'</span>...</div><div class="line">DONE</div></pre><!-- fragment --><p><code>5</code>. Look for the program output in the target device's log using <code>logread</code>.</p>
+<pre class="fragment"><div class="line">$ ssh root@192.168.2.2</div><div class="line">Linux swi-mdm9x15 3.4.91-8fcd3d08ac_7e84772e18 #1 PREEMPT Wed Jun 3 23:59:46 PDT 2015 armv7l GNU/Linux</div><div class="line">root@swi-mdm9x15:~# app start legacyProgram</div><div class="line">Starting app <span class="stringliteral">'legacyProgram'</span>...</div><div class="line">DONE</div></pre><!-- fragment --><p><code>5</code>. Look for the program output in the target device's log using <code>logread</code>.</p>
 <dl class="section note"><dt>Note</dt><dd>You can filter the log to show just your program's output by piping the output from <code>logread</code> into <code>grep</code>.</dd></dl>
 <pre class="fragment"><div class="line">root@swi-mdm9x15:~# logread | grep legacyProgram</div><div class="line">Jan 16 04:00:53 swi-mdm9x15 user.info Legato:  INFO | legacyProgram[27271] | Hello world.</div></pre><!-- fragment --><h1><a class="anchor" id="howtoPortingLegacyC_useLegatoSvcs"></a>
 Use Legato Services</h1>
@@ -93,9 +101,9 @@ Use Legato Services</h1>
 <p>Here is how to use a Legato modem service API (e.g., le_info). The source code for this example can be found in <code>apps/sample/legacy/useLegatoApi/</code>.</p>
 <p><code>1</code>. Run <code>ifgen</code> to generate the .c and .h files you need to access the interface.</p>
 <ul>
-<li>Use the <code>–gen-interface</code> option to generate the interface header (<code><a class="el" href="le__info__interface_8h.html">le_info_interface.h</a></code>).</li>
-<li>Use the <code>–gen-client</code> option to generate the client-side IPC implementation (<code>le_info_client.c</code>).</li>
-<li>Use the <code>–gen-local</code> option to generate definitions that are shared by both the client side and server side IPC code (<code>le_info_messages.h</code>).</li>
+<li>Use the <code>--gen-interface</code> option to generate the interface header (<code><a class="el" href="le__info__interface_8h.html">le_info_interface.h</a></code>).</li>
+<li>Use the <code>--gen-client</code> option to generate the client-side IPC implementation (<code>le_info_client.c</code>).</li>
+<li>Use the <code>--gen-local</code> option to generate definitions that are shared by both the client side and server side IPC code (<code>le_info_messages.h</code>).</li>
 </ul>
 <pre class="fragment">ifgen --gen-interface --gen-client --gen-local $LEGATO_ROOT/interfaces/modemServices/le_info.api
 </pre><p><code>2</code>. Include <code><a class="el" href="legato_8h.html">legato.h</a></code> in your program.</p>
@@ -107,7 +115,7 @@ Use Legato Services</h1>
 <p><code>6</code>. Compile and link your executable with the code generated by <code>ifgen:</code> </p><pre class="fragment"><div class="line">$ export CC=$WP85_TOOLCHAIN_DIR/arm-poky-linux-gnueabi-gcc</div><div class="line">$ $CC -c main.c -I$LEGATO_ROOT/framework/c/inc</div><div class="line">$ $CC -c le_info_client.c -I$LEGATO_ROOT/framework/c/inc</div><div class="line">$ $CC -o legacyProgram main.o le_info_client.o -L${LEGATO_ROOT}/build/${TARGET}/bin/lib -llegato -lpthread -lrt</div></pre><!-- fragment --><p><code>7</code>. Specify which instance of the <code>le_info</code> service your app should use by creating a binding in the <code> .adef </code> file:</p>
 <pre class="fragment"><div class="line">bindings:</div><div class="line">{</div><div class="line">     .le_info -&gt; modemService.le_info</div><div class="line">}</div></pre><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Actually, there's only one instance of <code>le_info</code> today, but if there were multiple, this would specify which one to use; and even when there's only one instance, we create a binding anyway to explicitly grant access permission so access is never unknowingly granted.</dd></dl>
 <p><code>9</code>. Re-generate your application bundle, install it, and run it on target:</p>
-<pre class="fragment"><div class="line">$ mkapp -t wp85 legacyProgram.adef</div><div class="line">$ instapp legacyProgram.update.wp85 192.168.1.2</div><div class="line">Installing application <span class="stringliteral">'legacyProgram'</span> from file <span class="stringliteral">'legacyProgram.wp85'</span>.</div><div class="line">Removing app <span class="stringliteral">'legacyProgram'</span>...</div><div class="line">Deleted user <span class="stringliteral">'applegacyProgram'</span>.</div><div class="line">Installing app <span class="stringliteral">'legacyProgram'</span>...</div><div class="line">Created user <span class="stringliteral">'applegacyProgram'</span> (uid 1011, gid 1011).</div><div class="line">DONE</div><div class="line">$ startapp legacyProgram 192.168.1.2</div></pre><!-- fragment --><h1><a class="anchor" id="howtoPortingLegacyC_handlers"></a>
+<pre class="fragment"><div class="line">$ mkapp -t wp85 legacyProgram.adef</div><div class="line">$ instapp legacyProgram.update.wp85 192.168.2.2</div><div class="line">Installing application <span class="stringliteral">'legacyProgram'</span> from file <span class="stringliteral">'legacyProgram.wp85'</span>.</div><div class="line">Removing app <span class="stringliteral">'legacyProgram'</span>...</div><div class="line">Deleted user <span class="stringliteral">'applegacyProgram'</span>.</div><div class="line">Installing app <span class="stringliteral">'legacyProgram'</span>...</div><div class="line">Created user <span class="stringliteral">'applegacyProgram'</span> (uid 1011, gid 1011).</div><div class="line">DONE</div><div class="line">$ startapp legacyProgram 192.168.2.2</div></pre><!-- fragment --><h1><a class="anchor" id="howtoPortingLegacyC_handlers"></a>
 Callbacks from Legato APIs</h1>
 <p>If you need asynchronous callbacks (i.e., handlers), you'll need to service the Legato event loop for your thread. To do this, use <a class="el" href="le__event_loop_8h.html#a12ce7f92f4bc6f5167d5a6ef86d7d0b1">le_event_GetFd()</a> and <a class="el" href="le__event_loop_8h.html#a096222e98f6a0d92a79722018a752b58">le_event_ServiceLoop()</a>. See <a class="el" href="c_event_loop.html#c_event_integratingLegacyPosix">Integrating with Legacy POSIX Code</a> for more details.</p>
 <p>The sample app for this is found in <code>apps/sample/legacy/useLegatoHandler</code>.</p>
@@ -126,8 +134,6 @@ Sample Legacy Apps</h1>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>
 </div></div>
 <br clear="left"/>
-</div>
-<div id="footer">
 </div>
 </div>
 </body>

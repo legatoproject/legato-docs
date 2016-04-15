@@ -86,7 +86,29 @@ ul, li {
 
 }
 
-
+/*****************
+*     No JS      *
+*****************/
+div#nojs {
+    font-size:90%;
+    z-index: 99999;
+    position: fixed;
+    background: #FAEBD7;
+    padding: 0.4em;
+    bottom: 0;
+    right: 0;
+    border: 2px solid #D4BEA1;
+      -webkit-transition: right 0.5s;
+  -moz-transition: right 0.5s;
+  -o-transition: right 0.5s;
+  transition: right 0.5s;
+}
+#modal-closing-trick{
+    display:none;
+}
+input.modal-closing-trick:checked ~ div#nojs {
+right:-100vw;
+}
 /******************
  *      TOP       *
  ******************/
@@ -133,72 +155,6 @@ ul, li {
     padding-top: 75px;
 }
 
-#mainmenu {
-    position: fixed;
-    width: 100%;
-    height: 100px;
-    z-index: 10;
-}
-
-div#mainmenu.transparent {
-    background-color: transparent;
-}
-
-div#mainmenu.white {
-    background-color: white;
-}
-
-#mainmenu ul {
-    position: absolute;
-    top: 8px;
-    right: 4%;
-    height: 50px;
-    padding-top: 25px;
-}
-
-#mainmenu ul li {
-    display: inline-flex;
-}
-
-#mainmenu ul li a {
-    display: inline-flex;
-    color: black;
-    padding: 0 20px;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-size: 13px;
-    padding: 9px 25px 39px 25px; 
-    border-bottom: 2px solid transparent;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    margin-left: -4px;
-}
-
-#mainmenu ul li a:hover {
-    border-bottom: 2px solid #F7781E;
-    color: #F7781E;
-}
-
-#mainmenu ul li a.selected {
-    border-bottom: 2px solid #00687a;
-    color: #00687a;
-}
-
-#mainmenu h1 a {
-    position: absolute;
-    left: 150px;
-    text-indent: -9000px;
-    top: 29px;
-    width: 200px;
-    height: 60px;
-    background: url('../images/legato_logo.png') no-repeat 0px 0px;
-    background-size: 200px;
-    border: none;
-    z-index: 100;
-}
 
 img.logo {
 
@@ -222,12 +178,18 @@ nav {
     display: block;
 
 }
-
-
-#top nav a:hover {
+#top nav a.selected {
     background: #7395A0;
     color: white;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.35), 0 0 7px rgba(0,0,0,0.1) inset;
 }
+#top nav a:hover {
+    background: #00677A;
+    color: white;
+      box-shadow: 0px 1px 5px rgba(0,0,0,0.35), 0 0 7px rgba(0,0,0,0.1) inset;
+}
+
+
 
 nav a.subnavlink {
     color: rgba(0,0,0,0.5);
@@ -286,7 +248,7 @@ nav a.subnavlink {
     padding-top:0.2em;
     vertical-align: middle;
 }
-#menudocumentation nav#searchresult {
+#menudocumentation #searchbox {
     float: right;
     padding-right: 2em;
     padding-top: 0.6em;
@@ -309,7 +271,7 @@ nav a.subnavlink {
 
 .ui-autocomplete-loading { background:url('../images/spinny_orangefg.gif') no-repeat right center }
 
-#searchresult .fa-search{
+#search-icon{
     font-size: 18px;
     margin-top: 0.7em;
     color: #F7781E;
@@ -319,9 +281,14 @@ nav a.subnavlink {
 }
 
 
+nav.ui-front{
+    float: right;
+    padding-right: 2em;
+    padding-top: 0.6em;
+    color: #FFF;
+}
 
-
-#menudocumentation nav input#autocomplete {
+#menudocumentation nav input#searchbox {
     background-color: transparent;
     border: none;
     border-bottom: #F7781E solid 2px;
@@ -335,12 +302,13 @@ nav a.subnavlink {
     font-weight: 500;
 
 }
-#menudocumentation nav input#autocomplete:focus{
+#menudocumentation nav input#searchbox:focus{
     outline: none;
 }
 /* shifted off screen for screen readers I guess */
 .ui-helper-hidden-accessible { position: absolute; left:-999em; }
 
+/** these are for changing the colour of the search box placeholder text **/
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color: #F7781E;
     opacity:  0.8;
@@ -361,6 +329,9 @@ nav a.subnavlink {
     color: #F7781E;
     opacity:  0.8;
 }
+/*****************/
+
+
 #menudocumentation nav label {
     text-transform: uppercase;
     font-size: 11px;
@@ -384,9 +355,12 @@ nav a.subnavlink {
     background:#FFF;
     color:#00677A;
     box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
-
+    max-height:80vh;
 }
-
+#menudocumentation nav ul#search_result::before{
+ content: attr(data-resultcount);
+ line-height:1;
+}
 #menudocumentation nav ul#search_result a {
     display:inline;
     font-size: 12px;
@@ -488,11 +462,11 @@ nav.secondary h2 {
     margin-right: 10px;
     border-bottom: 2px solid transparent;
 
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+    -webkit-transition: border-bottom 0.1s ease-in-out;
+    -moz-transition: border-bottom 0.1s ease-in-out;
+    -o-transition: border-bottom 0.1s ease-in-out;
+    -ms-transition: border-bottom 0.1s ease-in-out;
+    transition: border-bottom 0.1s ease-in-out;
 
 }
 nav.secondary{
@@ -959,7 +933,7 @@ div.usecase a.usecase03-bg {
 .contents h1 {
     font-family: 'Roboto Mono', monospace;
     font-weight: 400;
-    font-size: 30px;
+    font-size: 24px;
     color: #00677A;
     padding: 15px 0px 10px 0px;
 
