@@ -1,8 +1,18 @@
 /*** get rid of ?sq= parameter ASAP ***/
 var sq = getUrlParameter('sq');
-var re = new RegExp("(\\?|&)sq=" + sq);
-window.history.replaceState({}, '', location.href.replace(re,''));
+var re = new RegExp("(\\?|&)sq=" + encodeURIComponent(sq));
+try{
+    var newurl =  location.href.replace(re,'');
+    if(~newurl.indexOf('&') && !~newurl.indexOf('?')){
+        newurl = newurl.replace('&','?');
+    }
+window.history.replaceState({}, '',newurl);
 
+}
+catch(err){
+    console.log("Couldn't replaceState! Oh well, not a big deal.");
+    console.err(err);
+}
 /****** DOM STUFF *********/
 
 // adjusts altitude of content and navbar, in case header size changes.
