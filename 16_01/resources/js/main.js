@@ -1,6 +1,6 @@
 /*** get rid of ?sq= parameter ASAP ***/
 var sq = getUrlParameter('sq');
-var re = new RegExp("(\\?|&)sq=" + encodeURIComponent(sq));
+var re = new RegExp("(\\?|&)sq=" + escapeRegExp(encodeURIComponent(sq)));
 try {
     var newurl = location.href.replace(re, '');
     if (~newurl.indexOf('&') && !~newurl.indexOf('?')) {
@@ -51,7 +51,7 @@ $(document).ready(function() {
             window.scrollTo(0, top);
             el.each(function() {
                 $(this).html(function(index, text) {
-                    return text.replace(new RegExp(sq,"i"), '<span class="search-highlight">$&</span>');
+                    return text.replace(new RegExp(escapeRegExp(sq),"i"), '<span class="search-highlight">$&</span>');
                 });
             });
         }
@@ -380,4 +380,8 @@ function getUrlParameter(sParam) {
             return sParameterName[1] === undefined ? true : sParameterName[1];
         }
     }
+}
+
+function escapeRegExp(str) {
+  return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
 }
