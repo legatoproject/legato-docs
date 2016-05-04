@@ -1,7 +1,7 @@
 var sq = getUrlParameter('sq');
 try {
     /*** get rid of ?sq= parameter ASAP ***/
-    if (sq) {
+    if (sq && sq !== undefined) {
         var re = new RegExp("(\\?|&)sq=" + escapeRegExp(encodeURIComponent(sq)));
         var newurl = location.href.replace(re, '');
         if (~newurl.indexOf('&') && !~newurl.indexOf('?')) {
@@ -46,8 +46,8 @@ $(document).ready(function() {
     });
 
 
-    if (sq) {
-        var el = $(":not(html, body, div, table, tbody, tr):Contains('" + sq + "')");
+    if (sq !== undefined) {
+        var el = $(":not(html,title,head, body, div, table, tbody, tr):Contains('" + sq + "')");
         if (el && el.length > 0) {
             var top = el.get(0).offsetTop - (window.innerHeight / 2);
             window.scrollTo(0, top);
