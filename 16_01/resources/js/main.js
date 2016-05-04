@@ -1,15 +1,14 @@
 /*** get rid of ?sq= parameter ASAP ***/
 var sq = getUrlParameter('sq');
 var re = new RegExp("(\\?|&)sq=" + encodeURIComponent(sq));
-try{
-    var newurl =  location.href.replace(re,'');
-    if(~newurl.indexOf('&') && !~newurl.indexOf('?')){
-        newurl = newurl.replace('&','?');
+try {
+    var newurl = location.href.replace(re, '');
+    if (~newurl.indexOf('&') && !~newurl.indexOf('?')) {
+        newurl = newurl.replace('&', '?');
     }
-window.history.replaceState({}, '',newurl);
+    window.history.replaceState({}, '', newurl);
 
-}
-catch(err){
+} catch (err) {
     console.log("Couldn't replaceState! Oh well, not a big deal.");
     console.err(err);
 }
@@ -36,6 +35,28 @@ function nav_altitude() {
 
 $(document).ready(function() {
     $("#searchbox").val(sq);
+
+    // Contains = case insensitive 'contains'
+    $.expr[":"].Contains = jQuery.expr.createPseudo(function(arg) {
+        return function( elem ) {
+            return jQuery(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+        };
+    });
+
+
+    if (sq) {
+        var el = $(":not(html, body, div, table, tbody, tr):Contains('" + sq + "')");
+        if (el && el.length > 0) {
+            var top = el.get(0).offsetTop - (window.innerHeight / 2);
+            window.scrollTo(0, top);
+            el.each(function() {
+                $(this).html(function(index, text) {
+                    return text.replace(new RegExp(sq,"i"), '<span class="search-highlight">$&</span>');
+                });
+            });
+        }
+    }
+
     $("#searchbox").keyup(function() {
         getdata();
     });
