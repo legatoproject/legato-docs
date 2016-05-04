@@ -1,12 +1,14 @@
-/*** get rid of ?sq= parameter ASAP ***/
 var sq = getUrlParameter('sq');
-var re = new RegExp("(\\?|&)sq=" + escapeRegExp(encodeURIComponent(sq)));
 try {
-    var newurl = location.href.replace(re, '');
-    if (~newurl.indexOf('&') && !~newurl.indexOf('?')) {
-        newurl = newurl.replace('&', '?');
+    /*** get rid of ?sq= parameter ASAP ***/
+    if (sq) {
+        var re = new RegExp("(\\?|&)sq=" + escapeRegExp(encodeURIComponent(sq)));
+        var newurl = location.href.replace(re, '');
+        if (~newurl.indexOf('&') && !~newurl.indexOf('?')) {
+            newurl = newurl.replace('&', '?');
+        }
+        window.history.replaceState({}, '', newurl);
     }
-    window.history.replaceState({}, '', newurl);
 
 } catch (err) {
     console.log("Couldn't replaceState! Oh well, not a big deal.");
@@ -38,7 +40,7 @@ $(document).ready(function() {
 
     // Contains = case insensitive 'contains'
     $.expr[":"].Contains = jQuery.expr.createPseudo(function(arg) {
-        return function( elem ) {
+        return function(elem) {
             return jQuery(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
         };
     });
@@ -51,7 +53,7 @@ $(document).ready(function() {
             window.scrollTo(0, top);
             el.each(function() {
                 $(this).html(function(index, text) {
-                    return text.replace(new RegExp(escapeRegExp(sq),"i"), '<span class="search-highlight">$&</span>');
+                    return text.replace(new RegExp(escapeRegExp(sq), "i"), '<span class="search-highlight">$&</span>');
                 });
             });
         }
@@ -383,5 +385,5 @@ function getUrlParameter(sParam) {
 }
 
 function escapeRegExp(str) {
-  return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+    return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
 }
