@@ -59,7 +59,9 @@ $(document).ready(function() {
         }
     }
 
-    $("#searchbox").keyup(function() {
+    $("#searchbox").keyup(function(e) {
+        if (e.which >= 37 && e.which <= 40) // ignore if it's an arrow key
+            return;
         getdata();
     });
     $("#searchbox").click(function() {
