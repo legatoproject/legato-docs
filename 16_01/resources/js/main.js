@@ -37,7 +37,6 @@ function nav_altitude() {
 
 $(document).ready(function() {
     $("#searchbox").val(sq);
-
     // Contains = case insensitive 'contains'
     $.expr[":"].Contains = jQuery.expr.createPseudo(function(arg) {
         return function(elem) {
@@ -45,7 +44,7 @@ $(document).ready(function() {
         };
     });
 
-
+/*** highlight previous search query on page ****/
     if (sq !== undefined) {
          var x = $('body').highlight(sq);
         var el = $("span.search-highlight");
@@ -54,8 +53,7 @@ $(document).ready(function() {
             window.scrollTo(0, top);
             
         }
-       
-
+        $(document).bind('keydown', 'esc', function(){$('body').removeHighlight()});
     }
 
     $("#searchbox").keyup(function(e) {
