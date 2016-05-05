@@ -46,7 +46,7 @@ $(document).ready(function() {
 
 /*** highlight previous search query on page ****/
     if (sq !== undefined) {
-         var x = $('body').highlight(sq);
+         var x = $('body').highlight(sq.replace(/[\W]/g, ''));
         var el = $("span.search-highlight");
         if (el.length > 0) {
             var top = el.first().offset().top - (window.innerHeight / 2);
