@@ -46,7 +46,11 @@ $(document).ready(function() {
 
 /*** highlight previous search query on page ****/
     if (sq !== undefined) {
-         var x = $('body').highlight(sq.replace(/[\W]/g, ''));
+        sq.replace(/[^\w\s]/g, '').split(" ").forEach(function (term) {
+            $('body').highlight(term);
+        });
+        
+
         var el = $("span.search-highlight");
         if (el.length > 0) {
             var top = el.first().offset().top - (window.innerHeight / 2);
