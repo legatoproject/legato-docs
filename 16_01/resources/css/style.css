@@ -1060,11 +1060,24 @@ h1.title > .search-highlight{
     background: none;
     border-radius: 0;
 }
+
+div#sh_options {
+    font-size:90%;
+    z-index: 99999;
+    position: fixed;
+    background: #FAEBD7;
+    padding: 0.4em;
+    bottom: 0;
+    right: 0;
+    border: 2px solid #D4BEA1;
+}
+#sh_options a#toggle_highlight{
+     cursor: pointer;
+     font-weight:bold;
+}
 /* mobile tweaks */
 @media only screen and (max-width : 719px) {
    #resizable {
- /*       display: none !important;
-        width: 0 !important;*/
             position: fixed;
             z-index:700;
             padding-top:3em;

@@ -1,4 +1,5 @@
 var sq = getUrlParameter('sq');
+var noSH;
 try {
     /*** get rid of ?sq= parameter ASAP ***/
     if (sq && sq !== undefined) {
@@ -35,7 +36,27 @@ function nav_altitude() {
 
 }
 
+function updateSearchHighlight() {
+    var root = $('.contents');
+    if (noSH) {
+        root.removeHighlight();
+    } else {
+        sq.replace(/[^\w\s]/g, '').split(" ").forEach(function(term) {
+            root.highlight(term);
+        });
+
+
+        var el = $("span.search-highlight");
+        if (el.length > 0) {
+            var top = el.first().offset().top - (window.innerHeight / 2);
+            window.scrollTo(0, top);
+
+        }
+
+    }
+}
 $(document).ready(function() {
+    noSH = $.cookie("no-sh");
     $("#searchbox").val(sq);
     // Contains = case insensitive 'contains'
     $.expr[":"].Contains = jQuery.expr.createPseudo(function(arg) {
@@ -44,20 +65,22 @@ $(document).ready(function() {
         };
     });
 
-/*** highlight previous search query on page ****/
-    if (sq !== undefined) {
-        sq.replace(/[^\w\s]/g, '').split(" ").forEach(function (term) {
-            $('body').highlight(term);
-        });
-        
 
-        var el = $("span.search-highlight");
-        if (el.length > 0) {
-            var top = el.first().offset().top - (window.innerHeight / 2);
-            window.scrollTo(0, top);
-            
-        }
-        $(document).bind('keydown', 'esc', function(){$('body').removeHighlight()});
+
+    /*** highlight previous search query on page ****/
+    if (sq !== undefined) {
+        var $div = $('<div id="sh_options"><span>Search term highlight - <a id="toggle_highlight">' + (noSH ? '[off]' : '[on]') + '</a></span></div>').appendTo('body');
+        $div.find('#toggle_highlight').on('click', function() {
+            noSH = !noSH;
+            updateSearchHighlight();
+            $(this).text((noSH ? '[off]' : '[on]'));
+            if (noSH)
+                $.cookie("no-sh", 1);
+            else
+                $.removeCookie("no-sh");
+        });
+        updateSearchHighlight();
+
     }
 
     $("#searchbox").keyup(function(e) {
@@ -409,40 +432,39 @@ Johann Burkard
 */
 
 jQuery.fn.highlight = function(pat) {
- function innerHighlight(node, pat) {
-  var skip = 0;
-  if (node.nodeType == 3) {
-   var pos = node.data.toUpperCase().indexOf(pat);
-   pos -= (node.data.substr(0, pos).toUpperCase().length - node.data.substr(0, pos).length);
-   if (pos >= 0) {
-    var spannode = document.createElement('span');
-    spannode.className = 'search-highlight';
-    var middlebit = node.splitText(pos);
-    var endbit = middlebit.splitText(pat.length);
-    var middleclone = middlebit.cloneNode(true);
-    spannode.appendChild(middleclone);
-    middlebit.parentNode.replaceChild(spannode, middlebit);
-    skip = 1;
-   }
-  }
-  else if (node.nodeType == 1 && node.childNodes && !/(script|style)/i.test(node.tagName)) {
-   for (var i = 0; i < node.childNodes.length; ++i) {
-    i += innerHighlight(node.childNodes[i], pat);
-   }
-  }
-  return skip;
- }
- return this.length && pat && pat.length ? this.each(function() {
-  innerHighlight(this, pat.toUpperCase());
- }) : this;
+    function innerHighlight(node, pat) {
+        var skip = 0;
+        if (node.nodeType == 3) {
+            var pos = node.data.toUpperCase().indexOf(pat);
+            pos -= (node.data.substr(0, pos).toUpperCase().length - node.data.substr(0, pos).length);
+            if (pos >= 0) {
+                var spannode = document.createElement('span');
+                spannode.className = 'search-highlight';
+                var middlebit = node.splitText(pos);
+                var endbit = middlebit.splitText(pat.length);
+                var middleclone = middlebit.cloneNode(true);
+                spannode.appendChild(middleclone);
+                middlebit.parentNode.replaceChild(spannode, middlebit);
+                skip = 1;
+            }
+        } else if (node.nodeType == 1 && node.childNodes && !/(script|style)/i.test(node.tagName)) {
+            for (var i = 0; i < node.childNodes.length; ++i) {
+                i += innerHighlight(node.childNodes[i], pat);
+            }
+        }
+        return skip;
+    }
+    return this.length && pat && pat.length ? this.each(function() {
+        innerHighlight(this, pat.toUpperCase());
+    }) : this;
 };
 
 jQuery.fn.removeHighlight = function() {
- return this.find("span.search-highlight").each(function() {
-  this.parentNode.firstChild.nodeName;
-  with (this.parentNode) {
-   replaceChild(this.firstChild, this);
-   normalize();
-  }
- }).end();
+    return this.find("span.search-highlight").each(function() {
+        this.parentNode.firstChild.nodeName;
+        with(this.parentNode) {
+            replaceChild(this.firstChild, this);
+            normalize();
+        }
+    }).end();
 };
