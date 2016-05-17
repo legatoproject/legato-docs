@@ -4,96 +4,94 @@
 /*******************
  *     GLOBAL     *
  *******************/
-::selection {
-  background: #F7781E; /* WebKit/Blink Browsers */
-}
 
- html, body {
+html, body {
     margin: 0px;
     padding: 0px;
     height: 100%;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
-
 body {
-    color: rgb(120,120,120);
+    color: rgb(120, 120, 120);
     text-rendering: optimizeLegibility;
     font-family: 'Open Sans', arial, sans-serif;
     font-weight: 400;
     background-color: #FFF;
-
-
     position: relative;
 }
 
 /*NO PDF START*/
 .anchor, .groupheader>a {
-    font-size:16px;  /* doxygen sticks anchor tags inside h2, p, etc so we need a consistent fontsize*/
+    font-size: 16px;  /* doxygen sticks anchor tags inside h2, p, etc so we need a consistent fontsize*/
     display: block;
     height: 3.6em; /*same height as header*/
     margin-top: -3.6em; /*same height as header*/
     visibility: hidden;
 }
-/*NO PDF END*/
 
+/*NO PDF END*/
 a {
     text-decoration: none;
     outline: none;
     position: relative;
     z-index: 1;
-
     color: #F7781E;
 }
-
 a img {
     border: none;
 }
-
-#menudocumentation table, #menudocumentation h1, #menudocumentation h2,#menudocumentation  h3, #menudocumentation h4, #menudocumentation h5, #menudocumentation ul, #menudocumentation li,#menudocumentation  form {
+#menudocumentation table, #menudocumentation h1, #menudocumentation h2, #menudocumentation  h3, #menudocumentation h4, #menudocumentation h5, #menudocumentation ul, #menudocumentation li, #menudocumentation  form {
     margin: 0;
     padding: 0;
 }
-table{
-    border-spacing: 2em 0.5em;
-    color:#2B3B40;
+table.doxtable {
+    border-collapse: collapse;
+    color: #2B3B40;
+    border: 2px #FAFAFA solid;
+}
+table.doxtable > tbody >  tr:nth-of-type(even) {
+    background: #FAFAFA;
+}
+table.doxtable td, table.doxtable th {
+    padding: 0.5em 1em;
+}
+table.doxtable > th {
+    border-bottom: 2px #E5E5E5 solid;
+}
+table.memname, table.memberdecls {
     margin-left: -2em;
+    border-spacing: 2em 0.3em;
+    color: #2B3B40;
 }
-table.memname, table.memberdecls{
-        margin-left: -2em;
-}
-td.memname a{
-    padding-right:1em;
+td.memname a {
+    padding-right: 1em;
     padding-left: 1em;
 }
 td.memSeparator {
     display: none;
 }
-tr{
+tr {
     text-align: left;
 }
 ul, li {
-
     list-style-type: circle;
 }
-
 
 /******************
  *     COMMON     *
  ******************/
-
- div.wrapper {
+div.wrapper {
     position: relative;
     z-index: 1;
-        height: 100%;
-
+    height: 100%;
 }
 
 /*****************
 *     No JS      *
 *****************/
 div#nojs {
-    font-size:90%;
+    font-size: 90%;
     z-index: 99999;
     position: fixed;
     background: #FAEBD7;
@@ -101,38 +99,34 @@ div#nojs {
     bottom: 0;
     right: 0;
     border: 2px solid #D4BEA1;
-      -webkit-transition: right 0.5s;
-  -moz-transition: right 0.5s;
-  -o-transition: right 0.5s;
-  transition: right 0.5s;
+    -webkit-transition: right 0.5s;
+    -moz-transition: right 0.5s;
+    -o-transition: right 0.5s;
+    transition: right 0.5s;
 }
-#modal-closing-trick{
-    display:none;
+#modal-closing-trick {
+    display: none;
 }
 input.modal-closing-trick:checked ~ div#nojs {
-right:-100vw;
+    right: -100vw;
 }
+
 /******************
  *      TOP       *
  ******************/
-
- #menu-trigger {
+#menu-trigger {
     display: block;
     position: fixed;
-    color: #7395A0;;
+    color: #7395A0;
     z-index: 1000;
     line-height: 1.5em;
-    top:0.4em;
+    top: 0.4em;
     left: 25px;
     font-size: 24px;
 }
-
-
-
 #menu-trigger:hover {
     color: #43E6E6;
 }
-
 #top {
     position: fixed;
     top: 0px;
@@ -144,111 +138,86 @@ right:-100vw;
     transition: left 0.5s ease-in-out;
     -moz-transition: left 0.5s ease-in-out;
     -webkit-transition: left 0.5s ease-in-out;
-    box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
-
+    box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
 }
-
 #top.menu-open {
     left: 0px;
 }
-
 #top header {
     margin: auto;
     position: relative;
     padding-top: 75px;
 }
-
-
 img.logo {
-
     position: absolute;
     top: 25px;
     left: 10%;
     z-index: 15;
 }
-
 nav {
     position: relative;
-
     font-family: 'Open Sans', arial, sans-serif;
     font-weight: 400;
 }
-
 #top nav a.navlink {
     color: #7395A0;
     font-size: 16px;
     padding: 1em 0em 1em 1em;
     display: block;
-
 }
 #top nav a.selected {
     background: #7395A0;
     color: white;
-    box-shadow: 0px 1px 5px rgba(0,0,0,0.35), 0 0 7px rgba(0,0,0,0.1) inset;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.35), 0 0 7px rgba(0, 0, 0, 0.1) inset;
 }
 #top nav a:hover {
     background: #00677A;
     color: white;
-      box-shadow: 0px 1px 5px rgba(0,0,0,0.35), 0 0 7px rgba(0,0,0,0.1) inset;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.35), 0 0 7px rgba(0, 0, 0, 0.1) inset;
 }
-
-
-
 nav a.subnavlink {
-    color: rgba(0,0,0,0.5);
+    color: rgba(0, 0, 0, 0.5);
     font-size: 13px;
     text-transform: uppercase;
     padding: 0.5em 0.5em 0.5em 3em;
     display: block;
-
-
 }
-
-
 #menudocumentation {
     position: fixed;
     top: 0;
-    width:100%;
+    width: 100%;
     z-index: 600;
     padding-bottom: 0.1em;
-    padding-top:0.1em;
-        box-shadow: 0 0px 13px rgba(0,0,0,0.25);
-       border-bottom: 2px rgba(130, 130, 130, 0.1) solid;
+    padding-top: 0.1em;
+    box-shadow: 0 0px 13px rgba(0, 0, 0, 0.25);
+    border-bottom: 2px rgba(130, 130, 130, 0.1) solid;
 }
-
 #menudocumentation.teal {
     background-color: #00AEAF;
 }
-
-
 #menudocumentation.orange {
     background-color: #F7781E;
 }
-
 #menudocumentation header {
     line-height: 3em;
     padding-top: .2em;
 }
-
-
-
 #menudocumentation header h2 {
-
     font-family: 'Roboto Mono', monospace;
     font-weight: 300;
     font-size: 28px;
     color: #F7781E;
     border: none;
     z-index: 100;
-    float:left;
-    margin-left:1em;
+    float: left;
+    margin-left: 1em;
 }
-#menudocumentation img#logo{
+#menudocumentation img#logo {
     float: left;
     display: inline-block;
-    width:192px;
-     margin-left: 4.5em;
-    padding-top:0.2em;
+    width: 192px;
+    margin-left: 4.5em;
+    padding-top: 0.2em;
     vertical-align: middle;
 }
 #menudocumentation #searchbox {
@@ -263,18 +232,16 @@ nav a.subnavlink {
     height: 26px;
     text-transform: uppercase;
     color: #00414d;
-    font-size: 13px; 
+    font-size: 13px;
     border-bottom: 2px solid transparent;
-
 }
-
 #menudocumentation nav.secondary a:hover, #menudocumentation nav.secondary a.link-selected {
- border-bottom: 2px solid #43E6E6;
+    border-bottom: 2px solid #43E6E6;
 }
-
-.ui-autocomplete-loading { background:url('../images/spinny_orangefg.gif') no-repeat right center }
-
-#search-icon{
+.ui-autocomplete-loading {
+    background: url('../images/spinny_orangefg.gif') no-repeat right center
+}
+#search-icon {
     font-size: 18px;
     margin-top: 0.7em;
     color: #F7781E;
@@ -282,15 +249,12 @@ nav a.subnavlink {
     top: 0.5em;
     left: -1.4em;
 }
-
-
-nav.ui-front{
+nav.ui-front {
     float: right;
     padding-right: 2em;
     padding-top: 0.6em;
     color: #FFF;
 }
-
 #menudocumentation nav input#searchbox {
     background-color: transparent;
     border: none;
@@ -301,40 +265,52 @@ nav.ui-front{
     width: 13em;
     color: #00414d;
     float: right;
-     padding-top: 0.3em;
+    padding-top: 0.3em;
     font-weight: 500;
-
 }
-#menudocumentation nav input#searchbox:focus{
+#menudocumentation nav input#searchbox:focus {
     outline: none;
 }
+
 /* shifted off screen for screen readers I guess */
-.ui-helper-hidden-accessible { position: absolute; left:-999em; }
+.ui-helper-hidden-accessible {
+    position: absolute;
+    left: -999em;
+}
 
 /** these are for changing the colour of the search box placeholder text **/
-::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+::-webkit-input-placeholder {
+
+    /* WebKit, Blink, Edge */
     color: #F7781E;
-    opacity:  0.8;
+    opacity: 0.8;
 }
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+:-moz-placeholder {
+
+    /* Mozilla Firefox 4 to 18 */
     color: #F7781E;
-    opacity:  0.8;
+    opacity: 0.8;
 }
-::-moz-placeholder { /* Mozilla Firefox 19+ */
+::-moz-placeholder {
+
+    /* Mozilla Firefox 19+ */
     color: #F7781E;
-    opacity:  0.8;
+    opacity: 0.8;
 }
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color: #F7781E;
-   opacity:  0.8;
-}
-:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+:-ms-input-placeholder {
+
+    /* Internet Explorer 10-11 */
     color: #F7781E;
-    opacity:  0.8;
+    opacity: 0.8;
 }
+:placeholder-shown {
+
+    /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+    color: #F7781E;
+    opacity: 0.8;
+}
+
 /*****************/
-
-
 #menudocumentation nav label {
     text-transform: uppercase;
     font-size: 11px;
@@ -342,11 +318,9 @@ nav.ui-front{
     font-family: 'Open Sans', arial, sans-serif;
     font-weight: 400;
 }
-
 #menudocumentation nav .ui-widget-content {
     border: none;
 }
-
 #menudocumentation nav ul#search_result {
     display: block;
     width: 200px;
@@ -355,58 +329,50 @@ nav.ui-front{
     position: absolute;
     margin-top: 3px;
     overflow: auto;
-    background:#FFF;
-    color:#00677A;
-    box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
-    max-height:80vh;
+    background: #FFF;
+    color: #00677A;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
+    max-height: 80vh;
 }
-#menudocumentation nav ul#search_result::before{
- content: attr(data-resultcount);
- line-height:1;
+#menudocumentation nav ul#search_result::before {
+    content: attr(data-resultcount);
+    line-height: 1;
 }
 #menudocumentation nav ul#search_result a {
-    display:inline;
+    display: inline;
     font-size: 12px;
     font-family: 'Open Sans', arial, sans-serif;
     font-weight: 400;
-    
 }
-
-#menudocumentation nav ul#search_result li.ui-state-focus, #menudocumentation nav ul#search_result li:hover{
-  border-left: #00687a solid 3px;
-  -webkit-transition: all 0s;
-  -moz-transition: all 0s;
-  -o-transition: all 0s;
-  -ms-transition: all 0s;
-  transition: all 0s;
-  padding-left:12px; /* to account for 3 px border */
-  color: #00AEAF;
+#menudocumentation nav ul#search_result li.ui-state-focus, #menudocumentation nav ul#search_result li:hover {
+    border-left: #00687a solid 3px;
+    -webkit-transition: all 0s;
+    -moz-transition: all 0s;
+    -o-transition: all 0s;
+    -ms-transition: all 0s;
+    transition: all 0s;
+    padding-left: 12px; /* to account for 3 px border */
+    color: #00AEAF;
 }
-
-
 #menudocumentation nav ul#search_result li {
     padding: 5px 10px 5px 15px;
     line-height: 1.15em;
 }
-
-
-
 .wrapper.homepage nav {
     position: absolute;
     top: 25px;
     right: 100px;
     height: 50px;
-    padding-top: 35px;  
+    padding-top: 35px;
 }
-
 .wrapper.homepage nav a {
     font-family: 'Open Sans', arial, sans-serif;
     font-weight: 400;
     height: 50px;
     text-transform: uppercase;
     color: #00677A;
-    font-size: 13px; 
-    padding: 9px 20px 18px 20px; 
+    font-size: 13px;
+    padding: 9px 20px 18px 20px;
     border-bottom: 2px solid transparent;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -414,7 +380,6 @@ nav.ui-front{
     -ms-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
-
 #topMenu {
     position: absolute;
     top: 0.8em;
@@ -422,13 +387,11 @@ nav.ui-front{
     width: 100%;
     z-index: 400;
     height: 100px;
-    box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
 }
-
 #topMenu.teal {
     background-color: #00677A;
 }
-
 #topMenu.orange {
     background-color: #6a8e9a;
 }
@@ -440,98 +403,87 @@ nav.secondary h2 {
     font-weight: 300;
     font-weight: normal;
     font-size: 24px;
-    color: rgba(255,255,255,1);
+    color: rgba(255, 255, 255, 1);
     padding-left: 205px;
     padding-top: 15px;
 }
-
 #topMenu nav {
     position: absolute;
     top: 25px;
     left: 190px;
     height: 50px;
-    padding-top: 35px;      
+    padding-top: 35px;
 }
-
 #menudocumentation nav.secondary a {
-    font-size:16px;
+    font-size: 16px;
     font-family: 'Open Sans', arial, sans-serif;
     font-weight: 400;
     height: 50px;
     text-transform: none;
-
-    padding: 9px 0.2em 0.3em 0.2em; 
-    margin-left:10px;
+    padding: 9px 0.2em 0.3em 0.2em;
+    margin-left: 10px;
     margin-right: 10px;
     border-bottom: 2px solid transparent;
-
     -webkit-transition: border-bottom 0.1s ease-in-out;
     -moz-transition: border-bottom 0.1s ease-in-out;
     -o-transition: border-bottom 0.1s ease-in-out;
     -ms-transition: border-bottom 0.1s ease-in-out;
     transition: border-bottom 0.1s ease-in-out;
-
 }
-nav.secondary{
+nav.secondary {
     padding-top: 0.2em;
-    padding-left:1%;
-    margin-left:2%;
-    float:left;
+    padding-left: 1%;
+    margin-left: 2%;
+    float: left;
     white-space: nowrap;
-    border-left:2px rgba(130, 130, 130, 0.1) solid;
+    border-left: 2px rgba(130, 130, 130, 0.1) solid;
+}
+@media only screen and (max-width:1200px) {
+    nav.secondary {
+        margin-left: 0em;
+        clear: left;
+        border-left: none;
+    }
+}
 
-}
-@media only screen and (max-width : 1200px) {
-   nav.secondary{
-    margin-left:0em;
-    clear:left;
-    border-left:none;
-}
-}
 /*******************
- *      LEFT       *
- *******************/
- /* handle on the right */
- .ui-resizable-e {
-    width: 12px;
-    /* box-shadow: -1px 0px 8px rgba(0,0,0,.09); */
+*      LEFT       *
+*******************/
+
+/* handle on the right */
+.ui-resizable-e {
+    width: 12px;    /* box-shadow: -1px 0px 8px rgba(0,0,0,.09); */
     cursor: e-resize;
     right: -10px;
     top: 0;
     height: 100%;
     border-right: 2px rgba(130, 130, 130, 0.13) solid;
     box-sizing: border-box;
-      background: #FFF;
+    background: #FFF;
 }
-.ui-resizable-e:hover{
-        background: #F5F5F5;
+.ui-resizable-e:hover {
+    background: #F5F5F5;
 }
 .ui-resizable {
     position: relative;
-
 }
 .ui-resizable-handle {
     position: absolute;
     font-size: 0.1px;
     display: block;
-
 }
-.ui-resizable-disabled .ui-resizable-handle,
-.ui-resizable-autohide .ui-resizable-handle {
+.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle {
     display: none;
 }
-
-
-#resizable{
+#resizable {
     background: #fff;
     position: fixed;
-    float:left;
-    margin-top:0.4em;
-    bottom:0;
+    float: left;
+    margin-top: 0.4em;
+    bottom: 0;
     z-index: 200;
-    width:300px;
-    padding-right:1px;
-
+    width: 300px;
+    padding-right: 1px;
 }
 #left {
     width: 100%;
@@ -539,19 +491,12 @@ nav.secondary{
     font-size: 14px;
     overflow-y: auto;
     overflow-x: hidden;
-    position:relative;
+    position: relative;
 }
-
-
-
-
-#tree1{
-    padding-bottom:1em;
-
+#tree1 {
+    padding-bottom: 1em;
     padding-left: 1em;
 }
-
-
 .fa {
     display: inline-block;
     font-family: FontAwesome;
@@ -560,17 +505,14 @@ nav.secondary{
     line-height: 1;
     -webkit-font-smoothing: antialiased;
 }
-
 .flexslider {
     height: 500px;
 }
-
 ul.slides {
     background: #00687a;
     height: 500px;
     text-align: center;
 }
-
 li.slide_01 {
     background: url('../images/slide_02.jpg') center no-repeat;
     background-size: cover;
@@ -586,7 +528,6 @@ li.slide_03 {
     background-size: cover;
     height: 500px;
 }
-
 ul.slides h3 {
     font-family: 'Roboto Mono', monospace;
     font-weight: 700;
@@ -595,7 +536,6 @@ ul.slides h3 {
     color: #FFF;
     text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
 }
-
 ul.slides h4 {
     font-family: 'Open Sans', arial, sans-serif;
     font-weight: 400;
@@ -604,7 +544,6 @@ ul.slides h4 {
     text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
     padding-bottom: 15px;
 }
-
 ul.slides a {
     margin-left: 12px;
     padding: 11px 22px 13px;
@@ -617,21 +556,17 @@ ul.slides a {
     background-color: #F7781E;
     margin-top: 15px;
 }
-
 #content {
     padding: 150px 15% 25px 15%;
 }
-
 #content h2 {
     font-family: 'Roboto Mono', monospace;
     font-weight: 400;
     text-align: center;
-    color: rgba(64,64,64,1.0);
+    color: rgba(64, 64, 64, 1.0);
     font-size: 36px;
 }
-
 .content {
-
     position: relative;
     height: 100%;
     box-sizing: border-box;
@@ -639,15 +574,11 @@ ul.slides a {
     padding-left: 400px;
     padding-bottom: 50px;
     line-height: 1.4;
-
     font-family: 'Open Sans', arial, sans-serif;
     font-weight: 400;
     background-color: white;
     color: #464646;
-    font-size:15px;
-
-
-    
+    font-size: 15px;
 }
 .params>dt, .return>dt {
     font-weight: bold;
@@ -655,20 +586,20 @@ ul.slides a {
     color: #6A8E9A;
     padding-left: 0;
 }
-.content h2{
+.content h2 {
     font-family: 'Roboto Mono', monospace;
     font-weight: 400;
     font-size: 24px;
     color: #F7781E;
     padding-bottom: 15px;
 }
-.content h1{
-    font-size:30px;
+.content h1 {
+    font-size: 30px;
     color: #00677A;
     font-weight: 400;
-}  
-h1.title{
-    font-weight:600;
+}
+h1.title {
+    font-weight: 600;
 }
 .content h3 {
     font-family: 'Open Sans', arial, sans-serif;
@@ -677,18 +608,15 @@ h1.title{
     color: #00677A;
     padding-bottom: 25px;
 }
-
 .content.orange h2, .content.orange h3 {
     color: #F7781E;
 }
-
 .docsWidget {
     position: relative;
     float: left;
     width: 20%;
     padding-right: 25px;
 }
-
 .docsWidget h4 {
     font-family: 'Open Sans', arial, sans-serif;
     font-weight: 400;
@@ -697,7 +625,6 @@ h1.title{
     height: 40px;
     margin-bottom: 10px;
 }
-
 .docsWidget h4 a {
     border-left: 2px solid #F7781E;
     color: #F7781E;
@@ -705,41 +632,33 @@ h1.title{
     padding-bottom: 10px;
     padding-top: 10px;
 }
-
 .content.orange h4 a {
     color: #00677A;
     border-left: 2px solid #00677A;
 }
-
 .docsWidget.red a:hover {
     color: #e53b30;
 }
-
 .docsWidget.blue a:hover {
     color: #006892;
 }
-
 .docsWidget.grey a:hover {
     color: #666;
 }
-
 .docsWidget.green a:hover {
     color: #a09b25;
 }
-
 .docsWidget a {
     display: block;
     padding-left: 27px;
     padding-top: 15px;
 }
-
 div#apps-platform {
     position: relative;
     padding: 80px 14% 30px 15%;
     text-align: center;
     background-color: #f9f9f9;
 }
-
 div.build {
     position: relative;
     float: left;
@@ -748,86 +667,76 @@ div.build {
     padding-bottom: 15px;
     text-align: center;
 }
-
 div.build img {
     width: 30%;
     margin-bottom: 25px;
 }
-
 div.build h5 {
     font-family: 'Roboto Mono', monospace;
     font-weight: 400;
     font-size: 36px;
     padding-bottom: 20px;
 }
-p.copyright{
+p.copyright {
     margin-top: 6em;
-    font-size:13px;
-
+    font-size: 13px;
     opacity: 0.6;
 }
-.note{
+.note {
     color: #6a8e9a;
-    background:rgba(106, 142, 154,0.1);
-    border: 2px rgba(106, 142, 154,0.1) solid;
+    background: rgba(106, 142, 154, 0.1);
+    border: 2px rgba(106, 142, 154, 0.1) solid;
 }
-.warning{
+.warning {
     color: #F7781E;
     background: rgba(247, 120, 30, 0.1);
-    border: 2px rgba(247, 120, 30,.1) solid;
-
+    border: 2px rgba(247, 120, 30, .1) solid;
 }
-.warning > dt:before{
+.warning > dt:before {
     font-weight: normal;
     content: "\f071";
-    padding-right:0.5em;
+    padding-right: 0.5em;
     font-family: FontAwesome;
 }
-.note>dt, .warning>dt{
-    font-weight:bold;
-    padding:0.5em;
+.note>dt, .warning>dt {
+    font-weight: bold;
+    padding: 0.5em;
 }
-.note > dt:before{
+.note > dt:before {
     font-weight: normal;
     content: "\f06a";
-    padding-right:0.5em;
+    padding-right: 0.5em;
     font-family: FontAwesome;
 }
-.note, .warning{
+.note, .warning {
     display: inline-block;
-    padding:1em;
+    padding: 1em;
     padding-right: 1.5em;
-    padding-top:0.2em;
-    border-radius:2px;
+    padding-top: 0.2em;
+    border-radius: 2px;
 }
-.bluegrey{
+.bluegrey {
     color: #6a8e9a;
 }
-
 .teal {
     color: #00687a;
 }
-
 div.build a.usecase01-bg {
     background: url('../images/slide_02.jpg') center no-repeat;
     background-size: cover;
 }
-
 div.build a.usecase02-bg {
     background: url('../images/slide_02.jpg') center no-repeat;
     background-size: cover;
 }
-
 div.build a.usecase03-bg {
     background: url('../images/slide_02.jpg') center no-repeat;
     background-size: cover;
 }
-
 div#usecases {
     position: relative;
     padding: 1% 14% 0 15%;
 }
-
 div.usecase {
     position: relative;
     float: left;
@@ -835,29 +744,24 @@ div.usecase {
     margin-right: 1%;
     padding-bottom: 15px;
 }
-
 div.usecase h5 {
     font-family: 'Roboto Mono', monospace;
     font-weight: 400;
     font-size: 18px;
     color: #F7781E;
 }
-
 div.usecase a.usecase01-bg {
     background: url('../images/slide_02.jpg') center no-repeat;
     background-size: cover;
 }
-
 div.usecase a.usecase02-bg {
     background: url('../images/slide_02.jpg') center no-repeat;
     background-size: cover;
 }
-
 div.usecase a.usecase03-bg {
     background: url('../images/slide_02.jpg') center no-repeat;
     background-size: cover;
 }
-
 .button {
     display: inline-block;
     padding: 10px 20px;
@@ -878,32 +782,28 @@ div.usecase a.usecase03-bg {
     -ms-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
-
 .button.orange {
     color: #F7781E;
     border: 1px solid #F7781E;
 }
-
 .button.orange:hover {
     color: #FFF;
     background-color: #F7781E;
 }
-
 .button.teal {
     color: #00687a;
     border: 1px solid #00687a;
 }
-
 .button.teal:hover {
     color: #FFF;
     background-color: #00687a;
 }
 
 /*******************
- *     FOOTER      *
- *******************/
- 
- #footer {
+*     FOOTER      *
+*******************/
+#footer {
+
     /*
     position: relative;
     width: 80%;
@@ -913,16 +813,14 @@ div.usecase a.usecase03-bg {
     padding-bottom: 25px;
     text-align: center;
     */
-
 }
 
 /*******************
  * DOXYGEN CONTENT *
  *******************/
- code{
-  
+code {
 }
-em>code { 
+em>code {
     padding-left: 0.2em;
 }
 .contents {
@@ -935,140 +833,122 @@ em>code {
     color: #00677A;
     padding-bottom: 15px;
 }
-
 .contents h1 {
     font-family: 'Roboto Mono', monospace;
     font-weight: 400;
     font-size: 24px;
     color: #00677A;
     padding: 15px 0px 10px 0px;
-
 }
 .contents td.memname {
-/*    font-weight: 600;*/
-color:#000;
+
+    /*    font-weight: 600;*/
+    color: #000;
     font-size: 110%;
-        display: flex;
+    display: flex;
 }
-
 .contents a {
-  -webkit-transition: all 0s;
-  -moz-transition: all 0s;
-  -o-transition: all 0s;
-  -ms-transition: all 0s;
-  transition: all 0s;
-  color: #00AEAF;
-  /*border-bottom: 1px dashed #00AEAF;*/
+    -webkit-transition: all 0s;
+    -moz-transition: all 0s;
+    -o-transition: all 0s;
+    -ms-transition: all 0s;
+    transition: all 0s;
+    color: #00AEAF;  /*border-bottom: 1px dashed #00AEAF;*/
 }
-
 .contents a:hover {
     color: #43E6E6;
     border-bottom: 1px dashed #00ffff;
 }
-
 .contents hr {
-    display: none;
-    /*margin-top:5em; */
+    display: none;    /*margin-top:5em; */
 }
-
-div.fragment{
+div.fragment {
     font-family: monospace;
     white-space: pre;
     padding-left: 1em;
-    padding-top:1em;
+    padding-top: 1em;
     padding-bottom: 1em;
-    font-size:15px;
+    font-size: 15px;
     overflow: auto;
 }
-pre.fragment{
+pre.fragment {
     font-size: 15px;
     padding: 0.7em;
     background: rgba(130, 130, 130, 0.1);
-    border:2px rgba(130, 130, 130, 0.1) solid;
-    border-radius:2px;
+    border: 2px rgba(130, 130, 130, 0.1) solid;
+    border-radius: 2px;
     overflow: auto;
 }
-.memproto>table.memname, .memproto>table.mlabels
-{
+.memproto>table.memname, .memproto>table.mlabels {
     padding: 0.7em;
     border-spacing: 2em 0;
     font-family: monospace;
 }
-.memitem{
- margin-bottom: 1.5em;
-
+.memitem {
+    margin-bottom: 1.5em;
 }
-.memitem + .anchor + .memitem{
+.memitem + .anchor + .memitem {
+
     /*box-shadow: 0px 68px 98px 43px #ffffff inset, 0px -17px 11px -19px #CCC inset; */ /* bottom */
-/*    box-shadow: 0px -68px 98px 43px #ffffff inset, 0px 17px 11px -19px #999 inset; */  /* top */
-border-top:2px rgba(106, 142, 154,0.15) solid;
+
+    /*    box-shadow: 0px -68px 98px 43px #ffffff inset, 0px 17px 11px -19px #999 inset; */  /* top */
+    border-top: 2px rgba(106, 142, 154, 0.15) solid;
     padding-top: 1em;
 }
-.memdoc{
+.memdoc {
     padding-left: 1em;
 }
 .fielddoc p {
     margin-top: 0.2em;
     margin-bottom: 0.2em;
 }
+
 /* SYNTAX HIGHLIGHTING */
 span.keyword {
     color: #008000;
 }
-
 span.keywordtype {
     color: #445588;
     font-weight: bold;
 }
-
 span.keywordflow {
     color: #e08000
 }
-
 span.comment {
     color: rgb(153, 153, 136);
     font-style: italic;
 }
-
 span.preprocessor {
     color: #847a00;
 }
-
 span.stringliteral {
     color: #dd1144;
 }
-
 span.charliteral {
     color: #008080
 }
-
 span.vhdldigit {
     color: #ff00ff
 }
-
 span.vhdlchar {
     color: #000000
 }
-
 span.vhdlkeyword {
     color: #700070
 }
-
 span.vhdllogic {
     color: #ff0000
 }
-
-.search-highlight{
+.search-highlight {
     background: rgba(247, 205, 30, 0.4);
     border-radius: 2px;
 }
-h1.title > .search-highlight{
+h1.title > .search-highlight {
     background: none;
     border-radius: 0;
 }
-
 div#sh_options {
-    font-size:90%;
+    font-size: 90%;
     z-index: 99999;
     position: fixed;
     background: #FAEBD7;
@@ -1077,39 +957,37 @@ div#sh_options {
     right: 0;
     border: 2px solid #D4BEA1;
 }
-#sh_options a#toggle_highlight{
-     cursor: pointer;
-     font-weight:bold;
+#sh_options a#toggle_highlight {
+    cursor: pointer;
+    font-weight: bold;
 }
+
 /* mobile tweaks */
-@media only screen and (max-width : 719px) {
-   #resizable {
-            position: fixed;
-            z-index:700;
-            padding-top:3em;
-            margin-top:0;
+@media only screen and (max-width:719px) {
+    #resizable {
+        position: fixed;
+        z-index: 700;
+        padding-top: 3em;
+        margin-top: 0;
     }
-    .content{
+    .content {
         padding-left: 2em !important;
     }
-    #menudocumentation{
+    #menudocumentation {
         position: absolute;
-    }   
-    #left{
-        border-top: 2px rgba(130, 130, 130, 0.1) solid;
-        height:initial;
-
     }
-    #top{
-        overflow-y:auto;
+    #left {
+        border-top: 2px rgba(130, 130, 130, 0.1) solid;
+        height: initial;
+    }
+    #top {
+        overflow-y: auto;
     }
 }
 
-
 /* doc landing page*/
-
 a.big.el {
-    font-weight:500;
+    font-weight: 500;
     text-align: center;
     width: 10em;
     clear: both;
@@ -1117,7 +995,6 @@ a.big.el {
     font-size: 30px;
     padding: 0.5em;
     margin: 0.1em;
-
     text-align: center;
     cursor: pointer;
     background-color: #FFF;
@@ -1125,11 +1002,8 @@ a.big.el {
     border: 2px solid #7395A0;
     color: #7395A0;
 }
-a.big.el:hover{
-     background: #7395A0;;
-
-     text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.45);
+a.big.el:hover {
+    background: #7395A0;
+    text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.45);
     color: white;
 }
-
-
