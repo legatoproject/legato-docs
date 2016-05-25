@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" data-toc="tocs/Build Apps API Guides.json" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Semaphore API  - Legato Docs</title>
@@ -18,15 +18,6 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
-<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
-<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="resources/js/jquery.cookie.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
-<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
-<script>
-        setupTree("tocs/Build Apps API Guides.json");
-        </script>
 </head>
 <body>
 <noscript>
@@ -55,7 +46,7 @@
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
-<input id="searchbox" placeholder="Search..."/>
+<input id="searchbox" placeholder="Search"/>
 </nav>
 </header>
 </div>
@@ -80,13 +71,15 @@ Creating a Semaphore</h1>
 <p>All semaphores have names. This is required for diagnostic purposes. See <a class="el" href="c_semaphore.html#diagnostics_semaphore">Diagnostics</a> below.</p>
 <h1><a class="anchor" id="use_semaphore"></a>
 Using a Semaphore</h1>
-<p>Functions to increase and decrease semaphores are:</p><ul>
+<p>Functions to increase and decrease semaphores are:</p>
+<ul>
 <li><code><a class="el" href="le__semaphore_8h.html#abb859411cc58fbcc576c986ef52083b2">le_sem_Post()</a></code> </li>
 <li><code><a class="el" href="le__semaphore_8h.html#aecdf87fe330dd008771b7530edbb1f2b">le_sem_Wait()</a></code> </li>
 <li><code><a class="el" href="le__semaphore_8h.html#a6a6c435042dd37a3c78ebbab6ec72689">le_sem_TryWait()</a></code> </li>
 <li><code><a class="el" href="le__semaphore_8h.html#a14475f0c2f5483427279d39220f55eaa">le_sem_WaitWithTimeOut()</a></code> </li>
 </ul>
-<p>Function to get a semaphore's current value is:</p><ul>
+<p>Function to get a semaphore's current value is:</p>
+<ul>
 <li><code><a class="el" href="le__semaphore_8h.html#ac4858ccb0ba748ca463bb29807b75c05">le_sem_GetValue()</a></code> </li>
 </ul>
 <h1><a class="anchor" id="delete_semaphore"></a>
@@ -102,5 +95,11 @@ Diagnostics</h1>
 <br clear="left"/>
 </div>
 </div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 </body>
 </html>

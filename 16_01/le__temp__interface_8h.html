@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" data-toc="tocs/Build Apps API Guides.json" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>le_temp_interface.h File Reference - Legato Docs</title>
@@ -18,15 +18,6 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
-<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
-<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="resources/js/jquery.cookie.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
-<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
-<script>
-        setupTree("tocs/Build Apps API Guides.json");
-        </script>
 </head>
 <body>
 <noscript>
@@ -55,7 +46,7 @@
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
-<input id="searchbox" placeholder="Search..."/>
+<input id="searchbox" placeholder="Search"/>
 </nav>
 </header>
 </div>
@@ -92,10 +83,11 @@ Macros</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:ae0af7bbe704b0e3738fbfd65ef1dc5f0"><td align="right" class="memItemLeft" valign="top">typedef struct le_temp_Sensor * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__temp__interface_8h.html#ae0af7bbe704b0e3738fbfd65ef1dc5f0">le_temp_SensorRef_t</a></td></tr>
 <tr class="separator:ae0af7bbe704b0e3738fbfd65ef1dc5f0"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a10c66144cf9c183f133ddb36595615e0"><td align="right" class="memItemLeft" valign="top">typedef struct le_temp_ThresholdEventHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__temp__interface_8h.html#a10c66144cf9c183f133ddb36595615e0">le_temp_ThresholdEventHandlerRef_t</a></td></tr>
+<tr class="memitem:a10c66144cf9c183f133ddb36595615e0"><td align="right" class="memItemLeft" valign="top">typedef struct <br class="typebreak"/>
+le_temp_ThresholdEventHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__temp__interface_8h.html#a10c66144cf9c183f133ddb36595615e0">le_temp_ThresholdEventHandlerRef_t</a></td></tr>
 <tr class="separator:a10c66144cf9c183f133ddb36595615e0"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:ab2526bfa66ad1a52cc955c8b60442a1c"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__temp__interface_8h.html#ab2526bfa66ad1a52cc955c8b60442a1c">le_temp_ThresholdEventHandlerFunc_t</a>) (<a class="el" href="le__temp__interface_8h.html#ae0af7bbe704b0e3738fbfd65ef1dc5f0">le_temp_SensorRef_t</a> sensor, const char *threshold, void *contextPtr)</td></tr>
-<tr class="separator:ab2526bfa66ad1a52cc955c8b60442a1c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a62cf8630340df0cfeb96d9a77a38f4c2"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__temp__interface_8h.html#a62cf8630340df0cfeb96d9a77a38f4c2">le_temp_ThresholdEventHandlerFunc_t</a> )(<a class="el" href="le__temp__interface_8h.html#ae0af7bbe704b0e3738fbfd65ef1dc5f0">le_temp_SensorRef_t</a> sensor, const char *threshold, void *contextPtr)</td></tr>
+<tr class="separator:a62cf8630340df0cfeb96d9a77a38f4c2"><td class="memSeparator" colspan="2"> </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -107,7 +99,7 @@ Functions</h2></td></tr>
 <tr class="separator:a4b1869daf56012d886ddd424e6d610ea"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:ae14fb5a1c5445b2cc2148daa90c872fd"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__temp__interface_8h.html#ae14fb5a1c5445b2cc2148daa90c872fd">le_temp_GetSensorName</a> (<a class="el" href="le__temp__interface_8h.html#ae0af7bbe704b0e3738fbfd65ef1dc5f0">le_temp_SensorRef_t</a> sensor, char *sensorName, size_t sensorNameNumElements)</td></tr>
 <tr class="separator:ae14fb5a1c5445b2cc2148daa90c872fd"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:acb2ef2d56777133835b843a786103268"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__temp__interface_8h.html#a10c66144cf9c183f133ddb36595615e0">le_temp_ThresholdEventHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__temp__interface_8h.html#acb2ef2d56777133835b843a786103268">le_temp_AddThresholdEventHandler</a> (<a class="el" href="le__temp__interface_8h.html#ab2526bfa66ad1a52cc955c8b60442a1c">le_temp_ThresholdEventHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="memitem:acb2ef2d56777133835b843a786103268"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__temp__interface_8h.html#a10c66144cf9c183f133ddb36595615e0">le_temp_ThresholdEventHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__temp__interface_8h.html#acb2ef2d56777133835b843a786103268">le_temp_AddThresholdEventHandler</a> (<a class="el" href="le__temp__interface_8h.html#a62cf8630340df0cfeb96d9a77a38f4c2">le_temp_ThresholdEventHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
 <tr class="separator:acb2ef2d56777133835b843a786103268"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a29fa7d59baed8a6ee058e32e2cddbd74"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__temp__interface_8h.html#a29fa7d59baed8a6ee058e32e2cddbd74">le_temp_RemoveThresholdEventHandler</a> (<a class="el" href="le__temp__interface_8h.html#a10c66144cf9c183f133ddb36595615e0">le_temp_ThresholdEventHandlerRef_t</a> addHandlerRef)</td></tr>
 <tr class="separator:a29fa7d59baed8a6ee058e32e2cddbd74"><td class="memSeparator" colspan="2"> </td></tr>
@@ -185,12 +177,12 @@ Functions</h2></td></tr>
 <p>Reference type for a temperature sensor. </p>
 </div>
 </div>
-<a class="anchor" id="ab2526bfa66ad1a52cc955c8b60442a1c"></a>
+<a class="anchor" id="a62cf8630340df0cfeb96d9a77a38f4c2"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
 <tr>
-<td class="memname">typedef void(* le_temp_ThresholdEventHandlerFunc_t) (<a class="el" href="le__temp__interface_8h.html#ae0af7bbe704b0e3738fbfd65ef1dc5f0">le_temp_SensorRef_t</a> sensor, const char *threshold, void *contextPtr)</td>
+<td class="memname">typedef void(* le_temp_ThresholdEventHandlerFunc_t)(<a class="el" href="le__temp__interface_8h.html#ae0af7bbe704b0e3738fbfd65ef1dc5f0">le_temp_SensorRef_t</a> sensor, const char *threshold, void *contextPtr)</td>
 </tr>
 </table>
 </div><div class="memdoc">
@@ -225,7 +217,7 @@ Functions</h2></td></tr>
 <tr>
 <td class="memname"><a class="el" href="le__temp__interface_8h.html#a10c66144cf9c183f133ddb36595615e0">le_temp_ThresholdEventHandlerRef_t</a> le_temp_AddThresholdEventHandler </td>
 <td>(</td>
-<td class="paramtype"><a class="el" href="le__temp__interface_8h.html#ab2526bfa66ad1a52cc955c8b60442a1c">le_temp_ThresholdEventHandlerFunc_t</a> </td>
+<td class="paramtype"><a class="el" href="le__temp__interface_8h.html#a62cf8630340df0cfeb96d9a77a38f4c2">le_temp_ThresholdEventHandlerFunc_t</a> </td>
 <td class="paramname"><em>handlerPtr</em>, </td>
 </tr>
 <tr>
@@ -537,5 +529,11 @@ Functions</h2></td></tr>
 <br clear="left"/>
 </div>
 </div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" data-toc="tocs/Build Apps Concepts.json" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>C Language Standards  - Legato Docs</title>
@@ -18,15 +18,6 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
-<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
-<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="resources/js/jquery.cookie.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
-<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
-<script>
-        setupTree("tocs/Build Apps Concepts.json");
-        </script>
 </head>
 <body>
 <noscript>
@@ -55,7 +46,7 @@
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
-<input id="searchbox" placeholder="Search..."/>
+<input id="searchbox" placeholder="Search"/>
 </nav>
 </header>
 </div>
@@ -76,7 +67,8 @@
 Commenting</h1>
 <p>If it's not completely obvious what's going on, it must be documented clearly using comments.</p>
 <p>Comments should also be used to improve readability, wherever appropriate.</p>
-<p>However, there's no point in commenting the obvious, like this: </p><pre class="fragment">// Set the flag
+<p>However, there's no point in commenting the obvious, like this: </p>
+<pre class="fragment">// Set the flag
 isReady = TRUE; </pre><p>Comments should focus mainly on describing why something is happening, rather than what or how. Code should be written so that what it's doing, and how it's doing it, is obvious (because of the well named identifiers and cleanly structured code). If not, your should probably rewrite the code. If that's not practical, then you should comment on what and how.</p>
 <p>The idea of why the code is doing what it's doing can't be conveyed well in the code itself. This is the most valuable information to have in comments to advise of pitfalls and help quickly identify whether design change options are viable. Often, the ''why'' was learned the hard way, so documenting it can save others from having to learn it the hard way, too. Also, sometimes things are done arbitrarily, which is good to know too so people don't have to fear that making changes to it might break something in some subtle way.</p>
 <p>C++ style comments are permitted in C code. All modern compilers support them.</p>
@@ -199,7 +191,8 @@ Extern</h1>
 <h1><a class="anchor" id="cstdsFanOut"></a>
 Fan Out</h1>
 <p>Fan-out measures the number of different functions called by a function including the number of data structures it updates. High levels of fan-out indicate insufficient abstraction and results in higher defect density.</p>
-<p>The following function has a fan-out of 5: </p><pre class="fragment">static int Log(int value)
+<p>The following function has a fan-out of 5: </p>
+<pre class="fragment">static int Log(int value)
 {
     if (IsAboveThreshold(value))
     {
@@ -272,14 +265,32 @@ Line Length</h1>
 <h1><a class="anchor" id="cstdsMultipleInclusionGuards"></a>
 Multiple Inclusion Guards</h1>
 <p>To prevent declaration errors due to multiple inclusion of the same header file, every header file must include a "multiple inclusion guard" like this:</p>
-<pre class="fragment"><div class="line"><span class="preprocessor">#ifndef UNIQUE_INCLUDE_GUARD</span></div><div class="line"><span class="preprocessor">#define UNIQUE_INCLUDE_GUARD</span></div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line">#endif</div></pre><!-- fragment --><p><code>UNIQUE_INCLUDE_GUARD</code> must be replaced with a macro name unique to this header file. To ensure uniqueness, the macro name should:</p>
+<pre class="fragment"><div class="line"><span class="preprocessor">#ifndef UNIQUE_INCLUDE_GUARD</span></div>
+<div class="line"><span class="preprocessor"></span><span class="preprocessor">#define UNIQUE_INCLUDE_GUARD</span></div>
+<div class="line"><span class="preprocessor"></span></div>
+<div class="line">...</div>
+<div class="line"></div>
+<div class="line">#endif</div>
+</pre><!-- fragment --><p><code>UNIQUE_INCLUDE_GUARD</code> must be replaced with a macro name unique to this header file. To ensure uniqueness, the macro name should:</p>
 <ul>
 <li>contain the name of the file (converted to all upper case, with underscores separating words)</li>
 <li>be prefixed with a name or abbreviation that's unique to the module that the header file is a part of</li>
 <li>have "_INCLUDE_GUARD" as a suffix.</li>
 </ul>
-<p>The Converter module's inter-module interface file converter.h' in the Sierra Wireless (SWI) Transmogrifier component could contain a multiple inclusion guard macro named like this: </p><pre class="fragment"><div class="line">SWI_TMOG_CONVERTER_INCLUDE_GUARD</div></pre><!-- fragment --><p>Code in a header file must be inside the file's multiple inclusion guard (except for comments) like this:</p>
-<pre class="fragment"><div class="line"><span class="comment">// Only comments allowed here.</span></div><div class="line"></div><div class="line"><span class="preprocessor">#ifndef SWI_TMOG_CONVERTER_INCLUDE_GUARD</span></div><div class="line"><span class="preprocessor">#define SWI_TMOG_CONVERTER_INCLUDE_GUARD</span></div><div class="line"></div><div class="line"><span class="comment">// Any code can go here.</span></div><div class="line"></div><div class="line"><span class="preprocessor">#endif // SWI_TMOG_CONVERTER_INCLUDE_GUARD</span></div><div class="line"></div><div class="line"><span class="comment">// Only comments allowed here, but preferably nothing but the end of file should be here.</span></div></pre><!-- fragment --><p>To allow include guard macros to be renamed (in case the file is renamed, the code changes hands, a naming conflict is found, etc.) and to avoid maintenance confusion, these macros shouldn't be used for anything else other than the multiple inclusion guard.</p>
+<p>The Converter module's inter-module interface file converter.h' in the Sierra Wireless (SWI) Transmogrifier component could contain a multiple inclusion guard macro named like this: </p>
+<pre class="fragment"><div class="line">SWI_TMOG_CONVERTER_INCLUDE_GUARD</div>
+</pre><!-- fragment --><p>Code in a header file must be inside the file's multiple inclusion guard (except for comments) like this:</p>
+<pre class="fragment"><div class="line"><span class="comment">// Only comments allowed here.</span></div>
+<div class="line"></div>
+<div class="line"><span class="preprocessor">#ifndef SWI_TMOG_CONVERTER_INCLUDE_GUARD</span></div>
+<div class="line"><span class="preprocessor"></span><span class="preprocessor">#define SWI_TMOG_CONVERTER_INCLUDE_GUARD</span></div>
+<div class="line"><span class="preprocessor"></span></div>
+<div class="line"><span class="comment">// Any code can go here.</span></div>
+<div class="line"></div>
+<div class="line"><span class="preprocessor">#endif // SWI_TMOG_CONVERTER_INCLUDE_GUARD</span></div>
+<div class="line"><span class="preprocessor"></span></div>
+<div class="line"><span class="comment">// Only comments allowed here, but preferably nothing but the end of file should be here.</span></div>
+</pre><!-- fragment --><p>To allow include guard macros to be renamed (in case the file is renamed, the code changes hands, a naming conflict is found, etc.) and to avoid maintenance confusion, these macros shouldn't be used for anything else other than the multiple inclusion guard.</p>
 <dl class="section note"><dt>Note</dt><dd>If you're modifying existing code that uses multiple inclusion guard, follow the pre-existing code style instead of the Legato standard.</dd></dl>
 <h1><a class="anchor" id="cstdsMultithreading"></a>
 Multithreading</h1>
@@ -304,5 +315,11 @@ Tabs</h1>
 <br clear="left"/>
 </div>
 </div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 </body>
 </html>

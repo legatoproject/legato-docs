@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" data-toc="tocs/Build Apps Tools.json" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>config  - Legato Docs</title>
@@ -18,15 +18,6 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
-<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
-<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="resources/js/jquery.cookie.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
-<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
-<script>
-        setupTree("tocs/Build Apps Tools.json");
-        </script>
 </head>
 <body>
 <noscript>
@@ -55,7 +46,7 @@
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
-<input id="searchbox" placeholder="Search..."/>
+<input id="searchbox" placeholder="Search"/>
 </nav>
 </header>
 </div>
@@ -75,69 +66,89 @@
 <h1>Usage</h1>
 <p><b><code> config [OPTIONS] </code></b></p>
 <pre class="fragment">config get &lt;tree path&gt; [--format=json] </pre> <blockquote class="doxtable">
-<p>Read a value. </p>
+<p>Read a value.</p>
+<p></p>
 </blockquote>
 <pre class="fragment">config set &lt;tree path&gt; &lt;new value&gt; [&lt;type&gt;] </pre> <blockquote class="doxtable">
-<p>Write a value. </p>
+<p>Write a value.</p>
+<p></p>
 </blockquote>
 <pre class="fragment">config move &lt;node path&gt; &lt;new name&gt; </pre> <blockquote class="doxtable">
-<p>Move a node. </p>
+<p>Move a node.</p>
+<p></p>
 </blockquote>
 <pre class="fragment">config copy &lt;node path&gt; &lt;new name&gt; </pre> <blockquote class="doxtable">
-<p>Copy a node. </p>
+<p>Copy a node.</p>
+<p></p>
 </blockquote>
 <pre class="fragment">config delete &lt;tree path&gt; </pre> <blockquote class="doxtable">
-<p>Delete a node. </p>
+<p>Delete a node.</p>
+<p></p>
 </blockquote>
 <pre class="fragment">config clear &lt;tree path&gt; </pre> <blockquote class="doxtable">
-<p>Clear a node. Or create a new empty node if it didn't previously exist. </p>
+<p>Clear a node. Or create a new empty node if it didn't previously exist.</p>
+<p></p>
 </blockquote>
 <pre class="fragment">config import &lt;tree path&gt; &lt;file path&gt; [--format=json] </pre> <blockquote class="doxtable">
-<p>Import config data. </p>
+<p>Import config data.</p>
+<p></p>
 </blockquote>
 <pre class="fragment">config export &lt;tree path&gt; &lt;file path&gt; [--format=json] </pre> <blockquote class="doxtable">
-<p>Export config data. </p>
+<p>Export config data.</p>
+<p></p>
 </blockquote>
 <pre class="fragment">config list </pre> <blockquote class="doxtable">
-<p>List all config trees. </p>
+<p>List all config trees.</p>
+<p></p>
 </blockquote>
 <pre class="fragment">config rmtree &lt;tree name&gt; </pre> <blockquote class="doxtable">
-<p>Delete a tree. </p>
+<p>Delete a tree.</p>
+<p></p>
 </blockquote>
 <pre class="fragment">config help </pre> <blockquote class="doxtable">
-<p>Display help. </p>
+<p>Display help.</p>
+<p></p>
 </blockquote>
 <h2>Options</h2>
 <pre class="fragment">&lt;tree path&gt; </pre> <blockquote class="doxtable">
-<p>Path to the tree and node to configure. </p>
+<p>Path to the tree and node to configure.</p>
+<p></p>
 </blockquote>
 <pre class="fragment">&lt;tree name&gt; </pre> <blockquote class="doxtable">
-<p>Is the name of a tree in the system, but without a path. </p>
+<p>Is the name of a tree in the system, but without a path.</p>
+<p></p>
 </blockquote>
 <pre class="fragment">&lt;file path&gt; </pre> <blockquote class="doxtable">
-<p>Path to the file for import/export. </p>
+<p>Path to the file for import/export.</p>
+<p></p>
 </blockquote>
 <pre class="fragment">&lt;new value&gt; </pre> <blockquote class="doxtable">
-<p>String value to write to the config tree. </p>
+<p>String value to write to the config tree.</p>
+<p></p>
 </blockquote>
 <pre class="fragment">&lt;type&gt; </pre> <blockquote class="doxtable">
-<p>Optional, must be bool, int, float, or string. If tool, must be true or false. If unspecified, default type is string. </p>
+<p>Optional, must be bool, int, float, or string. If tool, must be true or false. If unspecified, default type is string.</p>
+<p></p>
 </blockquote>
 <pre class="fragment">--format=json </pre> <blockquote class="doxtable">
-<p>For imports, then properly formatted JSON will be expected. For exports, then the data will be generated as well. It is also possible to specify JSON for the get sub-command. </p>
+<p>For imports, then properly formatted JSON will be expected. For exports, then the data will be generated as well. It is also possible to specify JSON for the get sub-command.</p>
+<p></p>
 </blockquote>
 <h1><a class="anchor" id="toolsTarget_config_treePaths"></a>
 Tree Paths</h1>
-<p>A tree path is specified similar to a <code>*nix</code> path. With the beginning slash being optional. </p><pre class="fragment">For example:
+<p>A tree path is specified similar to a <code>*nix</code> path. With the beginning slash being optional. </p>
+<pre class="fragment">For example:
 
     /a/path/to/somewhere
 or
     a/path/to/somewhere
 </pre><p>The configTree supports multiple trees: a default tree is assigned per user. If the config tool is run as root, then alternative trees can be specified in the path by entering a tree name, then a colon and the value path.</p>
-<p>Here's an example using the tree named 'foo' instead of the default tree: </p><pre class="fragment">  foo:/a/path/to/somewhere
+<p>Here's an example using the tree named 'foo' instead of the default tree: </p>
+<pre class="fragment">  foo:/a/path/to/somewhere
 </pre><h2><a class="anchor" id="configtoolsTarget_config_TreeLocation"></a>
 Tree location</h2>
-<p>The trees themselves are stored in the file system at: </p><pre class="fragment">/legato/systems/current/configTree </pre><p>The configTree cycles through the extensions, .rock, .paper, and .scissors to differentiate between versions of the tree file. The base file name is the same as the tree.</p>
+<p>The trees themselves are stored in the file system at: </p>
+<pre class="fragment">/legato/systems/current/configTree </pre><p>The configTree cycles through the extensions, .rock, .paper, and .scissors to differentiate between versions of the tree file. The base file name is the same as the tree.</p>
 <p>A listing for /legato/systems/current/configTree where the system tree and the user trees are foo and bar looks like this:</p>
 <pre class="fragment">$ ls /legato/systems/current/configTree/ -l
 total 32
@@ -157,12 +168,15 @@ Config Code Samples</h1>
 </pre><p>The config tool can also read and write individual values. You can read the value of greeted like this:</p>
 <pre class="fragment">$ config get /helloWorld/greeted
 true
-</pre><p>If you want to see everything under helloWorld: </p><pre class="fragment">$ config get /helloWorld
+</pre><p>If you want to see everything under helloWorld: </p>
+<pre class="fragment">$ config get /helloWorld
 helloWorld/
   greeted&lt;bool&gt; == true
   ignored&lt;bool&gt; == false
-</pre><p>If you want to change the value of ignored: </p><pre class="fragment">$ config set /helloWorld/ignored true bool
-</pre><p>You can check it by running: </p><pre class="fragment">$ config get /helloWorld/ignored
+</pre><p>If you want to change the value of ignored: </p>
+<pre class="fragment">$ config set /helloWorld/ignored true bool
+</pre><p>You can check it by running: </p>
+<pre class="fragment">$ config get /helloWorld/ignored
 true
 </pre><p>If the config tool is listing a tree, it will display the node name and a / if the current node has children (except for the root node, as the root node does not have a name.)</p>
 <p>For leaf nodes, the config tool will display the value type in angle brackets, &lt;&gt;, as well as its name and actual value:</p>
@@ -178,5 +192,11 @@ true
 <br clear="left"/>
 </div>
 </div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 </body>
 </html>

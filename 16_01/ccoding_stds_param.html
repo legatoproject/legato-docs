@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" data-toc="tocs/Build Apps Concepts.json" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Variables &amp; Function Parameters  - Legato Docs</title>
@@ -18,15 +18,6 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
-<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
-<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="resources/js/jquery.cookie.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
-<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
-<script>
-        setupTree("tocs/Build Apps Concepts.json");
-        </script>
 </head>
 <body>
 <noscript>
@@ -55,7 +46,7 @@
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
-<input id="searchbox" placeholder="Search..."/>
+<input id="searchbox" placeholder="Search"/>
 </nav>
 </header>
 </div>
@@ -83,15 +74,43 @@ Prefix</h1>
 Pointers</h1>
 <p>Pointers are used differently than non-pointer variables. A range of new operators become available when you use pointers, and mathematical operations take on a whole new meaning. That's why it's important to distinguish pointer variables from non-pointer variables.</p>
 <p>Pointer variable names must end in "Ptr".</p>
-<pre class="fragment"><div class="line"><span class="keywordtype">int</span> index = 0;</div><div class="line"><span class="keywordtype">int</span>* indexPtr = &amp;index;</div></pre><!-- fragment --><p>There's an exception when working with opaque types, because pointers are often used to implement opaque types in C. A header file might contain something like this: </p><pre class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>foo_Sandwich* foo_SandwichRef_t;</div></pre><!-- fragment --><p> This defines a type that can be used to refer to a "Sandwich" object. Note struct foo_Sandwich is never defined outside of the "foo" module (and may not even be defined inside of the foo module). To all outsiders, this reference looks like a pointer to an incomplete type, and can't be dereferenced. Inside the "foo" module, struct foo_Sandwich could be defined or this pointer type could even be used to hold an integer, a char, or anything else that's the same size or smaller than a pointer.</p>
+<pre class="fragment"><div class="line"><span class="keywordtype">int</span> index = 0;</div>
+<div class="line"><span class="keywordtype">int</span>* indexPtr = &amp;index;</div>
+</pre><!-- fragment --><p>There's an exception when working with opaque types, because pointers are often used to implement opaque types in C. A header file might contain something like this: </p>
+<pre class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>foo_Sandwich* foo_SandwichRef_t;</div>
+</pre><!-- fragment --><p> This defines a type that can be used to refer to a "Sandwich" object. Note struct foo_Sandwich is never defined outside of the "foo" module (and may not even be defined inside of the foo module). To all outsiders, this reference looks like a pointer to an incomplete type, and can't be dereferenced. Inside the "foo" module, struct foo_Sandwich could be defined or this pointer type could even be used to hold an integer, a char, or anything else that's the same size or smaller than a pointer.</p>
 <p>A "file reference" could be implemented on some systems as an integer file descriptor. If the reference is an opaque type that's never used as a pointer outside of the module that implements it, or might not be a pointer even inside the module that implements it, then variables of opaque pointer types don't need a "Ptr" suffix.</p>
 <h1><a class="anchor" id="cstdsparamStaticVariables"></a>
 Static Variables</h1>
 <p>Variables that exist on the stack are function parameters and automatic variables (non-static variables declared inside of functions). When these variables go out of scope, they disappear; their memory is released so it can be used for other purposes. To make it obvious that these variables are stack variables and not static variables, they must start with a lower-case letter.</p>
 <p>Because the scope of these variables is limited to a specific function or compound block within a function, they don't need a prefix to avoid naming conflicts:</p>
-<pre class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> Function(<span class="keywordtype">int</span> numericParameter)</div><div class="line">{</div><div class="line">    <span class="keywordtype">char</span>* stringAutoVariable;</div><div class="line"></div><div class="line"></div><div class="line">    ...</div><div class="line">}</div></pre><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Only stack variable names and struct/union member names can (and <em>must</em>) start with lower-case letters.</dd></dl>
+<pre class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> Function(<span class="keywordtype">int</span> numericParameter)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordtype">char</span>* stringAutoVariable;</div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line">    ...</div>
+<div class="line">}</div>
+</pre><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Only stack variable names and struct/union member names can (and <em>must</em>) start with lower-case letters.</dd></dl>
 <p>Static variables aren't stored in either the stack or the heap. They are statically allocated in the data segment of the process's address space. They have scope limited to either a compound statement (if defined inside a function), or a file (if defined outside of all functions). Because these variables are never visible outside a file, they don't need any special prefix to prevent naming conflicts. But they're stored differently than variables on the stack (and don't disappear when they go out of scope), so they start with an upper-case letter to distinguish them from stack variables:</p>
-<pre class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">int</span> CallCounter = 0;  <span class="comment">// This is a file-scope variable.</span></div><div class="line"></div><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> Function(<span class="keywordtype">int</span> numericParameter)</div><div class="line">{</div><div class="line">    <span class="keyword">static</span> <span class="keywordtype">bool</span> WasCalledBefore = FALSE;</div><div class="line">    <span class="keywordtype">char</span>* stringAutoVariable;</div><div class="line"></div><div class="line">    <span class="keywordflow">if</span> (!WasCalledBefore)</div><div class="line">    {</div><div class="line">        ...</div><div class="line">        WasCalledBefore = TRUE;</div><div class="line">    }</div><div class="line"></div><div class="line">    CallCounter++;</div><div class="line"></div><div class="line">    ...</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="cstdsparamAbbreviations"></a>
+<pre class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">int</span> CallCounter = 0;  <span class="comment">// This is a file-scope variable.</span></div>
+<div class="line"></div>
+<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> Function(<span class="keywordtype">int</span> numericParameter)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">bool</span> WasCalledBefore = FALSE;</div>
+<div class="line">    <span class="keywordtype">char</span>* stringAutoVariable;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!WasCalledBefore)</div>
+<div class="line">    {</div>
+<div class="line">        ...</div>
+<div class="line">        WasCalledBefore = TRUE;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    CallCounter++;</div>
+<div class="line"></div>
+<div class="line">    ...</div>
+<div class="line">}</div>
+</pre><!-- fragment --><h1><a class="anchor" id="cstdsparamAbbreviations"></a>
 Abbreviations</h1>
 <p>To keep identifiers a manageable length, developers often abbreviate. If these abbreviations aren't carefully chosen, they can create confusion.</p>
 <p>See <a class="el" href="ccoding_stds_abbr.html">Abbreviations</a>. Other abbreviations should <b>not</b> be used.</p>
@@ -101,5 +120,11 @@ Abbreviations</h1>
 <br clear="left"/>
 </div>
 </div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 </body>
 </html>

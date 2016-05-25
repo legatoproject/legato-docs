@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" data-toc="tocs/Build Apps API Guides.json" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>JSON Parsing API  - Legato Docs</title>
@@ -18,15 +18,6 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
-<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
-<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="resources/js/jquery.cookie.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
-<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
-<script>
-        setupTree("tocs/Build Apps API Guides.json");
-        </script>
 </head>
 <body>
 <noscript>
@@ -55,7 +46,7 @@
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
-<input id="searchbox" placeholder="Search..."/>
+<input id="searchbox" placeholder="Search"/>
 </nav>
 </header>
 </div>
@@ -88,7 +79,8 @@ Starting and Stopping Parsing</h1>
 Event Handling</h1>
 <p>As parsing progresses and the parser finds things inside the JSON document, the parser calls the event handler function to report the findings.</p>
 <p>For example, when the parser finds an object member, it calls the event handler function with the event code LE_JSON_OBJECT_MEMBER; and when if finds a string value, an LE_JSON_STRING event is reported.</p>
-<p>The event handler function can call functions to fetch values, depending on the event:</p><ul>
+<p>The event handler function can call functions to fetch values, depending on the event:</p>
+<ul>
 <li>LE_JSON_OBJECT_MEMBER: <a class="el" href="le__json_8h.html#a6e3870d9dfb1082f92572042508271a6">le_json_GetString()</a> fetches the object member name.</li>
 <li>LE_JSON_STRING: <a class="el" href="le__json_8h.html#a6e3870d9dfb1082f92572042508271a6">le_json_GetString()</a> fetches the string value.</li>
 <li>LE_JSON_NUMBER: <a class="el" href="le__json_8h.html#a583ed4c1e74317dab7bab49cbdbb7bc2">le_json_GetNumber()</a> fetches the number value.</li>
@@ -99,16 +91,18 @@ Context</h1>
 <p>Each JSON object, object member and array in the JSON document is a "context". Each context has an event handler function and an opaque pointer associated with it. The top level context's event handler and opaque pointer are passed into <a class="el" href="le__json_8h.html#a610f180628f8e5be75fe5a08533124df">le_json_Parse()</a>. Sub-contexts (object members or array elements) will inherit their context from their parent.</p>
 <p>The current context's event handler can be changed from within an event handler function by calling <a class="el" href="le__json_8h.html#a8dda714db610cde2d8c342f8fc44988a">le_json_SetEventHandler()</a>. This will remain in effect until the parser finishes parsing that part of the document and returns back to its parent, at which time the current context will be automatically restored to the parent's context.</p>
 <h1><a class="anchor" id="c_json_errors"></a>
-Error Handling</h1>
+Other Functions</h1>
 <p>There is a global error handler that is also set when the parsing is started, and can be changed by calling <a class="el" href="le__json_8h.html#aedf060929ec148f846b3c91a4a5c2324">le_json_SetErrorHandler()</a>. Unlike other event handlers, this is not part of the context, and will therefore not get restored to a previous handler when the parsing of a member finishes. The error handler function is passed parameters that indicate what type of error occurred.</p>
 <h1><a class="anchor" id="c_json_errors"></a>
-Error Handling</h1>
+Other Functions</h1>
 <p>For diagnostic purposes, <a class="el" href="le__json_8h.html#a1c6b4146e44600f62259e1ea72275ca3">le_json_GetEventName()</a> can be called to get a human-readable string containing the name of a given event.</p>
 <p>To get the number of bytes that have been read by the parser since <a class="el" href="le__json_8h.html#a610f180628f8e5be75fe5a08533124df">le_json_Parse()</a> was called, call <a class="el" href="le__json_8h.html#ae78b0bd7d95e3ce100416edd3510fafd">le_json_GetBytesRead()</a>.</p>
 <h1><a class="anchor" id="c_json_example"></a>
 Example</h1>
 <p>If the JSON document is</p>
-<pre class="fragment"><div class="line">{ <span class="stringliteral">"x"</span>:1, <span class="stringliteral">"y"</span>:2, <span class="stringliteral">"name"</span>:<span class="stringliteral">"joe"</span> }</div></pre><!-- fragment --><p>The following sequence of events will be reported by the parser:</p><ol type="1">
+<pre class="fragment"><div class="line">{ <span class="stringliteral">"x"</span>:1, <span class="stringliteral">"y"</span>:2, <span class="stringliteral">"name"</span>:<span class="stringliteral">"joe"</span> }</div>
+</pre><!-- fragment --><p>The following sequence of events will be reported by the parser:</p>
+<ol type="1">
 <li>LE_JSON_OBJECT_START</li>
 <li>LE_JSON_OBJECT_MEMBER - If the event handler calls <a class="el" href="le__json_8h.html#a6e3870d9dfb1082f92572042508271a6">le_json_GetString()</a>, it will return "x".</li>
 <li>LE_JSON_NUMBER - If the event handler calls <a class="el" href="le__json_8h.html#a583ed4c1e74317dab7bab49cbdbb7bc2">le_json_GetNumber()</a>, it will return 1.</li>
@@ -132,5 +126,11 @@ Multi-Threading</h1>
 <br clear="left"/>
 </div>
 </div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 </body>
 </html>

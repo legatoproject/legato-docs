@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" data-toc="tocs/Build Apps API Guides.json" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Temperature monitoring  - Legato Docs</title>
@@ -18,15 +18,6 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
-<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
-<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="resources/js/jquery.cookie.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
-<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
-<script>
-        setupTree("tocs/Build Apps API Guides.json");
-        </script>
 </head>
 <body>
 <noscript>
@@ -55,7 +46,7 @@
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
-<input id="searchbox" placeholder="Search..."/>
+<input id="searchbox" placeholder="Search"/>
 </nav>
 </header>
 </div>
@@ -72,17 +63,20 @@
 <div class="textblock"><p>The AR755x, AR8652, and WP8548 platforms support two main sensors.</p>
 <p>The dedicated string to request a sensor with <a class="el" href="le__temp__interface_8h.html#a4b1869daf56012d886ddd424e6d610ea">le_temp_Request()</a> function are <b>"POWER_CONTROLLER"</b> and <b>"POWER_AMPLIFIER"</b>.</p>
 <p><b>"POWER_AMPLIFIER" sensor</b></p>
-<p>Two Thresholds can be set to notify the "POWER_AMPLIFIER" sensor state:</p><ul>
+<p>Two Thresholds can be set to notify the "POWER_AMPLIFIER" sensor state:</p>
+<ul>
 <li><b>"HI_CRITICAL_THRESHOLD"</b> </li>
 <li><b>"HI_NORMAL_THRESHOLD"</b> </li>
 </ul>
 <p>These are the strings to use with the <a class="el" href="le__temp__interface_8h.html#a1d0863fcca4f002409b4c7cbc371ab0b">le_temp_SetThreshold()</a> and <a class="el" href="le__temp__interface_8h.html#a79a2eec63e991780a772ca261fb6ea9a">le_temp_GetThreshold()</a> functions.</p>
-<p>Then, the "POWER_AMPLIFIER" sensor state will be notified with the following events (always a string format):</p><ul>
+<p>Then, the "POWER_AMPLIFIER" sensor state will be notified with the following events (always a string format):</p>
+<ul>
 <li><b>"HI_CRITICAL_EVENT"</b> </li>
 <li><b>"HI_WARNING_EVENT"</b> </li>
 <li><b>"NORMAL_EVENT"</b> </li>
 </ul>
-<p>if the "POWER_AMPLIFIER" sensor temperature reaches the:</p><ul>
+<p>if the "POWER_AMPLIFIER" sensor temperature reaches the:</p>
+<ul>
 <li>"HI_CRITICAL_THRESHOLD" threshold, a "HI_CRITICAL_EVENT" event occurs.</li>
 <li>"HI_NORMAL_THRESHOLD" threshold but still lower than "HI_CRITICAL_THRESHOLD" threshold, a "HI_WARNING_EVENT" event occurs.</li>
 </ul>
@@ -97,7 +91,8 @@
       |
       ^
       |
-</pre><p>if the "POWER_AMPLIFIER" sensor temperature decreases below the:</p><ul>
+</pre><p>if the "POWER_AMPLIFIER" sensor temperature decreases below the:</p>
+<ul>
 <li>"HI_CRITICAL_THRESHOLD" - 3°C threshold but still higher than "HI_NORMAL_THRESHOLD" threshold, a "HI_WARNING_EVENT" event occurs.</li>
 <li>"HI_NORMAL_THRESHOLD" - 3°C threshold, a "NORMAL_EVENT" event occurs.</li>
 </ul>
@@ -117,21 +112,24 @@
 </ul>
 </dd></dl>
 <p><b>"POWER_CONTROLLER" sensor</b></p>
-<p>Four Thresholds can be set to notify the "POWER_CONTROLLER" sensor state:</p><ul>
+<p>Four Thresholds can be set to notify the "POWER_CONTROLLER" sensor state:</p>
+<ul>
 <li><b>"HI_CRITICAL_THRESHOLD"</b> </li>
 <li><b>"HI_NORMAL_THRESHOLD"</b> </li>
 <li><b>"LO_NORMAL_THRESHOLD"</b> </li>
 <li><b>"LO_CRITICAL_THRESHOLD"</b> </li>
 </ul>
 <p>These are the strings to use with the <a class="el" href="le__temp__interface_8h.html#a1d0863fcca4f002409b4c7cbc371ab0b">le_temp_SetThreshold()</a> and <a class="el" href="le__temp__interface_8h.html#a79a2eec63e991780a772ca261fb6ea9a">le_temp_GetThreshold()</a> functions.</p>
-<p>Then, the "POWER_CONTROLLER" sensor state will be notified with the following events (always a string format):</p><ul>
+<p>Then, the "POWER_CONTROLLER" sensor state will be notified with the following events (always a string format):</p>
+<ul>
 <li><b>"HI_CRITICAL_EVENT"</b> </li>
 <li><b>"HI_WARNING_EVENT"</b> </li>
 <li><b>"NORMAL_EVENT"</b> </li>
 <li><b>"LO_WARNING_EVENT"</b> </li>
 <li><b>"LO_CRITICAL_EVENT"</b> </li>
 </ul>
-<p>if the "POWER_CONTROLLER" sensor temperature reaches the:</p><ul>
+<p>if the "POWER_CONTROLLER" sensor temperature reaches the:</p>
+<ul>
 <li>"LO_CRITICAL_THRESHOLD" threshold, a "LO_WARNING_EVENT" event occurs.</li>
 <li>"LO_NORMAL_THRESHOLD" + 3°C threshold but still lower than "HI_NORMAL_THRESHOLD" threshold, a "NORMAL_EVENT" event occurs.</li>
 <li>"HI_NORMAL_THRESHOLD" threshold but still lower than "HI_CRITICAL_THRESHOLD" threshold, a "HI_WARNING_EVENT" event occurs</li>
@@ -156,7 +154,8 @@
       |
       ^
       |
-</pre><p>if the "POWER_CONTROLLER" sensor temperature decreases below the:</p><ul>
+</pre><p>if the "POWER_CONTROLLER" sensor temperature decreases below the:</p>
+<ul>
 <li>"HI_CRITICAL_THRESHOLD" threshold, a "HI_WARNING_EVENT" event occurs.</li>
 <li>"HI_NORMAL_THRESHOLD" - 3°C threshold but still higher than "LO_NORMAL_THRESHOLD" threshold, a "NORMAL_EVENT" event occurs.</li>
 <li>"LO_NORMAL_THRESHOLD" threshold but still higher than "LO_CRITICAL_THRESHOLD" threshold, a "LO_WARNING_EVENT" event occurs.</li>
@@ -193,5 +192,11 @@
 <br clear="left"/>
 </div>
 </div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 </body>
 </html>

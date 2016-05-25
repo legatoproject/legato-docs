@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" data-toc="tocs/Build Apps API Guides.json" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>SMS Inbox Service  - Legato Docs</title>
@@ -18,15 +18,6 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
-<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
-<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="resources/js/jquery.cookie.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
-<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
-<script>
-        setupTree("tocs/Build Apps API Guides.json");
-        </script>
 </head>
 <body>
 <noscript>
@@ -55,7 +46,7 @@
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
-<input id="searchbox" placeholder="Search..."/>
+<input id="searchbox" placeholder="Search"/>
 </nav>
 </header>
 </div>
@@ -72,7 +63,8 @@
 <div class="textblock"><p><a class="el" href="le__sms_inbox1__interface_8h.html">API Reference</a></p>
 <hr/>
 <p>3rd-party customer applications need to access to SMS messages at anytime without worrying how the resources are managed.</p>
-<p>Legato provides an SMS Inbox service to allow apps to receive SMS messages through their own, private message box, without:</p><ul>
+<p>Legato provides an SMS Inbox service to allow apps to receive SMS messages through their own, private message box, without:</p>
+<ul>
 <li>having to manage SIM or modem memory;</li>
 <li>conflicting with other applications that also receive SMS messages;</li>
 <li>missing messages while being updated or restarted.</li>
@@ -88,7 +80,8 @@ Message Storage" folder and deleted from the SIM. This mechanism keeps the SIM a
 <h1><a class="anchor" id="le_smsInbox_binding"></a>
 IPC interfaces binding</h1>
 <p>All the functions of this API are provided by the <b>smsInboxService</b> application service.</p>
-<p>Here's a code sample binding to SMS Inbox services: </p><pre class="fragment">bindings:
+<p>Here's a code sample binding to SMS Inbox services: </p>
+<pre class="fragment">bindings:
 {
    clientExe.clientComponent.le_smsInbox1 -&gt; smsInboxService.le_smsInbox1
 }
@@ -100,10 +93,17 @@ Initialise a message box</h1>
 <h1><a class="anchor" id="le_smsInbox_receiving"></a>
 Receiving a message</h1>
 <p>To receive messages, register a handler function to obtain incoming messages. Use <a class="el" href="le__sms_inbox1__interface_8h.html#ad1921790ff294865477be5508fc46f87">le_smsInbox1_AddRxMessageHandler()</a> to register that handler.</p>
-<p>The handler must satisfy the following prototype: </p><pre class="fragment"><div class="line"><span class="keyword">typedef</span> void (*<a class="code" href="le__sms_inbox1__interface_8h.html#a19b58278c1549e54f5af6ff2542c3458">le_smsInbox1_RxMessageHandlerFunc_t</a>)</div><div class="line">(</div><div class="line">  uint32_t msgId,</div><div class="line">  <span class="keywordtype">void</span>*    contextPtr</div><div class="line">)</div></pre><!-- fragment --><p>If a succession of messages is received, a new Message reference is created for each, and the handler is called for each new message.</p>
+<p>The handler must satisfy the following prototype: </p>
+<pre class="fragment"><div class="line"><span class="keyword">typedef</span> void (*<a class="code" href="le__sms_inbox1__interface_8h.html#a629c82213a4325a463a5310950e88460">le_smsInbox1_RxMessageHandlerFunc_t</a>)</div>
+<div class="line">(</div>
+<div class="line">  uint32_t msgId,</div>
+<div class="line">  <span class="keywordtype">void</span>*    contextPtr</div>
+<div class="line">)</div>
+</pre><!-- fragment --><p>If a succession of messages is received, a new Message reference is created for each, and the handler is called for each new message.</p>
 <p>Uninstall the handler function by calling <a class="el" href="le__sms_inbox1__interface_8h.html#a58587948e7bf5612bcb38164edfa4fee">le_smsInbox1_RemoveRxMessageHandler()</a>.</p>
 <dl class="section note"><dt>Note</dt><dd><a class="el" href="le__sms_inbox1__interface_8h.html#a58587948e7bf5612bcb38164edfa4fee">le_smsInbox1_RemoveRxMessageHandler()</a> function does not delete the Message Object. The caller has to delete it with <a class="el" href="le__sms_inbox1__interface_8h.html#a2a426505848863678403f5b14c2ce16c">le_smsInbox1_DeleteMsg()</a>.</dd></dl>
-<p>Use the following APIs to retrieve message information and data from the message object:</p><ul>
+<p>Use the following APIs to retrieve message information and data from the message object:</p>
+<ul>
 <li><a class="el" href="le__sms_inbox1__interface_8h.html#a47b7188457df57060544353824a722e5">le_smsInbox1_GetImsi()</a> - get the IMSI of the message receiver SIM if it applies.</li>
 <li><a class="el" href="le__sms_inbox1__interface_8h.html#a7daf191029452574c2f73be31745ddd5">le_smsInbox1_GetFormat()</a> - determine if it is a binary or a text message.</li>
 <li><a class="el" href="le__sms_inbox1__interface_8h.html#a526785c35a6dcaabaff01b3959b25eb4">le_smsInbox1_GetSenderTel()</a> - get the sender's Telephone number.</li>
@@ -128,7 +128,8 @@ Close a message box</h1>
 <p>Use the API <a class="el" href="le__sms_inbox1__interface_8h.html#a2c3b0118016949b77df6bab31c3a986e">le_smsInbox1_Close()</a> to close a message box (the message box is still exist and can be re-opened and retrieve later all the messages).</p>
 <h1><a class="anchor" id="le_smsInbox_configdb"></a>
 Configuration tree</h1>
-<p>The configuration database path for the SMS Inbox Service is: </p><pre class="fragment">/
+<p>The configuration database path for the SMS Inbox Service is: </p>
+<pre class="fragment">/
     smsInbox/
         apps/
             appA&lt;uint&gt; = &lt;# of messages&gt;
@@ -141,5 +142,11 @@ Configuration tree</h1>
 <br clear="left"/>
 </div>
 </div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 </body>
 </html>

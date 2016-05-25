@@ -17,13 +17,20 @@ try {
 }
 
 
- (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+! function(l, e, g, a, t, o) {
+    l.GoogleAnalyticsObject = g;
+    l[g] || (l[g] = function() {
+        (l[g].q = l[g].q || []).push(arguments)
+    });
+    l[g].l = +new Date;
+    t = e.createElement(a);
+    o = e.getElementsByTagName(a)[0];
+    t.src = '//www.google-analytics.com/analytics.js';
+    o.parentNode.insertBefore(t, o)
+}(window, document, 'ga', 'script');
 
-  ga('create', 'UA-78024926-1', 'auto');
-  ga('send', 'pageview');
+ga('create', 'UA-78024926-1', 'auto');
+ga('send', 'pageview');
 
 
 
@@ -68,6 +75,7 @@ function updateSearchHighlight() {
     }
 }
 $(document).ready(function() {
+    setupTree();
     noSH = $.cookie("no-sh");
     $("#searchbox").val(sq);
     // Contains = case insensitive 'contains'
@@ -96,21 +104,22 @@ $(document).ready(function() {
     }
 
     $("#searchbox").keyup(function(e) {
-        if (e.which >= 37 && e.which <= 40) // ignore if it's an arrow key
-            return;
-        getdata();
+        // alphanumeric or enter
+        if (e.keyCode >= 48 && e.keyCode <= 90 || e.keyCode == 13) {
+            performSearch();
+        }
     });
-    $("#searchbox").click(function() {
-        getdata();
+    $("#searchbox").focus(function() {
+        performSearch();
     });
     var $content = $('.content');
     var is_mobile = screen.width <= 719;
 
-    if (!is_mobile) {
-        $("#left").perfectScrollbar();
-    } else {
+    if (is_mobile) {
         $("#left").detach().appendTo('#top');
         $("#resizable").remove();
+    } else {
+        $("#left").perfectScrollbar();
     }
 
     nav_altitude();
@@ -182,10 +191,8 @@ $(document).ready(function() {
 
 /******* SEARCHING *******/
 
-// perform a search.
-// ctx: context of current page, e.g. "Build Apps"
-function getdata() {
-    ctx = $('html').data('context');
+function performSearch() {
+    ctx = $('html').data('context'); // e.g. "Build Apps"
     var domain = "";
     var invoke_url = "https://x6khds7mia.execute-api.us-west-2.amazonaws.com/prod";
     if (ctx == "Legato Documentation")
@@ -198,6 +205,7 @@ function getdata() {
             $.ajax({
                 url: invoke_url,
                 dataType: "json",
+                // the reason that 'data' isn't an object is the conditional inclusion of the 'fq' parameter.
                 data: new function() {
                     this.q = request.term;
                     this.size = 25;
@@ -209,7 +217,6 @@ function getdata() {
                 change: function(e, ui) {
                     console.log(e.target.value);
                 },
-
                 success: function(data) {
                     var hits = data.hits.hit;
                     var results = []
@@ -235,9 +242,8 @@ function getdata() {
                     response(results);
                 }
             });
-
         },
-
+        
         minLength: 1,
         focus: function(event, ui) {
             event.preventDefault(); // so the textbox's value doesn't get replaced.
@@ -250,6 +256,7 @@ function getdata() {
         },
         open: function() {
             $(this).removeClass("ui-corner-all").addClass("ui-corner-top");
+            $("#search_result").css({top:"+=1"});
 
         },
         close: function() {
@@ -274,92 +281,88 @@ function getdata() {
         });
     };
     $("#searchbox").autocomplete("search", keyword);
-
 }
+
 /***** NAVIGATION TREE ******/
 
-function setupTree(treeURL) {
+function setupTree() {
+    var treeURL = $('html').data('toc');
     if (treeURL != "") {
+        String.prototype.endsWith = function(suffix) {
+            return this.indexOf(suffix, this.length - suffix.length) !== -1;
+        };
+        $.getJSON(
+            treeURL,
+            function(data) {
+                $tree = $('#tree1');
+                $tree.tree({
+                    data: data.children ? data.children : data,
+                    saveState: false,
+                    useContextMenu: false,
+                    slide: false,
+                    closedIcon: "+",
+                    openedIcon: "-",
+                    keyboardSupport: false,
+
+                    onCreateLi: function(node, $li) {
+                        var a = $li.find('span')[0];
+                        a.outerHTML = '<a href="' + node.href + '">' + a.outerHTML + '</a>';
+                    },
 
 
-        $(document).ready(function() {
-            String.prototype.endsWith = function(suffix) {
-                return this.indexOf(suffix, this.length - suffix.length) !== -1;
-            };
-            $.getJSON(
-                treeURL,
-                function(data) {
-                    $tree = $('#tree1');
-                    $tree.tree({
-                        data: data.children ? data.children : data,
-                        saveState: false,
-                        useContextMenu: false,
-                        slide: false,
-                        closedIcon: "+",
-                        openedIcon: "-",
-                        keyboardSupport: false,
+                });
 
-                        onCreateLi: function(node, $li) {
-                            var a = $li.find('span')[0];
-                            a.outerHTML = '<a href="' + node.href + '">' + a.outerHTML + '</a>';
-                        },
+                $tree.tree('selectNode', null); //unselect nodes
 
+                $("#left").perfectScrollbar('update');
 
-                    });
+                $tree.bind(
+                    'tree.close',
+                    function(e) {
+                        $("#left").perfectScrollbar('update');
+                    }
+                );
+                $tree.bind(
+                    'tree.open',
+                    function(e) {
+                        $("#left").perfectScrollbar('update');
+                    }
+                );
 
-                    $tree.tree('selectNode', null); //unselect nodes
+                // we want to get 
+                var path = window.location.pathname; // path = /docs/filename.html
+                var page = path.split("/").pop(); // page = filename.html
+                var anchor = window.location.hash.substr(1); // anchor = section
+                if (anchor)
+                    page += "#" + anchor; // page = filename.html#section
 
-                    $("#left").perfectScrollbar('update');
-
-                    $tree.bind(
-                        'tree.close',
-                        function(e) {
-                            $("#left").perfectScrollbar('update');
+                // find node of current page and select it
+                $tree.tree('getTree').iterate(
+                    function(node, level) {
+                        if (node.href === page) {
+                            $tree.tree('openNode', node);
+                            $tree.tree('selectNode', node);
+                            return false;
                         }
-                    );
-                    $tree.bind(
-                        'tree.open',
-                        function(e) {
-                            $("#left").perfectScrollbar('update');
-                        }
-                    );
+                        return true;
+                    }
+                );
+                $('#tree1').tree('setOption', 'slide', true); // now that only the user will be opening nodes, we can turn the animation back on.
+                // needed when clicking an anchor, and thus staying on the same page
+                $tree.bind(
+                    'tree.click',
+                    function(event) {
+                        $tree.tree('setOption', 'selectable', true);
+                        $tree.tree('selectNode', event.node);
+                        $tree.tree('setOption', 'selectable', false);
+                    }
+                );
 
-                    // we want to get 
-                    var path = window.location.pathname; // path = /docs/filename.html
-                    var page = path.split("/").pop(); // page = filename.html
-                    var anchor = window.location.hash.substr(1); // anchor = section
-                    if (anchor)
-                        page += "#" + anchor; // page = filename.html#section
-
-                    // find node of current page and select it
-                    $tree.tree('getTree').iterate(
-                        function(node, level) {
-                            if (node.href === page) {
-                                $tree.tree('openNode', node);
-                                $tree.tree('selectNode', node);
-                                return false;
-                            }
-                            return true;
-                        }
-                    );
-                    $('#tree1').tree('setOption', 'slide', true); // now that only the user will be opening nodes, we can turn the animation back on. 
-                    // needed when clicking an anchor, and thus staying on the same page
-                    $tree.bind(
-                        'tree.click',
-                        function(event) {
-                            $tree.tree('setOption', 'selectable', true);
-                            $tree.tree('selectNode', event.node);
-                            $tree.tree('setOption', 'selectable', false);
-                        }
-                    );
-
-                    $('#tree1').tree('setOption', 'selectable', false);
+                $('#tree1').tree('setOption', 'selectable', false);
 
 
-                }
-            );
-
-        });
+            }
+        );
     }
 }
 
@@ -441,13 +444,15 @@ Johann Burkard
 <http://johannburkard.de>
 <mailto:jb@eaio.com>
 
+(modified to use word boundaries)
+
 */
 
 jQuery.fn.highlight = function(pat) {
     function innerHighlight(node, pat) {
         var skip = 0;
         if (node.nodeType == 3) {
-            var pos = node.data.toUpperCase().indexOf(pat);
+            var pos = node.data.toUpperCase().search(new RegExp('\\b' + pat + '\\b'));
             pos -= (node.data.substr(0, pos).toUpperCase().length - node.data.substr(0, pos).length);
             if (pos >= 0) {
                 var spannode = document.createElement('span');

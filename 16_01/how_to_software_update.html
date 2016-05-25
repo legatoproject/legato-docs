@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" data-toc="tocs/Build Apps Concepts.json" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Use Software Update  - Legato Docs</title>
@@ -18,15 +18,6 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
-<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
-<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="resources/js/jquery.cookie.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
-<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
-<script>
-        setupTree("tocs/Build Apps Concepts.json");
-        </script>
 </head>
 <body>
 <noscript>
@@ -55,7 +46,7 @@
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
-<input id="searchbox" placeholder="Search..."/>
+<input id="searchbox" placeholder="Search"/>
 </nav>
 </header>
 </div>
@@ -71,7 +62,8 @@
 </div><div class="contents">
 <div class="textblock"><p>This topic describes how to use Legato's software update feature and provides some backgaround info.</p>
 <hr/>
-<p>The Legato application framework is designed to solve difficult problems surrounding updating software on devices operating in the field:</p><ul>
+<p>The Legato application framework is designed to solve difficult problems surrounding updating software on devices operating in the field:</p>
+<ul>
 <li>Atomic update of libraries, executables, resource files, and configuration settings.</li>
 <li>Autonomous recovery from failed update attempts (e.g., due to power loss or connection loss).</li>
 <li>Autonomous roll-back when newly updated software fails.</li>
@@ -91,7 +83,33 @@ Build Your System</h1>
 <p>You need to copy <code>system.sdef</code> to your own directory. You can rename it, but keep the <code></code>.sdef extension (e.g., pumpMonitor.sdef).</p>
 <p>Then customize the .sdef to your needs (see <a class="el" href="def_files_sdef.html">System Definition .sdef</a>).</p>
 <p>Here's a sample .sdef file using numerous platform services:</p>
-<pre class="fragment"><div class="line">apps:</div><div class="line">{</div><div class="line">    <span class="comment">// Platform services.</span></div><div class="line">    $LEGATO_ROOT/apps/platformServices/airVantage/avcService</div><div class="line">    $LEGATO_ROOT/apps/platformServices/audioService</div><div class="line">    $LEGATO_ROOT/apps/platformServices/cellNetService</div><div class="line">    $LEGATO_ROOT/apps/platformServices/dataConnectionService</div><div class="line">    $LEGATO_ROOT/apps/platformServices/fwupdateService</div><div class="line">    $LEGATO_ROOT/apps/platformServices/modemService</div><div class="line">    $LEGATO_ROOT/apps/platformServices/positioningService</div><div class="line">    $LEGATO_ROOT/apps/platformServices/powerMgr</div><div class="line">    $LEGATO_ROOT/apps/platformServices/secStore</div><div class="line">    $LEGATO_ROOT/apps/platformServices/smsInboxService</div><div class="line">    $LEGATO_ROOT/apps/platformServices/voiceCallService</div><div class="line">    $LEGATO_ROOT/apps/platformServices/gpioService</div><div class="line"></div><div class="line">    <span class="comment">// Command-line tools.</span></div><div class="line">    $LEGATO_ROOT/apps/tools/tools</div><div class="line">}</div><div class="line"></div><div class="line">commands:</div><div class="line">{</div><div class="line">    cm = tools:/bin/cm</div><div class="line">    fwupdate = tools:/bin/fwupdate</div><div class="line">    secstore = tools:/bin/secstore</div><div class="line">}</div></pre><!-- fragment --><h2><a class="anchor" id="howToSoftwareUpdate_buildSystem_preserve"></a>
+<pre class="fragment"><div class="line">apps:</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Platform services.</span></div>
+<div class="line">    $LEGATO_ROOT/apps/platformServices/airVantage/avcService</div>
+<div class="line">    $LEGATO_ROOT/apps/platformServices/audioService</div>
+<div class="line">    $LEGATO_ROOT/apps/platformServices/cellNetService</div>
+<div class="line">    $LEGATO_ROOT/apps/platformServices/dataConnectionService</div>
+<div class="line">    $LEGATO_ROOT/apps/platformServices/fwupdateService</div>
+<div class="line">    $LEGATO_ROOT/apps/platformServices/modemService</div>
+<div class="line">    $LEGATO_ROOT/apps/platformServices/positioningService</div>
+<div class="line">    $LEGATO_ROOT/apps/platformServices/powerMgr</div>
+<div class="line">    $LEGATO_ROOT/apps/platformServices/secStore</div>
+<div class="line">    $LEGATO_ROOT/apps/platformServices/smsInboxService</div>
+<div class="line">    $LEGATO_ROOT/apps/platformServices/voiceCallService</div>
+<div class="line">    $LEGATO_ROOT/apps/platformServices/gpioService</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Command-line tools.</span></div>
+<div class="line">    $LEGATO_ROOT/apps/tools/tools</div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line">commands:</div>
+<div class="line">{</div>
+<div class="line">    cm = tools:/bin/cm</div>
+<div class="line">    fwupdate = tools:/bin/fwupdate</div>
+<div class="line">    secstore = tools:/bin/secstore</div>
+<div class="line">}</div>
+</pre><!-- fragment --><h2><a class="anchor" id="howToSoftwareUpdate_buildSystem_preserve"></a>
 Preserve App Between Systems</h2>
 <p>To preserve an app between systems, ensure the app is included in the <a class="el" href="def_files_sdef.html#defFilesSdef_apps">apps</a> section of the <code></code>.sdef file.</p>
 <h1><a class="anchor" id="howToSystemUpdate_maintainConfig"></a>
@@ -146,5 +164,11 @@ Change Apps Process</h1>
 <br clear="left"/>
 </div>
 </div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 </body>
 </html>

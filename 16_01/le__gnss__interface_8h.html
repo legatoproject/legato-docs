@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" data-toc="tocs/Build Apps API Guides.json" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>le_gnss_interface.h File Reference - Legato Docs</title>
@@ -18,15 +18,6 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
-<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
-<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="resources/js/jquery.cookie.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
-<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
-<script>
-        setupTree("tocs/Build Apps API Guides.json");
-        </script>
 </head>
 <body>
 <noscript>
@@ -55,7 +46,7 @@
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
-<input id="searchbox" placeholder="Search..."/>
+<input id="searchbox" placeholder="Search"/>
 </nav>
 </header>
 </div>
@@ -95,10 +86,11 @@ Macros</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:ac9577035f26d6b7f48615670eb72102a"><td align="right" class="memItemLeft" valign="top">typedef struct le_gnss_Sample * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gnss__interface_8h.html#ac9577035f26d6b7f48615670eb72102a">le_gnss_SampleRef_t</a></td></tr>
 <tr class="separator:ac9577035f26d6b7f48615670eb72102a"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a55a27b330b348c8d78073fe0e3e784eb"><td align="right" class="memItemLeft" valign="top">typedef struct le_gnss_PositionHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gnss__interface_8h.html#a55a27b330b348c8d78073fe0e3e784eb">le_gnss_PositionHandlerRef_t</a></td></tr>
+<tr class="memitem:a55a27b330b348c8d78073fe0e3e784eb"><td align="right" class="memItemLeft" valign="top">typedef struct <br class="typebreak"/>
+le_gnss_PositionHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gnss__interface_8h.html#a55a27b330b348c8d78073fe0e3e784eb">le_gnss_PositionHandlerRef_t</a></td></tr>
 <tr class="separator:a55a27b330b348c8d78073fe0e3e784eb"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:abc0f34de9b91ed31cb10ccd5d432def8"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gnss__interface_8h.html#abc0f34de9b91ed31cb10ccd5d432def8">le_gnss_PositionHandlerFunc_t</a>) (<a class="el" href="le__gnss__interface_8h.html#ac9577035f26d6b7f48615670eb72102a">le_gnss_SampleRef_t</a> positionSampleRef, void *contextPtr)</td></tr>
-<tr class="separator:abc0f34de9b91ed31cb10ccd5d432def8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a95017728d84239e7b5640459bacec92d"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gnss__interface_8h.html#a95017728d84239e7b5640459bacec92d">le_gnss_PositionHandlerFunc_t</a> )(<a class="el" href="le__gnss__interface_8h.html#ac9577035f26d6b7f48615670eb72102a">le_gnss_SampleRef_t</a> positionSampleRef, void *contextPtr)</td></tr>
+<tr class="separator:a95017728d84239e7b5640459bacec92d"><td class="memSeparator" colspan="2"> </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -169,7 +161,7 @@ Functions</h2></td></tr>
 <tr class="separator:a75d96ec7ac6e0d6b58525e4c523d3b2c"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:acfa9b25ac13f601921bd9123a1d0daba"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gnss__interface_8h.html#acfa9b25ac13f601921bd9123a1d0daba">le_gnss_GetAcquisitionRate</a> (uint32_t *ratePtr)</td></tr>
 <tr class="separator:acfa9b25ac13f601921bd9123a1d0daba"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:ac300457f532757caf79d60b6dba60d67"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__gnss__interface_8h.html#a55a27b330b348c8d78073fe0e3e784eb">le_gnss_PositionHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gnss__interface_8h.html#ac300457f532757caf79d60b6dba60d67">le_gnss_AddPositionHandler</a> (<a class="el" href="le__gnss__interface_8h.html#abc0f34de9b91ed31cb10ccd5d432def8">le_gnss_PositionHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="memitem:ac300457f532757caf79d60b6dba60d67"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__gnss__interface_8h.html#a55a27b330b348c8d78073fe0e3e784eb">le_gnss_PositionHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gnss__interface_8h.html#ac300457f532757caf79d60b6dba60d67">le_gnss_AddPositionHandler</a> (<a class="el" href="le__gnss__interface_8h.html#a95017728d84239e7b5640459bacec92d">le_gnss_PositionHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
 <tr class="separator:ac300457f532757caf79d60b6dba60d67"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a3fc94954cc139340f447ae0ae87e8c2d"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gnss__interface_8h.html#a3fc94954cc139340f447ae0ae87e8c2d">le_gnss_RemovePositionHandler</a> (<a class="el" href="le__gnss__interface_8h.html#a55a27b330b348c8d78073fe0e3e784eb">le_gnss_PositionHandlerRef_t</a> addHandlerRef)</td></tr>
 <tr class="separator:a3fc94954cc139340f447ae0ae87e8c2d"><td class="memSeparator" colspan="2"> </td></tr>
@@ -277,12 +269,12 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="abc0f34de9b91ed31cb10ccd5d432def8"></a>
+<a class="anchor" id="a95017728d84239e7b5640459bacec92d"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
 <tr>
-<td class="memname">typedef void(* le_gnss_PositionHandlerFunc_t) (<a class="el" href="le__gnss__interface_8h.html#ac9577035f26d6b7f48615670eb72102a">le_gnss_SampleRef_t</a> positionSampleRef, void *contextPtr)</td>
+<td class="memname">typedef void(* le_gnss_PositionHandlerFunc_t)(<a class="el" href="le__gnss__interface_8h.html#ac9577035f26d6b7f48615670eb72102a">le_gnss_SampleRef_t</a> positionSampleRef, void *contextPtr)</td>
 </tr>
 </table>
 </div><div class="memdoc">
@@ -332,13 +324,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Assisted-GNSS mode </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a70085fe9ff78ec5c7426fd4c9dc2f9dca32336a5d9f3cf42251c081fbc0ae7b36"></a>LE_GNSS_STANDALONE_MODE </td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a70085fe9ff78ec5c7426fd4c9dc2f9dca32336a5d9f3cf42251c081fbc0ae7b36"></a>LE_GNSS_STANDALONE_MODE</em> </td><td class="fielddoc">
 <p>Standalone mode. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a70085fe9ff78ec5c7426fd4c9dc2f9dca4d21852db64fad5ca5c90b35efaaefff"></a>LE_GNSS_MS_BASED_MODE </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a70085fe9ff78ec5c7426fd4c9dc2f9dca4d21852db64fad5ca5c90b35efaaefff"></a>LE_GNSS_MS_BASED_MODE</em> </td><td class="fielddoc">
 <p>MS-Based mode. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a70085fe9ff78ec5c7426fd4c9dc2f9dca185c89cade65e4e40dc69c55327c726a"></a>LE_GNSS_MS_ASSISTED_MODE </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a70085fe9ff78ec5c7426fd4c9dc2f9dca185c89cade65e4e40dc69c55327c726a"></a>LE_GNSS_MS_ASSISTED_MODE</em> </td><td class="fielddoc">
 <p>MS-Assisted mode. </p>
 </td></tr>
 </table>
@@ -355,22 +347,22 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>GNSS constellation type. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a30697e968cedd1935e7ca5f3ebe2fea9a77c8502d2ea17362dcafd44aa81ddadc"></a>LE_GNSS_SV_CONSTELLATION_UNDEFINED </td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a30697e968cedd1935e7ca5f3ebe2fea9a77c8502d2ea17362dcafd44aa81ddadc"></a>LE_GNSS_SV_CONSTELLATION_UNDEFINED</em> </td><td class="fielddoc">
 <p>GNSS constellation field not defined. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a30697e968cedd1935e7ca5f3ebe2fea9ac6f47b9be468f8cda7beda6afe0e1324"></a>LE_GNSS_SV_CONSTELLATION_GPS </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a30697e968cedd1935e7ca5f3ebe2fea9ac6f47b9be468f8cda7beda6afe0e1324"></a>LE_GNSS_SV_CONSTELLATION_GPS</em> </td><td class="fielddoc">
 <p>Satellite Vehicle of GPS constellation. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a30697e968cedd1935e7ca5f3ebe2fea9a0f5d345dd7b9260cd219a4836572d419"></a>LE_GNSS_SV_CONSTELLATION_SBAS </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a30697e968cedd1935e7ca5f3ebe2fea9a0f5d345dd7b9260cd219a4836572d419"></a>LE_GNSS_SV_CONSTELLATION_SBAS</em> </td><td class="fielddoc">
 <p>Satellite Vehicle of SBAS constellation. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a30697e968cedd1935e7ca5f3ebe2fea9ab349eed6d7964f39ae97645bd84c219c"></a>LE_GNSS_SV_CONSTELLATION_GLONASS </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a30697e968cedd1935e7ca5f3ebe2fea9ab349eed6d7964f39ae97645bd84c219c"></a>LE_GNSS_SV_CONSTELLATION_GLONASS</em> </td><td class="fielddoc">
 <p>Satellite Vehicle of Glonass constellation. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a30697e968cedd1935e7ca5f3ebe2fea9af8c46789e88c3fa8a3c6d8e2661e7844"></a>LE_GNSS_SV_CONSTELLATION_GALILEO </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a30697e968cedd1935e7ca5f3ebe2fea9af8c46789e88c3fa8a3c6d8e2661e7844"></a>LE_GNSS_SV_CONSTELLATION_GALILEO</em> </td><td class="fielddoc">
 <p>Satellite Vehicle of Galileo constellation. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a30697e968cedd1935e7ca5f3ebe2fea9a63adb37a1800f8a8d2c8419170c72ed4"></a>LE_GNSS_SV_CONSTELLATION_MAX </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a30697e968cedd1935e7ca5f3ebe2fea9a63adb37a1800f8a8d2c8419170c72ed4"></a>LE_GNSS_SV_CONSTELLATION_MAX</em> </td><td class="fielddoc">
 <p>Maximum value. </p>
 </td></tr>
 </table>
@@ -387,10 +379,10 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>GNSS constellation Bit Mask (8 bits) indicating the GNSS constellation(s) used in solution. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="adac6fdd4f73229bc9af14e0a11335efcad8f92688bcc53bb744cb1466609d49a7"></a>LE_GNSS_CONSTELLATION_GPS </td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="adac6fdd4f73229bc9af14e0a11335efcad8f92688bcc53bb744cb1466609d49a7"></a>LE_GNSS_CONSTELLATION_GPS</em> </td><td class="fielddoc">
 <p>GPS constellation used in solution. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="adac6fdd4f73229bc9af14e0a11335efca8031dcacac5aac40d2b2e1b574c5b878"></a>LE_GNSS_CONSTELLATION_GLONASS </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="adac6fdd4f73229bc9af14e0a11335efca8031dcacac5aac40d2b2e1b574c5b878"></a>LE_GNSS_CONSTELLATION_GLONASS</em> </td><td class="fielddoc">
 <p>GLONASS constellation used in solution. </p>
 </td></tr>
 </table>
@@ -407,16 +399,16 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>GNSS fix position states. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="abcb86aa054abc7a32d2f5a7363387ef1a8d85fe09a65c69af21102b4bacc64055"></a>LE_GNSS_STATE_FIX_NO_POS </td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="abcb86aa054abc7a32d2f5a7363387ef1a8d85fe09a65c69af21102b4bacc64055"></a>LE_GNSS_STATE_FIX_NO_POS</em> </td><td class="fielddoc">
 <p>The GNSS fix position is not fixed. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="abcb86aa054abc7a32d2f5a7363387ef1a1325f1c092b36936bb75b5087499b82b"></a>LE_GNSS_STATE_FIX_2D </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="abcb86aa054abc7a32d2f5a7363387ef1a1325f1c092b36936bb75b5087499b82b"></a>LE_GNSS_STATE_FIX_2D</em> </td><td class="fielddoc">
 <p>2-Dimensional position fix. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="abcb86aa054abc7a32d2f5a7363387ef1a6eef37535d6eb582771825a1e0ccbb90"></a>LE_GNSS_STATE_FIX_3D </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="abcb86aa054abc7a32d2f5a7363387ef1a6eef37535d6eb582771825a1e0ccbb90"></a>LE_GNSS_STATE_FIX_3D</em> </td><td class="fielddoc">
 <p>3-Dimensional position fix. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="abcb86aa054abc7a32d2f5a7363387ef1a14dc297db5983ab7d1b838b7bf50499e"></a>LE_GNSS_STATE_FIX_ESTIMATED </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="abcb86aa054abc7a32d2f5a7363387ef1a14dc297db5983ab7d1b838b7bf50499e"></a>LE_GNSS_STATE_FIX_ESTIMATED</em> </td><td class="fielddoc">
 <p>Estimated (i.e. forward predicted) position fix. </p>
 </td></tr>
 </table>
@@ -430,7 +422,7 @@ Functions</h2></td></tr>
 <tr>
 <td class="memname"><a class="el" href="le__gnss__interface_8h.html#a55a27b330b348c8d78073fe0e3e784eb">le_gnss_PositionHandlerRef_t</a> le_gnss_AddPositionHandler </td>
 <td>(</td>
-<td class="paramtype"><a class="el" href="le__gnss__interface_8h.html#abc0f34de9b91ed31cb10ccd5d432def8">le_gnss_PositionHandlerFunc_t</a> </td>
+<td class="paramtype"><a class="el" href="le__gnss__interface_8h.html#a95017728d84239e7b5640459bacec92d">le_gnss_PositionHandlerFunc_t</a> </td>
 <td class="paramname"><em>handlerPtr</em>, </td>
 </tr>
 <tr>
@@ -1871,5 +1863,11 @@ If the caller is passing an invalid Position sample reference into this function
 <br clear="left"/>
 </div>
 </div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 </body>
 </html>

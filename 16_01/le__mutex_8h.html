@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" data-toc="tocs/Build Apps API Guides.json" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>le_mutex.h File Reference - Legato Docs</title>
@@ -18,15 +18,6 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
-<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
-<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="resources/js/jquery.cookie.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
-<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
-<script>
-        setupTree("tocs/Build Apps API Guides.json");
-        </script>
 </head>
 <body>
 <noscript>
@@ -55,7 +46,7 @@
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
-<input id="searchbox" placeholder="Search..."/>
+<input id="searchbox" placeholder="Search"/>
 </nav>
 </header>
 </div>
@@ -117,12 +108,17 @@ Functions</h2></td></tr>
 </tr>
 </table>
 </div><div class="memdoc">
-<b>Value:</b><pre class="fragment"><div class="line"><span class="keyword">static</span> <a class="code" href="le__mutex_8h.html#ab2af11e2077e6bed9962eb7dfd54eb03">le_mutex_Ref_t</a> refName; \</div><div class="line">    static <span class="keyword">inline</span> <span class="keywordtype">void</span> Lock(<span class="keywordtype">void</span>) { <a class="code" href="le__mutex_8h.html#ad5b7d94710f420cd945229648e7a80e7">le_mutex_Lock</a>(refName); } \</div><div class="line">    static <span class="keyword">inline</span> <span class="keywordtype">void</span> Unlock(<span class="keywordtype">void</span>) { <a class="code" href="le__mutex_8h.html#aae68b71222e20c55ff3bf2d7b52e3009">le_mutex_Unlock</a>(refName); }</div><div class="ttc" id="le__mutex_8h_html_ab2af11e2077e6bed9962eb7dfd54eb03"><div class="ttname"><a href="le__mutex_8h.html#ab2af11e2077e6bed9962eb7dfd54eb03">le_mutex_Ref_t</a></div><div class="ttdeci">struct le_mutex * le_mutex_Ref_t</div><div class="ttdef"><b>Definition:</b> le_mutex.h:96</div></div>
+<b>Value:</b><pre class="fragment"><div class="line"><span class="keyword">static</span> <a class="code" href="le__mutex_8h.html#ab2af11e2077e6bed9962eb7dfd54eb03">le_mutex_Ref_t</a> refName; \</div>
+<div class="line">    static <span class="keyword">inline</span> <span class="keywordtype">void</span> Lock(<span class="keywordtype">void</span>) { <a class="code" href="le__mutex_8h.html#ad5b7d94710f420cd945229648e7a80e7">le_mutex_Lock</a>(refName); } \</div>
+<div class="line">    static <span class="keyword">inline</span> <span class="keywordtype">void</span> Unlock(<span class="keywordtype">void</span>) { <a class="code" href="le__mutex_8h.html#aae68b71222e20c55ff3bf2d7b52e3009">le_mutex_Unlock</a>(refName); }</div>
+<div class="ttc" id="le__mutex_8h_html_ab2af11e2077e6bed9962eb7dfd54eb03"><div class="ttname"><a href="le__mutex_8h.html#ab2af11e2077e6bed9962eb7dfd54eb03">le_mutex_Ref_t</a></div><div class="ttdeci">struct le_mutex * le_mutex_Ref_t</div><div class="ttdef"><b>Definition:</b> le_mutex.h:96</div></div>
 <div class="ttc" id="le__mutex_8h_html_ad5b7d94710f420cd945229648e7a80e7"><div class="ttname"><a href="le__mutex_8h.html#ad5b7d94710f420cd945229648e7a80e7">le_mutex_Lock</a></div><div class="ttdeci">void le_mutex_Lock(le_mutex_Ref_t mutexRef)</div></div>
 <div class="ttc" id="le__mutex_8h_html_aae68b71222e20c55ff3bf2d7b52e3009"><div class="ttname"><a href="le__mutex_8h.html#aae68b71222e20c55ff3bf2d7b52e3009">le_mutex_Unlock</a></div><div class="ttdeci">void le_mutex_Unlock(le_mutex_Ref_t mutexRef)</div></div>
 </pre><!-- fragment --><p>Declare a static mutex reference variable and accessor functions.</p>
 <p>This is handy when you need a single, file-scope mutex for use inside your module to protect other file-scope data structures from multi-threaded race conditions.</p>
-<p>Adding the line </p><pre class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> LE_MUTEX_DECLARE_REF(MyMutexRef);</div></pre><!-- fragment --><p> near the top of your file will create a file-scope variable called "MyMutexRef" of type le_mutex_Ref_t and functions called "Lock" and "Unlock" that access that variable.</p>
+<p>Adding the line </p>
+<pre class="fragment"><div class="line"><a class="code" href="le__mutex_8h.html#a7bada3ca8908be93ba5b393e460f6e80">LE_MUTEX_DECLARE_REF</a>(MyMutexRef);</div>
+</pre><!-- fragment --><p> near the top of your file will create a file-scope variable called "MyMutexRef" of type le_mutex_Ref_t and functions called "Lock" and "Unlock" that access that variable.</p>
 <p>See c_mutex_locking_tips for more information.</p>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
@@ -296,5 +292,11 @@ Functions</h2></td></tr>
 <br clear="left"/>
 </div>
 </div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 </body>
 </html>

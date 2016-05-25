@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" data-toc="tocs/Build Apps API Guides.json" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Sample code for SIM access  - Legato Docs</title>
@@ -18,15 +18,6 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
-<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
-<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="resources/js/jquery.cookie.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
-<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
-<script>
-        setupTree("tocs/Build Apps API Guides.json");
-        </script>
 </head>
 <body>
 <noscript>
@@ -55,7 +46,7 @@
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
-<input id="searchbox" placeholder="Search..."/>
+<input id="searchbox" placeholder="Search"/>
 </nav>
 </header>
 </div>
@@ -69,9 +60,285 @@
 <div class="headertitle">
 <h1 class="title">Sample code for SIM access </h1> </div>
 </div><div class="contents">
-<div class="textblock"><pre class="fragment"><div class="line"><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><span class="comment"></span><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><span class="keywordtype">void</span> simTest_SimAccess</div><div class="line">(</div><div class="line">    <a class="code" href="le__sim__interface_8h.html#aace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId</div><div class="line">)</div><div class="line">{</div><div class="line">    <span class="comment">//========================================</span></div><div class="line">    <span class="comment">// 1. Read IMSI using le_sim_SendApdu API</span></div><div class="line">    <span class="comment">//========================================</span></div><div class="line"></div><div class="line">    <span class="comment">// Select IMSI file (6F07) (USIM commands)</span></div><div class="line">    uint8_t selectApdu[]={   0x00, 0xA4, 0x00, 0x0C, 0x02, 0x6F, 0x07 };</div><div class="line"></div><div class="line">    <span class="keywordtype">size_t</span> rspImsiLen = SIM_RSP_LEN;</div><div class="line">    uint8_t rspImsi[rspImsiLen];</div><div class="line"></div><div class="line">    <span class="comment">// Select the EF(IMSI)</span></div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>( <a class="code" href="le__sim__interface_8h.html#ad72df795270776e68e473f34c0264ecb">le_sim_SendApdu</a>(simId,</div><div class="line">                               selectApdu,</div><div class="line">                               <span class="keyword">sizeof</span>(selectApdu),</div><div class="line">                               rspImsi,</div><div class="line">                               &amp;rspImsiLen) == LE_OK );</div><div class="line"></div><div class="line">    PrintApdu(rspImsi, rspImsiLen);</div><div class="line"></div><div class="line">    rspImsiLen = SIM_RSP_LEN;</div><div class="line"></div><div class="line">    <span class="comment">// Read the EF(IMSI)</span></div><div class="line">    <span class="comment">// Read file</span></div><div class="line">    uint8_t readApdu[]={ 0x00, 0xB0, 0x00, 0x00, 0x09};</div><div class="line"></div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>( <a class="code" href="le__sim__interface_8h.html#ad72df795270776e68e473f34c0264ecb">le_sim_SendApdu</a>(simId,</div><div class="line">                               readApdu,</div><div class="line">                               <span class="keyword">sizeof</span>(readApdu),</div><div class="line">                               rspImsi,</div><div class="line">                               &amp;rspImsiLen) == LE_OK );</div><div class="line"></div><div class="line">    PrintApdu(rspImsi, rspImsiLen);</div><div class="line"></div><div class="line">    <span class="comment">//=====================================================================================</span></div><div class="line">    <span class="comment">// 2. Read IMSI using le_sim_SendSimCommand API, and check value get by le_sim_SendApdu</span></div><div class="line">    <span class="comment">//======================================================================================</span></div><div class="line"></div><div class="line">    <span class="keywordtype">size_t</span> rspImsiLen2 = SIM_RSP_LEN;</div><div class="line">    uint8_t rspImsi2[rspImsiLen2];</div><div class="line">    uint8_t swi1, swi2;</div><div class="line">    <span class="keywordtype">char</span> dfGsmPath[]=<span class="stringliteral">"3F007FFF"</span>;</div><div class="line"></div><div class="line">    <span class="comment">// Read EF(IMSI) using the le_sim_SendSimCommand API.</span></div><div class="line">    <a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> res = <a class="code" href="le__sim__interface_8h.html#acc0760cfa301adeb917b171b32973de3">le_sim_SendCommand</a>(simId,</div><div class="line">                                         <a class="code" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331ae4a619ba58f2cd503103b397b717b16f">LE_SIM_READ_BINARY</a>,</div><div class="line">                                         <span class="stringliteral">"6F07"</span>,</div><div class="line">                                         0,</div><div class="line">                                         0,</div><div class="line">                                         0,</div><div class="line">                                         NULL,</div><div class="line">                                         0,</div><div class="line">                                         dfGsmPath,</div><div class="line">                                         &amp;swi1,</div><div class="line">                                         &amp;swi2,</div><div class="line">                                         rspImsi2,</div><div class="line">                                         &amp;rspImsiLen2);</div><div class="line"></div><div class="line">    <span class="keywordflow">if</span> (res != LE_OK)</div><div class="line">    {</div><div class="line">        strcpy(dfGsmPath, <span class="stringliteral">"3F007F20"</span>);</div><div class="line"></div><div class="line">        <span class="comment">// Check backward compatibilty</span></div><div class="line">        res = <a class="code" href="le__sim__interface_8h.html#acc0760cfa301adeb917b171b32973de3">le_sim_SendCommand</a>(simId,</div><div class="line">                                 <a class="code" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331ae4a619ba58f2cd503103b397b717b16f">LE_SIM_READ_BINARY</a>,</div><div class="line">                                 <span class="stringliteral">"6F07"</span>,</div><div class="line">                                 0,</div><div class="line">                                 0,</div><div class="line">                                 0,</div><div class="line">                                 NULL,</div><div class="line">                                 0,</div><div class="line">                                 dfGsmPath,</div><div class="line">                                 &amp;swi1,</div><div class="line">                                 &amp;swi2,</div><div class="line">                                 rspImsi2,</div><div class="line">                                 &amp;rspImsiLen2);</div><div class="line">    }</div><div class="line"></div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(res == LE_OK);</div><div class="line"></div><div class="line">    <a class="code" href="le__log_8h.html#a4ebab29f40ee8eaaa87205fe3f9aaa13">LE_INFO</a>(<span class="stringliteral">"swi1=%d, swi2=%d"</span>, swi1, swi2);</div><div class="line">    PrintApdu(rspImsi2, rspImsiLen2);</div><div class="line"></div><div class="line">    <span class="comment">// Check both IMSI results</span></div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>( memcmp(rspImsi, rspImsi2, rspImsiLen2) == 0 );</div><div class="line"></div><div class="line">    <span class="keywordtype">size_t</span> rspLen = SIM_RSP_LEN;</div><div class="line">    uint8_t rsp[rspLen];</div><div class="line">    rspLen = 0;</div><div class="line"></div><div class="line">    <span class="comment">//==================================================================================</span></div><div class="line">    <span class="comment">// 3. Check read and write record elementary file</span></div><div class="line">    <span class="comment">// Write the 5th entry in EF(ADN): equivalent to AT+CPBW=5,"01290917",129,"Jacky"</span></div><div class="line">    <span class="comment">// Then, read the written data and check</span></div><div class="line">    <span class="comment">//==================================================================================</span></div><div class="line"></div><div class="line">    <span class="comment">// Write EF(ADN) using the le_sim_SendSimCommand API.</span></div><div class="line">    uint8_t dataAdn[] = {0x4A,0x61,0x63,0x6B,0x79,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0x05,</div><div class="line">                            0x81,0x10,0x92,0x90,0x71,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};</div><div class="line"></div><div class="line">    res = <a class="code" href="le__sim__interface_8h.html#acc0760cfa301adeb917b171b32973de3">le_sim_SendCommand</a>(simId,</div><div class="line">                             <a class="code" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331a73f253861a66d9f1689fbdb97263019e">LE_SIM_UPDATE_RECORD</a>,</div><div class="line">                             <span class="stringliteral">"6F3A"</span>,</div><div class="line">                             5,</div><div class="line">                             0,</div><div class="line">                             0,</div><div class="line">                             dataAdn,</div><div class="line">                             <span class="keyword">sizeof</span>(dataAdn),</div><div class="line">                             <span class="stringliteral">"3F007F10"</span>,</div><div class="line">                             &amp;swi1,</div><div class="line">                             &amp;swi2,</div><div class="line">                             NULL,</div><div class="line">                             &amp;rspLen);</div><div class="line"></div><div class="line">    <a class="code" href="le__log_8h.html#a4ebab29f40ee8eaaa87205fe3f9aaa13">LE_INFO</a>(<span class="stringliteral">"swi1=%d, swi2=%d"</span>, swi1, swi2);</div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(res == LE_OK);</div><div class="line"></div><div class="line">    rspLen = SIM_RSP_LEN;</div><div class="line"></div><div class="line">    <span class="comment">// Read EF(ADN) using the le_sim_SendSimCommand API.</span></div><div class="line">    res = <a class="code" href="le__sim__interface_8h.html#acc0760cfa301adeb917b171b32973de3">le_sim_SendCommand</a>(simId,</div><div class="line">                             <a class="code" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331aa2d4ea6bc380cab183fb215911a39f14">LE_SIM_READ_RECORD</a>,</div><div class="line">                             <span class="stringliteral">"6F3A"</span>,</div><div class="line">                             5,</div><div class="line">                             0,</div><div class="line">                             0,</div><div class="line">                             NULL,</div><div class="line">                             0,</div><div class="line">                             <span class="stringliteral">"3F007F10"</span>,</div><div class="line">                             &amp;swi1,</div><div class="line">                             &amp;swi2,</div><div class="line">                             rsp,</div><div class="line">                             &amp;rspLen);</div><div class="line"></div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(res == LE_OK);</div><div class="line"></div><div class="line">    <a class="code" href="le__log_8h.html#a4ebab29f40ee8eaaa87205fe3f9aaa13">LE_INFO</a>(<span class="stringliteral">"swi1=%d, swi2=%d"</span>, swi1, swi2);</div><div class="line">    PrintApdu(rsp, rspLen);</div><div class="line"></div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(rspLen == <span class="keyword">sizeof</span>(dataAdn));</div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(memcmp(rsp, dataAdn, rspLen) == 0);</div><div class="line"></div><div class="line">    <span class="comment">//==================================================================================</span></div><div class="line">    <span class="comment">// 4. Check read and write transparent elementary file</span></div><div class="line">    <span class="comment">// - Read language indication file</span></div><div class="line">    <span class="comment">// - Erase first entry of the file</span></div><div class="line">    <span class="comment">// - Check that it is really erased (by reading again)</span></div><div class="line">    <span class="comment">// - Re-write the initial value</span></div><div class="line">    <span class="comment">// - Check that the initial value is correct (read again)</span></div><div class="line">    <span class="comment">//==================================================================================</span></div><div class="line"></div><div class="line">    <span class="comment">// Read binary EF(6F05) Language indication</span></div><div class="line">    <span class="keywordtype">size_t</span> rspLenLi = SIM_RSP_LEN;</div><div class="line">    uint8_t rspLi[rspLenLi];</div><div class="line"></div><div class="line">    res = <a class="code" href="le__sim__interface_8h.html#acc0760cfa301adeb917b171b32973de3">le_sim_SendCommand</a>(simId,</div><div class="line">                             <a class="code" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331ae4a619ba58f2cd503103b397b717b16f">LE_SIM_READ_BINARY</a>,</div><div class="line">                             <span class="stringliteral">"6F05"</span>,</div><div class="line">                             0,</div><div class="line">                             0,</div><div class="line">                             0,</div><div class="line">                             NULL,</div><div class="line">                             0,</div><div class="line">                             dfGsmPath,</div><div class="line">                             &amp;swi1,</div><div class="line">                             &amp;swi2,</div><div class="line">                             rspLi,</div><div class="line">                             &amp;rspLenLi);</div><div class="line"></div><div class="line"></div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(res == LE_OK);</div><div class="line">    <a class="code" href="le__log_8h.html#a4ebab29f40ee8eaaa87205fe3f9aaa13">LE_INFO</a>(<span class="stringliteral">"swi1=%d, swi2=%d"</span>, swi1, swi2);</div><div class="line">    PrintApdu(rspLi, rspLenLi);</div><div class="line"></div><div class="line"></div><div class="line">    rspLen = 0;</div><div class="line"></div><div class="line">    uint8_t dataLi[]={0xFF, 0xFF};</div><div class="line">    <span class="comment">// erase first Language entry</span></div><div class="line">    res = <a class="code" href="le__sim__interface_8h.html#acc0760cfa301adeb917b171b32973de3">le_sim_SendCommand</a>(simId,</div><div class="line">                             <a class="code" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331a68f83c3e207642ec4153b67c51cd3cd6">LE_SIM_UPDATE_BINARY</a>,</div><div class="line">                             <span class="stringliteral">"6F05"</span>,</div><div class="line">                             0,</div><div class="line">                             0,</div><div class="line">                             0,</div><div class="line">                             dataLi,</div><div class="line">                             <span class="keyword">sizeof</span>(dataLi),</div><div class="line">                             dfGsmPath,</div><div class="line">                             &amp;swi1,</div><div class="line">                             &amp;swi2,</div><div class="line">                             NULL,</div><div class="line">                             &amp;rspLen);</div><div class="line"></div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(res == LE_OK);</div><div class="line">    <a class="code" href="le__log_8h.html#a4ebab29f40ee8eaaa87205fe3f9aaa13">LE_INFO</a>(<span class="stringliteral">"swi1=%d, swi2=%d"</span>, swi1, swi2);</div><div class="line">    rspLen = SIM_RSP_LEN;</div><div class="line"></div><div class="line">    <span class="comment">// Read again...</span></div><div class="line">    res = <a class="code" href="le__sim__interface_8h.html#acc0760cfa301adeb917b171b32973de3">le_sim_SendCommand</a>(simId,</div><div class="line">                             <a class="code" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331ae4a619ba58f2cd503103b397b717b16f">LE_SIM_READ_BINARY</a>,</div><div class="line">                             <span class="stringliteral">"6F05"</span>,</div><div class="line">                             0,</div><div class="line">                             0,</div><div class="line">                             0,</div><div class="line">                             NULL,</div><div class="line">                             0,</div><div class="line">                             dfGsmPath,</div><div class="line">                             &amp;swi1,</div><div class="line">                             &amp;swi2,</div><div class="line">                             rsp,</div><div class="line">                             &amp;rspLen);</div><div class="line"></div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(res == LE_OK);</div><div class="line">    <a class="code" href="le__log_8h.html#a4ebab29f40ee8eaaa87205fe3f9aaa13">LE_INFO</a>(<span class="stringliteral">"swi1=%d, swi2=%d"</span>, swi1, swi2);</div><div class="line">    PrintApdu(rsp, rspLen);</div><div class="line">    rspLen = 0;</div><div class="line"></div><div class="line">    <span class="comment">// Check it is correctly erased</span></div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>( memcmp(rsp, dataLi, <span class="keyword">sizeof</span>(dataLi)) == 0 );</div><div class="line"></div><div class="line">    <span class="comment">// Re-write initial values</span></div><div class="line">    res = <a class="code" href="le__sim__interface_8h.html#acc0760cfa301adeb917b171b32973de3">le_sim_SendCommand</a>(simId,</div><div class="line">                             <a class="code" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331a68f83c3e207642ec4153b67c51cd3cd6">LE_SIM_UPDATE_BINARY</a>,</div><div class="line">                             <span class="stringliteral">"6F05"</span>,</div><div class="line">                             0,</div><div class="line">                             0,</div><div class="line">                             0,</div><div class="line">                             rspLi,</div><div class="line">                             rspLenLi,</div><div class="line">                             dfGsmPath,</div><div class="line">                             &amp;swi1,</div><div class="line">                             &amp;swi2,</div><div class="line">                             NULL,</div><div class="line">                             &amp;rspLen);</div><div class="line"></div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(res == LE_OK);</div><div class="line">    <a class="code" href="le__log_8h.html#a4ebab29f40ee8eaaa87205fe3f9aaa13">LE_INFO</a>(<span class="stringliteral">"swi1=%d, swi2=%d"</span>, swi1, swi2);</div><div class="line"></div><div class="line">    rspLen = SIM_RSP_LEN;</div><div class="line"></div><div class="line">    <span class="comment">// And read again...</span></div><div class="line">    res = <a class="code" href="le__sim__interface_8h.html#acc0760cfa301adeb917b171b32973de3">le_sim_SendCommand</a>(simId,</div><div class="line">                             <a class="code" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331ae4a619ba58f2cd503103b397b717b16f">LE_SIM_READ_BINARY</a>,</div><div class="line">                             <span class="stringliteral">"6F05"</span>,</div><div class="line">                             0,</div><div class="line">                             0,</div><div class="line">                             0,</div><div class="line">                             NULL,</div><div class="line">                             0,</div><div class="line">                             dfGsmPath,</div><div class="line">                             &amp;swi1,</div><div class="line">                             &amp;swi2,</div><div class="line">                             rsp,</div><div class="line">                             &amp;rspLen);</div><div class="line"></div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(res == LE_OK);</div><div class="line">    <a class="code" href="le__log_8h.html#a4ebab29f40ee8eaaa87205fe3f9aaa13">LE_INFO</a>(<span class="stringliteral">"swi1=%d, swi2=%d"</span>, swi1, swi2);</div><div class="line">    PrintApdu(rsp, rspLen);</div><div class="line"></div><div class="line">    <span class="comment">// Check it is correctly erased</span></div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>( memcmp(rsp, rspLi, <span class="keyword">sizeof</span>(rspLenLi)) == 0 );</div><div class="line"></div><div class="line">    <a class="code" href="le__log_8h.html#a4ebab29f40ee8eaaa87205fe3f9aaa13">LE_INFO</a>(<span class="stringliteral">"SIM access test OK"</span>);</div><div class="line">}</div></pre><!-- fragment --></div></div>
+<div class="textblock"><pre class="fragment"><div class="line"><span class="comment">//--------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><span class="comment"></span><span class="comment">//--------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><span class="keywordtype">void</span> simTest_SimAccess</div>
+<div class="line">(</div>
+<div class="line">    <a class="code" href="le__sim__interface_8h.html#aace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId</div>
+<div class="line">)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">//========================================</span></div>
+<div class="line">    <span class="comment">// 1. Read IMSI using le_sim_SendApdu API</span></div>
+<div class="line">    <span class="comment">//========================================</span></div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Select IMSI file (6F07) (USIM commands)</span></div>
+<div class="line">    uint8_t selectApdu[]={   0x00, 0xA4, 0x00, 0x0C, 0x02, 0x6F, 0x07 };</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordtype">size_t</span> rspImsiLen = SIM_RSP_LEN;</div>
+<div class="line">    uint8_t rspImsi[rspImsiLen];</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Select the EF(IMSI)</span></div>
+<div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>( <a class="code" href="le__sim__interface_8h.html#ad72df795270776e68e473f34c0264ecb">le_sim_SendApdu</a>(simId,</div>
+<div class="line">                               selectApdu,</div>
+<div class="line">                               <span class="keyword">sizeof</span>(selectApdu),</div>
+<div class="line">                               rspImsi,</div>
+<div class="line">                               &amp;rspImsiLen) == LE_OK );</div>
+<div class="line"></div>
+<div class="line">    PrintApdu(rspImsi, rspImsiLen);</div>
+<div class="line"></div>
+<div class="line">    rspImsiLen = SIM_RSP_LEN;</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Read the EF(IMSI)</span></div>
+<div class="line">    <span class="comment">// Read file</span></div>
+<div class="line">    uint8_t readApdu[]={ 0x00, 0xB0, 0x00, 0x00, 0x09};</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>( <a class="code" href="le__sim__interface_8h.html#ad72df795270776e68e473f34c0264ecb">le_sim_SendApdu</a>(simId,</div>
+<div class="line">                               readApdu,</div>
+<div class="line">                               <span class="keyword">sizeof</span>(readApdu),</div>
+<div class="line">                               rspImsi,</div>
+<div class="line">                               &amp;rspImsiLen) == LE_OK );</div>
+<div class="line"></div>
+<div class="line">    PrintApdu(rspImsi, rspImsiLen);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">//=====================================================================================</span></div>
+<div class="line">    <span class="comment">// 2. Read IMSI using le_sim_SendSimCommand API, and check value get by le_sim_SendApdu</span></div>
+<div class="line">    <span class="comment">//======================================================================================</span></div>
+<div class="line"></div>
+<div class="line">    <span class="keywordtype">size_t</span> rspImsiLen2 = SIM_RSP_LEN;</div>
+<div class="line">    uint8_t rspImsi2[rspImsiLen2];</div>
+<div class="line">    uint8_t swi1, swi2;</div>
+<div class="line">    <span class="keywordtype">char</span> dfGsmPath[]=<span class="stringliteral">"3F007FFF"</span>;</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Read EF(IMSI) using the le_sim_SendSimCommand API.</span></div>
+<div class="line">    <a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> res = <a class="code" href="le__sim__interface_8h.html#acc0760cfa301adeb917b171b32973de3">le_sim_SendCommand</a>(simId,</div>
+<div class="line">                                         <a class="code" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331ae4a619ba58f2cd503103b397b717b16f">LE_SIM_READ_BINARY</a>,</div>
+<div class="line">                                         <span class="stringliteral">"6F07"</span>,</div>
+<div class="line">                                         0,</div>
+<div class="line">                                         0,</div>
+<div class="line">                                         0,</div>
+<div class="line">                                         NULL,</div>
+<div class="line">                                         0,</div>
+<div class="line">                                         dfGsmPath,</div>
+<div class="line">                                         &amp;swi1,</div>
+<div class="line">                                         &amp;swi2,</div>
+<div class="line">                                         rspImsi2,</div>
+<div class="line">                                         &amp;rspImsiLen2);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (res != LE_OK)</div>
+<div class="line">    {</div>
+<div class="line">        strcpy(dfGsmPath, <span class="stringliteral">"3F007F20"</span>);</div>
+<div class="line"></div>
+<div class="line">        <span class="comment">// Check backward compatibilty</span></div>
+<div class="line">        res = <a class="code" href="le__sim__interface_8h.html#acc0760cfa301adeb917b171b32973de3">le_sim_SendCommand</a>(simId,</div>
+<div class="line">                                 <a class="code" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331ae4a619ba58f2cd503103b397b717b16f">LE_SIM_READ_BINARY</a>,</div>
+<div class="line">                                 <span class="stringliteral">"6F07"</span>,</div>
+<div class="line">                                 0,</div>
+<div class="line">                                 0,</div>
+<div class="line">                                 0,</div>
+<div class="line">                                 NULL,</div>
+<div class="line">                                 0,</div>
+<div class="line">                                 dfGsmPath,</div>
+<div class="line">                                 &amp;swi1,</div>
+<div class="line">                                 &amp;swi2,</div>
+<div class="line">                                 rspImsi2,</div>
+<div class="line">                                 &amp;rspImsiLen2);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(res == LE_OK);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"swi1=%d, swi2=%d"</span>, swi1, swi2);</div>
+<div class="line">    PrintApdu(rspImsi2, rspImsiLen2);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Check both IMSI results</span></div>
+<div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>( memcmp(rspImsi, rspImsi2, rspImsiLen2) == 0 );</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordtype">size_t</span> rspLen = SIM_RSP_LEN;</div>
+<div class="line">    uint8_t rsp[rspLen];</div>
+<div class="line">    rspLen = 0;</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">//==================================================================================</span></div>
+<div class="line">    <span class="comment">// 3. Check read and write record elementary file</span></div>
+<div class="line">    <span class="comment">// Write the 5th entry in EF(ADN): equivalent to AT+CPBW=5,"01290917",129,"Jacky"</span></div>
+<div class="line">    <span class="comment">// Then, read the written data and check</span></div>
+<div class="line">    <span class="comment">//==================================================================================</span></div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Write EF(ADN) using the le_sim_SendSimCommand API.</span></div>
+<div class="line">    uint8_t dataAdn[] = {0x4A,0x61,0x63,0x6B,0x79,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0x05,</div>
+<div class="line">                            0x81,0x10,0x92,0x90,0x71,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};</div>
+<div class="line"></div>
+<div class="line">    res = <a class="code" href="le__sim__interface_8h.html#acc0760cfa301adeb917b171b32973de3">le_sim_SendCommand</a>(simId,</div>
+<div class="line">                             <a class="code" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331a73f253861a66d9f1689fbdb97263019e">LE_SIM_UPDATE_RECORD</a>,</div>
+<div class="line">                             <span class="stringliteral">"6F3A"</span>,</div>
+<div class="line">                             5,</div>
+<div class="line">                             0,</div>
+<div class="line">                             0,</div>
+<div class="line">                             dataAdn,</div>
+<div class="line">                             <span class="keyword">sizeof</span>(dataAdn),</div>
+<div class="line">                             <span class="stringliteral">"3F007F10"</span>,</div>
+<div class="line">                             &amp;swi1,</div>
+<div class="line">                             &amp;swi2,</div>
+<div class="line">                             NULL,</div>
+<div class="line">                             &amp;rspLen);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"swi1=%d, swi2=%d"</span>, swi1, swi2);</div>
+<div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(res == LE_OK);</div>
+<div class="line"></div>
+<div class="line">    rspLen = SIM_RSP_LEN;</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Read EF(ADN) using the le_sim_SendSimCommand API.</span></div>
+<div class="line">    res = <a class="code" href="le__sim__interface_8h.html#acc0760cfa301adeb917b171b32973de3">le_sim_SendCommand</a>(simId,</div>
+<div class="line">                             <a class="code" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331aa2d4ea6bc380cab183fb215911a39f14">LE_SIM_READ_RECORD</a>,</div>
+<div class="line">                             <span class="stringliteral">"6F3A"</span>,</div>
+<div class="line">                             5,</div>
+<div class="line">                             0,</div>
+<div class="line">                             0,</div>
+<div class="line">                             NULL,</div>
+<div class="line">                             0,</div>
+<div class="line">                             <span class="stringliteral">"3F007F10"</span>,</div>
+<div class="line">                             &amp;swi1,</div>
+<div class="line">                             &amp;swi2,</div>
+<div class="line">                             rsp,</div>
+<div class="line">                             &amp;rspLen);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(res == LE_OK);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"swi1=%d, swi2=%d"</span>, swi1, swi2);</div>
+<div class="line">    PrintApdu(rsp, rspLen);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(rspLen == <span class="keyword">sizeof</span>(dataAdn));</div>
+<div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(memcmp(rsp, dataAdn, rspLen) == 0);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">//==================================================================================</span></div>
+<div class="line">    <span class="comment">// 4. Check read and write transparent elementary file</span></div>
+<div class="line">    <span class="comment">// - Read language indication file</span></div>
+<div class="line">    <span class="comment">// - Erase first entry of the file</span></div>
+<div class="line">    <span class="comment">// - Check that it is really erased (by reading again)</span></div>
+<div class="line">    <span class="comment">// - Re-write the initial value</span></div>
+<div class="line">    <span class="comment">// - Check that the initial value is correct (read again)</span></div>
+<div class="line">    <span class="comment">//==================================================================================</span></div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Read binary EF(6F05) Language indication</span></div>
+<div class="line">    <span class="keywordtype">size_t</span> rspLenLi = SIM_RSP_LEN;</div>
+<div class="line">    uint8_t rspLi[rspLenLi];</div>
+<div class="line"></div>
+<div class="line">    res = <a class="code" href="le__sim__interface_8h.html#acc0760cfa301adeb917b171b32973de3">le_sim_SendCommand</a>(simId,</div>
+<div class="line">                             <a class="code" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331ae4a619ba58f2cd503103b397b717b16f">LE_SIM_READ_BINARY</a>,</div>
+<div class="line">                             <span class="stringliteral">"6F05"</span>,</div>
+<div class="line">                             0,</div>
+<div class="line">                             0,</div>
+<div class="line">                             0,</div>
+<div class="line">                             NULL,</div>
+<div class="line">                             0,</div>
+<div class="line">                             dfGsmPath,</div>
+<div class="line">                             &amp;swi1,</div>
+<div class="line">                             &amp;swi2,</div>
+<div class="line">                             rspLi,</div>
+<div class="line">                             &amp;rspLenLi);</div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(res == LE_OK);</div>
+<div class="line">    <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"swi1=%d, swi2=%d"</span>, swi1, swi2);</div>
+<div class="line">    PrintApdu(rspLi, rspLenLi);</div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line">    rspLen = 0;</div>
+<div class="line"></div>
+<div class="line">    uint8_t dataLi[]={0xFF, 0xFF};</div>
+<div class="line">    <span class="comment">// erase first Language entry</span></div>
+<div class="line">    res = <a class="code" href="le__sim__interface_8h.html#acc0760cfa301adeb917b171b32973de3">le_sim_SendCommand</a>(simId,</div>
+<div class="line">                             <a class="code" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331a68f83c3e207642ec4153b67c51cd3cd6">LE_SIM_UPDATE_BINARY</a>,</div>
+<div class="line">                             <span class="stringliteral">"6F05"</span>,</div>
+<div class="line">                             0,</div>
+<div class="line">                             0,</div>
+<div class="line">                             0,</div>
+<div class="line">                             dataLi,</div>
+<div class="line">                             <span class="keyword">sizeof</span>(dataLi),</div>
+<div class="line">                             dfGsmPath,</div>
+<div class="line">                             &amp;swi1,</div>
+<div class="line">                             &amp;swi2,</div>
+<div class="line">                             NULL,</div>
+<div class="line">                             &amp;rspLen);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(res == LE_OK);</div>
+<div class="line">    <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"swi1=%d, swi2=%d"</span>, swi1, swi2);</div>
+<div class="line">    rspLen = SIM_RSP_LEN;</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Read again...</span></div>
+<div class="line">    res = <a class="code" href="le__sim__interface_8h.html#acc0760cfa301adeb917b171b32973de3">le_sim_SendCommand</a>(simId,</div>
+<div class="line">                             <a class="code" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331ae4a619ba58f2cd503103b397b717b16f">LE_SIM_READ_BINARY</a>,</div>
+<div class="line">                             <span class="stringliteral">"6F05"</span>,</div>
+<div class="line">                             0,</div>
+<div class="line">                             0,</div>
+<div class="line">                             0,</div>
+<div class="line">                             NULL,</div>
+<div class="line">                             0,</div>
+<div class="line">                             dfGsmPath,</div>
+<div class="line">                             &amp;swi1,</div>
+<div class="line">                             &amp;swi2,</div>
+<div class="line">                             rsp,</div>
+<div class="line">                             &amp;rspLen);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(res == LE_OK);</div>
+<div class="line">    <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"swi1=%d, swi2=%d"</span>, swi1, swi2);</div>
+<div class="line">    PrintApdu(rsp, rspLen);</div>
+<div class="line">    rspLen = 0;</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Check it is correctly erased</span></div>
+<div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>( memcmp(rsp, dataLi, <span class="keyword">sizeof</span>(dataLi)) == 0 );</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Re-write initial values</span></div>
+<div class="line">    res = <a class="code" href="le__sim__interface_8h.html#acc0760cfa301adeb917b171b32973de3">le_sim_SendCommand</a>(simId,</div>
+<div class="line">                             <a class="code" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331a68f83c3e207642ec4153b67c51cd3cd6">LE_SIM_UPDATE_BINARY</a>,</div>
+<div class="line">                             <span class="stringliteral">"6F05"</span>,</div>
+<div class="line">                             0,</div>
+<div class="line">                             0,</div>
+<div class="line">                             0,</div>
+<div class="line">                             rspLi,</div>
+<div class="line">                             rspLenLi,</div>
+<div class="line">                             dfGsmPath,</div>
+<div class="line">                             &amp;swi1,</div>
+<div class="line">                             &amp;swi2,</div>
+<div class="line">                             NULL,</div>
+<div class="line">                             &amp;rspLen);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(res == LE_OK);</div>
+<div class="line">    <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"swi1=%d, swi2=%d"</span>, swi1, swi2);</div>
+<div class="line"></div>
+<div class="line">    rspLen = SIM_RSP_LEN;</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// And read again...</span></div>
+<div class="line">    res = <a class="code" href="le__sim__interface_8h.html#acc0760cfa301adeb917b171b32973de3">le_sim_SendCommand</a>(simId,</div>
+<div class="line">                             <a class="code" href="le__sim__interface_8h.html#ac1a708ba305c36e33383073ec7f0e331ae4a619ba58f2cd503103b397b717b16f">LE_SIM_READ_BINARY</a>,</div>
+<div class="line">                             <span class="stringliteral">"6F05"</span>,</div>
+<div class="line">                             0,</div>
+<div class="line">                             0,</div>
+<div class="line">                             0,</div>
+<div class="line">                             NULL,</div>
+<div class="line">                             0,</div>
+<div class="line">                             dfGsmPath,</div>
+<div class="line">                             &amp;swi1,</div>
+<div class="line">                             &amp;swi2,</div>
+<div class="line">                             rsp,</div>
+<div class="line">                             &amp;rspLen);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(res == LE_OK);</div>
+<div class="line">    <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"swi1=%d, swi2=%d"</span>, swi1, swi2);</div>
+<div class="line">    PrintApdu(rsp, rspLen);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Check it is correctly erased</span></div>
+<div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>( memcmp(rsp, rspLi, <span class="keyword">sizeof</span>(rspLenLi)) == 0 );</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"SIM access test OK"</span>);</div>
+<div class="line">}</div>
+</pre><!-- fragment --></div></div>
 <br clear="left"/>
 </div>
 </div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 </body>
 </html>

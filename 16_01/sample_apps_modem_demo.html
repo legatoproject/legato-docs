@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" data-toc="tocs/Build Apps Concepts.json" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Modem Demo  - Legato Docs</title>
@@ -18,15 +18,6 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
-<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
-<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="resources/js/jquery.cookie.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
-<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
-<script>
-        setupTree("tocs/Build Apps Concepts.json");
-        </script>
 </head>
 <body>
 <noscript>
@@ -55,7 +46,7 @@
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
-<input id="searchbox" placeholder="Search..."/>
+<input id="searchbox" placeholder="Search"/>
 </nav>
 </header>
 </div>
@@ -70,7 +61,8 @@
 <h1 class="title">Modem Demo </h1> </div>
 </div><div class="contents">
 <div class="textblock"><p>This sample app demonstrates a modem app. It uses modem services with <code></code>.adef bindings and related @ .cdef requires provides, and sources sections.</p>
-<p>Before you install this sample app:</p><ul>
+<p>Before you install this sample app:</p>
+<ul>
 <li>register your SIM network. See <a class="el" href="tools_target_cm.html#toolsTarget_cm_sim">SIM</a>.</li>
 <li>set an APN name. See <a class="el" href="tools_target_cm.html#toolsTarget_cm_data">Data</a>.</li>
 </ul>
@@ -99,7 +91,15 @@ Commands</h1>
 Customization</h1>
 <p>The sample app can be customized by editing the <code>modemDemo.adef</code> and related C source files.</p>
 <p>In <code>modemDemo.adef</code>, you can add a <code>send</code> execution on start-up to notify you when the app is running. Uncomment the <code>run</code> line and replace <code>+18005550199</code> by your own cell number.</p>
-<pre class="fragment"><div class="line">processes:</div><div class="line">{</div><div class="line">    run:</div><div class="line">    {</div><div class="line">        ( modemDemo )</div><div class="line">        ( send <span class="stringliteral">"+18005550199"</span> <span class="stringliteral">"Welcome to modemDemo app"</span>)</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>In <code>modemDemo/demo.c</code>, it's also possible to extend the list of processed commands.</p>
+<pre class="fragment"><div class="line">processes:</div>
+<div class="line">{</div>
+<div class="line">    run:</div>
+<div class="line">    {</div>
+<div class="line">        ( modemDemo )</div>
+<div class="line">        ( send <span class="stringliteral">"+18005550199"</span> <span class="stringliteral">"Welcome to modemDemo app"</span>)</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</pre><!-- fragment --><p>In <code>modemDemo/demo.c</code>, it's also possible to extend the list of processed commands.</p>
 <p>See <br/>
 <a class="el" href="c_mdc.html">Modem Data Control</a></p>
 <hr/>
@@ -108,5 +108,11 @@ Customization</h1>
 <br clear="left"/>
 </div>
 </div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 </body>
 </html>

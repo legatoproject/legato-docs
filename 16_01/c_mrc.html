@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" data-toc="tocs/Build Apps API Guides.json" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Modem Radio Control  - Legato Docs</title>
@@ -18,15 +18,6 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
-<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
-<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="resources/js/jquery.cookie.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
-<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
-<script>
-        setupTree("tocs/Build Apps API Guides.json");
-        </script>
 </head>
 <body>
 <noscript>
@@ -55,7 +46,7 @@
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
-<input id="searchbox" placeholder="Search..."/>
+<input id="searchbox" placeholder="Search"/>
 </nav>
 </header>
 </div>
@@ -76,21 +67,24 @@
 <h1><a class="anchor" id="le_mrc_binding"></a>
 IPC interfaces binding</h1>
 <p>All the functions of this API are provided by the <b>modemService</b> service.</p>
-<p>Here's a code sample binding to modem services: </p><pre class="fragment"> bindings:
+<p>Here's a code sample binding to modem services: </p>
+<pre class="fragment"> bindings:
  {
     clientExe.clientComponent.le_mrc -&gt; modemService.le_mrc
  }</pre><h1><a class="anchor" id="le_mrc_power"></a>
 Radio Power Management</h1>
 <p><a class="el" href="le__mrc__interface_8h.html#a78bd27d92337e2122320f41bcaa5480f">le_mrc_SetRadioPower()</a> API allows the application to power up or shutdown the radio module.</p>
 <p><a class="el" href="le__mrc__interface_8h.html#aac51332c6c84e460746eb1ad45c064d6">le_mrc_GetRadioPower()</a> API displays radio module power state.</p>
-<p>A sample code can be seen in the following page:</p><ul>
+<p>A sample code can be seen in the following page:</p>
+<ul>
 <li><a class="el" href="c_mrc_radio_power.html">Sample code for Radio Power Management</a></li>
 </ul>
 <h1><a class="anchor" id="le_mrc_configuration"></a>
 Radio Configuration preferences</h1>
 <p>The following functions let you configure and retrieve the radio configuration preferences: <a class="el" href="le__mrc__interface_8h.html#acb434a9f91afb5b6639baf3678ee9388">le_mrc_SetAutomaticRegisterMode()</a>, <a class="el" href="le__mrc__interface_8h.html#a09b890f05a20f4b007d60e595026631f">le_mrc_SetManualRegisterMode()</a> and <a class="el" href="le__mrc__interface_8h.html#a283c0c092c5a135a8e95f9f091655cb1">le_mrc_GetRegisterMode()</a> let you set/get the selected Scan mode.</p>
 <p><a class="el" href="le__mrc__interface_8h.html#ac808b4dc721e031566da92e00663c027">le_mrc_SetBandPreferences()</a>, <a class="el" href="le__mrc__interface_8h.html#a04418f56480070ba6c4f3d176dafaa37">le_mrc_GetBandPreferences()</a> let you set/get the 2G/3G band preferences by using a bit mask built with <code>le_mrc_BandBitMask_t</code> </p>
-<p>The 2G/3G band preferences can be:</p><ul>
+<p>The 2G/3G band preferences can be:</p>
+<ul>
 <li>Band-Class-0-A-System</li>
 <li>Band-Class-0-B-System</li>
 <li>Band-Class-1-All-Blocks</li>
@@ -138,7 +132,8 @@ Radio Configuration preferences</h1>
 <dl class="section warning"><dt>Warning</dt><dd>Ensure to check the supported preferences for your specific platform.</dd></dl>
 <p><a class="el" href="le__mrc__interface_8h.html#ac476a122ab91d3607c4eb016e93a3bde">le_mrc_AddPreferredOperator()</a> , <a class="el" href="le__mrc__interface_8h.html#a0c2d65eb8cdb200aa4bce8766530c39f">le_mrc_RemovePreferredOperator()</a> to add/remove a preferred operator by specifying the MCC/MNC and the Radio Access Technology.</p>
 <p><a class="el" href="le__mrc__interface_8h.html#a1ea0d2943accd51d3b428e0e6c94d297">le_mrc_GetPreferredOperatorsList()</a>, <a class="el" href="le__mrc__interface_8h.html#a9648b653b7551cd065ec323b96a0aa1b">le_mrc_GetFirstPreferredOperator()</a>, <a class="el" href="le__mrc__interface_8h.html#a896703cabaacf97a70708d944cfbfc87">le_mrc_GetNextPreferredOperator()</a>, <a class="el" href="le__mrc__interface_8h.html#a60679f563ffecc8f107425b806edcdf0">le_mrc_DeletePreferredOperatorsList()</a>, <a class="el" href="le__mrc__interface_8h.html#ab2204081bc04a108194e1dd915c35acf">le_mrc_GetPreferredOperatorDetails()</a> let you retrieve a list of the selected preferred operators and get their details.</p>
-<p>A sample code can be seen in the following page:</p><ul>
+<p>A sample code can be seen in the following page:</p>
+<ul>
 <li><a class="el" href="c_mrc_radio_configuration_preferences.html">Sample code for Radio Configuration Preferences</a></li>
 </ul>
 <h1><a class="anchor" id="le_mrc_capabilities"></a>
@@ -146,7 +141,8 @@ Radio Capabilities</h1>
 <p><a class="el" href="le__mrc__interface_8h.html#a7cb0a206729c652692701cd24226d34f">le_mrc_GetBandCapabilities()</a> let you get the 2G/3G band capabilities by retrieving a bit mask built with <code>le_mrc_BandBitMask_t</code> </p>
 <p><a class="el" href="le__mrc__interface_8h.html#ad6b44639b1d9755b92720d5184ee2515">le_mrc_GetLteBandCapabilities()</a> let you get the LTE band capabilities by retrieving a bit mask built with <code>le_mrc_LteBandBitMask_t</code> </p>
 <p><a class="el" href="le__mrc__interface_8h.html#adfa81f2361744bc67697221845713a98">le_mrc_GetTdScdmaBandCapabilities()</a> let you get the TD-SCDMA band capabilities by retrieving a bit mask built with <code>le_mrc_TdScdmaBandBitMask_t</code> </p>
-<p>A sample code can be seen in the following page:</p><ul>
+<p>A sample code can be seen in the following page:</p>
+<ul>
 <li><a class="el" href="c_mrc_band_capabilities.html">Sample code for Band Capabilities</a></li>
 </ul>
 <h1><a class="anchor" id="le_mrc_rat"></a>
@@ -156,14 +152,16 @@ Radio Access Technology (RAT)</h1>
 <p><a class="el" href="le__mrc__interface_8h.html#aedd9c526588a8298322525cfba6f875d">le_mrc_AddRatChangeHandler()</a> API installs a RAT change handler.</p>
 <p><a class="el" href="le__mrc__interface_8h.html#aed4f1730c99a1a9204a198e3df3cf6f5">le_mrc_RemoveRatChangeHandler()</a> API uninstalls the handler function.</p>
 <p><a class="el" href="le__mrc__interface_8h.html#a2d4abd391bc69c218538f5d8e1be4e01">le_mrc_SetRatPreferences()</a>, <a class="el" href="le__mrc__interface_8h.html#ae9fa8655738c63e392c8dcc862bdb1d5">le_mrc_GetRatPreferences()</a> let you set/get the Radio Access Technology preferences by using a bit mask built with <code>le_mrc_RatBitMask_t</code>.</p>
-<p>The Radio Access Technology preferences can be:</p><ul>
+<p>The Radio Access Technology preferences can be:</p>
+<ul>
 <li>CDMA (CDMA2000-1X + CDMA2000-HRPD)</li>
 <li>GSM</li>
 <li>UMTS (UMTS + TD-SCDMA)</li>
 <li>LTE</li>
 </ul>
 <dl class="section note"><dt>Note</dt><dd>LE_MRC_BITMASK_RAT_ALL value can be used to select the RAT in automatic mode.</dd></dl>
-<p>A sample code can be seen in the following page:</p><ul>
+<p>A sample code can be seen in the following page:</p>
+<ul>
 <li><a class="el" href="c_mrc_r_a_t.html">Sample code for Radio Access Technology</a></li>
 </ul>
 <h1><a class="anchor" id="le_mrc_registration"></a>
@@ -171,10 +169,12 @@ Network Registration</h1>
 <p><a class="el" href="le__mrc__interface_8h.html#a4f11e27862fef384c0023f5b538e543d">le_mrc_GetNetRegState()</a> API retrieves the radio module network registration status.</p>
 <p>The application can register a handler function to retrieve the registration status each time the registration state changes.</p>
 <p><a class="el" href="le__mrc__interface_8h.html#a929745b84719754d28f539540f71a552">le_mrc_AddNetRegStateEventHandler()</a> API installs a registration state handler.</p>
-<p><a class="el" href="le__mrc__interface_8h.html#a4fc57a5a5bc1f4b6617c895c98a09f15">le_mrc_RemoveNetRegStateEventHandler()</a> API uninstalls the handler function. </p><dl class="section note"><dt>Note</dt><dd>If only one handler is registered, the le_mrc_RemoveNetRegStateHandler() API resets the registration mode to its original value before any handler functions were added.</dd></dl>
+<p><a class="el" href="le__mrc__interface_8h.html#a4fc57a5a5bc1f4b6617c895c98a09f15">le_mrc_RemoveNetRegStateEventHandler()</a> API uninstalls the handler function. </p>
+<dl class="section note"><dt>Note</dt><dd>If only one handler is registered, the le_mrc_RemoveNetRegStateHandler() API resets the registration mode to its original value before any handler functions were added.</dd></dl>
 <p><a class="el" href="le__mrc__interface_8h.html#a09b890f05a20f4b007d60e595026631f">le_mrc_SetManualRegisterMode()</a> API registers on a cellular network.</p>
 <p>Call <a class="el" href="le__mrc__interface_8h.html#ac342382a54168e032be59e886b4d3262">le_mrc_SetManualRegisterModeAsync()</a> function to set the manual registration mode asynchronously. The function is not blocking. The response will be returned with the <code>le_mrc_ManualSelectionHandlerFunc_t</code> handler function.</p>
-<p>A sample code can be seen in the following page:</p><ul>
+<p>A sample code can be seen in the following page:</p>
+<ul>
 <li><a class="el" href="c_mrc_network_registration.html">Sample code for Network Registration</a></li>
 </ul>
 <h1><a class="anchor" id="le_mrc_signal"></a>
@@ -192,7 +192,8 @@ Signal Quality</h1>
 <dl class="section warning"><dt>Warning</dt><dd>The threshold values must be in the allowed platform range.</dd></dl>
 <p>The event is notified when we cross the range limits in both direction.</p>
 <p><a class="el" href="le__mrc__interface_8h.html#a789dca8360ddf32a0ea1bfdd24efc6d4">le_mrc_RemoveSignalStrengthChangeHandler()</a> API uninstalls the handler function.</p>
-<p>A sample code can be seen in the following page:</p><ul>
+<p>A sample code can be seen in the following page:</p>
+<ul>
 <li><a class="el" href="c_mrc_quality.html">Sample code for Signal Quality</a></li>
 </ul>
 <h1><a class="anchor" id="le_mrc_location"></a>
@@ -200,13 +201,15 @@ Serving cell's location information</h1>
 <p><a class="el" href="le__mrc__interface_8h.html#aafc9fb71c3013b7b26dc386b13ca4a85">le_mrc_GetServingCellId()</a> retrieves the the serving Cell Identifier.</p>
 <p><a class="el" href="le__mrc__interface_8h.html#a8ba03765e7595f85783f6f6a022311f8">le_mrc_GetServingCellLocAreaCode()</a> retrieves the Location Area Code of the serving cell.</p>
 <p><a class="el" href="le__mrc__interface_8h.html#a856dc7825b4fa8de095f26020e03f015">le_mrc_GetServingCellLteTracAreaCode()</a> retrieves the the Tracking Area Code of the serving cell (LTE only).</p>
-<p>A sample code can be seen in the following page:</p><ul>
+<p>A sample code can be seen in the following page:</p>
+<ul>
 <li><a class="el" href="c_mrc_locationinformation.html">Sample code for Location information</a></li>
 </ul>
 <h1><a class="anchor" id="le_mrc_network_information"></a>
 Current Network Information</h1>
 <p><a class="el" href="le__mrc__interface_8h.html#a27e5eaddd6df34e4bfcee7d25775591e">le_mrc_GetCurrentNetworkName()</a> retrieves the Current Network Name. <a class="el" href="le__mrc__interface_8h.html#a2e476636ca33c40ce18b73b11a6f9f55">le_mrc_GetCurrentNetworkMccMnc()</a> retrieves the Current Network PLMN information.</p>
-<p>A sample code can be seen in the following page:</p><ul>
+<p>A sample code can be seen in the following page:</p>
+<ul>
 <li><a class="el" href="c_mrc_get_current_network.html">Sample code for Get Current Network Information</a></li>
 </ul>
 <h1><a class="anchor" id="le_mrc_networkScan"></a>
@@ -224,7 +227,8 @@ Network Scan</h1>
 <li><a class="el" href="le__mrc__interface_8h.html#a699a52d014550124a5b3362ee888a780">le_mrc_IsCellularNetworkForbidden()</a> to check if this is forbidden by the network.</li>
 </ul>
 <p><a class="el" href="le__mrc__interface_8h.html#ac45ce335b3fa063b83bb925e67eeaeb3">le_mrc_DeleteCellularNetworkScan()</a> should be called when you do not need the list anymore.</p>
-<p>A sample code can be seen in the following page:</p><ul>
+<p>A sample code can be seen in the following page:</p>
+<ul>
 <li><a class="el" href="c_mrc_network_scan.html">Sample code for Network Scan</a></li>
 </ul>
 <h1><a class="anchor" id="le_mrc_ngbr"></a>
@@ -232,7 +236,8 @@ Neighboring Cells Information</h1>
 <dl class="section warning"><dt>Warning</dt><dd>The following functions do not apply to CDMA network.</dd></dl>
 <p>You must call <a class="el" href="le__mrc__interface_8h.html#a8d44fe46e61f3399c5e0dd6002b042ae">le_mrc_GetNeighborCellsInfo()</a> to retrieve the neighboring cells information. It returns a reference of le_mrc_NeighborCellsRef_t type.</p>
 <p>When the neighboring cells information is no longer needed, you must call <a class="el" href="le__mrc__interface_8h.html#a101343359e8d36ab41180aede2891b07">le_mrc_DeleteNeighborCellsInfo()</a> to free all allocated resources associated with the object.</p>
-<p>Then, you can use the following function to get the information:</p><ul>
+<p>Then, you can use the following function to get the information:</p>
+<ul>
 <li><a class="el" href="le__mrc__interface_8h.html#ab50724fd74818d71da1dfcd2217dd795">le_mrc_GetFirstNeighborCellInfo()</a> and <a class="el" href="le__mrc__interface_8h.html#ab50724fd74818d71da1dfcd2217dd795">le_mrc_GetFirstNeighborCellInfo()</a> allow to go among the single cell information retrieved with <a class="el" href="le__mrc__interface_8h.html#a8d44fe46e61f3399c5e0dd6002b042ae">le_mrc_GetNeighborCellsInfo()</a>. These two functions return a reference of le_mrc_CellInfoRef_t type.</li>
 <li><a class="el" href="le__mrc__interface_8h.html#abdbc94e474235417d8610e2eb95558eb">le_mrc_GetNeighborCellId()</a> gets the identifier of the cell specified with the le_mrc_CellInfoRef_t parameter (can be called for any kind of RAT).</li>
 <li><a class="el" href="le__mrc__interface_8h.html#a70ba0ca70367bc673a6bca1e246bb88f">le_mrc_GetNeighborCellLocAreaCode()</a> gets the location area code of the cell specified with the le_mrc_CellInfoRef_t parameter (can be called for any kind of RAT). 0xFFFF value is returned if the value is not available.</li>
@@ -242,14 +247,22 @@ Neighboring Cells Information</h1>
 <li><a class="el" href="le__mrc__interface_8h.html#a7754836120c34cd2610b9777bd56409f">le_mrc_GetNeighborCellLteIntraFreq()</a> gets the RSRP and RSRQ of the Interfrequency of the cell specified with the le_mrc_CellInfoRef_t parameter.</li>
 <li><a class="el" href="le__mrc__interface_8h.html#a331545d4e396c513bba028db981c016b">le_mrc_GetNeighborCellLteInterFreq()</a> gets the RSRP and RSRQ of the Interfrequency of the cell specified with the le_mrc_CellInfoRef_t parameter.</li>
 </ul>
-<p>A sample code can be seen in the following page:</p><ul>
+<p>A sample code can be seen in the following page:</p>
+<ul>
 <li><a class="el" href="c_mrc_neighbor_cells.html">Sample code for Neighboring Cells Information</a></li>
 </ul>
-<p>c_mrcNeighborCells </p><hr/>
+<p>c_mrcNeighborCells </p>
+<hr/>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>
 </div></div>
 <br clear="left"/>
 </div>
 </div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 </body>
 </html>

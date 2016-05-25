@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" data-toc="tocs/Build Apps Concepts.json" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Naming Standards  - Legato Docs</title>
@@ -18,15 +18,6 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
-<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
-<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="resources/js/jquery.cookie.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
-<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
-<script>
-        setupTree("tocs/Build Apps Concepts.json");
-        </script>
 </head>
 <body>
 <noscript>
@@ -55,7 +46,7 @@
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
-<input id="searchbox" placeholder="Search..."/>
+<input id="searchbox" placeholder="Search"/>
 </nav>
 </header>
 </div>
@@ -84,7 +75,15 @@ Naming Overview</h1>
 Be Descriptive</h2>
 <p>The most important requirement for names of identifiers, files, etc. is that they describe what they are. Don't call a pointer to a timer "p", or "tp" (is that toilet paper?). Call it "timerPtr" so at a glance, it's extremely obvious what it is.</p>
 <p>It's acceptable for loop counters to be numbered simply "i" (or "j" for a nested loop, or "k" for a nested nested loop), because this is common usage, not only in programming, but also in mathematics.</p>
-<p>It's also acceptable for variables with ''very'' limited scope (i.e., limited to a handful of lines of code) to have very simplified names, if that improves readability through reduced clutter. For example, "t" becomes more acceptable for a timer reference if it's used in a tiny code block like this: </p><pre class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> StartTimer(<span class="keywordtype">void</span>)</div><div class="line">{</div><div class="line">    <a class="code" href="le__timer_8h.html#a763fa6992488cdce3b5a820817094838">le_timer_Ref_t</a> t = <a class="code" href="le__timer_8h.html#aee41169a210378b369f440cf99146522">le_timer_Create</a>(TimerPool);</div><div class="line">    <a class="code" href="le__timer_8h.html#a0a103d5cef5e83fc9088859d527bbd43">le_timer_SetInterval</a>(t, TIMER_INTERVAL);</div><div class="line">    le_timer_SetExpiryHandler(t, TimerExpired, NULL);</div><div class="line">    <a class="code" href="le__timer_8h.html#ada2ce7f8cb1e76ed959e323ae94bbfc0">le_timer_Start</a>(t);</div><div class="line">}</div></pre><!-- fragment --><h2><a class="anchor" id="prefix"></a>
+<p>It's also acceptable for variables with ''very'' limited scope (i.e., limited to a handful of lines of code) to have very simplified names, if that improves readability through reduced clutter. For example, "t" becomes more acceptable for a timer reference if it's used in a tiny code block like this: </p>
+<pre class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> StartTimer(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    <a class="code" href="le__timer_8h.html#a763fa6992488cdce3b5a820817094838">le_timer_Ref_t</a> t = <a class="code" href="le__timer_8h.html#aee41169a210378b369f440cf99146522">le_timer_Create</a>(TimerPool);</div>
+<div class="line">    <a class="code" href="le__timer_8h.html#a0a103d5cef5e83fc9088859d527bbd43">le_timer_SetInterval</a>(t, TIMER_INTERVAL);</div>
+<div class="line">    le_timer_SetExpiryHandler(t, TimerExpired, NULL);</div>
+<div class="line">    <a class="code" href="le__timer_8h.html#ada2ce7f8cb1e76ed959e323ae94bbfc0">le_timer_Start</a>(t);</div>
+<div class="line">}</div>
+</pre><!-- fragment --><h2><a class="anchor" id="prefix"></a>
 Prefixes</h2>
 <p><a class="el" href="ccoding_stds_naming.html#cstdsInterComponentInterfaces">Component Interfaces</a> <br/>
 <a class="el" href="ccoding_stds_naming.html#cstdsInterModuleInterfaces">Module Interfaces</a> <br/>
@@ -113,11 +112,23 @@ Component Interfaces</h2>
 <p>The company abbreviation indicates the company that owns the interface. For Sierra Wireless, this is usually "swi". For open-source projects, the abbreviation indicates interface's project, like the "Legato" project that starts with <code>le_</code>.</p>
 <p>The interface name abbreviation is simply an abbreviation of the interface's name. A memory management API might have <code>mem</code> as its abbreviation. This abbreviation should not be longer than 5 characters. Two to four characters is preferred.</p>
 <p>A timer API owned by Sierra Wireless might have the prefix <code>swi_tmr_</code> </p>
-<pre class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>swi_tmr* swi_tmr_Ref_t;</div><div class="line"></div><div class="line">swi_tmr_Ref_t swi_tmr_Create(<span class="keywordtype">void</span>);</div><div class="line"><span class="keywordtype">void</span> swi_tmr_SetInterval(swi_tmr_Ref_t timer, uint intervalInMs);</div><div class="line"><span class="keywordtype">void</span> swi_tmr_Start(swi_tmr_Ref_t timer);</div><div class="line">...</div></pre><!-- fragment --><p>while the Legato Memory Management API could have the prefix <code>le_mem_</code> </p>
-<pre class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>le_mem_Pool* <a class="code" href="le__mem_8h.html#a44a896f6a0a1a8c733e8038eb332989e">le_mem_PoolRef_t</a>;</div><div class="line"></div><div class="line">le_mem_PoolRef_t <a class="code" href="le__mem_8h.html#ab91efaa2978c9c1c7b2427d25b33241c">le_mem_CreatePool</a>(<span class="keywordtype">size_t</span> blockSizeInBytes);</div></pre><!-- fragment --><h2><a class="anchor" id="cstdsInterModuleInterfaces"></a>
+<pre class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>swi_tmr* swi_tmr_Ref_t;</div>
+<div class="line"></div>
+<div class="line">swi_tmr_Ref_t swi_tmr_Create(<span class="keywordtype">void</span>);</div>
+<div class="line"><span class="keywordtype">void</span> swi_tmr_SetInterval(swi_tmr_Ref_t timer, uint intervalInMs);</div>
+<div class="line"><span class="keywordtype">void</span> swi_tmr_Start(swi_tmr_Ref_t timer);</div>
+<div class="line">...</div>
+</pre><!-- fragment --><p>while the Legato Memory Management API could have the prefix <code>le_mem_</code> </p>
+<pre class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>le_mem_Pool* <a class="code" href="le__mem_8h.html#a44a896f6a0a1a8c733e8038eb332989e">le_mem_PoolRef_t</a>;</div>
+<div class="line"></div>
+<div class="line">le_mem_PoolRef_t <a class="code" href="le__mem_8h.html#ab91efaa2978c9c1c7b2427d25b33241c">le_mem_CreatePool</a>(<span class="keywordtype">size_t</span> blockSizeInBytes);</div>
+</pre><!-- fragment --><h2><a class="anchor" id="cstdsInterModuleInterfaces"></a>
 Module Interfaces</h2>
 <p>Inter-module interfaces have only one part to their prefix: an interface name abbreviation. A Registration List module could use the prefix <code>rlist_</code>. A Registration Module that implements the registration objects that get stored in the Registration List might use the prefix <code>reg_:</code> </p>
-<pre class="fragment"><div class="line"><span class="keywordtype">void</span> rlist_Add(reg_Ref_t registration);</div><div class="line"><span class="keywordtype">void</span> rlist_Remove(reg_Ref_t registration);</div><div class="line">reg_Ref_t rlist_FindByName(<span class="keyword">const</span> <span class="keywordtype">char</span>* name);</div></pre><!-- fragment --><p>Because inter-module interfaces are not seen outside of the component where they're defined, it's impossible to have a naming conflict between an inter-module interface in one component and an inter-module interface in another component. Actually, there could still be a conflict at the link stage, if the symbols are allowed to leak out, but a linker script file can be used to prevent this quite easily.</p>
+<pre class="fragment"><div class="line"><span class="keywordtype">void</span> rlist_Add(reg_Ref_t registration);</div>
+<div class="line"><span class="keywordtype">void</span> rlist_Remove(reg_Ref_t registration);</div>
+<div class="line">reg_Ref_t rlist_FindByName(<span class="keyword">const</span> <span class="keywordtype">char</span>* name);</div>
+</pre><!-- fragment --><p>Because inter-module interfaces are not seen outside of the component where they're defined, it's impossible to have a naming conflict between an inter-module interface in one component and an inter-module interface in another component. Actually, there could still be a conflict at the link stage, if the symbols are allowed to leak out, but a linker script file can be used to prevent this quite easily.</p>
 <p>It's also impossible to have a naming conflict between an inter-component interface and an inter-module interface, because all interfaces imported from outside a component will have both a company prefix and an interface name abbreviation. The difference in the prefixes also highlights the scope differences of the identifiers, whichincreases readability.</p>
 <h1><a class="anchor" id="cstdsFiles"></a>
 Files</h1>
@@ -133,5 +144,11 @@ Macros</h1>
 <br clear="left"/>
 </div>
 </div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 </body>
 </html>

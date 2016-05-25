@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" data-toc="tocs/Build Apps API Guides.json" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Config Tree Entries  - Legato Docs</title>
@@ -18,15 +18,6 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
-<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
-<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="resources/js/jquery.cookie.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
-<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
-<script>
-        setupTree("tocs/Build Apps API Guides.json");
-        </script>
 </head>
 <body>
 <noscript>
@@ -55,7 +46,7 @@
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
-<input id="searchbox" placeholder="Search..."/>
+<input id="searchbox" placeholder="Search"/>
 </nav>
 </header>
 </div>
@@ -79,7 +70,8 @@ Cellular Network Service</h1>
 <h1><a class="anchor" id="mbxConfigTree"></a>
 SMS Inbox Service</h1>
 <p>Configuration for the <a class="el" href="c_sms_inbox.html">SMS Inbox Service</a> Service. <br/>
- The configuration database path for the SMS Inbox Service is: </p><pre class="fragment">/
+ The configuration database path for the SMS Inbox Service is: </p>
+<pre class="fragment">/
     smsInbox/
         apps/
             appA&lt;uint&gt; = &lt;# of messages&gt;
@@ -91,7 +83,8 @@ SMS Inbox Service</h1>
 <h1><a class="anchor" id="ecallConfigTree"></a>
 eCall</h1>
 <p>Configuration for the <a class="el" href="c_ecall.html">eCall</a> Service. <br/>
- The configuration database path for the eCall is: </p><pre class="fragment">/
+ The configuration database path for the eCall is: </p>
+<pre class="fragment">/
     modemServices/
         eCall/
             systemStandard&lt;string&gt; = &lt;eCall system&gt;
@@ -102,13 +95,15 @@ eCall</h1>
                 0&lt;string&gt; = &lt;propulsion type&gt;
                 1&lt;string&gt; = &lt;propulsion type&gt;
                 ...
-</pre><p>The 'systemStandard' is the kind of eCall system:</p><ul>
+</pre><p>The 'systemStandard' is the kind of eCall system:</p>
+<ul>
 <li>PAN-EUROPEAN</li>
 <li>ERA-GLONASS</li>
 </ul>
 <p>If no value or a bad entry is filled, the default value is 'PAN-EUROPEAN'.</p>
 <p>The 'msdVersion' field is the MSD format version. If the field is not present, the default MSD version is version 1.</p>
-<p>The 'vehicleType' field can be set with the following choices (string type):</p><ul>
+<p>The 'vehicleType' field can be set with the following choices (string type):</p>
+<ul>
 <li>"Passenger-M1" (Passenger vehicle, Class M1)</li>
 <li>"Bus-M2" (Buses and coaches, Class M2)</li>
 <li>"Bus-M3" (Buses and coaches, Class M3)</li>
@@ -124,7 +119,8 @@ eCall</h1>
 <li>"Motorcycle-L7e" (Motorcycles, Class L7e)</li>
 </ul>
 <p>The 'vin' is the vehicle identification number (string type).</p>
-<p>The 'propulsionType' field can be set with the following choices (string type):</p><ul>
+<p>The 'propulsionType' field can be set with the following choices (string type):</p>
+<ul>
 <li>"Gasoline" (Gasoline propulsion)</li>
 <li>"Diesel" (Diesel propulsion)</li>
 <li>"NaturalGas" (Compressed natural gas propulsion)</li>
@@ -140,7 +136,8 @@ eCall</h1>
 <h1><a class="anchor" id="posConfigTree"></a>
 Positioning</h1>
 <p>Configuration for the <a class="el" href="c_pos.html">Positioning</a> Service. <br/>
- The configuration database path for Positioning is: </p><pre class="fragment">/
+ The configuration database path for Positioning is: </p>
+<pre class="fragment">/
     positioning/
         acquisitionRate&lt;int&gt; == 5
 </pre><ul>
@@ -151,7 +148,8 @@ Positioning</h1>
 <h1><a class="anchor" id="avcServiceConfigTree"></a>
 AirVantage Service</h1>
 <p>Configuration for the <a class="el" href="c_le_avc.html">AirVantage Connector</a> Service. <br/>
- The configuration database path for the modemActivityTimeout is: </p><pre class="fragment">/
+ The configuration database path for the modemActivityTimeout is: </p>
+<pre class="fragment">/
     apps/
         avcService/
                  modemActivityTimeout
@@ -166,5 +164,11 @@ app restart avcService
 <br clear="left"/>
 </div>
 </div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 </body>
 </html>

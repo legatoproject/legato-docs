@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" data-toc="tocs/Build Apps API Guides.json" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Singly Linked List API  - Legato Docs</title>
@@ -18,15 +18,6 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
-<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
-<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="resources/js/jquery.cookie.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
-<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
-<script>
-        setupTree("tocs/Build Apps API Guides.json");
-        </script>
 </head>
 <body>
 <noscript>
@@ -55,7 +46,7 @@
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
-<input id="searchbox" placeholder="Search..."/>
+<input id="searchbox" placeholder="Search"/>
 </nav>
 </header>
 </div>
@@ -75,14 +66,54 @@
 <h1><a class="anchor" id="sls_createList"></a>
 Creating and Initializing Lists</h1>
 <p>To create and initialize a linked list, <code>create</code> a <a class="el" href="structle__sls___list__t.html">le_sls_List_t</a> typed list and assign LE_SLS_LIST_INIT to it. The assignment of LE_SLS_LIST_INIT can be done either when the list is declared or after it's declared. The list <b>must</b> be initialized before it can be used.</p>
-<pre class="fragment"><div class="line"><span class="comment">// Create and initialized the list in the declaration.</span></div><div class="line"><a class="code" href="structle__sls___list__t.html">le_sls_List_t</a> MyList = <a class="code" href="le__singly_linked_list_8h.html#a2e1013c24e2c826dbba37a761c5d9f44">LE_SLS_LIST_INIT</a>;</div></pre><!-- fragment --><p>Or</p>
-<pre class="fragment"><div class="line"><span class="comment">// Create list.</span></div><div class="line"><a class="code" href="structle__sls___list__t.html">le_sls_List_t</a> MyList;</div><div class="line"></div><div class="line"><span class="comment">// Initialize the list.</span></div><div class="line">MyList = <a class="code" href="le__singly_linked_list_8h.html#a2e1013c24e2c826dbba37a761c5d9f44">LE_SLS_LIST_INIT</a>;</div></pre><!-- fragment --><p><b> The elements of <a class="el" href="structle__sls___list__t.html">le_sls_List_t</a> MUST NOT be accessed directly by the user. </b></p>
+<pre class="fragment"><div class="line"><span class="comment">// Create and initialized the list in the declaration.</span></div>
+<div class="line"><a class="code" href="structle__sls___list__t.html">le_sls_List_t</a> MyList = <a class="code" href="le__singly_linked_list_8h.html#a2e1013c24e2c826dbba37a761c5d9f44">LE_SLS_LIST_INIT</a>;</div>
+</pre><!-- fragment --><p>Or</p>
+<pre class="fragment"><div class="line"><span class="comment">// Create list.</span></div>
+<div class="line"><a class="code" href="structle__sls___list__t.html">le_sls_List_t</a> MyList;</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// Initialize the list.</span></div>
+<div class="line">MyList = <a class="code" href="le__singly_linked_list_8h.html#a2e1013c24e2c826dbba37a761c5d9f44">LE_SLS_LIST_INIT</a>;</div>
+</pre><!-- fragment --><p><b> The elements of <a class="el" href="structle__sls___list__t.html">le_sls_List_t</a> MUST NOT be accessed directly by the user. </b></p>
 <h1><a class="anchor" id="sls_createNode"></a>
 Creating and Accessing Nodes</h1>
 <p>Nodes can contain any data in any format and is defined and created by the user. The only requirement for nodes is that it must contain a <a class="el" href="structle__sls___link__t.html">le_sls_Link_t</a> link member. The link member must be initialized by assigning LE_SLS_LINK_INIT to it before it can be used. Nodes can then be added to the list by passing their links to the add functions (<a class="el" href="le__singly_linked_list_8h.html#aca4266a87d4c5e3dca130cd5d48b99af">le_sls_Stack()</a>, <a class="el" href="le__singly_linked_list_8h.html#afb5e8ffc3fb5c0d86eb47d0885a6f546">le_sls_Queue()</a>, etc.). For example:</p>
-<pre class="fragment"><div class="line"><span class="comment">// The node may be defined like this.</span></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line">{</div><div class="line">     dataType someUserData;</div><div class="line">     ...</div><div class="line">     <a class="code" href="structle__sls___link__t.html">le_sls_Link_t</a> myLink;</div><div class="line"></div><div class="line">}</div><div class="line">MyNodeClass_t;</div><div class="line"></div><div class="line"><span class="comment">// Create and initialize the list.</span></div><div class="line"><a class="code" href="structle__sls___list__t.html">le_sls_List_t</a> MyList = <a class="code" href="le__singly_linked_list_8h.html#a2e1013c24e2c826dbba37a761c5d9f44">LE_SLS_LIST_INIT</a>;</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> foo (<span class="keywordtype">void</span>)</div><div class="line">{</div><div class="line">    <span class="comment">// Create the node.  Get the memory from a memory pool previously created.</span></div><div class="line">    MyNodeClass_t* myNodePtr = <a class="code" href="le__mem_8h.html#af7c289c73d4182835a26a9099f3db359">le_mem_ForceAlloc</a>(MyNodePool);</div><div class="line"></div><div class="line">    <span class="comment">// Initialize the node's link.</span></div><div class="line">    myNodePtr-&gt;myLink = <a class="code" href="le__singly_linked_list_8h.html#aa8375976bebc74107b4d026dfcf3e94a">LE_SLS_LINK_INIT</a>;</div><div class="line"></div><div class="line">    <span class="comment">// Add the node to the head of the list by passing in the node's link.</span></div><div class="line">    <a class="code" href="le__singly_linked_list_8h.html#aca4266a87d4c5e3dca130cd5d48b99af">le_sls_Stack</a>(&amp;MyList, &amp;(myNodePtr-&gt;myLink));</div><div class="line">}</div></pre><!-- fragment --><p>The links in the nodes are added to the list and not the nodes themselves. This allows a node to be simultaneously part of multiple lists simply by having multiple links and adding the links into differently lists. This also means that nodes in a list can be of different types.</p>
+<pre class="fragment"><div class="line"><span class="comment">// The node may be defined like this.</span></div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line">{</div>
+<div class="line">     dataType someUserData;</div>
+<div class="line">     ...</div>
+<div class="line">     <a class="code" href="structle__sls___link__t.html">le_sls_Link_t</a> myLink;</div>
+<div class="line"></div>
+<div class="line">}</div>
+<div class="line">MyNodeClass_t;</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// Create and initialize the list.</span></div>
+<div class="line"><a class="code" href="structle__sls___list__t.html">le_sls_List_t</a> MyList = <a class="code" href="le__singly_linked_list_8h.html#a2e1013c24e2c826dbba37a761c5d9f44">LE_SLS_LIST_INIT</a>;</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> foo (<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Create the node.  Get the memory from a memory pool previously created.</span></div>
+<div class="line">    MyNodeClass_t* myNodePtr = <a class="code" href="le__mem_8h.html#af7c289c73d4182835a26a9099f3db359">le_mem_ForceAlloc</a>(MyNodePool);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Initialize the node's link.</span></div>
+<div class="line">    myNodePtr-&gt;myLink = <a class="code" href="le__singly_linked_list_8h.html#aa8375976bebc74107b4d026dfcf3e94a">LE_SLS_LINK_INIT</a>;</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Add the node to the head of the list by passing in the node's link.</span></div>
+<div class="line">    <a class="code" href="le__singly_linked_list_8h.html#aca4266a87d4c5e3dca130cd5d48b99af">le_sls_Stack</a>(&amp;MyList, &amp;(myNodePtr-&gt;myLink));</div>
+<div class="line">}</div>
+</pre><!-- fragment --><p>The links in the nodes are added to the list and not the nodes themselves. This allows a node to be simultaneously part of multiple lists simply by having multiple links and adding the links into differently lists. This also means that nodes in a list can be of different types.</p>
 <p>Because the links and not the nodes are in the list, the user must have a way to obtain the node itself from the link. This is achieved using the <code>CONTAINER_OF</code> macro defined in <a class="el" href="le__basics_8h.html">le_basics.h</a>. This code sample shows using CONTAINER_OF to obtain the node:</p>
-<pre class="fragment"><div class="line"><span class="comment">// Assuming mylist has been created and initialized and is not empty.</span></div><div class="line">le_sls_link_t* linkPtr = <a class="code" href="le__singly_linked_list_8h.html#a63e301829d4a513c97dbda3943efa791">le_sls_Peek</a>(&amp;MyList);</div><div class="line"></div><div class="line"><span class="comment">// Now we have the link but we want the node so we can access the user data.</span></div><div class="line"><span class="comment">// We use CONTAINER_OF to get a pointer to the node given the node's link.</span></div><div class="line"><span class="keywordflow">if</span> (linkPtr != NULL)</div><div class="line">{</div><div class="line">    MyNodeClass_t* myNodePtr = <a class="code" href="le__basics_8h.html#a27404de74c6f19c776aa8f4e8109fdf5">CONTAINER_OF</a>(linkPtr, MyNodeClass_t, myLink);</div><div class="line">}</div></pre><!-- fragment --><p>The user is responsible for creating and freeing memory for all nodes, the linked list module simply manages the links in the nodes. The node must first be removed from all lists before its memory is freed.</p>
+<pre class="fragment"><div class="line"><span class="comment">// Assuming mylist has been created and initialized and is not empty.</span></div>
+<div class="line">le_sls_link_t* linkPtr = <a class="code" href="le__singly_linked_list_8h.html#a63e301829d4a513c97dbda3943efa791">le_sls_Peek</a>(&amp;MyList);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// Now we have the link but we want the node so we can access the user data.</span></div>
+<div class="line"><span class="comment">// We use CONTAINER_OF to get a pointer to the node given the node's link.</span></div>
+<div class="line"><span class="keywordflow">if</span> (linkPtr != NULL)</div>
+<div class="line">{</div>
+<div class="line">    MyNodeClass_t* myNodePtr = <a class="code" href="le__basics_8h.html#a3616d3fd5b502150b643ddc769f71188">CONTAINER_OF</a>(linkPtr, MyNodeClass_t, myLink);</div>
+<div class="line">}</div>
+</pre><!-- fragment --><p>The user is responsible for creating and freeing memory for all nodes, the linked list module simply manages the links in the nodes. The node must first be removed from all lists before its memory is freed.</p>
 <p><b>The elements of <a class="el" href="structle__sls___link__t.html">le_sls_Link_t</a> MUST NOT be accessed directly by the user.</b></p>
 <h1><a class="anchor" id="sls_add"></a>
 Adding Links to a List</h1>
@@ -128,5 +159,11 @@ Thread Safety and Re-Entrancy</h1>
 <br clear="left"/>
 </div>
 </div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 </body>
 </html>

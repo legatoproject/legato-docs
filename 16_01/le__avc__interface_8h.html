@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" data-toc="tocs/Build Apps API Guides.json" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>le_avc_interface.h File Reference - Legato Docs</title>
@@ -18,15 +18,6 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
-<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
-<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="resources/js/jquery.cookie.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
-<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
-<script>
-        setupTree("tocs/Build Apps API Guides.json");
-        </script>
 </head>
 <body>
 <noscript>
@@ -55,7 +46,7 @@
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
-<input id="searchbox" placeholder="Search..."/>
+<input id="searchbox" placeholder="Search"/>
 </nav>
 </header>
 </div>
@@ -100,12 +91,14 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:aa4848ef1adefe1f273d67d4211233a1f"><td align="right" class="memItemLeft" valign="top">typedef struct le_avc_StatusEventHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avc__interface_8h.html#aa4848ef1adefe1f273d67d4211233a1f">le_avc_StatusEventHandlerRef_t</a></td></tr>
+<tr class="memitem:aa4848ef1adefe1f273d67d4211233a1f"><td align="right" class="memItemLeft" valign="top">typedef struct <br class="typebreak"/>
+le_avc_StatusEventHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avc__interface_8h.html#aa4848ef1adefe1f273d67d4211233a1f">le_avc_StatusEventHandlerRef_t</a></td></tr>
 <tr class="separator:aa4848ef1adefe1f273d67d4211233a1f"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:af331b7d2433e312ee2b6fde1c93c2979"><td align="right" class="memItemLeft" valign="top">typedef struct le_avc_BlockRequest * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avc__interface_8h.html#af331b7d2433e312ee2b6fde1c93c2979">le_avc_BlockRequestRef_t</a></td></tr>
+<tr class="memitem:af331b7d2433e312ee2b6fde1c93c2979"><td align="right" class="memItemLeft" valign="top">typedef struct <br class="typebreak"/>
+le_avc_BlockRequest * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avc__interface_8h.html#af331b7d2433e312ee2b6fde1c93c2979">le_avc_BlockRequestRef_t</a></td></tr>
 <tr class="separator:af331b7d2433e312ee2b6fde1c93c2979"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:aafeac33fdfce140b8bf33683cd7d9d18"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avc__interface_8h.html#aafeac33fdfce140b8bf33683cd7d9d18">le_avc_StatusHandlerFunc_t</a>) (<a class="el" href="le__avc__interface_8h.html#ae45dee5277c9340c8bb083a09ef30cff">le_avc_Status_t</a> updateStatus, int32_t totalNumBytes, int32_t dloadProgress, void *contextPtr)</td></tr>
-<tr class="separator:aafeac33fdfce140b8bf33683cd7d9d18"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af074080e6a951c8710ac2f995ae82b8c"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avc__interface_8h.html#af074080e6a951c8710ac2f995ae82b8c">le_avc_StatusHandlerFunc_t</a> )(<a class="el" href="le__avc__interface_8h.html#ae45dee5277c9340c8bb083a09ef30cff">le_avc_Status_t</a> updateStatus, int32_t totalNumBytes, int32_t dloadProgress, void *contextPtr)</td></tr>
+<tr class="separator:af074080e6a951c8710ac2f995ae82b8c"><td class="memSeparator" colspan="2"> </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -155,7 +148,7 @@ Functions</h2></td></tr>
 <tr class="separator:a65ddf265fb3236f8035fb0c475a23bd7"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:ac2b017103029c74d4be4cad63eb9dceb"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avc__interface_8h.html#ac2b017103029c74d4be4cad63eb9dceb">le_avc_DisconnectService</a> (void)</td></tr>
 <tr class="separator:ac2b017103029c74d4be4cad63eb9dceb"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:ac5443791a6e4b8db75342f45fa2f91dc"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__avc__interface_8h.html#aa4848ef1adefe1f273d67d4211233a1f">le_avc_StatusEventHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avc__interface_8h.html#ac5443791a6e4b8db75342f45fa2f91dc">le_avc_AddStatusEventHandler</a> (<a class="el" href="le__avc__interface_8h.html#aafeac33fdfce140b8bf33683cd7d9d18">le_avc_StatusHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="memitem:ac5443791a6e4b8db75342f45fa2f91dc"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__avc__interface_8h.html#aa4848ef1adefe1f273d67d4211233a1f">le_avc_StatusEventHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avc__interface_8h.html#ac5443791a6e4b8db75342f45fa2f91dc">le_avc_AddStatusEventHandler</a> (<a class="el" href="le__avc__interface_8h.html#af074080e6a951c8710ac2f995ae82b8c">le_avc_StatusHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
 <tr class="separator:ac5443791a6e4b8db75342f45fa2f91dc"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a11e325085dadb01bbefffd0b899eb207"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avc__interface_8h.html#a11e325085dadb01bbefffd0b899eb207">le_avc_RemoveStatusEventHandler</a> (<a class="el" href="le__avc__interface_8h.html#aa4848ef1adefe1f273d67d4211233a1f">le_avc_StatusEventHandlerRef_t</a> addHandlerRef)</td></tr>
 <tr class="separator:a11e325085dadb01bbefffd0b899eb207"><td class="memSeparator" colspan="2"> </td></tr>
@@ -327,12 +320,12 @@ Functions</h2></td></tr>
 <p>Reference type used by Add/Remove functions for EVENT 'le_avc_StatusEvent' </p>
 </div>
 </div>
-<a class="anchor" id="aafeac33fdfce140b8bf33683cd7d9d18"></a>
+<a class="anchor" id="af074080e6a951c8710ac2f995ae82b8c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
 <tr>
-<td class="memname">typedef void(* le_avc_StatusHandlerFunc_t) (<a class="el" href="le__avc__interface_8h.html#ae45dee5277c9340c8bb083a09ef30cff">le_avc_Status_t</a> updateStatus, int32_t totalNumBytes, int32_t dloadProgress, void *contextPtr)</td>
+<td class="memname">typedef void(* le_avc_StatusHandlerFunc_t)(<a class="el" href="le__avc__interface_8h.html#ae45dee5277c9340c8bb083a09ef30cff">le_avc_Status_t</a> updateStatus, int32_t totalNumBytes, int32_t dloadProgress, void *contextPtr)</td>
 </tr>
 </table>
 </div><div class="memdoc">
@@ -361,16 +354,16 @@ Functions</h2></td></tr>
 <p>Error code used to provide diagnostic information after a failure (includes both download and install failure).</p>
 <dl class="section note"><dt>Note</dt><dd>Additional information may also be available in the target device's system log. </dd></dl>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a9c0a79ba754f64f270821246337c4ce9a23af7d0f6e4f880433b8189f6070cea6"></a>LE_AVC_ERR_NONE </td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a9c0a79ba754f64f270821246337c4ce9a23af7d0f6e4f880433b8189f6070cea6"></a>LE_AVC_ERR_NONE</em> </td><td class="fielddoc">
 <p>No error. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a9c0a79ba754f64f270821246337c4ce9a88f3a39f2aa27af2986e31b94febd9ec"></a>LE_AVC_ERR_BAD_PACKAGE </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a9c0a79ba754f64f270821246337c4ce9a88f3a39f2aa27af2986e31b94febd9ec"></a>LE_AVC_ERR_BAD_PACKAGE</em> </td><td class="fielddoc">
 <p>Encountered a bad package. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a9c0a79ba754f64f270821246337c4ce9a718608913fcee065e2b7076db63c962f"></a>LE_AVC_ERR_INTERNAL </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a9c0a79ba754f64f270821246337c4ce9a718608913fcee065e2b7076db63c962f"></a>LE_AVC_ERR_INTERNAL</em> </td><td class="fielddoc">
 <p>Something failed while doing install/download. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a9c0a79ba754f64f270821246337c4ce9a891ff0af5c14411c8c9f894212948f5a"></a>LE_AVC_ERR_SECURITY_FAILURE </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a9c0a79ba754f64f270821246337c4ce9a891ff0af5c14411c8c9f894212948f5a"></a>LE_AVC_ERR_SECURITY_FAILURE</em> </td><td class="fielddoc">
 <p>Security check failure while installing the package. </p>
 </td></tr>
 </table>
@@ -387,13 +380,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Session type indicates whether the device is connected to the bootstrap server or the device management server. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a75d2fe14cef94bb6ebe00e7a849031afae8fece53075194655a179153f7f1078e"></a>LE_AVC_BOOTSTRAP_SESSION </td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a75d2fe14cef94bb6ebe00e7a849031afae8fece53075194655a179153f7f1078e"></a>LE_AVC_BOOTSTRAP_SESSION</em> </td><td class="fielddoc">
 <p>Bootstrap session. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a75d2fe14cef94bb6ebe00e7a849031afa3d8ff093c4d4054dfaaf0cf18698ff29"></a>LE_AVC_DM_SESSION </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a75d2fe14cef94bb6ebe00e7a849031afa3d8ff093c4d4054dfaaf0cf18698ff29"></a>LE_AVC_DM_SESSION</em> </td><td class="fielddoc">
 <p>Device Management session. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a75d2fe14cef94bb6ebe00e7a849031afa00a8f797f5eeb4cc487a630a64843878"></a>LE_AVC_SESSION_INVALID </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a75d2fe14cef94bb6ebe00e7a849031afa00a8f797f5eeb4cc487a630a64843878"></a>LE_AVC_SESSION_INVALID</em> </td><td class="fielddoc">
 <p>Session type invalid. </p>
 </td></tr>
 </table>
@@ -411,49 +404,49 @@ Functions</h2></td></tr>
 <p>Status of session or update</p>
 <p>If an update is pending, it must first be downloaded and then installed. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffa1f3c54330817d9ea3f0f2d921f6aaa61"></a>LE_AVC_NO_UPDATE </td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffa1f3c54330817d9ea3f0f2d921f6aaa61"></a>LE_AVC_NO_UPDATE</em> </td><td class="fielddoc">
 <p>No updates pending. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffa466215ed9308f7ffa06280ea9b11342a"></a>LE_AVC_DOWNLOAD_PENDING </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffa466215ed9308f7ffa06280ea9b11342a"></a>LE_AVC_DOWNLOAD_PENDING</em> </td><td class="fielddoc">
 <p>Update pending download. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffaf0d46a35a5e0308c40c238611a793b34"></a>LE_AVC_DOWNLOAD_IN_PROGRESS </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffaf0d46a35a5e0308c40c238611a793b34"></a>LE_AVC_DOWNLOAD_IN_PROGRESS</em> </td><td class="fielddoc">
 <p>Download in progress. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffa13cafab97db914a705923e0fb3d0b864"></a>LE_AVC_DOWNLOAD_COMPLETE </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffa13cafab97db914a705923e0fb3d0b864"></a>LE_AVC_DOWNLOAD_COMPLETE</em> </td><td class="fielddoc">
 <p>Download has completed. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffa1d002c2c2b3344f3ca252e34557bd0c1"></a>LE_AVC_DOWNLOAD_FAILED </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffa1d002c2c2b3344f3ca252e34557bd0c1"></a>LE_AVC_DOWNLOAD_FAILED</em> </td><td class="fielddoc">
 <p>An error occurred downloading the update. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffa8e8517a1f269a3c24b133e070f41c182"></a>LE_AVC_INSTALL_PENDING </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffa8e8517a1f269a3c24b133e070f41c182"></a>LE_AVC_INSTALL_PENDING</em> </td><td class="fielddoc">
 <p>Install is pending (implies download complete) </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffaed27813e7aa84f9f853f17bf36ca5bf3"></a>LE_AVC_INSTALL_IN_PROGRESS </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffaed27813e7aa84f9f853f17bf36ca5bf3"></a>LE_AVC_INSTALL_IN_PROGRESS</em> </td><td class="fielddoc">
 <p>Install in progress. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffa0730c0add28d8e0adc992d5259052b8d"></a>LE_AVC_INSTALL_COMPLETE </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffa0730c0add28d8e0adc992d5259052b8d"></a>LE_AVC_INSTALL_COMPLETE</em> </td><td class="fielddoc">
 <p>Update has been successfully installed. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffa804a229abe688cbe91e65fd8cfa532e8"></a>LE_AVC_INSTALL_FAILED </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffa804a229abe688cbe91e65fd8cfa532e8"></a>LE_AVC_INSTALL_FAILED</em> </td><td class="fielddoc">
 <p>An error occurred installing the update. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffa1bf857f3a557baf4a34ae184e88a1510"></a>LE_AVC_UNINSTALL_PENDING </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffa1bf857f3a557baf4a34ae184e88a1510"></a>LE_AVC_UNINSTALL_PENDING</em> </td><td class="fielddoc">
 <p>Uninstall is pending. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffa339bce11b1eed576f74107514d4ad7be"></a>LE_AVC_UNINSTALL_IN_PROGRESS </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffa339bce11b1eed576f74107514d4ad7be"></a>LE_AVC_UNINSTALL_IN_PROGRESS</em> </td><td class="fielddoc">
 <p>Uninstall in progress. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffa2fdeb6f0e01f90750212a97a3b2bbbb8"></a>LE_AVC_UNINSTALL_COMPLETE </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffa2fdeb6f0e01f90750212a97a3b2bbbb8"></a>LE_AVC_UNINSTALL_COMPLETE</em> </td><td class="fielddoc">
 <p>App has been successfully uninstalled. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffa2534439c4b73ec8cb8816b7241bed15b"></a>LE_AVC_UNINSTALL_FAILED </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffa2534439c4b73ec8cb8816b7241bed15b"></a>LE_AVC_UNINSTALL_FAILED</em> </td><td class="fielddoc">
 <p>An error occurred uninstalling the update. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffafbb67dce39511535897ad23f847cafc1"></a>LE_AVC_SESSION_STARTED </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffafbb67dce39511535897ad23f847cafc1"></a>LE_AVC_SESSION_STARTED</em> </td><td class="fielddoc">
 <p>Session with AV server started. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffae8f54bfa941cac982ce845cb0b682ab0"></a>LE_AVC_SESSION_STOPPED </td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="ae45dee5277c9340c8bb083a09ef30cffae8f54bfa941cac982ce845cb0b682ab0"></a>LE_AVC_SESSION_STOPPED</em> </td><td class="fielddoc">
 <p>Session with AV server stopped. </p>
 </td></tr>
 </table>
@@ -542,7 +535,7 @@ Functions</h2></td></tr>
 <tr>
 <td class="memname"><a class="el" href="le__avc__interface_8h.html#aa4848ef1adefe1f273d67d4211233a1f">le_avc_StatusEventHandlerRef_t</a> le_avc_AddStatusEventHandler </td>
 <td>(</td>
-<td class="paramtype"><a class="el" href="le__avc__interface_8h.html#aafeac33fdfce140b8bf33683cd7d9d18">le_avc_StatusHandlerFunc_t</a> </td>
+<td class="paramtype"><a class="el" href="le__avc__interface_8h.html#af074080e6a951c8710ac2f995ae82b8c">le_avc_StatusHandlerFunc_t</a> </td>
 <td class="paramname"><em>handlerPtr</em>, </td>
 </tr>
 <tr>
@@ -1182,5 +1175,11 @@ Functions</h2></td></tr>
 <br clear="left"/>
 </div>
 </div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 </body>
 </html>

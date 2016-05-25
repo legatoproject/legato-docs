@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" data-toc="tocs/Build Apps Concepts.json" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Overview  - Legato Docs</title>
@@ -18,15 +18,6 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
-<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
-<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="resources/js/jquery.cookie.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
-<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
-<script>
-        setupTree("tocs/Build Apps Concepts.json");
-        </script>
 </head>
 <body>
 <noscript>
@@ -55,7 +46,7 @@
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
-<input id="searchbox" placeholder="Search..."/>
+<input id="searchbox" placeholder="Search"/>
 </nav>
 </header>
 </div>
@@ -76,7 +67,8 @@
 .adef Files</h1>
 <p>Application definition <code></code>.adef files are used to specify the external interfaces and internal content of applications that can be built, installed, and run on target devices.</p>
 <p><code>.adef</code> files can also be used to override some settings of components without having to change those components themselves, thereby making the components more reusable.</p>
-<p>Each application has a <code>.adef</code> file that describes:</p><ul>
+<p>Each application has a <code>.adef</code> file that describes:</p>
+<ul>
 <li>which executables should be built from which components</li>
 <li>additional files from the build system to be included in the app</li>
 <li>processes to be started (by running what executables with what command-line arguments and environment variables) when the app starts</li>
@@ -90,7 +82,8 @@
 <h1><a class="anchor" id="defFilesOverview_cdef"></a>
 .cdef Files</h1>
 <p>Component definition <code></code>.cdef files are used to specify the external interfaces and internal content of reusable software components.</p>
-<p>Each component has a single <code>Component.cdef</code> file that defines:</p><ul>
+<p>Each component has a single <code>Component.cdef</code> file that defines:</p>
+<ul>
 <li>source code files used to build the component</li>
 <li>files from the build system to be included in any app that includes the component</li>
 <li>files on the target to be accessible to any app that includes the component</li>
@@ -103,23 +96,27 @@
 .sdef Files</h1>
 <p>System definition <code></code>.sdef files are used to interconnect applications with each other and with the target's runtime environment (e.g., hardware devices).</p>
 <p>.sdef files can also override some app settings.</p>
-<p>An <code>.sdef</code> file defines a system of one or more applications that can be deployed to target devices in the field. Each <code>.sdef</code> file lists:</p><ul>
+<p>An <code>.sdef</code> file defines a system of one or more applications that can be deployed to target devices in the field. Each <code>.sdef</code> file lists:</p>
+<ul>
 <li>apps are to be installed on the device</li>
 <li>IPC connections permitted between apps</li>
 <li>overrides for limits, configuration settings, and IPC bindings within apps</li>
 </ul>
 <h1><a class="anchor" id="defFilesOverview_searchPaths"></a>
 Build Tool Search Paths</h1>
-<p>Two are used:</p><ul>
+<p>Two are used:</p>
+<ul>
 <li><b>source</b> search path - lists file system directories where the build tools look for source code files and components.</li>
 <li><b>interface</b> search path - lists file system directories where the build tools look for interface definition files (.h files and .api files).</li>
 </ul>
 <p>The default search path “.” is the current working directory where the build tool ran.</p>
-<p>Search paths can be changed through mk tools command-line options:</p><ul>
+<p>Search paths can be changed through mk tools command-line options:</p>
+<ul>
 <li>'-s' sets the source search path</li>
 <li>‘-i’ sets the interface search path</li>
 </ul>
-<pre class="fragment"><div class="line">$ mksys packageTracker.sdef -i ~/work/interfaces -s ~/work/components</div></pre><!-- fragment --><h1><a class="anchor" id="defFilesOverview_overriding"></a>
+<pre class="fragment"><div class="line">$ mksys packageTracker.sdef -i ~/work/interfaces -s ~/work/components</div>
+</pre><!-- fragment --><h1><a class="anchor" id="defFilesOverview_overriding"></a>
 Precedence and Overriding</h1>
 <p>Settings in a <code>.sdef</code> file override settings from <em>both</em> the <code>.adef</code> and <code>Component.cdef</code>, while the <code>.adef</code> overrides settings in the <code>Component.cdef</code>. This increases reusability by allowing an integrator to override a component's or app's settings without having to change that component or app.</p>
 <p>Most configuration settings can be overridden on the target device at runtime (although, some won't take effect until the app is restarted).</p>
@@ -133,5 +130,11 @@ Unsandboxed App Limits</h1>
 <br clear="left"/>
 </div>
 </div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
 </body>
 </html>

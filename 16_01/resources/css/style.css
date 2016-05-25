@@ -123,6 +123,7 @@ input.modal-closing-trick:checked ~ div#nojs {
     top: 0.4em;
     left: 25px;
     font-size: 24px;
+    cursor: pointer;
 }
 #menu-trigger:hover {
     color: #43E6E6;
@@ -220,12 +221,9 @@ nav a.subnavlink {
     padding-top: 0.2em;
     vertical-align: middle;
 }
-#menudocumentation #searchbox {
-    float: right;
-    padding-right: 2em;
-    padding-top: 0.6em;
-    color: #FFF;
-}
+
+
+
 #menudocumentation nav a {
     font-family: 'Open Sans', arial, sans-serif;
     font-weight: 400;
@@ -242,72 +240,46 @@ nav a.subnavlink {
     background: url('../images/spinny_orangefg.gif') no-repeat right center
 }
 #search-icon {
+    pointer-events: none;
     font-size: 18px;
     margin-top: 0.7em;
-    color: #F7781E;
+    color: #7395A0;
     position: absolute;
-    top: 0.5em;
-    left: -1.4em;
+    top: 0.35em;
+    opacity: 0.7;
 }
+
 nav.ui-front {
     float: right;
     padding-right: 2em;
     padding-top: 0.6em;
     color: #FFF;
 }
-#menudocumentation nav input#searchbox {
+#searchbox {
     background-color: transparent;
     border: none;
-    border-bottom: #F7781E solid 2px;
+    border-bottom: #7395A0 solid 2px;
     height: 1.5em;
     font-size: 18px;
-    padding-left: 15px;
+    padding-left: 1.5em;
     width: 13em;
     color: #00414d;
     float: right;
     padding-top: 0.3em;
     font-weight: 500;
 }
-#menudocumentation nav input#searchbox:focus {
+#searchbox:before{
+         content: "\f002";
+}
+#searchbox:focus {
     outline: none;
+    border-bottom: #F7781E solid 2px;
 }
 
 /* shifted off screen for screen readers I guess */
 .ui-helper-hidden-accessible {
     position: absolute;
     left: -999em;
-}
-
-/** these are for changing the colour of the search box placeholder text **/
-::-webkit-input-placeholder {
-
-    /* WebKit, Blink, Edge */
-    color: #F7781E;
-    opacity: 0.8;
-}
-:-moz-placeholder {
-
-    /* Mozilla Firefox 4 to 18 */
-    color: #F7781E;
-    opacity: 0.8;
-}
-::-moz-placeholder {
-
-    /* Mozilla Firefox 19+ */
-    color: #F7781E;
-    opacity: 0.8;
-}
-:-ms-input-placeholder {
-
-    /* Internet Explorer 10-11 */
-    color: #F7781E;
-    opacity: 0.8;
-}
-:placeholder-shown {
-
-    /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
-    color: #F7781E;
-    opacity: 0.8;
 }
 
 /*****************/
@@ -344,7 +316,7 @@ nav.ui-front {
     font-family: 'Open Sans', arial, sans-serif;
     font-weight: 400;
 }
-#menudocumentation nav ul#search_result li.ui-state-focus, #menudocumentation nav ul#search_result li:hover {
+#menudocumentation nav ul#search_result li.ui-state-focus {
     border-left: #00687a solid 3px;
     -webkit-transition: all 0s;
     -moz-transition: all 0s;
