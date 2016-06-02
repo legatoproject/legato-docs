@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" data-toc="tocs/Build Apps API Guides.json" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Antenna Monitoring  - Legato Docs</title>
@@ -18,6 +18,7 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
+<script src="tocs/Build Apps API Guides.json"></script>
 </head>
 <body>
 <noscript>
@@ -33,16 +34,16 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
 <div class="white" id="menudocumentation">
 <header>
-<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo_192.png"/></a>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -66,8 +67,7 @@
 <h1><a class="anchor" id="le_antenna_binding"></a>
 IPC interfaces binding</h1>
 <p>All the functions of this API are provided by the <b>modemService</b>.</p>
-<p>Here's a code sample binding to modem services: </p>
-<pre class="fragment">  bindings:
+<p>Here's a code sample binding to modem services: </p><pre class="fragment">  bindings:
   {
      clientExe.clientComponent.le_antenna -&gt; modemService.le_antenna
   }</pre><h1><a class="anchor" id="le_antenna_cell_section"></a>
@@ -78,8 +78,7 @@ Diagnostics principle</h2>
 <p>Antenna diagnosis is based on the following principle :</p>
 <p>A very small D.C. current goes through the coaxial cable to the antenna. A resistive bridge is realized to provide different voltages depending on the antenna state.</p>
 <p>It is mandatory to use a specific antenna. The antenna used have to be built with a resistor between radiating element and ground.</p>
-<p>The states to diagnose are listed here:</p>
-<ul>
+<p>The states to diagnose are listed here:</p><ul>
 <li>Antenna in open circuit: there is no antenna but RF open circuit</li>
 <li>Antenna in close circuit: presence of antenna</li>
 <li>Antenna in short circuit: with or without antenna, short circuit for RF path.</li>
@@ -87,8 +86,7 @@ Diagnostics principle</h2>
 <h2><a class="anchor" id="le_antenna_cell_thres_subsection"></a>
 Thresholds</h2>
 <p>Configurable thresholds are compared to the ADC (Analog to Digital Converter) reading from the antenna diagnostic voltage to determine in which state the RF (Radio Frequency) is.</p>
-<p>Two thresholds are set to decide the state: </p>
-<pre class="fragment">                          short limit                   open limit
+<p>Two thresholds are set to decide the state: </p><pre class="fragment">                          short limit                   open limit
   ---- short circuit ----|---- close circuit ----|---- open circuit ----
          unknown state      |   presence of antenna  |        no antenna
 </pre><p>A short event is reported for the Cellular or Diversity antenna if the ADC value is lower than the corresponding short limit. An open event is reported for the Cellular or Diversity antenna if the ADC value is higher than the corresponding open limit.</p>
@@ -100,8 +98,7 @@ GNSS antenna</h1>
 Diagnostics principle</h2>
 <p>This functionality allows to detect or not the presence of an antenna or to detect a defective antenna.</p>
 <p>The antenna diagnosis is based on the measurement of the current consumption for a GNSS active antenna. Moreover a current hardware protection circuitry is able to protect the power supply of that active antenna.</p>
-<p>The states to diagnose are listed here:</p>
-<ul>
+<p>The states to diagnose are listed here:</p><ul>
 <li>Antenna in short circuit: with or without antenna, short circuit for RF path.</li>
 <li>Antenna in open circuit: there is no antenna but RF open circuit.</li>
 <li>Antenna in close circuit: presence of antenna.</li>
@@ -110,8 +107,7 @@ Diagnostics principle</h2>
 <h2><a class="anchor" id="le_antenna_gnss_thre_subsection"></a>
 Thresholds</h2>
 <p>Configurable thresholds are compared to the ADC (Analog to Digital Converter) reading from the antenna diagnostic hardware design measuring the current to determine in which state the antenna is.</p>
-<p>The following status are reported for the GNSS antenna if the ADC value is:</p>
-<ul>
+<p>The following status are reported for the GNSS antenna if the ADC value is:</p><ul>
 <li>SHORT_CIRCUIT: ADC value &gt; short limit, but over current HW not tripped.</li>
 <li>CLOSE_CIRCUIT: short limit &gt;= ADC value &gt;= open limit.</li>
 <li>OPEN_CIRCUIT: ADC value &lt; open limit.</li>

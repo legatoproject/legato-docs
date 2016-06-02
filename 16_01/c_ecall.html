@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" data-toc="tocs/Build Apps API Guides.json" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>eCall  - Legato Docs</title>
@@ -18,6 +18,7 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
+<script src="tocs/Build Apps API Guides.json"></script>
 </head>
 <body>
 <noscript>
@@ -33,16 +34,16 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
 <div class="white" id="menudocumentation">
 <header>
-<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo_192.png"/></a>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -61,8 +62,8 @@
 <h1 class="title">eCall </h1> </div>
 </div><div class="contents">
 <div class="textblock"><p><a class="el" href="le__ecall__interface_8h.html">API Reference</a> <br/>
-<a class="el" href="how_to_ecall.html">Manage eCall</a> <br/>
-<a class="el" href="sample_apps_e_call.html">eCall</a> sample app <br/>
+<a class="el" href="howToEcall.html">Manage eCall</a> <br/>
+<a class="el" href="sampleApps_eCall.html">eCall</a> sample app <br/>
 <a class="el" href="c_ecall.html#le_ecall_samples">Code samples</a> <br/>
 </p>
 <hr/>
@@ -75,15 +76,13 @@
 <h1><a class="anchor" id="le_ecall_binding"></a>
 IPC interfaces binding</h1>
 <p>All the functions of this API are provided by the <b>modemService</b> service.</p>
-<p>Here's a code sample binding to modem services: </p>
-<pre class="fragment">bindings:
+<p>Here's a code sample binding to modem services: </p><pre class="fragment">bindings:
 {
    clientExe.clientComponent.le_ecall -&gt; modemService.le_ecall
 }
 </pre><h1><a class="anchor" id="le_ecall_operation"></a>
 Operation modes</h1>
-<p>The modem can be configured to operate in three different operation modes:</p>
-<ul>
+<p>The modem can be configured to operate in three different operation modes:</p><ul>
 <li><a class="el" href="le__ecall__interface_8h.html#a042d52c84b5b679ab32dd814c5b0be9e">le_ecall_ForceOnlyMode()</a>: this function configures the eCall operation mode to eCall only, only emergency number can be used to start an eCall session. The modem doesn't try to register on the Cellular network. This function forces the modem to behave as eCall only mode whatever U/SIM operation mode. The change doesn't persist over power cycles. This function can be called before making an eCall.</li>
 <li><a class="el" href="le__ecall__interface_8h.html#ad468828b0024de378d91ea9c30fd6f3f">le_ecall_ForcePersistentOnlyMode()</a>: Same as <a class="el" href="le__ecall__interface_8h.html#a042d52c84b5b679ab32dd814c5b0be9e">le_ecall_ForceOnlyMode()</a>, but the change persists over power cycles.</li>
 <li><a class="el" href="le__ecall__interface_8h.html#a924114fa7fab10c3f351766a76134f34">le_ecall_ExitOnlyMode()</a>: this function exits from eCall Only mode. It configures the eCall operation mode to Normal mode, the modem uses the default operation mode at power up (or after U/SIM hotswap). The modem behaves following the U/SIM eCall operation mode; for example the U/SIM can be configured only for eCall, or a combination of eCall and commercial service provision.</li>
@@ -97,8 +96,7 @@ Operation modes</h1>
 <h1><a class="anchor" id="le_ecall_session"></a>
 eCall Session</h1>
 <p>Start an eCall session by creating an eCall object that calls <a class="el" href="le__ecall__interface_8h.html#aad7fa3b34d9d72a2f1d4baa681ba25cc">le_ecall_Create()</a>. Stop an eCall session with <a class="el" href="le__ecall__interface_8h.html#a85800c86f9709fb7baa7219cc762181c">le_ecall_End()</a>.</p>
-<p>The type of eCall and the kind of activation are specified using different functions to start the eCall session:</p>
-<ul>
+<p>The type of eCall and the kind of activation are specified using different functions to start the eCall session:</p><ul>
 <li><a class="el" href="le__ecall__interface_8h.html#ab106c3ca87fc8dd8239d2849df932122">le_ecall_StartManual()</a>: initiate a manual eCall session (triggered by a passenger)</li>
 <li><a class="el" href="le__ecall__interface_8h.html#aa25256eeacefcf00c14763ef294c7667">le_ecall_StartAutomatic()</a>: initiate an automatic eCall session (automatically triggered by the IVS in case of accident)</li>
 <li><a class="el" href="le__ecall__interface_8h.html#aa5d23a1bea370b1ae29fc52d7a89d947">le_ecall_StartTest()</a>: initiate a test eCall session (to test the communication between the IVS and the PSAP)</li>
@@ -109,20 +107,17 @@ eCall Session</h1>
 <p>An application can call <a class="el" href="le__ecall__interface_8h.html#a771b2ef399a8fbf3b80c4eb11152c06a">le_ecall_GetTerminationReason()</a> to know the reason of the call termination when call state is LE_ECALL_STATE_DISCONNECTED, and also <a class="el" href="le__ecall__interface_8h.html#a8ffb7fb207537ea4574823285ebb6ca1">le_ecall_GetPlatformSpecificTerminationCode()</a> to get platform specific termination code (refer to your platform documentation for further details).</p>
 <h1><a class="anchor" id="le_ecall_msd"></a>
 Minimum Set of Data (MSD)</h1>
-<p>The dynamic values of the MSD can be set with:</p>
-<ul>
+<p>The dynamic values of the MSD can be set with:</p><ul>
 <li><a class="el" href="le__ecall__interface_8h.html#a2b56b7b7fd7f936c144d30eba7815908">le_ecall_SetMsdPosition()</a> sets the position of the vehicle.</li>
 <li><a class="el" href="le__ecall__interface_8h.html#a8c009bb03d61dcd0ffbd9e986b692a85">le_ecall_SetMsdPassengersCount()</a> sets the number of passengers.</li>
 </ul>
 <p>The MSD is automatically encoded with the dynamic values and the static values retrieved from the configuration tree each time those functions are called.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Those functions return a LE_DUPLICATE error when the MSD has been already imported with <a class="el" href="le__ecall__interface_8h.html#a85c4c3b921b9a6b0bc10f9400e58113e">le_ecall_ImportMsd()</a> function.</dd></dl>
-<p>The MSD transmission mode can be set or get with:</p>
-<ul>
+<p>The MSD transmission mode can be set or get with:</p><ul>
 <li><a class="el" href="le__ecall__interface_8h.html#a00d3dbc99884375cf2487d6640767c40">le_ecall_SetMsdTxMode()</a></li>
 <li><a class="el" href="le__ecall__interface_8h.html#a4319df67dc451fecb72e4e60ba7b6f6e">le_ecall_GetMsdTxMode()</a></li>
 </ul>
-<p>The transmission mode can be:</p>
-<ul>
+<p>The transmission mode can be:</p><ul>
 <li><code>LE_ECALL_TX_MODE_PUSH</code> : the MSD is pushed by the IVS</li>
 <li><code>LE_ECALL_TX_MODE_PULL</code> : the MSD is sent when requested by the PSAP</li>
 </ul>
@@ -153,14 +148,12 @@ ERA-GLONASS compliancy</h1>
 <h1><a class="anchor" id="le_ecall_eraGlonassData"></a>
 ERA-GLONASS MSD additional data</h1>
 <p>ERA-GLONASS additional data are optional and provided in the MSD message if any. They are located in MSD data block number 12 as optional additional data.</p>
-<p>ERA-GLONASS MSD additional data describes:</p>
-<ul>
+<p>ERA-GLONASS MSD additional data describes:</p><ul>
 <li>The crash severity (Accident Severity Index - ASI15)</li>
 <li>The diagnostic result</li>
 <li>The crash information</li>
 </ul>
-<p>ERA-GLONASS MSD additional data can be specified through the following functions:</p>
-<ul>
+<p>ERA-GLONASS MSD additional data can be specified through the following functions:</p><ul>
 <li><a class="el" href="le__ecall__interface_8h.html#a577f3dcd16e53c8a14295ec58c6d2b9a">le_ecall_SetMsdEraGlonassCrashSeverity()</a>.</li>
 <li><a class="el" href="le__ecall__interface_8h.html#addb2874aacaffba2731354c4ac9428bf">le_ecall_ResetMsdEraGlonassCrashSeverity()</a>.</li>
 <li><a class="el" href="le__ecall__interface_8h.html#a51ad61edf379cfe07f03fbd71b56df9d">le_ecall_SetMsdEraGlonassDiagnosticResult()</a>.</li>
@@ -169,91 +162,37 @@ ERA-GLONASS MSD additional data</h1>
 <li><a class="el" href="le__ecall__interface_8h.html#ab883aa41416ada9746acfbb75a0039a8">le_ecall_ResetMsdEraGlonassCrashInfo()</a>.</li>
 </ul>
 <p>ERA-GLONASS additional data is encoded using the OID version "1.4.1". This was assigned to ERA-GLONASS optional additional data by CEN. Content of data block in the AdditionalData should be:</p>
-<pre class="fragment"><div class="line">ERAOADASN1Module</div>
-<div class="line">DEFINITIONS</div>
-<div class="line">AUTOMATIC TAGS ::=</div>
-<div class="line">BEGIN</div>
-<div class="line">ERADataFormatId::= INTEGER (1)</div>
-<div class="line"></div>
-<div class="line">ERAAdditionalData ::= SEQUENCE {</div>
-<div class="line">   crashSeverity INTEGER(0..2047) OPTIONAL,</div>
-<div class="line">   diagnosticResult DiagnosticResult OPTIONAL,</div>
-<div class="line">   crashInfo CrashInfo OPTIONAL,</div>
-<div class="line">   ...</div>
-<div class="line">}</div>
-<div class="line"></div>
-<div class="line">DiagnosticResult ::= SEQUENCE {</div>
-<div class="line">   micConnectionFailure BOOLEAN OPTIONAL,</div>
-<div class="line">   micFailure BOOLEAN OPTIONAL,</div>
-<div class="line">   rightSpeakerFailure BOOLEAN OPTIONAL,</div>
-<div class="line">   leftSpeakerFailure BOOLEAN OPTIONAL,</div>
-<div class="line">   speakersFailure BOOLEAN OPTIONAL,</div>
-<div class="line">   ignitionLineFailure BOOLEAN OPTIONAL,</div>
-<div class="line">   uimFailure BOOLEAN OPTIONAL,</div>
-<div class="line">   statusIndicatorFailure BOOLEAN OPTIONAL,</div>
-<div class="line">   batteryFailure BOOLEAN OPTIONAL,</div>
-<div class="line">   batteryVoltageLow BOOLEAN OPTIONAL,</div>
-<div class="line">   crashSensorFailure BOOLEAN OPTIONAL,</div>
-<div class="line">   firmwareImageCorruption BOOLEAN OPTIONAL,</div>
-<div class="line">   commModuleInterfaceFailure BOOLEAN OPTIONAL,</div>
-<div class="line">   gnssReceiverFailure BOOLEAN OPTIONAL,</div>
-<div class="line">   raimProblem BOOLEAN OPTIONAL,</div>
-<div class="line">   gnssAntennaFailure BOOLEAN OPTIONAL,</div>
-<div class="line">   commModuleFailure BOOLEAN OPTIONAL,</div>
-<div class="line">   eventsMemoryOverflow BOOLEAN OPTIONAL,</div>
-<div class="line">   crashProfileMemoryOverflow BOOLEAN OPTIONAL,</div>
-<div class="line">   otherCriticalFailires BOOLEAN OPTIONAL,</div>
-<div class="line">   otherNotCriticalFailures BOOLEAN OPTIONAL</div>
-<div class="line">}</div>
-<div class="line"></div>
-<div class="line">CrashInfo ::= SEQUENCE {</div>
-<div class="line">   crashFront BOOLEAN OPTIONAL,</div>
-<div class="line">   crashLeft BOOLEAN OPTIONAL,</div>
-<div class="line">   crashRight BOOLEAN OPTIONAL,</div>
-<div class="line">   crashRear BOOLEAN OPTIONAL,</div>
-<div class="line">   crashRollover BOOLEAN OPTIONAL,</div>
-<div class="line">   crashSide BOOLEAN OPTIONAL,</div>
-<div class="line">   crashFrontOrSide BOOLEAN OPTIONAL,</div>
-<div class="line">   crashAnotherType BOOLEAN OPTIONAL</div>
-<div class="line">}</div>
-<div class="line">END</div>
-</pre><!-- fragment --><h1><a class="anchor" id="le_ecall_redial"></a>
+<pre class="fragment"><div class="line">ERAOADASN1Module</div><div class="line">DEFINITIONS</div><div class="line">AUTOMATIC TAGS ::=</div><div class="line">BEGIN</div><div class="line">ERADataFormatId::= INTEGER (1)</div><div class="line"> </div><div class="line">ERAAdditionalData ::= SEQUENCE {</div><div class="line">   crashSeverity INTEGER(0..2047) OPTIONAL,</div><div class="line">   diagnosticResult DiagnosticResult OPTIONAL,</div><div class="line">   crashInfo CrashInfo OPTIONAL,</div><div class="line">   ...</div><div class="line">}</div><div class="line"> </div><div class="line">DiagnosticResult ::= SEQUENCE {</div><div class="line">   micConnectionFailure BOOLEAN OPTIONAL,</div><div class="line">   micFailure BOOLEAN OPTIONAL,</div><div class="line">   rightSpeakerFailure BOOLEAN OPTIONAL,</div><div class="line">   leftSpeakerFailure BOOLEAN OPTIONAL,</div><div class="line">   speakersFailure BOOLEAN OPTIONAL,</div><div class="line">   ignitionLineFailure BOOLEAN OPTIONAL,</div><div class="line">   uimFailure BOOLEAN OPTIONAL,</div><div class="line">   statusIndicatorFailure BOOLEAN OPTIONAL,</div><div class="line">   batteryFailure BOOLEAN OPTIONAL,</div><div class="line">   batteryVoltageLow BOOLEAN OPTIONAL,</div><div class="line">   crashSensorFailure BOOLEAN OPTIONAL,</div><div class="line">   firmwareImageCorruption BOOLEAN OPTIONAL,</div><div class="line">   commModuleInterfaceFailure BOOLEAN OPTIONAL,</div><div class="line">   gnssReceiverFailure BOOLEAN OPTIONAL,</div><div class="line">   raimProblem BOOLEAN OPTIONAL,</div><div class="line">   gnssAntennaFailure BOOLEAN OPTIONAL,</div><div class="line">   commModuleFailure BOOLEAN OPTIONAL,</div><div class="line">   eventsMemoryOverflow BOOLEAN OPTIONAL,</div><div class="line">   crashProfileMemoryOverflow BOOLEAN OPTIONAL,</div><div class="line">   otherCriticalFailires BOOLEAN OPTIONAL,</div><div class="line">   otherNotCriticalFailures BOOLEAN OPTIONAL</div><div class="line">}</div><div class="line"> </div><div class="line">CrashInfo ::= SEQUENCE {</div><div class="line">   crashFront BOOLEAN OPTIONAL,</div><div class="line">   crashLeft BOOLEAN OPTIONAL,</div><div class="line">   crashRight BOOLEAN OPTIONAL,</div><div class="line">   crashRear BOOLEAN OPTIONAL,</div><div class="line">   crashRollover BOOLEAN OPTIONAL,</div><div class="line">   crashSide BOOLEAN OPTIONAL,</div><div class="line">   crashFrontOrSide BOOLEAN OPTIONAL,</div><div class="line">   crashAnotherType BOOLEAN OPTIONAL</div><div class="line">}</div><div class="line">END</div></pre><!-- fragment --><h1><a class="anchor" id="le_ecall_redial"></a>
 Redial management</h1>
 <p>In the case of PAN-EUROPEAN, the redial can be performed as many times as desired but should be performed within 2 minutes. (EN 16062:2014 -7.14.3).</p>
 <p>In the case of ERA-GLONASS, the redial can be performed ECALL_MANUAL_DIAL_ATTEMPTS times within the maximal time limit of ECALL_DIAL_DURATION (GOST 54620 2013 -- Appendix A).</p>
 <p>The <b>LE_ECALL_STATE_END_OF_REDIAL_PERIOD</b> state event notifies the User of the redial period end.</p>
 <h1><a class="anchor" id="le_ecall_samples"></a>
 Code samples</h1>
-<p>A sample code that implements an eCall test session with a local voice prompt can be found in <b>eCallWPrompt.c</b> file (please refer to <a class="el" href="c_ecall_w_prompt_sample.html">Sample code of an eCall test session with a local voice prompt</a> page).</p>
-<p>A sample code that implements an eCall test session with a voice call connection can be found in <b>eCallWVoice.c</b> file (please refer to <a class="el" href="c_ecall_w_voice_sample.html">Sample code an eCall test session with a voice call connection</a> page).</p>
+<p>A sample code that implements an eCall test session with a local voice prompt can be found in <b>eCallWPrompt.c</b> file (please refer to <a class="el" href="c_ecallWPromptSample.html">Sample code of an eCall test session with a local voice prompt</a> page).</p>
+<p>A sample code that implements an eCall test session with a voice call connection can be found in <b>eCallWVoice.c</b> file (please refer to <a class="el" href="c_ecallWVoiceSample.html">Sample code an eCall test session with a voice call connection</a> page).</p>
 <p>If you want to have a look at a more in-depth usage of these APIs, please refer to the c_ecallAppMain .</p>
 <h1><a class="anchor" id="le_ecall_configuration"></a>
 eCall configuration</h1>
 <p>By default, the number to dial is read from the FDN/SDN (Fixed Dialling Numbers/Service Dialling Numbers) of the U/SIM, depending upon the eCall operating mode.</p>
-<p>However, the PSAP telephone number can be specified and retrieved with:</p>
-<ul>
+<p>However, the PSAP telephone number can be specified and retrieved with:</p><ul>
 <li><a class="el" href="le__ecall__interface_8h.html#a9c13a8582bca84c4ae77643e1f4cfd71">le_ecall_SetPsapNumber()</a></li>
 <li><a class="el" href="le__ecall__interface_8h.html#a91c84ca3f4bb27844bfd2d14859bf31a">le_ecall_GetPsapNumber()</a></li>
 </ul>
 <dl class="section note"><dt>Note</dt><dd>That PSAP number is not applied to Manually or Automatically initiated eCall. For those modes, an emergency call is launched.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>These two functions don't modified the U/SIM content nor read the U/SIM content.</dd></dl>
 <p><a class="el" href="le__ecall__interface_8h.html#a034c442fd7c6650ed956822a561c0104">le_ecall_UseUSimNumbers()</a> function can be recalled to indicate the modem to read the number to dial from the FDN/SDN of the U/SIM, depending upon the eCall operating mode.</p>
-<p>The NAD (Network Access Device, i.e. the Modem) deregistration time value can be set or get with:</p>
-<ul>
+<p>The NAD (Network Access Device, i.e. the Modem) deregistration time value can be set or get with:</p><ul>
 <li><a class="el" href="le__ecall__interface_8h.html#a66e454e84db7d337d76bc867b57891a1">le_ecall_SetNadDeregistrationTime()</a></li>
 <li><a class="el" href="le__ecall__interface_8h.html#a0f24b673049d51baf132ace25e2fa161">le_ecall_GetNadDeregistrationTime()</a></li>
 </ul>
-<p>Time is set in hours where:</p>
-<ul>
+<p>Time is set in hours where:</p><ul>
 <li>from 1 to 60 minutes -&gt; 1 hour</li>
 <li>from 61 to 120 minutes -&gt; 2hours, etc.</li>
 </ul>
-<p>Example: if <code>deregTime</code> parameter unit is minutes, the effective time is: </p>
-<pre class="fragment"><div class="line">ECallConfiguration.nad_deregistration_time = (deregTime+59)/60; </div>
-</pre><!-- fragment --><p>After termination of an emergency call the in-vehicle system remains registered on the network for the period of time, defined by the installation parameter 'NAD_DEREGISTRATION_TIME'.</p>
+<p>Example: if <code>deregTime</code> parameter unit is minutes, the effective time is: </p><pre class="fragment"><div class="line">ECallConfiguration.nad_deregistration_time = (deregTime+59)/60; </div></pre><!-- fragment --><p>After termination of an emergency call the in-vehicle system remains registered on the network for the period of time, defined by the installation parameter 'NAD_DEREGISTRATION_TIME'.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Be sure to check the possible values of 'NAD_DEREGISTRATION_TIME' for your specific platform.</dd></dl>
-<p>The minimum interval value between dial attempts can be set or get with:</p>
-<ul>
+<p>The minimum interval value between dial attempts can be set or get with:</p><ul>
 <li><a class="el" href="le__ecall__interface_8h.html#af90a8602d4b1d0cacaa3971c508dd188">le_ecall_SetIntervalBetweenDialAttempts()</a></li>
 <li><a class="el" href="le__ecall__interface_8h.html#a3a24ae5a007d0c43db2bc55caa43c19d">le_ecall_GetIntervalBetweenDialAttempts()</a></li>
 </ul>
@@ -265,8 +204,7 @@ eCall configuration</h1>
 <p><a class="el" href="le__ecall__interface_8h.html#af90a8602d4b1d0cacaa3971c508dd188">le_ecall_SetIntervalBetweenDialAttempts()</a> is available for both manual and test modes.</p>
 <h1><a class="anchor" id="le_ecall_configdb"></a>
 Configuration tree</h1>
-<p>The configuration database path for the eCall is: </p>
-<pre class="fragment">/
+<p>The configuration database path for the eCall is: </p><pre class="fragment">/
     modemServices/
         eCall/
             systemStandard&lt;string&gt; = &lt;eCall system&gt;
@@ -277,15 +215,13 @@ Configuration tree</h1>
                 0&lt;string&gt; = &lt;propulsion type&gt;
                 1&lt;string&gt; = &lt;propulsion type&gt;
                 ...
-</pre><p>The 'systemStandard' is the kind of eCall system:</p>
-<ul>
+</pre><p>The 'systemStandard' is the kind of eCall system:</p><ul>
 <li>PAN-EUROPEAN</li>
 <li>ERA-GLONASS</li>
 </ul>
 <p>If no value or a bad entry is filled, the default value is 'PAN-EUROPEAN'.</p>
 <p>The 'msdVersion' field is the MSD format version. If the field is not present, the default MSD version is version 1.</p>
-<p>The 'vehicleType' field can be set with the following choices (string type):</p>
-<ul>
+<p>The 'vehicleType' field can be set with the following choices (string type):</p><ul>
 <li>"Passenger-M1" (Passenger vehicle, Class M1)</li>
 <li>"Bus-M2" (Buses and coaches, Class M2)</li>
 <li>"Bus-M3" (Buses and coaches, Class M3)</li>
@@ -301,8 +237,7 @@ Configuration tree</h1>
 <li>"Motorcycle-L7e" (Motorcycles, Class L7e)</li>
 </ul>
 <p>The 'vin' is the vehicle identification number (string type).</p>
-<p>The 'propulsionType' field can be set with the following choices (string type):</p>
-<ul>
+<p>The 'propulsionType' field can be set with the following choices (string type):</p><ul>
 <li>"Gasoline" (Gasoline propulsion)</li>
 <li>"Diesel" (Diesel propulsion)</li>
 <li>"NaturalGas" (Compressed natural gas propulsion)</li>

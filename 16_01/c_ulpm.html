@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" data-toc="tocs/Build Apps API Guides.json" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Ultra Low Power Mode  - Legato Docs</title>
@@ -18,6 +18,7 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
+<script src="tocs/Build Apps API Guides.json"></script>
 </head>
 <body>
 <noscript>
@@ -33,16 +34,16 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
 <div class="white" id="menudocumentation">
 <header>
-<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo_192.png"/></a>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -73,32 +74,7 @@ Typical Usage</h1>
 <h1><a class="anchor" id="ulpm_example"></a>
 Sample Code</h1>
 <p>This C code sample calls low power manager API to switch low power mode:</p>
-<pre class="fragment"><div class="line"><span class="keywordtype">void</span> SwitchToLowPowerMode</div>
-<div class="line">(</div>
-<div class="line">    <span class="keywordtype">void</span></div>
-<div class="line">)</div>
-<div class="line">{</div>
-<div class="line">    <span class="keywordtype">char</span> version[<a class="code" href="le__ulpm__interface_8h.html#a71cbdb416b14270eed36eefe9c6d4943">LE_ULPM_MAX_VERS_LEN</a>+1];</div>
-<div class="line"></div>
-<div class="line">    <span class="comment">// Get ultra low power manager firmware version</span></div>
-<div class="line">    <a class="code" href="le__log_8h.html#a7a3e66a87026cc9e57bcb748840ab41b">LE_FATAL_IF</a>(<a class="code" href="le__ulpm__interface_8h.html#a37e9613ce1958f740323ee0e01d81944">le_ulpm_GetFirmwareVersion</a>(version, <span class="keyword">sizeof</span>(version)) != LE_OK,</div>
-<div class="line">        <span class="stringliteral">"Failed to get ultra low power firmware version"</span>);</div>
-<div class="line"></div>
-<div class="line">     <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"Ultra Low Power Manager Firmware version: %s"</span>, version);</div>
-<div class="line"></div>
-<div class="line">    <span class="comment">// Boot after 1000 second of shutdown.</span></div>
-<div class="line">    <a class="code" href="le__log_8h.html#aceaf11a11691d6c676e36dd317b38dbd">LE_ERROR_IF</a>(<a class="code" href="le__ulpm__interface_8h.html#a0eb0a36b2db8eeccdda045c16fa01354">le_ulpm_BootOnTimer</a>(1000) != LE_OK, <span class="stringliteral">"Can't set timer as boot source"</span>);</div>
-<div class="line"></div>
-<div class="line">    <span class="comment">// Boot if GPIO36 voltage level is high.</span></div>
-<div class="line">    <a class="code" href="le__log_8h.html#aceaf11a11691d6c676e36dd317b38dbd">LE_ERROR_IF</a>(<a class="code" href="le__ulpm__interface_8h.html#a1ce360e976bcedd7668eeec5eed32257">le_ulpm_BootOnGpio</a>(36, <a class="code" href="le__ulpm__interface_8h.html#ab0af9c55cfd8187a5edee98d75fd7d57a5ea4850292e542d4f74a3ce481dcc1a5">LE_ULPM_GPIO_HIGH</a>) != LE_OK, <span class="stringliteral">"Can't set gpio36 as boot source"</span>);</div>
-<div class="line"></div>
-<div class="line">    <span class="comment">// Boot if GPIO38 voltage level is low.</span></div>
-<div class="line">    <a class="code" href="le__log_8h.html#aceaf11a11691d6c676e36dd317b38dbd">LE_ERROR_IF</a>(<a class="code" href="le__ulpm__interface_8h.html#a1ce360e976bcedd7668eeec5eed32257">le_ulpm_BootOnGpio</a>(38, <a class="code" href="le__ulpm__interface_8h.html#ab0af9c55cfd8187a5edee98d75fd7d57ac76e5ad8a889e949e38c3cb17c81be3a">LE_ULPM_GPIO_LOW</a>) != LE_OK, <span class="stringliteral">"Can't set gpio38 as boot source"</span>);</div>
-<div class="line"></div>
-<div class="line">    <span class="comment">// Initiate shutdown.</span></div>
-<div class="line">    <a class="code" href="le__log_8h.html#aceaf11a11691d6c676e36dd317b38dbd">LE_ERROR_IF</a>(<a class="code" href="le__ulpm__interface_8h.html#a6dfc4836ea4ad3154a51f574a1d6ddef">le_ulpm_ShutDown</a>() != LE_OK, <span class="stringliteral">"Can't initiate shutdown"</span>);</div>
-<div class="line">}</div>
-</pre><!-- fragment --><hr/>
+<pre class="fragment"><div class="line"><span class="keywordtype">void</span> SwitchToLowPowerMode</div><div class="line">(</div><div class="line">    <span class="keywordtype">void</span></div><div class="line">)</div><div class="line">{</div><div class="line">    <span class="keywordtype">char</span> version[<a class="code" href="le__ulpm__interface_8h.html#a71cbdb416b14270eed36eefe9c6d4943">LE_ULPM_MAX_VERS_LEN</a>+1];</div><div class="line"> </div><div class="line">    <span class="comment">// Get ultra low power manager firmware version</span></div><div class="line">    <a class="code" href="le__log_8h.html#a7a3e66a87026cc9e57bcb748840ab41b">LE_FATAL_IF</a>(<a class="code" href="le__ulpm__interface_8h.html#a37e9613ce1958f740323ee0e01d81944">le_ulpm_GetFirmwareVersion</a>(version, <span class="keyword">sizeof</span>(version)) != LE_OK,</div><div class="line">        <span class="stringliteral">"Failed to get ultra low power firmware version"</span>);</div><div class="line"> </div><div class="line">     <a class="code" href="le__log_8h.html#a4ebab29f40ee8eaaa87205fe3f9aaa13">LE_INFO</a>(<span class="stringliteral">"Ultra Low Power Manager Firmware version: %s"</span>, version);</div><div class="line"> </div><div class="line">    <span class="comment">// Boot after 1000 second of shutdown.</span></div><div class="line">    <a class="code" href="le__log_8h.html#aceaf11a11691d6c676e36dd317b38dbd">LE_ERROR_IF</a>(<a class="code" href="le__ulpm__interface_8h.html#a0eb0a36b2db8eeccdda045c16fa01354">le_ulpm_BootOnTimer</a>(1000) != LE_OK, <span class="stringliteral">"Can't set timer as boot source"</span>);</div><div class="line"> </div><div class="line">    <span class="comment">// Boot if GPIO36 voltage level is high.</span></div><div class="line">    <a class="code" href="le__log_8h.html#aceaf11a11691d6c676e36dd317b38dbd">LE_ERROR_IF</a>(<a class="code" href="le__ulpm__interface_8h.html#a1ce360e976bcedd7668eeec5eed32257">le_ulpm_BootOnGpio</a>(36, <a class="code" href="le__ulpm__interface_8h.html#ab0af9c55cfd8187a5edee98d75fd7d57a5ea4850292e542d4f74a3ce481dcc1a5">LE_ULPM_GPIO_HIGH</a>) != LE_OK, <span class="stringliteral">"Can't set gpio36 as boot source"</span>);</div><div class="line"> </div><div class="line">    <span class="comment">// Boot if GPIO38 voltage level is low.</span></div><div class="line">    <a class="code" href="le__log_8h.html#aceaf11a11691d6c676e36dd317b38dbd">LE_ERROR_IF</a>(<a class="code" href="le__ulpm__interface_8h.html#a1ce360e976bcedd7668eeec5eed32257">le_ulpm_BootOnGpio</a>(38, <a class="code" href="le__ulpm__interface_8h.html#ab0af9c55cfd8187a5edee98d75fd7d57ac76e5ad8a889e949e38c3cb17c81be3a">LE_ULPM_GPIO_LOW</a>) != LE_OK, <span class="stringliteral">"Can't set gpio38 as boot source"</span>);</div><div class="line"> </div><div class="line">    <span class="comment">// Initiate shutdown.</span></div><div class="line">    <a class="code" href="le__log_8h.html#aceaf11a11691d6c676e36dd317b38dbd">LE_ERROR_IF</a>(<a class="code" href="le__ulpm__interface_8h.html#a6dfc4836ea4ad3154a51f574a1d6ddef">le_ulpm_ShutDown</a>() != LE_OK, <span class="stringliteral">"Can't initiate shutdown"</span>);</div><div class="line">}</div></pre><!-- fragment --><hr/>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>
 </div></div>
 <br clear="left"/>

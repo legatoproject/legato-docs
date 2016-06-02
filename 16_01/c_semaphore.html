@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" data-toc="tocs/Build Apps API Guides.json" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Semaphore API  - Legato Docs</title>
@@ -18,6 +18,7 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
+<script src="tocs/Build Apps API Guides.json"></script>
 </head>
 <body>
 <noscript>
@@ -33,16 +34,16 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
 <div class="white" id="menudocumentation">
 <header>
-<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo_192.png"/></a>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -71,15 +72,13 @@ Creating a Semaphore</h1>
 <p>All semaphores have names. This is required for diagnostic purposes. See <a class="el" href="c_semaphore.html#diagnostics_semaphore">Diagnostics</a> below.</p>
 <h1><a class="anchor" id="use_semaphore"></a>
 Using a Semaphore</h1>
-<p>Functions to increase and decrease semaphores are:</p>
-<ul>
+<p>Functions to increase and decrease semaphores are:</p><ul>
 <li><code><a class="el" href="le__semaphore_8h.html#abb859411cc58fbcc576c986ef52083b2">le_sem_Post()</a></code> </li>
 <li><code><a class="el" href="le__semaphore_8h.html#aecdf87fe330dd008771b7530edbb1f2b">le_sem_Wait()</a></code> </li>
 <li><code><a class="el" href="le__semaphore_8h.html#a6a6c435042dd37a3c78ebbab6ec72689">le_sem_TryWait()</a></code> </li>
 <li><code><a class="el" href="le__semaphore_8h.html#a14475f0c2f5483427279d39220f55eaa">le_sem_WaitWithTimeOut()</a></code> </li>
 </ul>
-<p>Function to get a semaphore's current value is:</p>
-<ul>
+<p>Function to get a semaphore's current value is:</p><ul>
 <li><code><a class="el" href="le__semaphore_8h.html#ac4858ccb0ba748ca463bb29807b75c05">le_sem_GetValue()</a></code> </li>
 </ul>
 <h1><a class="anchor" id="delete_semaphore"></a>
@@ -88,7 +87,7 @@ Deleting a Semaphore</h1>
 <p>There must not be anything using the semaphore when it is deleted (i.e., no one can be waiting on it).</p>
 <h1><a class="anchor" id="diagnostics_semaphore"></a>
 Diagnostics</h1>
-<p>The command-line <a class="el" href="tools_target_inspect.html">inspect</a> tool can be used to list the semaphores that currently exist inside a given process. The state of each semaphore can be seen, including a list of any threads that might be waiting for that semaphore.</p>
+<p>The command-line <a class="el" href="toolsTarget_inspect.html">inspect</a> tool can be used to list the semaphores that currently exist inside a given process. The state of each semaphore can be seen, including a list of any threads that might be waiting for that semaphore.</p>
 <hr/>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>
 </div></div>

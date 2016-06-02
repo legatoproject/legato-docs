@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" data-toc="tocs/Build Apps API Guides.json" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>le_cfg_interface.h File Reference - Legato Docs</title>
@@ -18,6 +18,7 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
+<script src="tocs/Build Apps API Guides.json"></script>
 </head>
 <body>
 <noscript>
@@ -33,16 +34,16 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
 <div class="white" id="menudocumentation">
 <header>
-<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo_192.png"/></a>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -84,11 +85,10 @@ Macros</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:a646829934bb23a878e19ade2c3e01eba"><td align="right" class="memItemLeft" valign="top">typedef struct le_cfg_Iterator * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__cfg__interface_8h.html#a646829934bb23a878e19ade2c3e01eba">le_cfg_IteratorRef_t</a></td></tr>
 <tr class="separator:a646829934bb23a878e19ade2c3e01eba"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:ad02e652d8ea74b6e8ebb8125190e5244"><td align="right" class="memItemLeft" valign="top">typedef struct <br class="typebreak"/>
-le_cfg_ChangeHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__cfg__interface_8h.html#ad02e652d8ea74b6e8ebb8125190e5244">le_cfg_ChangeHandlerRef_t</a></td></tr>
+<tr class="memitem:ad02e652d8ea74b6e8ebb8125190e5244"><td align="right" class="memItemLeft" valign="top">typedef struct le_cfg_ChangeHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__cfg__interface_8h.html#ad02e652d8ea74b6e8ebb8125190e5244">le_cfg_ChangeHandlerRef_t</a></td></tr>
 <tr class="separator:ad02e652d8ea74b6e8ebb8125190e5244"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:affe352cba8a8cac1f8950901ea47b61c"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__cfg__interface_8h.html#affe352cba8a8cac1f8950901ea47b61c">le_cfg_ChangeHandlerFunc_t</a> )(void *contextPtr)</td></tr>
-<tr class="separator:affe352cba8a8cac1f8950901ea47b61c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac9b4508a0faa6a5d91a4bace0b8976c0"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__cfg__interface_8h.html#ac9b4508a0faa6a5d91a4bace0b8976c0">le_cfg_ChangeHandlerFunc_t</a>) (void *contextPtr)</td></tr>
+<tr class="separator:ac9b4508a0faa6a5d91a4bace0b8976c0"><td class="memSeparator" colspan="2"> </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -133,7 +133,7 @@ Functions</h2></td></tr>
 <tr class="separator:a31df1f796da5a18a74de1110c549d6f8"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a02c84283bc9c62a490e9c7cf3f3d5598"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__cfg__interface_8h.html#a02c84283bc9c62a490e9c7cf3f3d5598">le_cfg_GetNodeName</a> (<a class="el" href="le__cfg__interface_8h.html#a646829934bb23a878e19ade2c3e01eba">le_cfg_IteratorRef_t</a> iteratorRef, const char *path, char *name, size_t nameNumElements)</td></tr>
 <tr class="separator:a02c84283bc9c62a490e9c7cf3f3d5598"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:aa9a19e022625fc2c4a2a39e95ac60936"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__cfg__interface_8h.html#ad02e652d8ea74b6e8ebb8125190e5244">le_cfg_ChangeHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__cfg__interface_8h.html#aa9a19e022625fc2c4a2a39e95ac60936">le_cfg_AddChangeHandler</a> (const char *newPath, <a class="el" href="le__cfg__interface_8h.html#affe352cba8a8cac1f8950901ea47b61c">le_cfg_ChangeHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="memitem:aa9a19e022625fc2c4a2a39e95ac60936"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__cfg__interface_8h.html#ad02e652d8ea74b6e8ebb8125190e5244">le_cfg_ChangeHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__cfg__interface_8h.html#aa9a19e022625fc2c4a2a39e95ac60936">le_cfg_AddChangeHandler</a> (const char *newPath, <a class="el" href="le__cfg__interface_8h.html#ac9b4508a0faa6a5d91a4bace0b8976c0">le_cfg_ChangeHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
 <tr class="separator:aa9a19e022625fc2c4a2a39e95ac60936"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a17fa5e63dd1f5a2b7b66c92a76f8c98a"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__cfg__interface_8h.html#a17fa5e63dd1f5a2b7b66c92a76f8c98a">le_cfg_RemoveChangeHandler</a> (<a class="el" href="le__cfg__interface_8h.html#ad02e652d8ea74b6e8ebb8125190e5244">le_cfg_ChangeHandlerRef_t</a> addHandlerRef)</td></tr>
 <tr class="separator:a17fa5e63dd1f5a2b7b66c92a76f8c98a"><td class="memSeparator" colspan="2"> </td></tr>
@@ -235,12 +235,12 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="affe352cba8a8cac1f8950901ea47b61c"></a>
+<a class="anchor" id="ac9b4508a0faa6a5d91a4bace0b8976c0"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
 <tr>
-<td class="memname">typedef void(* le_cfg_ChangeHandlerFunc_t)(void *contextPtr)</td>
+<td class="memname">typedef void(* le_cfg_ChangeHandlerFunc_t) (void *contextPtr)</td>
 </tr>
 </table>
 </div><div class="memdoc">
@@ -289,25 +289,25 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Identifies the type of node. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a29c8480b3310d1235487d7ea96d8b57da545f7e9317020efc82e268c2c08b7e4b"></a>LE_CFG_TYPE_EMPTY</em> </td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a29c8480b3310d1235487d7ea96d8b57da545f7e9317020efc82e268c2c08b7e4b"></a>LE_CFG_TYPE_EMPTY </td><td class="fielddoc">
 <p>A node with no value. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a29c8480b3310d1235487d7ea96d8b57da7f65f22b4f8a8baca2f3ac4087a09730"></a>LE_CFG_TYPE_STRING</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a29c8480b3310d1235487d7ea96d8b57da7f65f22b4f8a8baca2f3ac4087a09730"></a>LE_CFG_TYPE_STRING </td><td class="fielddoc">
 <p>A string encoded as utf8. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a29c8480b3310d1235487d7ea96d8b57dafe64ea58a518cef6fbeefe9ee8fea944"></a>LE_CFG_TYPE_BOOL</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a29c8480b3310d1235487d7ea96d8b57dafe64ea58a518cef6fbeefe9ee8fea944"></a>LE_CFG_TYPE_BOOL </td><td class="fielddoc">
 <p>Boolean value. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a29c8480b3310d1235487d7ea96d8b57dae15135ce3aea7925fba96a16eefd7d01"></a>LE_CFG_TYPE_INT</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a29c8480b3310d1235487d7ea96d8b57dae15135ce3aea7925fba96a16eefd7d01"></a>LE_CFG_TYPE_INT </td><td class="fielddoc">
 <p>Signed 32-bit. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a29c8480b3310d1235487d7ea96d8b57da51f9f84c78b8ce049f85f28da0d3596b"></a>LE_CFG_TYPE_FLOAT</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a29c8480b3310d1235487d7ea96d8b57da51f9f84c78b8ce049f85f28da0d3596b"></a>LE_CFG_TYPE_FLOAT </td><td class="fielddoc">
 <p>64-bit floating point value. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a29c8480b3310d1235487d7ea96d8b57dab720da857c99845f5fac9499b3bfed4e"></a>LE_CFG_TYPE_STEM</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a29c8480b3310d1235487d7ea96d8b57dab720da857c99845f5fac9499b3bfed4e"></a>LE_CFG_TYPE_STEM </td><td class="fielddoc">
 <p>Non-leaf node, this node is the parent of other nodes. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a29c8480b3310d1235487d7ea96d8b57da2eaa4a8ac9d9b37b4cdd9b43c0168d17"></a>LE_CFG_TYPE_DOESNT_EXIST</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a29c8480b3310d1235487d7ea96d8b57da2eaa4a8ac9d9b37b4cdd9b43c0168d17"></a>LE_CFG_TYPE_DOESNT_EXIST </td><td class="fielddoc">
 <p>Node doesn't exist. </p>
 </td></tr>
 </table>
@@ -327,7 +327,7 @@ Functions</h2></td></tr>
 <tr>
 <td class="paramkey"></td>
 <td></td>
-<td class="paramtype"><a class="el" href="le__cfg__interface_8h.html#affe352cba8a8cac1f8950901ea47b61c">le_cfg_ChangeHandlerFunc_t</a> </td>
+<td class="paramtype"><a class="el" href="le__cfg__interface_8h.html#ac9b4508a0faa6a5d91a4bace0b8976c0">le_cfg_ChangeHandlerFunc_t</a> </td>
 <td class="paramname"><em>handlerPtr</em>, </td>
 </tr>
 <tr>
@@ -415,7 +415,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Connect the current client thread to the service providing this API.</p>
-<p>This function must be called before any other functions in this API. Normally, it's automatically called for the main thread, but must be explicitly called for other threads. For details, see <a class="el" href="api_files_c.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function must be called before any other functions in this API. Normally, it's automatically called for the main thread, but must be explicitly called for other threads. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
 <p>This function is created automatically. </p>
 </div>
 </div>
@@ -520,7 +520,7 @@ A tree transaction is global to that tree; a long-held write transaction will bl
 </table>
 </div><div class="memdoc">
 <p>Disconnect the current client thread from the service providing this API.</p>
-<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="api_files_c.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
 <p>This function is created automatically. </p>
 </div>
 </div>
@@ -775,15 +775,9 @@ A tree transaction is global to that tree; a long-held write transaction will bl
 </div><div class="memdoc">
 <p>Get path to the node where the iterator is currently pointed.</p>
 <p>Assuming the following tree:</p>
-<pre class="fragment"><div class="line">baseNode/</div>
-<div class="line">  childA/</div>
-<div class="line">    valueA</div>
-<div class="line">    valueB</div>
-</pre><!-- fragment --><p>If the iterator was currently pointing at valueA, GetPath would return the following path:</p>
-<pre class="fragment"><div class="line">/baseNode/childA/valueA</div>
-</pre><!-- fragment --><p>Optionally, a path to another node can be supplied to this function. So, if the iterator is again on valueA and the relative path ".." is supplied then this function will return the following path:</p>
-<pre class="fragment"><div class="line">/baseNode/childA/</div>
-</pre><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>- LE_OK - The write was completed successfully.<ul>
+<pre class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> baseNode/</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>   childA/</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>     valueA</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>     valueB</div></pre><!-- fragment --><p>If the iterator was currently pointing at valueA, GetPath would return the following path:</p>
+<pre class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> /baseNode/childA/valueA</div></pre><!-- fragment --><p>Optionally, a path to another node can be supplied to this function. So, if the iterator is again on valueA and the relative path ".." is supplied then this function will return the following path:</p>
+<pre class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> /baseNode/childA/</div></pre><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>- LE_OK - The write was completed successfully.<ul>
 <li>LE_OVERFLOW - The supplied string buffer was not large enough to hold the value. </li>
 </ul>
 </dd></dl>
@@ -897,11 +891,7 @@ A tree transaction is global to that tree; a long-held write transaction will bl
 </table>
 </div><div class="memdoc">
 <p>Jump the iterator to the next child node of the current node. Assuming the following tree:</p>
-<pre class="fragment"><div class="line">baseNode/</div>
-<div class="line">  childA/</div>
-<div class="line">    valueA</div>
-<div class="line">    valueB</div>
-</pre><!-- fragment --><p>If the iterator is moved to the path, "/baseNode/childA/valueA". After the first GoToNextSibling the iterator will be pointing at valueB. A second call to GoToNextSibling will cause the function to return LE_NOT_FOUND.</p>
+<pre class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> baseNode/</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>   childA/</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>     valueA</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>     valueB</div></pre><!-- fragment --><p>If the iterator is moved to the path, "/baseNode/childA/valueA". After the first GoToNextSibling the iterator will be pointing at valueB. A second call to GoToNextSibling will cause the function to return LE_NOT_FOUND.</p>
 <dl class="section return"><dt>Returns</dt><dd>Returns one of the following values: <pre class="fragment">    - LE_OK            - Commit was completed successfully.
     - LE_NOT_FOUND     - Iterator has reached the end of the current list of siblings.
                          Also returned if the the current node has no siblings.</pre> </dd></dl>

@@ -13,7 +13,7 @@ try {
 
 } catch (err) {
     console.log("Couldn't replaceState! Oh well, not a big deal.");
-    console.err(err);
+    console.error(err);
 }
 
 
@@ -75,7 +75,6 @@ function updateSearchHighlight() {
     }
 }
 $(document).ready(function() {
-    setupTree();
     noSH = $.cookie("no-sh");
     $("#searchbox").val(sq);
     // Contains = case insensitive 'contains'
@@ -228,11 +227,13 @@ function performSearch() {
                     } else
                         for (i = 0; i < hits.length; i++) {
                             var result = new Object();
-
-                            result.value = addParameter(hits[i].id, 'sq', request.term, false);
+                            if(window.location.protocol == "file:")
+                                result.value = hits[i].id; // don't do highlighting on local filesystem, since we can't do url rewrites
+                            else
+                                result.value = addParameter(hits[i].id, 'sq', request.term, false);
                             result.cat = hits[i].fields.category;
                             if (result.cat === undefined)
-                                result.cat = "Root"
+                                result.cat = "Root";
 
                             result.label = "" + result.cat + "<br/><b>" + hits[i].fields.title + "</b>";
 
@@ -243,7 +244,7 @@ function performSearch() {
                 }
             });
         },
-        
+
         minLength: 1,
         focus: function(event, ui) {
             event.preventDefault(); // so the textbox's value doesn't get replaced.
@@ -256,7 +257,9 @@ function performSearch() {
         },
         open: function() {
             $(this).removeClass("ui-corner-all").addClass("ui-corner-top");
-            $("#search_result").css({top:"+=1"});
+            $("#search_result").css({
+                top: "+=1"
+            });
 
         },
         close: function() {
@@ -285,152 +288,143 @@ function performSearch() {
 
 /***** NAVIGATION TREE ******/
 
-function setupTree() {
-    var treeURL = $('html').data('toc');
-    if (treeURL != "") {
-        String.prototype.endsWith = function(suffix) {
-            return this.indexOf(suffix, this.length - suffix.length) !== -1;
-        };
-        $.getJSON(
-            treeURL,
-            function(data) {
-                $tree = $('#tree1');
-                $tree.tree({
-                    data: data.children ? data.children : data,
-                    saveState: false,
-                    useContextMenu: false,
-                    slide: false,
-                    closedIcon: "+",
-                    openedIcon: "-",
-                    keyboardSupport: false,
+setupTree = function(data) {
+    $(document).ready(function() {
+            String.prototype.endsWith = function(suffix) {
+                return this.indexOf(suffix, this.length - suffix.length) !== -1;
+            };
+            $tree = $('#tree1');
+            $tree.tree({
+                data: data.children ? data.children : data,
+                saveState: false,
+                useContextMenu: false,
+                slide: false,
+                closedIcon: "+",
+                openedIcon: "-",
+                keyboardSupport: false,
 
-                    onCreateLi: function(node, $li) {
-                        var a = $li.find('span')[0];
-                        a.outerHTML = '<a href="' + node.href + '">' + a.outerHTML + '</a>';
-                    },
+                onCreateLi: function(node, $li) {
+                    var a = $li.find('span')[0];
+                    a.outerHTML = '<a href="' + node.href + '">' + a.outerHTML + '</a>';
+                },
 
 
-                });
+            });
 
-                $tree.tree('selectNode', null); //unselect nodes
+            $tree.tree('selectNode', null); //unselect nodes
 
-                $("#left").perfectScrollbar('update');
+            $("#left").perfectScrollbar('update');
 
-                $tree.bind(
-                    'tree.close',
-                    function(e) {
-                        $("#left").perfectScrollbar('update');
+            $tree.bind(
+                'tree.close',
+                function(e) {
+                    $("#left").perfectScrollbar('update');
+                }
+            );
+            $tree.bind(
+                'tree.open',
+                function(e) {
+                    $("#left").perfectScrollbar('update');
+                }
+            );
+            var path = window.location.pathname; // path = /docs/filename.html
+            var page = path.split("/").pop(); // page = filename.html
+            var anchor = window.location.hash.substr(1); // anchor = section
+            if (anchor)
+                page += "#" + anchor; // page = filename.html#section
+
+            // find node of current page and select it
+            $tree.tree('getTree').iterate(
+                function(node, level) {
+                    if (node.href === page) {
+                        $tree.tree('openNode', node);
+                        $tree.tree('selectNode', node);
+                        return false;
                     }
-                );
-                $tree.bind(
-                    'tree.open',
-                    function(e) {
-                        $("#left").perfectScrollbar('update');
-                    }
-                );
+                    return true;
+                }
+            );
+            $('#tree1').tree('setOption', 'slide', true); // now that only the user will be opening nodes, we can turn the animation back on.
+            // needed when clicking an anchor, and thus staying on the same page
+            $tree.bind(
+                'tree.click',
+                function(event) {
+                    $tree.tree('setOption', 'selectable', true);
+                    $tree.tree('selectNode', event.node);
+                    $tree.tree('setOption', 'selectable', false);
+                }
+            );
 
-                // we want to get 
-                var path = window.location.pathname; // path = /docs/filename.html
-                var page = path.split("/").pop(); // page = filename.html
-                var anchor = window.location.hash.substr(1); // anchor = section
-                if (anchor)
-                    page += "#" + anchor; // page = filename.html#section
-
-                // find node of current page and select it
-                $tree.tree('getTree').iterate(
-                    function(node, level) {
-                        if (node.href === page) {
-                            $tree.tree('openNode', node);
-                            $tree.tree('selectNode', node);
-                            return false;
-                        }
-                        return true;
-                    }
-                );
-                $('#tree1').tree('setOption', 'slide', true); // now that only the user will be opening nodes, we can turn the animation back on.
-                // needed when clicking an anchor, and thus staying on the same page
-                $tree.bind(
-                    'tree.click',
-                    function(event) {
-                        $tree.tree('setOption', 'selectable', true);
-                        $tree.tree('selectNode', event.node);
-                        $tree.tree('setOption', 'selectable', false);
-                    }
-                );
-
-                $('#tree1').tree('setOption', 'selectable', false);
+            $('#tree1').tree('setOption', 'selectable', false);
 
 
+        });
+    }
+    /*** utils ***/
+
+    // http://stackoverflow.com/a/6954277/765210
+    function addParameter(url, parameterName, parameterValue, atStart /*Add param before others*/ ) {
+        replaceDuplicates = true;
+        if (url.indexOf('#') > 0) {
+            var cl = url.indexOf('#');
+            urlhash = url.substring(url.indexOf('#'), url.length);
+        } else {
+            urlhash = '';
+            cl = url.length;
+        }
+        sourceUrl = url.substring(0, cl);
+
+        var urlParts = sourceUrl.split("?");
+        var newQueryString = "";
+
+        if (urlParts.length > 1) {
+            var parameters = urlParts[1].split("&");
+            for (var i = 0;
+                (i < parameters.length); i++) {
+                var parameterParts = parameters[i].split("=");
+                if (!(replaceDuplicates && parameterParts[0] == parameterName)) {
+                    if (newQueryString == "")
+                        newQueryString = "?";
+                    else
+                        newQueryString += "&";
+                    newQueryString += parameterParts[0] + "=" + (parameterParts[1] ? parameterParts[1] : '');
+                }
             }
-        );
-    }
-}
+        }
+        if (newQueryString == "")
+            newQueryString = "?";
 
-/*** utils ***/
+        if (atStart) {
+            newQueryString = '?' + parameterName + "=" + parameterValue + (newQueryString.length > 1 ? '&' + newQueryString.substring(1) : '');
+        } else {
+            if (newQueryString !== "" && newQueryString != '?')
+                newQueryString += "&";
+            newQueryString += parameterName + "=" + (parameterValue ? parameterValue : '');
+        }
+        return urlParts[0] + newQueryString + urlhash;
+    };
+    // http://stackoverflow.com/a/21903119/765210
+    function getUrlParameter(sParam) {
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
 
-// http://stackoverflow.com/a/6954277/765210
-function addParameter(url, parameterName, parameterValue, atStart /*Add param before others*/ ) {
-    replaceDuplicates = true;
-    if (url.indexOf('#') > 0) {
-        var cl = url.indexOf('#');
-        urlhash = url.substring(url.indexOf('#'), url.length);
-    } else {
-        urlhash = '';
-        cl = url.length;
-    }
-    sourceUrl = url.substring(0, cl);
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
 
-    var urlParts = sourceUrl.split("?");
-    var newQueryString = "";
-
-    if (urlParts.length > 1) {
-        var parameters = urlParts[1].split("&");
-        for (var i = 0;
-            (i < parameters.length); i++) {
-            var parameterParts = parameters[i].split("=");
-            if (!(replaceDuplicates && parameterParts[0] == parameterName)) {
-                if (newQueryString == "")
-                    newQueryString = "?";
-                else
-                    newQueryString += "&";
-                newQueryString += parameterParts[0] + "=" + (parameterParts[1] ? parameterParts[1] : '');
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : sParameterName[1];
             }
         }
     }
-    if (newQueryString == "")
-        newQueryString = "?";
 
-    if (atStart) {
-        newQueryString = '?' + parameterName + "=" + parameterValue + (newQueryString.length > 1 ? '&' + newQueryString.substring(1) : '');
-    } else {
-        if (newQueryString !== "" && newQueryString != '?')
-            newQueryString += "&";
-        newQueryString += parameterName + "=" + (parameterValue ? parameterValue : '');
+    function escapeRegExp(str) {
+        return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
     }
-    return urlParts[0] + newQueryString + urlhash;
-};
-// http://stackoverflow.com/a/21903119/765210
-function getUrlParameter(sParam) {
-    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-        sURLVariables = sPageURL.split('&'),
-        sParameterName,
-        i;
-
-    for (i = 0; i < sURLVariables.length; i++) {
-        sParameterName = sURLVariables[i].split('=');
-
-        if (sParameterName[0] === sParam) {
-            return sParameterName[1] === undefined ? true : sParameterName[1];
-        }
-    }
-}
-
-function escapeRegExp(str) {
-    return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
-}
 
 
-/*
+    /*
 
 highlight v5
 
@@ -448,40 +442,40 @@ Johann Burkard
 
 */
 
-jQuery.fn.highlight = function(pat) {
-    function innerHighlight(node, pat) {
-        var skip = 0;
-        if (node.nodeType == 3) {
-            var pos = node.data.toUpperCase().search(new RegExp('\\b' + pat + '\\b'));
-            pos -= (node.data.substr(0, pos).toUpperCase().length - node.data.substr(0, pos).length);
-            if (pos >= 0) {
-                var spannode = document.createElement('span');
-                spannode.className = 'search-highlight';
-                var middlebit = node.splitText(pos);
-                var endbit = middlebit.splitText(pat.length);
-                var middleclone = middlebit.cloneNode(true);
-                spannode.appendChild(middleclone);
-                middlebit.parentNode.replaceChild(spannode, middlebit);
-                skip = 1;
+    jQuery.fn.highlight = function(pat) {
+        function innerHighlight(node, pat) {
+            var skip = 0;
+            if (node.nodeType == 3) {
+                var pos = node.data.toUpperCase().search(new RegExp('\\b' + pat + '\\b'));
+                pos -= (node.data.substr(0, pos).toUpperCase().length - node.data.substr(0, pos).length);
+                if (pos >= 0) {
+                    var spannode = document.createElement('span');
+                    spannode.className = 'search-highlight';
+                    var middlebit = node.splitText(pos);
+                    var endbit = middlebit.splitText(pat.length);
+                    var middleclone = middlebit.cloneNode(true);
+                    spannode.appendChild(middleclone);
+                    middlebit.parentNode.replaceChild(spannode, middlebit);
+                    skip = 1;
+                }
+            } else if (node.nodeType == 1 && node.childNodes && !/(script|style)/i.test(node.tagName)) {
+                for (var i = 0; i < node.childNodes.length; ++i) {
+                    i += innerHighlight(node.childNodes[i], pat);
+                }
             }
-        } else if (node.nodeType == 1 && node.childNodes && !/(script|style)/i.test(node.tagName)) {
-            for (var i = 0; i < node.childNodes.length; ++i) {
-                i += innerHighlight(node.childNodes[i], pat);
-            }
+            return skip;
         }
-        return skip;
-    }
-    return this.length && pat && pat.length ? this.each(function() {
-        innerHighlight(this, pat.toUpperCase());
-    }) : this;
-};
+        return this.length && pat && pat.length ? this.each(function() {
+            innerHighlight(this, pat.toUpperCase());
+        }) : this;
+    };
 
-jQuery.fn.removeHighlight = function() {
-    return this.find("span.search-highlight").each(function() {
-        this.parentNode.firstChild.nodeName;
-        with(this.parentNode) {
-            replaceChild(this.firstChild, this);
-            normalize();
-        }
-    }).end();
-};
+    jQuery.fn.removeHighlight = function() {
+        return this.find("span.search-highlight").each(function() {
+            this.parentNode.firstChild.nodeName;
+            with(this.parentNode) {
+                replaceChild(this.firstChild, this);
+                normalize();
+            }
+        }).end();
+    };

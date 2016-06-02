@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" data-toc="tocs/Build Apps API Guides.json" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Temperature Monitoring  - Legato Docs</title>
@@ -18,6 +18,7 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
+<script src="tocs/Build Apps API Guides.json"></script>
 </head>
 <body>
 <noscript>
@@ -33,16 +34,16 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
 <div class="white" id="menudocumentation">
 <header>
-<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo_192.png"/></a>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -67,15 +68,14 @@
 <h1><a class="anchor" id="le_temp_binding"></a>
 IPC interfaces binding</h1>
 <p>All the functions of this API are provided by the <b>modemService</b> application service.</p>
-<p>Here's a code sample binding to modem services: </p>
-<pre class="fragment">bindings:
+<p>Here's a code sample binding to modem services: </p><pre class="fragment">bindings:
 {
    clientExe.clientComponent.le_temp -&gt; modemService.le_temp
 }
 </pre><h1><a class="anchor" id="le_temp_monitoring"></a>
 Monitoring</h1>
 <p>This functionality allows to monitor the temperature by getting the temperature sensor and by setting several temperature thresholds.</p>
-<dl class="section warning"><dt>Warning</dt><dd>Ensure to check the names of supported sensors and thresholds for your specific platform. Please refer to <a class="el" href="platform_constraints_temperature.html">Temperature monitoring</a> platform constraints page.</dd>
+<dl class="section warning"><dt>Warning</dt><dd>Ensure to check the names of supported sensors and thresholds for your specific platform. Please refer to <a class="el" href="platformConstraintsTemperature.html">Temperature monitoring</a> platform constraints page.</dd>
 <dd>
 An hysteresis can be dependent of the platform. Be sure to verify your platform's specifications.</dd>
 <dd>

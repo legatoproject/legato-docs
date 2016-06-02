@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" data-toc="tocs/Build Apps API Guides.json" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Input Power Supply Monitoring API  - Legato Docs</title>
@@ -18,6 +18,7 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
+<script src="tocs/Build Apps API Guides.json"></script>
 </head>
 <body>
 <noscript>
@@ -33,16 +34,16 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
 <div class="white" id="menudocumentation">
 <header>
-<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo_192.png"/></a>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -66,8 +67,7 @@
 <h1><a class="anchor" id="le_ips_binding"></a>
 IPC interfaces binding</h1>
 <p>All the functions of this API are provided by the <b>modemService</b>.</p>
-<p>Here's a code sample binding to modem services: </p>
-<pre class="fragment">bindings:
+<p>Here's a code sample binding to modem services: </p><pre class="fragment">bindings:
 {
    clientExe.clientComponent.le_ips -&gt; modemService.le_ips
 }
@@ -81,14 +81,12 @@ Input voltage Thresholds</h1>
 <dd>
 On some platforms, the thresholds parameters are persistent and a Platform reboot is required for thresholds change takes effect.</dd></dl>
 <p>Four Thresholds are set to decide the state: the critical, warning, the normal and the high critical Platform input voltage thresholds.</p>
-<p>if the Platform input voltage decreases below the:</p>
-<ul>
+<p>if the Platform input voltage decreases below the:</p><ul>
 <li>"High Critical Threshold - 1 " but still higher than "Warning Threshold", <code>LE_IPS_VOLTAGE_NORMAL</code> event occurs.</li>
 <li>"Warning Threshold" but still higher than "Critical Threshold", <code>LE_IPS_VOLTAGE_WARNING</code> event occurs.</li>
 <li>"Critical Threshold", a <code>LE_IPS_VOLTAGE_CRITICAL</code> event occurs.</li>
 </ul>
-<p>if the Platform input voltage goes up and it reaches the :</p>
-<ul>
+<p>if the Platform input voltage goes up and it reaches the :</p><ul>
 <li>"Normal threshold", a <code>LE_IPS_VOLTAGE_NORMAL</code> event occurs.</li>
 <li>"High critical thresholds", a <code>LE_IPS_HI_VOLTAGE_CRITICAL</code> event occurs.</li>
 </ul>

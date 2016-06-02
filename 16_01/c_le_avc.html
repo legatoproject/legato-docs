@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" data-toc="tocs/Build Apps API Guides.json" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>AirVantage Connector  - Legato Docs</title>
@@ -18,6 +18,7 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
+<script src="tocs/Build Apps API Guides.json"></script>
 </head>
 <body>
 <noscript>
@@ -33,16 +34,16 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
 <div class="white" id="menudocumentation">
 <header>
-<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo_192.png"/></a>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -65,8 +66,7 @@
 <p>The AirVantage connector service provides an API to communicate with the AirVantage server.</p>
 <h1><a class="anchor" id="c_le_avc_update"></a>
 Firmware/Application Update</h1>
-<p>The API for firmware/application update is divided into two parts:</p>
-<ul>
+<p>The API for firmware/application update is divided into two parts:</p><ul>
 <li>Allow a control app to contact the server for pending updates. If available, can select to download or install the update. <br/>
 </li>
 <li>Allow an app to block an update from being installed. An app may need this if it's performing a critical operation that can't be interrupted (e.g., eCall). This is necessary as installing an update will cause the app to restart (either the app itself needs to restart or a firmware change causes the modem to reset).</li>
@@ -96,8 +96,7 @@ Retry Timers</h1>
 <p>If an error occurs during a connection to the Device Services server (WWAN DATA establishment failed, http error code received), the embedded module will initiate a new connection according to the values defined in the retry timers. The timers are tried in sequence until a connection is established, or all enabled retry timers are exhausted. After all the enabled timers are exhausted, a connection will be initiated only on a command from user (le_avc_startSession() ) or at the expiry of the polling timer. The retry timer values are persistent. Writing 0 to one of the retry timers will disable it. Retry timer values range from 0 to 20160 minutes. The api <a class="el" href="le__avc__interface_8h.html#ae331259fab99d4d8dd1411b69b5bc52a">le_avc_GetRetryTimers()</a> reads the polling timers in an array and the api <a class="el" href="le__avc__interface_8h.html#a0a7e7491ad2b5489c4910bdd4a0ce82d">le_avc_SetRetryTimers()</a> writes the polling timers. When writing to the retry timers, values of all the 8 timers have to be defined.</p>
 <h1><a class="anchor" id="le_avcService_configdb"></a>
 AirVantage service configuration tree</h1>
-<p>The configuration database path for the modemActivityTimeout is: </p>
-<pre class="fragment">/
+<p>The configuration database path for the modemActivityTimeout is: </p><pre class="fragment">/
     apps/
         avcService/
                  modemActivityTimeout

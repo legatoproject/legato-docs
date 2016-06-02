@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" data-toc="tocs/Build Apps API Guides.json" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Timer API  - Legato Docs</title>
@@ -18,6 +18,7 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
+<script src="tocs/Build Apps API Guides.json"></script>
 </head>
 <body>
 <noscript>
@@ -33,16 +34,16 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
 <div class="white" id="menudocumentation">
 <header>
-<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo_192.png"/></a>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -67,8 +68,7 @@
 <h1><a class="anchor" id="timer_objects"></a>
 Creating/Deleting Timer Objects</h1>
 <p>Timers are created using <a class="el" href="le__timer_8h.html#aee41169a210378b369f440cf99146522">le_timer_Create</a>. The timer name is used for logging purposes only.</p>
-<p>The following attributes of the timer can be set:</p>
-<ul>
+<p>The following attributes of the timer can be set:</p><ul>
 <li><a class="el" href="le__timer_8h.html#a8fb341f11e0da2692453df997613cb8e">le_timer_SetHandler</a></li>
 <li><a class="el" href="le__timer_8h.html#a0a103d5cef5e83fc9088859d527bbd43">le_timer_SetInterval</a></li>
 <li><a class="el" href="le__timer_8h.html#a292b0a7d6dc0796a36a54fd04c6a7eeb">le_timer_SetRepeat</a></li>
@@ -86,15 +86,14 @@ Using Timers</h1>
 <h1><a class="anchor" id="le_timer_thread"></a>
 Thread Support</h1>
 <p>A timer should only be used by the thread that created it. It's not safe for a thread to use or manipulate a timer that belongs to another thread. The timer expiry handler is called by the event loop of the thread that starts the timer.</p>
-<p>See <a class="el" href="c_event_loop.html">Event Loop API</a> for details on running the event loop of a thread.</p>
+<p>See <a class="el" href="c_eventLoop.html">Event Loop API</a> for details on running the event loop of a thread.</p>
 <h1><a class="anchor" id="le_timer_suspend"></a>
 Suspend Support</h1>
 <p>The timer runs even when system is suspended. <br/>
  If the timer expires while the system is suspended, it will wake up the system.</p>
 <h1><a class="anchor" id="timer_errors"></a>
 Fatal Errors</h1>
-<p>The process will exit under any of the following conditions:</p>
-<ul>
+<p>The process will exit under any of the following conditions:</p><ul>
 <li>If an invalid timer object is given to:<ul>
 <li><a class="el" href="le__timer_8h.html#ae103f6736bf855e77e5e59bbad1e27a7">le_timer_Delete</a></li>
 <li><a class="el" href="le__timer_8h.html#a8fb341f11e0da2692453df997613cb8e">le_timer_SetHandler</a></li>

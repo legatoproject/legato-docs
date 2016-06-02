@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" data-toc="tocs/Build Apps API Guides.json" xmlns="http://www.w3.org/1999/xhtml">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>le_sms_interface.h File Reference - Legato Docs</title>
@@ -18,6 +18,7 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
+<script src="tocs/Build Apps API Guides.json"></script>
 </head>
 <body>
 <noscript>
@@ -33,16 +34,16 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
 <div class="white" id="menudocumentation">
 <header>
-<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo_192.png"/></a>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -97,13 +98,12 @@ Typedefs</h2></td></tr>
 <tr class="separator:a8eb2a15362fe26516fc68fd7a7d5e3e7"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:afd91170c5ea21ec7ca98f7ce95049dae"><td align="right" class="memItemLeft" valign="top">typedef struct le_sms_MsgList * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#afd91170c5ea21ec7ca98f7ce95049dae">le_sms_MsgListRef_t</a></td></tr>
 <tr class="separator:afd91170c5ea21ec7ca98f7ce95049dae"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a77d2607cc541bf0369e69bb2d105d4bf"><td align="right" class="memItemLeft" valign="top">typedef struct <br class="typebreak"/>
-le_sms_RxMessageHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a77d2607cc541bf0369e69bb2d105d4bf">le_sms_RxMessageHandlerRef_t</a></td></tr>
+<tr class="memitem:a77d2607cc541bf0369e69bb2d105d4bf"><td align="right" class="memItemLeft" valign="top">typedef struct le_sms_RxMessageHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a77d2607cc541bf0369e69bb2d105d4bf">le_sms_RxMessageHandlerRef_t</a></td></tr>
 <tr class="separator:a77d2607cc541bf0369e69bb2d105d4bf"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:aef09dafc2be4538347fa8cf260b6fdf2"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#aef09dafc2be4538347fa8cf260b6fdf2">le_sms_CallbackResultFunc_t</a> )(<a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> msgRef, <a class="el" href="le__sms__interface_8h.html#a18a1937acb5878ae01a9d668fe5070b6">le_sms_Status_t</a> status, void *contextPtr)</td></tr>
-<tr class="separator:aef09dafc2be4538347fa8cf260b6fdf2"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:af9c99d5b0a4745bd624590cc077133f0"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#af9c99d5b0a4745bd624590cc077133f0">le_sms_RxMessageHandlerFunc_t</a> )(<a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> msgRef, void *contextPtr)</td></tr>
-<tr class="separator:af9c99d5b0a4745bd624590cc077133f0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a01aa759eb07ab9e8c4a5e0a6d0c7e942"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a01aa759eb07ab9e8c4a5e0a6d0c7e942">le_sms_CallbackResultFunc_t</a>) (<a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> msgRef, <a class="el" href="le__sms__interface_8h.html#a18a1937acb5878ae01a9d668fe5070b6">le_sms_Status_t</a> status, void *contextPtr)</td></tr>
+<tr class="separator:a01aa759eb07ab9e8c4a5e0a6d0c7e942"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6b6e7403719627629df41529916fa71b"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a6b6e7403719627629df41529916fa71b">le_sms_RxMessageHandlerFunc_t</a>) (<a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> msgRef, void *contextPtr)</td></tr>
+<tr class="separator:a6b6e7403719627629df41529916fa71b"><td class="memSeparator" colspan="2"> </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -315,7 +315,7 @@ Functions</h2></td></tr>
 <tr class="separator:a1437987e5017d2159dc8dcbbbc50b953"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a1e445b8db58402de8a97ca6ce42ad155"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a1e445b8db58402de8a97ca6ce42ad155">le_sms_DisconnectService</a> (void)</td></tr>
 <tr class="separator:a1e445b8db58402de8a97ca6ce42ad155"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a844d595f3ae8d170b2fff80d854abb8d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__sms__interface_8h.html#a77d2607cc541bf0369e69bb2d105d4bf">le_sms_RxMessageHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a844d595f3ae8d170b2fff80d854abb8d">le_sms_AddRxMessageHandler</a> (<a class="el" href="le__sms__interface_8h.html#af9c99d5b0a4745bd624590cc077133f0">le_sms_RxMessageHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="memitem:a844d595f3ae8d170b2fff80d854abb8d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__sms__interface_8h.html#a77d2607cc541bf0369e69bb2d105d4bf">le_sms_RxMessageHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a844d595f3ae8d170b2fff80d854abb8d">le_sms_AddRxMessageHandler</a> (<a class="el" href="le__sms__interface_8h.html#a6b6e7403719627629df41529916fa71b">le_sms_RxMessageHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
 <tr class="separator:a844d595f3ae8d170b2fff80d854abb8d"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a2f474706ba6d7a40083fe1f50f530101"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a2f474706ba6d7a40083fe1f50f530101">le_sms_RemoveRxMessageHandler</a> (<a class="el" href="le__sms__interface_8h.html#a77d2607cc541bf0369e69bb2d105d4bf">le_sms_RxMessageHandlerRef_t</a> addHandlerRef)</td></tr>
 <tr class="separator:a2f474706ba6d7a40083fe1f50f530101"><td class="memSeparator" colspan="2"> </td></tr>
@@ -335,7 +335,7 @@ Functions</h2></td></tr>
 <tr class="separator:ab7295e1cdf2adb865135d657ec8bde09"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:ab7dee7d2c74cfcadd9ea0d5fe1786dfc"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#ab7dee7d2c74cfcadd9ea0d5fe1786dfc">le_sms_Send</a> (<a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> msgRef)</td></tr>
 <tr class="separator:ab7dee7d2c74cfcadd9ea0d5fe1786dfc"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a0ba61dcf10157e9982702373577c6b45"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a0ba61dcf10157e9982702373577c6b45">le_sms_SendAsync</a> (<a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> msgRef, <a class="el" href="le__sms__interface_8h.html#aef09dafc2be4538347fa8cf260b6fdf2">le_sms_CallbackResultFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="memitem:a0ba61dcf10157e9982702373577c6b45"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a0ba61dcf10157e9982702373577c6b45">le_sms_SendAsync</a> (<a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> msgRef, <a class="el" href="le__sms__interface_8h.html#a01aa759eb07ab9e8c4a5e0a6d0c7e942">le_sms_CallbackResultFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
 <tr class="separator:a0ba61dcf10157e9982702373577c6b45"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a46afe91bbded617ad444ea29a9dd910a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__sms__interface_8h.html#aeb77e45e90a8257c2b386428fa9397df">le_sms_ErrorCode3GPP2_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a46afe91bbded617ad444ea29a9dd910a">le_sms_Get3GPP2ErrorCode</a> (<a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> msgRef)</td></tr>
 <tr class="separator:a46afe91bbded617ad444ea29a9dd910a"><td class="memSeparator" colspan="2"> </td></tr>
@@ -343,9 +343,9 @@ Functions</h2></td></tr>
 <tr class="separator:a9ee511af99c91383344debf532fae1ae"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a9cfbc2131df38f99272a71bf05cb1254"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a9cfbc2131df38f99272a71bf05cb1254">le_sms_GetPlatformSpecificErrorCode</a> (<a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> msgRef)</td></tr>
 <tr class="separator:a9cfbc2131df38f99272a71bf05cb1254"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a4bf9a993afcf06f8e9927b534ef9861c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a4bf9a993afcf06f8e9927b534ef9861c">le_sms_SendText</a> (const char *destStr, const char *textStr, <a class="el" href="le__sms__interface_8h.html#aef09dafc2be4538347fa8cf260b6fdf2">le_sms_CallbackResultFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="memitem:a4bf9a993afcf06f8e9927b534ef9861c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a4bf9a993afcf06f8e9927b534ef9861c">le_sms_SendText</a> (const char *destStr, const char *textStr, <a class="el" href="le__sms__interface_8h.html#a01aa759eb07ab9e8c4a5e0a6d0c7e942">le_sms_CallbackResultFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
 <tr class="separator:a4bf9a993afcf06f8e9927b534ef9861c"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a8e6e66ff683717a8cd3eb20fc6efe6e0"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a8e6e66ff683717a8cd3eb20fc6efe6e0">le_sms_SendPdu</a> (const uint8_t *pduPtr, size_t pduNumElements, <a class="el" href="le__sms__interface_8h.html#aef09dafc2be4538347fa8cf260b6fdf2">le_sms_CallbackResultFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="memitem:a8e6e66ff683717a8cd3eb20fc6efe6e0"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#a8e6e66ff683717a8cd3eb20fc6efe6e0">le_sms_SendPdu</a> (const uint8_t *pduPtr, size_t pduNumElements, <a class="el" href="le__sms__interface_8h.html#a01aa759eb07ab9e8c4a5e0a6d0c7e942">le_sms_CallbackResultFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
 <tr class="separator:a8e6e66ff683717a8cd3eb20fc6efe6e0"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:aca1691010c88995cb47225f2889910fa"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sms__interface_8h.html#aca1691010c88995cb47225f2889910fa">le_sms_Delete</a> (<a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> msgRef)</td></tr>
 <tr class="separator:aca1691010c88995cb47225f2889910fa"><td class="memSeparator" colspan="2"> </td></tr>
@@ -527,12 +527,12 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="aef09dafc2be4538347fa8cf260b6fdf2"></a>
+<a class="anchor" id="a01aa759eb07ab9e8c4a5e0a6d0c7e942"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
 <tr>
-<td class="memname">typedef void(* le_sms_CallbackResultFunc_t)(<a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> msgRef, <a class="el" href="le__sms__interface_8h.html#a18a1937acb5878ae01a9d668fe5070b6">le_sms_Status_t</a> status, void *contextPtr)</td>
+<td class="memname">typedef void(* le_sms_CallbackResultFunc_t) (<a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> msgRef, <a class="el" href="le__sms__interface_8h.html#a18a1937acb5878ae01a9d668fe5070b6">le_sms_Status_t</a> status, void *contextPtr)</td>
 </tr>
 </table>
 </div><div class="memdoc">
@@ -571,12 +571,12 @@ Functions</h2></td></tr>
 <p>Declare a reference type for referring to SMS Message objects. </p>
 </div>
 </div>
-<a class="anchor" id="af9c99d5b0a4745bd624590cc077133f0"></a>
+<a class="anchor" id="a6b6e7403719627629df41529916fa71b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
 <tr>
-<td class="memname">typedef void(* le_sms_RxMessageHandlerFunc_t)(<a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> msgRef, void *contextPtr)</td>
+<td class="memname">typedef void(* le_sms_RxMessageHandlerFunc_t) (<a class="el" href="le__sms__interface_8h.html#a8eb2a15362fe26516fc68fd7a7d5e3e7">le_sms_MsgRef_t</a> msgRef, void *contextPtr)</td>
 </tr>
 </table>
 </div><div class="memdoc">
@@ -614,103 +614,103 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>CDMA Cell broadcast Service Categories. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca745c1a522cc4202e9c42ef90791cbe5b"></a>LE_SMS_CDMA_SVC_CAT_UNKNOWN</em> </td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca745c1a522cc4202e9c42ef90791cbe5b"></a>LE_SMS_CDMA_SVC_CAT_UNKNOWN </td><td class="fielddoc">
 <p>Unknown or Unspecified. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca6ac396b3ea8ef66b0cc4b639d2034f28"></a>LE_SMS_CDMA_SVC_CAT_EMERGENCY_BROADCAST</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca6ac396b3ea8ef66b0cc4b639d2034f28"></a>LE_SMS_CDMA_SVC_CAT_EMERGENCY_BROADCAST </td><td class="fielddoc">
 <p>Emergency Broadcast. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167cab71a684337eb7f63ac2bfc47321055ff"></a>LE_SMS_CDMA_SVC_CAT_ADMINISTRATIVE</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167cab71a684337eb7f63ac2bfc47321055ff"></a>LE_SMS_CDMA_SVC_CAT_ADMINISTRATIVE </td><td class="fielddoc">
 <p>Administrative. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167cabce7ed0ea9dfeebb1cc0b51f76f2dd74"></a>LE_SMS_CDMA_SVC_CAT_MAINTENANCE</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167cabce7ed0ea9dfeebb1cc0b51f76f2dd74"></a>LE_SMS_CDMA_SVC_CAT_MAINTENANCE </td><td class="fielddoc">
 <p>Maintenance. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca112d5136b5a851348eadcf1fb1b34469"></a>LE_SMS_CDMA_SVC_CAT_GENERAL_NEWS_LOCAL</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca112d5136b5a851348eadcf1fb1b34469"></a>LE_SMS_CDMA_SVC_CAT_GENERAL_NEWS_LOCAL </td><td class="fielddoc">
 <p>General News Local. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca486d33af6c2dccbdbdbfa7c1bc6085dc"></a>LE_SMS_CDMA_SVC_CAT_GENERAL_NEWS_REGIONAL</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca486d33af6c2dccbdbdbfa7c1bc6085dc"></a>LE_SMS_CDMA_SVC_CAT_GENERAL_NEWS_REGIONAL </td><td class="fielddoc">
 <p>General News Regional. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167cab2b3426f0c2023076ab95fd9ccfbbe5b"></a>LE_SMS_CDMA_SVC_CAT_GENERAL_NEWS_NATIONAL</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167cab2b3426f0c2023076ab95fd9ccfbbe5b"></a>LE_SMS_CDMA_SVC_CAT_GENERAL_NEWS_NATIONAL </td><td class="fielddoc">
 <p>General News National. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167cae066589e00cd71c81b2f53061e63262e"></a>LE_SMS_CDMA_SVC_CAT_GENERAL_NEWS_INTERNATIONAL</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167cae066589e00cd71c81b2f53061e63262e"></a>LE_SMS_CDMA_SVC_CAT_GENERAL_NEWS_INTERNATIONAL </td><td class="fielddoc">
 <p>General News International. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca94d8af66d8b5af6d442c1203dcd3912b"></a>LE_SMS_CDMA_SVC_CAT_BUSINESS_NEWS_LOCAL</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca94d8af66d8b5af6d442c1203dcd3912b"></a>LE_SMS_CDMA_SVC_CAT_BUSINESS_NEWS_LOCAL </td><td class="fielddoc">
 <p>Business News Local. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca8e886e0ed0e05a41f26fb6ce4f0045e7"></a>LE_SMS_CDMA_SVC_CAT_BUSINESS_NEWS_REGIONAL</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca8e886e0ed0e05a41f26fb6ce4f0045e7"></a>LE_SMS_CDMA_SVC_CAT_BUSINESS_NEWS_REGIONAL </td><td class="fielddoc">
 <p>Business News Regional. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca0ab2ef7e378fad7fbdfe481fe2b59fce"></a>LE_SMS_CDMA_SVC_CAT_BUSINESS_NEWS_NATIONAL</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca0ab2ef7e378fad7fbdfe481fe2b59fce"></a>LE_SMS_CDMA_SVC_CAT_BUSINESS_NEWS_NATIONAL </td><td class="fielddoc">
 <p>Business News National. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca8a2d2a021deca7c77a0e1f3cc6ab7c47"></a>LE_SMS_CDMA_SVC_CAT_BUSINESS_NEWS_INTERNATIONAL</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca8a2d2a021deca7c77a0e1f3cc6ab7c47"></a>LE_SMS_CDMA_SVC_CAT_BUSINESS_NEWS_INTERNATIONAL </td><td class="fielddoc">
 <p>Business News International. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167caa28e220f37e3754d40a1f1b6961eb606"></a>LE_SMS_CDMA_SVC_CAT_SPORTS_NEWS_LOCAL</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167caa28e220f37e3754d40a1f1b6961eb606"></a>LE_SMS_CDMA_SVC_CAT_SPORTS_NEWS_LOCAL </td><td class="fielddoc">
 <p>Sports News Local. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca02f49ceb4fe720459625255f019f4a8d"></a>LE_SMS_CDMA_SVC_CAT_SPORTS_NEWS_REGIONAL</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca02f49ceb4fe720459625255f019f4a8d"></a>LE_SMS_CDMA_SVC_CAT_SPORTS_NEWS_REGIONAL </td><td class="fielddoc">
 <p>Sports News Regional. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167cab20f62fb8e026d5a7e608aee4bed8870"></a>LE_SMS_CDMA_SVC_CAT_SPORTS_NEWS_NATIONAL</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167cab20f62fb8e026d5a7e608aee4bed8870"></a>LE_SMS_CDMA_SVC_CAT_SPORTS_NEWS_NATIONAL </td><td class="fielddoc">
 <p>Sports News National. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca5839cd80d1638c6ec320aa382c89cc4d"></a>LE_SMS_CDMA_SVC_CAT_SPORTS_NEWS_INTERNATIONAL</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca5839cd80d1638c6ec320aa382c89cc4d"></a>LE_SMS_CDMA_SVC_CAT_SPORTS_NEWS_INTERNATIONAL </td><td class="fielddoc">
 <p>Sports News International. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167caefd627fa7218c224eca1fcb148077eed"></a>LE_SMS_CDMA_SVC_CAT_ENTERTAINMENT_NEWS_LOCAL</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167caefd627fa7218c224eca1fcb148077eed"></a>LE_SMS_CDMA_SVC_CAT_ENTERTAINMENT_NEWS_LOCAL </td><td class="fielddoc">
 <p>Entertainment News Local. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca7220ef8a87ecf2428f75778a4da47f72"></a>LE_SMS_CDMA_SVC_CAT_ENTERTAINMENT_NEWS_REGIONAL</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca7220ef8a87ecf2428f75778a4da47f72"></a>LE_SMS_CDMA_SVC_CAT_ENTERTAINMENT_NEWS_REGIONAL </td><td class="fielddoc">
 <p>Entertainment News Regional. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167cad4e74bd82acbedf2bb8366fc5f781237"></a>LE_SMS_CDMA_SVC_CAT_ENTERTAINMENT_NEWS_NATIONAL</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167cad4e74bd82acbedf2bb8366fc5f781237"></a>LE_SMS_CDMA_SVC_CAT_ENTERTAINMENT_NEWS_NATIONAL </td><td class="fielddoc">
 <p>Entertainment News National. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca85b55ece9323db1fe0798a459b871ae0"></a>LE_SMS_CDMA_SVC_CAT_ENTERTAINMENT_NEWS_INTERNATIONAL</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca85b55ece9323db1fe0798a459b871ae0"></a>LE_SMS_CDMA_SVC_CAT_ENTERTAINMENT_NEWS_INTERNATIONAL </td><td class="fielddoc">
 <p>Entertainment News International. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167cabc377330c9a1d24b935dddc1d337cc04"></a>LE_SMS_CDMA_SVC_CAT_LOCAL_WEATHER</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167cabc377330c9a1d24b935dddc1d337cc04"></a>LE_SMS_CDMA_SVC_CAT_LOCAL_WEATHER </td><td class="fielddoc">
 <p>Local weather. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca13b9fbc43ce7b4e5f5e26ca36e1075c2"></a>LE_SMS_CDMA_SVC_CAT_TRAFFIC_REPORTS</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca13b9fbc43ce7b4e5f5e26ca36e1075c2"></a>LE_SMS_CDMA_SVC_CAT_TRAFFIC_REPORTS </td><td class="fielddoc">
 <p>Area Traffic Reports. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167caf861e234fe4b48a302c6569f34c26d67"></a>LE_SMS_CDMA_SVC_CAT_LOCAL_FLIGHT_SCHEDULES</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167caf861e234fe4b48a302c6569f34c26d67"></a>LE_SMS_CDMA_SVC_CAT_LOCAL_FLIGHT_SCHEDULES </td><td class="fielddoc">
 <p>Local Airplane Flight Schedules. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca85ce64c2470a6f743b28b9aedaba00d6"></a>LE_SMS_CDMA_SVC_CAT_RESTAURANTS</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca85ce64c2470a6f743b28b9aedaba00d6"></a>LE_SMS_CDMA_SVC_CAT_RESTAURANTS </td><td class="fielddoc">
 <p>Restaurants. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca2177833a1bc86c087c70ed45fa8e60f3"></a>LE_SMS_CDMA_SVC_CAT_LODGINGS</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca2177833a1bc86c087c70ed45fa8e60f3"></a>LE_SMS_CDMA_SVC_CAT_LODGINGS </td><td class="fielddoc">
 <p>Lodgings. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca4ad2923be0ced140783a5e0024dd9cc4"></a>LE_SMS_CDMA_SVC_CAT_RETAIL_DIRECTORY</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca4ad2923be0ced140783a5e0024dd9cc4"></a>LE_SMS_CDMA_SVC_CAT_RETAIL_DIRECTORY </td><td class="fielddoc">
 <p>Retail Directory. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167caea54439fbdcdbd2589d7f65a6f58856b"></a>LE_SMS_CDMA_SVC_CAT_ADVERTISEMENTS</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167caea54439fbdcdbd2589d7f65a6f58856b"></a>LE_SMS_CDMA_SVC_CAT_ADVERTISEMENTS </td><td class="fielddoc">
 <p>Advertisements. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca964fa5b3596b749ee29a88cc719d2ff1"></a>LE_SMS_CDMA_SVC_CAT_STOCK_QUOTES</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca964fa5b3596b749ee29a88cc719d2ff1"></a>LE_SMS_CDMA_SVC_CAT_STOCK_QUOTES </td><td class="fielddoc">
 <p>Stock Quotes. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167caf185924712d97732ffad76a9d7aa824c"></a>LE_SMS_CDMA_SVC_CAT_EMPLOYMENT_OPPORTUNITIES</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167caf185924712d97732ffad76a9d7aa824c"></a>LE_SMS_CDMA_SVC_CAT_EMPLOYMENT_OPPORTUNITIES </td><td class="fielddoc">
 <p>Employment Opportunities. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca3bd2cc802451db6962d6d33a4d51b50a"></a>LE_SMS_CDMA_SVC_CAT_MEDICAL</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca3bd2cc802451db6962d6d33a4d51b50a"></a>LE_SMS_CDMA_SVC_CAT_MEDICAL </td><td class="fielddoc">
 <p>Medical/Health/Hospitals. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167caa44cbda1aaec5d12b0e6f4529d4fcd68"></a>LE_SMS_CDMA_SVC_CAT_TECHNOLOGY_NEWS</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167caa44cbda1aaec5d12b0e6f4529d4fcd68"></a>LE_SMS_CDMA_SVC_CAT_TECHNOLOGY_NEWS </td><td class="fielddoc">
 <p>Technology News. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167cacc71da12fcff1f0ceb58000830f19107"></a>LE_SMS_CDMA_SVC_CAT_MULTI_CAT</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167cacc71da12fcff1f0ceb58000830f19107"></a>LE_SMS_CDMA_SVC_CAT_MULTI_CAT </td><td class="fielddoc">
 <p>Multicategory. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca93013a59eed4f32eb1e9ae059b1cdda4"></a>LE_SMS_CDMA_SVC_CAT_CATPT</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a4d1e11633722ac519f2d8efb1178167ca93013a59eed4f32eb1e9ae059b1cdda4"></a>LE_SMS_CDMA_SVC_CAT_CATPT </td><td class="fielddoc">
 <p>Card Application Toolkit Protocol Teleservice. </p>
 </td></tr>
 </table>
@@ -727,94 +727,94 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>3GPP2 Message Error code when the message sending has failed. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa3069a7eea9b3a9a9a68d12f1aee8c01b"></a>LE_SMS_ERROR_ADDR_VACANT</em> </td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa3069a7eea9b3a9a9a68d12f1aee8c01b"></a>LE_SMS_ERROR_ADDR_VACANT </td><td class="fielddoc">
 <p>The SMS Destination Address is valid but is not. currently allocated to an SMS terminal. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa11443cf726a2516d30daf0975fbc9b00"></a>LE_SMS_ERROR_ADDR_TRANSLATION_FAILURE</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa11443cf726a2516d30daf0975fbc9b00"></a>LE_SMS_ERROR_ADDR_TRANSLATION_FAILURE </td><td class="fielddoc">
 <p>The SMS Destination Address is invalid. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfadc54d89915a8f13b542392c4bd1ac54f"></a>LE_SMS_ERROR_NETWORK_RESOURCE_SHORTAGE</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfadc54d89915a8f13b542392c4bd1ac54f"></a>LE_SMS_ERROR_NETWORK_RESOURCE_SHORTAGE </td><td class="fielddoc">
 <p>The network transmission failed due to lack of a network resource or link capacity. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa74a40dce33e6f0f0fc8b8dfea83678cc"></a>LE_SMS_ERROR_NETWORK_FAILURE</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa74a40dce33e6f0f0fc8b8dfea83678cc"></a>LE_SMS_ERROR_NETWORK_FAILURE </td><td class="fielddoc">
 <p>A network node failed, a link failed, or a required operation failed. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa9eed9e6fd67eaeb811a31b7a32f5ca11"></a>LE_SMS_ERROR_INVALID_TELESERVICE_ID</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa9eed9e6fd67eaeb811a31b7a32f5ca11"></a>LE_SMS_ERROR_INVALID_TELESERVICE_ID </td><td class="fielddoc">
 <p>The SMS_TeleserviceIdentifier is not known, is not supported, or is not authorized by an addressed functional entity. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfaebf95494605aeca44a3972783a785175"></a>LE_SMS_ERROR_NETWORK_OTHER</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfaebf95494605aeca44a3972783a785175"></a>LE_SMS_ERROR_NETWORK_OTHER </td><td class="fielddoc">
 <p>A network problem other than identified above. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa4b31b9969ad773d3d80ce3a50f767cfc"></a>LE_SMS_ERROR_NO_PAGE_RESPONSE</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa4b31b9969ad773d3d80ce3a50f767cfc"></a>LE_SMS_ERROR_NO_PAGE_RESPONSE </td><td class="fielddoc">
 <p>The addressed MS-based SME is known, but it does not respond to a page. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa3b311d90ceb65333c05f49f222e4baae"></a>LE_SMS_ERROR_DEST_BUSY</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa3b311d90ceb65333c05f49f222e4baae"></a>LE_SMS_ERROR_DEST_BUSY </td><td class="fielddoc">
 <p>The destination MS-based SME is SMS capable, but is currently engaged in a call, a service, or a call mode that precludes the use of SMS, or the destination SME is congested. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfafc6f7027eaf2cea3462db0225684f866"></a>LE_SMS_ERROR_NO_ACK</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfafc6f7027eaf2cea3462db0225684f866"></a>LE_SMS_ERROR_NO_ACK </td><td class="fielddoc">
 <p>The destination SME does not acknowledge receipt of the SMS delivery. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfae8e6a91885558a9f213e8ed9a18a1886"></a>LE_SMS_ERROR_DEST_RESOURCE_SHORTAGE</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfae8e6a91885558a9f213e8ed9a18a1886"></a>LE_SMS_ERROR_DEST_RESOURCE_SHORTAGE </td><td class="fielddoc">
 <p>A required terminal resource is not available to process this message. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfabda6fc462548d4549dfb75e8ec47ed23"></a>LE_SMS_ERROR_SMS_DELIVERY_POSTPONED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfabda6fc462548d4549dfb75e8ec47ed23"></a>LE_SMS_ERROR_SMS_DELIVERY_POSTPONED </td><td class="fielddoc">
 <p>Delivery is not currently possible. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa96ae49ba1f57bf9fdb3754402b1082b3"></a>LE_SMS_ERROR_DEST_OUT_OF_SERV</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa96ae49ba1f57bf9fdb3754402b1082b3"></a>LE_SMS_ERROR_DEST_OUT_OF_SERV </td><td class="fielddoc">
 <p>The addressed destination is out of service for an extended period of time. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfae8b22a7d68867dc3d0e2368fa798099e"></a>LE_SMS_ERROR_DEST_NOT_AT_ADDR</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfae8b22a7d68867dc3d0e2368fa798099e"></a>LE_SMS_ERROR_DEST_NOT_AT_ADDR </td><td class="fielddoc">
 <p>The MS-based SME is no longer at the temporary SMS routing address. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfafa34dc0e987f7aedfe754875477f7380"></a>LE_SMS_ERROR_DEST_OTHER</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfafa34dc0e987f7aedfe754875477f7380"></a>LE_SMS_ERROR_DEST_OTHER </td><td class="fielddoc">
 <p>A terminal problem other than described above. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfaea507c5a37a25f30e4bdf95f80239fb5"></a>LE_SMS_ERROR_RADIO_IF_RESOURCE_SHORTAGE</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfaea507c5a37a25f30e4bdf95f80239fb5"></a>LE_SMS_ERROR_RADIO_IF_RESOURCE_SHORTAGE </td><td class="fielddoc">
 <p>There is no channel available or there is radio congestion at this time. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfacb381d5d4bd15ac91f8a7f38905a36df"></a>LE_SMS_ERROR_RADIO_IF_INCOMPATABILITY</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfacb381d5d4bd15ac91f8a7f38905a36df"></a>LE_SMS_ERROR_RADIO_IF_INCOMPATABILITY </td><td class="fielddoc">
 <p>The MS for an MS-based SME is operating in a mode that does not support SMS at this time. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfadcf31ba340503ce3f605030dfaddb3eb"></a>LE_SMS_ERROR_RADIO_IF_OTHER</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfadcf31ba340503ce3f605030dfaddb3eb"></a>LE_SMS_ERROR_RADIO_IF_OTHER </td><td class="fielddoc">
 <p>A radio interface problem to an MS-based SME other than described above. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa38ca09cb888bd51bb5c8c19fb9c1aab4"></a>LE_SMS_ERROR_ENCODING</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa38ca09cb888bd51bb5c8c19fb9c1aab4"></a>LE_SMS_ERROR_ENCODING </td><td class="fielddoc">
 <p>The size of a parameter or field is not what is expected. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfab87ede1b50c6c3cc9be747edf7e2511d"></a>LE_SMS_ERROR_SMS_ORIG_DENIED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfab87ede1b50c6c3cc9be747edf7e2511d"></a>LE_SMS_ERROR_SMS_ORIG_DENIED </td><td class="fielddoc">
 <p>The originating MIN is not recognized. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa85fa91d1725b6229b05a68c751b48e09"></a>LE_SMS_ERROR_SMS_TERM_DENIED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa85fa91d1725b6229b05a68c751b48e09"></a>LE_SMS_ERROR_SMS_TERM_DENIED </td><td class="fielddoc">
 <p>The destination is not authorized to receive the SMS message. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfab5573ff1bd2b1a2ddae0ff6b4df7fd8a"></a>LE_SMS_ERROR_SUPP_SERV_NOT_SUPP</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfab5573ff1bd2b1a2ddae0ff6b4df7fd8a"></a>LE_SMS_ERROR_SUPP_SERV_NOT_SUPP </td><td class="fielddoc">
 <p>The originating supplementary service is not known or supported. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa16e5f8f40f88d2eaef991913f0bf0655"></a>LE_SMS_ERROR_SMS_NOT_SUPP</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa16e5f8f40f88d2eaef991913f0bf0655"></a>LE_SMS_ERROR_SMS_NOT_SUPP </td><td class="fielddoc">
 <p>The originating supplementary service is not known or supported. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa3d84f3f3e0918fe9c0aac1f6c00359a8"></a>LE_SMS_ERROR_MISSING_EXPECTED_PARAM</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa3d84f3f3e0918fe9c0aac1f6c00359a8"></a>LE_SMS_ERROR_MISSING_EXPECTED_PARAM </td><td class="fielddoc">
 <p>An optional parameter that is required for a particular function. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa04b50427183c5a39b3416942a504771f"></a>LE_SMS_ERROR_MISSING_MAND_PARAM</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa04b50427183c5a39b3416942a504771f"></a>LE_SMS_ERROR_MISSING_MAND_PARAM </td><td class="fielddoc">
 <p>A parameter is missing that is mandatory. for a particular message. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa32a15ac94403911520f1cf9a8a2511cd"></a>LE_SMS_ERROR_UNRECOGNIZED_PARAM_VAL</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa32a15ac94403911520f1cf9a8a2511cd"></a>LE_SMS_ERROR_UNRECOGNIZED_PARAM_VAL </td><td class="fielddoc">
 <p>A known parameter has an unknown or unsupported value. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa43f51da5ac89c31986eb1f0296236348"></a>LE_SMS_ERROR_UNEXPECTED_PARAM_VAL</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa43f51da5ac89c31986eb1f0296236348"></a>LE_SMS_ERROR_UNEXPECTED_PARAM_VAL </td><td class="fielddoc">
 <p>A known parameter has a known but unexpected value. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfac79b7c4b9f1c6f14c81f6f72a05e3931"></a>LE_SMS_ERROR_USER_DATA_SIZE_ERR</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfac79b7c4b9f1c6f14c81f6f72a05e3931"></a>LE_SMS_ERROR_USER_DATA_SIZE_ERR </td><td class="fielddoc">
 <p>The User Data size is too large for access technology, transport network, or call mode, etc </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfac0d6a3702a8e6b7e5d41e16cf9469559"></a>LE_SMS_ERROR_GENERAL_OTHER</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfac0d6a3702a8e6b7e5d41e16cf9469559"></a>LE_SMS_ERROR_GENERAL_OTHER </td><td class="fielddoc">
 <p>Other general problems. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa9d01f7e0eff05497837d8a23e95fbe3d"></a>LE_SMS_ERROR_3GPP2_PLATFORM_SPECIFIC</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfa9d01f7e0eff05497837d8a23e95fbe3d"></a>LE_SMS_ERROR_3GPP2_PLATFORM_SPECIFIC </td><td class="fielddoc">
 <p>Platform specific code. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfab63802607dd4ff17a59ff7dd32640561"></a>LE_SMS_ERROR_3GPP2_MAX</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aeb77e45e90a8257c2b386428fa9397dfab63802607dd4ff17a59ff7dd32640561"></a>LE_SMS_ERROR_3GPP2_MAX </td><td class="fielddoc">
 <p>Undefined reason. </p>
 </td></tr>
 </table>
@@ -831,160 +831,160 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Message Error code when the message sending has failed. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea26469ea7cb41997513d9ad3c29bea7b9"></a>LE_SMS_RP_ERROR_UNASSIGNED_NUMBER</em> </td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea26469ea7cb41997513d9ad3c29bea7b9"></a>LE_SMS_RP_ERROR_UNASSIGNED_NUMBER </td><td class="fielddoc">
 <p>Unassigned (unallocated) number. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea69644439522bc9cc29f24b6c2b2e6317"></a>LE_SMS_RP_ERROR_OPERATOR_DETERMINED_BARRING</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea69644439522bc9cc29f24b6c2b2e6317"></a>LE_SMS_RP_ERROR_OPERATOR_DETERMINED_BARRING </td><td class="fielddoc">
 <p>Operator determined barring. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea6e54c6597ee96f353fa9ee12793a2963"></a>LE_SMS_RP_ERROR_CALL_BARRED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea6e54c6597ee96f353fa9ee12793a2963"></a>LE_SMS_RP_ERROR_CALL_BARRED </td><td class="fielddoc">
 <p>Call barred. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea1cea0bc480adeef1bcd5da9f45a3bd2c"></a>LE_SMS_RP_ERROR_RESERVED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea1cea0bc480adeef1bcd5da9f45a3bd2c"></a>LE_SMS_RP_ERROR_RESERVED </td><td class="fielddoc">
 <p>Reserved. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305eac980e73fa0bdb725742742a97cbe812a"></a>LE_SMS_RP_ERROR_SMS_TRANSFER_REJECTED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305eac980e73fa0bdb725742742a97cbe812a"></a>LE_SMS_RP_ERROR_SMS_TRANSFER_REJECTED </td><td class="fielddoc">
 <p>Short message transfer rejected. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305eae9d79ae6f657bf9495cd77e8d73577a8"></a>LE_SMS_RP_ERROR_MEMORY_CAP_EXCEEDED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305eae9d79ae6f657bf9495cd77e8d73577a8"></a>LE_SMS_RP_ERROR_MEMORY_CAP_EXCEEDED </td><td class="fielddoc">
 <p>Memory capacity exceeded. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305eaf48bacbdd0ffc07f3d32a90666f0f034"></a>LE_SMS_RP_ERROR_DESTINATION_OUT_OF_ORDER</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305eaf48bacbdd0ffc07f3d32a90666f0f034"></a>LE_SMS_RP_ERROR_DESTINATION_OUT_OF_ORDER </td><td class="fielddoc">
 <p>Destination out of order. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305eadaae4a5ada1617f98b6d692694f06764"></a>LE_SMS_RP_ERROR_UNIDENTIFIED_SUBSCRIBER</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305eadaae4a5ada1617f98b6d692694f06764"></a>LE_SMS_RP_ERROR_UNIDENTIFIED_SUBSCRIBER </td><td class="fielddoc">
 <p>Unidentified subscriber. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea946fc7d11cff398d34ecb1936f2d5cc5"></a>LE_SMS_RP_ERROR_FACILITY_REJECTED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea946fc7d11cff398d34ecb1936f2d5cc5"></a>LE_SMS_RP_ERROR_FACILITY_REJECTED </td><td class="fielddoc">
 <p>Facility rejected. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea5d00b68c253af7afa9d948069c8124e1"></a>LE_SMS_RP_ERROR_UNKNOWN_SUBSCRIBER</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea5d00b68c253af7afa9d948069c8124e1"></a>LE_SMS_RP_ERROR_UNKNOWN_SUBSCRIBER </td><td class="fielddoc">
 <p>Unknown subscriber. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea7293082103e20a1f618cdae6ecd5d32d"></a>LE_SMS_RP_ERROR_NETWORK_OUT_OF_ORDER</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea7293082103e20a1f618cdae6ecd5d32d"></a>LE_SMS_RP_ERROR_NETWORK_OUT_OF_ORDER </td><td class="fielddoc">
 <p>Network out of order. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305eaab13242146287557f50675afe6440513"></a>LE_SMS_RP_ERROR_TEMPORARY_FAILURE</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305eaab13242146287557f50675afe6440513"></a>LE_SMS_RP_ERROR_TEMPORARY_FAILURE </td><td class="fielddoc">
 <p>Temporary failure. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305eac8ccfe2e6cef23f2e847e76e47d8357d"></a>LE_SMS_RP_ERROR_CONGESTION</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305eac8ccfe2e6cef23f2e847e76e47d8357d"></a>LE_SMS_RP_ERROR_CONGESTION </td><td class="fielddoc">
 <p>Congestion. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305eabf541c28adabce273bfdffca35cccc97"></a>LE_SMS_RP_ERROR_RESOURCES_UNAVAILABLE</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305eabf541c28adabce273bfdffca35cccc97"></a>LE_SMS_RP_ERROR_RESOURCES_UNAVAILABLE </td><td class="fielddoc">
 <p>Resources unavailable, unspecified. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305eae63106efeecc7f63e9535de7aa7a5be8"></a>LE_SMS_RP_ERROR_REQUESTED_FACILITY_NOT_SUBSCRIBED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305eae63106efeecc7f63e9535de7aa7a5be8"></a>LE_SMS_RP_ERROR_REQUESTED_FACILITY_NOT_SUBSCRIBED </td><td class="fielddoc">
 <p>Resources facility not subscribed. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ead4aad611385d801dd7641e3eadcf21ff"></a>LE_SMS_RP_ERROR_REQUESTED_FACILITY_NOT_IMPLEMENTED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ead4aad611385d801dd7641e3eadcf21ff"></a>LE_SMS_RP_ERROR_REQUESTED_FACILITY_NOT_IMPLEMENTED </td><td class="fielddoc">
 <p>Resources facility not implemented. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305eaeff8eba73f1a87f3c2755579b179b2cb"></a>LE_SMS_RP_ERROR_INVALID_SMS_TRANSFER_REFERENCE_VALUE</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305eaeff8eba73f1a87f3c2755579b179b2cb"></a>LE_SMS_RP_ERROR_INVALID_SMS_TRANSFER_REFERENCE_VALUE </td><td class="fielddoc">
 <p>Invalid short message transfer reference value </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea45322135d0b7b357df0ba45a8c8fafea"></a>LE_SMS_RP_ERROR_SEMANTICALLY_INCORRECT_MESSAGE</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea45322135d0b7b357df0ba45a8c8fafea"></a>LE_SMS_RP_ERROR_SEMANTICALLY_INCORRECT_MESSAGE </td><td class="fielddoc">
 <p>Sementically incorect message. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea79e3b59aa2bf713b226ac28e0044e33e"></a>LE_SMS_RP_ERROR_INVALID_MANDATORY_INFO</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea79e3b59aa2bf713b226ac28e0044e33e"></a>LE_SMS_RP_ERROR_INVALID_MANDATORY_INFO </td><td class="fielddoc">
 <p>Invalid mandatory information. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea6655cbe6291ef47a3e82e9242b40aebd"></a>LE_SMS_RP_ERROR_MESSAGE_TYPE_NOT_IMPLEMENTED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea6655cbe6291ef47a3e82e9242b40aebd"></a>LE_SMS_RP_ERROR_MESSAGE_TYPE_NOT_IMPLEMENTED </td><td class="fielddoc">
 <p>Message type nonexistent or not implemented. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea4ada8a9e58225f53e8eec07ddeccbce2"></a>LE_SMS_RP_ERROR_MESSAGE_NOT_COMPATABLE_WITH_SMS</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea4ada8a9e58225f53e8eec07ddeccbce2"></a>LE_SMS_RP_ERROR_MESSAGE_NOT_COMPATABLE_WITH_SMS </td><td class="fielddoc">
 <p>Message not compatible with short message protocol state </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305eacadcba2389703b4fb8ed7f3b0f7f103c"></a>LE_SMS_RP_ERROR_INFO_ELEMENT_NOT_IMPLEMENTED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305eacadcba2389703b4fb8ed7f3b0f7f103c"></a>LE_SMS_RP_ERROR_INFO_ELEMENT_NOT_IMPLEMENTED </td><td class="fielddoc">
 <p>Information element nonexistent or not implemented </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305eaf4872bd60bb54de06bef857d3f64a214"></a>LE_SMS_RP_ERROR_PROTOCOL_ERROR</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305eaf4872bd60bb54de06bef857d3f64a214"></a>LE_SMS_RP_ERROR_PROTOCOL_ERROR </td><td class="fielddoc">
 <p>Protocol error, unspecified. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305eab50a5b9da7cade7d2e2d93f81578d6e5"></a>LE_SMS_RP_ERROR_INTERWORKING</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305eab50a5b9da7cade7d2e2d93f81578d6e5"></a>LE_SMS_RP_ERROR_INTERWORKING </td><td class="fielddoc">
 <p>Interworking, unspecified. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea7b138c36b955e2e49c55dc725dafe41e"></a>LE_SMS_TP_ERROR_TELE_INTERWORKING_NOT_SUPPORTED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea7b138c36b955e2e49c55dc725dafe41e"></a>LE_SMS_TP_ERROR_TELE_INTERWORKING_NOT_SUPPORTED </td><td class="fielddoc">
 <p>Telematic interworking not supported. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea3d0c539a5140865b21f135298a4bd6a3"></a>LE_SMS_TP_ERROR_SHORT_MESSAGE_TYPE_0_NOT_SUPPORTED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea3d0c539a5140865b21f135298a4bd6a3"></a>LE_SMS_TP_ERROR_SHORT_MESSAGE_TYPE_0_NOT_SUPPORTED </td><td class="fielddoc">
 <p>Short Message Type 0 not supported. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea4efee0159b5cd037d07a4cd2e48db31f"></a>LE_SMS_TP_ERROR_SHORT_MESSAGE_CANNOT_BE_REPLACED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea4efee0159b5cd037d07a4cd2e48db31f"></a>LE_SMS_TP_ERROR_SHORT_MESSAGE_CANNOT_BE_REPLACED </td><td class="fielddoc">
 <p>Cannot replace short message. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305eac5a013600a3b89936e09b4c8601d5cf2"></a>LE_SMS_TP_ERROR_UNSPECIFIED_PID_ERROR</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305eac5a013600a3b89936e09b4c8601d5cf2"></a>LE_SMS_TP_ERROR_UNSPECIFIED_PID_ERROR </td><td class="fielddoc">
 <p>Unspecified TP-PID error. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea49204734cd1bffa274164b4f00f7435d"></a>LE_SMS_TP_ERROR_DCS_NOT_SUPPORTED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea49204734cd1bffa274164b4f00f7435d"></a>LE_SMS_TP_ERROR_DCS_NOT_SUPPORTED </td><td class="fielddoc">
 <p>Data coding scheme (alphabet) not supported </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305eaf3023324980be6c0e1049c5a4894c602"></a>LE_SMS_TP_ERROR_MESSAGE_CLASS_NOT_SUPPORTED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305eaf3023324980be6c0e1049c5a4894c602"></a>LE_SMS_TP_ERROR_MESSAGE_CLASS_NOT_SUPPORTED </td><td class="fielddoc">
 <p>Message class not supported. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea732473f3eac1f73220a9eb7c659c37bd"></a>LE_SMS_TP_ERROR_UNSPECIFIED_DCS_ERROR</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea732473f3eac1f73220a9eb7c659c37bd"></a>LE_SMS_TP_ERROR_UNSPECIFIED_DCS_ERROR </td><td class="fielddoc">
 <p>Unspecified TP-DCS error. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea2561bc1f982718076443a68e34c0ad58"></a>LE_SMS_TP_ERROR_COMMAND_CANNOT_BE_ACTIONED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea2561bc1f982718076443a68e34c0ad58"></a>LE_SMS_TP_ERROR_COMMAND_CANNOT_BE_ACTIONED </td><td class="fielddoc">
 <p>Command cannot be actioned. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea00e5d9aaae4e418a6ade196da3ed7e18"></a>LE_SMS_TP_ERROR_COMMAND_UNSUPPORTED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea00e5d9aaae4e418a6ade196da3ed7e18"></a>LE_SMS_TP_ERROR_COMMAND_UNSUPPORTED </td><td class="fielddoc">
 <p>Command unsupported. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea02611a74fa74100ff33e9470d1b17727"></a>LE_SMS_TP_ERROR_UNSPECIFIED_COMMAND_ERROR</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea02611a74fa74100ff33e9470d1b17727"></a>LE_SMS_TP_ERROR_UNSPECIFIED_COMMAND_ERROR </td><td class="fielddoc">
 <p>Unspecified TP-Command error. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea7bb7bcda9425fde4654a01c152e0a3c3"></a>LE_SMS_TP_ERROR_TPDU_NOT_SUPPORTED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea7bb7bcda9425fde4654a01c152e0a3c3"></a>LE_SMS_TP_ERROR_TPDU_NOT_SUPPORTED </td><td class="fielddoc">
 <p>TPDU not supported. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea7eb7c4cee07b40c3462059d757b46044"></a>LE_SMS_TP_ERROR_SC_BUSY</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea7eb7c4cee07b40c3462059d757b46044"></a>LE_SMS_TP_ERROR_SC_BUSY </td><td class="fielddoc">
 <p>SC busy. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea79bd936f4ebc30173917831ffb2ed695"></a>LE_SMS_TP_ERROR_NO_SC_SUBSCRIPTION</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea79bd936f4ebc30173917831ffb2ed695"></a>LE_SMS_TP_ERROR_NO_SC_SUBSCRIPTION </td><td class="fielddoc">
 <p>No SC subscription. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ead4d9f099ff673f38abe45b10f8139b7a"></a>LE_SMS_TP_ERROR_SC_SYS_FAILURE</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ead4d9f099ff673f38abe45b10f8139b7a"></a>LE_SMS_TP_ERROR_SC_SYS_FAILURE </td><td class="fielddoc">
 <p>SC system failure. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ead0d038fffb6202e8c8880e998b706302"></a>LE_SMS_TP_ERROR_INVALID_SME_ADDRESS</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ead0d038fffb6202e8c8880e998b706302"></a>LE_SMS_TP_ERROR_INVALID_SME_ADDRESS </td><td class="fielddoc">
 <p>Invalid SME address. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea2292252b63178c656a7f3c8cc1662691"></a>LE_SMS_TP_ERROR_DESTINATION_SME_BARRED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea2292252b63178c656a7f3c8cc1662691"></a>LE_SMS_TP_ERROR_DESTINATION_SME_BARRED </td><td class="fielddoc">
 <p>Destination SME barred. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305eaafb84552030009e7ff1c3995396ef15a"></a>LE_SMS_TP_ERROR_SM_REJECTED_OR_DUPLICATE</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305eaafb84552030009e7ff1c3995396ef15a"></a>LE_SMS_TP_ERROR_SM_REJECTED_OR_DUPLICATE </td><td class="fielddoc">
 <p>SM Rejected-Duplicate SM. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305eaa243b5f59bc92592b73274b7990ef656"></a>LE_SMS_TP_ERROR_TP_VPF_NOT_SUPPORTED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305eaa243b5f59bc92592b73274b7990ef656"></a>LE_SMS_TP_ERROR_TP_VPF_NOT_SUPPORTED </td><td class="fielddoc">
 <p>TP-VPF not supported. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea85a6e40b46ab4179aa0e744744591326"></a>LE_SMS_TP_ERROR_TP_VP_NOT_SUPPORTED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea85a6e40b46ab4179aa0e744744591326"></a>LE_SMS_TP_ERROR_TP_VP_NOT_SUPPORTED </td><td class="fielddoc">
 <p>TP-VP not supporte. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305eacbeb3b2dd644f92d893a8e7e2da4370c"></a>LE_SMS_TP_ERROR_SIM_SMS_STORAGE_FULL</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305eacbeb3b2dd644f92d893a8e7e2da4370c"></a>LE_SMS_TP_ERROR_SIM_SMS_STORAGE_FULL </td><td class="fielddoc">
 <p>(U)SIM SMS storage full </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305eafb402181dea7da9ccb4214f3793428f9"></a>LE_SMS_TP_ERROR_NO_SMS_STORAGE_CAP_IN_SIM</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305eafb402181dea7da9ccb4214f3793428f9"></a>LE_SMS_TP_ERROR_NO_SMS_STORAGE_CAP_IN_SIM </td><td class="fielddoc">
 <p>No SMS storage capability in (U)SIM. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea260c482ae2a77e7be596f68a27093cce"></a>LE_SMS_TP_ERROR_MS_ERROR</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea260c482ae2a77e7be596f68a27093cce"></a>LE_SMS_TP_ERROR_MS_ERROR </td><td class="fielddoc">
 <p>Error in MS. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea0edd43feae63fbcd2cc279c9461bb553"></a>LE_SMS_TP_ERROR_MEMORY_CAP_EXCEEDED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea0edd43feae63fbcd2cc279c9461bb553"></a>LE_SMS_TP_ERROR_MEMORY_CAP_EXCEEDED </td><td class="fielddoc">
 <p>Memory capacity exceeded. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305eacbf84818a3847743132223dfb05e3435"></a>LE_SMS_TP_ERROR_SIM_APP_TOOLKIT_BUSY</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305eacbf84818a3847743132223dfb05e3435"></a>LE_SMS_TP_ERROR_SIM_APP_TOOLKIT_BUSY </td><td class="fielddoc">
 <p>(U)SIM Application Toolkit busy </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea4e0769fea8776b0990ed281897a4af17"></a>LE_SMS_TP_ERROR_SIM_DATA_DOWNLOAD_ERROR</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea4e0769fea8776b0990ed281897a4af17"></a>LE_SMS_TP_ERROR_SIM_DATA_DOWNLOAD_ERROR </td><td class="fielddoc">
 <p>(U)SIM data download error </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea08005ab8fbe421dd62a7de20beb380e1"></a>LE_SMS_TP_ERROR_UNSPECIFIED_ERROR</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea08005ab8fbe421dd62a7de20beb380e1"></a>LE_SMS_TP_ERROR_UNSPECIFIED_ERROR </td><td class="fielddoc">
 <p>Unspecified error cause. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea770a9e5f8652cc094bb532cd32f4f56f"></a>LE_SMS_ERROR_3GPP_PLATFORM_SPECIFIC</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea770a9e5f8652cc094bb532cd32f4f56f"></a>LE_SMS_ERROR_3GPP_PLATFORM_SPECIFIC </td><td class="fielddoc">
 <p>Platform specific code. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea8aa7f744a47b8ecda30b4d84b94216ae"></a>LE_SMS_ERROR_3GPP_MAX</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a67bb87987a78f42c1d7192372463305ea8aa7f744a47b8ecda30b4d84b94216ae"></a>LE_SMS_ERROR_3GPP_MAX </td><td class="fielddoc">
 <p>Undefined reason. </p>
 </td></tr>
 </table>
@@ -1001,19 +1001,19 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Message Format. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a337778c44e63660c44fa2116699296c0a3f6a4a63acbf7aec5a498017ff53a6e8"></a>LE_SMS_FORMAT_PDU</em> </td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a337778c44e63660c44fa2116699296c0a3f6a4a63acbf7aec5a498017ff53a6e8"></a>LE_SMS_FORMAT_PDU </td><td class="fielddoc">
 <p>PDU message format. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a337778c44e63660c44fa2116699296c0a1bb6a0d76a622b1185ee879e1595dff8"></a>LE_SMS_FORMAT_TEXT</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a337778c44e63660c44fa2116699296c0a1bb6a0d76a622b1185ee879e1595dff8"></a>LE_SMS_FORMAT_TEXT </td><td class="fielddoc">
 <p>Text message format. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a337778c44e63660c44fa2116699296c0ac70333fc9281ed10aa405d585689c000"></a>LE_SMS_FORMAT_BINARY</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a337778c44e63660c44fa2116699296c0ac70333fc9281ed10aa405d585689c000"></a>LE_SMS_FORMAT_BINARY </td><td class="fielddoc">
 <p>Binary message format. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a337778c44e63660c44fa2116699296c0afe08800134fe4f54c84439cb2d323a77"></a>LE_SMS_FORMAT_UCS2</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a337778c44e63660c44fa2116699296c0afe08800134fe4f54c84439cb2d323a77"></a>LE_SMS_FORMAT_UCS2 </td><td class="fielddoc">
 <p>UCS2 message format. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a337778c44e63660c44fa2116699296c0abea80bb6058e34a427c02b80bfede497"></a>LE_SMS_FORMAT_UNKNOWN</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a337778c44e63660c44fa2116699296c0abea80bb6058e34a427c02b80bfede497"></a>LE_SMS_FORMAT_UNKNOWN </td><td class="fielddoc">
 <p>Unknown message format. </p>
 </td></tr>
 </table>
@@ -1030,28 +1030,28 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>CDMA Cell broadcast message languages. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="ad4ba75a2c1d118cd46ca5e8428fb5ddbad0356a01286311e11035b9ef1ca4ef7c"></a>LE_SMS_LANGUAGE_UNKNOWN</em> </td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="ad4ba75a2c1d118cd46ca5e8428fb5ddbad0356a01286311e11035b9ef1ca4ef7c"></a>LE_SMS_LANGUAGE_UNKNOWN </td><td class="fielddoc">
 <p>Unknow or Unspecified language. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ad4ba75a2c1d118cd46ca5e8428fb5ddba42b1bbed8b017e36fd0389bfa09f42fb"></a>LE_SMS_LANGUAGE_ENGLISH</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="ad4ba75a2c1d118cd46ca5e8428fb5ddba42b1bbed8b017e36fd0389bfa09f42fb"></a>LE_SMS_LANGUAGE_ENGLISH </td><td class="fielddoc">
 <p>English language. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ad4ba75a2c1d118cd46ca5e8428fb5ddba6c88f276e71935b5fe119a468bba7fa3"></a>LE_SMS_LANGUAGE_FRENCH</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="ad4ba75a2c1d118cd46ca5e8428fb5ddba6c88f276e71935b5fe119a468bba7fa3"></a>LE_SMS_LANGUAGE_FRENCH </td><td class="fielddoc">
 <p>French language. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ad4ba75a2c1d118cd46ca5e8428fb5ddba8b5e31055b3883661e58f38843601bd9"></a>LE_SMS_LANGUAGE_SPANISH</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="ad4ba75a2c1d118cd46ca5e8428fb5ddba8b5e31055b3883661e58f38843601bd9"></a>LE_SMS_LANGUAGE_SPANISH </td><td class="fielddoc">
 <p>Spanish language. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ad4ba75a2c1d118cd46ca5e8428fb5ddba1bbdfadfec0d7020f2b171b1cf4dbbfe"></a>LE_SMS_LANGUAGE_JAPANESE</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="ad4ba75a2c1d118cd46ca5e8428fb5ddba1bbdfadfec0d7020f2b171b1cf4dbbfe"></a>LE_SMS_LANGUAGE_JAPANESE </td><td class="fielddoc">
 <p>Japanese language. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ad4ba75a2c1d118cd46ca5e8428fb5ddba58899a6c4374ff8e04072cecca609b0c"></a>LE_SMS_LANGUAGE_KOREAN</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="ad4ba75a2c1d118cd46ca5e8428fb5ddba58899a6c4374ff8e04072cecca609b0c"></a>LE_SMS_LANGUAGE_KOREAN </td><td class="fielddoc">
 <p>Korean language. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ad4ba75a2c1d118cd46ca5e8428fb5ddbafd2f8d23a5676922616f2893c5ce33a2"></a>LE_SMS_LANGUAGE_CHINESE</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="ad4ba75a2c1d118cd46ca5e8428fb5ddbafd2f8d23a5676922616f2893c5ce33a2"></a>LE_SMS_LANGUAGE_CHINESE </td><td class="fielddoc">
 <p>Chinese language. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ad4ba75a2c1d118cd46ca5e8428fb5ddba7d0f3b3f8ab2b76681b28b3ef4628b1d"></a>LE_SMS_LANGUAGE_HEBREW</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="ad4ba75a2c1d118cd46ca5e8428fb5ddba7d0f3b3f8ab2b76681b28b3ef4628b1d"></a>LE_SMS_LANGUAGE_HEBREW </td><td class="fielddoc">
 <p>Hebrew language. </p>
 </td></tr>
 </table>
@@ -1068,34 +1068,34 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Message Status. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a18a1937acb5878ae01a9d668fe5070b6acf7543162a77df096f714c66555052f1"></a>LE_SMS_RX_READ</em> </td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a18a1937acb5878ae01a9d668fe5070b6acf7543162a77df096f714c66555052f1"></a>LE_SMS_RX_READ </td><td class="fielddoc">
 <p>Message present in the message storage has been read. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a18a1937acb5878ae01a9d668fe5070b6a30d180b7a6410abdd57182014746b8bc"></a>LE_SMS_RX_UNREAD</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a18a1937acb5878ae01a9d668fe5070b6a30d180b7a6410abdd57182014746b8bc"></a>LE_SMS_RX_UNREAD </td><td class="fielddoc">
 <p>Message present in the message storage has not been read. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a18a1937acb5878ae01a9d668fe5070b6ad3254c9e0006f34d438c6e1918d3973f"></a>LE_SMS_STORED_SENT</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a18a1937acb5878ae01a9d668fe5070b6ad3254c9e0006f34d438c6e1918d3973f"></a>LE_SMS_STORED_SENT </td><td class="fielddoc">
 <p>Message saved in the message storage has been sent. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a18a1937acb5878ae01a9d668fe5070b6a57f62f640b2341ae3ac86310df6759e5"></a>LE_SMS_STORED_UNSENT</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a18a1937acb5878ae01a9d668fe5070b6a57f62f640b2341ae3ac86310df6759e5"></a>LE_SMS_STORED_UNSENT </td><td class="fielddoc">
 <p>Message saved in the message storage has not been sent. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a18a1937acb5878ae01a9d668fe5070b6aa20b05cdd468e822268c59d9789ef132"></a>LE_SMS_SENT</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a18a1937acb5878ae01a9d668fe5070b6aa20b05cdd468e822268c59d9789ef132"></a>LE_SMS_SENT </td><td class="fielddoc">
 <p>Message has been sent. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a18a1937acb5878ae01a9d668fe5070b6a5fbd6c7f39cc2ed3ea816133d29b5760"></a>LE_SMS_SENDING</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a18a1937acb5878ae01a9d668fe5070b6a5fbd6c7f39cc2ed3ea816133d29b5760"></a>LE_SMS_SENDING </td><td class="fielddoc">
 <p>Message has been in the sending pool. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a18a1937acb5878ae01a9d668fe5070b6afd992b5c50b6420d37067f8c516d9fef"></a>LE_SMS_UNSENT</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a18a1937acb5878ae01a9d668fe5070b6afd992b5c50b6420d37067f8c516d9fef"></a>LE_SMS_UNSENT </td><td class="fielddoc">
 <p>Message has not been sent. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a18a1937acb5878ae01a9d668fe5070b6aed2870eb00d4511f2a0c28996f8cd984"></a>LE_SMS_SENDING_FAILED</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a18a1937acb5878ae01a9d668fe5070b6aed2870eb00d4511f2a0c28996f8cd984"></a>LE_SMS_SENDING_FAILED </td><td class="fielddoc">
 <p>Message sending has Failed. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a18a1937acb5878ae01a9d668fe5070b6aa7381e00701ac73e660ae31c4223e403"></a>LE_SMS_SENDING_TIMEOUT</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a18a1937acb5878ae01a9d668fe5070b6aa7381e00701ac73e660ae31c4223e403"></a>LE_SMS_SENDING_TIMEOUT </td><td class="fielddoc">
 <p>Message sending has Failed due to timeout. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a18a1937acb5878ae01a9d668fe5070b6ae7b415d976598f3a548d8ab8382d2019"></a>LE_SMS_STATUS_UNKNOWN</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a18a1937acb5878ae01a9d668fe5070b6ae7b415d976598f3a548d8ab8382d2019"></a>LE_SMS_STATUS_UNKNOWN </td><td class="fielddoc">
 <p>Unknown message status. </p>
 </td></tr>
 </table>
@@ -1112,13 +1112,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Message Type. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a9001c5bc939bda5d5865e363bdf7662ca29050c2aa56f58a199d292d51be4fa01"></a>LE_SMS_TYPE_RX</em> </td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a9001c5bc939bda5d5865e363bdf7662ca29050c2aa56f58a199d292d51be4fa01"></a>LE_SMS_TYPE_RX </td><td class="fielddoc">
 <p>SMS mobile terminated message. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a9001c5bc939bda5d5865e363bdf7662ca2a206e19e871ea98e16e88aeed1a99cc"></a>LE_SMS_TYPE_TX</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a9001c5bc939bda5d5865e363bdf7662ca2a206e19e871ea98e16e88aeed1a99cc"></a>LE_SMS_TYPE_TX </td><td class="fielddoc">
 <p>SMS mobile originated message. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a9001c5bc939bda5d5865e363bdf7662ca3dff7628faf85524d772f34f52699a47"></a>LE_SMS_TYPE_BROADCAST_RX</em> </td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="a9001c5bc939bda5d5865e363bdf7662ca3dff7628faf85524d772f34f52699a47"></a>LE_SMS_TYPE_BROADCAST_RX </td><td class="fielddoc">
 <p>SMS Cell Broadcast message. </p>
 </td></tr>
 </table>
@@ -1251,7 +1251,7 @@ Functions</h2></td></tr>
 <tr>
 <td class="memname"><a class="el" href="le__sms__interface_8h.html#a77d2607cc541bf0369e69bb2d105d4bf">le_sms_RxMessageHandlerRef_t</a> le_sms_AddRxMessageHandler </td>
 <td>(</td>
-<td class="paramtype"><a class="el" href="le__sms__interface_8h.html#af9c99d5b0a4745bd624590cc077133f0">le_sms_RxMessageHandlerFunc_t</a> </td>
+<td class="paramtype"><a class="el" href="le__sms__interface_8h.html#a6b6e7403719627629df41529916fa71b">le_sms_RxMessageHandlerFunc_t</a> </td>
 <td class="paramname"><em>handlerPtr</em>, </td>
 </tr>
 <tr>
@@ -1334,7 +1334,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Connect the current client thread to the service providing this API.</p>
-<p>This function must be called before any other functions in this API. Normally, it's automatically called for the main thread, but must be explicitly called for other threads. For details, see <a class="el" href="api_files_c.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function must be called before any other functions in this API. Normally, it's automatically called for the main thread, but must be explicitly called for other threads. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
 <p>This function is created automatically. </p>
 </div>
 </div>
@@ -1505,7 +1505,7 @@ LE_OK Function succeeded.</dd></dl>
 </table>
 </div><div class="memdoc">
 <p>Disconnect the current client thread from the service providing this API.</p>
-<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="api_files_c.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
 <p>This function is created automatically. </p>
 </div>
 </div>
@@ -2363,7 +2363,7 @@ LE_TIMEOUT Timeout before the complete sending.</dd></dl>
 <tr>
 <td class="paramkey"></td>
 <td></td>
-<td class="paramtype"><a class="el" href="le__sms__interface_8h.html#aef09dafc2be4538347fa8cf260b6fdf2">le_sms_CallbackResultFunc_t</a> </td>
+<td class="paramtype"><a class="el" href="le__sms__interface_8h.html#a01aa759eb07ab9e8c4a5e0a6d0c7e942">le_sms_CallbackResultFunc_t</a> </td>
 <td class="paramname"><em>handlerPtr</em>, </td>
 </tr>
 <tr>
@@ -2418,7 +2418,7 @@ LE_TIMEOUT Timeout before the complete sending.</dd></dl>
 <tr>
 <td class="paramkey"></td>
 <td></td>
-<td class="paramtype"><a class="el" href="le__sms__interface_8h.html#aef09dafc2be4538347fa8cf260b6fdf2">le_sms_CallbackResultFunc_t</a> </td>
+<td class="paramtype"><a class="el" href="le__sms__interface_8h.html#a01aa759eb07ab9e8c4a5e0a6d0c7e942">le_sms_CallbackResultFunc_t</a> </td>
 <td class="paramname"><em>handlerPtr</em>, </td>
 </tr>
 <tr>
@@ -2470,7 +2470,7 @@ LE_TIMEOUT Timeout before the complete sending.</dd></dl>
 <tr>
 <td class="paramkey"></td>
 <td></td>
-<td class="paramtype"><a class="el" href="le__sms__interface_8h.html#aef09dafc2be4538347fa8cf260b6fdf2">le_sms_CallbackResultFunc_t</a> </td>
+<td class="paramtype"><a class="el" href="le__sms__interface_8h.html#a01aa759eb07ab9e8c4a5e0a6d0c7e942">le_sms_CallbackResultFunc_t</a> </td>
 <td class="paramname"><em>handlerPtr</em>, </td>
 </tr>
 <tr>
