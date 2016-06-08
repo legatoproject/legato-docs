@@ -183,6 +183,7 @@ $(document).ready(function() {
         } else {
             $p.width(5);
         }
+        $.cookie(cookieName, $p.width());
         adjust_content_padding($p.width());
     })
 });
