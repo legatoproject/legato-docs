@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Platform" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Audio  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build Platform Platform Constraints.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink" href="build_apps_main.html">Build Apps</a><a class="navlink selected" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Platform</h2>
+<nav class="secondary">
+<a class="link-selected" href="platform_constraints.html">Platform Constraints</a><a href="yocto_main.html">Yocto Info</a><a href="raspbian_main.html">Raspbian Info</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Audio </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><a class="el" href="c_audio.html">Audio</a> functions are constrained by the following platform limitations for AR755x, AR8652, and WP8548.</p>
+<p><b>Possible audio connections:</b></p>
+<table class="doxtable">
+<tr>
+<th>Input stream \ Output stream </th><th align="center">Spkr </th><th align="center">USB Tx </th><th align="center">PCM Tx </th><th align="center">I2S Tx </th><th align="center">MdmVoice Tx </th><th align="center">Recorder  </th></tr>
+<tr>
+<td>Mic </td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center">X </td><td align="center">X </td></tr>
+<tr>
+<td>USB Rx </td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center">X </td><td align="center">X </td></tr>
+<tr>
+<td>PCM Rx </td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center">X </td><td align="center">X </td></tr>
+<tr>
+<td>I2S Rx </td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center">X </td><td align="center">X </td></tr>
+<tr>
+<td>MdmVoice Rx </td><td align="center">X </td><td align="center">X </td><td align="center">X </td><td align="center">X </td><td align="center"></td><td align="center">X </td></tr>
+<tr>
+<td>Player </td><td align="center">X </td><td align="center">X </td><td align="center">X </td><td align="center">X </td><td align="center">X </td><td align="center"></td></tr>
+</table>
+<p>Player = file playback and samples insertion<br/>
+ Recorder = file recording and samples extraction</p>
+<dl class="section note"><dt>Note</dt><dd>Only 1 point to 1 point connection is possible except for Player and Recorder. Player and Recorder can be added to any active 1 point to 1 point connections, or tied to 1 single stream.</dd></dl>
+<hr/>
+<p><b>Available functions for the different audio streams:</b></p>
+<table class="doxtable">
+<tr>
+<th>Function \ Stream </th><th align="center">I2S Tx </th><th align="center">I2S Rx </th><th align="center">PCM Tx </th><th align="center">PCM Rx </th><th align="center">USB Tx </th><th align="center">USB Rx </th><th align="center">Spkr </th><th align="center">Mic </th><th align="center">MdmVoice Tx </th><th align="center">MdmVoice Rx </th><th align="center">Player </th><th align="center">Recorder  </th></tr>
+<tr>
+<td>Gain (Set / Get) </td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center">X </td><td align="center">X </td><td align="center">X </td><td align="center">X </td><td align="center"></td></tr>
+<tr>
+<td>Mute / Unmute </td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center">X </td><td align="center">X </td><td align="center">X </td><td align="center"></td><td align="center">X </td><td align="center"></td></tr>
+<tr>
+<td>NS </td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center">X </td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr>
+<td>EC </td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center">X </td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr>
+<td>IIR </td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center">X </td><td align="center">X </td><td align="center"></td><td align="center"></td></tr>
+<tr>
+<td>FIR </td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center">X </td><td align="center">X </td><td align="center"></td><td align="center"></td></tr>
+<tr>
+<td>AGC </td><td align="center">X </td><td align="center"></td><td align="center">X </td><td align="center"></td><td align="center">X </td><td align="center"></td><td align="center">X </td><td align="center"></td><td align="center">X </td><td align="center">X </td><td align="center"></td><td align="center"></td></tr>
+</table>
+<p>NS = Noise Suppressor <br/>
+ EC = Echo Canceller <br/>
+ IIR = Infinite Impulse Response filter <br/>
+ FIR = Finite Impulse Response filter <br/>
+ AGC = Automatic Gain Control</p>
+<p><b>The following diagram shows where the functions are applied in a voice call audio path:</b></p>
+<div class="image">
+<img alt="AR755x_Ext_AudioBlockDiagram_Legato.jpg" src="AR755x_Ext_AudioBlockDiagram_Legato.jpg"/>
+</div>
+<p><b>Gains value's for AR7x series (also applicable for AR8652):</b></p>
+<p><b>Mic:</b></p><ul>
+<li>range: 0x0000 -- 0xFFFF;</li>
+<li>value (in dB) = 20*Log(&lt;value&gt;/0x0100)</li>
+</ul>
+<p><b>MdmVoiceRx:</b></p><ul>
+<li>range: 0 - 8 (integer);</li>
+<li>the value is not in dB, '0' means lowest volume value (not muted) and '8' means the highest volume value.</li>
+</ul>
+<p><b>MdmVoiceTx:</b></p><ul>
+<li>range: 0x0000 -- 0xFFFF;</li>
+<li>value (in dB) = 20*Log(&lt;value&gt;/0x2000)</li>
+</ul>
+<p><b>Player:</b></p><ul>
+<li>range: 0x0000 -- 0xFFFF;</li>
+<li>value (in dB) = 20*Log(&lt;value&gt;/0x2000)</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>AR specific gains can use the <a class="el" href="le__audio__interface_8h.html#af7163fc276aaf8855d2ef7b0bbdaf8c3">le_audio_SetPlatformSpecificGain()</a> function with <b>"D_AFE_GAIN_RX"</b> and <b>"D_AFE_GAIN_TX"</b> parameters.</dd></dl>
+<p><b>"D_AFE_GAIN_RX":</b></p><ul>
+<li>range: 0x0000 -- 0xFFFF;</li>
+<li>value (in dB) = 20*Log(&lt;value&gt;/0x2000)</li>
+</ul>
+<p><b>"D_AFE_GAIN_TX":</b></p><ul>
+<li>range: 0x0000 -- 0xFFFF;</li>
+<li>value (in dB) = 20*Log(&lt;value&gt;/0x2000)</li>
+</ul>
+<hr/>
+<p><b>Other audio features and constraints:</b></p><ul>
+<li>DTMF decoding works only on MdmVoice Rx stream. DTMF's reception handler must be installed before call initiation.</li>
+<li>File Playback/Recording: WAVE, AMR Narrowband and AMR Wideband formats are supported.</li>
+<li>Samples insertion/extraction: PCM samples using configuration of channel number, sampling rate and sampling resolution.</li>
+<li>Several file playbacks can be activated simultaneously but not several file recordings. Playback and recording can’t be performed simultaneously. This also applies to samples insertion/extraction.</li>
+</ul>
+<hr/>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

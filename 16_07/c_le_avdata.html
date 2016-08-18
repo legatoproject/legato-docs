@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>AirVantage Data  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build Apps API Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">AirVantage Data </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><a class="el" href="le__avdata__interface_8h.html">API Reference</a> <br/>
+<a class="el" href="how_to_a_v_data.html">How To Manage Data</a></p>
+<hr/>
+<p>This API provides a data service to allow apps to manage app-specific data on the AirVantage server.</p>
+<p>Data is setup as <b>assets</b> -- a collection of fields that can be managed by the AirVantage server.</p>
+<p>An asset field is a single piece of information that can be managed by the AirVantage server. There can be multiple fields in an asset.</p>
+<p>A field can be:</p><ul>
+<li><code>variable</code> allows an app to set the value, and can be read from the AV server.</li>
+<li><code>setting</code> allows the AV server to set the value, and can be read by an app.</li>
+<li><code>command</code> allows the AV server to invoke a command or function in the app.</li>
+</ul>
+<p>All fields have names. Variable and setting fields also have a type. The possible field types, along with the default value are:</p><ul>
+<li>string (empty string)</li>
+<li>integer (0)</li>
+<li>float (0.0)</li>
+<li>boolean (false)</li>
+<li>binary (zero-length block).</li>
+</ul>
+<p>Default values can be overwritten in the asset definition. Currently, string, integer, float and boolean fields are supported; binary fields will be supported in the future.</p>
+<h1><a class="anchor" id="le_avdata_instance"></a>
+Asset Data Instances</h1>
+<p>An app that needs to send data to the AirVantage server must first create an asset instance using le_avc_Create() with the name of the asset definition. Once an asset instance is created, the app can begin accessing the instance's fields.</p>
+<p>Multiple instances of the same asset can be created, as well as multiple instances of different assets.</p>
+<p>Asset definitions are specified in the <a class="el" href="def_files_cdef.html#defFilesCdef_assets">assets</a> section of the app's <code>cdef</code> file.</p>
+<h1><a class="anchor" id="le_avdata_field"></a>
+Field Values and Activity</h1>
+<p>Set functions are available to set variable field values. Get functions are available to get settings fields' values.</p>
+<p>An app can register a handler so that it can be called when activity occurs on a field. This is optional for variable and setting fields, but is required for command fields.</p><ul>
+<li><code>variable</code> called when the field is read by the AV server. The app can then call the appropriate set function to provide a new value for the field.</li>
+<li><code>setting</code> called when the field has been updated by the AV server with a new value. The app can use the appropriate get function to retrieve the new value.</li>
+<li><code>command</code> called when the AV server wants to invoke a command. The app should perform an appropriate action or call a function to execute this command.</li>
+</ul>
+<p>Registered handlers are only called when the server performs the associated activity on a specific field of an asset instance. For example, a handler registered on a variable field will be called if the server reads only that field of an instance; it will not be called if the server reads the whole instance of an asset.</p>
+<p>Leaving it optional to register handlers for variable and setting fields allows an app to decide how it wants to access variable and setting fields. It can decide to only do something in response to the AV server, or it can work independently of the AV server updating variables when it has a new value, and reading settings only when it needs the value.</p>
+<h1><a class="anchor" id="le_avdata_observe"></a>
+Observe</h1>
+<p>If the <a class="el" href="how_to_a_v_data.html#howToAVData_enableObserve">Observe</a> is enabled, the AirVantage Server will send observe requests on all user-defined assets of an app.</p>
+<p>Whenever an app (asset) changes a field value by using le_avdata_Set*(), it'll trigger a notify if Observe is enabled on that asset. The notify contains only the value of the changed field.</p>
+<h1><a class="anchor" id="le_avdata_fatal"></a>
+Fatal Behavior</h1>
+<p>An invalid asset name or field name is treated as a fatal error (i.e. non-recoverable) and will result in the client app being terminated.</p>
+<hr/>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
