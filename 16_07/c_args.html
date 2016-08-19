@@ -34,7 +34,7 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
@@ -43,7 +43,7 @@
 <a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -85,8 +85,7 @@ Options</h1>
 Positional Arguments</h1>
 <p>Positional arguments are arguments that <b>do not</b> start with a "-" or "--"; except for "-" or "--" by itself (these are positional arguments).</p>
 <p>For example, the following command line has four positional arguments ("foo", "bar", "-", and "--"). A flag option ("-x"), and two string options ("-f ./infile" and "--output=/tmp/output file") are intermixed with the positional arguments.</p>
-<pre class="fragment"><div class="line">$ myExe -x foo -f ./infile - <span class="stringliteral">"--output=/tmp/output file"</span> bar --</div>
-</pre><!-- fragment --><p>In this example, "foo" is the first positional argument, "-" is the second, "bar" is the third, and "--" is the fourth.</p>
+<pre class="fragment"><div class="line">$ myExe -x foo -f ./infile - <span class="stringliteral">"--output=/tmp/output file"</span> bar --</div></pre><!-- fragment --><p>In this example, "foo" is the first positional argument, "-" is the second, "bar" is the third, and "--" is the fourth.</p>
 <p>Positional arguments are retrieved using the <a class="el" href="c_args.html#c_args_scanner">Argument Scanner</a> and <a class="el" href="le__args_8h.html#a525bef6095a4655e97008e27a4829d44">le_arg_AddPositionalCallback()</a>.</p>
 <h1><a class="anchor" id="c_args_scanner"></a>
 Argument Scanner</h1>
@@ -128,38 +127,12 @@ Usage</h2>
 <p><a class="el" href="le__utf8_8h.html#a680a92fafea1ed72dedb80b52be32a06">le_utf8_ParseInt()</a> can be used by a positional callback to convert the string value it receives into an integer value, if needed.</p>
 <h2><a class="anchor" id="c_args_parser_example"></a>
 Example</h2>
-<pre class="fragment"><div class="line"><span class="comment">// Set IsExtreme to true if the -x or --extreme appears on the command-line.</span></div>
-<div class="line"><a class="code" href="le__args_8h.html#a889bb72c62d8590d61170a069219e852">le_arg_SetFlagVar</a>(&amp;IsExtreme, <span class="stringliteral">"x"</span>, <span class="stringliteral">"extreme"</span>);</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// Set Count to the value N given by "-mc N" or "--max-count=N".</span></div>
-<div class="line"><a class="code" href="le__args_8h.html#a27f1486b1e855559158e218a7d93ce73">le_arg_SetIntVar</a>(&amp;MaxCount, <span class="stringliteral">"mc"</span>, <span class="stringliteral">"max-count"</span>);</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// Register a function to be called if -h or --help appears on the command-line.</span></div>
-<div class="line"><a class="code" href="le__args_8h.html#a4594892b35d4e0a6d7551e9c371919fc">le_arg_SetFlagCallback</a>(PrintHelp, <span class="stringliteral">"h"</span>, <span class="stringliteral">"help"</span>);</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// The first argument that doesn't start with '-' or '--' should be a command.</span></div>
-<div class="line"><a class="code" href="le__args_8h.html#a525bef6095a4655e97008e27a4829d44">le_arg_AddPositionalCallback</a>(SetCommand);</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// All other arguments that don't start with '-' or '--' should be file paths.</span></div>
-<div class="line"><a class="code" href="le__args_8h.html#a525bef6095a4655e97008e27a4829d44">le_arg_AddPositionalCallback</a>(SetFilePath);</div>
-<div class="line"><a class="code" href="le__args_8h.html#ab646cfcb831e13312bff496221e74acc">le_arg_AllowMorePositionalArgsThanCallbacks</a>();</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// Perform command-line argument processing.</span></div>
-<div class="line"><a class="code" href="le__args_8h.html#af44485fc914a7ac6f562d23d66c3410c">le_arg_Scan</a>();</div>
-</pre><!-- fragment --><h2><a class="anchor" id="c_args_parser_errorHandling"></a>
+<pre class="fragment"><div class="line"><span class="comment">// Set IsExtreme to true if the -x or --extreme appears on the command-line.</span></div><div class="line"><a class="code" href="le__args_8h.html#a889bb72c62d8590d61170a069219e852">le_arg_SetFlagVar</a>(&amp;IsExtreme, <span class="stringliteral">"x"</span>, <span class="stringliteral">"extreme"</span>);</div><div class="line"> </div><div class="line"><span class="comment">// Set Count to the value N given by "-mc N" or "--max-count=N".</span></div><div class="line"><a class="code" href="le__args_8h.html#a27f1486b1e855559158e218a7d93ce73">le_arg_SetIntVar</a>(&amp;MaxCount, <span class="stringliteral">"mc"</span>, <span class="stringliteral">"max-count"</span>);</div><div class="line"> </div><div class="line"><span class="comment">// Register a function to be called if -h or --help appears on the command-line.</span></div><div class="line"><a class="code" href="le__args_8h.html#a4594892b35d4e0a6d7551e9c371919fc">le_arg_SetFlagCallback</a>(PrintHelp, <span class="stringliteral">"h"</span>, <span class="stringliteral">"help"</span>);</div><div class="line"> </div><div class="line"><span class="comment">// The first argument that doesn't start with '-' or '--' should be a command.</span></div><div class="line"><a class="code" href="le__args_8h.html#a525bef6095a4655e97008e27a4829d44">le_arg_AddPositionalCallback</a>(SetCommand);</div><div class="line"> </div><div class="line"><span class="comment">// All other arguments that don't start with '-' or '--' should be file paths.</span></div><div class="line"><a class="code" href="le__args_8h.html#a525bef6095a4655e97008e27a4829d44">le_arg_AddPositionalCallback</a>(SetFilePath);</div><div class="line"><a class="code" href="le__args_8h.html#ab646cfcb831e13312bff496221e74acc">le_arg_AllowMorePositionalArgsThanCallbacks</a>();</div><div class="line"> </div><div class="line"><span class="comment">// Perform command-line argument processing.</span></div><div class="line"><a class="code" href="le__args_8h.html#af44485fc914a7ac6f562d23d66c3410c">le_arg_Scan</a>();</div></pre><!-- fragment --><h2><a class="anchor" id="c_args_parser_errorHandling"></a>
 Error Handling</h2>
 <p>If a program wishes to try to recover from errors on the command-line or to generate its own special form of error message, it can use <a class="el" href="le__args_8h.html#a5128be1cbe2c7b30f1f697f8b5594479">le_arg_SetErrorHandler()</a> to register a callback function to be called to handle errors.</p>
 <p>If no error handler is set, the default handler will print an error message to the standard error stream and terminate the process with an exit code of EXIT_FAILURE.</p>
-<p>Error conditions that can be reported to the error handler are described in the documentation for <a class="el" href="le__args_8h.html#a52331d81cc8f4a20089598b0ab362786">le_arg_ErrorHandlerFunc_t</a>.</p>
-<pre class="fragment"><div class="line"><span class="comment">// Set Count to the value N given by "-mc N" or "--max-count=N".</span></div>
-<div class="line"><a class="code" href="le__args_8h.html#a27f1486b1e855559158e218a7d93ce73">le_arg_SetIntVar</a>(&amp;MaxCount, <span class="stringliteral">"mc"</span>, <span class="stringliteral">"max-count"</span>);</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// Register my own error handler.</span></div>
-<div class="line"><a class="code" href="le__args_8h.html#a5128be1cbe2c7b30f1f697f8b5594479">le_arg_SetErrorHandler</a>(HandleArgError);</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// Perform command-line argument processing.</span></div>
-<div class="line"><a class="code" href="le__args_8h.html#af44485fc914a7ac6f562d23d66c3410c">le_arg_Scan</a>();</div>
-</pre><!-- fragment --><h1><a class="anchor" id="c_args_writingYourOwnMain"></a>
+<p>Error conditions that can be reported to the error handler are described in the documentation for <a class="el" href="le__args_8h.html#a45e8d73a4e7f22a46a53ecbf73e3285b">le_arg_ErrorHandlerFunc_t</a>.</p>
+<pre class="fragment"><div class="line"><span class="comment">// Set Count to the value N given by "-mc N" or "--max-count=N".</span></div><div class="line"><a class="code" href="le__args_8h.html#a27f1486b1e855559158e218a7d93ce73">le_arg_SetIntVar</a>(&amp;MaxCount, <span class="stringliteral">"mc"</span>, <span class="stringliteral">"max-count"</span>);</div><div class="line"> </div><div class="line"><span class="comment">// Register my own error handler.</span></div><div class="line"><a class="code" href="le__args_8h.html#a5128be1cbe2c7b30f1f697f8b5594479">le_arg_SetErrorHandler</a>(HandleArgError);</div><div class="line"> </div><div class="line"><span class="comment">// Perform command-line argument processing.</span></div><div class="line"><a class="code" href="le__args_8h.html#af44485fc914a7ac6f562d23d66c3410c">le_arg_Scan</a>();</div></pre><!-- fragment --><h1><a class="anchor" id="c_args_writingYourOwnMain"></a>
 Writing Your Own main()?</h1>
 <p>If you are not using a main() function that is auto-generated by the Legato application framework's build tools (<code>mksys</code>, <code>mkapp</code>, or <code>mkexe</code> ), then you must call <a class="el" href="le__args_8h.html#aefd062c124811c5de122a06907e19b56">le_arg_SetArgs()</a> to pass <code>argc</code> and <code>argv</code> to the argument parsing system before using any other <code>le_arg</code> functions.</p>
 <hr/>

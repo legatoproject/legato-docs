@@ -34,7 +34,7 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
@@ -43,7 +43,7 @@
 <a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -62,7 +62,7 @@
 <h1 class="title">Audio </h1> </div>
 </div><div class="contents">
 <div class="textblock"><p><a class="el" href="le__audio__interface_8h.html">API Reference</a> <br/>
-<a class="el" href="platform_constraints_audio.html">Audio</a> Constraints </p><hr/>
+<a class="el" href="platformConstraintsAudio.html">Audio</a> Constraints </p><hr/>
 <p>The Audio API handles audio interfaces including play and record supported formats.</p>
 <p>A Legato device can use several audio interfaces. You choose the input and output interfaces to tie together. The Audio stream related to a particular interface is represented with an 'Audio Stream Reference'.</p>
 <p>You can create your own audio path by connecting several audio streams together using audio connectors.</p>
@@ -144,7 +144,7 @@ Create Audio connectors</h1>
 <p>The following image shows how to connect a Player stream to play a file towards a remote end during a voice call. </p><div class="image">
 <img alt="AudioConnector.png" src="AudioConnector.png"/>
 </div>
-<p>A sample code that implements audio connectors and audio streams during voice call can be found in <b>audioMccTest.c</b> file (please refer to <a class="el" href="c_audio_mcc.html">Sample code of audio settings for a dialing call</a> page).</p>
+<p>A sample code that implements audio connectors and audio streams during voice call can be found in <b>audioMccTest.c</b> file (please refer to <a class="el" href="c_audioMcc.html">Sample code of audio settings for a dialing call</a> page).</p>
 <dl class="section note"><dt>Note</dt><dd>It is recommended to set the connectors before the connected streams are used. In particular, a connector using Modem Voice Rx or Tx interfaces has to be created before dialing or answering the call if the application needs to customize the audio path.</dd></dl>
 <h1><a class="anchor" id="le_audio_pb_playback"></a>
 Playback</h1>
@@ -194,7 +194,7 @@ Record</h1>
 <p><a class="el" href="le__audio__interface_8h.html#a9996ac9d23333cf8219f28b69cac4f81">le_audio_AddMediaHandler()</a> function installs a handler for player/recorder stream notifications.</p>
 <p><a class="el" href="le__audio__interface_8h.html#a60442c840a69155110ae878e03e16059">le_audio_RemoveMediaHandler()</a> function removes the player/recorder handler function.</p>
 <dl class="section note"><dt>Note</dt><dd>The <code>LE_AUDIO_MEDIA_NO_MORE_SAMPLES</code> event indicates when all samples put into the pipe by the user's app have been sent to the audio driver (see <a class="el" href="le__audio__interface_8h.html#afd37d59ab8207338da197554f49d7ff0">le_audio_PlaySamples()</a>).</dd></dl>
-<p>A sample code that implements audio playback and capture can be found in <b>audioPlaybackRec.c</b> file (please refer to <a class="el" href="c_audio_capture_playback.html">Sample code of audio playback and capture</a> page).</p>
+<p>A sample code that implements audio playback and capture can be found in <b>audioPlaybackRec.c</b> file (please refer to <a class="el" href="c_audioCapturePlayback.html">Sample code of audio playback and capture</a> page).</p>
 <h1><a class="anchor" id="le_audio_dtmf"></a>
 DTMF</h1>
 <p>The <a class="el" href="le__audio__interface_8h.html#a8b1546842a6e917db9a9458aceb77c82">le_audio_PlayDtmf()</a> function allows the application to play one or several DTMF on a playback stream. The duration and the pause of the DTMFs must also be specified with the input parameters.</p>

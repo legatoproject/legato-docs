@@ -34,7 +34,7 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
@@ -43,7 +43,7 @@
 <a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -62,7 +62,7 @@
 <h1 class="title">GPIO </h1> </div>
 </div><div class="contents">
 <div class="textblock"><p><a class="el" href="le__gpio__interface_8h.html">API Reference</a> <br/>
-<a class="el" href="sample_apps_gpio_cf3.html">GPIO sample app</a></p>
+<a class="el" href="sampleApps_gpioCf3.html">GPIO sample app</a></p>
 <hr/>
 <p>This API is used by apps to control general-purpose digital input/output pins.</p>
 <p>A GPIO pin typically has one or more of the following features:</p><ul>
@@ -109,14 +109,7 @@ Using Bindings</h1>
 {
     ui.frontPanel.powerLed -&gt; gpioService.le_gpio22
 }
-</pre><p>This connects your component called <code>frontPanel</code> to the instance of this API that can be used to drive GPIO 22. Setting the pin high looks like this: </p><pre class="fragment"><div class="line">{</div>
-<div class="line">    <span class="comment">// Configure the output type</span></div>
-<div class="line">    powerLed_SetPushPullOutput(LE_GPIOPIN22_ACTIVE_HIGH, <span class="keyword">false</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// Some time later ... set the GPIO high</span></div>
-<div class="line">    powerLed_Activate();</div>
-<div class="line">}</div>
-</pre><!-- fragment --><p>For details on how the GPIOs exposed by this service map to a CF3 module (like the WP85), see <a class="el" href="sample_apps_gpio_cf3.html">GPIO sample app</a>.</p>
+</pre><p>This connects your component called <code>frontPanel</code> to the instance of this API that can be used to drive GPIO 22. Setting the pin high looks like this: </p><pre class="fragment"><div class="line">{</div><div class="line">    <span class="comment">// Configure the output type</span></div><div class="line">    powerLed_SetPushPullOutput(LE_GPIOPIN22_ACTIVE_HIGH, <span class="keyword">false</span>);</div><div class="line"> </div><div class="line">    <span class="comment">// Some time later ... set the GPIO high</span></div><div class="line">    powerLed_Activate();</div><div class="line">}</div></pre><!-- fragment --><p>For details on how the GPIOs exposed by this service map to a CF3 module (like the WP85), see <a class="el" href="sampleApps_gpioCf3.html">GPIO sample app</a>.</p>
 <h1><a class="anchor" id="gpioConfig"></a>
 Configuring available GPIOs</h1>
 <p>The GPIOs that are available for use are advertised in the sysfs at </p><pre class="fragment">/sys/class/gpio/gpiochip1/mask </pre><p> For each entry in this bitmask, a service will be advertised to allow use of the pin. However, if a pin needs to be disabled form being accessed, e.g. it carries out some system function that should not be available to apps, then it can be disabled by adding an entry to the config tree.</p>

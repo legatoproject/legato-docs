@@ -34,7 +34,7 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
@@ -43,7 +43,7 @@
 <a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -91,31 +91,7 @@ Overview</h1>
 Creating a Pool</h1>
 <p>Before allocating memory from a pool, the pool must be created using <a class="el" href="le__mem_8h.html#ab91efaa2978c9c1c7b2427d25b33241c">le_mem_CreatePool()</a>, passing it the name of the pool and the size of the objects to be allocated from that pool. This returns a reference to the new pool, which has zero free objects in it.</p>
 <p>To populate your new pool with free objects, you call <code><a class="el" href="le__mem_8h.html#a79a4321ffa0345f267eaf3b7d3d3528a">le_mem_ExpandPool()</a></code>. This is separated into two functions (rather than having one function with three parameters) to make it virtually impossible to accidentally get the parameters in the wrong order (which would result in nasty bugs that couldn't be caught by the compiler). The ability to expand pools comes in handy (see <a class="el" href="c_memory.html#mem_pool_sizes">Managing Pool Sizes</a>).</p>
-<p>This code sample defines a class "Point" and a pool "PointPool" used to allocate memory for objects of that class: </p><pre class="fragment"><div class="line"><span class="preprocessor">#define MAX_POINTS 12  // Maximum number of points that can be handled.</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
-<div class="line">{</div>
-<div class="line">    <span class="keywordtype">int</span> x;  <span class="comment">// pixel position along x-axis</span></div>
-<div class="line">    <span class="keywordtype">int</span> y;  <span class="comment">// pixel position along y-axis</span></div>
-<div class="line">}</div>
-<div class="line">Point_t;</div>
-<div class="line"> </div>
-<div class="line">le_mem_PoolRef_t PointPool;</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> xx_pt_ProcessStart(<span class="keywordtype">void</span>)</div>
-<div class="line">{</div>
-<div class="line">    PointPool = <a class="code" href="le__mem_8h.html#ab91efaa2978c9c1c7b2427d25b33241c">le_mem_CreatePool</a>(<span class="stringliteral">"xx.pt.Points"</span>, <span class="keyword">sizeof</span>(Point_t));</div>
-<div class="line">    <a class="code" href="le__mem_8h.html#a79a4321ffa0345f267eaf3b7d3d3528a">le_mem_ExpandPool</a>(PointPool, MAX_POINTS);</div>
-<div class="line"> </div>
-<div class="line">    <span class="keywordflow">return</span> SUCCESS;</div>
-<div class="line">}</div>
-</pre><!-- fragment --><p>To make things easier for power-users, <code><a class="el" href="le__mem_8h.html#a79a4321ffa0345f267eaf3b7d3d3528a">le_mem_ExpandPool()</a></code> returns the same pool reference that it was given. This allows the xx_pt_ProcessStart() function to be re-implemented as follows: </p><pre class="fragment"><div class="line"><span class="keywordtype">int</span> xx_pt_ProcessStart(<span class="keywordtype">void</span>)</div>
-<div class="line">{</div>
-<div class="line">    PointPool = <a class="code" href="le__mem_8h.html#a79a4321ffa0345f267eaf3b7d3d3528a">le_mem_ExpandPool</a>(<a class="code" href="le__mem_8h.html#ab91efaa2978c9c1c7b2427d25b33241c">le_mem_CreatePool</a>(<span class="keyword">sizeof</span>(Point_t)), MAX_POINTS);</div>
-<div class="line"> </div>
-<div class="line">    <span class="keywordflow">return</span> SUCCESS;</div>
-<div class="line">}</div>
-</pre><!-- fragment --><p>Although this requires a dozen or so fewer keystrokes of typing and occupies one less line of code, it's arguably less readable than the previous example.</p>
+<p>This code sample defines a class "Point" and a pool "PointPool" used to allocate memory for objects of that class: </p><pre class="fragment"><div class="line"><span class="preprocessor">#define MAX_POINTS 12  // Maximum number of points that can be handled.</span></div><div class="line"> </div><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line">{</div><div class="line">    <span class="keywordtype">int</span> x;  <span class="comment">// pixel position along x-axis</span></div><div class="line">    <span class="keywordtype">int</span> y;  <span class="comment">// pixel position along y-axis</span></div><div class="line">}</div><div class="line">Point_t;</div><div class="line"> </div><div class="line">le_mem_PoolRef_t PointPool;</div><div class="line"> </div><div class="line"><span class="keywordtype">int</span> xx_pt_ProcessStart(<span class="keywordtype">void</span>)</div><div class="line">{</div><div class="line">    PointPool = <a class="code" href="le__mem_8h.html#ab91efaa2978c9c1c7b2427d25b33241c">le_mem_CreatePool</a>(<span class="stringliteral">"xx.pt.Points"</span>, <span class="keyword">sizeof</span>(Point_t));</div><div class="line">    <a class="code" href="le__mem_8h.html#a79a4321ffa0345f267eaf3b7d3d3528a">le_mem_ExpandPool</a>(PointPool, MAX_POINTS);</div><div class="line"> </div><div class="line">    <span class="keywordflow">return</span> SUCCESS;</div><div class="line">}</div></pre><!-- fragment --><p>To make things easier for power-users, <code><a class="el" href="le__mem_8h.html#a79a4321ffa0345f267eaf3b7d3d3528a">le_mem_ExpandPool()</a></code> returns the same pool reference that it was given. This allows the xx_pt_ProcessStart() function to be re-implemented as follows: </p><pre class="fragment"><div class="line"><span class="keywordtype">int</span> xx_pt_ProcessStart(<span class="keywordtype">void</span>)</div><div class="line">{</div><div class="line">    PointPool = <a class="code" href="le__mem_8h.html#a79a4321ffa0345f267eaf3b7d3d3528a">le_mem_ExpandPool</a>(<a class="code" href="le__mem_8h.html#ab91efaa2978c9c1c7b2427d25b33241c">le_mem_CreatePool</a>(<span class="keyword">sizeof</span>(Point_t)), MAX_POINTS);</div><div class="line"> </div><div class="line">    <span class="keywordflow">return</span> SUCCESS;</div><div class="line">}</div></pre><!-- fragment --><p>Although this requires a dozen or so fewer keystrokes of typing and occupies one less line of code, it's arguably less readable than the previous example.</p>
 <p>For a discussion on how to pick the number of objects to have in your pools, see <a class="el" href="c_memory.html#mem_pool_sizes">Managing Pool Sizes</a>.</p>
 <h1><a class="anchor" id="mem_allocating"></a>
 Allocating From a Pool</h1>
@@ -131,12 +107,7 @@ Allocating From a Pool</h1>
 <h1><a class="anchor" id="mem_releasing"></a>
 Releasing Back Into a Pool</h1>
 <p>Releasing memory back to a pool never fails, so there's no need to check a return code. Also, each object knows which pool it came from, so the code that releases the object doesn't have to care. All it has to do is call <code><a class="el" href="le__mem_8h.html#a6d8e3fe430bcb81efe97b57ce30ef2de">le_mem_Release()</a></code> and pass a pointer to the object to be released.</p>
-<p>The critical thing to remember is that once an object has been released, it <b> must never be accessed again </b>. Here is a <b> very bad code example</b>: </p><pre class="fragment"><div class="line">Point_t* pointPtr = <a class="code" href="le__mem_8h.html#af7c289c73d4182835a26a9099f3db359">le_mem_ForceAlloc</a>(PointPool);</div>
-<div class="line">pointPtr-&gt;x = 5;</div>
-<div class="line">pointPtr-&gt;y = 10;</div>
-<div class="line"><a class="code" href="le__mem_8h.html#a6d8e3fe430bcb81efe97b57ce30ef2de">le_mem_Release</a>(pointPtr);</div>
-<div class="line">printf(<span class="stringliteral">"Point is at position (%d, %d).\n"</span>, pointPtr-&gt;x, pointPtr-&gt;y);</div>
-</pre><!-- fragment --><h1><a class="anchor" id="mem_ref_counting"></a>
+<p>The critical thing to remember is that once an object has been released, it <b> must never be accessed again </b>. Here is a <b> very bad code example</b>: </p><pre class="fragment"><div class="line">Point_t* pointPtr = <a class="code" href="le__mem_8h.html#af7c289c73d4182835a26a9099f3db359">le_mem_ForceAlloc</a>(PointPool);</div><div class="line">pointPtr-&gt;x = 5;</div><div class="line">pointPtr-&gt;y = 10;</div><div class="line"><a class="code" href="le__mem_8h.html#a6d8e3fe430bcb81efe97b57ce30ef2de">le_mem_Release</a>(pointPtr);</div><div class="line">printf(<span class="stringliteral">"Point is at position (%d, %d).\n"</span>, pointPtr-&gt;x, pointPtr-&gt;y);</div></pre><!-- fragment --><h1><a class="anchor" id="mem_ref_counting"></a>
 Reference Counting</h1>
 <p>Reference counting is a powerful feature of our memory pools. Here's how it works:</p><ul>
 <li>Every object allocated from a pool starts with a reference count of 1.</li>
@@ -158,32 +129,7 @@ Reference Counting</h1>
 Destructors</h1>
 <p>Destructors are a powerful feature of C++. Anyone who has any non-trivial experience with C++ has used them. Because C was created before object-oriented programming was around, there's no native language support for destructors in C. Object-oriented design is still possible and highly desireable even when the programming is done in C.</p>
 <p>In Legato, it's possible to call <code><a class="el" href="le__mem_8h.html#a055007b38ce04bcb823e08034fd11b85">le_mem_SetDestructor()</a></code> to attach a function to a memory pool to be used as a destructor for objects allocated from that pool. If a pool has a destructor, whenever the reference count reaches zero for an object allocated from that pool, the pool's destructor function will pass a pointer to that object. After the destructor returns, the object will be fully destroyed, and its memory will be released back into the pool for later reuse by another object.</p>
-<p>Here's a destructor code sample: </p><pre class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> PointDestructor(<span class="keywordtype">void</span>* objPtr)</div>
-<div class="line">{</div>
-<div class="line">    Point_t* pointPtr = objPtr;</div>
-<div class="line"> </div>
-<div class="line">    printf(<span class="stringliteral">"Destroying point (%d, %d)\n"</span>, pointPtr-&gt;x, pointPtr-&gt;y);</div>
-<div class="line"> </div>
-<div class="line">    @todo Add more to sample.</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> xx_pt_ProcessStart(<span class="keywordtype">void</span>)</div>
-<div class="line">{</div>
-<div class="line">    PointPool = <a class="code" href="le__mem_8h.html#ab91efaa2978c9c1c7b2427d25b33241c">le_mem_CreatePool</a>(<span class="keyword">sizeof</span>(Point_t));</div>
-<div class="line">    <a class="code" href="le__mem_8h.html#a79a4321ffa0345f267eaf3b7d3d3528a">le_mem_ExpandPool</a>(PointPool, MAX_POINTS);</div>
-<div class="line">    <a class="code" href="le__mem_8h.html#a055007b38ce04bcb823e08034fd11b85">le_mem_SetDestructor</a>(PointPool, PointDestructor);</div>
-<div class="line">    <span class="keywordflow">return</span> SUCCESS;</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> DeletePointList(Point_t** pointList, <span class="keywordtype">size_t</span> numPoints)</div>
-<div class="line">{</div>
-<div class="line">    <span class="keywordtype">size_t</span> i;</div>
-<div class="line">    <span class="keywordflow">for</span> (i = 0; i &lt; numPoints; i++)</div>
-<div class="line">    {</div>
-<div class="line">        <a class="code" href="le__mem_8h.html#a6d8e3fe430bcb81efe97b57ce30ef2de">le_mem_Release</a>(pointList[i]);</div>
-<div class="line">    }</div>
-<div class="line">}</div>
-</pre><!-- fragment --><p>In this sample, when DeletePointList() is called (with a pointer to an array of pointers to Point_t objects with reference counts of 1), each of the objects in the pointList is released. This causes their reference counts to hit 0, which triggers executing PointDestructor() for each object in the pointList, and the "Destroying point..." message will be printed for each.</p>
+<p>Here's a destructor code sample: </p><pre class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> PointDestructor(<span class="keywordtype">void</span>* objPtr)</div><div class="line">{</div><div class="line">    Point_t* pointPtr = objPtr;</div><div class="line"> </div><div class="line">    printf(<span class="stringliteral">"Destroying point (%d, %d)\n"</span>, pointPtr-&gt;x, pointPtr-&gt;y);</div><div class="line"> </div><div class="line">    @todo Add more to sample.</div><div class="line">}</div><div class="line"> </div><div class="line"><span class="keywordtype">int</span> xx_pt_ProcessStart(<span class="keywordtype">void</span>)</div><div class="line">{</div><div class="line">    PointPool = <a class="code" href="le__mem_8h.html#ab91efaa2978c9c1c7b2427d25b33241c">le_mem_CreatePool</a>(<span class="keyword">sizeof</span>(Point_t));</div><div class="line">    <a class="code" href="le__mem_8h.html#a79a4321ffa0345f267eaf3b7d3d3528a">le_mem_ExpandPool</a>(PointPool, MAX_POINTS);</div><div class="line">    <a class="code" href="le__mem_8h.html#a055007b38ce04bcb823e08034fd11b85">le_mem_SetDestructor</a>(PointPool, PointDestructor);</div><div class="line">    <span class="keywordflow">return</span> SUCCESS;</div><div class="line">}</div><div class="line"> </div><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> DeletePointList(Point_t** pointList, <span class="keywordtype">size_t</span> numPoints)</div><div class="line">{</div><div class="line">    <span class="keywordtype">size_t</span> i;</div><div class="line">    <span class="keywordflow">for</span> (i = 0; i &lt; numPoints; i++)</div><div class="line">    {</div><div class="line">        <a class="code" href="le__mem_8h.html#a6d8e3fe430bcb81efe97b57ce30ef2de">le_mem_Release</a>(pointList[i]);</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>In this sample, when DeletePointList() is called (with a pointer to an array of pointers to Point_t objects with reference counts of 1), each of the objects in the pointList is released. This causes their reference counts to hit 0, which triggers executing PointDestructor() for each object in the pointList, and the "Destroying point..." message will be printed for each.</p>
 <h1><a class="anchor" id="mem_stats"></a>
 Statistics</h1>
 <p>Some statistics are gathered for each memory pool:</p><ul>
@@ -205,8 +151,7 @@ Diagnostics</h1>
 <p>The memory system also supports two different forms of diagnostics. Both are enabled by defining special preprocessor macros when building the framework.</p>
 <p>The first of which is <code>LE_MEM_TRACE</code>. When you define <code>LE_MEM_TRACE</code> every pool is given a tracepoint with the name of the pool on creation.</p>
 <p>For instance, the configTree node pool is called, "configTree.nodePool". So to enable a trace of all config tree node creation and deletion one would use the log tool as follows:</p>
-<pre class="fragment"><div class="line">$ log trace configTree.nodePool</div>
-</pre><!-- fragment --><p>The second diagnostic build flag is <code>LE_MEM_VALGRIND</code>. When <code>LE_MEM_VALGRIND</code> is enabled, the pools are disabled and instead malloc and free are directly used. Thus enabling the use of tools like Valgrind.</p>
+<pre class="fragment"><div class="line">$ log trace configTree.nodePool</div></pre><!-- fragment --><p>The second diagnostic build flag is <code>LE_MEM_VALGRIND</code>. When <code>LE_MEM_VALGRIND</code> is enabled, the pools are disabled and instead malloc and free are directly used. Thus enabling the use of tools like Valgrind.</p>
 <h1><a class="anchor" id="mem_threading"></a>
 Multi-Threading</h1>
 <p>All functions in this API are <b> thread-safe, but not async-safe </b>. The objects allocated from pools are not inherently protected from races between threads.</p>

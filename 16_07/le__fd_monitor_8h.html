@@ -34,7 +34,7 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
@@ -43,7 +43,7 @@
 <a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -95,7 +95,7 @@ Functions</h2></td></tr>
 <tr class="separator:ad7f0f1a0cd2f99b081403784f048aef0"><td class="memSeparator" colspan="2"> </td></tr>
 </table>
 <a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Legato <a class="el" href="c_fd_monitor.html">File Descriptor Monitor API</a> include file.</p>
+<div class="textblock"><p>Legato <a class="el" href="c_fdMonitor.html">File Descriptor Monitor API</a> include file.</p>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
 <a class="anchor" id="ac2d5531f6fae37076c9a79682091a161"></a>
@@ -118,20 +118,7 @@ Functions</h2></td></tr>
 <li><code>POLLHUP</code> = Hang up.</li>
 </ul>
 <p>These are bitmask values that may appear in the <code>events</code> parameter. Use the bit-wise AND operator ('&amp;') to test for specific events.</p>
-<pre class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> if (events &amp; POLLIN)</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span> {</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>     // Data available to read.</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>     ...</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span> }</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span> if (events &amp; POLLERR)</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span> {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>     // An error occured.</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>     ...</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span> }</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span> ...</div>
-</pre><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+<pre class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> if (events &amp; POLLIN)</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> {</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>     // Data available to read.</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>     ...</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> }</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> </div><div class="line"><a name="l00007"></a><span class="lineno">    7</span> if (events &amp; POLLERR)</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span> {</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>     // An error occured.</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>     ...</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span> }</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span> </div><div class="line"><a name="l00013"></a><span class="lineno">   13</span> ...</div></pre><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramname">fd</td><td>[in] File descriptor.</td></tr>
 <tr><td class="paramname">events</td><td>[in] Bit map of events that occurred. Use bitwise AND ('&amp;') to test for events. </td></tr>

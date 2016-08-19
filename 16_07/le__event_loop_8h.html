@@ -34,7 +34,7 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
@@ -43,7 +43,7 @@
 <a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -123,7 +123,7 @@ Functions</h2></td></tr>
 <tr class="separator:a096222e98f6a0d92a79722018a752b58"><td class="memSeparator" colspan="2"> </td></tr>
 </table>
 <a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Legato <a class="el" href="c_event_loop.html">Event Loop API</a> include file.</p>
+<div class="textblock"><p>Legato <a class="el" href="c_eventLoop.html">Event Loop API</a> include file.</p>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="abdb9187a56836a93d19cc793cbd4b7ec"></a>
@@ -149,11 +149,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Initialization event handler function declaration macro.</p>
 <p>Use this macro instead of a normal function prototype to create an Initialization Event Handler function. E.g.,</p>
-<pre class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> COMPONENT_INIT</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span> {</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>     // Do my initialization here...</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span> }</div>
-</pre><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Nothing. </dd></dl>
+<pre class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> COMPONENT_INIT</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> {</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>     // Do my initialization here...</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> }</div></pre><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Nothing. </dd></dl>
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -173,7 +169,7 @@ Functions</h2></td></tr>
 </table>
 </dd>
 </dl>
-<p>See <a class="el" href="c_event_loop.html#c_event_deferredFunctionCalls">Deferred Function Calls</a> for more information. </p>
+<p>See <a class="el" href="c_eventLoop.html#c_event_deferredFunctionCalls">Deferred Function Calls</a> for more information. </p>
 </div>
 </div>
 <a class="anchor" id="ada421dec46f51fcb3421ef7058f16944"></a>
@@ -218,7 +214,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Event ID.</p>
-<p>An Event ID ties event reports to event handlers. See <a class="el" href="c_event_loop.html#c_event_publishSubscribe">Publish-Subscribe Events</a> for more details. </p>
+<p>An Event ID ties event reports to event handlers. See <a class="el" href="c_eventLoop.html#c_event_publishSubscribe">Publish-Subscribe Events</a> for more details. </p>
 </div>
 </div>
 <a class="anchor" id="a325afcc96343fde371e4c63639ace2ef"></a>
@@ -322,7 +318,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Adds a layered handler function for a publish-subscribe event ID.</p>
 <p>Tells the calling thread event loop to call a specified handler function when a defined event reaches the front of the event queue. Passes the required handler functions when called.</p>
-<p>This is intended for use in implementing <a class="el" href="c_event_loop.html#c_event_layeredPublishSubscribe">Layered Publish-Subscribe Handlers</a>.</p>
+<p>This is intended for use in implementing <a class="el" href="c_eventLoop.html#c_event_layeredPublishSubscribe">Layered Publish-Subscribe Handlers</a>.</p>
 <dl class="section return"><dt>Returns</dt><dd>Handler reference, only needed for later removal of the handler (using <a class="el" href="le__event_loop_8h.html#ae31a85d4acbef72451b5411a613eea58">le_event_RemoveHandler()</a> ). Can be ignored if the handler will never be removed.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Doesn't return on failure, there's no need to check the return value for errors. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>

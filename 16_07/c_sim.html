@@ -34,7 +34,7 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
@@ -43,7 +43,7 @@
 <a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -62,7 +62,7 @@
 <h1 class="title">SIM </h1> </div>
 </div><div class="contents">
 <div class="textblock"><p><a class="el" href="le__sim__interface_8h.html">API Reference</a> <br/>
-<a class="el" href="platform_constraints_sim.html">SIM</a> Constraints</p>
+<a class="el" href="platformConstraintsSim.html">SIM</a> Constraints</p>
 <hr/>
 <p>This file contains prototype definitions for SIM API.</p>
 <p>A subscriber identity module or subscriber identification module (SIM) is an integrated circuit that securely stores the international mobile subscriber identity (IMSI) and related key used to identify and authenticate subscribers on M2M devices.</p>
@@ -81,7 +81,7 @@ Select a card to use</h1>
 <dd>
 : It is recommended to wait for a SIM handler notification after a new SIM selection before calling le_sim API functions.</dd></dl>
 <p>A sample code can be seen in the following page:</p><ul>
-<li><a class="el" href="c_sim_test_select.html">Sample code for SIM Select</a></li>
+<li><a class="el" href="c_simTestSelect.html">Sample code for SIM Select</a></li>
 </ul>
 <h1><a class="anchor" id="le_sim_id"></a>
 SIM identification information</h1>
@@ -100,7 +100,7 @@ SIM identification information</h1>
 <li><a class="el" href="le__sim__interface_8h.html#a048b9cc4aed3f4c2fcf6ca34f40e99a9">le_sim_GetHomeNetworkMccMnc()</a>function retrieves the Home Network MCC (Mobile Country Code) and MNC (Mobile Network Code).</li>
 </ul>
 <p>A sample code can be seen in the following page:</p><ul>
-<li><a class="el" href="c_sim_test_identification.html">Sample code for SIM Identification</a></li>
+<li><a class="el" href="c_simTestIdentification.html">Sample code for SIM Identification</a></li>
 </ul>
 <h1><a class="anchor" id="le_sim_auth"></a>
 SIM Authentication</h1>
@@ -116,7 +116,7 @@ SIM Authentication</h1>
 <p>Using this API selects the requested SIM.</p>
 <p><a class="el" href="le__sim__interface_8h.html#a77293780d1e14f291418181c7c3c11f0">le_sim_Unblock()</a> unblocks the SIM card. The SIM card is blocked after X unsuccessful attempts to enter the PIN. <a class="el" href="le__sim__interface_8h.html#a77293780d1e14f291418181c7c3c11f0">le_sim_Unblock()</a> requires the PUK (Personal Unblocking) code to set a new PIN code.</p>
 <p>A sample code can be seen in the following page:</p><ul>
-<li><a class="el" href="c_sim_test_authentication.html">Sample code for SIM Authentication</a></li>
+<li><a class="el" href="c_simTestAuthentication.html">Sample code for SIM Authentication</a></li>
 </ul>
 <h1><a class="anchor" id="le_sim_state"></a>
 SIM states</h1>
@@ -140,7 +140,7 @@ SIM states</h1>
 <dl class="section note"><dt>Note</dt><dd>If two (or more) applications have registered a handler function for notifications, they will all receive it and will be passed the same SIM.</dd></dl>
 <p>The application can uninstall the handler function by calling <a class="el" href="le__sim__interface_8h.html#a8e3a4e2e978cf4931a39317ee5e9f762">le_sim_RemoveNewStateHandler()</a> API.</p>
 <p>A sample code can be seen in the following page:</p><ul>
-<li><a class="el" href="c_sim_test_states.html">Sample code for SIM States</a></li>
+<li><a class="el" href="c_simTestStates.html">Sample code for SIM States</a></li>
 </ul>
 <h1><a class="anchor" id="le_sim_profile_switch"></a>
 Local SIM profile switch</h1>
@@ -158,11 +158,11 @@ Local SIM profile switch</h1>
 <p>The <a class="el" href="le__sim__interface_8h.html#a837cdc0fe30761f4339f846a0b44c5f1">le_sim_IsEmergencyCallSubscriptionSelected()</a> function must be called to get the current subscription.</p>
 <dl class="section warning"><dt>Warning</dt><dd>There is no standard method to interrogate the current selected subscription. The returned value of this function is based on the last executed local swap command. This means that this function will always return LE_NOT_FOUND error at Legato startup.</dd></dl>
 <p>A sample code can be seen in the following page:</p><ul>
-<li><a class="el" href="c_sim_test_profile_switch.html">Sample code for Local SIM profile switch</a></li>
+<li><a class="el" href="c_simTestProfileSwitch.html">Sample code for Local SIM profile switch</a></li>
 </ul>
 <h1><a class="anchor" id="le_sim_stk"></a>
 SIM Toolkit</h1>
-<p>The SIM application Toolkit allows the SIM card to initiates commands or asking input from the modem to accept/reject SIM operations. See <a class="el" href="platform_constraints_stk.html">SIM Toolkit</a> Constraints.</p>
+<p>The SIM application Toolkit allows the SIM card to initiates commands or asking input from the modem to accept/reject SIM operations. See <a class="el" href="platformConstraintsStk.html">SIM Toolkit</a> Constraints.</p>
 <p>One of the use case is the remote provisioning of an embedded UICC (eUICC).</p>
 <p>The embedded UICC (eUICC) format supports multiple subscription profiles, which can be remotely provisioned, updated or selected through SIM tool kit procedures (Bearer Independent Protocol -BIP-, SIM refresh).</p>
 <p>It is mainly used for in-vehicle emergency call service (eCall).</p>
@@ -172,15 +172,15 @@ SIM Toolkit</h1>
 <p>The <a class="el" href="le__sim__interface_8h.html#a8cc75a17466446c19c5bd941b1360e0e">le_sim_AcceptSimToolkitCommand()</a> allows the device to accept the last SIM Toolkit command.</p>
 <p>The <a class="el" href="le__sim__interface_8h.html#a8cbdc50d62ddd5ea80386d27e16d954f">le_sim_RejectSimToolkitCommand()</a> forbids the device to accept the last SIM Toolkit command.</p>
 <p>A sample code can be seen in the following page:</p><ul>
-<li><a class="el" href="c_sim_test_sim_toolkit.html">Sample code for Local SIM Toolkit</a></li>
+<li><a class="el" href="c_simTestSimToolkit.html">Sample code for Local SIM Toolkit</a></li>
 </ul>
-<p>Information related to SIM Toolkit platform constraints can be seen in the <a class="el" href="platform_constraints_stk.html">SIM Toolkit</a> page.</p>
+<p>Information related to SIM Toolkit platform constraints can be seen in the <a class="el" href="platformConstraintsStk.html">SIM Toolkit</a> page.</p>
 <h1><a class="anchor" id="le_sim_access"></a>
 SIM access</h1>
 <p>The application can send an APDU (Application Protocol Data Unit) to the SIM using <a class="el" href="le__sim__interface_8h.html#ad72df795270776e68e473f34c0264ecb">le_sim_SendApdu()</a> API. The user must encode the APDU as specified by in recommendation 3GPP 11.11, 3GPP 51.011, 3GPP 31.102, 3GPP 31.103 or ETSI TS 102 221. </p><dl class="section note"><dt>Note</dt><dd>Between two successive call to <a class="el" href="le__sim__interface_8h.html#ad72df795270776e68e473f34c0264ecb">le_sim_SendApdu()</a> API, there is no locking protection. In this situation, some command types and parameters can modify SIM files incorrectly.</dd></dl>
-<p>Using <a class="el" href="le__sim__interface_8h.html#acc0760cfa301adeb917b171b32973de3">le_sim_SendCommand()</a>, the application has easier but more limited access to the SIM database. The command is transmitted to the SIM, which gives information through swi1 and swi2 about the execution of the command (see 3GPP recommendation previously mentioned for their coding). Some parameters are platform dependent, see <a class="el" href="platform_constraints_sim.html">SIM</a> for their coding.</p>
+<p>Using <a class="el" href="le__sim__interface_8h.html#acc0760cfa301adeb917b171b32973de3">le_sim_SendCommand()</a>, the application has easier but more limited access to the SIM database. The command is transmitted to the SIM, which gives information through swi1 and swi2 about the execution of the command (see 3GPP recommendation previously mentioned for their coding). Some parameters are platform dependent, see <a class="el" href="platformConstraintsSim.html">SIM</a> for their coding.</p>
 <p>A sample code can be seen in the following page:</p><ul>
-<li><a class="el" href="c_sim_test_apdu.html">Sample code for SIM access</a></li>
+<li><a class="el" href="c_simTestApdu.html">Sample code for SIM access</a></li>
 </ul>
 <hr/>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>

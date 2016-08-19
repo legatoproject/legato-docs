@@ -34,7 +34,7 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
@@ -43,7 +43,7 @@
 <a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -91,23 +91,7 @@ Setting parameters for the Access Point</h1>
 <p>Sets which channel to use.</p><ul>
 <li><a class="el" href="le__wifi_ap__interface_8h.html#a686036419f15a4253c28a41c6d2dc759">le_wifiAp_SetChannel()</a></li>
 </ul>
-<pre class="fragment"><div class="line"><span class="comment">//--------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
-<div class="line"><span class="comment">/**</span></div>
-<div class="line"><span class="comment"> * Sets the credentials</span></div>
-<div class="line"><span class="comment"> */</span></div>
-<div class="line"><span class="comment">//--------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> Testle_setCredentials</div>
-<div class="line">(</div>
-<div class="line">    <span class="keywordtype">void</span></div>
-<div class="line">)</div>
-<div class="line">{</div>
-<div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(LE_OK == <a class="code" href="le__wifi_ap__interface_8h.html#ae7c66bf84bcd64c6e67222001a2545e1">le_wifiAp_SetPassPhrase</a> ( TEST_PASSPHRASE ));</div>
-<div class="line"> </div>
-<div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(LE_OK == <a class="code" href="le__wifi_ap__interface_8h.html#a0985bb7661b81c6882a170855c7c8298">le_wifiAp_SetSecurityProtocol</a> ( TEST_SECU_PROTO ));</div>
-<div class="line"> </div>
-<div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(LE_OK == <a class="code" href="le__wifi_ap__interface_8h.html#a53d220d33f1c7d7560605b5bffc13c80">le_wifiAp_SetDiscoverable</a> ( <span class="keyword">true</span> ));</div>
-<div class="line">}</div>
-</pre><!-- fragment --> <h1><a class="anchor" id="le_wifiAp_Start"></a>
+<pre class="fragment"><div class="line"><span class="comment">//--------------------------------------------------------------------------------------------------</span><span class="comment"></span></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * Sets the credentials</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> Testle_setCredentials</div><div class="line">(</div><div class="line">    <span class="keywordtype">void</span></div><div class="line">)</div><div class="line">{</div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(LE_OK == <a class="code" href="le__wifi_ap__interface_8h.html#ae7c66bf84bcd64c6e67222001a2545e1">le_wifiAp_SetPassPhrase</a> ( TEST_PASSPHRASE ));</div><div class="line"> </div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(LE_OK == <a class="code" href="le__wifi_ap__interface_8h.html#a0985bb7661b81c6882a170855c7c8298">le_wifiAp_SetSecurityProtocol</a> ( TEST_SECU_PROTO ));</div><div class="line"> </div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(LE_OK == <a class="code" href="le__wifi_ap__interface_8h.html#a53d220d33f1c7d7560605b5bffc13c80">le_wifiAp_SetDiscoverable</a> ( <span class="keyword">true</span> ));</div><div class="line">}</div></pre><!-- fragment --> <h1><a class="anchor" id="le_wifiAp_Start"></a>
 Starting the WiFi Access Point</h1>
 <p>The WiFi Access Point is started with the function <a class="el" href="le__wifi_ap__interface_8h.html#ad21bdeabf6a8c923d246ef3c28ac42a0">le_wifiAp_Start()</a>. Unless values have been changed, default values will be used:</p><ul>
 <li><a class="el" href="le__wifi_ap__interface_8h.html#ad21bdeabf6a8c923d246ef3c28ac42a0">le_wifiAp_Start()</a>:</li>
@@ -115,84 +99,7 @@ Starting the WiFi Access Point</h1>
 <p>To subscribe to wifi events le_wifiAp_AddEventHandler() is to be called.</p><ul>
 <li>le_wifiAp_AddEventHandler()</li>
 </ul>
-<pre class="fragment"><div class="line"><span class="comment">//--------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
-<div class="line"><span class="comment">/**</span></div>
-<div class="line"><span class="comment"> * Handler for Wifi Client changes</span></div>
-<div class="line"><span class="comment"> *</span></div>
-<div class="line"><span class="comment"> * @param event</span></div>
-<div class="line"><span class="comment"> *        Handles the wifi events</span></div>
-<div class="line"><span class="comment"> * @param contextPtr</span></div>
-<div class="line"><span class="comment"> */</span></div>
-<div class="line"><span class="comment">//--------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> myMsgHandler</div>
-<div class="line">(</div>
-<div class="line">    <a class="code" href="le__wifi_ap__interface_8h.html#aeac8ad63bcfc5ee984cdd86ec9f116d5">le_wifiAp_Event_t</a> event,</div>
-<div class="line">    <span class="keywordtype">void</span>* contextPtr</div>
-<div class="line">)</div>
-<div class="line">{</div>
-<div class="line">    <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>( <span class="stringliteral">"Wifi Ap event received"</span>);</div>
-<div class="line">    <span class="keywordflow">switch</span>( event )</div>
-<div class="line">    {</div>
-<div class="line">        <span class="keywordflow">case</span> <a class="code" href="le__wifi_ap__interface_8h.html#aeac8ad63bcfc5ee984cdd86ec9f116d5a77e1636cb334d7bdde04761d333ff284">LE_WIFIAP_EVENT_CLIENT_CONNECTED</a>:</div>
-<div class="line">        {<span class="comment"></span></div>
-<div class="line"><span class="comment">            ///&lt; A client connect to AP</span></div>
-<div class="line"><span class="comment"></span>            <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>( <span class="stringliteral">"LE_WIFIAP_EVENT_CLIENT_CONNECTED"</span>);</div>
-<div class="line">        }</div>
-<div class="line">        <span class="keywordflow">break</span>;</div>
-<div class="line"> </div>
-<div class="line">        <span class="keywordflow">case</span> <a class="code" href="le__wifi_ap__interface_8h.html#aeac8ad63bcfc5ee984cdd86ec9f116d5a6d0e05c5fb1ec89d873b96dae320ca6e">LE_WIFIAP_EVENT_CLIENT_DISCONNECTED</a>:</div>
-<div class="line">        {<span class="comment"></span></div>
-<div class="line"><span class="comment">            ///&lt; A client connect to AP</span></div>
-<div class="line"><span class="comment"></span>            <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>( <span class="stringliteral">"LE_WIFICLIENT_EVENT_DISCONNECTED"</span>);</div>
-<div class="line">        }</div>
-<div class="line">        <span class="keywordflow">break</span>;</div>
-<div class="line"> </div>
-<div class="line"> </div>
-<div class="line">        <span class="keywordflow">default</span>:</div>
-<div class="line">            <a class="code" href="le__log_8h.html#a353590f91b3143a7ba3a416ae5a50c3d">LE_ERROR</a>( <span class="stringliteral">"ERROR Unknown event %d"</span>, event);</div>
-<div class="line">        <span class="keywordflow">break</span>;</div>
-<div class="line">    }</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"> </div>
-<div class="line"><span class="comment">//--------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
-<div class="line"><span class="comment">/**</span></div>
-<div class="line"><span class="comment"> * Tests the Wifi Access Point.</span></div>
-<div class="line"><span class="comment"> *</span></div>
-<div class="line"><span class="comment"> */</span></div>
-<div class="line"><span class="comment">//--------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><span class="keywordtype">void</span> Testle_wifiApStart</div>
-<div class="line">(</div>
-<div class="line">    <span class="keywordtype">void</span></div>
-<div class="line">)</div>
-<div class="line">{</div>
-<div class="line">    <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>( <span class="stringliteral">"Start Test Wifi Access Point"</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// Add an handler function to handle message reception</span></div>
-<div class="line">    HdlrRef=<a class="code" href="le__wifi_ap__interface_8h.html#a1ab6c2c710b61aa9b1abd30535702e38">le_wifiAp_AddNewEventHandler</a>( myMsgHandler, NULL );</div>
-<div class="line"> </div>
-<div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(HdlrRef != NULL);</div>
-<div class="line"> </div>
-<div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(LE_OK == <a class="code" href="le__wifi_ap__interface_8h.html#a188eb15670a2e7cd3fb9ade83da6307e">le_wifiAp_SetSsid</a>( TEST_SSID, TEST_SSID_NBR_BYTES ));</div>
-<div class="line"> </div>
-<div class="line">    Testle_setCredentials();</div>
-<div class="line"> </div>
-<div class="line">    <span class="keywordflow">if</span>( LE_OK == <a class="code" href="le__wifi_ap__interface_8h.html#ad21bdeabf6a8c923d246ef3c28ac42a0">le_wifiAp_Start</a>() )</div>
-<div class="line">    {</div>
-<div class="line">        <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>( <span class="stringliteral">"le_wifiAp_Start OK"</span>);</div>
-<div class="line"> </div>
-<div class="line">        Testle_startDhcpServerAndbridgeConnection();</div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">    {</div>
-<div class="line">        <a class="code" href="le__log_8h.html#a353590f91b3143a7ba3a416ae5a50c3d">LE_ERROR</a>( <span class="stringliteral">"le_wifiAp_Start ERROR"</span>);</div>
-<div class="line">    }</div>
-<div class="line"> </div>
-<div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(LE_OK == <a class="code" href="le__wifi_ap__interface_8h.html#af656f8f76b40857bac92890cbdf9cd8d">le_wifiAp_SetIpRange</a>(<span class="stringliteral">"192.168.10.1"</span>,</div>
-<div class="line">                                            <span class="stringliteral">"192.168.10.10"</span>,</div>
-<div class="line">                                            <span class="stringliteral">"192.168.10.100"</span>));</div>
-<div class="line">}</div>
-</pre><!-- fragment --> <hr/>
+<pre class="fragment"><div class="line"><span class="comment">//--------------------------------------------------------------------------------------------------</span><span class="comment"></span></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * Handler for Wifi Client changes</span></div><div class="line"><span class="comment"> *</span></div><div class="line"><span class="comment"> * @param event</span></div><div class="line"><span class="comment"> *        Handles the wifi events</span></div><div class="line"><span class="comment"> * @param contextPtr</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> myMsgHandler</div><div class="line">(</div><div class="line">    <a class="code" href="le__wifi_ap__interface_8h.html#aeac8ad63bcfc5ee984cdd86ec9f116d5">le_wifiAp_Event_t</a> event,</div><div class="line">    <span class="keywordtype">void</span>* contextPtr</div><div class="line">)</div><div class="line">{</div><div class="line">    <a class="code" href="le__log_8h.html#a4ebab29f40ee8eaaa87205fe3f9aaa13">LE_INFO</a>( <span class="stringliteral">"Wifi Ap event received"</span>);</div><div class="line">    <span class="keywordflow">switch</span>( event )</div><div class="line">    {</div><div class="line">        <span class="keywordflow">case</span> <a class="code" href="le__wifi_ap__interface_8h.html#aeac8ad63bcfc5ee984cdd86ec9f116d5a77e1636cb334d7bdde04761d333ff284">LE_WIFIAP_EVENT_CLIENT_CONNECTED</a>:</div><div class="line">        {<span class="comment"></span></div><div class="line"><span class="comment">            ///&lt; A client connect to AP</span></div><div class="line"><span class="comment"></span>            <a class="code" href="le__log_8h.html#a4ebab29f40ee8eaaa87205fe3f9aaa13">LE_INFO</a>( <span class="stringliteral">"LE_WIFIAP_EVENT_CLIENT_CONNECTED"</span>);</div><div class="line">        }</div><div class="line">        <span class="keywordflow">break</span>;</div><div class="line"> </div><div class="line">        <span class="keywordflow">case</span> <a class="code" href="le__wifi_ap__interface_8h.html#aeac8ad63bcfc5ee984cdd86ec9f116d5a6d0e05c5fb1ec89d873b96dae320ca6e">LE_WIFIAP_EVENT_CLIENT_DISCONNECTED</a>:</div><div class="line">        {<span class="comment"></span></div><div class="line"><span class="comment">            ///&lt; A client connect to AP</span></div><div class="line"><span class="comment"></span>            <a class="code" href="le__log_8h.html#a4ebab29f40ee8eaaa87205fe3f9aaa13">LE_INFO</a>( <span class="stringliteral">"LE_WIFICLIENT_EVENT_DISCONNECTED"</span>);</div><div class="line">        }</div><div class="line">        <span class="keywordflow">break</span>;</div><div class="line"> </div><div class="line"> </div><div class="line">        <span class="keywordflow">default</span>:</div><div class="line">            <a class="code" href="le__log_8h.html#a3ee3d0451bd7351a6252c9487452d175">LE_ERROR</a>( <span class="stringliteral">"ERROR Unknown event %d"</span>, event);</div><div class="line">        <span class="keywordflow">break</span>;</div><div class="line">    }</div><div class="line">}</div><div class="line"> </div><div class="line"> </div><div class="line"><span class="comment">//--------------------------------------------------------------------------------------------------</span><span class="comment"></span></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * Tests the Wifi Access Point.</span></div><div class="line"><span class="comment"> *</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><span class="keywordtype">void</span> Testle_wifiApStart</div><div class="line">(</div><div class="line">    <span class="keywordtype">void</span></div><div class="line">)</div><div class="line">{</div><div class="line">    <a class="code" href="le__log_8h.html#a4ebab29f40ee8eaaa87205fe3f9aaa13">LE_INFO</a>( <span class="stringliteral">"Start Test Wifi Access Point"</span>);</div><div class="line"> </div><div class="line">    <span class="comment">// Add an handler function to handle message reception</span></div><div class="line">    HdlrRef=<a class="code" href="le__wifi_ap__interface_8h.html#a1ab6c2c710b61aa9b1abd30535702e38">le_wifiAp_AddNewEventHandler</a>( myMsgHandler, NULL );</div><div class="line"> </div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(HdlrRef != NULL);</div><div class="line"> </div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(LE_OK == <a class="code" href="le__wifi_ap__interface_8h.html#a188eb15670a2e7cd3fb9ade83da6307e">le_wifiAp_SetSsid</a>( TEST_SSID, TEST_SSID_NBR_BYTES ));</div><div class="line"> </div><div class="line">    Testle_setCredentials();</div><div class="line"> </div><div class="line">    <span class="keywordflow">if</span>( LE_OK == <a class="code" href="le__wifi_ap__interface_8h.html#ad21bdeabf6a8c923d246ef3c28ac42a0">le_wifiAp_Start</a>() )</div><div class="line">    {</div><div class="line">        <a class="code" href="le__log_8h.html#a4ebab29f40ee8eaaa87205fe3f9aaa13">LE_INFO</a>( <span class="stringliteral">"le_wifiAp_Start OK"</span>);</div><div class="line"> </div><div class="line">        Testle_startDhcpServerAndbridgeConnection();</div><div class="line">    }</div><div class="line">    <span class="keywordflow">else</span></div><div class="line">    {</div><div class="line">        <a class="code" href="le__log_8h.html#a3ee3d0451bd7351a6252c9487452d175">LE_ERROR</a>( <span class="stringliteral">"le_wifiAp_Start ERROR"</span>);</div><div class="line">    }</div><div class="line"> </div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(LE_OK == <a class="code" href="le__wifi_ap__interface_8h.html#af656f8f76b40857bac92890cbdf9cd8d">le_wifiAp_SetIpRange</a>(<span class="stringliteral">"192.168.10.1"</span>,</div><div class="line">                                            <span class="stringliteral">"192.168.10.10"</span>,</div><div class="line">                                            <span class="stringliteral">"192.168.10.100"</span>));</div><div class="line">}</div></pre><!-- fragment --> <hr/>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>
 </div></div>
 <br clear="left"/>

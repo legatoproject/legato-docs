@@ -34,7 +34,7 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
@@ -43,7 +43,7 @@
 <a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -213,18 +213,8 @@ Functions</h2></td></tr>
 </tr>
 </table>
 </div><div class="memdoc">
-<b>Value:</b><pre class="fragment"><div class="line">{ <a class="code" href="le__messaging_8h.html#a1e5c37fdd50a4d6d24cad82cb166f770">\</a></div>
-<div class="line"><a class="code" href="le__messaging_8h.html#a1e5c37fdd50a4d6d24cad82cb166f770">    le_msg_MessageRef_t</a> msgRef = <a class="code" href="le__messaging_8h.html#a2007f56df1f818119e3188a1a2a902d6">le_msg_GetServiceRxMsg</a>(); <a class="code" href="le__log_8h.html#a7a3e66a87026cc9e57bcb748840ab41b">\</a></div>
-<div class="line"><a class="code" href="le__log_8h.html#a7a3e66a87026cc9e57bcb748840ab41b">    LE_FATAL_IF</a>(msgRef == NULL, formatString, ##__VA_ARGS__); <a class="code" href="le__log_8h.html#a651e75cb4ec9d59f5ddc7bae2fbdde88">\</a></div>
-<div class="line"><a class="code" href="le__log_8h.html#a651e75cb4ec9d59f5ddc7bae2fbdde88">    LE_EMERG</a>(formatString, ##__VA_ARGS__); <a class="code" href="le__messaging_8h.html#a1af0671de74160d99be5bfe212c39369">\</a></div>
-<div class="line"><a class="code" href="le__messaging_8h.html#a1af0671de74160d99be5bfe212c39369">    le_msg_CloseSession</a>(<a class="code" href="le__messaging_8h.html#a253088f1b852575b60d7732ca7afc79b">le_msg_GetSession</a>(msgRef)); \</div>
-<div class="line">}</div>
-<div class="ttc" id="le__messaging_8h_html_a2007f56df1f818119e3188a1a2a902d6"><div class="ttname"><a href="le__messaging_8h.html#a2007f56df1f818119e3188a1a2a902d6">le_msg_GetServiceRxMsg</a></div><div class="ttdeci">le_msg_MessageRef_t le_msg_GetServiceRxMsg(void)</div></div>
+<b>Value:</b><pre class="fragment"><div class="line">{ \</div><div class="line">    le_msg_MessageRef_t msgRef = <a class="code" href="le__messaging_8h.html#a2007f56df1f818119e3188a1a2a902d6">le_msg_GetServiceRxMsg</a>(); \</div><div class="line">    LE_FATAL_IF(msgRef == NULL, formatString, ##__VA_ARGS__); \</div><div class="line">    LE_EMERG(formatString, ##__VA_ARGS__); \</div><div class="line">    le_msg_CloseSession(<a class="code" href="le__messaging_8h.html#a253088f1b852575b60d7732ca7afc79b">le_msg_GetSession</a>(msgRef)); \</div><div class="line">}</div><div class="ttc" id="le__messaging_8h_html_a2007f56df1f818119e3188a1a2a902d6"><div class="ttname"><a href="le__messaging_8h.html#a2007f56df1f818119e3188a1a2a902d6">le_msg_GetServiceRxMsg</a></div><div class="ttdeci">le_msg_MessageRef_t le_msg_GetServiceRxMsg(void)</div></div>
 <div class="ttc" id="le__messaging_8h_html_a253088f1b852575b60d7732ca7afc79b"><div class="ttname"><a href="le__messaging_8h.html#a253088f1b852575b60d7732ca7afc79b">le_msg_GetSession</a></div><div class="ttdeci">le_msg_SessionRef_t le_msg_GetSession(le_msg_MessageRef_t msgRef)</div></div>
-<div class="ttc" id="le__messaging_8h_html_a1af0671de74160d99be5bfe212c39369"><div class="ttname"><a href="le__messaging_8h.html#a1af0671de74160d99be5bfe212c39369">le_msg_CloseSession</a></div><div class="ttdeci">void le_msg_CloseSession(le_msg_SessionRef_t sessionRef)</div></div>
-<div class="ttc" id="le__log_8h_html_a651e75cb4ec9d59f5ddc7bae2fbdde88"><div class="ttname"><a href="le__log_8h.html#a651e75cb4ec9d59f5ddc7bae2fbdde88">LE_EMERG</a></div><div class="ttdeci">#define LE_EMERG(formatString,...)</div><div class="ttdoc">Emergency. A fatal error has occurred. A process is being terminated. </div><div class="ttdef"><b>Definition:</b> le_log.h:490</div></div>
-<div class="ttc" id="le__log_8h_html_a7a3e66a87026cc9e57bcb748840ab41b"><div class="ttname"><a href="le__log_8h.html#a7a3e66a87026cc9e57bcb748840ab41b">LE_FATAL_IF</a></div><div class="ttdeci">#define LE_FATAL_IF(condition, formatString,...)</div><div class="ttdef"><b>Definition:</b> le_log.h:546</div></div>
-<div class="ttc" id="le__messaging_8h_html_a1e5c37fdd50a4d6d24cad82cb166f770"><div class="ttname"><a href="le__messaging_8h.html#a1e5c37fdd50a4d6d24cad82cb166f770">le_msg_MessageRef_t</a></div><div class="ttdeci">struct le_msg_Message * le_msg_MessageRef_t</div><div class="ttdef"><b>Definition:</b> le_messaging.h:865</div></div>
 </pre><!-- fragment --><p>Logs an error message (at EMERGENCY level) and:</p><ul>
 <li>if the caller is running a server-side IPC function, kills the connection to the client and returns.</li>
 <li>if the caller is not running a server-side IPC function, kills the caller (doesn't return). </li>

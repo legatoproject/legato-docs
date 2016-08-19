@@ -34,7 +34,7 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
@@ -43,7 +43,7 @@
 <a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -62,11 +62,11 @@
 <h1 class="title">Logging API </h1> </div>
 </div><div class="contents">
 <div class="textblock"><p><a class="el" href="le__log_8h.html">API Reference</a> <br/>
-<a class="el" href="how_to_logs.html">Use Logs</a> </p><hr/>
+<a class="el" href="howToLogs.html">Use Logs</a> </p><hr/>
 <p>The Legato Logging API provides a toolkit allowing code to be instrumented with error, warning, informational, and debugging messages. These messages can be turned on or off remotely and pushed or pulled from the device through a secure shell, cloud services interfaces, e-mail, SMS, etc.</p>
 <h1><a class="anchor" id="c_log_logging"></a>
 Logging Basics</h1>
-<p>Legato's logging can be configured through this API, and there's also a command-line target <a class="el" href="tools_target_log.html">log</a> tool available.</p>
+<p>Legato's logging can be configured through this API, and there's also a command-line target <a class="el" href="toolsTarget_log.html">log</a> tool available.</p>
 <h2><a class="anchor" id="c_log_levels"></a>
 Levels</h2>
 <p>Log messages are categorized according to the severity of the information being logged. A log message may be purely informational, describing something that is expected to occur from time-to-time during normal operation; or it may be a report of a fault that might have a significant negative impact on the operation of the system. To differentiate these, each log entry is associated with one of the following log levels:</p>
@@ -95,15 +95,14 @@ Basic Logging</h2>
 <p>All of them accept printf-style arguments, consisting of a format string followed by zero or more parameters to be printed (depending on the contents of the format string).</p>
 <p>There is a logging macro for each of the log levels:</p>
 <ul>
-<li><a class="el" href="le__log_8h.html#a2a91ea8857cf190fde71d85ba930a498">LE_DEBUG</a>(formatString, ...)</li>
-<li><a class="el" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(formatString, ...)</li>
-<li><a class="el" href="le__log_8h.html#a0201b2f60ee0e945479f91e181bf04b6">LE_WARN</a>(formatString, ...)</li>
-<li><a class="el" href="le__log_8h.html#a353590f91b3143a7ba3a416ae5a50c3d">LE_ERROR</a>(formatString, ...)</li>
-<li><a class="el" href="le__log_8h.html#a5efa1e4b6292c820c8555b4066a5c10d">LE_CRIT</a>(formatString, ...)</li>
-<li><a class="el" href="le__log_8h.html#a651e75cb4ec9d59f5ddc7bae2fbdde88">LE_EMERG</a>(formatString, ...)</li>
+<li><a class="el" href="le__log_8h.html#af45667acfd1b4bdfdc4433db4947cd9e">LE_DEBUG</a>(formatString, ...)</li>
+<li><a class="el" href="le__log_8h.html#a4ebab29f40ee8eaaa87205fe3f9aaa13">LE_INFO</a>(formatString, ...)</li>
+<li><a class="el" href="le__log_8h.html#a6e79fdd28f63d612fee5d9f42fc4df77">LE_WARN</a>(formatString, ...)</li>
+<li><a class="el" href="le__log_8h.html#a3ee3d0451bd7351a6252c9487452d175">LE_ERROR</a>(formatString, ...)</li>
+<li><a class="el" href="le__log_8h.html#adfddb0272111f192957c0ae6704290dd">LE_CRIT</a>(formatString, ...)</li>
+<li><a class="el" href="le__log_8h.html#a745705de4e8edd16f2bb476ef3fe16c3">LE_EMERG</a>(formatString, ...)</li>
 </ul>
-<p>For example, </p><pre class="fragment"><div class="line"><a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"Obtained new IP address %s."</span>, ipAddrStr);</div>
-</pre><!-- fragment --><h2><a class="anchor" id="c_log_conditional_logging"></a>
+<p>For example, </p><pre class="fragment"><div class="line"><a class="code" href="le__log_8h.html#a4ebab29f40ee8eaaa87205fe3f9aaa13">LE_INFO</a>(<span class="stringliteral">"Obtained new IP address %s."</span>, ipAddrStr);</div></pre><!-- fragment --><h2><a class="anchor" id="c_log_conditional_logging"></a>
 Conditional Logging</h2>
 <p>Similar to the basic macros, but these contain a conditional expression as their first parameter. If this expression equals true, then the macro will generate this log output:</p>
 <ul>
@@ -114,12 +113,7 @@ Conditional Logging</h2>
 <li><a class="el" href="le__log_8h.html#ae507036675ece2d77e8e285cf864a6f4">LE_CRIT_IF</a>(expression, formatString, ...)</li>
 <li><a class="el" href="le__log_8h.html#a5dcf8dc55407a8f41ada2e85ff8131fe">LE_EMERG_IF</a>(expression, formatString, ...)</li>
 </ul>
-<p>Instead of writing </p><pre class="fragment"><div class="line"><span class="keywordflow">if</span> (result == -1)</div>
-<div class="line">{</div>
-<div class="line">    <a class="code" href="le__log_8h.html#a0201b2f60ee0e945479f91e181bf04b6">LE_WARN</a>(<span class="stringliteral">"Failed to send message to server.  Errno = %m."</span>);</div>
-<div class="line">}</div>
-</pre><!-- fragment --><p>you could write this: </p><pre class="fragment"><div class="line"><a class="code" href="le__log_8h.html#a8d8f204806cd5fc0455fe3caacf1d251">LE_WARN_IF</a>(result == -1, <span class="stringliteral">"Failed to send message to server.  Errno = %m."</span>);</div>
-</pre><!-- fragment --><h2><a class="anchor" id="c_log_loging_fatals"></a>
+<p>Instead of writing </p><pre class="fragment"><div class="line"><span class="keywordflow">if</span> (result == -1)</div><div class="line">{</div><div class="line">    <a class="code" href="le__log_8h.html#a6e79fdd28f63d612fee5d9f42fc4df77">LE_WARN</a>(<span class="stringliteral">"Failed to send message to server.  Errno = %m."</span>);</div><div class="line">}</div></pre><!-- fragment --><p>you could write this: </p><pre class="fragment"><div class="line"><a class="code" href="le__log_8h.html#a8d8f204806cd5fc0455fe3caacf1d251">LE_WARN_IF</a>(result == -1, <span class="stringliteral">"Failed to send message to server.  Errno = %m."</span>);</div></pre><!-- fragment --><h2><a class="anchor" id="c_log_loging_fatals"></a>
 Fatal Errors</h2>
 <p>There are some special logging macros intended for fatal errors:</p>
 <ul>
@@ -132,50 +126,27 @@ Fatal Errors</h2>
 <li><a class="el" href="le__log_8h.html#a7cd2daa3d4af1de4d29e0eed95187484">LE_ASSERT_OK(condition)</a> <br/>
  If the condition is LE_OK (0), does nothing. If the condition is anything else, logs the a message at EMERGENCY level, containing the source code text of the condition, indicating that it did not evaluate to LE_OK, and kills the calling process.</li>
 </ul>
-<p>For example, </p><pre class="fragment"><div class="line"><span class="keywordflow">if</span> (NULL == objPtr)</div>
-<div class="line">{</div>
-<div class="line">    <a class="code" href="le__log_8h.html#a54b4b07f5396e19a8d9fca74238f4795">LE_FATAL</a>(<span class="stringliteral">"Object pointer is NULL!"</span>);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// Now I can go ahead and use objPtr, knowing that if it was NULL then LE_FATAL() would have</span></div>
-<div class="line"><span class="comment">// been called and LE_FATAL() never returns.</span></div>
-</pre><!-- fragment --><p>or,</p>
-<pre class="fragment"><div class="line"><a class="code" href="le__log_8h.html#a7a3e66a87026cc9e57bcb748840ab41b">LE_FATAL_IF</a>(NULL == objPtr, <span class="stringliteral">"Object pointer is NULL!"</span>);</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// Now I can go ahead and use objPtr, knowing that if it was NULL then LE_FATAL_IF() would not</span></div>
-<div class="line"><span class="comment">// have returned.</span></div>
-</pre><!-- fragment --><p>or,</p>
-<pre class="fragment"><div class="line"><a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(NULL != objPtr);</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// Now I can go ahead and use objPtr, knowing that if it was NULL then LE_ASSERT() would not</span></div>
-<div class="line"><span class="comment">// have returned.</span></div>
-</pre><!-- fragment --><h2><a class="anchor" id="c_log_tracing"></a>
+<p>For example, </p><pre class="fragment"><div class="line"><span class="keywordflow">if</span> (NULL == objPtr)</div><div class="line">{</div><div class="line">    <a class="code" href="le__log_8h.html#a54b4b07f5396e19a8d9fca74238f4795">LE_FATAL</a>(<span class="stringliteral">"Object pointer is NULL!"</span>);</div><div class="line">}</div><div class="line"> </div><div class="line"><span class="comment">// Now I can go ahead and use objPtr, knowing that if it was NULL then LE_FATAL() would have</span></div><div class="line"><span class="comment">// been called and LE_FATAL() never returns.</span></div></pre><!-- fragment --><p>or,</p>
+<pre class="fragment"><div class="line"><a class="code" href="le__log_8h.html#a7a3e66a87026cc9e57bcb748840ab41b">LE_FATAL_IF</a>(NULL == objPtr, <span class="stringliteral">"Object pointer is NULL!"</span>);</div><div class="line"> </div><div class="line"><span class="comment">// Now I can go ahead and use objPtr, knowing that if it was NULL then LE_FATAL_IF() would not</span></div><div class="line"><span class="comment">// have returned.</span></div></pre><!-- fragment --><p>or,</p>
+<pre class="fragment"><div class="line"><a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(NULL != objPtr);</div><div class="line"> </div><div class="line"><span class="comment">// Now I can go ahead and use objPtr, knowing that if it was NULL then LE_ASSERT() would not</span></div><div class="line"><span class="comment">// have returned.</span></div></pre><!-- fragment --><h2><a class="anchor" id="c_log_tracing"></a>
 Tracing</h2>
 <p>Finally, a macro is provided for tracing:</p>
 <ul>
-<li><a class="el" href="le__log_8h.html#a331fb6c78ccddeafc455ad9c64e42008">LE_TRACE</a>(traceRef, string, ...)</li>
+<li><a class="el" href="le__log_8h.html#a07bbbb4095720cff330e87e249ce1252">LE_TRACE</a>(traceRef, string, ...)</li>
 </ul>
 <p>This macro is special because it's independent of log level. Instead, trace messages are associated with a trace keyword. Tracing can be enabled and disabled based on these keywords.</p>
 <p>If a developer wanted to trace the creation of "shape" objects in their GUI package, they could add trace statements like the following:</p>
-<pre class="fragment"><div class="line"><a class="code" href="le__log_8h.html#a331fb6c78ccddeafc455ad9c64e42008">LE_TRACE</a>(NewShapeTraceRef, <span class="stringliteral">"Created %p with position (%d,%d)."</span>, shapePtr, shapePtr-&gt;x, shapePtr-&gt;y);</div>
-</pre><!-- fragment --><p>The reference to the trace is obtained at start-up as follows:</p>
-<pre class="fragment"><div class="line">NewShapeTraceRef = <a class="code" href="le__log_8h.html#a6d99d8147bcdcd1ed3848c9fdb72afe5">le_log_GetTraceRef</a>(<span class="stringliteral">"newShape"</span>);</div>
-</pre><!-- fragment --><p>This allows enabling and disabling these <a class="el" href="le__log_8h.html#a331fb6c78ccddeafc455ad9c64e42008">LE_TRACE()</a> calls using the "newShape" keyword through configuration settings and runtime log control tools. See <a class="el" href="c_logging.html#c_log_controlling">Log Controls</a> below.</p>
+<pre class="fragment"><div class="line"><a class="code" href="le__log_8h.html#a07bbbb4095720cff330e87e249ce1252">LE_TRACE</a>(NewShapeTraceRef, <span class="stringliteral">"Created %p with position (%d,%d)."</span>, shapePtr, shapePtr-&gt;x, shapePtr-&gt;y);</div></pre><!-- fragment --><p>The reference to the trace is obtained at start-up as follows:</p>
+<pre class="fragment"><div class="line">NewShapeTraceRef = <a class="code" href="le__log_8h.html#a6d99d8147bcdcd1ed3848c9fdb72afe5">le_log_GetTraceRef</a>(<span class="stringliteral">"newShape"</span>);</div></pre><!-- fragment --><p>This allows enabling and disabling these <a class="el" href="le__log_8h.html#a07bbbb4095720cff330e87e249ce1252">LE_TRACE()</a> calls using the "newShape" keyword through configuration settings and runtime log control tools. See <a class="el" href="c_logging.html#c_log_controlling">Log Controls</a> below.</p>
 <p>Applications can use <a class="el" href="le__log_8h.html#a0746e2e37585f61ccdf7ce4976909936">LE_IS_TRACE_ENABLED(NewShapeTraceRef)</a> to query whether a trace keyword is enabled.</p>
 <p>These allow apps to hook into the trace management system to use it to implement sophisticated, app-specific tracing or profiling features.</p>
 <h2><a class="anchor" id="c_log_resultTxt"></a>
 Result Code Text</h2>
 <p>The <a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> macro supports printing an error condition in a human-readable text string.</p>
-<pre class="fragment"><div class="line">result = le_foo_DoSomething();</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordflow">if</span> (result != LE_OK)</div>
-<div class="line">{</div>
-<div class="line">    <a class="code" href="le__log_8h.html#a353590f91b3143a7ba3a416ae5a50c3d">LE_ERROR</a>(<span class="stringliteral">"Failed to do something. Result = %d (%s)."</span>, result, <a class="code" href="le__log_8h.html#a99402d6a983f318e5b8bfcdf5dfe9024">LE_RESULT_TXT</a>(result));</div>
-<div class="line">}</div>
-</pre><!-- fragment --><h1><a class="anchor" id="c_log_controlling"></a>
+<pre class="fragment"><div class="line">result = le_foo_DoSomething();</div><div class="line"> </div><div class="line"><span class="keywordflow">if</span> (result != LE_OK)</div><div class="line">{</div><div class="line">    <a class="code" href="le__log_8h.html#a3ee3d0451bd7351a6252c9487452d175">LE_ERROR</a>(<span class="stringliteral">"Failed to do something. Result = %d (%s)."</span>, result, <a class="code" href="le__log_8h.html#a99402d6a983f318e5b8bfcdf5dfe9024">LE_RESULT_TXT</a>(result));</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="c_log_controlling"></a>
 Log Controls</h1>
 <p>Log level filtering and tracing can be controlled at runtime using:</p><ul>
-<li>the command-line Log Control Tool (<a class="el" href="tools_target_log.html">log</a>)</li>
+<li>the command-line Log Control Tool (<a class="el" href="toolsTarget_log.html">log</a>)</li>
 <li>configuration settings</li>
 <li>environment variables</li>
 <li>function calls.</li>

@@ -34,7 +34,7 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
@@ -43,7 +43,7 @@
 <a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -100,8 +100,7 @@ Error Handling</h1>
 <h1><a class="anchor" id="c_json_example"></a>
 Example</h1>
 <p>If the JSON document is</p>
-<pre class="fragment"><div class="line">{ <span class="stringliteral">"x"</span>:1, <span class="stringliteral">"y"</span>:2, <span class="stringliteral">"name"</span>:<span class="stringliteral">"joe"</span> }</div>
-</pre><!-- fragment --><p>The following sequence of events will be reported by the parser:</p><ol type="1">
+<pre class="fragment"><div class="line">{ <span class="stringliteral">"x"</span>:1, <span class="stringliteral">"y"</span>:2, <span class="stringliteral">"name"</span>:<span class="stringliteral">"joe"</span> }</div></pre><!-- fragment --><p>The following sequence of events will be reported by the parser:</p><ol type="1">
 <li>LE_JSON_OBJECT_START</li>
 <li>LE_JSON_OBJECT_MEMBER - If the event handler calls <a class="el" href="le__json_8h.html#a6e3870d9dfb1082f92572042508271a6">le_json_GetString()</a>, it will return "x".</li>
 <li>LE_JSON_NUMBER - If the event handler calls <a class="el" href="le__json_8h.html#a583ed4c1e74317dab7bab49cbdbb7bc2">le_json_GetNumber()</a>, it will return 1.</li>

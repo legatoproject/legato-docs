@@ -34,7 +34,7 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
@@ -43,7 +43,7 @@
 <a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -94,7 +94,7 @@ Sending a message</h1>
 <p>After the Msg object is ready, call <code><a class="el" href="le__sms__interface_8h.html#ab7dee7d2c74cfcadd9ea0d5fe1786dfc">le_sms_Send()</a></code>.</p>
 <p><code><a class="el" href="le__sms__interface_8h.html#ab7dee7d2c74cfcadd9ea0d5fe1786dfc">le_sms_Send()</a></code> is a blocking function, it will return once the Modem has given back a positive or negative answer to the sending operation. The return of <code><a class="el" href="le__sms__interface_8h.html#ab7dee7d2c74cfcadd9ea0d5fe1786dfc">le_sms_Send()</a></code> API provides definitive status of the sending operation.</p>
 <p>When a message sending has failed and returned LE_FAULT, call <a class="el" href="le__sms__interface_8h.html#a9ee511af99c91383344debf532fae1ae">le_sms_GetErrorCode()</a> to retrieve the 3GPP message error code or <a class="el" href="le__sms__interface_8h.html#a46afe91bbded617ad444ea29a9dd910a">le_sms_Get3GPP2ErrorCode()</a> to retrieve the 3GPP2 message error code. If LE_SMS_ERROR_3GPP_PLATFORM_SPECIFIC or LE_SMS_ERROR_3GPP2_PLATFORM_SPECIFIC values is returned, call <a class="el" href="le__sms__interface_8h.html#a9cfbc2131df38f99272a71bf05cb1254">le_sms_GetPlatformSpecificErrorCode()</a> to retrieve the platform specific error code.</p>
-<p>Please refer to <a class="el" href="c_sms_sample_m_o.html">Sample code for Mobile Originated SMS message</a> page to get an example of SMS message sending.</p>
+<p>Please refer to <a class="el" href="c_smsSampleMO.html">Sample code for Mobile Originated SMS message</a> page to get an example of SMS message sending.</p>
 <h1><a class="anchor" id="le_sms_ops_async_sending"></a>
 Sending asynchronously a message</h1>
 <p>To send an asynchronous message, <a class="el" href="le__sms__interface_8h.html#a0ba61dcf10157e9982702373577c6b45">le_sms_SendAsync()</a> API can be called instead of <a class="el" href="le__sms__interface_8h.html#ab7dee7d2c74cfcadd9ea0d5fe1786dfc">le_sms_Send()</a> and a specific timeout value can be used with <a class="el" href="le__sms__interface_8h.html#a2b14febf0e2285b0b3c2dbcd1c2bb7b0">le_sms_SetTimeout()</a> API.</p>
@@ -131,13 +131,13 @@ Receiving a message</h1>
 - For incoming SMS, format returned by le_sms_GetFormat is never LE_SMS_FORMAT_PDU.</dd></dl>
 <p>If a succession of messages is received, a new Message object is created for each, and the handler is called for each new message.</p>
 <p>Uninstall the handler function by calling <code><a class="el" href="le__sms__interface_8h.html#a2f474706ba6d7a40083fe1f50f530101">le_sms_RemoveRxMessageHandler()</a></code>. </p><dl class="section note"><dt>Note</dt><dd><code><a class="el" href="le__sms__interface_8h.html#a2f474706ba6d7a40083fe1f50f530101">le_sms_RemoveRxMessageHandler()</a></code> API does not delete the Message Object. The caller has to delete it.</dd></dl>
-<p>Please refer to <a class="el" href="c_sms_sample_m_t.html">Sample code for Mobile Terminated SMS message</a> page to get an example of SMS message reception handling.</p>
+<p>Please refer to <a class="el" href="c_smsSampleMT.html">Sample code for Mobile Terminated SMS message</a> page to get an example of SMS message reception handling.</p>
 <h1><a class="anchor" id="le_sms_ops_sms_storage"></a>
 Receiving a full SMS storage indication</h1>
 <p>To receive a SMS full storage status, the application has to register a handler function. Use <code><a class="el" href="le__sms__interface_8h.html#a1ae7c04f5de9245489956e62bd607430">le_sms_AddFullStorageEventHandler()</a></code> to register that handler.</p>
 <p>The handler must satisfy the following prototype: <code>typedef</code> void (*le_sms_FullStorageEventFunc_t)(le_sms_Storage_t storage).</p>
 <p>Uninstall the handler function by calling <code><a class="el" href="le__sms__interface_8h.html#a1b4c00f308ffab8c9828edc1631047d8">le_sms_RemoveFullStorageEventHandler()</a></code>.</p>
-<p>Please refer to <a class="el" href="c_sms_sample_m_t.html">Sample code for Mobile Terminated SMS message</a> page to get an example of SMS storage indication handling.</p>
+<p>Please refer to <a class="el" href="c_smsSampleMT.html">Sample code for Mobile Terminated SMS message</a> page to get an example of SMS storage indication handling.</p>
 <h1><a class="anchor" id="le_sms_ops_listing"></a>
 Listing  messages recorded in storage area</h1>
 <p>Call <code><a class="el" href="le__sms__interface_8h.html#aee4328f9e417108fa16794cc135073d0">le_sms_CreateRxMsgList()</a></code> to create a List object that lists the received messages present in the storage area, which is referenced by <code>le_sms_MsgListRef_t</code> type.</p>
@@ -170,7 +170,7 @@ SMS Cell Broadcast</h1>
 <li><a class="el" href="le__sms__interface_8h.html#aa3e075b4a9396b2e4af233e4543f40bd">le_sms_GetCellBroadcastSerialNumber()</a> get the message Serial Number received (3GPP 23.41).</li>
 </ul>
 <dl class="section note"><dt>Note</dt><dd>- Format returned by le_sms_GetFormat is never LE_SMS_FORMAT_PDU.</dd></dl>
-<p>A sample code that implements a function for SMS Cell Broadcast reception can be found in <b>smsCBTest.c</b> file (please refer to <a class="el" href="c_sms_cb_sample.html">Sample code for SMS Cell Broadcast reception</a> page).</p>
+<p>A sample code that implements a function for SMS Cell Broadcast reception can be found in <b>smsCBTest.c</b> file (please refer to <a class="el" href="c_smsCbSample.html">Sample code for SMS Cell Broadcast reception</a> page).</p>
 <p><b>Serial</b> <b>Number</b> </p>
 <p>Cell Broadcast Serial Number parameter is a 16-bit integer which identifies a particular CBS message from the source and type indicated by the Message Identifier and is altered every time the CBS message with a given Message Identifier is changed.</p>
 <p>The two bytes of the Serial Number field are divided into a 2-bit Geographical Scope (GS) indicator, a 10-bit Message Code and a 4-bit Update Number as shown below:</p>
@@ -195,8 +195,8 @@ Preferred SMS storage configuration</h1>
 <p>Preferred SMS storage for incoming messages can be set or get with <a class="el" href="le__sms__interface_8h.html#a05e4196eb01d4d36ed2412c6eedc406e">le_sms_SetPreferredStorage()</a> and <a class="el" href="le__sms__interface_8h.html#a5275b917903dbd1d782867f42d256c55">le_sms_GetPreferredStorage()</a> functions.</p>
 <h1><a class="anchor" id="le_sms_ops_samples"></a>
 Sample codes</h1>
-<p>A sample code that implements a function for Mobile Originated SMS message can be found in <b>smsMO.c</b> file (please refer to <a class="el" href="c_sms_sample_m_o.html">Sample code for Mobile Originated SMS message</a> page).</p>
-<p>A sample code that implements a function for Mobile Terminated SMS message can be found in <b>smsMT.c</b> file (please refer to <a class="el" href="c_sms_sample_m_t.html">Sample code for Mobile Terminated SMS message</a> page).</p>
+<p>A sample code that implements a function for Mobile Originated SMS message can be found in <b>smsMO.c</b> file (please refer to <a class="el" href="c_smsSampleMO.html">Sample code for Mobile Originated SMS message</a> page).</p>
+<p>A sample code that implements a function for Mobile Terminated SMS message can be found in <b>smsMT.c</b> file (please refer to <a class="el" href="c_smsSampleMT.html">Sample code for Mobile Terminated SMS message</a> page).</p>
 <p>These two samples can be easily compiled and run into the <b>sms</b> app, to install and use this app:</p>
 <pre class="fragment">$ make ar7
 $ bin/instapp  build/ar7/bin/samples/sms.ar7 &lt;ipaddress&gt;
@@ -204,9 +204,9 @@ $ bin/instapp  build/ar7/bin/samples/sms.ar7 &lt;ipaddress&gt;
 <p>Then on your target, just run: </p><pre class="fragment">$ app start sms
 </pre><p>The sample replies to the sender by the message "Message from &lt;phone number&gt; received". Where "phone number" is the sender's phone number.</p>
 <p>Sample code for that application can be seen in the following pages:</p><ul>
-<li><a class="el" href="c_sms_sample_m_o.html">Sample code for Mobile Originated SMS message</a> <br/>
+<li><a class="el" href="c_smsSampleMO.html">Sample code for Mobile Originated SMS message</a> <br/>
 </li>
-<li><a class="el" href="c_sms_sample_m_t.html">Sample code for Mobile Terminated SMS message</a></li>
+<li><a class="el" href="c_smsSampleMT.html">Sample code for Mobile Terminated SMS message</a></li>
 </ul>
 <hr/>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>

@@ -34,7 +34,7 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
@@ -43,7 +43,7 @@
 <a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -72,70 +72,22 @@ Creating a HashMap</h1>
 <h1><a class="anchor" id="c_hashmap_insert"></a>
 Adding key-value pairs</h1>
 <p>Key-value pairs are added using <a class="el" href="le__hashmap_8h.html#a68759fb8291c487a507eae6d92710fc7">le_hashmap_Put()</a>. For example:</p>
-<pre class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> StoreStuff(<span class="keyword">const</span> <span class="keywordtype">char</span>* keyStr, <span class="keyword">const</span> <span class="keywordtype">char</span>* valueStr)</div>
-<div class="line">{</div>
-<div class="line">    myTable = <a class="code" href="le__hashmap_8h.html#ade79896a5b2ceec82c570fe21f7efe3a">le_hashmap_Create</a>(</div>
-<div class="line">                        <span class="stringliteral">"My Table"</span>,</div>
-<div class="line">                        31,</div>
-<div class="line">                        <a class="code" href="le__hashmap_8h.html#a3ff75de814b38d4c4283379acb406b65">le_hashmap_HashString</a>,</div>
-<div class="line">                        <a class="code" href="le__hashmap_8h.html#a63d2b6c0689ece50ce979557029b8483">le_hashmap_EqualsString</a></div>
-<div class="line">                      );</div>
-<div class="line"> </div>
-<div class="line">    <a class="code" href="le__hashmap_8h.html#a68759fb8291c487a507eae6d92710fc7">le_hashmap_Put</a>(myTable, keyStr, valueStr);</div>
-<div class="line">    ....</div>
-<div class="line">}</div>
-</pre><!-- fragment --><p>The table does not take control of the keys or values. The map only stores the pointers to these values, not the values themselves. It's the responsibility of the caller to manage the actual data storage.</p>
+<pre class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> StoreStuff(<span class="keyword">const</span> <span class="keywordtype">char</span>* keyStr, <span class="keyword">const</span> <span class="keywordtype">char</span>* valueStr)</div><div class="line">{</div><div class="line">    myTable = <a class="code" href="le__hashmap_8h.html#ade79896a5b2ceec82c570fe21f7efe3a">le_hashmap_Create</a>(</div><div class="line">                        <span class="stringliteral">"My Table"</span>,</div><div class="line">                        31,</div><div class="line">                        <a class="code" href="le__hashmap_8h.html#a3ff75de814b38d4c4283379acb406b65">le_hashmap_HashString</a>,</div><div class="line">                        <a class="code" href="le__hashmap_8h.html#a63d2b6c0689ece50ce979557029b8483">le_hashmap_EqualsString</a></div><div class="line">                      );</div><div class="line"> </div><div class="line">    <a class="code" href="le__hashmap_8h.html#a68759fb8291c487a507eae6d92710fc7">le_hashmap_Put</a>(myTable, keyStr, valueStr);</div><div class="line">    ....</div><div class="line">}</div></pre><!-- fragment --><p>The table does not take control of the keys or values. The map only stores the pointers to these values, not the values themselves. It's the responsibility of the caller to manage the actual data storage.</p>
 <h2><a class="anchor" id="c_hashmap_tips"></a>
 Tip</h2>
 <p>The code sample shows some pre-defined functions for certain key types. The key types supported are uint32_t and strings. The strings must be NULL terminated.</p>
 <p>Tables can also have their own hash and equality functions, but ensure the functions work on the type of key you're storing. The hash function should provide a good distribution of values. It is not required that they be unique.</p>
 <h1><a class="anchor" id="c_hashmap_iterating"></a>
 Iterating over a map</h1>
-<p>This API allows the user of the map to iterate over the entire map, acting on each key-value pair. You supply a callback function conforming to the prototype: </p><pre class="fragment"><div class="line">bool (*callback)(<span class="keywordtype">void</span>* key, <span class="keywordtype">void</span>* value, <span class="keywordtype">void</span>* context)</div>
-</pre><!-- fragment --><p>This can then be used to process every value in the map. The return value from the callback function determines if iteration should continue or stop. If the function returns false then iteration will cease. For example:</p>
-<pre class="fragment"><div class="line"><span class="keywordtype">bool</span> ProcessTableData</div>
-<div class="line">(</div>
-<div class="line">    <span class="keywordtype">void</span>* keyPtr,     <span class="comment">// Pointer to the map entry's key</span></div>
-<div class="line">    <span class="keywordtype">void</span>* valuePtr,   <span class="comment">// Pointer to the map entry's value</span></div>
-<div class="line">    <span class="keywordtype">void</span>* contextPtr  <span class="comment">// Pointer to an abritrary context for the callback function</span></div>
-<div class="line">)</div>
-<div class="line">{</div>
-<div class="line">    <span class="keywordtype">int</span> keyCheck = *((<span class="keywordtype">int</span>*)context);</div>
-<div class="line">    <span class="keywordtype">int</span> currentKey = *((<span class="keywordtype">int</span>*)key);</div>
-<div class="line"> </div>
-<div class="line">    <span class="keywordflow">if</span> (keyCheck == currentKey) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// Do some stuff, maybe print out data or do a calculation</span></div>
-<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line">{</div>
-<div class="line">    <span class="comment">// ... somewhere else in the code ...</span></div>
-<div class="line">    <span class="keywordtype">int</span> lastKey = 10;</div>
-<div class="line">    <a class="code" href="le__hashmap_8h.html#a2fc335fffcf59a677ac2ac4e5733cdda">le_hashmap_ForEach</a> (myTable, processTableData, &amp;lastKey);</div>
-<div class="line">}</div>
-</pre><!-- fragment --><p>This code sample shows the callback function must also be aware of the types stored in the table.</p>
+<p>This API allows the user of the map to iterate over the entire map, acting on each key-value pair. You supply a callback function conforming to the prototype: </p><pre class="fragment"><div class="line">bool (*callback)(<span class="keywordtype">void</span>* key, <span class="keywordtype">void</span>* value, <span class="keywordtype">void</span>* context)</div></pre><!-- fragment --><p>This can then be used to process every value in the map. The return value from the callback function determines if iteration should continue or stop. If the function returns false then iteration will cease. For example:</p>
+<pre class="fragment"><div class="line"><span class="keywordtype">bool</span> ProcessTableData</div><div class="line">(</div><div class="line">    <span class="keywordtype">void</span>* keyPtr,     <span class="comment">// Pointer to the map entry's key</span></div><div class="line">    <span class="keywordtype">void</span>* valuePtr,   <span class="comment">// Pointer to the map entry's value</span></div><div class="line">    <span class="keywordtype">void</span>* contextPtr  <span class="comment">// Pointer to an abritrary context for the callback function</span></div><div class="line">)</div><div class="line">{</div><div class="line">    <span class="keywordtype">int</span> keyCheck = *((<span class="keywordtype">int</span>*)context);</div><div class="line">    <span class="keywordtype">int</span> currentKey = *((<span class="keywordtype">int</span>*)key);</div><div class="line"> </div><div class="line">    <span class="keywordflow">if</span> (keyCheck == currentKey) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"> </div><div class="line">    <span class="comment">// Do some stuff, maybe print out data or do a calculation</span></div><div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line">}</div><div class="line"> </div><div class="line">{</div><div class="line">    <span class="comment">// ... somewhere else in the code ...</span></div><div class="line">    <span class="keywordtype">int</span> lastKey = 10;</div><div class="line">    <a class="code" href="le__hashmap_8h.html#a2fc335fffcf59a677ac2ac4e5733cdda">le_hashmap_ForEach</a> (myTable, processTableData, &amp;lastKey);</div><div class="line">}</div></pre><!-- fragment --><p>This code sample shows the callback function must also be aware of the types stored in the table.</p>
 <p>However, keep in mind that it is unsafe and undefined to modify the map during this style of iteration.</p>
 <p>Alternatively, the calling function can control the iteration by first calling <code><a class="el" href="le__hashmap_8h.html#a8fb1d3a3d4c4b1b52a45205ac11a12c1">le_hashmap_GetIterator()</a></code>. This returns an iterator that is ready to return each key/value pair in the map in the order in which they are stored. The iterator is controlled by calling <code><a class="el" href="le__hashmap_8h.html#a601b7d3e5d92e91e4090d726e5b190ca">le_hashmap_NextNode()</a></code>, and must be called before accessing any elements. You can then retrieve pointers to the key and value by using <a class="el" href="le__hashmap_8h.html#a8c983aea3bfa393419b4ea26cfe35f42">le_hashmap_GetKey()</a> and <a class="el" href="le__hashmap_8h.html#aefd09b502200c3260a047cb12097e8ad">le_hashmap_GetValue()</a>.</p>
 <dl class="section note"><dt>Note</dt><dd>There is only one iterator per hashtable. Calling <a class="el" href="le__hashmap_8h.html#a8fb1d3a3d4c4b1b52a45205ac11a12c1">le_hashmap_GetIterator()</a> will simply re-initialize the current iterator</dd></dl>
 <p>It is possible to add and remove items during this style of iteration. When adding items during an iteration it is not guaranteed that the newly added item will be iterated over. It's very possible that the newly added item is added in an earlier location than the iterator is curently pointed at.</p>
 <p>When removing items during an iteration you also have to keep in mind that the iterator's current item may be the one removed. If this is the case, le_hashmap_GetKey, and le_hashmap_GetValue will return NULL until either, le_hashmap_NextNode, or le_hashmap_PrevNode are called.</p>
 <p>For example (assuming a table of string/string):</p>
-<pre class="fragment"><div class="line"><span class="keywordtype">void</span> ProcessTable(<a class="code" href="le__hashmap_8h.html#ae81c60860dbdb8c59beaf25985e5605a">le_hashmap_Ref_t</a> myTable)</div>
-<div class="line">{</div>
-<div class="line">    <span class="keywordtype">char</span>* nextKey;</div>
-<div class="line">    <span class="keywordtype">char</span>* nextVal;</div>
-<div class="line"> </div>
-<div class="line">    <a class="code" href="le__hashmap_8h.html#a8ab2021261a368add28c1be14f248459">le_hashmap_It_Ref_t</a> myIter = <a class="code" href="le__hashmap_8h.html#a8fb1d3a3d4c4b1b52a45205ac11a12c1">le_hashmap_GetIterator</a>(myTable);</div>
-<div class="line"> </div>
-<div class="line">    <span class="keywordflow">while</span> (LE_OK == <a class="code" href="le__hashmap_8h.html#a601b7d3e5d92e91e4090d726e5b190ca">le_hashmap_NextNode</a>(myIter))</div>
-<div class="line">    {</div>
-<div class="line">        <span class="comment">// Do something with the strings</span></div>
-<div class="line">        nextKey = <a class="code" href="le__hashmap_8h.html#a8c983aea3bfa393419b4ea26cfe35f42">le_hashmap_GetKey</a>(myIter);</div>
-<div class="line">        nextVal = <a class="code" href="le__hashmap_8h.html#aefd09b502200c3260a047cb12097e8ad">le_hashmap_GetValue</a>(myIter);</div>
-<div class="line">    }</div>
-<div class="line">}</div>
-</pre><!-- fragment --><p>If you need to control access to the hashmap, then a mutex can be used.</p>
+<pre class="fragment"><div class="line"><span class="keywordtype">void</span> ProcessTable(<a class="code" href="le__hashmap_8h.html#ae81c60860dbdb8c59beaf25985e5605a">le_hashmap_Ref_t</a> myTable)</div><div class="line">{</div><div class="line">    <span class="keywordtype">char</span>* nextKey;</div><div class="line">    <span class="keywordtype">char</span>* nextVal;</div><div class="line"> </div><div class="line">    <a class="code" href="le__hashmap_8h.html#a8ab2021261a368add28c1be14f248459">le_hashmap_It_Ref_t</a> myIter = <a class="code" href="le__hashmap_8h.html#a8fb1d3a3d4c4b1b52a45205ac11a12c1">le_hashmap_GetIterator</a>(myTable);</div><div class="line"> </div><div class="line">    <span class="keywordflow">while</span> (LE_OK == <a class="code" href="le__hashmap_8h.html#a601b7d3e5d92e91e4090d726e5b190ca">le_hashmap_NextNode</a>(myIter))</div><div class="line">    {</div><div class="line">        <span class="comment">// Do something with the strings</span></div><div class="line">        nextKey = <a class="code" href="le__hashmap_8h.html#a8c983aea3bfa393419b4ea26cfe35f42">le_hashmap_GetKey</a>(myIter);</div><div class="line">        nextVal = <a class="code" href="le__hashmap_8h.html#aefd09b502200c3260a047cb12097e8ad">le_hashmap_GetValue</a>(myIter);</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>If you need to control access to the hashmap, then a mutex can be used.</p>
 <h1><a class="anchor" id="c_hashmap_tracing"></a>
 Tracing a map</h1>
 <p>Hashmaps can be traced using the logging system.</p>

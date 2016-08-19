@@ -34,7 +34,7 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
@@ -43,7 +43,7 @@
 <a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -62,10 +62,10 @@
 <h1 class="title">Positioning </h1> </div>
 </div><div class="contents">
 <div class="textblock"><p><a class="el" href="le__pos__interface_8h.html">API Reference</a> <br/>
-<a class="el" href="c_pos_ctrl.html">Positioning Control Reference</a></p>
+<a class="el" href="c_posCtrl.html">Positioning Control Reference</a></p>
 <hr/>
 <p>This API provides access to the device's physical position and movement information.</p>
-<dl class="section note"><dt>Note</dt><dd>Enabling and disabling the positioning system is a privileged operation available only through the <a class="el" href="c_pos_ctrl.html">Positioning Control API</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Enabling and disabling the positioning system is a privileged operation available only through the <a class="el" href="c_posCtrl.html">Positioning Control API</a>.</dd></dl>
 <h1><a class="anchor" id="le_pos_binding"></a>
 IPC interfaces binding</h1>
 <p>All the functions of this API are provided by the <b>positioningService</b> application service.</p>
@@ -107,7 +107,7 @@ Fix On Demand</h1>
 <p>The <code><a class="el" href="le__pos__interface_8h.html#ae06eaad71c152ade96d9b3f2e87a2053">le_pos_GetHeading()</a></code> function gets the last updated heading value in degrees (where 0 is True North) and its associated accuracy value. Heading is the direction that the vehicle/person is facing.</p>
 <p>The <code><a class="el" href="le__pos__interface_8h.html#a2b5b4e4ce66c4f1653d6f0982bbd5feb">le_pos_GetDirection()</a></code> function gets the last updated direction value in degrees (where 0 is True North) and its associated accuracy value. Direction of movement is the direction that the vehicle/person is actually moving.</p>
 <p>A sample code can be seen in the following page:</p><ul>
-<li><a class="el" href="c_pos_sample_code_fix_on_demand.html">Sample code for Fix On Demand</a></li>
+<li><a class="el" href="c_posSampleCodeFixOnDemand.html">Sample code for Fix On Demand</a></li>
 </ul>
 <h1><a class="anchor" id="le_pos_navigation"></a>
 Navigation</h1>
@@ -126,7 +126,7 @@ Navigation</h1>
 <p><code><a class="el" href="le__pos__interface_8h.html#af2999e2e4f7eca899b2af1125547e3ea">le_pos_sample_Release()</a></code> releases the object.</p>
 <p>You can uninstall the handler function by calling the <a class="el" href="le__pos__interface_8h.html#a3c1b616489fc29fc578e58c6b570f14b">le_pos_RemoveMovementHandler()</a> API. </p><dl class="section note"><dt>Note</dt><dd>The <a class="el" href="le__pos__interface_8h.html#a3c1b616489fc29fc578e58c6b570f14b">le_pos_RemoveMovementHandler()</a> API does not delete the Position Object. The caller has to delete it by calling the <a class="el" href="le__pos__interface_8h.html#af2999e2e4f7eca899b2af1125547e3ea">le_pos_sample_Release()</a> function.</dd></dl>
 <p>A sample code can be seen in the following page:</p><ul>
-<li><a class="el" href="c_pos_sample_code_navigation.html">Sample code for Navigation</a></li>
+<li><a class="el" href="c_posSampleCodeNavigation.html">Sample code for Navigation</a></li>
 </ul>
 <h1><a class="anchor" id="le_pos_acquisitionRate"></a>
 Positioning acquisition rate</h1>

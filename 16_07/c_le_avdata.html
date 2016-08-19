@@ -34,7 +34,7 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
@@ -43,7 +43,7 @@
 <a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -62,7 +62,7 @@
 <h1 class="title">AirVantage Data </h1> </div>
 </div><div class="contents">
 <div class="textblock"><p><a class="el" href="le__avdata__interface_8h.html">API Reference</a> <br/>
-<a class="el" href="how_to_a_v_data.html">How To Manage Data</a></p>
+<a class="el" href="howToAVData.html">How To Manage Data</a></p>
 <hr/>
 <p>This API provides a data service to allow apps to manage app-specific data on the AirVantage server.</p>
 <p>Data is setup as <b>assets</b> -- a collection of fields that can be managed by the AirVantage server.</p>
@@ -84,7 +84,7 @@
 Asset Data Instances</h1>
 <p>An app that needs to send data to the AirVantage server must first create an asset instance using le_avc_Create() with the name of the asset definition. Once an asset instance is created, the app can begin accessing the instance's fields.</p>
 <p>Multiple instances of the same asset can be created, as well as multiple instances of different assets.</p>
-<p>Asset definitions are specified in the <a class="el" href="def_files_cdef.html#defFilesCdef_assets">assets</a> section of the app's <code>cdef</code> file.</p>
+<p>Asset definitions are specified in the <a class="el" href="defFilesCdef.html#defFilesCdef_assets">assets</a> section of the app's <code>cdef</code> file.</p>
 <h1><a class="anchor" id="le_avdata_field"></a>
 Field Values and Activity</h1>
 <p>Set functions are available to set variable field values. Get functions are available to get settings fields' values.</p>
@@ -97,7 +97,7 @@ Field Values and Activity</h1>
 <p>Leaving it optional to register handlers for variable and setting fields allows an app to decide how it wants to access variable and setting fields. It can decide to only do something in response to the AV server, or it can work independently of the AV server updating variables when it has a new value, and reading settings only when it needs the value.</p>
 <h1><a class="anchor" id="le_avdata_observe"></a>
 Observe</h1>
-<p>If the <a class="el" href="how_to_a_v_data.html#howToAVData_enableObserve">Observe</a> is enabled, the AirVantage Server will send observe requests on all user-defined assets of an app.</p>
+<p>If the <a class="el" href="howToAVData.html#howToAVData_enableObserve">Observe</a> is enabled, the AirVantage Server will send observe requests on all user-defined assets of an app.</p>
 <p>Whenever an app (asset) changes a field value by using le_avdata_Set*(), it'll trigger a notify if Observe is enabled on that asset. The notify contains only the value of the changed field.</p>
 <h1><a class="anchor" id="le_avdata_fatal"></a>
 Fatal Behavior</h1>

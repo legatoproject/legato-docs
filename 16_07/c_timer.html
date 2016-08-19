@@ -34,7 +34,7 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
@@ -43,7 +43,7 @@
 <a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -75,13 +75,7 @@ Creating/Deleting Timer Objects</h1>
 <li><a class="el" href="le__timer_8h.html#af6900bdb4653ff95f7f7be918b9e482d">le_timer_SetContextPtr</a></li>
 </ul>
 <p>The repeat count defaults to 1, so that the timer is initially a one-shot timer. All the other attributes must be explicitly set. At a minimum, the interval must be set before the timer can be used. Note that these attributes can only be set if the timer is not currently running; otherwise, an error will be returned.</p>
-<p>Timers must be explicitly deleted using <a class="el" href="le__timer_8h.html#ae103f6736bf855e77e5e59bbad1e27a7">le_timer_Delete</a>. If the timer is currently running, it'll be stopped before being deleted. If a timer uses <a class="el" href="le__timer_8h.html#af6900bdb4653ff95f7f7be918b9e482d">le_timer_SetContextPtr</a>, and the context pointer is allocated memory, then the context pointer must be freed when deleting the timer. The following function can be used for this: </p><pre class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> DeleteTimerAndFreePtr(<a class="code" href="le__timer_8h.html#a763fa6992488cdce3b5a820817094838">le_timer_Ref_t</a> t)</div>
-<div class="line">{</div>
-<div class="line">    <a class="code" href="le__timer_8h.html#af310daa378bd6ca39373a47e073f2243">le_timer_Stop</a>( t );</div>
-<div class="line">    free( <a class="code" href="le__timer_8h.html#aa0432dbabb32b546c0c0e6ced5ba9d3d">le_timer_GetContextPtr</a>( t ) );</div>
-<div class="line">    <a class="code" href="le__timer_8h.html#ae103f6736bf855e77e5e59bbad1e27a7">le_timer_Delete</a>( t );  <span class="comment">// timer ref is now invalid</span></div>
-<div class="line">}</div>
-</pre><!-- fragment --><p> You can call this function anywhere, including in the timer handler.</p>
+<p>Timers must be explicitly deleted using <a class="el" href="le__timer_8h.html#ae103f6736bf855e77e5e59bbad1e27a7">le_timer_Delete</a>. If the timer is currently running, it'll be stopped before being deleted. If a timer uses <a class="el" href="le__timer_8h.html#af6900bdb4653ff95f7f7be918b9e482d">le_timer_SetContextPtr</a>, and the context pointer is allocated memory, then the context pointer must be freed when deleting the timer. The following function can be used for this: </p><pre class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> DeleteTimerAndFreePtr(<a class="code" href="le__timer_8h.html#a763fa6992488cdce3b5a820817094838">le_timer_Ref_t</a> t)</div><div class="line">{</div><div class="line">    <a class="code" href="le__timer_8h.html#af310daa378bd6ca39373a47e073f2243">le_timer_Stop</a>( t );</div><div class="line">    free( <a class="code" href="le__timer_8h.html#aa0432dbabb32b546c0c0e6ced5ba9d3d">le_timer_GetContextPtr</a>( t ) );</div><div class="line">    <a class="code" href="le__timer_8h.html#ae103f6736bf855e77e5e59bbad1e27a7">le_timer_Delete</a>( t );  <span class="comment">// timer ref is now invalid</span></div><div class="line">}</div></pre><!-- fragment --><p> You can call this function anywhere, including in the timer handler.</p>
 <h1><a class="anchor" id="timer_usage"></a>
 Using Timers</h1>
 <p>A timer is started using <a class="el" href="le__timer_8h.html#ada2ce7f8cb1e76ed959e323ae94bbfc0">le_timer_Start</a>. If it's already running, then it won't be modified; instead an error will be returned. To restart a currently running timer, use <a class="el" href="le__timer_8h.html#ab6b83d6302095a46b6046160c0a479bb">le_timer_Restart</a>.</p>
@@ -93,7 +87,7 @@ Using Timers</h1>
 Thread Support</h1>
 <p>A timer should only be used by the thread that created it. It's not safe for a thread to use or manipulate a timer that belongs to another thread. The timer expiry handler is called by the event loop of the thread that starts the timer.</p>
 <p>The call to the timer expiry handler may not occur immediately after the timer expires, depending on which other functions are called from the event loop. The amount of delay is entirely dependent on other work done in the event loop. For a repeating timer, if this delay is longer than the timer period, one or more timer expiries may be dropped. To reduce the likelihood of dropped expiries, the combined execution time of all handlers called from the event loop should ideally be less than the timer period.</p>
-<p>See <a class="el" href="c_event_loop.html">Event Loop API</a> for details on running the event loop of a thread.</p>
+<p>See <a class="el" href="c_eventLoop.html">Event Loop API</a> for details on running the event loop of a thread.</p>
 <h1><a class="anchor" id="le_timer_suspend"></a>
 Suspend Support</h1>
 <p>The timer runs even when system is suspended. <br/>

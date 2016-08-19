@@ -34,7 +34,7 @@
 <div id="top">
 <header>
 <nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="build_apps_main.html">Build Apps</a><a class="navlink" href="build_platform_main.html">Build Platform</a><a class="navlink" href="about_main.html">About</a>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
 </nav>
 </header>
 </div>
@@ -43,7 +43,7 @@
 <a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="build_apps_concepts.html">Concepts</a><a class="link-selected" href="api_guides_main.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -417,7 +417,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
-<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="api_files_c.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
 <p>This function is created automatically. </p>
 </div>
 </div>
@@ -522,7 +522,7 @@ A tree transaction is global to that tree; a long-held write transaction will bl
 </table>
 </div><div class="memdoc">
 <p>Disconnect the current client thread from the service providing this API.</p>
-<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="api_files_c.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
 <p>This function is created automatically. </p>
 </div>
 </div>
@@ -777,15 +777,9 @@ A tree transaction is global to that tree; a long-held write transaction will bl
 </div><div class="memdoc">
 <p>Get path to the node where the iterator is currently pointed.</p>
 <p>Assuming the following tree:</p>
-<pre class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> baseNode/</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>   childA/</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>     valueA</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>     valueB</div>
-</pre><!-- fragment --><p>If the iterator was currently pointing at valueA, GetPath would return the following path:</p>
-<pre class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> /baseNode/childA/valueA</div>
-</pre><!-- fragment --><p>Optionally, a path to another node can be supplied to this function. So, if the iterator is again on valueA and the relative path ".." is supplied then this function will return the following path:</p>
-<pre class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> /baseNode/childA/</div>
-</pre><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>- LE_OK - The write was completed successfully.<ul>
+<pre class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> baseNode/</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>   childA/</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>     valueA</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>     valueB</div></pre><!-- fragment --><p>If the iterator was currently pointing at valueA, GetPath would return the following path:</p>
+<pre class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> /baseNode/childA/valueA</div></pre><!-- fragment --><p>Optionally, a path to another node can be supplied to this function. So, if the iterator is again on valueA and the relative path ".." is supplied then this function will return the following path:</p>
+<pre class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> /baseNode/childA/</div></pre><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>- LE_OK - The write was completed successfully.<ul>
 <li>LE_OVERFLOW - The supplied string buffer was not large enough to hold the value. </li>
 </ul>
 </dd></dl>
@@ -899,11 +893,7 @@ A tree transaction is global to that tree; a long-held write transaction will bl
 </table>
 </div><div class="memdoc">
 <p>Jump the iterator to the next child node of the current node. Assuming the following tree:</p>
-<pre class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> baseNode/</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>   childA/</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>     valueA</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>     valueB</div>
-</pre><!-- fragment --><p>If the iterator is moved to the path, "/baseNode/childA/valueA". After the first GoToNextSibling the iterator will be pointing at valueB. A second call to GoToNextSibling will cause the function to return LE_NOT_FOUND.</p>
+<pre class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> baseNode/</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>   childA/</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>     valueA</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>     valueB</div></pre><!-- fragment --><p>If the iterator is moved to the path, "/baseNode/childA/valueA". After the first GoToNextSibling the iterator will be pointing at valueB. A second call to GoToNextSibling will cause the function to return LE_NOT_FOUND.</p>
 <dl class="section return"><dt>Returns</dt><dd>Returns one of the following values: <pre class="fragment">    - LE_OK            - Commit was completed successfully.
     - LE_NOT_FOUND     - Iterator has reached the end of the current list of siblings.
                          Also returned if the the current node has no siblings.</pre> </dd></dl>
@@ -1610,7 +1600,7 @@ A tree transaction is global to that tree; a long-held write transaction will bl
 </table>
 </div><div class="memdoc">
 <p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
-<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="api_files_c.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
 <p>This function is created automatically.</p>
 <dl class="section return"><dt>Returns</dt><dd><ul>
 <li>LE_OK if the client connected successfully to the service.</li>
