@@ -70,9 +70,8 @@ $ instapp fileInfo.wp85.update &lt;ip address&gt;
 </pre><p>If you're using an AR7 module in your target, substitute <code>ar7</code> for wp85.</p>
 <p>This sample app takes a command with a list of file/directory paths, and accepts additional options like <code>-x</code> or <code>--max-count</code>.</p>
 <p>Here's an example on how to run the command-line sample app:</p>
-<p>Start your Legato app <code>app start &lt;appname&gt;</code>.</p>
-<p>Change to the sandbox directory: </p><pre class="fragment"><div class="line">cd /tmp/legato/sandboxes/&lt;appname&gt;/bin</div></pre><!-- fragment --><p>This is how to access a regular file:</p>
-<pre class="fragment"><div class="line">root@swi-mdm9x15:/tmp/legato/sandboxes/fileInfo/bin# ./fileInfo type /etc/hosts --max-count=10</div></pre><!-- fragment --><p>This is how to access permissions to control read/write, group members' and others' read access. </p><pre class="fragment"><div class="line">root@swi-mdm9x15:/tmp/legato/sandboxes/fileInfo/bin# ./fileInfo permissions /etc/hosts --max-count=10 </div></pre><!-- fragment --><p><a class="el" href="sampleApps.html#sampleApps_startApp">Start App</a></p>
+<p>Change to the sandbox directory: </p><pre class="fragment"><div class="line">cd /legato/systems/current/apps/&lt;appname&gt;/read-only/bin</div></pre><!-- fragment --><p>This is how to access a regular file: </p><pre class="fragment"><div class="line">root@swi-mdm9x15:/legato/apps/bb20bdcce7eb03179af9c62adf619e19/read-only/bin#  ./fileInfo type /etc/hosts --max-count=10</div></pre><!-- fragment --><p>This is how to access permissions to control read/write, group members' and others' read access: </p><pre class="fragment"><div class="line">root@swi-mdm9x15:/legato/apps/bb20bdcce7eb03179af9c62adf619e19/read-only/bin# ./fileInfo permissions /etc/hosts --max-count=10 </div></pre><!-- fragment --><dl class="section note"><dt>Note</dt><dd>The long hexadecimal number in the apps' directory is unique to each installed app.</dd></dl>
+<p><a class="el" href="sampleApps.html#sampleApps_startApp">Start App</a></p>
 <p>See <br/>
 <a class="el" href="basicAppsCreate.html">Create Apps</a></p>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>
