@@ -1,70 +1,121 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<title>eCall  - Legato Docs</title>
-<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
-<meta content="legato, iot" name="keywords"/>
-<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
-<link href="resources/images/legato.ico" rel="shortcut icon"/>
-<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
-<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
-<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
-<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
-<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
-<!--[if IE]>
-        <script src="resources/js/html5shiv.js"></script>
-        <script src="resources/js/respond.js"></script>
-        <![endif]-->
-<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-<script src="resources/js/main.js"></script>
-<script src="tocs/Build Apps API Guides.json"></script>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>eCall</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="fonts.css" rel="stylesheet" type="text/css" />
+<link href="legato.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<script type="text/javascript">
+//<![CDATA[
+    // Detect if doc is served by eclipse
+    if( ( (window.location.hostname == "127.0.0.1") || (window.location.hostname == "localhost") ) &&
+        ( (window.location.port != "") && (window.location.port != 80) && (window.location.port != 443) ) )
+    {
+        // Inhibit init function from navtree
+        initNavTree = function(toroot,relpath) {}
+        $(document).ready(function(){
+            navTree = document.getElementById("side-nav");
+            if(navTree)
+            {
+                navTree.parentElement.removeChild(navTree);
+            }
+            $("#doc-content").css('margin-left',10);
+        });
+    }
+//]]>
+</script>
+<link rel="icon" type="image/png" href="favicon.ico" />
 </head>
 <body>
-<noscript>
-<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
-<div id="nojs">
-<label for="modal-closing-trick">
-<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
-</label>
+<div id="top"><!-- do not remove this div! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo">
+    <a href="index.html" title="Legato">
+      <img alt="Logo" src="legatoLogo.png"/>
+    </a>
+    <div id="projectbrief">Simplifying IoT development</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
 </div>
-</noscript>
-<div class="wrapper">
-<div class="fa fa-bars documentation" id="menu-trigger"></div>
-<div id="top">
-<header>
-<nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
-</nav>
-</header>
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
 </div>
-<div class="white" id="menudocumentation">
-<header>
-<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
-<h2>/ Build Apps</h2>
-<nav class="secondary">
-<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a>
-</nav>
-<nav class="ui-front">
-<i class="fa fa-search" id="search-icon"></i>
-<input id="searchbox" placeholder="Search"/>
-</nav>
-</header>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('c_ecall.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
 </div>
-<div id="resizable">
-<div id="left">
-<div id="tree1"></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
 </div>
-</div>
-<div class="content">
+
 <div class="header">
-<div class="headertitle">
-<h1 class="title">eCall </h1> </div>
-</div><div class="contents">
-<div class="textblock"><p><a class="el" href="le__ecall__interface_8h.html">API Reference</a> <br/>
-<a class="el" href="howToEcall.html">Manage eCall</a> <br/>
-<a class="el" href="sampleApps_eCall.html">eCall</a> sample app <br/>
-<a class="el" href="c_ecall.html#le_ecall_samples">Code samples</a> <br/>
+  <div class="headertitle">
+<div class="title">eCall </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="el" href="le__ecall__interface_8h.html">API Reference</a> <br />
+ <a class="el" href="howToEcall.html">Manage eCall</a> <br />
+ <a class="el" href="sampleApps_eCall.html">eCall</a> sample app <br />
+ <a class="el" href="c_ecall.html#le_ecall_samples">Code samples</a> <br />
 </p>
 <hr/>
 <p>eCall is a technology initiative intended to bring rapid assistance to auto accidents anywhere in the European Union. When a serious vehicle accident occurs, sensors automatically trigger an eCall. When activated, the in-vehicle system (IVS) establishes a 112-voice connection.</p>
@@ -162,10 +213,10 @@ ERA-GLONASS MSD additional data</h1>
 <li><a class="el" href="le__ecall__interface_8h.html#ab883aa41416ada9746acfbb75a0039a8">le_ecall_ResetMsdEraGlonassCrashInfo()</a>.</li>
 </ul>
 <p>ERA-GLONASS additional data is encoded using the OID version "1.4.1". This was assigned to ERA-GLONASS optional additional data by CEN. Content of data block in the AdditionalData should be:</p>
-<pre class="fragment"><div class="line">ERAOADASN1Module</div><div class="line">DEFINITIONS</div><div class="line">AUTOMATIC TAGS ::=</div><div class="line">BEGIN</div><div class="line">ERADataFormatId::= INTEGER (1)</div><div class="line"> </div><div class="line">ERAAdditionalData ::= SEQUENCE {</div><div class="line">   crashSeverity INTEGER(0..2047) OPTIONAL,</div><div class="line">   diagnosticResult DiagnosticResult OPTIONAL,</div><div class="line">   crashInfo CrashInfo OPTIONAL,</div><div class="line">   ...</div><div class="line">}</div><div class="line"> </div><div class="line">DiagnosticResult ::= SEQUENCE {</div><div class="line">   micConnectionFailure BOOLEAN OPTIONAL,</div><div class="line">   micFailure BOOLEAN OPTIONAL,</div><div class="line">   rightSpeakerFailure BOOLEAN OPTIONAL,</div><div class="line">   leftSpeakerFailure BOOLEAN OPTIONAL,</div><div class="line">   speakersFailure BOOLEAN OPTIONAL,</div><div class="line">   ignitionLineFailure BOOLEAN OPTIONAL,</div><div class="line">   uimFailure BOOLEAN OPTIONAL,</div><div class="line">   statusIndicatorFailure BOOLEAN OPTIONAL,</div><div class="line">   batteryFailure BOOLEAN OPTIONAL,</div><div class="line">   batteryVoltageLow BOOLEAN OPTIONAL,</div><div class="line">   crashSensorFailure BOOLEAN OPTIONAL,</div><div class="line">   firmwareImageCorruption BOOLEAN OPTIONAL,</div><div class="line">   commModuleInterfaceFailure BOOLEAN OPTIONAL,</div><div class="line">   gnssReceiverFailure BOOLEAN OPTIONAL,</div><div class="line">   raimProblem BOOLEAN OPTIONAL,</div><div class="line">   gnssAntennaFailure BOOLEAN OPTIONAL,</div><div class="line">   commModuleFailure BOOLEAN OPTIONAL,</div><div class="line">   eventsMemoryOverflow BOOLEAN OPTIONAL,</div><div class="line">   crashProfileMemoryOverflow BOOLEAN OPTIONAL,</div><div class="line">   otherCriticalFailires BOOLEAN OPTIONAL,</div><div class="line">   otherNotCriticalFailures BOOLEAN OPTIONAL</div><div class="line">}</div><div class="line"> </div><div class="line">CrashInfo ::= SEQUENCE {</div><div class="line">   crashFront BOOLEAN OPTIONAL,</div><div class="line">   crashLeft BOOLEAN OPTIONAL,</div><div class="line">   crashRight BOOLEAN OPTIONAL,</div><div class="line">   crashRear BOOLEAN OPTIONAL,</div><div class="line">   crashRollover BOOLEAN OPTIONAL,</div><div class="line">   crashSide BOOLEAN OPTIONAL,</div><div class="line">   crashFrontOrSide BOOLEAN OPTIONAL,</div><div class="line">   crashAnotherType BOOLEAN OPTIONAL</div><div class="line">}</div><div class="line">END</div></pre><!-- fragment --><h1><a class="anchor" id="le_ecall_redial"></a>
+<div class="fragment"><div class="line">ERAOADASN1Module</div><div class="line">DEFINITIONS</div><div class="line">AUTOMATIC TAGS ::=</div><div class="line">BEGIN</div><div class="line">ERADataFormatId::= INTEGER (1)</div><div class="line"></div><div class="line">ERAAdditionalData ::= SEQUENCE {</div><div class="line">   crashSeverity INTEGER(0..2047) OPTIONAL,</div><div class="line">   diagnosticResult DiagnosticResult OPTIONAL,</div><div class="line">   crashInfo CrashInfo OPTIONAL,</div><div class="line">   ...</div><div class="line">}</div><div class="line"></div><div class="line">DiagnosticResult ::= SEQUENCE {</div><div class="line">   micConnectionFailure BOOLEAN OPTIONAL,</div><div class="line">   micFailure BOOLEAN OPTIONAL,</div><div class="line">   rightSpeakerFailure BOOLEAN OPTIONAL,</div><div class="line">   leftSpeakerFailure BOOLEAN OPTIONAL,</div><div class="line">   speakersFailure BOOLEAN OPTIONAL,</div><div class="line">   ignitionLineFailure BOOLEAN OPTIONAL,</div><div class="line">   uimFailure BOOLEAN OPTIONAL,</div><div class="line">   statusIndicatorFailure BOOLEAN OPTIONAL,</div><div class="line">   batteryFailure BOOLEAN OPTIONAL,</div><div class="line">   batteryVoltageLow BOOLEAN OPTIONAL,</div><div class="line">   crashSensorFailure BOOLEAN OPTIONAL,</div><div class="line">   firmwareImageCorruption BOOLEAN OPTIONAL,</div><div class="line">   commModuleInterfaceFailure BOOLEAN OPTIONAL,</div><div class="line">   gnssReceiverFailure BOOLEAN OPTIONAL,</div><div class="line">   raimProblem BOOLEAN OPTIONAL,</div><div class="line">   gnssAntennaFailure BOOLEAN OPTIONAL,</div><div class="line">   commModuleFailure BOOLEAN OPTIONAL,</div><div class="line">   eventsMemoryOverflow BOOLEAN OPTIONAL,</div><div class="line">   crashProfileMemoryOverflow BOOLEAN OPTIONAL,</div><div class="line">   otherCriticalFailires BOOLEAN OPTIONAL,</div><div class="line">   otherNotCriticalFailures BOOLEAN OPTIONAL</div><div class="line">}</div><div class="line"></div><div class="line">CrashInfo ::= SEQUENCE {</div><div class="line">   crashFront BOOLEAN OPTIONAL,</div><div class="line">   crashLeft BOOLEAN OPTIONAL,</div><div class="line">   crashRight BOOLEAN OPTIONAL,</div><div class="line">   crashRear BOOLEAN OPTIONAL,</div><div class="line">   crashRollover BOOLEAN OPTIONAL,</div><div class="line">   crashSide BOOLEAN OPTIONAL,</div><div class="line">   crashFrontOrSide BOOLEAN OPTIONAL,</div><div class="line">   crashAnotherType BOOLEAN OPTIONAL</div><div class="line">}</div><div class="line">END</div></div><!-- fragment --><h1><a class="anchor" id="le_ecall_redial"></a>
 Redial management</h1>
 <p>In the case of PAN-EUROPEAN, the redial can be performed as many times as desired but should be performed within 2 minutes. (EN 16062:2014 -7.14.3).</p>
-<p>In the case of ERA-GLONASS, the redial can be performed ECALL_MANUAL_DIAL_ATTEMPTS times within the maximal time limit of ECALL_DIAL_DURATION (GOST 54620 2013 -- Appendix A).</p>
+<p>In the case of ERA-GLONASS, the redial can be performed ECALL_MANUAL_DIAL_ATTEMPTS times within the maximal time limit of ECALL_DIAL_DURATION (GOST 54620 2013 – Appendix A).</p>
 <p>The <b>LE_ECALL_STATE_END_OF_REDIAL_PERIOD</b> state event notifies the User of the redial period end.</p>
 <h1><a class="anchor" id="le_ecall_samples"></a>
 Code samples</h1>
@@ -190,7 +241,7 @@ eCall configuration</h1>
 <li>from 1 to 60 minutes -&gt; 1 hour</li>
 <li>from 61 to 120 minutes -&gt; 2hours, etc.</li>
 </ul>
-<p>Example: if <code>deregTime</code> parameter unit is minutes, the effective time is: </p><pre class="fragment"><div class="line">ECallConfiguration.nad_deregistration_time = (deregTime+59)/60; </div></pre><!-- fragment --><p>After termination of an emergency call the in-vehicle system remains registered on the network for the period of time, defined by the installation parameter 'NAD_DEREGISTRATION_TIME'.</p>
+<p>Example: if <code>deregTime</code> parameter unit is minutes, the effective time is: </p><div class="fragment"><div class="line">ECallConfiguration.nad_deregistration_time = (deregTime+59)/60; </div></div><!-- fragment --><p>After termination of an emergency call the in-vehicle system remains registered on the network for the period of time, defined by the installation parameter 'NAD_DEREGISTRATION_TIME'.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Be sure to check the possible values of 'NAD_DEREGISTRATION_TIME' for your specific platform.</dd></dl>
 <p>The minimum interval value between dial attempts can be set or get with:</p><ul>
 <li><a class="el" href="le__ecall__interface_8h.html#af90a8602d4b1d0cacaa3971c508dd188">le_ecall_SetIntervalBetweenDialAttempts()</a></li>
@@ -248,18 +299,20 @@ Configuration tree</h1>
 </ul>
 <p>Several 'propulsionType' can be applied.</p>
 <hr/>
-<p class="copyright">Copyright (C) Sierra Wireless Inc. Use of this work is subject to license.</p>
+<p>Copyright (C) Sierra Wireless Inc. Use of this work is subject to license.</p>
 <hr/>
-<p class="copyright">Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>
-</div></div>
-<br clear="left"/>
-</div>
-</div>
-<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
-<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="resources/js/jquery.cookie.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
-<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+<p>Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+   <div class="footer">
+        <div>
+            <a href="http://www.sierrawireless.com/">
+                <img src="swi-ico-medium.png" width="24" alt="" />
+                &nbsp;Sierra Wireless
+            </a>
+            &nbsp;-&nbsp;
+            Generated by Doxygen 1.8.11
+        </div>
+    </div>
 </body>
 </html>

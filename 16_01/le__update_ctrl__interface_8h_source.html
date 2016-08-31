@@ -1,67 +1,118 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<title>le_updateCtrl_interface.h - Legato Docs</title>
-<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
-<meta content="legato, iot" name="keywords"/>
-<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
-<link href="resources/images/legato.ico" rel="shortcut icon"/>
-<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
-<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
-<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
-<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
-<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
-<!--[if IE]>
-        <script src="resources/js/html5shiv.js"></script>
-        <script src="resources/js/respond.js"></script>
-        <![endif]-->
-<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-<script src="resources/js/main.js"></script>
-<script src="tocs/Build Apps API Guides.json"></script>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>le_updateCtrl_interface.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="fonts.css" rel="stylesheet" type="text/css" />
+<link href="legato.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<script type="text/javascript">
+//<![CDATA[
+    // Detect if doc is served by eclipse
+    if( ( (window.location.hostname == "127.0.0.1") || (window.location.hostname == "localhost") ) &&
+        ( (window.location.port != "") && (window.location.port != 80) && (window.location.port != 443) ) )
+    {
+        // Inhibit init function from navtree
+        initNavTree = function(toroot,relpath) {}
+        $(document).ready(function(){
+            navTree = document.getElementById("side-nav");
+            if(navTree)
+            {
+                navTree.parentElement.removeChild(navTree);
+            }
+            $("#doc-content").css('margin-left',10);
+        });
+    }
+//]]>
+</script>
+<link rel="icon" type="image/png" href="favicon.ico" />
 </head>
 <body>
-<noscript>
-<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
-<div id="nojs">
-<label for="modal-closing-trick">
-<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
-</label>
+<div id="top"><!-- do not remove this div! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo">
+    <a href="index.html" title="Legato">
+      <img alt="Logo" src="legatoLogo.png"/>
+    </a>
+    <div id="projectbrief">Simplifying IoT development</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
 </div>
-</noscript>
-<div class="wrapper">
-<div class="fa fa-bars documentation" id="menu-trigger"></div>
-<div id="top">
-<header>
-<nav>
-<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
-</nav>
-</header>
+<!-- Generated by Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
 </div>
-<div class="white" id="menudocumentation">
-<header>
-<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
-<h2>/ Build Apps</h2>
-<nav class="secondary">
-<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a>
-</nav>
-<nav class="ui-front">
-<i class="fa fa-search" id="search-icon"></i>
-<input id="searchbox" placeholder="Search"/>
-</nav>
-</header>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('le__update_ctrl__interface_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
 </div>
-<div id="resizable">
-<div id="left">
-<div id="tree1"></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
 </div>
-</div>
-<div class="content">
+
 <div class="header">
-<div class="headertitle">
-<h1 class="title">le_updateCtrl_interface.h</h1> </div>
-</div><div class="contents">
-<a href="le__update_ctrl__interface_8h.html">Go to the documentation of this file.</a><pre class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> <span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> <span class="comment"> * ====================== WARNING ======================</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> <span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> <span class="comment"> * THE CONTENTS OF THIS FILE HAVE BEEN AUTO-GENERATED.</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> <span class="comment"> * DO NOT MODIFY IN ANY WAY.</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> <span class="comment"> *</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span> <span class="comment"> * ====================== WARNING ======================</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span> <span class="comment"> */</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span> </div><div class="line"><a name="l00089"></a><span class="lineno">   89</span> <span class="preprocessor">#ifndef LE_UPDATECTRL_INTERFACE_H_INCLUDE_GUARD</span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span> <span class="preprocessor">#define LE_UPDATECTRL_INTERFACE_H_INCLUDE_GUARD</span></div><div class="line"><a name="l00091"></a><span class="lineno">   91</span> </div><div class="line"><a name="l00092"></a><span class="lineno">   92</span> </div><div class="line"><a name="l00093"></a><span class="lineno">   93</span> <span class="preprocessor">#include "<a class="code" href="legato_8h.html">legato.h</a>"</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span> </div><div class="line"><a name="l00095"></a><span class="lineno">   95</span> <span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00106"></a><span class="lineno">  106</span> <span class="comment"></span><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00107"></a><span class="lineno">  107</span> <span class="keywordtype">void</span> <a class="code" href="le__update_ctrl__interface_8h.html#a1e59368455d91b7bf8a1e6bf4a04b672">le_updateCtrl_ConnectService</a></div><div class="line"><a name="l00108"></a><span class="lineno">  108</span> (</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>     <span class="keywordtype">void</span></div><div class="line"><a name="l00110"></a><span class="lineno">  110</span> );</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span> </div><div class="line"><a name="l00112"></a><span class="lineno">  112</span> <span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00123"></a><span class="lineno">  123</span> <span class="comment"></span><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00124"></a><span class="lineno">  124</span> <span class="keywordtype">void</span> <a class="code" href="le__update_ctrl__interface_8h.html#afaa9e08b6a161e3107c7f328d8dee1ed">le_updateCtrl_DisconnectService</a></div><div class="line"><a name="l00125"></a><span class="lineno">  125</span> (</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>     <span class="keywordtype">void</span></div><div class="line"><a name="l00127"></a><span class="lineno">  127</span> );</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span> </div><div class="line"><a name="l00129"></a><span class="lineno">  129</span> <span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00133"></a><span class="lineno">  133</span> <span class="comment"></span><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00134"></a><span class="lineno">  134</span> <span class="keywordtype">void</span> <a class="code" href="le__update_ctrl__interface_8h.html#acdbc9dcc05455f0dd1020b875909c3ed">le_updateCtrl_Defer</a></div><div class="line"><a name="l00135"></a><span class="lineno">  135</span> (</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>     <span class="keywordtype">void</span></div><div class="line"><a name="l00137"></a><span class="lineno">  137</span> );</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span> </div><div class="line"><a name="l00139"></a><span class="lineno">  139</span> <span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00143"></a><span class="lineno">  143</span> <span class="comment"></span><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00144"></a><span class="lineno">  144</span> <span class="keywordtype">void</span> <a class="code" href="le__update_ctrl__interface_8h.html#ab3955f0e34df43a5fbe3e9eae16040d4">le_updateCtrl_Allow</a></div><div class="line"><a name="l00145"></a><span class="lineno">  145</span> (</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>     <span class="keywordtype">void</span></div><div class="line"><a name="l00147"></a><span class="lineno">  147</span> );</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span> </div><div class="line"><a name="l00149"></a><span class="lineno">  149</span> <span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00155"></a><span class="lineno">  155</span> <span class="comment"></span><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00156"></a><span class="lineno">  156</span> <span class="keywordtype">void</span> <a class="code" href="le__update_ctrl__interface_8h.html#afe4f9e002058e3c74488a28f7c76e47a">le_updateCtrl_LockProbation</a></div><div class="line"><a name="l00157"></a><span class="lineno">  157</span> (</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>     <span class="keywordtype">void</span></div><div class="line"><a name="l00159"></a><span class="lineno">  159</span> );</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span> </div><div class="line"><a name="l00161"></a><span class="lineno">  161</span> <span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00167"></a><span class="lineno">  167</span> <span class="comment"></span><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00168"></a><span class="lineno">  168</span> <span class="keywordtype">void</span> <a class="code" href="le__update_ctrl__interface_8h.html#a4ba5ace59bfe352c518c3f1eae6d0448">le_updateCtrl_UnlockProbation</a></div><div class="line"><a name="l00169"></a><span class="lineno">  169</span> (</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>     <span class="keywordtype">void</span></div><div class="line"><a name="l00171"></a><span class="lineno">  171</span> );</div><div class="line"><a name="l00172"></a><span class="lineno">  172</span> </div><div class="line"><a name="l00173"></a><span class="lineno">  173</span> <span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00179"></a><span class="lineno">  179</span> <span class="comment"></span><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00180"></a><span class="lineno">  180</span> <span class="keywordtype">void</span> <a class="code" href="le__update_ctrl__interface_8h.html#add52f13de9853da8259799ad689be4fd">le_updateCtrl_MarkGood</a></div><div class="line"><a name="l00181"></a><span class="lineno">  181</span> (</div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>     <span class="keywordtype">void</span></div><div class="line"><a name="l00183"></a><span class="lineno">  183</span> );</div><div class="line"><a name="l00184"></a><span class="lineno">  184</span> </div><div class="line"><a name="l00185"></a><span class="lineno">  185</span> <span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00192"></a><span class="lineno">  192</span> <span class="comment"></span><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00193"></a><span class="lineno">  193</span> <span class="keywordtype">void</span> <a class="code" href="le__update_ctrl__interface_8h.html#a9f6a3bf7a830eb04823ea6188c12109c">le_updateCtrl_FailProbation</a></div><div class="line"><a name="l00194"></a><span class="lineno">  194</span> (</div><div class="line"><a name="l00195"></a><span class="lineno">  195</span>     <span class="keywordtype">void</span></div><div class="line"><a name="l00196"></a><span class="lineno">  196</span> );</div><div class="line"><a name="l00197"></a><span class="lineno">  197</span> </div><div class="line"><a name="l00198"></a><span class="lineno">  198</span> </div><div class="line"><a name="l00199"></a><span class="lineno">  199</span> <span class="preprocessor">#endif // LE_UPDATECTRL_INTERFACE_H_INCLUDE_GUARD</span></div><div class="line"><a name="l00200"></a><span class="lineno">  200</span> </div><div class="ttc" id="le__update_ctrl__interface_8h_html_a9f6a3bf7a830eb04823ea6188c12109c"><div class="ttname"><a href="le__update_ctrl__interface_8h.html#a9f6a3bf7a830eb04823ea6188c12109c">le_updateCtrl_FailProbation</a></div><div class="ttdeci">void le_updateCtrl_FailProbation(void)</div></div>
+  <div class="headertitle">
+<div class="title">le_updateCtrl_interface.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="le__update_ctrl__interface_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * ====================== WARNING ======================</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * THE CONTENTS OF THIS FILE HAVE BEEN AUTO-GENERATED.</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * DO NOT MODIFY IN ANY WAY.</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * ====================== WARNING ======================</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#ifndef LE_UPDATECTRL_INTERFACE_H_INCLUDE_GUARD</span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#define LE_UPDATECTRL_INTERFACE_H_INCLUDE_GUARD</span></div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="legato_8h.html">legato.h</a>&quot;</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment"></span><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keywordtype">void</span> <a class="code" href="le__update_ctrl__interface_8h.html#a1e59368455d91b7bf8a1e6bf4a04b672">le_updateCtrl_ConnectService</a></div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;(</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span></div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;);</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment"></span><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keywordtype">void</span> <a class="code" href="le__update_ctrl__interface_8h.html#afaa9e08b6a161e3107c7f328d8dee1ed">le_updateCtrl_DisconnectService</a></div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;(</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">void</span></div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;);</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment"></span><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="keywordtype">void</span> <a class="code" href="le__update_ctrl__interface_8h.html#acdbc9dcc05455f0dd1020b875909c3ed">le_updateCtrl_Defer</a></div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;(</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">void</span></div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;);</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment"></span><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keywordtype">void</span> <a class="code" href="le__update_ctrl__interface_8h.html#ab3955f0e34df43a5fbe3e9eae16040d4">le_updateCtrl_Allow</a></div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;(</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordtype">void</span></div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;);</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment"></span><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keywordtype">void</span> <a class="code" href="le__update_ctrl__interface_8h.html#afe4f9e002058e3c74488a28f7c76e47a">le_updateCtrl_LockProbation</a></div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;(</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordtype">void</span></div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;);</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment"></span><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="keywordtype">void</span> <a class="code" href="le__update_ctrl__interface_8h.html#a4ba5ace59bfe352c518c3f1eae6d0448">le_updateCtrl_UnlockProbation</a></div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;(</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordtype">void</span></div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;);</div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment"></span><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="keywordtype">void</span> <a class="code" href="le__update_ctrl__interface_8h.html#add52f13de9853da8259799ad689be4fd">le_updateCtrl_MarkGood</a></div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;(</div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordtype">void</span></div><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;);</div><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="comment"></span><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="keywordtype">void</span> <a class="code" href="le__update_ctrl__interface_8h.html#a9f6a3bf7a830eb04823ea6188c12109c">le_updateCtrl_FailProbation</a></div><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;(</div><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordtype">void</span></div><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;);</div><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="preprocessor">#endif // LE_UPDATECTRL_INTERFACE_H_INCLUDE_GUARD</span></div><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div><div class="ttc" id="le__update_ctrl__interface_8h_html_a9f6a3bf7a830eb04823ea6188c12109c"><div class="ttname"><a href="le__update_ctrl__interface_8h.html#a9f6a3bf7a830eb04823ea6188c12109c">le_updateCtrl_FailProbation</a></div><div class="ttdeci">void le_updateCtrl_FailProbation(void)</div></div>
 <div class="ttc" id="le__update_ctrl__interface_8h_html_afaa9e08b6a161e3107c7f328d8dee1ed"><div class="ttname"><a href="le__update_ctrl__interface_8h.html#afaa9e08b6a161e3107c7f328d8dee1ed">le_updateCtrl_DisconnectService</a></div><div class="ttdeci">void le_updateCtrl_DisconnectService(void)</div></div>
 <div class="ttc" id="le__update_ctrl__interface_8h_html_a1e59368455d91b7bf8a1e6bf4a04b672"><div class="ttname"><a href="le__update_ctrl__interface_8h.html#a1e59368455d91b7bf8a1e6bf4a04b672">le_updateCtrl_ConnectService</a></div><div class="ttdeci">void le_updateCtrl_ConnectService(void)</div></div>
 <div class="ttc" id="le__update_ctrl__interface_8h_html_a4ba5ace59bfe352c518c3f1eae6d0448"><div class="ttname"><a href="le__update_ctrl__interface_8h.html#a4ba5ace59bfe352c518c3f1eae6d0448">le_updateCtrl_UnlockProbation</a></div><div class="ttdeci">void le_updateCtrl_UnlockProbation(void)</div></div>
@@ -70,15 +121,17 @@
 <div class="ttc" id="legato_8h_html"><div class="ttname"><a href="legato_8h.html">legato.h</a></div></div>
 <div class="ttc" id="le__update_ctrl__interface_8h_html_afe4f9e002058e3c74488a28f7c76e47a"><div class="ttname"><a href="le__update_ctrl__interface_8h.html#afe4f9e002058e3c74488a28f7c76e47a">le_updateCtrl_LockProbation</a></div><div class="ttdeci">void le_updateCtrl_LockProbation(void)</div></div>
 <div class="ttc" id="le__update_ctrl__interface_8h_html_ab3955f0e34df43a5fbe3e9eae16040d4"><div class="ttname"><a href="le__update_ctrl__interface_8h.html#ab3955f0e34df43a5fbe3e9eae16040d4">le_updateCtrl_Allow</a></div><div class="ttdeci">void le_updateCtrl_Allow(void)</div></div>
-</pre><!-- fragment --></div>
-<br clear="left"/>
-</div>
-</div>
-<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
-<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
-<script src="resources/js/jquery.cookie.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
-<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+   <div class="footer">
+        <div>
+            <a href="http://www.sierrawireless.com/">
+                <img src="swi-ico-medium.png" width="24" alt="" />
+                &nbsp;Sierra Wireless
+            </a>
+            &nbsp;-&nbsp;
+            Generated by Doxygen 1.8.11
+        </div>
+    </div>
 </body>
 </html>
