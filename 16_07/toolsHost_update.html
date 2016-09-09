@@ -61,8 +61,25 @@
 <div class="headertitle">
 <h1 class="title">update </h1> </div>
 </div><div class="contents">
-<div class="textblock"><pre class="fragment">update has been deprecated and is scheduled to be removed in the next release. Please use 'app install' instead.
-</pre> </div></div>
+<div class="textblock"><h1>NAME</h1>
+<p><b>update</b> - apply update to target device</p>
+<h1>SYNOPSIS</h1>
+<p><code>update UPDATE_FILE [DEST_IP]</code><br/>
+</p>
+<h1>DESCRIPTION</h1>
+<pre class="fragment">    Apply the given update pack to the target device at a given IP address.
+    
+    UPDATE_FILE is the update pack file to be applied.
+    E.g., 'myApp.ar7.update' or 'system.wp85.update'.
+    
+    DEST_IP is the IP address of the target device. If DEST_IP is not specified on
+    the command line, the contents of the DEST_IP environment variable will be used.
+    
+    System update files are created by 'mksys'.
+    App update files are created by 'mkapp'.
+    App removal update packs and firmware update packs can be created using 'update-pack'.</pre> <hr/>
+<p class="copyright"> Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>
+</div></div>
 <br clear="left"/>
 </div>
 </div>
