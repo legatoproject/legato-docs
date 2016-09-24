@@ -92,7 +92,7 @@
 </ul>
 <p>To set the level of an output pin, call Activate(), Deactivate(), or SetHighZ().</p>
 <p>To poll the value of an input pin, call Read().</p>
-<p>Use the ChangeEvent to register a notification callback function to be called when the state of an input pin changes. Thje type of edge detection can then be modified by calling SetEdgeSense() or DisbleEdgeSense() </p><dl class="section note"><dt>Note</dt><dd>Only one handler can be registered per pin. Subsequent attempts to register a handler will result in the client being killed.</dd></dl>
+<p>Use the ChangeEvent to register a notification callback function to be called when the state of an input pin changes. Thje type of edge detection can then be modified by calling SetEdgeSense() or DisableEdgeSense() </p><dl class="section note"><dt>Note</dt><dd>Only one handler can be registered per pin. Subsequent attempts to register a handler will result in the client being killed.</dd></dl>
 <p>The following functions can be used to read the current setting for a GPIO Pin. In a Linux environment these values are read from the sysfs and reflect the actual value at the time the function is called.</p><ul>
 <li>IsOutput() - Is the pin currently an output?</li>
 <li>IsInput() - Is the pin currently an input?</li>

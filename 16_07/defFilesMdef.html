@@ -66,7 +66,7 @@
 <p><code></code>.mdef files contain the following sections:</p>
 <h1><a class="anchor" id="defFilesMdef_preBuilt"></a>
 preBuilt</h1>
-<p>The mandatory <code>preBuilt:</code> section specifies the path to the pre-built kernel module binary file. This binary file will be bundled with Legato and installed on the target using @ insmod Linux command.</p>
+<p>The mandatory <code>preBuilt:</code> section specifies the path to the pre-built kernel module binary file. This binary file will be bundled with Legato and installed on the target using <code>insmod</code> Linux command.</p>
 <p>The module binary file specified must have an extension <code></code>.ko to indicate the kernel module binary.</p>
 <p>This code sample shows how the kernel module binary file <code>/path/to/module/hello</code>.ko is bundled with Legato:</p>
 <pre class="fragment"><div class="line">{</div><div class="line">    preBuilt: /path/to/kernel/module/hello.ko</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="defFilesMdef_params"></a>
