@@ -1,0 +1,997 @@
+
+YOCTO Release: mdm9x15-SWI0X15Y_07.11.21.00
+Legato Release: 16.10.0
+Date: December 16, 2016
+
+See https://source.sierrawireless.com/resources/legato/wpfirmwarerelease for instructions on how to upgrade your target device.
+
+See http://legato.io/legato-docs/latest/legatoRelNotes.html for the complete Legato Release notes.
+
+OVERVIEW
+
+The following changes and improvements have been made in this release:
+
+Kernel
+
+-  Added UBIFS atime support
+-  Added config option to enable interrupts
+-  Added ADC and GPIO39 boot sources to sysfs
+-  Added support for the mangOH for spidev
+-  Added interrupt support for MCU GPIO's
+-  Added support for UART1, DSR, DCD and DTR lines
+-  Added sysfs support
+-  Added the ability to maintain SMACK labels using IPV6
+-  Resolved MCU IRQ conflict with WM8944
+-  Resolved a shared memory misalignment issue in bccoworkmsg
+-  Resolved an issue where add_hwgenerator_randomness() was passing data in bytes, not bits
+-  Resolved issue with kernel tracing when the USB is unplugged on the WPx5 devices
+-  Resolved an issue with the kernel crashing when using IPV6
+-  Resolved issue with user GPIO's initializing correctly on startup
+-  Removed unused security xattr handles
+-  Removed gup_flags FOLL_WRITE games from __get_user_pages()
+
+System
+-  Kernel modules are now compiled in the rootfs at runtime.
+-  Removed dependency on libcap at startup
+
+Modem
+- Added option to bridge ECM to Ethernet
+- Improved autosleep functionality and enabled it by default
+- Resolved issue where the modem sometimes fails to mount with external power supply connected.
+- Resolved issue that GSM recordings will cause high CPU load
+
+
+Legato
+-  Added dependency for Legato and tinycbor in build
+-  Added loginNagger for enhanced security
+-  Changes to support new "Developer Mode" in Legato
+-  Legato bin directory is now default added to PATH
+-  Updated startLegato.sh to work with the read-only system tree
+
+mangOH
+-  i2c utility added for i2cgpioctl, a testing interface for mangOH peripherals
+-  Added drivers for IoT cards
+
+Audio
+-  Optimized AMIX aplay to use lib instead of app
+
+Tools
+- ud_getusbinfo can now be used to configure USBCom settings
+
+Toolchain
+-  Added veritysetup to toolchain for DM-verity
+
+AT Commands
+-  Added !USBVID and !USBPID commands
+
+
+CHANGE LOG
+
+---------------------------
+[AUDIO] Use lib instead of app for amix aplay and arec SWI9X28A_00.04.03.00 SWI9X15Y_07.11.20.00  refs/changes/40/10640/3
+
+Issue Description:
+Need to optimize amix aplay and arec to use lib instead of app
+
+Root Cause:
+None
+
+Solution:
+Optimize amix aplay and arec to use lib instead of app
+
+Resolves: QTI9X28-608
+---------------------------
+Package kernel modules to rootfs  refs/changes/09/10709/3
+
+Description:
+Kernel modules are compiled but not packaged in the rootfs
+while they are required at runtime.
+
+Note:
+  This patch comes from the following path:
+
+Resolves:QTI9X40-1035
+---------------------------
+Add the dependency of libcap for system-core  refs/changes/75/10575/4
+
+The system-core package occasionally
+build failed, because couldn't find
+the dependency of libcap.
+
+Resolves: QTI9X28-582
+---------------------------
+The modem occasionally mount failed  refs/changes/04/10504/7
+
+Issue Description:
+When plug the power to restart the board,
+modem sometimes failed to mounted.
+
+Root Cause:
+"/dev/ubi1_0" is not generated in time
+when running "ubiattch -m" without delay.
+
+Solution:
+Add a waiting for "/dev/ubi1_0" process. When found
+the "/dev/ubi1_0", then go on.
+
+Resolves: QTI9X40-784
+---------------------------
+The modem occasionally mount failed  refs/changes/01/10501/10
+
+Issue Description:
+When plug the power to restart the board,
+modem sometimes failed to mounted.
+
+Root Cause:
+"/dev/ubi1_0" is not generated in time when running
+"ubiattch -m" without delay.
+
+Solution:
+Add a waiting for "/dev/ubi1_0" process. When found
+the "/dev/ubi1_0", then go on.
+
+Resolves: QTI9X28-623
+---------------------------
+Merge tag 'r00185.1' into oli_mdm9x28 SWI9X40A_01.03.07.00 SWI9X28A_00.04.02.00 SWI9X28A_00.04.01.00 SWI9X15Y_07.11.19.00 SWI9X07Y_00.02.00.00  refs/changes/48/10548/2
+
+Because have integrated Qualcomm baseline
+MDM9607.LE.1.0.1-Post-CS11 0.0.185.1,
+so update the related code revision
+according to the Qualcomm manifest.xml.
+
+Resolves: QTI9X28-603
+---------------------------
+[loginNagger] Move loginNagger to /etc/profile.d/ SWI9X28A_00.04.00.00 SWI9X28A_00.03.11.01 SWI9X28A_00.03.11.00 SWI9X28A_00.03.10.00 SWI9X15Y_07.11.18.00  refs/changes/96/10496/2
+
+Instead of explicitly invoking the loginNagger from /etc/profile,
+move the script to /etc/profile.d/, where it could be implicitly
+called by /etc/profile when executing all scripts in profile.d
+sub-directory.
+
+Move setting Legato PATH before calling profile.d scripts.
+Apparently these need to be set before loginNagger is called.
+
+Resolves: LE-5796
+---------------------------
+GSM TX average current is too large SWI9X28A_00.03.09.00  refs/changes/31/10231/2
+
+GSM voice call, aPlay and aRec will lead to high cpu load that upto 90%,
+so A7 will consume a large of power. average current is too large.
+
+Resolves:QTI9X28-490
+---------------------------
+ud_getusbinfo will be used to configure USB setting for !USBCOMP  refs/changes/68/10168/4
+
+Resolves: QTI9X28-577
+---------------------------
+legato: fix tinycbor build dependency SWI9X15Y_07.11.17.00  refs/changes/45/10345/2
+
+Yocto builds number of packages in parallel. Consequently, there could
+be race condition between packages, if dependencies are not manually
+specified.
+
+In this case, legato depends on development portion of tinycbor package.
+However, tinycbor package output may not be available at the time of
+legato build.
+
+To fix this, we need to explicitly specify that legato depends on
+tinycbor, and it needs to be built first.
+
+Resolves:LXSWI9X1517-161
+---------------------------
+Implement the Developer Mode SWI9X40A_01.03.06.00 SWI9X28A_00.03.08.00  refs/changes/61/9161/4
+
+- Remove tcf-agent from the init scripts.
+- Remove the postinsts package and the scripts that it generates.
+
+Resolves: LE-4574 LE-4551 LE-4986
+---------------------------
+[networking] Start firewall if configuration files exist SWI9X40A_01.03.05.00 SWI9X15Y_07.11.16.00 SWI9X07Y_00.01.02.00  refs/changes/44/10144/5
+
+During network start, check for existence of firewall configuration
+files in /etc/iptables/ and configure firewall accordingly. Use
+separate files rules.v4 and rules.v6 for ipv4 and ipv6 firewall,
+respectively. Install firewall rules that block ssh access over WAN
+for MDM9x15 platforms.
+
+Resolves: LXSWI9X1517-154
+---------------------------
+Add mangOH i2c utility i2cgpioctl for mdm9x28  refs/changes/74/10074/3
+
+The i2cgpioctl utility provides a simple testing interface for mangOH
+peripherals on the external i2c bus.  It also supports probing for
+internal i2c devices, since the bus is shared.  This change pulls in
+the WP8548/WP75xx version of the tool, and adds flexibility so that
+the i2c bus can be specified by the user.  Minor improvements are
+also made for code cleanup.
+
+Resolves: LXSWI9X28-15
+---------------------------
+[BSP] cannot reset device using DM mode command  refs/changes/81/9781/2
+
+Issue Description:
+Cannot reset device using DM mode reset command
+
+Root Cause:
+The DM reset command is processed at apps side however processes to
+handle the DM reset command are not there
+
+Solution:
+Bring up the process:
+diag-reboot-app: fixed the issue that the process cannot open /dev/diag
+device and exited right away during startup
+reboot-daemon: add the process to start up scripts
+
+Testing:
+Reset command from QXDM or QRCT works after the fix
+
+Resolves: QTI9X07-92
+---------------------------
+Disable SMACK SWI9X40A_01.03.04.00  refs/changes/91/9591/3
+
+- Modify some init scripts to not apply SMACK labels if Legato is running with SMACK disabled.
+
+Resolves: LE-5536
+---------------------------
+[profile] Add Legato bin to PATH environment variable SWI9X40A_01.03.03.00 SWI9X40A_01.03.02.00 SWI9X28A_00.03.07.00  refs/changes/00/9900/2
+
+Resolves: LE-5345
+---------------------------
+Add tool veritysetup to toolchain lib SWI9X28A_00.03.06.00 SWI9X07Y_00.01.01.00  refs/changes/39/9139/4
+
+Description:
+Dm-verity need to use veritysetup to create hash tree table
+for image bin. Independently build legato image need to
+call this tool from toolchain lib.
+
+Resolves: QTI9X40-788
+---------------------------
+Update lk version  refs/changes/19/10019/4
+
+lk version stored in sierra_lkversion.h when build lk.
+The version value is generated by sha256sum to make sure it's unique.
+
+Resolves: QTI9X40-429
+---------------------------
+Remove deprecated stuffs from legato init script SWI9X40A_01.03.01.00 SWI9X15Y_07.11.15.00  refs/changes/94/8594/4
+
+Resolves: LE-4230
+---------------------------
+Update syslog init script to support remote logging  refs/changes/59/8559/2
+
+Resolves: LE-5069
+---------------------------
+[ecm] Add option to bridge ECM to Ethernet  refs/changes/78/8378/3
+
+WHQL/HLK certification test consists of two PCs connected via USB
+modules to an Ethernet/IP backbone. Client PCs generate/receive
+traffic whereas server PC relays traffic back to the client(s).
+
+To support this test, add a script that bridges ECM to Ethernet
+interface so that the two PCs to which the modules are attached
+could communicate over Ethernet. This script is not enabled by
+default and hence is not symlinked in /etc/rcS.d. To enable this
+configuration, one has to do the following:
+
+1. Descend into init script directory:
+    $ cd /etc/rcS.d
+
+2. Disable ECM configuration script:
+    $ mv S95bringup_ecm.sh _S95bringup_ecm.sh
+
+3. Re-link the ECM startup script to this new file:
+    $ ln -s ../init.d/bridge_ecm.sh S95bringup_ecm.sh
+
+This setting would be persistent across reboots.
+
+The inverse should be done to restore normal operation.
+
+Resolves: LE-5403
+---------------------------
+Add loginNagger to root file system  refs/changes/74/9874/1
+
+loginNagger file is moved to meta-swi-extras repo, because
+this is where SWIR home grown scripts should be located.
+
+Resolves:LXSWI9X1517-149
+
+---------------------------
+Implement new dual system shared data structure SWI9X28A_00.03.05.00  refs/changes/69/9569/2
+
+1. Modify the selection of root FS image during system
+boot up according to SSID linux index.
+2. Modify the selection of modem image during system
+boot up according to SSID modem index.
+
+Resolves: QTI9X28-480
+---------------------------
+[AV] rebuild Aplay/Arec/Amix to lib and use APIs to replace system call. SWI9X40A_01.03.00.00 SWI9X40A_01.02.03.00 SWI9X28A_00.03.04.00 SWI9X15Y_07.11.14.00 SWI9X15Y_07.11.13.00  refs/changes/75/9275/3
+
+Build aplay, arec and amix as dynamic libraries:
+a. User app always use aplay and arec APIs among a thread, so need to close file
+descriptor and free heap when the thread is canceled by user (such as user stop playing
+wav file).
+b. use local variables instead of static variables in aplay and arec module, because user
+app may use aplay and amix in the case of multithreading(such as playing wav file
+and making a call at the same time).
+c. amix doesn't have above issues, so just use amix() to replace main() in amix module.
+
+Resolves: QTI9X40-777
+---------------------------
+Enable autosleep by default  refs/changes/08/9708/1
+
+Description:
+a.Enable autosleep by default so that module can enter low power mode automatically
+b.As module can enter LPM mode automatically, so keep it wake up when module starting up
+
+Resolves: QTI9X28-502
+---------------------------
+Add support for wp76xx target in Legato build SWI9X28A_00.03.03.00 SWI9X28A_00.03.02.00 SWI9X07Y_00.01.00.00  refs/changes/69/9369/2
+
+This change adds the wp76xx to the list of supported targets for mdm9x28
+
+Resolves: LXSWI9X28-13
+---------------------------
+Mount bind /lib/firmware/ SWI9X40A_01.02.02.00 SWI9X28A_00.03.01.00 SWI9X28A_00.03.00.00 SWI9X28A_00.02.22.00 SWI9X28A_00.02.21.00 SWI9X15Y_07.11.12.00 SWI9X15Y_07.11.11.00  refs/changes/96/9196/3
+
+Root Cause:
+Support Read-Only rootfs and get rid of USERAPP partition.
+
+Solution:
+Intead of creating lots of symlinks in a RW partion, mounting bind /lib/firmware is more simple and cleaner.
+
+Resolves: QTI9X40-778
+---------------------------
+[9x28] Dm-verity   refs/changes/32/9032/2
+
+The purpose of dm-verity is to implement a device mapper target
+capable of validating the data blocks contained in a file system
+against a list of cryptographic hash values.
+
+We can close this function by set it to "DM_VERITY_ENCRYPT = off"
+in file "swi-mdm9x28.conf". The root hash of the rootfs is stored
+in scripts in initramfs, So when dm-verity is enabled we must burn
+the kernel and the rootfs together, they are pairs or you will got
+crash during boot up.
+
+Dm-verity is activated from initramfs. Till now only the rootfs partition
+is protected by Dm-verity.The rootfs data is stored at UBI volume 0 (UBI0_0)
+and the corresponding data hash tree table is store at volume 1 (UBI0_1)
+Every access to the data blocks (mtdblock0_0) Dm-verity will check
+corresponding hash tree table (mtdblock0_1). If the data and the hash is
+not match then return I/O error, which is expected.
+
+notes: this is merge from QTI9X40-471
+
+Resolves: QTI9X28-420
+---------------------------
+Add tinyCBOR package  SWI9X40A_01.02.01.00   refs/changes/93/8993/6
+
+The Concise Binary Object Representation (CBOR) is a data format whose
+design goals include the possibility of extremely small code size,
+fairly small message size, and extensibility without the need for
+version negotiation.
+
+More about CBOR could be found at cbor.io .
+
+Resolves:LXSWI9X1517-113
+
+---------------------------
+Add a script that nags the user into setting up login credentials  SWI9X28A_00.02.20.00   refs/changes/19/8219/9
+
+Resolves: LE-5345
+---------------------------
+Implement new dual system shared data structure  SWI9X40A_01.02.00.00   refs/changes/16/9016/3
+
+1. Modify the selection of root FS image during
+   system boot up according to SSID Linux index.
+2. Modify the selection of modem image during
+   system boot up according to SSID modem index.
+
+Resolves: QTI9X40-733
+---------------------------
+Merge alxkernel module into kernel 3.18 tree and remove it from meta-swi  SWI9X07Y_00.00.02.00  refs/changes/82/9082/1
+
+The alxdriver will be merged into 3.18 Kernel. So remove it from meta-swi.
+
+Resolves: QTI9X40-673
+---------------------------
+Upgrading Qualcomm source distribution   refs/changes/81/9081/1
+
+Upgrading new stack from Qualcomm, Linux build ID is changed from LNX.LE.5.3-79002-9x40
+to LNX.LE.5.3-79003-9x40.
+
+Resolves: QTI9X40-806
+---------------------------
+[AR758x][BSP] Add !USBVID and !USBPID SWI9X28A_00.02.19.00 SWI9X28A_00.02.18.00  refs/changes/60/8860/5
+
+Description:
+Add !USBVID and !USBPID
+
+Root cause:
+N/A
+
+Solution:
+- Bring up UD module
+- Implement two AT commands to change/query USB VID/PID
+
+Resolves: QTI9X28-394
+---------------------------
+Reboot command does not work SWI9X15Y_07.11.10.00  refs/changes/65/8965/1
+
+Perform mount -o bind only at when start is requested.
+
+Resolves: LXSWI9X40-30
+---------------------------
+[AR758x][USB] Add USB ECM and NCM SWI9X40A_01.01.08.00  refs/changes/82/8682/4
+
+Description:
+Add USB ECM and NCM
+
+Root cause:
+N/A
+
+Solution:
+- Enable ECM and NCM function for USB stack
+
+Resolves: QTI9X28-316
+---------------------------
+Fix Legato QMI pending issue by changing startup priority SWI9X40A_01.01.07.00 SWI9X28A_00.02.17.00  refs/changes/68/8868/1
+
+Legato modemDeamon depends on other Qualcomm daemon processes(such as qti).
+Now the startup priority of Legato is 60, some daemon processes are
+not ready, finally cause the Legato command "cm data" to be stuck.
+
+Currently Change Legato startup priority to 98, to make sure that all the daemon
+processes have been ready when Legato startup.
+
+Resolves: QTI9X40-747
+---------------------------
+Mount of /legato should be done dynamically according to Legato RO or RW SWI9X40A_01.01.06.00 SWI9X07Y_00.00.01.00  refs/changes/95/8795/2
+
+Check for presence of /mnt/legato/systems/current/read-only to
+perform the mount bind of /legato and launch the start from
+legato tree.
+
+Resolves: LXSWI9X40-29
+---------------------------
+Bring up alxdriver on the Qualcomm LE.3.1.rb.1.1 stack SWI9X40A_01.01.05.00 SWI9X40A_01.01.04.00 SWI9X28A_00.02.16.00  refs/changes/78/8678/1
+
+This commit includes the following issues:
+a. Fix Makefile to generate alxko.
+b. The usage of IPA interface in alxdriver doesn't match LE.3.1 IPA module.
+   Remove the marco MDM_PLATFORM to disable IPA on alxdriver, and fix the
+   compile error when removing MDM_PLATFORM.
+
+Note:
+This commit also removes the patches in the following commits:
+3f34bb0 Require IPA RM resource when wakeup module or plugin Ethernet Cable
+9780480 Update LE.3.1 alxdriver
+This is because the IPA feature is disabled in this commits. It doesn't need to
+apply the patches in 3f34bb0 and 9780480.
+We will apply the Qualcomm CRs in the future when they fix the IPA issue.
+
+Resolves: QTI9X40-445
+---------------------------
+Require IPA RM resource when wakeup module or plug-in Ethernet Cable SWI9X40A_01.01.03.00  refs/changes/35/8535/7
+
+The alxdriver have the bug that IPA RM resource can be released when
+unplugging the Ethernet cable or Linux suspend, but cannot acquire the
+IPA RM resource again, finally cause system reboot because of accessing
+external bus without IPA clock.
+The patch is for fixing this issue by acquiring the IPA RM resource when
+plugging Ethernet cable or system resume.
+This patch also fixes the incorrect assignment statement in alxsuspend().
+
+Ramdump(exception in r14_abt):
+core0 regs:
+   r0       = 0x0000000000000001
+   r1       = 0x000000000000000f
+   r2       = 0x0000000000000015
+   r3       = 0x00000000e0b5f818
+   r4       = 0x00000000de5830a4
+   r5       = 0x000000000001f818
+   r6       = 0x00000000000000e0
+   r7       = 0x00000000c11e4048
+   r8       = 0x0000000000000000
+   r9       = 0x00000000c14211dd
+   r10      = 0x00000000c14211dc
+   r11      = 0x0000000000000000
+   r12      = 0x000000000000000b
+   r13_usr  = 0x0000000000000000
+   r14_usr  = 0x0000000000000000
+   r13_hyp  = 0x0000000000000000
+   r14_irq  = 0x00000000c0012a00 [__irq_svc+0x0]
+   r13_irq  = 0x00000000c130be00
+   r14_svc  = 0x00000000c00680cc [sched_clock+0x7c]
+   r13_svc  = 0x00000000dec61b30
+   r14_abt  = 0x00000000c05ef8d8 [bam_pipe_set_desc_write_offset+0x190] //accessing external bus while
+   r13_abt  = 0x00000000c130be0c
+   r14_und  = 0x00000000c130be18 [stacks+0x18]
+   r13_und  = 0x00000000c130be18
+   r8_fiq   = 0x0000000000000000
+   r9_fiq   = 0x0000000000000000
+   r10_fiq  = 0x0000000000000000
+   r11_fiq  = 0x0000000000000000
+   r12_fiq  = 0x0000000000000000
+   r13_fiq  = 0x00000000c130be24
+   r14_fiq  = 0x00000000c130be24 [stacks+0x24]
+   pc       = 0x00000000ffff0010
+   cpsr     = 0x0000000080000197
+   r13_mon  = 0x0000000000000000
+   r14_mon  = 0x00000000ffff0010
+   r14_hyp  = 0x0000000000000000 [(No symbol for address 0)+0x0]
+
+Resolves: QTI9X40-445
+---------------------------
+[AR758x][USB] Disable USB audio by default SWI9X28A_00.02.15.00  refs/changes/75/8575/2
+
+Description:
+Disable USB audio by default
+
+Root cause:
+USB audio needs one available audio device at least, USB can't enumerate
+properly in case of that USB audio is enabled but no any available audio device.
+
+We have few AR758x samples which didn't include internal Codec(audio device)
+and were delivered to the customer. They will have USB enumeration problem if they
+ upgrade to the FW which enables USB audio.
+
+Solution:
+We has a plan to design some function which can recognize whether internal Codec
+exists in future. So this problem will go away at at time. But we have to disable
+ USB audio by default at this moment.
+
+Resolves: QTI9X28-369
+---------------------------
+Read-only legato application framework system tree SWI9X40A_01.01.02.00 SWI9X40A_01.01.01.00 SWI9X28A_00.02.14.00 SWI9X15Y_07.11.09.00  refs/changes/19/8419/2
+
+Change the /legato bind to /mnt/legato
+Update the startlegato.sh to work with standalone read-only
+legato system tree
+Update legato-image recipe to handle the legato read-only
+system tree
+
+Resolves: LXSWI9X40-24
+Related: LE9XXX-242
+---------------------------
+[loginNagger] Make loginNagger use full path to uartMode tool SWI9X15Y_07.11.20.00 SWI9X15Y_07.11.19.00yocto-1.7-swi-le55  refs/changes/66/10566/1
+
+Resolves: LE-5838
+---------------------------
+[loginNagger] Add extra confirmation for risky operations SWI9X15Y_07.11.18.00  refs/changes/97/10497/4
+
+Add extra user confirmation when:
+  1. Disabling ssh password logins
+  2. Disabling console device(s)
+  3. Disabling root password login completely
+
+Also move the loginNagger script to /etc/profile.d/ where it could
+be implicitly called by /etc/profile when executing scripts from
+this sub-directory.
+
+Resolves: LE-5796
+---------------------------
+[loginNagger] Do no display menu for disabling password if password is set SWI9X15Y_07.11.17.00 SWI9X15Y_07.11.16.00  refs/changes/01/9901/2
+
+Resolves: LE-5345
+---------------------------
+Add loginNagger to root file system SWI9X15Y_07.11.15.00  refs/changes/73/9873/1
+
+loginNagger file was introduced to meta-swi. However, it really
+does not belong there, and there was nothing to push it to final
+root file system image.
+
+Resolves:LXSWI9X1517-149
+
+---------------------------
+Add entropy to the system early in the boot process SWI9X15Y_07.11.14.00 SWI9X15Y_07.11.13.00  refs/changes/96/9496/3
+
+This change increases system entropy very early in the boot process.
+
+In systems where HW RNG is not available, entropy would be really low
+upon boot, and not much could be extracted from /dev/random RNG device.
+In these systems, we could use rngd daemon which feeds data from random
+number generator to kernel's random number entropy pool.
+
+Systems running kernel 3.17 and up, do not need this daemon, because
+kernel is doing the same thing internally. However, entropy level
+which triggers kernel entropy pool filler to start working is set
+lower than rngd would do it. In order to have systems which are behaving
+similarly, /proc/sys/kernel/random/write_wakeup_threshold
+is set to 75% of /proc/sys/kernel/random/poolsize.
+
+In both cases, /dev/hwrng is the device providing input for kernel
+entropy pool.
+
+Resolves:LXSWI9X1517-112
+
+---------------------------
+Fix typo in run_getty.sh SWI9X15Y_07.11.12.00 SWI9X15Y_07.11.11.00  refs/changes/46/9246/2
+
+Log message was incorrect in case system is using UART2 as
+console device.
+
+Copyright message was somewhat incorrect, and was fixed as well.
+
+Resolves:LE-5515
+
+---------------------------
+Revert "Revert "mm: remove gup_flags FOLL_WRITE games from __get_user_pages()""  SWI9X15Y_07.11.20.00SWI9X15Y_07.11.19.00 refs/changes/95/10695/1
+
+It also fixes incorrectly back ported "Dirty COW" patch
+(http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=19be0eaffa3ac7d8eb6784ad9bdbc7d67ed8e619).
+
+Resolves: LXSWI9X1517-153
+---------------------------
+Revert "mm: remove gup_flags FOLL_WRITE games from __get_user_pages()" refs/changes/67/10667/1
+
+This reverts commit 16249e209b565e9d34cceb3d036a5076eb49672f.
+
+This patch is causing gdbserver to spin its wheels on the target,
+while not being able to communicate with the host gdb.
+
+So far, no one reported any other problems with it. For, now
+we need to remove it to allow target side debugging.
+
+Resolves: LXSWI9X1517-181
+---------------------------
+mm: remove gup_flags FOLL_WRITE games from __get_user_pages() SWI9X15Y_07.11.18.00SWI9X15Y_07.11.17.00 refs/changes/35/10335/1
+
+This is an ancient bug that was actually attempted to be fixed once
+(badly) by me eleven years ago in commit 4ceb5db9757a ("Fix
+get_user_pages() race for write access") but that was then undone due to
+problems on s390 by commit f33ea7f404e5 ("fix get_user_pages bug").
+
+In the meantime, the s390 situation has long been fixed, and we can now
+fix it by checking the pte_dirty() bit properly (and do it better).  The
+s390 dirty bit was implemented in abf09bed3cce ("s390/mm: implement
+software dirty bits") which made it into v3.9.  Earlier kernels will
+have to look at the page state itself.
+
+Also, the VM has become more scalable, and what used a purely
+theoretical race back then has become easier to trigger.
+
+To fix it, we introduce a new internal FOLL_COW flag to mark the "yes,
+we already did a COW" rather than play racy games with FOLL_WRITE that
+is very fundamental, and then use the pte dirty flag to validate that
+the FOLL_COW flag is still valid.
+
+Note, : Since version 3.14, code was changed and moved around.
+It may be that "once upon a time", changes were in __get_user_pages,
+but this is not the case any more.
+
+Resolves: LXSWI9X1517-153
+---------------------------
+wm8944: add config option to enable interrupts SWI9X15Y_07.11.16.00 refs/changes/60/10160/4
+
+wm8944 uses msmgpio 86 as a parent interrupt line on AR hardware types, but
+on WPx5 this line is actually an internal GPS_LNA_EN signal. This causes a
+significant increase in boot time when gps auto start is enabled. The interrupt
+signal from wm8944 is not routed on the mangOH board, so we can disable
+interrupts by omitting the IRQ line from the wm8944 platform data. Add a config
+option for wm8944 interrupts and disable by default.
+
+Resolves: QTI9X1555-135
+---------------------------
+swimcu_pm: add ADC and GPIO39 boot sources to sysfs refs/changes/03/9903/5
+
+Add ADC2, ADC3 and GPIO39 as ULPM wakeup sources in swimcu_pm driver.
+Also modify ADC init command to add interval and trigger parameters
+for hardware trigger configuration.
+
+Resolves: LXSWI9X1517-71, LXSWI9X1517-135
+---------------------------
+swimcu: MCU IRQ conflict with WM8944 SWI9X15Y_07.11.15.00 refs/changes/45/10045/3
+
+wm8944 and swimcu allocate IRQ numbers from the same base number. This
+should not be an issue, however wm8944 statically allocates the IRQs rather
+than dynamically allocating using irq_alloc_descs. This creates a conflict with
+the IRQ for gpio36. Move the irq base for swimcu above the IRQs statically
+allocated by wm8944 to resolve the issue.
+
+Resolves: LXSWI9X1517-151
+---------------------------
+Fix smem misalignment refs/changes/42/10042/3
+
+Fixes a shared memory misalignment issue in bccoworkmsg
+structure
+
+Resolves: LXSWI9X1517-152
+---------------------------
+hwrng: Pass entropy to add_hwgenerator_randomness() in bits, not bytes refs/changes/29/9929/1
+
+rng_get_data() returns the number of bytes read from the hardware.
+The entropy argument to add_hwgenerator_randomness() is passed
+directly to credit_entropy_bits() so we should be passing the
+number of bits, not bytes here.
+
+---------------------------
+hwrng: create filler thread refs/changes/28/9928/2
+
+This can be viewed as the in-kernel equivalent of hwrngd;
+like FUSE it is a good thing to have a mechanism in user land,
+but for some reasons (simplicity, secrecy, integrity, speed)
+it may be better to have it in kernel space.
+
+This patch creates a thread once a hwrng registers, and uses
+the previously established add_hwgenerator_randomness() to feed
+its data to the input pool as long as needed. A derating factor
+is used to bias the entropy estimation and to disable this
+mechanism entirely when set to zero.
+
+---------------------------
+random: Fix compilation errors refs/changes/27/9927/3
+
+Fix compilation errors caused by the following commit:
+
+random: add_hwgenerator_randomness() for feeding entropy from devices.
+
+This patch adds an interface to the random pool for feeding entropy
+in-kernel.
+
+Resolves:LXSWI9X1517-112
+
+---------------------------
+random: add_hwgenerator_randomness() for feeding entropy from devices refs/changes/26/9926/2
+
+This patch adds an interface to the random pool for feeding entropy
+in-kernel.
+
+Resolves:LXSWI9X1517-112
+
+---------------------------
+sierra_spi: Use spidev instead of sierra_spiSWI9X15Y_07.11.14.00 refs/changes/92/9492/3
+
+While testing the MangOH platform, it was discovered that SPI CS0
+was taken by sierra_spi device at boot time. This prevented using
+any other SPI device driver using CS0. Using CS0 was particularly
+important for MangOH SPI daughter cards, for which drivers may
+have been already implemented, even merged into mainline kernel.
+
+It turns out that sierra_spi has more-or-less the same function
+as the spidev device. Source code comparison revealed these
+differences:
+  - Separate buffers for tx and rx in sierra_spi:
+      This is of little importance since most functions hold a
+      mutex to prevent tx and rx concurrency. Exception is
+      spidev_message() that handles message bursts, but even in
+      that case spidev handles it properly by managing message
+      length, so that tx and rx messages do not overlap in
+      buffer.
+  - Different buffer size:
+      This can be handled with the 'bufsiz' module parameter.
+  - Clock frequency rounding:
+      This is inherently handled through spidev_setup(); calls
+      to the clock framework to configure frequency round it
+      to the nearest supported frequency.
+  - Setting master's dessert time (and other registers):
+      This shouldn't be slave's function in the first place. If
+      necessary, Qualcomm's master driver provides debugfs
+      interface through which registers could be configured.
+
+Remove sierra_spi device and redirect any functionality to spidev
+device that can be created at run time, either by spi_new_device()
+kernel call, or through udev/mdev. With dynamic spidev creation,
+CS0 is freed for use in MangOH slots.
+
+Resolves: LXSWI9X1517-127
+Relates: LXSWI9X1517-51
+
+---------------------------
+mdm9615: Defer claiming of IRQ GPIO for TI wifi chip refs/changes/40/9440/3
+
+TI's WL18XX device is not part of any MDM9615 platform; it was
+intended that a daughter card with device is added to the MangOH
+platform. If the IRQ GPIO for this device is allocated at boot
+time, then any other device in slot 0 of MangOH platform wouldn't
+be able to claim it.
+
+Defer allocation of this GPIO until a daughter card in slot 0 is
+detected. GPIO will be claimed by a separate MangOH module that
+performs this detection.
+
+Resolves:LXSWI9X1517-51
+---------------------------
+Add interrupt support for MCU GPIOsSWI9X15Y_07.11.13.00 refs/changes/09/9109/5
+
+MCU pins mapped to GPIO 36, 38, and 39 have interrupt capabilities
+which are currently only used as wakeup sources by the swimcu_pm driver.
+This change adds general IRQ support for these pins in sysfs.
+
+Resolves: LXSWI9X1517-73
+---------------------------
+Add support for UART1 DSR, DCD, DTR lines refs/changes/30/9530/3
+
+Currently, UART1 RI is supported and can be configured for modem or apps
+using AT!RIOWNER. This change extends the mechanism used to control/configure
+RI to DSR, DCD and DTR. if AT!RIOWNER is set to apps, then RI, DSR, DCD
+and DTR will be available for export in sysfs and are mapped to gpio 16,
+17, 18, and 19, respectively.
+
+Resolves: LXSWI9X1517-99
+---------------------------
+pm8xxx-pwm: Add sysfs support refs/changes/00/9600/7
+
+Add and modify sysfs functions from generic pwm driver.
+Remove obsolete debugfs code.
+Configured PWMs on startup based on shared memory set by modem.
+
+Resolves: LXSWI9X1517-133
+---------------------------
+Add support for gpio 28-31 refs/changes/46/8846/2
+
+Update CF3 pin mappings with gpio 28-31 to add
+support for these pins in sysfs.
+
+Resolves: LXSWI9X1517-120
+---------------------------
+Fix kernel trace when USB is unplugged on WPx5 refs/changes/23/9523/1
+
+Port the change in trac2951 from the yocto 1.6 kernel:
+
+Problem Description:
+msm_otg module enable runtime & pm resume/suspend at the same time.
+when msm_otg pm resume, the runtime should be set as active to avoid
+runtime resume msm_otg again. Before msm_otg enter suspend, runtime
+should be set as suspended status to make sure runtime resume can
+resume the msm_otg. This issue is caused by pm resume set runtime
+active too late, so that runtime resume been called while pm resume
+is running. Thus, both pm resume and runtime resume should increase
+the msm_otg usage count and leads to /dev/usb_link can't been unlock.
+
+Solution:
+set runtime active earlier(before call msm_otg_resume).
+
+Resolves: LXSWI9X1517-128
+---------------------------
+/dev/hwrng is nowhere to be foundSWI9X15Y_07.11.12.00 refs/changes/41/9441/1
+
+The name of the device clock producer was incorrect for MSM hardware
+RNG. It should be "core_clk" instead of just "core".
+
+Resolves:LXSWI9X1517-132
+---------------------------
+Kernel crashes when it receives packet destined for its IPv6 address SWI9X15Y_07.11.11.00 refs/changes/59/9259/2
+
+Apparently, Linux kernel is crashing once it receives packet destined
+for its unique local IPv6 address. This is only possible to reproduce
+on kernels older than 3.11.
+
+The crash is present when local IPv6 address is used
+(fd00::/48 - fd00:ffff:ffff::/48), but is not present when local link
+addresses are used (fe80::/64 addresses).
+
+Kernels 3.11+ have following mainline kernel fix:
+
+Date:   Wed May 22 18:42:56 2013 -0700
+
+    Smack: Local IPv6 port based controls
+
+    Smack does not provide access controls on IPv6 communications.
+    This patch introduces a mechanism for maintaining Smack lables
+    for local IPv6 communications. It is based on labeling local ports.
+    The behavior should be compatible with any future "real" IPv6
+    support as it provides no interfaces for users to manipulate
+    the labeling. Remote IPv6 connections use the ambient label
+    the same way that unlabeled IPv4 packets are treated.
+
+    Targeted for git://git.gitorious.org/smack-next/kernel.git
+
+
+However, this patch is just masking initial problem, where NULL
+pointer is passed to cipso_v4_req_delattr method.
+
+This patch fixes NULL pointer related problem.
+
+Resolves:LXSWI9X1517-124
+
+---------------------------
+Initialize external GPIOs to input no pull SWI9X15Y_07.11.10.00 refs/changes/86/8986/2
+
+Root Cause
+Several issues have been noted involving gpio2, 8, and 13 behaving
+incorrectly. Gpio2 in particular does not function correctly in sysfs
+when configured as an output, unless the pull type is modified first.
+This behaviour seems to be related to the default configurations, which
+are inconsistent between each gpio and in some cases interfere
+with normal operation.
+
+Solution
+Initialize user gpios on startup.
+
+Resolves: QTI9X1555-753
+---------------------------
+ipc_router: LINUX IPC Router Binding Any Port as a Control Port refs/changes/42/8742/1
+
+IPC Router binds any port as a control port and moves it from the client
+port list to control port list. Misbehaving clients can exploit this
+incorrect behavior.
+
+IPC Router to check if the port is a client port before binding it as a
+control port.
+
+Resolves:LXSWI9X1517-111
+
+---------------------------
+ubifs: Use XATTR_*_PREFIX_LEN refs/changes/86/6786/2
+
+...instead of open coding it.
+
+---------------------------
+ubifs: Remove unused security xattr handler refs/changes/84/6784/2
+
+Ubifs installs a security xattr handler in sb->s_xattr but doesn't use the
+generic_{get,set,list,remove}xattr inode operations needed for processing
+this list of attribute handlers; the handler is never called.  Instead,
+ubifs uses its own xattr handlers which also process security xattrs.
+
+---------------------------
+ubifs: introduce UBIFS_ATIME_SUPPORT to ubifs refs/changes/83/6783/2
+
+To make ubifs support atime flexily, this commit introduces
+a Kconfig option named as UBIFS_ATIME_SUPPORT.
+
+With UBIFS_ATIME_SUPPORT=n:
+    ubifs keeps the full compatibility to no_atime from
+the start of ubifs.
+
+=================UBIFS_ATIME_SUPPORT=n=======================
+-o - no atime
+-o atime - no atime
+-o noatime - no atime
+-o relatime - no atime
+-o strictatime - no atime
+-o lazyatime - no atime
+
+With UBIFS_ATIME_SUPPORT=y:
+    ubifs supports the atime same with other main stream
+file systems.
+=================UBIFS_ATIME_SUPPORT=y=======================
+-o - default behavior (relatime currently)
+-o atime - atime support
+-o noatime - no atime support
+-o relatime - relative atime support
+-o strictatime - strict atime support
+-o lazyatime - lazy atime support
+
+---------------------------
+Add UBIFS quota support refs/changes/58/5958/3
+
+This rather large patch adds UBIFS file system quota support.
+It also fixes few UBIFS bugs. This patch requires kernel
+configurations changes as well:
+
+- Enable UBIFS quota support
+- Disable UBIFS ATIME support (even if support is there, in general
+  atime will increase number of flash writes, and that is
+  never a good idea). Use it if you really cannot live without it.
+- Enable old, v1 and v2 quota support in form of kernel modules.
+
+This patch is based on Dongsheng Yang's work, kernel version 4.2 .
+
+---------------------------
+[MangOH] Include drivers for IoT expansion slots
+
+AR7 kernel does not assume existence of IoT slots that are present
+on the similar MangOH platform. In order to map the IoT slots, the
+kernel needs to support I2C muxing, PCA9548 I2C switch, SX1509
+GPIO expanders and I2C EEPROMs on IoT cards. Presence of the IoT
+slots (and MangOH platform) still need to be determined by
+inserting a MangOH-specific kernel module, which will be provided
+with Legato. This commit only adds necessary drivers to perform
+IoT slot mapping.
+
+Note that the current kernel version supports SX150X devices as
+built-in and hence the decision was brought not to add the above
+drivers as modules in order to maintain consistency. Assumption is
+that the above drivers are simple enough not to substantially
+increase kernel size.
+
+Also build spidev as a module to avoid driver binding at boot time.
+
+Resolves: LXSWI9X1517-51
+
+
+
+
