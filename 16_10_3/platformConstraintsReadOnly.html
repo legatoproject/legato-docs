@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Legato Read Only R/O  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src=""></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Legato Documentation</h2>
+<nav class="secondary">
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Legato Read Only R/O </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>The Legato can be built as read-only (R/O) This is done by setting the variable <b><code>READ_ONLY=1</code></b> as argument to <b><code>make</code></b>.</p>
+<dl class="section note"><dt>Note</dt><dd>This is the default for <b>ar759x</b> and <b>ar758x</b> platforms.</dd></dl>
+<p>It also possible to force the built as read-write (R/W) by setting the variable <b><code>READ_ONLY=0</code></b>.</p>
+<p><b>What is Legato R/O</b><br/>
+ The Legato system tree is built and deployed into a squashfs or ubifs image. This image is standalone and is not modifiable. Everything required to run Legato is provided during the build time.<br/>
+ When freshly installed, the Legato is fully ready and no further installation or configuration operations are expected.<br/>
+ The Legato R/O is safe of any write to a R/W partition on a flash device. This mode is typically to be used for flash devices mounted in R/O.</p>
+<p><b>What is Legato R/W</b><br/>
+ The Legato system tree is built, but some installation operations need to be performed at the first startup of a freshly installed system. Also, to run these operations, Legato is expecting a R/W partition to post deploy and finalize its configuration steps.</p>
+<p><b>Build:</b><br/>
+ By default the targets <b>ar759x</b> and <b>ar758x</b> are R/O. For these platforms, two images R/W and R/O are created in the build/... directory.<br/>
+ The images <b>legato.cwe</b>, <b>legato.squashfs</b>, <b>legato.squashfs.ubi</b> are R/O and the others suffixed with a <b>_rw</b>, ie, <b>legato_rw.cwe</b>, <b>legato_rw.squashfs</b>, <b>legato_rw.squashfs.ubi</b> are R/W.</p>
+<p><b>Restrictions:</b><br/>
+ The Legato ReadOnly feature is introducing the following restrictions:</p><ul>
+<li>The sandboxed applications are only launchable if and only if legato has a write access to /etc/passwd and /etc/group. If these files are not writable, the applications uid and gid will not be created and the related applications are not usable.</li>
+<li>To prevent the dynamic installation or removal of legato applications,</li>
+<li>To prevent single application update through AirVantage.</li>
+<li>The modifications of the config-tree remain volatile inside its cache and are not physically written to flash.</li>
+<li>Legato should avoid to modify files into the root file-system (<b><code>/etc/passwd</code></b>, <b><code>/etc/group</code></b>) because the root becomes may also R/O,</li>
+<li>The cache of <b><code>ld.so</code></b> is dymically generated by the legato startup script to add the pathes to the Legato libraries and customer Legato libraries. A bound mount is done to <b><code>/tmp/ld.so.cache</code></b> for <b><code>/etc/ld.so.cache</code></b>. This is because the Legato system tree image may be updated without updating the rootfs.</li>
+</ul>
+<p><b>Impacts</b><br/>
+ The Legato ReadOnly feature will introduce the following impacts:</p><ul>
+<li>The whole Legato system tree should be installed by flashing the Legato in a partition partition in once operation,</li>
+<li>The usage of <b><code><a class="el" href="toolsTarget_app.html">app</a> runProc</code></b> will fail for sandboxed applications if legato fails to create uid/gid for these applications.</li>
+<li>Reject the usage of <b><code><a class="el" href="toolsTarget_app.html">app</a> install</code></b> or <b><code><a class="el" href="toolsTarget_app.html">app</a> remove</code></b>,</li>
+<li>Reject the usage of the <b><code><a class="el" href="toolsTarget_update.html">update</a></code></b> tool,</li>
+<li>Reject the deletion, or clear of variables into the config tree, and also tree/sub-tree deletion, import, move or copy,</li>
+<li>If some specific users or groups are required for Legato, they should be created at build time (Yocto), because the root file system is also R/O and dynamically modifications of <b><code>/etc/passwd</code></b> or <b><code>/etc/groups</code></b> is impossible. This should be handled by the supervisor and fwupdate daemon of Legato.</li>
+<li>Files requiring to be acceded in WRITE should be located into <b><code>/tmp</code></b> or into the customer dedicated R/W partitions, if any,</li>
+<li>Files located inside the applications trees should be opened by <b>their relative path</b> and not by an absolute path,</li>
+<li>The <b><code>smsInbox</code></b> application and others applications using <b><code>/data</code></b> for recording data may not work until <b><code>/data</code></b> is located into a RW partition or applications are adapted to use another RW location,</li>
+<li>The applications, service daemons and tools need to be added into the <b><code>default_readonly.sdef</code></b> or <b><code>&lt;target&gt;.sdef</code></b> file in the way to be compiled and deployed into the whole legato system tree.</li>
+</ul>
+<p><b>Setting SMACK labels:</b><br/>
+ Because the Legato directory tree is read-only, the SMACK labels need to be set during the build time.<br/>
+ This is done by fixing labels name and value to the variables <b><code>SMACK_ATTR_NAME</code></b> and <b><code>SMACK_ATTR_VALUE</code></b> located into the <b><code>targetDefs.&lt;target&gt;</code></b>.<br/>
+<br/>
+ For example, the variables set in the <b><code>targetDefs.ar759x</code></b> file:<br/>
+<code># SMACK attribute name and value (optional)</code><br/>
+<code># If set, SMACK attr will be set at build time</code><br/>
+<code>export <b>SMACK_ATTR_NAME=security.SMACK64</b></code><br/>
+<code>export <b>SMACK_ATTR_VALUE=*</b></code><br/>
+</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

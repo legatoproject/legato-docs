@@ -1,0 +1,655 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_fs_interface.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#define-members">Macros</a> |
+<a href="#typedef-members">Typedefs</a> |
+<a href="#enum-members">Enumerations</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_fs_interface.h File Reference</h1> </div>
+</div><div class="contents">
+<div class="textblock"><code>#include "<a class="el" href="legato_8h_source.html">legato.h</a>"</code><br/>
+</div>
+<p><a href="le__fs__interface_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:af84f0e6f9c84710506f8a88f558ce3ff"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fs__interface_8h.html#af84f0e6f9c84710506f8a88f558ce3ff">LE_FS_ACCESS_MODE_MAX</a>   127</td></tr>
+<tr class="separator:af84f0e6f9c84710506f8a88f558ce3ff"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac2dad026f875cc242f2541b57315788e"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fs__interface_8h.html#ac2dad026f875cc242f2541b57315788e">LE_FS_PATH_MAX_LEN</a>   128</td></tr>
+<tr class="separator:ac2dad026f875cc242f2541b57315788e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7e2a31d954e7bcd758ed5461448fedf0"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fs__interface_8h.html#a7e2a31d954e7bcd758ed5461448fedf0">LE_FS_DATA_MAX_SIZE</a>   8192</td></tr>
+<tr class="separator:a7e2a31d954e7bcd758ed5461448fedf0"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a5d6a6ea918795062df6645f9ae8ebfe0"><td align="right" class="memItemLeft" valign="top">typedef struct le_fs_File * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fs__interface_8h.html#a5d6a6ea918795062df6645f9ae8ebfe0">le_fs_FileRef_t</a></td></tr>
+<tr class="separator:a5d6a6ea918795062df6645f9ae8ebfe0"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a7d03254febfa1144c5f979e9c82e9780"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fs__interface_8h.html#a7d03254febfa1144c5f979e9c82e9780">le_fs_AccessMode_t</a> { <br/>
+  <a class="el" href="le__fs__interface_8h.html#a7d03254febfa1144c5f979e9c82e9780a1f9274c9e8861ddba809ce7cf20f97ad">LE_FS_RDONLY</a> = 0x1, 
+<a class="el" href="le__fs__interface_8h.html#a7d03254febfa1144c5f979e9c82e9780a63d6455728571c19b44c0702e3c0434b">LE_FS_WRONLY</a> = 0x2, 
+<a class="el" href="le__fs__interface_8h.html#a7d03254febfa1144c5f979e9c82e9780a39da82663b735dcb8fca360537bb3375">LE_FS_RDWR</a> = 0x4, 
+<a class="el" href="le__fs__interface_8h.html#a7d03254febfa1144c5f979e9c82e9780a8d8333fa389b5e7fd936634d31455672">LE_FS_CREAT</a> = 0x8, 
+<br/>
+  <a class="el" href="le__fs__interface_8h.html#a7d03254febfa1144c5f979e9c82e9780a5c49848557186c27e702762283f79d2e">LE_FS_TRUNC</a> = 0x10, 
+<a class="el" href="le__fs__interface_8h.html#a7d03254febfa1144c5f979e9c82e9780ab3cb38b2cf0279860d8f7804244e7515">LE_FS_APPEND</a> = 0x20, 
+<a class="el" href="le__fs__interface_8h.html#a7d03254febfa1144c5f979e9c82e9780a3ba49e09f235e4af50e7ada28e3c431f">LE_FS_SYNC</a> = 0x40
+<br/>
+ }</td></tr>
+<tr class="separator:a7d03254febfa1144c5f979e9c82e9780"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a457edff9b23ffd119c2ef0efe2917e91"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fs__interface_8h.html#a457edff9b23ffd119c2ef0efe2917e91">le_fs_Position_t</a> { <a class="el" href="le__fs__interface_8h.html#a457edff9b23ffd119c2ef0efe2917e91a7f52b3bc9b287b6b435537a015389734">LE_FS_SEEK_SET</a> = 0, 
+<a class="el" href="le__fs__interface_8h.html#a457edff9b23ffd119c2ef0efe2917e91a19082e6d7faf2897884e6072e3cba7c9">LE_FS_SEEK_CUR</a> = 1, 
+<a class="el" href="le__fs__interface_8h.html#a457edff9b23ffd119c2ef0efe2917e91aecd181d4c95ae88fb4071887ab8f4b06">LE_FS_SEEK_END</a> = 2
+ }</td></tr>
+<tr class="separator:a457edff9b23ffd119c2ef0efe2917e91"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aa623a3f5dc1fafe2b1f57690ea37ebe3"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fs__interface_8h.html#aa623a3f5dc1fafe2b1f57690ea37ebe3">le_fs_ConnectService</a> (void)</td></tr>
+<tr class="separator:aa623a3f5dc1fafe2b1f57690ea37ebe3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab3ef8715bab7e3e57d216cc3e658be1e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fs__interface_8h.html#ab3ef8715bab7e3e57d216cc3e658be1e">le_fs_TryConnectService</a> (void)</td></tr>
+<tr class="separator:ab3ef8715bab7e3e57d216cc3e658be1e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a533e32a70fc18f2cf141b32be0b91833"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fs__interface_8h.html#a533e32a70fc18f2cf141b32be0b91833">le_fs_DisconnectService</a> (void)</td></tr>
+<tr class="separator:a533e32a70fc18f2cf141b32be0b91833"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3e2f984b093bdba73002e95a199eecd8"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fs__interface_8h.html#a3e2f984b093bdba73002e95a199eecd8">le_fs_Open</a> (const char *filePath, <a class="el" href="le__fs__interface_8h.html#a7d03254febfa1144c5f979e9c82e9780">le_fs_AccessMode_t</a> accessMode, <a class="el" href="le__fs__interface_8h.html#a5d6a6ea918795062df6645f9ae8ebfe0">le_fs_FileRef_t</a> *fileRefPtr)</td></tr>
+<tr class="separator:a3e2f984b093bdba73002e95a199eecd8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2ecd0f3b1867abd51eca0f98f8cc932b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fs__interface_8h.html#a2ecd0f3b1867abd51eca0f98f8cc932b">le_fs_Close</a> (<a class="el" href="le__fs__interface_8h.html#a5d6a6ea918795062df6645f9ae8ebfe0">le_fs_FileRef_t</a> fileRef)</td></tr>
+<tr class="separator:a2ecd0f3b1867abd51eca0f98f8cc932b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a155feeb2adcc8ca2caf7becf401030c8"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fs__interface_8h.html#a155feeb2adcc8ca2caf7becf401030c8">le_fs_Read</a> (<a class="el" href="le__fs__interface_8h.html#a5d6a6ea918795062df6645f9ae8ebfe0">le_fs_FileRef_t</a> fileRef, uint8_t *bufPtr, size_t *bufNumElementsPtr)</td></tr>
+<tr class="separator:a155feeb2adcc8ca2caf7becf401030c8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:afb8428bae9f5335591bef6d723d908f9"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fs__interface_8h.html#afb8428bae9f5335591bef6d723d908f9">le_fs_Write</a> (<a class="el" href="le__fs__interface_8h.html#a5d6a6ea918795062df6645f9ae8ebfe0">le_fs_FileRef_t</a> fileRef, const uint8_t *bufPtr, size_t bufNumElements)</td></tr>
+<tr class="separator:afb8428bae9f5335591bef6d723d908f9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a17a5a2b58cb9dfb75a105048429e785e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fs__interface_8h.html#a17a5a2b58cb9dfb75a105048429e785e">le_fs_Seek</a> (<a class="el" href="le__fs__interface_8h.html#a5d6a6ea918795062df6645f9ae8ebfe0">le_fs_FileRef_t</a> fileRef, int32_t offset, <a class="el" href="le__fs__interface_8h.html#a457edff9b23ffd119c2ef0efe2917e91">le_fs_Position_t</a> position, int32_t *currentOffsetPtr)</td></tr>
+<tr class="separator:a17a5a2b58cb9dfb75a105048429e785e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aec91662b817e8bf094f877488fa04a6b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fs__interface_8h.html#aec91662b817e8bf094f877488fa04a6b">le_fs_GetSize</a> (const char *filePath, size_t *sizePtr)</td></tr>
+<tr class="separator:aec91662b817e8bf094f877488fa04a6b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5bbf8b900c1d4a366e4e5a29e7ba6948"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fs__interface_8h.html#a5bbf8b900c1d4a366e4e5a29e7ba6948">le_fs_Delete</a> (const char *filePath)</td></tr>
+<tr class="separator:a5bbf8b900c1d4a366e4e5a29e7ba6948"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a790401bdc04c4ae936600c73d0397f2f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fs__interface_8h.html#a790401bdc04c4ae936600c73d0397f2f">le_fs_Move</a> (const char *srcPath, const char *destPath)</td></tr>
+<tr class="separator:a790401bdc04c4ae936600c73d0397f2f"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato <a class="el" href="c_fs.html">File System service</a> API.</p>
+<hr/>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="af84f0e6f9c84710506f8a88f558ce3ff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_FS_ACCESS_MODE_MAX   127</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Define the maximal bit mask for file access mode.</p>
+<dl class="section note"><dt>Note</dt><dd>This maximal value should be coherent with <a class="el" href="le__fs__interface_8h.html#a7d03254febfa1144c5f979e9c82e9780">le_fs_AccessMode_t</a> </dd></dl>
+</div>
+</div>
+<a class="anchor" id="a7e2a31d954e7bcd758ed5461448fedf0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_FS_DATA_MAX_SIZE   8192</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Maximum number of bytes to read/write in one API call. </p>
+</div>
+</div>
+<a class="anchor" id="ac2dad026f875cc242f2541b57315788e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_FS_PATH_MAX_LEN   128</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Maximum number of characters permitted for a file path. </p>
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="a5d6a6ea918795062df6645f9ae8ebfe0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_fs_File* <a class="el" href="le__fs__interface_8h.html#a5d6a6ea918795062df6645f9ae8ebfe0">le_fs_FileRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference of a file </p>
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="a7d03254febfa1144c5f979e9c82e9780"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">enum <a class="el" href="le__fs__interface_8h.html#a7d03254febfa1144c5f979e9c82e9780">le_fs_AccessMode_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>File access modes used when opening a file. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a7d03254febfa1144c5f979e9c82e9780a1f9274c9e8861ddba809ce7cf20f97ad"></a>LE_FS_RDONLY </td><td class="fielddoc">
+<p>Read only. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7d03254febfa1144c5f979e9c82e9780a63d6455728571c19b44c0702e3c0434b"></a>LE_FS_WRONLY </td><td class="fielddoc">
+<p>Write only. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7d03254febfa1144c5f979e9c82e9780a39da82663b735dcb8fca360537bb3375"></a>LE_FS_RDWR </td><td class="fielddoc">
+<p>Read/Write. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7d03254febfa1144c5f979e9c82e9780a8d8333fa389b5e7fd936634d31455672"></a>LE_FS_CREAT </td><td class="fielddoc">
+<p>Create a new file. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7d03254febfa1144c5f979e9c82e9780a5c49848557186c27e702762283f79d2e"></a>LE_FS_TRUNC </td><td class="fielddoc">
+<p>Truncate. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7d03254febfa1144c5f979e9c82e9780ab3cb38b2cf0279860d8f7804244e7515"></a>LE_FS_APPEND </td><td class="fielddoc">
+<p>Append. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a7d03254febfa1144c5f979e9c82e9780a3ba49e09f235e4af50e7ada28e3c431f"></a>LE_FS_SYNC </td><td class="fielddoc">
+<p>Synchronized. </p>
+</td></tr>
+</table>
+</div>
+</div>
+<a class="anchor" id="a457edff9b23ffd119c2ef0efe2917e91"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">enum <a class="el" href="le__fs__interface_8h.html#a457edff9b23ffd119c2ef0efe2917e91">le_fs_Position_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Offset position used when seeking in a file. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a457edff9b23ffd119c2ef0efe2917e91a7f52b3bc9b287b6b435537a015389734"></a>LE_FS_SEEK_SET </td><td class="fielddoc">
+<p>From the current position. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a457edff9b23ffd119c2ef0efe2917e91a19082e6d7faf2897884e6072e3cba7c9"></a>LE_FS_SEEK_CUR </td><td class="fielddoc">
+<p>From the beginning of the file. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a457edff9b23ffd119c2ef0efe2917e91aecd181d4c95ae88fb4071887ab8f4b06"></a>LE_FS_SEEK_END </td><td class="fielddoc">
+<p>From the end of the file. </p>
+</td></tr>
+</table>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a2ecd0f3b1867abd51eca0f98f8cc932b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_fs_Close </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__fs__interface_8h.html#a5d6a6ea918795062df6645f9ae8ebfe0">le_fs_FileRef_t</a> </td>
+<td class="paramname"><em>fileRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function is called to close an opened file.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">fileRef</td><td>File reference </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="aa623a3f5dc1fafe2b1f57690ea37ebe3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_fs_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a class="anchor" id="a5bbf8b900c1d4a366e4e5a29e7ba6948"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_fs_Delete </td>
+<td>(</td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>filePath</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function is called to delete a file.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_BAD_PARAMETER A parameter is invalid.</li>
+<li>LE_OVERFLOW The file path is too long.</li>
+<li>LE_NOT_FOUND The file does not exist or a directory in the path does not exist</li>
+<li>LE_NOT_PERMITTED The access right fails to delete the file or access is not granted to a a directory in the path</li>
+<li>LE_UNSUPPORTED The prefix cannot be added and the function is unusable</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">filePath</td><td>File path </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a533e32a70fc18f2cf141b32be0b91833"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_fs_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a class="anchor" id="aec91662b817e8bf094f877488fa04a6b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_fs_GetSize </td>
+<td>(</td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>filePath</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>sizePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function is called to get the size of a file.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_BAD_PARAMETER A parameter is invalid.</li>
+<li>LE_OVERFLOW The file path is too long.</li>
+<li>LE_UNSUPPORTED The prefix cannot be added and the function is unusable</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">filePath</td><td>File path </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">sizePtr</td><td>File size (if successful) </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a790401bdc04c4ae936600c73d0397f2f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_fs_Move </td>
+<td>(</td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>srcPath</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>destPath</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function is called to rename an existing file. If rename fails, the file will keep its original name.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_BAD_PARAMETER A parameter is invalid.</li>
+<li>LE_OVERFLOW A file path is too long.</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">srcPath</td><td>Path to file to rename </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">destPath</td><td>New path to file </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a3e2f984b093bdba73002e95a199eecd8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_fs_Open </td>
+<td>(</td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>filePath</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__fs__interface_8h.html#a7d03254febfa1144c5f979e9c82e9780">le_fs_AccessMode_t</a> </td>
+<td class="paramname"><em>accessMode</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__fs__interface_8h.html#a5d6a6ea918795062df6645f9ae8ebfe0">le_fs_FileRef_t</a> * </td>
+<td class="paramname"><em>fileRefPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function is called to create or open an existing file.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_BAD_PARAMETER A parameter is invalid.</li>
+<li>LE_OVERFLOW The file path is too long.</li>
+<li>LE_NOT_FOUND The file does not exists or a directory in the path does not exist</li>
+<li>LE_NOT_PERMITTED Access denied to the file or to a directory in the path</li>
+<li>LE_UNSUPPORTED The prefix cannot be added and the function is unusable</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">filePath</td><td>File path </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">accessMode</td><td>Access mode for the file </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">fileRefPtr</td><td>File reference (if successful) </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a155feeb2adcc8ca2caf7becf401030c8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_fs_Read </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__fs__interface_8h.html#a5d6a6ea918795062df6645f9ae8ebfe0">le_fs_FileRef_t</a> </td>
+<td class="paramname"><em>fileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>bufPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>bufNumElementsPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function is called to read the requested data length from an opened file. The data is read at the current file position.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_BAD_PARAMETER A parameter is invalid.</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">fileRef</td><td>File reference </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">bufPtr</td><td>Buffer to store the data read in the file </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">bufNumElementsPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a17a5a2b58cb9dfb75a105048429e785e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_fs_Seek </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__fs__interface_8h.html#a5d6a6ea918795062df6645f9ae8ebfe0">le_fs_FileRef_t</a> </td>
+<td class="paramname"><em>fileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t </td>
+<td class="paramname"><em>offset</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__fs__interface_8h.html#a457edff9b23ffd119c2ef0efe2917e91">le_fs_Position_t</a> </td>
+<td class="paramname"><em>position</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t * </td>
+<td class="paramname"><em>currentOffsetPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function is called to change the file position of an opened file.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_BAD_PARAMETER A parameter is invalid.</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">fileRef</td><td>File reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">offset</td><td>Offset to apply </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">position</td><td>Offset is relative to this position </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">currentOffsetPtr</td><td>Offset from the beginning after the seek operation </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ab3ef8715bab7e3e57d216cc3e658be1e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_fs_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a class="anchor" id="afb8428bae9f5335591bef6d723d908f9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_fs_Write </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__fs__interface_8h.html#a5d6a6ea918795062df6645f9ae8ebfe0">le_fs_FileRef_t</a> </td>
+<td class="paramname"><em>fileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>bufPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>bufNumElements</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function is called to write the requested data length to an opened file. The data is written at the current file position.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_BAD_PARAMETER A parameter is invalid.</li>
+<li>LE_UNDERFLOW The write succeed but was not able to write all bytes</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">fileRef</td><td>File reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">bufPtr</td><td>Buffer to write in the file </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">bufNumElements</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

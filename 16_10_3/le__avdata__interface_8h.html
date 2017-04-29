@@ -1,0 +1,1549 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_avdata_interface.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#define-members">Macros</a> |
+<a href="#typedef-members">Typedefs</a> |
+<a href="#enum-members">Enumerations</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_avdata_interface.h File Reference</h1> </div>
+</div><div class="contents">
+<div class="textblock"><code>#include "<a class="el" href="legato_8h_source.html">legato.h</a>"</code><br/>
+</div>
+<p><a href="le__avdata__interface_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ab43d6ecd9878f5bf517a1848ee70b333"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#ab43d6ecd9878f5bf517a1848ee70b333">LE_AVDATA_ASSET_NAME_LEN</a>   47</td></tr>
+<tr class="separator:ab43d6ecd9878f5bf517a1848ee70b333"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:acf95f1c0cfc9c4e3dfae83c43aa44e56"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#acf95f1c0cfc9c4e3dfae83c43aa44e56">LE_AVDATA_FIELD_NAME_LEN</a>   47</td></tr>
+<tr class="separator:acf95f1c0cfc9c4e3dfae83c43aa44e56"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a151c1a2691ba88df163243d02d1e0741"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a151c1a2691ba88df163243d02d1e0741">LE_AVDATA_STRING_VALUE_LEN</a>   255</td></tr>
+<tr class="separator:a151c1a2691ba88df163243d02d1e0741"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1af4f7f6ac035755237d117b4a7688ef"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a1af4f7f6ac035755237d117b4a7688ef">LE_AVDATA_BINARY_VALUE_LEN</a>   255</td></tr>
+<tr class="separator:a1af4f7f6ac035755237d117b4a7688ef"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a08f091c0da8c4a26f662dbff039de900"><td align="right" class="memItemLeft" valign="top">typedef struct le_avdata_AssetInstance * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a></td></tr>
+<tr class="separator:a08f091c0da8c4a26f662dbff039de900"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1a7e4c61c7b1e5a157428da7c60e1024"><td align="right" class="memItemLeft" valign="top">typedef struct le_avdata_RequestSessionObj * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a1a7e4c61c7b1e5a157428da7c60e1024">le_avdata_RequestSessionObjRef_t</a></td></tr>
+<tr class="separator:a1a7e4c61c7b1e5a157428da7c60e1024"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8eb8a64d416f7ec5e8f45c06c1906ea0"><td align="right" class="memItemLeft" valign="top">typedef struct le_avdata_FieldEventHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a8eb8a64d416f7ec5e8f45c06c1906ea0">le_avdata_FieldEventHandlerRef_t</a></td></tr>
+<tr class="separator:a8eb8a64d416f7ec5e8f45c06c1906ea0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a99a6853bdf4144b6c47331d2d69adedf"><td align="right" class="memItemLeft" valign="top">typedef struct le_avdata_SessionStateHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a99a6853bdf4144b6c47331d2d69adedf">le_avdata_SessionStateHandlerRef_t</a></td></tr>
+<tr class="separator:a99a6853bdf4144b6c47331d2d69adedf"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad103a82a122d9cb3b377d0ebd1ba6a76"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#ad103a82a122d9cb3b377d0ebd1ba6a76">le_avdata_FieldHandlerFunc_t</a>) (<a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> instRef, const char *fieldName, void *contextPtr)</td></tr>
+<tr class="separator:ad103a82a122d9cb3b377d0ebd1ba6a76"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a556501407ad4588fec37e238f51c2945"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a556501407ad4588fec37e238f51c2945">le_avdata_SessionStateHandlerFunc_t</a>) (<a class="el" href="le__avdata__interface_8h.html#a91f4eced925d1a1e1039d6efc1eec739">le_avdata_SessionState_t</a> sessionState, void *contextPtr)</td></tr>
+<tr class="separator:a556501407ad4588fec37e238f51c2945"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a91f4eced925d1a1e1039d6efc1eec739"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a91f4eced925d1a1e1039d6efc1eec739">le_avdata_SessionState_t</a> { <a class="el" href="le__avdata__interface_8h.html#a91f4eced925d1a1e1039d6efc1eec739af375bd64030ccf58c3e25039f8add18c">LE_AVDATA_SESSION_STARTED</a> = 0, 
+<a class="el" href="le__avdata__interface_8h.html#a91f4eced925d1a1e1039d6efc1eec739a6316506877c3dbfcb58f28768d60f48d">LE_AVDATA_SESSION_STOPPED</a> = 1
+ }</td></tr>
+<tr class="separator:a91f4eced925d1a1e1039d6efc1eec739"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a0f3c4d28bfe37aa29b6f519537b87da3"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a0f3c4d28bfe37aa29b6f519537b87da3">le_avdata_ConnectService</a> (void)</td></tr>
+<tr class="separator:a0f3c4d28bfe37aa29b6f519537b87da3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af9dc75ad35431dd76f2248bbd0da7f33"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#af9dc75ad35431dd76f2248bbd0da7f33">le_avdata_TryConnectService</a> (void)</td></tr>
+<tr class="separator:af9dc75ad35431dd76f2248bbd0da7f33"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4210ebe082f4c821d10d5bed72f9c640"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a4210ebe082f4c821d10d5bed72f9c640">le_avdata_DisconnectService</a> (void)</td></tr>
+<tr class="separator:a4210ebe082f4c821d10d5bed72f9c640"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aaae8e18ac8ac377eaab944f5f89a192d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__avdata__interface_8h.html#a8eb8a64d416f7ec5e8f45c06c1906ea0">le_avdata_FieldEventHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#aaae8e18ac8ac377eaab944f5f89a192d">le_avdata_AddFieldEventHandler</a> (<a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> instRef, const char *fieldName, <a class="el" href="le__avdata__interface_8h.html#ad103a82a122d9cb3b377d0ebd1ba6a76">le_avdata_FieldHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:aaae8e18ac8ac377eaab944f5f89a192d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a18b8176f294ffc1b5ffdefe4c3e3768a"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a18b8176f294ffc1b5ffdefe4c3e3768a">le_avdata_RemoveFieldEventHandler</a> (<a class="el" href="le__avdata__interface_8h.html#a8eb8a64d416f7ec5e8f45c06c1906ea0">le_avdata_FieldEventHandlerRef_t</a> addHandlerRef)</td></tr>
+<tr class="separator:a18b8176f294ffc1b5ffdefe4c3e3768a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:afb9b95f51959a3edb155c5f780c4c0b1"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#afb9b95f51959a3edb155c5f780c4c0b1">le_avdata_Create</a> (const char *assetName)</td></tr>
+<tr class="separator:afb9b95f51959a3edb155c5f780c4c0b1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9f302c8654fb6746223bea8091d8f606"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a9f302c8654fb6746223bea8091d8f606">le_avdata_Delete</a> (<a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> instRef)</td></tr>
+<tr class="separator:a9f302c8654fb6746223bea8091d8f606"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aece245e0d4ba02523679dd2ba25a8a90"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#aece245e0d4ba02523679dd2ba25a8a90">le_avdata_GetInt</a> (<a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> instRef, const char *fieldName, int32_t *valuePtr)</td></tr>
+<tr class="separator:aece245e0d4ba02523679dd2ba25a8a90"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:abaf691214485643af60da3f93795909c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#abaf691214485643af60da3f93795909c">le_avdata_SetInt</a> (<a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> instRef, const char *fieldName, int32_t value)</td></tr>
+<tr class="separator:abaf691214485643af60da3f93795909c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7f4a6bfedd75bc81ceae57924b832455"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a7f4a6bfedd75bc81ceae57924b832455">le_avdata_GetFloat</a> (<a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> instRef, const char *fieldName, double *valuePtr)</td></tr>
+<tr class="separator:a7f4a6bfedd75bc81ceae57924b832455"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af9a038bf7e1e57b63d7f34738cd17c21"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#af9a038bf7e1e57b63d7f34738cd17c21">le_avdata_SetFloat</a> (<a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> instRef, const char *fieldName, double value)</td></tr>
+<tr class="separator:af9a038bf7e1e57b63d7f34738cd17c21"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae3d448ea6e5d4e87cfb8a9ae713cc06c"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#ae3d448ea6e5d4e87cfb8a9ae713cc06c">le_avdata_GetBool</a> (<a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> instRef, const char *fieldName, bool *valuePtr)</td></tr>
+<tr class="separator:ae3d448ea6e5d4e87cfb8a9ae713cc06c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a358ae030ed3607f4844e50341c45d746"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a358ae030ed3607f4844e50341c45d746">le_avdata_SetBool</a> (<a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> instRef, const char *fieldName, bool value)</td></tr>
+<tr class="separator:a358ae030ed3607f4844e50341c45d746"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:add94bfa34220bf89c913f13b4721c4d0"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#add94bfa34220bf89c913f13b4721c4d0">le_avdata_GetString</a> (<a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> instRef, const char *fieldName, char *value, size_t valueNumElements)</td></tr>
+<tr class="separator:add94bfa34220bf89c913f13b4721c4d0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa32e616235212e3bf8dd514767bc8fa1"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#aa32e616235212e3bf8dd514767bc8fa1">le_avdata_SetString</a> (<a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> instRef, const char *fieldName, const char *value)</td></tr>
+<tr class="separator:aa32e616235212e3bf8dd514767bc8fa1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af43cd83333be70ec9529dd4030f4e430"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#af43cd83333be70ec9529dd4030f4e430">le_avdata_GetBinary</a> (<a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> instRef, const char *fieldName, uint8_t *valuePtr, size_t *valueNumElementsPtr)</td></tr>
+<tr class="separator:af43cd83333be70ec9529dd4030f4e430"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae6200a5fb1fdf180fae558ea718d39c3"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#ae6200a5fb1fdf180fae558ea718d39c3">le_avdata_SetBinary</a> (<a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> instRef, const char *fieldName, const uint8_t *valuePtr, size_t valueNumElements)</td></tr>
+<tr class="separator:ae6200a5fb1fdf180fae558ea718d39c3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1d6df0ba8c6b6d0c7c32776a8aaa357f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a1d6df0ba8c6b6d0c7c32776a8aaa357f">le_avdata_StartTimeSeries</a> (<a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> instRef, const char *fieldName, double factor, double timeStampFactor)</td></tr>
+<tr class="separator:a1d6df0ba8c6b6d0c7c32776a8aaa357f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab8d36689b3b8e262c22886012f14ecb6"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#ab8d36689b3b8e262c22886012f14ecb6">le_avdata_StopTimeSeries</a> (<a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> instRef, const char *fieldName)</td></tr>
+<tr class="separator:ab8d36689b3b8e262c22886012f14ecb6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3f4f95c9ddead3838c753780f7df076e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a3f4f95c9ddead3838c753780f7df076e">le_avdata_PushTimeSeries</a> (<a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> instRef, const char *fieldName, bool isRestartTimeSeries)</td></tr>
+<tr class="separator:a3f4f95c9ddead3838c753780f7df076e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af36e54289bb16f2f29da4c7456560982"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__avdata__interface_8h.html#a99a6853bdf4144b6c47331d2d69adedf">le_avdata_SessionStateHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#af36e54289bb16f2f29da4c7456560982">le_avdata_AddSessionStateHandler</a> (<a class="el" href="le__avdata__interface_8h.html#a556501407ad4588fec37e238f51c2945">le_avdata_SessionStateHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:af36e54289bb16f2f29da4c7456560982"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a76fa8cac2ca4ed74156832cc07197de6"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a76fa8cac2ca4ed74156832cc07197de6">le_avdata_RemoveSessionStateHandler</a> (<a class="el" href="le__avdata__interface_8h.html#a99a6853bdf4144b6c47331d2d69adedf">le_avdata_SessionStateHandlerRef_t</a> addHandlerRef)</td></tr>
+<tr class="separator:a76fa8cac2ca4ed74156832cc07197de6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a939368c52a55cf19795fbae835796d5d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a939368c52a55cf19795fbae835796d5d">le_avdata_GetTimeSeriesStatus</a> (<a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> instRef, const char *fieldName, bool *isTimeSeriesPtr, int32_t *numDataPointPtr)</td></tr>
+<tr class="separator:a939368c52a55cf19795fbae835796d5d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3625f1d2a6343d0222b571c257e7ed98"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a3625f1d2a6343d0222b571c257e7ed98">le_avdata_RecordInt</a> (<a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> instRef, const char *fieldName, int32_t value, uint64_t timestamp)</td></tr>
+<tr class="separator:a3625f1d2a6343d0222b571c257e7ed98"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0786a4b3aba202202627b9dce81fee05"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a0786a4b3aba202202627b9dce81fee05">le_avdata_RecordFloat</a> (<a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> instRef, const char *fieldName, double value, uint64_t timestamp)</td></tr>
+<tr class="separator:a0786a4b3aba202202627b9dce81fee05"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a58c1b401b3dae95329c232fbb3a56017"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a58c1b401b3dae95329c232fbb3a56017">le_avdata_RecordBool</a> (<a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> instRef, const char *fieldName, bool value, uint64_t timeStamp)</td></tr>
+<tr class="separator:a58c1b401b3dae95329c232fbb3a56017"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab140b6ccf9f16c7567b6d2540f11f5ce"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#ab140b6ccf9f16c7567b6d2540f11f5ce">le_avdata_RecordString</a> (<a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> instRef, const char *fieldName, const char *value, uint64_t timeStamp)</td></tr>
+<tr class="separator:ab140b6ccf9f16c7567b6d2540f11f5ce"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a35f1cb74f0bb6e96abf2ce57e7a6f19b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a35f1cb74f0bb6e96abf2ce57e7a6f19b">le_avdata_IsObserve</a> (<a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> instRef, const char *fieldName, bool *isObservePtr)</td></tr>
+<tr class="separator:a35f1cb74f0bb6e96abf2ce57e7a6f19b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1153ba43d55c59db3d36e3f44fd5ff10"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__avdata__interface_8h.html#a1a7e4c61c7b1e5a157428da7c60e1024">le_avdata_RequestSessionObjRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a1153ba43d55c59db3d36e3f44fd5ff10">le_avdata_RequestSession</a> (void)</td></tr>
+<tr class="separator:a1153ba43d55c59db3d36e3f44fd5ff10"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1f0253c6388d80aa9c1ce7745a06cfe9"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__avdata__interface_8h.html#a1f0253c6388d80aa9c1ce7745a06cfe9">le_avdata_ReleaseSession</a> (<a class="el" href="le__avdata__interface_8h.html#a1a7e4c61c7b1e5a157428da7c60e1024">le_avdata_RequestSessionObjRef_t</a> requestRef)</td></tr>
+<tr class="separator:a1f0253c6388d80aa9c1ce7745a06cfe9"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato <a class="el" href="c_le_avdata.html">AirVantage Data</a> include file.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="ab43d6ecd9878f5bf517a1848ee70b333"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_AVDATA_ASSET_NAME_LEN   47</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Define the maximum length of an asset name (TODO: verify value) </p>
+</div>
+</div>
+<a class="anchor" id="a1af4f7f6ac035755237d117b4a7688ef"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_AVDATA_BINARY_VALUE_LEN   255</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Define the maximum length of a binary data field (TODO: verify value) </p>
+</div>
+</div>
+<a class="anchor" id="acf95f1c0cfc9c4e3dfae83c43aa44e56"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_AVDATA_FIELD_NAME_LEN   47</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Define the maximum length of a field name (TODO: verify value) </p>
+</div>
+</div>
+<a class="anchor" id="a151c1a2691ba88df163243d02d1e0741"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_AVDATA_STRING_VALUE_LEN   255</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Define the maximum length of a string field (TODO: verify value) </p>
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="a08f091c0da8c4a26f662dbff039de900"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_avdata_AssetInstance* <a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>An asset data instance reference </p>
+</div>
+</div>
+<a class="anchor" id="a8eb8a64d416f7ec5e8f45c06c1906ea0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_avdata_FieldEventHandler* <a class="el" href="le__avdata__interface_8h.html#a8eb8a64d416f7ec5e8f45c06c1906ea0">le_avdata_FieldEventHandlerRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference type used by Add/Remove functions for EVENT 'le_avdata_FieldEvent' </p>
+</div>
+</div>
+<a class="anchor" id="ad103a82a122d9cb3b377d0ebd1ba6a76"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_avdata_FieldHandlerFunc_t) (<a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> instRef, const char *fieldName, void *contextPtr)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Handler for field activity</p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramname">instRef</td><td></td></tr>
+<tr><td class="paramname">fieldName</td><td></td></tr>
+<tr><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a1a7e4c61c7b1e5a157428da7c60e1024"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_avdata_RequestSessionObj* <a class="el" href="le__avdata__interface_8h.html#a1a7e4c61c7b1e5a157428da7c60e1024">le_avdata_RequestSessionObjRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference returned by RequestSession function and used by ReleaseSession function </p>
+</div>
+</div>
+<a class="anchor" id="a556501407ad4588fec37e238f51c2945"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_avdata_SessionStateHandlerFunc_t) (<a class="el" href="le__avdata__interface_8h.html#a91f4eced925d1a1e1039d6efc1eec739">le_avdata_SessionState_t</a> sessionState, void *contextPtr)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Handler for AV session changes</p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramname">sessionState</td><td>Session started or stopped? </td></tr>
+<tr><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a99a6853bdf4144b6c47331d2d69adedf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_avdata_SessionStateHandler* <a class="el" href="le__avdata__interface_8h.html#a99a6853bdf4144b6c47331d2d69adedf">le_avdata_SessionStateHandlerRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference type used by Add/Remove functions for EVENT 'le_avdata_SessionState' </p>
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="a91f4eced925d1a1e1039d6efc1eec739"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">enum <a class="el" href="le__avdata__interface_8h.html#a91f4eced925d1a1e1039d6efc1eec739">le_avdata_SessionState_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>AVMS session state </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a91f4eced925d1a1e1039d6efc1eec739af375bd64030ccf58c3e25039f8add18c"></a>LE_AVDATA_SESSION_STARTED </td><td class="fielddoc">
+<p>AVMS session started. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a91f4eced925d1a1e1039d6efc1eec739a6316506877c3dbfcb58f28768d60f48d"></a>LE_AVDATA_SESSION_STOPPED </td><td class="fielddoc">
+<p>AVMS session stopped. </p>
+</td></tr>
+</table>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="aaae8e18ac8ac377eaab944f5f89a192d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__avdata__interface_8h.html#a8eb8a64d416f7ec5e8f45c06c1906ea0">le_avdata_FieldEventHandlerRef_t</a> le_avdata_AddFieldEventHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> </td>
+<td class="paramname"><em>instRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>fieldName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#ad103a82a122d9cb3b377d0ebd1ba6a76">le_avdata_FieldHandlerFunc_t</a> </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Add handler function for EVENT 'le_avdata_FieldEvent'</p>
+<p>This event provides information on field activity </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">instRef</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fieldName</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="af36e54289bb16f2f29da4c7456560982"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__avdata__interface_8h.html#a99a6853bdf4144b6c47331d2d69adedf">le_avdata_SessionStateHandlerRef_t</a> le_avdata_AddSessionStateHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a556501407ad4588fec37e238f51c2945">le_avdata_SessionStateHandlerFunc_t</a> </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Add handler function for EVENT 'le_avdata_SessionState'</p>
+<p>This event provides information on AV session state changes </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a0f3c4d28bfe37aa29b6f519537b87da3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_avdata_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a class="anchor" id="afb9b95f51959a3edb155c5f780c4c0b1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> le_avdata_Create </td>
+<td>(</td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>assetName</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Create an instance of AirVantage asset</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the asset instance</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>It is a fatal error if the asset isn't defined. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">assetName</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a9f302c8654fb6746223bea8091d8f606"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_avdata_Delete </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> </td>
+<td class="paramname"><em>instRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Delete an instance of AirVantage asset</p>
+<dl class="section note"><dt>Note</dt><dd>It's a fatal error if the instRef isn't valid </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">instRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a4210ebe082f4c821d10d5bed72f9c640"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_avdata_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a class="anchor" id="af43cd83333be70ec9529dd4030f4e430"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_avdata_GetBinary </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> </td>
+<td class="paramname"><em>instRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>fieldName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>valuePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>valueNumElementsPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the value of a binary data setting field</p>
+<dl class="section note"><dt>Note</dt><dd>The client will be terminated if the instRef is not valid, or the field doesn't exist </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">instRef</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fieldName</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">valuePtr</td><td></td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">valueNumElementsPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ae3d448ea6e5d4e87cfb8a9ae713cc06c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_avdata_GetBool </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> </td>
+<td class="paramname"><em>instRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>fieldName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">bool * </td>
+<td class="paramname"><em>valuePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the value of a boolean setting field</p>
+<dl class="section note"><dt>Note</dt><dd>The client will be terminated if the instRef is not valid, or the field doesn't exist </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">instRef</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fieldName</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">valuePtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a7f4a6bfedd75bc81ceae57924b832455"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_avdata_GetFloat </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> </td>
+<td class="paramname"><em>instRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>fieldName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">double * </td>
+<td class="paramname"><em>valuePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the value of a float setting field</p>
+<dl class="section note"><dt>Note</dt><dd>The client will be terminated if the instRef is not valid, or the field doesn't exist </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">instRef</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fieldName</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">valuePtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="aece245e0d4ba02523679dd2ba25a8a90"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_avdata_GetInt </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> </td>
+<td class="paramname"><em>instRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>fieldName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t * </td>
+<td class="paramname"><em>valuePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the value of an integer setting field</p>
+<dl class="section note"><dt>Note</dt><dd>The client will be terminated if the instRef is not valid, or the field doesn't exist </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">instRef</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fieldName</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">valuePtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="add94bfa34220bf89c913f13b4721c4d0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_avdata_GetString </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> </td>
+<td class="paramname"><em>instRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>fieldName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>value</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>valueNumElements</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the value of a string setting field</p>
+<dl class="section note"><dt>Note</dt><dd>The client will be terminated if the instRef is not valid, or the field doesn't exist </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">instRef</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fieldName</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">value</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">valueNumElements</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a939368c52a55cf19795fbae835796d5d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_avdata_GetTimeSeriesStatus </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> </td>
+<td class="paramname"><em>instRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>fieldName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">bool * </td>
+<td class="paramname"><em>isTimeSeriesPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t * </td>
+<td class="paramname"><em>numDataPointPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Is time series enabled on this resource, if yes how many data points are recorded so far?</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT if time series not supported </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">instRef</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fieldName</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">isTimeSeriesPtr</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">numDataPointPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a35f1cb74f0bb6e96abf2ce57e7a6f19b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_avdata_IsObserve </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> </td>
+<td class="paramname"><em>instRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>fieldName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">bool * </td>
+<td class="paramname"><em>isObservePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Is this resource enabled for observe notifications?</p>
+<dl class="section note"><dt>Note</dt><dd>client will be terminated if instRef isn't valid, or the field doesn't exist</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_NOT_FOUND if field not found </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">instRef</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fieldName</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">isObservePtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a3f4f95c9ddead3838c753780f7df076e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_avdata_PushTimeSeries </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> </td>
+<td class="paramname"><em>instRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>fieldName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">bool </td>
+<td class="paramname"><em>isRestartTimeSeries</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Compress the accumulated CBOR encoded time series data and send it to server. After the data is pushed, time series will be stopped and not started again unless isRestartTimeSeries is true.</p>
+<dl class="section note"><dt>Note</dt><dd>client will be terminated if instRef isn't valid, or the field doesn't exist</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>:<ul>
+<li>LE_OK on success</li>
+<li>LE_CLOSED if time series not enabled on this field</li>
+<li>LE_UNAVAILABLE if observe is not enabled on this field</li>
+<li>LE_FAULT if any other error </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">instRef</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fieldName</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">isRestartTimeSeries</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a58c1b401b3dae95329c232fbb3a56017"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_avdata_RecordBool </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> </td>
+<td class="paramname"><em>instRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>fieldName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">bool </td>
+<td class="paramname"><em>value</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>timeStamp</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Record the value of a boolean variable field in time series.</p>
+<dl class="section note"><dt>Note</dt><dd>The client will be terminated if the instRef is not valid, or the field doesn't exist</dd>
+<dd>
+This function is the same as the SetBool() except that it provides an option to pass the timestamp. SetBool() can be used to record time series with system time as the timestamp. Timestamp should be in milli seconds elapsed since epoch.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>:<ul>
+<li>LE_OK on success</li>
+<li>LE_OVERFLOW if the current entry was NOT added as the time series buffer is full. (This error is applicable only if time series is enabled on this field)</li>
+<li>LE_NO_MEMORY if the current entry was added but there is no space for next one. (This error is applicable only if time series is enabled on this field)</li>
+<li>LE_FAULT on any other error </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">instRef</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fieldName</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">value</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">timeStamp</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a0786a4b3aba202202627b9dce81fee05"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_avdata_RecordFloat </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> </td>
+<td class="paramname"><em>instRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>fieldName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">double </td>
+<td class="paramname"><em>value</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>timestamp</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Record the value of a float variable field in time series.</p>
+<dl class="section note"><dt>Note</dt><dd>The client will be terminated if the instRef is not valid, or the field doesn't exist</dd>
+<dd>
+This function is the same as the SetFloat() except that it provides an option to pass the timestamp. SetFloat() can be used to record time series with system time as the timestamp. Timestamp should be in milli seconds elapsed since epoch.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>:<ul>
+<li>LE_OK on success</li>
+<li>LE_OVERFLOW if the current entry was NOT added as the time series buffer is full. (This error is applicable only if time series is enabled on this field)</li>
+<li>LE_NO_MEMORY if the current entry was added but there is no space for next one. (This error is applicable only if time series is enabled on this field)</li>
+<li>LE_FAULT on any other error </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">instRef</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fieldName</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">value</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">timestamp</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a3625f1d2a6343d0222b571c257e7ed98"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_avdata_RecordInt </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> </td>
+<td class="paramname"><em>instRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>fieldName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t </td>
+<td class="paramname"><em>value</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>timestamp</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Record the value of an integer variable field in time series.</p>
+<dl class="section note"><dt>Note</dt><dd>The client will be terminated if the instRef is not valid, or the field doesn't exist</dd>
+<dd>
+This function is the same as the SetInt() except that it provides an option to pass the timestamp. SetInt() can be used to record time series with system time as the timestamp. Timestamp should be in milli seconds elapsed since epoch.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>:<ul>
+<li>LE_OK on success</li>
+<li>LE_OVERFLOW if the current entry was NOT added as the time series buffer is full. (This error is applicable only if time series is enabled on this field)</li>
+<li>LE_NO_MEMORY if the current entry was added but there is no space for next one. (This error is applicable only if time series is enabled on this field)</li>
+<li>LE_FAULT on any other error </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">instRef</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fieldName</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">value</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">timestamp</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ab140b6ccf9f16c7567b6d2540f11f5ce"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_avdata_RecordString </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> </td>
+<td class="paramname"><em>instRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>fieldName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>value</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>timeStamp</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Record the value of a string variable field in time series</p>
+<dl class="section note"><dt>Note</dt><dd>The client will be terminated if the instRef is not valid, or the field doesn't exist</dd>
+<dd>
+This function is the same as the SetString() except that it provides an option to pass the timestamp. SetString() can be used to record time series with system time as the timestamp. Timestamp should be in milli seconds elapsed since epoch.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>:<ul>
+<li>LE_OK on success</li>
+<li>LE_OVERFLOW if the stored string was truncated or if the current entry was NOT added as the time series buffer is full.</li>
+<li>LE_NO_MEMORY if the current entry was added but there is no space for next one. (This error is applicable only if time series is enabled on this field)</li>
+<li>LE_FAULT on any other error </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">instRef</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fieldName</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">value</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">timeStamp</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a1f0253c6388d80aa9c1ce7745a06cfe9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_avdata_ReleaseSession </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a1a7e4c61c7b1e5a157428da7c60e1024">le_avdata_RequestSessionObjRef_t</a> </td>
+<td class="paramname"><em>requestRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Request the avcServer to close a session. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">requestRef</td><td>Reference to a previously opened AV session. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a18b8176f294ffc1b5ffdefe4c3e3768a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_avdata_RemoveFieldEventHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a8eb8a64d416f7ec5e8f45c06c1906ea0">le_avdata_FieldEventHandlerRef_t</a> </td>
+<td class="paramname"><em>addHandlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove handler function for EVENT 'le_avdata_FieldEvent' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">addHandlerRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a76fa8cac2ca4ed74156832cc07197de6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_avdata_RemoveSessionStateHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a99a6853bdf4144b6c47331d2d69adedf">le_avdata_SessionStateHandlerRef_t</a> </td>
+<td class="paramname"><em>addHandlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove handler function for EVENT 'le_avdata_SessionState' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">addHandlerRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a1153ba43d55c59db3d36e3f44fd5ff10"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__avdata__interface_8h.html#a1a7e4c61c7b1e5a157428da7c60e1024">le_avdata_RequestSessionObjRef_t</a> le_avdata_RequestSession </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Request the avcServer to open a session.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>SessionRef if session request succeeded</li>
+<li>NULL if session request failed </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a class="anchor" id="ae6200a5fb1fdf180fae558ea718d39c3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_avdata_SetBinary </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> </td>
+<td class="paramname"><em>instRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>fieldName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>valuePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>valueNumElements</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the value of a binary data variable field</p>
+<dl class="section note"><dt>Note</dt><dd>The client will be terminated if the instRef is not valid, or the field doesn't exist </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">instRef</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fieldName</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">valuePtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">valueNumElements</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a358ae030ed3607f4844e50341c45d746"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_avdata_SetBool </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> </td>
+<td class="paramname"><em>instRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>fieldName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">bool </td>
+<td class="paramname"><em>value</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the value of a boolean variable field</p>
+<dl class="section note"><dt>Note</dt><dd>The client will be terminated if the instRef is not valid, or the field doesn't exist</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>:<ul>
+<li>LE_OK on success</li>
+<li>LE_OVERFLOW if the current entry was NOT added as the time series buffer is full. (This error is applicable only if time series is enabled on this field)</li>
+<li>LE_NO_MEMORY if the current entry was added but there is no space for next one. (This error is applicable only if time series is enabled on this field)</li>
+<li>LE_FAULT on any other error </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">instRef</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fieldName</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">value</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="af9a038bf7e1e57b63d7f34738cd17c21"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_avdata_SetFloat </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> </td>
+<td class="paramname"><em>instRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>fieldName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">double </td>
+<td class="paramname"><em>value</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the value of a float variable field</p>
+<dl class="section note"><dt>Note</dt><dd>The client will be terminated if the instRef is not valid, or the field doesn't exist</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>:<ul>
+<li>LE_OK on success</li>
+<li>LE_OVERFLOW if the current entry was NOT added as the time series buffer is full. (This error is applicable only if time series is enabled on this field)</li>
+<li>LE_NO_MEMORY if the current entry was added but there is no space for next one. (This error is applicable only if time series is enabled on this field)</li>
+<li>LE_FAULT on any other error </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">instRef</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fieldName</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">value</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="abaf691214485643af60da3f93795909c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_avdata_SetInt </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> </td>
+<td class="paramname"><em>instRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>fieldName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t </td>
+<td class="paramname"><em>value</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the value of an integer variable field</p>
+<dl class="section note"><dt>Note</dt><dd>The client will be terminated if the instRef is not valid, or the field doesn't exist</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>:<ul>
+<li>LE_OK on success</li>
+<li>LE_OVERFLOW if the current entry was NOT added as the time series buffer is full. (This error is applicable only if time series is enabled on this field)</li>
+<li>LE_NO_MEMORY if the current entry was added but there is no space for next one. (This error is applicable only if time series is enabled on this field)</li>
+<li>LE_FAULT on any other error </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">instRef</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fieldName</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">value</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="aa32e616235212e3bf8dd514767bc8fa1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_avdata_SetString </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> </td>
+<td class="paramname"><em>instRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>fieldName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>value</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the value of a string variable field</p>
+<dl class="section note"><dt>Note</dt><dd>The client will be terminated if the instRef is not valid, or the field doesn't exist</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>:<ul>
+<li>LE_OK on success</li>
+<li>LE_OVERFLOW if the stored string was truncated or if the current entry was NOT added as the time series buffer is full.</li>
+<li>LE_NO_MEMORY if the current entry was added but there is no space for next one. (This error is applicable only if time series is enabled on this field)</li>
+<li>LE_FAULT on any other error </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">instRef</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fieldName</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">value</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a1d6df0ba8c6b6d0c7c32776a8aaa357f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_avdata_StartTimeSeries </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> </td>
+<td class="paramname"><em>instRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>fieldName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">double </td>
+<td class="paramname"><em>factor</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">double </td>
+<td class="paramname"><em>timeStampFactor</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Allocate resources and set up cbor stream so that we can start accumulating time series data on the specified field.</p>
+<dl class="section note"><dt>Note</dt><dd>client will be terminated if instRef isn't valid, or the field doesn't exist</dd>
+<dd>
+Currently the buffer size of time series data is limited to 1024 bytes. When the buffer overflows the device has to push the buffer before recording new entries.</dd>
+<dd>
+Factor is applicable only for integer and float fields. For all other fields factor will be silently ignored. Also a factor of "0" will be ignored for integer resources. The factor will be applied (multiplication) before encoding the sample.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_BUSY if time series already enabled on this field</li>
+<li>LE_FAULT on any other error </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">instRef</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fieldName</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">factor</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">timeStampFactor</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ab8d36689b3b8e262c22886012f14ecb6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_avdata_StopTimeSeries </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a> </td>
+<td class="paramname"><em>instRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>fieldName</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Stop time series on this field and free resources.</p>
+<dl class="section note"><dt>Note</dt><dd>client will be terminated if instRef isn't valid, or the field doesn't exist</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_CLOSED if timeseries already stopped </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">instRef</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fieldName</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="af9dc75ad35431dd76f2248bbd0da7f33"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_avdata_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
