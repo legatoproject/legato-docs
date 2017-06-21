@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>gnss  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Tools.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="buildAppsConcepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a class="link-selected" href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">gnss </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>Use the GLobal Navigation Satellite System (GNSS) <code>gnss</code> tool to monitor and debug a GNSS target device.</p>
+<p>Also see <a class="el" href="c_gnss.html">GNSS</a> API</p>
+<h1>Usage</h1>
+<p><b><code> gnss [commands] </code></b></p><pre class="fragment"><div class="line">gnss &lt;enable/disable&gt;</div><div class="line">gnss &lt;start/stop&gt;</div><div class="line">gnss restart &lt;RestartType&gt;</div><div class="line">gnss fix [FixTime in seconds]</div><div class="line">gnss get &lt;parameter&gt;</div><div class="line">gnss <span class="keyword">get</span> posInfo</div><div class="line">gnss <span class="keyword">set</span> constellation &lt;ConstellationType&gt;</div><div class="line">gnss <span class="keyword">set</span> agpsMode &lt;ModeType&gt;</div><div class="line">gnss <span class="keyword">set</span> acqRate &lt;acqRate in milliseconds&gt;</div><div class="line">gnss <span class="keyword">set</span> nmeaSentences &lt;nmeaMask&gt;</div><div class="line">gnss watch [WatchPeriod in seconds]</div><div class="line">gnss help</div></pre><!-- fragment --><p></p>
+<p><b><code></code></b></p><pre class="fragment">gnss &lt;enable/disable&gt;</pre> <blockquote class="doxtable">
+<p>Enable/disable gnss device. </p>
+</blockquote>
+<p></p>
+<p><b><code></code></b></p><pre class="fragment">gnss &lt;start/stop&gt;</pre> <blockquote class="doxtable">
+<p>Start/stop gnss device. </p>
+</blockquote>
+<p></p>
+<p><b><code></code></b></p><pre class="fragment">gnss restart &lt;RestartType&gt;</pre> <blockquote class="doxtable">
+<p>Restart gnss device. Allowed when device in 'active' state. Restart type can be:</p><ul>
+<li>hot</li>
+<li>warm</li>
+<li>cold</li>
+<li>factory </li>
+</ul>
+</blockquote>
+<p></p>
+<p><b><code></code></b></p><blockquote class="doxtable">
+<p>See <a class="el" href="c_gnss.html">GNSS</a> for more info on these restart types. </p>
+</blockquote>
+<p></p>
+<p><b><code></code></b></p><pre class="fragment">gnss fix [FixTime in seconds]</pre> <blockquote class="doxtable">
+<p>Loop for certain time for first position fix. FixTime is optional. Default time(60s) will be used if not specified. </p>
+</blockquote>
+<p></p>
+<p><b><code></code></b></p><pre class="fragment">gnss get &lt;parameter&gt;</pre> <blockquote class="doxtable">
+<p>Used to get different gnss parameters:</p><ul>
+<li>ttff: Time to First Fix (milliseconds)</li>
+<li>acqRate: Acquisition Rate (unit milliseconds)</li>
+<li>agpsMode: Agps Mode</li>
+<li>nmeaSentences: Enabled NMEA sentences (bit mask)</li>
+<li>constellation: GNSS constellation</li>
+<li>posState: Position fix state(no fix, 2D, 3D etc)</li>
+<li>loc2d: 2D location (latitude, longitude, horizontal accuracy)</li>
+<li>alt: Altitude (Altitude, Vertical accuracy)</li>
+<li>loc3d: 3D location (latitude, longitude, altitude, horizontal accuracy, vertical accuracy)</li>
+<li>gpsTime: Get last updated gps time</li>
+<li>time: Time of the last updated location</li>
+<li>timeAcc: Time accuracy in milliseconds</li>
+<li>date: Date of the last updated location</li>
+<li>hSpeed : Horizontal speed(Horizontal Speed, Horizontal Speed accuracy)</li>
+<li>vSpeed : Vertical speed(Vertical Speed, Vertical Speed accuracy)</li>
+<li>motion: Motion data (Horizontal Speed, Horizontal Speed accuracy, Vertical Speed, Vertical Speed accuracy)</li>
+<li>direction: Direction indication</li>
+<li>satInfo: Satellites Vehicle information</li>
+<li>satStat: Satellites Vehicle status</li>
+<li>dop: Dilution Of Precision for the fixed position</li>
+<li>posInfo: Get all current position info of the device.</li>
+<li>status: Get gnss device's current status. </li>
+</ul>
+</blockquote>
+<p></p>
+<p><b><code></code></b></p><pre class="fragment">gnss set constellation &lt;ConstellationType&gt;</pre> <blockquote class="doxtable">
+<p>Used to set constellation. Allowed when device in 'ready' state. May require platform reboot. See <a class="el" href="c_gnss.html">GNSS</a> for more details. </p>
+</blockquote>
+<p></p>
+<p><b><code></code></b></p><blockquote class="doxtable">
+<p>ConstellationType can be:</p><ul>
+<li>1: GPS</li>
+<li>2: GLONASS</li>
+<li>4: BEIDOU</li>
+<li>8: GALILEO </li>
+</ul>
+</blockquote>
+<p></p>
+<p><b><code></code></b></p><blockquote class="doxtable">
+<p>Use sum of the values to set multiple constellation, e.g., 3 for GPS+GLONASS 15 for GPS+GLONASS+BEIDOU+GALILEO. </p>
+</blockquote>
+<p></p>
+<p><b><code>See <a class="el" href="c_gnss.html">GNSS</a> for more details.</code></b></p>
+<p><b><code></code></b></p><pre class="fragment">gnss set agpsMode &lt;ModeType&gt;</pre> <blockquote class="doxtable">
+<p>Used to set agps mode. ModeType can be:</p><ul>
+<li>alone: Standalone agps mode</li>
+<li>msBase: MS-based agps mode</li>
+<li>msAssist: MS-assisted agps mode </li>
+</ul>
+</blockquote>
+<p></p>
+<p><b><code></code></b></p><pre class="fragment">gnss set acqRate &lt;acqRate in milliseconds&gt;</pre> <blockquote class="doxtable">
+<p>Used to set acquisition rate. Available when device is 'ready' state. </p>
+</blockquote>
+<p></p>
+<p><b><code></code></b></p><pre class="fragment">gnss set nmeaSentences &lt;nmeaMask&gt;</pre> <blockquote class="doxtable">
+<p>Used to set the enabled NMEA sentences. Bit mask should be set with hexadecimal values (e.g., 7FFF). </p>
+</blockquote>
+<p></p>
+<p><b><code></code></b></p><pre class="fragment">gnss watch [WatchPeriod in seconds]</pre> <blockquote class="doxtable">
+<p>Used to monitor all gnss information (position, speed, satellites used, etc.). WatchPeriod is optional. Default time(600s) will be used if not specified. </p>
+</blockquote>
+<p></p>
+<p><b><code></code></b></p><pre class="fragment">gnss help</pre> <blockquote class="doxtable">
+<p>Display help. </p>
+</blockquote>
+<p></p>
+<p><b><code></code></b></p><dl class="section note"><dt>Note</dt><dd>Some commands require the gnss target to be in specific state (and platform reboot).</dd></dl>
+<p>See howtoGNSS and <a class="el" href="c_gnss.html">GNSS</a> for more info.</p>
+<p class="copyright"><b><code>Copyright (C) Sierra Wireless Inc. </code></b></p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

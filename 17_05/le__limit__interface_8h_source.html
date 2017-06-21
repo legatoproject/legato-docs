@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_limit_interface.h - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">le_limit_interface.h</h1> </div>
+</div><div class="contents">
+<a href="le__limit__interface_8h.html">Go to the documentation of this file.</a><pre class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> </div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> </div><div class="line"><a name="l00003"></a><span class="lineno">    3</span> <span class="comment">/*</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> <span class="comment"> * ====================== WARNING ======================</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> <span class="comment"> *</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> <span class="comment"> * THE CONTENTS OF THIS FILE HAVE BEEN AUTO-GENERATED.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span> <span class="comment"> * DO NOT MODIFY IN ANY WAY.</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span> <span class="comment"> *</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span> <span class="comment"> * ====================== WARNING ======================</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span> <span class="comment"> */</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span> <span class="comment"></span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span> <span class="comment">/**</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span> <span class="comment"> * @page c_limit Limit Definitions</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span> <span class="comment"> *</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span> <span class="comment"> * @ref le_limit_interface.h "API Reference"</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span> <span class="comment"> *</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span> <span class="comment"> * This file defines limit definitions used by other APIs.</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span> <span class="comment"> *</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span> <span class="comment"> * &lt;HR&gt;</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span> <span class="comment"> *</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span> <span class="comment"> * Copyright (C) Sierra Wireless Inc.</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span> <span class="comment"> */</span><span class="comment"></span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span> <span class="comment">/**</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span> <span class="comment"> * @file le_limit_interface.h</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span> <span class="comment"> *</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span> <span class="comment"> * Legato @ref c_limit include file.</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span> <span class="comment"> *</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span> <span class="comment"> * Copyright (C) Sierra Wireless Inc.</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span> <span class="comment"> */</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span> </div><div class="line"><a name="l00031"></a><span class="lineno">   31</span> <span class="preprocessor">#ifndef LE_LIMIT_INTERFACE_H_INCLUDE_GUARD</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span> <span class="preprocessor">#define LE_LIMIT_INTERFACE_H_INCLUDE_GUARD</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span> </div><div class="line"><a name="l00034"></a><span class="lineno">   34</span> </div><div class="line"><a name="l00035"></a><span class="lineno">   35</span> <span class="preprocessor">#include "<a class="code" href="legato_8h.html">legato.h</a>"</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span> </div><div class="line"><a name="l00037"></a><span class="lineno">   37</span> </div><div class="line"><a name="l00038"></a><span class="lineno">   38</span> </div><div class="line"><a name="l00039"></a><span class="lineno">   39</span> </div><div class="line"><a name="l00040"></a><span class="lineno">   40</span> </div><div class="line"><a name="l00041"></a><span class="lineno">   41</span> <span class="comment">//--------------------------------------------------------------------------------------------------</span><span class="comment"></span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span> <span class="comment">/**</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span> <span class="comment"> * Maximum length of application names.</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span> <span class="comment"> */</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span> <span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="le__limit__interface_8h.html#afd5423fe41c48d718b3b72eb6aa56e06">   46</a></span> <span class="preprocessor">#define LE_LIMIT_APP_NAME_LEN 47</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span> </div><div class="line"><a name="l00048"></a><span class="lineno">   48</span> <span class="comment">//--------------------------------------------------------------------------------------------------</span><span class="comment"></span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span> <span class="comment">/**</span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span> <span class="comment"> * Maximum length of process names.</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span> <span class="comment"> */</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span> <span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="le__limit__interface_8h.html#a6206649866cf07340724dfd0d38ca7e0">   53</a></span> <span class="preprocessor">#define LE_LIMIT_PROC_NAME_LEN 47</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span> </div><div class="line"><a name="l00055"></a><span class="lineno">   55</span> <span class="comment">//--------------------------------------------------------------------------------------------------</span><span class="comment"></span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span> <span class="comment">/**</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span> <span class="comment"> * Maximum string length of paths.</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span> <span class="comment"> */</span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span> <span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="le__limit__interface_8h.html#a69ad513e5591d63ef98164372efcd3a8">   60</a></span> <span class="preprocessor">#define LE_LIMIT_MAX_PATH_LEN 511</span></div><div class="line"><a name="l00061"></a><span class="lineno">   61</span> </div><div class="line"><a name="l00062"></a><span class="lineno">   62</span> <span class="comment">//--------------------------------------------------------------------------------------------------</span><span class="comment"></span></div><div class="line"><a name="l00063"></a><span class="lineno">   63</span> <span class="comment">/**</span></div><div class="line"><a name="l00064"></a><span class="lineno">   64</span> <span class="comment"> * Maximum string length of priority names.</span></div><div class="line"><a name="l00065"></a><span class="lineno">   65</span> <span class="comment"> */</span></div><div class="line"><a name="l00066"></a><span class="lineno">   66</span> <span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="le__limit__interface_8h.html#a165c3f3c30ddaf1167c6fc6102126df4">   67</a></span> <span class="preprocessor">#define LE_LIMIT_MAX_PRIORITY_NAME_LEN 6</span></div><div class="line"><a name="l00068"></a><span class="lineno">   68</span> </div><div class="line"><a name="l00069"></a><span class="lineno">   69</span> <span class="comment">//--------------------------------------------------------------------------------------------------</span><span class="comment"></span></div><div class="line"><a name="l00070"></a><span class="lineno">   70</span> <span class="comment">/**</span></div><div class="line"><a name="l00071"></a><span class="lineno">   71</span> <span class="comment"> * Maximum string length of argument lists.</span></div><div class="line"><a name="l00072"></a><span class="lineno">   72</span> <span class="comment"> */</span></div><div class="line"><a name="l00073"></a><span class="lineno">   73</span> <span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="le__limit__interface_8h.html#a04b9c95d2e01e6c1bbbd6886653131bd">   74</a></span> <span class="preprocessor">#define LE_LIMIT_MAX_ARGS_STR_LEN 511</span></div><div class="line"><a name="l00075"></a><span class="lineno">   75</span> </div><div class="line"><a name="l00076"></a><span class="lineno">   76</span> <span class="comment">//--------------------------------------------------------------------------------------------------</span><span class="comment"></span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span> <span class="comment">/**</span></div><div class="line"><a name="l00078"></a><span class="lineno">   78</span> <span class="comment"> * Length of a MD5 string.</span></div><div class="line"><a name="l00079"></a><span class="lineno">   79</span> <span class="comment"> */</span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span> <span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="le__limit__interface_8h.html#a36e78b8197aba1e41ed8e3551ac14683">   81</a></span> <span class="preprocessor">#define LE_LIMIT_MD5_STR_LEN 32</span></div><div class="line"><a name="l00082"></a><span class="lineno">   82</span> </div><div class="line"><a name="l00083"></a><span class="lineno">   83</span> <span class="preprocessor">#endif // LE_LIMIT_INTERFACE_H_INCLUDE_GUARD</span></div><div class="ttc" id="legato_8h_html"><div class="ttname"><a href="legato_8h.html">legato.h</a></div></div>
+</pre><!-- fragment --></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
