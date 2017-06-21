@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Install/Remove Legato via Command-Line  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Concepts.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a class="link-selected" href="buildAppsConcepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Install/Remove Legato via Command-Line </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>The following directions will guide you to set up your Linux development machine, download the Legato AF and install a build on your Target Device using the command line.</p>
+<h1><a class="anchor" id="buildPackages"></a>
+Install Linux Packages</h1>
+<pre class="fragment">$ sudo apt-get install build-essential \
+                       python python-jinja2 python-pkg-resources cmake \
+                       git subversion libsdl-dev \
+                       diffstat texinfo gawk chrpath wget cpio \
+                       vim zsh bash ninja-build screen sshpass \
+                       bc python-git unzip libxml2-utils gcovr \
+                       libcurl4-gnutls-dev zlib1g-dev libbz2-dev \
+                       bsdiff libssl-dev autoconf automake
+</pre><p>Optional packages: vim (or any text editor), zsh (command interpreter for shell scripting), openjdk-8-jdk (for Java support) doxygen graphviz (for doc generation)</p>
+<h1><a class="anchor" id="buildToolchain"></a>
+Install a Toolchain</h1>
+<p>If you are building the Legato AF for a SWI WP Series Device you will need to download and install a Toolchain which includes GCC and other tools needed to make a build for your Target Device. If you are building Legato AF directly on a Raspberry Pi then no toolchain is needed and you only need to install the native GCC. If you are cross-compiling the Legato AF on a Linux machine for use on a Raspberry Pi Device, then you will need to install Raspberry Pi's toolchain.</p>
+<h2><a class="anchor" id="buildToolchainSWI"></a>
+SWI WP Series Device Toolchain</h2>
+<p>Sierra Wireless platforms <a href="http://source.sierrawireless.com/resources/legato/downloads/">download the toolchain.</a></p>
+<p>Once you've downloaded the SWI toolchain installer you may need to grant execute rights before it can be run. </p><pre class="fragment">$ chmod +x &lt;toolchain&gt;
+</pre><p>Upon running the toolchain installer you will be prompted where you want to install the tools.</p>
+<p>Enter:</p><pre class="fragment">/opt/swi/y17-ext-&lt;legato version&gt; </pre><p>When prompted, answer "Y" to proceed with the install.</p>
+<pre class="fragment">$ ./poky-swi-ext-glibc-x86_64-meta-toolchain-swi-ext-armv7a-vfp-neon-toolchain-swi-ext-1.7.3.sh
+Enter target directory for SDK (default: /opt/swi/y17-ext): /opt/swi/y17-ext-1610
+You are about to install the SDK to "/opt/swi/y17-ext-1610". Proceed[Y/n]?Y
+Extracting SDK...done
+Setting it up...done
+SDK has been successfully set up and is ready to be used.
+</pre><p>Create a soft link from the versioned folder to /y17-ext (delete the existing soft link if needed)</p>
+<pre class="fragment">$ cd /opt/swi
+$ rm y-17-ext
+$ ln -s y17-ext-1610 y17-ext
+</pre><dl class="section note"><dt>Note</dt><dd>Each version of Legato requires its own toolchain. To support multiple versions on one host:<ul>
+<li>create a folder for each version</li>
+<li>update the softlink "/opt/swi/y17-ext" to point to the legato version that are currently working with. To change versions update the soft link to point to the new Legato version you are working with.</li>
+</ul>
+</dd></dl>
+<h2><a class="anchor" id="buildRaspberryToolChain"></a>
+Raspberry Pi Toolchain</h2>
+<p>Raspberry Pi platforms (clone from the GitHub repo): </p><pre class="fragment">git clone https://github.com/raspberrypi/tools
+</pre><p>Copy the <code>/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian</code> directory to a shared location on your Linux Development Host.</p>
+<p>Add <code>/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin</code> to your $PATH </p><pre class="fragment">export PATH=$PATH:${PWD}/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin
+</pre><dl class="section note"><dt>Note</dt><dd>The 64bit Raspberry Pi toolchain is located: <code>/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64</code> </dd></dl>
+<h1><a class="anchor" id="buildDownload"></a>
+Download the Source Code</h1>
+<p>To start with building Legato you first need to download or clone the source.</p>
+<h2><a class="anchor" id="buildTarball"></a>
+Download Tarball</h2>
+<p>Visit our <a class="el" href="aboutReleaseInfo.html">Release Info</a> page to download the Legato AF.</p>
+<p>Download the Tarball and extract it to a directory on your local machine </p><pre class="fragment">$ mkdir legato-demo
+$ mv ~/Downloads/legato-16.10.1.tar.bz2 legato-demo/
+$ cd legato-demo/
+$ tar -xvf legato-16.10.1.tar.bz2
+</pre><h2><a class="anchor" id="buildClone"></a>
+Clone from GitHub</h2>
+<p>The <a href="https://github.com/legatoproject/legato-af#clone-from-github">GitHub Legato Project</a> provides all up-to-date code development as well as official releases. To clone the latest official release clone the last release tag (e.g., -m legato/releases/16.10.1.xml), and not the master branch.</p>
+<p>See the <a class="el" href="aboutReleaseInfo.html">Releases</a> page to list the supported releases.</p>
+<p>Install repo:</p>
+<p>On Ubuntu &gt;= 16.04</p>
+<pre class="fragment">$ sudo apt-get install repo
+</pre><p>On &lt;= 16.04</p>
+<pre class="fragment">$ sudo apt-get install phablet-tools
+</pre><p>OR</p>
+<pre class="fragment">$ wget -O ~/bin/repo https://storage.googleapis.com/git-repo-downloads/repo
+$ chmod a+x ~/bin/repo
+</pre><p>Clone a specific release:</p>
+<pre class="fragment">$ mkdir workspace
+$ cd workspace
+$ repo init -u git://github.com/legatoproject/manifest -m legato/releases/16.10.1.xml
+$ repo sync
+</pre><p>Clone from master (latest in progress development):</p>
+<pre class="fragment">$ mkdir workspace
+$ cd workspace
+$ repo init -u git://github.com/legatoproject/manifest
+$ repo sync
+</pre><h1><a class="anchor" id="buildDirs"></a>
+Directory Structure Overview</h1>
+<p>Directory Structure on your Host Machine:</p>
+<table class="doxtable">
+<tr>
+<th>Directory </th><th>Description  </th></tr>
+<tr>
+<td><code>apps</code> </td><td>Source Code for Apps </td></tr>
+<tr>
+<td><code>bin</code> </td><td>Created by build system and populated with executable files run on the development host that ran the build. Contains files like <code>mksys</code>, <code>app</code> and <code>update</code>. </td></tr>
+<tr>
+<td><code>build</code> </td><td>Results of a framework build. Includes <code>build/tools</code> and <code>build/target</code>. </td></tr>
+<tr>
+<td><code>cmake</code> </td><td>CMake scripts used by the build system. </td></tr>
+<tr>
+<td><code>components</code> </td><td>Platform-independent components that are used in apps. </td></tr>
+<tr>
+<td><code>framework</code> </td><td>Source code for the Legato framework. </td></tr>
+<tr>
+<td><code>targetFiles</code> </td><td>Files needed for installation on target devices. </td></tr>
+<tr>
+<td><code>platformAdaptor</code> </td><td>Components specific to specific platforms. **covered under other licenses </td></tr>
+<tr>
+<td><code>modules</code> </td><td>Other repositories that extend Legato. </td></tr>
+<tr>
+<td><code>3rdParty</code> </td><td>Third-party code that is integrated with Legato. **covered under other licenses </td></tr>
+</table>
+<h1><a class="anchor" id="Using"></a>
+Tools and Make</h1>
+<p>You are now ready to work with your host and your target device.</p>
+<table class="doxtable">
+<tr>
+<th>Section </th><th>Description  </th></tr>
+<tr>
+<td><a class="el" href="tools.html">Tools</a> </td><td>Tools used for building/configuring/diagnosing your target or host </td></tr>
+<tr>
+<td><a class="el" href="basicBuildLegato_make.html">Make</a> </td><td>How to Make a build and Update a Target Device </td></tr>
+<tr>
+<td><a class="el" href="basicTarget.html">Configure SWI WP Series Target</a> </td><td>How to setup and configure a Target Device </td></tr>
+<tr>
+<td><a href="http://source.sierrawireless.com/devices/wp-series/wp8548/">WP Series Software</a> </td><td>Tools to install and build the Legato AF with Developer Studio on either Windows or Linux. </td></tr>
+</table>
+<dl class="section note"><dt>Note</dt><dd>Sierra Wireless WP Series Software includes free development tools for use with the WP Series Devices. These tools will install an Eclipse based IDE with the toolchain, Legato AF pre-built, Legato Linux Distro and can be used either with Windows or Linux.</dd></dl>
+<h1><a class="anchor" id="basicBuildUninstall"></a>
+Uninstall Legato</h1>
+<p>To uninstall Legato from your Linux development machine, delete the directory where you extracted Legato.</p>
+<p>Remove the <code>/opt/swi</code> directory and all of it contents.</p>
+<p>Revert any changes you may have made to your .bashrc, .profile etc. that were used to set up xxxxx_TOOLCHAIN_DIR environment variables.</p>
+<p>Remove any packages (that are no longer needed) that were installed in <a class="el" href="basicBuildLegato.html#buildPackages">Install Linux Packages</a> .</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
