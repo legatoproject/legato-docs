@@ -131,9 +131,10 @@ AirVantage Connector Version 2</h2>
 <li>TimeSeries Observe function has been replaced with a push function.</li>
 </ul>
 <p>The <a class="el" href="avMigration.html">AirVantage Migration</a> contains details on the changes between AirVantage V1 and AirVantage V2 and how to migrate your configuration.</p>
-<dl class="section note"><dt>Note</dt><dd>The AirVantage documentation has been reorganized and is now located within the <a class="el" href="legatoServicesAirVantage.html">AirVantage Connector Documentation</a></dd></dl>
-<h3><a class="anchor" id="rn17_05_FeaturesExperimentalReadOnly"></a>
-Read Only Mode</h3>
+<dl class="section warning"><dt>Warning</dt><dd>To sync AirVantage with a 17.05 Legato System Build, an extra step must be done to update the version number before you upload the <a class="el" href="avInstallUpload.html#avInstallUpload_CustomSystem">System Bundle to sync with AirVantage.</a></dd></dl>
+<p>The AirVantage documentation has been reorganized and is now located within the <a class="el" href="legatoServicesAirVantage.html">AirVantage Connector Documentation</a></p>
+<h2><a class="anchor" id="rn17_05_FeaturesExperimentalReadOnly"></a>
+Read Only Mode</h2>
 <p>In Legato AF Read-Only mode the system tree is built and deployed into a squashfs or ubifs image making the system read-only. Any system configuration must be done before the system is built an installed on to the Target Device.</p>
 <p>While Legato is built as Read-Only the following actions are restricted: -Running Apps within Sandboxes -Installation or removal of Legato Apps and/or Services -Software over-the-air updates through AirVantage -Additions of new nodes to the Config Tree (values can still be changed) -Modifications to the root file-system (e.g., changing passwords)</p>
 <p>For more information please see <a class="el" href="platformConstraintsReadOnly.html">Legato Read Only R/O</a> .</p>
