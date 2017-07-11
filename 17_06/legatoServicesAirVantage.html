@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>AirVantage Connector  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">AirVantage Connector </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>Use AirVantage Connect Platform Service for remote administration of Legato AF.</p>
+<p>Legato 17.05 enables AirVantage Connector Version 2 (AVCv2). See the <a class="el" href="avMigration.html">AirVantage Migration</a> Guide to find out the differences between AVC 1.0 and AVC 2.0.</p>
+<p><b>AVC 2.0 New Features:</b></p><ul>
+<li>Asset data can be dynamically created with in the application and there is no need to define the data model in the <code></code>.cdef</li>
+<li>Asset data settings now support read/write from the Air Vantage Server</li>
+<li>Asset data definitions have changed to resources (paths)</li>
+<li>TimeSeries is no longer coupled with asset data</li>
+<li>TimeSeries enables users to aggregate multiple data points into a single push</li>
+<li>TimeSeries Observe function has been replaced with a push function.</li>
+</ul>
+<table class="doxtable">
+<tr>
+<th>Section </th><th>Description  </th></tr>
+<tr>
+<td><a class="el" href="avRegister.html">Register a Target on AirVantage</a> </td><td>Register a target with AirVantage </td></tr>
+<tr>
+<td><a class="el" href="avInstallUpload.html#avInstallUpload">Uploading an App or System Bundle</a> </td><td>Build an App/System and deploy using AirVantage </td></tr>
+<tr>
+<td><a class="el" href="avMigration.html">AirVantage Migration</a> </td><td>AVC 1.0 vs AVC 2.0 differences </td></tr>
+<tr>
+<td><a class="el" href="avData.html">Asset Data</a> </td><td>How to use AssetData with AirVantage 2.0 </td></tr>
+</table>
+<p>The AirVantage Platform Service exposes two API's that will help with connecting to the AirVantage Server and set up any Asset Data with the AirVantage service.</p>
+<table class="doxtable">
+<tr>
+<th>API </th><th>Description  </th></tr>
+<tr>
+<td><a class="el" href="c_le_avc.html">AirVantage Connector</a> </td><td>API to configure AirVantage connectivity </td></tr>
+<tr>
+<td><a class="el" href="c_le_avdata.html">AirVantage Data</a> </td><td>API to setup AirVantage data </td></tr>
+</table>
+<p><b>AirVantage Server Documentation</b></p>
+<p>For AirVantage Server documentation refer to the following links:</p><ul>
+<li><a href="https://doc.airvantage.net/alms/howto/gettingstarted/">AirVantage Getting Started Guide</a></li>
+<li><a href="http://source.sierrawireless.com/airvantage/av/howto/cloud/application_howto/">AirVantage Docs for Developing Apps</a></li>
+<li><a href="https://doc.airvantage.net/av/reference/application/">AirVantage Application Format Reference</a></li>
+<li><a href="https://doc.airvantage.net/av/reference/cloud/API/">AirVantage Web Services API Documentation</a></li>
+</ul>
+<dl class="section warning"><dt>Warning</dt><dd>AirVantage Connector 1.0 is no longer enabled in 17.05.0 and above.</dd></dl>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
