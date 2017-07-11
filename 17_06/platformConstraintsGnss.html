@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Platform" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GNSS platform constraints  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Platform_Platform_Constraints.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink selected" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Platform</h2>
+<nav class="secondary">
+<a class="link-selected" href="platformConstraints.html">Platform Constraints</a><a href="yoctoMain.html">Yocto Info</a><a href="raspbianMain.html">Raspbian Info</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">GNSS platform constraints </h1> </div>
+</div><div class="contents">
+<div class="textblock"><h1><a class="anchor" id="platformConstraintsGnss_acqRate"></a>
+Acquisition rate</h1>
+<p>The <a class="el" href="le__gnss__interface_8h.html#a75d96ec7ac6e0d6b58525e4c523d3b2c">le_gnss_SetAcquisitionRate()</a> function configures the GNSS device acquisition rate.</p>
+<p>On Qualcomm-based platform the “tracking” mode is selected for the “continuous” navigation.</p>
+<p>When a hot start is requested, it is possible that GPS engine can’t get fix within first 1s, hence NMEA message can possibly get empty frame outputs every second. Tracking mode is based on periodic hot start: periodically, low layer GPS engine starts a new session and updates GPS location until it gets a fix, from which NMEA output can be composed.</p>
+<p>In other words, after first fix is gotten, GPS engine restart the GPS session to get the fix again, it will not output the last valid fix before we get the new fix, and NMEA message can get empty frame again.</p>
+<p>The 'Acquisition Rate' value is used to set the interval between two fix requests.</p>
+<p>Qualcomm-based platform hot start performance is about 1~3s, it’s an average value. So you may notice a void NMEA string (and the corresponding Legato position sample notification) during hot start and then the valid NMEA string on an AcquisitionRate minimum time interval. But it’s should not be so accurate, you may have 1~3s error-range.</p>
+<p>Here below an example of NMEA traces in tracking mode with a 30-second acquisition rate. Note the GPGGA string sequence:</p>
+<pre class="fragment">$GPVTG,,T,,M,,N,,K,N*2C
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+        $GPGGA,,,,,,0,,,,,,,,*66                -&gt; say it’s 1st second from logging start, no fix from beginning for 1st GPS session
+$PQXFI,,,,,,,,,,*56
+$GPRMC,,V,,,,,,,,,,N*53
+$GPGSV,2,1,05,02,,,42,06,48,299,50,09,53,213,50,19,28,230,43*48
+$GPGSV,2,2,05,31,09,029,*4C
+        $GPGGA,100836.0,4849.944172,N,00216.094351,E,1,03,1.7,54.2,M,48.0,M,,*69  -&gt; second 2 from start (100836), get the fix for 1st session
+$PQXFI,100836.0,4849.944172,N,00216.094351,E,54.2,5.74,11.44,1.86*6A
+$GPVTG,318.5,T,320.6,M,0.0,N,0.0,K,A*2B
+$GPRMC,100836.0,A,4849.944172,N,00216.094351,E,0.0,318.5,220116,2.1,W,A*12 valid final NMEA
+$GPGSA,A,2,06,09,19,,,,,,,,,,2.0,1.7,1.0*31
+$GPVTG,,T,,M,,N,,K,N*2C
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+        $GPGGA,,,,,,0,,,,,,,,*66               -&gt; second 31, no fix for 2nd GPS session
+$PQXFI,,,,,,,,,,*56
+$GPRMC,,V,,,,,,,,,,N*53 non valid intermediate NMEA
+$GPGSV,2,1,05,02,,,41,06,49,299,49,09,53,213,48,19,28,230,43*4B
+$GPGSV,2,2,05,31,09,029,*4C
+        $GPGGA,100906.0,4849.942986,N,00216.093882,E,1,03,1.7,48.3,M,48.0,M,,*60  -&gt; second 32 from start (100906, 30s after 100836), get the fix for 2nd session
+$PQXFI,100906.0,4849.942986,N,00216.093882,E,48.3,7.25,15.04,0.77*6A
+$GPVTG,318.5,T,320.6,M,0.0,N,0.0,K,A*2B
+$GPRMC,100906.0,A,4849.942986,N,00216.093882,E,0.0,318.5,220116,2.1,W,A*17
+$GPGSA,A,2,06,09,19,,,,,,,,,,2.0,1.7,1.0*31
+$GPVTG,,T,,M,,N,,K,N*2C
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$       GPGGA,,,,,,0,,,,,,,,*66               -&gt; second 61, no fix for 3rd session
+$PQXFI,,,,,,,,,,*56
+$GPRMC,,V,,,,,,,,,,N*53
+$GPGSV,2,1,05,02,,,43,06,49,298,50,09,53,213,47,19,27,230,44*47
+$GPGSV,2,2,05,31,09,029,*4C
+$GPGGA,100936.0,4849.941714,N,00216.095230,E,1,03,1.7,55.9,M,48.0,M,,*66  -&gt; second 62 from start (100936, 30s after 100906), get the fix for 3rd session
+$PQXFI,100936.0,4849.941714,N,00216.095230,E,55.9,15.01,27.89,0.34*5A
+$GPVTG,318.5,T,320.6,M,0.0,N,0.0,K,A*2B
+$GPRMC,100936.0,A,4849.941714,N,00216.095230,E,0.0,318.5,220116,2.1,W,A*17
+$GPGSA,A,2,06,09,19,,,,,,,,,,2.0,1.7,1.0*31
+$GPVTG,,T,,M,,N,,K,N*2C
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$GPGGA,,,,,,0,,,,,,,,*66</pre><h1><a class="anchor" id="platformConstraintsGnss_nmeaMask"></a>
+Enabled NMEA sentences</h1>
+<p>The <a class="el" href="le__gnss__interface_8h.html#ab9253e29d74cae6e962dcc8b94f0e3c1">le_gnss_SetNmeaSentences()</a> and <a class="el" href="le__gnss__interface_8h.html#a985845ac33d35c34ac3099b6557ca8ea">le_gnss_GetNmeaSentences()</a> functions configure the enabled NMEA sentences in the NMEA flow. Please note that the Qualcomm-based firmware release <code>SWI9X15A_07.10.15.00</code> (AR755x, AR8652) is subject to some limitations:</p><ul>
+<li>Not all NMEA sentences supported by the AT!GPSNMEASENTENCE can be (de)activated through the Legato API: the <code>GPGSV_EXTENDED</code> and <code>GPGRS</code> NMEA sentences are not available.</li>
+<li>The Galileo NMEA sentences always appear as not enabled when retrieving their status, even if they are enabled. This concerns the <code>GAGGA</code>, <code>GAGSA</code>, <code>GAGSV</code>, <code>GARMC</code>, and <code>GAVTG</code> NMEA sentences.</li>
+</ul>
+<h1><a class="anchor" id="platformConstraintsGnss_SetConstellation"></a>
+Set constellations</h1>
+<p>The <a class="el" href="le__gnss__interface_8h.html#a6dbdc58f23e480e65ea16c583ef5340f">le_gnss_SetConstellation()</a> API sets the constellations used in the solution. Please note that on Qualcomm-based platform, a new constellation set by <a class="el" href="le__gnss__interface_8h.html#a6dbdc58f23e480e65ea16c583ef5340f">le_gnss_SetConstellation()</a> is valid only after a reboot of the module.</p>
+<h1><a class="anchor" id="References"></a>
+References</h1>
+<p>See <a class="el" href="c_gnss.html">GNSS</a> API</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
