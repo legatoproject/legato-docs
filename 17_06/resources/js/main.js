@@ -1,4 +1,4 @@
-var invoke_url = "https://uol13g6g8c.execute-api.us-west-2.amazonaws.com/prod"; // cloudsearch api endpoint
+var invoke_url = "https://sj3kp3pd4g.execute-api.us-west-2.amazonaws.com/prod"; // cloudsearch api endpoint
 var restrict_to_ctx = false; // restrict search to current context?
 
 
