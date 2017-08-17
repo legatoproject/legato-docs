@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>WiFi Client Service  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">WiFi Client Service </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><a class="el" href="le__wifi_client__interface_8h.html">API Reference</a></p>
+<hr/>
+<p>This API provides WiFi Client setup. Please note that the WiFi Client cannot be used at the same time as the WiFi Access Points service, due to the sharing of same wifi hardware.</p>
+<h1><a class="anchor" id="le_wifi_binding"></a>
+IPC interfaces binding</h1>
+<p>Here's a code sample binding to WiFi service: </p><pre class="fragment">bindings:
+{
+   clientExe.clientComponent.le_wifiClient -&gt; wifiService.le_wifiClient
+}
+</pre><h1><a class="anchor" id="le_wifiClient_Start"></a>
+Starting the WiFi Client</h1>
+<p>First of all the function <a class="el" href="le__wifi_client__interface_8h.html#af637c17f5b8331b598dcf6c57b9260ad">le_wifiClient_Start()</a> must be called to start the WiFi Service.</p><ul>
+<li><a class="el" href="le__wifi_client__interface_8h.html#af637c17f5b8331b598dcf6c57b9260ad">le_wifiClient_Start()</a>: returns LE_OK if the call went ok. If WiFi Access Point is active, this will fail.</li>
+</ul>
+<p>To subscribe to wifi events <a class="el" href="le__wifi_client__interface_8h.html#a55aaafbc0a0b4a70faafb50f6babf482">le_wifiClient_AddNewEventHandler()</a> is to be called.</p><ul>
+<li><a class="el" href="le__wifi_client__interface_8h.html#a55aaafbc0a0b4a70faafb50f6babf482">le_wifiClient_AddNewEventHandler()</a>: returns the handler reference if the call went ok.</li>
+</ul>
+<pre class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> EventHandler</div><div class="line">(</div><div class="line">    <a class="code" href="le__wifi_client__interface_8h.html#a1b776321e539bab3bc6a07078545bca4">le_wifiClient_Event_t</a> clientEvent,</div><div class="line">    <span class="keywordtype">void</span> *contextPtr</div><div class="line">)</div><div class="line">{</div><div class="line">    <span class="keywordflow">switch</span>( clientEvent )</div><div class="line">    {</div><div class="line">         <span class="keywordflow">case</span> <a class="code" href="le__wifi_client__interface_8h.html#a1b776321e539bab3bc6a07078545bca4a7311dd6562fef67d5c5defbd9dcbc6d2">LE_WIFICLIENT_EVENT_CONNECTED</a>:</div><div class="line">         {</div><div class="line">             <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"WiFi Client Connected."</span>);</div><div class="line">         }</div><div class="line">         <span class="keywordflow">break</span>;</div><div class="line">         <span class="keywordflow">case</span> <a class="code" href="le__wifi_client__interface_8h.html#a1b776321e539bab3bc6a07078545bca4a72b538a3446d73b0da95db84de318747">LE_WIFICLIENT_EVENT_DISCONNECTED</a>:</div><div class="line">         {</div><div class="line">             <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"WiFi Client Disconnected."</span>);</div><div class="line">         }</div><div class="line">         <span class="keywordflow">break</span>;</div><div class="line">         <span class="keywordflow">case</span> <a class="code" href="le__wifi_client__interface_8h.html#a1b776321e539bab3bc6a07078545bca4a4202d7b05f16eb80f8b7adfafcef3973">LE_WIFICLIENT_EVENT_SCAN_DONE</a>:</div><div class="line">         {</div><div class="line">             <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"WiFi Client Scan is done."</span>);</div><div class="line">             MyHandleScanResult();</div><div class="line">         }</div><div class="line">         <span class="keywordflow">break</span>;</div><div class="line">    }</div><div class="line">}</div><div class="line"> </div><div class="line">le_wifiClient_NewEventHandler WiFiEventHandlerRef = NULL;</div><div class="line"> </div><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> MyInit</div><div class="line">(</div><div class="line">    <span class="keywordtype">void</span></div><div class="line">)</div><div class="line">{</div><div class="line">    <a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> result = le_wifiClient_start();</div><div class="line"> </div><div class="line">    <span class="keywordflow">if</span> ( LE_OK == result )</div><div class="line">    {</div><div class="line">        <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"WiFi Client started."</span>);</div><div class="line">        WiFiEventHandlerRef = <a class="code" href="le__wifi_client__interface_8h.html#a55aaafbc0a0b4a70faafb50f6babf482">le_wifiClient_AddNewEventHandler</a>( EventHandler, NULL );</div><div class="line">    }</div><div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( <a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86ca92b0367090993d8b41d1560663d01e8d">LE_BUSY</a> == result )</div><div class="line">    {</div><div class="line">        <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"ERROR: WiFi Client already started."</span>);</div><div class="line">    }</div><div class="line">    <span class="keywordflow">else</span></div><div class="line">    {</div><div class="line">        <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"ERROR: WiFi Client not started."</span>);</div><div class="line">    }</div><div class="line"> </div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="le_wifiClient_scan"></a>
+Scanning Access Points with WiFi Client</h1>
+<p>To start a scan for Access Points, the <a class="el" href="le__wifi_client__interface_8h.html#af478b542f65242095c05e1ee61160e2a">le_wifiClient_Scan()</a> should be called.</p><ul>
+<li><a class="el" href="le__wifi_client__interface_8h.html#af478b542f65242095c05e1ee61160e2a">le_wifiClient_Scan()</a>: returns the LE_OK if the call went ok.</li>
+</ul>
+<h1><a class="anchor" id="le_wifiClient_scan_result"></a>
+Processing the WiFi scan results</h1>
+<p>Once the scan results are available, the event LE_WIFICLIENT_EVENT_SCAN_DONE is received. The found Access Points can then be gotten with</p><ul>
+<li><a class="el" href="le__wifi_client__interface_8h.html#a284c452c5bd4309e096b6f89a8da653e">le_wifiClient_GetFirstAccessPoint()</a>: returns the Access Point if found. Else NULL.</li>
+<li><a class="el" href="le__wifi_client__interface_8h.html#ab566a61f36b25118f9f38d62863361d2">le_wifiClient_GetNextAccessPoint()</a>: returns the next Access Point if found. Else NULL.</li>
+</ul>
+<p>The Access Points SSID, Service Set Identifier, is not a string. It does however often contain human readable ASCII values. It can be read with the following function:</p><ul>
+<li><a class="el" href="le__wifi_client__interface_8h.html#a85f1bfae650591ab3fe6844e688121f9">le_wifiClient_GetSsid()</a> : returns the LE_OK if the SSID was read ok.</li>
+</ul>
+<p>The Access Points signal strength can be read with the following function:</p><ul>
+<li><a class="el" href="le__wifi_client__interface_8h.html#ade417976a142b6e71df49bd8761e9833">le_wifiClient_GetSignalStrength()</a> : returns the signal strength in dBm of the AccessPoint</li>
+</ul>
+<pre class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> MyHandleScanResult</div><div class="line">(</div><div class="line">    <span class="keywordtype">void</span></div><div class="line">)</div><div class="line">{</div><div class="line">    uint8 ssid[MAX_SSID_BYTES];</div><div class="line">    <a class="code" href="le__wifi_client__interface_8h.html#a5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> accessPointRef = <a class="code" href="le__wifi_client__interface_8h.html#a284c452c5bd4309e096b6f89a8da653e">le_wifiClient_GetFirstAccessPoint</a>();</div><div class="line"> </div><div class="line">    <span class="keywordflow">while</span>( NULL != accessPointRef )</div><div class="line">    {</div><div class="line">         result = <a class="code" href="le__wifi_client__interface_8h.html#a85f1bfae650591ab3fe6844e688121f9">le_wifiClient_GetSsid</a>( accessPointRef, ssid, MAX_SSID_BYTES );</div><div class="line">         <span class="keywordflow">if</span> (( result == LE_OK ) &amp;&amp; ( memcmp( ssid, <span class="stringliteral">"MySSID"</span>, 6) == 0 ))</div><div class="line">         {</div><div class="line">              <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"WiFi Client found."</span>);</div><div class="line">              <span class="keywordflow">break</span>;</div><div class="line">         }</div><div class="line">         accessPointRef = <a class="code" href="le__wifi_client__interface_8h.html#ab566a61f36b25118f9f38d62863361d2">le_wifiClient_GetNextAccessPoint</a>();</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="le_wifiClient_connect_to_ap"></a>
+Connecting to Access Point</h1>
+<p>To connect to an Access Point use the function:</p><ul>
+<li><a class="el" href="le__wifi_client__interface_8h.html#a17963642c794a003627dde66776ba225">le_wifiClient_Connect()</a> : returns the LE_OK if the function was called ok.</li>
+</ul>
+<p>To set the pass phrase prior for the Access Point use the function:</p><ul>
+<li><a class="el" href="le__wifi_client__interface_8h.html#a398b877814bde1cd3054f2f59d0f6b8b">le_wifiClient_SetPassphrase()</a> : returns the LE_OK if the function was called ok.</li>
+</ul>
+<p>WPA-Enterprise requires a username and password to authenticate. To set them use the function :</p><ul>
+<li><a class="el" href="le__wifi_client__interface_8h.html#a362429a884a24cf6e33415e111f0b522">le_wifiClient_SetUserCredentials()</a> : returns the LE_OK if the function was called ok.</li>
+</ul>
+<p>If an Access Point is hidden, it does not announce it's presence, it will not show up in the scan. To be able to connect to it, the SSID must be known. Use the following function to get an Access Point that can be used to connect to:</p><ul>
+<li><a class="el" href="le__wifi_client__interface_8h.html#a96542be7e54ff8373aa0d8b0f5e540c7">le_wifiClient_Create()</a> : returns Access Point.</li>
+</ul>
+<pre class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> MyConnectTo</div><div class="line">(</div><div class="line">    <a class="code" href="le__wifi_client__interface_8h.html#a5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> accessPointRef</div><div class="line">)</div><div class="line">{</div><div class="line">    <a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> result;</div><div class="line">    <a class="code" href="le__wifi_client__interface_8h.html#a398b877814bde1cd3054f2f59d0f6b8b">le_wifiClient_SetPassphrase</a> ( accessPointRef, <span class="stringliteral">"Secret1"</span> );</div><div class="line">    result = <a class="code" href="le__wifi_client__interface_8h.html#a17963642c794a003627dde66776ba225">le_wifiClient_Connect</a>( accessPointRef );</div><div class="line">    <span class="keywordflow">if</span> (result == LE_OK)</div><div class="line">    {</div><div class="line">         <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"Connecting to AP."</span>);</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><hr/>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

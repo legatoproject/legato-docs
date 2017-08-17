@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>AirVantage Connector API  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">AirVantage Connector API </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><a class="el" href="le__avc__interface_8h.html">API Reference</a> <br/>
+<a class="el" href="legatoServicesAirVantage.html">AirVantage Connector Platform Service</a></p>
+<p>The AirVantage connector service provides an API to communicate with the AirVantage Server to download and install updates.</p>
+<h1><a class="anchor" id="c_le_avc_update"></a>
+Firmware/Application Updates</h1>
+<p>The API for firmware/application update is divided into two parts:</p><ul>
+<li>Allow an App to contact the server for pending updates. If available, can select to download or install the update.</li>
+<li>Allow an App to block an update from being installed. An App may need this if it's performing a critical operation that can't be interrupted (e.g., eCall). This is necessary as installing an update will cause the App to restart (either the App itself needs to restart or a firmware change causes the modem to reset).</li>
+</ul>
+<h2><a class="anchor" id="c_le_avc_update_control"></a>
+Update Control</h2>
+<p>Any App can start a session with an AirVantage server to determine if there is a pending update. This is done with <a class="el" href="le__avc__interface_8h.html#aee17b1de43cf946b59a965e6077e7b03">le_avc_StartSession()</a>.</p>
+<p>The current session can be stopped using <a class="el" href="le__avc__interface_8h.html#a5b3e21858181bb972e982046bced1182">le_avc_StopSession()</a>. This cancels any query for pending update, or suspends a download in progress; however, it <b>won't stop</b> an install in progress.</p>
+<p>The status of a pending update is sent to all Apps registered for receiving a notification. An App can use <a class="el" href="le__avc__interface_8h.html#ac5443791a6e4b8db75342f45fa2f91dc">le_avc_AddStatusEventHandler()</a> to register a handler function to receive this notification. The notification will be received after a session is started.</p>
+<p>Example of registering an AVC handler and starting a session with fault checking: </p><pre class="fragment"><div class="line"><span class="comment">// Start AVC Session</span></div><div class="line"><a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"AirVantage Connection Controller started."</span>);</div><div class="line"><a class="code" href="le__avc__interface_8h.html#ac5443791a6e4b8db75342f45fa2f91dc">le_avc_AddStatusEventHandler</a>(avcStatusHandler, NULL);    <span class="comment">//register a AVC handler</span></div><div class="line"> </div><div class="line"><span class="comment">//Start AVC session. Note: AVC handler must be registered prior starting a session</span></div><div class="line"><a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> result = <a class="code" href="le__avc__interface_8h.html#aee17b1de43cf946b59a965e6077e7b03">le_avc_StartSession</a>();</div><div class="line"><span class="keywordflow">if</span> (<a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86cac409634423b6b1ef09643529f6224798">LE_FAULT</a> == result)</div><div class="line">{</div><div class="line">    <a class="code" href="le__avc__interface_8h.html#a5b3e21858181bb972e982046bced1182">le_avc_StopSession</a>();</div><div class="line">    <a class="code" href="le__avc__interface_8h.html#aee17b1de43cf946b59a965e6077e7b03">le_avc_StartSession</a>();</div><div class="line">}</div></pre><!-- fragment --><p>Sometimes, <code>avcService</code> may decide to start a session with the AirVantage server; for instance if a call to <a class="el" href="le__avc__interface_8h.html#a3f7dea04dd1e9c456fe24a5eb98d2592">le_avc_AcceptDownload()</a> when the session is stopped, <code>avcService</code> will open a session to proceed with the download. In this case, a session started notification could also be received, even if <a class="el" href="le__avc__interface_8h.html#aee17b1de43cf946b59a965e6077e7b03">le_avc_StartSession()</a> is not called explicitly.</p>
+<h3><a class="anchor" id="c_le_avc_updateControl_pending"></a>
+Pending Updates</h3>
+<p>There can only be one pending update at a time. To query the type of update, use <a class="el" href="le__avc__interface_8h.html#a1f085c5986e7c473ed70cff32320ce11">le_avc_GetUpdateType()</a>. App updates can call <a class="el" href="le__avc__interface_8h.html#a698d25127e9fc822c4e0ec34d66c696e">le_avc_GetAppUpdateName()</a> to retrieve the App name.</p>
+<p>If a download is pending, then <a class="el" href="le__avc__interface_8h.html#a3f7dea04dd1e9c456fe24a5eb98d2592">le_avc_AcceptDownload()</a> can be used to allow the update to be downloaded. If this API is called while no AirVantage session is active, calling this API will initiate an AirVantage session. To defer the decision, <a class="el" href="le__avc__interface_8h.html#a0c50c8ce89e21cbd9d0bfa431389b780">le_avc_DeferDownload()</a> can be used to defer the download for the specified number of minutes. After the defer time has elapsed, the pending download notification will be re-sent again to all registered Apps.</p>
+<p>Once an update has been downloaded, a new notification will be received to indicate that an install is pending. Apps can then use <a class="el" href="le__avc__interface_8h.html#ab3ff8076bb7b36ca58efc0ae240efedb">le_avc_AcceptInstall()</a> to allow the install to proceed.</p>
+<p>If an uninstall is pending, then <a class="el" href="le__avc__interface_8h.html#aa5b34a29de899b0f333769cd86078e9e">le_avc_AcceptUninstall()</a> can be used to allow the uninstall to proceed. To defer the decision, <a class="el" href="le__avc__interface_8h.html#a4da465033b4438cdc75fdba894fd890f">le_avc_DeferUninstall()</a> can be used to defer the uninstall for the specified number of minutes. In case of an upgrade, the existing application will not be uninstalled after <a class="el" href="le__avc__interface_8h.html#aa5b34a29de899b0f333769cd86078e9e">le_avc_AcceptUninstall()</a> is called. <a class="el" href="le__avc__interface_8h.html#aa5b34a29de899b0f333769cd86078e9e">le_avc_AcceptUninstall()</a> is only used to signal the server to start downloading the new application. To proceed with an upgrade process, accept the uninstall of the existing version followed by accepting the download and install of the new version.</p>
+<pre class="fragment"><div class="line"><span class="keywordflow">switch</span> (updateStatus)</div><div class="line">     {</div><div class="line">         <span class="keywordflow">case</span> <a class="code" href="le__avc__interface_8h.html#ae45dee5277c9340c8bb083a09ef30cffa466215ed9308f7ffa06280ea9b11342a">LE_AVC_DOWNLOAD_PENDING</a>:</div><div class="line">             <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"Accepting %s update."</span>, GetUpdateType());</div><div class="line">             res = <a class="code" href="le__avc__interface_8h.html#a3f7dea04dd1e9c456fe24a5eb98d2592">le_avc_AcceptDownload</a>();</div><div class="line">             <span class="keywordflow">if</span> (res != LE_OK)</div><div class="line">             {</div><div class="line">                 <a class="code" href="le__log_8h.html#a353590f91b3143a7ba3a416ae5a50c3d">LE_ERROR</a>(<span class="stringliteral">"Failed to accept download from AirVantage (%s)"</span>, <a class="code" href="le__log_8h.html#a99402d6a983f318e5b8bfcdf5dfe9024">LE_RESULT_TXT</a>(res));</div><div class="line">             }</div><div class="line">             <span class="keywordflow">break</span>;</div><div class="line"> </div><div class="line">         <span class="keywordflow">case</span> <a class="code" href="le__avc__interface_8h.html#ae45dee5277c9340c8bb083a09ef30cffa8e8517a1f269a3c24b133e070f41c182">LE_AVC_INSTALL_PENDING</a>:</div><div class="line">             <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"Accepting %s installation."</span>, GetUpdateType());</div><div class="line">             res = <a class="code" href="le__avc__interface_8h.html#ab3ff8076bb7b36ca58efc0ae240efedb">le_avc_AcceptInstall</a>();</div><div class="line">             <span class="keywordflow">if</span> (res != LE_OK)</div><div class="line">             {</div><div class="line">                 <a class="code" href="le__log_8h.html#a353590f91b3143a7ba3a416ae5a50c3d">LE_ERROR</a>(<span class="stringliteral">"Failed to accept install from AirVantage (%s)"</span>, <a class="code" href="le__log_8h.html#a99402d6a983f318e5b8bfcdf5dfe9024">LE_RESULT_TXT</a>(res));</div><div class="line">             }</div><div class="line">             <span class="keywordflow">break</span>;</div><div class="line"> </div><div class="line">         <span class="keywordflow">case</span> <a class="code" href="le__avc__interface_8h.html#ae45dee5277c9340c8bb083a09ef30cffa1bf857f3a557baf4a34ae184e88a1510">LE_AVC_UNINSTALL_PENDING</a>:</div><div class="line">             <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"Accepting %s uninstall."</span>, GetUpdateType());</div><div class="line">             res = <a class="code" href="le__avc__interface_8h.html#aa5b34a29de899b0f333769cd86078e9e">le_avc_AcceptUninstall</a>();</div><div class="line">             <span class="keywordflow">if</span> (res != LE_OK)</div><div class="line">             {</div><div class="line">                 <a class="code" href="le__log_8h.html#a353590f91b3143a7ba3a416ae5a50c3d">LE_ERROR</a>(<span class="stringliteral">"Failed to accept uninstall from AirVantage (%s)"</span>, <a class="code" href="le__log_8h.html#a99402d6a983f318e5b8bfcdf5dfe9024">LE_RESULT_TXT</a>(res));</div><div class="line">             }</div><div class="line">             <span class="keywordflow">break</span>;</div><div class="line"> </div><div class="line">         <span class="keywordflow">case</span> <a class="code" href="le__avc__interface_8h.html#ae45dee5277c9340c8bb083a09ef30cffa86b683c0afcc2793996d3ad5010f6cd0">LE_AVC_REBOOT_PENDING</a>:</div><div class="line">             <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"Accepting device reboot."</span>);</div><div class="line">             res = <a class="code" href="le__avc__interface_8h.html#a7987dc86f61aea691fcc2486f725f4ae">le_avc_AcceptReboot</a>();</div><div class="line">             <span class="keywordflow">if</span> (res != LE_OK)</div><div class="line">             {</div><div class="line">                 <a class="code" href="le__log_8h.html#a353590f91b3143a7ba3a416ae5a50c3d">LE_ERROR</a>(<span class="stringliteral">"Failed to accept reboot from AirVantage (%s)"</span>, <a class="code" href="le__log_8h.html#a99402d6a983f318e5b8bfcdf5dfe9024">LE_RESULT_TXT</a>(res));</div><div class="line">             }</div><div class="line">             <span class="keywordflow">break</span>;</div><div class="line"> </div><div class="line">         <span class="keywordflow">default</span>:</div><div class="line">             <span class="comment">// No action required</span></div><div class="line">             <span class="keywordflow">break</span>;</div><div class="line">     }</div></pre><!-- fragment --><dl class="section note"><dt>Note</dt><dd>that even if an App calls <a class="el" href="le__avc__interface_8h.html#ab3ff8076bb7b36ca58efc0ae240efedb">le_avc_AcceptInstall()</a>, the install may still be blocked by another App using the <a class="el" href="c_le_avc.html#c_le_avc_update_app">Application Installation Blocking</a> functions. To defer the decision, an App can use <a class="el" href="le__avc__interface_8h.html#a068f714a110bfa4cac179731a17798f3">le_avc_DeferInstall()</a> to defer the install for the specified number of minutes. After the defer time has elapsed, the pending install notification will be re-sent to allow Apps to make a new decision, or again defer.</dd></dl>
+<h3><a class="anchor" id="c_le_avc_updateControl_accepting"></a>
+Accepting Installs/Uninstalls</h3>
+<p>Accepting an App install or uninstall will not initiate an AirVantage session if no session is active. An App should start an AirVantage session before accepting an App install/uninstall, to ensure the process is completed, and the server is updated.</p>
+<p>If no app has registered for notifications using <a class="el" href="le__avc__interface_8h.html#ac5443791a6e4b8db75342f45fa2f91dc">le_avc_AddStatusEventHandler()</a>, then any pending downloads and installs will happen automatically, subject to any restrictions imposed by app using the <a class="el" href="c_le_avc.html#c_le_avc_update_app">Application Installation Blocking</a> functions.</p>
+<p>There is no restriction on the number of Apps registering for notifications.</p>
+<p>In case of any error incurred during App download/install, an error code will be set which can be retrieved by calling <a class="el" href="le__avc__interface_8h.html#a5c893155e3b5ef0c68405b26b4244f1f">le_avc_GetErrorCode()</a>.</p>
+<h2><a class="anchor" id="c_le_avc_update_app"></a>
+Application Installation Blocking</h2>
+<p>When an App is about to perform a critical operation, it can block the installation of an update with <a class="el" href="le__avc__interface_8h.html#a4d298bc6d814481205c4db5d24812694">le_avc_BlockInstall()</a>, and after it's finished with the critical operation, it can unblock the install with <a class="el" href="le__avc__interface_8h.html#af5b3dffdd29b7de3288ea1a88c0ecd4e">le_avc_UnblockInstall()</a>.</p>
+<p>What constitutes a critical operation depends on the App. An eCall App might block installs for the duration that it runs. A data collection App that wakes up once an hour might block installs while it collects and stores and/or transmits a new data sample, and then unblock installs just before it goes to sleep again.</p>
+<p>If an install can't be applied because it's blocked, another attempt to apply the install will be made at a later time.</p>
+<p>An App can add a session control handler using <a class="el" href="le__avc__interface_8h.html#a14f4e6b17bc2343a9e84fa0b0951fe77">le_avc_AddSessionRequestEventHandler()</a>. Requests by user Apps to open or close session will be forwarded to the session control handler. If no App has registered a session request handler, AVC session can be opened or closed anytime by user Apps.</p>
+<h1><a class="anchor" id="c_le_avc_Timers"></a>
+Timers</h1>
+<p>Poling timers sets the time that the Target will communicate with the AirVantage Server to check for new jobs. Retry timers will try and re-establish a connection to the AirVantage Server in accordance with the times that are declared.</p>
+<h2><a class="anchor" id="c_le_avc_PollingTimer"></a>
+Polling Timer</h2>
+<p>The target will periodically initiate a connection to the AirVantage Server according to the settings for the polling timer to check if there are any pending jobs.</p>
+<p>If you need to disable the poling timer call <a class="el" href="le__avc__interface_8h.html#a774b5c0278c056ef0787f4e1ba9e7255">le_avc_SetPollingTimer()</a> and set the value to 0.</p>
+<p>The polling timer accepts ranges from 0 to 525600 minutes and is persistent across reboots and upgrades.</p>
+<p>To read the polling timer call: <a class="el" href="le__avc__interface_8h.html#a123c2bc3f47759547bf3089d48d9d964">le_avc_GetPollingTimer()</a></p>
+<p>To write a new value to the polling timer call: <a class="el" href="le__avc__interface_8h.html#a774b5c0278c056ef0787f4e1ba9e7255">le_avc_SetPollingTimer()</a></p>
+<h2><a class="anchor" id="c_le_avc_RetryTimers"></a>
+Retry Timers</h2>
+<p>If an error occurs during a connection to the Device Services server (WWAN DATA establishment failed and an http error code is received) the embedded module will initiate a new connection according to the values defined in the retry timers.</p>
+<p>The timers are tried in sequence until a connection is established, or all enabled retry timers are exhausted. After all the enabled timers are exhausted, a new session must be initiated again by calling le_avc_startSession() after the expiry of the retry timer.</p>
+<p>The retry timer values are persistent (reboots and updates do not effect the retry timers). If you wish to disable a retry timer set the timer value to 0. You must always pass in at least 8 values to the retry timers.</p>
+<p>Retry timer values range from 0 to 20160 minutes. The function <a class="el" href="le__avc__interface_8h.html#a2b07ea518d6d404f449b102c776de380">le_avc_GetRetryTimers()</a> reads the retry timers in an array and the function <a class="el" href="le__avc__interface_8h.html#afeeb7e747be21527117014102fe80b19">le_avc_SetRetryTimers()</a> writes the retry timers. When writing to the retry timers, values of all the 8 timers have to be defined.</p>
+<p>Example of calling retry timers, the session will be retried after 15 minutes, 1 hour, 4 hours, 8 hours, 1 day and 2 days, the last two retries are disabled: </p><pre class="fragment"><div class="line">uint16_t RetryTimers[<a class="code" href="le__avc__interface_8h.html#abe9f6c66e63f33f10ce4bc609bdfdfe7">LE_AVC_NUM_RETRY_TIMERS</a>] = {15, 60, 240, 480, 1440, 2880, 0, 0};</div><div class="line"><a class="code" href="le__avc__interface_8h.html#afeeb7e747be21527117014102fe80b19">le_avc_SetRetryTimers</a>(RetryTimers, <a class="code" href="le__avc__interface_8h.html#abe9f6c66e63f33f10ce4bc609bdfdfe7">LE_AVC_NUM_RETRY_TIMERS</a>);</div></pre><!-- fragment --><h1><a class="anchor" id="c_le_avc_reboot"></a>
+Device reboot</h1>
+<p>The AirVantage server can request to reboot the device. If a reboot is requested a notification is sent to the registered Apps. The App can either accept the reboot with <a class="el" href="le__avc__interface_8h.html#a7987dc86f61aea691fcc2486f725f4ae">le_avc_AcceptReboot()</a> or defer it for a specified number of minutes with <a class="el" href="le__avc__interface_8h.html#a31509a11eb81a8975b47c9f26ceb6724">le_avc_DeferReboot()</a>. After the defer time has elapsed, the pending reboot notification will be re-sent. This allows the registered app to make a new decision or defer the reboot again.</p>
+<p>If no App has registered for notifications using <a class="el" href="le__avc__interface_8h.html#ac5443791a6e4b8db75342f45fa2f91dc">le_avc_AddStatusEventHandler()</a>, then any pending reboot will happen automatically.</p>
+<h1><a class="anchor" id="c_le_avc_GetCredentialStatus"></a>
+Credential Status</h1>
+<p>The device is provisioned with bootstrap credentials from factory. The Device Management (DM) credentials are provisioned by AirVantage Bootstrap Server. This API is used to retrieve the status of credentials provisioned on the device.</p>
+<h1><a class="anchor" id="c_le_avc_connection"></a>
+Connection required</h1>
+<p>The AirVantage agent can request a connection to the AirVantage server, especially when a firmware package is installed (after a platform reboot). In this case a notification is sent to the control App, which can start the connection with <a class="el" href="le__avc__interface_8h.html#aee17b1de43cf946b59a965e6077e7b03">le_avc_StartSession()</a>.</p>
+<h1><a class="anchor" id="c_le_avc_routing"></a>
+Data routing</h1>
+<p>By default the AirVantage connection uses the default mobile data profile and the default route set by the data connection service.</p>
+<p>If the user wishes to control the network configuration, e.g. to use the AirVantage agent with multi-PDP contexts, they should first bind the application to the data connection service: </p><pre class="fragment">bindings:
+{
+   clientExe.clientComponent.le_data -&gt; dataConnectionService.le_data
+}
+</pre><p>The data connection service should then be configured before launching the AirVantage connection:</p><ul>
+<li><a class="el" href="le__data__interface_8h.html#ae9bc8830afd2f629db8a32fd9ec57717">le_data_SetCellularProfileIndex()</a> allows to change the data profile to use.</li>
+<li><a class="el" href="le__data__interface_8h.html#a980d5ea77c0f5ecf025bdf14520f991a">le_data_GetDefaultRouteStatus()</a> indicates if the default route is activated in the data connection service. This default route can be deactivated in the data connection service configuration database, as explained in <a class="el" href="c_le_data.html#c_le_data_defaultRoute">Default route</a>. If the default route is deactivated, the AirVantage agent will automatically add routes to be able to reach the AirVantage server through the connection used by AirVantage.</li>
+</ul>
+<h1><a class="anchor" id="le_avcService_configdb"></a>
+Service Configuration Tree</h1>
+<p>The configuration database path for the activityTimeout is: </p><pre class="fragment">/
+    apps/
+        avcService/
+                 activityTimeout
+</pre><p>After an AirVantage session is started, if there's no activity between the device and the server within the timer interval, then LE_AVC_NO_UPDATE state will be returned to the app. However, this activity timeout can be overridden by setting an integer value for /apps/avcService/activityTimeout. The activity timer is initialized only when the <code>avcService</code> starts. If a valid entry &gt;0 is found, then it will be used instead of the default value of 20 seconds. The following steps should be used to set the activityTimeout.</p>
+<pre class="fragment">config set /apps/avcService/activityTimeout xx
+app restart avcService
+</pre><dl class="section note"><dt>Note</dt><dd>Everytime a new value is written to activityTimeout, the avcService needs to be restarted to read the new value.</dd></dl>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Platform" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Out-of-Tree Kernel Modules  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Platform_Yocto_Info.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink selected" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Platform</h2>
+<nav class="secondary">
+<a href="platformConstraints.html">Platform Constraints</a><a href="virtualPlatformMain.html">Virtual Platform</a><a class="link-selected" href="yoctoMain.html">Yocto Info</a><a href="raspbianMain.html">Raspbian Info</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Out-of-Tree Kernel Modules </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>This topic provides details on how to prepare, build, and load/unload out-of-tree kernel drivers.</p>
+<p>Linux kernel modules can be loaded/unloaded in runtime, which allows for smaller core kernel images and more flexibles systems.</p>
+<p>Also see <a class="el" href="defFilesMdef.html">Kernel Module Definition .mdef</a></p>
+<h1><a class="anchor" id="howToAddKernelDriver_setBuildEnv"></a>
+Set Build Environment</h1>
+<p>To overcome a current deficiency in the Yocto kernel-dev package, you need to set the module build environment: </p><pre class="fragment"><div class="line">cd ./y17-ext/sysroots/armv7a-vfp-neon-poky-linux-gnueabi/usr/src/kernel</div><div class="line">ARCH=arm CROSS_COMPILE=arm-poky-linux-gnueabi- make scripts</div></pre><!-- fragment --><h1><a class="anchor" id="howToAddKernelDriver_installToolchain"></a>
+Install Toolchain to Build Kernel Modules</h1>
+<p>This process involves changing the make configuration before you build the kernel, to do this it is recommended that you install another separate version of the toolchain for this purpose.</p>
+<p>Create an install directory and open a Linux shell to ensure the top directory is known like this: </p><pre class="fragment"><div class="line">mkdir yocto-install</div><div class="line">cd yocto-install</div><div class="line">export TOPDIR=${PWD}</div></pre><!-- fragment --><p>Then download the appropriate toolchain for your environment from the <a href="http://source.sierrawireless.com/resources/legato/downloads/">Legato Downloads</a> page. You can use <code>wget</code> after you know the filename.</p>
+<p>Ensure you have appropriate access to run the toolchain install script: </p><pre class="fragment"><div class="line">chmod 755 &lt;toolchain filename&gt;</div></pre><!-- fragment --><p>Start installation: </p><pre class="fragment"><div class="line">./poky-swi-ext-glibc-x86_64-meta-toolchain-swi-ext-armv7a-vfp-neon-toolchain-swi-ext-1.7.3.sh</div></pre><!-- fragment --><p>When asked <code>type</code>, enter this: </p><pre class="fragment"><div class="line">Enter the target directory <span class="keywordflow">for</span> SDK (<span class="keywordflow">default</span>: /opt/swi/y17-ext): ./y17-ext</div></pre><!-- fragment --><p>Then press &lt;ENTER&gt; twice:</p><ul>
+<li>once to confirm the command</li>
+<li>once to answer "Y" to the following question.</li>
+</ul>
+<p>Check to ensure the toolchain is in your path: </p><pre class="fragment"><div class="line">export PATH=$PATH:${PWD}/y17-ext/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi</div></pre><!-- fragment --><p>It's recommended to add the toolchain path to your <code>~/</code>.profile file so it's available every time you log in. </p>
+<h1><a class="anchor" id="howToAddKernelDriver_setBuildEnv"></a>
+Set Build Environment</h1>
+<p>To overcome a current deficiency in the Yocto kernel-dev package, you need to set the module build environment: </p><pre class="fragment"><div class="line">cd ./y17-ext/sysroots/armv7a-vfp-neon-poky-linux-gnueabi/usr/src/kernel</div><div class="line">ARCH=arm CROSS_COMPILE=arm-poky-linux-gnueabi- make scripts</div></pre><!-- fragment --><h1><a class="anchor" id="howToAddKernelDriver_makeKernel"></a>
+Make Kernel Module</h1>
+<p>First, ensure the kernel module support root directory is known: </p><pre class="fragment"><div class="line">export B_KDIR=${PWD}</div><div class="line">cd $TOPDIR</div></pre><!-- fragment --><p>Next, make an example kernel module directory, and go to it </p><pre class="fragment"><div class="line">mkdir kmodule</div><div class="line">cd kmodule</div></pre><!-- fragment --><h2><a class="anchor" id="howToAddKernelDriver_makeKernel_cFile"></a>
+C File Example</h2>
+<p>Create a kernel file like this simple <code>ktest_module.c</code> example:</p>
+<pre class="fragment"><div class="line"><span class="preprocessor">#include &lt;linux/module.h&gt;</span>    <span class="comment">/* Needed by all modules */</span></div><div class="line"><span class="preprocessor">#include &lt;linux/kernel.h&gt;</span>    <span class="comment">/* Needed for KERN_INFO */</span></div><div class="line"><span class="preprocessor">#include &lt;linux/init.h&gt;</span>      <span class="comment">/* Needed for the macros */</span></div><div class="line"> </div><div class="line"><span class="keyword">static</span> <span class="keywordtype">int</span> __init ktest_module_init(<span class="keywordtype">void</span>)</div><div class="line">{</div><div class="line">    printk(KERN_INFO <span class="stringliteral">"Driver version %s\n"</span>, VERSION);</div><div class="line">    printk(KERN_INFO <span class="stringliteral">"Buona Sera :)\n"</span>);</div><div class="line">    <span class="keywordflow">return</span> 0;</div><div class="line">}</div><div class="line"> </div><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> __exit ktest_module_exit(<span class="keywordtype">void</span>)</div><div class="line">{</div><div class="line">    printk(KERN_INFO <span class="stringliteral">"Ciao!\n"</span>);</div><div class="line">}</div><div class="line"> </div><div class="line">module_init(ktest_module_init);</div><div class="line">module_exit(ktest_module_exit);</div></pre><!-- fragment --><h2><a class="anchor" id="howToAddKernelDriver_makeKernel_makefile"></a>
+Makefile Example</h2>
+<p>Create a <code>makefile</code> like this simple example:</p>
+<pre class="fragment"><div class="line"><span class="preprocessor"># Kernel module build command for ARM targets is:</span></div><div class="line"><span class="preprocessor"># make ARCH=arm CROSS_COMPILE=arm-poky-linux-gnueabi-</span></div><div class="line"><span class="preprocessor">#</span></div><div class="line"><span class="preprocessor"># List of object file(s) to be built</span></div><div class="line">obj-m+=ktest_module.o</div><div class="line"><span class="preprocessor">#</span></div><div class="line"><span class="preprocessor"># Point to the directory containing sources for the kernel running on target</span></div><div class="line"><span class="preprocessor"># system. The kernel directory must have the configuration build step executed,</span></div><div class="line"><span class="preprocessor"># i.e. it must contain the target system's .config file.</span></div><div class="line"><span class="preprocessor">#</span></div><div class="line"><span class="preprocessor"># Legato tools contain such a directory, point to it.</span></div><div class="line">KBUILD_DIR=/opt/swi/y17-ext/sysroots/armv7a-vfp-neon-poky-linux-gnueabi/usr/src/kernel</div><div class="line"><span class="preprocessor">#</span></div><div class="line"><span class="preprocessor"># Kernel module build dependency</span></div><div class="line">all:</div><div class="line">    make -C $(KBUILD_DIR) M=$(PWD) modules</div><div class="line"><span class="preprocessor">#</span></div><div class="line"><span class="preprocessor"># Kernel module clean dependency</span></div><div class="line">clean:</div><div class="line">    make -C $(KBUILD_DIR) M=$(PWD) clean</div></pre><!-- fragment --><h2><a class="anchor" id="howToAddKernelDriver_makeKernel_buildKernel"></a>
+Build Kernel</h2>
+<p>Then add the example kernel module source <code>ktest_module.c</code> file and its Makefile to <code>kmodule</code> directory.</p>
+<p>You're then ready to build the example kernel module: </p><pre class="fragment"><div class="line">make</div></pre><!-- fragment --><p>You should then have a <code>ktest_module.ko</code> located in kmodule directory.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Ensure the kernel sources version used to compile the module matches the kernel version running on the target.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The <code>y17-ext</code> directory could be relocated to directory of your choice. If relocated, <code>PATH</code> and <code>B_KDIR</code> variables must be changed accordingly.</dd></dl>
+<h1><a class="anchor" id="howToAddKernelDriver_loadDriver"></a>
+Load Driver</h1>
+<p>You can load the driver onto the target device <a class="el" href="yoctoOutofTreeKernelModule.html#howToAddKernelDriver_loadDriver_manualLoad">manually</a> or use Legato's <a class="el" href="yoctoOutofTreeKernelModule.html#howToAddKernelDriver_loadDriver_mDefFile">mdef File Load</a>.</p>
+<h2><a class="anchor" id="howToAddKernelDriver_loadDriver_manualLoad"></a>
+Manual Load</h2>
+<p>This section shows how to:</p><ul>
+<li>copy a module to a target</li>
+<li>manually install a module on a target</li>
+<li>remove a module from a target</li>
+</ul>
+<p>This is how to use <code>scp</code> to copy a kernel module (driver) onto the target: </p><pre class="fragment"><div class="line">scp ktest_module.ko root@$target_IP:/home/root/ktest_dir</div></pre><!-- fragment --><p>This is how to install a module, and check it installed: </p><pre class="fragment"><div class="line">root@swi-mdm9x15:~/ktest_dir# insmod ktest_module.ko</div><div class="line">root@swi-mdm9x15:~/ktest_dir# lsmod |grep ktest</div><div class="line">ktest_module 648 0 - Live 0xbf0eb000 (PO)</div></pre><!-- fragment --><p>This is how to check the log file: </p><pre class="fragment"><div class="line">root@swi-mdm9x15:~/ktest_dir# logread |tail -n 2</div><div class="line">Nov 10 18:16:30 swi-mdm9x15 user.info kernel: [88600.728022] Driver version 1.0.0</div><div class="line">Nov 10 18:16:30 swi-mdm9x15 user.info kernel: [88600.728053] Buona Sera :)</div></pre><!-- fragment --><p>This is how to remove the module, and check the log that it was removed: </p><pre class="fragment"><div class="line">root@swi-mdm9x15:~/ktest_dir# rmmod ktest_module.ko</div><div class="line">root@swi-mdm9x15:~/ktest_dir# logread |tail -n 2</div><div class="line">Nov 10 18:16:30 swi-mdm9x15 user.info kernel: [88600.728053] Buona Sera :)</div><div class="line">Nov 10 18:19:38 swi-mdm9x15 user.info kernel: [88789.028495] Ciao!</div><div class="line">root@swi-mdm9x15:~/ktest_dir#</div></pre><!-- fragment --><h2><a class="anchor" id="howToAddKernelDriver_loadDriver_mDefFile"></a>
+mdef File Load</h2>
+<p>You can also use Legato's <code>mdef</code> to load the pre-built kernel module.</p>
+<p>Create <a class="el" href="defFilesMdef.html">Kernel Module Definition .mdef</a> <code>hello.mdef</code> file in any location with this <code>preBuilt</code> section: </p><pre class="fragment"><div class="line">preBuilt: /path/to/kernel/module/ktest_module.ko</div></pre><!-- fragment --><p>Modify <code>$LEGATO_ROOT/system</code>.sdef (in Legato root dir) to include the <code>kernelModule</code> path: </p><pre class="fragment"><div class="line">kernelModules:</div><div class="line">{ &lt;path_to_hello.mdef&gt; }</div></pre><!-- fragment --><h2><a class="anchor" id="howToAddKernelDriver_loadDriver_buildInstall"></a>
+Build and Install</h2>
+<p>Then <a class="el" href="basicAppsCreate.html#basicAppsCreate_buildApp">build</a> and <a class="el" href="basicAppsCreate.html#basicAppsCreate_instTarget">install</a> Legato on a WP85 module.</p>
+<p>If the driver load succeeds, a console log message like this should display: </p><pre class="fragment"><div class="line">Jul 14 17:58:28 swi-mdm9x15 user.info Legato: INFO | supervisor[23722]/supervisor T=main | kernelModules.c ModuleGetParams() 119 | Module ktest_module.ko uses no parameters.</div><div class="line">Jul 14 17:58:28 swi-mdm9x15 user.info Legato: INFO | supervisor[23722]/supervisor T=main | kernelModules.c ModuleInsert() 286 | New kernel module <span class="stringliteral">'ktest_module'</span></div><div class="line">Jul 14 17:58:28 swi-mdm9x15 user.info kernel: [244746.908837] Driver version 1.0.0</div><div class="line">Jul 14 17:58:28 swi-mdm9x15 user.info kernel: [244746.911157] Buona Sera</div></pre><!-- fragment --><p>Then use <code>lsmod</code> on the target to check that your kernel module is listed (installed). </p><pre class="fragment"><div class="line">root@swi-mdm9x15:~# lsmod</div><div class="line">ktest_module 648 0 - Live 0xbf0c0000 (O) &lt;===============</div><div class="line">ipv6 290588 14 [permanent], Live 0xbf060000</div><div class="line">usb_storage 41365 0 - Live 0xbf04c000</div><div class="line">sd_mod 29567 0 - Live 0xbf03f000</div><div class="line">scsi_mod 133355 2 usb_storage,sd_mod, Live 0xbf00d000</div><div class="line">unix 29432 659 - Live 0xbf000000</div></pre><!-- fragment --> </div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
