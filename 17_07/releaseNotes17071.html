@@ -2,7 +2,7 @@
 <html data-context="About" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<title>17.07.0 Release Notes  - Legato Docs</title>
+<title>17.07.1 Release Notes  - Legato Docs</title>
 <meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
 <meta content="legato, iot" name="keywords"/>
 <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
@@ -59,9 +59,9 @@
 <div class="content">
 <div class="header">
 <div class="headertitle">
-<h1 class="title">17.07.0 Release Notes </h1> </div>
+<h1 class="title">17.07.1 Release Notes </h1> </div>
 </div><div class="contents">
-<div class="textblock"><p>Release Date: Aug 17, 2017</p>
+<div class="textblock"><p>Release Date: Aug 18, 2017</p>
 <p>See <a class="el" href="aboutLicenses.html">Licenses</a> to view Legato AF Licensing Information.</p>
 <p>The following provides a summary of changes that have been made in the 17.07 Legato AF Release.</p>
 <p><b> Download the <a class="el" href="aboutReleaseInfo.html">source code</a> and get started with <a class="el" href="basicBuild.html">building Legato AF</a>. </b></p>
@@ -82,7 +82,18 @@ Legato Application Framework Release Process</h1>
 <li>Module Vendor takes release 17.11 and creates a "Legato Platform" and "Product Release Z", and so on..</li>
 </ul>
 <p>For any questions about the Product Releases please contact your Module Vendor directly.</p>
-<h1><a class="anchor" id="rn17_07_Features"></a>
+<h1><a class="anchor" id="rn107_07_Patches"></a>
+Patches</h1>
+<p>The following are the list of patches that have been applied to Legato AF 17.07:</p>
+<h2><a class="anchor" id=""></a>
+</h2>
+<p>Version 17.07.1 was introduced to resolve an issue where running <code>make</code> with the tarball distribution of Legato AF produces an error (the build is still successful, even with the error):</p>
+<p>Example of error message: </p><pre class="fragment">Version (-v) not set
+make: *** [stage_mkavmodel] Error 1
+</pre><p><b>Resolution:</b> download the new tarball and run <code>make</code> <code>clean</code> and then <code>make</code> for your target: <a href="https://downloads.sierrawireless.com/legato/1707/legato-17.07.1.tar.bz2">legato-17.07.1.tar.bz2</a></p>
+<p>Example: </p><pre class="fragment">$ make clean
+$ make wp85           # make &lt;target&gt;
+</pre><h1><a class="anchor" id="rn17_07_Features"></a>
 New Features</h1>
 <p>The following are the list of new features that have been added into the 17.07 Release:</p>
 <h2><a class="anchor" id="rn17_07_Features_AV"></a>
