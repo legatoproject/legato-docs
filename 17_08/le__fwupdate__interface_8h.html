@@ -1,0 +1,618 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_fwupdate_interface.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#define-members">Macros</a> |
+<a href="#typedef-members">Typedefs</a> |
+<a href="#enum-members">Enumerations</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_fwupdate_interface.h File Reference</h1> </div>
+</div><div class="contents">
+<div class="textblock"><code>#include "<a class="el" href="legato_8h_source.html">legato.h</a>"</code><br/>
+</div>
+<p><a href="le__fwupdate__interface_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a5bcff3734162fd0b39eafa4d19b8d72c"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fwupdate__interface_8h.html#a5bcff3734162fd0b39eafa4d19b8d72c">LE_FWUPDATE_MAX_VERS_LEN</a>   256</td></tr>
+<tr class="separator:a5bcff3734162fd0b39eafa4d19b8d72c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa7b226d1c113d549ca60ac38f7a625a3"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fwupdate__interface_8h.html#aa7b226d1c113d549ca60ac38f7a625a3">LE_FWUPDATE_STATUS_LABEL_LENGTH_MAX</a>   32</td></tr>
+<tr class="separator:aa7b226d1c113d549ca60ac38f7a625a3"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a625550f84978b36e792ce1643f4d1df0"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fwupdate__interface_8h.html#a625550f84978b36e792ce1643f4d1df0">le_fwupdate_DisconnectHandler_t</a>) (void *)</td></tr>
+<tr class="separator:a625550f84978b36e792ce1643f4d1df0"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a8749c3532db083893e9dd2d7c128a027"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fwupdate__interface_8h.html#a8749c3532db083893e9dd2d7c128a027">le_fwupdate_UpdateStatus_t</a> { <br/>
+  <a class="el" href="le__fwupdate__interface_8h.html#a8749c3532db083893e9dd2d7c128a027a51b94fbef4ff15b30849e33a143fc49d">LE_FWUPDATE_UPDATE_STATUS_OK</a> = 0, 
+<a class="el" href="le__fwupdate__interface_8h.html#a8749c3532db083893e9dd2d7c128a027ab05f70f01e520db770011dacd7835bf3">LE_FWUPDATE_UPDATE_STATUS_PARTITION_ERROR</a> = 1, 
+<a class="el" href="le__fwupdate__interface_8h.html#a8749c3532db083893e9dd2d7c128a027a4346dda96b15a733287e6e7f7aefc340">LE_FWUPDATE_UPDATE_STATUS_DWL_ONGOING</a> = 2, 
+<a class="el" href="le__fwupdate__interface_8h.html#a8749c3532db083893e9dd2d7c128a027a5ba5079e787d9d4ca81c58c185a5d640">LE_FWUPDATE_UPDATE_STATUS_DWL_FAILED</a> = 3, 
+<br/>
+  <a class="el" href="le__fwupdate__interface_8h.html#a8749c3532db083893e9dd2d7c128a027ad2f6e39e0f7e091bfa2d0edea8633740">LE_FWUPDATE_UPDATE_STATUS_DWL_TIMEOUT</a> = 4, 
+<a class="el" href="le__fwupdate__interface_8h.html#a8749c3532db083893e9dd2d7c128a027ac86592808b078f100b58828f0bfcc0e7">LE_FWUPDATE_UPDATE_STATUS_UNKNOWN</a> = 5
+<br/>
+ }</td></tr>
+<tr class="separator:a8749c3532db083893e9dd2d7c128a027"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a295e3696a0233968f6822d65b561a6ff"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fwupdate__interface_8h.html#a295e3696a0233968f6822d65b561a6ff">le_fwupdate_ConnectService</a> (void)</td></tr>
+<tr class="separator:a295e3696a0233968f6822d65b561a6ff"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ace50eb37816b68bd314652afff825e3a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fwupdate__interface_8h.html#ace50eb37816b68bd314652afff825e3a">le_fwupdate_TryConnectService</a> (void)</td></tr>
+<tr class="separator:ace50eb37816b68bd314652afff825e3a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6d38ae77a779a015c4e5362a96c7d233"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fwupdate__interface_8h.html#a6d38ae77a779a015c4e5362a96c7d233">le_fwupdate_SetServerDisconnectHandler</a> (<a class="el" href="le__fwupdate__interface_8h.html#a625550f84978b36e792ce1643f4d1df0">le_fwupdate_DisconnectHandler_t</a> disconnectHandler, void *contextPtr)</td></tr>
+<tr class="separator:a6d38ae77a779a015c4e5362a96c7d233"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1f0caf62fe163a57a4c12a506bd51846"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fwupdate__interface_8h.html#a1f0caf62fe163a57a4c12a506bd51846">le_fwupdate_DisconnectService</a> (void)</td></tr>
+<tr class="separator:a1f0caf62fe163a57a4c12a506bd51846"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab68f3a7c5d4284306468e888bf6a8796"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fwupdate__interface_8h.html#ab68f3a7c5d4284306468e888bf6a8796">le_fwupdate_Download</a> (int fd)</td></tr>
+<tr class="separator:ab68f3a7c5d4284306468e888bf6a8796"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a481234992a0fbc18f97c88f68dc00837"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fwupdate__interface_8h.html#a481234992a0fbc18f97c88f68dc00837">le_fwupdate_InitDownload</a> (void)</td></tr>
+<tr class="separator:a481234992a0fbc18f97c88f68dc00837"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6629d3f730bfcea4843a3cfe3d457bcd"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fwupdate__interface_8h.html#a6629d3f730bfcea4843a3cfe3d457bcd">le_fwupdate_GetResumePosition</a> (size_t *positionPtr)</td></tr>
+<tr class="separator:a6629d3f730bfcea4843a3cfe3d457bcd"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:abb967dcbee7f8d2ae75d708bec5e4fc9"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fwupdate__interface_8h.html#abb967dcbee7f8d2ae75d708bec5e4fc9">le_fwupdate_GetUpdateStatus</a> (<a class="el" href="le__fwupdate__interface_8h.html#a8749c3532db083893e9dd2d7c128a027">le_fwupdate_UpdateStatus_t</a> *statusPtr, char *statusLabel, size_t statusLabelSize)</td></tr>
+<tr class="separator:abb967dcbee7f8d2ae75d708bec5e4fc9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad0860656d991ac9c92fef5273f73344e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fwupdate__interface_8h.html#ad0860656d991ac9c92fef5273f73344e">le_fwupdate_GetFirmwareVersion</a> (char *version, size_t versionSize)</td></tr>
+<tr class="separator:ad0860656d991ac9c92fef5273f73344e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1674fc0d84a53e331e7e85f98bae07ee"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fwupdate__interface_8h.html#a1674fc0d84a53e331e7e85f98bae07ee">le_fwupdate_GetBootloaderVersion</a> (char *version, size_t versionSize)</td></tr>
+<tr class="separator:a1674fc0d84a53e331e7e85f98bae07ee"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aafc80ed054d69c6d159933093bb13ff7"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fwupdate__interface_8h.html#aafc80ed054d69c6d159933093bb13ff7">le_fwupdate_IsSystemMarkedGood</a> (bool *isSystemGoodPtr)</td></tr>
+<tr class="separator:aafc80ed054d69c6d159933093bb13ff7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a534e72fc1a6c20a36a9bdf4a58074159"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fwupdate__interface_8h.html#a534e72fc1a6c20a36a9bdf4a58074159">le_fwupdate_Install</a> (void)</td></tr>
+<tr class="separator:a534e72fc1a6c20a36a9bdf4a58074159"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad153c293ff605e7aef51929c873e2792"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fwupdate__interface_8h.html#ad153c293ff605e7aef51929c873e2792">le_fwupdate_MarkGood</a> (void)</td></tr>
+<tr class="separator:ad153c293ff605e7aef51929c873e2792"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9e8d0d482a2a4f207650cc01296811be"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fwupdate__interface_8h.html#a9e8d0d482a2a4f207650cc01296811be">le_fwupdate_InstallAndMarkGood</a> (void)</td></tr>
+<tr class="separator:a9e8d0d482a2a4f207650cc01296811be"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato <a class="el" href="c_fwupdate.html">Modem Firmware Update</a> include file.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a5bcff3734162fd0b39eafa4d19b8d72c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_FWUPDATE_MAX_VERS_LEN   256</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Maximum length of a version string, excluding any termination character. </p>
+</div>
+</div>
+<a class="anchor" id="aa7b226d1c113d549ca60ac38f7a625a3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_FWUPDATE_STATUS_LABEL_LENGTH_MAX   32</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Maximum length of the update status label </p>
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="a625550f84978b36e792ce1643f4d1df0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_fwupdate_DisconnectHandler_t) (void *)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Type for handler called when a server disconnects. </p>
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="a8749c3532db083893e9dd2d7c128a027"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">enum <a class="el" href="le__fwupdate__interface_8h.html#a8749c3532db083893e9dd2d7c128a027">le_fwupdate_UpdateStatus_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Update status Indicates either a success or the defective image partition. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a8749c3532db083893e9dd2d7c128a027a51b94fbef4ff15b30849e33a143fc49d"></a>LE_FWUPDATE_UPDATE_STATUS_OK </td><td class="fielddoc">
+<p>Last update succeeded. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a8749c3532db083893e9dd2d7c128a027ab05f70f01e520db770011dacd7835bf3"></a>LE_FWUPDATE_UPDATE_STATUS_PARTITION_ERROR </td><td class="fielddoc">
+<p>At least, a partition is corrupted. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a8749c3532db083893e9dd2d7c128a027a4346dda96b15a733287e6e7f7aefc340"></a>LE_FWUPDATE_UPDATE_STATUS_DWL_ONGOING </td><td class="fielddoc">
+<p>Downloading in progress. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a8749c3532db083893e9dd2d7c128a027a5ba5079e787d9d4ca81c58c185a5d640"></a>LE_FWUPDATE_UPDATE_STATUS_DWL_FAILED </td><td class="fielddoc">
+<p>Last downloading failed. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a8749c3532db083893e9dd2d7c128a027ad2f6e39e0f7e091bfa2d0edea8633740"></a>LE_FWUPDATE_UPDATE_STATUS_DWL_TIMEOUT </td><td class="fielddoc">
+<p>Last downloading ended with timeout. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a8749c3532db083893e9dd2d7c128a027ac86592808b078f100b58828f0bfcc0e7"></a>LE_FWUPDATE_UPDATE_STATUS_UNKNOWN </td><td class="fielddoc">
+<p>Unknown status. It has to be the last one. </p>
+</td></tr>
+</table>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a295e3696a0233968f6822d65b561a6ff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_fwupdate_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a class="anchor" id="a1f0caf62fe163a57a4c12a506bd51846"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_fwupdate_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a class="anchor" id="ab68f3a7c5d4284306468e888bf6a8796"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_fwupdate_Download </td>
+<td>(</td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>fd</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Download the firmware image file. The function can also be used to resume the download if the <a class="el" href="le__fwupdate__interface_8h.html#a481234992a0fbc18f97c88f68dc00837">le_fwupdate_InitDownload()</a> function is not called before.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_BAD_PARAMETER If an input parameter is not valid</li>
+<li>LE_TIMEOUT After 900 seconds without data received</li>
+<li>LE_NOT_POSSIBLE The systems are not synced</li>
+<li>LE_UNAVAILABLE The flash access is not granted for SW update</li>
+<li>LE_CLOSED File descriptor has been closed before all data have been received</li>
+<li>LE_FAULT On failure</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid file descriptor (e.g. negative) is given. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>File descriptor of the image, opened to the start of the image. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a1674fc0d84a53e331e7e85f98bae07ee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_fwupdate_GetBootloaderVersion </td>
+<td>(</td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>version</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>versionSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the bootloader version string</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_NOT_FOUND if the version string is not available</li>
+<li>LE_OVERFLOW if version string to big to fit in provided buffer</li>
+<li>LE_FAULT for any other errors</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">version</td><td>Bootloader version string </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">versionSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ad0860656d991ac9c92fef5273f73344e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_fwupdate_GetFirmwareVersion </td>
+<td>(</td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>version</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>versionSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the firmware version string</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_NOT_FOUND if the version string is not available</li>
+<li>LE_OVERFLOW if version string to big to fit in provided buffer</li>
+<li>LE_FAULT for any other errors</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">version</td><td>Firmware version string </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">versionSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a6629d3f730bfcea4843a3cfe3d457bcd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_fwupdate_GetResumePosition </td>
+<td>(</td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>positionPtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Return the downloaded update package write position.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_BAD_PARAMETER The given parameter is invalid.</li>
+<li>LE_FAULT On failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">positionPtr</td><td>Update package read position </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="abb967dcbee7f8d2ae75d708bec5e4fc9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_fwupdate_GetUpdateStatus </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__fwupdate__interface_8h.html#a8749c3532db083893e9dd2d7c128a027">le_fwupdate_UpdateStatus_t</a> * </td>
+<td class="paramname"><em>statusPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>statusLabel</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>statusLabelSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Return the update status.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_BAD_PARAMETER Invalid parameter</li>
+<li>LE_FAULT on failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">statusPtr</td><td>Returned update status </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">statusLabel</td><td>Description of the status </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">statusLabelSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a481234992a0fbc18f97c88f68dc00837"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_fwupdate_InitDownload </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Download initialization:</p><ul>
+<li>for single and dual systems, it resets resume position,</li>
+<li>for dual systems, it synchronizes the systems if needed.</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>When invoked, resuming a previous download is not possible, a full update package has to be downloaded.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_FAULT On failure</li>
+<li>LE_IO_ERROR Dual systems platforms only -- The synchronization fails due to unrecoverable ECC errors. In this case, the update without synchronization is forced, but the whole system must be updated to ensure that the new update system will be workable ECC stands for Error-Correction-Code: some errors may be corrected. If this correction fails, a unrecoverable error is registered and the data become corrupted. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a class="anchor" id="a534e72fc1a6c20a36a9bdf4a58074159"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_fwupdate_Install </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Request to install the package. Calling this API will result in a system reset.</p>
+<p>Dual System: After reset, the UPDATE and ACTIVE systems will be swapped. Single System: After reset, the image in the FOTA partition will be installed on the device.</p>
+<dl class="section note"><dt>Note</dt><dd>On success, a device reboot is initiated without returning any value.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_BUSY Download is ongoing, install is not allowed</li>
+<li>LE_UNSUPPORTED The feature is not supported</li>
+<li>LE_FAULT On failure </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a class="anchor" id="a9e8d0d482a2a4f207650cc01296811be"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_fwupdate_InstallAndMarkGood </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Request to install the package and marks the system as good. Calling this API will result in a system reset.</p>
+<p>Dual System: Request a full system reset with a systems SWAP and systems SYNC. After the reset, the UPDATE and ACTIVE systems will be swapped and synchronized. Single System: Installs the package from the FOTA partition.</p>
+<dl class="section note"><dt>Note</dt><dd>On success, a device reboot is initiated without returning any value.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_FAULT On failure </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a class="anchor" id="aafc80ed054d69c6d159933093bb13ff7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_fwupdate_IsSystemMarkedGood </td>
+<td>(</td>
+<td class="paramtype">bool * </td>
+<td class="paramname"><em>isSystemGoodPtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the status of the system.</p>
+<p>Dual System: Indicates if Active and Update systems are synchronized Single System: This api is not supported on single system.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_UNSUPPORTED The feature is not supported </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">isSystemGoodPtr</td><td>true if the system is marked good, false otherwise </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ad153c293ff605e7aef51929c873e2792"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_fwupdate_MarkGood </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Mark the current system as good.</p>
+<p>Dual System: Requests a system Sync. The UPDATE system will be synchronised with the ACTIVE one. Single System: This api is not supported on single system.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_UNSUPPORTED The feature is not supported</li>
+<li>LE_UNAVAILABLE The flash access is not granted for SW update</li>
+<li>LE_FAULT On failure</li>
+<li>LE_IO_ERROR Dual systems platforms only -- The synchronization fails due to unrecoverable ECC errors ECC stands for Error-Correction-Code: some errors may be corrected. If this correction fails, an unrecoverable error is registered and the data become corrupted. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a class="anchor" id="a6d38ae77a779a015c4e5362a96c7d233"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_fwupdate_SetServerDisconnectHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__fwupdate__interface_8h.html#a625550f84978b36e792ce1643f4d1df0">le_fwupdate_DisconnectHandler_t</a> </td>
+<td class="paramname"><em>disconnectHandler</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set handler called when server disconnection is detected.</p>
+<p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
+</div>
+</div>
+<a class="anchor" id="ace50eb37816b68bd314652afff825e3a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_fwupdate_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

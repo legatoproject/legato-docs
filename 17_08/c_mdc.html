@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Modem Data Control  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Modem Data Control </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><a class="el" href="le__mdc__interface_8h.html">API Reference</a></p>
+<hr/>
+<p>A data session is useful for applications that need to send or receive data over a network where SMS messages are insufficient. To start a data session, a data profile must be configured as specified by the target network.</p>
+<p>The Modem Data Control (mdc) API is used to manage data profiles and data sessions.</p>
+<h1><a class="anchor" id="le_mdc_binding"></a>
+IPC interfaces binding</h1>
+<p>All the functions of this API are provided by the <b>modemService</b> service.</p>
+<p>Here's a code sample binding to modem services: </p><pre class="fragment">bindings:
+{
+   clientExe.clientComponent.le_mdc -&gt; modemService.le_mdc
+}
+</pre><h1><a class="anchor" id="le_mdc_profile"></a>
+Data Profiles</h1>
+<p>If a pre-defined data profile has been configured then this profile can be loaded using <a class="el" href="le__mdc__interface_8h.html#a638b693cd5f644fa5c24f81e1e36483c">le_mdc_GetProfile()</a>. <a class="el" href="le__mdc__interface_8h.html#a638b693cd5f644fa5c24f81e1e36483c">le_mdc_GetProfile()</a> must be called with <code>LE_MDC_DEFAULT_PROFILE</code> to retrieve the default index used by the modem for data connection. <a class="el" href="le__mdc__interface_8h.html#a638b693cd5f644fa5c24f81e1e36483c">le_mdc_GetProfile()</a> must be called with <code>LE_MDC_SIMTOOLKIT_BIP_DEFAULT_PROFILE</code> to retrieve the default index used by the modem for Bearer Independent Protocol (BIP). The maximum number of data profiles supported is modem dependent and can be retrieved with <a class="el" href="le__mdc__interface_8h.html#a790602f1b17d7bf9626a51eac5599439">le_mdc_NumProfiles()</a>.</p>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="le__mdc__interface_8h.html#a638b693cd5f644fa5c24f81e1e36483c">le_mdc_GetProfile()</a> creates a new profile if the profile's index can't be found.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>0 is not a valid index.</dd></dl>
+<p>A pre-defined data profile can be retrieved using <a class="el" href="le__mdc__interface_8h.html#a2ea0573e6e9cd16c04e95146f2b2e693">le_mdc_GetProfileFromApn()</a> thanks to its APN.</p>
+<p>A default APN can be set for a defined profile with <a class="el" href="le__mdc__interface_8h.html#ad44bd756fd5cbfd43a5b348054786a4d">le_mdc_SetDefaultAPN()</a>, based on the SIM identification number (ICCID). If no match is found in the database using the ICCID, the search falls back on the home network (MCC/MNC) to determine the default APN.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Ensure to check the list of supported data profiles for your specific platform.</dd></dl>
+<p>The following data profile parameters can be retrieved:</p><ul>
+<li>Packet Data Protocol using <a class="el" href="le__mdc__interface_8h.html#a0a51125579f1d5009dac03c79ddff498">le_mdc_GetPDP()</a>.</li>
+<li>Access Point Name using <a class="el" href="le__mdc__interface_8h.html#afc0c149bfa4455f3e9a8ccc06f0c5fed">le_mdc_GetAPN()</a>.</li>
+<li>Authentication settings using <a class="el" href="le__mdc__interface_8h.html#a3f83b1b922271091e3f1da418a4f39ca">le_mdc_GetAuthentication()</a>.</li>
+</ul>
+<p>The following data profile parameters can be set:</p><ul>
+<li>Packet Data Protocol using <a class="el" href="le__mdc__interface_8h.html#a73e66a7a63dc95d7f261fc2a26470386">le_mdc_SetPDP()</a>.</li>
+<li>Access Point Name using <a class="el" href="le__mdc__interface_8h.html#ae8ebd11b9cb9afb9b6b5745903f50156">le_mdc_SetAPN()</a>.</li>
+<li>Authentication settings using <a class="el" href="le__mdc__interface_8h.html#a9f69d0751927b5ead6c756202179b222">le_mdc_SetAuthentication()</a>.</li>
+</ul>
+<dl class="section warning"><dt>Warning</dt><dd>The maximum APN length might be limited by the platform. Please refer to the platform documentation.</dd></dl>
+<p>A sample code can be seen in the following page:</p><ul>
+<li><a class="el" href="c_mdcDataProfiles.html">Sample code for Data Profiles</a></li>
+</ul>
+<h1><a class="anchor" id="le_mdc_session"></a>
+Data Sessions</h1>
+<h2><a class="anchor" id="le_mdc_session_MO"></a>
+Mobile Originated (MO-PDP context activation)</h2>
+<p><a class="el" href="le__mdc__interface_8h.html#a56cd547a4e2b9cc98c1f0d052aeb92e6">le_mdc_MapProfileOnNetworkInterface()</a> may be used to map a data session with a network interface. To take effect, this API has to be called before starting the data session. Otherwise, the mapping will be taken into account at the next start of the data profile.</p>
+<p>A data session can be started using <a class="el" href="le__mdc__interface_8h.html#a2cb08d5c3e6c43297d80448891719649">le_mdc_StartSession()</a>. To start a data session, a data profile must be created and written to the modem, or an existing data profile can be used. A data session can be stopped using <a class="el" href="le__mdc__interface_8h.html#a53453f85065c3cace0922150b7e3d869">le_mdc_StopSession()</a>. The number of simultaneous data sessions supported is dependent on the modem, but cannot be more than the maximum number of supported profiles.</p>
+<p>A data session can be started using <a class="el" href="le__mdc__interface_8h.html#aa03d6e31263ddf8bf1d94b183c9934d9">le_mdc_StartSessionAsync()</a> and stopped using <a class="el" href="le__mdc__interface_8h.html#ac5b357f7437c9e253fa17b2511fa14ef">le_mdc_StopSessionAsync()</a>. These functions are not blocking. The response will be returned with the <code>le_mdc_SessionHandlerFunc_t</code> handler function.</p>
+<p>The current state of a data session can be queried using <a class="el" href="le__mdc__interface_8h.html#add91c364e8b3e4e82a0ce64e480c016b">le_mdc_GetSessionState()</a>. An application can also a register handler to be notified when the session state changes. The handler can be managed using <a class="el" href="le__mdc__interface_8h.html#a594c85c1ccb56ddfbaf36496f35f681e">le_mdc_AddSessionStateHandler()</a> and <a class="el" href="le__mdc__interface_8h.html#af223a193b73ce6f870947557f69136dc">le_mdc_RemoveSessionStateHandler()</a>.</p>
+<h2><a class="anchor" id="le_mdc_session_MT"></a>
+Mobile Terminated (MT-PDP context activation)</h2>
+<p>To be notified by the MT-PDP context request, the application has to subscribe to the state handler using <a class="el" href="le__mdc__interface_8h.html#ada19c2a399ba8c0aa038e27c21689472">le_mdc_AddMtPdpSessionStateHandler()</a>. When the incoming MT-PDP context request is notified, the application takes responsibility to trigger the data session for that MT PDP request using le_mdc_StartSession. That data session can be stopped using <a class="el" href="le__mdc__interface_8h.html#a53453f85065c3cace0922150b7e3d869">le_mdc_StopSession()</a>.</p>
+<p>The network interface settings of that MT-PDP context can be retrieved using the provided Data Profile. Please refer to <a class="el" href="c_mdc.html#le_mdc_session_networkItf">Network interface settings</a>.</p>
+<p>A data session can be rejected using <a class="el" href="le__mdc__interface_8h.html#ae3b49edad910960b84a9012ecc33c66a">le_mdc_RejectMtPdpSession()</a>. The number of simultaneous data sessions supported is dependent on the modem, but cannot be more than the maximum number of supported profiles.</p>
+<p>The handler can be released using <a class="el" href="le__mdc__interface_8h.html#a68b03606241ea2215e076966a7c08d99">le_mdc_RemoveMtPdpSessionStateHandler()</a>.</p>
+<h2><a class="anchor" id="le_mdc_session_networkItf"></a>
+Network interface settings</h2>
+<p>Once a data session starts, a Linux network interface is created. It's the application's responsibility to configure the network interface, usually through a DHCP client. Query the interface name using <a class="el" href="le__mdc__interface_8h.html#a4c22a8691d6e6a69270a7ed6ab9974af">le_mdc_GetInterfaceName()</a>. The IP Preference can be checked with <a class="el" href="le__mdc__interface_8h.html#aa3912e94864a6e5862e07f58b3772cba">le_mdc_IsIPv4()</a> or <a class="el" href="le__mdc__interface_8h.html#adde11de0b17b2c937acca6355b6fba11">le_mdc_IsIPv6()</a> when the profile is connected. The IP address for the current data session can be retrieved by <a class="el" href="le__mdc__interface_8h.html#a0b5e11efda06472fc6c525101fceafe6">le_mdc_GetIPv4Address()</a> or <a class="el" href="le__mdc__interface_8h.html#a73ef38d4d2399580d552b12c62f1c508">le_mdc_GetIPv6Address()</a>. The Gateway and DNS addresses can be retrieved using <a class="el" href="le__mdc__interface_8h.html#a290cff563b19ee4891bcd5c8908c54f9">le_mdc_GetIPv4GatewayAddress()</a>, <a class="el" href="le__mdc__interface_8h.html#a0dd0dcf60d647388fa3e1973917a6161">le_mdc_GetIPv4DNSAddresses()</a> or <a class="el" href="le__mdc__interface_8h.html#a3bb60671304e2b4d3b23d8e623f9940c">le_mdc_GetIPv6GatewayAddress()</a>, <a class="el" href="le__mdc__interface_8h.html#ad9cb7d3299620d9dcde551cec45389a1">le_mdc_GetIPv6DNSAddresses()</a>. The Access Point Name can be retrieved by <a class="el" href="le__mdc__interface_8h.html#afc0c149bfa4455f3e9a8ccc06f0c5fed">le_mdc_GetAPN()</a>. The Data bearer Technology can be retrieved by <a class="el" href="le__mdc__interface_8h.html#a1b17bb87b347162013b5ad608cdcda2d">le_mdc_GetDataBearerTechnology()</a>.</p>
+<p>When the data session is stopped, the disconnection reason can be known using <a class="el" href="le__mdc__interface_8h.html#afe73f44c23b1bd120dd82a85b36c6059">le_mdc_GetDisconnectionReason()</a> or <a class="el" href="le__mdc__interface_8h.html#a3e3a92b0f5e3edab9400412170517a62">le_mdc_GetPlatformSpecificDisconnectionCode()</a> (refer to your platform documentation for further details).</p>
+<p>When the data session connection fails, the failure reason can be known using <a class="el" href="le__mdc__interface_8h.html#afe73f44c23b1bd120dd82a85b36c6059">le_mdc_GetDisconnectionReason()</a>, <a class="el" href="le__mdc__interface_8h.html#a3e3a92b0f5e3edab9400412170517a62">le_mdc_GetPlatformSpecificDisconnectionCode()</a> or <a class="el" href="le__mdc__interface_8h.html#a438ff354100b5020ace1059635b740b4">le_mdc_GetPlatformSpecificFailureConnectionReason()</a> (refer to your platform documentation for further details).</p>
+<p>A sample code can be seen in the following page:</p><ul>
+<li><a class="el" href="c_mdcDataSessions.html">Sample code for network interface settings</a></li>
+</ul>
+<h1><a class="anchor" id="le_mdc_dataStatistics"></a>
+Data Statistics</h1>
+<p>Data bytes received/transmitted can be access through <a class="el" href="le__mdc__interface_8h.html#aaad833c105f7d0ae77f18195d6739080">le_mdc_GetBytesCounters()</a>. These values correspond to the number of bytes received/transmitted since the last software reset or the last <a class="el" href="le__mdc__interface_8h.html#a63636b2779d2ee6a6520ebfb2d26666c">le_mdc_ResetBytesCounter()</a> called. Making these value persistent after a software reboot is the client responsibility.</p>
+<p>A sample code can be seen in the following page:</p><ul>
+<li><a class="el" href="c_mdcDataStatistics.html">Sample code for Data Statistics</a></li>
+</ul>
+<hr/>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
