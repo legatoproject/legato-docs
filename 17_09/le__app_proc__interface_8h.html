@@ -1,0 +1,754 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_appProc_interface.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#typedef-members">Typedefs</a> |
+<a href="#enum-members">Enumerations</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_appProc_interface.h File Reference</h1> </div>
+</div><div class="contents">
+<div class="textblock"><code>#include "<a class="el" href="legato_8h_source.html">legato.h</a>"</code><br/>
+<code>#include "<a class="el" href="le__limit__interface_8h_source.html">le_limit_interface.h</a>"</code><br/>
+</div>
+<p><a href="le__app_proc__interface_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ac43e5899676671f343414dbc9ab49b99"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__app_proc__interface_8h.html#ac43e5899676671f343414dbc9ab49b99">le_appProc_DisconnectHandler_t</a>) (void *)</td></tr>
+<tr class="separator:ac43e5899676671f343414dbc9ab49b99"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad9a08e3c003446fdfd6d603062b69dbe"><td align="right" class="memItemLeft" valign="top">typedef struct le_appProc_Ref * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a></td></tr>
+<tr class="separator:ad9a08e3c003446fdfd6d603062b69dbe"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2e83720daaf79b0193218c02c0cd65c5"><td align="right" class="memItemLeft" valign="top">typedef struct le_appProc_StopHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__app_proc__interface_8h.html#a2e83720daaf79b0193218c02c0cd65c5">le_appProc_StopHandlerRef_t</a></td></tr>
+<tr class="separator:a2e83720daaf79b0193218c02c0cd65c5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a71009853be5d13b5fc29def8c1c752ae"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__app_proc__interface_8h.html#a71009853be5d13b5fc29def8c1c752ae">le_appProc_StopHandlerFunc_t</a>) (int32_t exitCode, void *contextPtr)</td></tr>
+<tr class="separator:a71009853be5d13b5fc29def8c1c752ae"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a10fa04c82eb5b17f5a8f46988f999eb3"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__app_proc__interface_8h.html#a10fa04c82eb5b17f5a8f46988f999eb3">le_appProc_FaultAction_t</a> { <br/>
+  <a class="el" href="le__app_proc__interface_8h.html#a10fa04c82eb5b17f5a8f46988f999eb3a65e7957d49aae82615c298a167b9b68c">LE_APPPROC_FAULT_ACTION_IGNORE</a> = 0, 
+<a class="el" href="le__app_proc__interface_8h.html#a10fa04c82eb5b17f5a8f46988f999eb3adafa9d629e5c477fbbc9bf127fcd2535">LE_APPPROC_FAULT_ACTION_RESTART_PROC</a> = 1, 
+<a class="el" href="le__app_proc__interface_8h.html#a10fa04c82eb5b17f5a8f46988f999eb3a8f9e7a3c9f5961cf6cfc904bc12d8389">LE_APPPROC_FAULT_ACTION_RESTART_APP</a> = 2, 
+<a class="el" href="le__app_proc__interface_8h.html#a10fa04c82eb5b17f5a8f46988f999eb3a65d3c2d62de64a7adccda1f6694da441">LE_APPPROC_FAULT_ACTION_STOP_APP</a> = 3, 
+<br/>
+  <a class="el" href="le__app_proc__interface_8h.html#a10fa04c82eb5b17f5a8f46988f999eb3adb057b6e378079b4df015d116b0df8df">LE_APPPROC_FAULT_ACTION_REBOOT</a> = 4
+<br/>
+ }</td></tr>
+<tr class="separator:a10fa04c82eb5b17f5a8f46988f999eb3"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a70ed3a976ca0919cb412e58a7311100e"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__app_proc__interface_8h.html#a70ed3a976ca0919cb412e58a7311100e">le_appProc_ConnectService</a> (void)</td></tr>
+<tr class="separator:a70ed3a976ca0919cb412e58a7311100e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a082bab9fd03d504bed56672bf3199e34"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__app_proc__interface_8h.html#a082bab9fd03d504bed56672bf3199e34">le_appProc_TryConnectService</a> (void)</td></tr>
+<tr class="separator:a082bab9fd03d504bed56672bf3199e34"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa1a5d215864ab0e6e87ae009568e99a4"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__app_proc__interface_8h.html#aa1a5d215864ab0e6e87ae009568e99a4">le_appProc_SetServerDisconnectHandler</a> (<a class="el" href="le__app_proc__interface_8h.html#ac43e5899676671f343414dbc9ab49b99">le_appProc_DisconnectHandler_t</a> disconnectHandler, void *contextPtr)</td></tr>
+<tr class="separator:aa1a5d215864ab0e6e87ae009568e99a4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a301e5e6e8420f5e6b4baec559a93ad13"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__app_proc__interface_8h.html#a301e5e6e8420f5e6b4baec559a93ad13">le_appProc_DisconnectService</a> (void)</td></tr>
+<tr class="separator:a301e5e6e8420f5e6b4baec559a93ad13"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a95b591bc94c7a2af85400457e2475b49"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__app_proc__interface_8h.html#a95b591bc94c7a2af85400457e2475b49">le_appProc_Create</a> (const char *LE_NONNULL appName, const char *LE_NONNULL procName, const char *LE_NONNULL execPath)</td></tr>
+<tr class="separator:a95b591bc94c7a2af85400457e2475b49"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a653dd6a5ccfe03148326ba0ddf97150b"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__app_proc__interface_8h.html#a653dd6a5ccfe03148326ba0ddf97150b">le_appProc_SetStdIn</a> (<a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> appProcRef, int stdInFd)</td></tr>
+<tr class="separator:a653dd6a5ccfe03148326ba0ddf97150b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4ebde1675892edb909462004d0152782"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__app_proc__interface_8h.html#a4ebde1675892edb909462004d0152782">le_appProc_SetStdOut</a> (<a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> appProcRef, int stdOutFd)</td></tr>
+<tr class="separator:a4ebde1675892edb909462004d0152782"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6a5df96a9f94f93cd2c63d99680d1221"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__app_proc__interface_8h.html#a6a5df96a9f94f93cd2c63d99680d1221">le_appProc_SetStdErr</a> (<a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> appProcRef, int stdErrFd)</td></tr>
+<tr class="separator:a6a5df96a9f94f93cd2c63d99680d1221"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac1142e2fd9bc950d01682c3be6968acf"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__app_proc__interface_8h.html#a2e83720daaf79b0193218c02c0cd65c5">le_appProc_StopHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__app_proc__interface_8h.html#ac1142e2fd9bc950d01682c3be6968acf">le_appProc_AddStopHandler</a> (<a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> appProcRef, <a class="el" href="le__app_proc__interface_8h.html#a71009853be5d13b5fc29def8c1c752ae">le_appProc_StopHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:ac1142e2fd9bc950d01682c3be6968acf"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aee97bacf2052382c508eae672e04717d"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__app_proc__interface_8h.html#aee97bacf2052382c508eae672e04717d">le_appProc_RemoveStopHandler</a> (<a class="el" href="le__app_proc__interface_8h.html#a2e83720daaf79b0193218c02c0cd65c5">le_appProc_StopHandlerRef_t</a> handlerRef)</td></tr>
+<tr class="separator:aee97bacf2052382c508eae672e04717d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7cf200a0663132737ffb3389327dd64b"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__app_proc__interface_8h.html#a7cf200a0663132737ffb3389327dd64b">le_appProc_AddArg</a> (<a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> appProcRef, const char *LE_NONNULL arg)</td></tr>
+<tr class="separator:a7cf200a0663132737ffb3389327dd64b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:adcd9432aa4865015af3bdead6b97a5ab"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__app_proc__interface_8h.html#adcd9432aa4865015af3bdead6b97a5ab">le_appProc_ClearArgs</a> (<a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> appProcRef)</td></tr>
+<tr class="separator:adcd9432aa4865015af3bdead6b97a5ab"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:adbd8281c12246636abb5646634c6cf49"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__app_proc__interface_8h.html#adbd8281c12246636abb5646634c6cf49">le_appProc_SetPriority</a> (<a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> appProcRef, const char *LE_NONNULL priority)</td></tr>
+<tr class="separator:adbd8281c12246636abb5646634c6cf49"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a29b3b8529f3c4dc5580d8acd5d261957"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__app_proc__interface_8h.html#a29b3b8529f3c4dc5580d8acd5d261957">le_appProc_ClearPriority</a> (<a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> appProcRef)</td></tr>
+<tr class="separator:a29b3b8529f3c4dc5580d8acd5d261957"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0a1d0c99b9f0c086b33c0efd2da8aada"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__app_proc__interface_8h.html#a0a1d0c99b9f0c086b33c0efd2da8aada">le_appProc_SetFaultAction</a> (<a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> appProcRef, <a class="el" href="le__app_proc__interface_8h.html#a10fa04c82eb5b17f5a8f46988f999eb3">le_appProc_FaultAction_t</a> action)</td></tr>
+<tr class="separator:a0a1d0c99b9f0c086b33c0efd2da8aada"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab7a13e04ce14b0140a43d87e072d915c"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__app_proc__interface_8h.html#ab7a13e04ce14b0140a43d87e072d915c">le_appProc_ClearFaultAction</a> (<a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> appProcRef)</td></tr>
+<tr class="separator:ab7a13e04ce14b0140a43d87e072d915c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6203aae500afb330a0ad99f55592066b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__app_proc__interface_8h.html#a6203aae500afb330a0ad99f55592066b">le_appProc_Start</a> (<a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> appProcRef)</td></tr>
+<tr class="separator:a6203aae500afb330a0ad99f55592066b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae6390153cad9389427bf5968f573808e"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__app_proc__interface_8h.html#ae6390153cad9389427bf5968f573808e">le_appProc_Delete</a> (<a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> appProcRef)</td></tr>
+<tr class="separator:ae6390153cad9389427bf5968f573808e"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato <a class="el" href="c_appProc.html">Application Process Execution API</a> include file.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="ac43e5899676671f343414dbc9ab49b99"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_appProc_DisconnectHandler_t) (void *)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Type for handler called when a server disconnects. </p>
+</div>
+</div>
+<a class="anchor" id="ad9a08e3c003446fdfd6d603062b69dbe"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_appProc_Ref* <a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference to application process objects. </p>
+</div>
+</div>
+<a class="anchor" id="a71009853be5d13b5fc29def8c1c752ae"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_appProc_StopHandlerFunc_t) (int32_t exitCode,void *contextPtr)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>A handler that is called when the application process exits. </p>
+</div>
+</div>
+<a class="anchor" id="a2e83720daaf79b0193218c02c0cd65c5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_appProc_StopHandler* <a class="el" href="le__app_proc__interface_8h.html#a2e83720daaf79b0193218c02c0cd65c5">le_appProc_StopHandlerRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference type used by Add/Remove functions for EVENT 'le_appProc_Stop' </p>
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="a10fa04c82eb5b17f5a8f46988f999eb3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">enum <a class="el" href="le__app_proc__interface_8h.html#a10fa04c82eb5b17f5a8f46988f999eb3">le_appProc_FaultAction_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Fault action for a process. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a10fa04c82eb5b17f5a8f46988f999eb3a65e7957d49aae82615c298a167b9b68c"></a>LE_APPPROC_FAULT_ACTION_IGNORE </td><td class="fielddoc">
+<p>A fault occured but no further action is required. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a10fa04c82eb5b17f5a8f46988f999eb3adafa9d629e5c477fbbc9bf127fcd2535"></a>LE_APPPROC_FAULT_ACTION_RESTART_PROC </td><td class="fielddoc">
+<p>The process should be restarted. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a10fa04c82eb5b17f5a8f46988f999eb3a8f9e7a3c9f5961cf6cfc904bc12d8389"></a>LE_APPPROC_FAULT_ACTION_RESTART_APP </td><td class="fielddoc">
+<p>The application should be restarted. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a10fa04c82eb5b17f5a8f46988f999eb3a65d3c2d62de64a7adccda1f6694da441"></a>LE_APPPROC_FAULT_ACTION_STOP_APP </td><td class="fielddoc">
+<p>The application should be terminated. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a10fa04c82eb5b17f5a8f46988f999eb3adb057b6e378079b4df015d116b0df8df"></a>LE_APPPROC_FAULT_ACTION_REBOOT </td><td class="fielddoc">
+<p>The system should be rebooted. </p>
+</td></tr>
+</table>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a7cf200a0663132737ffb3389327dd64b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_appProc_AddArg </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> </td>
+<td class="paramname"><em>appProcRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>arg</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Adds a command line argument to the application process.</p>
+<p>If the application process is a configured process adding any argument means no arguments from the configuration database will be used.</p>
+<p>Adding an empty argument validates the argument list but does not acutally add an argument. This is useful for overriding the configured arguments list with an empty argument list.</p>
+<p>If there is an error this function will kill the calling client. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">appProcRef</td><td>Application process to start. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>Argument to add. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ac1142e2fd9bc950d01682c3be6968acf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__app_proc__interface_8h.html#a2e83720daaf79b0193218c02c0cd65c5">le_appProc_StopHandlerRef_t</a> le_appProc_AddStopHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> </td>
+<td class="paramname"><em>appProcRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__app_proc__interface_8h.html#a71009853be5d13b5fc29def8c1c752ae">le_appProc_StopHandlerFunc_t</a> </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Add handler function for EVENT 'le_appProc_Stop'</p>
+<p>Process stopped event. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">appProcRef</td><td>Application process to start. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td>Handler for the event. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="adcd9432aa4865015af3bdead6b97a5ab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_appProc_ClearArgs </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> </td>
+<td class="paramname"><em>appProcRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Deletes and invalidates the cmd-line arguments to a process and use the configured arguments if available.</p>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing an invalid reference to the application process, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">appProcRef</td><td>Application process to start. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ab7a13e04ce14b0140a43d87e072d915c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_appProc_ClearFaultAction </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> </td>
+<td class="paramname"><em>appProcRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Clears the application process's fault action and use either the configured fault action or the default.</p>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing an invalid reference to the application process, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">appProcRef</td><td>Application process to start. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a29b3b8529f3c4dc5580d8acd5d261957"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_appProc_ClearPriority </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> </td>
+<td class="paramname"><em>appProcRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Clears the application process's priority and use either the configured priority or the default.</p>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing an invalid reference to the application process, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">appProcRef</td><td>Application process to start. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a70ed3a976ca0919cb412e58a7311100e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_appProc_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a class="anchor" id="a95b591bc94c7a2af85400457e2475b49"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> le_appProc_Create </td>
+<td>(</td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>appName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>procName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>execPath</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Creates a process in an app. This function can be used to create and subsequently start a process in an application that the application normally would not start on its own. This function does not actually start the process, use Start() to start the process.</p>
+<p>If the specified process name matches a name in the app's list of configured processes then runtime parameters such as environment variables, priority, etc. will be taken from the configuration database. Otherwise default parameters will be used.</p>
+<p>Parameters can be overridden by the other functions in this API such as AddArg(), SetPriority(), etc.</p>
+<p>If the executable path is empty and the process name matches a configured process then the configured executable is used. Otherwise the specified executable path is used.</p>
+<p>Either the process name or the executable path may be empty but not both.</p>
+<p>It is an error to call this function on a configured process that is already running.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the application process object if successful. NULL if there was an error.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the application or process names pointers are null or if their strings are empty or of bad format it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">appName</td><td>Name of the app. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">procName</td><td>Name of the process. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">execPath</td><td>Path to the executable file. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ae6390153cad9389427bf5968f573808e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_appProc_Delete </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> </td>
+<td class="paramname"><em>appProcRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Deletes the application process object.</p>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing an invalid reference to the application process, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">appProcRef</td><td>Application process to start. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a301e5e6e8420f5e6b4baec559a93ad13"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_appProc_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a class="anchor" id="aee97bacf2052382c508eae672e04717d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_appProc_RemoveStopHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__app_proc__interface_8h.html#a2e83720daaf79b0193218c02c0cd65c5">le_appProc_StopHandlerRef_t</a> </td>
+<td class="paramname"><em>handlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove handler function for EVENT 'le_appProc_Stop' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a0a1d0c99b9f0c086b33c0efd2da8aada"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_appProc_SetFaultAction </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> </td>
+<td class="paramname"><em>appProcRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__app_proc__interface_8h.html#a10fa04c82eb5b17f5a8f46988f999eb3">le_appProc_FaultAction_t</a> </td>
+<td class="paramname"><em>action</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the application process's fault action.</p>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing an invalid reference to the application process, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">appProcRef</td><td>Application process to start. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">action</td><td>Fault action for the application process. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="adbd8281c12246636abb5646634c6cf49"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_appProc_SetPriority </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> </td>
+<td class="paramname"><em>appProcRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>priority</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the application process's priority.</p>
+<p>The priority string must be either 'idle','low', 'medium', 'high', 'rt1', 'rt2'...'rt32'.</p>
+<p>If there is an error this function will kill the client. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">appProcRef</td><td>Application process to start. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">priority</td><td>Priority for the application process. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="aa1a5d215864ab0e6e87ae009568e99a4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_appProc_SetServerDisconnectHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__app_proc__interface_8h.html#ac43e5899676671f343414dbc9ab49b99">le_appProc_DisconnectHandler_t</a> </td>
+<td class="paramname"><em>disconnectHandler</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set handler called when server disconnection is detected.</p>
+<p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
+</div>
+</div>
+<a class="anchor" id="a6a5df96a9f94f93cd2c63d99680d1221"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_appProc_SetStdErr </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> </td>
+<td class="paramname"><em>appProcRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>stdErrFd</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the file descriptor that the application process's standard err should be attached to.</p>
+<p>By default the standard err is directed to the logs.</p>
+<p>If there is an error this function will kill the calling process </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">appProcRef</td><td>Application process to start. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">stdErrFd</td><td>File descriptor to use as the app proc's standard error. -1 means direct to logs. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a653dd6a5ccfe03148326ba0ddf97150b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_appProc_SetStdIn </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> </td>
+<td class="paramname"><em>appProcRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>stdInFd</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the file descriptor that the application process's standard in should be attached to.</p>
+<p>By default the standard in is directed to /dev/null.</p>
+<p>If there is an error this function will kill the calling process </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">appProcRef</td><td>Application process to start. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">stdInFd</td><td>File descriptor to use as the app proc's standard in. -1 means direct to /dev/null. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a4ebde1675892edb909462004d0152782"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_appProc_SetStdOut </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> </td>
+<td class="paramname"><em>appProcRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>stdOutFd</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the file descriptor that the application process's standard out should be attached to.</p>
+<p>By default the standard out is directed to the logs.</p>
+<p>If there is an error this function will kill the calling process </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">appProcRef</td><td>Application process to start. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">stdOutFd</td><td>File descriptor to use as the app proc's standard out. -1 means direct to logs. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a6203aae500afb330a0ad99f55592066b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_appProc_Start </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__app_proc__interface_8h.html#ad9a08e3c003446fdfd6d603062b69dbe">le_appProc_RefRef_t</a> </td>
+<td class="paramname"><em>appProcRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Starts the application process. If the application was not running this function will start it first.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_FAULT if there was some other error.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing an invalid reference to the application process, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">appProcRef</td><td>Application process to start. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a082bab9fd03d504bed56672bf3199e34"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_appProc_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

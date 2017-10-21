@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Kernel Module Definition .mdef  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Concepts.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a class="link-selected" href="buildAppsConcepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Kernel Module Definition .mdef </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>This topic provides details about Legato AF's Kernel Module Definition file.</p>
+<p>The <code></code>.mdef files support 2 methods of building drivers within the Legato AF.</p><ol type="1">
+<li>Using <code>pre-built</code> to bundle kernel module binary files.</li>
+<li>Using <code>sources</code> to make and bundle .c files into a kernel object.</li>
+</ol>
+<p>Each method will bundle the kernel module into the system definition (when called in the .sdef) and will be installed on the target when the system is updated.</p>
+<dl class="section note"><dt>Note</dt><dd>The <code></code>.mdef must contain <b>either</b> a <code>source</code> or a <code>preBuilt</code> section, not both.</dd></dl>
+<p><code></code>.mdef files contain the following sections:</p>
+<h1><a class="anchor" id="defFilesMdef_sources"></a>
+sources</h1>
+<p>The <code>sources:</code> section specifies the path of the source code that is required to build the kernel module binary file. This will build a <code></code>.ko file from the source</p>
+<p>Building a driver using <code>sources:</code> </p>
+<pre class="fragment"><div class="line">sources:</div><div class="line">{</div><div class="line">    mangoh_iot.c</div><div class="line">    green.c</div><div class="line">    eeprom.c</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="defFilesMdef_preBuilt"></a>
+preBuilt</h1>
+<p>The <code>preBuilt:</code> section specifies the path to the pre-built kernel module binary file. The module binary file specified must have an extension <code></code>.ko.</p>
+<p>Building a kernel module binary file from <code>/path/to/module/hello</code>.ko:</p>
+<pre class="fragment"><div class="line">{</div><div class="line">    preBuilt: /path/to/kernel/module/hello.ko</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="defFilesMdef_params"></a>
+params</h1>
+<p>The optional <code>params:</code> section lists all module parameters that must be provided to the <code>insmod</code> command.</p>
+<p>The following code sample will execute this command <code>insmod &lt;module&gt; param1=value1 param2=value2 …</code>: </p><pre class="fragment"><div class="line">params:</div><div class="line">{</div><div class="line">    param1 = <span class="stringliteral">"value1"</span></div><div class="line">    param2 = <span class="stringliteral">"value2"</span></div><div class="line">    …</div><div class="line">}</div></pre><!-- fragment --><p>The mandatory quotes (" ") around each parameter value indicate a string type.</p>
+<h1><a class="anchor" id="defFilesMdef_flags"></a>
+flags</h1>
+<p>The optional <code>cflags:</code> and <code>ldflags:</code> can be added to list all options that need to be passed to the compiler and linker during the driver build. </p><pre class="fragment"><div class="line">cflags:</div><div class="line">{</div><div class="line"><span class="stringliteral">"-I/path/to/custom/includes"</span></div><div class="line">}</div><div class="line"> </div><div class="line">ldflags:</div><div class="line">{</div><div class="line"><span class="stringliteral">"-L/path/to/custom/libs"</span></div><div class="line">}</div></pre><!-- fragment --><p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
