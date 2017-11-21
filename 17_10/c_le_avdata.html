@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>AirVantage Data API  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="sampleApps.html">Sample Apps</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">AirVantage Data API </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><a class="el" href="le__avdata__interface_8h.html">API Reference</a> <br/>
+<a class="el" href="avData.html">How To Manage Data</a></p>
+<p>This API provides a data service to allow Apps to manage App-specific data on the AirVantage server.</p>
+<h1><a class="anchor" id="le_data_binding"></a>
+IPC Interfaces Binding</h1>
+<p>All the functions of this API are provided by the <b>avcService</b> platform service.</p>
+<p>Code sample for binding to avcService: </p><pre class="fragment">bindings:
+{
+   clientExe.clientComponent.le_avdata -&gt; avcService.le_avdata
+}
+</pre><h1><a class="anchor" id="le_data_overview"></a>
+AirVantage Data Overview</h1>
+<p>Data is setup as <b>Assets</b> -- a collection of fields that can be managed by the AirVantage server.</p>
+<p>An <b>asset</b> <b>field</b> is a single data point taken from a sensor that can be managed by the AirVantage server.</p>
+<p>A field can be:</p><ul>
+<li><b>variable</b> allowing an App to read/write the value, and can be read from the AV server.</li>
+<li><b>setting</b> allowing the AirVantage server to read/write the value, and can be read by an App.</li>
+<li><b>command</b> allowing the AirVantage server to invoke a function in the App.</li>
+</ul>
+<p>A field is referred to by a path, much like a path in Unix-like OSes. A path is separated by a slash ("/"), a parent path <b>cannot</b> contain a field, and a parent path cannot contain a parent path and a child path of the same name.</p>
+<p>Variable and setting fields also have types. The available field types are:</p><ul>
+<li>string</li>
+<li>integer</li>
+<li>float</li>
+<li>boolean</li>
+</ul>
+<p>Variable and setting fields have no default values. When they are first created with the <a class="el" href="le__avdata__interface_8h.html#a9adb41270f7420fd269606c12f0a7c4c">le_avdata_CreateResource()</a> , all values are "null". They can also be set to "null" values with the <a class="el" href="le__avdata__interface_8h.html#aed0ca9d71814a5813b7761d10b73a39f">le_avdata_SetNull()</a> .</p>
+<p>Fields do not have a fixed data type, so any of the SetInt/Float/Bool/String can be called for a certain field to change its value and its type. However, A GetInt/Float/Bool/String API must be called on a field with the matching type. In other words, a Get API does not perform type-casting.</p>
+<dl class="section note"><dt>Note</dt><dd>If a user enters a value 0 for float data type, an error will be returned (LE_NOT_FOUND), as the system infers 0 as an integer value and the data type doesn't match. 0.0 needs to be set for the float data type to be zero.</dd></dl>
+<h1><a class="anchor" id="le_avdata_field"></a>
+Field Values and Activity</h1>
+<p>Set functions are available to set field values (including "null"). Get functions are available to get field values.</p>
+<p>An App can register a handler so that it can be called when an activity occurs on a field. This is optional for variable and setting fields, but is <b>required</b> for command fields. Registered handlers are called only when activities from AV server occurs. Client activities do not trigger handlers.</p>
+<p>A handler registered with a command field is invoked with an optional argument list sent from the AirVantage server. The APIs GetInt/Float/Bool/StringArg and <a class="el" href="le__avdata__interface_8h.html#a10871ede51f402b7df0463204fdc9fc6">le_avdata_GetStringArgLength()</a> are available to extract the arguments in the handler definition. AV server does not send argument lists for handlers registered with variable and setting fields.</p>
+<p>A handler registered with a command field must call the <a class="el" href="le__avdata__interface_8h.html#aff2cc1ef8d7a1abdd14ebf37382ffc8c">le_avdata_ReplyExecResult()</a> at the end of its definition, in order to reply the command execution result to the AV server.</p>
+<p>Sometimes instead of waiting for activity to occur on a field, users may want to have their application notify the server of their asset data details. Asset data can also be pushed from the device to the server by using <a class="el" href="le__avdata__interface_8h.html#a29358516371baeb8a3c3b03e5d2bd4ec">le_avdata_Push()</a>.</p>
+<p>This code sample shows how to push asset data to the server (assuming session is opened)</p>
+<pre class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> PushCallbackHandler</div><div class="line">(</div><div class="line">    <a class="code" href="le__avdata__interface_8h.html#a03e16db57b2114699db0700c32e7bb78">le_avdata_PushStatus_t</a> status,</div><div class="line">    <span class="keywordtype">void</span>* contextPtr</div><div class="line">)</div><div class="line">{</div><div class="line">    <span class="keywordflow">if</span> (status == <a class="code" href="le__avdata__interface_8h.html#a03e16db57b2114699db0700c32e7bb78ade234d16bd1731de5b7193b35b6a42bb">LE_AVDATA_PUSH_SUCCESS</a>)</div><div class="line">    {</div><div class="line">        <span class="comment">// data pushed successfully</span></div><div class="line">    }</div><div class="line">}</div><div class="line"> </div><div class="line"><a class="code" href="le__event_loop_8h.html#abdb9187a56836a93d19cc793cbd4b7ec">COMPONENT_INIT</a></div><div class="line">{</div><div class="line">      <a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> result;</div><div class="line">      result = <a class="code" href="le__avdata__interface_8h.html#a9adb41270f7420fd269606c12f0a7c4c">le_avdata_CreateResource</a>(<span class="stringliteral">"/livingRoom/sensor1"</span>, <a class="code" href="le__avdata__interface_8h.html#a3b231b512ef7918ab579c943e2e684e2adfae7598cd52960a9183b42c339aacda">LE_AVDATA_ACCESS_VARIABLE</a>);</div><div class="line">      <span class="keywordflow">if</span> (result != LE_OK)</div><div class="line">      {</div><div class="line">          <a class="code" href="le__log_8h.html#a54b4b07f5396e19a8d9fca74238f4795">LE_FATAL</a>(<span class="stringliteral">"Error in creating livingRoom resource."</span>);</div><div class="line">      }</div><div class="line"> </div><div class="line">      result = <a class="code" href="le__avdata__interface_8h.html#a61bafefd7356193f1d3111cceb8db1ad">le_avdata_SetInt</a>(<span class="stringliteral">"/livingRoom/sensor1"</span>, 5) == <a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86ca5066a4bcec691c6b67843b8f79656422">LE_OK</a>);</div><div class="line">      <span class="keywordflow">if</span> (result != LE_OK)</div><div class="line">      {</div><div class="line">          <a class="code" href="le__log_8h.html#a54b4b07f5396e19a8d9fca74238f4795">LE_FATAL</a>(<span class="stringliteral">"Failed to set value for livingRoom resource."</span>);</div><div class="line">      }</div><div class="line"> </div><div class="line">      <a class="code" href="le__avdata__interface_8h.html#a29358516371baeb8a3c3b03e5d2bd4ec">le_avdata_Push</a>(<span class="stringliteral">"/livingRoom/sensor1"</span>, PushCallbackHandler, NULL);</div><div class="line">}</div></pre><!-- fragment --><p>If users simply want to push a data dump to the server without creating resources, <a class="el" href="le__avdata__interface_8h.html#ac823201bbe5e33ae2e645fe3da10f2f6">le_avdata_PushStream()</a> is available. </p><dl class="section note"><dt>Note</dt><dd>The push stream API has a limit of 20K.</dd></dl>
+<pre class="fragment"><div class="line"><a class="code" href="le__event_loop_8h.html#abdb9187a56836a93d19cc793cbd4b7ec">COMPONENT_INIT</a></div><div class="line">{</div><div class="line">      <span class="keywordtype">int</span> fd = open(<span class="stringliteral">"data.txt"</span>, O_RDONLY);</div><div class="line">      <span class="keywordflow">if</span> (fd == -1)</div><div class="line">      {</div><div class="line">         <a class="code" href="le__log_8h.html#a54b4b07f5396e19a8d9fca74238f4795">LE_FATAL</a>(<span class="stringliteral">"Failed to open file."</span>);</div><div class="line">      }</div><div class="line"> </div><div class="line">      <span class="comment">// The data dump sent to the server will be display under &lt;Path&gt;</span></div><div class="line">      <a class="code" href="le__avdata__interface_8h.html#ac823201bbe5e33ae2e645fe3da10f2f6">le_avdata_PushStream</a>(<span class="stringliteral">"&lt;Path&gt;"</span>, fd, PushCallbackHandler, NULL);</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="le_avdata_timeseries"></a>
+Time Series</h1>
+<p>This feature enables user Apps to collect and keep in memory data when the device is off-line and send the data to the AirVantage Server when the device is on-line.</p>
+<p>Time series records can be initialized using <a class="el" href="le__avdata__interface_8h.html#a49d63022c31b5b80ee3538e490346324">le_avdata_CreateRecord()</a>. Data can be accumulated using the following data types along with a specified time stamp (milliseconds elapsed since epoch).</p><ul>
+<li><a class="el" href="le__avdata__interface_8h.html#ae64a45e6363082c978a1d17ed9637c76">le_avdata_RecordInt()</a></li>
+<li><a class="el" href="le__avdata__interface_8h.html#a6bfbffae6b12865d655f79d5e35c1363">le_avdata_RecordFloat()</a></li>
+<li><a class="el" href="le__avdata__interface_8h.html#af6410065e82c6c1845138b257a2ca866">le_avdata_RecordBool()</a></li>
+<li><a class="el" href="le__avdata__interface_8h.html#a417247a6dbc83c0a8a5c2a2916c9e278">le_avdata_RecordString()</a></li>
+</ul>
+<p>User apps can then open an <code>avms</code> session, and push the collected history data using <a class="el" href="le__avdata__interface_8h.html#a0bca8b820b8175e11ad693582fc7f7b5">le_avdata_PushRecord()</a>. The callback used when calling <a class="el" href="le__avdata__interface_8h.html#a0bca8b820b8175e11ad693582fc7f7b5">le_avdata_PushRecord()</a> will indicate whether the push has been successful or not.</p>
+<p>This code sample shows how to collect data and send to the server (assuming session is opened)</p>
+<pre class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> PushCallbackHandler</div><div class="line">(</div><div class="line">    <a class="code" href="le__avdata__interface_8h.html#a03e16db57b2114699db0700c32e7bb78">le_avdata_PushStatus_t</a> status,</div><div class="line">    <span class="keywordtype">void</span>* contextPtr</div><div class="line">)</div><div class="line">{</div><div class="line">    <span class="keywordflow">if</span> (status == <a class="code" href="le__avdata__interface_8h.html#a03e16db57b2114699db0700c32e7bb78ade234d16bd1731de5b7193b35b6a42bb">LE_AVDATA_PUSH_SUCCESS</a>)</div><div class="line">    {</div><div class="line">        <span class="comment">// data pushed successfully</span></div><div class="line">    }</div><div class="line">}</div><div class="line"> </div><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> SendData()</div><div class="line">{</div><div class="line">    <span class="keyword">struct </span>timeval tv;</div><div class="line">    uint64_t utcMilliSec;</div><div class="line">    <a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> result;</div><div class="line"> </div><div class="line">    <a class="code" href="le__avdata__interface_8h.html#abded4f6f1dbe80988e140fdc8df4a218">le_avdata_RecordRef_t</a> recRef = <a class="code" href="le__avdata__interface_8h.html#a49d63022c31b5b80ee3538e490346324">le_avdata_CreateRecord</a>();</div><div class="line"> </div><div class="line">    gettimeofday(&amp;tv, NULL);</div><div class="line">    utcMilliSec = (uint64_t)(tv.tv_sec) * 1000 + (uint64_t)(tv.tv_usec) / 1000; <span class="comment">// get current time</span></div><div class="line">    result = <a class="code" href="le__avdata__interface_8h.html#a6bfbffae6b12865d655f79d5e35c1363">le_avdata_RecordFloat</a>(recRef, <span class="stringliteral">"speed"</span>, 0.08, utcMilliSec);</div><div class="line"> </div><div class="line">    <span class="keywordflow">if</span> (result == LE_OK)</div><div class="line">    {</div><div class="line">         <a class="code" href="le__avdata__interface_8h.html#a0bca8b820b8175e11ad693582fc7f7b5">le_avdata_PushRecord</a>(recRef, PushCallbackHandler, NULL);</div><div class="line">    }</div><div class="line"> </div><div class="line">    <a class="code" href="le__avdata__interface_8h.html#a01949472601455ea064bdfe11cbe5dda">le_avdata_DeleteRecord</a>(recRef);</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="le_avdata_session"></a>
+User App Session Management</h1>
+<p>An App can request to open a session and register a handler to get notified of a session events. <a class="el" href="le__avdata__interface_8h.html#a1153ba43d55c59db3d36e3f44fd5ff10">le_avdata_RequestSession()</a> and <a class="el" href="le__avdata__interface_8h.html#a1f0253c6388d80aa9c1ce7745a06cfe9">le_avdata_ReleaseSession()</a> can be used to open a session and close a session respectively. If the session was initiated by an user app, the session will be closed when all apps release their session reference. <a class="el" href="le__avdata__interface_8h.html#af36e54289bb16f2f29da4c7456560982">le_avdata_AddSessionStateHandler()</a> and <a class="el" href="le__avdata__interface_8h.html#abf24d6f2ced767cfa7cc07c2d051bd22">le_avdata_RemoveSessionStateHandler()</a> can be used to add and remove notification handlers.</p>
+<h1><a class="anchor" id="le_avdata_fatal"></a>
+Fatal Behavior</h1>
+<p>An invalid asset name or field name is treated as a fatal error (i.e. non-recoverable) and will result in the client App being terminated.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Setup SPI  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="sampleApps.html">Sample Apps</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Setup SPI </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>This topic provides details on how to setup the <a class="el" href="c_spi.html">SPI</a> Service.</p>
+<p>To be able to use the <a class="el" href="c_spi.html">SPI</a> Service, you need to install the <code>spidev</code> and <code>spisvc</code> modules on the target.</p>
+<p>Verify if <code>spidev</code> isn't already in the /dev directory: </p><pre class="fragment"><div class="line">root@swi-mdm9x15:~# ls /dev/spi*</div><div class="line">ls: /dev/spi*: No such file or directory</div></pre><!-- fragment --><p>Then verify the <code>spidev</code> and <code>spisvc</code> modules aren't already installed, like this: </p><pre class="fragment"><div class="line">root@swi-mdm9x15:~# lsmod</div><div class="line">    Not tainted</div><div class="line">ipv6 287772 14 [permanent], Live 0xbf076000</div><div class="line">msm_sdcc 61674 0 - Live 0xbf060000</div><div class="line">usb_storage 41205 0 - Live 0xbf04c000</div><div class="line">sd_mod 29459 0 - Live 0xbf03f000</div><div class="line">scsi_mod 131955 2 usb_storage,sd_mod, Live 0xbf00d000</div><div class="line">unix 28948 625 - Live 0xbf000000</div></pre><!-- fragment --><p>Install <code>spidev:</code> </p><pre class="fragment"><div class="line">root@swi-mdm9x15:~/ktest_dir# modprobe spidev</div></pre><!-- fragment --><p>Check <code>spidev</code> is now listed: </p><pre class="fragment"><div class="line">root@swi-mdm9x15:~/ktest_dir# lsmod</div><div class="line">    Not tainted</div><div class="line">spidev 6060 0 - Live 0xbf0d2000</div><div class="line">ipv6 287772 14 [permanent], Live 0xbf076000</div><div class="line">msm_sdcc 61674 0 - Live 0xbf060000</div><div class="line">usb_storage 41205 0 - Live 0xbf04c000</div><div class="line">sd_mod 29459 0 - Live 0xbf03f000</div><div class="line">scsi_mod 131955 2 usb_storage,sd_mod, Live 0xbf00d000</div><div class="line">unix 28948 625 - Live 0xbf000000</div></pre><!-- fragment --><p>Next, you'll need to create a kernel module <code></code>.ko file. Follow the instructions in Out of Tree Kernel Module topic howToAddKernelDriver_makeKernel. Your <code></code>.ko file should use the code in the files located in <code>legato/drivers/spisvc: Makefile, spisvc.c, and spisvc.mdef</code>. Use <code>scp</code> to copy your kernel module (driver) onto the target like this: </p><pre class="fragment"><div class="line">scp ktest_module.ko root@$target_IP:/home/root/ktest_dir</div></pre><!-- fragment --><p>After you've copied your kernel module <code></code>.ko file, install it like this: </p><pre class="fragment"><div class="line">root@swi-mdm9x15:~/ktest_dir# insmod spisvc.ko</div></pre><!-- fragment --><p>Check <code>spisvc</code> is installed: </p><pre class="fragment"><div class="line">root@swi-mdm9x15:~/ktest_dir# lsmod</div><div class="line">    Tainted: G</div><div class="line">spisvc 694 0 - Live 0xbf0d7000 (O)</div><div class="line">spidev 6060 0 - Live 0xbf0d2000</div><div class="line">ipv6 287772 14 [permanent], Live 0xbf076000</div><div class="line">msm_sdcc 61674 0 - Live 0xbf060000</div><div class="line">usb_storage 41205 0 - Live 0xbf04c000</div><div class="line">sd_mod 29459 0 - Live 0xbf03f000</div><div class="line">scsi_mod 131955 2 usb_storage,sd_mod, Live 0xbf00d000</div><div class="line">unix 28948 625 - Live 0xbf000000</div></pre><!-- fragment --><p>Check the target to ensure <code>spidev0.0</code> now exists: </p><pre class="fragment"><div class="line">root@swi-mdm9x15:~/ktest_dir# ls /dev<span class="comment">/*spi*</span></div><div class="line"><span class="comment">/dev/spidev0.0</span></div></pre><!-- fragment --><p>Start the <code>spisvc:</code> </p><pre class="fragment"><div class="line">root@swi-mdm9x15:~/ktest_dir# app start spisvc</div></pre><!-- fragment --><p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

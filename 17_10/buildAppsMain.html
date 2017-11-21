@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Build Apps  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="buildAppsConcepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="sampleApps.html">Sample Apps</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Build Apps </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>Legato Application Framework is designed to <b>simplify embedded IoT development</b> and connect your applications to the cloud and network services. Developers do not need in-depth knowledge of embedded systems to be able to develop on IoT devices with Legato. Legato provides <b>an extensive C Runtime Library, a set of management daemons, build and target management tools and built-in security</b> enabling you to focus on developing your applications.</p>
+<p>
+<iframe height="315" src="https://www.youtube.com/embed/YcC9eGOii74" width="420">
+</iframe>
+</p>
+<h1>What is the Legato Application Framework? </h1>
+<p>The Legato Application Framework allows developers to focus on building applications by <b>providing tools and a rich set of APIs</b>. It simplifies the complexity of interfacing with the underlaying Operating System and hardware. It also introduces <b>layers of security</b> that ensure that applications only have the permissions and access to the resources that they need. All permissions are given explicitly and applications natively run in a isolated environment unless explicitly configured not to.</p>
+<div class="image">
+<img alt="LegatoAFRuntime.png" src="LegatoAFRuntime.png"/>
+</div>
+<p><b>The Legato AF provides:</b></p><ul>
+<li>A <a class="el" href="c_APIs.html">C Runtime Library</a> that provides many APIs to enable low-level routines and commonly used data structures and OS service APIs.</li>
+<li><a class="el" href="basicRuntimeArch.html">Core Daemons</a> that provide secure services to run and manage your applications.</li>
+<li>A set of <a class="el" href="tools.html">Command Line Tools</a> for both your target and your development machine to ease the configuration and administration of deploying applications and configuring your target device.</li>
+<li>Built-in native security where all applications by default run in isolated Sandboxes and have to be given permissions to interact with applications outside of the Sandbox.</li>
+<li>The ability to plug in applications/services provided by your Processor Vendor or other developers that you can then take and connect to your applications.</li>
+<li>The ability to bundle OS drivers within your applications to allow connection to hardware without modifying the underlaying platform.</li>
+</ul>
+<h1>Why Choose the Legato Application Framework? </h1>
+<ul>
+<li>An Open Source Framework that allows full customization of all components.</li>
+<li>Provides well defined patterns that allow for the encapsulation of varying hardware and associated applications.</li>
+<li>Provides a robust set of <a class="el" href="tools.html">Command Line Tools</a> that enable the configuration and administration of devices.</li>
+<li>Ability to run your applications in <a class="el" href="basicSecuritySandbox.html">secure containers</a> with resource management and monitoring, while still allowing cross application communication.</li>
+<li><a class="el" href="toolsBuild.html">Developer tools</a> that help you troubleshoot interprocess communications, package up applications, components, and kernel drivers into a customized system and then deploy the system to your target.</li>
+</ul>
+<h1>Legato Application Framework Concepts </h1>
+<p>Dig further and discover our development concepts, API Guides for our core daemons and service apps (platform services), or our tool box that contains tools to help you configure and run the Legato Runtime Environment and the underlaying platform.</p>
+<table class="doxtable">
+<tr>
+<th>Section </th><th>Description  </th></tr>
+<tr>
+<td><a class="el" href="buildAppsConcepts.html">Concepts</a> </td><td>Legato basic concepts </td></tr>
+<tr>
+<td><a class="el" href="apiGuidesMain.html">API Guides</a> </td><td>Service and C Library API reference </td></tr>
+<tr>
+<td><a class="el" href="tools.html">Tools</a> </td><td>Target, Host, and Build tools' info </td></tr>
+<tr>
+<td><a class="el" href="howToMain.html">How To</a> </td><td>How To and Troubleshooting articles for common features </td></tr>
+<tr>
+<td><a class="el" href="sampleApps.html">Sample Apps</a> </td><td>Sample Applications </td></tr>
+</table>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
