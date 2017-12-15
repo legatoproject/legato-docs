@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Exchange Data  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Concepts.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a class="link-selected" href="buildAppsConcepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Exchange Data </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>This topic describes how to develop a Legato app to exchange data with AirVantage:</p>
+<ul>
+<li>Send data (e.g., sensor values) from a Legato app to AirVantage</li>
+<li>Send commands (or apply settings) from AirVantage to a Legato app</li>
+</ul>
+<p>Data is transmitted over the standardized OMA LightWeight M2M protocol secured with DTLS. The underlying protocol and security stacks are provided by Legato so developers can focus on gathering data from sensors without worrying about security.</p>
+<p>These are the main steps to develop a Legato app that exchanges data with AirVantage:</p>
+<p><code>1</code>. <a class="el" href="howToAirVantageExchangeData.html#howToAirVantageExchangeData_defineData">Define data model</a> on your target device. <br/>
+<code>2</code>. <a class="el" href="howToAirVantageExchangeData.html#howToAirVantageExchangeData_implementLegatoApp">Develop and Install Legato app</a>. <br/>
+<code>3</code>. <a class="el" href="howToAirVantageExchangeData.html#howToAirVantageExchangeData_uploadAV">Create Packages, Upload, and Run AirVantage</a>. <br/>
+<code>4</code>. <a class="el" href="howToAirVantageExchangeData.html#howToAirVantageExchangeData_exchData">Exchange data</a> between the target device and AirVantage.</p>
+<h1><a class="anchor" id="howToAirVantageExchangeData_pre"></a>
+Prerequisite</h1>
+<p>We recommend you work through the <a href="http://mangoh.io/getting-started.html">MangOH Getting Started</a> before starting this tutorial. Part references used in this tutorial:</p><ul>
+<li><a href="http://www.sierrawireless.com/products-and-solutions/embedded-solutions/wp-series/">AirPrime WP8548 module</a></li>
+<li><a href="http://mangoh.io/">MangOH board</a></li>
+<li><a href="http://fr.rs-online.com/web/p/alimentations-enfichables/7212203/">Power adapter 12Vdc 1.5A</a></li>
+<li><a href="http://www.aten.com/products/productItem.php?model_no=UC232A">USB-to-Serial cable</a></li>
+</ul>
+<p>If you encounter issues setting up your target device, go to our <a href="https://forum.sierrawireless.com/viewforum.php?f=71">developer community.</a></p>
+<h1><a class="anchor" id="howToAirVantageExchangeData_defineData"></a>
+Define App Data</h1>
+<p>This section covers how to define an app data model and configure variables, settings, and commands.</p>
+<p>First, define a scenario to implement and the data to be exchanged. This will guide you through the code to manage the app data life cycle.</p>
+<h2><a class="anchor" id="howToAirVantageExchangeData_defineData_one"></a>
+One Room Scenario</h2>
+<p>This sample shows how to use AirVantage to automate remote monitoring and control of scenario for simple room temperature:</p>
+<p>In this model, one Room has 3 variables that can be read (no write access) by AirVantage:</p><ul>
+<li>Room name</li>
+<li>Current temperature</li>
+<li>Current AC switch (on/off) state The Room has a target temperature that can be set (read and write access) by AirVantage. User can remotely set the room temperature.</li>
+</ul>
+<p>The Room also has an AC switch can be triggered from AirVantage.</p>
+<p>In this remote control case, the user can turn on the AC by defining a target temperature <code>setting</code>; the AC can be turned off using this <code>command</code>.</p>
+<p>The variables, settings and commands are gathered in an app data named <code>Room</code>. Here's a code sample:</p>
+<pre class="fragment"><div class="line">assets:</div><div class="line">{</div><div class="line">    Room =</div><div class="line">    {</div><div class="line">        variables:</div><div class="line">        {</div><div class="line">            <span class="keywordtype">string</span>  Name</div><div class="line">            <span class="keywordtype">float</span>   Temperature</div><div class="line">            <span class="keywordtype">bool</span>    IsAC_on</div><div class="line">        }</div><div class="line"> </div><div class="line">        settings:</div><div class="line">        {</div><div class="line">            <span class="keywordtype">int</span>     TargetTemperature</div><div class="line">        }</div><div class="line"> </div><div class="line">        commands:</div><div class="line">        {</div><div class="line">                    TurnOffAC</div><div class="line">        }</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><h2><a class="anchor" id="howToAirVantageExchangeData_defineData_two"></a>
+Two Room Scenario</h2>
+<p>This sample shows how to monitor two rooms (a living room and a bedroom).</p>
+<p>We need to create 2 instances of the Room data model, and for each instance:</p><ul>
+<li>assign a name to the room, in the field <code>Name</code>.</li>
+<li>set the current temperature of the room to variable <code>TemperatureC</code>.</li>
+<li>reflect the on/off state of the AC to variable <code>IsAC_on</code>.</li>
+<li>if the user remotely changes the target temperature <code>TargetTemperatureC</code> on AirVantage, then the AC will automatically be switched on.</li>
+<li>user has the ability to remotely switch off the AC on AirVantage, by sending the <code>TurnOffAc</code> command.</li>
+</ul>
+<h1><a class="anchor" id="howToAirVantageExchangeData_implementLegatoApp"></a>
+Implement Legato App</h1>
+<p>This section covers how to:</p><ul>
+<li>get Legato <a class="el" href="howToAirVantageExchangeData.html#howToAirVantageExchangeData_implementLegatoApp_sampleCode">Sample Source Code</a> from GitHub</li>
+<li><a class="el" href="howToAirVantageExchangeData.html#howToAirVantageExchangeData_implementLegatoApp_useAPIs">Use Legato APIs</a>.</li>
+<li><a class="el" href="howToAirVantageExchangeData.html#howToAirVantageExchangeData_implementLegatoApp_varSettings">Declare variables</a>.</li>
+<li><a class="el" href="howToAirVantageExchangeData.html#howToAirVantageExchangeData_implementLegatoApp_initApp">Initialize App</a>.</li>
+<li><a class="el" href="howToAirVantageExchangeData.html#howToAirVantageExchangeData_implementLegatoApp_compileInstall">Compile and Install</a> Legato app for MangOH/WP85xx</li>
+</ul>
+<h2><a class="anchor" id="howToAirVantageExchangeData_implementLegatoApp_sampleCode"></a>
+Sample Source Code</h2>
+<p>Download the sample app source code from <a href="https://github.com/nhonchu/LegatoAssetData">GitHub</a>.</p>
+<p>The Room data model, defined previously, is declared in <code>Component.cdef</code> file.</p>
+<p>Before data exchange can start with AirVantage, a LWM2M session must be established. Usually, this session is initiated by another app (e.g., a controller app managing connectivity).</p>
+<p>The <a class="el" href="c_le_avc.html">AirVantage Connector</a> API (le_avdata.api) and <a class="el" href="c_le_avdata.html">AirVantage Data</a> API (le_avc.api) are used to exchange data and to create LWM2M session.</p>
+<h2><a class="anchor" id="howToAirVantageExchangeData_implementLegatoApp_useAPIs"></a>
+Use Legato APIs</h2>
+<p>This section provides code samples using Legato's AirVantage APIs.</p>
+<p>In the <b>component definition</b> file <code>component.cdef:</code> </p><pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    api:</div><div class="line">    {</div><div class="line">        le_avdata.api</div><div class="line">        le_avc.api</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>In the <b>app definition file</b>, <code>assetDataTutorial.adef:</code> </p>
+<pre class="fragment"><div class="line">bindings:</div><div class="line">{</div><div class="line">    assetDataTutorial.componentAssetData.le_avdata -&gt; avcService.le_avdata</div><div class="line">    assetDataTutorial.componentAssetData.le_avc -&gt; avcService.le_avc</div><div class="line">}</div></pre><!-- fragment --><p>In the <b>Makefile</b>, include the path to AirVantage APIs: </p><pre class="fragment"><div class="line">mkapp -v -t $@ \</div><div class="line">         -i $(LEGATO_ROOT)/interfaces/airVantage \</div><div class="line">         assetDataTutorial.adef</div></pre><!-- fragment --><p>The main code handling the app data exchange with AirVantage is in <code>assetDataMain.c</code> </p>
+<h2><a class="anchor" id="howToAirVantageExchangeData_implementLegatoApp_varSettings"></a>
+Declare Variables</h2>
+<p>Let's declare the following as global: </p><pre class="fragment"><div class="line"><a class="code" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a>    AssetInstRef[2];            <span class="comment">// Reference to the 2 asset instances.</span></div><div class="line"><span class="keywordtype">char</span>*                           RoomName[2];                <span class="comment">// Array of 2 Variable Name.</span></div><div class="line"><span class="keywordtype">float</span>                           CurrentTemperature[2];      <span class="comment">// Array of 2 Variable Temperature.</span></div><div class="line"><span class="keywordtype">bool</span>                            IsAcOn[2];                  <span class="comment">// Array of 2 Variable IsAC_on.</span></div><div class="line"><span class="keywordtype">int</span>                             TargetTemperature[2];       <span class="comment">// Array of 2 Setting TargetTemperature.</span></div><div class="line"><span class="keywordtype">int</span>                             OutsideTemperature = 30;    <span class="comment">// Assuming hot summer.</span></div><div class="line"><a class="code" href="le__timer_8h.html#a763fa6992488cdce3b5a820817094838">le_timer_Ref_t</a>                  TempUpdateTimerRef = NULL;  <span class="comment">// Reference to temperature update timer.</span></div><div class="line"><a class="code" href="le__timer_8h.html#a763fa6992488cdce3b5a820817094838">le_timer_Ref_t</a>                  AvcTimerRef;                <span class="comment">// Reference to the AVC session timer.</span></div><div class="line"><a class="code" href="le__avc__interface_8h.html#aa4848ef1adefe1f273d67d4211233a1f">le_avc_StatusEventHandlerRef_t</a>  AvcEventHandlerRef = NULL;  <span class="comment">// Reference to AirVantage Controller</span></div><div class="line">                                                            <span class="comment">//  (AVC) Session handler.</span></div></pre><!-- fragment --><h2><a class="anchor" id="howToAirVantageExchangeData_implementLegatoApp_initApp"></a>
+Initialize App</h2>
+<p>The <code>COMPONENT_INIT</code> is called <b>once</b> by the Legato framework when the app starts. This is where your component's initialization code goes.</p>
+<p><code>COMPONENT_INIT</code> must return to the framework. App logic tasks are implemented outside of this function using event-handlers: an event-driven model app.</p>
+<h3><a class="anchor" id="howToAirVantageExchangeData_implementLegatoApp_COMPONENT_INIT"></a>
+COMPONENT_INIT</h3>
+<p>We'll do the following initializations in COMPONENT_INIT:</p>
+<p><b>Register an AirVantage Controller (AVC) handler</b> function, by calling <a class="el" href="le__avc__interface_8h.html#ac5443791a6e4b8db75342f45fa2f91dc">le_avc_AddStatusEventHandler()</a> function. Only a registered control app can call <a class="el" href="le__avc__interface_8h.html#aee17b1de43cf946b59a965e6077e7b03">le_avc_StartSession()</a>.</p>
+<p><b>Call</b> <a class="el" href="le__avc__interface_8h.html#aee17b1de43cf946b59a965e6077e7b03">le_avc_StartSession()</a> to start an AVC Session with AirVantage.</p>
+<pre class="fragment"><div class="line"><span class="comment">// Register a AVC handler.</span></div><div class="line">AvcEventHandlerRef = <a class="code" href="le__avc__interface_8h.html#ac5443791a6e4b8db75342f45fa2f91dc">le_avc_AddStatusEventHandler</a>(AVsessionHandler, NULL);</div><div class="line"> </div><div class="line"><span class="comment">// Start AVC session. Note: AVC handler must be registered prior starting a session.</span></div><div class="line"><a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> result = <a class="code" href="le__avc__interface_8h.html#aee17b1de43cf946b59a965e6077e7b03">le_avc_StartSession</a>();</div><div class="line"><span class="keywordflow">if</span> (result == <a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86cac409634423b6b1ef09643529f6224798">LE_FAULT</a>)</div><div class="line">{</div><div class="line">    <a class="code" href="le__avc__interface_8h.html#a5b3e21858181bb972e982046bced1182">le_avc_StopSession</a>();</div><div class="line">    <a class="code" href="le__avc__interface_8h.html#aee17b1de43cf946b59a965e6077e7b03">le_avc_StartSession</a>();</div><div class="line">}</div></pre><!-- fragment --><p><b>Create a timer to close the AVC session</b> and exit app, in 10 min: </p><pre class="fragment"><div class="line"><span class="comment">// Create and start a timer that will time out in 10 minutes and never repeat.</span></div><div class="line"><a class="code" href="structle__clk___time__t.html">le_clk_Time_t</a> delay = { 600, 0 };</div><div class="line">AvcTimerRef = <a class="code" href="le__timer_8h.html#aee41169a210378b369f440cf99146522">le_timer_Create</a>(<span class="stringliteral">"assetDataAppSessionTimer"</span>);</div><div class="line"> </div><div class="line"><a class="code" href="le__timer_8h.html#a0a103d5cef5e83fc9088859d527bbd43">le_timer_SetInterval</a>(AvcTimerRef, delay);</div><div class="line"><a class="code" href="le__timer_8h.html#a292b0a7d6dc0796a36a54fd04c6a7eeb">le_timer_SetRepeat</a>(AvcTimerRef, 1);</div><div class="line"><a class="code" href="le__timer_8h.html#a8fb341f11e0da2692453df997613cb8e">le_timer_SetHandler</a>(AvcTimerRef, TimerExpiredHandler);</div><div class="line"><a class="code" href="le__timer_8h.html#ada2ce7f8cb1e76ed959e323ae94bbfc0">le_timer_Start</a>(AvcTimerRef);</div></pre><!-- fragment --><p><b>Create 2 instances of Room Asset</b>, by calling <a class="el" href="le__avdata__interface_8h.html#afb9b95f51959a3edb155c5f780c4c0b1">le_avdata_Create()</a></p>
+<pre class="fragment"><div class="line"><span class="comment">// Create instances 1 and 2 of asset "Room".</span></div><div class="line">AssetInstRef[0] = <a class="code" href="le__avdata__interface_8h.html#afb9b95f51959a3edb155c5f780c4c0b1">le_avdata_Create</a>(<span class="stringliteral">"Room"</span>);</div><div class="line">AssetInstRef[1] = <a class="code" href="le__avdata__interface_8h.html#afb9b95f51959a3edb155c5f780c4c0b1">le_avdata_Create</a>(<span class="stringliteral">"Room"</span>);</div></pre><!-- fragment --><p><b>Assign default values</b> to our 2 instances of Room asset (declared as global variables):</p>
+<pre class="fragment"><div class="line"><span class="keywordtype">int</span> i = 0;</div><div class="line"><span class="comment">// Assign default value to asset data fields.</span></div><div class="line">RoomName[i] = (char) malloc(16);</div><div class="line">strcpy(roomName[i], <span class="stringliteral">"bedroom"</span>);</div><div class="line">CurrentTemperature[i] = 31.0;</div><div class="line">IsAcOn[i] = <span class="keyword">false</span>;</div><div class="line">TargetTemperature[i] = 19;</div><div class="line"> </div><div class="line">i++;</div><div class="line"> </div><div class="line">RoomName[i] = (<span class="keywordtype">char</span> *) malloc(16);</div><div class="line">strcpy(roomName[i], <span class="stringliteral">"living-room"</span>);</div><div class="line">CurrentTemperature[i] = 30.0;</div><div class="line">IsAcOn[i] = <span class="keyword">false</span>;</div><div class="line">TargetTemperature[i] = 19;</div></pre><!-- fragment --><p><b>Map data value to instances:</b> </p><pre class="fragment"><div class="line"><span class="keywordflow">for</span> (i=0; i&lt; 2; i++)</div><div class="line">{</div><div class="line">    <a class="code" href="le__avdata__interface_8h.html#aa32e616235212e3bf8dd514767bc8fa1">le_avdata_SetString</a>(AssetInstRef[i], <span class="stringliteral">"Name"</span>, RoomName[i]);</div><div class="line">    <a class="code" href="le__avdata__interface_8h.html#abaf691214485643af60da3f93795909c">le_avdata_SetInt</a>(AssetInstRef[i], <span class="stringliteral">"Temperature"</span>, CurrentTemperature[i]);</div><div class="line">    <a class="code" href="le__avdata__interface_8h.html#a358ae030ed3607f4844e50341c45d746">le_avdata_SetBool</a>(AssetInstRef[i], <span class="stringliteral">"IsAC_on"</span>, IsAcOn[i]);</div><div class="line">    <a class="code" href="le__avdata__interface_8h.html#abaf691214485643af60da3f93795909c">le_avdata_SetInt</a>(AssetInstRef[i], <span class="stringliteral">"TargetTemperature"</span>, TargetTemperature[i]);</div><div class="line">}</div></pre><!-- fragment --><p><b>Register handler</b>, in order to apply Settings and Commands sent by AirVantage. For each data field (settings and commands), call <a class="el" href="le__avdata__interface_8h.html#aaae8e18ac8ac377eaab944f5f89a192d">le_avdata_AddFieldEventHandler()</a> to register handler functions that will be called by the framework whenever the field is altered by AirVantage: </p><pre class="fragment"><div class="line"><span class="keywordflow">for</span> (i = 0; i &lt; 2; i++)</div><div class="line">{</div><div class="line">    <span class="comment">// call OnWriteSetting() handler whenever the setting "TargetTemperature" is accessed</span></div><div class="line">    <a class="code" href="le__avdata__interface_8h.html#aaae8e18ac8ac377eaab944f5f89a192d">le_avdata_AddFieldEventHandler</a>(AssetInstRef[i], <span class="stringliteral">"TargetTemperature"</span>, OnWriteSetting, NULL);</div><div class="line"> </div><div class="line">    <span class="comment">// call OnCommand() handler whenever the setting "TurnOffAC" is accessed</span></div><div class="line">    <a class="code" href="le__avdata__interface_8h.html#aaae8e18ac8ac377eaab944f5f89a192d">le_avdata_AddFieldEventHandler</a>(AssetInstRef[i], <span class="stringliteral">"TurnOffAC"</span>, OnCommand, NULL);</div><div class="line">}</div></pre><!-- fragment --><p><b>Simulate the rooms' temperature</b>, let's set a timer to update the temperature every 5 seconds: </p><pre class="fragment"><div class="line"><span class="comment">// Create timer, with an interval of every 5 seconds, repeating forever.</span></div><div class="line"><a class="code" href="structle__clk___time__t.html">le_clk_Time_t</a> interval = { 5, 0 };</div><div class="line">TempUpdateTimerRef = <a class="code" href="le__timer_8h.html#aee41169a210378b369f440cf99146522">le_timer_Create</a>(<span class="stringliteral">"tempUpdateTimer"</span>);</div><div class="line"> </div><div class="line"><a class="code" href="le__timer_8h.html#a0a103d5cef5e83fc9088859d527bbd43">le_timer_SetInterval</a>(TempUpdateTimerRef, interval);</div><div class="line"><a class="code" href="le__timer_8h.html#a292b0a7d6dc0796a36a54fd04c6a7eeb">le_timer_SetRepeat</a>(TempUpdateTimerRef, 0);</div><div class="line"><a class="code" href="le__timer_8h.html#a8fb341f11e0da2692453df997613cb8e">le_timer_SetHandler</a>(TempUpdateTimerRef, UpdateTemperature);</div><div class="line"><a class="code" href="le__timer_8h.html#ada2ce7f8cb1e76ed959e323ae94bbfc0">le_timer_Start</a>(TempUpdateTimerRef);</div></pre><!-- fragment --><h3><a class="anchor" id="howToAirVantageExchangeData_implementLegatoApp_setHandlers"></a>
+Set Handler Functions</h3>
+<p>Our app needs to implement handler functions to retrieve the value of a Setting (<code>TargetTemperature</code>) set by AirVantage. This function should have the prototype defined by le_avdata_FieldHandlerFunc_t, see <a class="el" href="howToAVData.html">Manage AirVantage Data</a>.</p>
+<p>This function must be registered in COMPONENT_INIT with <a class="el" href="le__avdata__interface_8h.html#aaae8e18ac8ac377eaab944f5f89a192d">le_avdata_AddFieldEventHandler()</a>.</p>
+<p>Let's name it OnWriteVariable:</p><ul>
+<li>void OnWriteVariable(le_avdata_AssetInstanceRef_t instRef, const char *fieldName, void *contextPtr)</li>
+<li>This function will be called by the framework whenever AirVantage wants to change the <code>fieldname</code>. Setting of our asset instance, referenced by <code>instRef</code> </li>
+<li>To retrieve the Setting value pushed by AirVantage, call <a class="el" href="le__avdata__interface_8h.html#add94bfa34220bf89c913f13b4721c4d0">le_avdata_GetString()</a>, le_avdata_GetInt or <a class="el" href="le__avdata__interface_8h.html#ae3d448ea6e5d4e87cfb8a9ae713cc06c">le_avdata_GetBool()</a></li>
+</ul>
+<pre class="fragment"><div class="line"><span class="keywordtype">void</span> OnWriteSetting(<a class="code" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a>() instRef, <span class="keyword">const</span> <span class="keywordtype">char</span>* fieldName, <span class="keywordtype">void</span>* contextPtr)</div><div class="line">{</div><div class="line">    <span class="keywordtype">int</span> i;</div><div class="line"> </div><div class="line">    <span class="keywordflow">for</span> (i = 0; i &lt; 2; i++)</div><div class="line">    {</div><div class="line">        <span class="keywordflow">if</span> (instRef == AssetInstRef[i])</div><div class="line">        {</div><div class="line">            <span class="keywordflow">if</span> (strcmp(fieldName, <span class="stringliteral">"TargetTemperature"</span>) == 0)</div><div class="line">            {</div><div class="line">                <span class="comment">// Get the new setting from AirVantage.</span></div><div class="line">                <span class="keywordtype">int</span> nTemp;</div><div class="line">                <a class="code" href="le__avdata__interface_8h.html#aece245e0d4ba02523679dd2ba25a8a90">le_avdata_GetInt</a>(instRef, fieldName, &amp;nTemp);</div><div class="line"> </div><div class="line">                <span class="keywordflow">if</span> (nTemp != TargetTemperature[i])</div><div class="line">                {</div><div class="line">                    <span class="comment">// Let's set the AC status to ON, and update the object with our new values.</span></div><div class="line">                    IsAcOn[i] = <span class="keyword">true</span>;</div><div class="line">                    TargetTemperature[i] = nTemp;</div><div class="line"> </div><div class="line">                    <a class="code" href="le__avdata__interface_8h.html#a358ae030ed3607f4844e50341c45d746">le_avdata_SetBool</a>(instRef, <span class="stringliteral">"IsAC_on"</span>, IsAcOn[i]);</div><div class="line">                    <a class="code" href="le__avdata__interface_8h.html#abaf691214485643af60da3f93795909c">le_avdata_SetInt</a>(instRef, fieldName, TargetTemperature[i]);</div><div class="line">                }</div><div class="line">            }</div><div class="line">            <span class="keywordflow">break</span>;</div><div class="line">        }</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><h3><a class="anchor" id="howToAirVantageExchangeData_implementLegatoApp_cmdHandlers"></a>
+Command Handler Functions</h3>
+<p>Our app needs to implement handler function to Execute the Command (<code>TurnOffAC</code>) set by AirVantage. This function should have the prototype defined by le_avdata_FieldHandlerFunc_t. This function must be registered in COMPONENT_INIT with le_avdata_AddFieldEventHandler.</p>
+<p>Let's name it OnCommand:</p><ul>
+<li>void OnCommand(le_avdata_AssetInstanceRef_t instRef, const char *fieldName, void *contextPtr)</li>
+<li>This function will be called by the framework whenever AirVantage wants to execute the <code>TurnOffAC</code> Command on our asset instance, referenced by <code>instRef</code> </li>
+</ul>
+<pre class="fragment"><div class="line"><span class="keywordtype">void</span> OnCommand(<a class="code" href="le__avdata__interface_8h.html#a08f091c0da8c4a26f662dbff039de900">le_avdata_AssetInstanceRef_t</a>() instRef, <span class="keyword">const</span> <span class="keywordtype">char</span>* fieldName, <span class="keywordtype">void</span>* contextPtr)</div><div class="line">{</div><div class="line">    <span class="keywordtype">int</span> i;</div><div class="line"> </div><div class="line">    <span class="keywordflow">for</span> (i = 0; i &lt; 2; i++)</div><div class="line">    {</div><div class="line">        <span class="keywordflow">if</span> (instRef == AssetInstRef[i])</div><div class="line">        {</div><div class="line">            <span class="keywordflow">if</span> (strcmp(fieldName, <span class="stringliteral">"TurnOffAC"</span>) == 0)</div><div class="line">            {</div><div class="line">                <span class="comment">// Execute the command, just turn AC status to OFF, and reflect the new value to the</span></div><div class="line">                <span class="comment">// instance.</span></div><div class="line">                IsAcOn[i] = <span class="keyword">false</span>;</div><div class="line">                <a class="code" href="le__avdata__interface_8h.html#a358ae030ed3607f4844e50341c45d746">le_avdata_SetBool</a>(instRef, <span class="stringliteral">"IsAC_on"</span>, IsAcOn[i]);</div><div class="line">            }</div><div class="line">            <span class="keywordflow">break</span>;</div><div class="line">        }</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><h3><a class="anchor" id="howToAirVantageExchangeData_implementLegatoApp_simTemp"></a>
+Simulate Temperature</h3>
+<p>The handler <code>updateTemperature</code> is called by the framework every 5 seconds, as set in COMPONENT_INIT. This is how the function modifies the temperature:</p><ul>
+<li>if AC switch is OFF, then converge the room temperature to the outside temperature</li>
+<li>if AC switch is ON, then converge the room temperature to the <code>targetTemperature</code> (set in AirVantage). Simulated room temperatures are then pushed to AirVantage by calling <a class="el" href="le__avdata__interface_8h.html#af9a038bf7e1e57b63d7f34738cd17c21">le_avdata_SetFloat()</a>. This is performed automatically by the underlying LWM2M Observe feature when AVC session is opened.</li>
+</ul>
+<h3><a class="anchor" id="howToAirVantageExchangeData_implementLegatoApp_avcHandler"></a>
+AVC Handler Functions</h3>
+<p>The <code>AVsessionHandler</code> function has been registered in the COMPONENT_INIT function; this is required to start an AVC session with AirVantage. For this tutorial, let's do nothing in this function.</p>
+<h3><a class="anchor" id="howToAirVantageExchangeData_implementLegatoApp_exitApp"></a>
+Exit App</h3>
+<p>The handler <code>timerExpiredHandler</code> is called by the framework 10min later, as set in COMPONENT_INIT. This function closes LWM2M session and Quit the app</p>
+<h2><a class="anchor" id="howToAirVantageExchangeData_implementLegatoApp_compileInstall"></a>
+Compile and Install</h2>
+<p>Next, you have to compile your app and install it on the target device.</p>
+<p>Compile the source code from <code>assetDataTutorial</code> main folder and install the app on the target device.</p>
+<p>Our example uses a mangOH board with an embedded WP8548 module so the compiler target will be <code>wp85</code>. If you're using a different target module, change the compiler target as needed (e.g., ar7, wp7 or ar86).</p>
+<p>Enter these 2 commands on the Host PC:</p>
+<pre class="fragment"><div class="line">make wp85</div></pre><!-- fragment --><p>After <code>make</code> completes, a software package will be generated: <code>assetDataTutorial.wp85.update</code> </p>
+<pre class="fragment"><div class="line">update &lt;software package&gt; &lt;device_ip_address&gt; </div></pre><!-- fragment --> <h1><a class="anchor" id="howToAirVantageExchangeData_uploadAV"></a>
+Upload and Run AirVantage</h1>
+<p>Now, we'll upload our app and data model to AirVantage. The <code>Room</code> data model in <code>Component.cdef</code> is defined in a manifest file (XML file generated automatically at compile time). The manifest file exposes the app data collection of information to AirVantage. AirVantage needs the manifest information to access the <code>Room</code> data model so it can exchange the predefined data with our device app.</p>
+<p>This section covers how to:</p><ul>
+<li><a class="el" href="howToAirVantageExchangeData.html#howToAirVantageExchangeData_uploadAV_createPkg">Create an app update package</a> for a target device and generate app package to upload to AirVantage.</li>
+<li><a class="el" href="howToAirVantageExchangeData.html#howToAirVantageExchangeData_uploadAV_upload">Upload app package to AirVantage</a></li>
+<li><a class="el" href="howToAirVantageExchangeData.html#howToAirVantageExchangeData_uploadAV_assignApp">Assign app to our device</a> on AirVantage.</li>
+<li><a class="el" href="howToAirVantageExchangeData.html#howToAirVantageExchangeData_uploadAV_launchApp">Launch App and View Log</a>.</li>
+</ul>
+<h2><a class="anchor" id="howToAirVantageExchangeData_uploadAV_createPkg"></a>
+Create and Generate AirVantage Package</h2>
+<p>This step is run on the Host, in Terminal #1:</p>
+<pre class="fragment"><div class="line">av-pack -f assetDataTutorial.wp85.update &lt;TypeName&gt; </div></pre><!-- fragment --><p>where &lt;TypeName&gt; shall be globally unique (e.g. assetTutorialAppV3), AirVantage uses it to uniquely identify multiple versions of our app</p>
+<h2><a class="anchor" id="howToAirVantageExchangeData_uploadAV_upload"></a>
+Login and Upload</h2>
+<ul>
+<li>Login to the AirVantage portal.</li>
+<li>Choose the "Develop" activity, and then <code>My</code> Apps.</li>
+<li>Click the Release button.</li>
+<li>Select the app package zip file <code>assetDataTutorial.zip</code>, created in the previous section.</li>
+<li>Check the "I want to publish my app after releasing it" checkbox in the <code>Advanced</code> settings option.</li>
+<li>Click Start.</li>
+</ul>
+<h2><a class="anchor" id="howToAirVantageExchangeData_uploadAV_assignApp"></a>
+Assign App to Device</h2>
+<p>Before our device can exchange "Room" data fields with AirVantage, the uploaded app must be assigned to our device on AirVantage.</p>
+<p>Depending on your AirVantage account setup, there are two alternatives to assign the app.</p>
+<p>If you're using AirVantage for one device type:</p><ul>
+<li>Login to AirVantage portal, go to <code>Inventory</code> activity, and then <code>Systems</code>.</li>
+<li>Select your system by clicking on its Name.</li>
+<li>Click on the Edit icon.</li>
+<li>In the <code>Applications</code> field, type in the name of the app (e.g., assetDataTutorial) and select it.</li>
+<li>Click Save.</li>
+</ul>
+<p>If you're using one AirVantage account to monitor multiple SIM cards and devices:</p><ul>
+<li>Login to the AirVantage portal, go to <code>Monitor</code> activity, and <code>Systems</code>.</li>
+<li>Choose the More menu, and then the Edit icon.</li>
+<li>In the <code>Applications</code> field, type in the name of the app (e.g., assetDataTutorial) and select it.</li>
+<li>Click Save.</li>
+</ul>
+<p>You can now use your saved package to install your app remotely using AirVantage.</p>
+<p>So far, we created an app that can exchange a collection of information (app data fields) with AirVantage, packaged the app with a manifest file,and then uploaded it to AirVantage.</p>
+<p>Next, we need to retrieve the current values:</p><ul>
+<li>room name</li>
+<li>current temperature</li>
+<li>target temperature</li>
+<li>AC switch state for bedroom and living room on AirVantage.</li>
+</ul>
+<p>This is how your target terminal will look:</p>
+<div class="image">
+<img alt="legato_term1.png" src="legato_term1.png"/>
+</div>
+<h2><a class="anchor" id="howToAirVantageExchangeData_uploadAV_launchApp"></a>
+Launch App and View Log</h2>
+<p>We're now ready to start data exchange with AirVantage. Start the app and prepare to view the log:</p>
+<p>In the Terminal #2:</p><ul>
+<li>Connect to the target using ssh: ssh root.</li>
+<li>Launch <code>logread -f | grep "Legato AssetData"</code> to continuously view the log In the Terminal #3.</li>
+<li>Connect to the target using ssh: ssh root.</li>
+<li>Type in <code>app status</code> command to make sure that <code>assetDataTutorial</code> is listed.</li>
+<li>Launch the app: <code>app start assetDataTutorial</code>.</li>
+</ul>
+<p>This is how your Terminal #2 (using logread -f) will look:</p>
+<div class="image">
+<img alt="legato_term2.png" src="legato_term2.png"/>
+</div>
+<h1><a class="anchor" id="howToAirVantageExchangeData_exchData"></a>
+Exchange Data with AirVantage</h1>
+<p>The LightWeight M2M protocol default behavior initiates communication to the server through the target device. Once a connection between the server and the device is established, the server can send any request to the device: read or write a data, execute a command, apply a firmware upgrade, install an app, etc. </p><div class="image">
+<img alt="lwm2m_communication.png" src="lwm2m_communication.png"/>
+</div>
+<p>When a device is in the field:</p><ul>
+<li>On the first boot, it starts to communicate with the bootstrap server to collect credentials and the AirVantage URL. It will do this only if AirVantage denies the connection or because of a regular interval to change the security keys (steps 1 and 2).</li>
+<li>Then the device initiates a communication with AirVantage, updates the objects list (step 3).</li>
+<li>AirVantage sends the pending requests to the device (step 4).</li>
+<li>The device executes the requests.</li>
+<li>The device communicates the acknowledgements and close the connection.</li>
+</ul>
+<h2><a class="anchor" id="howToAirVantageExchangeData_exchData_pushData"></a>
+Push Data</h2>
+<p>If you need to collect data as soon as the device is ready to communicate with AirVantage, and at high frequency, use the AirVantage LWM2M Observe feature.</p>
+<p>This is how the Observe feature sends new data values: </p><div class="image">
+<img alt="lwm2m_observe.png" src="lwm2m_observe.png"/>
+</div>
+<ul>
+<li>On the first communication with a device, AirVantage will request to observe a list of data (step 1). This sends a notification when new values exist for this list of pre-defined data.</li>
+<li>When a new value is obtained from the sensor, the value is pushed to Legato (step 2).</li>
+<li>The target device sends the data automatically without a new request from AirVantage (step 3).</li>
+</ul>
+<p>During sample app data updates in Legato, you can see the new values displayed in AirVantage using the timeline view.</p>
+<p>If you're using a Sierra Wireless SIM card, you can <a href="https://doc.airvantage.net/avc">Test Your Solution</a> and <a href="https://source.sierrawireless.com/airvantage/av/reference/monitor/">Monitor Your System</a></p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

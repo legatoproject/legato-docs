@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Sandboxes  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Concepts.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a class="link-selected" href="buildAppsConcepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Sandboxes </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>Also see <br/>
+<a class="el" href="howToSecuritySandboxOverview.html">Sandbox Overview</a> <br/>
+<a class="el" href="howToSecuritySandboxConfigSample.html">Sandbox Config Sample</a> <br/>
+<a class="el" href="howToSecuritySandboxHelper.html">Sandbox Helper</a></p>
+<p>Legato uses sandboxes to provide a security layer between apps running in the same system. Legato sandboxes isolate apps from the rest of the system. This allows both original equipment manufacturer (OEM) and independent software vendor (ISV) apps to coexist safely on the same device without fear of interfering with each other or breaking the rest of the software stack.</p>
+<p>Each app has its own unique user ID, group ID, and root directory.</p>
+<p>Legato sandboxes use <em>chroot</em> to limit an app's view to its own section of the file system only. Files are bound into the chroot jail using bind mounts. The process then only has access to files and directories under its root directory. Only processes with certain capabilities can find their way outside of their root directory; processes belonging to sandboxed apps run as unprivileged users that don't have those capabilities.</p>
+<p>Legato sandboxes use bind mounts to import files into sandboxes (defined using the <code></code>.adef and <code></code>.sdef <code>requires</code> section). This works like a file system hard link, except that the link is only stored in RAM and can cross over to different file systems. Bind-mounting avoids copying so the overhead is minimal.</p>
+<p>Access control for files visible within the sandbox is done using a combination of standard POSIX discretionary access control (based on user and group permissions) and mandatory access control provided by Linux's SMACK.</p>
+<p>A Legato sandboxed app can access services outside its sandbox via inter-process communication (IPC). All available IPC services are advertised by the Service Directory. Apps connect to services through a request to the Service Directory. The Service Directory grants access only if the app has been explicitly bound to a service (using the <code></code>.adef and <code></code>.sdef <code>bindings</code> section). When access is granted, the connection to the client is passed to the server and all communication between the client and the server are direct from that point on. SMACK is also used to add another layer of security to the IPC, limiting the passing of IPC socket file descriptors from one app to another</p>
+<p>Legato sandboxes also provide <em>resource limitations</em>. Resource limitations place limits on the amount of system resources an app is allowed to consume. Without resource limits, an isolated app can still cause damage by consuming all available resources.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. Use of this work is subject to license. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

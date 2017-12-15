@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Configure SWI WP Series Target  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Concepts.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/index.html">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a class="link-selected" href="buildAppsConcepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="external_proj_mainpage.html">WiFi Plugin</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Configure SWI WP Series Target </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>To connect to your device you must use either a USB or Serial cable and connect the device directly to your Dev Machine. All other interfaces are turned off by default for security reasons.</p>
+<h1><a class="anchor" id="targetConnectUSB"></a>
+Connect using USB</h1>
+<p>Install a ssh client on your dev machine:</p>
+<pre class="fragment">$ sudo apt-get install openssh-client
+</pre><p>The default IP for WP series devices over USB is 192.168.2.2.</p>
+<pre class="fragment">$ ssh root@192.168.2.2
+</pre><dl class="section note"><dt>Note</dt><dd>Currently there is an outstanding issue in Ubuntu 15.10+ with the ECMUsb driver. This bug may cause Ubuntu Connection Manager to crash. The workaround is to uninstall modemManager on your dev machine. <code> $ sudo apt-get remove modemmanager</code></dd></dl>
+<h1><a class="anchor" id="targetConnectUART"></a>
+Connect using UART</h1>
+<p>To connect using the UART port connect a Serial to USB cable to your target and install a serial communications program like Minicom.</p>
+<p>Install minicom on your dev machine:</p>
+<pre class="fragment">$ sudo apt-get install minicom
+</pre><p>Connect using Minicom to the USB Port that your device is plugged into:</p>
+<pre class="fragment">$ minicom -D /dev/ttyUSB0
+</pre><p>Press enter, and you should be prompted to log in.</p>
+<dl class="section note"><dt>Note</dt><dd>If ttyUSB0 does not work, try a different port such as ttyUSB1 or ttyUSB2. The port number will need to correspond to the USB port on your dev machine which your USB-to-serial cable is connected.</dd></dl>
+<p>If the device can not be opened. You may need to add your user to the dialout group.</p>
+<pre class="fragment">$ sudo usermod -a -G dialout $USER
+$ newgrp dialout # Updates the current shell
+</pre><h1><a class="anchor" id="targetLogin"></a>
+Setup Login Authentication</h1>
+<p>In Legato 16.10.0+ a menu will prompt you upon first connection to choose your method of Login Authentication.</p>
+<pre class="fragment">It is strongly recommended to setup credentials for remote login.
+  Please select one of the following options:
+    1) Setup ssh keys and disable passwords-based authentication via ssh (the most secure)
+    2) Setup password (better than nothing)
+    3) Do nothing
+</pre><h2><a class="anchor" id="targetSSHKeys"></a>
+Setup SSH Keys</h2>
+<p><b>This is the method we strongly recommend!</b></p>
+<p>1) On the target, choose <code>1</code> to setup ssh keys.</p>
+<p>2) On the dev Machine, run <a class="el" href="toolsHost_configtargetssh.html">configtargetssh</a> (ensure you run bin/legs first to configure the Legato shell).</p>
+<p><a class="el" href="toolsHost_configtargetssh.html">configtargetssh</a> is a tool that will set your ssh-keys and copy those keys to your target device.</p>
+<pre class="fragment">$ configtargetssh 192.168.2.2   # The target device IP
+</pre><p>The ssh key pair is only authorized on the dev machine &amp; target that you ran <code>configtargetssh</code> on. If you need to use the target device on another PC, or set up a new target on the current PC you will have to run <code>configtargetssh</code> for the new device(s).</p>
+<dl class="section note"><dt>Note</dt><dd>You can manually setup ssh keys using <code>ssh-keygen</code>, and copy the public key to the target's ssh directory for any dev machine.</dd></dl>
+<p>3) After <code>configtargetssh</code> finishes, choose <code>1</code> (Done), and answer the "are you sure" questions. The configure local console menu will then display:</p>
+<pre class="fragment">1) Disable console access (the most secure)
+2) Disable password-based authentication for root user account
+       but leave the console for debug messages (less secure)
+       WARNING: This will disable password-based authentication for
+       root user account completely (even over ssh).
+3) Enable password-based authentication for root user account
+</pre><p>4) Choose <code>1</code> if local access through the serial console isn't needed, it's recommended to completely disable console access. Choose <code>2</code> if you are only connecting from the dev machine that <code>configtargetssh</code> was just run. Choose <code>3</code> if you are still need to connect to the target from other dev machines that you have not set up ssh keys with. It is recommended to set a <b>strong</b> password if this option is chosen.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Please test your ssh keys and/or passwords in a separate terminal before logging off from all terminals to ensure you don't lose access to your target device.</dd></dl>
+<h2><a class="anchor" id="targetSetupPass"></a>
+Setup Password</h2>
+<p>If you choose to just set up a root password, the system will prompt you through the process, and then ask you if you would like to disable your console access.</p>
+<pre class="fragment">Changing password for root
+Enter the new password (minimum of 5 characters)
+Please use a combination of upper and lower case letters and numbers.
+New password:
+Re-enter new password:
+passwd: password changed.
+
+Configure local console login.
+  Disable console access [Y/n]?
+
+
+You are about to disable console access for all users.
+Are you sure [y/N]?
+</pre><h2><a class="anchor" id="targetDoNothing"></a>
+Do Nothing</h2>
+<p>If you choose the option to "Do Nothing", you will be presented the option to choose if you would like to go through this menu the next time you connect to the target.</p>
+<dl class="section note"><dt>Note</dt><dd>If you choose this option you always have the option of setting up ssh keys using <code>configtargetssh</code>, or setting a root password manually using <code>passwd</code>.</dd></dl>
+<h1><a class="anchor" id="targetRecover"></a>
+Recover a Target</h1>
+<p>To recover a Sierra Wireless Target Device (e.g., mangOH or WP8545) you must use the proprietary Sierra Wireless flash tool. Instructions and the tool can be found on <a href="http://source.sierrawireless.com/resources/airprime/software/swiflash/">the Source.</a></p>
+<h1><a class="anchor" id="targetOptionalConfig"></a>
+Optional Configuration</h1>
+<p>To configure other network interfaces, install software or enable/disable Developer Mode:</p>
+<table class="doxtable">
+<tr>
+<th>Section </th><th>Description  </th></tr>
+<tr>
+<td><a class="el" href="basicTargetConfigETH.html">Configure Ethernet Interface</a> </td><td>Configure Ethernet interfaces </td></tr>
+<tr>
+<td><a class="el" href="basicTargetConfigUSB.html">Configure USB Interface</a> </td><td>Configure USB interfaces </td></tr>
+<tr>
+<td><a class="el" href="basicTargetModem.html">Configure Cell Modems</a> </td><td>Configure a Cell Modem </td></tr>
+<tr>
+<td><a class="el" href="basicTargetDevMode.html">Developer Mode</a> </td><td>Manage Developer Mode </td></tr>
+</table>
+<p>Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
