@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>WiFi Access Point Service  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="sampleApps.html">Sample Apps</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">WiFi Access Point Service </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><a class="el" href="le__wifi_ap__interface_8h.html">API Reference</a></p>
+<hr/>
+<p>This WiFi Service API provides Wifi Access Point setup. Please note that if there is only one wifi hardware the WiFi Access Point cannot be used at the same time as the WiFi Client service.</p>
+<h1><a class="anchor" id="le_wifi_binding"></a>
+IPC interfaces binding</h1>
+<p>Here's a code sample binding to WiFi service: </p><pre class="fragment">bindings:
+{
+   clientExe.clientComponent.le_wifiAp -&gt; wifiService.le_wifiAp
+}
+</pre><h1><a class="anchor" id="le_wifiAp_connect_to_ap"></a>
+Setting parameters for the Access Point</h1>
+<p>Note that these parameters must be set before the access point is started. See each function for its default value.</p>
+<p>To set the SSID for the Access Point use the following function:</p><ul>
+<li><a class="el" href="le__wifi_ap__interface_8h.html#a0f29690f2a2d01157cc2d9e58d1d5536">le_wifiAp_SetSsid()</a></li>
+</ul>
+<p>To set the pass phrase prior for the Access Point use the function: Also see <a class="el" href="le__wifi_ap__interface_8h.html#a9d126d5511dae79d2229c48bbcc4dddc">le_wifiAp_SetPreSharedKey()</a>.</p><ul>
+<li><a class="el" href="le__wifi_ap__interface_8h.html#a8be6c0c7aad3e14f492898df6f131c5b">le_wifiAp_SetPassPhrase()</a></li>
+</ul>
+<p>Instead of setting the pass phrase, the Pre Shared Key (PSK), can be set explicitly. To set the Pre Shared Key prior for the Access Point start use the function:</p><ul>
+<li><a class="el" href="le__wifi_ap__interface_8h.html#a9d126d5511dae79d2229c48bbcc4dddc">le_wifiAp_SetPreSharedKey()</a></li>
+</ul>
+<p>Sets the security protocol to use.</p><ul>
+<li><a class="el" href="le__wifi_ap__interface_8h.html#a0985bb7661b81c6882a170855c7c8298">le_wifiAp_SetSecurityProtocol()</a></li>
+</ul>
+<p>Sets is the Access Point should show up in network scans or not.</p><ul>
+<li><a class="el" href="le__wifi_ap__interface_8h.html#a53d220d33f1c7d7560605b5bffc13c80">le_wifiAp_SetDiscoverable()</a></li>
+</ul>
+<p>Sets which channel to use.</p><ul>
+<li><a class="el" href="le__wifi_ap__interface_8h.html#a686036419f15a4253c28a41c6d2dc759">le_wifiAp_SetChannel()</a></li>
+</ul>
+<pre class="fragment"><div class="line"><span class="comment">//--------------------------------------------------------------------------------------------------</span><span class="comment"></span></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * Sets the credentials</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> Testle_setCredentials</div><div class="line">(</div><div class="line">    <span class="keywordtype">void</span></div><div class="line">)</div><div class="line">{</div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(LE_OK == <a class="code" href="le__wifi_ap__interface_8h.html#a8be6c0c7aad3e14f492898df6f131c5b">le_wifiAp_SetPassPhrase</a>(TEST_PASSPHRASE));</div><div class="line"> </div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(LE_OK == <a class="code" href="le__wifi_ap__interface_8h.html#a0985bb7661b81c6882a170855c7c8298">le_wifiAp_SetSecurityProtocol</a>(TEST_SECU_PROTO));</div><div class="line"> </div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(LE_OK == <a class="code" href="le__wifi_ap__interface_8h.html#a53d220d33f1c7d7560605b5bffc13c80">le_wifiAp_SetDiscoverable</a>(<span class="keyword">true</span>));</div><div class="line">}</div></pre><!-- fragment --> <h1><a class="anchor" id="le_wifiAp_Start"></a>
+Starting the WiFi Access Point</h1>
+<p>The WiFi Access Point is started with the function <a class="el" href="le__wifi_ap__interface_8h.html#ad21bdeabf6a8c923d246ef3c28ac42a0">le_wifiAp_Start()</a>. Unless values have been changed, default values will be used:</p><ul>
+<li><a class="el" href="le__wifi_ap__interface_8h.html#ad21bdeabf6a8c923d246ef3c28ac42a0">le_wifiAp_Start()</a>:</li>
+</ul>
+<p>To subscribe to wifi events <a class="el" href="le__wifi_ap__interface_8h.html#a1ab6c2c710b61aa9b1abd30535702e38">le_wifiAp_AddNewEventHandler()</a> is to be called.</p><ul>
+<li><a class="el" href="le__wifi_ap__interface_8h.html#a1ab6c2c710b61aa9b1abd30535702e38">le_wifiAp_AddNewEventHandler()</a></li>
+</ul>
+<pre class="fragment"><div class="line"><span class="comment">//--------------------------------------------------------------------------------------------------</span><span class="comment"></span></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * Handler for WiFi client changes</span></div><div class="line"><span class="comment"> *</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> myMsgHandler</div><div class="line">(</div><div class="line">    <a class="code" href="le__wifi_ap__interface_8h.html#aeac8ad63bcfc5ee984cdd86ec9f116d5">le_wifiAp_Event_t</a> event,<span class="comment"></span></div><div class="line"><span class="comment">        ///&lt; [IN]</span></div><div class="line"><span class="comment">        ///&lt; WiFi event to process</span></div><div class="line"><span class="comment"></span>    <span class="keywordtype">void</span> *contextPtr<span class="comment"></span></div><div class="line"><span class="comment">        ///&lt; [IN]</span></div><div class="line"><span class="comment">        ///&lt; Associated event context</span></div><div class="line"><span class="comment"></span>)</div><div class="line">{</div><div class="line">    <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"WiFi access point event received"</span>);</div><div class="line">    <span class="keywordflow">switch</span>(event)</div><div class="line">    {</div><div class="line">        <span class="keywordflow">case</span> <a class="code" href="le__wifi_ap__interface_8h.html#aeac8ad63bcfc5ee984cdd86ec9f116d5a77e1636cb334d7bdde04761d333ff284">LE_WIFIAP_EVENT_CLIENT_CONNECTED</a>:</div><div class="line">        {</div><div class="line">            <span class="comment">// Client connected to AP</span></div><div class="line">            <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"LE_WIFIAP_EVENT_CLIENT_CONNECTED"</span>);</div><div class="line">        }</div><div class="line">        <span class="keywordflow">break</span>;</div><div class="line"> </div><div class="line">        <span class="keywordflow">case</span> <a class="code" href="le__wifi_ap__interface_8h.html#aeac8ad63bcfc5ee984cdd86ec9f116d5a6d0e05c5fb1ec89d873b96dae320ca6e">LE_WIFIAP_EVENT_CLIENT_DISCONNECTED</a>:</div><div class="line">        {</div><div class="line">            <span class="comment">// Client disconnected from AP</span></div><div class="line">            <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"LE_WIFICLIENT_EVENT_DISCONNECTED"</span>);</div><div class="line">        }</div><div class="line">        <span class="keywordflow">break</span>;</div><div class="line"> </div><div class="line"> </div><div class="line">        <span class="keywordflow">default</span>:</div><div class="line">            <a class="code" href="le__log_8h.html#a353590f91b3143a7ba3a416ae5a50c3d">LE_ERROR</a>(<span class="stringliteral">"ERROR Unknown event %d"</span>, event);</div><div class="line">        <span class="keywordflow">break</span>;</div><div class="line">    }</div><div class="line">}</div><div class="line"> </div><div class="line"> </div><div class="line"><span class="comment">//--------------------------------------------------------------------------------------------------</span><span class="comment"></span></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * Tests the WiFi access point.</span></div><div class="line"><span class="comment"> *</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="comment">//--------------------------------------------------------------------------------------------------</span></div><div class="line"><span class="keywordtype">void</span> Testle_wifiApStart</div><div class="line">(</div><div class="line">    <span class="keywordtype">void</span></div><div class="line">)</div><div class="line">{</div><div class="line">    <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"Start Test WiFi access point"</span>);</div><div class="line"> </div><div class="line">    <span class="comment">// Add an handler function to handle message reception</span></div><div class="line">    HdlrRef=<a class="code" href="le__wifi_ap__interface_8h.html#a1ab6c2c710b61aa9b1abd30535702e38">le_wifiAp_AddNewEventHandler</a>(myMsgHandler, NULL);</div><div class="line"> </div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(HdlrRef != NULL);</div><div class="line"> </div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(LE_OK == <a class="code" href="le__wifi_ap__interface_8h.html#a0f29690f2a2d01157cc2d9e58d1d5536">le_wifiAp_SetSsid</a>(TEST_SSID, TEST_SSID_NBR_BYTES));</div><div class="line"> </div><div class="line">    Testle_setCredentials();</div><div class="line"> </div><div class="line">    <span class="keywordflow">if</span> (LE_OK == <a class="code" href="le__wifi_ap__interface_8h.html#ad21bdeabf6a8c923d246ef3c28ac42a0">le_wifiAp_Start</a>())</div><div class="line">    {</div><div class="line">        <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"Start OK"</span>);</div><div class="line"> </div><div class="line">        Testle_startDhcpServerAndbridgeConnection();</div><div class="line">    }</div><div class="line">    <span class="keywordflow">else</span></div><div class="line">    {</div><div class="line">        <a class="code" href="le__log_8h.html#a353590f91b3143a7ba3a416ae5a50c3d">LE_ERROR</a>(<span class="stringliteral">"Start ERROR"</span>);</div><div class="line">    }</div><div class="line"> </div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(LE_OK == <a class="code" href="le__wifi_ap__interface_8h.html#ae2d9ae8853b403f7778dcf74fb2002e6">le_wifiAp_SetIpRange</a>(HOST_IP, IP_RANGE_START, IP_RANGE_END));</div><div class="line">}</div></pre><!-- fragment --> <hr/>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
