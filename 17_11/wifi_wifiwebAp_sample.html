@@ -75,14 +75,16 @@ Use Web App</h1>
 <ol type="1">
 <li>Connect your target via USB.</li>
 <li>Check your targets IP on the USB interface with <em>ifconfig</em>.</li>
+<li>Run <code>cm data connect</code> to check that the right interface is configured for your target.</li>
 <li>Start the application wifiWebAp</li>
-<li>Open a webbrowser with the IP of your module <a href="http://NNN.NNN.NNN.NNN:8080">http://NNN.NNN.NNN.NNN:8080</a></li>
+<li>Open a web browser with the IP of your module <a href="http://NNN.NNN.NNN.NNN:8080">http://NNN.NNN.NNN.NNN:8080</a></li>
 <li>Set the desired parameters on the webpage and click the "Start WiFi AP" button.</li>
 <li>Wait while result page is generated (this will take 15-20 seconds).</li>
 <li>You can monitor the progression of the connection by looking at the logs.</li>
 <li>Once the message "Waiting for connections..." is displayed, you can try to connect to your WiFi AP.</li>
 <li>Connections/Disconnections are visible in the logs as well.</li>
 </ol>
+<dl class="section note"><dt>Note</dt><dd>Check with your module vendor to verify interface names before starting the app. (e.g.; wp85 interface is rmnet0 and wp76 interface is rmnet_data0)</dd></dl>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
 </div></div>
 <br clear="left"/>
