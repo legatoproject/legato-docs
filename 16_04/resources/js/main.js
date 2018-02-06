@@ -29,7 +29,7 @@ try {
     o.parentNode.insertBefore(t, o)
 }(window, document, 'ga', 'script');
 
-ga('create', 'UA-78024926-1', 'auto');
+ga('create', 'UA-99839286-1', 'auto');
 ga('send', 'pageview');
 
 
