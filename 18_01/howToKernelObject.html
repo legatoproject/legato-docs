@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Build and Install a Kernel Object  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_How_To.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="buildAppsConcepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a class="link-selected" href="howToMain.html">How To</a><a href="sampleApps.html">Sample Apps</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Build and Install a Kernel Object </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>Loadable kernel modules (.ko files) are object files that are used to extend the kernel of the Linux Distribution. They are used to provide drivers for new hardware like IoT expansion cards that have not been included in the Linux Distribution.</p>
+<p>This tutorial walks you through building a .ko file, bundling the kernel object with your Legato System and updating the Legato Runtime Environment. The benefit of this is that you can provide any drivers needed for your hardware with your applications and easily install the drivers on your target device without having to rebuild the Linux Distribution.</p>
+<p>The files that are used in this tutorial are located in <code>$LEGATO_ROOT/drivers/example</code> </p>
+<p>This tutorial is specific to building kernel objects on Sierra Wireless Modules. It references toolchains for the WP Series Modules and has been tested on both the WPX5XX and WP76XX modules.</p>
+<h1><a class="anchor" id="howToKernelObject_PreReq"></a>
+Pre-Requisites</h1>
+<p>This tutorial requires you to have:</p><ul>
+<li>Legato AF version 16.10.3 or newer installed on your dev machine and target device.</li>
+<li>The <a class="el" href="basicBuildToolchain.html">toolchain</a> associated with your Module and Linux Distribution installed on your dev machine.</li>
+<li>The source driver files for the IoT expansion card (.c files) or the pre-built kernel object (.ko file)</li>
+</ul>
+<dl class="section warning"><dt>Warning</dt><dd>This tutorial is designed to teach the software aspects of building, installing and loading drivers into the kernel using the Legato Application Framework. It does not focus on setting up or interfacing with specific hardware. It also does not cover writing or compiling source driver files for specific kernels. The source driver files must be compatible with the kernel on your target device.</dd></dl>
+<h1><a class="anchor" id="howToKernelObject_SetUp"></a>
+First Time Setup</h1>
+<p>If this is your first time building .ko files, you have to run the kernel build scripts that are used to compile your module on your dev machine; the script to build the objects is included in a directory in the toolchain. If you have installed the toolchain with Developer Studio or legato-spm these steps are already done for you.</p>
+<p><code>1</code>. Verify that you have installed the <a class="el" href="basicBuildToolchain.html">toolchain</a> for your specific target.</p>
+<p><code>2</code>. Add the following directory to your PATH: <code>/opt/swi/y17-ext/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi</code> </p>
+<pre class="fragment">$ export PATH=/opt/swi/y17-ext/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi:$PATH
+</pre><p><code>3</code>. Change directory to: <code>/opt/swi/y17-ext/sysroots/armv7a-vfp-neon-poky-linux-gnueabi/usr/src/kernel</code> </p>
+<pre class="fragment">$ cd /opt/swi/y17-ext/sysroots/armv7a-vfp-neon-poky-linux-gnueabi/usr/src/kernel
+</pre><p><code>4</code>. Take ownership of the files in the directory and run <code>make</code> <code>scripts</code>, when done return ownership to the root user.</p>
+<dl class="section note"><dt>Note</dt><dd>The root user does not know the path to the Legato compiler so file ownership must be temporarily transfered to yourself so that the scripts build properly and then given back when the script is completed.</dd></dl>
+<pre class="fragment">$ sudo chown -R $USER .
+$ ARCH=arm CROSS_COMPILE=arm-poky-linux-gnueabi- make scripts
+$ sudo chown -R root .
+</pre><dl class="section warning"><dt>Warning</dt><dd>The last step must be repeated every time that you install a new version of the toolchain or install a new toolchain for a different module/target.</dd></dl>
+<h1><a class="anchor" id="howToKernelObject_defFiles"></a>
+Configuring Def Files</h1>
+<p>To load the kernel object into the Legato Runtime Environment you must configure your app's <code>mdef</code> file to include the source files for the driver; next configure your target's sdef to include the driver at build time.</p>
+<p>If you have the source code driver files then your <a class="el" href="defFilesMdef.html">mdef</a> must include the <a class="el" href="defFilesMdef.html#defFilesMdef_sources">sources</a> section of the <a class="el" href="defFilesMdef.html">mdef</a>.</p>
+<p>Copy the source files into the directory that you will reference in your <code>mdef</code>.</p>
+<pre class="fragment"><div class="line">sources:</div><div class="line">{</div><div class="line">    example.c         <span class="comment">//the example.c file is in the same location as the example.mdef</span></div><div class="line">}</div></pre><!-- fragment --><dl class="section note"><dt>Note</dt><dd>If your kernel module sources needs any parameters or flags use the <a class="el" href="defFilesMdef.html#defFilesMdef_params">params</a> or <a class="el" href="defFilesMdef.html#defFilesMdef_flags">flags</a> sections of the <a class="el" href="defFilesMdef.html">Kernel Module Definition .mdef</a>.</dd></dl>
+<p>If you have a compiled binary kernel object that matches your kernel, then your <a class="el" href="defFilesMdef.html">mdef</a> must include the <a class="el" href="defFilesMdef.html#defFilesMdef_preBuilt">preBuilt</a> section of the <a class="el" href="defFilesMdef.html">mdef</a>.</p>
+<p>Example of a <a class="el" href="defFilesMdef.html#defFilesMdef_preBuilt">preBuilt</a> section in the <code>mdef:</code> </p>
+<pre class="fragment"><div class="line">preBuilt:</div><div class="line">{</div><div class="line">   ~/drivers/example/example.ko</div><div class="line">}</div></pre><!-- fragment --><p>The <code>kernelModules:</code> section in the  declares the kernel modules to be bundled and installed into the Runtime Environment.</p>
+<p>Example <a class="el" href="defFilesSdef.html#defFilesSdef_kernelModules">kernelModules</a> section in the defFilesSdef:</p>
+<pre class="fragment"><div class="line">kernelModules:</div><div class="line">{</div><div class="line">    ~/drivers/example/example.mdef</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="howToKernelObject_Building"></a>
+Building your System</h1>
+<p>Once you've set up your system to include the source driver files or binary .ko the next step is to build your update system by running <a class="el" href="basicBuildMake.html">make &lt;target&gt;</a>.</p>
+<dl class="section warning"><dt>Warning</dt><dd><code>make</code> <code>clean</code> must be run before making a build with a new .ko file or the .ko file will not build.</dd></dl>
+<p>Example of running make for a wp85: </p><pre class="fragment">$ make clean
+$ make wp85
+</pre><p>This will build the system update file and place it in the <code>build</code> directory under <code>$LEGATO_ROOT</code>. For example, if you <code>make</code> <code>wp85</code> then the update file will be called <code>system.wp85.update</code> and will be located in the <code>$LEGATO_ROOT/build/wp85</code> directory.</p>
+<p>You can also do a search for the .ko file to view the kernel object. </p><pre class="fragment">$ cd $LEGATO_ROOT/build/wp85
+$ find -name \*.ko
+</pre><p>Example output: </p><pre class="fragment">$ find -name \*.ko
+./system/staging/modules/example.ko
+./system/modules/example/example.ko
+./_staging_system.wp85.update/system/modules/example.ko
+</pre><dl class="section warning"><dt>Warning</dt><dd>The .ko file that is built is built for the specific Linux kernel that exists on your target machine. If the .ko is needed for other targets with a different models of module then the .ko file must be built using that target's toolchain.</dd></dl>
+<h1><a class="anchor" id="howToKernelObject_Installing"></a>
+Installing the System</h1>
+<p>Now that you have your <code></code>.update file you can use tools included in the Legato AF to install the update on your target. <a class="el" href="toolsHost_update.html">update</a> and <a class="el" href="toolsHost_instlegato.html">instlegato</a> will both update the Legato system on your target.</p>
+<dl class="section note"><dt>Note</dt><dd>If you wish to <a class="el" href="howToKernelObject.html#howToKernelObject_InstallingVerify">Verify the Update</a> with <code>logread</code>, you must set up the <code>logread</code> before installing the Legato system update.</dd></dl>
+<p>As long your build is in the normal build location (e.g.; $LEGATO_ROOT/build) then only the target's platform and the target's IP needs to be specified with using <code>instlegato</code>. If it it built to a different location then the full path to the <code></code>.update file must be provided.</p>
+<p>To access the Legato target management tools <code>bin/legs</code> or <code>source</code> <code>bin/configlegatoenv</code> must be run first. This step is not necessary if <code>bin/configlegatoenv</code> has been added to your bash profile.</p>
+<p>From the $LEGATO_ROOT directory: </p><pre class="fragment">$ bin/legs
+$ instlegato &lt;target's platform&gt; &lt;target's IP&gt;
+</pre><p>Example command and output: </p><pre class="fragment">$ bin/legs
+$ instlegato wp85 192.168.2.2
+Installing Legato system update pack build/wp85/system.wp85.update
+Applying update from file 'build/wp85/system.wp85.update' to device at address '192.168.2.2'.
+Unpacking package: 100% ++++++++++++++++++++++++++++++++++++++++++++++++++
+Applying update: 100% ++++++++++++++++++++++++++++++++++++++++++++++++++
+SUCCESS
+Done
+</pre><h2><a class="anchor" id="howToKernelObject_InstallingVerify"></a>
+Verify the Update</h2>
+<p>Depending on what your kernel object does there are a couple of ways to verify that it was successfully installed.</p>
+<h3><a class="anchor" id="howToKernelObject_InstallingVerify_legatoStatus"></a>
+legato status</h3>
+<p>To verify that your system was updated, from your target:</p>
+<pre class="fragment"># legato status
+</pre><p><code>legato</code> <code>status</code> should show that the systems installed has been incremented and that you have a good system and are currently running the new system. (As long as the <em>markKnownGood</em> threshold has not been reached)</p>
+<pre class="fragment"># legato status
+Systems installed:
+  19 [good]
+  20 [tried 1] &lt;-- current
+Legato framework is running.
+</pre><dl class="section warning"><dt>Warning</dt><dd>If there is a kernel mismatch (the .ko was built against a different kernel then what is installed on your target) then a rollback may be initiated and your Legato system will revert to the previous known good system. If this happens then you must rebuild the .ko files with the same kernel version as what is on your target. This should not happen if you are building your system with the source code driver files as long as the source code driver files are compatible with the target's kernel.</dd></dl>
+<h3><a class="anchor" id="howToKernelObject_InstallingVerify_lsmod"></a>
+lsmod</h3>
+<p><code>lsmod</code> (a Linux command) will display what kernel modules have been installed into the target's kernel.</p>
+<p>Example output of <code>lsmod:</code> </p><pre class="fragment"># lsmod
+    Tainted: G
+example 755 0 - Live 0xbf133000 (O)
+...
+</pre><dl class="section note"><dt>Note</dt><dd><code>lsmod</code> might report your kernel as "Tainted" if you are using an out-of-tree driver such as <code>example.ko</code>. The kernel is labeled "Tainted" if it is not in a state that is supported by the Linux Community, but can be safely ignored in this case.</dd></dl>
+<h3><a class="anchor" id="howToKernelObject_InstallingVerify_logread"></a>
+logread</h3>
+<p>Following the log files as the system update is installed will display the modules being loaded into the system.</p>
+<p>Example of greping for the example.ko being loaded on the system; this needs to be setup before you install the system update with <code>instlegato</code>. SSH to the target and run <code>logread</code> (a Linux tool):</p>
+<pre class="fragment"># logread -f | grep "example"      # example should be replaced with what your .ko file is called
+</pre><p>On your dev machine install the updated Legato system:</p>
+<p>Example command and output: </p><pre class="fragment">$ instlegato wp85 192.168.2.2
+Installing Legato system update pack build/wp85/system.wp85.update
+Applying update from file 'build/wp85/system.wp85.update' to device at address '192.168.2.2'.
+Unpacking package: 100% ++++++++++++++++++++++++++++++++++++++++++++++++++
+Applying update: 100% ++++++++++++++++++++++++++++++++++++++++++++++++++
+SUCCESS
+Done
+</pre><p>On the target you should be able to see something like the following message in the logs:</p>
+<pre class="fragment">Legato:  INFO | supervisor[1956]/supervisor T=main | kernelModules.c ModuleInsert() 285 | New kernel module 'example'
+</pre><h1><a class="anchor" id="howToKernelObject_CheckKernel"></a>
+Verifying the Kernel Version</h1>
+<p>If the kernel module does not show in the list of <code>lsmod</code> it means that it was not successfully loaded onto your target. The most common cause of this is that your toolchain version and firmware version are using different kernels. It is very important to make sure you are building your kernel modules with the same version of toolchain that matches the firmware on your device.</p>
+<p>The following command will grep for the kernel version of the kernel module: </p><pre class="fragment"># strings /path/to/kernel/object/example.ko |grep vermagic
+</pre><p>Example of using grep on example.ko: </p><pre class="fragment"># strings /legato/systems/current/modules/example.ko |grep vermagic
+vermagic=3.14.29ltsi-961ca71325_ab5094eade preempt mod_unload ARMv7
+__UNIQUE_ID_vermagic0
+__UNIQUE_ID_vermagic0
+</pre><p>To find the kernel version that your target is using: </p><pre class="fragment"># uname -a
+</pre><p>Example of finding the kernel on a target: </p><pre class="fragment"># uname -a
+Linux swi-mdm9x15 3.14.29ltsi-961ca71325_ab5094eade #2 PREEMPT Thu Apr 27 02:17:10 PDT 2017 armv7l GNU/Linux
+</pre><p>In this example both kernels are version <b>3.14.29ltsi-961ca71325_ab5094eade</b>, if they are different at all the kernel module or system will fail to load and the system may rollback to the previous known good system.</p>
+<dl class="section note"><dt>Note</dt><dd>Connecting to the console port of your target and using <code>logread</code> will let you view the logs as your target loads. This is helpful to view errors in real time or check if the target is rolling back to the previous system.</dd></dl>
+<p>To resolve this download and install the toolchain that matches the version of your target or update your firmware to match the version of the toolchain that you are using.</p>
+<p>Running <code>fwupdate</code> <code>query</code> on your target will display the current firmware version:</p>
+<p>Example of running fwupdate: </p><pre class="fragment"># fwupdate query
+Connecting to service ...
+Firmware Version: SWI9X15Y_07.12.09.00 r34123 CARMD-EV-FRMWR1 2017/04/26 23:34:19
+Bootloader Version: SWI9X15Y_07.12.09.00 r34123 CARMD-EV-FRMWR1 2017/04/26 23:34:19
+Linux Version: 3.14.29ltsi-961ca71325_ab5094eade #2 PREEMPT Thu Apr 27 02:17:10 PDT 2017
+</pre> </div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
