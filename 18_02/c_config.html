@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Config Tree API  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Config Tree API </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><a class="el" href="le__cfg__interface_8h.html">API Reference</a> <br/>
+</p>
+<p>The Config Tree is a non-volatile noSQL database that stores configuration values for apps. By default each app is given read access to a single tree that has the same name as the app. Any other access permissions (read access for any other tree, or write access to any tree at all) must be explicitly granted in the app's <a class="el" href="defFilesAdef.html#defFilesAdef_requiresConfigTree">.adef file</a>.</p>
+<p>Trees are created automatically the first time that they are accessed by an app or a component. The apps tree will be named the same as the name of the app. It is possible for apps to be given access to other apps tree's or for multiple apps to share one tree.</p>
+<dl class="section note"><dt>Note</dt><dd>If your app is running as root then the configuration will get added to the System Tree by default. System utilities also use the Config Tree and store their configurations in the <code>system</code> tree.</dd></dl>
+<p>Apps are able to search over the tree for data, although it's generally expected that the location will be known to the app and that the app will point to the right node to retrieve the value.</p>
+<p>More on the <a class="el" href="basicConfig.html">Config Strategy</a> for the Legato AF.</p>
+<h1><a class="anchor" id="cfg_Overview"></a>
+Overview</h1>
+<p>The tree is broken down into stems and leaves.</p>
+<p>A stem is a node that has at least one child node. A leaf has no children and holds a value.</p>
+<pre class="fragment"><div class="line">+tree</div><div class="line">    |</div><div class="line">    +--stem</div><div class="line">    |   |</div><div class="line">    |   +--leaf (value)</div><div class="line">    |</div><div class="line">    +-stem</div><div class="line">       |</div><div class="line">       +--leaf (value)</div><div class="line">       |</div><div class="line">       +--leaf (value)</div></pre><!-- fragment --><p>Paths in the tree are traditional Unix style paths and each node is separated by a /:</p>
+<pre class="fragment"><div class="line">/stem/stem/leaf </div></pre><!-- fragment --><p>If no app is specified as the root of the tree, then the app will search in it's own tree. To get to another tree reference that tree followed by a colon.</p>
+<pre class="fragment">/path/to/my/tree/value                   # references the default apps tree
+secondTree:/path/to/secondTree/value    # references the second tree
+</pre><dl class="section note"><dt>Note</dt><dd>It's recommended to store anything complex using stems and leaves, this enhances readability and debugging. It also helps to sidestep nasty cross platform alignment issues.</dd></dl>
+<p>Apps must explicitly give permissions to other apps before they can access their Config Tree data. This is done in the <a class="el" href="defFilesAdef.html#defFilesAdef_requiresConfigTree">.adef file</a>. Each transaction is only able to iterate over one tree at a time, each tree that you want to read or write to must be created as a separate transaction.</p>
+<p>The Config Tree supports storing the following types of data and each has their own get/set function as well as a quick set/get function (see <a class="el" href="c_config.html#cfg_quick">Quick Read/Writes</a>):</p><ul>
+<li>string</li>
+<li>signed integer</li>
+<li>boolean</li>
+<li>64bit floating point</li>
+<li>empty values.</li>
+</ul>
+<p>Each transaction has a global timeout setting (default is 30s). The configuration is located in the System Tree and may be configured with the <a class="el" href="toolsTarget_config.html">config</a> target tool.</p>
+<pre class="fragment">config /configTree/transactionTimeout 10 int         #changes the timeout to 10s
+</pre><h1><a class="anchor" id="cfg_trans"></a>
+Transactions</h1>
+<h2><a class="anchor" id="cfg_transConcepts"></a>
+Key Transaction Concepts</h2>
+<ul>
+<li>All transactions are sent to a queue and processed in a sequence.</li>
+<li>Only one write transaction may be active at a time and subsequent writes are queued until the first is finished processing.</li>
+<li>Transactions may contain multiple read or write requests within a single transaction.</li>
+<li>Multiple read transactions may be processed while a write transaction is active.</li>
+<li>Quick(implicit) read/writes can be created and are also sequentially queued.</li>
+</ul>
+<h2><a class="anchor" id="cfg_createTrans"></a>
+Create Transactions</h2>
+<p>To make a change to the tree, you must Create a write transaction, call one or more Set functions, and Commit the transaction. If a write transaction is canceled instead of committed, then the changes will be discarded and the tree will remain unchanged.</p>
+<p>To read from a tree without making any changes, you should:</p><ul>
+<li>create a read transaction,</li>
+<li>call the Get functions,</li>
+<li>cancel the transaction when finished.</li>
+</ul>
+<p>You could also:</p><ul>
+<li>create a write transaction,</li>
+<li>perform only Get operations,</li>
+<li>cancel the transaction</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>It's safer to use a read transaction when there is no intention to change the tree.</dd></dl>
+<p>Transactions must not be kept open for extended periods of time. If a transaction is kept open for longer than the transaction time limit (default is 30 seconds), then the Config Tree will cancel the transaction and drop the connection to the offending client (most likely causing the client process to terminate).</p>
+<table class="doxtable">
+<tr>
+<th>Function </th><th>Action  </th></tr>
+<tr>
+<td><code><a class="el" href="le__cfg__interface_8h.html#ae70663c8b4bd50327bb3771acb694c18">le_cfg_CreateReadTxn()</a></code> </td><td>Opens the transaction </td></tr>
+<tr>
+<td><code><a class="el" href="le__cfg__interface_8h.html#af5f10497ed85d2e647b41ca460228483">le_cfg_CancelTxn()</a></code> </td><td>Closes a read/write transaction and does not write it to the tree </td></tr>
+<tr>
+<td><code><a class="el" href="le__cfg__interface_8h.html#a9825af4d2e007d82f4385ee444a348ef">le_cfg_CommitTxn()</a></code> </td><td>Closes a write transaction and queues it for commit </td></tr>
+</table>
+<h2><a class="anchor" id="cfg_transNavigate"></a>
+Navigating the Tree</h2>
+<p>To move around within the Tree you can move directly to a specific node(leaf or stem) and then do your read or write from that point. Functions have been added to easily navigate through Tree. All nodes can be referenced either by their absolute or relative paths.</p>
+<table class="doxtable">
+<tr>
+<th>Function </th><th>Action  </th></tr>
+<tr>
+<td><code><a class="el" href="le__cfg__interface_8h.html#af85e0663dcd80f5ff262de7c6adbf607">le_cfg_GoToNode()</a></code> </td><td>Moves to the location specified </td></tr>
+<tr>
+<td><code><a class="el" href="le__cfg__interface_8h.html#ad7d7debfc7c78b3a8b3908fcbc1a5966">le_cfg_GoToParent()</a></code> </td><td>Moves to the parent of the current node (moves up the Tree) </td></tr>
+<tr>
+<td><code><a class="el" href="le__cfg__interface_8h.html#abb7ab8d52ca9bf5e0977341e18740079">le_cfg_GoToFirstChild()</a></code> </td><td>Moves to the first node from the current location (moves down the Tree) </td></tr>
+<tr>
+<td><code><a class="el" href="le__cfg__interface_8h.html#aafcdb4bf55c14d960b7d16bb05af4bbe">le_cfg_GoToNextSibling()</a></code> </td><td>Moves to the next node on the same level as the current node (moves laterally) </td></tr>
+</table>
+<h2><a class="anchor" id="cfg_transGetInfo"></a>
+Retrieving Node Information</h2>
+<p>The Config tree also contains functions to help you identify your current location in the tree, what node you are currently pointing at, and what type of data is contained in the current node.</p>
+<table class="doxtable">
+<tr>
+<th>Function </th><th>Action  </th></tr>
+<tr>
+<td><code><a class="el" href="le__cfg__interface_8h.html#a37174a5934ea2ad5774231f0c8e7c316">le_cfg_GetPath()</a></code> </td><td>Gets the location of where you are in the Tree </td></tr>
+<tr>
+<td><code><a class="el" href="le__cfg__interface_8h.html#a103715312749704c5ab41755bc904fa9">le_cfg_GetNodeType()</a></code> </td><td>Gets the data type of the node where you are currently located </td></tr>
+<tr>
+<td><code><a class="el" href="le__cfg__interface_8h.html#a4f1604038fde1f5d378920ec7e3c7254">le_cfg_GetNodeName()</a></code> </td><td>Gets the name of the node where you are in the Tree (does not include the path) </td></tr>
+</table>
+<h2><a class="anchor" id="cfg_read"></a>
+Read Transactions</h2>
+<p>Each data type has it's own get function to read a value from a node within the Tree.</p>
+<table class="doxtable">
+<tr>
+<th>Function </th><th>Action  </th></tr>
+<tr>
+<td><code><a class="el" href="le__cfg__interface_8h.html#ac8917f78c8434c2418d7612706d0c1a9">le_cfg_GetString()</a></code> </td><td>Reads the string's value </td></tr>
+<tr>
+<td><code><a class="el" href="le__cfg__interface_8h.html#adf09647cee8da04d1059e2c4853d0f56">le_cfg_GetInt()</a></code> </td><td>Reads the integer's value </td></tr>
+<tr>
+<td><code><a class="el" href="le__cfg__interface_8h.html#afdb5cc5f7cabc3d3783b0836069868e0">le_cfg_GetFloat()</a></code> </td><td>Reads the floating point value </td></tr>
+<tr>
+<td><code><a class="el" href="le__cfg__interface_8h.html#a41c400e8c5d74ff7068885fac0ea241c">le_cfg_GetBool()</a></code> </td><td>Reads the boolean value </td></tr>
+</table>
+<p>To perform a read from a Tree, we need to open a transaction, move to the node that you want to read from, read the node and then cancel the transaction.</p>
+<p>Sample read transaction (with error checking):</p>
+<pre class="fragment"><div class="line"><a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> GetIp4Static  <span class="comment">//reads the IP address values from the Config Tree</span></div><div class="line">(</div><div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span>* interfaceNamePtr,</div><div class="line">    <span class="keywordtype">char</span>* ipAddrPtr,</div><div class="line">    <span class="keywordtype">size_t</span> ipAddrSize,</div><div class="line">    <span class="keywordtype">char</span>* netMaskPtr,</div><div class="line">    <span class="keywordtype">size_t</span> netMaskSize</div><div class="line">)</div><div class="line">{</div><div class="line">    <span class="comment">// Change current tree position to the base ip4 node.</span></div><div class="line">    <span class="keywordtype">char</span> nameBuffer[<a class="code" href="le__cfg__interface_8h.html#aea00ee500b7beccc4bf46ab637190a55">LE_CFG_STR_LEN_BYTES</a>] = { 0 };</div><div class="line"> </div><div class="line">    <span class="comment">// Returns errors for out of bounds exceptions</span></div><div class="line">    <span class="keywordtype">int</span> r = snprintf(nameBuffer, <span class="keyword">sizeof</span>(nameBuffer), <span class="stringliteral">"/system/%s/ip4"</span>, interfaceNamePtr);</div><div class="line">    <span class="keywordflow">if</span> (r &lt; 0)</div><div class="line">    {</div><div class="line">        <span class="keywordflow">return</span> <a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86cac409634423b6b1ef09643529f6224798">LE_FAULT</a>;</div><div class="line">    }</div><div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (r &gt;= <span class="keyword">sizeof</span>(nameBuffer))</div><div class="line">    {</div><div class="line">        <span class="keywordflow">return</span> <a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86cae42c9d785827fc3a9c47fb55baca7879">LE_OVERFLOW</a>;</div><div class="line">    }</div><div class="line"> </div><div class="line">    <span class="comment">// Open up a read transaction on the Config Tree.</span></div><div class="line">    <a class="code" href="le__cfg__interface_8h.html#a646829934bb23a878e19ade2c3e01eba">le_cfg_IteratorRef_t</a> iteratorRef = <a class="code" href="le__cfg__interface_8h.html#ae70663c8b4bd50327bb3771acb694c18">le_cfg_CreateReadTxn</a>(nameBuffer);</div><div class="line"> </div><div class="line">    <span class="keywordflow">if</span> (<a class="code" href="le__cfg__interface_8h.html#a4a26378faf84f4d95532c359a2d9e0c2">le_cfg_NodeExists</a>(iteratorRef, <span class="stringliteral">""</span>) == <span class="keyword">false</span>)</div><div class="line">    {</div><div class="line">        <a class="code" href="le__log_8h.html#a0201b2f60ee0e945479f91e181bf04b6">LE_WARN</a>(<span class="stringliteral">"Configuration not found."</span>);</div><div class="line">        <a class="code" href="le__cfg__interface_8h.html#af5f10497ed85d2e647b41ca460228483">le_cfg_CancelTxn</a>(iteratorRef);</div><div class="line">        <span class="keywordflow">return</span> <a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86ca77a7505b0443df2fa1bab375c7267637">LE_NOT_FOUND</a>;</div><div class="line">    }</div><div class="line"> </div><div class="line">    <span class="comment">// Returns the IP Address value stored in the Config Tree.</span></div><div class="line">    <a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> result = <a class="code" href="le__cfg__interface_8h.html#ac8917f78c8434c2418d7612706d0c1a9">le_cfg_GetString</a>(iteratorRef, <span class="stringliteral">"addr"</span>, ipAddrPtr, ipAddrSize, <span class="stringliteral">""</span>);</div><div class="line">    <span class="keywordflow">if</span> (result != LE_OK)</div><div class="line">    {</div><div class="line">        <a class="code" href="le__cfg__interface_8h.html#af5f10497ed85d2e647b41ca460228483">le_cfg_CancelTxn</a>(iteratorRef);</div><div class="line">        <span class="keywordflow">return</span> result;</div><div class="line">    }</div><div class="line"> </div><div class="line">    <span class="comment">// Returns the NetMask value stored in the Config Tree.</span></div><div class="line">    result = <a class="code" href="le__cfg__interface_8h.html#ac8917f78c8434c2418d7612706d0c1a9">le_cfg_GetString</a>(iteratorRef, <span class="stringliteral">"mask"</span>, netMaskPtr, netMaskSize, <span class="stringliteral">""</span>);</div><div class="line">    <span class="keywordflow">if</span> (result != LE_OK)</div><div class="line">    {</div><div class="line">        <a class="code" href="le__cfg__interface_8h.html#af5f10497ed85d2e647b41ca460228483">le_cfg_CancelTxn</a>(iteratorRef);</div><div class="line">        <span class="keywordflow">return</span> result;</div><div class="line">    }</div><div class="line"> </div><div class="line">    <span class="comment">// Close the transaction and return success.</span></div><div class="line">    <a class="code" href="le__cfg__interface_8h.html#af5f10497ed85d2e647b41ca460228483">le_cfg_CancelTxn</a>(iteratorRef);</div><div class="line"> </div><div class="line">    <span class="keywordflow">return</span> <a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86ca5066a4bcec691c6b67843b8f79656422">LE_OK</a>;</div><div class="line">}</div></pre><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Any writes done will be discarded at the end of the read transaction.</dd></dl>
+<h2><a class="anchor" id="cfg_write"></a>
+Write Transactions</h2>
+<p>Each data type has it's own set function, to write a value to a node within the Tree. Before you are able to write to a tree, permissions must be set in the apps <a class="el" href="defFilesAdef.html#defFilesAdef_requiresConfigTree">.adef's requires section</a> or with the <a class="el" href="toolsTarget_config.html">config</a> tool.</p>
+<table class="doxtable">
+<tr>
+<th>Function </th><th>Action  </th></tr>
+<tr>
+<td><code><a class="el" href="le__cfg__interface_8h.html#a8f31a75f9140825c7ba9b8c0922dcfc1">le_cfg_SetString()</a></code> </td><td>Writes the string's value </td></tr>
+<tr>
+<td><code><a class="el" href="le__cfg__interface_8h.html#a8b76404cf41ab83d5136ac95e9361146">le_cfg_SetInt()</a></code> </td><td>Writes the integer's value </td></tr>
+<tr>
+<td><code><a class="el" href="le__cfg__interface_8h.html#a918ac92140db2cd6d5254d24f2b0238a">le_cfg_SetFloat()</a></code> </td><td>Writes the floating point value </td></tr>
+<tr>
+<td><code><a class="el" href="le__cfg__interface_8h.html#aae21ad3f9372ae47880e028981acc0a5">le_cfg_SetBool()</a></code> </td><td>Writes the boolean value </td></tr>
+</table>
+<p>To perform a write to a Tree, we need to open a transaction, move to the node that you want to write to, write to the node and then commit the transaction.</p>
+<p>Sample write transaction (with error checking):</p>
+<pre class="fragment"><div class="line"><span class="keywordtype">void</span> SetIp4Static</div><div class="line">(</div><div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span>* interfaceNamePtr,</div><div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span>* ipAddrPtr,</div><div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span>* netMaskPtr</div><div class="line">)</div><div class="line">{</div><div class="line">    <span class="comment">// Change current tree position to the base ip4 node.</span></div><div class="line">    <span class="keywordtype">char</span> nameBuffer[<a class="code" href="le__cfg__interface_8h.html#aea00ee500b7beccc4bf46ab637190a55">LE_CFG_STR_LEN_BYTES</a>] = { 0 };</div><div class="line"> </div><div class="line">    <span class="keywordtype">int</span> r = snprintf(nameBuffer, <span class="keyword">sizeof</span>(nameBuffer), <span class="stringliteral">"/system/%s/ip4"</span>, interfaceNamePtr);</div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>((r &gt;= 0) &amp;&amp; (r &lt; <span class="keyword">sizeof</span>(nameBuffer));</div><div class="line"> </div><div class="line">    <span class="comment">// Create a write transaction so that we can update the tree.</span></div><div class="line">    <a class="code" href="le__cfg__interface_8h.html#a646829934bb23a878e19ade2c3e01eba">le_cfg_IteratorRef_t</a> iteratorRef = <a class="code" href="le__cfg__interface_8h.html#a5a263340159319b01bb64e32341a7786">le_cfg_CreateWriteTxn</a>(nameBuffer);</div><div class="line"> </div><div class="line">    <a class="code" href="le__cfg__interface_8h.html#a8f31a75f9140825c7ba9b8c0922dcfc1">le_cfg_SetString</a>(iteratorRef, <span class="stringliteral">"addr"</span>, ipAddrPtr);</div><div class="line">    <a class="code" href="le__cfg__interface_8h.html#a8f31a75f9140825c7ba9b8c0922dcfc1">le_cfg_SetString</a>(iteratorRef, <span class="stringliteral">"mask"</span>, netMaskPtr);</div><div class="line"> </div><div class="line">    <span class="comment">// Commit the transaction to make sure these new settings get written to the tree.</span></div><div class="line">    <a class="code" href="le__cfg__interface_8h.html#a9825af4d2e007d82f4385ee444a348ef">le_cfg_CommitTxn</a>(iteratorRef);</div><div class="line">}</div></pre><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Creating write transactions creates a temporary working copy of the tree for use within the transaction. All read transactions running in the meantime see the committed state, without any of the changes that have been made within the write transaction.</dd></dl>
+<h2><a class="anchor" id="cfg_transDelete"></a>
+Deleting a Node</h2>
+<p>You can also delete a node from the tree. A word of caution as deleting a node will automatically delete all children nodes as well.</p>
+<table class="doxtable">
+<tr>
+<th>Function </th><th>Action  </th></tr>
+<tr>
+<td><code><a class="el" href="le__cfg__interface_8h.html#ad825e1c209d5cea5a008d723732d99cf">le_cfg_DeleteNode()</a></code> </td><td>Deletes the node and all children </td></tr>
+</table>
+<h1><a class="anchor" id="cfg_quick"></a>
+Quick Read/Writes</h1>
+<p>Another option is to perform quick read/write which implicitly wraps functions with in an internal transaction. This is ideal if all you need to do is read or write some simple values to the default app tree.</p>
+<p>The quick reads and writes work almost identically to the transactional version except quick reads don't explicitly take an iterator object. The quick functions internally use an implicit transaction. This implicit transaction wraps one get or set, and does not protect your code from other activity in the system.</p>
+<p>Because quick read/write functions don't get created within a transaction, there is no option to traverse to a specific node. All values that are read or written must be referenced from the root of the tree.</p>
+<p>A quick delete example:</p>
+<pre class="fragment"><div class="line"><span class="keywordtype">void</span> ClearIpInfo</div><div class="line">(</div><div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span>* interfaceNamePtr</div><div class="line">)</div><div class="line">{</div><div class="line">    <span class="keywordtype">char</span> pathBuffer[MAX_CFG_STRING] = { 0 };</div><div class="line"> </div><div class="line">    <span class="comment">// Removes the node from the tree.</span></div><div class="line">    snprintf(pathBuffer, <span class="keyword">sizeof</span>(pathBuffer), <span class="stringliteral">"/system/%s/ip4/"</span>, interfaceNamePtr);</div><div class="line">    <a class="code" href="le__cfg__interface_8h.html#aed55baa6230a9f4dbaf2ab866df8498f">le_cfg_QuickDeleteNode</a>(pathBuffer);</div><div class="line">}</div></pre><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>Because each quick function is independent, there's no guarantee of consistency between them. If another process changes one of the values while you read/write the other, the two values could be read out of sync.</dd></dl>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

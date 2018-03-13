@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>AirVantage 1.0 to 2.0 Migration  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">AirVantage 1.0 to 2.0 Migration </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>AirVantage Connector 2.0 changes the way that the Legato AF connects to the AirVantage Cloud service.</p>
+<h1><a class="anchor" id="avMigration_Comparison"></a>
+Comparison of Changes</h1>
+<p>The following are a comparison of high level changes within AirVantage. For the complete description of the new AirVantage 2.0 features see <a class="el" href="c_le_avc.html">AirVantage Connector API</a>.</p>
+<table class="doxtable">
+<tr>
+<th>AVC 1.0 </th><th>AVC 2.0  </th></tr>
+<tr>
+<td>Asset model defined in <code></code>.cdef </td><td>Asset model defined in code on the fly </td></tr>
+<tr>
+<td>AssetData Resource paths are LWM2M standard formatted </td><td>AssetData Resource paths are Unix Path Formatted </td></tr>
+<tr>
+<td>AssetData Permissions are write only </td><td>AssetData Permissions are read/write allowing dynamic updates </td></tr>
+<tr>
+<td>Authentication Failures are retried immediately </td><td>Authentication failures are retried 2s later </td></tr>
+<tr>
+<td>Device reconnects in 20s after a FOTA update </td><td>No device reconnection, Apps can initiate the connection. </td></tr>
+<tr>
+<td>TimeSeries resources are part of AssetData </td><td>TimeSeries resources can be used separate from Asset Data </td></tr>
+<tr>
+<td>TimeSeries data points can only be pushed one at a time </td><td>TimeSeries can accommodate multiple data points pushed and acknowledge at one time </td></tr>
+</table>
+<h1><a class="anchor" id="avMigration_Migration"></a>
+Migrating from AVC 1.0 to AVC 2.0</h1>
+<p>AVC 1.0 configurations are automatically migrated to AVC 2.0 when Legato AF 17.05+ is upgraded on your target.</p>
+<p>To re-import AVC 1.0 configuration again (if there are any issues) then the re-import can be done by removing the file (/data/le_fs/avc/config/isImported).</p>
+<pre class="fragment"># rm -rf /data/le_fs/avc/config/isImported
+</pre><h1><a class="anchor" id="avMigration_AssetData"></a>
+Asset Data Models</h1>
+<p>AirVantage 2.0 now supports dynamic asset data models, meaning that you no longer need to set the model in your control app's <code></code>.cdef at build time. Now you are able to define and update the model dynamically at compile time. You can now create get or set jobs for your assets from the AirVantage server.</p>
+<p>In AVC 2.0 system data (assets) are dynamically created/assigned on the fly and are identified by their unique resource paths (e.g., /myApp/Room/Kitchen/Temperature). (e.g., Calling the <code>le_avdata_CreateResource</code>(/myApp/Room/Kitchen/Temperature) will create a new asset.)</p>
+<dl class="section note"><dt>Note</dt><dd>the assets section in the .cdef file has been removed and assets can no longer be defined through the .cdef. To add asset data to the app model, the manifest.app must be hand edited.</dd></dl>
+<h2><a class="anchor" id="avMigration_AssetDataDataModel"></a>
+Data Model</h2>
+<p>There is no longer a need to create a data model and the section has been removed from the <code></code>.cdef. You are now able to call functions to work with variables, settings, and commands.</p>
+<h2><a class="anchor" id="avMigration_AssetDataCommand"></a>
+Command Arguments</h2>
+<p>In AVC 2.0 commands with arguments are able to be used, whereas we do not have such provision in AVC 1.0.</p>
+<p>See <a href="https://doc.airvantage.net/av/reference/cloud/API/API-System-v1/">AirVantage System</a> and click on Applicative Command to find more details on sending commands from AirVantage.</p>
+<h2><a class="anchor" id="avMigration_AssetDataResourcePaths"></a>
+Resource Paths</h2>
+<p>The resource paths are now formatted in the traditional *nix path standard, instead of the LWM2M standard.</p>
+<p>AVC 1.0 </p><pre class="fragment">le_${APP_NAME}.1000.0.0
+</pre><p>AVC 2.0 </p><pre class="fragment">/myApp/Room/Kitchen/Temperature
+</pre><h1><a class="anchor" id="avMigration_TimeSeries"></a>
+Time Series</h1>
+<p>TimeSeries provides the ability to collect an app data set periodically, store the data locally, and then send all data to the server based on a specified trigger event (e.g., collect driving behavior during a trip, and send all data only when the car is parked).</p>
+<p>To use a TimeSeries you can push the changes within your App, TimeSeries no longer depends on the asset that were defined in the <code>Component.cdef</code>.</p>
+<p>There is now no need to turn on the observe function before pushing TimeSeries data to the AirVantage Server.</p>
+<p>Example of pushing data to the AirVantage server:</p>
+<pre class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> PushCallbackHandler</div><div class="line">(</div><div class="line">     <a class="code" href="le__avdata__interface_8h.html#a03e16db57b2114699db0700c32e7bb78">le_avdata_PushStatus_t</a> status,</div><div class="line">     <span class="keywordtype">void</span>* contextPtr</div><div class="line"> )</div><div class="line"> {</div><div class="line">     <span class="keywordflow">if</span> (status == LE_AVDATA_SENT_SUCCESS)</div><div class="line">     {</div><div class="line">         <span class="comment">// data pushed successfully</span></div><div class="line">     }</div><div class="line"> }</div><div class="line"> </div><div class="line"> <span class="keyword">static</span> <span class="keywordtype">void</span> SendData()</div><div class="line"> {</div><div class="line">     <span class="keyword">struct </span>timeval tv;</div><div class="line">     uint64_t utcMilliSec;</div><div class="line">     <a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> result;</div><div class="line"> </div><div class="line">     <a class="code" href="le__avdata__interface_8h.html#abded4f6f1dbe80988e140fdc8df4a218">le_avdata_RecordRef_t</a> recRef = <a class="code" href="le__avdata__interface_8h.html#a49d63022c31b5b80ee3538e490346324">le_avdata_CreateRecord</a>();</div><div class="line"> </div><div class="line">     gettimeofday(&amp;tv, NULL);</div><div class="line">     utcMilliSec = (uint64_t)(tv.tv_sec) * 1000 + (uint64_t)(tv.tv_usec) / 1000; <span class="comment">// get current time</span></div><div class="line">     result = <a class="code" href="le__avdata__interface_8h.html#a6bfbffae6b12865d655f79d5e35c1363">le_avdata_RecordFloat</a>(recRef, <span class="stringliteral">"speed"</span>, 0.08, utcMilliSec);</div><div class="line"> </div><div class="line">     <span class="keywordflow">if</span> (result == <a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86ca5066a4bcec691c6b67843b8f79656422">LE_OK</a>)</div><div class="line">     {</div><div class="line">        <a class="code" href="le__avdata__interface_8h.html#a0bca8b820b8175e11ad693582fc7f7b5">le_avdata_PushRecord</a>(recRef, PushCallbackHandler, NULL);</div><div class="line">     }</div><div class="line"> </div><div class="line">     <a class="code" href="le__avdata__interface_8h.html#a01949472601455ea064bdfe11cbe5dda">le_avdata_DeleteRecord</a>(recRef);</div><div class="line"> }</div></pre><!-- fragment --> </div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>CRC32 API  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="buildAppsConcepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">CRC32 API </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><a class="el" href="le__crc_8h.html">API Reference</a></p>
+<hr/>
+<p>This module provides APIs for computing CRC of a binary buffer.</p>
+<p>CRC (Cyclic Redundancy Check) are used to verify the integrity of data, like file, messages, etc...</p>
+<h1><a class="anchor" id="Crc32"></a>
+Computing a CRC32</h1>
+<ul>
+<li><code><a class="el" href="le__crc_8h.html#a2e867355a0af799bf9093f63878bd001">le_crc_Crc32()</a></code> - Compute the CRC32 of a memory buffer</li>
+</ul>
+<p>The CRC32 is computed by the function <a class="el" href="le__crc_8h.html#a2e867355a0af799bf9093f63878bd001">le_crc_Crc32</a>. It takes a base buffer address, a length and a CRC32. When the CRC32 is expected to be first computed, the value <a class="el" href="le__crc_8h.html#af0b0bb86c0a8cb178f414d01bb08ce37">LE_CRC_START_CRC32</a> needs to be set as crc32 value.</p>
+<dl class="section note"><dt>Note</dt><dd>It is possible to compute a "global" CRC32 of a huge amount of data by splitting into small blocks and continue computing the CRC32 on each one.</dd></dl>
+<p>This code compute the whole CRC32 of amount of data splitted into an array of small blocks: </p><pre class="fragment"><div class="line"><span class="preprocessor">#define MAX_BLOCKS 4  // Maximum number of blocks</span></div><div class="line"> </div><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line">{</div><div class="line">    <span class="keywordtype">size_t</span>   blockSize;  <span class="comment">// size of the block</span></div><div class="line">    uint8_t *blockPtr;   <span class="comment">// pointer of the data</span></div><div class="line">}</div><div class="line">block_t;</div><div class="line"> </div><div class="line">uint32_t ComputeArrayCRC32</div><div class="line">(</div><div class="line">    block_t blockArray[]</div><div class="line">)</div><div class="line">{</div><div class="line">    uint32_t crc = <a class="code" href="le__crc_8h.html#af0b0bb86c0a8cb178f414d01bb08ce37">LE_CRC_START_CRC32</a>;  <span class="comment">// New CRC initialized</span></div><div class="line">    <span class="keywordtype">int</span> iBlock;</div><div class="line"> </div><div class="line">    <span class="keywordflow">for</span> (iBlock = 0; iBlock &lt; MAX_BLOCKS; iBlock++)</div><div class="line">    {</div><div class="line">        <span class="keywordflow">if</span> (blockArray[iBlock].blockPtr)</div><div class="line">        {</div><div class="line">            crc = <a class="code" href="le__crc_8h.html#a2e867355a0af799bf9093f63878bd001">le_crc_Crc32</a>(blockArray[iBlock].blockPtr,</div><div class="line">                               blockArray[iBlock].blockSize,</div><div class="line">                               crc);</div><div class="line">        }</div><div class="line">    }</div><div class="line">    <span class="keywordflow">return</span> crc;</div><div class="line">}</div></pre><!-- fragment --><hr/>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
