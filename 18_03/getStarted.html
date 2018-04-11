@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Get Started  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Get_Started.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a class="link-selected" href="getStarted.html">Get Started</a><a href="buildAppsConcepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Get Started </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>Welcome to the Legato Application Framework. This getting start section will will walk you through</p><ul>
+<li>installing the framework on your dev machine.</li>
+<li>configuring your target.</li>
+<li>creating a couple of simple applications to demonstrate some of our main concepts.</li>
+</ul>
+<p>Completing this section will familiarize you with the Legato Application Framework concepts and prepare you to start developing your own components and apps.</p>
+<h1>Install and Build the Legato Application Framework </h1>
+<p>The first thing to do to get started is to install the Source Code, Tools and do an initial Build of the Application Framework for your target.</p>
+<p><b><a class="el" href="basicBuild.html">Install and Build</a> </b> the Legato Application Framework from GitHub.</p>
+<p>If you need help configuring your target for first time use:</p>
+<table class="doxtable">
+<tr>
+<th>Module </th><th>Description  </th></tr>
+<tr>
+<td><a class="el" href="basicTarget.html">Configure Sierra Wireless Module</a> </td><td>Configure a Sierra Wireless Target </td></tr>
+<tr>
+<td><a class="el" href="raspbianMain.html">Configure Raspberry Pi</a> </td><td>Configure the Legato Application Framework for a Raspberry Pi </td></tr>
+</table>
+<h1>Develop Components and Apps </h1>
+<p>We provide two options for development environments:</p><ul>
+<li>the Legato Application Framework which contains tools to build systems for your target and configure your target through the command line.</li>
+<li><a href="https://source.sierrawireless.com/resources/legato/developerstudio/">Developer Studio</a>, that Sierra Wireless has developed to use with officially support releases of the WP Smart Modules.</li>
+</ul>
+<p>The Legato Application Framework tools are automatically installed and configured when you go through the setup process and <a class="el" href="basicBuildMake.html">make</a> your first build for a target. To install Developer Studio follow the instructions on the <a href="https://source.sierrawireless.com/resources/legato/developerstudio/">Sierra Wireless Source</a>.</p>
+<p>The Framework also comes with a <a class="el" href="basicTargetDevMode.html">developer mode</a> app, which when installed on a target provides the following tools and settings specific for development:</p><ul>
+<li>bundles <a class="el" href="howToDebugGDB.html">gdbserver</a> executable for use on the target device, allowing step-by-step debugging of Legato apps.</li>
+<li>runs the tcf-agent, so the target is auto discoverable by Developer Studio.</li>
+<li>sets the probation period of apps to 10 seconds, to prevent aggressive roll-back.</li>
+<li>holds a wake lock, so the target won't go to sleep when disconnected from USB.</li>
+<li>removes the boot count file on startup to disable the boot loop detection feature of Legato.</li>
+</ul>
+<p>To install devMode on your target follow these <a class="el" href="basicTargetDevMode.html#howToDevMode_installDev">install instructions</a>.</p>
+<p>Now you are ready to start developing apps and installing them on your target. We first recommend starting with our <b> <a class="el" href="basicAppsCreate.html">HelloWorld tutorial</a></b> as it walks you through some of the basic concepts and <b> how to create, install and test </b> your first application.</p>
+<p>Once you have mastered HelloWorld walk through our <b> <a class="el" href="basicAppsIPC.html">HelloIPC tutorials</a> </b> which will <b> demonstrate 3 different ways to create components and applications </b> and how to communicate between components and apps.</p>
+<table class="doxtable">
+<tr>
+<th>Tutorial </th><th>Description  </th></tr>
+<tr>
+<td><a class="el" href="basicApps.html">Develop Apps</a> </td><td>Create and modify Legato's version of Hello World and learn how to create components and apps and communicate between them </td></tr>
+</table>
+<h1>Concepts and Conventions </h1>
+<p>Now that you are familiar with the basic flow of the Legato Application Framework explore our documentation on our concepts and the programing conventions to create apps and systems with the Legato Application Framework.</p>
+<table class="doxtable">
+<tr>
+<th>Section </th><th>Description  </th></tr>
+<tr>
+<td><a class="el" href="buildAppsConcepts.html">Concepts</a> </td><td>Introduction to the Concepts that make up Legato AF </td></tr>
+<tr>
+<td><a class="el" href="defFiles.html">Definition Files</a> </td><td>Use Definition Files to build systems, Apps, components and drivers </td></tr>
+<tr>
+<td><a class="el" href="apiFiles.html">API Files</a> </td><td>Work with the API files to develop Apps </td></tr>
+<tr>
+<td><a class="el" href="ccodingStdsMain.html">C Language Standards</a> </td><td>C Language Coding Standards </td></tr>
+</table>
+<h1>Sample Apps and How To's </h1>
+<p>Our <a class="el" href="howToMain.html">How To</a> section contains useful articles to walk through some of our advance concepts and tools. There is also a repo of <a class="el" href="sampleApps.html">Sample Apps</a> that provide demo apps and apps showing how to connect to and consume specific <a class="el" href="apiGuidesMain.html">APIs</a>.</p>
+<table class="doxtable">
+<tr>
+<th>Section </th><th>Description  </th></tr>
+<tr>
+<td><a class="el" href="howToMain.html">How To</a> </td><td>How To and Troubleshooting articles for common features </td></tr>
+<tr>
+<td><a class="el" href="sampleApps.html">Sample Apps</a> </td><td>Sample Applications </td></tr>
+</table>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

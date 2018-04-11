@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Developer Mode  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Get_Started.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a class="link-selected" href="getStarted.html">Get Started</a><a href="buildAppsConcepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Developer Mode </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>Developer Mode is provided as a pre-built core app (but is not installed by default). It is created to install tools and features for use by developers that should be removed before the target is deployed into production.</p>
+<p><code>devMode</code> provides the following features:<br/>
+</p><ul>
+<li>installs <a class="el" href="howToDebugGDB.html">gdbserver</a> executable for use on the target device, allowing step-by-step debugging of Legato apps.</li>
+<li>installs strace for use on the target device, allowing tracing of kernel calls.</li>
+<li>sets the probation period of apps to 10 seconds, to prevent aggressive roll-back.</li>
+<li>holds a wake lock, so the target won't go to sleep when disconnected from USB.</li>
+<li>removes the boot count file on startup to disable the boot loop detection feature of Legato.</li>
+</ul>
+<p><code>devMode</code> also provides specific tools for Developer Studio support:</p><ul>
+<li>tcf-agent, making the target is able to be auto-discoverable by Developer Studio.</li>
+<li>enables SFTP for use over SSH, facilitating file transfers from Developer Studio to the target (SFTP can also be used as an alternative for scp through the CLI).</li>
+</ul>
+<dl class="section warning"><dt>Warning</dt><dd>Before deploying your system image or target in a production environment devMode must be uninstalled. devMode installs gdbserver which is licensed with <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a>, uninstalling devMode removes all GPLv3 software from your target.</dd></dl>
+<h1><a class="anchor" id="howToDevMode_installDev"></a>
+Install Developer Mode</h1>
+<p><code>devMode</code> is a core app that is built during the <code>make</code> <code></code> &lt;target&gt; process but it is not included by default in the <code>system.sdef</code>.</p>
+<p>To install <code>devMode:</code> </p>
+<pre class="fragment">$ make wp85
+$ app install $LEGATO_ROOT/build/wp85/tools/devMode.wp85.update 192.168.2.2
+</pre><h1><a class="anchor" id="devMode_enableDev"></a>
+Enable Developer Mode</h1>
+<p>To start <code>devMode</code> on your target (if it's disabled):</p>
+<p>Start the app:</p>
+<pre class="fragment">app start devMode </pre><p>Modify the config on the target to enable starting devMode upon reboot:</p>
+<pre class="fragment">config set /apps/devMode/startManual false bool </pre><p>To configure enabling/disabling <code>devMode</code> (even after a system rebuild) add a start: auto (enabled) or start: manual (disabled) to the <code>devMode</code> adef.</p>
+<p>Example devMode adef:</p>
+<pre class="fragment">sandboxed: false
+start: auto                 &lt;-- change to manual to disable
+
+executables:
+{
+    devMode = ( $LEGATO_ROOT/components/devMode/devMode )
+}
+
+processes:
+{
+    run:
+    {
+</pre><h1><a class="anchor" id="DevMode_disableDev"></a>
+Disable Developer Mode</h1>
+<p>To temporarily stop devMode:</p>
+<pre class="fragment">app stop devMode </pre><h1><a class="anchor" id="devMode_removeDev"></a>
+Remove Developer Mode</h1>
+<p>To remove devMode from your target:</p>
+<pre class="fragment">app remove devMode </pre><p>It is advisable to remove the devMode app before deploying targets in production. This can be done by removing devMode from the system sdef file and rebuilding the system for the target device.</p>
+<dl class="section note"><dt>Note</dt><dd>The tcf-agent creates extra network traffic between the host and the target. Stopping or removing devMode will decrease the traffic.</dd></dl>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
