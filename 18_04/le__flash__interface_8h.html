@@ -1,0 +1,1206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_flash_interface.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#define-members">Macros</a> |
+<a href="#typedef-members">Typedefs</a> |
+<a href="#enum-members">Enumerations</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_flash_interface.h File Reference</h1> </div>
+</div><div class="contents">
+<div class="textblock"><code>#include "<a class="el" href="legato_8h_source.html">legato.h</a>"</code><br/>
+</div>
+<p><a href="le__flash__interface_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a88870cd753ea312e179d05e6b907b3ec"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a88870cd753ea312e179d05e6b907b3ec">LE_FLASH_IMAGE_NAME_MAX_LEN</a>   32</td></tr>
+<tr class="separator:a88870cd753ea312e179d05e6b907b3ec"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a218731fc7b8388a1cf70e2b28ebcc1dc"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a218731fc7b8388a1cf70e2b28ebcc1dc">LE_FLASH_IMAGE_NAME_MAX_BYTES</a>   33</td></tr>
+<tr class="separator:a218731fc7b8388a1cf70e2b28ebcc1dc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a818401aca924dd5acd07617df598e752"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a818401aca924dd5acd07617df598e752">LE_FLASH_PARTITION_NAME_MAX_LEN</a>   50</td></tr>
+<tr class="separator:a818401aca924dd5acd07617df598e752"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a180f8ebf349f7f42d2f63842736913b9"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a180f8ebf349f7f42d2f63842736913b9">LE_FLASH_PARTITION_NAME_MAX_BYTES</a>   51</td></tr>
+<tr class="separator:a180f8ebf349f7f42d2f63842736913b9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a07d5c4ec4e71295347aa275458dd762e"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a07d5c4ec4e71295347aa275458dd762e">LE_FLASH_VOLUME_NAME_MAX_LEN</a>   50</td></tr>
+<tr class="separator:a07d5c4ec4e71295347aa275458dd762e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6d73aa4f99f94dda20337b1d5c7cd013"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a6d73aa4f99f94dda20337b1d5c7cd013">LE_FLASH_VOLUME_NAME_MAX_BYTES</a>   51</td></tr>
+<tr class="separator:a6d73aa4f99f94dda20337b1d5c7cd013"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a99e077ca5b0a9f685241d1fdd77fe794"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a99e077ca5b0a9f685241d1fdd77fe794">LE_FLASH_MAX_WRITE_SIZE</a>   262144</td></tr>
+<tr class="separator:a99e077ca5b0a9f685241d1fdd77fe794"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae8c2597f274805d3f2eb9d75eebb1cb7"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#ae8c2597f274805d3f2eb9d75eebb1cb7">LE_FLASH_MAX_READ_SIZE</a>   262144</td></tr>
+<tr class="separator:ae8c2597f274805d3f2eb9d75eebb1cb7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a665479827533ef84335f7b2fb2a21b52"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a665479827533ef84335f7b2fb2a21b52">LE_FLASH_UBI_VOL_NO_SIZE</a>   -1</td></tr>
+<tr class="separator:a665479827533ef84335f7b2fb2a21b52"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab4e089b4ddade751fcf184906de1a800"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#ab4e089b4ddade751fcf184906de1a800">LE_FLASH_UBI_VOL_NO_ID</a>   -1</td></tr>
+<tr class="separator:ab4e089b4ddade751fcf184906de1a800"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:adac0338ad0295e82f011e1abdd30ce3d"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#adac0338ad0295e82f011e1abdd30ce3d">LE_FLASH_UBI_VOL_ID_MAX</a>   127</td></tr>
+<tr class="separator:adac0338ad0295e82f011e1abdd30ce3d"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a05155447383d2c0ff254170f4f63ff01"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a05155447383d2c0ff254170f4f63ff01">le_flash_DisconnectHandler_t</a>) (void *)</td></tr>
+<tr class="separator:a05155447383d2c0ff254170f4f63ff01"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a38b1fbb1ffed1bceeb4f39679bda3b4d"><td align="right" class="memItemLeft" valign="top">typedef struct le_flash_Partition * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a></td></tr>
+<tr class="separator:a38b1fbb1ffed1bceeb4f39679bda3b4d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a40ecd021d6dc0a748d2a5a27dab4f9c0"><td align="right" class="memItemLeft" valign="top">typedef struct le_flash_BadImageDetectionHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a40ecd021d6dc0a748d2a5a27dab4f9c0">le_flash_BadImageDetectionHandlerRef_t</a></td></tr>
+<tr class="separator:a40ecd021d6dc0a748d2a5a27dab4f9c0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:abab63a8767f0091513f3edbac029705d"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#abab63a8767f0091513f3edbac029705d">le_flash_BadImageDetectionHandlerFunc_t</a>) (const char *LE_NONNULL imageName, void *contextPtr)</td></tr>
+<tr class="separator:abab63a8767f0091513f3edbac029705d"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a66c5ba586f2ec9e232e53feae8f94164"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a66c5ba586f2ec9e232e53feae8f94164">le_flash_OpenMode_t</a> { <b>LE_FLASH_READ_ONLY</b> = 0, 
+<b>LE_FLASH_WRITE_ONLY</b> = 1, 
+<b>LE_FLASH_READ_WRITE</b> = 2
+ }</td></tr>
+<tr class="separator:a66c5ba586f2ec9e232e53feae8f94164"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2ff1ef7f1fa75e75af9deccd217f724a"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a2ff1ef7f1fa75e75af9deccd217f724a">le_flash_UbiVolumeType_t</a> { <b>LE_FLASH_DYNAMIC</b> = 0, 
+<b>LE_FLASH_STATIC</b> = 1
+ }</td></tr>
+<tr class="separator:a2ff1ef7f1fa75e75af9deccd217f724a"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a54bc299ab07842170f062e5ab7a13d11"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a54bc299ab07842170f062e5ab7a13d11">le_flash_ConnectService</a> (void)</td></tr>
+<tr class="separator:a54bc299ab07842170f062e5ab7a13d11"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1b3e2c090f38b2869bbba6e7d3899c14"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a1b3e2c090f38b2869bbba6e7d3899c14">le_flash_TryConnectService</a> (void)</td></tr>
+<tr class="separator:a1b3e2c090f38b2869bbba6e7d3899c14"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:abed326ceddfd48fc36cf99182eae8d36"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#abed326ceddfd48fc36cf99182eae8d36">le_flash_SetServerDisconnectHandler</a> (<a class="el" href="le__flash__interface_8h.html#a05155447383d2c0ff254170f4f63ff01">le_flash_DisconnectHandler_t</a> disconnectHandler, void *contextPtr)</td></tr>
+<tr class="separator:abed326ceddfd48fc36cf99182eae8d36"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2317ee626cffbe20200d329db2c5bebe"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a2317ee626cffbe20200d329db2c5bebe">le_flash_DisconnectService</a> (void)</td></tr>
+<tr class="separator:a2317ee626cffbe20200d329db2c5bebe"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a95574e6e395ef5dc5877ebf9b4e2a19f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__flash__interface_8h.html#a40ecd021d6dc0a748d2a5a27dab4f9c0">le_flash_BadImageDetectionHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a95574e6e395ef5dc5877ebf9b4e2a19f">le_flash_AddBadImageDetectionHandler</a> (<a class="el" href="le__flash__interface_8h.html#abab63a8767f0091513f3edbac029705d">le_flash_BadImageDetectionHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:a95574e6e395ef5dc5877ebf9b4e2a19f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9e395cd7955381a119bd353cc1023554"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a9e395cd7955381a119bd353cc1023554">le_flash_RemoveBadImageDetectionHandler</a> (<a class="el" href="le__flash__interface_8h.html#a40ecd021d6dc0a748d2a5a27dab4f9c0">le_flash_BadImageDetectionHandlerRef_t</a> handlerRef)</td></tr>
+<tr class="separator:a9e395cd7955381a119bd353cc1023554"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5b1c0d8884bfe843dd33a2ac25e4bf3f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a5b1c0d8884bfe843dd33a2ac25e4bf3f">le_flash_RequestAccess</a> (void)</td></tr>
+<tr class="separator:a5b1c0d8884bfe843dd33a2ac25e4bf3f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a935bb23268e1311fa6d9d0fb0e90606a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a935bb23268e1311fa6d9d0fb0e90606a">le_flash_ReleaseAccess</a> (void)</td></tr>
+<tr class="separator:a935bb23268e1311fa6d9d0fb0e90606a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a201ac5e6437c377c2c77ac25a0b0e0f0"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a201ac5e6437c377c2c77ac25a0b0e0f0">le_flash_OpenMtd</a> (const char *LE_NONNULL partitionName, <a class="el" href="le__flash__interface_8h.html#a66c5ba586f2ec9e232e53feae8f94164">le_flash_OpenMode_t</a> mode, <a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> *partitionRefPtr)</td></tr>
+<tr class="separator:a201ac5e6437c377c2c77ac25a0b0e0f0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a952dd12d255eca1b408b15465256c8f7"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a952dd12d255eca1b408b15465256c8f7">le_flash_OpenUbi</a> (const char *LE_NONNULL partitionName, <a class="el" href="le__flash__interface_8h.html#a66c5ba586f2ec9e232e53feae8f94164">le_flash_OpenMode_t</a> mode, <a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> *partitionRefPtr)</td></tr>
+<tr class="separator:a952dd12d255eca1b408b15465256c8f7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a30777595484051e349c41005cbe567a1"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a30777595484051e349c41005cbe567a1">le_flash_OpenUbiVolume</a> (<a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> partitionRef, const char *LE_NONNULL volumeName, int32_t volumeSize)</td></tr>
+<tr class="separator:a30777595484051e349c41005cbe567a1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a775b88378bd1e99ac9fc7578eb45ea45"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a775b88378bd1e99ac9fc7578eb45ea45">le_flash_CloseUbiVolume</a> (<a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> partitionRef)</td></tr>
+<tr class="separator:a775b88378bd1e99ac9fc7578eb45ea45"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad35822ce512be4c76ede295618fd292f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#ad35822ce512be4c76ede295618fd292f">le_flash_Close</a> (<a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> partitionRef)</td></tr>
+<tr class="separator:ad35822ce512be4c76ede295618fd292f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa7cf4492e183d50c6acd91a09dd8e379"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#aa7cf4492e183d50c6acd91a09dd8e379">le_flash_EraseBlock</a> (<a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> partitionRef, uint32_t blockIndex)</td></tr>
+<tr class="separator:aa7cf4492e183d50c6acd91a09dd8e379"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aeade27f3e79bc31562f03a55c2720205"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#aeade27f3e79bc31562f03a55c2720205">le_flash_Read</a> (<a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> partitionRef, uint32_t blockIndex, uint8_t *readDataPtr, size_t *readDataSizePtr)</td></tr>
+<tr class="separator:aeade27f3e79bc31562f03a55c2720205"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4710e671736b31623bde38a0a45dd6be"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a4710e671736b31623bde38a0a45dd6be">le_flash_Write</a> (<a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> partitionRef, uint32_t blockIndex, const uint8_t *writeDataPtr, size_t writeDataSize)</td></tr>
+<tr class="separator:a4710e671736b31623bde38a0a45dd6be"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a62fb368ac8627c1757ca7003d93753e7"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a62fb368ac8627c1757ca7003d93753e7">le_flash_GetBlockInformation</a> (<a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> partitionRef, uint32_t *badBlocksNumberPtr, uint32_t *eraseBlocksNumberPtr, uint32_t *eraseBlockSizePtr, uint32_t *pageSizePtr)</td></tr>
+<tr class="separator:a62fb368ac8627c1757ca7003d93753e7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac83627b7aac9aef8f2a921b0d210771d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#ac83627b7aac9aef8f2a921b0d210771d">le_flash_GetUbiVolumeInformation</a> (<a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> partitionRef, uint32_t *freeBlockNumberPtr, uint32_t *allocatedBlockNumberPtr, uint32_t *sizeInBytesPtr)</td></tr>
+<tr class="separator:ac83627b7aac9aef8f2a921b0d210771d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac89478424c0faf00d59dbfe0c5d135ac"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#ac89478424c0faf00d59dbfe0c5d135ac">le_flash_CreateUbi</a> (const char *LE_NONNULL partitionName, bool isForcedCreate, <a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> *partitionRefPtr)</td></tr>
+<tr class="separator:ac89478424c0faf00d59dbfe0c5d135ac"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a821742a3f7ae388b6a337917cc5ee176"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a821742a3f7ae388b6a337917cc5ee176">le_flash_CreateUbiVolume</a> (<a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> partitionRef, bool isForcedCreate, uint32_t volumeID, <a class="el" href="le__flash__interface_8h.html#a2ff1ef7f1fa75e75af9deccd217f724a">le_flash_UbiVolumeType_t</a> volumeType, const char *LE_NONNULL volumeName, int32_t volumeSize)</td></tr>
+<tr class="separator:a821742a3f7ae388b6a337917cc5ee176"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3878530d7d57eb120267d34c67d5d163"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__flash__interface_8h.html#a3878530d7d57eb120267d34c67d5d163">le_flash_DeleteUbiVolume</a> (<a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> partitionRef, const char *LE_NONNULL volumeName)</td></tr>
+<tr class="separator:a3878530d7d57eb120267d34c67d5d163"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato <a class="el" href="c_flash.html">Flash API</a> include file.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a218731fc7b8388a1cf70e2b28ebcc1dc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_FLASH_IMAGE_NAME_MAX_BYTES   33</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Image length maximum length. One extra byte is added for the null character. </p>
+</div>
+</div>
+<a class="anchor" id="a88870cd753ea312e179d05e6b907b3ec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_FLASH_IMAGE_NAME_MAX_LEN   32</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Image length maximum length. </p>
+</div>
+</div>
+<a class="anchor" id="ae8c2597f274805d3f2eb9d75eebb1cb7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_FLASH_MAX_READ_SIZE   262144</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Max byte storage size for read buffer </p>
+</div>
+</div>
+<a class="anchor" id="a99e077ca5b0a9f685241d1fdd77fe794"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_FLASH_MAX_WRITE_SIZE   262144</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Max byte storage size for write buffer </p>
+</div>
+</div>
+<a class="anchor" id="a180f8ebf349f7f42d2f63842736913b9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_FLASH_PARTITION_NAME_MAX_BYTES   51</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Maximum partition name length One extra byte is added for the null character. </p>
+</div>
+</div>
+<a class="anchor" id="a818401aca924dd5acd07617df598e752"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_FLASH_PARTITION_NAME_MAX_LEN   50</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Maximum partition name length </p>
+</div>
+</div>
+<a class="anchor" id="adac0338ad0295e82f011e1abdd30ce3d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_FLASH_UBI_VOL_ID_MAX   127</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Maximum volume ID </p>
+</div>
+</div>
+<a class="anchor" id="ab4e089b4ddade751fcf184906de1a800"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_FLASH_UBI_VOL_NO_ID   -1</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Default volume ID to specify the automatic allocation of volume ID </p>
+</div>
+</div>
+<a class="anchor" id="a665479827533ef84335f7b2fb2a21b52"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_FLASH_UBI_VOL_NO_SIZE   -1</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Default volume size to keep the current volume size untouched </p>
+</div>
+</div>
+<a class="anchor" id="a6d73aa4f99f94dda20337b1d5c7cd013"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_FLASH_VOLUME_NAME_MAX_BYTES   51</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Maximum volume name length One extra byte is added for the null character. </p>
+</div>
+</div>
+<a class="anchor" id="a07d5c4ec4e71295347aa275458dd762e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_FLASH_VOLUME_NAME_MAX_LEN   50</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Maximum volume name length </p>
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="abab63a8767f0091513f3edbac029705d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_flash_BadImageDetectionHandlerFunc_t) (const char *LE_NONNULL imageName,void *contextPtr)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Handler for bad image detection.</p>
+<dl class="section note"><dt>Note</dt><dd>The image names are platform dependent. </dd></dl>
+</div>
+</div>
+<a class="anchor" id="a40ecd021d6dc0a748d2a5a27dab4f9c0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_flash_BadImageDetectionHandler* <a class="el" href="le__flash__interface_8h.html#a40ecd021d6dc0a748d2a5a27dab4f9c0">le_flash_BadImageDetectionHandlerRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference type used by Add/Remove functions for EVENT 'le_flash_BadImageDetection' </p>
+</div>
+</div>
+<a class="anchor" id="a05155447383d2c0ff254170f4f63ff01"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_flash_DisconnectHandler_t) (void *)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Type for handler called when a server disconnects. </p>
+</div>
+</div>
+<a class="anchor" id="a38b1fbb1ffed1bceeb4f39679bda3b4d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_flash_Partition* <a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Declare a reference type for referring a partition. </p>
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="a66c5ba586f2ec9e232e53feae8f94164"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">enum <a class="el" href="le__flash__interface_8h.html#a66c5ba586f2ec9e232e53feae8f94164">le_flash_OpenMode_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Open mode. </p>
+</div>
+</div>
+<a class="anchor" id="a2ff1ef7f1fa75e75af9deccd217f724a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">enum <a class="el" href="le__flash__interface_8h.html#a2ff1ef7f1fa75e75af9deccd217f724a">le_flash_UbiVolumeType_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>UBI volume type mode. </p>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a95574e6e395ef5dc5877ebf9b4e2a19f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__flash__interface_8h.html#a40ecd021d6dc0a748d2a5a27dab4f9c0">le_flash_BadImageDetectionHandlerRef_t</a> le_flash_AddBadImageDetectionHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__flash__interface_8h.html#abab63a8767f0091513f3edbac029705d">le_flash_BadImageDetectionHandlerFunc_t</a> </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Add handler function for EVENT 'le_flash_BadImageDetection'</p>
+<p>This event provides information on bad image status. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ad35822ce512be4c76ede295618fd292f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_flash_Close </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> </td>
+<td class="paramname"><em>partitionRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Close a flash partition</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_BAD_PARAMETER If a parameter is invalid </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">partitionRef</td><td>Partition reference to be closed. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a775b88378bd1e99ac9fc7578eb45ea45"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_flash_CloseUbiVolume </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> </td>
+<td class="paramname"><em>partitionRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Close the used UBI volume of an UBI image.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_BAD_PARAMETER If a parameter is invalid</li>
+<li>LE_FAULT On failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">partitionRef</td><td>Partition reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a54bc299ab07842170f062e5ab7a13d11"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_flash_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a class="anchor" id="ac89478424c0faf00d59dbfe0c5d135ac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_flash_CreateUbi </td>
+<td>(</td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>partitionName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">bool </td>
+<td class="paramname"><em>isForcedCreate</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> * </td>
+<td class="paramname"><em>partitionRefPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Create an UBI partition. If the partition is already an UBI, an error is raised except if the flag isForcedCreate is set to true. In this case, the whole UBI partition is recreated and the previous content is lost. If the operation succeed, the partition is opened in write-only and this is not necessary to call <a class="el" href="le__flash__interface_8h.html#a952dd12d255eca1b408b15465256c8f7">le_flash_OpenUbi()</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_BAD_PARAMETER If a parameter is invalid</li>
+<li>LE_NOT_FOUND If the flash partition is not found</li>
+<li>LE_DUPLICATE If the partition is already an UBI partition and isForcedCreate is not set to true</li>
+<li>LE_FAULT On failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">partitionName</td><td>Partition to be opened. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">isForcedCreate</td><td>Force the UBI recreation and overwrite the previous content. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">partitionRefPtr</td><td>Partition reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a821742a3f7ae388b6a337917cc5ee176"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_flash_CreateUbiVolume </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> </td>
+<td class="paramname"><em>partitionRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">bool </td>
+<td class="paramname"><em>isForcedCreate</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>volumeID</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__flash__interface_8h.html#a2ff1ef7f1fa75e75af9deccd217f724a">le_flash_UbiVolumeType_t</a> </td>
+<td class="paramname"><em>volumeType</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>volumeName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t </td>
+<td class="paramname"><em>volumeSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Create a new UBI volume into an UBI partition. If the volume name or the volume ID already exists, an error is raised except if the flag isForcedCreate is set to true. In this case, the whole UBI volume is recreated and the previous content is lost. If the operation succeed, UBI volume is opened and this is not necessary to call <a class="el" href="le__flash__interface_8h.html#a30777595484051e349c41005cbe567a1">le_flash_OpenUbiVolume()</a>. Note that the UBI partition should be opened in write-only or read-write mode, else an error is raised. The volumeName is the same parameter as <a class="el" href="le__flash__interface_8h.html#a30777595484051e349c41005cbe567a1">le_flash_OpenUbiVolume()</a>. A static volume cannot be extended when mounted, so it is generally used for SQUASHFS or others immutables and R/O filesystems. A dynamic volume is extensible like UBIFS volumes. The volume ID is the number of the UBI volume to be created. If set to NO_UBI_VOLUME_ID, the first free volume ID will be used.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_BAD_PARAMETER If a parameter is invalid</li>
+<li>LE_NOT_PERMITTED If the UBI partition is not opened in write-only or read-write mode</li>
+<li>LE_DUPLICATE If the UBI volume already exists with a same name or a same volume ID and isForcedCreate is not set to true</li>
+<li>LE_FAULT On failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">partitionRef</td><td>Partition reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">isForcedCreate</td><td>Force the UBI volume recreation and overwrite the previous content. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">volumeID</td><td>Volume ID to set. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">volumeType</td><td>Volume type to set. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">volumeName</td><td>Volume name to be created. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">volumeSize</td><td>Volume size to set. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a3878530d7d57eb120267d34c67d5d163"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_flash_DeleteUbiVolume </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> </td>
+<td class="paramname"><em>partitionRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>volumeName</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Delete an UBI volume from an UBI partition. If the volume is currently opened by <a class="el" href="le__flash__interface_8h.html#a30777595484051e349c41005cbe567a1">le_flash_OpenUbiVolume()</a>, it is closed first. Note that the UBI partition should be opened in write-only or read-write mode, else an error is raised.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_BAD_PARAMETER If a parameter is invalid</li>
+<li>LE_NOT_PERMITTED If the UBI partition is not open in write-only or read-write mode</li>
+<li>LE_NOT_FOUND If the volume name is not found</li>
+<li>LE_FAULT On failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">partitionRef</td><td>Partition reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">volumeName</td><td>Volume name to be deleted. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a2317ee626cffbe20200d329db2c5bebe"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_flash_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a class="anchor" id="aa7cf4492e183d50c6acd91a09dd8e379"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_flash_EraseBlock </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> </td>
+<td class="paramname"><em>partitionRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>blockIndex</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Erase a block inside a flash partition. If the erase fails, the block is marked bad.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_BAD_PARAMETER If a parameter is invalid</li>
+<li>LE_FAULT On other error </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">partitionRef</td><td>Partition reference to be closed. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">blockIndex</td><td>Logical block index to be erased. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a62fb368ac8627c1757ca7003d93753e7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_flash_GetBlockInformation </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> </td>
+<td class="paramname"><em>partitionRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t * </td>
+<td class="paramname"><em>badBlocksNumberPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t * </td>
+<td class="paramname"><em>eraseBlocksNumberPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t * </td>
+<td class="paramname"><em>eraseBlockSizePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t * </td>
+<td class="paramname"><em>pageSizePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Retrieve information about the partition opened: the number of bad blocks found inside the partition, the number of erase blocks, the size of the erase block and the size of the page.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_BAD_PARAMETER If a parameter is invalid</li>
+<li>LE_FAULT On other error </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">partitionRef</td><td>Partition reference to be used. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">badBlocksNumberPtr</td><td>Bad blocks number inside the partition </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">eraseBlocksNumberPtr</td><td>Erase blocks number </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">eraseBlockSizePtr</td><td>Erase block size </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">pageSizePtr</td><td>Page size </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ac83627b7aac9aef8f2a921b0d210771d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_flash_GetUbiVolumeInformation </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> </td>
+<td class="paramname"><em>partitionRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t * </td>
+<td class="paramname"><em>freeBlockNumberPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t * </td>
+<td class="paramname"><em>allocatedBlockNumberPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t * </td>
+<td class="paramname"><em>sizeInBytesPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Retrieve information about the UBI volume opened: the number of free blocks for the UBI, the number of currently allocated blocks to the volume and its real size in bytes.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_BAD_PARAMETER If a parameter is invalid</li>
+<li>LE_FAULT On other error </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">partitionRef</td><td>Partition reference to be used. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">freeBlockNumberPtr</td><td>Free blocks number on the UBI partition </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">allocatedBlockNumberPtr</td><td>Allocated blocks number to the UBI volume </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">sizeInBytesPtr</td><td>Real size in bytes of the UBI volume </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a201ac5e6437c377c2c77ac25a0b0e0f0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_flash_OpenMtd </td>
+<td>(</td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>partitionName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__flash__interface_8h.html#a66c5ba586f2ec9e232e53feae8f94164">le_flash_OpenMode_t</a> </td>
+<td class="paramname"><em>mode</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> * </td>
+<td class="paramname"><em>partitionRefPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Open a flash partition at the block layer for the given operation and return a descriptor. The read and write operation will be done using MTD.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_BAD_PARAMETER If a parameter is invalid</li>
+<li>LE_NOT_FOUND If the flash partition is not found</li>
+<li>LE_FAULT On failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">partitionName</td><td>Partition to be opened. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>Opening mode. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">partitionRefPtr</td><td>Partition reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a952dd12d255eca1b408b15465256c8f7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_flash_OpenUbi </td>
+<td>(</td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>partitionName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__flash__interface_8h.html#a66c5ba586f2ec9e232e53feae8f94164">le_flash_OpenMode_t</a> </td>
+<td class="paramname"><em>mode</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> * </td>
+<td class="paramname"><em>partitionRefPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Open a UBI volume for the given operation and return a descriptor. The read and write operation will be done using MTD, UBI metadata will be updated.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_BAD_PARAMETER If a parameter is invalid</li>
+<li>LE_NOT_FOUND If the flash partition is not found</li>
+<li>LE_FAULT On failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">partitionName</td><td>Partition to be opened. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>Opening mode. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">partitionRefPtr</td><td>Partition reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a30777595484051e349c41005cbe567a1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_flash_OpenUbiVolume </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> </td>
+<td class="paramname"><em>partitionRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>volumeName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t </td>
+<td class="paramname"><em>volumeSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Open the UBI volume of an UBI image to be used for the read and write operations. When open for writing and a volumeSize is given, the UBI volume will be adjusted to this size by freeing the PEBs over this size. If the data inside the volume require more PEBs, they will be added by the <a class="el" href="le__flash__interface_8h.html#a4710e671736b31623bde38a0a45dd6be">le_flash_Write()</a> API.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_BAD_PARAMETER If a parameter is invalid</li>
+<li>LE_NOT_FOUND If the volume name is not found</li>
+<li>LE_FAULT On failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">partitionRef</td><td>Partition reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">volumeName</td><td>Volume name to be used. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">volumeSize</td><td>Volume size to set if open for writing </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="aeade27f3e79bc31562f03a55c2720205"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_flash_Read </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> </td>
+<td class="paramname"><em>partitionRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>blockIndex</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>readDataPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>readDataSizePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Read data from a flash partition. The read data are:</p><ul>
+<li>at the logical block index given by blockIndex.</li>
+<li>the maximum read data length is:<ul>
+<li>an erase block size for MTD usage partition</li>
+<li>an erase block size minus 2 pages for UBI partitions</li>
+</ul>
+</li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_BAD_PARAMETER If a parameter is invalid</li>
+<li>LE_FAULT On other error </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">partitionRef</td><td>Partition reference to be used. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">blockIndex</td><td>Logical block index to be read. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">readDataPtr</td><td>Data buffer to copy the read data. </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">readDataSizePtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a935bb23268e1311fa6d9d0fb0e90606a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_flash_ReleaseAccess </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Release the flash access requested by le_flash_RequestAccess API.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_FAULT On failure </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a class="anchor" id="a9e395cd7955381a119bd353cc1023554"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_flash_RemoveBadImageDetectionHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__flash__interface_8h.html#a40ecd021d6dc0a748d2a5a27dab4f9c0">le_flash_BadImageDetectionHandlerRef_t</a> </td>
+<td class="paramname"><em>handlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove handler function for EVENT 'le_flash_BadImageDetection' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a5b1c0d8884bfe843dd33a2ac25e4bf3f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_flash_RequestAccess </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Request the flash access authorization. This is required to avoid race operations.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_UNAVAILABLE The flash access is temporarily unavailable</li>
+<li>LE_DUPLICATE If the a request access for the client was already performed</li>
+<li>LE_FAULT On failure </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a class="anchor" id="abed326ceddfd48fc36cf99182eae8d36"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_flash_SetServerDisconnectHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__flash__interface_8h.html#a05155447383d2c0ff254170f4f63ff01">le_flash_DisconnectHandler_t</a> </td>
+<td class="paramname"><em>disconnectHandler</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set handler called when server disconnection is detected.</p>
+<p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
+</div>
+</div>
+<a class="anchor" id="a1b3e2c090f38b2869bbba6e7d3899c14"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_flash_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a class="anchor" id="a4710e671736b31623bde38a0a45dd6be"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_flash_Write </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__flash__interface_8h.html#a38b1fbb1ffed1bceeb4f39679bda3b4d">le_flash_PartitionRef_t</a> </td>
+<td class="paramname"><em>partitionRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>blockIndex</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>writeDataPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>writeDataSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Write data to a flash partition.</p><ul>
+<li>the block is firstly erased, so no call to <a class="el" href="le__flash__interface_8h.html#aa7cf4492e183d50c6acd91a09dd8e379">le_flash_EraseBlock()</a> is needed.</li>
+<li>if the erase or the write reports an error, the block is marked "bad" and the write starts again at the next physical block.</li>
+<li>the data are programmed at the logical block index given by blockIndex.</li>
+<li>the maximum written data length is:<ul>
+<li>an erase block size for MTD usage partition. This is the eraseBlockSize returned by le_flash_GetInformation().</li>
+<li>an erase block size minus 2 pages for UBI partitions. These are the eraseBlockSize and pageSize returned by le_flash_GetInformation(). If the write addresses an UBI volume and more PEBs are required to write the new data, new PEBs will be added into this volume.</li>
+</ul>
+</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>The addressed block is automatically erased before to be written.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_BAD_PARAMETER If a parameter is invalid</li>
+<li>LE_FAULT On other error </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">partitionRef</td><td>Partition reference to be used. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">blockIndex</td><td>Logical block index to be write. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">writeDataPtr</td><td>Data buffer to be written. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">writeDataSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

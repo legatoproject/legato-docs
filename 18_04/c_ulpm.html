@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Ultra Low Power Mode  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Ultra Low Power Mode </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><a class="el" href="le__ulpm__interface_8h.html">API Reference</a></p>
+<hr/>
+<p>This API is used to set the boot sources and switch the device to ultra-low power state. Ultra- low power mode is achieved by shutting down major components (e.g. app processor, modem, etc.) while keeping an ultra-low power component alive. This ultra-low power component is used to monitor boot sources that are set before switching to ultra-low power mode.</p>
+<h1><a class="anchor" id="API_Usage_usage"></a>
+Typical Usage</h1>
+<p>Typically, this API is used like this:</p>
+<ul>
+<li>Boot sources are set by calling <a class="el" href="le__ulpm__interface_8h.html#a1ce360e976bcedd7668eeec5eed32257">le_ulpm_BootOnGpio()</a>/le_ulpm_BootOnTimer(). If multiple boot sources are configured, the module will boot if any of the boot sources are triggered.</li>
+<li>After configuring boot source, <a class="el" href="le__ulpm__interface_8h.html#a6dfc4836ea4ad3154a51f574a1d6ddef">le_ulpm_ShutDown()</a> can be called to initiate shutdown (i.e. shutt down all major components like the app processor, modem, etc.).</li>
+</ul>
+<h1><a class="anchor" id="ulpm_example"></a>
+Sample Code</h1>
+<p>This C code sample calls low power manager API to switch low power mode:</p>
+<pre class="fragment"><div class="line"><span class="keywordtype">void</span> SwitchToLowPowerMode</div><div class="line">(</div><div class="line">    <span class="keywordtype">void</span></div><div class="line">)</div><div class="line">{</div><div class="line">    <span class="keywordtype">char</span> version[<a class="code" href="le__ulpm__interface_8h.html#a71cbdb416b14270eed36eefe9c6d4943">LE_ULPM_MAX_VERS_LEN</a>+1];</div><div class="line"> </div><div class="line">    <span class="comment">// Get ultra low power manager firmware version</span></div><div class="line">    <a class="code" href="le__log_8h.html#a7a3e66a87026cc9e57bcb748840ab41b">LE_FATAL_IF</a>(<a class="code" href="le__ulpm__interface_8h.html#a2e3867a26be660373995266aea73dcd3">le_ulpm_GetFirmwareVersion</a>(version, <span class="keyword">sizeof</span>(version)) != LE_OK,</div><div class="line">        <span class="stringliteral">"Failed to get ultra low power firmware version"</span>);</div><div class="line"> </div><div class="line">     <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"Ultra Low Power Manager Firmware version: %s"</span>, version);</div><div class="line"> </div><div class="line">    <span class="comment">// Boot after 1000 second of shutdown.</span></div><div class="line">    <a class="code" href="le__log_8h.html#aceaf11a11691d6c676e36dd317b38dbd">LE_ERROR_IF</a>(<a class="code" href="le__ulpm__interface_8h.html#a0eb0a36b2db8eeccdda045c16fa01354">le_ulpm_BootOnTimer</a>(1000) != LE_OK, <span class="stringliteral">"Can't set timer as boot source"</span>);</div><div class="line"> </div><div class="line">    <span class="comment">// Boot if GPIO36 voltage level is high.</span></div><div class="line">    <a class="code" href="le__log_8h.html#aceaf11a11691d6c676e36dd317b38dbd">LE_ERROR_IF</a>(<a class="code" href="le__ulpm__interface_8h.html#a1ce360e976bcedd7668eeec5eed32257">le_ulpm_BootOnGpio</a>(36, <a class="code" href="le__ulpm__interface_8h.html#ab0af9c55cfd8187a5edee98d75fd7d57a5ea4850292e542d4f74a3ce481dcc1a5">LE_ULPM_GPIO_HIGH</a>) != LE_OK, <span class="stringliteral">"Can't set gpio36 as boot source"</span>);</div><div class="line"> </div><div class="line">    <span class="comment">// Boot if GPIO38 voltage level is low.</span></div><div class="line">    <a class="code" href="le__log_8h.html#aceaf11a11691d6c676e36dd317b38dbd">LE_ERROR_IF</a>(<a class="code" href="le__ulpm__interface_8h.html#a1ce360e976bcedd7668eeec5eed32257">le_ulpm_BootOnGpio</a>(38, <a class="code" href="le__ulpm__interface_8h.html#ab0af9c55cfd8187a5edee98d75fd7d57ac76e5ad8a889e949e38c3cb17c81be3a">LE_ULPM_GPIO_LOW</a>) != LE_OK, <span class="stringliteral">"Can't set gpio38 as boot source"</span>);</div><div class="line"> </div><div class="line">    <span class="comment">// Initiate shutdown.</span></div><div class="line">    <a class="code" href="le__log_8h.html#aceaf11a11691d6c676e36dd317b38dbd">LE_ERROR_IF</a>(<a class="code" href="le__ulpm__interface_8h.html#a6dfc4836ea4ad3154a51f574a1d6ddef">le_ulpm_ShutDown</a>() != LE_OK, <span class="stringliteral">"Can't initiate shutdown"</span>);</div><div class="line">}</div></pre><!-- fragment --><hr/>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
