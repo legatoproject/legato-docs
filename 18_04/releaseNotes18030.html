@@ -113,7 +113,18 @@ ECM-USB modem manager issue</h3>
 <li>Uninstall <code>modemmanager</code> from Ubuntu or</li>
 <li><a href="http://packages.ubuntu.com/trusty/modemmanager">Downgrade <code>modemmanager</code> to version 1.0.0-2ubuntu1</a></li>
 </ul>
-<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+<h3><a class="anchor" id="rn1803_ConstraintsTC"></a>
+Sierra Wireless Toolchain Install</h3>
+<p>There is currently an error with setting up the WP76XX and WP77XX toolchain and the toolchain only partially installs. The part of the script to install and setup the kernel headers does not run and produces the following errors:</p>
+<pre class="fragment">scripts/kconfig/Makefile:36: recipe for target 'silentoldconfig' failed
+make[2]: *** [silentoldconfig] Error 1
+Makefile:546: recipe for target 'silentoldconfig' failed
+make[1]: *** [silentoldconfig] Error 2
+make: *** No rule to make target 'include/config/auto.conf', needed by 'scripts'.  Stop.
+</pre><p>To resolve this remove the installed toolchain and reinstall with <code>sudo</code> privileges.</p>
+<p>Example of setting up the toolchain for a 64bit dev machine and a WP76 module with product release 9: </p><pre class="fragment">$ rm -rf /opt/swi/y22-ext
+$ sudo poky-swi-ext-glibc-x86_64-meta-toolchain-swi-ext-armv7a-neon-toolchain-swi-ext-2.2.3.sh
+</pre><p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
 </div></div>
 <br clear="left"/>
 </div>
