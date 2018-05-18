@@ -54,14 +54,14 @@ ul
 <p><b>Important:</b> Upgrade the firmware before upgrading the Legato application framework.</p>
 
 <p><b>Config Trees: </b>Legato currently overwrites private config trees during upgrading. An 
-<a href="http://www.legato.io/legato-docs/15_10/how_to_config_tree_import_export.html">import/export script</a>
+<a href="https://docs.legato.io/15_10/how_to_config_tree_import_export.html">import/export script</a>
 can be used to create a copy of config trees and reinstate settings after installation.</p>
 <hr>
 <p>Contact your Field Application Engineer (FAE) to upgrade AR series targets.</p>
 <p><a href="#1">Upgrade WP Firmware </a><br>
 <a href="#2">Upgrade Legato Application Framework</a></p>
 <p>Here's other info you may need to look at: <br>
-<a href="http://www.legato.io/legato-docs/15_10/Legato_15_10_ReleaseNotes.pdf">Legato 15.10 Beta release notes</a></p>
+<a href="https://docs.legato.io/15_10/Legato_15_10_ReleaseNotes.pdf">Legato 15.10 Beta release notes</a></p>
 <hr>
 <h2><a id="1">Upgrade WP85 Firmware</a></h2>
 <p>These instructions are for the Legato 15.10.1 Beta release; this release provided new downloads only. 
@@ -90,11 +90,11 @@ if your target isn't displayed in the list.</p>
 
 <p><b>SKU 9101011 v001.013_000</b><br>
 File: 9101011_5501011_WP8548-G_07.04.06.00_00_DevKit_001.013_000-field.exe<br>
-<a href="http://source.sierrawireless.com/resources/legato/wp85upgrade9101011/">download 9101011 configuration</a></p> 
+<a href="https://source.sierrawireless.com/resources/legato/wp85upgrade9101011/">download 9101011 configuration</a></p> 
 
 <p><b>SKU 1102621 v001.000_000</b><br>
 File: 1102621_9904889_WP8548-G_07.04.06.00_00_Generic_001.000_000-field.exe<br>
-<a href="http://source.sierrawireless.com/resources/legato/wp85upgrade1102621">download 1102621 configuration</a></p> 
+<a href="https://source.sierrawireless.com/resources/legato/wp85upgrade1102621">download 1102621 configuration</a></p> 
 <p>Double-click the .exe file to run the upgrade.</p>
 <p>The target will boot in Airplane mode after the upgrade if this is the first use of this configuration.</p>
 
@@ -104,9 +104,9 @@ configuration.</p>
 
 <p>Download the generic carrier configuration tool: </p>
 <p>File: 9999999_9904559_SWI9X15Y_07.05.01.00_00_GENERIC_001.013_000-field.exe<br>
-<a href="http://source.sierrawireless.com/resources/legato/wp85upgradeCarrier/">download Beta carrier configuration</a></p>
+<a href="https://source.sierrawireless.com/resources/legato/wp85upgradeCarrier/">download Beta carrier configuration</a></p>
 <p>File: legatocwe-15.10.1.exe<br>
-<a href="http://source.sierrawireless.com/resources/legato/wp85upgradecarrierlegato/">download Beta legato upgrade tool</a></p>
+<a href="https://source.sierrawireless.com/resources/legato/wp85upgradecarrierlegato/">download Beta legato upgrade tool</a></p>
 <p>Double-click the 9999999_9904559_SWI9X15Y_07.05.01.00_00_GENERIC_001.013_000-field.exe file to run the carrier upgrade.</p>
 
 <p>The target will boot in Online mode after the upgrade. </p>
@@ -120,9 +120,9 @@ USB (ADB), and run command <font face="courier">configEcm on</font>. Alternative
 list optional parameters for the ECM configuration. </p>
 
 <h3><a id="moreInfo">More Info</a></h3><p>For complete WP85 release notes, see the 
-<a href="http://source.sierrawireless.com/resources/legato/WP85crn/">SWI9X15Y 7.0 r01.04 Customer Release Notes PDF.</a></p>
+<a href="https://source.sierrawireless.com/resources/legato/WP85crn/">SWI9X15Y 7.0 r01.04 Customer Release Notes PDF.</a></p>
 <p>For more info about the WP85 firmware downloads, see the 
-<a href="http://source.sierrawireless.com/resources/legato/wp85firmware/#sthash.wyWcd88O.dpuf">WP85 Legato Source page</a></p>
+<a href="https://source.sierrawireless.com/resources/legato/wp85firmware/#sthash.wyWcd88O.dpuf">WP85 Legato Source page</a></p>
 <hr>
 <h2><a id="2">Upgrade Legato Beta AF 15.08 to 15.10 </a></h2>
 <p>Ensure you <a href="#1">upgrade firmware</a> before upgrading Legato AF. Also, ensure you have the latest
@@ -133,7 +133,7 @@ list optional parameters for the ECM configuration. </p>
 <p><font face="courier">$ cd /opt/swi <br>
 $ sudo rm -rf *</font></p>
 <p>Installation packages (including toolchain downloads) are available at the Sierra Wireless Source 
-<a href="http://source.sierrawireless.com/resources/legato/downloads/">
+<a href="https://source.sierrawireless.com/resources/legato/downloads/">
 Legato Downloads</a> page.</p>
 <p>Select toolchain for either 32 or 64 bits and copy it to <font face="courier">/opt/swi</font></p>
 <p><font face="courier">$ mkdir -p /opt/swi <br>
@@ -141,11 +141,11 @@ $ chmod u+x [toolchain.sh file] <br>
 $ [toolchain.sh file]</font></p>
 <p>You may need to use <font face="courier">sudo</font> to run <font face="courier">mkdir</font>.</p>
 
-<p>Then <a href="http://www.legato.io/legato-docs/15_10/getstarted_c_linstall.html">install</a> and
-<a href="http://www.legato.io/legato-docs/15_10/getstarted_c_lbuild.html">build</a> Legato, and then
- <a href="http://www.legato.io/legato-docs/15_10/getstarted_target_s_w.html" target="_blank">
+<p>Then <a href="https://docs.legato.io/15_10/getstarted_c_linstall.html">install</a> and
+<a href="https://docs.legato.io/15_10/getstarted_c_lbuild.html">build</a> Legato, and then
+ <a href="https://docs.legato.io/15_10/getstarted_target_s_w.html" target="_blank">
 set up the target software</a>.</p>
-<p>See <a href="http://www.legato.io/legato-docs/">
+<p>See <a href="https://docs.legato.io/">
 Legato documentation</a> for full information.</p>
 <hr>
 </body>
