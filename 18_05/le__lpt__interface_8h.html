@@ -1,0 +1,556 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_lpt_interface.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#typedef-members">Typedefs</a> |
+<a href="#enum-members">Enumerations</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_lpt_interface.h File Reference</h1> </div>
+</div><div class="contents">
+<div class="textblock"><code>#include "<a class="el" href="legato_8h_source.html">legato.h</a>"</code><br/>
+</div>
+<p><a href="le__lpt__interface_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a304b76d31bf85e40f490bbb6a11e31db"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__lpt__interface_8h.html#a304b76d31bf85e40f490bbb6a11e31db">le_lpt_DisconnectHandler_t</a>) (void *)</td></tr>
+<tr class="separator:a304b76d31bf85e40f490bbb6a11e31db"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aeb629311974999a2389d1c93e460db47"><td align="right" class="memItemLeft" valign="top">typedef struct le_lpt_EDrxParamsChangeHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__lpt__interface_8h.html#aeb629311974999a2389d1c93e460db47">le_lpt_EDrxParamsChangeHandlerRef_t</a></td></tr>
+<tr class="separator:aeb629311974999a2389d1c93e460db47"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0689fc078e14c1f9ca552641be988245"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__lpt__interface_8h.html#a0689fc078e14c1f9ca552641be988245">le_lpt_EDrxParamsChangeHandlerFunc_t</a>) (<a class="el" href="le__lpt__interface_8h.html#a4094c01923d2065adb1557b6ab2121d5">le_lpt_EDrxRat_t</a> rat, <a class="el" href="le__basics_8h.html#ae2138c90c41d30e2d510be01d8b374da">le_onoff_t</a> activation, uint8_t eDrxValue, uint8_t pagingTimeWindow, void *contextPtr)</td></tr>
+<tr class="separator:a0689fc078e14c1f9ca552641be988245"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a4094c01923d2065adb1557b6ab2121d5"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__lpt__interface_8h.html#a4094c01923d2065adb1557b6ab2121d5">le_lpt_EDrxRat_t</a> { <br/>
+  <a class="el" href="le__lpt__interface_8h.html#a4094c01923d2065adb1557b6ab2121d5a8af6451efc451a1e4a0aabac54d7cf62">LE_LPT_EDRX_RAT_UNKNOWN</a> = 0, 
+<a class="el" href="le__lpt__interface_8h.html#a4094c01923d2065adb1557b6ab2121d5a603fa6daf4e9e47b19908df7b558ee9e">LE_LPT_EDRX_RAT_EC_GSM_IOT</a> = 1, 
+<a class="el" href="le__lpt__interface_8h.html#a4094c01923d2065adb1557b6ab2121d5a8260fcda80b2e4593aca89359b5a1a84">LE_LPT_EDRX_RAT_GSM</a> = 2, 
+<a class="el" href="le__lpt__interface_8h.html#a4094c01923d2065adb1557b6ab2121d5a32e4e45f8d22236fbc3612278594ab7a">LE_LPT_EDRX_RAT_UTRAN</a> = 3, 
+<br/>
+  <a class="el" href="le__lpt__interface_8h.html#a4094c01923d2065adb1557b6ab2121d5a505dc7ded5473c620c0c5cc3c2d95c97">LE_LPT_EDRX_RAT_LTE_M1</a> = 4, 
+<a class="el" href="le__lpt__interface_8h.html#a4094c01923d2065adb1557b6ab2121d5a928b0076da904eeab39eeec597de2eb3">LE_LPT_EDRX_RAT_LTE_NB1</a> = 5, 
+<a class="el" href="le__lpt__interface_8h.html#a4094c01923d2065adb1557b6ab2121d5a2d94901fe9a553dd812098d87ef12402">LE_LPT_EDRX_RAT_MAX</a> = 6
+<br/>
+ }</td></tr>
+<tr class="separator:a4094c01923d2065adb1557b6ab2121d5"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aaf2904a34930f6c5d6b15f4fd685178d"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__lpt__interface_8h.html#aaf2904a34930f6c5d6b15f4fd685178d">le_lpt_ConnectService</a> (void)</td></tr>
+<tr class="separator:aaf2904a34930f6c5d6b15f4fd685178d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5401d5aadbb91d210e500ec6e777b916"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__lpt__interface_8h.html#a5401d5aadbb91d210e500ec6e777b916">le_lpt_TryConnectService</a> (void)</td></tr>
+<tr class="separator:a5401d5aadbb91d210e500ec6e777b916"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a35307ca537f4a55d641854d5fddc89b0"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__lpt__interface_8h.html#a35307ca537f4a55d641854d5fddc89b0">le_lpt_SetServerDisconnectHandler</a> (<a class="el" href="le__lpt__interface_8h.html#a304b76d31bf85e40f490bbb6a11e31db">le_lpt_DisconnectHandler_t</a> disconnectHandler, void *contextPtr)</td></tr>
+<tr class="separator:a35307ca537f4a55d641854d5fddc89b0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9e2238a371b9cd0331a723fa21c4420e"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__lpt__interface_8h.html#a9e2238a371b9cd0331a723fa21c4420e">le_lpt_DisconnectService</a> (void)</td></tr>
+<tr class="separator:a9e2238a371b9cd0331a723fa21c4420e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a29c14497b1e9773edca1374674e1dd02"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__lpt__interface_8h.html#a29c14497b1e9773edca1374674e1dd02">le_lpt_SetEDrxState</a> (<a class="el" href="le__lpt__interface_8h.html#a4094c01923d2065adb1557b6ab2121d5">le_lpt_EDrxRat_t</a> rat, <a class="el" href="le__basics_8h.html#ae2138c90c41d30e2d510be01d8b374da">le_onoff_t</a> activation)</td></tr>
+<tr class="separator:a29c14497b1e9773edca1374674e1dd02"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a453a299fbefbd9ecce549b25574c7f69"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__lpt__interface_8h.html#a453a299fbefbd9ecce549b25574c7f69">le_lpt_SetRequestedEDrxValue</a> (<a class="el" href="le__lpt__interface_8h.html#a4094c01923d2065adb1557b6ab2121d5">le_lpt_EDrxRat_t</a> rat, uint8_t eDrxValue)</td></tr>
+<tr class="separator:a453a299fbefbd9ecce549b25574c7f69"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:acd994d5f5f20d9171181d5785f71e9f5"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__lpt__interface_8h.html#acd994d5f5f20d9171181d5785f71e9f5">le_lpt_GetRequestedEDrxValue</a> (<a class="el" href="le__lpt__interface_8h.html#a4094c01923d2065adb1557b6ab2121d5">le_lpt_EDrxRat_t</a> rat, uint8_t *eDrxValuePtr)</td></tr>
+<tr class="separator:acd994d5f5f20d9171181d5785f71e9f5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a19b77f9788e971d59e4d78e02f0dcab6"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__lpt__interface_8h.html#a19b77f9788e971d59e4d78e02f0dcab6">le_lpt_GetNetworkProvidedEDrxValue</a> (<a class="el" href="le__lpt__interface_8h.html#a4094c01923d2065adb1557b6ab2121d5">le_lpt_EDrxRat_t</a> rat, uint8_t *eDrxValuePtr)</td></tr>
+<tr class="separator:a19b77f9788e971d59e4d78e02f0dcab6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad969476d3aa805336bd80e11e377c6ec"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__lpt__interface_8h.html#ad969476d3aa805336bd80e11e377c6ec">le_lpt_GetNetworkProvidedPagingTimeWindow</a> (<a class="el" href="le__lpt__interface_8h.html#a4094c01923d2065adb1557b6ab2121d5">le_lpt_EDrxRat_t</a> rat, uint8_t *pagingTimeWindowPtr)</td></tr>
+<tr class="separator:ad969476d3aa805336bd80e11e377c6ec"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a74ac2323ba4e90b43fba080b09898dc3"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__lpt__interface_8h.html#aeb629311974999a2389d1c93e460db47">le_lpt_EDrxParamsChangeHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__lpt__interface_8h.html#a74ac2323ba4e90b43fba080b09898dc3">le_lpt_AddEDrxParamsChangeHandler</a> (<a class="el" href="le__lpt__interface_8h.html#a0689fc078e14c1f9ca552641be988245">le_lpt_EDrxParamsChangeHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:a74ac2323ba4e90b43fba080b09898dc3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2a3c5d3d2d473ca9f0533a4ceee9105f"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__lpt__interface_8h.html#a2a3c5d3d2d473ca9f0533a4ceee9105f">le_lpt_RemoveEDrxParamsChangeHandler</a> (<a class="el" href="le__lpt__interface_8h.html#aeb629311974999a2389d1c93e460db47">le_lpt_EDrxParamsChangeHandlerRef_t</a> handlerRef)</td></tr>
+<tr class="separator:a2a3c5d3d2d473ca9f0533a4ceee9105f"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato <a class="el" href="c_lpt.html">Low Power Technologies</a> include file.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="a304b76d31bf85e40f490bbb6a11e31db"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_lpt_DisconnectHandler_t) (void *)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Type for handler called when a server disconnects. </p>
+</div>
+</div>
+<a class="anchor" id="a0689fc078e14c1f9ca552641be988245"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_lpt_EDrxParamsChangeHandlerFunc_t) (<a class="el" href="le__lpt__interface_8h.html#a4094c01923d2065adb1557b6ab2121d5">le_lpt_EDrxRat_t</a> rat,<a class="el" href="le__basics_8h.html#ae2138c90c41d30e2d510be01d8b374da">le_onoff_t</a> activation,uint8_t eDrxValue,uint8_t pagingTimeWindow,void *contextPtr)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Handler to report a change in the network-provided eDRX parameters. </p>
+</div>
+</div>
+<a class="anchor" id="aeb629311974999a2389d1c93e460db47"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_lpt_EDrxParamsChangeHandler* <a class="el" href="le__lpt__interface_8h.html#aeb629311974999a2389d1c93e460db47">le_lpt_EDrxParamsChangeHandlerRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference type used by Add/Remove functions for EVENT 'le_lpt_EDrxParamsChange' </p>
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="a4094c01923d2065adb1557b6ab2121d5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">enum <a class="el" href="le__lpt__interface_8h.html#a4094c01923d2065adb1557b6ab2121d5">le_lpt_EDrxRat_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>eDRX Radio Access Technology enum </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a4094c01923d2065adb1557b6ab2121d5a8af6451efc451a1e4a0aabac54d7cf62"></a>LE_LPT_EDRX_RAT_UNKNOWN </td><td class="fielddoc">
+<p>Unknown. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a4094c01923d2065adb1557b6ab2121d5a603fa6daf4e9e47b19908df7b558ee9e"></a>LE_LPT_EDRX_RAT_EC_GSM_IOT </td><td class="fielddoc">
+<p>EC-GSM-IoT (A/Gb mode) </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a4094c01923d2065adb1557b6ab2121d5a8260fcda80b2e4593aca89359b5a1a84"></a>LE_LPT_EDRX_RAT_GSM </td><td class="fielddoc">
+<p>GSM (A/Gb mode) </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a4094c01923d2065adb1557b6ab2121d5a32e4e45f8d22236fbc3612278594ab7a"></a>LE_LPT_EDRX_RAT_UTRAN </td><td class="fielddoc">
+<p>UTRAN (Iu mode) </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a4094c01923d2065adb1557b6ab2121d5a505dc7ded5473c620c0c5cc3c2d95c97"></a>LE_LPT_EDRX_RAT_LTE_M1 </td><td class="fielddoc">
+<p>E-UTRAN (WB-S1 mode) </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a4094c01923d2065adb1557b6ab2121d5a928b0076da904eeab39eeec597de2eb3"></a>LE_LPT_EDRX_RAT_LTE_NB1 </td><td class="fielddoc">
+<p>E-UTRAN (NB-S1 mode) </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a4094c01923d2065adb1557b6ab2121d5a2d94901fe9a553dd812098d87ef12402"></a>LE_LPT_EDRX_RAT_MAX </td><td class="fielddoc">
+<p>Invalid. </p>
+</td></tr>
+</table>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a74ac2323ba4e90b43fba080b09898dc3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__lpt__interface_8h.html#aeb629311974999a2389d1c93e460db47">le_lpt_EDrxParamsChangeHandlerRef_t</a> le_lpt_AddEDrxParamsChangeHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__lpt__interface_8h.html#a0689fc078e14c1f9ca552641be988245">le_lpt_EDrxParamsChangeHandlerFunc_t</a> </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Add handler function for EVENT 'le_lpt_EDrxParamsChange'</p>
+<p>Event to report a change in the network-provided eDRX parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="aaf2904a34930f6c5d6b15f4fd685178d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_lpt_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a class="anchor" id="a9e2238a371b9cd0331a723fa21c4420e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_lpt_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a class="anchor" id="a19b77f9788e971d59e4d78e02f0dcab6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_lpt_GetNetworkProvidedEDrxValue </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__lpt__interface_8h.html#a4094c01923d2065adb1557b6ab2121d5">le_lpt_EDrxRat_t</a> </td>
+<td class="paramname"><em>rat</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>eDrxValuePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the network-provided eDRX cycle value for the given Radio Access Technology. The eDRX cycle value is defined in 3GPP TS 24.008 Release 13 section 10.5.5.32.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_BAD_PARAMETER A parameter is invalid.</li>
+<li>LE_UNSUPPORTED eDRX is not supported by the platform.</li>
+<li>LE_UNAVAILABLE No network-provided eDRX cycle value.</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">rat</td><td>Radio Access Technology. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">eDrxValuePtr</td><td>Network-provided eDRX cycle value, defined in 3GPP TS 24.008 Rel-13 section 10.5.5.32. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ad969476d3aa805336bd80e11e377c6ec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_lpt_GetNetworkProvidedPagingTimeWindow </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__lpt__interface_8h.html#a4094c01923d2065adb1557b6ab2121d5">le_lpt_EDrxRat_t</a> </td>
+<td class="paramname"><em>rat</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>pagingTimeWindowPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the network-provided Paging Time Window for the given Radio Access Technology. The Paging Time Window is defined in 3GPP TS 24.008 Release 13 section 10.5.5.32.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_BAD_PARAMETER A parameter is invalid.</li>
+<li>LE_UNSUPPORTED eDRX is not supported by the platform.</li>
+<li>LE_UNAVAILABLE No defined Paging Time Window.</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">rat</td><td>Radio Access Technology. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">pagingTimeWindowPtr</td><td>Network-provided Paging Time Window, defined in 3GPP TS 24.008 Rel-13 section 10.5.5.32. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="acd994d5f5f20d9171181d5785f71e9f5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_lpt_GetRequestedEDrxValue </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__lpt__interface_8h.html#a4094c01923d2065adb1557b6ab2121d5">le_lpt_EDrxRat_t</a> </td>
+<td class="paramname"><em>rat</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>eDrxValuePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the requested eDRX cycle value for the given Radio Access Technology. The eDRX cycle value is defined in 3GPP TS 24.008 Release 13 section 10.5.5.32.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_BAD_PARAMETER A parameter is invalid.</li>
+<li>LE_UNSUPPORTED eDRX is not supported by the platform.</li>
+<li>LE_UNAVAILABLE No requested eDRX cycle value.</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">rat</td><td>Radio Access Technology. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">eDrxValuePtr</td><td>Requested eDRX cycle value, defined in 3GPP TS 24.008 Rel-13 section 10.5.5.32. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a2a3c5d3d2d473ca9f0533a4ceee9105f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_lpt_RemoveEDrxParamsChangeHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__lpt__interface_8h.html#aeb629311974999a2389d1c93e460db47">le_lpt_EDrxParamsChangeHandlerRef_t</a> </td>
+<td class="paramname"><em>handlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove handler function for EVENT 'le_lpt_EDrxParamsChange' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a29c14497b1e9773edca1374674e1dd02"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_lpt_SetEDrxState </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__lpt__interface_8h.html#a4094c01923d2065adb1557b6ab2121d5">le_lpt_EDrxRat_t</a> </td>
+<td class="paramname"><em>rat</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__basics_8h.html#ae2138c90c41d30e2d510be01d8b374da">le_onoff_t</a> </td>
+<td class="paramname"><em>activation</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the eDRX activation state for the given Radio Access Technology.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_BAD_PARAMETER A parameter is invalid.</li>
+<li>LE_UNSUPPORTED eDRX is not supported by the platform.</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">rat</td><td>Radio Access Technology. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">activation</td><td>eDRX activation state. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a453a299fbefbd9ecce549b25574c7f69"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_lpt_SetRequestedEDrxValue </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__lpt__interface_8h.html#a4094c01923d2065adb1557b6ab2121d5">le_lpt_EDrxRat_t</a> </td>
+<td class="paramname"><em>rat</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t </td>
+<td class="paramname"><em>eDrxValue</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the requested eDRX cycle value for the given Radio Access Technology. The eDRX cycle value is defined in 3GPP TS 24.008 Release 13 section 10.5.5.32.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_BAD_PARAMETER A parameter is invalid.</li>
+<li>LE_UNSUPPORTED eDRX is not supported by the platform.</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">rat</td><td>Radio Access Technology. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">eDrxValue</td><td>Requested eDRX cycle value, defined in 3GPP TS 24.008 Rel-13 section 10.5.5.32. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a35307ca537f4a55d641854d5fddc89b0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_lpt_SetServerDisconnectHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__lpt__interface_8h.html#a304b76d31bf85e40f490bbb6a11e31db">le_lpt_DisconnectHandler_t</a> </td>
+<td class="paramname"><em>disconnectHandler</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set handler called when server disconnection is detected.</p>
+<p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
+</div>
+</div>
+<a class="anchor" id="a5401d5aadbb91d210e500ec6e777b916"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_lpt_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
