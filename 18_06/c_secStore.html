@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Secure Storage  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Secure Storage </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><a class="el" href="le__sec_store__interface_8h.html">API Reference</a> <br/>
+<a class="el" href="c_secStoreAdmin.html">Secure Storage Admin</a> API <br/>
+<a class="el" href="platformConstraintsSecStorage.html">Secure Storage</a> Constraints</p>
+<hr/>
+<p>This API for accessing secure storage.</p>
+<p>Secure storage can be used to store sensitive information like passwords, keys, certificates, etc. All data in the secure storage is in an encrypted format. Each app using this API only has access to its own secure storage data.</p>
+<p>App's items in secure storage have a name and a value. The item name is used to access the item's value and can be maximum 255 characters. The item name can contain path separators, '/', to help organize an app's data. Item names cannot contain a trailing separator.</p>
+<p>To create or update an item, use <a class="el" href="le__sec_store__interface_8h.html#a67ef7540ad79e9621a18acdf2d3427ae">le_secStore_Write()</a> to specify the item's name and value. If the item doesn't exist, it'll be created. Each item can be a maximum of 8192 bytes. If it's larger, <a class="el" href="le__sec_store__interface_8h.html#a67ef7540ad79e9621a18acdf2d3427ae">le_secStore_Write()</a> will fail.</p>
+<p>Additionally, an app's total secure storage usage is limited by the maxSecureStorageBytes setting that may be specified in the xdef files. The maxSecureStorageBytes default is 8192 bytes.</p>
+<p>Writing to secure storage may also fail if the system-wide secure storage is out of memory. The system-wide secure storage memory amount is platform dependent (see <a class="el" href="platformConstraintsSecStorage.html">Secure Storage</a>).</p>
+<p>To read an item, use <a class="el" href="le__sec_store__interface_8h.html#a14688c5dbebc75e82ac2e7835eee6364">le_secStore_Read()</a>, and specify the item's name. To delete an item, use <a class="el" href="le__sec_store__interface_8h.html#a5d5c156d080e4e4f40fcf7e46c2790e7">le_secStore_Delete()</a>.</p>
+<p>All the functions in this API are provided by the <b>secStore</b> service.</p>
+<p>Here's a code sample binding to this service: </p><pre class="fragment">bindings:
+{
+   clientExe.clientComponent.le_secStore -&gt; secStore.le_secStore
+}
+</pre><p>Whenever the secure storage is modified, a timer of 300 seconds is started. When the timer expires, a backup is performed to capture all changes since the previous backup. If the secure storage is not modified, then the backup is not performed. If corruption in the secure storage is detected, a restore is performed and the target device is rebooted.</p>
+<h1><a class="anchor" id="c_secStoreGlobal"></a>
+Global Secure Storage</h1>
+<p>This same API also provides access to a global area that can be shared across the system. This interface is called <code>secStoreGlobal</code>.</p>
+<p>Here's a code sample binding to this service: </p><pre class="fragment">bindings:
+{
+   clientExe.clientComponent.secStoreGlobal -&gt; secStore.secStoreGlobal
+}
+</pre><p>And the following code should be used to use the API from your .cdef file: </p><pre class="fragment">requires:
+{
+  api:
+
+  {
+    secStoreGlobal = le_secStore.api
+ }
+}
+</pre><hr/>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
