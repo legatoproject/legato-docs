@@ -61,12 +61,12 @@
 <div class="headertitle">
 <h1 class="title">Linux Kernel Module API </h1> </div>
 </div><div class="contents">
-<div class="textblock"><p><a class="el" href="le__kernel_module__interface_8h.html">API Reference</a></p>
+<div class="textblock"><p><a class="el" href="le__kernelModule__interface_8h.html">API Reference</a></p>
 <p>This API provides a way for applications to manually load and unload modules that were bundled with their system.</p>
 <p>Module dependencies and running module load scripts are handled automatically. Only the name of the module in question is required.</p>
 <p>To load a module, call <code>le_kernelModule_Load</code>. Unloading is similarly handled by <code>le_kernelModule_Unload</code> </p>
 <p>An example for loading a module:</p>
-<pre class="fragment"><div class="line"><a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> result = <a class="code" href="le__kernel_module__interface_8h.html#a9c2e966ce7469e0e299067d3738f9f1b">le_kernelModule_Load</a>(moduleName);</div><div class="line"> </div><div class="line"><a class="code" href="le__log_8h.html#a7a3e66a87026cc9e57bcb748840ab41b">LE_FATAL_IF</a>(result != LE_OK, <span class="stringliteral">"Could not load the required module, %s."</span>, moduleName);</div><div class="line"> </div><div class="line"><a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"Module, %s has been loaded."</span>, moduleName);</div></pre><!-- fragment --><p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+<pre class="fragment"><div class="line"><a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> result = <a class="code" href="le__kernelModule__interface_8h.html#a9c2e966ce7469e0e299067d3738f9f1b">le_kernelModule_Load</a>(moduleName);</div><div class="line"> </div><div class="line"><a class="code" href="le__log_8h.html#a7a3e66a87026cc9e57bcb748840ab41b">LE_FATAL_IF</a>(result != <a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86ca5066a4bcec691c6b67843b8f79656422">LE_OK</a>, <span class="stringliteral">"Could not load the required module, %s."</span>, moduleName);</div><div class="line"> </div><div class="line"><a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"Module, %s has been loaded."</span>, moduleName);</div></pre><!-- fragment --><p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
 </div></div>
 <br clear="left"/>
 </div>

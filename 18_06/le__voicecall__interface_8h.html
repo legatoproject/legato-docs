@@ -66,7 +66,7 @@
 <h1 class="title">le_voicecall_interface.h File Reference</h1> </div>
 </div><div class="contents">
 <div class="textblock"><code>#include "<a class="el" href="legato_8h_source.html">legato.h</a>"</code><br/>
-<code>#include "<a class="el" href="le__mdm_defs__interface_8h_source.html">le_mdmDefs_interface.h</a>"</code><br/>
+<code>#include "<a class="el" href="le__mdmDefs__interface_8h_source.html">le_mdmDefs_interface.h</a>"</code><br/>
 <code>#include "<a class="el" href="le__audio__interface_8h_source.html">le_audio_interface.h</a>"</code><br/>
 </div>
 <p><a href="le__voicecall__interface_8h_source.html">Go to the source code of this file.</a></p>
@@ -79,8 +79,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:a74c8b6a9f13f7a8ef47b6b1d57d8ab56"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a4a761b06b92521e2ae27c21a3a69993d"><td align="right" class="memItemLeft" valign="top">typedef struct le_voicecall_StateHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__voicecall__interface_8h.html#a4a761b06b92521e2ae27c21a3a69993d">le_voicecall_StateHandlerRef_t</a></td></tr>
 <tr class="separator:a4a761b06b92521e2ae27c21a3a69993d"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a9a3203db5ff7114c02e8b9b5513732a9"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__voicecall__interface_8h.html#a9a3203db5ff7114c02e8b9b5513732a9">le_voicecall_StateHandlerFunc_t</a>) (<a class="el" href="le__voicecall__interface_8h.html#a74c8b6a9f13f7a8ef47b6b1d57d8ab56">le_voicecall_CallRef_t</a> reference, const char *LE_NONNULL identifier, <a class="el" href="le__voicecall__interface_8h.html#a51066eb84677e4d4c5447aaf8dd18ff1">le_voicecall_Event_t</a> event, void *contextPtr)</td></tr>
-<tr class="separator:a9a3203db5ff7114c02e8b9b5513732a9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a714ba6bfefd08fe4b28be63f101872a9"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__voicecall__interface_8h.html#a714ba6bfefd08fe4b28be63f101872a9">le_voicecall_StateHandlerFunc_t</a>) (<a class="el" href="le__voicecall__interface_8h.html#a74c8b6a9f13f7a8ef47b6b1d57d8ab56">le_voicecall_CallRef_t</a> reference, const char *LE_NONNULL identifier, <a class="el" href="le__voicecall__interface_8h.html#a51066eb84677e4d4c5447aaf8dd18ff1">le_voicecall_Event_t</a> event, void *contextPtr)</td></tr>
+<tr class="separator:a714ba6bfefd08fe4b28be63f101872a9"><td class="memSeparator" colspan="2"> </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -121,7 +121,7 @@ Functions</h2></td></tr>
 <tr class="separator:ae45c2c4a73831effce6a824ad832de75"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a86593c8b8b0dea4210171b289fa50d2f"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__voicecall__interface_8h.html#a86593c8b8b0dea4210171b289fa50d2f">le_voicecall_DisconnectService</a> (void)</td></tr>
 <tr class="separator:a86593c8b8b0dea4210171b289fa50d2f"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a54875833715ef1f81d78d74cb86d0562"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__voicecall__interface_8h.html#a4a761b06b92521e2ae27c21a3a69993d">le_voicecall_StateHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__voicecall__interface_8h.html#a54875833715ef1f81d78d74cb86d0562">le_voicecall_AddStateHandler</a> (<a class="el" href="le__voicecall__interface_8h.html#a9a3203db5ff7114c02e8b9b5513732a9">le_voicecall_StateHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="memitem:a54875833715ef1f81d78d74cb86d0562"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__voicecall__interface_8h.html#a4a761b06b92521e2ae27c21a3a69993d">le_voicecall_StateHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__voicecall__interface_8h.html#a54875833715ef1f81d78d74cb86d0562">le_voicecall_AddStateHandler</a> (<a class="el" href="le__voicecall__interface_8h.html#a714ba6bfefd08fe4b28be63f101872a9">le_voicecall_StateHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
 <tr class="separator:a54875833715ef1f81d78d74cb86d0562"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a42b5fdb594a1e0ea56e87481f8fad515"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__voicecall__interface_8h.html#a42b5fdb594a1e0ea56e87481f8fad515">le_voicecall_RemoveStateHandler</a> (<a class="el" href="le__voicecall__interface_8h.html#a4a761b06b92521e2ae27c21a3a69993d">le_voicecall_StateHandlerRef_t</a> handlerRef)</td></tr>
 <tr class="separator:a42b5fdb594a1e0ea56e87481f8fad515"><td class="memSeparator" colspan="2"> </td></tr>
@@ -144,7 +144,8 @@ Functions</h2></td></tr>
 <div class="textblock"><p>Legato <a class="el" href="c_le_voicecall.html">Voice Call Service</a> include file.</p>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="a74c8b6a9f13f7a8ef47b6b1d57d8ab56"></a>
+<a id="a74c8b6a9f13f7a8ef47b6b1d57d8ab56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74c8b6a9f13f7a8ef47b6b1d57d8ab56">◆ </a></span>le_voicecall_CallRef_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -156,7 +157,8 @@ Functions</h2></td></tr>
 <p>Reference returned by Start function and used by End function </p>
 </div>
 </div>
-<a class="anchor" id="a7dfa8a2a6ecfaa650b1b0a56b8346a50"></a>
+<a id="a7dfa8a2a6ecfaa650b1b0a56b8346a50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dfa8a2a6ecfaa650b1b0a56b8346a50">◆ </a></span>le_voicecall_DisconnectHandler_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -168,19 +170,21 @@ Functions</h2></td></tr>
 <p>Type for handler called when a server disconnects. </p>
 </div>
 </div>
-<a class="anchor" id="a9a3203db5ff7114c02e8b9b5513732a9"></a>
+<a id="a714ba6bfefd08fe4b28be63f101872a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a714ba6bfefd08fe4b28be63f101872a9">◆ </a></span>le_voicecall_StateHandlerFunc_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
 <tr>
-<td class="memname">typedef void(* le_voicecall_StateHandlerFunc_t) (<a class="el" href="le__voicecall__interface_8h.html#a74c8b6a9f13f7a8ef47b6b1d57d8ab56">le_voicecall_CallRef_t</a> reference,const char *LE_NONNULL identifier,<a class="el" href="le__voicecall__interface_8h.html#a51066eb84677e4d4c5447aaf8dd18ff1">le_voicecall_Event_t</a> event,void *contextPtr)</td>
+<td class="memname">typedef void(* le_voicecall_StateHandlerFunc_t) (<a class="el" href="le__voicecall__interface_8h.html#a74c8b6a9f13f7a8ef47b6b1d57d8ab56">le_voicecall_CallRef_t</a> reference, const char *LE_NONNULL identifier, <a class="el" href="le__voicecall__interface_8h.html#a51066eb84677e4d4c5447aaf8dd18ff1">le_voicecall_Event_t</a> event, void *contextPtr)</td>
 </tr>
 </table>
 </div><div class="memdoc">
 <p>Handler for voice call state changes. </p>
 </div>
 </div>
-<a class="anchor" id="a4a761b06b92521e2ae27c21a3a69993d"></a>
+<a id="a4a761b06b92521e2ae27c21a3a69993d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a761b06b92521e2ae27c21a3a69993d">◆ </a></span>le_voicecall_StateHandlerRef_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -193,7 +197,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
-<a class="anchor" id="a51066eb84677e4d4c5447aaf8dd18ff1"></a>
+<a id="a51066eb84677e4d4c5447aaf8dd18ff1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51066eb84677e4d4c5447aaf8dd18ff1">◆ </a></span>le_voicecall_Event_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -204,37 +209,29 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Voice call establishment states. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a51066eb84677e4d4c5447aaf8dd18ff1af01827ea1f8f40f541a539775f7dcc37"></a>LE_VOICECALL_EVENT_ALERTING </td><td class="fielddoc">
-<p>Voice call establishment in progress. Far end is now alerting its user (outgoing call). </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a51066eb84677e4d4c5447aaf8dd18ff1af01827ea1f8f40f541a539775f7dcc37"></a>LE_VOICECALL_EVENT_ALERTING </td><td class="fielddoc"><p>Voice call establishment in progress. Far end is now alerting its user (outgoing call). </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a51066eb84677e4d4c5447aaf8dd18ff1ad3cd30048fd3957b80293e876712e79b"></a>LE_VOICECALL_EVENT_CONNECTED </td><td class="fielddoc">
-<p>Call has been established, and is media is active. </p>
+<tr><td class="fieldname"><a id="a51066eb84677e4d4c5447aaf8dd18ff1ad3cd30048fd3957b80293e876712e79b"></a>LE_VOICECALL_EVENT_CONNECTED </td><td class="fielddoc"><p>Call has been established, and is media is active. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a51066eb84677e4d4c5447aaf8dd18ff1a55cdfb321f8b09d5037edeb1ec6b04e6"></a>LE_VOICECALL_EVENT_TERMINATED </td><td class="fielddoc">
-<p>Call has terminated. </p>
+<tr><td class="fieldname"><a id="a51066eb84677e4d4c5447aaf8dd18ff1a55cdfb321f8b09d5037edeb1ec6b04e6"></a>LE_VOICECALL_EVENT_TERMINATED </td><td class="fielddoc"><p>Call has terminated. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a51066eb84677e4d4c5447aaf8dd18ff1a70bd4b958f5707742fd66b447685d3ef"></a>LE_VOICECALL_EVENT_OFFLINE </td><td class="fielddoc">
-<p>NO Service available to try establish a voice call. </p>
+<tr><td class="fieldname"><a id="a51066eb84677e4d4c5447aaf8dd18ff1a70bd4b958f5707742fd66b447685d3ef"></a>LE_VOICECALL_EVENT_OFFLINE </td><td class="fielddoc"><p>NO Service available to try establish a voice call. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a51066eb84677e4d4c5447aaf8dd18ff1a425cb5212a5eb51110ac0f02ad1bebd8"></a>LE_VOICECALL_EVENT_BUSY </td><td class="fielddoc">
-<p>Remote party (callee) is busy. </p>
+<tr><td class="fieldname"><a id="a51066eb84677e4d4c5447aaf8dd18ff1a425cb5212a5eb51110ac0f02ad1bebd8"></a>LE_VOICECALL_EVENT_BUSY </td><td class="fielddoc"><p>Remote party (callee) is busy. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a51066eb84677e4d4c5447aaf8dd18ff1ad3c8824924d684995308a9e45af95422"></a>LE_VOICECALL_EVENT_RESOURCE_BUSY </td><td class="fielddoc">
-<p>All local connection resources (lines/channels) are in use. </p>
+<tr><td class="fieldname"><a id="a51066eb84677e4d4c5447aaf8dd18ff1ad3c8824924d684995308a9e45af95422"></a>LE_VOICECALL_EVENT_RESOURCE_BUSY </td><td class="fielddoc"><p>All local connection resources (lines/channels) are in use. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a51066eb84677e4d4c5447aaf8dd18ff1a2f7877d24154743a548984d81e7fa6f7"></a>LE_VOICECALL_EVENT_CALL_END_FAILED </td><td class="fielddoc">
-<p>Call ending failed. </p>
+<tr><td class="fieldname"><a id="a51066eb84677e4d4c5447aaf8dd18ff1a2f7877d24154743a548984d81e7fa6f7"></a>LE_VOICECALL_EVENT_CALL_END_FAILED </td><td class="fielddoc"><p>Call ending failed. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a51066eb84677e4d4c5447aaf8dd18ff1a72a3f8b2a94d4617b7baf466c0b7d944"></a>LE_VOICECALL_EVENT_CALL_ANSWER_FAILED </td><td class="fielddoc">
-<p>Call answering failed. </p>
+<tr><td class="fieldname"><a id="a51066eb84677e4d4c5447aaf8dd18ff1a72a3f8b2a94d4617b7baf466c0b7d944"></a>LE_VOICECALL_EVENT_CALL_ANSWER_FAILED </td><td class="fielddoc"><p>Call answering failed. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a51066eb84677e4d4c5447aaf8dd18ff1abeff6317fd3fa13e2ad42e20da589dc6"></a>LE_VOICECALL_EVENT_INCOMING </td><td class="fielddoc">
-<p>Incoming voice call in progress. </p>
+<tr><td class="fieldname"><a id="a51066eb84677e4d4c5447aaf8dd18ff1abeff6317fd3fa13e2ad42e20da589dc6"></a>LE_VOICECALL_EVENT_INCOMING </td><td class="fielddoc"><p>Incoming voice call in progress. </p>
 </td></tr>
 </table>
 </div>
 </div>
-<a class="anchor" id="a752ba5dba19137e6d92e25450894bb13"></a>
+<a id="a752ba5dba19137e6d92e25450894bb13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a752ba5dba19137e6d92e25450894bb13">◆ </a></span>le_voicecall_TerminationReason_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -245,36 +242,31 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Voice call termination reason. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a752ba5dba19137e6d92e25450894bb13a554ae3d86ab6ae1b12b16497bdf77f13"></a>LE_VOICECALL_TERM_NETWORK_FAIL </td><td class="fielddoc">
-<p>Network could not complete the call. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a752ba5dba19137e6d92e25450894bb13a554ae3d86ab6ae1b12b16497bdf77f13"></a>LE_VOICECALL_TERM_NETWORK_FAIL </td><td class="fielddoc"><p>Network could not complete the call. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a752ba5dba19137e6d92e25450894bb13afb17bd03bb743fc51a99e0900f9725af"></a>LE_VOICECALL_TERM_BAD_ADDRESS </td><td class="fielddoc">
-<p>Remote address could not be resolved. </p>
+<tr><td class="fieldname"><a id="a752ba5dba19137e6d92e25450894bb13afb17bd03bb743fc51a99e0900f9725af"></a>LE_VOICECALL_TERM_BAD_ADDRESS </td><td class="fielddoc"><p>Remote address could not be resolved. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a752ba5dba19137e6d92e25450894bb13abea9be34bad189a32693f53d6e99816a"></a>LE_VOICECALL_TERM_BUSY </td><td class="fielddoc">
-<p>Caller is currently busy and cannot take the call. </p>
+<tr><td class="fieldname"><a id="a752ba5dba19137e6d92e25450894bb13abea9be34bad189a32693f53d6e99816a"></a>LE_VOICECALL_TERM_BUSY </td><td class="fielddoc"><p>Caller is currently busy and cannot take the call. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a752ba5dba19137e6d92e25450894bb13ad1993e84925081f21d3af3f50c4ff8ff"></a>LE_VOICECALL_TERM_LOCAL_ENDED </td><td class="fielddoc">
-<p>Local party ended the call. </p>
+<tr><td class="fieldname"><a id="a752ba5dba19137e6d92e25450894bb13ad1993e84925081f21d3af3f50c4ff8ff"></a>LE_VOICECALL_TERM_LOCAL_ENDED </td><td class="fielddoc"><p>Local party ended the call. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a752ba5dba19137e6d92e25450894bb13a2bbfe0b67fab1ca3d13156b55d9f837d"></a>LE_VOICECALL_TERM_REMOTE_ENDED </td><td class="fielddoc">
-<p>Remote party ended the call. </p>
+<tr><td class="fieldname"><a id="a752ba5dba19137e6d92e25450894bb13a2bbfe0b67fab1ca3d13156b55d9f837d"></a>LE_VOICECALL_TERM_REMOTE_ENDED </td><td class="fielddoc"><p>Remote party ended the call. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a752ba5dba19137e6d92e25450894bb13a2b82c5859edb51677668f8c0822a6706"></a>LE_VOICECALL_TERM_UNDEFINED </td><td class="fielddoc">
-<p>Undefined reason. </p>
+<tr><td class="fieldname"><a id="a752ba5dba19137e6d92e25450894bb13a2b82c5859edb51677668f8c0822a6706"></a>LE_VOICECALL_TERM_UNDEFINED </td><td class="fielddoc"><p>Undefined reason. </p>
 </td></tr>
 </table>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a54875833715ef1f81d78d74cb86d0562"></a>
+<a id="a54875833715ef1f81d78d74cb86d0562"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54875833715ef1f81d78d74cb86d0562">◆ </a></span>le_voicecall_AddStateHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
 <tr>
 <td class="memname"><a class="el" href="le__voicecall__interface_8h.html#a4a761b06b92521e2ae27c21a3a69993d">le_voicecall_StateHandlerRef_t</a> le_voicecall_AddStateHandler </td>
 <td>(</td>
-<td class="paramtype"><a class="el" href="le__voicecall__interface_8h.html#a9a3203db5ff7114c02e8b9b5513732a9">le_voicecall_StateHandlerFunc_t</a> </td>
+<td class="paramtype"><a class="el" href="le__voicecall__interface_8h.html#a714ba6bfefd08fe4b28be63f101872a9">le_voicecall_StateHandlerFunc_t</a> </td>
 <td class="paramname"><em>handlerPtr</em>, </td>
 </tr>
 <tr>
@@ -301,7 +293,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a9dc899a059b3881edb7da244b8c9fbef"></a>
+<a id="a9dc899a059b3881edb7da244b8c9fbef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dc899a059b3881edb7da244b8c9fbef">◆ </a></span>le_voicecall_Answer()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -328,7 +321,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="aed46b7d09b1560210a26a891775590f5"></a>
+<a id="aed46b7d09b1560210a26a891775590f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed46b7d09b1560210a26a891775590f5">◆ </a></span>le_voicecall_ConnectService()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -346,7 +340,8 @@ Functions</h2></td></tr>
 <p>This function is created automatically. </p>
 </div>
 </div>
-<a class="anchor" id="adb9eeb5c2e344f72b934dc8b72d3db62"></a>
+<a id="adb9eeb5c2e344f72b934dc8b72d3db62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb9eeb5c2e344f72b934dc8b72d3db62">◆ </a></span>le_voicecall_Delete()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -374,7 +369,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a86593c8b8b0dea4210171b289fa50d2f"></a>
+<a id="a86593c8b8b0dea4210171b289fa50d2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86593c8b8b0dea4210171b289fa50d2f">◆ </a></span>le_voicecall_DisconnectService()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -392,7 +388,8 @@ Functions</h2></td></tr>
 <p>This function is created automatically. </p>
 </div>
 </div>
-<a class="anchor" id="aa4758e37f80ef9fd410ef0a9731d3797"></a>
+<a id="aa4758e37f80ef9fd410ef0a9731d3797"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4758e37f80ef9fd410ef0a9731d3797">◆ </a></span>le_voicecall_End()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -419,7 +416,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="afd7256c9caa5a1cb8ccca588c7913797"></a>
+<a id="afd7256c9caa5a1cb8ccca588c7913797"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd7256c9caa5a1cb8ccca588c7913797">◆ </a></span>le_voicecall_GetRxAudioStream()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -442,7 +440,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a1e04e5a857e17e67eb75cd1c6136f163"></a>
+<a id="a1e04e5a857e17e67eb75cd1c6136f163"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e04e5a857e17e67eb75cd1c6136f163">◆ </a></span>le_voicecall_GetTerminationReason()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -481,7 +480,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ab2dc17c9f027ed291576a1b6f6b6fed1"></a>
+<a id="ab2dc17c9f027ed291576a1b6f6b6fed1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2dc17c9f027ed291576a1b6f6b6fed1">◆ </a></span>le_voicecall_GetTxAudioStream()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -504,7 +504,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a42b5fdb594a1e0ea56e87481f8fad515"></a>
+<a id="a42b5fdb594a1e0ea56e87481f8fad515"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42b5fdb594a1e0ea56e87481f8fad515">◆ </a></span>le_voicecall_RemoveStateHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -526,7 +527,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ae45c2c4a73831effce6a824ad832de75"></a>
+<a id="ae45c2c4a73831effce6a824ad832de75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae45c2c4a73831effce6a824ad832de75">◆ </a></span>le_voicecall_SetServerDisconnectHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -553,7 +555,8 @@ Functions</h2></td></tr>
 <p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
 </div>
 </div>
-<a class="anchor" id="a7b4030c0ac2b5d2d5743325d801ca560"></a>
+<a id="a7b4030c0ac2b5d2d5743325d801ca560"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b4030c0ac2b5d2d5743325d801ca560">◆ </a></span>le_voicecall_Start()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -580,7 +583,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a07e94a7b09c94d763c4ca2b8d1707580"></a>
+<a id="a07e94a7b09c94d763c4ca2b8d1707580"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07e94a7b09c94d763c4ca2b8d1707580">◆ </a></span>le_voicecall_TryConnectService()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">

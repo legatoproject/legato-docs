@@ -61,17 +61,17 @@
 <div class="headertitle">
 <h1 class="title">Secure Storage </h1> </div>
 </div><div class="contents">
-<div class="textblock"><p><a class="el" href="le__sec_store__interface_8h.html">API Reference</a> <br/>
+<div class="textblock"><p><a class="el" href="le__secStore__interface_8h.html">API Reference</a> <br/>
 <a class="el" href="c_secStoreAdmin.html">Secure Storage Admin</a> API <br/>
 <a class="el" href="platformConstraintsSecStorage.html">Secure Storage</a> Constraints</p>
 <hr/>
 <p>This API for accessing secure storage.</p>
 <p>Secure storage can be used to store sensitive information like passwords, keys, certificates, etc. All data in the secure storage is in an encrypted format. Each app using this API only has access to its own secure storage data.</p>
 <p>App's items in secure storage have a name and a value. The item name is used to access the item's value and can be maximum 255 characters. The item name can contain path separators, '/', to help organize an app's data. Item names cannot contain a trailing separator.</p>
-<p>To create or update an item, use <a class="el" href="le__sec_store__interface_8h.html#a67ef7540ad79e9621a18acdf2d3427ae">le_secStore_Write()</a> to specify the item's name and value. If the item doesn't exist, it'll be created. Each item can be a maximum of 8192 bytes. If it's larger, <a class="el" href="le__sec_store__interface_8h.html#a67ef7540ad79e9621a18acdf2d3427ae">le_secStore_Write()</a> will fail.</p>
+<p>To create or update an item, use <a class="el" href="le__secStore__interface_8h.html#a67ef7540ad79e9621a18acdf2d3427ae">le_secStore_Write()</a> to specify the item's name and value. If the item doesn't exist, it'll be created. Each item can be a maximum of 8192 bytes. If it's larger, <a class="el" href="le__secStore__interface_8h.html#a67ef7540ad79e9621a18acdf2d3427ae">le_secStore_Write()</a> will fail.</p>
 <p>Additionally, an app's total secure storage usage is limited by the maxSecureStorageBytes setting that may be specified in the xdef files. The maxSecureStorageBytes default is 8192 bytes.</p>
 <p>Writing to secure storage may also fail if the system-wide secure storage is out of memory. The system-wide secure storage memory amount is platform dependent (see <a class="el" href="platformConstraintsSecStorage.html">Secure Storage</a>).</p>
-<p>To read an item, use <a class="el" href="le__sec_store__interface_8h.html#a14688c5dbebc75e82ac2e7835eee6364">le_secStore_Read()</a>, and specify the item's name. To delete an item, use <a class="el" href="le__sec_store__interface_8h.html#a5d5c156d080e4e4f40fcf7e46c2790e7">le_secStore_Delete()</a>.</p>
+<p>To read an item, use <a class="el" href="le__secStore__interface_8h.html#a14688c5dbebc75e82ac2e7835eee6364">le_secStore_Read()</a>, and specify the item's name. To delete an item, use <a class="el" href="le__secStore__interface_8h.html#a5d5c156d080e4e4f40fcf7e46c2790e7">le_secStore_Delete()</a>.</p>
 <p>All the functions in this API are provided by the <b>secStore</b> service.</p>
 <p>Here's a code sample binding to this service: </p><pre class="fragment">bindings:
 {

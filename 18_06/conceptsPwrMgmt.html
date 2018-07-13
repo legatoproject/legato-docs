@@ -102,7 +102,7 @@ Wakeup &amp; Deferrable Events</h1>
 <li><b>Wakeup events</b>: require immediate attention so the system to must be powered.</li>
 <li><b>Deferrable events</b>: can wait to be processed until the system is powered for another reason.</li>
 </ul>
-<p>These event types are defined in the <code>fdMonitor</code> object. To classify the fdMonitor event as wakeup or deferrable, the app should call <a class="el" href="le__fd_monitor_8h.html#a66a93ae01f1e6faf1d0c7645752d4442">le_fdMonitor_SetDeferrable()</a> with the appropriate ‘isDeferrable’ flag. By default, if <a class="el" href="le__fd_monitor_8h.html#a66a93ae01f1e6faf1d0c7645752d4442">le_fdMonitor_SetDeferrable()</a> is not called; all events on that object will be assumed to be wakeup events.</p>
+<p>These event types are defined in the <code>fdMonitor</code> object. To classify the fdMonitor event as wakeup or deferrable, the app should call <a class="el" href="le__fdMonitor_8h.html#a66a93ae01f1e6faf1d0c7645752d4442">le_fdMonitor_SetDeferrable()</a> with the appropriate ‘isDeferrable’ flag. By default, if <a class="el" href="le__fdMonitor_8h.html#a66a93ae01f1e6faf1d0c7645752d4442">le_fdMonitor_SetDeferrable()</a> is not called; all events on that object will be assumed to be wakeup events.</p>
 <p>The underlying Linux mechanism of waiting for wakeup events from <code>fdMonitor’s</code> file descriptor uses epoll_wait() in conjunction with <code>EPOLLWAKEUP</code> flag. When an epoll_wait() event occurs on a file descriptor that has this flag is set, epoll_wait() will unblock the caller and an <b>eventpoll</b> kernel wakeup source will be signaled. This causes the system to stay awake until one of these conditions are met:</p>
 <ul>
 <li>another epoll_wait() call is made with the same file descriptor in the event list.</li>
@@ -116,7 +116,7 @@ Wakeup &amp; Deferrable Events</h1>
 <div class="image">
 <img alt="conceptsPwrMgmt_wakeupSources.png" src="conceptsPwrMgmt_wakeupSources.png"/>
 </div>
-<p>App components that subscribe to wakeup events must have CAP_BLOCK_SUSPEND Linux capability assigned. If not, all events will be assumed deferrable and calling <a class="el" href="le__fd_monitor_8h.html#a66a93ae01f1e6faf1d0c7645752d4442">le_fdMonitor_SetDeferrable()</a> will have no effect.</p>
+<p>App components that subscribe to wakeup events must have CAP_BLOCK_SUSPEND Linux capability assigned. If not, all events will be assumed deferrable and calling <a class="el" href="le__fdMonitor_8h.html#a66a93ae01f1e6faf1d0c7645752d4442">le_fdMonitor_SetDeferrable()</a> will have no effect.</p>
 <h1><a class="anchor" id="conceptsPwrMgmt_clients"></a>
 Power Manager Clients</h1>
 <p>Using wakeup sources and EPOLLWAKEUP provides a simple programming model to write Power Manager clients. Here are some guidelines:</p>

@@ -96,7 +96,8 @@ Functions</h2></td></tr>
 <div class="textblock"><p>Legato <a class="el" href="c_mutex.html">Mutex API</a> include file.</p>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a7bada3ca8908be93ba5b393e460f6e80"></a>
+<a id="a7bada3ca8908be93ba5b393e460f6e80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bada3ca8908be93ba5b393e460f6e80">◆ </a></span>LE_MUTEX_DECLARE_REF</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -114,7 +115,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="le__mutex_8h_html_aae68b71222e20c55ff3bf2d7b52e3009"><div class="ttname"><a href="le__mutex_8h.html#aae68b71222e20c55ff3bf2d7b52e3009">le_mutex_Unlock</a></div><div class="ttdeci">void le_mutex_Unlock(le_mutex_Ref_t mutexRef)</div></div>
 </pre><!-- fragment --><p>Declare a static mutex reference variable and accessor functions.</p>
 <p>This is handy when you need a single, file-scope mutex for use inside your module to protect other file-scope data structures from multi-threaded race conditions.</p>
-<p>Adding the line </p><pre class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> LE_MUTEX_DECLARE_REF(MyMutexRef);</div></pre><!-- fragment --><p> near the top of your file will create a file-scope variable called "MyMutexRef" of type le_mutex_Ref_t and functions called "Lock" and "Unlock" that access that variable.</p>
+<p>Adding the line </p><pre class="fragment"><div class="line"><a class="code" href="le__mutex_8h.html#a7bada3ca8908be93ba5b393e460f6e80">LE_MUTEX_DECLARE_REF</a>(MyMutexRef);</div></pre><!-- fragment --><p> near the top of your file will create a file-scope variable called "MyMutexRef" of type le_mutex_Ref_t and functions called "Lock" and "Unlock" that access that variable.</p>
 <p>See c_mutex_locking_tips for more information.</p>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
@@ -126,7 +127,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="ab2af11e2077e6bed9962eb7dfd54eb03"></a>
+<a id="ab2af11e2077e6bed9962eb7dfd54eb03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2af11e2077e6bed9962eb7dfd54eb03">◆ </a></span>le_mutex_Ref_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -139,7 +141,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a602e2c18e646db7af0d68bb5fb103207"></a>
+<a id="a602e2c18e646db7af0d68bb5fb103207"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a602e2c18e646db7af0d68bb5fb103207">◆ </a></span>le_mutex_CreateNonRecursive()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -163,7 +166,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ac7dd2b69f4b905d56df969c9085a570b"></a>
+<a id="ac7dd2b69f4b905d56df969c9085a570b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7dd2b69f4b905d56df969c9085a570b">◆ </a></span>le_mutex_CreateRecursive()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -187,7 +191,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a38571fa1d9c15d5f30ea9c480d8810c6"></a>
+<a id="a38571fa1d9c15d5f30ea9c480d8810c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38571fa1d9c15d5f30ea9c480d8810c6">◆ </a></span>le_mutex_Delete()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -210,7 +215,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ad5b7d94710f420cd945229648e7a80e7"></a>
+<a id="ad5b7d94710f420cd945229648e7a80e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5b7d94710f420cd945229648e7a80e7">◆ </a></span>le_mutex_Lock()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -233,7 +239,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a43864999f70f0a825cf8ca87f9a2ee2c"></a>
+<a id="a43864999f70f0a825cf8ca87f9a2ee2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43864999f70f0a825cf8ca87f9a2ee2c">◆ </a></span>le_mutex_TryLock()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -261,7 +268,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="aae68b71222e20c55ff3bf2d7b52e3009"></a>
+<a id="aae68b71222e20c55ff3bf2d7b52e3009"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae68b71222e20c55ff3bf2d7b52e3009">◆ </a></span>le_mutex_Unlock()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
