@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_pm_interface.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#define-members">Macros</a> |
+<a href="#typedef-members">Typedefs</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_pm_interface.h File Reference</h1> </div>
+</div><div class="contents">
+<div class="textblock"><code>#include "<a class="el" href="legato_8h_source.html">legato.h</a>"</code><br/>
+</div>
+<p><a href="le__pm__interface_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ab4f2275d5b6b1aed69b221f8a2724a8f"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__pm__interface_8h.html#ab4f2275d5b6b1aed69b221f8a2724a8f">LE_PM_TAG_LEN</a>   31</td></tr>
+<tr class="separator:ab4f2275d5b6b1aed69b221f8a2724a8f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:afa6c3fd59302cbb5578030b5468ef00d"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__pm__interface_8h.html#afa6c3fd59302cbb5578030b5468ef00d">LE_PM_TAG_LEN_BYTES</a>   32</td></tr>
+<tr class="separator:afa6c3fd59302cbb5578030b5468ef00d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac9254e3965057776d69d5c50adb47d3f"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__pm__interface_8h.html#ac9254e3965057776d69d5c50adb47d3f">LE_PM_REF_COUNT</a>   1</td></tr>
+<tr class="separator:ac9254e3965057776d69d5c50adb47d3f"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:aaef450ec7abf888cd6adcd4038728810"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__pm__interface_8h.html#aaef450ec7abf888cd6adcd4038728810">le_pm_DisconnectHandler_t</a>) (void *)</td></tr>
+<tr class="separator:aaef450ec7abf888cd6adcd4038728810"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af959045ad2b6c98fa2bbeb456c7bb9f5"><td align="right" class="memItemLeft" valign="top">typedef struct le_pm_WakeupSource * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__pm__interface_8h.html#af959045ad2b6c98fa2bbeb456c7bb9f5">le_pm_WakeupSourceRef_t</a></td></tr>
+<tr class="separator:af959045ad2b6c98fa2bbeb456c7bb9f5"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a7af80fb2e53e48370ae3bb9d78c67f2e"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__pm__interface_8h.html#a7af80fb2e53e48370ae3bb9d78c67f2e">le_pm_ConnectService</a> (void)</td></tr>
+<tr class="separator:a7af80fb2e53e48370ae3bb9d78c67f2e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7fbcd7a020620a5a2aba064f9d408800"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__pm__interface_8h.html#a7fbcd7a020620a5a2aba064f9d408800">le_pm_TryConnectService</a> (void)</td></tr>
+<tr class="separator:a7fbcd7a020620a5a2aba064f9d408800"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a80c638b6bd0143cb6b911aa2f23f0169"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__pm__interface_8h.html#a80c638b6bd0143cb6b911aa2f23f0169">le_pm_SetServerDisconnectHandler</a> (<a class="el" href="le__pm__interface_8h.html#aaef450ec7abf888cd6adcd4038728810">le_pm_DisconnectHandler_t</a> disconnectHandler, void *contextPtr)</td></tr>
+<tr class="separator:a80c638b6bd0143cb6b911aa2f23f0169"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aaf6d4541984f163ac25f35cda6373849"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__pm__interface_8h.html#aaf6d4541984f163ac25f35cda6373849">le_pm_DisconnectService</a> (void)</td></tr>
+<tr class="separator:aaf6d4541984f163ac25f35cda6373849"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a32fb74e5f0204dc6d88d1611b15765b9"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__pm__interface_8h.html#af959045ad2b6c98fa2bbeb456c7bb9f5">le_pm_WakeupSourceRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__pm__interface_8h.html#a32fb74e5f0204dc6d88d1611b15765b9">le_pm_NewWakeupSource</a> (uint32_t createOpts, const char *LE_NONNULL wsTag)</td></tr>
+<tr class="separator:a32fb74e5f0204dc6d88d1611b15765b9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa890042304352a02c3552ed2a2a927f9"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__pm__interface_8h.html#aa890042304352a02c3552ed2a2a927f9">le_pm_StayAwake</a> (<a class="el" href="le__pm__interface_8h.html#af959045ad2b6c98fa2bbeb456c7bb9f5">le_pm_WakeupSourceRef_t</a> wsRef)</td></tr>
+<tr class="separator:aa890042304352a02c3552ed2a2a927f9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a23799e750c1067e36b8f27ac8023c371"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__pm__interface_8h.html#a23799e750c1067e36b8f27ac8023c371">le_pm_Relax</a> (<a class="el" href="le__pm__interface_8h.html#af959045ad2b6c98fa2bbeb456c7bb9f5">le_pm_WakeupSourceRef_t</a> wsRef)</td></tr>
+<tr class="separator:a23799e750c1067e36b8f27ac8023c371"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5e91847cc0b76313b615b08097d14656"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__pm__interface_8h.html#a5e91847cc0b76313b615b08097d14656">le_pm_ForceRelaxAndDestroyAllWakeupSource</a> (void)</td></tr>
+<tr class="separator:a5e91847cc0b76313b615b08097d14656"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato <a class="el" href="c_pm.html">Power Manager</a> include file.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="ac9254e3965057776d69d5c50adb47d3f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_PM_REF_COUNT   1</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Option LE_PM_REF_COUNT to manage a reference counted wakeup source </p>
+</div>
+</div>
+<a class="anchor" id="ab4f2275d5b6b1aed69b221f8a2724a8f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_PM_TAG_LEN   31</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Maximum string length for a wake-up source tag (not including the null-terminator) </p>
+</div>
+</div>
+<a class="anchor" id="afa6c3fd59302cbb5578030b5468ef00d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_PM_TAG_LEN_BYTES   32</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Maximum string length for a wake-up source tag (including the null-terminator) </p>
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="aaef450ec7abf888cd6adcd4038728810"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_pm_DisconnectHandler_t) (void *)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Some useful constants Type for handler called when a server disconnects. </p>
+</div>
+</div>
+<a class="anchor" id="af959045ad2b6c98fa2bbeb456c7bb9f5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_pm_WakeupSource* <a class="el" href="le__pm__interface_8h.html#af959045ad2b6c98fa2bbeb456c7bb9f5">le_pm_WakeupSourceRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference to wakeup source used by StayAwake and Relax function </p>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a7af80fb2e53e48370ae3bb9d78c67f2e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_pm_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a class="anchor" id="aaf6d4541984f163ac25f35cda6373849"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_pm_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a class="anchor" id="a5e91847cc0b76313b615b08097d14656"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_pm_ForceRelaxAndDestroyAllWakeupSource </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Release and destroy all acquired wakeup source, kill all clients</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the wakeup source is acquired</li>
+<li>LE_NOT_PERMITTED if the <a class="el" href="le__pm__interface_8h.html#aa890042304352a02c3552ed2a2a927f9">le_pm_StayAwake()</a> has not failed with LE_NO_MEMORY</li>
+<li>LE_FAULT for other errors</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The service is available only if <a class="el" href="le__pm__interface_8h.html#aa890042304352a02c3552ed2a2a927f9">le_pm_StayAwake()</a> has returned LE_NO_MEMORY. It should be used in the way to release and destroy all wakeup sources. </dd></dl>
+</div>
+</div>
+<a class="anchor" id="a32fb74e5f0204dc6d88d1611b15765b9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__pm__interface_8h.html#af959045ad2b6c98fa2bbeb456c7bb9f5">le_pm_WakeupSourceRef_t</a> le_pm_NewWakeupSource </td>
+<td>(</td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>createOpts</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>wsTag</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Create a wakeup source</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>Reference to wakeup source (to be used later for acquiring/releasing)</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits if an invalid or existing tag is passed </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">createOpts</td><td>Wakeup source options </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">wsTag</td><td>Context-specific wakeup source tag </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a23799e750c1067e36b8f27ac8023c371"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_pm_Relax </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__pm__interface_8h.html#af959045ad2b6c98fa2bbeb456c7bb9f5">le_pm_WakeupSourceRef_t</a> </td>
+<td class="paramname"><em>wsRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Release a previously acquired wakeup source</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the wakeup source is acquired</li>
+<li>LE_NOT_FOUND if the wakeup source was not currently acquired</li>
+<li>LE_FAULT for other errors</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits if an invalid reference is passed </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">wsRef</td><td>Reference to a created wakeup source </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a80c638b6bd0143cb6b911aa2f23f0169"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_pm_SetServerDisconnectHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__pm__interface_8h.html#aaef450ec7abf888cd6adcd4038728810">le_pm_DisconnectHandler_t</a> </td>
+<td class="paramname"><em>disconnectHandler</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set handler called when server disconnection is detected.</p>
+<p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
+</div>
+</div>
+<a class="anchor" id="aa890042304352a02c3552ed2a2a927f9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_pm_StayAwake </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__pm__interface_8h.html#af959045ad2b6c98fa2bbeb456c7bb9f5">le_pm_WakeupSourceRef_t</a> </td>
+<td class="paramname"><em>wsRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Acquire a wakeup source</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the wakeup source is acquired</li>
+<li>LE_NO_MEMORY if the wakeup sources limit is reached</li>
+<li>LE_FAULT for other errors</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits if an invalid reference is passed </dd>
+<dd>
+The wakeup sources limit is fixed by the kernel CONFIG_PM_WAKELOCKS_LIMIT configuration variable </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">wsRef</td><td>Reference to a created wakeup source </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a7fbcd7a020620a5a2aba064f9d408800"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_pm_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

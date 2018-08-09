@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Debug using GDB  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_How_To.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a class="link-selected" href="howToMain.html">How To</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Debug using GDB </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>This topic provides details on using the open-source <code>GDB</code> tool on a dev machine to debug sandboxed apps. This type of remote debugging is useful where resources are limited like in embedded apps.</p>
+<p>The sample code uses an app named <code>hw</code> with one executable <code>hw_exe</code> and processes created in the same executable (<code>hw_proc1</code>, <code>hw_proc2</code>, etc.).</p>
+<p>High-level steps to use GDB with a sandboxed app:</p>
+<p>To debug a running app which is part of the default system:</p><ul>
+<li>On your dev machine, run<pre class="fragment">$ remoteDebug appName processName targetIP </pre>.</li>
+</ul>
+<p>To debug app startup, or app which is not part of default system: When compiling:</p><ul>
+<li><a class="el" href="howToDebugGDB.html#howToDebugGDB_building">Building with Debug Symbols</a> Make sure to build debug symbols</li>
+</ul>
+<p>On the target device:</p><ul>
+<li>Make sure the devMode app <code>is</code> installed and running</li>
+<li>Run the sandboxed app <a class="el" href="howToDebugGDB.html#howToDebugGDB_withoutProcess">without the process</a> you want to debug.</li>
+<li><a class="el" href="howToDebugGDB.html#howToDebugGDB_makeGDBAvail">Start</a> <code>gdbserver</code> in the sanboxed app.</li>
+<li><a class="el" href="howToDebugGDB.html#howToDebugGDB_withProcess">Start the process</a> in the sandboxed app with <code>gdbserver</code>.</li>
+<li><a class="el" href="howToDebugGDB.html#howToDebugGDB_removeGDB">Remove</a> <code>gdb</code> from the sandboxed app after you're finished debugging.</li>
+</ul>
+<p>On your dev machine:</p><ul>
+<li><a class="el" href="howToDebugGDB.html#howToDebugGDB_launchGDBhost">Launch</a> <code>gdb</code> from the apps make directory.</li>
+<li><a class="el" href="howToDebugGDB.html#howToDebugGDB_remoteConnect">Remote connect</a> to the target and run <code>gdb</code> commands.</li>
+</ul>
+<p>See basicTargetConfigIP if you need to setup your host/target communications.</p>
+<h1><a class="anchor" id="howToDebugGDB_sampleCode"></a>
+Sample Code</h1>
+<p>The following simple app sample code is used in examples.</p>
+<h2><a class="anchor" id="howToDebugGDB_sampleCode_adef"></a>
+hw.adef</h2>
+<pre class="fragment"><div class="line">start: manual</div><div class="line"> </div><div class="line">executables:</div><div class="line">{</div><div class="line">    hw_exe = ( hw )</div><div class="line">}</div><div class="line"> </div><div class="line">processes:</div><div class="line">{</div><div class="line">    run:</div><div class="line">    {</div><div class="line">        hw_proc1 = ( hw_exe )</div><div class="line">        hw_proc2 = ( hw_exe )</div><div class="line">        hw_proc3 = ( hw_exe )</div><div class="line">        hw_proc4 = ( hw_exe )</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>See <a class="el" href="getStartedApps.html">Tutorials</a> for more info.</p>
+<h2><a class="anchor" id="howToDebugGDB_sampleCode_cdef"></a>
+.cdef</h2>
+<p><code>hw/Component.cdef</code> </p><pre class="fragment"><div class="line">sources:</div><div class="line">{</div><div class="line">    hello.c</div><div class="line">}</div></pre><!-- fragment --><h2><a class="anchor" id="howToDebugGDB_sampleCode_helloC"></a>
+hello.c</h2>
+<p><code>hw/hello.c</code> </p>
+<pre class="fragment"><div class="line"><span class="preprocessor">#include "<a class="code" href="legato_8h.html">legato.h</a>"</span></div><div class="line"> </div><div class="line"><a class="code" href="le__eventLoop_8h.html#abdb9187a56836a93d19cc793cbd4b7ec">COMPONENT_INIT</a></div><div class="line">{</div><div class="line">    <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"HELLO WORLD."</span>);</div><div class="line">}</div></pre><!-- fragment --><p>See <a class="el" href="getStartedApps.html">Tutorials</a> for more info.</p>
+<h1><a class="anchor" id="howToDebugGDB_building"></a>
+Building with Debug Symbols</h1>
+<p>When building your app, build as normal, but add</p><pre class="fragment">-d &lt;debug-path&gt; </pre><p> to the mkapp command-line to generate debug symbols in <code>&lt;debug-path&gt;</code>. You can use the same directory for all your apps -- each program or library will use a unique name.</p>
+<p>When building the Legato framework from source, debug symbols for the legato framework are always generated and placed in <code>build/</code> &lt;target&gt;/debug.</p>
+<h1><a class="anchor" id="howToDebugGDB_onTarget"></a>
+Running GDB on your Target Device</h1>
+<h2><a class="anchor" id="howToDebugGDB_withoutProcess"></a>
+Running the App without a Process</h2>
+<p>To use GDB, start the sandboxed app excluding the process being debugged:</p>
+<p>On the target, run the app excluding the process being debugged, <code>hw_proc3:</code> </p><pre class="fragment"># app start hw --norun=hw_proc3
+</pre><h2><a class="anchor" id="howToDebugGDB_makeGDBAvail"></a>
+Start GDB on an App</h2>
+<p>On your dev machine, set up port forwarding from local host to the target. This bypasses the firewall on the target and allows GDB server to connect.</p>
+<pre class="fragment">$ ssh -L 2000:localhost:2000 root@192.168.2.2
+</pre><dl class="section warning"><dt>Warning</dt><dd>Do not end this session to the Target or the port forwarding will end. GDB won't be able to connect to the Target.</dd></dl>
+<p>On the target, start <code>gdbserver</code> in the sandboxed <code>/bin</code> directory by running: </p><pre class="fragment"># gdbCfg &lt;app name&gt;
+</pre><p>For Example: </p><pre class="fragment"># gdbCfg hw
+</pre><h2><a class="anchor" id="howToDebugGDB_withProcess"></a>
+Start the Process with GDB enabled</h2>
+<p>On the target, start <code>gdbserver</code> by starting the app with the arguments specified after <code>--</code> (two dashes):</p>
+<pre class="fragment"># app runProc &lt;app name&gt; --exe=/bin/gdbserver -- localhost:2000 /bin/&lt;app bin dir&gt;
+</pre><p>For Example: </p><pre class="fragment"># app runProc hw --exe=/bin/gdbserver -- localhost:2000 /bin/hw_exe
+</pre><p>If started successfully, the following will be returned: <br/>
+</p><pre class="fragment">Process /bin/hw_exe created; pid = 9783
+Listening on port 2000
+</pre><h1><a class="anchor" id="howToDebugGDB_launchGDBhost"></a>
+Launch GDB on your Dev Machine</h1>
+<p>To start GDB on your Dev Machine:</p><ul>
+<li><a class="el" href="howToDebugGDB.html#howToDebugGDB_launchGDBhost">Launch</a> <code>gdb</code> on the Dev Machine.</li>
+<li><a class="el" href="howToDebugGDB.html#howToDebugGDB_remoteConnect">Remote connect</a> to the target and run regular <code>gdb</code> commands.</li>
+</ul>
+<h2><a class="anchor" id="howTODebugGDB_lanchGDBhost"></a>
+Launch gdb from Dev Machine</h2>
+<p>You need to run the commands from the directory where the <code>hw</code> app was made. The path <code>_build_hw/wp85/app/hw/staging/read-only/bin/hw_exe</code> is relative to the app directory; this build directory is generated when an app is made and the gdb commands must be run here.</p>
+<p>In this example, we're running the <code>gdb</code> tool (<code>arm-poky-linux-gnueabi-gdb</code>) located in our target's toolchain path (<code>/opt/swi/y17-ext/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi</code> for wp85). Use the <code>findtoolchain</code> command on your dev machine to determine the toolchain path.</p>
+<p>Launch GDB from the toolchain using the following command (substitute your program and path for hw):</p>
+<pre class="fragment">$ ~/LegatoApps/hw$ /opt/swi/y17-ext/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-gdb _build_hw/wp85/app/hw/staging/read-only/bin/hw_exe
+</pre><h2><a class="anchor" id="howToDebugGDB_remoteConnect"></a>
+Remote Connect</h2>
+<p>After GDB is launched, use the <code>target</code> <code>remote</code> command to connect to the target: </p><pre class="fragment">$ (gdb) target remote localhost:2000
+</pre><dl class="section note"><dt>Note</dt><dd>If you get an error about connecting make sure you have a <a class="el" href="howToDebugGDB.html#howToDebugGDB_makeGDBAvail">ssh -L (port forwarding) session</a> open between the dev machine and target.</dd></dl>
+<p>The target will display: </p><pre class="fragment">Remote debugging using localhost:2000
+</pre><p>Now tell gdb to fetch the libraries to debug across the network, but use local debug symbols: </p><pre class="fragment">$ (gdb) set debug-file-directory &lt;debug-path&gt;
+$ (gdb) set sysroot remote:/
+</pre><p>You should see GDB reading symbols for Legato components.</p>
+<p>You can now run any of the standard <code>gdb</code> debugging commands on <code>hw_exe</code>.</p>
+<h1><a class="anchor" id="howToDebugGDB_removeGDB"></a>
+Remove GDB from Sandbox</h1>
+<p>Once you've finished debugging, remove <code>gdbserver</code> from the sandbox <code>/bin</code> directory on the target: </p><pre class="fragment"># gdbCfg hw --reset
+</pre><p>Refer to the many available open source resources if you need help using <code>gdb</code>.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
