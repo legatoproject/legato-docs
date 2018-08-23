@@ -143,7 +143,7 @@ Tracing</h2>
 <h2><a class="anchor" id="c_log_resultTxt"></a>
 Result Code Text</h2>
 <p>The <a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> macro supports printing an error condition in a human-readable text string.</p>
-<pre class="fragment"><div class="line">result = le_foo_DoSomething();</div><div class="line"> </div><div class="line"><span class="keywordflow">if</span> (result != LE_OK)</div><div class="line">{</div><div class="line">    <a class="code" href="le__log_8h.html#a353590f91b3143a7ba3a416ae5a50c3d">LE_ERROR</a>(<span class="stringliteral">"Failed to do something. Result = %d (%s)."</span>, result, <a class="code" href="le__log_8h.html#a99402d6a983f318e5b8bfcdf5dfe9024">LE_RESULT_TXT</a>(result));</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="c_log_controlling"></a>
+<pre class="fragment"><div class="line">result = le_foo_DoSomething();</div><div class="line"> </div><div class="line"><span class="keywordflow">if</span> (result != <a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86ca5066a4bcec691c6b67843b8f79656422">LE_OK</a>)</div><div class="line">{</div><div class="line">    <a class="code" href="le__log_8h.html#a353590f91b3143a7ba3a416ae5a50c3d">LE_ERROR</a>(<span class="stringliteral">"Failed to do something. Result = %d (%s)."</span>, result, <a class="code" href="le__log_8h.html#a99402d6a983f318e5b8bfcdf5dfe9024">LE_RESULT_TXT</a>(result));</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="c_log_controlling"></a>
 Log Controls</h1>
 <p>Log level filtering and tracing can be controlled at runtime using:</p><ul>
 <li>the command-line Log Control Tool (<a class="el" href="toolsTarget_log.html">log</a>)</li>

@@ -88,8 +88,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:a95cc07879f0c048d96c6ea68f610ff59"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a5045065175e7a868d02d07dcf45314c0"><td align="right" class="memItemLeft" valign="top">typedef struct streamMedia_RtcpHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="streamMedia__interface_8h.html#a5045065175e7a868d02d07dcf45314c0">streamMedia_RtcpHandlerRef_t</a></td></tr>
 <tr class="separator:a5045065175e7a868d02d07dcf45314c0"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a03ce00588c62fe59083ad7176954356f"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="streamMedia__interface_8h.html#a03ce00588c62fe59083ad7176954356f">streamMedia_RtcpHandlerFunc_t</a>) (<a class="el" href="le__audio__interface_8h.html#a9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> streamRef, <a class="el" href="streamMedia__interface_8h.html#ac31267c2639cdbb49a53830b4b3d4f53">streamMedia_RtcpEvent_t</a> event, void *contextPtr)</td></tr>
-<tr class="separator:a03ce00588c62fe59083ad7176954356f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a02bf732f125fb769b02bb9f9d77783be"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="streamMedia__interface_8h.html#a02bf732f125fb769b02bb9f9d77783be">streamMedia_RtcpHandlerFunc_t</a>) (<a class="el" href="le__audio__interface_8h.html#a9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> streamRef, <a class="el" href="streamMedia__interface_8h.html#ac31267c2639cdbb49a53830b4b3d4f53">streamMedia_RtcpEvent_t</a> event, void *contextPtr)</td></tr>
+<tr class="separator:a02bf732f125fb769b02bb9f9d77783be"><td class="memSeparator" colspan="2"> </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -128,7 +128,7 @@ Functions</h2></td></tr>
 <tr class="separator:adc641d91ad5ee1df5c3f7e9b80bd4acb"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a37bd0d6a6c7c5a4be40d8d76bd379da3"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="streamMedia__interface_8h.html#a37bd0d6a6c7c5a4be40d8d76bd379da3">streamMedia_Close</a> (<a class="el" href="le__audio__interface_8h.html#a9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> streamRef)</td></tr>
 <tr class="separator:a37bd0d6a6c7c5a4be40d8d76bd379da3"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a574ded86be6fafba6a2ee30c41350e94"><td align="right" class="memItemLeft" valign="top"><a class="el" href="streamMedia__interface_8h.html#a5045065175e7a868d02d07dcf45314c0">streamMedia_RtcpHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="streamMedia__interface_8h.html#a574ded86be6fafba6a2ee30c41350e94">streamMedia_AddRtcpHandler</a> (<a class="el" href="le__audio__interface_8h.html#a9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> streamRef, <a class="el" href="streamMedia__interface_8h.html#a03ce00588c62fe59083ad7176954356f">streamMedia_RtcpHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="memitem:a574ded86be6fafba6a2ee30c41350e94"><td align="right" class="memItemLeft" valign="top"><a class="el" href="streamMedia__interface_8h.html#a5045065175e7a868d02d07dcf45314c0">streamMedia_RtcpHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="streamMedia__interface_8h.html#a574ded86be6fafba6a2ee30c41350e94">streamMedia_AddRtcpHandler</a> (<a class="el" href="le__audio__interface_8h.html#a9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> streamRef, <a class="el" href="streamMedia__interface_8h.html#a02bf732f125fb769b02bb9f9d77783be">streamMedia_RtcpHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
 <tr class="separator:a574ded86be6fafba6a2ee30c41350e94"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a1e6f1d4ba0fb3f13101d0a61c1c20168"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="streamMedia__interface_8h.html#a1e6f1d4ba0fb3f13101d0a61c1c20168">streamMedia_RemoveRtcpHandler</a> (<a class="el" href="streamMedia__interface_8h.html#a5045065175e7a868d02d07dcf45314c0">streamMedia_RtcpHandlerRef_t</a> handlerRef)</td></tr>
 <tr class="separator:a1e6f1d4ba0fb3f13101d0a61c1c20168"><td class="memSeparator" colspan="2"> </td></tr>
@@ -137,7 +137,8 @@ Functions</h2></td></tr>
 <div class="textblock"><p>Legato <a class="el" href="sampleApps_streamMedia.html">Stream Media</a> include file.</p>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a3c9f1f29b8c0ef0f2a2aa37c939997c1"></a>
+<a id="a3c9f1f29b8c0ef0f2a2aa37c939997c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c9f1f29b8c0ef0f2a2aa37c939997c1">◆ </a></span>STREAMMEDIA_DEFAULT_RTP_PORT</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -149,7 +150,8 @@ Functions</h2></td></tr>
 <p>The default RTP port. </p>
 </div>
 </div>
-<a class="anchor" id="a64148947a62436e9d57c9e202e6ef499"></a>
+<a id="a64148947a62436e9d57c9e202e6ef499"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64148947a62436e9d57c9e202e6ef499">◆ </a></span>STREAMMEDIA_MAX_BYE_REASON_LENGTH</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -161,7 +163,8 @@ Functions</h2></td></tr>
 <p>The maximum length of the optional RTCP BYE packet reason string length. </p>
 </div>
 </div>
-<a class="anchor" id="aa74fa8cf824775885a7fda965b473141"></a>
+<a id="aa74fa8cf824775885a7fda965b473141"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa74fa8cf824775885a7fda965b473141">◆ </a></span>STREAMMEDIA_MAX_IP_LENGTH</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -173,7 +176,8 @@ Functions</h2></td></tr>
 <p>The maximum length of the textual representation of an IP address. </p>
 </div>
 </div>
-<a class="anchor" id="a5cdb0e5799818b79d8cee67148c7bdc1"></a>
+<a id="a5cdb0e5799818b79d8cee67148c7bdc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cdb0e5799818b79d8cee67148c7bdc1">◆ </a></span>STREAMMEDIA_MAX_SDES_FIELD_LENGTH</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -186,7 +190,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="a95cc07879f0c048d96c6ea68f610ff59"></a>
+<a id="a95cc07879f0c048d96c6ea68f610ff59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95cc07879f0c048d96c6ea68f610ff59">◆ </a></span>streamMedia_DisconnectHandler_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -198,19 +203,21 @@ Functions</h2></td></tr>
 <p>Type for handler called when a server disconnects. </p>
 </div>
 </div>
-<a class="anchor" id="a03ce00588c62fe59083ad7176954356f"></a>
+<a id="a02bf732f125fb769b02bb9f9d77783be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02bf732f125fb769b02bb9f9d77783be">◆ </a></span>streamMedia_RtcpHandlerFunc_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
 <tr>
-<td class="memname">typedef void(* streamMedia_RtcpHandlerFunc_t) (<a class="el" href="le__audio__interface_8h.html#a9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> streamRef,<a class="el" href="streamMedia__interface_8h.html#ac31267c2639cdbb49a53830b4b3d4f53">streamMedia_RtcpEvent_t</a> event,void *contextPtr)</td>
+<td class="memname">typedef void(* streamMedia_RtcpHandlerFunc_t) (<a class="el" href="le__audio__interface_8h.html#a9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> streamRef, <a class="el" href="streamMedia__interface_8h.html#ac31267c2639cdbb49a53830b4b3d4f53">streamMedia_RtcpEvent_t</a> event, void *contextPtr)</td>
 </tr>
 </table>
 </div><div class="memdoc">
 <p>Handler for RTCP packet reception. </p>
 </div>
 </div>
-<a class="anchor" id="a5045065175e7a868d02d07dcf45314c0"></a>
+<a id="a5045065175e7a868d02d07dcf45314c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5045065175e7a868d02d07dcf45314c0">◆ </a></span>streamMedia_RtcpHandlerRef_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -223,7 +230,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
-<a class="anchor" id="ac31267c2639cdbb49a53830b4b3d4f53"></a>
+<a id="ac31267c2639cdbb49a53830b4b3d4f53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac31267c2639cdbb49a53830b4b3d4f53">◆ </a></span>streamMedia_RtcpEvent_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -234,26 +242,22 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>RTCP packet reception events, related to the RTCP packet type. See <a href="https://tools.ietf.org/pdf/rfc3550.pdf">RFC-3550</a> for more details. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="ac31267c2639cdbb49a53830b4b3d4f53a9880ef921fb1aea434487623ec965ea2"></a>STREAMMEDIA_RTCP_SDES </td><td class="fielddoc">
-<p>RTCP Session Description packet has been received. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac31267c2639cdbb49a53830b4b3d4f53a9880ef921fb1aea434487623ec965ea2"></a>STREAMMEDIA_RTCP_SDES </td><td class="fielddoc"><p>RTCP Session Description packet has been received. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ac31267c2639cdbb49a53830b4b3d4f53ab7e8ee1030d37d58fb890420cbb3af29"></a>STREAMMEDIA_RTCP_BYE </td><td class="fielddoc">
-<p>RTCP BYE packet has been received. </p>
+<tr><td class="fieldname"><a id="ac31267c2639cdbb49a53830b4b3d4f53ab7e8ee1030d37d58fb890420cbb3af29"></a>STREAMMEDIA_RTCP_BYE </td><td class="fielddoc"><p>RTCP BYE packet has been received. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ac31267c2639cdbb49a53830b4b3d4f53a1fd41e7e651c3a7a24c5b097b50e681d"></a>STREAMMEDIA_RTCP_SR </td><td class="fielddoc">
-<p>RTCP Sender Report packet has been received. </p>
+<tr><td class="fieldname"><a id="ac31267c2639cdbb49a53830b4b3d4f53a1fd41e7e651c3a7a24c5b097b50e681d"></a>STREAMMEDIA_RTCP_SR </td><td class="fielddoc"><p>RTCP Sender Report packet has been received. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ac31267c2639cdbb49a53830b4b3d4f53a3939f46763c80b367c76aac029af8952"></a>STREAMMEDIA_RTCP_RR </td><td class="fielddoc">
-<p>RTCP Receiver Report packet has been received. </p>
+<tr><td class="fieldname"><a id="ac31267c2639cdbb49a53830b4b3d4f53a3939f46763c80b367c76aac029af8952"></a>STREAMMEDIA_RTCP_RR </td><td class="fielddoc"><p>RTCP Receiver Report packet has been received. </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ac31267c2639cdbb49a53830b4b3d4f53a9ef00e0f72c7b3a88478bbc07fbbae09"></a>STREAMMEDIA_RTCP_APP </td><td class="fielddoc">
-<p>RTCP Application-specific packet has been received. </p>
+<tr><td class="fieldname"><a id="ac31267c2639cdbb49a53830b4b3d4f53a9ef00e0f72c7b3a88478bbc07fbbae09"></a>STREAMMEDIA_RTCP_APP </td><td class="fielddoc"><p>RTCP Application-specific packet has been received. </p>
 </td></tr>
 </table>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a574ded86be6fafba6a2ee30c41350e94"></a>
+<a id="a574ded86be6fafba6a2ee30c41350e94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a574ded86be6fafba6a2ee30c41350e94">◆ </a></span>streamMedia_AddRtcpHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -266,7 +270,7 @@ Functions</h2></td></tr>
 <tr>
 <td class="paramkey"></td>
 <td></td>
-<td class="paramtype"><a class="el" href="streamMedia__interface_8h.html#a03ce00588c62fe59083ad7176954356f">streamMedia_RtcpHandlerFunc_t</a> </td>
+<td class="paramtype"><a class="el" href="streamMedia__interface_8h.html#a02bf732f125fb769b02bb9f9d77783be">streamMedia_RtcpHandlerFunc_t</a> </td>
 <td class="paramname"><em>handlerPtr</em>, </td>
 </tr>
 <tr>
@@ -294,7 +298,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a37bd0d6a6c7c5a4be40d8d76bd379da3"></a>
+<a id="a37bd0d6a6c7c5a4be40d8d76bd379da3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37bd0d6a6c7c5a4be40d8d76bd379da3">◆ </a></span>streamMedia_Close()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -316,7 +321,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="afb795dfd4c2f6b59b84f503b8d32626e"></a>
+<a id="afb795dfd4c2f6b59b84f503b8d32626e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb795dfd4c2f6b59b84f503b8d32626e">◆ </a></span>streamMedia_ConnectService()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -334,7 +340,8 @@ Functions</h2></td></tr>
 <p>This function is created automatically. </p>
 </div>
 </div>
-<a class="anchor" id="a3333799e0e87b8153aee56931f624f7c"></a>
+<a id="a3333799e0e87b8153aee56931f624f7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3333799e0e87b8153aee56931f624f7c">◆ </a></span>streamMedia_DisconnectService()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -352,7 +359,8 @@ Functions</h2></td></tr>
 <p>This function is created automatically. </p>
 </div>
 </div>
-<a class="anchor" id="aae91ec9ec540b41c84c1feffd40ed47f"></a>
+<a id="aae91ec9ec540b41c84c1feffd40ed47f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae91ec9ec540b41c84c1feffd40ed47f">◆ </a></span>streamMedia_OpenAudioRtpRx()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -375,7 +383,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a4521dbbb0f1296026fb4055487157fe7"></a>
+<a id="a4521dbbb0f1296026fb4055487157fe7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4521dbbb0f1296026fb4055487157fe7">◆ </a></span>streamMedia_OpenAudioRtpTx()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -416,7 +425,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a1e6f1d4ba0fb3f13101d0a61c1c20168"></a>
+<a id="a1e6f1d4ba0fb3f13101d0a61c1c20168"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e6f1d4ba0fb3f13101d0a61c1c20168">◆ </a></span>streamMedia_RemoveRtcpHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -438,7 +448,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="adc641d91ad5ee1df5c3f7e9b80bd4acb"></a>
+<a id="adc641d91ad5ee1df5c3f7e9b80bd4acb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc641d91ad5ee1df5c3f7e9b80bd4acb">◆ </a></span>streamMedia_SendRtcpBye()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -475,7 +486,8 @@ LE_OK Function succeeded. </dd></dl>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a16e827dba1aba9371d5daca229ba1afa"></a>
+<a id="a16e827dba1aba9371d5daca229ba1afa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16e827dba1aba9371d5daca229ba1afa">◆ </a></span>streamMedia_SendRtcpSdes()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -554,7 +566,8 @@ LE_OK Function succeeded. </dd></dl>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a022a69f6565915e91410875e93e621d3"></a>
+<a id="a022a69f6565915e91410875e93e621d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a022a69f6565915e91410875e93e621d3">◆ </a></span>streamMedia_SetServerDisconnectHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -581,7 +594,8 @@ LE_OK Function succeeded. </dd></dl>
 <p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
 </div>
 </div>
-<a class="anchor" id="a6fda400c0ebf46c7fc70bc2093d7cf8b"></a>
+<a id="a6fda400c0ebf46c7fc70bc2093d7cf8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fda400c0ebf46c7fc70bc2093d7cf8b">◆ </a></span>streamMedia_Start()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -606,7 +620,8 @@ LE_OK Function succeeded. </dd></dl>
 </dl>
 </div>
 </div>
-<a class="anchor" id="af38d378186a4f8a207ff585e7ffc33e9"></a>
+<a id="af38d378186a4f8a207ff585e7ffc33e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af38d378186a4f8a207ff585e7ffc33e9">◆ </a></span>streamMedia_Stop()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -631,7 +646,8 @@ LE_OK Function succeeded. </dd></dl>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a152f116c4941d1f369adcaed81672f40"></a>
+<a id="a152f116c4941d1f369adcaed81672f40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a152f116c4941d1f369adcaed81672f40">◆ </a></span>streamMedia_TryConnectService()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">

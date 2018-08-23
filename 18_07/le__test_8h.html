@@ -59,7 +59,8 @@
 <div class="content">
 <div class="header">
 <div class="summary">
-<a href="#define-members">Macros</a> </div>
+<a href="#define-members">Macros</a> |
+<a href="#typedef-members">Typedefs</a> </div>
 <div class="headertitle">
 <h1 class="title">le_test.h File Reference</h1> </div>
 </div><div class="contents">
@@ -67,81 +68,51 @@
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a122fa6648e4c8b84f98de1bac7771283"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__test_8h.html#a122fa6648e4c8b84f98de1bac7771283">LE_TEST_NO_PLAN</a>   -1</td></tr>
-<tr class="separator:a122fa6648e4c8b84f98de1bac7771283"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a59d2c15e0ecdbe2ec85bc06d78c709c8"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__test_8h.html#a59d2c15e0ecdbe2ec85bc06d78c709c8">LE_TEST_PLAN</a>(testCount)</td></tr>
-<tr class="separator:a59d2c15e0ecdbe2ec85bc06d78c709c8"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a219d49d27a2a5a1a6dc63f31b0b66c23"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__test_8h.html#a219d49d27a2a5a1a6dc63f31b0b66c23">LE_TEST_INIT</a>   <a class="el" href="le__test_8h.html#a59d2c15e0ecdbe2ec85bc06d78c709c8">LE_TEST_PLAN</a>(<a class="el" href="le__test_8h.html#a122fa6648e4c8b84f98de1bac7771283">LE_TEST_NO_PLAN</a>)</td></tr>
+<tr class="memitem:a219d49d27a2a5a1a6dc63f31b0b66c23"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__test_8h.html#a219d49d27a2a5a1a6dc63f31b0b66c23">LE_TEST_INIT</a>   _le_test_Init()</td></tr>
 <tr class="separator:a219d49d27a2a5a1a6dc63f31b0b66c23"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a9e80e8c5615f59652c4e8c9871e6bcd4"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__test_8h.html#a9e80e8c5615f59652c4e8c9871e6bcd4">LE_TEST_OK</a>(test,  testName, ...)</td></tr>
-<tr class="separator:a9e80e8c5615f59652c4e8c9871e6bcd4"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a555300c0c5b3442572fbcafa6dd7994b"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__test_8h.html#a555300c0c5b3442572fbcafa6dd7994b">LE_TEST</a>(testResult)   <a class="el" href="le__test_8h.html#a9e80e8c5615f59652c4e8c9871e6bcd4">LE_TEST_OK</a>((testResult), #testResult)</td></tr>
+<tr class="memitem:a555300c0c5b3442572fbcafa6dd7994b"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__test_8h.html#a555300c0c5b3442572fbcafa6dd7994b">LE_TEST</a>(testResult)</td></tr>
 <tr class="separator:a555300c0c5b3442572fbcafa6dd7994b"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a6be5bda79648279a391e9ca53317d3d6"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__test_8h.html#a6be5bda79648279a391e9ca53317d3d6">LE_TEST_FATAL</a>(...)</td></tr>
-<tr class="separator:a6be5bda79648279a391e9ca53317d3d6"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a4930d5ed69a2e4d50d4562c2aced55b2"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__test_8h.html#a4930d5ed69a2e4d50d4562c2aced55b2">LE_TEST_ASSERT</a>(test,  testName, ...)</td></tr>
-<tr class="separator:a4930d5ed69a2e4d50d4562c2aced55b2"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a0c8a5005f441c900dd88228a7f99834e"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__test_8h.html#a0c8a5005f441c900dd88228a7f99834e">LE_TEST_INFO</a>(...)   LE_TEST_OUTPUT("# " __VA_ARGS__)</td></tr>
-<tr class="separator:a0c8a5005f441c900dd88228a7f99834e"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a3ec85e2402b160c653b36290e3305f1e"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__test_8h.html#a3ec85e2402b160c653b36290e3305f1e">LE_TEST_BEGIN_TODO</a>(cond)</td></tr>
-<tr class="separator:a3ec85e2402b160c653b36290e3305f1e"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a066abe102a7518efd30f0531c0c86ec3"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__test_8h.html#a066abe102a7518efd30f0531c0c86ec3">LE_TEST_END_TODO</a>()</td></tr>
-<tr class="separator:a066abe102a7518efd30f0531c0c86ec3"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:ae9fc3c4c4505e671493b6deadeee6a2c"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__test_8h.html#ae9fc3c4c4505e671493b6deadeee6a2c">LE_TEST_BEGIN_SKIP</a>(cond,  count)</td></tr>
-<tr class="separator:ae9fc3c4c4505e671493b6deadeee6a2c"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a615a3c5d4efa30d1ce8b718b3b6a7436"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__test_8h.html#a615a3c5d4efa30d1ce8b718b3b6a7436">LE_TEST_END_SKIP</a>()   } while(0)</td></tr>
-<tr class="separator:a615a3c5d4efa30d1ce8b718b3b6a7436"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a5f0517641049c368d0a55658c4f4ddec"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__test_8h.html#a5f0517641049c368d0a55658c4f4ddec">LE_TEST_EXIT</a></td></tr>
+<tr class="memitem:a5f0517641049c368d0a55658c4f4ddec"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__test_8h.html#a5f0517641049c368d0a55658c4f4ddec">LE_TEST_EXIT</a>   exit(_le_test_GetNumFailures());</td></tr>
 <tr class="separator:a5f0517641049c368d0a55658c4f4ddec"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a6854a523683637eaf983472360d6a275"><td align="right" class="memItemLeft" valign="top"><a class="anchor" id="a6854a523683637eaf983472360d6a275"></a>
+<tr class="memitem:a6854a523683637eaf983472360d6a275"><td align="right" class="memItemLeft" valign="top"><a id="a6854a523683637eaf983472360d6a275"></a>
 #define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__test_8h.html#a6854a523683637eaf983472360d6a275">LE_TEST_SUMMARY</a>   <a class="el" href="le__test_8h.html#a5f0517641049c368d0a55658c4f4ddec">LE_TEST_EXIT</a></td></tr>
 <tr class="memdesc:a6854a523683637eaf983472360d6a275"><td class="mdescLeft"> </td><td class="mdescRight"><b> <em>DEPRECATED</em> </b> old name for LE_TEST_EXIT. <br/></td></tr>
 <tr class="separator:a6854a523683637eaf983472360d6a275"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac0c538ca3dfcd072464385b2f7e2776f"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__test_8h.html#ac0c538ca3dfcd072464385b2f7e2776f">LE_TEST_FORK</a>(exePath, ...)   _le_test_Fork(exePath, ##__VA_ARGS__, NULL)</td></tr>
+<tr class="separator:ac0c538ca3dfcd072464385b2f7e2776f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad6045dfae96da7c326024c784de3d207"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__test_8h.html#ad6045dfae96da7c326024c784de3d207">LE_TEST_JOIN</a>(child)   _le_test_Join(child)</td></tr>
+<tr class="separator:ad6045dfae96da7c326024c784de3d207"><td class="memSeparator" colspan="2"> </td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
-Local definitions that should not be used directly.</h2></td></tr>
-<tr class="memitem:ad3b794717eba8da2a932be7edf290524"><td align="right" class="memItemLeft" valign="top"><a class="anchor" id="ad3b794717eba8da2a932be7edf290524"></a>
-#define </td><td class="memItemRight" valign="bottom"><b>LE_TEST_OUTPUT</b>(format, ...)   <a class="el" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>("TAP | " format, ##__VA_ARGS__)</td></tr>
-<tr class="separator:ad3b794717eba8da2a932be7edf290524"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a6bc8868dfe8f24691af83a0f0d26c426"><td align="right" class="memItemLeft" valign="top"><a class="anchor" id="a6bc8868dfe8f24691af83a0f0d26c426"></a>
-void </td><td class="memItemRight" valign="bottom"><b>_le_test_Init</b> (int testCount)</td></tr>
-<tr class="separator:a6bc8868dfe8f24691af83a0f0d26c426"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:ace8ec844f43dc4999c4d737ae8aaa1fb"><td align="right" class="memItemLeft" valign="top"><a class="anchor" id="ace8ec844f43dc4999c4d737ae8aaa1fb"></a>
-void </td><td class="memItemRight" valign="bottom"><b>_le_test_Exit</b> (void)</td></tr>
-<tr class="separator:ace8ec844f43dc4999c4d737ae8aaa1fb"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a69a4667e878a52e9ed497fbe425954f1"><td align="right" class="memItemLeft" valign="top"><a class="anchor" id="a69a4667e878a52e9ed497fbe425954f1"></a>
-bool </td><td class="memItemRight" valign="bottom"><b>_le_test_CheckNeedsPlan</b> (void)</td></tr>
-<tr class="separator:a69a4667e878a52e9ed497fbe425954f1"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:ad793449c43650807ff598c2806074c11"><td align="right" class="memItemLeft" valign="top"><a class="anchor" id="ad793449c43650807ff598c2806074c11"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ab2de7b7c51414646bad2bc4ec2dda444"><td align="right" class="memItemLeft" valign="top">typedef struct le_test_Child * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__test_8h.html#ab2de7b7c51414646bad2bc4ec2dda444">le_test_ChildRef_t</a></td></tr>
+<tr class="separator:ab2de7b7c51414646bad2bc4ec2dda444"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Local definitions that should not be used directly.</div></td></tr>
+<tr class="memitem:adae44bbfa6299b76dc232116908a8045"><td align="right" class="memItemLeft" valign="top"><a id="adae44bbfa6299b76dc232116908a8045"></a>
+void </td><td class="memItemRight" valign="bottom"><b>_le_test_Init</b> (void)</td></tr>
+<tr class="separator:adae44bbfa6299b76dc232116908a8045"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad793449c43650807ff598c2806074c11"><td align="right" class="memItemLeft" valign="top"><a id="ad793449c43650807ff598c2806074c11"></a>
 void </td><td class="memItemRight" valign="bottom"><b>_le_test_Fail</b> (void)</td></tr>
 <tr class="separator:ad793449c43650807ff598c2806074c11"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a78fc2e28269d693593ae8c188fcc6724"><td align="right" class="memItemLeft" valign="top"><a class="anchor" id="a78fc2e28269d693593ae8c188fcc6724"></a>
-int </td><td class="memItemRight" valign="bottom"><b>_le_test_NumberTest</b> (void)</td></tr>
-<tr class="separator:a78fc2e28269d693593ae8c188fcc6724"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a95d63ba0596507044f331d3bad67c29f"><td align="right" class="memItemLeft" valign="top"><a class="anchor" id="a95d63ba0596507044f331d3bad67c29f"></a>
-int </td><td class="memItemRight" valign="bottom"><b>_le_test_GetNumTests</b> (void)</td></tr>
-<tr class="separator:a95d63ba0596507044f331d3bad67c29f"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:af25acd8593c2fe66f5b5c30804cb862c"><td align="right" class="memItemLeft" valign="top"><a class="anchor" id="af25acd8593c2fe66f5b5c30804cb862c"></a>
+<tr class="memitem:af25acd8593c2fe66f5b5c30804cb862c"><td align="right" class="memItemLeft" valign="top"><a id="af25acd8593c2fe66f5b5c30804cb862c"></a>
 int </td><td class="memItemRight" valign="bottom"><b>_le_test_GetNumFailures</b> (void)</td></tr>
 <tr class="separator:af25acd8593c2fe66f5b5c30804cb862c"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a01649f962268440e8bdaf9760880e22a"><td align="right" class="memItemLeft" valign="top"><a class="anchor" id="a01649f962268440e8bdaf9760880e22a"></a>
-bool </td><td class="memItemRight" valign="bottom"><b>_le_test_SetTodo</b> (bool todo)</td></tr>
-<tr class="separator:a01649f962268440e8bdaf9760880e22a"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a46947dadab0ad4d465f6a68d7ac85691"><td align="right" class="memItemLeft" valign="top"><a class="anchor" id="a46947dadab0ad4d465f6a68d7ac85691"></a>
-void </td><td class="memItemRight" valign="bottom"><b>_le_test_Skip</b> (int count)</td></tr>
-<tr class="separator:a46947dadab0ad4d465f6a68d7ac85691"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:ab444d80615ab3caa1cdccff1bf1f2983"><td align="right" class="memItemLeft" valign="top"><a class="anchor" id="ab444d80615ab3caa1cdccff1bf1f2983"></a>
-bool </td><td class="memItemRight" valign="bottom"><b>_le_test_IsSkipping</b> (void)</td></tr>
-<tr class="separator:ab444d80615ab3caa1cdccff1bf1f2983"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:ad12560332558fa22d31703663c174c0f"><td align="right" class="memItemLeft" valign="top"><a class="anchor" id="ad12560332558fa22d31703663c174c0f"></a>
-const char * </td><td class="memItemRight" valign="bottom"><b>_le_test_GetTag</b> (void)</td></tr>
-<tr class="separator:ad12560332558fa22d31703663c174c0f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a567cce7d9f3d3a66f1bca3575f4ef846"><td align="right" class="memItemLeft" valign="top"><a id="a567cce7d9f3d3a66f1bca3575f4ef846"></a>
+<a class="el" href="le__test_8h.html#ab2de7b7c51414646bad2bc4ec2dda444">le_test_ChildRef_t</a> </td><td class="memItemRight" valign="bottom"><b>_le_test_Fork</b> (const char *exePath,...)</td></tr>
+<tr class="separator:a567cce7d9f3d3a66f1bca3575f4ef846"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a11f2785e8f09904c788cc847d1efde3a"><td align="right" class="memItemLeft" valign="top"><a id="a11f2785e8f09904c788cc847d1efde3a"></a>
+void </td><td class="memItemRight" valign="bottom"><b>_le_test_Join</b> (<a class="el" href="le__test_8h.html#ab2de7b7c51414646bad2bc4ec2dda444">le_test_ChildRef_t</a> child)</td></tr>
+<tr class="separator:a11f2785e8f09904c788cc847d1efde3a"><td class="memSeparator" colspan="2"> </td></tr>
 </table>
 <a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Legato <a class="el" href="c_test.html">Unit Testing API</a> include file.</p>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a555300c0c5b3442572fbcafa6dd7994b"></a>
+<a id="a555300c0c5b3442572fbcafa6dd7994b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a555300c0c5b3442572fbcafa6dd7994b">◆ </a></span>LE_TEST</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -150,207 +121,36 @@ const char * </td><td class="memItemRight" valign="bottom"><b>_le_test_GetTag</
 <td>(</td>
 <td class="paramtype"> </td>
 <td class="paramname">testResult</td><td>)</td>
-<td>   <a class="el" href="le__test_8h.html#a9e80e8c5615f59652c4e8c9871e6bcd4">LE_TEST_OK</a>((testResult), #testResult)</td>
+<td></td>
 </tr>
 </table>
 </div><div class="memdoc">
-<p>Performs the test.</p>
-<p>For new tests, LE_TEST_OK is preferred which gives an option to set the test name. </p>
+<b>Value:</b><pre class="fragment"><div class="line"><span class="keywordflow">if</span> (testResult) \</div><div class="line">                                    { \</div><div class="line">                                        LE_INFO(<span class="stringliteral">"Unit Test Passed: '%s'"</span>, #testResult); \</div><div class="line">                                    } \</div><div class="line">                                    else \</div><div class="line">                                    { \</div><div class="line">                                        LE_ERROR(<span class="stringliteral">"Unit Test Failed: '%s'"</span>, #testResult); \</div><div class="line">                                        _le_test_Fail(); \</div><div class="line">                                    }</div></pre><!-- fragment --><p>Performs the test. If the test fails (testResult == false) then an error message is logged and the process either exits or the number of test failures is incremented depending on the operating mode. If the test passes (testResult == true) then an info message is logged and this macro just returns. </p>
 </div>
 </div>
-<a class="anchor" id="a4930d5ed69a2e4d50d4562c2aced55b2"></a>
+<a id="a5f0517641049c368d0a55658c4f4ddec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f0517641049c368d0a55658c4f4ddec">◆ </a></span>LE_TEST_EXIT</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
 <tr>
-<td class="memname">#define LE_TEST_ASSERT</td>
+<td class="memname">#define LE_TEST_EXIT   exit(_le_test_GetNumFailures());</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Exits the process and returns the number of failed tests. </p>
+</div>
+</div>
+<a id="ac0c538ca3dfcd072464385b2f7e2776f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0c538ca3dfcd072464385b2f7e2776f">◆ </a></span>LE_TEST_FORK</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_TEST_FORK</td>
 <td>(</td>
 <td class="paramtype"> </td>
-<td class="paramname">test, </td>
-</tr>
-<tr>
-<td class="paramkey"></td>
-<td></td>
-<td class="paramtype"> </td>
-<td class="paramname">testName, </td>
-</tr>
-<tr>
-<td class="paramkey"></td>
-<td></td>
-<td class="paramtype"> </td>
-<td class="paramname"><em>...</em> </td>
-</tr>
-<tr>
-<td></td>
-<td>)</td>
-<td></td><td></td>
-</tr>
-</table>
-</div><div class="memdoc">
-<b>Value:</b><pre class="fragment"><div class="line"><span class="keywordflow">do</span> {                            \</div><div class="line">        if (test)                                                       \</div><div class="line">        {                                                               \</div><div class="line">            LE_TEST_OUTPUT(<span class="stringliteral">"ok %d - "</span> testName <span class="stringliteral">"%s"</span>,                    \</div><div class="line">                           _le_test_NumberTest(),                       \</div><div class="line">                           ##__VA_ARGS__,                               \</div><div class="line">                           _le_test_GetTag());                          \</div><div class="line">        }                                                               \</div><div class="line">        else                                                            \</div><div class="line">        {                                                               \</div><div class="line">            LE_TEST_OUTPUT(<span class="stringliteral">"not ok %d - "</span> testName <span class="stringliteral">"%s"</span>,                \</div><div class="line">                           _le_test_NumberTest(),                       \</div><div class="line">                           ##__VA_ARGS__,                               \</div><div class="line">                           _le_test_GetTag());                          \</div><div class="line">            _le_test_Fail();                                            <a class="code" href="le__test_8h.html#a6be5bda79648279a391e9ca53317d3d6">\</a></div><div class="line"><a class="code" href="le__test_8h.html#a6be5bda79648279a391e9ca53317d3d6">            LE_TEST_FATAL</a>();                                            \</div><div class="line">        }                                                               \</div><div class="line">    } <span class="keywordflow">while</span>(0)</div><div class="ttc" id="le__test_8h_html_a6be5bda79648279a391e9ca53317d3d6"><div class="ttname"><a href="le__test_8h.html#a6be5bda79648279a391e9ca53317d3d6">LE_TEST_FATAL</a></div><div class="ttdeci">#define LE_TEST_FATAL(...)</div><div class="ttdef"><b>Definition:</b> le_test.h:209</div></div>
-</pre><!-- fragment --><p>Perform a test, and bail out if the test fails.</p>
-<p>This should only be used if a test suite cannot continue if this test fails. Generally LE_TEST_OK should be used instead. </p>
-</div>
-</div>
-<a class="anchor" id="ae9fc3c4c4505e671493b6deadeee6a2c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="memname">
-<tr>
-<td class="memname">#define LE_TEST_BEGIN_SKIP</td>
-<td>(</td>
-<td class="paramtype"> </td>
-<td class="paramname">cond, </td>
-</tr>
-<tr>
-<td class="paramkey"></td>
-<td></td>
-<td class="paramtype"> </td>
-<td class="paramname">count </td>
-</tr>
-<tr>
-<td></td>
-<td>)</td>
-<td></td><td></td>
-</tr>
-</table>
-</div><div class="memdoc">
-<b>Value:</b><pre class="fragment"><div class="line"><span class="keywordflow">do</span> {                            \</div><div class="line">          if (cond)                                                     \</div><div class="line">          {                                                             \</div><div class="line">              _le_test_Skip(count);                                     \</div><div class="line">              break;                                                    \</div><div class="line">          }</div></pre><!-- fragment --><p>Mark a test as skipped. Skipped tests will not be run, and will always pass.</p>
-<p>Begins a block which must be terminated by <a class="el" href="le__test_8h.html#a615a3c5d4efa30d1ce8b718b3b6a7436">LE_TEST_END_SKIP()</a> </p>
-</div>
-</div>
-<a class="anchor" id="a3ec85e2402b160c653b36290e3305f1e"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="memname">
-<tr>
-<td class="memname">#define LE_TEST_BEGIN_TODO</td>
-<td>(</td>
-<td class="paramtype"> </td>
-<td class="paramname">cond</td><td>)</td>
-<td></td>
-</tr>
-</table>
-</div><div class="memdoc">
-<b>Value:</b><pre class="fragment"><div class="line"><span class="keywordflow">do</span> {                                   \</div><div class="line">        bool _le_test_OldTodo = _le_test_SetTodo(cond);                 \</div></pre><!-- fragment --><p>Mark a test as not yet implemented. Todo tests will still be run, but are expected to fail.</p>
-<p>Begins a block which must be terminated by <a class="el" href="le__test_8h.html#a066abe102a7518efd30f0531c0c86ec3">LE_TEST_END_TODO()</a> </p>
-</div>
-</div>
-<a class="anchor" id="a615a3c5d4efa30d1ce8b718b3b6a7436"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="memname">
-<tr>
-<td class="memname">#define LE_TEST_END_SKIP</td>
-<td>(</td>
-<td class="paramname"></td><td>)</td>
-<td>   } while(0)</td>
-</tr>
-</table>
-</div><div class="memdoc">
-<p>End a block of tests which may not be implemented yet. </p>
-</div>
-</div>
-<a class="anchor" id="a066abe102a7518efd30f0531c0c86ec3"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="memname">
-<tr>
-<td class="memname">#define LE_TEST_END_TODO</td>
-<td>(</td>
-<td class="paramname"></td><td>)</td>
-<td></td>
-</tr>
-</table>
-</div><div class="memdoc">
-<b>Value:</b><pre class="fragment"><div class="line">_le_test_SetTodo(_le_test_OldTodo);         \</div><div class="line">    } <span class="keywordflow">while</span>(0)</div></pre><!-- fragment --><p>End a block of tests which may not be implemented yet. </p>
-</div>
-</div>
-<a class="anchor" id="a5f0517641049c368d0a55658c4f4ddec"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="memname">
-<tr>
-<td class="memname">#define LE_TEST_EXIT</td>
-</tr>
-</table>
-</div><div class="memdoc">
-<b>Value:</b><pre class="fragment"><div class="line"><span class="keywordflow">do</span> {                                       \</div><div class="line">        if (_le_test_CheckNeedsPlan())                          \</div><div class="line">        {                                                       \</div><div class="line">            LE_TEST_OUTPUT(<span class="stringliteral">"1..%d"</span>, _le_test_GetNumTests());    \</div><div class="line">        }                                                       \</div><div class="line">        _le_test_Exit();                                        \</div><div class="line">    } <span class="keywordflow">while</span>(0)</div></pre><!-- fragment --><p>Exits the process and returns the number of failed tests. </p>
-</div>
-</div>
-<a class="anchor" id="a6be5bda79648279a391e9ca53317d3d6"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="memname">
-<tr>
-<td class="memname">#define LE_TEST_FATAL</td>
-<td>(</td>
-<td class="paramtype"> </td>
-<td class="paramname"><em>...</em></td><td>)</td>
-<td></td>
-</tr>
-</table>
-</div><div class="memdoc">
-<b>Value:</b><pre class="fragment"><div class="line"><span class="keywordflow">do</span> {                         \</div><div class="line">        LE_TEST_OUTPUT(<span class="stringliteral">"Bail out! "</span> __VA_ARGS__);       \</div><div class="line">        _le_test_Exit();                                \</div><div class="line">    } <span class="keywordflow">while</span>(0)</div></pre><!-- fragment --><p>Bail out of a test suite early.</p>
-<p>Using this instead of LE_FATAL ensures the test harness is notified the test suite is exiting abnormally. </p>
-</div>
-</div>
-<a class="anchor" id="a0c8a5005f441c900dd88228a7f99834e"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="memname">
-<tr>
-<td class="memname">#define LE_TEST_INFO</td>
-<td>(</td>
-<td class="paramtype"> </td>
-<td class="paramname"><em>...</em></td><td>)</td>
-<td>   LE_TEST_OUTPUT("# " __VA_ARGS__)</td>
-</tr>
-</table>
-</div><div class="memdoc">
-<p>Ouptut some diagnostic information. In tests this should be used instead of LE_INFO so the output appears in the test results </p>
-</div>
-</div>
-<a class="anchor" id="a219d49d27a2a5a1a6dc63f31b0b66c23"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="memname">
-<tr>
-<td class="memname">#define LE_TEST_INIT   <a class="el" href="le__test_8h.html#a59d2c15e0ecdbe2ec85bc06d78c709c8">LE_TEST_PLAN</a>(<a class="el" href="le__test_8h.html#a122fa6648e4c8b84f98de1bac7771283">LE_TEST_NO_PLAN</a>)</td>
-</tr>
-</table>
-</div><div class="memdoc">
-<p>Initializes the testing framework. Must be called once before any tests are performed.</p>
-<p>Obselete synonym for <a class="el" href="le__test_8h.html#a59d2c15e0ecdbe2ec85bc06d78c709c8">LE_TEST_PLAN(LE_TEST_NO_PLAN)</a> </p>
-</div>
-</div>
-<a class="anchor" id="a122fa6648e4c8b84f98de1bac7771283"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="memname">
-<tr>
-<td class="memname">#define LE_TEST_NO_PLAN   -1</td>
-</tr>
-</table>
-</div><div class="memdoc">
-<p>Indicate the number of tests is not known in advance. </p>
-</div>
-</div>
-<a class="anchor" id="a9e80e8c5615f59652c4e8c9871e6bcd4"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="memname">
-<tr>
-<td class="memname">#define LE_TEST_OK</td>
-<td>(</td>
-<td class="paramtype"> </td>
-<td class="paramname">test, </td>
-</tr>
-<tr>
-<td class="paramkey"></td>
-<td></td>
-<td class="paramtype"> </td>
-<td class="paramname">testName, </td>
+<td class="paramname">exePath, </td>
 </tr>
 <tr>
 <td class="paramkey"></td>
@@ -361,33 +161,69 @@ const char * </td><td class="memItemRight" valign="bottom"><b>_le_test_GetTag</
 <tr>
 <td></td>
 <td>)</td>
-<td></td><td></td>
+<td></td><td>   _le_test_Fork(exePath, ##__VA_ARGS__, NULL)</td>
 </tr>
 </table>
 </div><div class="memdoc">
-<b>Value:</b><pre class="fragment"><div class="line"><span class="keywordflow">do</span> {                            \</div><div class="line">        if (test)                                                       \</div><div class="line">        {                                                               \</div><div class="line">            LE_TEST_OUTPUT(<span class="stringliteral">"ok %d - "</span> testName <span class="stringliteral">"%s"</span>,                    \</div><div class="line">                           _le_test_NumberTest(),                       \</div><div class="line">                           ##__VA_ARGS__,                               \</div><div class="line">                           _le_test_GetTag());                          \</div><div class="line">        }                                                               \</div><div class="line">        else                                                            \</div><div class="line">        {                                                               \</div><div class="line">            LE_TEST_OUTPUT(<span class="stringliteral">"not ok %d - "</span> testName <span class="stringliteral">"%s"</span>,                \</div><div class="line">                           _le_test_NumberTest(),                       \</div><div class="line">                           ##__VA_ARGS__,                               \</div><div class="line">                           _le_test_GetTag());                          \</div><div class="line">            _le_test_Fail();                                            \</div><div class="line">        }                                                               \</div><div class="line">    } <span class="keywordflow">while</span>(0)</div></pre><!-- fragment --><p>Perform the test </p>
-</div>
-</div>
-<a class="anchor" id="a59d2c15e0ecdbe2ec85bc06d78c709c8"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="memname">
-<tr>
-<td class="memname">#define LE_TEST_PLAN</td>
-<td>(</td>
-<td class="paramtype"> </td>
-<td class="paramname">testCount</td><td>)</td>
-<td></td>
-</tr>
-</table>
-</div><div class="memdoc">
-<b>Value:</b><pre class="fragment"><div class="line"><span class="keywordflow">do</span> {                                    \</div><div class="line">        if (testCount &gt;= 0) { LE_TEST_OUTPUT(<span class="stringliteral">"1..%d"</span>, testCount); }     \</div><div class="line">        _le_test_Init(testCount);                                       \</div><div class="line">    } <span class="keywordflow">while</span>(0)</div></pre><!-- fragment --><p>Initializes a test plan. Must be called once before any tests are performed.</p>
+<p>Fork a child process and have it execute a given program.</p>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
-<tr><td class="paramname">testCount</td><td>Number of tests expected in this test case. </td></tr>
+<tr><td class="paramname">exePath</td><td>[in] String containing the path to the program to be executed. If this is not an absolute path (doesn't start with a slash '/'), then the PATH environment variable will be used to search for the executable.</td></tr>
 </table>
 </dd>
 </dl>
+<p>A variable list of subsequent parameters is allowed, each of which will be passed as a command-line argument to the child program when it is executed.</p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the child process (see <a class="el" href="le__test_8h.html#ad6045dfae96da7c326024c784de3d207">LE_TEST_JOIN()</a>). </dd></dl>
+</div>
+</div>
+<a id="a219d49d27a2a5a1a6dc63f31b0b66c23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a219d49d27a2a5a1a6dc63f31b0b66c23">◆ </a></span>LE_TEST_INIT</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_TEST_INIT   _le_test_Init()</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Initializes the testing framework. Must be called once before any tests are performed. </p>
+</div>
+</div>
+<a id="ad6045dfae96da7c326024c784de3d207"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6045dfae96da7c326024c784de3d207">◆ </a></span>LE_TEST_JOIN</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_TEST_JOIN</td>
+<td>(</td>
+<td class="paramtype"> </td>
+<td class="paramname">child</td><td>)</td>
+<td>   _le_test_Join(child)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Wait for a given child process to terminate and add its results to the running test summary.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramname">child</td><td>[IN] Child process reference returned by <a class="el" href="le__test_8h.html#ac0c538ca3dfcd072464385b2f7e2776f">LE_TEST_FORK()</a>. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ab2de7b7c51414646bad2bc4ec2dda444"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2de7b7c51414646bad2bc4ec2dda444">◆ </a></span>le_test_ChildRef_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_test_Child* <a class="el" href="le__test_8h.html#ab2de7b7c51414646bad2bc4ec2dda444">le_test_ChildRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference to a forked child process. See <a class="el" href="le__test_8h.html#ac0c538ca3dfcd072464385b2f7e2776f">LE_TEST_FORK()</a> and <a class="el" href="le__test_8h.html#ad6045dfae96da7c326024c784de3d207">LE_TEST_JOIN()</a>. </p>
 </div>
 </div>
 </div>

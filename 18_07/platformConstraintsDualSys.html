@@ -64,26 +64,26 @@
 <div class="textblock"><dl class="section note"><dt>Note</dt><dd>Please refer to the Product Technical specification document of your platform for further details.</dd></dl>
 <p>The <b>dual system</b> consists in managing 2 copies of most code areas, for reliability and stability purposes. One copy is a backup in case the other one is corrupted or not running properly. The running system is called <b>ACTIVE</b> and the other system (not running) is called <b>UPDATE</b>. One cannot write in <b>ACTIVE</b> system. Only <b>UPDATE</b> system is in RW mode. In the next figure, this dual-system architecture is detailled. Some partitions are duplicated, for dual-system purpose, and some other are shared between the two systems (mainly data).</p>
 <center> <div class="image">
-<img alt="le_fwupdate_DualSys_Summary.svg" src="le_fwupdate_DualSys_Summary.svg"/>
+<object data="le_fwupdate_DualSys_Summary.svg" type="image/svg+xml">le_fwupdate_DualSys_Summary.svg</object>
 </div>
 </center><p>There are 3 operations to manage the <b>dual system</b>: <b>MARKGOOD</b>, <b>INSTALL</b> and <b>INSTALL&amp;MARKGOOD</b>.</p>
 <ul>
 <li><b>INSTALL</b> operation consists in a reboot, followed by a switch between ACTIVE &amp; UPDATE systems. Legato will mark the ACTIVE system as UPDATE one, the UPDATE system as ACTIVE one and then it will load the ACTIVE system.</li>
 </ul>
 <center> <div class="image">
-<img alt="le_fwupdate_Install.svg" src="le_fwupdate_Install.svg"/>
+<object data="le_fwupdate_Install.svg" type="image/svg+xml">le_fwupdate_Install.svg</object>
 </div>
 </center><ul>
 <li><b>MARKGOOD</b> operation consists in a copy of ACTIVE system into UPDATE one by APPS. No new downloads are possible without a successful MARKGOOD issued previously. So it means that in a stable situation, both systems are identical (same version N).</li>
 </ul>
 <center> <div class="image">
-<img alt="le_fwupdate_MarkGood.svg" src="le_fwupdate_MarkGood.svg"/>
+<object data="le_fwupdate_MarkGood.svg" type="image/svg+xml">le_fwupdate_MarkGood.svg</object>
 </div>
 </center><ul>
 <li><b>INSTALL&amp;MARKGOOD</b> operation consists in a reboot, followed by a switch between ACTIVE &amp; UPDATE systems in Legato, followed immediately by a copy of ACTIVE system into UPDATE system.</li>
 </ul>
 <center> <div class="image">
-<img alt="le_fwupdate_InstallAndMarkGood.svg" src="le_fwupdate_InstallAndMarkGood.svg"/>
+<object data="le_fwupdate_InstallAndMarkGood.svg" type="image/svg+xml">le_fwupdate_InstallAndMarkGood.svg</object>
 </div>
 </center><h1><a class="anchor" id="fwupdateConstrain_SystemUpdate"></a>
 System update</h1>

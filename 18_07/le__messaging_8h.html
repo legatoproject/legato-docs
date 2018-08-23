@@ -190,7 +190,8 @@ Functions</h2></td></tr>
 <div class="textblock"><p>Legato <a class="el" href="c_messaging.html">Low-level Messaging API</a> include file.</p>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a24a72ef8cd95d79b40cacc008b8e1b5f"></a>
+<a id="a24a72ef8cd95d79b40cacc008b8e1b5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24a72ef8cd95d79b40cacc008b8e1b5f">◆ </a></span>LE_KILL_CLIENT</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -213,12 +214,8 @@ Functions</h2></td></tr>
 </tr>
 </table>
 </div><div class="memdoc">
-<b>Value:</b><pre class="fragment"><div class="line">{ <a class="code" href="le__messaging_8h.html#a1e5c37fdd50a4d6d24cad82cb166f770">\</a></div><div class="line"><a class="code" href="le__messaging_8h.html#a1e5c37fdd50a4d6d24cad82cb166f770">    le_msg_MessageRef_t</a> msgRef = <a class="code" href="le__messaging_8h.html#a2007f56df1f818119e3188a1a2a902d6">le_msg_GetServiceRxMsg</a>(); <a class="code" href="le__log_8h.html#a7a3e66a87026cc9e57bcb748840ab41b">\</a></div><div class="line"><a class="code" href="le__log_8h.html#a7a3e66a87026cc9e57bcb748840ab41b">    LE_FATAL_IF</a>(msgRef == NULL, formatString, ##__VA_ARGS__); <a class="code" href="le__log_8h.html#a651e75cb4ec9d59f5ddc7bae2fbdde88">\</a></div><div class="line"><a class="code" href="le__log_8h.html#a651e75cb4ec9d59f5ddc7bae2fbdde88">    LE_EMERG</a>(formatString, ##__VA_ARGS__); <a class="code" href="le__messaging_8h.html#a1af0671de74160d99be5bfe212c39369">\</a></div><div class="line"><a class="code" href="le__messaging_8h.html#a1af0671de74160d99be5bfe212c39369">    le_msg_CloseSession</a>(<a class="code" href="le__messaging_8h.html#a253088f1b852575b60d7732ca7afc79b">le_msg_GetSession</a>(msgRef)); \</div><div class="line">}</div><div class="ttc" id="le__messaging_8h_html_a2007f56df1f818119e3188a1a2a902d6"><div class="ttname"><a href="le__messaging_8h.html#a2007f56df1f818119e3188a1a2a902d6">le_msg_GetServiceRxMsg</a></div><div class="ttdeci">le_msg_MessageRef_t le_msg_GetServiceRxMsg(void)</div></div>
+<b>Value:</b><pre class="fragment"><div class="line">{ \</div><div class="line">    le_msg_MessageRef_t msgRef = <a class="code" href="le__messaging_8h.html#a2007f56df1f818119e3188a1a2a902d6">le_msg_GetServiceRxMsg</a>(); \</div><div class="line">    LE_FATAL_IF(msgRef == NULL, formatString, ##__VA_ARGS__); \</div><div class="line">    LE_EMERG(formatString, ##__VA_ARGS__); \</div><div class="line">    le_msg_CloseSession(<a class="code" href="le__messaging_8h.html#a253088f1b852575b60d7732ca7afc79b">le_msg_GetSession</a>(msgRef)); \</div><div class="line">}</div><div class="ttc" id="le__messaging_8h_html_a2007f56df1f818119e3188a1a2a902d6"><div class="ttname"><a href="le__messaging_8h.html#a2007f56df1f818119e3188a1a2a902d6">le_msg_GetServiceRxMsg</a></div><div class="ttdeci">le_msg_MessageRef_t le_msg_GetServiceRxMsg(void)</div></div>
 <div class="ttc" id="le__messaging_8h_html_a253088f1b852575b60d7732ca7afc79b"><div class="ttname"><a href="le__messaging_8h.html#a253088f1b852575b60d7732ca7afc79b">le_msg_GetSession</a></div><div class="ttdeci">le_msg_SessionRef_t le_msg_GetSession(le_msg_MessageRef_t msgRef)</div></div>
-<div class="ttc" id="le__messaging_8h_html_a1af0671de74160d99be5bfe212c39369"><div class="ttname"><a href="le__messaging_8h.html#a1af0671de74160d99be5bfe212c39369">le_msg_CloseSession</a></div><div class="ttdeci">void le_msg_CloseSession(le_msg_SessionRef_t sessionRef)</div></div>
-<div class="ttc" id="le__log_8h_html_a651e75cb4ec9d59f5ddc7bae2fbdde88"><div class="ttname"><a href="le__log_8h.html#a651e75cb4ec9d59f5ddc7bae2fbdde88">LE_EMERG</a></div><div class="ttdeci">#define LE_EMERG(formatString,...)</div><div class="ttdoc">Emergency. A fatal error has occurred. A process is being terminated. </div><div class="ttdef"><b>Definition:</b> le_log.h:494</div></div>
-<div class="ttc" id="le__log_8h_html_a7a3e66a87026cc9e57bcb748840ab41b"><div class="ttname"><a href="le__log_8h.html#a7a3e66a87026cc9e57bcb748840ab41b">LE_FATAL_IF</a></div><div class="ttdeci">#define LE_FATAL_IF(condition, formatString,...)</div><div class="ttdef"><b>Definition:</b> le_log.h:550</div></div>
-<div class="ttc" id="le__messaging_8h_html_a1e5c37fdd50a4d6d24cad82cb166f770"><div class="ttname"><a href="le__messaging_8h.html#a1e5c37fdd50a4d6d24cad82cb166f770">le_msg_MessageRef_t</a></div><div class="ttdeci">struct le_msg_Message * le_msg_MessageRef_t</div><div class="ttdef"><b>Definition:</b> le_messaging.h:861</div></div>
 </pre><!-- fragment --><p>Logs an error message (at EMERGENCY level) and:</p><ul>
 <li>if the caller is running a server-side IPC function, kills the connection to the client and returns.</li>
 <li>if the caller is not running a server-side IPC function, kills the caller (doesn't return). </li>
@@ -226,7 +223,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="abf4d6c5113e22dc8ccefb48938fba7b8"></a>
+<a id="abf4d6c5113e22dc8ccefb48938fba7b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf4d6c5113e22dc8ccefb48938fba7b8">◆ </a></span>le_msg_ClientInterfaceRef_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -238,7 +236,8 @@ Functions</h2></td></tr>
 <p>Reference to a client's service instance. </p>
 </div>
 </div>
-<a class="anchor" id="a67826f96880f776bda0a3b9117304b45"></a>
+<a id="a67826f96880f776bda0a3b9117304b45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67826f96880f776bda0a3b9117304b45">◆ </a></span>le_msg_InterfaceRef_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -250,7 +249,8 @@ Functions</h2></td></tr>
 <p>Reference to an interface's service instance. </p>
 </div>
 </div>
-<a class="anchor" id="a1e5c37fdd50a4d6d24cad82cb166f770"></a>
+<a id="a1e5c37fdd50a4d6d24cad82cb166f770"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e5c37fdd50a4d6d24cad82cb166f770">◆ </a></span>le_msg_MessageRef_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -262,7 +262,8 @@ Functions</h2></td></tr>
 <p>Reference to a message. </p>
 </div>
 </div>
-<a class="anchor" id="ac05e9b3268f8fb5776adab6fe11410e5"></a>
+<a id="ac05e9b3268f8fb5776adab6fe11410e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac05e9b3268f8fb5776adab6fe11410e5">◆ </a></span>le_msg_ProtocolRef_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -274,7 +275,8 @@ Functions</h2></td></tr>
 <p>Reference to a protocol. </p>
 </div>
 </div>
-<a class="anchor" id="a9aa36465329fb00e85fb3cbdf034298a"></a>
+<a id="a9aa36465329fb00e85fb3cbdf034298a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aa36465329fb00e85fb3cbdf034298a">◆ </a></span>le_msg_ReceiveHandler_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -294,7 +296,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a70cf756e252bb377e0443bcf89f66805"></a>
+<a id="a70cf756e252bb377e0443bcf89f66805"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70cf756e252bb377e0443bcf89f66805">◆ </a></span>le_msg_ResponseCallback_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -314,7 +317,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ad9f0b13cde1d8c1eab5318dbcf0d9e28"></a>
+<a id="ad9f0b13cde1d8c1eab5318dbcf0d9e28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9f0b13cde1d8c1eab5318dbcf0d9e28">◆ </a></span>le_msg_ServiceRef_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -326,7 +330,8 @@ Functions</h2></td></tr>
 <p>Reference to a server's service instance. </p>
 </div>
 </div>
-<a class="anchor" id="a2db32a8ef90eced02789aee366c9dda2"></a>
+<a id="a2db32a8ef90eced02789aee366c9dda2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2db32a8ef90eced02789aee366c9dda2">◆ </a></span>le_msg_SessionEventHandler_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -346,7 +351,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="af86eb84f7043287aafb0a130a9eacf95"></a>
+<a id="af86eb84f7043287aafb0a130a9eacf95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af86eb84f7043287aafb0a130a9eacf95">◆ </a></span>le_msg_SessionEventHandlerRef_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -358,7 +364,8 @@ Functions</h2></td></tr>
 <p>Reference to a handler (call-back) function for events that can occur on a service (such as opening and closing of sessions and receipt of messages). </p>
 </div>
 </div>
-<a class="anchor" id="aebfc01e15b430a5b4f3038a5bd518904"></a>
+<a id="aebfc01e15b430a5b4f3038a5bd518904"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebfc01e15b430a5b4f3038a5bd518904">◆ </a></span>le_msg_SessionRef_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -371,7 +378,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a93be4a4e628d079f9f53db30f2e78b28"></a>
+<a id="a93be4a4e628d079f9f53db30f2e78b28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93be4a4e628d079f9f53db30f2e78b28">◆ </a></span>le_msg_AddRef()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -393,7 +401,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a426dfbae396599d80e52902165368907"></a>
+<a id="a426dfbae396599d80e52902165368907"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a426dfbae396599d80e52902165368907">◆ </a></span>le_msg_AddServiceCloseHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -434,7 +443,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a829d6450d487166e0b2994b4bf44ee5d"></a>
+<a id="a829d6450d487166e0b2994b4bf44ee5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a829d6450d487166e0b2994b4bf44ee5d">◆ </a></span>le_msg_AddServiceOpenHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -475,7 +485,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ad3ff11d1962840f879d9c8fe7054de0c"></a>
+<a id="ad3ff11d1962840f879d9c8fe7054de0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3ff11d1962840f879d9c8fe7054de0c">◆ </a></span>le_msg_AdvertiseService()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -498,7 +509,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a1af0671de74160d99be5bfe212c39369"></a>
+<a id="a1af0671de74160d99be5bfe212c39369"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1af0671de74160d99be5bfe212c39369">◆ </a></span>le_msg_CloseSession()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -520,7 +532,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a8293a69f256b98cbce5b9990ea3520f3"></a>
+<a id="a8293a69f256b98cbce5b9990ea3520f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8293a69f256b98cbce5b9990ea3520f3">◆ </a></span>le_msg_CreateMsg()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -548,7 +561,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="adbbb2737069b636028128c74ae407742"></a>
+<a id="adbbb2737069b636028128c74ae407742"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbbb2737069b636028128c74ae407742">◆ </a></span>le_msg_CreateService()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -582,7 +596,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a696d7c2d4e3725d3ddb5dd2d79d2d732"></a>
+<a id="a696d7c2d4e3725d3ddb5dd2d79d2d732"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a696d7c2d4e3725d3ddb5dd2d79d2d732">◆ </a></span>le_msg_CreateSession()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -617,7 +632,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a2efe99bdd7dcea84ea820a8cb4a8a9a4"></a>
+<a id="a2efe99bdd7dcea84ea820a8cb4a8a9a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2efe99bdd7dcea84ea820a8cb4a8a9a4">◆ </a></span>le_msg_DeleteService()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -640,7 +656,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a8d950c4b07741177d2c0927c31e3e29f"></a>
+<a id="a8d950c4b07741177d2c0927c31e3e29f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d950c4b07741177d2c0927c31e3e29f">◆ </a></span>le_msg_DeleteSession()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -663,7 +680,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a4fe4cb3d7a13f0b999aeb20eb5107f8b"></a>
+<a id="a4fe4cb3d7a13f0b999aeb20eb5107f8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fe4cb3d7a13f0b999aeb20eb5107f8b">◆ </a></span>le_msg_GetClientProcessId()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -698,7 +716,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ae17fcad4c9bc442dfb2403a50b5143a4"></a>
+<a id="ae17fcad4c9bc442dfb2403a50b5143a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae17fcad4c9bc442dfb2403a50b5143a4">◆ </a></span>le_msg_GetClientUserCreds()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -740,7 +759,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a8c04f9cad0a768b4922a9987df84b65f"></a>
+<a id="a8c04f9cad0a768b4922a9987df84b65f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c04f9cad0a768b4922a9987df84b65f">◆ </a></span>le_msg_GetClientUserId()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -775,7 +795,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a1eff9dd7f93de58f5678ad3d6e0b734d"></a>
+<a id="a1eff9dd7f93de58f5678ad3d6e0b734d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1eff9dd7f93de58f5678ad3d6e0b734d">◆ </a></span>le_msg_GetFd()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -798,7 +819,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a32e952eda728d1a1b4236d879bfc05f9"></a>
+<a id="a32e952eda728d1a1b4236d879bfc05f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32e952eda728d1a1b4236d879bfc05f9">◆ </a></span>le_msg_GetInterfaceName()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -822,7 +844,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a7bf1bcd46c65a764dbd944db204a73b8"></a>
+<a id="a7bf1bcd46c65a764dbd944db204a73b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bf1bcd46c65a764dbd944db204a73b8">◆ </a></span>le_msg_GetInterfaceProtocol()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -845,7 +868,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ac12a43d9266aa931762e54ab0026693f"></a>
+<a id="ac12a43d9266aa931762e54ab0026693f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac12a43d9266aa931762e54ab0026693f">◆ </a></span>le_msg_GetMaxPayloadSize()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -868,7 +892,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a32d1c7ffd913db8546f6f1bd5cce58c4"></a>
+<a id="a32d1c7ffd913db8546f6f1bd5cce58c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32d1c7ffd913db8546f6f1bd5cce58c4">◆ </a></span>le_msg_GetPayloadPtr()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -892,7 +917,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a10a7c8b66a6baadb290c8d0e3c72f066"></a>
+<a id="a10a7c8b66a6baadb290c8d0e3c72f066"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10a7c8b66a6baadb290c8d0e3c72f066">◆ </a></span>le_msg_GetProtocolIdStr()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -915,7 +941,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a42196218a35f314966901c4cd22fbb07"></a>
+<a id="a42196218a35f314966901c4cd22fbb07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42196218a35f314966901c4cd22fbb07">◆ </a></span>le_msg_GetProtocolMaxMsgSize()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -938,7 +965,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="adcd1ff1a6906433aaa6d7038125c4473"></a>
+<a id="adcd1ff1a6906433aaa6d7038125c4473"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcd1ff1a6906433aaa6d7038125c4473">◆ </a></span>le_msg_GetProtocolRef()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -972,7 +1000,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="afdbe07163b20ad9246bc8419e7c034e3"></a>
+<a id="afdbe07163b20ad9246bc8419e7c034e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdbe07163b20ad9246bc8419e7c034e3">◆ </a></span>le_msg_GetServiceContextPtr()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -996,7 +1025,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a2007f56df1f818119e3188a1a2a902d6"></a>
+<a id="a2007f56df1f818119e3188a1a2a902d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2007f56df1f818119e3188a1a2a902d6">◆ </a></span>le_msg_GetServiceRxMsg()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -1013,7 +1043,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Reference to the message being handled, or NULL if no Service message receive handler is currently running. </dd></dl>
 </div>
 </div>
-<a class="anchor" id="a253088f1b852575b60d7732ca7afc79b"></a>
+<a id="a253088f1b852575b60d7732ca7afc79b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a253088f1b852575b60d7732ca7afc79b">◆ </a></span>le_msg_GetSession()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -1036,7 +1067,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="aa6af290efb4f6f28a0438811859506b2"></a>
+<a id="aa6af290efb4f6f28a0438811859506b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6af290efb4f6f28a0438811859506b2">◆ </a></span>le_msg_GetSessionContextPtr()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -1059,7 +1091,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a708715b598d1ecbe3f62f52f5955a61c"></a>
+<a id="a708715b598d1ecbe3f62f52f5955a61c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a708715b598d1ecbe3f62f52f5955a61c">◆ </a></span>le_msg_GetSessionInterface()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -1082,7 +1115,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a729fb1891da6ec1255debd04e2a0efdb"></a>
+<a id="a729fb1891da6ec1255debd04e2a0efdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a729fb1891da6ec1255debd04e2a0efdb">◆ </a></span>le_msg_GetSessionProtocol()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -1105,7 +1139,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a38cc9dec16a758c5262d8bb5c7a2e57f"></a>
+<a id="a38cc9dec16a758c5262d8bb5c7a2e57f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38cc9dec16a758c5262d8bb5c7a2e57f">◆ </a></span>le_msg_HideService()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -1128,7 +1163,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a8b0824781c030b9ed6f8be48e4d20419"></a>
+<a id="a8b0824781c030b9ed6f8be48e4d20419"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b0824781c030b9ed6f8be48e4d20419">◆ </a></span>le_msg_NeedsResponse()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -1156,7 +1192,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a574d37960a07c4fc2bde310408619cff"></a>
+<a id="a574d37960a07c4fc2bde310408619cff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a574d37960a07c4fc2bde310408619cff">◆ </a></span>le_msg_OpenSession()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -1198,7 +1235,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a8c6480e3708e20e1f9da032a93c80bc0"></a>
+<a id="a8c6480e3708e20e1f9da032a93c80bc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c6480e3708e20e1f9da032a93c80bc0">◆ </a></span>le_msg_OpenSessionSync()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -1223,7 +1261,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="afc508c24d0b6933e8fbc4e0410d50271"></a>
+<a id="afc508c24d0b6933e8fbc4e0410d50271"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc508c24d0b6933e8fbc4e0410d50271">◆ </a></span>le_msg_ReleaseMsg()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -1245,7 +1284,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ac1aacc5df9172804ce18b93ef266b786"></a>
+<a id="ac1aacc5df9172804ce18b93ef266b786"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1aacc5df9172804ce18b93ef266b786">◆ </a></span>le_msg_RemoveServiceHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -1268,7 +1308,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a5440ae06a89b60ed04e9de5601496608"></a>
+<a id="a5440ae06a89b60ed04e9de5601496608"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5440ae06a89b60ed04e9de5601496608">◆ </a></span>le_msg_RequestResponse()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -1313,7 +1354,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="aa3cf113b26b154697ccef270dafe8798"></a>
+<a id="aa3cf113b26b154697ccef270dafe8798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3cf113b26b154697ccef270dafe8798">◆ </a></span>le_msg_RequestSyncResponse()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -1346,7 +1388,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ac4545833ad2da9bb4cc5d18125f7d9f2"></a>
+<a id="ac4545833ad2da9bb4cc5d18125f7d9f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4545833ad2da9bb4cc5d18125f7d9f2">◆ </a></span>le_msg_Respond()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -1371,7 +1414,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a073de097d281475c44a445b927fbb929"></a>
+<a id="a073de097d281475c44a445b927fbb929"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a073de097d281475c44a445b927fbb929">◆ </a></span>le_msg_Send()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -1393,7 +1437,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a43459773ce8a9febf0f2e66681e40e91"></a>
+<a id="a43459773ce8a9febf0f2e66681e40e91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43459773ce8a9febf0f2e66681e40e91">◆ </a></span>le_msg_SetFd()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -1428,7 +1473,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a9233d283c260a1983c594b4a9061374a"></a>
+<a id="a9233d283c260a1983c594b4a9061374a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9233d283c260a1983c594b4a9061374a">◆ </a></span>le_msg_SetServiceContextPtr()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -1462,7 +1508,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a21c2e57ad1ffbbdfedd3987c468e3130"></a>
+<a id="a21c2e57ad1ffbbdfedd3987c468e3130"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21c2e57ad1ffbbdfedd3987c468e3130">◆ </a></span>le_msg_SetServiceRecvHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -1503,7 +1550,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a981b1b0714abba85efc19293ac6d2744"></a>
+<a id="a981b1b0714abba85efc19293ac6d2744"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a981b1b0714abba85efc19293ac6d2744">◆ </a></span>le_msg_SetSessionCloseHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -1549,7 +1597,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a2d2c311bf66a28d99cc21dc5264d7432"></a>
+<a id="a2d2c311bf66a28d99cc21dc5264d7432"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d2c311bf66a28d99cc21dc5264d7432">◆ </a></span>le_msg_SetSessionContextPtr()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -1582,7 +1631,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ac726cc93219d326e1b10a7d13a0f4f65"></a>
+<a id="ac726cc93219d326e1b10a7d13a0f4f65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac726cc93219d326e1b10a7d13a0f4f65">◆ </a></span>le_msg_SetSessionRecvHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -1624,7 +1674,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a2ee1410da1dc345c86d6958b6cdda5e1"></a>
+<a id="a2ee1410da1dc345c86d6958b6cdda5e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ee1410da1dc345c86d6958b6cdda5e1">◆ </a></span>le_msg_TryOpenSessionSync()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">

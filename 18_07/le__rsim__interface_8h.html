@@ -82,10 +82,10 @@ Typedefs</h2></td></tr>
 <tr class="separator:a56327e6f93bf7e779ec0cb635bfe6c09"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a5da55c94a0910d5334e680d824dc7fa2"><td align="right" class="memItemLeft" valign="top">typedef struct le_rsim_MessageHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__rsim__interface_8h.html#a5da55c94a0910d5334e680d824dc7fa2">le_rsim_MessageHandlerRef_t</a></td></tr>
 <tr class="separator:a5da55c94a0910d5334e680d824dc7fa2"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a50af06cb237ec76a1b8f5a6fa4bf611a"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__rsim__interface_8h.html#a50af06cb237ec76a1b8f5a6fa4bf611a">le_rsim_MessageHandlerFunc_t</a>) (const uint8_t *messagePtr, size_t messageSize, void *contextPtr)</td></tr>
-<tr class="separator:a50af06cb237ec76a1b8f5a6fa4bf611a"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:afc68d9993eb6b20a697cdabfe85c0843"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__rsim__interface_8h.html#afc68d9993eb6b20a697cdabfe85c0843">le_rsim_CallbackHandlerFunc_t</a>) (uint8_t messageId, <a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> result, void *contextPtr)</td></tr>
-<tr class="separator:afc68d9993eb6b20a697cdabfe85c0843"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af409f56fe26a0499ea5739798b2e3d3e"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__rsim__interface_8h.html#af409f56fe26a0499ea5739798b2e3d3e">le_rsim_MessageHandlerFunc_t</a>) (const uint8_t *messagePtr, size_t messageSize, void *contextPtr)</td></tr>
+<tr class="separator:af409f56fe26a0499ea5739798b2e3d3e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8bd89de6790f60e0c8ea5feeb69ec745"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__rsim__interface_8h.html#a8bd89de6790f60e0c8ea5feeb69ec745">le_rsim_CallbackHandlerFunc_t</a>) (uint8_t messageId, <a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> result, void *contextPtr)</td></tr>
+<tr class="separator:a8bd89de6790f60e0c8ea5feeb69ec745"><td class="memSeparator" colspan="2"> </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -97,11 +97,11 @@ Functions</h2></td></tr>
 <tr class="separator:ad622639fbcc0d611569c444d804df1c4"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a06b5243134a443fa93b8566f80a8ff33"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__rsim__interface_8h.html#a06b5243134a443fa93b8566f80a8ff33">le_rsim_DisconnectService</a> (void)</td></tr>
 <tr class="separator:a06b5243134a443fa93b8566f80a8ff33"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a7c525d3f8a02a4ca14e4fb723b6cc673"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__rsim__interface_8h.html#a5da55c94a0910d5334e680d824dc7fa2">le_rsim_MessageHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__rsim__interface_8h.html#a7c525d3f8a02a4ca14e4fb723b6cc673">le_rsim_AddMessageHandler</a> (<a class="el" href="le__rsim__interface_8h.html#a50af06cb237ec76a1b8f5a6fa4bf611a">le_rsim_MessageHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="memitem:a7c525d3f8a02a4ca14e4fb723b6cc673"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__rsim__interface_8h.html#a5da55c94a0910d5334e680d824dc7fa2">le_rsim_MessageHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__rsim__interface_8h.html#a7c525d3f8a02a4ca14e4fb723b6cc673">le_rsim_AddMessageHandler</a> (<a class="el" href="le__rsim__interface_8h.html#af409f56fe26a0499ea5739798b2e3d3e">le_rsim_MessageHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
 <tr class="separator:a7c525d3f8a02a4ca14e4fb723b6cc673"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:ad488fe9d57c161a8c17ac60bda891817"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__rsim__interface_8h.html#ad488fe9d57c161a8c17ac60bda891817">le_rsim_RemoveMessageHandler</a> (<a class="el" href="le__rsim__interface_8h.html#a5da55c94a0910d5334e680d824dc7fa2">le_rsim_MessageHandlerRef_t</a> handlerRef)</td></tr>
 <tr class="separator:ad488fe9d57c161a8c17ac60bda891817"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:ace5e9e861ab59d4ec8e6198b827a5c28"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__rsim__interface_8h.html#ace5e9e861ab59d4ec8e6198b827a5c28">le_rsim_SendMessage</a> (const uint8_t *messagePtr, size_t messageSize, <a class="el" href="le__rsim__interface_8h.html#afc68d9993eb6b20a697cdabfe85c0843">le_rsim_CallbackHandlerFunc_t</a> callbackPtr, void *contextPtr)</td></tr>
+<tr class="memitem:ace5e9e861ab59d4ec8e6198b827a5c28"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__rsim__interface_8h.html#ace5e9e861ab59d4ec8e6198b827a5c28">le_rsim_SendMessage</a> (const uint8_t *messagePtr, size_t messageSize, <a class="el" href="le__rsim__interface_8h.html#a8bd89de6790f60e0c8ea5feeb69ec745">le_rsim_CallbackHandlerFunc_t</a> callbackPtr, void *contextPtr)</td></tr>
 <tr class="separator:ace5e9e861ab59d4ec8e6198b827a5c28"><td class="memSeparator" colspan="2"> </td></tr>
 </table>
 <a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -109,7 +109,8 @@ Functions</h2></td></tr>
 <hr/>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a6e8b290ec4404fd2a7b6c119d82dc9ef"></a>
+<a id="a6e8b290ec4404fd2a7b6c119d82dc9ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e8b290ec4404fd2a7b6c119d82dc9ef">◆ </a></span>LE_RSIM_MAX_MSG_SIZE</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -122,7 +123,8 @@ Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>The maximal message size of 276 bytes is based on the longest possible SAP message. This message is a <code>TRANSFER_APDU_RESP</code> composed of a 4-byte SAP header, a 8-byte ResultCode, a 4-byte ResponseAPDU header, 256 bytes of APDU data, 2 status bytes and 2 padding bytes. </dd></dl>
 </div>
 </div>
-<a class="anchor" id="a17cc74b7183e4fe32685b3692612ff3b"></a>
+<a id="a17cc74b7183e4fe32685b3692612ff3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17cc74b7183e4fe32685b3692612ff3b">◆ </a></span>LE_RSIM_MIN_MSG_SIZE</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -136,19 +138,21 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="afc68d9993eb6b20a697cdabfe85c0843"></a>
+<a id="a8bd89de6790f60e0c8ea5feeb69ec745"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bd89de6790f60e0c8ea5feeb69ec745">◆ </a></span>le_rsim_CallbackHandlerFunc_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
 <tr>
-<td class="memname">typedef void(* le_rsim_CallbackHandlerFunc_t) (uint8_t messageId,<a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> result,void *contextPtr)</td>
+<td class="memname">typedef void(* le_rsim_CallbackHandlerFunc_t) (uint8_t messageId, <a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> result, void *contextPtr)</td>
 </tr>
 </table>
 </div><div class="memdoc">
 <p>Handler for message sending result </p>
 </div>
 </div>
-<a class="anchor" id="a56327e6f93bf7e779ec0cb635bfe6c09"></a>
+<a id="a56327e6f93bf7e779ec0cb635bfe6c09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56327e6f93bf7e779ec0cb635bfe6c09">◆ </a></span>le_rsim_DisconnectHandler_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -160,19 +164,21 @@ Functions</h2></td></tr>
 <p>Type for handler called when a server disconnects. </p>
 </div>
 </div>
-<a class="anchor" id="a50af06cb237ec76a1b8f5a6fa4bf611a"></a>
+<a id="af409f56fe26a0499ea5739798b2e3d3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af409f56fe26a0499ea5739798b2e3d3e">◆ </a></span>le_rsim_MessageHandlerFunc_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
 <tr>
-<td class="memname">typedef void(* le_rsim_MessageHandlerFunc_t) (const uint8_t *messagePtr,size_t messageSize,void *contextPtr)</td>
+<td class="memname">typedef void(* le_rsim_MessageHandlerFunc_t) (const uint8_t *messagePtr, size_t messageSize, void *contextPtr)</td>
 </tr>
 </table>
 </div><div class="memdoc">
 <p>Handler for message notification </p>
 </div>
 </div>
-<a class="anchor" id="a5da55c94a0910d5334e680d824dc7fa2"></a>
+<a id="a5da55c94a0910d5334e680d824dc7fa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5da55c94a0910d5334e680d824dc7fa2">◆ </a></span>le_rsim_MessageHandlerRef_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -185,14 +191,15 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a7c525d3f8a02a4ca14e4fb723b6cc673"></a>
+<a id="a7c525d3f8a02a4ca14e4fb723b6cc673"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c525d3f8a02a4ca14e4fb723b6cc673">◆ </a></span>le_rsim_AddMessageHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
 <tr>
 <td class="memname"><a class="el" href="le__rsim__interface_8h.html#a5da55c94a0910d5334e680d824dc7fa2">le_rsim_MessageHandlerRef_t</a> le_rsim_AddMessageHandler </td>
 <td>(</td>
-<td class="paramtype"><a class="el" href="le__rsim__interface_8h.html#a50af06cb237ec76a1b8f5a6fa4bf611a">le_rsim_MessageHandlerFunc_t</a> </td>
+<td class="paramtype"><a class="el" href="le__rsim__interface_8h.html#af409f56fe26a0499ea5739798b2e3d3e">le_rsim_MessageHandlerFunc_t</a> </td>
 <td class="paramname"><em>handlerPtr</em>, </td>
 </tr>
 <tr>
@@ -219,7 +226,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ab02ad25a7a83160a0fb36a06c8604439"></a>
+<a id="ab02ad25a7a83160a0fb36a06c8604439"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab02ad25a7a83160a0fb36a06c8604439">◆ </a></span>le_rsim_ConnectService()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -237,7 +245,8 @@ Functions</h2></td></tr>
 <p>This function is created automatically. </p>
 </div>
 </div>
-<a class="anchor" id="a06b5243134a443fa93b8566f80a8ff33"></a>
+<a id="a06b5243134a443fa93b8566f80a8ff33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06b5243134a443fa93b8566f80a8ff33">◆ </a></span>le_rsim_DisconnectService()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -255,7 +264,8 @@ Functions</h2></td></tr>
 <p>This function is created automatically. </p>
 </div>
 </div>
-<a class="anchor" id="ad488fe9d57c161a8c17ac60bda891817"></a>
+<a id="ad488fe9d57c161a8c17ac60bda891817"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad488fe9d57c161a8c17ac60bda891817">◆ </a></span>le_rsim_RemoveMessageHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -277,7 +287,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ace5e9e861ab59d4ec8e6198b827a5c28"></a>
+<a id="ace5e9e861ab59d4ec8e6198b827a5c28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace5e9e861ab59d4ec8e6198b827a5c28">◆ </a></span>le_rsim_SendMessage()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -296,7 +307,7 @@ Functions</h2></td></tr>
 <tr>
 <td class="paramkey"></td>
 <td></td>
-<td class="paramtype"><a class="el" href="le__rsim__interface_8h.html#afc68d9993eb6b20a697cdabfe85c0843">le_rsim_CallbackHandlerFunc_t</a> </td>
+<td class="paramtype"><a class="el" href="le__rsim__interface_8h.html#a8bd89de6790f60e0c8ea5feeb69ec745">le_rsim_CallbackHandlerFunc_t</a> </td>
 <td class="paramname"><em>callbackPtr</em>, </td>
 </tr>
 <tr>
@@ -330,7 +341,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ad622639fbcc0d611569c444d804df1c4"></a>
+<a id="ad622639fbcc0d611569c444d804df1c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad622639fbcc0d611569c444d804df1c4">◆ </a></span>le_rsim_SetServerDisconnectHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -357,7 +369,8 @@ Functions</h2></td></tr>
 <p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
 </div>
 </div>
-<a class="anchor" id="a33fbaad0ed1ffb3d6e1b228eeb60aef7"></a>
+<a id="a33fbaad0ed1ffb3d6e1b228eeb60aef7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33fbaad0ed1ffb3d6e1b228eeb60aef7">◆ </a></span>le_rsim_TryConnectService()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">

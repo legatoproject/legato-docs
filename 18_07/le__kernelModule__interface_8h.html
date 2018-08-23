@@ -71,10 +71,10 @@
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a6c339a7e719bae5c6082a0033b1feee1"><td align="right" class="memItemLeft" valign="top"><a class="anchor" id="a6c339a7e719bae5c6082a0033b1feee1"></a>
+<tr class="memitem:a6c339a7e719bae5c6082a0033b1feee1"><td align="right" class="memItemLeft" valign="top"><a id="a6c339a7e719bae5c6082a0033b1feee1"></a>
 #define </td><td class="memItemRight" valign="bottom"><b>LE_KERNELMODULE_NAME_LEN</b>   60</td></tr>
 <tr class="separator:a6c339a7e719bae5c6082a0033b1feee1"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:ad8e43e8ccbec4aa9d5a92c75c2a0f812"><td align="right" class="memItemLeft" valign="top"><a class="anchor" id="ad8e43e8ccbec4aa9d5a92c75c2a0f812"></a>
+<tr class="memitem:ad8e43e8ccbec4aa9d5a92c75c2a0f812"><td align="right" class="memItemLeft" valign="top"><a id="ad8e43e8ccbec4aa9d5a92c75c2a0f812"></a>
 #define </td><td class="memItemRight" valign="bottom"><b>LE_KERNELMODULE_NAME_LEN_BYTES</b>   61</td></tr>
 <tr class="separator:ad8e43e8ccbec4aa9d5a92c75c2a0f812"><td class="memSeparator" colspan="2"> </td></tr>
 </table><table class="memberdecls">
@@ -102,7 +102,8 @@ Functions</h2></td></tr>
 <div class="textblock"><p>Legato <a class="el" href="c_kernelModule.html">Linux Kernel Module API</a> include file.</p>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="ad963f95149e18959c02660a083a999f5"></a>
+<a id="ad963f95149e18959c02660a083a999f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad963f95149e18959c02660a083a999f5">◆ </a></span>le_kernelModule_DisconnectHandler_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -115,7 +116,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ab354beced24de671b42888dad6b1430e"></a>
+<a id="ab354beced24de671b42888dad6b1430e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab354beced24de671b42888dad6b1430e">◆ </a></span>le_kernelModule_ConnectService()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -133,7 +135,8 @@ Functions</h2></td></tr>
 <p>This function is created automatically. </p>
 </div>
 </div>
-<a class="anchor" id="a47e2e278a242ea5abbc6a9a7fe3d422e"></a>
+<a id="a47e2e278a242ea5abbc6a9a7fe3d422e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47e2e278a242ea5abbc6a9a7fe3d422e">◆ </a></span>le_kernelModule_DisconnectService()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -151,7 +154,8 @@ Functions</h2></td></tr>
 <p>This function is created automatically. </p>
 </div>
 </div>
-<a class="anchor" id="a9c2e966ce7469e0e299067d3738f9f1b"></a>
+<a id="a9c2e966ce7469e0e299067d3738f9f1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c2e966ce7469e0e299067d3738f9f1b">◆ </a></span>le_kernelModule_Load()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -168,8 +172,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><ul>
 <li>LE_OK if the module has been successfully loaded into the kernel.</li>
 <li>LE_NOT_FOUND if the named module was not found in the system.</li>
-<li>LE_FAULT if errors were encountered when loading the module, or one of the module's dependencies.</li>
-<li>LE_DUPLICATE if the module has been already loaded into the kernel. </li>
+<li>LE_FAULT if errors were encountered when loading the module, or one of the module's dependencies. </li>
 </ul>
 </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -180,7 +183,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a812c3a5b37dbe508ffa8a2664af6e782"></a>
+<a id="a812c3a5b37dbe508ffa8a2664af6e782"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a812c3a5b37dbe508ffa8a2664af6e782">◆ </a></span>le_kernelModule_SetServerDisconnectHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -207,7 +211,8 @@ Functions</h2></td></tr>
 <p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
 </div>
 </div>
-<a class="anchor" id="a929bcd41d4f6173b888fe9c3106c0166"></a>
+<a id="a929bcd41d4f6173b888fe9c3106c0166"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a929bcd41d4f6173b888fe9c3106c0166">◆ </a></span>le_kernelModule_TryConnectService()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -232,7 +237,8 @@ Functions</h2></td></tr>
 </dd></dl>
 </div>
 </div>
-<a class="anchor" id="ab5f32b97b1af07b87dbfc2be30703ac7"></a>
+<a id="ab5f32b97b1af07b87dbfc2be30703ac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5f32b97b1af07b87dbfc2be30703ac7">◆ </a></span>le_kernelModule_Unload()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -249,8 +255,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><ul>
 <li>LE_OK if the module has been successfully unloaded from the kernel.</li>
 <li>LE_NOT_FOUND if the named module was not found in the system.</li>
-<li>LE_FAULT if errors were encountered during the module, or one of the module's dependencies unloading.</li>
-<li>LE_DUPLICATE if the module has been already unloaded from the kernel. </li>
+<li>LE_FAULT if errors were encountered during the module, or one of the module's dependencies unloading. </li>
 </ul>
 </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>

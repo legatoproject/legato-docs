@@ -73,7 +73,7 @@ Macros</h2></td></tr>
 <tr class="separator:a3973e227dd6ff4e79b2f97c42b105662"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:abdb9187a56836a93d19cc793cbd4b7ec"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__eventLoop_8h.html#abdb9187a56836a93d19cc793cbd4b7ec">COMPONENT_INIT</a>   <a class="el" href="le__eventLoop_8h.html#a3973e227dd6ff4e79b2f97c42b105662">LE_CI_LINKAGE</a> <a class="el" href="le__basics_8h.html#a1661bfbb29c2e0372ca9f0c556a8fc24">LE_SHARED</a> void _le_event_InitializeComponent(void)</td></tr>
 <tr class="separator:abdb9187a56836a93d19cc793cbd4b7ec"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a47faa85db57fa5243f12a4a1e55fbfec"><td align="right" class="memItemLeft" valign="top"><a class="anchor" id="a47faa85db57fa5243f12a4a1e55fbfec"></a>
+<tr class="memitem:a47faa85db57fa5243f12a4a1e55fbfec"><td align="right" class="memItemLeft" valign="top"><a id="a47faa85db57fa5243f12a4a1e55fbfec"></a>
 #define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__eventLoop_8h.html#a47faa85db57fa5243f12a4a1e55fbfec">LE_EVENT_INIT_HANDLER</a>   <a class="el" href="le__eventLoop_8h.html#abdb9187a56836a93d19cc793cbd4b7ec">COMPONENT_INIT</a></td></tr>
 <tr class="memdesc:a47faa85db57fa5243f12a4a1e55fbfec"><td class="mdescLeft"> </td><td class="mdescRight">Deprecated name for <a class="el" href="le__eventLoop_8h.html#abdb9187a56836a93d19cc793cbd4b7ec">COMPONENT_INIT</a>. <br/></td></tr>
 <tr class="separator:a47faa85db57fa5243f12a4a1e55fbfec"><td class="memSeparator" colspan="2"> </td></tr>
@@ -126,7 +126,8 @@ Functions</h2></td></tr>
 <div class="textblock"><p>Legato <a class="el" href="c_eventLoop.html">Event Loop API</a> include file.</p>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="abdb9187a56836a93d19cc793cbd4b7ec"></a>
+<a id="abdb9187a56836a93d19cc793cbd4b7ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdb9187a56836a93d19cc793cbd4b7ec">◆ </a></span>COMPONENT_INIT</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -138,7 +139,8 @@ Functions</h2></td></tr>
 <p>Initialization event handler function. </p>
 </div>
 </div>
-<a class="anchor" id="a3973e227dd6ff4e79b2f97c42b105662"></a>
+<a id="a3973e227dd6ff4e79b2f97c42b105662"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3973e227dd6ff4e79b2f97c42b105662">◆ </a></span>LE_CI_LINKAGE</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -149,11 +151,12 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Initialization event handler function declaration macro.</p>
 <p>Use this macro instead of a normal function prototype to create an Initialization Event Handler function. E.g.,</p>
-<pre class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> COMPONENT_INIT</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> {</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>     // Do my initialization here...</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span> }</div></pre><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Nothing. </dd></dl>
+<pre class="fragment"><div class="line"><a class="code" href="le__eventLoop_8h.html#abdb9187a56836a93d19cc793cbd4b7ec">COMPONENT_INIT</a></div><div class="line">{</div><div class="line">    <span class="comment">// Do my initialization here...</span></div><div class="line">}</div></pre><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Nothing. </dd></dl>
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="a6f86581d4d2bf24647d5efaff1046d5d"></a>
+<a id="a6f86581d4d2bf24647d5efaff1046d5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f86581d4d2bf24647d5efaff1046d5d">◆ </a></span>le_event_DeferredFunc_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -172,7 +175,8 @@ Functions</h2></td></tr>
 <p>See <a class="el" href="c_eventLoop.html#c_event_deferredFunctionCalls">Deferred Function Calls</a> for more information. </p>
 </div>
 </div>
-<a class="anchor" id="ada421dec46f51fcb3421ef7058f16944"></a>
+<a id="ada421dec46f51fcb3421ef7058f16944"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada421dec46f51fcb3421ef7058f16944">◆ </a></span>le_event_HandlerFunc_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -191,7 +195,8 @@ Functions</h2></td></tr>
 <dl class="section warning"><dt>Warning</dt><dd>The reportPtr is only valid until the handler function returns. </dd></dl>
 </div>
 </div>
-<a class="anchor" id="ae7ab96b8e3441b3d484fcf52aa7a9dad"></a>
+<a id="ae7ab96b8e3441b3d484fcf52aa7a9dad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7ab96b8e3441b3d484fcf52aa7a9dad">◆ </a></span>le_event_HandlerRef_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -204,7 +209,8 @@ Functions</h2></td></tr>
 <p>Used to refer to handlers that have been added for events. Only needed if you want to set the handler's context pointer or need to remove the handler later. </p>
 </div>
 </div>
-<a class="anchor" id="ae6e351b38bc95954f159d16d19d2d55c"></a>
+<a id="ae6e351b38bc95954f159d16d19d2d55c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6e351b38bc95954f159d16d19d2d55c">◆ </a></span>le_event_Id_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -217,7 +223,8 @@ Functions</h2></td></tr>
 <p>An Event ID ties event reports to event handlers. See <a class="el" href="c_eventLoop.html#c_event_publishSubscribe">Publish-Subscribe Events</a> for more details. </p>
 </div>
 </div>
-<a class="anchor" id="a325afcc96343fde371e4c63639ace2ef"></a>
+<a id="a325afcc96343fde371e4c63639ace2ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a325afcc96343fde371e4c63639ace2ef">◆ </a></span>le_event_LayeredHandlerFunc_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -238,7 +245,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ae65a65b4111618f47d7e6d57a48289e5"></a>
+<a id="ae65a65b4111618f47d7e6d57a48289e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae65a65b4111618f47d7e6d57a48289e5">◆ </a></span>le_event_AddHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -281,7 +289,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a8b906d38935f64953482f42c745e1c18"></a>
+<a id="a8b906d38935f64953482f42c745e1c18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b906d38935f64953482f42c745e1c18">◆ </a></span>le_event_AddLayeredHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -332,7 +341,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a41a96eb3affb07184b519164cf54e213"></a>
+<a id="a41a96eb3affb07184b519164cf54e213"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41a96eb3affb07184b519164cf54e213">◆ </a></span>le_event_CreateId()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -367,7 +377,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a31bef8276ad0e911fd84fb710d58ca2b"></a>
+<a id="a31bef8276ad0e911fd84fb710d58ca2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31bef8276ad0e911fd84fb710d58ca2b">◆ </a></span>le_event_CreateIdWithRefCounting()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -391,7 +402,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a1c73916295cc9e17af07e02756aa86c9"></a>
+<a id="a1c73916295cc9e17af07e02756aa86c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c73916295cc9e17af07e02756aa86c9">◆ </a></span>le_event_GetContextPtr()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -409,7 +421,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Context pointer that was set using <a class="el" href="le__eventLoop_8h.html#ae0c4307a9715794c720e525032aa0bfd">le_event_SetContextPtr()</a>, or NULL if <a class="el" href="le__eventLoop_8h.html#ae0c4307a9715794c720e525032aa0bfd">le_event_SetContextPtr()</a> was not called. </dd></dl>
 </div>
 </div>
-<a class="anchor" id="a12ce7f92f4bc6f5167d5a6ef86d7d0b1"></a>
+<a id="a12ce7f92f4bc6f5167d5a6ef86d7d0b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12ce7f92f4bc6f5167d5a6ef86d7d0b1">◆ </a></span>le_event_GetFd()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -427,7 +440,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The file descriptor. </dd></dl>
 </div>
 </div>
-<a class="anchor" id="a6dcc88f96060c5bc107a81a978132f38"></a>
+<a id="a6dcc88f96060c5bc107a81a978132f38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dcc88f96060c5bc107a81a978132f38">◆ </a></span>le_event_QueueFunction()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -467,7 +481,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a228da2d1f53ffa74517f108b0dcfa4d9"></a>
+<a id="a228da2d1f53ffa74517f108b0dcfa4d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a228da2d1f53ffa74517f108b0dcfa4d9">◆ </a></span>le_event_QueueFunctionToThread()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -514,7 +529,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ae31a85d4acbef72451b5411a613eea58"></a>
+<a id="ae31a85d4acbef72451b5411a613eea58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae31a85d4acbef72451b5411a613eea58">◆ </a></span>le_event_RemoveHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -537,7 +553,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ae3ffe6990b70fb572b4eef06739b4f54"></a>
+<a id="ae3ffe6990b70fb572b4eef06739b4f54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3ffe6990b70fb572b4eef06739b4f54">◆ </a></span>le_event_Report()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -579,7 +596,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="af0277165493b512216fabb6086ec7d9c"></a>
+<a id="af0277165493b512216fabb6086ec7d9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0277165493b512216fabb6086ec7d9c">◆ </a></span>le_event_ReportWithRefCounting()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -613,7 +631,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ae313b457994371c658be9fe0494a01ff"></a>
+<a id="ae313b457994371c658be9fe0494a01ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae313b457994371c658be9fe0494a01ff">◆ </a></span>le_event_RunLoop()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -632,7 +651,8 @@ Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Function never returns. </dd></dl>
 </div>
 </div>
-<a class="anchor" id="a096222e98f6a0d92a79722018a752b58"></a>
+<a id="a096222e98f6a0d92a79722018a752b58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a096222e98f6a0d92a79722018a752b58">◆ </a></span>le_event_ServiceLoop()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -655,7 +675,8 @@ Functions</h2></td></tr>
 </dd></dl>
 </div>
 </div>
-<a class="anchor" id="ae0c4307a9715794c720e525032aa0bfd"></a>
+<a id="ae0c4307a9715794c720e525032aa0bfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0c4307a9715794c720e525032aa0bfd">◆ </a></span>le_event_SetContextPtr()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">

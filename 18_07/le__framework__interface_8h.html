@@ -98,7 +98,8 @@ Functions</h2></td></tr>
 <div class="textblock"><p>Legato <a class="el" href="c_framework.html">Framework Control API</a> include file.</p>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="a0337cf20db70e6854958471d96a850b6"></a>
+<a id="a0337cf20db70e6854958471d96a850b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0337cf20db70e6854958471d96a850b6">◆ </a></span>le_framework_DisconnectHandler_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -111,7 +112,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a617e196e3221a671c5233da81ae1904a"></a>
+<a id="a617e196e3221a671c5233da81ae1904a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a617e196e3221a671c5233da81ae1904a">◆ </a></span>le_framework_ConnectService()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -129,7 +131,8 @@ Functions</h2></td></tr>
 <p>This function is created automatically. </p>
 </div>
 </div>
-<a class="anchor" id="ad6e08c3f8c8a8b760dde63b4081b7ade"></a>
+<a id="ad6e08c3f8c8a8b760dde63b4081b7ade"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6e08c3f8c8a8b760dde63b4081b7ade">◆ </a></span>le_framework_DisconnectService()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -147,7 +150,8 @@ Functions</h2></td></tr>
 <p>This function is created automatically. </p>
 </div>
 </div>
-<a class="anchor" id="a688be01b41cc376a0195454eb9c861a2"></a>
+<a id="a688be01b41cc376a0195454eb9c861a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a688be01b41cc376a0195454eb9c861a2">◆ </a></span>le_framework_IsReadOnly()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -164,7 +168,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true if the framework is Read-Only false otherwise </dd></dl>
 </div>
 </div>
-<a class="anchor" id="a3750b2ec8d397d7b9b1eaa650fea0b46"></a>
+<a id="a3750b2ec8d397d7b9b1eaa650fea0b46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3750b2ec8d397d7b9b1eaa650fea0b46">◆ </a></span>le_framework_IsStopping()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -181,7 +186,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true if the framework is stopping or rebooting false otherwise </dd></dl>
 </div>
 </div>
-<a class="anchor" id="a397518a7b3e2a2df1fc8e874c5b6d0de"></a>
+<a id="a397518a7b3e2a2df1fc8e874c5b6d0de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a397518a7b3e2a2df1fc8e874c5b6d0de">◆ </a></span>le_framework_NotifyExpectedReboot()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -197,7 +203,8 @@ Functions</h2></td></tr>
 <p>Mark the next reboot as expected. Should be called by short lived app that shutdown platform after a small wakeup. This prevents system not to rollback on expected reboot. </p>
 </div>
 </div>
-<a class="anchor" id="a9deba580686d6fc7f05cc1c8bbea39c9"></a>
+<a id="a9deba580686d6fc7f05cc1c8bbea39c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9deba580686d6fc7f05cc1c8bbea39c9">◆ </a></span>le_framework_Restart()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -220,7 +227,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ad8ffb2961b2ae9bf967ba21871cae05e"></a>
+<a id="ad8ffb2961b2ae9bf967ba21871cae05e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8ffb2961b2ae9bf967ba21871cae05e">◆ </a></span>le_framework_SetServerDisconnectHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -247,7 +255,8 @@ Functions</h2></td></tr>
 <p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
 </div>
 </div>
-<a class="anchor" id="a4ed733441a4aba8a5b2aa570a8eac2d2"></a>
+<a id="a4ed733441a4aba8a5b2aa570a8eac2d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ed733441a4aba8a5b2aa570a8eac2d2">◆ </a></span>le_framework_Stop()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -264,7 +273,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_DUPLICATE if the framework is in the process of shutting down (perhaps someone else has already requested the framework be stopped or restarted). </dd></dl>
 </div>
 </div>
-<a class="anchor" id="a38fa5962e9394b06660f2218eb260d42"></a>
+<a id="a38fa5962e9394b06660f2218eb260d42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38fa5962e9394b06660f2218eb260d42">◆ </a></span>le_framework_TryConnectService()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">

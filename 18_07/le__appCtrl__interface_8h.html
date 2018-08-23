@@ -73,13 +73,13 @@
 Typedefs</h2></td></tr>
 <tr class="memitem:a28e6c051ba8e61a6d5aa7f3f12542536"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__appCtrl__interface_8h.html#a28e6c051ba8e61a6d5aa7f3f12542536">le_appCtrl_DisconnectHandler_t</a>) (void *)</td></tr>
 <tr class="separator:a28e6c051ba8e61a6d5aa7f3f12542536"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a91f18fa2ac21dcea04769cdf57cb7a3f"><td align="right" class="memItemLeft" valign="top"><a class="anchor" id="a91f18fa2ac21dcea04769cdf57cb7a3f"></a>
+<tr class="memitem:a91f18fa2ac21dcea04769cdf57cb7a3f"><td align="right" class="memItemLeft" valign="top"><a id="a91f18fa2ac21dcea04769cdf57cb7a3f"></a>
 typedef struct le_appCtrl_App * </td><td class="memItemRight" valign="bottom"><b>le_appCtrl_AppRef_t</b></td></tr>
 <tr class="separator:a91f18fa2ac21dcea04769cdf57cb7a3f"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:ae5de1d770cee03e790f9d9900fa2b1f2"><td align="right" class="memItemLeft" valign="top">typedef struct le_appCtrl_TraceAttachHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__appCtrl__interface_8h.html#ae5de1d770cee03e790f9d9900fa2b1f2">le_appCtrl_TraceAttachHandlerRef_t</a></td></tr>
 <tr class="separator:ae5de1d770cee03e790f9d9900fa2b1f2"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a71556a4ce496caa172e138e65eee656c"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__appCtrl__interface_8h.html#a71556a4ce496caa172e138e65eee656c">le_appCtrl_TraceAttachHandlerFunc_t</a>) (le_appCtrl_AppRef_t appRef, int32_t pid, const char *LE_NONNULL procName, void *contextPtr)</td></tr>
-<tr class="separator:a71556a4ce496caa172e138e65eee656c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a37e3a7d158a655fb8486497810a0389d"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__appCtrl__interface_8h.html#a37e3a7d158a655fb8486497810a0389d">le_appCtrl_TraceAttachHandlerFunc_t</a>) (le_appCtrl_AppRef_t appRef, int32_t pid, const char *LE_NONNULL procName, void *contextPtr)</td></tr>
+<tr class="separator:a37e3a7d158a655fb8486497810a0389d"><td class="memSeparator" colspan="2"> </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -101,7 +101,7 @@ Functions</h2></td></tr>
 <tr class="separator:a60684f6a4ee4900c33a22b6304801930"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:ac61ea4ff4711107976d6bfde76fe1d8f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__appCtrl__interface_8h.html#ac61ea4ff4711107976d6bfde76fe1d8f">le_appCtrl_SetDevicePerm</a> (le_appCtrl_AppRef_t appRef, const char *LE_NONNULL path, const char *LE_NONNULL permissions)</td></tr>
 <tr class="separator:ac61ea4ff4711107976d6bfde76fe1d8f"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a61eef2118f65c5e1855c5b5b768a027a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__appCtrl__interface_8h.html#ae5de1d770cee03e790f9d9900fa2b1f2">le_appCtrl_TraceAttachHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__appCtrl__interface_8h.html#a61eef2118f65c5e1855c5b5b768a027a">le_appCtrl_AddTraceAttachHandler</a> (le_appCtrl_AppRef_t appRef, <a class="el" href="le__appCtrl__interface_8h.html#a71556a4ce496caa172e138e65eee656c">le_appCtrl_TraceAttachHandlerFunc_t</a> attachToPidPtr, void *contextPtr)</td></tr>
+<tr class="memitem:a61eef2118f65c5e1855c5b5b768a027a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__appCtrl__interface_8h.html#ae5de1d770cee03e790f9d9900fa2b1f2">le_appCtrl_TraceAttachHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__appCtrl__interface_8h.html#a61eef2118f65c5e1855c5b5b768a027a">le_appCtrl_AddTraceAttachHandler</a> (le_appCtrl_AppRef_t appRef, <a class="el" href="le__appCtrl__interface_8h.html#a37e3a7d158a655fb8486497810a0389d">le_appCtrl_TraceAttachHandlerFunc_t</a> attachToPidPtr, void *contextPtr)</td></tr>
 <tr class="separator:a61eef2118f65c5e1855c5b5b768a027a"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a3dcd9d91790ccf8fd7b45098cf6c4f1d"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__appCtrl__interface_8h.html#a3dcd9d91790ccf8fd7b45098cf6c4f1d">le_appCtrl_RemoveTraceAttachHandler</a> (<a class="el" href="le__appCtrl__interface_8h.html#ae5de1d770cee03e790f9d9900fa2b1f2">le_appCtrl_TraceAttachHandlerRef_t</a> handlerRef)</td></tr>
 <tr class="separator:a3dcd9d91790ccf8fd7b45098cf6c4f1d"><td class="memSeparator" colspan="2"> </td></tr>
@@ -116,7 +116,8 @@ Functions</h2></td></tr>
 <div class="textblock"><p>Legato <a class="el" href="c_appCtrl.html">App Control API</a> include file.</p>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="a28e6c051ba8e61a6d5aa7f3f12542536"></a>
+<a id="a28e6c051ba8e61a6d5aa7f3f12542536"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28e6c051ba8e61a6d5aa7f3f12542536">◆ </a></span>le_appCtrl_DisconnectHandler_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -128,19 +129,21 @@ Functions</h2></td></tr>
 <p>Type for handler called when a server disconnects. </p>
 </div>
 </div>
-<a class="anchor" id="a71556a4ce496caa172e138e65eee656c"></a>
+<a id="a37e3a7d158a655fb8486497810a0389d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37e3a7d158a655fb8486497810a0389d">◆ </a></span>le_appCtrl_TraceAttachHandlerFunc_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
 <tr>
-<td class="memname">typedef void(* le_appCtrl_TraceAttachHandlerFunc_t) (le_appCtrl_AppRef_t appRef,int32_t pid,const char *LE_NONNULL procName,void *contextPtr)</td>
+<td class="memname">typedef void(* le_appCtrl_TraceAttachHandlerFunc_t) (le_appCtrl_AppRef_t appRef, int32_t pid, const char *LE_NONNULL procName, void *contextPtr)</td>
 </tr>
 </table>
 </div><div class="memdoc">
 <p>Handler for attaching to a process that is to be traced. The process is blocked allowing the tracer to attach to it. The tracer must call TraceUnblock() to unblock the traced process. </p>
 </div>
 </div>
-<a class="anchor" id="ae5de1d770cee03e790f9d9900fa2b1f2"></a>
+<a id="ae5de1d770cee03e790f9d9900fa2b1f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5de1d770cee03e790f9d9900fa2b1f2">◆ </a></span>le_appCtrl_TraceAttachHandlerRef_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -153,7 +156,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a61eef2118f65c5e1855c5b5b768a027a"></a>
+<a id="a61eef2118f65c5e1855c5b5b768a027a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61eef2118f65c5e1855c5b5b768a027a">◆ </a></span>le_appCtrl_AddTraceAttachHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -166,7 +170,7 @@ Functions</h2></td></tr>
 <tr>
 <td class="paramkey"></td>
 <td></td>
-<td class="paramtype"><a class="el" href="le__appCtrl__interface_8h.html#a71556a4ce496caa172e138e65eee656c">le_appCtrl_TraceAttachHandlerFunc_t</a> </td>
+<td class="paramtype"><a class="el" href="le__appCtrl__interface_8h.html#a37e3a7d158a655fb8486497810a0389d">le_appCtrl_TraceAttachHandlerFunc_t</a> </td>
 <td class="paramname"><em>attachToPidPtr</em>, </td>
 </tr>
 <tr>
@@ -194,7 +198,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a616263797459c89ee29964282c22fdab"></a>
+<a id="a616263797459c89ee29964282c22fdab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a616263797459c89ee29964282c22fdab">◆ </a></span>le_appCtrl_ConnectService()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -212,7 +217,8 @@ Functions</h2></td></tr>
 <p>This function is created automatically. </p>
 </div>
 </div>
-<a class="anchor" id="af9b5bc6174a005a6a21fb9c30d1eec57"></a>
+<a id="af9b5bc6174a005a6a21fb9c30d1eec57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9b5bc6174a005a6a21fb9c30d1eec57">◆ </a></span>le_appCtrl_DisconnectService()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -230,7 +236,8 @@ Functions</h2></td></tr>
 <p>This function is created automatically. </p>
 </div>
 </div>
-<a class="anchor" id="a3e6e91d2f7d664a0643c2ac677c0ed17"></a>
+<a id="a3e6e91d2f7d664a0643c2ac677c0ed17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e6e91d2f7d664a0643c2ac677c0ed17">◆ </a></span>le_appCtrl_GetRef()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -253,7 +260,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a60684f6a4ee4900c33a22b6304801930"></a>
+<a id="a60684f6a4ee4900c33a22b6304801930"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60684f6a4ee4900c33a22b6304801930">◆ </a></span>le_appCtrl_Import()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -288,7 +296,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a6636a95cce85b6dce397a875fd9099bc"></a>
+<a id="a6636a95cce85b6dce397a875fd9099bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6636a95cce85b6dce397a875fd9099bc">◆ </a></span>le_appCtrl_ReleaseRef()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -310,7 +319,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a3dcd9d91790ccf8fd7b45098cf6c4f1d"></a>
+<a id="a3dcd9d91790ccf8fd7b45098cf6c4f1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dcd9d91790ccf8fd7b45098cf6c4f1d">◆ </a></span>le_appCtrl_RemoveTraceAttachHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -332,7 +342,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ac61ea4ff4711107976d6bfde76fe1d8f"></a>
+<a id="ac61ea4ff4711107976d6bfde76fe1d8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac61ea4ff4711107976d6bfde76fe1d8f">◆ </a></span>le_appCtrl_SetDevicePerm()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -374,7 +385,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a6fe6781ff1390e0314adea10768b28a7"></a>
+<a id="a6fe6781ff1390e0314adea10768b28a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fe6781ff1390e0314adea10768b28a7">◆ </a></span>le_appCtrl_SetRun()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -415,7 +427,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a83425e6a1ed031938cb0493de0d12ed7"></a>
+<a id="a83425e6a1ed031938cb0493de0d12ed7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83425e6a1ed031938cb0493de0d12ed7">◆ </a></span>le_appCtrl_SetServerDisconnectHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -442,7 +455,8 @@ Functions</h2></td></tr>
 <p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
 </div>
 </div>
-<a class="anchor" id="af6ead537c4e4833ca4d728b219ceccd5"></a>
+<a id="af6ead537c4e4833ca4d728b219ceccd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6ead537c4e4833ca4d728b219ceccd5">◆ </a></span>le_appCtrl_Start()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -465,7 +479,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="abe3c8c9e161119fea070a066775dcc2b"></a>
+<a id="abe3c8c9e161119fea070a066775dcc2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe3c8c9e161119fea070a066775dcc2b">◆ </a></span>le_appCtrl_Stop()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -488,7 +503,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a92b461507ed1cafca1a19d4b9067c2c0"></a>
+<a id="a92b461507ed1cafca1a19d4b9067c2c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92b461507ed1cafca1a19d4b9067c2c0">◆ </a></span>le_appCtrl_TraceUnblock()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -522,7 +538,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a5685949b1987477d3d1e508363a50a54"></a>
+<a id="a5685949b1987477d3d1e508363a50a54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5685949b1987477d3d1e508363a50a54">◆ </a></span>le_appCtrl_TryConnectService()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">

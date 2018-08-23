@@ -98,7 +98,8 @@ Functions</h2></td></tr>
 <div class="textblock"><p>Legato <a class="el" href="c_fdMonitor.html">File Descriptor Monitor API</a> include file.</p>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="ac2d5531f6fae37076c9a79682091a161"></a>
+<a id="ac2d5531f6fae37076c9a79682091a161"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2d5531f6fae37076c9a79682091a161">◆ </a></span>le_fdMonitor_HandlerFunc_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -118,7 +119,7 @@ Functions</h2></td></tr>
 <li><code>POLLHUP</code> = Hang up.</li>
 </ul>
 <p>These are bitmask values that may appear in the <code>events</code> parameter. Use the bit-wise AND operator ('&amp;') to test for specific events.</p>
-<pre class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span> if (events &amp; POLLIN)</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span> {</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>     // Data available to read.</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>     ...</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span> }</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span> </div><div class="line"><a name="l00007"></a><span class="lineno">    7</span> if (events &amp; POLLERR)</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span> {</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>     // An error occured.</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>     ...</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span> }</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span> </div><div class="line"><a name="l00013"></a><span class="lineno">   13</span> ...</div></pre><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+<pre class="fragment"><div class="line"><span class="keywordflow">if</span> (events &amp; POLLIN)</div><div class="line">{</div><div class="line">    <span class="comment">// Data available to read.</span></div><div class="line">    ...</div><div class="line">}</div><div class="line"> </div><div class="line"><span class="keywordflow">if</span> (events &amp; POLLERR)</div><div class="line">{</div><div class="line">    <span class="comment">// An error occured.</span></div><div class="line">    ...</div><div class="line">}</div><div class="line"> </div><div class="line">...</div></pre><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramname">fd</td><td>[in] File descriptor.</td></tr>
 <tr><td class="paramname">events</td><td>[in] Bit map of events that occurred. Use bitwise AND ('&amp;') to test for events. </td></tr>
@@ -127,7 +128,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a85048556f0b95147af81e76907895d42"></a>
+<a id="a85048556f0b95147af81e76907895d42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85048556f0b95147af81e76907895d42">◆ </a></span>le_fdMonitor_Ref_t</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -141,7 +143,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a52902d634d810f9b7a23c53c9c5164f0"></a>
+<a id="a52902d634d810f9b7a23c53c9c5164f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52902d634d810f9b7a23c53c9c5164f0">◆ </a></span>le_fdMonitor_Create()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -205,7 +208,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ad7f0f1a0cd2f99b081403784f048aef0"></a>
+<a id="ad7f0f1a0cd2f99b081403784f048aef0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7f0f1a0cd2f99b081403784f048aef0">◆ </a></span>le_fdMonitor_Delete()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -227,7 +231,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ada2b1023507b99e9247175dd3ffe5d48"></a>
+<a id="ada2b1023507b99e9247175dd3ffe5d48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada2b1023507b99e9247175dd3ffe5d48">◆ </a></span>le_fdMonitor_Disable()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -267,7 +272,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a497aee19dbedadf884f404958713b414"></a>
+<a id="a497aee19dbedadf884f404958713b414"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a497aee19dbedadf884f404958713b414">◆ </a></span>le_fdMonitor_Enable()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -307,7 +313,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a3073205dc7ee7a054857119bc11c9dfc"></a>
+<a id="a3073205dc7ee7a054857119bc11c9dfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3073205dc7ee7a054857119bc11c9dfc">◆ </a></span>le_fdMonitor_GetContextPtr()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -325,7 +332,8 @@ Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>This only works inside the handler function. The difference between this function and <a class="el" href="le__eventLoop_8h.html#a1c73916295cc9e17af07e02756aa86c9">le_event_GetContextPtr()</a> is that <a class="el" href="le__fdMonitor_8h.html#a3073205dc7ee7a054857119bc11c9dfc">le_fdMonitor_GetContextPtr()</a> will double check that it's being called inside of a File Descriptor Monitor's handler function. </dd></dl>
 </div>
 </div>
-<a class="anchor" id="af8761888bcd44c4826d02b5e5931168f"></a>
+<a id="af8761888bcd44c4826d02b5e5931168f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8761888bcd44c4826d02b5e5931168f">◆ </a></span>le_fdMonitor_GetFd()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -348,7 +356,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a688da8b3627d20b01795dfa1ae46bb78"></a>
+<a id="a688da8b3627d20b01795dfa1ae46bb78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a688da8b3627d20b01795dfa1ae46bb78">◆ </a></span>le_fdMonitor_GetMonitor()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -366,7 +375,8 @@ Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>This only works inside the handler function. </dd></dl>
 </div>
 </div>
-<a class="anchor" id="af88e40be018bcd6cd47a64bde49a9f98"></a>
+<a id="af88e40be018bcd6cd47a64bde49a9f98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af88e40be018bcd6cd47a64bde49a9f98">◆ </a></span>le_fdMonitor_SetContextPtr()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -399,7 +409,8 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="a66a93ae01f1e6faf1d0c7645752d4442"></a>
+<a id="a66a93ae01f1e6faf1d0c7645752d4442"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66a93ae01f1e6faf1d0c7645752d4442">◆ </a></span>le_fdMonitor_SetDeferrable()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">

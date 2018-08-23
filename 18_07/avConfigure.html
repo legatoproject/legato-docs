@@ -165,38 +165,19 @@ PING bs.airvantage.net (52.24.215.63): 56 data bytes
 64 bytes from 52.24.215.63: seq=2 ttl=234 time=707.798 ms
 64 bytes from 52.24.215.63: seq=3 ttl=234 time=237.510 ms
 64 bytes from 52.24.215.63: seq=4 ttl=234 time=246.483 ms
-</pre><h1><a class="anchor" id="avConfigure_UserAgreements"></a>
-Configure user agreements</h1>
-<p>Before starting a session with the AirVantage server, check the user agreements and configure them if needed using APIs <a class="el" href="le__avc__interface_8h.html#a0f2715814e2b0e37321872a14e798cd3">le_avc_GetUserAgreement()</a>/le_avc_SetUserAgreement() or using the <code>AT</code> command.</p>
-<p>By default, user agreements are disabled. This means that avcService automatically accepts requests from the server without asking for user approval: it initiates a connection to the server, download/install packages and reboots the target if needed.</p>
-<p>If you want to have control on these operations and be able to accept or defer them, you need to enable the corresponding user agreement for each operation (connect, download, install, uninstall, reset). Thus, avcService notifies registered apps each time a pending request is ongoing and waits for your approval.</p>
-<p>Example for WPX5XX/WP76XX/FX30 Customers: </p><pre class="fragment">AT+WDSC?
-
-+WDSC: 0,0 # user agreement for connection to server disabled
-+WDSC: 1,0 # user agreement for package download disabled
-+WDSC: 2,0 # user agreeemnt for package install disabled
-+WDSC: 3,0
-+WDSC: 4,15,60,240,480,1440,2880,0,0
-+WDSC: 5,0 # user agreement for reboot disabled
-+WDSC: 6,0 # user agreeemnt for package uninstall disabled
-
-OK
-
-AT+WDSC=3,1 # activates user agreement for package download
-AT+WDSC=4,1 # activates user agreement for package install
 </pre><h1><a class="anchor" id="avConfigure_Connect"></a>
-Connect to the AirVantage server</h1>
-<p>At this point the target is ready to be connected to the AirVantage server. Use the api <a class="el" href="le__avc__interface_8h.html#aee17b1de43cf946b59a965e6077e7b03">le_avc_StartSession()</a> to start a session or use the <code>AT</code> command to connect the device to AirVantage.</p>
-<p>Steps to connect to the AirVantage server with AT commands:</p><ul>
+Connect to the AirVantage Server</h1>
+<p>At this point the target is ready to be connected to the AirVantage Server. Use the api <a class="el" href="le__avc__interface_8h.html#aee17b1de43cf946b59a965e6077e7b03">le_avc_StartSession()</a> to start a session or use the <code>at</code> command to connect the device to AirVantage.</p>
+<p>Steps to connect to the AirVantage Server with AT commands:</p><ul>
 <li><code>ssh</code> to device: <code>ssh</code> <code>192.168.2.2</code> </li>
 <li>open an AT connection: <code>microcom -E /dev/ttyAT</code></li>
-<li>enable all notification: <code>AT+WDSI=4479</code> </li>
-<li>connect to the AirVantage server: <code>AT+WDSS=1</code>,1</li>
+<li>enable all notification: <code>at+wdsi=4479</code> </li>
+<li>connect to the AirVantage Server: <code>at+wdss=1</code>,1</li>
 </ul>
 <p>Example for WPX5XX/WP76XX/FX30 Customers: </p><pre class="fragment"># microcom -E /dev/ttyAT
-AT+WDSI=4479  # activates all AirVantage server notifications
+at+wdsi=4479  # activates all AirVantage Server notifications
 OK
-AT+WDSS=1,1   # starts a connection to the AirVantage server
+at+wdss=1,1   # starts a connection to the AirVantage Server
 OK
 +WDSI: 4      # displays the current state of authentication notification
 +WDSI: 6      # displays that the session has succeeded and has started
@@ -209,14 +190,14 @@ Configure Frequency of Connections</h1>
 <p>Within your Polling Timer, Hearbeat and Lifetime are all set the same and indicate how frequently the device connects to the AirVantage server.</p>
 <p>The Polling Timer can be enabled by setting it to a non-zero value either with <a class="el" href="le__avc__interface_8h.html#a774b5c0278c056ef0787f4e1ba9e7255">le_avc_SetPollingTimer()</a>, or by using the following AT commands:</p>
 <p>Example of setting the polling timer to 1 minute. </p><pre class="fragment"># microcom /dev/ttyAT
-AT+WDSC=3,1           # 3 specifies the polling timer, and 1 sets the number of minutes
+at+wdsc=3,1           # 3 specifies the polling timer, and 1 sets the number of minutes
 OK
 </pre><p>Retry timers are built into the AVC API to build resiliency into the system.</p>
-<p>Example Scenario: Let's say we set the polling timer to connect to the server every 24 hours. The mobile device may be in an area where there is a network loss that happens everyday and prevents the target from connecting. The device will never be able to establish a connection to the AirVantage server in this case because it's trying to connect to server only when there is no network. To prevent this Retry timers should be set at a variety of times enabling a greater chance of strong network connections.</p>
+<p>Example Scenario: Let's say we set the polling timer to connect to the server every 24 hours. The mobile device may be in an area where there is a network loss that happens everyday and prevents the target from connecting. The device will never be able to establish a connection to the AirVantage Server in this case because it's trying to connect to server only when there is no network. To prevent this Retry timers should be set at a variety of times enabling a greater chance of strong network connections.</p>
 <p>Retry Timers can be initiated by using either <a class="el" href="le__avc__interface_8h.html#aee17b1de43cf946b59a965e6077e7b03">le_avc_StartSession()</a> or by setting the polling timer. If the session fails, the retry timers can use up to 8 attempts to connect back to the AirVantage server.</p>
 <p>The retry timer can be set using <a class="el" href="le__avc__interface_8h.html#afeeb7e747be21527117014102fe80b19">le_avc_SetRetryTimers()</a> or by using the following AT commands:</p>
 <p>Example of setting the retry timer: </p><pre class="fragment"># microcom /dev/ttyAT
-AT+WDSC=4,15,60,240,480,1440,2880,0,0  # 4 specifies the retry timer
+at+wdsc=4,15,60,240,480,1440,2880,0,0  # 4 specifies the retry timer
 OK
 </pre><p>Above command indicates that a retry will be attempted retried after 15 minutes, 1 hour, 4 hours, 8 hours, 1 day and 2 days, the last two retries are disabled.</p>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
