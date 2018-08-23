@@ -111,6 +111,20 @@ SAR backoff</h1>
 <tr>
 <td>SAR maximum number of states </td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center">8 </td><td align="center">8 </td><td align="center"></td></tr>
 </table>
+<h1><a class="anchor" id="mrc_PciScan"></a>
+Perform Pci Network Scan</h1>
+<p>The PciScan is not supported by all platforms. Also, to be able to perform a Pci scan, the modem must be configured on LTE rat, the configuration can be donne using:</p><ul>
+<li>AT command at!selrat=06</li>
+<li>CM tool cm radio rat LTE</li>
+<li>Legato API <a class="el" href="le__mrc__interface_8h.html#a2d4abd391bc69c218538f5d8e1be4e01">le_mrc_SetRatPreferences()</a>.<br/>
+</li>
+</ul>
+<table class="doxtable">
+<tr>
+<th></th><th align="center">AR755x </th><th align="center">AR758x </th><th align="center">AR759x </th><th align="center">AR8652 </th><th align="center">WP750x </th><th align="center">WP76xx </th><th align="center">WP77xx </th><th align="center">WP8548  </th></tr>
+<tr>
+<td>PciScan feature </td><td align="center"></td><td align="center">X </td><td align="center">X </td><td align="center"></td><td align="center"></td><td align="center">X </td><td align="center"></td><td align="center"></td></tr>
+</table>
 <p>See <a class="el" href="c_mrc.html">Modem Radio Control</a> API<br/>
  See <a class="el" href="c_mdc.html">Modem Data Control</a> API<br/>
  Copyright (C) Sierra Wireless Inc. </p>

@@ -91,6 +91,12 @@ Typedefs</h2></td></tr>
 <tr class="separator:a3e7fe3e0d8f10fe7853f00eb254529ea"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a25a9e79cc9078e22cec22444fd959c61"><td align="right" class="memItemLeft" valign="top">typedef struct le_mrc_ScanInformationList * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#a25a9e79cc9078e22cec22444fd959c61">le_mrc_ScanInformationListRef_t</a></td></tr>
 <tr class="separator:a25a9e79cc9078e22cec22444fd959c61"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a468e9490f12dd7abc8a184782dbb16e9"><td align="right" class="memItemLeft" valign="top">typedef struct le_mrc_PciScanInformationList * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#a468e9490f12dd7abc8a184782dbb16e9">le_mrc_PciScanInformationListRef_t</a></td></tr>
+<tr class="separator:a468e9490f12dd7abc8a184782dbb16e9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a254df9366a9b7914cfe0931872fef578"><td align="right" class="memItemLeft" valign="top">typedef struct le_mrc_PciScanInformation * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#a254df9366a9b7914cfe0931872fef578">le_mrc_PciScanInformationRef_t</a></td></tr>
+<tr class="separator:a254df9366a9b7914cfe0931872fef578"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a646ae958a17cbb1cacd6e3c8e616beaa"><td align="right" class="memItemLeft" valign="top">typedef struct le_mrc_PlmnInformation * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#a646ae958a17cbb1cacd6e3c8e616beaa">le_mrc_PlmnInformationRef_t</a></td></tr>
+<tr class="separator:a646ae958a17cbb1cacd6e3c8e616beaa"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:add1c18b20b02f57f3d4d1510a2d2d62c"><td align="right" class="memItemLeft" valign="top">typedef struct le_mrc_PreferredOperator * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#add1c18b20b02f57f3d4d1510a2d2d62c">le_mrc_PreferredOperatorRef_t</a></td></tr>
 <tr class="separator:add1c18b20b02f57f3d4d1510a2d2d62c"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:ae9f0c124121ac480535d0fd7fd9e452b"><td align="right" class="memItemLeft" valign="top">typedef struct le_mrc_PreferredOperatorList * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#ae9f0c124121ac480535d0fd7fd9e452b">le_mrc_PreferredOperatorListRef_t</a></td></tr>
@@ -123,6 +129,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:aad70b8ec8988256ac39f5d04bc078a34"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a32b46b705cd7d45d76606b6c609df627"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#a32b46b705cd7d45d76606b6c609df627">le_mrc_CellularNetworkScanHandlerFunc_t</a>) (<a class="el" href="le__mrc__interface_8h.html#a25a9e79cc9078e22cec22444fd959c61">le_mrc_ScanInformationListRef_t</a> listRef, void *contextPtr)</td></tr>
 <tr class="separator:a32b46b705cd7d45d76606b6c609df627"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa9b13b3e30910820bbf796f45e70cf8d"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#aa9b13b3e30910820bbf796f45e70cf8d">le_mrc_PciNetworkScanHandlerFunc_t</a>) (<a class="el" href="le__mrc__interface_8h.html#a468e9490f12dd7abc8a184782dbb16e9">le_mrc_PciScanInformationListRef_t</a> listRef, void *contextPtr)</td></tr>
+<tr class="separator:aa9b13b3e30910820bbf796f45e70cf8d"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:aed3784a1d6f94a5b4b15baf3cc89555a"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#aed3784a1d6f94a5b4b15baf3cc89555a">le_mrc_ManualSelectionHandlerFunc_t</a>) (<a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> result, void *contextPtr)</td></tr>
 <tr class="separator:aed3784a1d6f94a5b4b15baf3cc89555a"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:add5673e49710c1b2be7aa00c3db52854"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#add5673e49710c1b2be7aa00c3db52854">le_mrc_NetworkRejectHandlerFunc_t</a>) (const char *LE_NONNULL mcc, const char *LE_NONNULL mnc, <a class="el" href="le__mrc__interface_8h.html#aaf23906c37ad59fb96a8a48f7fab5b43">le_mrc_Rat_t</a> rat, void *contextPtr)</td></tr>
@@ -369,14 +377,32 @@ Functions</h2></td></tr>
 <tr class="separator:aac51332c6c84e460746eb1ad45c064d6"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:ab4a246dd466fa8175aca0158e0cab227"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__mrc__interface_8h.html#a25a9e79cc9078e22cec22444fd959c61">le_mrc_ScanInformationListRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#ab4a246dd466fa8175aca0158e0cab227">le_mrc_PerformCellularNetworkScan</a> (<a class="el" href="le__mrc__interface_8h.html#af643c7005da7f2466302eebdf7a29d93">le_mrc_RatBitMask_t</a> ratMask)</td></tr>
 <tr class="separator:ab4a246dd466fa8175aca0158e0cab227"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a82800dff5d7a09b645467ab335c1f4bd"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__mrc__interface_8h.html#a468e9490f12dd7abc8a184782dbb16e9">le_mrc_PciScanInformationListRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#a82800dff5d7a09b645467ab335c1f4bd">le_mrc_PerformPciNetworkScan</a> (<a class="el" href="le__mrc__interface_8h.html#af643c7005da7f2466302eebdf7a29d93">le_mrc_RatBitMask_t</a> ratMask)</td></tr>
+<tr class="separator:a82800dff5d7a09b645467ab335c1f4bd"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:ab66e29d054d7902c61f87e79fd6d987f"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#ab66e29d054d7902c61f87e79fd6d987f">le_mrc_PerformCellularNetworkScanAsync</a> (<a class="el" href="le__mrc__interface_8h.html#af643c7005da7f2466302eebdf7a29d93">le_mrc_RatBitMask_t</a> ratMask, <a class="el" href="le__mrc__interface_8h.html#a32b46b705cd7d45d76606b6c609df627">le_mrc_CellularNetworkScanHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
 <tr class="separator:ab66e29d054d7902c61f87e79fd6d987f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a40caa30636962c0385a474986438ba06"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#a40caa30636962c0385a474986438ba06">le_mrc_PerformPciNetworkScanAsync</a> (<a class="el" href="le__mrc__interface_8h.html#af643c7005da7f2466302eebdf7a29d93">le_mrc_RatBitMask_t</a> ratMask, <a class="el" href="le__mrc__interface_8h.html#aa9b13b3e30910820bbf796f45e70cf8d">le_mrc_PciNetworkScanHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:a40caa30636962c0385a474986438ba06"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:ae006d053b037cec589aa85053472a2af"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__mrc__interface_8h.html#a3e7fe3e0d8f10fe7853f00eb254529ea">le_mrc_ScanInformationRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#ae006d053b037cec589aa85053472a2af">le_mrc_GetFirstCellularNetworkScan</a> (<a class="el" href="le__mrc__interface_8h.html#a25a9e79cc9078e22cec22444fd959c61">le_mrc_ScanInformationListRef_t</a> scanInformationListRef)</td></tr>
 <tr class="separator:ae006d053b037cec589aa85053472a2af"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:ae0ca9f0c1c106d6ddeef784c6bb0d69b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__mrc__interface_8h.html#a3e7fe3e0d8f10fe7853f00eb254529ea">le_mrc_ScanInformationRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#ae0ca9f0c1c106d6ddeef784c6bb0d69b">le_mrc_GetNextCellularNetworkScan</a> (<a class="el" href="le__mrc__interface_8h.html#a25a9e79cc9078e22cec22444fd959c61">le_mrc_ScanInformationListRef_t</a> scanInformationListRef)</td></tr>
 <tr class="separator:ae0ca9f0c1c106d6ddeef784c6bb0d69b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9afeaa5a7639f5f9667eb0bae67c990d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__mrc__interface_8h.html#a254df9366a9b7914cfe0931872fef578">le_mrc_PciScanInformationRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#a9afeaa5a7639f5f9667eb0bae67c990d">le_mrc_GetFirstPciScanInfo</a> (<a class="el" href="le__mrc__interface_8h.html#a468e9490f12dd7abc8a184782dbb16e9">le_mrc_PciScanInformationListRef_t</a> scanInformationListRef)</td></tr>
+<tr class="separator:a9afeaa5a7639f5f9667eb0bae67c990d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:adfaff632784b66e2f4e576b20bc7674c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__mrc__interface_8h.html#a254df9366a9b7914cfe0931872fef578">le_mrc_PciScanInformationRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#adfaff632784b66e2f4e576b20bc7674c">le_mrc_GetNextPciScanInfo</a> (<a class="el" href="le__mrc__interface_8h.html#a468e9490f12dd7abc8a184782dbb16e9">le_mrc_PciScanInformationListRef_t</a> scanInformationListRef)</td></tr>
+<tr class="separator:adfaff632784b66e2f4e576b20bc7674c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af081d6a75b593b164044c67c6e288028"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__mrc__interface_8h.html#a646ae958a17cbb1cacd6e3c8e616beaa">le_mrc_PlmnInformationRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#af081d6a75b593b164044c67c6e288028">le_mrc_GetFirstPlmnInfo</a> (<a class="el" href="le__mrc__interface_8h.html#a254df9366a9b7914cfe0931872fef578">le_mrc_PciScanInformationRef_t</a> pciScanInformationRef)</td></tr>
+<tr class="separator:af081d6a75b593b164044c67c6e288028"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab61faf88d4ab24454fc3d4b268a4767d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__mrc__interface_8h.html#a646ae958a17cbb1cacd6e3c8e616beaa">le_mrc_PlmnInformationRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#ab61faf88d4ab24454fc3d4b268a4767d">le_mrc_GetNextPlmnInfo</a> (<a class="el" href="le__mrc__interface_8h.html#a254df9366a9b7914cfe0931872fef578">le_mrc_PciScanInformationRef_t</a> plmnRef)</td></tr>
+<tr class="separator:ab61faf88d4ab24454fc3d4b268a4767d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9ed8cc05b482f7a1c0efa11f05ca35a6"><td align="right" class="memItemLeft" valign="top">uint16_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#a9ed8cc05b482f7a1c0efa11f05ca35a6">le_mrc_GetPciScanCellId</a> (<a class="el" href="le__mrc__interface_8h.html#a254df9366a9b7914cfe0931872fef578">le_mrc_PciScanInformationRef_t</a> pciScanInformationRef)</td></tr>
+<tr class="separator:a9ed8cc05b482f7a1c0efa11f05ca35a6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae71b74cf99f54a943aea8ea24e889db5"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#ae71b74cf99f54a943aea8ea24e889db5">le_mrc_GetPciScanMccMnc</a> (<a class="el" href="le__mrc__interface_8h.html#a646ae958a17cbb1cacd6e3c8e616beaa">le_mrc_PlmnInformationRef_t</a> plmnRef, char *mccPtr, size_t mccPtrSize, char *mncPtr, size_t mncPtrSize)</td></tr>
+<tr class="separator:ae71b74cf99f54a943aea8ea24e889db5"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:ac45ce335b3fa063b83bb925e67eeaeb3"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#ac45ce335b3fa063b83bb925e67eeaeb3">le_mrc_DeleteCellularNetworkScan</a> (<a class="el" href="le__mrc__interface_8h.html#a25a9e79cc9078e22cec22444fd959c61">le_mrc_ScanInformationListRef_t</a> scanInformationListRef)</td></tr>
 <tr class="separator:ac45ce335b3fa063b83bb925e67eeaeb3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad31523c7917d87d1e1377a6f819bdaae"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#ad31523c7917d87d1e1377a6f819bdaae">le_mrc_DeletePciNetworkScan</a> (<a class="el" href="le__mrc__interface_8h.html#a468e9490f12dd7abc8a184782dbb16e9">le_mrc_PciScanInformationListRef_t</a> scanInformationListRef)</td></tr>
+<tr class="separator:ad31523c7917d87d1e1377a6f819bdaae"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:aad275d839efe8b2b5eafe65ef87bd3d3"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#aad275d839efe8b2b5eafe65ef87bd3d3">le_mrc_GetCellularNetworkMccMnc</a> (<a class="el" href="le__mrc__interface_8h.html#a3e7fe3e0d8f10fe7853f00eb254529ea">le_mrc_ScanInformationRef_t</a> scanInformationRef, char *mccPtr, size_t mccPtrSize, char *mncPtr, size_t mncPtrSize)</td></tr>
 <tr class="separator:aad275d839efe8b2b5eafe65ef87bd3d3"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a6fcb9785c79cb9f8a4d1bef2484ca9d5"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#a6fcb9785c79cb9f8a4d1bef2484ca9d5">le_mrc_GetCellularNetworkName</a> (<a class="el" href="le__mrc__interface_8h.html#a3e7fe3e0d8f10fe7853f00eb254529ea">le_mrc_ScanInformationRef_t</a> scanInformationRef, char *namePtr, size_t namePtrSize)</td></tr>
@@ -712,6 +738,58 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Reference type used by Add/Remove functions for EVENT 'le_mrc_PacketSwitchedChange' </p>
+</div>
+</div>
+<a id="aa9b13b3e30910820bbf796f45e70cf8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9b13b3e30910820bbf796f45e70cf8d">◆ </a></span>le_mrc_PciNetworkScanHandlerFunc_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_mrc_PciNetworkScanHandlerFunc_t) (<a class="el" href="le__mrc__interface_8h.html#a468e9490f12dd7abc8a184782dbb16e9">le_mrc_PciScanInformationListRef_t</a> listRef, void *contextPtr)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Handler for PCI asynchronous network scan Sending result. Returns the reference to the List object. Null pointer if the scan failed. </p>
+</div>
+</div>
+<a id="a468e9490f12dd7abc8a184782dbb16e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a468e9490f12dd7abc8a184782dbb16e9">◆ </a></span>le_mrc_PciScanInformationListRef_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_mrc_PciScanInformationList* <a class="el" href="le__mrc__interface_8h.html#a468e9490f12dd7abc8a184782dbb16e9">le_mrc_PciScanInformationListRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference type for PCI Scan Information Listing. </p>
+</div>
+</div>
+<a id="a254df9366a9b7914cfe0931872fef578"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a254df9366a9b7914cfe0931872fef578">◆ </a></span>le_mrc_PciScanInformationRef_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_mrc_PciScanInformation* <a class="el" href="le__mrc__interface_8h.html#a254df9366a9b7914cfe0931872fef578">le_mrc_PciScanInformationRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference type for PCI Scan Information . </p>
+</div>
+</div>
+<a id="a646ae958a17cbb1cacd6e3c8e616beaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a646ae958a17cbb1cacd6e3c8e616beaa">◆ </a></span>le_mrc_PlmnInformationRef_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_mrc_PlmnInformation* <a class="el" href="le__mrc__interface_8h.html#a646ae958a17cbb1cacd6e3c8e616beaa">le_mrc_PlmnInformationRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference type for PLMN Information . </p>
 </div>
 </div>
 <a id="ae9f0c124121ac480535d0fd7fd9e452b"></a>
@@ -1347,6 +1425,30 @@ Other reports, called intermediate reports, gives only intermediate results issu
 </dl>
 </div>
 </div>
+<a id="ad31523c7917d87d1e1377a6f819bdaae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad31523c7917d87d1e1377a6f819bdaae">◆ </a></span>le_mrc_DeletePciNetworkScan()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_mrc_DeletePciNetworkScan </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__mrc__interface_8h.html#a468e9490f12dd7abc8a184782dbb16e9">le_mrc_PciScanInformationListRef_t</a> </td>
+<td class="paramname"><em>scanInformationListRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to delete the list of the Pci Scan Information retrieved with <a class="el" href="le__mrc__interface_8h.html#a82800dff5d7a09b645467ab335c1f4bd">le_mrc_PerformPciNetworkScan()</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>On failure, the process exits, so you don't have to worry about checking the returned reference for validity. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">scanInformationListRef</td><td>The list of scan information. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
 <a id="a60679f563ffecc8f107425b806edcdf0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a60679f563ffecc8f107425b806edcdf0">◆ </a></span>le_mrc_DeletePreferredOperatorsList()</h2>
 <div class="memitem">
@@ -1840,6 +1942,62 @@ le_mrc_CellInfoRef_t The Cell information object reference.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[in]</td><td class="paramname">ngbrCellsRef</td><td>Neighboring Cells reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a9afeaa5a7639f5f9667eb0bae67c990d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9afeaa5a7639f5f9667eb0bae67c990d">◆ </a></span>le_mrc_GetFirstPciScanInfo()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__mrc__interface_8h.html#a254df9366a9b7914cfe0931872fef578">le_mrc_PciScanInformationRef_t</a> le_mrc_GetFirstPciScanInfo </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__mrc__interface_8h.html#a468e9490f12dd7abc8a184782dbb16e9">le_mrc_PciScanInformationListRef_t</a> </td>
+<td class="paramname"><em>scanInformationListRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to get the first Pci Scan Information object reference in the list of scan Information retrieved with <a class="el" href="le__mrc__interface_8h.html#a82800dff5d7a09b645467ab335c1f4bd">le_mrc_PerformPciNetworkScan()</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>NULL No scan information found. </dd>
+<dd>
+The Scan Information object reference.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">scanInformationListRef</td><td>The list of scan information. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="af081d6a75b593b164044c67c6e288028"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af081d6a75b593b164044c67c6e288028">◆ </a></span>le_mrc_GetFirstPlmnInfo()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__mrc__interface_8h.html#a646ae958a17cbb1cacd6e3c8e616beaa">le_mrc_PlmnInformationRef_t</a> le_mrc_GetFirstPlmnInfo </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__mrc__interface_8h.html#a254df9366a9b7914cfe0931872fef578">le_mrc_PciScanInformationRef_t</a> </td>
+<td class="paramname"><em>pciScanInformationRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to get the first Plmn Information object reference in the list of Plmn on each cell.</p>
+<dl class="section return"><dt>Returns</dt><dd>NULL No scan information found. </dd>
+<dd>
+le_mrc_PlmnInformationRef_t The Plmn Information object reference.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">pciScanInformationRef</td><td>[IN] The reference to the cell information. </td></tr>
 </table>
 </dd>
 </dl>
@@ -2402,6 +2560,62 @@ le_mrc_CellInfoRef_t Cell information object reference.</dd></dl>
 </dl>
 </div>
 </div>
+<a id="adfaff632784b66e2f4e576b20bc7674c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfaff632784b66e2f4e576b20bc7674c">◆ </a></span>le_mrc_GetNextPciScanInfo()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__mrc__interface_8h.html#a254df9366a9b7914cfe0931872fef578">le_mrc_PciScanInformationRef_t</a> le_mrc_GetNextPciScanInfo </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__mrc__interface_8h.html#a468e9490f12dd7abc8a184782dbb16e9">le_mrc_PciScanInformationListRef_t</a> </td>
+<td class="paramname"><em>scanInformationListRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to get the next Scan Information object reference in the list of scan Information retrieved with <a class="el" href="le__mrc__interface_8h.html#a82800dff5d7a09b645467ab335c1f4bd">le_mrc_PerformPciNetworkScan()</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>NULL No scan information found. </dd>
+<dd>
+The Scan Information object reference.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
+<dd>
+<b>multi-app safe</b> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">scanInformationListRef</td><td>The list of scan information. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ab61faf88d4ab24454fc3d4b268a4767d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab61faf88d4ab24454fc3d4b268a4767d">◆ </a></span>le_mrc_GetNextPlmnInfo()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__mrc__interface_8h.html#a646ae958a17cbb1cacd6e3c8e616beaa">le_mrc_PlmnInformationRef_t</a> le_mrc_GetNextPlmnInfo </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__mrc__interface_8h.html#a254df9366a9b7914cfe0931872fef578">le_mrc_PciScanInformationRef_t</a> </td>
+<td class="paramname"><em>plmnRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to get the next Plmn Information object reference in the list of Plmn on each cell.</p>
+<dl class="section return"><dt>Returns</dt><dd>NULL No scan information found. </dd>
+<dd>
+le_mrc_PlmnInformationRef_t The Plmn Information object reference.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">plmnRef</td><td>[IN] The reference to the cell information. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
 <a id="a896703cabaacf97a70708d944cfbfc87"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a896703cabaacf97a70708d944cfbfc87">◆ </a></span>le_mrc_GetNextPreferredOperator()</h2>
 <div class="memitem">
@@ -2457,6 +2671,92 @@ le_mrc_CellInfoRef_t Cell information object reference.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramdir">[out]</td><td class="paramname">statePtr</td><td>The current Packet switched state. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a9ed8cc05b482f7a1c0efa11f05ca35a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ed8cc05b482f7a1c0efa11f05ca35a6">◆ </a></span>le_mrc_GetPciScanCellId()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">uint16_t le_mrc_GetPciScanCellId </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__mrc__interface_8h.html#a254df9366a9b7914cfe0931872fef578">le_mrc_PciScanInformationRef_t</a> </td>
+<td class="paramname"><em>pciScanInformationRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to get the cell id referenced by PciScanInformation which is returned by <a class="el" href="le__mrc__interface_8h.html#a9afeaa5a7639f5f9667eb0bae67c990d">le_mrc_GetFirstPciScanInfo()</a> and <a class="el" href="le__mrc__interface_8h.html#adfaff632784b66e2f4e576b20bc7674c">le_mrc_GetNextPciScanInfo()</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>The Cell Identifier.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">pciScanInformationRef</td><td>[IN] The reference to the cell information. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ae71b74cf99f54a943aea8ea24e889db5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae71b74cf99f54a943aea8ea24e889db5">◆ </a></span>le_mrc_GetPciScanMccMnc()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mrc_GetPciScanMccMnc </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__mrc__interface_8h.html#a646ae958a17cbb1cacd6e3c8e616beaa">le_mrc_PlmnInformationRef_t</a> </td>
+<td class="paramname"><em>plmnRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>mccPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>mccPtrSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>mncPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>mncPtrSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to get the Mcc/Mnc of each PLMN referenced in the list of Plmn Information retrieved with <a class="el" href="le__mrc__interface_8h.html#af081d6a75b593b164044c67c6e288028">le_mrc_GetFirstPlmnInfo()</a> and <a class="el" href="le__mrc__interface_8h.html#ab61faf88d4ab24454fc3d4b268a4767d">le_mrc_GetNextPlmnInfo()</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_OVERFLOW if the MCC or MNC would not fit in buffer</li>
+<li>LE_FAULT for all other errors </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">plmnRef</td><td>[IN] The reference to the cell information. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">mccPtr</td><td>Mobile Country Code </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">mccPtrSize</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">mncPtr</td><td>Mobile Network Code </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">mncPtrSize</td><td></td></tr>
 </table>
 </dd>
 </dl>
@@ -3181,6 +3481,73 @@ NULL if no signal metrics are available.</dd></dl>
 <td class="paramkey"></td>
 <td></td>
 <td class="paramtype"><a class="el" href="le__mrc__interface_8h.html#a32b46b705cd7d45d76606b6c609df627">le_mrc_CellularNetworkScanHandlerFunc_t</a> </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to perform a cellular network scan asynchronously. This function is not blocking, the response will be returned with a handler function.</p>
+<dl class="section note"><dt>Note</dt><dd><b>multi-app safe</b> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ratMask</td><td>Radio Access Technology mask </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td>handler for sending result. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a82800dff5d7a09b645467ab335c1f4bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82800dff5d7a09b645467ab335c1f4bd">◆ </a></span>le_mrc_PerformPciNetworkScan()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__mrc__interface_8h.html#a468e9490f12dd7abc8a184782dbb16e9">le_mrc_PciScanInformationListRef_t</a> le_mrc_PerformPciNetworkScan </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__mrc__interface_8h.html#af643c7005da7f2466302eebdf7a29d93">le_mrc_RatBitMask_t</a> </td>
+<td class="paramname"><em>ratMask</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to perform a PCI network scan.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the List object. Null pointer if the scan failed.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>multi-app safe</b> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ratMask</td><td>Radio Access Technology mask </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a40caa30636962c0385a474986438ba06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40caa30636962c0385a474986438ba06">◆ </a></span>le_mrc_PerformPciNetworkScanAsync()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_mrc_PerformPciNetworkScanAsync </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__mrc__interface_8h.html#af643c7005da7f2466302eebdf7a29d93">le_mrc_RatBitMask_t</a> </td>
+<td class="paramname"><em>ratMask</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__mrc__interface_8h.html#aa9b13b3e30910820bbf796f45e70cf8d">le_mrc_PciNetworkScanHandlerFunc_t</a> </td>
 <td class="paramname"><em>handlerPtr</em>, </td>
 </tr>
 <tr>
