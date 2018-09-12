@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="About" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>17.05.0 Release Notes  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/About_Releases.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink selected" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ About</h2>
+<nav class="secondary">
+<a href="aboutLegato.html">Legato</a><a class="link-selected" href="aboutReleaseInfo.html">Releases</a><a href="aboutLicenses.html">Licenses</a><a href="aboutLegatoContributing.html">Contribute Code</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">17.05.0 Release Notes </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>Release Date: June 23, 2017</p>
+<p>See <a class="el" href="aboutLicenses.html">Licenses</a> to view Legato AF Licensing Information.</p>
+<p>The following provides a summary of changes that have been made in the 17.05 Legato AF Release.</p>
+<p><b> Download the <a class="el" href="aboutReleaseInfo.html">source code</a> and get started with <a class="el" href="basicBuild.html">building Legato AF</a>. </b></p>
+<h1><a class="anchor" id="rn17_05_Features"></a>
+New Features</h1>
+<h2><a class="anchor" id="rn17_05_FeaturesFwupdate"></a>
+fwupdate Service</h2>
+<p>fwupdate now includes the following features:</p><ul>
+<li>Suspend/Resume feature added - the fwupdate service now supports suspending and resuming updates in the case of a loss of connection or power.</li>
+<li>fwupdate is split into two functions <a class="el" href="le__fwupdate__interface_8h.html#ab68f3a7c5d4284306468e888bf6a8796">le_fwupdate_Download()</a> to download updates, and <a class="el" href="le__fwupdate__interface_8h.html#a534e72fc1a6c20a36a9bdf4a58074159">le_fwupdate_Install()</a> to install the update.</li>
+</ul>
+<p>See <a class="el" href="c_fwupdate.html">fwupdate</a> for further information the new features for updating firmware</p>
+<h2><a class="anchor" id="rn17_05_FeaturesIncDefFiles"></a>
+Def Files Inclusion in other Def Files</h2>
+<p>To allow extensions of systems, apps and components Def Files are now allowed to be <a class="el" href="defFilesFormat.html#defFileFormatIncludeDirectives">included into other Def Files</a>. To reuse common parts of the definition file, these parts can be separated into a common file, which is then included in each definition file where it is needed. This new feature is done by using <a class="el" href="defFilesFormat.html#defFileFormatIncludeDirectives">include directives</a>.</p>
+<h2><a class="anchor" id="rn17_05_FeaturesTdefSinc"></a>
+Target Definition Files replaced with Sdef includes</h2>
+<p>With the improvement of including Def Files into other Def Files, we have also been able to replace our Target Definition files with Sdef Include files. All build variables are now defined by <code>target/*</code>.sinc and are included in the target sdef's. This allows a target to be built by running <code> mksys -t &lt;target&gt; </code> with only toolchain settings from the environment.</p>
+<h2><a class="anchor" id="rn17_05_FeaturesRemoteSIM"></a>
+Remote SIM Service added</h2>
+<p>The Modem Services Platform Adapter now includes support for Remote SIMs. The following features are supported:</p><ul>
+<li>Connection management</li>
+<li>Transfer APDU</li>
+<li>Transfer ATR</li>
+<li>Power SIM off</li>
+<li>Power SIM on</li>
+<li>Reset SIM</li>
+<li>Report Status</li>
+<li>Error handling</li>
+</ul>
+<p>The following optional features are not supported:</p><ul>
+<li>Transfer Card Reader Status</li>
+<li>Set Transport Protocol</li>
+</ul>
+<p>See <a class="el" href="c_rsim.html">Remote SIM service</a> to implement this feature.</p>
+<h2><a class="anchor" id="rn17_05_FeaturesMdefSource"></a>
+build .ko file with sources</h2>
+<p>The <code></code>.mdef files now support 2 methods of building drivers within the Legato AF. A new method has been added to build drivers straight from the source code instead of needed a pre-compiled <code></code>.ko file.</p>
+<p>See <a class="el" href="defFilesMdef.html">Kernel Module Definition .mdef</a> for details on how to bundle <code></code>.c files into a kernel object.</p>
+<h2><a class="anchor" id="rn17_05_FeaturesDualSS"></a>
+Dual System Support</h2>
+<p>Dual System consists of managing 2 copies of most code areas, the ACTIVE system (currently used, Read-Only) and UPDATE system (backup, Read-Write). <a class="el" href="c_fwupdate.html">Firmware Update API</a> now supports updating both the ACTIVE and UPDATE systems.</p>
+<p>For more information please see <a class="el" href="platformConstraintsDualSys.html">Dual System mechanism</a>.</p>
+<h2><a class="anchor" id="rn17_05_FeaturesMinimumArray"></a>
+Minimum array and string sizes deprecated</h2>
+<p>In API files the Minimum array and string sizes have been deprecated, due to minimum sizes not being properly enforced.</p>
+<p>The following function will now return the error: <code> reusable/INFRA_CmdMng/CmdServer/api/CmdMngIpc.api:8:16: error: Unexpected character u'.' </code> </p><pre class="fragment"><div class="line">FUNCTION SomeFunction(<span class="keywordtype">string</span> aString[1..255]);</div></pre><!-- fragment --><p>Change to:</p>
+<pre class="fragment"><div class="line">FUNCTION SomeFunction(<span class="keywordtype">string</span> aString[255]);</div></pre><!-- fragment --><h2><a class="anchor" id="rn17_05_FeaturesTools"></a>
+Tooling Changes</h2>
+<p>The following changes have been made to the Legato AF Tools:</p><ul>
+<li>Auto-Complete is now added for both zsh and bash commands</li>
+<li><a class="el" href="buildToolsmkexe.html">mkexe</a> is now able to package and build drivers from kernel objects or <code></code>.c sources.</li>
+<li><a class="el" href="buildToolsifgen.html">ifgen</a> - <a class="el" href="apiFilesSyntax.html#apiFilesSyntax_types">data type handler</a> has been deprecated; User-defined type <code>HANDLER</code> is to be used instead</li>
+</ul>
+<h1><a class="anchor" id="rn17_05_FeaturesExperimental"></a>
+Experimental Features</h1>
+<h2><a class="anchor" id="rn17_05_FeaturesExperimentalAirVantage"></a>
+AirVantage Connector Version 2</h2>
+<p>AirVantage Connect version 2 has been launched as an <b>experimental</b> <b>version</b>. Version 2 upgrades the AirVantage Connector to improve support for Asset Data and TimeSeries management.</p>
+<p>AirVantage 1.0 is no longer enabled in 17.05.0 and above.</p>
+<p>AVC 2.0 New Features:</p><ul>
+<li>Asset data can be dynamically created within the application and there is no need to define the data model in the <code></code>.cdef</li>
+<li>Asset data settings now support read/write from the Air Vantage Server</li>
+<li>Asset data definitions have changed to resources (paths)</li>
+<li>TimeSeries is no longer coupled with asset data</li>
+<li>TimeSeries enables users to aggregate multiple data points into a single push</li>
+<li>TimeSeries Observe function has been replaced with a push function.</li>
+</ul>
+<p>The <a class="el" href="avMigration.html">AirVantage 1.0 to 2.0 Migration</a> contains details on the changes between AirVantage V1 and AirVantage V2 and how to migrate your configuration.</p>
+<dl class="section warning"><dt>Warning</dt><dd>To sync AirVantage with a 17.05 Legato System Build, an extra step must be done to update the version number before you upload the <a class="el" href="avInstallUpload.html#avInstallUpload_CustomSystem">System Bundle to sync with AirVantage.</a></dd></dl>
+<p>The AirVantage documentation has been reorganized and is now located within the <a class="el" href="legatoServicesAirVantage.html">AirVantage Connector Documentation</a></p>
+<h2><a class="anchor" id="rn17_05_FeaturesExperimentalReadOnly"></a>
+Read Only Mode</h2>
+<p>In Legato AF Read-Only mode the system tree is built and deployed into a squashfs or ubifs image making the system read-only. Any system configuration must be done before the system is built an installed on to the Target Device.</p>
+<p>While Legato is built as Read-Only the following actions are restricted: -Running Apps within Sandboxes -Installation or removal of Legato Apps and/or Services -Software over-the-air updates through AirVantage -Additions of new nodes to the Config Tree (values can still be changed) -Modifications to the root file-system (e.g., changing passwords)</p>
+<p>For more information please see <a class="el" href="platformConstraintsReadOnly.html">Legato Read Only R/O</a> .</p>
+<h1><a class="anchor" id="rn17_05_Fixes"></a>
+Fixed Issues</h1>
+<p>All development work is tagged in GitHub as "17.05.0". The list of changes and commitm messages can be found on GitHub.</p>
+<p><a href="https://github.com/legatoproject/legato-af/commits/17.05.0">Legato AF 17.05.0 Fixes</a></p>
+<h1><a class="anchor" id="rn17_05_KnownIssues"></a>
+Known Issues</h1>
+<h2><a class="anchor" id="rn17_05_Constraints"></a>
+Constraints and Limitations</h2>
+<h3><a class="anchor" id="rn17_05_ContraintsLinuxSupport"></a>
+Dev Machine Linux Version</h3>
+<p>To develop applications within the Legato AF, a <a href="https://www.ubuntu.com/info/release-end-of-life">Long Term Support version of Ubuntu Linux</a> is needed on your dev machine (or running in a virtual box on Windows). Any release older then Ubuntu 12.04 is no longer supported by the Legato AF.</p>
+<h3><a class="anchor" id="rn17_05_ConstECMUSB"></a>
+ECM-USB modem manager issue</h3>
+<p>Ubuntu 15.10 and newer is default installed with Modem Manager version <code>1.4.12-1ubuntu1</code> which conflicts with the ECM-USB driver when connecting a target. Modem manager may cause the Ubuntu Network Manager to crash on your host and/or your target device to become unavailable over USB.</p>
+<p><b>Symptoms:</b> </p><ul>
+<li>NetworkManager crashing when plugging into your device over USB, or</li>
+<li>The target device becomes inaccessible after 30 seconds.</li>
+</ul>
+<p><b>Recommended</b> <b>Work</b> <b>Around:</b> </p><ul>
+<li>Uninstall <code>modemmanager</code> from Ubuntu or</li>
+<li>Downgrade <code>modemmanager</code> to version 1.0.0-2ubuntu1 <a href="http://packages.ubuntu.com/trusty/modemmanager">Download version 1.0.0-2ubuntu1 of modemmanager</a></li>
+</ul>
+<h2><a class="anchor" id="rn17_05_OpenIssues"></a>
+Open Issues</h2>
+<p>The following is the list of known issues that still exist in Legato 17.05.0 and are currently under investigation:</p>
+<p><b>Legato</b> <b>AF</b> </p><ul>
+<li>Apps can't share writable files with each other unless both apps are "un-sandboxed".</li>
+<li>Real time scheduling policies are not able to promote themselves if needed.</li>
+</ul>
+<p><b>Config</b> <b>Tree</b> </p><ul>
+<li>Removing an <code>app</code> may remove another <code>apps</code> tree if the first <code>apps</code> requires section lists the second <code>app</code>.</li>
+</ul>
+<p><b>Tools</b> </p><ul>
+<li><code>app</code> <code>runProc</code> does not work for apps running outside of a Sandbox. If you wish to run <code>app</code> runProc your <code>app</code> must be running in a Sandbox.</li>
+<li><code>app</code> <code>status</code> doesn’t have a "waiting" status if an app is waiting it gets reported as "running".</li>
+<li><code>configEcm</code> will give a confusing error message about IP's not being on the same subnet when other errors are present.</li>
+</ul>
+<p><b>Audio</b> <b>API</b> </p><ul>
+<li>No sound recorded when using an Analog interface.</li>
+<li>Not able to resume a playback after a recording has been paused.</li>
+<li>"Pop" noise on <code>usb</code> audio at the end of a play or when stopping an ongoing file</li>
+</ul>
+<p><b>Data</b> <b>Connection</b> <b>API</b> </p><ul>
+<li>"wifi client disconnect" does not release current Wifi connection</li>
+</ul>
+<p><b>eCall</b> <b>API</b> </p><ul>
+<li>First tone in DTMF is often missed or has a shorter duration.</li>
+<li><code>LE_ECALL_STATE_TIMEOUT_T6</code> is not handled when T6 expires. The timeout event is not generated in the eCall handler.</li>
+<li>MSD transmissions fail over SMS when the FDN is locked.</li>
+<li>The fall-back SMS is not received during an Era-Glonass eCall session.</li>
+</ul>
+<p><b>GPIO</b> <b>API</b> </p><ul>
+<li>Only one service is able to access a GPIO pin at a time</li>
+</ul>
+<p><b>SPI</b> <b>API</b> </p><ul>
+<li>Driver does not support speeds lower than 960000 baud</li>
+</ul>
+<p><b>UART</b> <b>API</b> </p><ul>
+<li>Modem does not support serial baud rate of 1000000</li>
+</ul>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

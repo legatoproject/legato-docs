@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Configure the Application Framework  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Get_Started.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a class="link-selected" href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Configure the Application Framework </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>Now that you have the Legato Application Framework and a toolchain installed on your development machine, you can now configure the Framework for your specific target. Running the <code>make</code> script for your target sets up the target management tools, builds a default update for your target and sets up environment variables for your target. Each time you upgrade Legato, or switch target devices you need to run the make scripts again to set up the environment specific for your target.</p>
+<h1><a class="anchor" id="basicBuildMake_makeTarget"></a>
+Configure Application Framework for a Target</h1>
+<p>All supported platforms use the <code>make</code> tool and have pre-configured makefiles included in the Framework.</p>
+<dl class="section warning"><dt>Warning</dt><dd>You must have the matching toolchain installed for your target.</dd></dl>
+<p>Run <code>make</code> <code></code> &lt;target&gt; to build the framework for the target from your Legato Root Directory: </p><pre class="fragment">$ make wp85  # makes an update file for a WP85 series device
+</pre><p>List of Supported Platforms (see your module vendor for information and the toolchain required to build)</p>
+<table class="doxtable">
+<tr>
+<th>Target </th><th>Description  </th></tr>
+<tr>
+<td>localhost </td><td>Test build process, very limited functionality </td></tr>
+<tr>
+<td>raspi </td><td><a href="https://www.raspbian.org/">Raspberry Pi running Raspbian</a> </td></tr>
+<tr>
+<td>wp85 </td><td><a href="https://source.sierrawireless.com/devices/wp-series/wp8548/">Sierra Wireless WP85xx modules</a> </td></tr>
+<tr>
+<td>wp77xx </td><td><a href="https://source.sierrawireless.com/">Sierra Wireless WP77xx modules</a> </td></tr>
+<tr>
+<td>wp76xx </td><td><a href="https://source.sierrawireless.com/devices/wp-series/wp7601/">Sierra Wireless WP76xx modules</a> </td></tr>
+<tr>
+<td>wp750x </td><td><a href="https://source.sierrawireless.com/devices/wp-series/wp7502/">Sierra Wireless WP750x modules</a> </td></tr>
+<tr>
+<td>ar86 </td><td><a href="https://www.sierrawireless.com/products-and-solutions/embedded-solutions/automotive-modules/">Sierra Wireless AR86xx modules</a> </td></tr>
+<tr>
+<td>ar759x </td><td><a href="https://www.sierrawireless.com/products-and-solutions/embedded-solutions/automotive-modules/">Sierra Wireless AR759x modules</a> </td></tr>
+<tr>
+<td>ar758x </td><td><a href="https://www.sierrawireless.com/products-and-solutions/embedded-solutions/automotive-modules/">Sierra Wireless AR758x modules</a> </td></tr>
+<tr>
+<td>ar7 </td><td><a href="https://www.sierrawireless.com/products-and-solutions/embedded-solutions/automotive-modules/">Sierra Wireless AR7xxx modules</a> </td></tr>
+</table>
+<p>Running make will:</p><ul>
+<li>build an update pack for your target with the version of the Legato Application Framework that is installed on your dev machine.</li>
+<li>build tools needed to build apps and configure your target.</li>
+<li>set-up environment variables and other useful configuration to make using the Framework easier.</li>
+</ul>
+<p>Once the make scripts have run you should now see the following directories <code>/bin</code> and <code>/build</code>. The <code>bin</code> directory contains tools and scripts for the framework and the <code>build</code> directory contains all the build files and install files to update your target.</p>
+<h1><a class="anchor" id="basicBuildMake_ConfigureShell"></a>
+Configure Shell</h1>
+<p>You will need to configure your shell so you can easily use the <a class="el" href="tools.html">Tools</a> included with Legato Application Framework.</p>
+<p><code>cd</code> into the legato root directory (e.g.; <code>~/legato-repo/legato</code>) and run the script <code></code>./bin/legs or <code>source bin/configlegatoenv</code>. <code>legs</code> (legato shell) will open up a new shell and configure the Legato environment variables such as setting $LEGATO_ROOT and adding it to your path. Sourcing <code>configlegatoenv</code> will do the same thing but will configure your current shell, preserving your history.</p>
+<p>For the list of tools and further instructions on configuring your shell see <a class="el" href="tools.html">Tools</a> .</p>
+<pre class="fragment">$ ./bin/legs
+</pre><p>OR</p>
+<pre class="fragment">$ source bin/configlegatoenv
+</pre><dl class="section note"><dt>Note</dt><dd>You can also add bin/configlegatoenv to your bash profile so that the environment variables will automatically be configured each time you log into your Dev Machine.</dd></dl>
+<h1><a class="anchor" id="basicBuildMake_UpdateTarget"></a>
+Update Target</h1>
+<p>The Legato Runtime Environment included on your target may not be at the same version that is installed on your dev machine. Please check what version(s) are compatible with your target before updating. Now that you've run <code>make</code> for your target you will have an initial "default" build of Runtime Environment that you can now update your target with. The update file will be located in the <code>build/</code> &lt;target&gt; directory and will be named <code>system</code>.&lt;target&gt;.update.</p>
+<p>To <a class="el" href="toolsHost_update.html">update</a> the runtime environment on your target use the <a class="el" href="toolsHost_update.html">update</a> tool to pass the system update pack to the target device for installation. I</p>
+<pre class="fragment">$ update build/wp85/system.wp85.update 192.168.2.2
+</pre><p>OR</p>
+<pre class="fragment">$ update build/raspi/system.raspi.update &lt;target IP&gt;
+</pre><h1><a class="anchor" id="basicBuildLegato_StartProject"></a>
+Start Project</h1>
+<p>Now you are ready to start your first project, we suggest starting with our helloWorld tutorial and then work your way through helloIPC before starting coding your own projects. The hello tutorials introduce you to some of the <a class="el" href="concepts.html">methodologies and concepts</a> of how build apps and systems for your target.</p>
+<p>In your workspace directory create a folder for your project.</p>
+<pre class="fragment">$ mkdir &lt;projectName&gt;
+$ cd &lt;projectName&gt;
+</pre><p>Each project will probabbly contain apps, components and</p>
+<dl class="section note"><dt>Note</dt><dd>It is recommended to do all of your work within project directories, while the Application Framework is open source and you are able to customize most parts within it, your project directory should contain all your apps, components and systems that you have created/customized. This ensures that future upgrades will not overwrite any of the work that you have done.</dd></dl>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
