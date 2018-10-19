@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Kernel Modules  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Concepts.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a class="link-selected" href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Kernel Modules </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>A loadable kernel module is a way to add or remove code from the kernel at runtime. It is an ideal way to create device drivers and enable the kernel to interface with hardware on your target. The alternative to this is to add your device drivers into your kernel which can make the kernel very large (not good on an embedded system), also requiring you to create and maintain your own OS distribution.</p>
+<p>In the Framework we have provided a method to add loadable kernel modules within a Legato System. This allows you to add the device drivers for any sensors or IoT devices that you are adding to your target, include them with a system and install, upgrade and test them on your target all without rebuilding the OS.</p>
+<p>The general workflow for adding a kernel module is to take either the source files or an already existing <code></code>.ko file and describe it with a <a class="el" href="defFilesMdef.html">Kernel Module Definition .mdef</a>. Once you have the <code></code>.mdef file for your kernel module then you add it to your <a class="el" href="defFilesSdef.html">System Definition .sdef</a> and build your system with <code>mksys</code>. Building your system will build your kernel module and use the kernel headers that have been included with your toolchain. Once the system is built then you can <a class="el" href="toolsHost_update.html">update</a> your target with the new system and install the kernel module.</p>
+<p><b>References:</b> </p><ul>
+<li><a class="el" href="getStartedKO.html">Kernel Modules</a> Tutorial to walk you through the step by step instructions of building an <code></code>.mdef for your kernel module and add and update your system.</li>
+<li>Find detailed specifications on adding a kernel module to your target in our <a class="el" href="defFilesMdef.html">Kernel Module Definition .mdef</a> reference.</li>
+<li>For examples of different configuration and real world examples of setting up kernel modules see <a class="el" href="howToKMod.html">How To Setup Kernel Modules</a>.</li>
+</ul>
+<h1><a class="anchor" id="conceptsKernelModule_version"></a>
+Kernel Versions</h1>
+<p>Kernel modules must be specifically built to work with the Linux Kernel. To successfully run a Kernel Module on your target it must be built with the <b>exact</b> toolchain with the same header files that were used to build the Linux Distribution on your target. Many targets may not be running the latest kernel due to chipset limitations and support. Make sure when you are writing and testing the kernel module that you are using the matching toolchain.</p>
+<p>The following command will grep for the kernel version of the kernel module: </p><pre class="fragment"># strings /path/to/kernel/module/example.ko |grep vermagic
+</pre><p>Example of using grep on example.ko: </p><pre class="fragment"># strings /legato/systems/current/modules/example.ko |grep vermagic
+vermagic=3.14.29ltsi-961ca71325_ab5094eade preempt mod_unload ARMv7
+__UNIQUE_ID_vermagic0
+__UNIQUE_ID_vermagic0
+</pre><p>To find the kernel version that your target is using: </p><pre class="fragment"># uname -a
+</pre><p>Example of finding the kernel on a target: </p><pre class="fragment"># uname -a
+Linux swi-mdm9x15 3.14.29ltsi-961ca71325_ab5094eade #2 PREEMPT Thu Apr 27 02:17:10 PDT 2017 armv7l GNU/Linux
+</pre><p>In this example both kernels are version <b>3.14.29ltsi-961ca71325_ab5094eade</b>, if they are different at all the kernel module or system will fail to load and the system may rollback to the previous known good system.</p>
+<dl class="section warning"><dt>Warning</dt><dd>If you are using a custom version of the Linux Distro then you must also rebuild the toolchain and build the kernel modules with that custom version of the toolchain. The Linux version must match exactly before kernel modules can be installed on the target. This also means that if you upgrade your firmware for your target you must rebuild and reinstall your Legato system, so that the Kernel Module gets rebuilt with the new version of the toolchain.</dd></dl>
+<p>It is very important that your source files that you are using for your kernel module are built specifically for that linux kernel. The toolchain that is provided by Sierra Wireless will match the Linux kernel included in the Linux Distribution, if you update the firmware on your target you must install the matching toolchain so that your kernel modules get built properly for the target.</p>
+<h1><a class="anchor" id="conceptsKernelModule_prebvssource"></a>
+Pre-built and Source Modules</h1>
+<p>Kernel modules can either be added to an .sdef as either a pre-built (already built) module or the sources can be included so that when your Legato System is built it will build the source files against the installed toolchain. The benefit to adding the source files is that the kernel module gets built each time you run <code>mksys</code>. If you upgrade your targets firmware (including the toolchain) the source files will get built against the new kernel headers automatically.</p>
+<p>Set up your kernel module with a <a class="el" href="defFilesMdef.html">Kernel Module Definition .mdef</a> and specify if you wish to use pre-built or source files for your kernel module.</p>
+<h1><a class="anchor" id="conceptsKernelModule_dependencies"></a>
+Kernel Dependencies</h1>
+<p>In the <a class="el" href="defFiles.html">Definition Files</a> you are able to specify kernel module dependencies. There are two types of dependencies:</p><ul>
+<li>In the <a class="el" href="defFilesMdef.html">Kernel Module Definition .mdef</a> you can specify a hierarchy of kernel module dependencies and specify a load order to the kernel modules that you have installed within your Legato System.</li>
+<li>In the <a class="el" href="defFilesCdef.html">Component Definition .cdef</a> and <a class="el" href="defFilesAdef.html">Application Definition .adef</a> you can specify which kernel modules the app or component depends on. This will check that the module is included with the system at build time.</li>
+</ul>
+<p>To set up kernel module dependencies review the <code>requires:</code> section of the <a class="el" href="defFilesMdef.html">Kernel Module Definition .mdef</a>.</p>
+<p>To set up app or component dependencies then review the <code>kernelModule:</code> section of the <a class="el" href="defFilesCdef.html">Component Definition .cdef</a> and <a class="el" href="defFilesAdef.html">Application Definition .adef</a>.</p>
+<h1><a class="anchor" id="conceptsKernelModule_bundlesScripts"></a>
+Bundles and Scripts</h1>
+<p>Sometimes binary and firmware files many need to be bundled with your kernel module so that the kernel module can run through additional setup or removal steps. Support has been added so that you can bundle in external files with your kernel module and supply scripts with further information to setup or remove your kernel module.</p>
+<p>Within the kernel module's <code></code>.mdef file the <code>bundles:</code> section can be used to add additional files to the kernel module. If you have added any extra files you also need to have a <code>script</code> that provides further instructions to the target on how to load/unload the additional files.</p>
+<dl class="section note"><dt>Note</dt><dd>The script must also handle the loading and unloading of the kernel module with <code>insmod</code> and <code>rmmod</code>.</dd></dl>
+<p>To install the kernel module when using the <a class="el" href="defFilesMdef.html#defFilesMdef_bundles">bundles:</a> section, you must <a class="el" href="defFilesMdef.html#defFilesMdef_scripts">specify an install and a remove script</a>. The Framework will use those scripts to load and unload the kernel module on your target. If no scripts are specified the kernel module will be loaded with <code>insmod</code> but the bundled files will not be handled at all.</p>
+<h1><a class="anchor" id="conceptsKernelModule_bundlesTools"></a>
+Tools and APIs</h1>
+<p>A <a class="el" href="c_kernelModule.html">Linux Kernel Module API</a> API is provided from the Supervisor daemon to call the loading and unloading of kernel modules from within your app.</p>
+<p>The target also includes a tool <a class="el" href="toolsTarget_kmod.html">kmod</a> so that you can load and unload modules from the command line. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
