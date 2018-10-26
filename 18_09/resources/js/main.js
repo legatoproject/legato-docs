@@ -112,11 +112,11 @@ $(document).ready(function() {
     $("#searchbox").keyup(function(e) {
         // alphanumeric or enter
         if (e.keyCode >= 48 && e.keyCode <= 90 || e.keyCode == 13) {
-            onSearchRequested();
+            setupAutocomplete();
         }
     });
     $("#searchbox").focus(function() {
-        onSearchRequested();
+        $("#search_result").show();
     });
     var $content = $('.content');
     var is_mobile = screen.width <= 719;
@@ -203,7 +203,14 @@ $(document).ready(function() {
  * @param context - A context string (e.g. "Build Apps") that can be either be set
  *                  to restrict search results, or left empty to search all contexts.
  **/
+
+var searchResultCache = {};
+
 function fetchSearchResults(search_query, callback, context) {
+    if (searchResultCache[search_query]) {
+        callback(searchResultCache[search_query]);
+        return;
+    }
     $.ajax({
         url: invoke_url,
         dataType: "json",
@@ -249,23 +256,27 @@ function fetchSearchResults(search_query, callback, context) {
                 }
             // if query doesnt end with wildcard, do a prefix search as well, and then call the callback with both sets of results together
             if (!search_query.trim().endsWith("*")) fetchSearchResults(search_query + "*", function(results2) {
-                callback(uniqueSearchResults(results.concat(results2)));
+                var results3 = uniqueSearchResults(results.concat(results2));
+                searchResultCache[search_query] = results3;
+                callback(results3);
             }, context);
-            else
+            else {
                 //otherwise just call the callback
+                searchResultCache[search_query] = results;
                 callback(results);
+            }
 
         }
     });
 }
 
-function onSearchRequested() {
+function setupAutocomplete() {
     ctx = $('html').data('context'); // e.g. "Build Apps"
     if (ctx == "Legato Documentation")
         ctx = "";
     var keyword = $('#searchbox').val();
     var ac = $("#searchbox").autocomplete({
-        delay: 10,
+        delay: 400,
         autoFocus: true,
         source: function(request, response) {
             fetchSearchResults(request.term, response, restrict_to_ctx ? ctx : "");
@@ -274,6 +285,7 @@ function onSearchRequested() {
         minLength: 1,
         focus: function(event, ui) {
             event.preventDefault(); // so the textbox's value doesn't get replaced.
+
         },
         select: function(event, ui) {
             event.preventDefault();
@@ -309,7 +321,8 @@ function onSearchRequested() {
             that._renderItemData(ul, item);
         });
     };
-    $("#searchbox").autocomplete("search", keyword);
+    // Previously used to force autocomplete to open, but likely no longer needed:
+    //$("#searchbox").autocomplete("search", keyword);
 }
 
 
