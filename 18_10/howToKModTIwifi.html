@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>TI WiFi Kernel Module Example  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_How_To.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a class="link-selected" href="howToMain.html">How To</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">TI WiFi Kernel Module Example </h1> </div>
+</div><div class="contents">
+<div class="textblock"><dl class="section warning"><dt>Warning</dt><dd>The TIWiFi module example is here for example purposes only, the driver is currently bundled with Linux on supported targets. If you want to try this example you must first remove the TIWiFi driver from Linux and rebuild your Linux Distribution.</dd></dl>
+<p>The TI WiFi module provides an example of a complicated install and remove script for multiple modules as well as dependencies on multiple kernel modules.</p>
+<p>The TI WiFi driver is comprised of 3 kernel modules:</p><ul>
+<li>wlcore: needs install and remove scripts</li>
+<li>wlcore_sdio</li>
+<li>wp18xx: needs install and remove scripts</li>
+</ul>
+<p>The load sequence for the modules is (the unload sequence is done in reverse):</p>
+<p><code>1</code>. wlcore  <code>2</code>. wlcore_sdio  <code>3</code>. wl18xx </p>
+<p>All three modules must be called in your systems <code></code>.sdef file: </p><pre class="fragment">{
+    $LEGATO_ROOT/drivers/wl18xx/wl18xx.mdef
+    $LEGATO_ROOT/drivers/wlcore/wlcore.mdef
+    $LEGATO_ROOT/drivers/wlcore_sdio/wlcore_sdio.mdef
+}
+</pre><p>The wlcore kernel module contains multiple source files as well as 2 binary files. These must be defined in the <code>wlcore.mdef</code> as follows: </p><pre class="fragment">//-------------------------------------------------------------------------------------------------
+// wlcore.mdef
+//
+// Copyright (C) Sierra Wireless Inc.
+//-------------------------------------------------------------------------------------------------
+
+sources:
+{
+    acx.c
+    ps.c
+    tx.c
+    cmd.c
+    debugfs.c
+    event.c
+    io.c
+    main.c
+    scan.c
+    boot.c
+    init.c
+    rx.c
+    sysfs.c
+    vendor_cmd.c
+}
+
+bundles:
+{
+    file:
+    {
+        $CURDIR/bin/wl18xx-conf.bin /bin/wl18xx-conf.bin
+        $CURDIR/bin/wl18xx-fw-4.bin /bin/wl18xx-fw-4.bin
+    }
+}
+
+scripts:
+{
+    install: $CURDIR/scripts_wlcore/install.sh
+    remove: $CURDIR/scripts_wlcore/remove.sh
+}
+</pre><p>To install the wlcore kernel module we need to use an install and remove script as we need to:</p><ul>
+<li>point the kernel to where the binaries will be available on the target</li>
+<li>enable the GPIO pins</li>
+<li>resolve the module dependencies</li>
+<li>install modules already included in the Linux distribution (msm_sdcc, cfg80211, mac80211)</li>
+<li>install wlcore</li>
+</ul>
+<p>Install Script: </p><pre class="fragment">#!/bin/sh
+# Copyright (C) Sierra Wireless Inc. Use of this work is subject to license.
+#
+# TI wireless wl18xx specific applications start or stop here
+# TI WIFI IoT board is managed by SDIO/MMC bus. Some signals need to be set
+# and managed before the SDIO/MMC module is inserted.
+# TI WIFI IoT conflicts with others devices using the SDIO/MMC bus
+
+export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin
+
+KO_PATH=$1
+
+echo -n /legato/systems/current/modules/files/wlcore/bin &gt; /sys/module/firmware_class/parameters/path
+
+# Add mdev rule for crda
+grep crda /etc/mdev.conf &gt; /dev/null
+if [ $? -ne 0 ]; then
+   (mount | grep -q " on /etc type ") || \
+       (cp /etc/mdev.conf /tmp; mount -o bind /tmp/mdev.conf /etc/mdev.conf)
+   echo "\$COUNTRY=.. root:root 0660 */sbin/crda" &gt;&gt; /etc/mdev.conf
+fi
+lsmod | grep wlcore &gt;/dev/null
+if [ $? -ne 0 ]; then
+   # Check if MMC/SDIO module is inserted. Because WIFI use SDIO/MMC bus
+   # we need to remove the SDIO/MMC module
+   lsmod | grep msm_sdcc &gt;/dev/null
+  if [ $? -eq 0 ]; then
+      grep -q mmcblk /proc/mounts
+      if [ $? -ne 0 ]; then
+         rmmod msm_sdcc
+      else
+         false
+      fi
+      if [ $? -ne 0 ]; then
+         # Unable to remove. May be others devices use SDIO/MMC bus
+         echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+         echo "Unable to remove the SDIO/MMC module... May be in use ?"
+         echo "Please, free all SDIO/MMC devices before using TI WIFI."
+         echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+         exit 127
+      fi
+   fi
+   # Enable all GPIOs on all EXPANDERs
+   gpioexp 1 1 enable &gt;/dev/null || exit 127
+
+   ### mangOH green has 3 expanders
+   # Set IOTO_RESET, GPIO#4/EXPANDER#3 - IOT0 Reset signal is disabled
+   gpioexp 3 4 output normal high &gt;/dev/null 2&gt;&amp;1
+   if [ $? -ne 0 ]; then
+       echo "mangOH red board"
+
+       # Set IOT0_GPIO2 = 1 (WP GPIO13)
+       [ -d /sys/class/gpio/gpio13 ] || echo 13 &gt;/sys/class/gpio/export
+       echo out &gt;/sys/class/gpio/gpio13/direction
+       echo 1 &gt;/sys/class/gpio/gpio13/value
+
+       # Set IOT0_RESET = 1 (WP GPIO2)
+       [ -d /sys/class/gpio/gpio2 ] || echo 2 &gt;/sys/class/gpio/export
+       echo out &gt;/sys/class/gpio/gpio2/direction
+       echo 1 &gt;/sys/class/gpio/gpio2/value
+
+       # Clear SDIO_SEL, GPIO#9/EXPANDER#1 - Select the SDIO
+       gpioexp 1 9 output normal low &gt;/dev/null || exit 127
+   else
+       echo "mangOH green board"
+       # Set IOT0_GPIO2 = 1 (WP GPIO33)
+       [ -d /sys/class/gpio/gpio33 ] || echo 33 &gt;/sys/class/gpio/export
+       echo out &gt;/sys/class/gpio/gpio33/direction
+       echo 1 &gt;/sys/class/gpio/gpio33/value
+
+       # Clear SDIO_SEL, GPIO#13/EXPANDER#1 - Select the SDIO
+       gpioexp 1 13 output normal low &gt;/dev/null || exit 127
+   fi
+
+   # Set IOT0_GPIO4 = 1 (WP GPIO8)
+   [ -d /sys/class/gpio/gpio8 ] || echo 8 &gt;/sys/class/gpio/export
+   echo out &gt;/sys/class/gpio/gpio8/direction
+   echo 1 &gt;/sys/class/gpio/gpio8/value
+
+   modprobe msm_sdcc || exit 127
+   modprobe cfg80211 || exit 127
+   modprobe mac80211 || exit 127
+
+   insmod $KO_PATH || exit 127
+
+fi
+</pre><p>The removal script must:</p><ul>
+<li>remove the dependencies on the modules in the Linux distribution (msm_sdcc, cfg80211, mac80211)</li>
+<li>disable the GPIO pins</li>
+<li>remove the wlcore module</li>
+</ul>
+<p>Remove Script: </p><pre class="fragment">#!/bin/sh
+# Copyright (C) Sierra Wireless Inc. Use of this work is subject to license.
+#
+# TI wireless wl18xx specific applications start or stop here
+# TI WIFI IoT board is managed by SDIO/MMC bus. Some signals need to be set
+# and managed before the SDIO/MMC module is inserted.
+# TI WIFI IoT conflicts with others devices using the SDIO/MMC bus
+
+export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin
+
+KO_PATH=$1
+
+lsmod | grep wlcore &gt;/dev/null
+if [ $? -eq 0 ]; then
+   rmmod $KO_PATH || exit 127
+   rmmod mac80211 || exit 127
+   rmmod cfg80211 || exit 127
+   if `lsmod | grep '^compat '`; then
+       rmmod compat || exit 127
+   fi
+
+   rmmod msm-sdcc || exit 127
+
+   # Reset IOT0_GPIO4 = 0 (WP GPIO8)
+   echo 0 &gt;/sys/class/gpio/gpio8/value
+   # Clear IOTO_RESET, GPIO#4/EXPANDER#3 - IOT0 Reset signal is enabled
+   gpioexp 3 4 output normal low &gt;/dev/null 2&gt;&amp;1
+   if [ $? -ne 0 ]; then
+       echo "mangOH red board"
+       # Set IOT0_RESET = 1 (WP GPIO2)
+       echo 0 &gt;/sys/class/gpio/gpio2/value
+
+       # Clear SDIO_SEL, GPIO#9/EXPANDER#1 - Deselect the SDIO
+       gpioexp 1 9 output normal high &gt;/dev/null || exit 127
+
+       # Reset IOT0_GPIO2 = 0 (WP GPIO13)
+       echo 0 &gt;/sys/class/gpio/gpio13/value
+   else
+       echo "mangOH green board"
+       # Set SDIO_SEL, GPIO#13/EXPANDER#1 - Deselect the SDIO
+       gpioexp 1 13 output normal high &gt;/dev/null || exit 127
+
+       # Reset IOT0_GPIO2 = 0 (WP GPIO33)
+       echo 0 &gt;/sys/class/gpio/gpio33/value
+   fi
+
+   # Insert MMC/SDIO module
+   modprobe msm_sdcc || exit 127
+fi
+</pre><p>The wlcore_sdio module has only one source file sdio.c and has dependency on wlcore. The module dependency is indicated in the mdef with <code>requires:</code> <code>kernelModules:</code> section. </p><pre class="fragment">sources:
+{
+    sdio.c
+}
+
+requires:
+{
+    kernelModules:
+    {
+        $LEGATO_ROOT/drivers/wlcore/wlcore.mdef
+    }
+}
+</pre><p>The wp18xx module is made up of multiple source files and also needs to use an install and removal script to correctly install the kernel module.</p>
+<p>wl18xx.mdef: </p><pre class="fragment">sources:
+{
+    acx.c
+    cmd.c
+    debugfs.c
+    event.c
+    io.c
+    main.c
+    scan.c
+    tx.c
+}
+
+requires:
+{
+    kernelModules:
+    {
+        $LEGATO_ROOT/drivers/wlcore_sdio/wlcore_sdio.mdef
+    }
+}
+
+scripts:
+{
+    install: $CURDIR/scripts_wl18xx/install.sh
+    remove:  $CURDIR/scripts_wl18xx/remove.sh
+}
+</pre><p>The install script for the wp18xx module needs to install the module and enable the wlan0 interface: </p><pre class="fragment">#!/bin/sh
+# Copyright (C) Sierra Wireless Inc. Use of this work is subject to license.
+#
+# TI wireless wl18xx specific applications start or stop here
+# TI WIFI IoT board is managed by SDIO/MMC bus. Some signals need to be set
+# and managed before the SDIO/MMC module is inserted.
+# TI WIFI IoT conflicts with others devices using the SDIO/MMC bus
+
+export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin
+
+KO_PATH=$1
+
+insmod $KO_PATH
+
+sleep 62
+
+ifconfig -a | grep wlan0 &gt;/dev/null
+if [ $? -ne 0 ] ; then
+    echo "Failed to start TI wifi"; exit 126
+fi
+ifconfig wlan0 up &gt;/dev/null
+if [ $? -ne 0 ] ; then
+    echo "Failed to start TI wifi"; exit 127
+fi
+</pre><p>And the removal script needs to disable the wlan0 interface and remove the module: </p><pre class="fragment">#!/bin/sh
+# Copyright (C) Sierra Wireless Inc. Use of this work is subject to license.
+#
+# TI wireless wl18xx specific applications start or stop here
+# TI WIFI IoT board is managed by SDIO/MMC bus. Some signals need to be set
+# and managed before the SDIO/MMC module is inserted.
+# TI WIFI IoT conflicts with others devices using the SDIO/MMC bus
+
+export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin
+
+KO_PATH=$1
+
+ifconfig | grep wlan0 &gt;/dev/null
+if [ $? -eq 0 ]; then
+    ifconfig wlan0 down
+fi
+lsmod | grep wlcore &gt;/dev/null
+if [ $? -eq 0 ]; then
+    rmmod $KO_PATH
+fi
+</pre><p>You should now be able to build your system including the kernel module and <a class="el" href="toolsHost_update.html">update</a> your target with the new system including the TI WiFi modules.</p>
+<p>Once the new system is installed on your target you should be able to find the TI WiFi files in the following location:</p>
+<pre class="fragment">/legato/systems/current/modules
+    ├── files
+    │   ├── wl18xx
+    │   │   └── scripts
+    │   │       ├── install.sh
+    │   │       └── remove.sh
+    │   └── wlcore
+    │       ├── bin
+    │       │   ├── wl18xx-conf.bin
+    │       │   └── wl18xx-fw-4.bin
+    │       └── scripts
+    │           ├── install.sh
+    │           └── remove.sh
+    ├── wl18xx.ko
+    ├── wlcore.ko
+    └── wlcore_sdio.ko
+</pre> </div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
