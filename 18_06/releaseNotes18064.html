@@ -2,7 +2,7 @@
 <html data-context="About" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<title>18.06.3 Release Notes  - Legato Docs</title>
+<title>18.06.4 Release Notes  - Legato Docs</title>
 <meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
 <meta content="legato, iot" name="keywords"/>
 <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
@@ -59,12 +59,19 @@
 <div class="content">
 <div class="header">
 <div class="headertitle">
-<h1 class="title">18.06.3 Release Notes </h1> </div>
+<h1 class="title">18.06.4 Release Notes </h1> </div>
 </div><div class="contents">
-<div class="textblock"><p>Release Date: Aug 24, 2018</p>
+<div class="textblock"><p>Release Date: Oct 23, 2018</p>
 <p>See <a class="el" href="aboutLicenses.html">Licenses</a> to view Legato AF Licensing Information.</p>
 <p>The following provides a summary of changes that have been made in the 18.06 Legato AF Release.</p>
 <p><b> Download the <a class="el" href="aboutReleaseInfo.html">source code</a> and get started with <a class="el" href="basicBuild.html">building Legato AF</a>. </b></p>
+<h1><a class="anchor" id="rn18064_Patches"></a>
+18.06.4 Patch</h1>
+<p>The following issues have been fixed by the 18.06.4 patch:</p>
+<ul>
+<li>A bug has been fixed that prevented the SPI service from working on wp85 targets. The fix changes the SPI driver to load on demand. The SPI driver is now loaded when the SPI service app starts and not at Legato start.</li>
+</ul>
+<p><b>User Agreement Behavior Change:</b> By default, <a class="el" href="c_le_avc.html#c_le_avc_user_agreement">user agreements</a> are <b>now</b> <b>disabled</b>. This means that avcService automatically accepts requests from the server without asking for user approval. It initiates a connection to the server, downloads/installs packages and reboots the target if needed. Thus, if no control app for the AirVantage service is present on the target, the daemon is still able to update the target.</p>
 <h1><a class="anchor" id="rn18063_Patches"></a>
 18.06.3 Patch</h1>
 <p>The following issues have been fixed by the 18.06.3 patch:</p>
