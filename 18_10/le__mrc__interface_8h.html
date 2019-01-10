@@ -400,6 +400,8 @@ Functions</h2></td></tr>
 <tr class="separator:ab61faf88d4ab24454fc3d4b268a4767d"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a9ed8cc05b482f7a1c0efa11f05ca35a6"><td align="right" class="memItemLeft" valign="top">uint16_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#a9ed8cc05b482f7a1c0efa11f05ca35a6">le_mrc_GetPciScanCellId</a> (<a class="el" href="le__mrc__interface_8h.html#a254df9366a9b7914cfe0931872fef578">le_mrc_PciScanInformationRef_t</a> pciScanInformationRef)</td></tr>
 <tr class="separator:a9ed8cc05b482f7a1c0efa11f05ca35a6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6afa9cc6f1006a37dba3ab86c48cfb3f"><td align="right" class="memItemLeft" valign="top">uint32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#a6afa9cc6f1006a37dba3ab86c48cfb3f">le_mrc_GetPciScanGlobalCellId</a> (<a class="el" href="le__mrc__interface_8h.html#a254df9366a9b7914cfe0931872fef578">le_mrc_PciScanInformationRef_t</a> pciScanInformationRef)</td></tr>
+<tr class="separator:a6afa9cc6f1006a37dba3ab86c48cfb3f"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:ae71b74cf99f54a943aea8ea24e889db5"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#ae71b74cf99f54a943aea8ea24e889db5">le_mrc_GetPciScanMccMnc</a> (<a class="el" href="le__mrc__interface_8h.html#a646ae958a17cbb1cacd6e3c8e616beaa">le_mrc_PlmnInformationRef_t</a> plmnRef, char *mccPtr, size_t mccPtrSize, char *mncPtr, size_t mncPtrSize)</td></tr>
 <tr class="separator:ae71b74cf99f54a943aea8ea24e889db5"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:ac45ce335b3fa063b83bb925e67eeaeb3"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mrc__interface_8h.html#ac45ce335b3fa063b83bb925e67eeaeb3">le_mrc_DeleteCellularNetworkScan</a> (<a class="el" href="le__mrc__interface_8h.html#a25a9e79cc9078e22cec22444fd959c61">le_mrc_ScanInformationListRef_t</a> scanInformationListRef)</td></tr>
@@ -2230,8 +2232,8 @@ le_mrc_PlmnInformationRef_t The Plmn Information object reference.</dd></dl>
 </tr>
 </table>
 </div><div class="memdoc">
-<p>This function must be called to get the Cell Identifier.</p>
-<dl class="section return"><dt>Returns</dt><dd>The Cell Identifier. UINT32_MAX value is returned if the Cell Identifier is not available.</dd></dl>
+<p>This function must be called to get the Physical Cell Identifier.</p>
+<dl class="section return"><dt>Returns</dt><dd>The Physical Cell Identifier. UINT32_MAX value is returned if the Cell Identifier is not available.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return.</dd>
 <dd>
 <b>multi-app safe</b> </dd></dl>
@@ -2693,8 +2695,33 @@ le_mrc_PlmnInformationRef_t The Plmn Information object reference.</dd></dl>
 </tr>
 </table>
 </div><div class="memdoc">
-<p>This function must be called to get the cell id referenced by PciScanInformation which is returned by <a class="el" href="le__mrc__interface_8h.html#a9afeaa5a7639f5f9667eb0bae67c990d">le_mrc_GetFirstPciScanInfo()</a> and <a class="el" href="le__mrc__interface_8h.html#adfaff632784b66e2f4e576b20bc7674c">le_mrc_GetNextPciScanInfo()</a>.</p>
-<dl class="section return"><dt>Returns</dt><dd>The Cell Identifier.</dd></dl>
+<p>This function must be called to get the physical cell id referenced by PciScanInformation which is returned by <a class="el" href="le__mrc__interface_8h.html#a9afeaa5a7639f5f9667eb0bae67c990d">le_mrc_GetFirstPciScanInfo()</a> and <a class="el" href="le__mrc__interface_8h.html#adfaff632784b66e2f4e576b20bc7674c">le_mrc_GetNextPciScanInfo()</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>The Physical Cell Identifier.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">pciScanInformationRef</td><td>[IN] The reference to the cell information. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a6afa9cc6f1006a37dba3ab86c48cfb3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6afa9cc6f1006a37dba3ab86c48cfb3f">◆ </a></span>le_mrc_GetPciScanGlobalCellId()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">uint32_t le_mrc_GetPciScanGlobalCellId </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__mrc__interface_8h.html#a254df9366a9b7914cfe0931872fef578">le_mrc_PciScanInformationRef_t</a> </td>
+<td class="paramname"><em>pciScanInformationRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to get the global cell id referenced by PciScanInformation which is returned by <a class="el" href="le__mrc__interface_8h.html#a9afeaa5a7639f5f9667eb0bae67c990d">le_mrc_GetFirstPciScanInfo()</a> and <a class="el" href="le__mrc__interface_8h.html#adfaff632784b66e2f4e576b20bc7674c">le_mrc_GetNextPciScanInfo()</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>The Global Cell Identifier.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it's a fatal error, the function won't return. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
