@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Manually Install Dev Environment  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Get_Started.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a class="link-selected" href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Manually Install Dev Environment </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>How to manually build, install and remove the Legato Application Framework:</p>
+<p>To install and get started with the Legato Application Framework you need to install and configure:</p><ul>
+<li>The Legato Application Framework on a development PC(host) running an LTS version of Ubuntu</li>
+<li>A toolchain that corresponds to the Linux Distro installed on your target.</li>
+<li>Configure the Legato Application Framework for your target.</li>
+</ul>
+<table class="doxtable">
+<tr>
+<th>Section </th><th>Description  </th></tr>
+<tr>
+<td><a class="el" href="basicBuildLegato.html">Install the Application Framework</a> </td><td>Install the Application Framework on a Linux development machine </td></tr>
+<tr>
+<td><a class="el" href="basicBuildToolchain.html">Install the Toolchain</a> </td><td>Install a toolchain for your target </td></tr>
+<tr>
+<td><a class="el" href="basicBuildMake.html">Configure the Application Framework</a> </td><td>Configure your environment and update your target </td></tr>
+</table>
+<p>If you wish to upgrade to a new version of the Framework or to uninstall existing versions:</p>
+<table class="doxtable">
+<tr>
+<th>Section </th><th>Description  </th></tr>
+<tr>
+<td><a class="el" href="basicBuildUpdate.html">Update the Application Framework</a> </td><td>Update the Application Framework to a new version </td></tr>
+<tr>
+<td><a class="el" href="basicBuildUninstall.html">Uninstall the Application Framework</a> </td><td>Uninstall the Application Framework from a development machine </td></tr>
+</table>
+<dl class="section note"><dt>Note</dt><dd>Installing Legato through <a class="el" href="toolsLeaf.html">Leaf</a> takes care of all the above steps and configuration, and provides an upgrade path for installing new versions of the Legato Application Framework.</dd></dl>
+<h1><a class="anchor" id="basicBuild_CheckVersion"></a>
+Verify Target</h1>
+<p>To check the version of Legato installed on your target:</p>
+<pre class="fragment"># legato version
+</pre><p>Example Output: </p><pre class="fragment">17.11.0_31b9a1260bc1e45310ccf15491352a01
+</pre><p>To check the version of Firmware and Linux Distribution on your target:</p>
+<pre class="fragment"># fwupdate query
+</pre><p>Example Output: </p><pre class="fragment">Firmware Version: SWI9X07Y_02.10.01.00 000000 jenkins 2017/12/03 03:05:33
+Bootloader Version: SWI9X07Y_02.10.01.00 000000 jenkins 2017/12/03 03:05:33
+Linux Version: 3.18.44 #2 PREEMPT Thu Dec 21 22:18:24 UTC 2017
+</pre><p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
