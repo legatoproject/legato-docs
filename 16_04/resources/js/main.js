@@ -1,3 +1,8 @@
+var invoke_url = "https://search.legato.io/docs"; // cloudsearch api master endpoint
+var restrict_to_ctx = false; // restrict search to current context?
+
+
+
 var sq = getUrlParameter('sq');
 var noSH;
 try {
@@ -60,7 +65,7 @@ function updateSearchHighlight() {
     if (noSH) {
         root.removeHighlight();
     } else {
-        sq.replace(/[^\w\s]/g, '').split(" ").forEach(function(term) {
+        sq.replace(/[^\w\s\*]/g, '').split(" ").forEach(function(term) {
             root.highlight(term);
         });
 
@@ -74,16 +79,22 @@ function updateSearchHighlight() {
 
     }
 }
+
+var legatoVersion;
+
 $(document).ready(function() {
     noSH = $.cookie("no-sh");
-    $("#searchbox").val(sq);
-    // Contains = case insensitive 'contains'
+    // don't replace searchbox if it already contains something (from going back a page)
+    if ($("#searchbox").val() == "")
+        $("#searchbox").val(sq);
+    // Contains = case insensitive version of 'contains'
     $.expr[":"].Contains = jQuery.expr.createPseudo(function(arg) {
         return function(elem) {
             return jQuery(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
         };
     });
 
+    legatoVersion = $("meta[name='legato-version']").attr("content");
 
 
     /*** highlight previous search query on page ****/
@@ -105,11 +116,11 @@ $(document).ready(function() {
     $("#searchbox").keyup(function(e) {
         // alphanumeric or enter
         if (e.keyCode >= 48 && e.keyCode <= 90 || e.keyCode == 13) {
-            performSearch();
+            setupAutocomplete();
         }
     });
     $("#searchbox").focus(function() {
-        performSearch();
+        $("#search_result").show();
     });
     var $content = $('.content');
     var is_mobile = screen.width <= 719;
@@ -153,7 +164,6 @@ $(document).ready(function() {
     adjust_content_padding(width);
 
     $('#resizable').resizable({
-
         handles: 'e',
         maxWidth: 500,
         minWidth: 5,
@@ -183,7 +193,6 @@ $(document).ready(function() {
         } else {
             $p.width(5);
         }
-        $.cookie(cookieName, $p.width());
         adjust_content_padding($p.width());
     })
 });
@@ -191,64 +200,96 @@ $(document).ready(function() {
 
 /******* SEARCHING *******/
 
-function performSearch() {
+/**
+ * Fetches search results from the backend.
+ * @param search_query - The string to be searched.
+ * @param callback - The callback that handles the results.
+ * @param context - A context string (e.g. "Build Apps") that can be either be set
+ *                  to restrict search results, or left empty to search all contexts.
+ **/
+
+var searchResultCache = {};
+
+function fetchSearchResults(search_query, callback, context) {
+    if (searchResultCache[search_query]) {
+        callback(searchResultCache[search_query]);
+        return;
+    }
+    $.ajax({
+        url: invoke_url,
+        dataType: "json",
+        data: {
+            q: search_query,
+            size: 25,
+            // restrict search results to current release and context
+            //only include "context:" filter if context isnt empty
+            fq: "release:'" + legatoVersion + "'" +
+                (context != "" ? " context:'" + context + "'" : ""),
+            sort: "_score desc",
+            return: "category,title,context,id",
+        },
+        change: function(e, ui) {
+            console.log(e.target.value);
+        },
+        success: function(data) {
+            var hits = data.hits.hit;
+            var results = []
+            if (hits.length == 0) {
+                // if there aren't any results even with a wildcard, let the user know
+                if (search_query.trim().endsWith("*"))
+                    results.push({
+                        value: "javascript:void(0);",
+                        label: "No results found :("
+                    });
+            } else
+                for (i = 0; i < hits.length; i++) {
+                    var result = new Object();
+                    if (window.location.protocol == "file:")
+                        result.value = hits[i].fields.id; // don't do highlighting on local filesystem, since we can't do url rewrites
+                    else // append search query as a url parameter (for highlighting)
+                        result.value = addParameter(hits[i].fields.id, 'sq', search_query, false);
+                    result.filename = hits[i].id;
+                    result.cat = hits[i].fields.category;
+                    if (result.cat === undefined)
+                        result.cat = "Root";
+
+                    result.label = "" + result.cat + "<br/><b>" + hits[i].fields.title + "</b>";
+
+                    result.title = hits[i].fields.title;
+                    results.push(result);
+                }
+            // if query doesnt end with wildcard, do a prefix search as well, and then call the callback with both sets of results together
+            if (!search_query.trim().endsWith("*")) fetchSearchResults(search_query + "*", function(results2) {
+                var results3 = uniqueSearchResults(results.concat(results2));
+                searchResultCache[search_query] = results3;
+                callback(results3);
+            }, context);
+            else {
+                //otherwise just call the callback
+                searchResultCache[search_query] = results;
+                callback(results);
+            }
+
+        }
+    });
+}
+
+function setupAutocomplete() {
     ctx = $('html').data('context'); // e.g. "Build Apps"
-    var domain = "";
-    var invoke_url = "https://r5oee1f9c3.execute-api.us-west-2.amazonaws.com/prod";
     if (ctx == "Legato Documentation")
         ctx = "";
     var keyword = $('#searchbox').val();
     var ac = $("#searchbox").autocomplete({
-        delay: 10,
+        delay: 400,
         autoFocus: true,
         source: function(request, response) {
-            $.ajax({
-                url: invoke_url,
-                dataType: "json",
-                // the reason that 'data' isn't an object is the conditional inclusion of the 'fq' parameter.
-                data: new function() {
-                    this.q = request.term;
-                    this.size = 25;
-                    if (ctx != "")
-                        this.fq = "context:'" + ctx + "'"; //only include "context:" filter if ctx isnt empty
-                    this.sort = "_score desc";
-                    this.return = "category,title,context,id";
-                },
-                change: function(e, ui) {
-                    console.log(e.target.value);
-                },
-                success: function(data) {
-                    var hits = data.hits.hit;
-                    var results = []
-                    if (hits.length == 0) {
-                        results.push({
-                            value: "javascript:void(0);",
-                            label: "No results found :("
-                        });
-                    } else
-                        for (i = 0; i < hits.length; i++) {
-                            var result = new Object();
-                            if(window.location.protocol == "file:")
-                                result.value = hits[i].id; // don't do highlighting on local filesystem, since we can't do url rewrites
-                            else
-                                result.value = addParameter(hits[i].id, 'sq', request.term, false);
-                            result.cat = hits[i].fields.category;
-                            if (result.cat === undefined)
-                                result.cat = "Root";
-
-                            result.label = "" + result.cat + "<br/><b>" + hits[i].fields.title + "</b>";
-
-                            result.title = hits[i].fields.title;
-                            results.push(result);
-                        }
-                    response(results);
-                }
-            });
+            fetchSearchResults(request.term, response, restrict_to_ctx ? ctx : "");
         },
 
         minLength: 1,
         focus: function(event, ui) {
             event.preventDefault(); // so the textbox's value doesn't get replaced.
+
         },
         select: function(event, ui) {
             event.preventDefault();
@@ -284,148 +325,162 @@ function performSearch() {
             that._renderItemData(ul, item);
         });
     };
-    $("#searchbox").autocomplete("search", keyword);
+    // Previously used to force autocomplete to open, but likely no longer needed:
+    //$("#searchbox").autocomplete("search", keyword);
+}
+
+
+function uniqueSearchResults(array) {
+    var seen = {};
+
+    return array.filter(function(elem) {
+        href = elem.filename;
+        if (seen[href]) return false;
+        seen[href] = true;
+        return true;
+    });
 }
 
 /***** NAVIGATION TREE ******/
 
 setupTree = function(data) {
     $(document).ready(function() {
-            String.prototype.endsWith = function(suffix) {
-                return this.indexOf(suffix, this.length - suffix.length) !== -1;
-            };
-            $tree = $('#tree1');
-            $tree.tree({
-                data: data.children ? data.children : data,
-                saveState: false,
-                useContextMenu: false,
-                slide: false,
-                closedIcon: "+",
-                openedIcon: "-",
-                keyboardSupport: false,
+        String.prototype.endsWith = function(suffix) {
+            return this.indexOf(suffix, this.length - suffix.length) !== -1;
+        };
+        $tree = $('#tree1');
+        $tree.tree({
+            data: data.children ? data.children : data,
+            saveState: false,
+            useContextMenu: false,
+            slide: false,
+            closedIcon: "+",
+            openedIcon: "-",
+            keyboardSupport: false,
 
-                onCreateLi: function(node, $li) {
-                    var a = $li.find('span')[0];
-                    a.outerHTML = '<a href="' + node.href + '">' + a.outerHTML + '</a>';
-                },
-
-
-            });
-
-            $tree.tree('selectNode', null); //unselect nodes
-
-            $("#left").perfectScrollbar('update');
-
-            $tree.bind(
-                'tree.close',
-                function(e) {
-                    $("#left").perfectScrollbar('update');
-                }
-            );
-            $tree.bind(
-                'tree.open',
-                function(e) {
-                    $("#left").perfectScrollbar('update');
-                }
-            );
-            var path = window.location.pathname; // path = /docs/filename.html
-            var page = path.split("/").pop(); // page = filename.html
-            var anchor = window.location.hash.substr(1); // anchor = section
-            if (anchor)
-                page += "#" + anchor; // page = filename.html#section
-
-            // find node of current page and select it
-            $tree.tree('getTree').iterate(
-                function(node, level) {
-                    if (node.href === page) {
-                        $tree.tree('openNode', node);
-                        $tree.tree('selectNode', node);
-                        return false;
-                    }
-                    return true;
-                }
-            );
-            $('#tree1').tree('setOption', 'slide', true); // now that only the user will be opening nodes, we can turn the animation back on.
-            // needed when clicking an anchor, and thus staying on the same page
-            $tree.bind(
-                'tree.click',
-                function(event) {
-                    $tree.tree('setOption', 'selectable', true);
-                    $tree.tree('selectNode', event.node);
-                    $tree.tree('setOption', 'selectable', false);
-                }
-            );
-
-            $('#tree1').tree('setOption', 'selectable', false);
+            onCreateLi: function(node, $li) {
+                var a = $li.find('span')[0];
+                a.outerHTML = '<a href="' + node.href + '">' + a.outerHTML + '</a>';
+            },
 
 
         });
-    }
-    /*** utils ***/
 
-    // http://stackoverflow.com/a/6954277/765210
-    function addParameter(url, parameterName, parameterValue, atStart /*Add param before others*/ ) {
-        replaceDuplicates = true;
-        if (url.indexOf('#') > 0) {
-            var cl = url.indexOf('#');
-            urlhash = url.substring(url.indexOf('#'), url.length);
-        } else {
-            urlhash = '';
-            cl = url.length;
-        }
-        sourceUrl = url.substring(0, cl);
+        $tree.tree('selectNode', null); //unselect nodes
 
-        var urlParts = sourceUrl.split("?");
-        var newQueryString = "";
+        $("#left").perfectScrollbar('update');
 
-        if (urlParts.length > 1) {
-            var parameters = urlParts[1].split("&");
-            for (var i = 0;
-                (i < parameters.length); i++) {
-                var parameterParts = parameters[i].split("=");
-                if (!(replaceDuplicates && parameterParts[0] == parameterName)) {
-                    if (newQueryString == "")
-                        newQueryString = "?";
-                    else
-                        newQueryString += "&";
-                    newQueryString += parameterParts[0] + "=" + (parameterParts[1] ? parameterParts[1] : '');
+        $tree.bind(
+            'tree.close',
+            function(e) {
+                $("#left").perfectScrollbar('update');
+            }
+        );
+        $tree.bind(
+            'tree.open',
+            function(e) {
+                $("#left").perfectScrollbar('update');
+            }
+        );
+        var path = window.location.pathname; // path = /docs/filename.html
+        var page = path.split("/").pop(); // page = filename.html
+        var anchor = window.location.hash.substr(1); // anchor = section
+        if (anchor)
+            page += "#" + anchor; // page = filename.html#section
+
+        // find node of current page and select it
+        $tree.tree('getTree').iterate(
+            function(node, level) {
+                if (node.href === page) {
+                    $tree.tree('openNode', node);
+                    $tree.tree('selectNode', node);
+                    return false;
                 }
+                return true;
             }
-        }
-        if (newQueryString == "")
-            newQueryString = "?";
+        );
+        $('#tree1').tree('setOption', 'slide', true); // now that only the user will be opening nodes, we can turn the animation back on.
+        // needed when clicking an anchor, and thus staying on the same page
+        $tree.bind(
+            'tree.click',
+            function(event) {
+                $tree.tree('setOption', 'selectable', true);
+                $tree.tree('selectNode', event.node);
+                $tree.tree('setOption', 'selectable', false);
+            }
+        );
 
-        if (atStart) {
-            newQueryString = '?' + parameterName + "=" + parameterValue + (newQueryString.length > 1 ? '&' + newQueryString.substring(1) : '');
-        } else {
-            if (newQueryString !== "" && newQueryString != '?')
-                newQueryString += "&";
-            newQueryString += parameterName + "=" + (parameterValue ? parameterValue : '');
-        }
-        return urlParts[0] + newQueryString + urlhash;
-    };
-    // http://stackoverflow.com/a/21903119/765210
-    function getUrlParameter(sParam) {
-        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-            sURLVariables = sPageURL.split('&'),
-            sParameterName,
-            i;
+        $('#tree1').tree('setOption', 'selectable', false);
 
-        for (i = 0; i < sURLVariables.length; i++) {
-            sParameterName = sURLVariables[i].split('=');
 
-            if (sParameterName[0] === sParam) {
-                return sParameterName[1] === undefined ? true : sParameterName[1];
+    });
+}
+/*** utils ***/
+
+
+// http://stackoverflow.com/a/6954277/765210
+function addParameter(url, parameterName, parameterValue, atStart /*Add param before others*/ ) {
+    replaceDuplicates = true;
+    if (url.indexOf('#') > 0) {
+        var cl = url.indexOf('#');
+        urlhash = url.substring(url.indexOf('#'), url.length);
+    } else {
+        urlhash = '';
+        cl = url.length;
+    }
+    sourceUrl = url.substring(0, cl);
+
+    var urlParts = sourceUrl.split("?");
+    var newQueryString = "";
+
+    if (urlParts.length > 1) {
+        var parameters = urlParts[1].split("&");
+        for (var i = 0;
+            (i < parameters.length); i++) {
+            var parameterParts = parameters[i].split("=");
+            if (!(replaceDuplicates && parameterParts[0] == parameterName)) {
+                if (newQueryString == "")
+                    newQueryString = "?";
+                else
+                    newQueryString += "&";
+                newQueryString += parameterParts[0] + "=" + (parameterParts[1] ? parameterParts[1] : '');
             }
         }
     }
+    if (newQueryString == "")
+        newQueryString = "?";
 
-    function escapeRegExp(str) {
-        return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+    if (atStart) {
+        newQueryString = '?' + parameterName + "=" + parameterValue + (newQueryString.length > 1 ? '&' + newQueryString.substring(1) : '');
+    } else {
+        if (newQueryString !== "" && newQueryString != '?')
+            newQueryString += "&";
+        newQueryString += parameterName + "=" + (parameterValue ? parameterValue : '');
     }
+    return urlParts[0] + newQueryString + urlhash;
+};
+// http://stackoverflow.com/a/21903119/765210
+function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+}
+
+function escapeRegExp(str) {
+    return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}
 
 
-    /*
+/*
 
 highlight v5
 
@@ -443,40 +498,45 @@ Johann Burkard
 
 */
 
-    jQuery.fn.highlight = function(pat) {
-        function innerHighlight(node, pat) {
-            var skip = 0;
-            if (node.nodeType == 3) {
-                var pos = node.data.toUpperCase().search(new RegExp('\\b' + pat + '\\b'));
-                pos -= (node.data.substr(0, pos).toUpperCase().length - node.data.substr(0, pos).length);
-                if (pos >= 0) {
-                    var spannode = document.createElement('span');
-                    spannode.className = 'search-highlight';
-                    var middlebit = node.splitText(pos);
-                    var endbit = middlebit.splitText(pat.length);
-                    var middleclone = middlebit.cloneNode(true);
-                    spannode.appendChild(middleclone);
-                    middlebit.parentNode.replaceChild(spannode, middlebit);
-                    skip = 1;
-                }
-            } else if (node.nodeType == 1 && node.childNodes && !/(script|style)/i.test(node.tagName)) {
-                for (var i = 0; i < node.childNodes.length; ++i) {
-                    i += innerHighlight(node.childNodes[i], pat);
-                }
+jQuery.fn.highlight = function(pat) {
+    function innerHighlight(node, pat) {
+        var skip = 0;
+        if (node.nodeType == 3) {
+            var prefix_match = pat.endsWith('*');
+            if (prefix_match)
+                pat = pat.slice(0, -1); // remove wildcard from the end
+            // if it's not a prefix match, we add \\b to the end to match word-final boundaries
+            // in order to match whole words
+            var pos = node.data.toUpperCase().search(new RegExp('\\b' + pat + (prefix_match ? '' : '\\b')));
+            pos -= (node.data.substr(0, pos).toUpperCase().length - node.data.substr(0, pos).length);
+            if (pos >= 0) {
+                var spannode = document.createElement('span');
+                spannode.className = 'search-highlight';
+                var middlebit = node.splitText(pos);
+                var endbit = middlebit.splitText(pat.length);
+                var middleclone = middlebit.cloneNode(true);
+                spannode.appendChild(middleclone);
+                middlebit.parentNode.replaceChild(spannode, middlebit);
+                skip = 1;
             }
-            return skip;
+        } else if (node.nodeType == 1 && node.childNodes && !/(script|style)/i.test(node.tagName)) {
+            for (var i = 0; i < node.childNodes.length; ++i) {
+                i += innerHighlight(node.childNodes[i], pat);
+            }
         }
-        return this.length && pat && pat.length ? this.each(function() {
-            innerHighlight(this, pat.toUpperCase());
-        }) : this;
-    };
+        return skip;
+    }
+    return this.length && pat && pat.length ? this.each(function() {
+        innerHighlight(this, pat.toUpperCase());
+    }) : this;
+};
 
-    jQuery.fn.removeHighlight = function() {
-        return this.find("span.search-highlight").each(function() {
-            this.parentNode.firstChild.nodeName;
-            with(this.parentNode) {
-                replaceChild(this.firstChild, this);
-                normalize();
-            }
-        }).end();
-    };
+jQuery.fn.removeHighlight = function() {
+    return this.find("span.search-highlight").each(function() {
+        this.parentNode.firstChild.nodeName;
+        with(this.parentNode) {
+            replaceChild(this.firstChild, this);
+            normalize();
+        }
+    }).end();
+};

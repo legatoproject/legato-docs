@@ -1,4 +1,4 @@
-var invoke_url = "https://h1slfb90q4.execute-api.us-west-2.amazonaws.com/prod"; // cloudsearch api endpoint
+var invoke_url = "https://search.legato.io/docs"; // cloudsearch api master endpoint
 var restrict_to_ctx = false; // restrict search to current context?
 
 
@@ -79,6 +79,9 @@ function updateSearchHighlight() {
 
     }
 }
+
+var legatoVersion;
+
 $(document).ready(function() {
     noSH = $.cookie("no-sh");
     // don't replace searchbox if it already contains something (from going back a page)
@@ -91,6 +94,7 @@ $(document).ready(function() {
         };
     });
 
+    legatoVersion = $("meta[name='legato-version']").attr("content");
 
 
     /*** highlight previous search query on page ****/
@@ -214,15 +218,15 @@ function fetchSearchResults(search_query, callback, context) {
     $.ajax({
         url: invoke_url,
         dataType: "json",
-        // the reason that 'data' isn't an object is the conditional inclusion of the 'fq' parameter.
-        data: new function() {
-            this.q = search_query;
-            this.size = 25;
-            // restrict search results to specific context
-            if (context != "")
-                this.fq = "context:'" + context + "'"; //only include "context:" filter if context isnt empty
-            this.sort = "_score desc";
-            this.return = "category,title,context,id";
+        data: {
+            q: search_query,
+            size: 25,
+            // restrict search results to current release and context
+            //only include "context:" filter if context isnt empty
+            fq: "release:'" + legatoVersion + "'" +
+                (context != "" ? " context:'" + context + "'" : ""),
+            sort: "_score desc",
+            return: "category,title,context,id",
         },
         change: function(e, ui) {
             console.log(e.target.value);
@@ -241,9 +245,9 @@ function fetchSearchResults(search_query, callback, context) {
                 for (i = 0; i < hits.length; i++) {
                     var result = new Object();
                     if (window.location.protocol == "file:")
-                        result.value = hits[i].id; // don't do highlighting on local filesystem, since we can't do url rewrites
+                        result.value = hits[i].fields.id; // don't do highlighting on local filesystem, since we can't do url rewrites
                     else // append search query as a url parameter (for highlighting)
-                        result.value = addParameter(hits[i].id, 'sq', search_query, false);
+                        result.value = addParameter(hits[i].fields.id, 'sq', search_query, false);
                     result.filename = hits[i].id;
                     result.cat = hits[i].fields.category;
                     if (result.cat === undefined)
