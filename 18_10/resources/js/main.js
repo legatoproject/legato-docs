@@ -1,4 +1,4 @@
-var invoke_url = "https://search.legato.io/docs"; // cloudsearch api master endpoint
+var invoke_url = "https://yjcqk9rqs1.execute-api.us-west-2.amazonaws.com/prod"; // cloudsearch api endpoint
 var restrict_to_ctx = false; // restrict search to current context?
 
 
@@ -79,9 +79,6 @@ function updateSearchHighlight() {
 
     }
 }
-
-var legatoVersion;
-
 $(document).ready(function() {
     noSH = $.cookie("no-sh");
     // don't replace searchbox if it already contains something (from going back a page)
@@ -94,7 +91,6 @@ $(document).ready(function() {
         };
     });
 
-    legatoVersion = $("meta[name='legato-version']").attr("content");
 
 
     /*** highlight previous search query on page ****/
@@ -116,11 +112,11 @@ $(document).ready(function() {
     $("#searchbox").keyup(function(e) {
         // alphanumeric or enter
         if (e.keyCode >= 48 && e.keyCode <= 90 || e.keyCode == 13) {
-            setupAutocomplete();
+            onSearchRequested();
         }
     });
     $("#searchbox").focus(function() {
-        $("#search_result").show();
+        onSearchRequested();
     });
     var $content = $('.content');
     var is_mobile = screen.width <= 719;
@@ -207,26 +203,19 @@ $(document).ready(function() {
  * @param context - A context string (e.g. "Build Apps") that can be either be set
  *                  to restrict search results, or left empty to search all contexts.
  **/
-
-var searchResultCache = {};
-
 function fetchSearchResults(search_query, callback, context) {
-    if (searchResultCache[search_query]) {
-        callback(searchResultCache[search_query]);
-        return;
-    }
     $.ajax({
         url: invoke_url,
         dataType: "json",
-        data: {
-            q: search_query,
-            size: 25,
-            // restrict search results to current release and context
-            //only include "context:" filter if context isnt empty
-            fq: "release:'" + legatoVersion + "'" +
-                (context != "" ? " context:'" + context + "'" : ""),
-            sort: "_score desc",
-            return: "category,title,context,id",
+        // the reason that 'data' isn't an object is the conditional inclusion of the 'fq' parameter.
+        data: new function() {
+            this.q = search_query;
+            this.size = 25;
+            // restrict search results to specific context
+            if (context != "")
+                this.fq = "context:'" + context + "'"; //only include "context:" filter if context isnt empty
+            this.sort = "_score desc";
+            this.return = "category,title,context,id";
         },
         change: function(e, ui) {
             console.log(e.target.value);
@@ -245,9 +234,9 @@ function fetchSearchResults(search_query, callback, context) {
                 for (i = 0; i < hits.length; i++) {
                     var result = new Object();
                     if (window.location.protocol == "file:")
-                        result.value = hits[i].fields.id; // don't do highlighting on local filesystem, since we can't do url rewrites
+                        result.value = hits[i].id; // don't do highlighting on local filesystem, since we can't do url rewrites
                     else // append search query as a url parameter (for highlighting)
-                        result.value = addParameter(hits[i].fields.id, 'sq', search_query, false);
+                        result.value = addParameter(hits[i].id, 'sq', search_query, false);
                     result.filename = hits[i].id;
                     result.cat = hits[i].fields.category;
                     if (result.cat === undefined)
@@ -260,27 +249,23 @@ function fetchSearchResults(search_query, callback, context) {
                 }
             // if query doesnt end with wildcard, do a prefix search as well, and then call the callback with both sets of results together
             if (!search_query.trim().endsWith("*")) fetchSearchResults(search_query + "*", function(results2) {
-                var results3 = uniqueSearchResults(results.concat(results2));
-                searchResultCache[search_query] = results3;
-                callback(results3);
+                callback(uniqueSearchResults(results.concat(results2)));
             }, context);
-            else {
+            else
                 //otherwise just call the callback
-                searchResultCache[search_query] = results;
                 callback(results);
-            }
 
         }
     });
 }
 
-function setupAutocomplete() {
+function onSearchRequested() {
     ctx = $('html').data('context'); // e.g. "Build Apps"
     if (ctx == "Legato Documentation")
         ctx = "";
     var keyword = $('#searchbox').val();
     var ac = $("#searchbox").autocomplete({
-        delay: 400,
+        delay: 10,
         autoFocus: true,
         source: function(request, response) {
             fetchSearchResults(request.term, response, restrict_to_ctx ? ctx : "");
@@ -289,7 +274,6 @@ function setupAutocomplete() {
         minLength: 1,
         focus: function(event, ui) {
             event.preventDefault(); // so the textbox's value doesn't get replaced.
-
         },
         select: function(event, ui) {
             event.preventDefault();
@@ -325,8 +309,7 @@ function setupAutocomplete() {
             that._renderItemData(ul, item);
         });
     };
-    // Previously used to force autocomplete to open, but likely no longer needed:
-    //$("#searchbox").autocomplete("search", keyword);
+    $("#searchbox").autocomplete("search", keyword);
 }
 
 
