@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Update  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.02.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Update </h1> </div>
+</div><div class="contents">
+<div class="textblock"><h1><a class="anchor" id="legatoServicesUpdate_Overview"></a>
+Overview</h1>
+<p>The process of updating software in a Legato based system split into multiple parts:</p><ul>
+<li>the <code>updateDaemon</code> service which accepts updates over it's API <a class="el" href="c_update.html">Update API</a>.</li>
+<li>separate update clients, provide the ability to initiate updates over various channels (command line, ssh, or even from the cloud using an appropriate cloud client).</li>
+<li>parts of the Legato software stack assist the update service in providing its functionality.</li>
+<li>the startup system also plays a roll in update and rollback.</li>
+</ul>
+<p>For the specifics of what the update service does and the actions that it performs see <a class="el" href="conceptsUpdates.html">Updates</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>Because the specifics of how platforms function can differ, the behavior of the of the update service can vary by platform. This document focuses on the update process for common Sierra Wireless modules.</dd></dl>
+<h2><a class="anchor" id="legatoServicesUpdate_AboutService"></a>
+Update Service</h2>
+<p>The <code>updateDaemon</code> process is part of Legato's core system services. It is run and controlled by the Supervisor and isn't a Legato app, so can't be started or stopped.</p>
+<p>When the update receives a <a class="el" href="legatoServicesUpdatePack.html">.update file</a> it extracts update commands and files from the <code></code>.update pack and applies them to the target.</p>
+<p>The <code></code>.update file commands understood by the service are:</p><ul>
+<li>Update System -- <b>Install a Legato system.</b> Updates the runtime environment but doesn't modify the OS or any support device firmware.</li>
+<li>Update App -- <b>Install an application.</b> If an application of the same name is already installed it is replaced with the version found within the <code></code>.update pack.</li>
+<li>Remove App -- <b>Removes the named application.</b> This is the only update command that doesn't have any data files associated with it.</li>
+<li>Update Firmware -- Update the firmware of an attached hardware device. For example the cellular modem found in wireless modules. On systems without a firmware portion, like the virtual platform, this command is unsupported.</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>On Sierra Wireless modules, firmware level updates can include replacement copies of whole partition file systems. It is possible to replace the "Base" version of Legato this way. See legatoServicesUpdate_Base for more details on this. It is also possible to create a <code></code>.cwe file that instructs the modem to erase and reformat the user data partition allowing the user to create an update that takes their module back to a factor default state.</dd>
+<dd>
+On Sierra Wireless modules when firmware updates are installed a full reboot of the module will be triggered. For system updates only the runtime environment will be restarted.</dd></dl>
+<h2><a class="anchor" id="legatoServicesUpdate_APIs"></a>
+Update APIs</h2>
+<p>The following APIs are provided by the update service to monitor and control the update process:</p><ul>
+<li><a class="el" href="c_update.html">Update API</a></li>
+<li><a class="el" href="c_updateCtrl.html">Update Control API</a></li>
+<li><a class="el" href="c_le_instStat.html">Install Status API</a></li>
+<li>c_le_appRemove</li>
+</ul>
+<h3><a class="anchor" id="legatoServicesUpdate_APIs_update"></a>
+Update API</h3>
+<p><b>API: <a class="el" href="c_update.html">Update API</a> </b></p>
+<p>The Update API is used to push an update to the service and provides functions for getting information about the current and previously installed system.</p>
+<h3><a class="anchor" id="legatoServicesUpdate_APIs_updateCtrl"></a>
+Update Control API</h3>
+<p><b>API: <a class="el" href="c_updateCtrl.html">Update Control API</a></b></p>
+<p>The update control API is used to control the update process. For example, applying an update can cause the system to restart itself, an application can use le_updateCtrl.api to choose to block updates from being applied, if it is running a critical process that can't be interrupted.</p>
+<h3><a class="anchor" id="legatoServicesUpdate_APIs_instStat"></a>
+Install Status API</h3>
+<p><b>API: <a class="el" href="c_le_instStat.html">Install Status API</a></b></p>
+<p>The API Install Status can be used by an application to watch for other applications being installed or uninstalled from a system.</p>
+<h3><a class="anchor" id="legatoServicesUpdate_APIs_appRemove"></a>
+App Remove API</h3>
+<p><b>API: c_le_appRemove</b></p>
+<p>The App Remove API is used to remove applications from the running system.</p>
+<h2><a class="anchor" id="legatoServicesUpdate_Tools"></a>
+Update Clients</h2>
+<p>Within the application framework there are multiple clients that use the update service:</p><ul>
+<li>a command line client <a class="el" href="toolsHost_update.html">update</a> tool, used to transfer update packs from your dev machine to the target for installation.</li>
+<li><a class="el" href="legatoServicesAirVantage.html">AirVantage Connector</a> uses the <code>update</code> service to receive and install software updates from the AirVantage server.</li>
+</ul>
+<p>You are also able to create your own app to handle updates. If you have your own method or protocol for delivering updates, you can build a service to download and control the updates.</p>
+<h1>API Overview </h1>
+<table class="doxtable">
+<tr>
+<th>Service </th><th>Description </th><th align="center">multi-app safe  </th></tr>
+<tr>
+<td><a class="el" href="c_update.html">Update API</a> </td><td>Apply app and firmware updates </td><td align="center"><div class="image">
+<img alt="green_dot.png" src="green_dot.png"/>
+</div>
+</td></tr>
+<tr>
+<td><a class="el" href="c_updateCtrl.html">Update Control API</a> </td><td>Control app and firmware updates </td><td align="center"><div class="image">
+<img alt="green_dot.png" src="green_dot.png"/>
+</div>
+</td></tr>
+<tr>
+<td><a class="el" href="c_le_instStat.html">Install Status API</a> </td><td>App install/uninstall notification </td><td align="center"><div class="image">
+<img alt="green_dot.png" src="green_dot.png"/>
+</div>
+</td></tr>
+<tr>
+<td><a class="el" href="c_fwupdate.html">Firmware Update API</a> </td><td>Firmware image updates </td><td align="center"></td></tr>
+<tr>
+<td><a class="el" href="c_flash.html">Flash API</a> </td><td>Flash management </td><td align="center"><div class="image">
+<img alt="green_dot.png" src="green_dot.png"/>
+</div>
+</td></tr>
+<tr>
+<td><a class="el" href="c_le_dualsys.html">Dual Systems Update API</a> </td><td>Dual systems partition definition </td><td align="center"></td></tr>
+</table>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

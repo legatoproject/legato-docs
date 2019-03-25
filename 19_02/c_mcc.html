@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Modem Call Control  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.02.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Modem Call Control </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><a class="el" href="le__mcc__interface_8h.html">API Reference</a></p>
+<hr/>
+<p>The Modem Call Control (mcc) API functions of this API are provided by the <b>modemService</b> service.</p>
+<h1><a class="anchor" id="le_mcc_binding"></a>
+IPC interfaces binding</h1>
+<p>Here's a code sample binding to modem services: </p><pre class="fragment">bindings:
+{
+   clientExe.clientComponent.le_mcc -&gt; modemService.le_mcc
+}
+</pre><h1><a class="anchor" id="le_mcc_starting_a_call"></a>
+Starting a Call</h1>
+<p>To initiate a call, create a new call object with a destination telephone number calling the <a class="el" href="le__mcc__interface_8h.html#a42130fc6b1d69413a387e3292117b3d3">le_mcc_Create()</a> function.</p>
+<p><a class="el" href="le__mcc__interface_8h.html#a72a32869bb23864b3e86c606368bed70">le_mcc_Start()</a> must still initiate the call when ready.</p>
+<p>The <a class="el" href="le__mcc__interface_8h.html#a72a32869bb23864b3e86c606368bed70">le_mcc_Start()</a> function initiates a call attempt (it's asynchronous because it can take time for a call to connect). If function failed, the <a class="el" href="le__mcc__interface_8h.html#ab16921abc02e0569b129f4a7d92bf3c9">le_mcc_GetTerminationReason()</a> API can be used to retrieve the terminal reason.</p>
+<p>It's essential to register a handler function to get the call events. Use <a class="el" href="le__mcc__interface_8h.html#ab826cf4b9e3911e659a90d483081e7fe">le_mcc_AddCallEventHandler()</a> API to install that handler function. The handler will be called for all calls' events (incoming and outgoing).</p>
+<p>The <a class="el" href="le__mcc__interface_8h.html#aa7682ff49924db10aefee547fcb0b4d8">le_mcc_RemoveCallEventHandler()</a> API uninstalls the handler function.</p>
+<p>The following APIs can be used to manage incoming or outgoing calls:</p><ul>
+<li><a class="el" href="le__mcc__interface_8h.html#ab16921abc02e0569b129f4a7d92bf3c9">le_mcc_GetTerminationReason()</a> - termination reason.</li>
+<li><a class="el" href="le__mcc__interface_8h.html#a68b9b8ed1b221924dcea1be0fd610a54">le_mcc_GetPlatformSpecificTerminationCode()</a> - let you get the platform specific termination code by retrieving the termination code from <code>le_mcc_CallRef_t</code>. Please refer to <a class="el" href="platformConstraintsSpecificErrorCodes.html">Platform specific error codes</a> for platform specific termination code description.</li>
+<li><a class="el" href="le__mcc__interface_8h.html#a07e4856dffdbf887f51879e39ec43e42">le_mcc_IsConnected()</a> - connection status.</li>
+<li><a class="el" href="le__mcc__interface_8h.html#a6b5922dc325e4f45c90b2ecfd0f0a74f">le_mcc_GetRemoteTel()</a> - displays remote party telephone number associated with the call.</li>
+<li><a class="el" href="le__mcc__interface_8h.html#a7b9567715a3cd30c83a3b6886eeb2044">le_mcc_HangUp()</a> will disconnect this call.</li>
+</ul>
+<p>When finished with the call object, call <a class="el" href="le__mcc__interface_8h.html#a1a016e6443df2d3ee99113649f4f34ae">le_mcc_Delete()</a> to free all the allocated resources associated with the object.</p>
+<p>Multi-threading/multi-application behaviour: the callRef is linked to a specific client (i.e. connection with the mcc service). Each client will have its own callRef for a same call. That is, if a call event handler is registered by one thread but <a class="el" href="le__mcc__interface_8h.html#a42130fc6b1d69413a387e3292117b3d3">le_mcc_Create()</a> is called by another thread, they will each get different call references for the same call. So, when multiple threads are being used to work with the same call, a comparison of the call references themselves can't be used to tell whether or not they refer to the same call.</p>
+<p>The Adaptive Multi Rate (AMR) is an audio compression format optimized for speech coding and used during a voice call. Two AMRs are supported: An AMR Narrowband that encodes a bandwidth of 200--3400 Hz signals at variable bitrates ranging from 4.75 to 12.2 kbit/s and an AMR Wideband that encodes a wider bandwidth of 50--7000 Hz and thus improves the speech quality.</p>
+<p><a class="el" href="le__mcc__interface_8h.html#ab2df0040963d964f360cb2b7148f9277">le_mcc_SetAmrWbCapability()</a> function enables or disables the AMR Wideband supported capability. <a class="el" href="le__mcc__interface_8h.html#a3762311b9860dc66c52b00f4324dc140">le_mcc_GetAmrWbCapability()</a> function returns the AMR Wideband capability status.</p>
+<h1><a class="anchor" id="le_mcc_answering_a_call"></a>
+Answering a call</h1>
+<p>Receiving calls is similar sending calls. Add a handler through <a class="el" href="le__mcc__interface_8h.html#ab826cf4b9e3911e659a90d483081e7fe">le_mcc_AddCallEventHandler()</a> to be notified of incoming calls.</p>
+<p>To answer, call <a class="el" href="le__mcc__interface_8h.html#a598349c6ccfa151dbd1d2f2a9c293ca4">le_mcc_Answer()</a>. To reject it, call <a class="el" href="le__mcc__interface_8h.html#a7b9567715a3cd30c83a3b6886eeb2044">le_mcc_HangUp()</a>.</p>
+<h1><a class="anchor" id="le_mcc_ending_all_call"></a>
+Ending all calls</h1>
+<p>A special function can be used to hang-up all the ongoing calls: <a class="el" href="le__mcc__interface_8h.html#a38ac8543a579ecc81430c121a64bd346">le_mcc_HangUpAll()</a>. This function can be used to hang-up any calls that have been initiated through another client like AT commands.</p>
+<h1><a class="anchor" id="le_mcc_ss"></a>
+Supplementary service</h1>
+<p>Calling Line Identification Restriction (CLIR) can be activated or deactivated by <a class="el" href="le__mcc__interface_8h.html#a6b7fda9b1d0f0208a99b4bdcafe97538">le_mcc_SetCallerIdRestrict()</a> API. The status is independent for each call object reference. Status can be read with the <a class="el" href="le__mcc__interface_8h.html#a54093f7d51cae9a186a97aa799ac3ddc">le_mcc_GetCallerIdRestrict()</a> API. If the status is not set, <a class="el" href="le__mcc__interface_8h.html#a54093f7d51cae9a186a97aa799ac3ddc">le_mcc_GetCallerIdRestrict()</a> API returns LE_UNAVAILABLE. By default the CLIR status is not set.</p>
+<p>Call waiting supplementary service can be activated or deactivated by <a class="el" href="le__mcc__interface_8h.html#ac637e687387a5b8cf9c5b02cbb7816fa">le_mcc_SetCallWaitingService()</a>. Its status can be given by <a class="el" href="le__mcc__interface_8h.html#acdf73f5a2e498ee201d8a11c416de29b">le_mcc_GetCallWaitingService()</a>. A call waiting can be answered using <a class="el" href="le__mcc__interface_8h.html#a62626d9db0d9bf56fb2660d9acfdfcc5">le_mcc_ActivateCall()</a> API. This API is also used to activate an on hold call (current call is then placed on hold). An activated, waiting or on hold call can be released using <a class="el" href="le__mcc__interface_8h.html#a7b9567715a3cd30c83a3b6886eeb2044">le_mcc_HangUp()</a> function. See 3GPP TS 02.83 / 22.083 for any details concerning call waiting / call hold supplementary services.</p>
+<h1><a class="anchor" id="le_mcc_samples"></a>
+Sample codes</h1>
+<p>A sample code that implements a dialing call can be found in <b>le_mccTest.c</b> file (please refer to <a class="el" href="c_mccTest.html">Sample code of Modem Call control</a> page).</p>
+<hr/>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

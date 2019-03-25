@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Component Definition .cdef  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.02.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Concepts.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a class="link-selected" href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Component Definition .cdef </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>This topic provides details about Legato's Component Definition file.</p>
+<p><code>Component.cdef</code> files can contain these sections:</p>
+<h1><a class="anchor" id="defFilesCdef_assets"></a>
+assets</h1>
+<p>The asset section has now been removed as it is not supported with AVC 2.0. See the <a class="el" href="avMigration.html">AirVantage 1.0 to 2.0 Migration</a> Guide to see the changes between AVC 1.0 and AVC 2.0, including the new way to model the asset data.</p>
+<h1><a class="anchor" id="defFilesCdef_bundles"></a>
+bundles</h1>
+<p>Lists additional files or directories to be copied from the build host into the App so they’re available to the App at runtime (e.g., audio files, web pages, executable scripts or programs built using some external build system).</p>
+<pre class="fragment"><div class="line">bundles:</div><div class="line">{</div><div class="line">    file:</div><div class="line">    {</div><div class="line">        <span class="comment">// Include the web server executable (built using some other build tool) in the app's /bin.</span></div><div class="line">        [x] 3rdParty/webServer/bin/wwwServ  /bin/</div><div class="line"> </div><div class="line">        <span class="comment">// Put the company logo into the app's /var/www/ for read-only access by the web server.</span></div><div class="line">        images/abcCorpLogo.jpg  /var/www/</div><div class="line"> </div><div class="line">        <span class="comment">// Make the appropriate welcome page for the product appear at /var/www/index.html.</span></div><div class="line">        webContent/$PRODUCT_ID/welcome.html  /var/www/index.html</div><div class="line"> </div><div class="line">        <span class="comment">// Create a file to record persistent custom audio messages into.</span></div><div class="line">        [w] audio/defaultMessage.wav  /usr/share/sounds/customMessage.wav</div><div class="line">    }</div><div class="line"> </div><div class="line">    dir:</div><div class="line">    {</div><div class="line">        <span class="comment">// Recursively bundle the directory containing all the audio files into the app.</span></div><div class="line">        <span class="comment">// It will appear to the app read-only under /usr/share/sounds/.</span></div><div class="line">        audio   /usr/share/sounds</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>Three things need to be specified for each file or directory:</p><ul>
+<li>access permissions</li>
+<li>build system path</li>
+<li>target path</li>
+</ul>
+<p><b>Access permissions</b> - any combination of one or more of the following letters, enclosed in square brackets:</p><ul>
+<li>r = readable</li>
+<li>w = writeable</li>
+<li>x = executable</li>
+</ul>
+<p>If permissions values are not specified, then read-only ([r]) is the default.</p>
+<dl class="section note"><dt>Note</dt><dd>For security reasons, files and directories cannot be both writable and executable.</dd></dl>
+<p>Directories always have executable permission set so they can be traversed. Setting the <code></code>[x] permission in the <code>dir:</code> subsection causes the files under the directory to be made executable.</p>
+<p>Setting <code></code>[w] in the <code>dir:</code> subsection causes all files under that directory to be writable, but the directory itself will not be writable.</p>
+<dl class="section note"><dt>Note</dt><dd>Check with your module vendor to see if your target supports disk quotas. If not, directories in the persistent (flash) file system are never made writable because the on-target flash file system does not support usage quotas (yet).</dd></dl>
+<p><b>Build system path</b> - file system path on the build PC where the file is located at build time.</p>
+<p>The path can be relative to the directory where the <code></code>.adef file is located.</p>
+<dl class="section note"><dt>Note</dt><dd>Environment variables can be used inside these paths.</dd></dl>
+<p><b>Target path</b> - file system path on the target where the file will appear at runtime.</p>
+<p>It's an absolute path inside the app's sandbox file system.</p>
+<p>If the path ends with '/', it means the directory path where the source object (file or directory) will be copied. The destination object will have the same name as the source object.</p>
+<p>If the path doesn't end in a '/', it's a full destination object path. The destination object could have a different name than the source object.</p>
+<dl class="section note"><dt>Note</dt><dd>If the app is running unsandboxed, the bundled files and directories can be found in their installation location under <code>/legato/systems/current/apps/xxxx</code>, where xxxx is replaced by the app name.</dd></dl>
+<p><b>Quoting Paths</b></p>
+<p>File paths can be enclosed in quotation marks (either single ' or double "). This is required when the file path contains spaces or comment start sequences </p><pre class="fragment">"//" or  "/*"
+</pre><p><b>File Ownership and Set-UID Bits</b></p>
+<p>When the app is installed on a target: <br/>
+</p><ul>
+<li>the owner and group are set to <code>root</code> on all files in the app.</li>
+<li>the <code>setuid</code> bit is cleared on everything in the app.</li>
+</ul>
+<h1><a class="anchor" id="defFilesCdef_cFlags"></a>
+cflags</h1>
+<p>Provides a way to specify command-line arguments to pass to the compiler when compiling C source code files. These flags will be added to the flags specified on the command-line and in other definition files.</p>
+<p>Flags are separated by whitespace.</p>
+<pre class="fragment"><div class="line">cflags:</div><div class="line">{</div><div class="line">    -g -O0</div><div class="line">    -DDEBUG=1</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="defFilesCdef_cxxFlags"></a>
+cxxflags</h1>
+<p>Provides a way to specify command-line arguments to pass to the compiler when compiling C++ source code files. These flags will be added to the flags specified on the command-line and in other definition files.</p>
+<p>Flags are separated by whitespace.</p>
+<pre class="fragment"><div class="line">cxxflags:</div><div class="line">{</div><div class="line">    -std=c++0x</div><div class="line">    -g -O0</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="defFilesCdef_externalBuild"></a>
+externalBuild</h1>
+<p>Specifies a list of commands required to build this component using an external build process. These commands will be executed in order by the shell, similarly to make recipes. This may be used to build third-party libraries which need to be built from source but are not part of of the target filesystem.</p>
+<dl class="section note"><dt>Note</dt><dd>As with make, sh is used as the shell for executing commands regardless of what shell the user uses. If an alternate shell or long scripts are needed, these can be placed in a separate shell script, and that shell script called here.</dd></dl>
+<p>If <code>externalBuild:</code> section is used in a component, the <code>sources:</code> section cannot be used.</p>
+<dl class="section note"><dt>Note</dt><dd><code>CC</code>, <code>CXX</code>, <code>LD</code>, <code>CPP</code>, <code>CFLAGS</code>, <code>CXXFLAGS</code>, <code>LDFLAGS</code> and <code>CPPFLAGS</code> are set to the target compiler and compiler flags when running the external build commands. The current directory for the command will be the component's object directory. This makes it easy to build and configure packages based on GNU autotools. See example below.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Any files which need to be copied into the App must be listed in a bundles: file: section. To avoid compiling successfully even though expected files are missing, bundles: dir: sections cannot be used.</dd></dl>
+<p>To use a library built from a component with an externalBuild section, the following need to be done:</p><ul>
+<li>The component needs to be added to the <code>requires:</code> <code>component:</code> section</li>
+<li>The library has to be added to <code>requires:</code> <code>lib:</code> section.</li>
+<li>The component providing the library may have the library path listed in <code>provides:</code> <code>lib:</code> section.</li>
+</ul>
+<p>For example, suppose a component requires the libwarpspeed.so library, which is a third-party library built using autoconf and make. First create a Component.cdef for the warpspeed library in that library's directory:</p>
+<pre class="fragment"><div class="line">bundles:</div><div class="line">{</div><div class="line">    file:</div><div class="line">    {</div><div class="line">        [x] libwarpspeed.so /usr/lib</div><div class="line">    }</div><div class="line">}</div><div class="line"> </div><div class="line">provides:</div><div class="line">{</div><div class="line">    lib:</div><div class="line">    {</div><div class="line">       libwarpspeed.so</div><div class="line">    }</div><div class="line">}</div><div class="line"> </div><div class="line">externalBuild:</div><div class="line">{</div><div class="line">    <span class="stringliteral">"${CURDIR}/configure --target=$${TOOLCHAIN_PREFIX%-}"</span></div><div class="line">    make</div><div class="line">}</div></pre><!-- fragment --><p>Then add</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    component:</div><div class="line">    {</div><div class="line">        warpspeed</div><div class="line">    }</div><div class="line"> </div><div class="line">    lib:</div><div class="line">    {</div><div class="line">        libwarpspeed.so</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>to the Component.cdef of any component that needs this library.</p>
+<h1><a class="anchor" id="defFilesCdef_ldFlags"></a>
+ldflags</h1>
+<p>Linker flags provide a way to specify command-line arguments to pass to the compiler when linking C/C++ object (.o) files together into a component shared library (.so) file. These flags will be added to the flags specified on the command-line and in other definition files.</p>
+<p>Flags are separated by whitespace.</p>
+<pre class="fragment"><div class="line">ldflags:</div><div class="line">{</div><div class="line">    -Lfoo/bar</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="defFilesCdef_pools"></a>
+pools</h1>
+<dl class="section warning"><dt>Warning</dt><dd>This feature not yet implemented.</dd></dl>
+<p>Specifies the number of memory pool blocks that each <a class="el" href="c_memory.html">memory pool</a> should contain.</p>
+<pre class="fragment"><div class="line">pools:</div><div class="line">{</div><div class="line">    myPool = 45</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="defFilesCdef_provides"></a>
+provides</h1>
+<p>Lists things this component provides (exports) to other software either inside or outside of the App.</p>
+<h2><a class="anchor" id="defFilesCdef_providesApi"></a>
+api</h2>
+<p>Lists IPC services provided by this component to other components.</p>
+<p>Contents use the same syntax as the <code>requires:</code> <a class="el" href="defFilesCdef.html#defFilesCdef_requiresApi">api</a> section, except the options are different.</p>
+<p>Here's a code sample where <code>greet.api</code> defines a function called <code>Send()</code> where the C source code for the component (in <code>greetServer.c</code>) is implement a function called <code>greet_Send()</code>.</p>
+<pre class="fragment"><div class="line">provides:</div><div class="line">{</div><div class="line">    api:</div><div class="line">    {</div><div class="line">        greet.api   <span class="comment">// We offer the Greet API to others so they can say “hello” to the world.</span></div><div class="line">        heat = digitalOutput.api</div><div class="line">        cool = digitalOutput.api</div><div class="line">    }</div><div class="line">}</div><div class="line"> </div><div class="line">sources:</div><div class="line">{</div><div class="line">    greetServer.c</div><div class="line">    tempControl.c</div><div class="line">}</div></pre><!-- fragment --><p>The component must implement the API functions being provided.</p>
+<p>In C, the source code must <code>#include</code> <code>“interfaces.h”</code> to get the auto-generated function prototype definitions and type definitions. The function and type names defined in the <code></code>.api files are prefixed with the interface name and an underscore (similar to required APIs).</p>
+<h2><a class="anchor" id="defFilesCdef_providesheaderDir"></a>
+headerDir</h2>
+<pre class="fragment"><div class="line">provides:</div><div class="line">{</div><div class="line">    headerDir:</div><div class="line">    {</div><div class="line">       $CURDIR/include</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><h2><a class="anchor" id="defFilesCdef_provideslib"></a>
+lib</h2>
+<p>List the libraries provided by the component.</p>
+<pre class="fragment"><div class="line">provides:</div><div class="line">{</div><div class="line">    lib:</div><div class="line">    {</div><div class="line">       $CURDIR/lib/mylib.so</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><h3><a class="anchor" id="defFilesCdef_providesApiManualStart"></a>
+[manual-start]</h3>
+<p>To reduce the initialization code a component writer needs to write, the build tools automatically try to advertise the service when the executable is run. Sometimes this is not the preferred behaviour.</p>
+<p>The <b><code></code>[manual-start</b>] option tells the build tools <b>not</b> to automatically advertise this API with the Service Directory when the process starts. If <code></code>[manual-start] option is used, the component can control when it wants to start offering the service to others by calling the <code>xxxx_AdvertiseService()</code> function explicitly in the component source code when it's ready.</p>
+<pre class="fragment"><div class="line">provides:</div><div class="line">{</div><div class="line">    api:</div><div class="line">    {</div><div class="line">        foo.api [manual-start]</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><h3><a class="anchor" id="defFilesCdef_providesApiAsync"></a>
+[async]</h3>
+<p>The server of a service can also implement the functions as if they were called directly by the client (even though the client may be running inside another process). When the client calls an API function, the server's API function gets called, and when the server returns from the function, the function returns in the client process.</p>
+<p>Sometimes the server needs to hold onto the client request and do other things (like handing requests from other clients in the meantime) before sending a response back. This is called asynchronous mode, and is enabled using the <code></code>[async] keyword on the end of the <code>api</code> section entry:</p>
+<pre class="fragment"><div class="line">provides:</div><div class="line">{</div><div class="line">    api:</div><div class="line">    {</div><div class="line">        bar.api [async]</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>When asynchronous mode is enabled for a server-side interface, the generated code changes as follows:</p><ul>
+<li><code>commandRef</code> parameter is added to the beginning of all the API functions' parameter lists.</li>
+<li>return value is removed from every API function.</li>
+<li><code>Respond()</code> function is generated for every API function.</li>
+</ul>
+<p>In async mode, the server responds to the client's call to API function <code>F()</code> by calling the associated <code>FRespond()</code> function.</p>
+<p>The <code>Respond</code> functions all take the <code>commandRef</code> as their first parameter. If an API function has a return value, that return value is sent to the client through the second parameter of the <code>Respond</code> function. Any output parameters defined in the API function are also passed as parameters to the <code>Respond</code> function.</p>
+<p>See <a class="el" href="apiFiles.html">API Files</a> for more information, or try it and have a look at the generated header files.</p>
+<h1><a class="anchor" id="defFilesCdef_requires"></a>
+requires</h1>
+<p>The <code>requires:</code> section specifies things the component needs from its runtime environment.</p>
+<p>It can contain various subsections.</p>
+<h2><a class="anchor" id="defFilesCdef_requiresApi"></a>
+api</h2>
+<p>Lists IPC APIs used by this component.</p>
+<p>Here's a code sample of a component using the Configuration Data API (defined in le_cfg.api) to read its configuration data:</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    api:</div><div class="line">    {</div><div class="line">        le_cfg.api</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>This creates a client-side IPC interface called <code>le_cfg</code> on this component, and it makes the functions and data types defined inside <code>le_cfg.api</code> available for use in the component's program code.</p>
+<p>The name of the <code></code>.api file (minus the <code></code>.api extension) is the name of the interface, and in C code, the names of functions and data types defined in the <code></code>.api file are prefixed with the name of the interface with an underscore separator.</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    api:</div><div class="line">    {</div><div class="line">        print.api <span class="comment">// WriteLine() from the API will appear in my C code as "print_WriteLine()".</span></div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>To rename the interface, an interface name followed by an equals sign ('=') can be added in front of the <code></code>.api file path.</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    api:</div><div class="line">    {</div><div class="line">        hello = greet.api <span class="comment">// Send() from the API will appear as "hello_Send()" in my code.</span></div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>Multiple instances of the same API listed in the <code>api:</code> section must have unique instance names, and appear as separate functions with different prefixes.</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    api:</div><div class="line">    {</div><div class="line">        heat = digitalOutput.api   <span class="comment">// Used to turn on and off the heater.</span></div><div class="line">        cool = digitalOutput.api   <span class="comment">// Used to turn on and off the cooling (A/C).</span></div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>If <code>digitalOutput.api</code> defines two functions <code>On()</code> and <code>Off()</code>, the component’s source code would have four functions available to it: <code>heat_On()</code>, <code>heat_Off()</code>, <code>cool_On()</code>, and <code>cool_Off()</code>.</p>
+<p>C/C++ source code must <code>#include</code> <code>“interfaces.h”</code> to use the auto-generated function definitions. The build tools will automatically generate a version of <code>interfaces.h</code> customized for your component that includes all declarations for all the interfaces the component uses.</p>
+<p>The build tools search for the interface definition (.api) file based on the interface search path.</p>
+<h3><a class="anchor" id="defFilesCdef_requiresApiOptions"></a>
+options</h3>
+<p>To reduce the amount of initialization code a component needs to write, the build tools automatically generate the client-side IPC code for that API, and automatically try to connect to the server when the executable is run. There are a couple of options that can be used to suppress this behaviour.</p>
+<p>The <b><code></code>[types-only</b>] option tells the build tools the client only wants to use type definitions from the API. This means the client-side IPC code will not be generated for this API, but the types defined in the API will still be available to the component (through <code>interfaces.h</code> in C/C++).</p>
+<p>The <b><code></code>[manual-start</b>] option tells the build tools not to automatically connect to this API's server when the process starts. This means the component can control when it wants to connect to the server by calling the <code>ConnectService()</code> function for this interface explicitly in the component source code.</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    api:</div><div class="line">    {</div><div class="line">        foo.api [types-only]    <span class="comment">// Only need typedefs from here.  Don't need IPC code generated.</span></div><div class="line">        bar.api [manual-start]  <span class="comment">// I'll start this when I'm ready by calling bar_ConnectService().</span></div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>In addition, <code>mksys</code> and <code>mkapp</code> will check to make sure that all client-side IPC interfaces are bound to some service. If you want to allow a client-side interface to not be bound sometimes, the <b><code></code>[optional</b>] option can be used. Use of <code></code>[optional] also implies <code></code>[manual-start].</p>
+<p>Also, if <code></code>[optional] is used on an interface that would normally get automatically bound (le_cfg.api or le_wdog.api) the automatic binding will be suppressed.</p>
+<p>At runtime, the component can try to use the interface by calling the <code>TryConnectService()</code> function for the interface. If the interface is not bound to anything, an error code will be returned.</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    api:</div><div class="line">    {</div><div class="line">        baz.api [optional]      <span class="comment">// May not be bound. I'll try it by calling baz_TryConnectService().</span></div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><h2><a class="anchor" id="defFilesCdef_requiresFile"></a>
+file</h2>
+<p>Declares:</p><ul>
+<li>specific files located on the target outside of the app, but made accessible to the app.</li>
+<li>location inside the app's sandbox where the file will appear.</li>
+</ul>
+<p>Things listed in <code>requires</code> are expected to be found on the target at runtime. They're not copied into the app at build time; they are made accessible to the app inside of its sandbox at runtime.</p>
+<p>Each entry consists of:</p><ul>
+<li>access permissions</li>
+<li>source path</li>
+<li>destination path</li>
+</ul>
+<p><b>Access permissions</b> - any combination of one or more of the following letters, enclosed in square brackets:</p><ul>
+<li>r = readable</li>
+<li>w = writeable</li>
+<li>x = executable</li>
+</ul>
+<p>If permissions values are not specified, then the file will be mounted into the sandbox without modifying any permissions.</p>
+<p>A file path can be enclosed in quotation marks (either single ' or double "). This is required when it contains spaces or character sequences that would start comments.</p>
+<p>The first path can't end in a '/'.</p>
+<p>If the second path ends in a '/', then it's specifying the directory where the object appears, and the object has the same name inside the sandbox as it has outside the sandbox.</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    file:</div><div class="line">    {</div><div class="line">        <span class="comment">// I get character stream input from outside via a named pipe (read-only)</span></div><div class="line">        /var/run/someNamedPipe  /var/run/</div><div class="line"> </div><div class="line">        <span class="comment">// I need to be able to play back audio files installed in /usr/local/share/audio.</span></div><div class="line">        <span class="stringliteral">"/usr/local/share/audio/error message.wav"</span> /usr/share/audio/</div><div class="line">        <span class="stringliteral">'/usr/local/share/audio/success message.wav'</span> /usr/share/audio/</div><div class="line"> </div><div class="line">        <span class="comment">// Need to write to log.txt. Read is required to open the file.</span></div><div class="line">        [rw] /home/root/myFiles/log.txt      /usr/myFiles/</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>It's also possible to give the object a different names inside and outside of the sandbox by adding a name to the end of the second path.</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    file:</div><div class="line">    {</div><div class="line">        <span class="comment">// Program uses /var/run/someNamedPipe which it calls /var/run/externalPipe.</span></div><div class="line">        /var/run/someNamedPipe  /var/run/externalPipe</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>When something is accessible from inside an app sandbox, there are potential security risks (e.g., access to the object could be exploited by the app, or hacker, to access sensitive information or launch a denial-of-service attack on other apps within the target device or other devices connected to the target device).</dd></dl>
+<p>If apps require access to shared memory located into /dev/shm, these entries need to be declared inside this section to have the right access and the correct SMACK label set by the supervisor. Apps that create the shared memory do not need to explicitly state them in the <code>requires:</code> section. This is only need for apps that want to access another apps shared memory.</p>
+<p>For example, appA will create the shared memory files /dev/shm/appShm00 and /dev/shm/shamem. If a second app, called appB wants to access to these files, it needs to define them inside its <code>appB.adef</code> as shown below:</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    file:</div><div class="line">    {</div><div class="line">        <span class="comment">// Import the shared memory /dev/shm/appShm00 and /dev/shm/shamem into the appB.</span></div><div class="line">        /dev/shm/appShm00  /dev/shm/appShm00</div><div class="line">        /dev/shm/shamem    /dev/shm/shamem</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><h2><a class="anchor" id="defFilesCdef_requiresDevice"></a>
+device</h2>
+<p>Declares:</p><ul>
+<li>device files that reside on the target outside of the app, but made accessible to the app.</li>
+<li>location inside the app's sandbox where the file will appear.</li>
+<li>access permissions the app is given to the device file.</li>
+</ul>
+<p>Things listed in <code>requires</code> are expected to be found on the target at runtime. They're not copied into the app at build time; they are made accessible to the app inside of its sandbox at runtime.</p>
+<p>Each entry consists of two file system paths and a set of optional access permissions:</p>
+<ul>
+<li>access permissions, readable ([r]) and/or writeable ([w]). Executable is not allowed on device files. If permission values are not specified, then read-only ([r]) is the default.</li>
+<li>path to the object in the file system outside of the app, which must be an absolute path (beginning with ‘/’). This must be a path to a valid character or block device file.</li>
+<li>absolute file system path inside the app’s sandbox where the object will appear at runtime.</li>
+</ul>
+<p>A file path can be enclosed in quotation marks (either single ' or double "). This is required when it contains spaces or character sequences that would start comments.</p>
+<p>The first path can't end in a '/'.</p>
+<p>If the second path ends in a '/', then it's specifying the directory where the object appears, and the object has the same name inside the sandbox as it has outside the sandbox.</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    device:</div><div class="line">    {</div><div class="line">        <span class="comment">// I get read-only access to the SPI port.</span></div><div class="line">        [r]     /dev/sierra_spi   /dev/sierra_spi</div><div class="line"> </div><div class="line">        <span class="comment">// I get read-only access to the NMEA port.</span></div><div class="line">                /dev/nmea         /dev/nmea</div><div class="line"> </div><div class="line">        <span class="comment">// I get read and write access to the I2C port.</span></div><div class="line">        [rw]    /dev/sierra_i2c   /dev/</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>Note that if a hot-plug device is unplugged and plugged back in, the app must be restarted before it can access the device.</p>
+<p>It's also possible to give the object a different names inside and outside of the sandbox by adding a name to the end of the second path.</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    device:</div><div class="line">    {</div><div class="line">        /dev/ttyS0  /dev/port1     <span class="comment">// Program uses /dev/port1, but UART0 is called /dev/ttyS0.</span></div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>When something is accessible from inside an app sandbox, there are potential security risks (e.g., access to the object could be exploited by the app, or hacker, to access sensitive information or launch a denial-of-service attack on other apps within the target device or other devices connected to the target device).</dd>
+<dd>
+This section is experimental. Future releases of may not support this section.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If an access to the directory <code>/dev/shm</code> is required, it should be listed in the subsection <code>dir:</code> because it is treated like a directory even if it is located in <code>/dev</code>.</dd></dl>
+<h2><a class="anchor" id="defFilesCdef_requiresDir"></a>
+dir</h2>
+<p>Specifies directories on target device to make accessible to the app.</p>
+<p>The location inside the app's sandbox where the directory will appear is also specified.</p>
+<p>Things listed here are expected to be found on the target at runtime. They are not copied into the app at build time; they are made accessible to the app inside of its sandbox at runtime.</p>
+<p>Three things need to be specified for each directory:</p><ul>
+<li>access permissions</li>
+<li>source path</li>
+<li>destination path</li>
+</ul>
+<p><b>Access permissions</b> - any combination of one or more of the following letters, enclosed in square brackets:</p><ul>
+<li>r = readable</li>
+<li>w = writeable</li>
+<li>x = executable</li>
+</ul>
+<p>If permission values are not specified, then the directory will be mounted into the sandbox without modifying any permissions. Applications can mount any directories except for the legato directory (/mnt/flash/legato or /legato).</p>
+<p>Specifying the permission values on a directory will only modify the permission of the directory. Any subdirectory and files will remain the same.</p>
+<p>Also specifying the permission value on directories is only allowed in two locations:</p><ul>
+<li>Any directory under /home/root/</li>
+<li>Any directory under /mnt/flash/ except /legato</li>
+</ul>
+<p><b>Source path</b>is the path to the directory <b>outside</b> of the app. This must be an absolute path (beginning with "/") and can never end in a "/".</p>
+<p><b>Destination path</b> is the absolute path <b>inside</b> the app’s sandbox where the directory will appear at runtime.</p>
+<p>Paths can be enclosed in quotation marks (either single ' or double "). This is required when it contains spaces or character sequences that would start comments.</p>
+<p>If the destination path ends in a "/", the name from the source is appended to it. Otherwise, only the destination path is used. That means <code>/foo/bar</code> /baz will appear as <code>/baz</code> inside the sandbox, and <code>/foo/bar</code> /baz/ will appear as <code>/baz/bar</code> inside the sandbox.</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    dir:</div><div class="line">    {</div><div class="line">        <span class="comment">// I need access to /proc for debugging.</span></div><div class="line">        /proc   /</div><div class="line"> </div><div class="line">        <span class="comment">// For now, I want access to all executables and libraries in /bin and /lib.</span></div><div class="line">        <span class="comment">// Later I'll remove this and replace with just the files I really need in the field.</span></div><div class="line">        <span class="comment">// Also, I don't want to hide the stuff that the tools automatically bundle into my app's</span></div><div class="line">        <span class="comment">// /bin and /lib for me, so I'll make the root file system's /bin and /lib accessible as</span></div><div class="line">        <span class="comment">// my app's /usr/bin and /usr/lib.</span></div><div class="line">        /bin    /usr/bin</div><div class="line">        /lib    /usr/lib</div><div class="line"> </div><div class="line">        <span class="comment">// I need permissions to create a file in /home/root/myTestDir</span></div><div class="line">        <span class="comment">// Execute is needed since we need to search a directory before creating the file.</span></div><div class="line">        [rwx] /home/root/myTestDir    /myTestDir</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>Any time anything is made accessible from inside an app sandbox, the security risks must be considered carefully. Ask yourself if access to the object can be exploited by the app (or a hacker who has broken into the app) to access sensitive information or launch a denial-of-service attack on other apps within the target device or other devices connected to the target device?</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>It's not possible to put anything inside of a directory that was mapped into the app from outside of the sandbox. If you <em>require</em> <code>/bin</code> to appear at <code>/usr/bin</code>, you can't then <em>bundle</em> a file into <code>/usr/bin</code> or <em>require</em> something to appear in <code>/usr/bin</code>; that would have an effect on the contents of the /bin directory outside of the app.</dd>
+<dd>
+If an access to the directory /dev/shm is required, it should be listed in this subsection as below mentioned, because it is treated like a directory even if it is located in /dev. <pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    dir:</div><div class="line">    {</div><div class="line">        /dev/shm    /dev/shm</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --></dd>
+<dd>
+If your <code>requires:</code> dir: section includes /dev/shm then, inside your legato application after calling: shm_open (sharedMemRegion, ...) you have to run: chmod ("/dev/shm/sharedMemRegion", S_IRWXU | S_IRWXG | S_IRWXO);</dd></dl>
+<h2><a class="anchor" id="defFilesCdef_requiresLib"></a>
+lib</h2>
+<p>The <code>lib:</code> subsection of the <code>requires:</code> section is used to specify that a shared (dynamic) library is required by any executable that the component is part of.</p>
+<p>The required library will be linked with executables that the component is a part of.</p>
+<p>Specifying a shared library file's path will result in <code>"-L"</code> and <code>"-l"</code> arguments being added to the linker's command line.</p>
+<p>This is useful when linking to libraries that are not part of the target's sysroot. (If the library is part of the target's sysroot, then the <code>ldflags:</code> section can be used instead.)</p>
+<p>On the target device at runtime, the dynamic linker will look for the library, so it must be made available inside the app sandbox, somewhere in the dynamic linker's library search path. (The dynamic linker will typically look in the <code>/lib</code> and <code>/usr/lib</code> directories for libraries at runtime.)</p>
+<p>The library file can be bundled as a part of the app using the <b><code>bundles:</code> </b> section of the <code></code>.cdef file.</p>
+<pre class="fragment"><div class="line">bundles:</div><div class="line">{</div><div class="line">    file:</div><div class="line">    {</div><div class="line">        <span class="comment">// Bundle the "foo" library as part of the app (in the app's /lib directory).</span></div><div class="line">        libfoo.so.3     /lib/</div><div class="line">        libfoo.so.3.1.1 /lib/</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>Or, if the library is already present on the target, then the <code>files:</code> or <code>dirs:</code> subsection of the <b><code>requires:</code> </b> section of either the <code></code>.cdef or <code></code>.adef file can be used to make the library visible from inside the app sandbox.</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    file:</div><div class="line">    {</div><div class="line">        <span class="comment">// Make the "foo" library available inside the App sandbox (in the App's /lib directory).</span></div><div class="line">        /usr/local/lib/libfoo.so.3     /lib/</div><div class="line">        /usr/local/lib/libfoo.so.3.1.1 /lib/</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>For backward compatibility, it is also possible to specify the library name "xml" without the leading "lib" or the trailing ".so". This will result in <code>"-lxml"</code> being passed to the linker when linking any executables that include this component, but will not add a <code>'-L'</code> option.</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    lib:</div><div class="line">    {</div><div class="line">        xml    <span class="comment">// I need access to libxml.so which is expected to already be on the target.</span></div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>This is equivalent to using the "ldflags:" section to add "-lxml" to the linker command-line arguments.</p>
+<pre class="fragment"><div class="line">ldflags:</div><div class="line">{</div><div class="line">    -lxml</div><div class="line">}</div></pre><!-- fragment --><h2><a class="anchor" id="defFilesCdef_requiresComponent"></a>
+component</h2>
+<p>Declares this component depends on another component.</p>
+<p>Any app that uses a component will also use any other components that component requires, and any components they require, etc.</p>
+<p>Specifying a dependency on another component ensures that calls to component initialization functions ( <code>COMPONENT_INIT</code> in C/C++ components ) are sorted in the correct order. If component A depends on component B, then component B will be initialized first.</p>
+<pre class="fragment"><div class="line">xyz.cdef</div><div class="line"> </div><div class="line">requires:</div><div class="line">{</div><div class="line">    component:</div><div class="line">    {</div><div class="line">        abc</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><pre class="fragment"><div class="line">abc.cdef</div><div class="line"> </div><div class="line">requires:</div><div class="line">{</div><div class="line">    component:</div><div class="line">    {</div><div class="line">        foo</div><div class="line">        bar</div><div class="line">        baz [provide-header]</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>Use '[provide-header]' tag to export header files of a component. To clarify the concept let us consider three components xyz, abc and baz as shown above. xyz is dependent on abc and abc is dependent on baz. If xyz needs to directly use the header files provided by baz then abc should require baz with [provide-header] tag to expose baz's header files to the components having dependency on abc. However, if only abc needs to use baz's header files then [provide-header] is not required as abc has direct dependency on baz component.</p>
+<p>Dependency loops are not allowed: component C can't depend on another component that (either directly or indirectly) depends on component C. The build tools detect dependency loops and report any error.</p>
+<h2><a class="anchor" id="defFilesCdef_requireskm"></a>
+kernelModules</h2>
+<p>Your component may depend on one or more kernel modules to load before the component starts. Use <code>kernelModules:</code> section to declare the component dependencies on kernel modules. Each entry is a path to another <a class="el" href="defFilesMdef.html">.mdef</a> definition file. This section marks that the component has a requirement on a kernel module but does not add the kernel module to the Legato system. The kernel module needs to be <b>explicitly</b> <b>added</b> to kernelModules: section of your systems <a class="el" href="defFilesSdef.html">.sdef</a>. After the kernel modules are added to the sdef, the modules will be bundled as a part of the component and installed with the Legato system. The listed modules will be installed before the component starts. In the example below, hello and world kernel modules will be installed before the component starts.</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    kernelModules:</div><div class="line">    {</div><div class="line">       $CURDIR/kernelmodule/hello</div><div class="line">       $CURDIR/kernelmodule/world [optional]</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>In case a module fails to load, the fault handler kicks in which triggers the fault action of each process in the app (see <a class="el" href="defFilesAdef.html#defFilesAdef_processFaultAction">faultAction</a>) that uses the component. The faultAction values relevant for a component with kernel modules dependencies are:</p><ul>
+<li>restartApp - log a critical message and restart the entire app.</li>
+<li>stopApp - log a critical message and terminate the entire app.</li>
+<li>reboot - log an emergency message and reboot the system.</li>
+</ul>
+<p>If the fault action for each process must not be triggered when a module fails to load, the module must be marked as optional by using '[optional]' tag. In the above example, world is an optional module.</p>
+<h1><a class="anchor" id="defFilesCdef_requiresJavaPackage"></a>
+javaPackage</h1>
+<p>When creating a Java based component, you can create a <code>javaPackage:</code> section in the @ .cdef listing Java packages to build. It should look something like this:</p>
+<pre class="fragment"><div class="line">javaPackage:</div><div class="line">{</div><div class="line">    io.legato.samples</div><div class="line">}</div></pre><!-- fragment --><p>Where you supply the name of the package where your java code will be found. The build tools will look for Java to code under <code>COMPONENT_DIR/src/io/legato/samples/</code> *.java</p>
+<p>It won't recurse automatically into subdirectories; if you want subdirectories, they also must added to the JavaPackage section.</p>
+<pre class="fragment"><div class="line">javaPackage:</div><div class="line">{</div><div class="line">    io.legato.samples</div><div class="line">    io.legato.samples.foo</div><div class="line">    io.legato.samples.bar</div><div class="line">}</div></pre><!-- fragment --><p>The first Java package listed is assumed to be the <em>main</em> component package as it contains a class with the same name of the component, and it implements the interface (<code>io.legato.Component</code>).</p>
+<p>A hello world Java app folder structure should look something like this:</p>
+<pre class="fragment"><div class="line">+-- javaHelloComponent</div><div class="line">|   +-- Component.cdef</div><div class="line">|   +-- src</div><div class="line">|       +-- io</div><div class="line">|           +-- legato</div><div class="line">|               +-- samples</div><div class="line">|                   +-- javaHelloComponent.java</div><div class="line">+-- jHello.adef</div></pre><!-- fragment --><p>It is also possible to bundle pre-built Jar files with your component. Simply add the Jar files to your bundles section of the same <code></code>.cdef file containing your Java source. Note that the extension of the file does have to be <code></code>.jar in order to be detected by the build tools.</p>
+<p>For example in your <code>Component.cdef:</code> </p>
+<pre class="fragment"><div class="line">javaPackage:</div><div class="line">{</div><div class="line">    com.yourcompany.yourproject</div><div class="line">}</div><div class="line"> </div><div class="line">bundles:</div><div class="line">{</div><div class="line">    file:</div><div class="line">    {</div><div class="line">        path/to/my/lib/MyHandyLib.jar  /lib/</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>Will bundle the lib <code>MyHandyLib.jar</code> in the application's <code>lib</code> directory. In addition to this, the Jar file will also be automatically be added in your classpath. Allowing your code to make use of the code within that Java library.</p>
+<h1><a class="anchor" id="defFilesCdef_sources"></a>
+sources</h1>
+<p>Contains a list of source code files.</p>
+<p>If C or C++ code, one source file must implement a <code>COMPONENT_INIT</code> function. The framework will automatically call that function at start-up.</p>
+<pre class="fragment"><div class="line">sources:</div><div class="line">{</div><div class="line">    foo.c</div><div class="line">    bar.c</div><div class="line">    init.c      <span class="comment">// This one implements the COMPONENT_INIT</span></div><div class="line">}</div></pre><!-- fragment --><p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

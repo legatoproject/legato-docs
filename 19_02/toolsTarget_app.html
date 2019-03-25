@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>app  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.02.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Tools.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a class="link-selected" href="tools.html">Tools</a><a href="howToMain.html">How To</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">app </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>The Control Apps <code>app</code> tool is used to control and obtain info about apps installed on the target device.</p>
+<h1>Usage</h1>
+<p><b><code>app start &lt;appName&gt; [&lt;options&gt;] <br/>
+ app stop &lt;appName&gt; <br/>
+ app restart &lt;appName&gt; <br/>
+ app remove &lt;appName&gt; <br/>
+ app list <br/>
+ app status [&lt;appName&gt;] <br/>
+ app version &lt;appName&gt; <br/>
+ app info [&lt;appName&gt;] <br/>
+ app runProc &lt;appName&gt; &lt;procName&gt; [options] <br/>
+ app runProc &lt;appName&gt; [&lt;procName&gt;] --exe=&lt;exePath&gt; [options] <br/>
+ app --help <br/>
+</code></b></p>
+<pre class="fragment">app start &lt;appName&gt; [&lt;options&gt;] </pre> <blockquote class="doxtable">
+<p>Runs an app in a modified manner by one or more of the following options: </p>
+</blockquote>
+<blockquote class="doxtable">
+<p><code>--norun=&lt;procName1&gt;[,&lt;procName2&gt;,...]</code> <br/>
+ Don't start the specified configured processes. Names are separated by commas without spaces. </p>
+</blockquote>
+<pre class="fragment">app stop &lt;appName&gt; </pre> <blockquote class="doxtable">
+<p>Stops the specified app. </p>
+</blockquote>
+<pre class="fragment">app restart &lt;appName&gt; </pre> <blockquote class="doxtable">
+<p>Restarts the specified app. </p>
+</blockquote>
+<pre class="fragment">app remove &lt;appName&gt; </pre> <blockquote class="doxtable">
+<p>Removes the specified app. </p><dl class="section warning"><dt>Warning</dt><dd>Be careful not to accidentally remove system services apps that you might need (e.g., modemService app). </dd></dl>
+</blockquote>
+<pre class="fragment">app list </pre> <blockquote class="doxtable">
+<p>List all installed apps. </p>
+</blockquote>
+<pre class="fragment">app status [&lt;appName&gt;] </pre> <blockquote class="doxtable">
+<p>If an appName is specified, provides status on that app. If no app is specified, provides status on all installed apps. Status can be <code>stopped</code>, <code>running</code>, <code>paused</code> or <code>not</code> installed. </p>
+</blockquote>
+<pre class="fragment">app version &lt;appName&gt; </pre> <blockquote class="doxtable">
+<p>Provides the version of the specified app. </p>
+</blockquote>
+<pre class="fragment">app info &lt;appName&gt; </pre> <blockquote class="doxtable">
+<p>If an appName is specified, provides info on that app. If no app is specified, provides info on all installed apps. </p>
+</blockquote>
+<pre class="fragment">app runProc &lt;appName&gt; &lt;procName&gt; [options]</pre><blockquote class="doxtable">
+<p>Runs a configured process inside an app using the process settings from the configuration database. If an <code>exePath</code> is provided as an option, the specified executable is used instead of the configured executable. </p>
+</blockquote>
+<pre class="fragment">app runProc &lt;appName&gt; [&lt;procName&gt;] --exe=&lt;exePath&gt; [options]</pre><blockquote class="doxtable">
+<p>Runs an executable inside an app. The <code>exePath</code> must be provided, and the optional process name must not match any configured processes for the app. </p>
+</blockquote>
+<blockquote class="doxtable">
+<p>Unless specified through the options below, the executable will be run with default settings: </p>
+</blockquote>
+<blockquote class="doxtable">
+<p><code>--exe=&lt;exePath&gt;</code> <br/>
+ Use the executable at &lt;exePath&gt;. &lt;exePath&gt; is from the perspective of the app (e.g., <code>/exe</code> would be at the sandbox root if the app is sandboxed). </p>
+</blockquote>
+<blockquote class="doxtable">
+<p><code>--priority=&lt;priorityStr&gt;</code> <br/>
+ Sets the priority of the process. &lt;priorityStr&gt; can be either <code>idle</code>, <code>low</code>, <code>medium</code>, <code>high</code>, <code>rt1</code>, <code>rt2</code>, ... <code>rt32</code>. </p>
+</blockquote>
+<blockquote class="doxtable">
+<p><code>--faultAction=&lt;action&gt;</code> <br/>
+ Sets the fault action for the process. &lt;action&gt; can be either 'ignore', 'restartProc', 'restartApp', 'stopApp'. </p>
+</blockquote>
+<blockquote class="doxtable">
+<p><code>--[&lt;args&gt; ...]</code> <br/>
+ Specifies command line arguments to the process. Everything following the <code>--</code> option is taken as arguments for process to be started. The <code>--</code> option must be the last option to app runProc. If the <code>--</code> option is not used, then the configured arguments are used (if available). </p>
+</blockquote>
+<pre class="fragment">app --help</pre> <blockquote class="doxtable">
+<p>Prints help text to standard out and exits. </p>
+</blockquote>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

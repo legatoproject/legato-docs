@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Sample code for LTE PCI Scan  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.02.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Sample code for LTE PCI Scan </h1> </div>
+</div><div class="contents">
+<div class="textblock"><pre class="fragment"><div class="line">    uint16_t physicalCellId = 0;</div><div class="line">    uint32_t globalCellId = 0;</div><div class="line">    <span class="keywordtype">char</span> mcc[<a class="code" href="le__mrc__interface_8h.html#aec88b97b54a45f86e6cb34f65b2d0afd">LE_MRC_MCC_BYTES</a>] = {0};</div><div class="line">    <span class="keywordtype">char</span> mnc[<a class="code" href="le__mrc__interface_8h.html#aeae0e240c77730be724ad7ac42596469">LE_MRC_MNC_BYTES</a>] = {0};</div><div class="line">    <a class="code" href="le__mrc__interface_8h.html#a468e9490f12dd7abc8a184782dbb16e9">le_mrc_PciScanInformationListRef_t</a> scanInfoListRef = NULL;</div><div class="line">    <a class="code" href="le__mrc__interface_8h.html#a254df9366a9b7914cfe0931872fef578">le_mrc_PciScanInformationRef_t</a>     scanInfoRef     = NULL;</div><div class="line">    <a class="code" href="le__mrc__interface_8h.html#a646ae958a17cbb1cacd6e3c8e616beaa">le_mrc_PlmnInformationRef_t</a>        plmnInfoRef     = NULL;</div><div class="line"> </div><div class="line">    <span class="comment">// Request an LTE PCI scan</span></div><div class="line">    scanInfoListRef = <a class="code" href="le__mrc__interface_8h.html#a82800dff5d7a09b645467ab335c1f4bd">le_mrc_PerformPciNetworkScan</a>(LE_MRC_BITMASK_RAT_LTE);</div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(scanInfoListRef != NULL);</div><div class="line"> </div><div class="line">    <span class="comment">// Get reference to first cell info</span></div><div class="line">    scanInfoRef = <a class="code" href="le__mrc__interface_8h.html#a9afeaa5a7639f5f9667eb0bae67c990d">le_mrc_GetFirstPciScanInfo</a>(scanInfoListRef);</div><div class="line">    <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(scanInfoRef != NULL);</div><div class="line"> </div><div class="line">    <span class="keywordflow">do</span></div><div class="line">    {</div><div class="line">        physicalCellId = <a class="code" href="le__mrc__interface_8h.html#a9ed8cc05b482f7a1c0efa11f05ca35a6">le_mrc_GetPciScanCellId</a>(scanInfoRef);</div><div class="line">        globalCellId = <a class="code" href="le__mrc__interface_8h.html#a6afa9cc6f1006a37dba3ab86c48cfb3f">le_mrc_GetPciScanGlobalCellId</a>(scanInfoRef);</div><div class="line"> </div><div class="line">        <span class="comment">// Get reference to the first PLMN info</span></div><div class="line">        plmnInfoRef = <a class="code" href="le__mrc__interface_8h.html#af081d6a75b593b164044c67c6e288028">le_mrc_GetFirstPlmnInfo</a>(scanInfoRef);</div><div class="line">        <a class="code" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT</a>(plmnInfoRef != NULL);</div><div class="line"> </div><div class="line">        <span class="keywordflow">do</span></div><div class="line">        {</div><div class="line">            <span class="keywordflow">if</span> (<a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86ca5066a4bcec691c6b67843b8f79656422">LE_OK</a> == <a class="code" href="le__mrc__interface_8h.html#ae71b74cf99f54a943aea8ea24e889db5">le_mrc_GetPciScanMccMnc</a>(plmnInfoRef,</div><div class="line">                                                 mcc,</div><div class="line">                                                 <a class="code" href="le__mrc__interface_8h.html#aec88b97b54a45f86e6cb34f65b2d0afd">LE_MRC_MCC_BYTES</a>,</div><div class="line">                                                 mnc,</div><div class="line">                                                 <a class="code" href="le__mrc__interface_8h.html#aec88b97b54a45f86e6cb34f65b2d0afd">LE_MRC_MCC_BYTES</a>))</div><div class="line">            {</div><div class="line">                <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"Cell ID: physical %"</span>PRIu16<span class="stringliteral">" global %"</span>PRIu32<span class="stringliteral">", MCC: %s, MNC: %s"</span>,</div><div class="line">                        physicalCellId, globalCellId, mcc, mnc);</div><div class="line">            }</div><div class="line"> </div><div class="line">            plmnInfoRef = <a class="code" href="le__mrc__interface_8h.html#ab61faf88d4ab24454fc3d4b268a4767d">le_mrc_GetNextPlmnInfo</a>(scanInfoRef);</div><div class="line"> </div><div class="line">        }</div><div class="line">        <span class="keywordflow">while</span> (plmnInfoRef);</div><div class="line"> </div><div class="line">        scanInfoRef = <a class="code" href="le__mrc__interface_8h.html#adfaff632784b66e2f4e576b20bc7674c">le_mrc_GetNextPciScanInfo</a>(scanInfoListRef);</div><div class="line"> </div><div class="line">    }</div><div class="line">    <span class="keywordflow">while</span> (scanInfoRef);</div><div class="line"> </div><div class="line">    <a class="code" href="le__mrc__interface_8h.html#ad31523c7917d87d1e1377a6f819bdaae">le_mrc_DeletePciNetworkScan</a>(scanInfoListRef);</div></pre><!-- fragment --></div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

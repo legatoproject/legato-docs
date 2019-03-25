@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>App/System Configuration  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.02.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Concepts.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a class="link-selected" href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">App/System Configuration </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>This topic describes how application and system configuration works in Legato AF.</p>
+<p>Device config data is vital for most apps. Seldom are all devices in an application identical. Usually, there's some kind of customization on each device: it may be a complex set of user preferences, or it may be just a simple node name. Regardless of the device's customization, the device needs to be:</p><ul>
+<li>stored somewhere it can be retrieved quickly</li>
+<li>easy to modify programmatically from within the device application code</li>
+<li>easy to view and modify remotely via generic network or managed portal service</li>
+<li>protected from:<ul>
+<li>malicious snooping and vandalism</li>
+<li>multi-threaded race conditions</li>
+<li>untimely device reset or power loss</li>
+</ul>
+</li>
+</ul>
+<h1><a class="anchor" id="conceptsConfig_treestructs"></a>
+Tree Structure</h1>
+<p>Config data is stored in a tree structure, where each node is made up of a stem or a leaf. Stem nodes can contain any number of child nodes, each with its own name. Leaf nodes can either be empty or contain data.</p>
+<pre class="fragment">       +tree
+           |
+           +--stem
+           |   |
+           |   +--leaf (value)
+           |
+           +-stem
+           |  |
+           |  +--leaf (value)
+           |  |
+           |  +--leaf (value)
+           |
+           +--stem
+               |
+               +stem
+               |  |
+               |  +leaf (value)
+               |  |
+               |  +stem
+               |    |
+               |    +stem
+               |       |
+               |       +leaf (value)
+               |
+               +leaf (value)~</pre><p>This tree structure allows config data items to be uniquely identified using path names, much like file system paths, which makes it much easier to access config data via HTTP, SNMP, OMA-DM, and other protocols. It also allows the config database to be explored using tree walking algorithms and tools.</p>
+<h1><a class="anchor" id="conceptsConfig_trans"></a>
+Transactions</h1>
+<p>Config data can be shared by multiple processes and threads. This can sometimes result in race conditions that can threaten data integrity. E.g., if threads A and B both use data fields X and Y, it could be bad if thread A interrupts thread B to read those fields just after thread B has updated field X and is about to update field Y to be consistent with the new value of field X.</p>
+<p>A possible reset or power loss may occur at any time, and we must be sure that would not corrupt the config data. For example, if power fails just after field X has been updated, but before field Y gets updated to match the new value of field X, then the config data could be in an invalid state. Transactions are used to prevent these sorts of problems.</p>
+<p>Before a change can be made to config data, a write transaction must be started. All changes are made in the context of such a transaction, and when the changes are complete, the transaction can be "committed". If a fault prevents the entire set of changes from being applied on commit, or if the transaction is canceled before it is committed, then none of that transaction's changes will be applied.</p>
+<p>Transactions can also be started for reading only. A write transaction will be allowed to start while there is a read transaction in progress. But the commit process will block write transactions until the read transactions have finished. This ensures that anyone reading config data fields will see only field values that are consistent.</p>
+<p>To prevent denial of service problems (either accidental or malicious), transactions have a limited lifetime. If a transaction remains open for too long, it will be automatically terminated; the configuration database will drop its connection to the offending client.</p>
+<h1><a class="anchor" id="conceptsConfig_growth"></a>
+Config Data Growth</h1>
+<p>Config structure will change over time as your app is developed and new features are added. Config tree changes need to be managed in a way that supports the growth and the upgrades.</p>
+<p>Recommended strategies when upgrading your app's tree:</p><ul>
+<li>Have newer software understand the config data structure used by previous versions of the software;</li>
+<li>Never write to the config data unless settings are being changed;</li>
+<li>When changing settings, write the config data using the newest format;</li>
+<li>If both multiple versions of the same config data are found, use only the newest that is understood by the current running software;</li>
+<li>If you are backing up the original config tree keep in mind the limited space requirements of the non-volatile memory, or the time and data cost of over-the-air bandwidth.</li>
+</ul>
+<h1><a class="anchor" id="conceptsConfig_updateRollback"></a>
+Software Updates and Roll-Back</h1>
+<p>When you update apps that use Config Trees, and the upgrade is done using the <a class="el" href="c_update.html">Update API</a> API:</p><ul>
+<li>the updated new system automatically inherits (copies) the trees from the old system.</li>
+<li>if a roll-back happens, the updated system trees (possibly corrupted) are deleted, and the old system is restored (along with the old config trees in the same state as before the update).</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="toolsTarget_update.html">update</a> tool uses the <a class="el" href="c_update.html">Update API</a> API.</dd></dl>
+<h1><a class="anchor" id="conceptsConfig_changeNotif"></a>
+Config Change Notifications</h1>
+<p>Sometimes, action needs to be taken whenever a config data field changes value. The <a class="el" href="c_config.html">Config Tree API</a> allows client software to register for notification when changes are committed to a particular branch of the config tree.</p>
+<h1><a class="anchor" id="conceptsConfig_accessControl"></a>
+Access Control</h1>
+<p>Because the behavior of apps can be affected by the config data that they use, config data can be used as an attack vector for malicious software. As a result, access to config data must be strictly controlled when there is any possibility that malicious software may be allowed to run on a device.</p>
+<p>The Config Tree system separates each apps' configuration data only allowing access to its own data.</p>
+<p>See <a class="el" href="defFilesAdef.html#defFilesAdef_requiresConfigTree">.adef requires section</a> for details about setting permissions for your trees.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

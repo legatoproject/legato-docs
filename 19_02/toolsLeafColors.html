@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Leaf Colors  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.02.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Tools.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a class="link-selected" href="tools.html">Tools</a><a href="howToMain.html">How To</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Leaf Colors </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><code>leaf</code> <code>colors</code> - customize and update the leaf color themes</p>
+<p>This page explains how to customize the output of the leaf commands to better display the colors that work with your terminal.</p>
+<p>The colors configuration reads the colors from the themes.ini configuration file. themes.ini is located in the leaf configuration folder (see leaf config documentation).</p>
+<h1><a class="anchor" id="toolsLeafGetsrc_themes"></a>
+Themes</h1>
+<p>Colors are grouped by "themes". The purpose of a theme is to set a collection of colors, and then switch from a colors collection to another by simply changing the active theme by selecting the active one in the <code>themes.ini</code> configuration file.</p>
+<p>In the configuration file, themes are identified by its header ([NAME]) and a list of <code>property</code> <code>=</code> <code>values</code>. It is possible to have multiple values defined for one property.</p>
+<p>There is a special theme called [DEFAULT] which configures the default theme behavior. This section must always be present in the themes.ini file. The coloring behavior will be that if a given property key is not defined in the selected theme, it will fallback to its value in the [DEFAULT] section.</p>
+<h1><a class="anchor" id="toolsLeafGetsrc_properties"></a>
+Properties</h1>
+<p>Supported values for property, in a given theme definition. Except the selected key, all others are a color/style definition.</p>
+<p><code><b>selected</b> </code> <br/>
+</p>
+<p>Only used in the [DEFAULT] theme. This property identifies the active theme (identifying the theme section [NAME])</p>
+<p><code><b>error</b> </code> <br/>
+</p>
+<p>Defines the color for all the leaf error messages</p>
+<p><code><b>hints</b> </code> <br/>
+</p>
+<p>Defines the color for hint messages</p>
+<p><code><b>hintscommands</b> </code> <br/>
+</p>
+<p>Defines the color for commands in hints</p>
+<p><code><b>label</b> </code> <br/>
+</p>
+<p>Defines the color for the text labels in tables (everything that is not a property value)</p>
+<p><code><b>tableseparator</b> </code> <br/>
+</p>
+<p>Defines the color for the border in a table</p>
+<p><code><b>tag.XXX</b> </code> <br/>
+</p>
+<p>Defines the color for a keyword for XXX tag (used in leaf search and leaf package list) i.e.; tag.current = FGREEN will color all the current tag's green in leaf search</p>
+<p><code><b>remotedisabled</b> </code> <br/>
+</p>
+<p>Defines the color for a disabled remote (see leaf remote)</p>
+<p><code><b>profilecurrent</b> </code> <br/>
+</p>
+<p>Defines the color for profiles (see leaf status and leaf profile)</p>
+<h1><a class="anchor" id="toolsLeafGetsrc_colors"></a>
+Colors and styles</h1>
+<p>Values for the above property keys can be a combination of:</p><ul>
+<li>foreground color</li>
+<li>background color</li>
+<li>style</li>
+</ul>
+<p><b>Foreground</b> <b>Colors</b> </p>
+<p>Available supported foreground colors:</p><ul>
+<li>FBLACK</li>
+<li>FRED</li>
+<li>FGREEN</li>
+<li>FYELLOW</li>
+<li>FBLUE</li>
+<li>FMAGENTA</li>
+<li>FCYAN</li>
+<li>FWHITE</li>
+</ul>
+<p>Other foreground colors (may not be available on all terminals):</p><ul>
+<li>FLIGHTBLACK</li>
+<li>FLIGHTRED</li>
+<li>FLIGHTGREEN</li>
+<li>FLIGHTYELLOW</li>
+<li>FLIGHTBLUE</li>
+<li>FLIGHTMAGENTA</li>
+<li>FLIGHTCYAN</li>
+<li>FLIGHTWHITE</li>
+</ul>
+<p><b>Background</b> <b>Colors</b> </p>
+<p>Available supported background colors:</p><ul>
+<li>BBLACK</li>
+<li>BRED</li>
+<li>BGREEN</li>
+<li>BYELLOW</li>
+<li>BBLUE</li>
+<li>BMAGENTA</li>
+<li>BCYAN</li>
+<li>BWHITE</li>
+</ul>
+<p>Other background colors (may not be available on all terminals):</p><ul>
+<li>BLIGHTBLACK</li>
+<li>BLIGHTRED</li>
+<li>BLIGHTGREEN</li>
+<li>BLIGHTYELLOW</li>
+<li>BLIGHTBLUE</li>
+<li>BLIGHTMAGENTA</li>
+<li>BLIGHTCYAN</li>
+<li>BLIGHTWHITE</li>
+</ul>
+<p><b>Styles</b> </p>
+<p>Available style values are:</p><ul>
+<li>NORMAL - Default font rendering</li>
+<li>BRIGHT - Highlighted (bold) font</li>
+<li>DIM - Lowlighted (thin) font</li>
+</ul>
+<h1><a class="anchor" id="toolsLeafGetsrc_Examples"></a>
+Examples</h1>
+<p>Example of a [DEFAULT] section content: </p><pre class="fragment">  [DEFAULT]
+  selected = DEFAULT
+  error = BRIGHT + FRED
+  hints = FGREEN
+  hintscommands = BRIGHT + FGREEN
+  label = BRIGHT
+  tableseparator = FLIGHTBLACK
+  tag.current = FGREEN
+  tag.installed = FGREEN
+  tag.latest = FCYAN
+  remotedisabled = FLIGHTBLACK
+  profilecurrent = FGREEN
+</pre><p> See themes.ini for other examples of setting themes.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
