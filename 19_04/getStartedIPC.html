@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Extend helloWorld  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.04.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Get_Started.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a class="link-selected" href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Extend helloWorld </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>Now that you've created your first Legato app, helloWorld, we are going to build upon it and introduce some of the key concepts of the Application Framework. helloWorld is a simple app that logs a string to the <code>syslog</code>. In this next section we are going to break helloWorld into a printClient and a printServer component and then use these two components to demonstrate the different approaches that can be used to design application architecture. The first demonstration starts with the two components existing within a single process, they have full access rights and communication to each other and processes are not protected from each other. Next each component will get moved to their own process and will need to communicate over IPC and an API will need to be defined to facilitate the communication. Lastly, we will move each component into it's own application and use an API to facilitate IPC communication. The two apps will only be able to communicate over IPC and only have access to what is defined in the API.</p>
+<dl class="section note"><dt>Note</dt><dd>When you are designing your own components or applications it's important to find a configuration that allows the access that your app needs while maintaining a secure system. We encourage the use of IPC and application sandboxing as they allow for secure communications between apps while protecting the internal components.</dd></dl>
+<p>To prepare for this tutorial we first need to create a second component that will take the string from the first component and then use the second component to log it to the syslog.</p>
+<h1><a class="anchor" id="getStartedIPC_createComps"></a>
+Create Components</h1>
+<p>For these tutorials we are going to create two components: <code>printClient</code> and <code>printServer</code>.</p>
+<h2><a class="anchor" id="getStartedIPC_createComps_dirs"></a>
+Create Directories</h2>
+<p>First make the directories:</p>
+<pre class="fragment">$ mkdir helloIPC
+$ cd helloIPC
+$ mkdir printClient
+$ mkdir printServer
+</pre><p>Your directory structure should look like:</p>
+<pre class="fragment">helloIPC/
+├──printClient/
+└──printServer/
+</pre><h2><a class="anchor" id="getStartedIPC_createComps_PSsource"></a>
+Create printServer Component</h2>
+<p><code>cd</code> into the printServer directory and create your source file: <code>server.c</code>. The <code>server.c</code> file is going to take the passed in perimeter from the client and print it to the logs.</p>
+<p><code>server.c</code> should contain the following: </p><pre class="fragment"><div class="line"><span class="preprocessor">#include "legato.h"</span></div><div class="line"><span class="preprocessor">#include "interfaces.h"</span></div><div class="line"> </div><div class="line"><span class="keywordtype">void</span> printer_Print(<span class="keyword">const</span> <span class="keywordtype">char</span>* message)</div><div class="line">{</div><div class="line">    <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"******** Client says '%s'"</span>, message);</div><div class="line">}</div><div class="line"> </div><div class="line"><a class="code" href="le__eventLoop_8h.html#abdb9187a56836a93d19cc793cbd4b7ec">COMPONENT_INIT</a></div><div class="line">{</div><div class="line">}</div></pre><!-- fragment --><p>The file <code>interfaces.h</code> is auto-generated based on the contents of printServer's <code>Component.cdef</code>. It'll contain a prototype of the function <code>print_Print()</code>, which we implemented in <code>server.c</code>.</p>
+<p>Next, create the <code>Component.cdef</code> file so the component is built correctly with <code>mktools</code>.</p>
+<pre class="fragment"><div class="line">sources:</div><div class="line">{</div><div class="line">    server.c</div><div class="line">}</div></pre><!-- fragment --><h2><a class="anchor" id="getStartedIPC_createComps_PCsource"></a>
+Create printClient Component</h2>
+<p>Next, create the printClient component:</p>
+<p><code>cd</code> into the printClient component directory and create a source file called <code>client.c:</code> </p>
+<p><code>client.c</code> should contain 2 lines, the first telling the log it's asking the print function to print Hello, world! and then calls the print function in the server.c component to print the message to the log:</p>
+<pre class="fragment"><div class="line"><span class="preprocessor">#include "legato.h"</span></div><div class="line"><span class="preprocessor">#include "interfaces.h"</span></div><div class="line"> </div><div class="line"><a class="code" href="le__eventLoop_8h.html#abdb9187a56836a93d19cc793cbd4b7ec">COMPONENT_INIT</a></div><div class="line">{</div><div class="line">    <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"Asking server to print 'Hello, world!'"</span>);</div><div class="line">    printer_Print(<span class="stringliteral">"Hello, world!"</span>);</div><div class="line">}</div></pre><!-- fragment --><p>Next create the <code>Component.cdef</code> file: <code>vim</code> <code>Component.cdef</code> </p>
+<p>The Component.cdef should contain: </p><pre class="fragment"><div class="line">sources:</div><div class="line">{</div><div class="line">    client.c</div><div class="line">}</div></pre><!-- fragment --><p>Now we have the printClient and printServer components created, we will use this as a basis for the rest of the tutorial.</p>
+<p>Your directory for helloIPC should look like: </p><pre class="fragment">helloIPC/
+├── printClient/
+│   ├── client.c
+│   └── Component.cdef
+└── printServer/
+    ├── Component.cdef
+    └── server.c
+</pre><h1><a class="anchor" id="getStartedIPC_createOneExe"></a>
+2 Components within 1 Executable</h1>
+<p>Now that we have the two components we need to make them talk to each other from within the executable. To do this we need a standard header file in the printServer component, as this is the function that was want to expose outside of itself.</p>
+<h2><a class="anchor" id="getStartedIPC_2comp1exe_PSHeader"></a>
+Create printServer Header</h2>
+<pre class="fragment">$vim server.h
+</pre><p>The file should contain the following code: </p><pre class="fragment"><div class="line"><span class="preprocessor">#ifndef SERVER_H_INC</span></div><div class="line"><span class="preprocessor">#define SERVER_H_INC</span></div><div class="line"> </div><div class="line"><a class="code" href="le__basics_8h.html#a1661bfbb29c2e0372ca9f0c556a8fc24">LE_SHARED</a> <span class="keywordtype">void</span> printer_Print(<span class="keyword">const</span> <span class="keywordtype">char</span>* message);</div><div class="line"> </div><div class="line"><span class="preprocessor">#endif</span></div></pre><!-- fragment --><p>By default all symbols are hidden in the Legato build process, to export symbols you need to explicitly define them in the header. Because we want printClient to be able to use the printer_Print function in the printServer we need to add <code>LE_SHARED</code> to the function prototype so that the function name is added to the component's exported symbol table and printClient can use the function.</p>
+<p>Next add <code>#include</code> <code>"server.h"</code> in both the <code>client.c</code> and <code>server.c</code> files.</p>
+<pre class="fragment"><div class="line"><span class="preprocessor">#include "legato.h"</span></div><div class="line"><span class="preprocessor">#include "interfaces.h"</span></div><div class="line"><span class="preprocessor">#include "server.h"</span></div></pre><!-- fragment --><p>Now we need to tell the build tools where to find the <code>server.h</code> header file. The server component <code>printServer</code> will be able to find this file automatically. This is because the header file is in the same directory as the source file, <code>server.c</code>. However, in the client component's code the file .h is located in a different directory than <code>client.c</code>.</p>
+<p>So, what we need to do is we need to tell the build tools where to find find the header file <code>server.h</code>. In the component printClient's <code>Component.cdef</code> add a cflags section as follows:</p>
+<pre class="fragment"><div class="line">cflags:</div><div class="line">{</div><div class="line">    -I $CURDIR/../printServer</div><div class="line">}</div></pre><!-- fragment --><p>The <code>-I</code> tells the compiler we want to add a new directory to the search path. When you use the <code>#include</code> directive you tell the compiler to search for that file. The compiler uses a list of directories called a search path to perform this search. If the file in question is not in one these directories it is considered not found, and the build will fail.</p>
+<p>The <code>$CURDIR</code> in the directory path is a build variable. It is automatically set by the mktools. Inside of a <code>Component.cdef</code> the variable <code>$CURDIR</code> automatically points to the directory that the <code>Component.cdef</code> file was found.</p>
+<h2><a class="anchor" id="getStartedIPC_2comp1exe_exe"></a>
+Create Executable</h2>
+<p>We are now ready to create an executable with both components and bundle the executable into an app and install it on the target.</p>
+<p>First, create your <code></code>.adef</p>
+<pre class="fragment">$ vim helloApp.adef
+</pre><p>Add the following:</p>
+<pre class="fragment"><div class="line">executables:</div><div class="line">{</div><div class="line">    helloPrint = ( printClient printServer )</div><div class="line">}</div><div class="line"> </div><div class="line">processes:</div><div class="line">{</div><div class="line">    run:</div><div class="line">    {</div><div class="line">        ( helloPrint )</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>The two components are added to the same executable, helloPrint. helloPrint is then given a process to run in and bundled into the app.</p>
+<p>Your directory structure for helloIPC should look like: </p><pre class="fragment">helloIPC/
+├── helloApp.adef
+├── printClient/
+│   ├── client.c
+│   └── Component.cdef
+└── printServer/
+    ├── Component.cdef
+    ├── server.c
+    └── server.h
+</pre><h2><a class="anchor" id="getStartedIPC_2comp1exe_app"></a>
+Create App</h2>
+<p>Next run <code>mkapp</code> to create the update bundle for your target (the same as in <code>helloWorld</code>) and install it on your target.</p>
+<pre class="fragment">$ mkapp -t wp85 helloApp.adef
+$ app install helloApp.wp85.update   # add the target IP to the command if DEST_IP is not set
+</pre><p>Running <code>logread</code> on your target you should see logs like: </p><pre class="fragment">&lt;time&gt; &lt;target&gt; user.info Legato:  INFO | supervisor[461]/supervisor T=main | proc.c proc_Start() 1394 | Starting process 'helloPrint' with pid 976
+&lt;time&gt; &lt;target&gt; user.info Legato:  INFO | supervisor[976]/supervisor T=main | proc.c proc_Start() 1359 | Execing 'helloPrint'
+&lt;time&gt; &lt;target&gt; user.info Legato:  INFO | helloPrint[976]/printClient T=main | client.c _printClient_COMPONENT_INIT() 7 | Asking server to print 'Hello, world!'
+&lt;time&gt; &lt;target&gt; user.info Legato:  INFO | helloPrint[976]/printServer T=main | server.c printer_Print() 7 | ******** Client says 'Hello, world!'
+</pre><dl class="section note"><dt>Note</dt><dd><code>The</code> app is called helloPrint and only has one PID, you can see that both components are running in the same PID in the <code>helloPrint</code> executable.</dd></dl>
+<h1><a class="anchor" id="getStartedIPC_2Process"></a>
+1 App with 2 Processes</h1>
+<p>Legato components can provide APIs for other components to use. It can be done conventionally by writing a C header file to define the interface. But a C header file can only be used by components also written in C, and functions defined in a C header file can only be implemented by C code. C compilers won't generate IPC code, so unless you write your own, your API implementation and its user are forced to run inside the same process. This can severely limit the re-usability of components and can force using a programming language not ideally suited to a particular problem domain or developer skill-set. It also leaves inter-process communication (IPC) to be implemented manually, which can be time-consuming and fraught with bugs and security issues.</p>
+<p>Now that we've got our app going, we are going to modify it and show the same application but with the components running in two separate processes. With each component run in own process this allows the capability to restart each process individually.</p>
+<p>For the two components to talk to each other in different processes then an API must be used to facilitate the communication. The Legato Application Framework provides <a class="el" href="ccodingStdsMain.html">coding standards</a> and an <a class="el" href="apiFiles.html">overview on how to create APIs</a>.</p>
+<h2><a class="anchor" id="getStartedIPC_1app2proc_api"></a>
+Create API</h2>
+<p>First we need to remove the <code>server.h</code> file and it's references as it's not needed for this communication.</p>
+<pre class="fragment">$ rm printServer/server.h
+</pre><p>Remove <code>#include</code> <code>server.h</code> from both <code>printClient/client.c</code> and <code>printServer/server.c</code>.</p>
+<p>Remove the <code>cflags</code> section in the printClient/Component.cdef as it's not needed anymore.</p>
+<p>Next, we create the API file, the API file should be created in the root of your project.</p>
+<pre class="fragment">$ vim printer.api
+</pre><p>In your API you first want to <a class="el" href="apiFilesSyntax.html#apiFilesSyntax_typesDefine">DEFINE</a> the constant as a maximum length for a the message string. Defining this as a constant means that it can used later in the <code>client.c</code> or <code>server.c</code> by referencing <code>PRINTER_MESSAGE_LEN</code> (API Name_Define Name).</p>
+<p>Next you need to define your function <code>Print()</code> and accept the message to pass to the function in <code>server.c</code>.</p>
+<p><a class="el" href="apiFilesSyntax.html#apiFilesSyntax_function">Define the function</a> for the API:</p>
+<p>In the <code>printer.api</code> file: </p><pre class="fragment"><div class="line">DEFINE MESSAGE_LEN = 100;</div><div class="line"> </div><div class="line">FUNCTION Print</div><div class="line">(</div><div class="line">    <span class="keywordtype">string</span> message[MESSAGE_LEN] IN <span class="comment">///&lt; message to be printed into the log, max 100 characters.</span></div><div class="line"><span class="comment"></span>);</div></pre><!-- fragment --><p>Next, we need to tell the printServer component that it is providing the API:</p>
+<p>Add the following to <code>printServer/Component.cdef</code> before the <code>sources:</code> section.</p>
+<pre class="fragment"><div class="line">provides:</div><div class="line">{</div><div class="line">    api:</div><div class="line">    {</div><div class="line">        printer = printer.api</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>This declares that the component named <code>printServer</code> (the name of the directory is the name of the component) provides a service called <code>printer</code> accessed using the API defined in <code>printer.api</code> while the source code can be found in the file <code>server.c</code>.</p>
+<dl class="section note"><dt>Note</dt><dd>The source code file name extension is used to identify the programming language it's written in. (e.g.; The file <b>server.c</b> determines that this is c code)</dd></dl>
+<p>The function <code>printer_Print()</code> can be called when a client binds to our <code>printer</code> <code>service</code> calls the API function <code>printer_Print()</code>.</p>
+<p>The format of the generated function names is: </p><pre class="fragment">&lt;interface-name&gt;_&lt;api-function-name&gt;
+</pre><p>The <code>interface-name</code> is the name given to the provided interface. In our example, it's the name <code>printer</code> before the <code>=</code> in the line <code>printer</code> <code>=</code> <code>printer.api</code>. <code>printer</code> in this case is optional and doesn't have to be the same name as the <code></code>.api file. We chose to implement it that way as it follows the server and client para-dime we use for this tutorial.</p>
+<dl class="section note"><dt>Note</dt><dd>If you forget to implement a service function on the server or if you give it the wrong name, the link stage will fail and complain that the symbol is unresolved. You'll know you missed a function, and you'll be able to see what the correct name of the function should be.</dd></dl>
+<h2><a class="anchor" id="getStartedIPC_1app2proc_app"></a>
+Use API in printClient</h2>
+<p>Next we need to tell the client app that it requires the printer API to be able to print messages.</p>
+<p>Add the following to <code>printClient/Component.cdef</code> before the <code>sources:</code> section.</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    api:</div><div class="line">    {</div><div class="line">        printer = printer.api</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>Next, we have the printServer Component providing an API and the printClient Component using that API. It's time to create our app and have them start communicating.</p>
+<p>Your directory structure should contain the following files now: </p><pre class="fragment">helloIPC/
+├── helloApp.adef
+├── printClient/
+│   ├── client.c
+│   └── Component.cdef
+├── printer.api
+└── printServer/
+    ├── Component.cdef
+    └── server.c
+</pre><h2><a class="anchor" id="getStartedIPC_1app2proc_createApp"></a>
+Create App</h2>
+<p>We are now ready to create the <code></code>.adef and bundle the two components into one app. This is very similar to what we did before except that we will be defining two executables and two processes.</p>
+<p>Start by creating the <code></code>.adef </p><pre class="fragment">$ vim helloIPC1.adef
+</pre><p>Add the following into the <code>helloIPC1.adef:</code> </p><pre class="fragment"><div class="line">executables:</div><div class="line">{</div><div class="line">    helloClient = ( printClient )</div><div class="line">    helloServer = ( printServer )</div><div class="line">}</div><div class="line"> </div><div class="line">processes:</div><div class="line">{</div><div class="line">    run:</div><div class="line">    {</div><div class="line">        ( helloClient )</div><div class="line">        ( helloServer )</div><div class="line">    }</div><div class="line">}</div><div class="line"> </div><div class="line">bindings:</div><div class="line">{</div><div class="line">    helloClient.printClient.printer -&gt; helloServer.printServer.printer</div><div class="line">}</div></pre><!-- fragment --><p>The bindings: section is used to connect the client interface to the server interface so that the client can call the printer functions on the server. When the app is built it will generate the system information for the client so that it knows that it is allowed to use the print function in the server exe. Because both exe's are within one app, they have unrestricted permissions to each other. <code>mkapp</code> will check that all client connections are satisfied.</p>
+<p>We are now ready to bundle up the application and install it on your target:</p>
+<h2><a class="anchor" id="getStartedIPC_1app2proc_installApp"></a>
+Install App</h2>
+<pre class="fragment">$ mkapp -t wp85 helloIPC1.adef
+$ app install helloIPC1.wp85.update 192.168.2.2
+</pre><p>Doing a <code>logread</code> on the client you should be able to see the following logs:</p>
+<pre class="fragment">&lt;date&gt; &lt;target&gt; user.info Legato:  INFO | supervisor[1235]/supervisor T=main | proc.c proc_Start() 1394 | Starting process 'helloClient' with pid 11185
+&lt;date&gt; &lt;target&gt; user.info Legato:  INFO | supervisor[11185]/supervisor T=main | proc.c proc_Start() 1359 | Execing 'helloClient'
+&lt;date&gt; &lt;target&gt; user.info Legato:  INFO | supervisor[1235]/supervisor T=main | proc.c proc_Start() 1394 | Starting process 'helloServer' with pid 11186
+&lt;date&gt; &lt;target&gt; user.info Legato:  INFO | supervisor[11186]/supervisor T=main | proc.c proc_Start() 1359 | Execing 'helloServer'
+&lt;date&gt; &lt;target&gt; user.info Legato:  INFO | helloClient[11185]/printClient T=main | client.c _printClient_COMPONENT_INIT() 6 | Asking server to print 'Hello, world!'
+&lt;date&gt; &lt;target&gt; user.info Legato:  INFO | helloServer[11186]/printServer T=main | server.c printer_Print() 6 | ******** Client says 'Hello, world!'
+</pre><p>You can see that each of the components start their own process independently from each other, and each process has it's own PID. This allows you to kill one process if needed and not the other. This also allows you to monitor specific processes or if your app has a critical process set up a <a class="el" href="conceptsRuntimeArch.html#conceptsRuntimeArch_watchdog">Watchdog</a> monitor on it.</p>
+<p>The benefits of providing components their own interface are:</p><ul>
+<li>process isolation, while each component is in the same sandbox but code is isolated.</li>
+<li>complexity of the app internals are hidden, the components can still talk to each other but are bundled as one app.</li>
+</ul>
+<p>Depending on your security model you may want to separate your Components into separate apps. Currently the client and the server have access to the entire environment. If this server needs to keep files or resources protected from the client, there is no mechanism to do that.</p>
+<h1><a class="anchor" id="getStartedIPC_2apps"></a>
+Migrating to 2 Applications</h1>
+<p>We can set up the printServer and printClient as two separate apps, and have them completely secure from each other and only able to talk to each other through the defined APIs. This is the most secure method of creating apps and we recommend it when you are creating your own applications within the Legato Application Framework.</p>
+<p>All the code that we did in the previous step is reusable, we will just need to modify the <code></code>.adef files to create 2 separate applications, one for the print client and one for the print server.</p>
+<h2><a class="anchor" id="getStartedIPC_2app_PCadef"></a>
+Create helloClient.adef</h2>
+<p>First, remove <code>helloApp.adef</code> </p><pre class="fragment">$ rm helloApp.adef
+</pre><p>Next, create <code>helloClient.adef</code> </p>
+<pre class="fragment">$ vim helloClient.adef
+</pre><p><code>helloClient.adef</code> should contain the following sections:</p>
+<pre class="fragment"><div class="line">executables:</div><div class="line">{</div><div class="line">    helloClient = ( printClient )</div><div class="line">}</div><div class="line"> </div><div class="line">processes:</div><div class="line">{</div><div class="line">    run:</div><div class="line">    {</div><div class="line">        ( helloClient )</div><div class="line">    }</div><div class="line">}</div><div class="line"> </div><div class="line">bindings:</div><div class="line">{</div><div class="line">    helloClient.printClient.printer -&gt; helloServer.printer</div><div class="line">}</div></pre><!-- fragment --><p>Binding the interfaces also sets up permissions so that you are explicitly allowing the client app to communicate with the server app.</p>
+<h2><a class="anchor" id="getStartedIPC_2app_PSadef"></a>
+Create helloServer.adef</h2>
+<p>Next, we need to create a <code></code>.adef for <code>helloServer</code>.</p>
+<p>In the <code>helloServer.adef</code> we need to add an <b>extern</b> section. The extern section publishes the API as public and will let other apps connect to it.</p>
+<pre class="fragment">$ vim helloServer.adef
+</pre><p><code>helloServer.adef</code> should contain the following sections: </p><pre class="fragment"><div class="line">executables:</div><div class="line">{</div><div class="line">    helloServer = ( printServer )</div><div class="line">}</div><div class="line"> </div><div class="line">processes:</div><div class="line">{</div><div class="line">    run:</div><div class="line">    {</div><div class="line">        ( helloServer )</div><div class="line">    }</div><div class="line">}</div><div class="line"> </div><div class="line"><span class="keyword">extern</span>:</div><div class="line">{</div><div class="line">    printer = helloServer.printServer.printer</div><div class="line">}</div></pre><!-- fragment --><p>The extern section publishes the printer api external to itself so that other applications can use it. In the <code></code>.adef for the helloClient app we already bound the app to this external interface.</p>
+<h2><a class="anchor" id="getStartedIPC_2app_apps"></a>
+Create Apps</h2>
+<p>We are now ready to bundle up the applications and install them on your target. Because we have two application we need to run <code>mkapp</code> on them separately and create two application bundles for your target.</p>
+<p>First, we will create the server app: </p><pre class="fragment">$ mkapp -t wp85 helloServer.adef
+$ app install helloServer.wp85.update 192.168.2.2
+</pre><p>Connect through ssh and enter <code>logread</code> on the target you should be able to see the following logs:</p>
+<pre class="fragment">&lt;date&gt; &lt;target&gt; user.info Legato:  INFO | supervisor[1235]/supervisor T=main | proc.c proc_Start() 1394 | Starting process 'helloServer' with pid 13079
+&lt;date&gt; &lt;target&gt; user.info Legato:  INFO | supervisor[13079]/supervisor T=main | proc.c proc_Start() 1359 | Execing 'helloServer'
+</pre><p>Now we repeat the process with <code>helloClient</code>.</p>
+<pre class="fragment">$ mkapp -t wp85 helloClient.adef
+$ app install helloClient.wp85.update 192.168.2.2
+</pre><pre class="fragment">&lt;date&gt; &lt;target&gt; user.info Legato:  INFO | supervisor[1235]/supervisor T=main | proc.c proc_Start() 1394 | Starting process 'helloClient' with pid 13469
+&lt;date&gt; &lt;target&gt; user.info Legato:  INFO | supervisor[13469]/supervisor T=main | proc.c proc_Start() 1359 | Execing 'helloClient'
+&lt;date&gt; &lt;target&gt; user.info Legato:  INFO | helloClient[13469]/printClient T=main | client.c _printClient_COMPONENT_INIT() 6 | Asking server to print 'Hello, world!'
+&lt;date&gt; &lt;target&gt; user.info Legato:  INFO | helloServer[13079]/printServer T=main | server.c printer_Print() 6 | ******** Client says 'Hello, world!'
+</pre><p>You can see that the Client successfully starts and then sends a message to the <code>helloServer</code> app and asks it to print 'Hello, world!'</p>
+<p>You have now successfully explored the multiple ways to create components and bundle them within executables and applications as well as the benefits for each method. This should get you started in designing and creating your own apps.</p>
+<p>You can also refer to our <a class="el" href="howToMain.html">How To</a> section for other tutorials and our <a class="el" href="sampleApps.html">Sample Apps</a> section for examples of howToMain to include platform services and other Legato Application Framework features within your own applications. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

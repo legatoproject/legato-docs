@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Base64 encoding/decoding API  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.04.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src=""></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Legato Documentation</h2>
+<nav class="secondary">
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Base64 encoding/decoding API </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><a class="el" href="le__base64_8h.html">API Reference</a></p>
+<hr/>
+<p>This module implements encoding binary data into base64-encoded string, which contains only the characters that belong to the base64 alphabet: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=</p>
+<p>This allows to convert the binary data into a form that is suitable for serialization into a text file (without conflicting with special characters and markup elements), and for sending through the channels that do not support arbitrary binary data.</p>
+<p>Encoded data is about 33% larger in size than the original binary data. Padding characters '=' are added to the end of the encoded string, to make the string length multiple of 4.</p>
+<p>The following sample performs base64 encoding and decoding:</p>
+<pre class="fragment"><div class="line"><span class="keywordtype">void</span> Base64EncodeDecodeExample</div><div class="line">(</div><div class="line">    <span class="keywordtype">void</span></div><div class="line">)</div><div class="line">{</div><div class="line">    <span class="comment">// allocate 4-byte array and fill it with some data</span></div><div class="line">    uint8_t binBuf[4] = {1, 2, 3, 4};</div><div class="line">    <span class="comment">// use macro to calculate the encoded size, add 1 byte for terminating 0</span></div><div class="line">    <span class="keywordtype">char</span> encodedBuf[<a class="code" href="le__base64_8h.html#a5d8b713bb8d5b999849f1aae97b4f2cd">LE_BASE64_ENCODED_SIZE</a>(<span class="keyword">sizeof</span>(binBuf)) + 1];</div><div class="line">    uint8_t decodedBuf[4] = {0};</div><div class="line"> </div><div class="line">    <span class="comment">// perform encoding</span></div><div class="line">    <span class="keywordtype">size_t</span> len = <span class="keyword">sizeof</span>(encodedBuf);</div><div class="line">    <a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> result = <a class="code" href="le__base64_8h.html#a7f27e5b15a4b63d7c3ebbde7d5abd583">le_base64_Encode</a>(binBuf,</div><div class="line">                                          <span class="keyword">sizeof</span>(binBuf),</div><div class="line">                                          encodedBuf,</div><div class="line">                                          &amp;len);</div><div class="line">    <span class="keywordflow">if</span> (<a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86ca5066a4bcec691c6b67843b8f79656422">LE_OK</a> != result)</div><div class="line">    {</div><div class="line">        <a class="code" href="le__log_8h.html#a353590f91b3143a7ba3a416ae5a50c3d">LE_ERROR</a>(<span class="stringliteral">"Error %d encoding data!"</span>, result);</div><div class="line">    }</div><div class="line">    <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"Encoded string [%s] size %zd"</span>, encodedBuf, len);</div><div class="line"> </div><div class="line">    <span class="comment">// perform decoding</span></div><div class="line">    len = <span class="keyword">sizeof</span>(decodedBuf);</div><div class="line">    result = <a class="code" href="le__base64_8h.html#a8572fb6bafce8cf4a394b4f8ba628a5a">le_base64_Decode</a>(encodedBuf,</div><div class="line">                              strlen(encodedBuf),</div><div class="line">                              decodedBuf,</div><div class="line">                              &amp;len);</div><div class="line">    <span class="keywordflow">if</span> (<a class="code" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86ca5066a4bcec691c6b67843b8f79656422">LE_OK</a> != result)</div><div class="line">    {</div><div class="line">        <a class="code" href="le__log_8h.html#a353590f91b3143a7ba3a416ae5a50c3d">LE_ERROR</a>(<span class="stringliteral">"Error %d decoding data!"</span>, result);</div><div class="line">    }</div><div class="line">    <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"Decoded length: %zd"</span>, len);</div><div class="line">    <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"Decoded data: %u %u %u %u"</span>,</div><div class="line">             decodedBuf[0], decodedBuf[1],</div><div class="line">             decodedBuf[2], decodedBuf[3]);</div><div class="line">}</div></pre><!-- fragment --><hr/>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_temp_interface.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.04.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src=""></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Legato Documentation</h2>
+<nav class="secondary">
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#typedef-members">Typedefs</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_temp_interface.h File Reference</h1> </div>
+</div><div class="contents">
+<div class="textblock"><code>#include "legato.h"</code><br/>
+<code>#include "le_temp_common.h"</code><br/>
+</div>
+<p><a href="le__temp__interface_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:adc14a215ef9491284beedb34fbcbc5bc"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__temp__interface_8h.html#adc14a215ef9491284beedb34fbcbc5bc">le_temp_DisconnectHandler_t</a>) (void *)</td></tr>
+<tr class="separator:adc14a215ef9491284beedb34fbcbc5bc"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ab23dc70f44db65ba89d1fcf63dee8296"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__temp__interface_8h.html#ab23dc70f44db65ba89d1fcf63dee8296">le_temp_ConnectService</a> (void)</td></tr>
+<tr class="separator:ab23dc70f44db65ba89d1fcf63dee8296"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa5816b09a5e20f6240817ed64acb4859"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__temp__interface_8h.html#aa5816b09a5e20f6240817ed64acb4859">le_temp_TryConnectService</a> (void)</td></tr>
+<tr class="separator:aa5816b09a5e20f6240817ed64acb4859"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af7dd7f92adbc2189f5f9cce95a2ae8a0"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__temp__interface_8h.html#af7dd7f92adbc2189f5f9cce95a2ae8a0">le_temp_SetServerDisconnectHandler</a> (<a class="el" href="le__temp__interface_8h.html#adc14a215ef9491284beedb34fbcbc5bc">le_temp_DisconnectHandler_t</a> disconnectHandler, void *contextPtr)</td></tr>
+<tr class="separator:af7dd7f92adbc2189f5f9cce95a2ae8a0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a74eab024a7cb29e99488686f26be2595"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__temp__interface_8h.html#a74eab024a7cb29e99488686f26be2595">le_temp_DisconnectService</a> (void)</td></tr>
+<tr class="separator:a74eab024a7cb29e99488686f26be2595"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ada76ad1c0461ddb13608a942ce0b0912"><td align="right" class="memItemLeft" valign="top">le_temp_SensorRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__temp__interface_8h.html#ada76ad1c0461ddb13608a942ce0b0912">le_temp_Request</a> (const char *LE_NONNULL sensorName)</td></tr>
+<tr class="separator:ada76ad1c0461ddb13608a942ce0b0912"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae1b2c13a5255d08cfd8bce454c8835f0"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__temp__interface_8h.html#ae1b2c13a5255d08cfd8bce454c8835f0">le_temp_GetSensorName</a> (le_temp_SensorRef_t sensor, char *sensorName, size_t sensorNameSize)</td></tr>
+<tr class="separator:ae1b2c13a5255d08cfd8bce454c8835f0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:abc1a33392c1d2e54ba3ebaa544fbee81"><td align="right" class="memItemLeft" valign="top">le_temp_ThresholdEventHandlerRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__temp__interface_8h.html#abc1a33392c1d2e54ba3ebaa544fbee81">le_temp_AddThresholdEventHandler</a> (le_temp_ThresholdEventHandlerFunc_t ThresholdEventHandlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:abc1a33392c1d2e54ba3ebaa544fbee81"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:abf25171bdae0707002309e00cd619af5"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__temp__interface_8h.html#abf25171bdae0707002309e00cd619af5">le_temp_RemoveThresholdEventHandler</a> (le_temp_ThresholdEventHandlerRef_t handlerRef)</td></tr>
+<tr class="separator:abf25171bdae0707002309e00cd619af5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6e5739c1ae59cd2971182ebfba3d79b2"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__temp__interface_8h.html#a6e5739c1ae59cd2971182ebfba3d79b2">le_temp_GetTemperature</a> (le_temp_SensorRef_t sensor, int32_t *temperaturePtr)</td></tr>
+<tr class="separator:a6e5739c1ae59cd2971182ebfba3d79b2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9e21aa40ec65dda6976d0e5fc7b2aec4"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__temp__interface_8h.html#a9e21aa40ec65dda6976d0e5fc7b2aec4">le_temp_SetThreshold</a> (le_temp_SensorRef_t sensor, const char *LE_NONNULL threshold, int32_t temperature)</td></tr>
+<tr class="separator:a9e21aa40ec65dda6976d0e5fc7b2aec4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac53124401d9333a14d62f938fc640272"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__temp__interface_8h.html#ac53124401d9333a14d62f938fc640272">le_temp_GetThreshold</a> (le_temp_SensorRef_t sensor, const char *LE_NONNULL threshold, int32_t *temperaturePtr)</td></tr>
+<tr class="separator:ac53124401d9333a14d62f938fc640272"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a192ea069d86b65935a4269bc804987a5"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__temp__interface_8h.html#a192ea069d86b65935a4269bc804987a5">le_temp_StartMonitoring</a> (void)</td></tr>
+<tr class="separator:a192ea069d86b65935a4269bc804987a5"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato <a class="el" href="c_temp.html">Temperature Monitoring</a> include file.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="adc14a215ef9491284beedb34fbcbc5bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc14a215ef9491284beedb34fbcbc5bc">◆ </a></span>le_temp_DisconnectHandler_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_temp_DisconnectHandler_t) (void *)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Type for handler called when a server disconnects. </p>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="abc1a33392c1d2e54ba3ebaa544fbee81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc1a33392c1d2e54ba3ebaa544fbee81">◆ </a></span>le_temp_AddThresholdEventHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_temp_ThresholdEventHandlerRef_t le_temp_AddThresholdEventHandler </td>
+<td>(</td>
+<td class="paramtype">le_temp_ThresholdEventHandlerFunc_t </td>
+<td class="paramname"><em>ThresholdEventHandlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Add handler function for EVENT 'le_temp_ThresholdEvent'</p>
+<p>This event provides information on the threshold reached. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ThresholdEventHandlerPtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ab23dc70f44db65ba89d1fcf63dee8296"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab23dc70f44db65ba89d1fcf63dee8296">◆ </a></span>le_temp_ConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_temp_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="a74eab024a7cb29e99488686f26be2595"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74eab024a7cb29e99488686f26be2595">◆ </a></span>le_temp_DisconnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_temp_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="ae1b2c13a5255d08cfd8bce454c8835f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1b2c13a5255d08cfd8bce454c8835f0">◆ </a></span>le_temp_GetSensorName()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_temp_GetSensorName </td>
+<td>(</td>
+<td class="paramtype">le_temp_SensorRef_t </td>
+<td class="paramname"><em>sensor</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>sensorName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>sensorNameSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Retrieve the temperature sensor's name from its reference.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_OVERFLOW The name length exceed the maximum length.</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">sensor</td><td>Temperature sensor reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">sensorName</td><td>Name of the temperature sensor. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">sensorNameSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a6e5739c1ae59cd2971182ebfba3d79b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e5739c1ae59cd2971182ebfba3d79b2">◆ </a></span>le_temp_GetTemperature()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_temp_GetTemperature </td>
+<td>(</td>
+<td class="paramtype">le_temp_SensorRef_t </td>
+<td class="paramname"><em>sensor</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t * </td>
+<td class="paramname"><em>temperaturePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the temperature in degree Celsius.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_FAULT The function failed to get the temperature. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">sensor</td><td>Temperature sensor reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">temperaturePtr</td><td>Temperature in degree Celsius. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ac53124401d9333a14d62f938fc640272"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac53124401d9333a14d62f938fc640272">◆ </a></span>le_temp_GetThreshold()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_temp_GetThreshold </td>
+<td>(</td>
+<td class="paramtype">le_temp_SensorRef_t </td>
+<td class="paramname"><em>sensor</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>threshold</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t * </td>
+<td class="paramname"><em>temperaturePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the temperature threshold in degree Celsius.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">sensor</td><td>Temperature sensor reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">threshold</td><td>Name of the threshold. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">temperaturePtr</td><td>Temperature threshold in degree Celsius. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="abf25171bdae0707002309e00cd619af5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf25171bdae0707002309e00cd619af5">◆ </a></span>le_temp_RemoveThresholdEventHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_temp_RemoveThresholdEventHandler </td>
+<td>(</td>
+<td class="paramtype">le_temp_ThresholdEventHandlerRef_t </td>
+<td class="paramname"><em>handlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove handler function for EVENT 'le_temp_ThresholdEvent' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ada76ad1c0461ddb13608a942ce0b0912"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada76ad1c0461ddb13608a942ce0b0912">◆ </a></span>le_temp_Request()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_temp_SensorRef_t le_temp_Request </td>
+<td>(</td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>sensorName</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference type for a temperature sensor. Handler for Temperature event. Reference type used by Add/Remove functions for EVENT 'le_temp_ThresholdEvent' Request a temperature sensor reference.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>Reference to the temperature sensor.</li>
+<li>NULL when the requested sensor is not supported. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">sensorName</td><td>Name of the temperature sensor. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="af7dd7f92adbc2189f5f9cce95a2ae8a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7dd7f92adbc2189f5f9cce95a2ae8a0">◆ </a></span>le_temp_SetServerDisconnectHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void le_temp_SetServerDisconnectHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__temp__interface_8h.html#adc14a215ef9491284beedb34fbcbc5bc">le_temp_DisconnectHandler_t</a> </td>
+<td class="paramname"><em>disconnectHandler</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set handler called when server disconnection is detected.</p>
+<p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
+</div>
+</div>
+<a id="a9e21aa40ec65dda6976d0e5fc7b2aec4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e21aa40ec65dda6976d0e5fc7b2aec4">◆ </a></span>le_temp_SetThreshold()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_temp_SetThreshold </td>
+<td>(</td>
+<td class="paramtype">le_temp_SensorRef_t </td>
+<td class="paramname"><em>sensor</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>threshold</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t </td>
+<td class="paramname"><em>temperature</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the temperature threshold in degree Celsius. This function does not start the temperature monitoring, call <a class="el" href="le__temp__interface_8h.html#a192ea069d86b65935a4269bc804987a5">le_temp_StartMonitoring()</a> to start it.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">sensor</td><td>Temperature sensor reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">threshold</td><td>Name of the threshold. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">temperature</td><td>Temperature threshold in degree Celsius. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a192ea069d86b65935a4269bc804987a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a192ea069d86b65935a4269bc804987a5">◆ </a></span>le_temp_StartMonitoring()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_temp_StartMonitoring </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Start the temperature monitoring with the temperature thresholds configured by <a class="el" href="le__temp__interface_8h.html#a9e21aa40ec65dda6976d0e5fc7b2aec4">le_temp_SetThreshold()</a> function.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_BAD_PARAMETER There is a mismatch with the configured threshold values.</li>
+<li>LE_FAULT The function failed to apply the thresholds. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a id="aa5816b09a5e20f6240817ed64acb4859"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5816b09a5e20f6240817ed64acb4859">◆ </a></span>le_temp_TryConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_temp_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

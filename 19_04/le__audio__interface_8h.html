@@ -1,0 +1,2620 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_audio_interface.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.04.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src=""></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Legato Documentation</h2>
+<nav class="secondary">
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#typedef-members">Typedefs</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_audio_interface.h File Reference</h1> </div>
+</div><div class="contents">
+<div class="textblock"><code>#include "legato.h"</code><br/>
+<code>#include "le_audio_common.h"</code><br/>
+</div>
+<p><a href="le__audio__interface_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ab774b695ab74b16aab5b9fd8ee10e708"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#ab774b695ab74b16aab5b9fd8ee10e708">le_audio_DisconnectHandler_t</a>) (void *)</td></tr>
+<tr class="separator:ab774b695ab74b16aab5b9fd8ee10e708"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a65a8844fc6d2e1b7ed78f33bef1b9990"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a65a8844fc6d2e1b7ed78f33bef1b9990">le_audio_ConnectService</a> (void)</td></tr>
+<tr class="separator:a65a8844fc6d2e1b7ed78f33bef1b9990"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af95c8ecd8562696e322707e207c393dc"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#af95c8ecd8562696e322707e207c393dc">le_audio_TryConnectService</a> (void)</td></tr>
+<tr class="separator:af95c8ecd8562696e322707e207c393dc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae418320230dc2c5a051add21c909137e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#ae418320230dc2c5a051add21c909137e">le_audio_SetServerDisconnectHandler</a> (<a class="el" href="le__audio__interface_8h.html#ab774b695ab74b16aab5b9fd8ee10e708">le_audio_DisconnectHandler_t</a> disconnectHandler, void *contextPtr)</td></tr>
+<tr class="separator:ae418320230dc2c5a051add21c909137e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af72a5338e5fd23d17e0274e43642c77a"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#af72a5338e5fd23d17e0274e43642c77a">le_audio_DisconnectService</a> (void)</td></tr>
+<tr class="separator:af72a5338e5fd23d17e0274e43642c77a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a74f1ef979329f6c2bd56ea622f4d05b2"><td align="right" class="memItemLeft" valign="top">le_audio_StreamRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a74f1ef979329f6c2bd56ea622f4d05b2">le_audio_OpenMic</a> (void)</td></tr>
+<tr class="separator:a74f1ef979329f6c2bd56ea622f4d05b2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5c19afce44021c4abf6193707317f8de"><td align="right" class="memItemLeft" valign="top">le_audio_StreamRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a5c19afce44021c4abf6193707317f8de">le_audio_OpenSpeaker</a> (void)</td></tr>
+<tr class="separator:a5c19afce44021c4abf6193707317f8de"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:acd8be89289067cef9441a8ed1d891146"><td align="right" class="memItemLeft" valign="top">le_audio_StreamRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#acd8be89289067cef9441a8ed1d891146">le_audio_OpenUsbRx</a> (void)</td></tr>
+<tr class="separator:acd8be89289067cef9441a8ed1d891146"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:adb38f11ac78cf99160c19f69b4db0eb8"><td align="right" class="memItemLeft" valign="top">le_audio_StreamRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#adb38f11ac78cf99160c19f69b4db0eb8">le_audio_OpenUsbTx</a> (void)</td></tr>
+<tr class="separator:adb38f11ac78cf99160c19f69b4db0eb8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa0f0b5fcab8844c67a936d88fa050cf5"><td align="right" class="memItemLeft" valign="top">le_audio_StreamRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#aa0f0b5fcab8844c67a936d88fa050cf5">le_audio_OpenPcmRx</a> (uint32_t timeslot)</td></tr>
+<tr class="separator:aa0f0b5fcab8844c67a936d88fa050cf5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5e112543e8525775aa670dc71b320766"><td align="right" class="memItemLeft" valign="top">le_audio_StreamRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a5e112543e8525775aa670dc71b320766">le_audio_OpenPcmTx</a> (uint32_t timeslot)</td></tr>
+<tr class="separator:a5e112543e8525775aa670dc71b320766"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9e7d0042c4f422554eb10d64535608e5"><td align="right" class="memItemLeft" valign="top">le_audio_StreamRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a9e7d0042c4f422554eb10d64535608e5">le_audio_OpenI2sRx</a> (le_audio_I2SChannel_t mode)</td></tr>
+<tr class="separator:a9e7d0042c4f422554eb10d64535608e5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2633c1368adf60e342d7cadbbfa6278b"><td align="right" class="memItemLeft" valign="top">le_audio_StreamRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a2633c1368adf60e342d7cadbbfa6278b">le_audio_OpenI2sTx</a> (le_audio_I2SChannel_t mode)</td></tr>
+<tr class="separator:a2633c1368adf60e342d7cadbbfa6278b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a92eb1b6377f50ff07b97c5b8546f01ec"><td align="right" class="memItemLeft" valign="top">le_audio_StreamRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a92eb1b6377f50ff07b97c5b8546f01ec">le_audio_OpenPlayer</a> (void)</td></tr>
+<tr class="separator:a92eb1b6377f50ff07b97c5b8546f01ec"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aeac35459c36748a4471b6d45f1ebeb24"><td align="right" class="memItemLeft" valign="top">le_audio_StreamRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#aeac35459c36748a4471b6d45f1ebeb24">le_audio_OpenRecorder</a> (void)</td></tr>
+<tr class="separator:aeac35459c36748a4471b6d45f1ebeb24"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae3ed568ba4d2763ea77e17e77b20ff02"><td align="right" class="memItemLeft" valign="top">le_audio_StreamRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#ae3ed568ba4d2763ea77e17e77b20ff02">le_audio_OpenModemVoiceRx</a> (void)</td></tr>
+<tr class="separator:ae3ed568ba4d2763ea77e17e77b20ff02"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad745f008bb04873c817da7af3daf783d"><td align="right" class="memItemLeft" valign="top">le_audio_StreamRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#ad745f008bb04873c817da7af3daf783d">le_audio_OpenModemVoiceTx</a> (void)</td></tr>
+<tr class="separator:ad745f008bb04873c817da7af3daf783d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9996ac9d23333cf8219f28b69cac4f81"><td align="right" class="memItemLeft" valign="top">le_audio_MediaHandlerRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a9996ac9d23333cf8219f28b69cac4f81">le_audio_AddMediaHandler</a> (le_audio_StreamRef_t streamRef, le_audio_MediaHandlerFunc_t handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:a9996ac9d23333cf8219f28b69cac4f81"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:acaf0935a282d66c9cbe64df4d8a03ddf"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#acaf0935a282d66c9cbe64df4d8a03ddf">le_audio_RemoveMediaHandler</a> (le_audio_MediaHandlerRef_t handlerRef)</td></tr>
+<tr class="separator:acaf0935a282d66c9cbe64df4d8a03ddf"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:abafeb411da7b1a14b2d5777fc1d3e394"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#abafeb411da7b1a14b2d5777fc1d3e394">le_audio_Close</a> (le_audio_StreamRef_t streamRef)</td></tr>
+<tr class="separator:abafeb411da7b1a14b2d5777fc1d3e394"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a65f11540e6af03a3494b6b9be76ba5fc"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a65f11540e6af03a3494b6b9be76ba5fc">le_audio_SetGain</a> (le_audio_StreamRef_t streamRef, int32_t gain)</td></tr>
+<tr class="separator:a65f11540e6af03a3494b6b9be76ba5fc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a365dede3aa7e895755f5812d89368f9f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a365dede3aa7e895755f5812d89368f9f">le_audio_GetGain</a> (le_audio_StreamRef_t streamRef, int32_t *gainPtr)</td></tr>
+<tr class="separator:a365dede3aa7e895755f5812d89368f9f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a147e97c49dbc003f63df78f97d5fca32"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a147e97c49dbc003f63df78f97d5fca32">le_audio_Mute</a> (le_audio_StreamRef_t streamRef)</td></tr>
+<tr class="separator:a147e97c49dbc003f63df78f97d5fca32"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:adad24547293481964039efe56bc14e2b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#adad24547293481964039efe56bc14e2b">le_audio_Unmute</a> (le_audio_StreamRef_t streamRef)</td></tr>
+<tr class="separator:adad24547293481964039efe56bc14e2b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a570aaf85086f00aca592acfbaaa237be"><td align="right" class="memItemLeft" valign="top">le_audio_ConnectorRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a570aaf85086f00aca592acfbaaa237be">le_audio_CreateConnector</a> (void)</td></tr>
+<tr class="separator:a570aaf85086f00aca592acfbaaa237be"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3f40b13ff980040503927f59bb3e86a9"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a3f40b13ff980040503927f59bb3e86a9">le_audio_DeleteConnector</a> (le_audio_ConnectorRef_t connectorRef)</td></tr>
+<tr class="separator:a3f40b13ff980040503927f59bb3e86a9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a338df65b2fb1ae0140d86880adbcf0de"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a338df65b2fb1ae0140d86880adbcf0de">le_audio_Connect</a> (le_audio_ConnectorRef_t connectorRef, le_audio_StreamRef_t streamRef)</td></tr>
+<tr class="separator:a338df65b2fb1ae0140d86880adbcf0de"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6b88df9301038375701e4c15a4c8aaf0"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a6b88df9301038375701e4c15a4c8aaf0">le_audio_Disconnect</a> (le_audio_ConnectorRef_t connectorRef, le_audio_StreamRef_t streamRef)</td></tr>
+<tr class="separator:a6b88df9301038375701e4c15a4c8aaf0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6e65275798c0db287fc1b540cdc0db8b"><td align="right" class="memItemLeft" valign="top">le_audio_DtmfDetectorHandlerRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a6e65275798c0db287fc1b540cdc0db8b">le_audio_AddDtmfDetectorHandler</a> (le_audio_StreamRef_t streamRef, le_audio_DtmfDetectorHandlerFunc_t handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:a6e65275798c0db287fc1b540cdc0db8b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aeb1d43fbf2a741fbd91172a90666247d"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#aeb1d43fbf2a741fbd91172a90666247d">le_audio_RemoveDtmfDetectorHandler</a> (le_audio_DtmfDetectorHandlerRef_t handlerRef)</td></tr>
+<tr class="separator:aeb1d43fbf2a741fbd91172a90666247d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac1af23c9febed1378620370a6961ce89"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#ac1af23c9febed1378620370a6961ce89">le_audio_EnableNoiseSuppressor</a> (le_audio_StreamRef_t streamRef)</td></tr>
+<tr class="separator:ac1af23c9febed1378620370a6961ce89"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3d3d52002fe6bf95271db1a16b1573f7"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a3d3d52002fe6bf95271db1a16b1573f7">le_audio_DisableNoiseSuppressor</a> (le_audio_StreamRef_t streamRef)</td></tr>
+<tr class="separator:a3d3d52002fe6bf95271db1a16b1573f7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a54df27e4ab733a1f50e17903d7a9ae88"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a54df27e4ab733a1f50e17903d7a9ae88">le_audio_EnableEchoCanceller</a> (le_audio_StreamRef_t streamRef)</td></tr>
+<tr class="separator:a54df27e4ab733a1f50e17903d7a9ae88"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:afc413a569b1e7eb877a3f98c2b52b05d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#afc413a569b1e7eb877a3f98c2b52b05d">le_audio_DisableEchoCanceller</a> (le_audio_StreamRef_t streamRef)</td></tr>
+<tr class="separator:afc413a569b1e7eb877a3f98c2b52b05d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad121a74079c620ec9195d03523a704a4"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#ad121a74079c620ec9195d03523a704a4">le_audio_IsNoiseSuppressorEnabled</a> (le_audio_StreamRef_t streamRef, bool *statusPtr)</td></tr>
+<tr class="separator:ad121a74079c620ec9195d03523a704a4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af1e969b6b4bd81654a3e854219c8e9db"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#af1e969b6b4bd81654a3e854219c8e9db">le_audio_IsEchoCancellerEnabled</a> (le_audio_StreamRef_t streamRef, bool *statusPtr)</td></tr>
+<tr class="separator:af1e969b6b4bd81654a3e854219c8e9db"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:adedb3bb7e372fffa406f001bdb353e96"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#adedb3bb7e372fffa406f001bdb353e96">le_audio_EnableFirFilter</a> (le_audio_StreamRef_t streamRef)</td></tr>
+<tr class="separator:adedb3bb7e372fffa406f001bdb353e96"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae5be820a7a167c307d64ea2c15b0abb4"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#ae5be820a7a167c307d64ea2c15b0abb4">le_audio_DisableFirFilter</a> (le_audio_StreamRef_t streamRef)</td></tr>
+<tr class="separator:ae5be820a7a167c307d64ea2c15b0abb4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad5eee81a34cc554ddef8a29c64bcd498"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#ad5eee81a34cc554ddef8a29c64bcd498">le_audio_EnableIirFilter</a> (le_audio_StreamRef_t streamRef)</td></tr>
+<tr class="separator:ad5eee81a34cc554ddef8a29c64bcd498"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af7958cd14c83c479ede6ae7a7953461b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#af7958cd14c83c479ede6ae7a7953461b">le_audio_DisableIirFilter</a> (le_audio_StreamRef_t streamRef)</td></tr>
+<tr class="separator:af7958cd14c83c479ede6ae7a7953461b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac4978d8d632269730c67e27d66fba818"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#ac4978d8d632269730c67e27d66fba818">le_audio_EnableAutomaticGainControl</a> (le_audio_StreamRef_t streamRef)</td></tr>
+<tr class="separator:ac4978d8d632269730c67e27d66fba818"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a364cdff3d9fa7b2ced00ef92c0c4e9f7"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a364cdff3d9fa7b2ced00ef92c0c4e9f7">le_audio_DisableAutomaticGainControl</a> (le_audio_StreamRef_t streamRef)</td></tr>
+<tr class="separator:a364cdff3d9fa7b2ced00ef92c0c4e9f7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8526af295a5fe34cbb79f6b6d5c99f6a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a8526af295a5fe34cbb79f6b6d5c99f6a">le_audio_SetProfile</a> (uint32_t profile)</td></tr>
+<tr class="separator:a8526af295a5fe34cbb79f6b6d5c99f6a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a26d5e3e4e52a821a18c4dd6a84b2fa23"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a26d5e3e4e52a821a18c4dd6a84b2fa23">le_audio_GetProfile</a> (uint32_t *profilePtr)</td></tr>
+<tr class="separator:a26d5e3e4e52a821a18c4dd6a84b2fa23"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae7c9d76c5377ad5fae13b24477827f45"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#ae7c9d76c5377ad5fae13b24477827f45">le_audio_SetPcmSamplingRate</a> (uint32_t rate)</td></tr>
+<tr class="separator:ae7c9d76c5377ad5fae13b24477827f45"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab3678e77c8d69f248cd339042bd824cc"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#ab3678e77c8d69f248cd339042bd824cc">le_audio_SetPcmSamplingResolution</a> (uint32_t bitsPerSample)</td></tr>
+<tr class="separator:ab3678e77c8d69f248cd339042bd824cc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a593682daa95aec349e48144f5b46c658"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a593682daa95aec349e48144f5b46c658">le_audio_SetPcmCompanding</a> (le_audio_Companding_t companding)</td></tr>
+<tr class="separator:a593682daa95aec349e48144f5b46c658"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a36779982278d3f965286582f38917247"><td align="right" class="memItemLeft" valign="top">uint32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a36779982278d3f965286582f38917247">le_audio_GetPcmSamplingRate</a> (void)</td></tr>
+<tr class="separator:a36779982278d3f965286582f38917247"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a70fbe5e1ae02033e89ad04bbf1ed2b39"><td align="right" class="memItemLeft" valign="top">uint32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a70fbe5e1ae02033e89ad04bbf1ed2b39">le_audio_GetPcmSamplingResolution</a> (void)</td></tr>
+<tr class="separator:a70fbe5e1ae02033e89ad04bbf1ed2b39"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aab9a28f3c695b90f8b9f622eb401f6cf"><td align="right" class="memItemLeft" valign="top">le_audio_Companding_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#aab9a28f3c695b90f8b9f622eb401f6cf">le_audio_GetPcmCompanding</a> (void)</td></tr>
+<tr class="separator:aab9a28f3c695b90f8b9f622eb401f6cf"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3f87e41dabde5bfb1170df527c380b9d"><td align="right" class="memItemLeft" valign="top">uint32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a3f87e41dabde5bfb1170df527c380b9d">le_audio_GetDefaultPcmTimeSlot</a> (void)</td></tr>
+<tr class="separator:a3f87e41dabde5bfb1170df527c380b9d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0b727e15c16fffe10cdd5d345b297194"><td align="right" class="memItemLeft" valign="top">le_audio_I2SChannel_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a0b727e15c16fffe10cdd5d345b297194">le_audio_GetDefaultI2sMode</a> (void)</td></tr>
+<tr class="separator:a0b727e15c16fffe10cdd5d345b297194"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aea2c5d0b394cfab87503639c534300c9"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#aea2c5d0b394cfab87503639c534300c9">le_audio_PlayFile</a> (le_audio_StreamRef_t streamRef, int fd)</td></tr>
+<tr class="separator:aea2c5d0b394cfab87503639c534300c9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:afd37d59ab8207338da197554f49d7ff0"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#afd37d59ab8207338da197554f49d7ff0">le_audio_PlaySamples</a> (le_audio_StreamRef_t streamRef, int fd)</td></tr>
+<tr class="separator:afd37d59ab8207338da197554f49d7ff0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a393a26f6cff7fe05c1813fcafeef50f3"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a393a26f6cff7fe05c1813fcafeef50f3">le_audio_RecordFile</a> (le_audio_StreamRef_t streamRef, int fd)</td></tr>
+<tr class="separator:a393a26f6cff7fe05c1813fcafeef50f3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9c55a59849afcbb2ccef88cd4265782e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a9c55a59849afcbb2ccef88cd4265782e">le_audio_GetSamples</a> (le_audio_StreamRef_t streamRef, int fd)</td></tr>
+<tr class="separator:a9c55a59849afcbb2ccef88cd4265782e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4aebc6e8cdc4389c375e93418823af71"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a4aebc6e8cdc4389c375e93418823af71">le_audio_Stop</a> (le_audio_StreamRef_t streamRef)</td></tr>
+<tr class="separator:a4aebc6e8cdc4389c375e93418823af71"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a80343ca9800ab80f818bbe0361bb226b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a80343ca9800ab80f818bbe0361bb226b">le_audio_Pause</a> (le_audio_StreamRef_t streamRef)</td></tr>
+<tr class="separator:a80343ca9800ab80f818bbe0361bb226b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7a5855b7be77110eaca1846b17792597"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a7a5855b7be77110eaca1846b17792597">le_audio_Flush</a> (le_audio_StreamRef_t streamRef)</td></tr>
+<tr class="separator:a7a5855b7be77110eaca1846b17792597"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1dba6618bd8fc9835869ee72c3fbd850"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a1dba6618bd8fc9835869ee72c3fbd850">le_audio_Resume</a> (le_audio_StreamRef_t streamRef)</td></tr>
+<tr class="separator:a1dba6618bd8fc9835869ee72c3fbd850"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aae7db9f0933119fb5a61162722b3274a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#aae7db9f0933119fb5a61162722b3274a">le_audio_SetSamplePcmChannelNumber</a> (le_audio_StreamRef_t streamRef, uint32_t nbChannel)</td></tr>
+<tr class="separator:aae7db9f0933119fb5a61162722b3274a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a40bf3633c3050a7526a100562edc97f9"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a40bf3633c3050a7526a100562edc97f9">le_audio_GetSamplePcmChannelNumber</a> (le_audio_StreamRef_t streamRef, uint32_t *nbChannelPtr)</td></tr>
+<tr class="separator:a40bf3633c3050a7526a100562edc97f9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a04adfcc0e8f5796eca53c31cd5dd6528"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a04adfcc0e8f5796eca53c31cd5dd6528">le_audio_SetSamplePcmSamplingRate</a> (le_audio_StreamRef_t streamRef, uint32_t rate)</td></tr>
+<tr class="separator:a04adfcc0e8f5796eca53c31cd5dd6528"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a80fb48632ce8f638cea4a3e5d333d66f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a80fb48632ce8f638cea4a3e5d333d66f">le_audio_GetSamplePcmSamplingRate</a> (le_audio_StreamRef_t streamRef, uint32_t *ratePtr)</td></tr>
+<tr class="separator:a80fb48632ce8f638cea4a3e5d333d66f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aae37b46c13f76144dd94c48bfe94998b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#aae37b46c13f76144dd94c48bfe94998b">le_audio_SetSamplePcmSamplingResolution</a> (le_audio_StreamRef_t streamRef, uint32_t samplingRes)</td></tr>
+<tr class="separator:aae37b46c13f76144dd94c48bfe94998b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a70b9f904ce225aad4fb80b8b24a1f92a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a70b9f904ce225aad4fb80b8b24a1f92a">le_audio_GetSamplePcmSamplingResolution</a> (le_audio_StreamRef_t streamRef, uint32_t *samplingResPtr)</td></tr>
+<tr class="separator:a70b9f904ce225aad4fb80b8b24a1f92a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab9d062cda7010c3c97e0dfdc52f7470e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#ab9d062cda7010c3c97e0dfdc52f7470e">le_audio_PlayDtmf</a> (le_audio_StreamRef_t streamRef, const char *LE_NONNULL dtmf, uint32_t duration, uint32_t pause)</td></tr>
+<tr class="separator:ab9d062cda7010c3c97e0dfdc52f7470e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af3b056db8153ce71fb3ca1124edecd13"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#af3b056db8153ce71fb3ca1124edecd13">le_audio_PlaySignallingDtmf</a> (const char *LE_NONNULL dtmf, uint32_t duration, uint32_t pause)</td></tr>
+<tr class="separator:af3b056db8153ce71fb3ca1124edecd13"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aead87ec16d317bb4e4a8e7e9ea37550b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#aead87ec16d317bb4e4a8e7e9ea37550b">le_audio_SetEncodingFormat</a> (le_audio_StreamRef_t streamRef, le_audio_Format_t format)</td></tr>
+<tr class="separator:aead87ec16d317bb4e4a8e7e9ea37550b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a62e45a441a7d7ab5b7d20b41849331a2"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a62e45a441a7d7ab5b7d20b41849331a2">le_audio_GetEncodingFormat</a> (le_audio_StreamRef_t streamRef, le_audio_Format_t *formatPtr)</td></tr>
+<tr class="separator:a62e45a441a7d7ab5b7d20b41849331a2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a18600cdbd3995c9c2ca24f9b15991f7d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a18600cdbd3995c9c2ca24f9b15991f7d">le_audio_SetSampleAmrMode</a> (le_audio_StreamRef_t streamRef, le_audio_AmrMode_t mode)</td></tr>
+<tr class="separator:a18600cdbd3995c9c2ca24f9b15991f7d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa293e15d41f7c1c384053947b5a4dbea"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#aa293e15d41f7c1c384053947b5a4dbea">le_audio_GetSampleAmrMode</a> (le_audio_StreamRef_t streamRef, le_audio_AmrMode_t *modePtr)</td></tr>
+<tr class="separator:aa293e15d41f7c1c384053947b5a4dbea"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5932f51fb1398cc2442c8bb765ca4071"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a5932f51fb1398cc2442c8bb765ca4071">le_audio_SetSampleAmrDtx</a> (le_audio_StreamRef_t streamRef, bool dtx)</td></tr>
+<tr class="separator:a5932f51fb1398cc2442c8bb765ca4071"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab26d633ee83aed52dae838cb9d721f87"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#ab26d633ee83aed52dae838cb9d721f87">le_audio_GetSampleAmrDtx</a> (le_audio_StreamRef_t streamRef, bool *dtxPtr)</td></tr>
+<tr class="separator:ab26d633ee83aed52dae838cb9d721f87"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a64e7ebe776e83d10deb42415e185d68a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a64e7ebe776e83d10deb42415e185d68a">le_audio_SetPlatformSpecificGain</a> (const char *LE_NONNULL gainName, int32_t gain)</td></tr>
+<tr class="separator:a64e7ebe776e83d10deb42415e185d68a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1a499212a6640dd8760133883836f482"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a1a499212a6640dd8760133883836f482">le_audio_GetPlatformSpecificGain</a> (const char *LE_NONNULL gainName, int32_t *gainPtr)</td></tr>
+<tr class="separator:a1a499212a6640dd8760133883836f482"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a308738761d21ebfb504c0f490ecefec4"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#a308738761d21ebfb504c0f490ecefec4">le_audio_MuteCallWaitingTone</a> (void)</td></tr>
+<tr class="separator:a308738761d21ebfb504c0f490ecefec4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab2cee945145242ebe446ab66eac9aa91"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__audio__interface_8h.html#ab2cee945145242ebe446ab66eac9aa91">le_audio_UnmuteCallWaitingTone</a> (void)</td></tr>
+<tr class="separator:ab2cee945145242ebe446ab66eac9aa91"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato <a class="el" href="c_audio.html">Audio</a> include file.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="ab774b695ab74b16aab5b9fd8ee10e708"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab774b695ab74b16aab5b9fd8ee10e708">◆ </a></span>le_audio_DisconnectHandler_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_audio_DisconnectHandler_t) (void *)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Type for handler called when a server disconnects. </p>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a6e65275798c0db287fc1b540cdc0db8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e65275798c0db287fc1b540cdc0db8b">◆ </a></span>le_audio_AddDtmfDetectorHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_audio_DtmfDetectorHandlerRef_t le_audio_AddDtmfDetectorHandler </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_audio_DtmfDetectorHandlerFunc_t </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Add handler function for EVENT 'le_audio_DtmfDetector'</p>
+<p>This event provides information on DTMF decoding for the specified streamRef </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a9996ac9d23333cf8219f28b69cac4f81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9996ac9d23333cf8219f28b69cac4f81">◆ </a></span>le_audio_AddMediaHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_audio_MediaHandlerRef_t le_audio_AddMediaHandler </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_audio_MediaHandlerFunc_t </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Add handler function for EVENT 'le_audio_Media'</p>
+<p>This event provides information on player / recorder stream events. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>The audio stream reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="abafeb411da7b1a14b2d5777fc1d3e394"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abafeb411da7b1a14b2d5777fc1d3e394">◆ </a></span>le_audio_Close()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_audio_Close </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Close an audio stream. If several users own the stream reference, the interface closes only after the last user closes the audio stream.</p>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad reference into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a338df65b2fb1ae0140d86880adbcf0de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a338df65b2fb1ae0140d86880adbcf0de">◆ </a></span>le_audio_Connect()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_Connect </td>
+<td>(</td>
+<td class="paramtype">le_audio_ConnectorRef_t </td>
+<td class="paramname"><em>connectorRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect an audio stream to the connector reference.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_BUSY There are insufficient DSP resources available. </dd>
+<dd>
+LE_UNAVAILABLE The audio service initialization failed. </dd>
+<dd>
+LE_BAD_PARAMETER The connector and/or the audio stream references are invalid. </dd>
+<dd>
+LE_FAULT On any other failure. </dd>
+<dd>
+LE_OK The function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad reference into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">connectorRef</td><td>Connector reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a65a8844fc6d2e1b7ed78f33bef1b9990"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65a8844fc6d2e1b7ed78f33bef1b9990">◆ </a></span>le_audio_ConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_audio_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="a570aaf85086f00aca592acfbaaa237be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a570aaf85086f00aca592acfbaaa237be">◆ </a></span>le_audio_CreateConnector()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_audio_ConnectorRef_t le_audio_CreateConnector </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Create an audio connector reference.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the audio connector, NULL if the function fails. </dd></dl>
+</div>
+</div>
+<a id="a3f40b13ff980040503927f59bb3e86a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f40b13ff980040503927f59bb3e86a9">◆ </a></span>le_audio_DeleteConnector()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_audio_DeleteConnector </td>
+<td>(</td>
+<td class="paramtype">le_audio_ConnectorRef_t </td>
+<td class="paramname"><em>connectorRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Delete an audio connector reference.</p>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad reference into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">connectorRef</td><td>Connector reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a364cdff3d9fa7b2ced00ef92c0c4e9f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a364cdff3d9fa7b2ced00ef92c0c4e9f7">◆ </a></span>le_audio_DisableAutomaticGainControl()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_DisableAutomaticGainControl </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to disable the automatic gain control on the selected audio stream.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_BAD_PARAMETER The audio stream reference is invalid. </dd>
+<dd>
+LE_UNAVAILABLE The audio service initialization failed. </dd>
+<dd>
+LE_FAULT On any other failure. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid audio stream reference is given. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="afc413a569b1e7eb877a3f98c2b52b05d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc413a569b1e7eb877a3f98c2b52b05d">◆ </a></span>le_audio_DisableEchoCanceller()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_DisableEchoCanceller </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to disable the Echo Canceller.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_BAD_PARAMETER The audio stream reference is invalid. </dd>
+<dd>
+LE_UNAVAILABLE The audio service initialization failed. </dd>
+<dd>
+LE_FAULT On any other failure. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid audio stream reference is given. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ae5be820a7a167c307d64ea2c15b0abb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5be820a7a167c307d64ea2c15b0abb4">◆ </a></span>le_audio_DisableFirFilter()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_DisableFirFilter </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to disable the FIR (Finite Impulse Response) filter.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_BAD_PARAMETER The audio stream reference is invalid. </dd>
+<dd>
+LE_UNAVAILABLE The audio service initialization failed. </dd>
+<dd>
+LE_FAULT On any other failure. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid audio stream reference is given. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="af7958cd14c83c479ede6ae7a7953461b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7958cd14c83c479ede6ae7a7953461b">◆ </a></span>le_audio_DisableIirFilter()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_DisableIirFilter </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to disable the IIR (Infinite Impulse Response) filter.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_BAD_PARAMETER The audio stream reference is invalid. </dd>
+<dd>
+LE_UNAVAILABLE The audio service initialization failed. </dd>
+<dd>
+LE_FAULT On any other failure. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid audio stream reference is given. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a3d3d52002fe6bf95271db1a16b1573f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d3d52002fe6bf95271db1a16b1573f7">◆ </a></span>le_audio_DisableNoiseSuppressor()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_DisableNoiseSuppressor </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to disable the Noise Suppressor.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_BAD_PARAMETER The audio stream reference is invalid. </dd>
+<dd>
+LE_UNAVAILABLE The audio service initialization failed. </dd>
+<dd>
+LE_FAULT On any other failure. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid audio stream reference is given. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a6b88df9301038375701e4c15a4c8aaf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b88df9301038375701e4c15a4c8aaf0">◆ </a></span>le_audio_Disconnect()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_audio_Disconnect </td>
+<td>(</td>
+<td class="paramtype">le_audio_ConnectorRef_t </td>
+<td class="paramname"><em>connectorRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect an audio stream from the connector reference.</p>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad reference into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">connectorRef</td><td>Connector reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="af72a5338e5fd23d17e0274e43642c77a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af72a5338e5fd23d17e0274e43642c77a">◆ </a></span>le_audio_DisconnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_audio_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="ac4978d8d632269730c67e27d66fba818"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4978d8d632269730c67e27d66fba818">◆ </a></span>le_audio_EnableAutomaticGainControl()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_EnableAutomaticGainControl </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to enable the automatic gain control on the selected audio stream.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_BAD_PARAMETER The audio stream reference is invalid. </dd>
+<dd>
+LE_UNAVAILABLE The audio service initialization failed. </dd>
+<dd>
+LE_FAULT On any other failure. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid audio stream reference is given. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a54df27e4ab733a1f50e17903d7a9ae88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54df27e4ab733a1f50e17903d7a9ae88">◆ </a></span>le_audio_EnableEchoCanceller()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_EnableEchoCanceller </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to enable the Echo Canceller.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_BAD_PARAMETER The audio stream reference is invalid. </dd>
+<dd>
+LE_UNAVAILABLE The audio service initialization failed. </dd>
+<dd>
+LE_FAULT On any other failure. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid audio stream reference is given. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="adedb3bb7e372fffa406f001bdb353e96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adedb3bb7e372fffa406f001bdb353e96">◆ </a></span>le_audio_EnableFirFilter()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_EnableFirFilter </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to enable the FIR (Finite Impulse Response) filter.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_BAD_PARAMETER The audio stream reference is invalid. </dd>
+<dd>
+LE_UNAVAILABLE The audio service initialization failed. </dd>
+<dd>
+LE_FAULT On any other failure. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid audio stream reference is given. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ad5eee81a34cc554ddef8a29c64bcd498"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5eee81a34cc554ddef8a29c64bcd498">◆ </a></span>le_audio_EnableIirFilter()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_EnableIirFilter </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to enable the IIR (Infinite Impulse Response) filter.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_BAD_PARAMETER The audio stream reference is invalid. </dd>
+<dd>
+LE_UNAVAILABLE The audio service initialization failed. </dd>
+<dd>
+LE_FAULT On any other failure. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid audio stream reference is given. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ac1af23c9febed1378620370a6961ce89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1af23c9febed1378620370a6961ce89">◆ </a></span>le_audio_EnableNoiseSuppressor()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_EnableNoiseSuppressor </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to enable the Noise Suppressor.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_BAD_PARAMETER The audio stream reference is invalid. </dd>
+<dd>
+LE_UNAVAILABLE The audio service initialization failed. </dd>
+<dd>
+LE_FAULT On any other failure. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid audio stream reference is given. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a7a5855b7be77110eaca1846b17792597"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a5855b7be77110eaca1846b17792597">◆ </a></span>le_audio_Flush()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_Flush </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Flush the remaining audio samples.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_OK Function succeeded. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a0b727e15c16fffe10cdd5d345b297194"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b727e15c16fffe10cdd5d345b297194">◆ </a></span>le_audio_GetDefaultI2sMode()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_audio_I2SChannel_t le_audio_GetDefaultI2sMode </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the default I2S channel mode used on the current platform.</p>
+<dl class="section return"><dt>Returns</dt><dd>the I2S channel mode. </dd></dl>
+</div>
+</div>
+<a id="a3f87e41dabde5bfb1170df527c380b9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f87e41dabde5bfb1170df527c380b9d">◆ </a></span>le_audio_GetDefaultPcmTimeSlot()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">uint32_t le_audio_GetDefaultPcmTimeSlot </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the default PCM time slot used on the current platform.</p>
+<dl class="section return"><dt>Returns</dt><dd>the time slot number. </dd></dl>
+</div>
+</div>
+<a id="a62e45a441a7d7ab5b7d20b41849331a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62e45a441a7d7ab5b7d20b41849331a2">◆ </a></span>le_audio_GetEncodingFormat()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_GetEncodingFormat </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_audio_Format_t * </td>
+<td class="paramname"><em>formatPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the encoding format of a recorder stream.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>A client calling this function with either an invalid streamRef or null out pointer parameter will be killed and the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">formatPtr</td><td>Encoding format. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a365dede3aa7e895755f5812d89368f9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a365dede3aa7e895755f5812d89368f9f">◆ </a></span>le_audio_GetGain()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_GetGain </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t * </td>
+<td class="paramname"><em>gainPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the Gain value of an input or output stream.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_BAD_PARAMETER The audio stream reference is invalid. </dd>
+<dd>
+LE_UNAVAILABLE The audio service initialization failed. </dd>
+<dd>
+LE_FAULT On any other failure. </dd>
+<dd>
+LE_OK The function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad reference into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">gainPtr</td><td>Gain value (specific to the platform) </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aab9a28f3c695b90f8b9f622eb401f6cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab9a28f3c695b90f8b9f622eb401f6cf">◆ </a></span>le_audio_GetPcmCompanding()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_audio_Companding_t le_audio_GetPcmCompanding </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Retrieve the PCM Companding.</p>
+<dl class="section return"><dt>Returns</dt><dd>The PCM companding. </dd></dl>
+</div>
+</div>
+<a id="a36779982278d3f965286582f38917247"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36779982278d3f965286582f38917247">◆ </a></span>le_audio_GetPcmSamplingRate()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">uint32_t le_audio_GetPcmSamplingRate </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Retrieve the PCM Sampling Rate.</p>
+<dl class="section return"><dt>Returns</dt><dd>The sampling rate in Hz. </dd></dl>
+</div>
+</div>
+<a id="a70fbe5e1ae02033e89ad04bbf1ed2b39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70fbe5e1ae02033e89ad04bbf1ed2b39">◆ </a></span>le_audio_GetPcmSamplingResolution()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">uint32_t le_audio_GetPcmSamplingResolution </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Retrieve the PCM Sampling Resolution.</p>
+<dl class="section return"><dt>Returns</dt><dd>The sampling resolution (bits/sample). </dd></dl>
+</div>
+</div>
+<a id="a1a499212a6640dd8760133883836f482"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a499212a6640dd8760133883836f482">◆ </a></span>le_audio_GetPlatformSpecificGain()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_GetPlatformSpecificGain </td>
+<td>(</td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>gainName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t * </td>
+<td class="paramname"><em>gainPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the value of a platform specific gain in the audio subsystem.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_BAD_PARAMETER The pointer to the name of the platform specific gain is invalid. </dd>
+<dd>
+LE_NOT_FOUND The specified gain's name is not recognized in your audio subsystem. </dd>
+<dd>
+LE_UNAVAILABLE The audio service initialization failed. </dd>
+<dd>
+LE_FAULT On any other failure. </dd>
+<dd>
+LE_OK The function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad reference into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Ensure to check the names of supported gains for your specific platform. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">gainName</td><td>Name of the platform specific gain. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">gainPtr</td><td>The gain value (specific to the platform) </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a26d5e3e4e52a821a18c4dd6a84b2fa23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26d5e3e4e52a821a18c4dd6a84b2fa23">◆ </a></span>le_audio_GetProfile()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_GetProfile </td>
+<td>(</td>
+<td class="paramtype">uint32_t * </td>
+<td class="paramname"><em>profilePtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to get the audio profile in use.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_UNAVAILABLE On audio service initialization failure. </dd>
+<dd>
+LE_FAULT On any other failure. </dd>
+<dd>
+LE_OK Function succeeded. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">profilePtr</td><td>Audio profile. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ab26d633ee83aed52dae838cb9d721f87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab26d633ee83aed52dae838cb9d721f87">◆ </a></span>le_audio_GetSampleAmrDtx()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_GetSampleAmrDtx </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">bool * </td>
+<td class="paramname"><em>dtxPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the AMR discontinuous transmission (DTX) value.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad reference into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">dtxPtr</td><td>DTX. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aa293e15d41f7c1c384053947b5a4dbea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa293e15d41f7c1c384053947b5a4dbea">◆ </a></span>le_audio_GetSampleAmrMode()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_GetSampleAmrMode </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_audio_AmrMode_t * </td>
+<td class="paramname"><em>modePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the AMR mode for AMR encoder.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>A client calling this function with a null out pointer parameter will be killed and the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">modePtr</td><td>AMR mode. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a40bf3633c3050a7526a100562edc97f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40bf3633c3050a7526a100562edc97f9">◆ </a></span>le_audio_GetSamplePcmChannelNumber()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_GetSamplePcmChannelNumber </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t * </td>
+<td class="paramname"><em>nbChannelPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the channel number of a PCM sample.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_OK Function succeeded. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">nbChannelPtr</td><td>Channel Number </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a80fb48632ce8f638cea4a3e5d333d66f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80fb48632ce8f638cea4a3e5d333d66f">◆ </a></span>le_audio_GetSamplePcmSamplingRate()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_GetSamplePcmSamplingRate </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t * </td>
+<td class="paramname"><em>ratePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the PCM sampling rate of a PCM sample.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_OK Function succeeded. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">ratePtr</td><td>PCM sampling Rate. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a70b9f904ce225aad4fb80b8b24a1f92a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70b9f904ce225aad4fb80b8b24a1f92a">◆ </a></span>le_audio_GetSamplePcmSamplingResolution()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_GetSamplePcmSamplingResolution </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t * </td>
+<td class="paramname"><em>samplingResPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the sampling resolution (in bits per sample) of a PCM sample.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_OK Function succeeded. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">samplingResPtr</td><td>Sampling resolution (in bits per sample). </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a9c55a59849afcbb2ccef88cd4265782e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c55a59849afcbb2ccef88cd4265782e">◆ </a></span>le_audio_GetSamples()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_GetSamples </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>fd</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get samples from a recorder stream.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_BUSY Recorder interface is already active. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The fd is closed by the API. To use again the same pipe, the fd parameter can be set to LE_AUDIO_NO_FD: in this case, the previous file descriptor is re-used. If the fd as to be kept on its side, the application should duplicate the fd (e.g., using dup() ) before calling the API.</dd>
+<dd>
+When using this function recording must be stopped by calling <a class="el" href="le__audio__interface_8h.html#a4aebc6e8cdc4389c375e93418823af71">le_audio_Stop()</a>. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>File descriptor. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="af1e969b6b4bd81654a3e854219c8e9db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1e969b6b4bd81654a3e854219c8e9db">◆ </a></span>le_audio_IsEchoCancellerEnabled()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_IsEchoCancellerEnabled </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">bool * </td>
+<td class="paramname"><em>statusPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to get the status of Echo Canceller.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_BAD_PARAMETER The audio stream reference is invalid. </dd>
+<dd>
+LE_UNAVAILABLE The audio service initialization failed. </dd>
+<dd>
+LE_FAULT On any other failure. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid audio stream reference is given. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">statusPtr</td><td>true if EC is enabled, false otherwise </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ad121a74079c620ec9195d03523a704a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad121a74079c620ec9195d03523a704a4">◆ </a></span>le_audio_IsNoiseSuppressorEnabled()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_IsNoiseSuppressorEnabled </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">bool * </td>
+<td class="paramname"><em>statusPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to get the status of Noise Suppressor.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_BAD_PARAMETER The audio stream reference is invalid. </dd>
+<dd>
+LE_UNAVAILABLE The audio service initialization failed. </dd>
+<dd>
+LE_FAULT On any other failure. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid audio stream reference is given. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">statusPtr</td><td>true if NS is enabled, false otherwise </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a147e97c49dbc003f63df78f97d5fca32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a147e97c49dbc003f63df78f97d5fca32">◆ </a></span>le_audio_Mute()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_Mute </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Mute an audio stream.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_BAD_PARAMETER The audio stream reference is invalid. </dd>
+<dd>
+LE_UNAVAILABLE The audio service initialization failed. </dd>
+<dd>
+LE_FAULT On any other failure. </dd>
+<dd>
+LE_OK The function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad reference into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a308738761d21ebfb504c0f490ecefec4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a308738761d21ebfb504c0f490ecefec4">◆ </a></span>le_audio_MuteCallWaitingTone()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_MuteCallWaitingTone </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Mute the Call Waiting Tone.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_UNAVAILABLE On audio service initialization failure. </dd>
+<dd>
+LE_FAULT On any other failure. </dd>
+<dd>
+LE_OK The function succeeded. </dd></dl>
+</div>
+</div>
+<a id="a9e7d0042c4f422554eb10d64535608e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e7d0042c4f422554eb10d64535608e5">◆ </a></span>le_audio_OpenI2sRx()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_audio_StreamRef_t le_audio_OpenI2sRx </td>
+<td>(</td>
+<td class="paramtype">le_audio_I2SChannel_t </td>
+<td class="paramname"><em>mode</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Open the received audio stream of the I2S interface.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the input audio stream, NULL if the function fails. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>The channel mode. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a2633c1368adf60e342d7cadbbfa6278b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2633c1368adf60e342d7cadbbfa6278b">◆ </a></span>le_audio_OpenI2sTx()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_audio_StreamRef_t le_audio_OpenI2sTx </td>
+<td>(</td>
+<td class="paramtype">le_audio_I2SChannel_t </td>
+<td class="paramname"><em>mode</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Open the transmitted audio stream of the I2S interface.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the output audio stream, NULL if the function fails. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>The channel mode. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a74f1ef979329f6c2bd56ea622f4d05b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74f1ef979329f6c2bd56ea622f4d05b2">◆ </a></span>le_audio_OpenMic()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_audio_StreamRef_t le_audio_OpenMic </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Audio recording/playback events. Companding. I2S channel mode. Audio format. AMR mode. Reference type for Audio Stream Reference type for Audio Connector Handler for audio stream event. Reference type used by Add/Remove functions for EVENT 'le_audio_Media' Handler for DTMF decoding. Reference type used by Add/Remove functions for EVENT 'le_audio_DtmfDetector' Open the Microphone.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the input audio stream, NULL if the function fails. </dd></dl>
+</div>
+</div>
+<a id="ae3ed568ba4d2763ea77e17e77b20ff02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3ed568ba4d2763ea77e17e77b20ff02">◆ </a></span>le_audio_OpenModemVoiceRx()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_audio_StreamRef_t le_audio_OpenModemVoiceRx </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Open the received audio stream of a voice call.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the input audio stream, NULL if the function fails. </dd></dl>
+</div>
+</div>
+<a id="ad745f008bb04873c817da7af3daf783d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad745f008bb04873c817da7af3daf783d">◆ </a></span>le_audio_OpenModemVoiceTx()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_audio_StreamRef_t le_audio_OpenModemVoiceTx </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Open the transmitted audio stream of a voice call.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the output audio stream, NULL if the function fails. </dd></dl>
+</div>
+</div>
+<a id="aa0f0b5fcab8844c67a936d88fa050cf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0f0b5fcab8844c67a936d88fa050cf5">◆ </a></span>le_audio_OpenPcmRx()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_audio_StreamRef_t le_audio_OpenPcmRx </td>
+<td>(</td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>timeslot</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Open the received audio stream of the PCM interface.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the input audio stream, NULL if the function fails. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">timeslot</td><td>The time slot number. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a5e112543e8525775aa670dc71b320766"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e112543e8525775aa670dc71b320766">◆ </a></span>le_audio_OpenPcmTx()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_audio_StreamRef_t le_audio_OpenPcmTx </td>
+<td>(</td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>timeslot</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Open the transmitted audio stream of the PCM interface.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the output audio stream, NULL if the function fails. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">timeslot</td><td>The time slot number. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a92eb1b6377f50ff07b97c5b8546f01ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92eb1b6377f50ff07b97c5b8546f01ec">◆ </a></span>le_audio_OpenPlayer()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_audio_StreamRef_t le_audio_OpenPlayer </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Open the audio stream for playback.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the audio stream, NULL if the function fails. </dd></dl>
+</div>
+</div>
+<a id="aeac35459c36748a4471b6d45f1ebeb24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeac35459c36748a4471b6d45f1ebeb24">◆ </a></span>le_audio_OpenRecorder()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_audio_StreamRef_t le_audio_OpenRecorder </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Open the audio stream for recording.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the audio stream, NULL if the function fails. </dd></dl>
+</div>
+</div>
+<a id="a5c19afce44021c4abf6193707317f8de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c19afce44021c4abf6193707317f8de">◆ </a></span>le_audio_OpenSpeaker()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_audio_StreamRef_t le_audio_OpenSpeaker </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Open the Speaker-phone.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the output audio stream, NULL if the function fails. </dd></dl>
+</div>
+</div>
+<a id="acd8be89289067cef9441a8ed1d891146"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd8be89289067cef9441a8ed1d891146">◆ </a></span>le_audio_OpenUsbRx()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_audio_StreamRef_t le_audio_OpenUsbRx </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Open the received audio stream of an USB audio class.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the input audio stream, NULL if the function fails. </dd></dl>
+</div>
+</div>
+<a id="adb38f11ac78cf99160c19f69b4db0eb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb38f11ac78cf99160c19f69b4db0eb8">◆ </a></span>le_audio_OpenUsbTx()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_audio_StreamRef_t le_audio_OpenUsbTx </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Open the transmitted audio stream of an USB audio class.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the output audio stream, NULL if the function fails. </dd></dl>
+</div>
+</div>
+<a id="a80343ca9800ab80f818bbe0361bb226b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80343ca9800ab80f818bbe0361bb226b">◆ </a></span>le_audio_Pause()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_Pause </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Pause the file playback/recording.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_OK Function succeeded. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ab9d062cda7010c3c97e0dfdc52f7470e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9d062cda7010c3c97e0dfdc52f7470e">◆ </a></span>le_audio_PlayDtmf()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_PlayDtmf </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>dtmf</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>duration</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>pause</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to play a DTMF on a specific audio stream.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FORMAT_ERROR The DTMF characters are invalid. </dd>
+<dd>
+LE_BUSY A DTMF playback is already in progress on the playback stream. </dd>
+<dd>
+LE_FAULT Function failed to play the DTMFs. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the DTMF string is too long (max DTMF_MAX_LEN characters), it is a fatal error, the function will not return. </dd>
+<dd>
+The process exits, if an invalid audio stream reference is given. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">dtmf</td><td>DTMFs to play. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">duration</td><td>DTMF duration in milliseconds. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">pause</td><td>Pause duration between tones in milliseconds. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aea2c5d0b394cfab87503639c534300c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea2c5d0b394cfab87503639c534300c9">◆ </a></span>le_audio_PlayFile()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_PlayFile </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>fd</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Play a file on a playback stream.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_BAD_PARAMETER Audio stream reference is invalid. </dd>
+<dd>
+LE_BUSY Player interface is already active. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>The fd is closed by the IPC API. To play again the same file, the fd parameter can be set to LE_AUDIO_NO_FD: in this case, the previous file descriptor is re-used. If the fd as to be kept on its side, the application should duplicate the fd (e.g., using dup() ) before calling the API. In that case, the old and new file descriptors refer to the same open file description and thus share file offset. So, once a playback has reached the end of file, the application must reset the file offset by using lseek on the duplicated descriptor to start the playback from the beginning.</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li>Calling le_audio_PlayFile(&lt;..&gt;, LE_AUDIO_NO_FD) will rewind the audio file to the beginning when a playback is already in progress. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>File descriptor. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="afd37d59ab8207338da197554f49d7ff0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd37d59ab8207338da197554f49d7ff0">◆ </a></span>le_audio_PlaySamples()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_PlaySamples </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>fd</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Initiate a playback sending samples over a pipe.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_BUSY Player interface is already active. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The fd is closed by the IPC API. To use again the same pipe, the fd parameter can be set to LE_AUDIO_NO_FD: in this case, the previous file descriptor is re-used. If the fd as to be kept on its side, the application should duplicate the fd (e.g., using dup() ) before calling the API.</dd>
+<dd>
+Playback initiated with this function must be stopped by calling <a class="el" href="le__audio__interface_8h.html#a4aebc6e8cdc4389c375e93418823af71">le_audio_Stop()</a>. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>File descriptor. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="af3b056db8153ce71fb3ca1124edecd13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3b056db8153ce71fb3ca1124edecd13">◆ </a></span>le_audio_PlaySignallingDtmf()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_PlaySignallingDtmf </td>
+<td>(</td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>dtmf</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>duration</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>pause</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to ask to the Mobile Network to generate on the remote audio party the DTMFs.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FORMAT_ERROR The DTMF characters are invalid. </dd>
+<dd>
+LE_BUSY A DTMF playback is in progress. </dd>
+<dd>
+LE_FAULT Function failed. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the DTMF string is too long (max DTMF_MAX_LEN characters), it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">dtmf</td><td>DTMFs to play. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">duration</td><td>DTMF duration in milliseconds. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">pause</td><td>Pause duration between tones in milliseconds. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a393a26f6cff7fe05c1813fcafeef50f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a393a26f6cff7fe05c1813fcafeef50f3">◆ </a></span>le_audio_RecordFile()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_RecordFile </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>fd</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Record a file on a recorder stream.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_BAD_PARAMETER The audio stream reference is invalid. </dd>
+<dd>
+LE_BUSY Recorder interface is already active. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>the fd is closed by the API. To record again the same file, the fd parameter can be set to LE_AUDIO_NO_FD: in this case, the previous file descriptor is re-used. If the fd as to be kept on its side, the application should duplicate the fd (e.g., using dup() ) before calling the API. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>File descriptor. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aeb1d43fbf2a741fbd91172a90666247d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb1d43fbf2a741fbd91172a90666247d">◆ </a></span>le_audio_RemoveDtmfDetectorHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_audio_RemoveDtmfDetectorHandler </td>
+<td>(</td>
+<td class="paramtype">le_audio_DtmfDetectorHandlerRef_t </td>
+<td class="paramname"><em>handlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove handler function for EVENT 'le_audio_DtmfDetector' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="acaf0935a282d66c9cbe64df4d8a03ddf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaf0935a282d66c9cbe64df4d8a03ddf">◆ </a></span>le_audio_RemoveMediaHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_audio_RemoveMediaHandler </td>
+<td>(</td>
+<td class="paramtype">le_audio_MediaHandlerRef_t </td>
+<td class="paramname"><em>handlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove handler function for EVENT 'le_audio_Media' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a1dba6618bd8fc9835869ee72c3fbd850"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dba6618bd8fc9835869ee72c3fbd850">◆ </a></span>le_audio_Resume()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_Resume </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Resume a file playback/recording (need to be in pause state).</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_OK Function succeeded. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aead87ec16d317bb4e4a8e7e9ea37550b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aead87ec16d317bb4e4a8e7e9ea37550b">◆ </a></span>le_audio_SetEncodingFormat()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_SetEncodingFormat </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_audio_Format_t </td>
+<td class="paramname"><em>format</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the encoding format of a recorder stream.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_OK Function succeeded. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">format</td><td>Encoding format. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a65f11540e6af03a3494b6b9be76ba5fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65f11540e6af03a3494b6b9be76ba5fc">◆ </a></span>le_audio_SetGain()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_SetGain </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t </td>
+<td class="paramname"><em>gain</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the Gain value of an input or output stream.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_BAD_PARAMETER The audio stream reference is invalid. </dd>
+<dd>
+LE_OUT_OF_RANGE The gain value is out of range. </dd>
+<dd>
+LE_UNAVAILABLE The audio service initialization failed. </dd>
+<dd>
+LE_FAULT On any other failure. </dd>
+<dd>
+LE_OK The function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad reference into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">gain</td><td>Gain value (specific to the platform) </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a593682daa95aec349e48144f5b46c658"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a593682daa95aec349e48144f5b46c658">◆ </a></span>le_audio_SetPcmCompanding()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_SetPcmCompanding </td>
+<td>(</td>
+<td class="paramtype">le_audio_Companding_t </td>
+<td class="paramname"><em>companding</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Configure the PCM Companding.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_OUT_OF_RANGE Your platform does not support the setting's value. </dd>
+<dd>
+LE_BUSY PCM interface is already active. </dd>
+<dd>
+LE_OK Function succeeded. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">companding</td><td>Companding. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ae7c9d76c5377ad5fae13b24477827f45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7c9d76c5377ad5fae13b24477827f45">◆ </a></span>le_audio_SetPcmSamplingRate()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_SetPcmSamplingRate </td>
+<td>(</td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>rate</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Configure the PCM Sampling Rate.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_OUT_OF_RANGE Your platform does not support the setting's value. </dd>
+<dd>
+LE_BUSY PCM interface is already active. </dd>
+<dd>
+LE_OK Function succeeded. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">rate</td><td>Sampling rate in Hz. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ab3678e77c8d69f248cd339042bd824cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3678e77c8d69f248cd339042bd824cc">◆ </a></span>le_audio_SetPcmSamplingResolution()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_SetPcmSamplingResolution </td>
+<td>(</td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>bitsPerSample</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Configure the PCM Sampling Resolution.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_OUT_OF_RANGE Your platform does not support the setting's value. </dd>
+<dd>
+LE_BUSY PCM interface is already active. </dd>
+<dd>
+LE_OK Function succeeded. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">bitsPerSample</td><td>Sampling resolution (bits/sample). </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a64e7ebe776e83d10deb42415e185d68a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64e7ebe776e83d10deb42415e185d68a">◆ </a></span>le_audio_SetPlatformSpecificGain()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_SetPlatformSpecificGain </td>
+<td>(</td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>gainName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t </td>
+<td class="paramname"><em>gain</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the value of a platform specific gain in the audio subsystem.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_BAD_PARAMETER The pointer to the name of the platform specific gain is invalid. </dd>
+<dd>
+LE_NOT_FOUND The specified gain's name is not recognized in your audio subsystem. </dd>
+<dd>
+LE_OUT_OF_RANGE The gain parameter is out of range. </dd>
+<dd>
+LE_UNAVAILABLE The audio service initialization failed. </dd>
+<dd>
+LE_FAULT On any other failure. </dd>
+<dd>
+LE_OK The function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad reference into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Ensure to check the names of supported gains for your specific platform. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">gainName</td><td>Name of the platform specific gain. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">gain</td><td>The gain value (specific to the platform) </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a8526af295a5fe34cbb79f6b6d5c99f6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8526af295a5fe34cbb79f6b6d5c99f6a">◆ </a></span>le_audio_SetProfile()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_SetProfile </td>
+<td>(</td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>profile</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to set the audio profile.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_UNAVAILABLE On audio service initialization failure. </dd>
+<dd>
+LE_FAULT On any other failure. </dd>
+<dd>
+LE_OK Function succeeded. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profile</td><td>Audio profile. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a5932f51fb1398cc2442c8bb765ca4071"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5932f51fb1398cc2442c8bb765ca4071">◆ </a></span>le_audio_SetSampleAmrDtx()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_SetSampleAmrDtx </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">bool </td>
+<td class="paramname"><em>dtx</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the AMR discontinuous transmission (DTX). The DTX is activated by default.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad reference into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">dtx</td><td>DTX. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a18600cdbd3995c9c2ca24f9b15991f7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18600cdbd3995c9c2ca24f9b15991f7d">◆ </a></span>le_audio_SetSampleAmrMode()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_SetSampleAmrMode </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_audio_AmrMode_t </td>
+<td class="paramname"><em>mode</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the AMR mode for AMR encoder.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_OK Function succeeded. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>AMR mode. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aae7db9f0933119fb5a61162722b3274a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae7db9f0933119fb5a61162722b3274a">◆ </a></span>le_audio_SetSamplePcmChannelNumber()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_SetSamplePcmChannelNumber </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>nbChannel</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the channel number of a PCM sample.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_OK Function succeeded. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">nbChannel</td><td>Channel Number </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a04adfcc0e8f5796eca53c31cd5dd6528"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04adfcc0e8f5796eca53c31cd5dd6528">◆ </a></span>le_audio_SetSamplePcmSamplingRate()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_SetSamplePcmSamplingRate </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>rate</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the PCM sampling rate of a PCM sample.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_OK Function succeeded. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">rate</td><td>PCM sampling Rate. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aae37b46c13f76144dd94c48bfe94998b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae37b46c13f76144dd94c48bfe94998b">◆ </a></span>le_audio_SetSamplePcmSamplingResolution()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_SetSamplePcmSamplingResolution </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>samplingRes</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the sampling resolution (in bits per sample) of a PCM sample.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_OK Function succeeded. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">samplingRes</td><td>Sampling resolution (in bits per sample). </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ae418320230dc2c5a051add21c909137e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae418320230dc2c5a051add21c909137e">◆ </a></span>le_audio_SetServerDisconnectHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void le_audio_SetServerDisconnectHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__audio__interface_8h.html#ab774b695ab74b16aab5b9fd8ee10e708">le_audio_DisconnectHandler_t</a> </td>
+<td class="paramname"><em>disconnectHandler</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set handler called when server disconnection is detected.</p>
+<p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
+</div>
+</div>
+<a id="a4aebc6e8cdc4389c375e93418823af71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aebc6e8cdc4389c375e93418823af71">◆ </a></span>le_audio_Stop()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_Stop </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Stop the file playback/recording.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The used file descriptor is not deallocated, but is is rewound to the beginning. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="af95c8ecd8562696e322707e207c393dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af95c8ecd8562696e322707e207c393dc">◆ </a></span>le_audio_TryConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a id="adad24547293481964039efe56bc14e2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adad24547293481964039efe56bc14e2b">◆ </a></span>le_audio_Unmute()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_Unmute </td>
+<td>(</td>
+<td class="paramtype">le_audio_StreamRef_t </td>
+<td class="paramname"><em>streamRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Unmute an audio stream.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_BAD_PARAMETER The audio stream reference is invalid. </dd>
+<dd>
+LE_UNAVAILABLE The audio service initialization failed. </dd>
+<dd>
+LE_FAULT On any other failure. </dd>
+<dd>
+LE_OK The function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad reference into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ab2cee945145242ebe446ab66eac9aa91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2cee945145242ebe446ab66eac9aa91">◆ </a></span>le_audio_UnmuteCallWaitingTone()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_audio_UnmuteCallWaitingTone </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Unmute the Call Waiting Tone.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_UNAVAILABLE On audio service initialization failure. </dd>
+<dd>
+LE_FAULT On any other failure. </dd>
+<dd>
+LE_OK The function succeeded. </dd></dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

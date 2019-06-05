@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>fd.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.04.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src=""></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Legato Documentation</h2>
+<nav class="secondary">
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#define-members">Macros</a> |
+<a href="#typedef-members">Typedefs</a> </div>
+<div class="headertitle">
+<h1 class="title">fd.h File Reference</h1> </div>
+</div><div class="contents">
+<p><a href="fd_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a2cb5d6358deb39a800fbaaa0f40d83c2"><td align="right" class="memItemLeft" valign="top"><a id="a2cb5d6358deb39a800fbaaa0f40d83c2"></a>
+#define </td><td class="memItemRight" valign="bottom"><b>le_fd_Open</b>   open</td></tr>
+<tr class="separator:a2cb5d6358deb39a800fbaaa0f40d83c2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a55f285fe5eec689bc213d5d95c744f7c"><td align="right" class="memItemLeft" valign="top"><a id="a55f285fe5eec689bc213d5d95c744f7c"></a>
+#define </td><td class="memItemRight" valign="bottom"><b>le_fd_Close</b>   close</td></tr>
+<tr class="separator:a55f285fe5eec689bc213d5d95c744f7c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a371382b357d36dd3aa50363bebfd6404"><td align="right" class="memItemLeft" valign="top"><a id="a371382b357d36dd3aa50363bebfd6404"></a>
+#define </td><td class="memItemRight" valign="bottom"><b>le_fd_Read</b>   read</td></tr>
+<tr class="separator:a371382b357d36dd3aa50363bebfd6404"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af97480c94307b54769a9e0a29cee0b3a"><td align="right" class="memItemLeft" valign="top"><a id="af97480c94307b54769a9e0a29cee0b3a"></a>
+#define </td><td class="memItemRight" valign="bottom"><b>le_fd_Write</b>   write</td></tr>
+<tr class="separator:af97480c94307b54769a9e0a29cee0b3a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ade02f9c0211f78b92cfd11167ada9d58"><td align="right" class="memItemLeft" valign="top"><a id="ade02f9c0211f78b92cfd11167ada9d58"></a>
+#define </td><td class="memItemRight" valign="bottom"><b>le_fd_Ioctl</b>   ioctl</td></tr>
+<tr class="separator:ade02f9c0211f78b92cfd11167ada9d58"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6d61946536765dd70996a5c1336e3b28"><td align="right" class="memItemLeft" valign="top"><a id="a6d61946536765dd70996a5c1336e3b28"></a>
+#define </td><td class="memItemRight" valign="bottom"><b>le_fd_MkFifo</b>(p,  m)   mkfifo(p,(mode_t)m)</td></tr>
+<tr class="separator:a6d61946536765dd70996a5c1336e3b28"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0678c85673d69c6122f8577587181b96"><td align="right" class="memItemLeft" valign="top"><a id="a0678c85673d69c6122f8577587181b96"></a>
+#define </td><td class="memItemRight" valign="bottom"><b>le_fd_Fcntl</b>   fcntl</td></tr>
+<tr class="separator:a0678c85673d69c6122f8577587181b96"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a346fda25685ddf2c3867ba1ad57e40a1"><td align="right" class="memItemLeft" valign="top"><a id="a346fda25685ddf2c3867ba1ad57e40a1"></a>
+#define </td><td class="memItemRight" valign="bottom"><b>le_fd_Dup</b>   dup</td></tr>
+<tr class="separator:a346fda25685ddf2c3867ba1ad57e40a1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aeed08ce366693a2dc600fd9638358dbe"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="fd_8h.html#aeed08ce366693a2dc600fd9638358dbe">LE_FD_FLUSH</a>   0x7F00</td></tr>
+<tr class="separator:aeed08ce366693a2dc600fd9638358dbe"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ab3e3daf4bf2836a2ec2adc25f4046752"><td align="right" class="memItemLeft" valign="top"><a id="ab3e3daf4bf2836a2ec2adc25f4046752"></a>
+typedef mode_t </td><td class="memItemRight" valign="bottom"><b>le_fd_Mode_t</b></td></tr>
+<tr class="separator:ab3e3daf4bf2836a2ec2adc25f4046752"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato File Descriptor inter-module include file.</p>
+<p>Inter-module interface definitions exported by the File Descriptor module to other modules within the framework.</p>
+<p>The File Descriptor module is part of the <a class="el" href="c_fd.html">File Descriptor API</a> implementation.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="aeed08ce366693a2dc600fd9638358dbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeed08ce366693a2dc600fd9638358dbe">◆ </a></span>LE_FD_FLUSH</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_FD_FLUSH   0x7F00</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Request codes for le_fd_Ioctl API </p>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

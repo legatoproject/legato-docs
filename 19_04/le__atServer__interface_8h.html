@@ -1,0 +1,1243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_atServer_interface.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.04.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src=""></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Legato Documentation</h2>
+<nav class="secondary">
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#typedef-members">Typedefs</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_atServer_interface.h File Reference</h1> </div>
+</div><div class="contents">
+<div class="textblock"><code>#include "legato.h"</code><br/>
+<code>#include "<a class="el" href="le__atDefs__interface_8h_source.html">le_atDefs_interface.h</a>"</code><br/>
+<code>#include "le_atServer_common.h"</code><br/>
+</div>
+<p><a href="le__atServer__interface_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a2bd922fa1b84c5e72a081cefd3459105"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#a2bd922fa1b84c5e72a081cefd3459105">le_atServer_DisconnectHandler_t</a>) (void *)</td></tr>
+<tr class="separator:a2bd922fa1b84c5e72a081cefd3459105"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a00d7268ae64a71ba0ce34b4faa303b63"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#a00d7268ae64a71ba0ce34b4faa303b63">le_atServer_ConnectService</a> (void)</td></tr>
+<tr class="separator:a00d7268ae64a71ba0ce34b4faa303b63"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0e9595c6c43222659d106cee168c439e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#a0e9595c6c43222659d106cee168c439e">le_atServer_TryConnectService</a> (void)</td></tr>
+<tr class="separator:a0e9595c6c43222659d106cee168c439e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8cb2d029621d8845c9352ad02393e819"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#a8cb2d029621d8845c9352ad02393e819">le_atServer_SetServerDisconnectHandler</a> (<a class="el" href="le__atServer__interface_8h.html#a2bd922fa1b84c5e72a081cefd3459105">le_atServer_DisconnectHandler_t</a> disconnectHandler, void *contextPtr)</td></tr>
+<tr class="separator:a8cb2d029621d8845c9352ad02393e819"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a526218c03ad00c028da213665dd63d2a"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#a526218c03ad00c028da213665dd63d2a">le_atServer_DisconnectService</a> (void)</td></tr>
+<tr class="separator:a526218c03ad00c028da213665dd63d2a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac7d8d30fc10da9b641ae74e6afcf662e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#ac7d8d30fc10da9b641ae74e6afcf662e">le_atServer_Suspend</a> (le_atServer_DeviceRef_t device)</td></tr>
+<tr class="separator:ac7d8d30fc10da9b641ae74e6afcf662e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0e47de20e11a8ba2c280e999776e22fb"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#a0e47de20e11a8ba2c280e999776e22fb">le_atServer_Resume</a> (le_atServer_DeviceRef_t device)</td></tr>
+<tr class="separator:a0e47de20e11a8ba2c280e999776e22fb"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7b59aee923ee8d0032e0c7cb9d7ffea5"><td align="right" class="memItemLeft" valign="top">le_atServer_DeviceRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#a7b59aee923ee8d0032e0c7cb9d7ffea5">le_atServer_Open</a> (int fd)</td></tr>
+<tr class="separator:a7b59aee923ee8d0032e0c7cb9d7ffea5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad2fcae1e47c5dc3efb333f65f81a5eef"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#ad2fcae1e47c5dc3efb333f65f81a5eef">le_atServer_Close</a> (le_atServer_DeviceRef_t device)</td></tr>
+<tr class="separator:ad2fcae1e47c5dc3efb333f65f81a5eef"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad013f01db3faf2c7afe5627e1c4aae75"><td align="right" class="memItemLeft" valign="top">le_atServer_CmdRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#ad013f01db3faf2c7afe5627e1c4aae75">le_atServer_Create</a> (const char *LE_NONNULL name)</td></tr>
+<tr class="separator:ad013f01db3faf2c7afe5627e1c4aae75"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2cbdff4ae86ac055f21301aff36ec12c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#a2cbdff4ae86ac055f21301aff36ec12c">le_atServer_Delete</a> (le_atServer_CmdRef_t commandRef)</td></tr>
+<tr class="separator:a2cbdff4ae86ac055f21301aff36ec12c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6473ee190af7fcaf93b6578b4f4d8890"><td align="right" class="memItemLeft" valign="top">le_atServer_CommandHandlerRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#a6473ee190af7fcaf93b6578b4f4d8890">le_atServer_AddCommandHandler</a> (le_atServer_CmdRef_t commandRef, le_atServer_CommandHandlerFunc_t handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:a6473ee190af7fcaf93b6578b4f4d8890"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a33ad84305e25b36449ed156a7a64491d"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#a33ad84305e25b36449ed156a7a64491d">le_atServer_RemoveCommandHandler</a> (le_atServer_CommandHandlerRef_t handlerRef)</td></tr>
+<tr class="separator:a33ad84305e25b36449ed156a7a64491d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2a7ebca3ad28f1351d8e20c3be6cca9c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#a2a7ebca3ad28f1351d8e20c3be6cca9c">le_atServer_GetParameter</a> (le_atServer_CmdRef_t commandRef, uint32_t index, char *parameter, size_t parameterSize)</td></tr>
+<tr class="separator:a2a7ebca3ad28f1351d8e20c3be6cca9c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aea9d502514234b728b0250d1bb2f4ec9"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#aea9d502514234b728b0250d1bb2f4ec9">le_atServer_GetCommandName</a> (le_atServer_CmdRef_t commandRef, char *name, size_t nameSize)</td></tr>
+<tr class="separator:aea9d502514234b728b0250d1bb2f4ec9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aeebff4006acfd2164eea138ecf1f2e4c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#aeebff4006acfd2164eea138ecf1f2e4c">le_atServer_GetDevice</a> (le_atServer_CmdRef_t commandRef, le_atServer_DeviceRef_t *deviceRefPtr)</td></tr>
+<tr class="separator:aeebff4006acfd2164eea138ecf1f2e4c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad7faba1f1f505de0b11557a03d966d5b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#ad7faba1f1f505de0b11557a03d966d5b">le_atServer_SendIntermediateResponse</a> (le_atServer_CmdRef_t commandRef, const char *LE_NONNULL intermediateRsp)</td></tr>
+<tr class="separator:ad7faba1f1f505de0b11557a03d966d5b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a14c57753f986e5eb4928ea2eb350d9d9"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#a14c57753f986e5eb4928ea2eb350d9d9">le_atServer_SendFinalResponse</a> (le_atServer_CmdRef_t commandRef, le_atServer_FinalRsp_t finalResponse, bool customStringAvailable, const char *LE_NONNULL finalRsp)</td></tr>
+<tr class="separator:a14c57753f986e5eb4928ea2eb350d9d9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad3f175c366a50d92f8011d7062bdd147"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#ad3f175c366a50d92f8011d7062bdd147">le_atServer_SendFinalResultCode</a> (le_atServer_CmdRef_t commandRef, le_atServer_FinalRsp_t finalResult, const char *LE_NONNULL pattern, uint32_t errorCode)</td></tr>
+<tr class="separator:ad3f175c366a50d92f8011d7062bdd147"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a003f02f3b6096b8b9965fad2be0f3056"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#a003f02f3b6096b8b9965fad2be0f3056">le_atServer_SendUnsolicitedResponse</a> (const char *LE_NONNULL unsolRsp, le_atServer_AvailableDevice_t availableDevice, le_atServer_DeviceRef_t device)</td></tr>
+<tr class="separator:a003f02f3b6096b8b9965fad2be0f3056"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:afdef81e1283dc1485362533af3df343f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#afdef81e1283dc1485362533af3df343f">le_atServer_EnableEcho</a> (le_atServer_DeviceRef_t device)</td></tr>
+<tr class="separator:afdef81e1283dc1485362533af3df343f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9a329f04df29340ff0e4fcdea244608d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#a9a329f04df29340ff0e4fcdea244608d">le_atServer_DisableEcho</a> (le_atServer_DeviceRef_t device)</td></tr>
+<tr class="separator:a9a329f04df29340ff0e4fcdea244608d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a95ee0e0371e4c6a92148a1d3c4b6c073"><td align="right" class="memItemLeft" valign="top">le_atServer_BridgeRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#a95ee0e0371e4c6a92148a1d3c4b6c073">le_atServer_OpenBridge</a> (int fd)</td></tr>
+<tr class="separator:a95ee0e0371e4c6a92148a1d3c4b6c073"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab21d9b3843f5f229643c55181d460890"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#ab21d9b3843f5f229643c55181d460890">le_atServer_CloseBridge</a> (le_atServer_BridgeRef_t bridgeRef)</td></tr>
+<tr class="separator:ab21d9b3843f5f229643c55181d460890"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3aa1a2e61fdc1b918fe6886e7986fff1"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#a3aa1a2e61fdc1b918fe6886e7986fff1">le_atServer_AddDeviceToBridge</a> (le_atServer_DeviceRef_t deviceRef, le_atServer_BridgeRef_t bridgeRef)</td></tr>
+<tr class="separator:a3aa1a2e61fdc1b918fe6886e7986fff1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aec9a70dac50f4d5ecd7aa7025c328cd0"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#aec9a70dac50f4d5ecd7aa7025c328cd0">le_atServer_RemoveDeviceFromBridge</a> (le_atServer_DeviceRef_t deviceRef, le_atServer_BridgeRef_t bridgeRef)</td></tr>
+<tr class="separator:aec9a70dac50f4d5ecd7aa7025c328cd0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7e619aca889fb7c4ffd0bc46faa464b1"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#a7e619aca889fb7c4ffd0bc46faa464b1">le_atServer_EnableVerboseErrorCodes</a> (void)</td></tr>
+<tr class="separator:a7e619aca889fb7c4ffd0bc46faa464b1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8acfe50e0c112ca835e5298ab197c44d"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#a8acfe50e0c112ca835e5298ab197c44d">le_atServer_EnableExtendedErrorCodes</a> (void)</td></tr>
+<tr class="separator:a8acfe50e0c112ca835e5298ab197c44d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aaf4fce1a181272837e35337b0debdf4a"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#aaf4fce1a181272837e35337b0debdf4a">le_atServer_DisableExtendedErrorCodes</a> (void)</td></tr>
+<tr class="separator:aaf4fce1a181272837e35337b0debdf4a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3397ba6f66ac70fc1c5be1c3c0551190"><td align="right" class="memItemLeft" valign="top">le_atServer_ErrorCodeRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#a3397ba6f66ac70fc1c5be1c3c0551190">le_atServer_CreateErrorCode</a> (uint32_t errorCode, const char *LE_NONNULL pattern)</td></tr>
+<tr class="separator:a3397ba6f66ac70fc1c5be1c3c0551190"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7130c65365ad3b021eccb67103535a6f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#a7130c65365ad3b021eccb67103535a6f">le_atServer_DeleteErrorCode</a> (le_atServer_ErrorCodeRef_t errorCodeRef)</td></tr>
+<tr class="separator:a7130c65365ad3b021eccb67103535a6f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3ca7e4073f47db50fe97f171012b6b33"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#a3ca7e4073f47db50fe97f171012b6b33">le_atServer_SetVerboseErrorCode</a> (le_atServer_ErrorCodeRef_t errorCodeRef, const char *LE_NONNULL verboseCode)</td></tr>
+<tr class="separator:a3ca7e4073f47db50fe97f171012b6b33"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae6adec2d9f46c1241ba66d7c46b63c02"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__atServer__interface_8h.html#ae6adec2d9f46c1241ba66d7c46b63c02">le_atServer_GetTextAsync</a> (le_atServer_CmdRef_t cmdRef, le_atServer_GetTextCallbackFunc_t callbackPtr, void *contextPtr)</td></tr>
+<tr class="separator:ae6adec2d9f46c1241ba66d7c46b63c02"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato <a class="el" href="c_atServer.html">AT Commands Server</a> include file.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="a2bd922fa1b84c5e72a081cefd3459105"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bd922fa1b84c5e72a081cefd3459105">◆ </a></span>le_atServer_DisconnectHandler_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_atServer_DisconnectHandler_t) (void *)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Type for handler called when a server disconnects. </p>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a6473ee190af7fcaf93b6578b4f4d8890"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6473ee190af7fcaf93b6578b4f4d8890">◆ </a></span>le_atServer_AddCommandHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_atServer_CommandHandlerRef_t le_atServer_AddCommandHandler </td>
+<td>(</td>
+<td class="paramtype">le_atServer_CmdRef_t </td>
+<td class="paramname"><em>commandRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_atServer_CommandHandlerFunc_t </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Add handler function for EVENT 'le_atServer_Command'</p>
+<p>This event provides information when the AT command is detected. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">commandRef</td><td>AT command reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td>Handler to called when the AT command is detected </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a3aa1a2e61fdc1b918fe6886e7986fff1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3aa1a2e61fdc1b918fe6886e7986fff1">◆ </a></span>le_atServer_AddDeviceToBridge()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_atServer_AddDeviceToBridge </td>
+<td>(</td>
+<td class="paramtype">le_atServer_DeviceRef_t </td>
+<td class="paramname"><em>deviceRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_atServer_BridgeRef_t </td>
+<td class="paramname"><em>bridgeRef</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function adds a device to an opened bridge.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_BUSY The device is already used by the bridge.</li>
+<li>LE_FAULT The function failed to add the device to the bridge. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">deviceRef</td><td>Device reference to add to the bridge </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">bridgeRef</td><td>Bridge refence </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ad2fcae1e47c5dc3efb333f65f81a5eef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2fcae1e47c5dc3efb333f65f81a5eef">◆ </a></span>le_atServer_Close()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_atServer_Close </td>
+<td>(</td>
+<td class="paramtype">le_atServer_DeviceRef_t </td>
+<td class="paramname"><em>device</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function closes the AT server session on the requested device.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_BAD_PARAMETER Invalid device reference.</li>
+<li>LE_BUSY The requested device is busy.</li>
+<li>LE_FAULT Failed to stop the server, check logs for more information. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>device to be unbound </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ab21d9b3843f5f229643c55181d460890"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab21d9b3843f5f229643c55181d460890">◆ </a></span>le_atServer_CloseBridge()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_atServer_CloseBridge </td>
+<td>(</td>
+<td class="paramtype">le_atServer_BridgeRef_t </td>
+<td class="paramname"><em>bridgeRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function closes an opened bridge.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_FAULT The function failed to close the bridge.</li>
+<li>LE_BUSY The bridge is in use (devices references have to be removed first). </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">bridgeRef</td><td>Bridge reference </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a00d7268ae64a71ba0ce34b4faa303b63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00d7268ae64a71ba0ce34b4faa303b63">◆ </a></span>le_atServer_ConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_atServer_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="ad013f01db3faf2c7afe5627e1c4aae75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad013f01db3faf2c7afe5627e1c4aae75">◆ </a></span>le_atServer_Create()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_atServer_CmdRef_t le_atServer_Create </td>
+<td>(</td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>name</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function created an AT command and register it into the AT parser.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>Reference to the AT command.</li>
+<li>NULL if an error occurs. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>AT command name string </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a3397ba6f66ac70fc1c5be1c3c0551190"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3397ba6f66ac70fc1c5be1c3c0551190">◆ </a></span>le_atServer_CreateErrorCode()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_atServer_ErrorCodeRef_t le_atServer_CreateErrorCode </td>
+<td>(</td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>errorCode</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>pattern</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function creates a custom error code. </p><dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ErrorCode Reference to the created error code</li>
+<li>NULL Function failed to create the error code</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function fails to create the error code if the combinaison (errorCode, pattern) already exists or if the errorCode number is lower than 512. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">errorCode</td><td>Numerical error code </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">pattern</td><td>Prefix of the response message </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a2cbdff4ae86ac055f21301aff36ec12c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cbdff4ae86ac055f21301aff36ec12c">◆ </a></span>le_atServer_Delete()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_atServer_Delete </td>
+<td>(</td>
+<td class="paramtype">le_atServer_CmdRef_t </td>
+<td class="paramname"><em>commandRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function deletes an AT command (i.e. unregister from the AT parser).</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_FAULT The function failed to delete the command.</li>
+<li>LE_BUSY Command is in progress. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">commandRef</td><td>AT command reference </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a7130c65365ad3b021eccb67103535a6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7130c65365ad3b021eccb67103535a6f">◆ </a></span>le_atServer_DeleteErrorCode()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_atServer_DeleteErrorCode </td>
+<td>(</td>
+<td class="paramtype">le_atServer_ErrorCodeRef_t </td>
+<td class="paramname"><em>errorCodeRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function deletes a custom error code.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded</li>
+<li>LE_FAULT The function failed to delete the error code </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">errorCodeRef</td><td>Error code reference </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a9a329f04df29340ff0e4fcdea244608d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a329f04df29340ff0e4fcdea244608d">◆ </a></span>le_atServer_DisableEcho()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_atServer_DisableEcho </td>
+<td>(</td>
+<td class="paramtype">le_atServer_DeviceRef_t </td>
+<td class="paramname"><em>device</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function disables echo on the selected device.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_BAD_PARAMETER Invalid device reference. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>device reference </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aaf4fce1a181272837e35337b0debdf4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf4fce1a181272837e35337b0debdf4a">◆ </a></span>le_atServer_DisableExtendedErrorCodes()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_atServer_DisableExtendedErrorCodes </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function disables extended error codes on the selected device. </p>
+</div>
+</div>
+<a id="a526218c03ad00c028da213665dd63d2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a526218c03ad00c028da213665dd63d2a">◆ </a></span>le_atServer_DisconnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_atServer_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="afdef81e1283dc1485362533af3df343f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdef81e1283dc1485362533af3df343f">◆ </a></span>le_atServer_EnableEcho()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_atServer_EnableEcho </td>
+<td>(</td>
+<td class="paramtype">le_atServer_DeviceRef_t </td>
+<td class="paramname"><em>device</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function enables echo on the selected device.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_BAD_PARAMETER Invalid device reference. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>device reference </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a8acfe50e0c112ca835e5298ab197c44d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8acfe50e0c112ca835e5298ab197c44d">◆ </a></span>le_atServer_EnableExtendedErrorCodes()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_atServer_EnableExtendedErrorCodes </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function enables extended error codes on the selected device. </p>
+</div>
+</div>
+<a id="a7e619aca889fb7c4ffd0bc46faa464b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e619aca889fb7c4ffd0bc46faa464b1">◆ </a></span>le_atServer_EnableVerboseErrorCodes()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_atServer_EnableVerboseErrorCodes </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function enables verbose error codes on the selected device. </p>
+</div>
+</div>
+<a id="aea9d502514234b728b0250d1bb2f4ec9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea9d502514234b728b0250d1bb2f4ec9">◆ </a></span>le_atServer_GetCommandName()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_atServer_GetCommandName </td>
+<td>(</td>
+<td class="paramtype">le_atServer_CmdRef_t </td>
+<td class="paramname"><em>commandRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>name</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>nameSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function can be used to get the AT command string.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_FAULT The function failed to get the AT command string. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">commandRef</td><td>AT command reference </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">name</td><td>AT command string </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">nameSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aeebff4006acfd2164eea138ecf1f2e4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeebff4006acfd2164eea138ecf1f2e4c">◆ </a></span>le_atServer_GetDevice()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_atServer_GetDevice </td>
+<td>(</td>
+<td class="paramtype">le_atServer_CmdRef_t </td>
+<td class="paramname"><em>commandRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_atServer_DeviceRef_t * </td>
+<td class="paramname"><em>deviceRefPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function can be used to get the device reference in use for an AT command specified with its reference.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_FAULT The function failed to get the AT command string. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">commandRef</td><td>AT command reference </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">deviceRefPtr</td><td>Device reference </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a2a7ebca3ad28f1351d8e20c3be6cca9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a7ebca3ad28f1351d8e20c3be6cca9c">◆ </a></span>le_atServer_GetParameter()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_atServer_GetParameter </td>
+<td>(</td>
+<td class="paramtype">le_atServer_CmdRef_t </td>
+<td class="paramname"><em>commandRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>index</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>parameter</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>parameterSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function can be used to get the parameters of a received AT command.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_FAULT The function failed to get the requested parameter.</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the parameter is parsed with quotes, the quotes are removed when retrieving the parameter value using this API. If a parmeter is not parsed with quotes, that parameter is converted to uppercase equivalent. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">commandRef</td><td>AT command reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>agument index </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">parameter</td><td>parameter value </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">parameterSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ae6adec2d9f46c1241ba66d7c46b63c02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6adec2d9f46c1241ba66d7c46b63c02">◆ </a></span>le_atServer_GetTextAsync()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_atServer_GetTextAsync </td>
+<td>(</td>
+<td class="paramtype">le_atServer_CmdRef_t </td>
+<td class="paramname"><em>cmdRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_atServer_GetTextCallbackFunc_t </td>
+<td class="paramname"><em>callbackPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function allows the user to register a le_atServer_GetTextCallback_t callback to retrieve text and sends a prompt &lt;CR&gt;&lt;LF&gt;&lt;greater_than&gt;&lt;SPACE&gt; on the current command's device.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_BAD_PARAMETER Invalid device or command reference. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">cmdRef</td><td>AT command reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">callbackPtr</td><td>Get text callback </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a7b59aee923ee8d0032e0c7cb9d7ffea5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b59aee923ee8d0032e0c7cb9d7ffea5">◆ </a></span>le_atServer_Open()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_atServer_DeviceRef_t le_atServer_Open </td>
+<td>(</td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>fd</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function opens an AT server session on the requested device.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>Reference to the requested device.</li>
+<li>NULL if the device is not available or fd is a BAD FILE DESCRIPTOR.</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Make sure to duplicate (man dup) your file descriptor before opening a server session to be able to use the suspend/resume feature </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>File descriptor. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a95ee0e0371e4c6a92148a1d3c4b6c073"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95ee0e0371e4c6a92148a1d3c4b6c073">◆ </a></span>le_atServer_OpenBridge()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_atServer_BridgeRef_t le_atServer_OpenBridge </td>
+<td>(</td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>fd</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function opens a AT commands server bridge. All unknown AT commands will be sent on this alternative file descriptor thanks to the AT client Service.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>Reference to the requested bridge.</li>
+<li>NULL if the device can't be bridged </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>File descriptor. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a33ad84305e25b36449ed156a7a64491d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33ad84305e25b36449ed156a7a64491d">◆ </a></span>le_atServer_RemoveCommandHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_atServer_RemoveCommandHandler </td>
+<td>(</td>
+<td class="paramtype">le_atServer_CommandHandlerRef_t </td>
+<td class="paramname"><em>handlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove handler function for EVENT 'le_atServer_Command' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aec9a70dac50f4d5ecd7aa7025c328cd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec9a70dac50f4d5ecd7aa7025c328cd0">◆ </a></span>le_atServer_RemoveDeviceFromBridge()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_atServer_RemoveDeviceFromBridge </td>
+<td>(</td>
+<td class="paramtype">le_atServer_DeviceRef_t </td>
+<td class="paramname"><em>deviceRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_atServer_BridgeRef_t </td>
+<td class="paramname"><em>bridgeRef</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function removes a device from a bridge</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_NOT_FOUND The device is not isued by the specified bridge</li>
+<li>LE_BUSY The device is currently in use</li>
+<li>LE_FAULT The function failed to add the device to the bridge. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">deviceRef</td><td>Device reference to add to the bridge </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">bridgeRef</td><td>Bridge refence </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a0e47de20e11a8ba2c280e999776e22fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e47de20e11a8ba2c280e999776e22fb">◆ </a></span>le_atServer_Resume()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_atServer_Resume </td>
+<td>(</td>
+<td class="paramtype">le_atServer_DeviceRef_t </td>
+<td class="paramname"><em>device</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Resume server / enter command mode</p>
+<p>When this function is called the server resumes monitoring the fd for events and is able to interpret AT commands again.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Success.</li>
+<li>LE_BAD_PARAMETER Invalid device reference.</li>
+<li>LE_FAULT Device not monitored </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>device to be resumed </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a14c57753f986e5eb4928ea2eb350d9d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14c57753f986e5eb4928ea2eb350d9d9">◆ </a></span>le_atServer_SendFinalResponse()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_atServer_SendFinalResponse </td>
+<td>(</td>
+<td class="paramtype">le_atServer_CmdRef_t </td>
+<td class="paramname"><em>commandRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_atServer_FinalRsp_t </td>
+<td class="paramname"><em>finalResponse</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">bool </td>
+<td class="paramname"><em>customStringAvailable</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>finalRsp</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function can be used to send the final response.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000009">Deprecated:</a></b></dt><dd><a class="el" href="le__atServer__interface_8h.html#a14c57753f986e5eb4928ea2eb350d9d9">le_atServer_SendFinalResponse()</a> should not be used anymore and will be removed soon. It has been replaced by <a class="el" href="le__atServer__interface_8h.html#ad3f175c366a50d92f8011d7062bdd147">le_atServer_SendFinalResultCode()</a></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_FAULT The function failed to send the final response. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">commandRef</td><td>AT command reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">finalResponse</td><td>Final response to be sent </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">customStringAvailable</td><td>Custom final response has to be sent instead of the default one. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">finalRsp</td><td>custom final response string </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ad3f175c366a50d92f8011d7062bdd147"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3f175c366a50d92f8011d7062bdd147">◆ </a></span>le_atServer_SendFinalResultCode()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_atServer_SendFinalResultCode </td>
+<td>(</td>
+<td class="paramtype">le_atServer_CmdRef_t </td>
+<td class="paramname"><em>commandRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_atServer_FinalRsp_t </td>
+<td class="paramname"><em>finalResult</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>pattern</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>errorCode</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function can be used to send the final result code.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_FAULT The function failed to send the final result code. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">commandRef</td><td>AT command reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">finalResult</td><td>Final result code to be sent </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">pattern</td><td>Prefix of the return message </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">errorCode</td><td>Numeric error code </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ad7faba1f1f505de0b11557a03d966d5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7faba1f1f505de0b11557a03d966d5b">◆ </a></span>le_atServer_SendIntermediateResponse()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_atServer_SendIntermediateResponse </td>
+<td>(</td>
+<td class="paramtype">le_atServer_CmdRef_t </td>
+<td class="paramname"><em>commandRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>intermediateRsp</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function can be used to send an intermediate response.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_FAULT The function failed to send the intermediate response. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">commandRef</td><td>AT command reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">intermediateRsp</td><td>Intermediate response to be sent </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a003f02f3b6096b8b9965fad2be0f3056"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a003f02f3b6096b8b9965fad2be0f3056">◆ </a></span>le_atServer_SendUnsolicitedResponse()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_atServer_SendUnsolicitedResponse </td>
+<td>(</td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>unsolRsp</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_atServer_AvailableDevice_t </td>
+<td class="paramname"><em>availableDevice</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_atServer_DeviceRef_t </td>
+<td class="paramname"><em>device</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function can be used to send the unsolicited response.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_FAULT The function failed to send the unsolicited response. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">unsolRsp</td><td>Unsolicited response to be sent </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">availableDevice</td><td>device to send the unsolicited response </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>device reference where the unsolicited response has to be sent </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a8cb2d029621d8845c9352ad02393e819"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cb2d029621d8845c9352ad02393e819">◆ </a></span>le_atServer_SetServerDisconnectHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void le_atServer_SetServerDisconnectHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__atServer__interface_8h.html#a2bd922fa1b84c5e72a081cefd3459105">le_atServer_DisconnectHandler_t</a> </td>
+<td class="paramname"><em>disconnectHandler</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set handler called when server disconnection is detected.</p>
+<p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
+</div>
+</div>
+<a id="a3ca7e4073f47db50fe97f171012b6b33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ca7e4073f47db50fe97f171012b6b33">◆ </a></span>le_atServer_SetVerboseErrorCode()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_atServer_SetVerboseErrorCode </td>
+<td>(</td>
+<td class="paramtype">le_atServer_ErrorCodeRef_t </td>
+<td class="paramname"><em>errorCodeRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>verboseCode</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function adds a verbose message to a specified error code</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded</li>
+<li>LE_FAULT The function failed to set the verbose message </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">errorCodeRef</td><td>Error code reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">verboseCode</td><td>Verbose message </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ac7d8d30fc10da9b641ae74e6afcf662e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7d8d30fc10da9b641ae74e6afcf662e">◆ </a></span>le_atServer_Suspend()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_atServer_Suspend </td>
+<td>(</td>
+<td class="paramtype">le_atServer_DeviceRef_t </td>
+<td class="paramname"><em>device</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference type for an AT command. Reference type for a AT command device. Reference type for a AT commands server / AT commands client bridge. Reference type for an error code. Received AT command type. Final response. Device availability. Handler for the AT command processing.</p>
+<dl class="section note"><dt>Note</dt><dd>The argument "parametersNumber" is set only when "type" parameter value is LE_AT_SERVER_TYPE_PARA Reference type used by Add/Remove functions for EVENT 'le_atServer_Command' Get text callback</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK: The function succeeded</li>
+<li>LE_IO_ERROR: An io error happened and the function couldn't read from the device</li>
+<li>LE_FORMAT_ERROR: Received an invalid character or an invalid sequence</li>
+<li>LE_FAULT: Failed to remove backspaces Suspend server / enter data mode</li>
+</ul>
+</dd></dl>
+<p>When this function is called the server stops monitoring the fd for events hence no more I/O operations are done on the fd by the server.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Success.</li>
+<li>LE_BAD_PARAMETER Invalid device reference.</li>
+<li>LE_FAULT Device not monitored </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">device</td><td>device to be suspended </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a0e9595c6c43222659d106cee168c439e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e9595c6c43222659d106cee168c439e">◆ </a></span>le_atServer_TryConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_atServer_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

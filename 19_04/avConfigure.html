@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Configuration Tips for AirVantage  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.04.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Configuration Tips for AirVantage </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>We've included some configuration tips to help when connecting to AirVantage, if you haven't registered your device yet follow the steps in <a class="el" href="avRegister.html">Register a Target on AirVantage</a> and <a href="https://source.sierrawireless.com/airvantage/av/howto/hardware/legato_getting_started/">AirVantage Getting Started</a>.</p>
+<h1><a class="anchor" id="avConfigure_Apps"></a>
+Check Running Services</h1>
+<p>The AirVantage Connector (avcService) relies on the data connection services (dataConnectionService) for network connectivity. The data connection service is in turn relies on the modem service (modemService) and the cellnet service (cellNetService). Before you can connect to AirVantage, check that the <code>avcService</code>, <code>dataConnectionService</code>, <code>modemService</code> and <code>cellNetService</code> are running.</p>
+<p><b>Command: <a class="el" href="toolsTarget_app.html">app status</a></b></p>
+<p>Example: </p><pre class="fragment"># app status
+
+[running] atAirVantage
+[running] atQmiLinker
+[running] atService
+[running] audioService
+[running] avcCompat
+[running] avcService
+[running] cellNetService
+[running] dataConnectionService
+[running] fwupdateService
+[running] gpioService
+[running] modemService
+[running] positioningService
+[running] powerMgr
+[running] secStore
+[stopped] smsInboxService
+[stopped] spiService
+[stopped] tools
+[stopped] voiceCallService
+[stopped] wifi
+[stopped] wifiApTest
+[stopped] wifiClientTest
+[running] wifiService
+[stopped] wifiWebAp
+</pre><p>If you are running into errors, check what IPC bindings are needed for the avcService use the <a class="el" href="toolsTarget_sdir.html">sdir</a> tool.</p>
+<pre class="fragment"># sdir list         #  list of all the IPC services known by the Service Directory
+</pre><h1><a class="anchor" id="avConfigure_Data"></a>
+Check the Data Connection</h1>
+<p>The <code>dataConnectionService</code> can be used to connect to WiFi or the Cellular network. If all WIFI related services are stopped the <code>dataConnectionService</code> will default to the Cellular Network. To connect to cellular network we need to make sure that the SIM is registered to the network and the signal strength is good.</p>
+<p><b>Command: <a class="el" href="toolsTarget_cm.html">cm radio</a></b></p>
+<p>Example: </p><pre class="fragment">cm radio
+
+Power: ON
+Current Network Operator: BLOGS
+RAT: UMTS network (LE_MRC_RAT_UMTS)
+Status: Registered, home network (LE_MRC_REG_HOME)
+Signal: Strong signal strength (4)
+PS: Packet Switched Registered, home network (LE_MRC_REG_HOME)
+</pre><p> The SIM is registered and has a strong signal strength on the UMTS network.</p>
+<p>To make sure there is an Access Point Name (APN) set up for data connectivity:</p>
+<p><b>Command: <a class="el" href="toolsTarget_cm.html">cm data</a></b></p>
+<p>Example: </p><pre class="fragment"># cm data
+
+Index: 1
+APN: sp.blogs.com
+PDP Type: IPV4
+Connected: no
+</pre><p>AirVantage server only supports IPV4 for PDP. If your PDP connection is not using IPV4 you can change it with the following:</p>
+<p><b>Command: <a class="el" href="toolsTarget_cm.html">cm data pdp IPV4</a></b></p>
+<h1><a class="anchor" id="avConfigure_IP"></a>
+Check the IP Address</h1>
+<p>To establish a data connection, make sure the data connection is established, and an IP address can be obtained.</p>
+<p><b>Command: <a class="el" href="toolsTarget_cm.html">cm data connect</a></b></p>
+<p>Example:</p>
+<pre class="fragment"># cm data connect
+
+Setting up profile 1
+Setting access point name ... ok
+Setting packet data protocol ... ok
+Setting Authentication ... ok
+Connecting ... ok
+Checking if device is up ... ok
+Routing ... ok
+Updating /etc/resolv.conf ... ok
+Updating /etc/resolv.conf ... ok
+Testing connection ... ok
+</pre><p>From the above output the device is currently using profile 1 which is the APN (sp.blogs.com) and that the routing table is ok. Verify the IP address with the following command.</p>
+<p><b>Command: <a class="el" href="toolsTarget_cm.html">cm data</a></b></p>
+<p>Example: </p><pre class="fragment"># cm data
+
+Index: 1
+APN: sp.blogs.com
+PDP Type: IPV4
+Connected: yes
+Interface: rmnet0
+Family: inet
+IP: 123.345.567.789
+Gateway: 123.1.1.1
+Dns1: 123.123.123.123
+Dns2: 123.123.123.321
+</pre><h1><a class="anchor" id="avConfigure_Ping"></a>
+Check Network Connections</h1>
+<p>You should now be able to ping the outside world.</p>
+<p>Example: </p><pre class="fragment"># ping google.com
+PING google.com (216.58.193.78) 56(84) bytes of data.
+64 bytes from sea15s07-in-f14.1e100.net (216.58.193.78): icmp_seq=1 ttl=54 time=6.19 ms
+64 bytes from sea15s07-in-f14.1e100.net (216.58.193.78): icmp_seq=2 ttl=54 time=9.55 ms
+64 bytes from sea15s07-in-f14.1e100.net (216.58.193.78): icmp_seq=3 ttl=54 time=6.07 ms
+64 bytes from sea15s07-in-f14.1e100.net (216.58.193.78): icmp_seq=4 ttl=54 time=5.73 ms
+64 bytes from sea15s07-in-f14.1e100.net (216.58.193.78): icmp_seq=5 ttl=54 time=19.3 ms
+64 bytes from sea15s07-in-f14.1e100.net (216.58.193.78): icmp_seq=6 ttl=54 time=5.80 ms
+</pre><p>Ping the AirVantage bootstrap server. </p><pre class="fragment"># ping bs.airvantage.net
+PING bs.airvantage.net (52.24.215.63): 56 data bytes
+64 bytes from 52.24.215.63: seq=0 ttl=234 time=269.007 ms
+64 bytes from 52.24.215.63: seq=1 ttl=234 time=258.111 ms
+64 bytes from 52.24.215.63: seq=2 ttl=234 time=707.798 ms
+64 bytes from 52.24.215.63: seq=3 ttl=234 time=237.510 ms
+64 bytes from 52.24.215.63: seq=4 ttl=234 time=246.483 ms
+</pre><h1><a class="anchor" id="avConfigure_UserAgreements"></a>
+Configure user agreements</h1>
+<p>Before starting a session with the AirVantage server, check the user agreements and configure them if needed using APIs <a class="el" href="le__avc__interface_8h.html#a0f2715814e2b0e37321872a14e798cd3">le_avc_GetUserAgreement()</a>/le_avc_SetUserAgreement() or using the <code>AT</code> command.</p>
+<p>By default, user agreements are disabled. This means that avcService automatically accepts requests from the server without asking for user approval: it initiates a connection to the server, download/install packages and reboots the target if needed.</p>
+<p>If you want to have control on these operations and be able to accept or defer them, you need to enable the corresponding user agreement for each operation (connect, download, install, uninstall, reset). Thus, avcService notifies registered apps each time a pending request is ongoing and waits for your approval.</p>
+<p>Example for WPX5XX/WP76XX/FX30 Customers: </p><pre class="fragment">AT+WDSC?
+
++WDSC: 0,0 # user agreement for connection to server disabled
++WDSC: 1,0 # user agreement for package download disabled
++WDSC: 2,0 # user agreeemnt for package install disabled
++WDSC: 3,0
++WDSC: 4,15,60,240,480,1440,2880,0,0
++WDSC: 5,0 # user agreement for reboot disabled
++WDSC: 6,0 # user agreeemnt for package uninstall disabled
+
+OK
+
+AT+WDSC=3,1 # activates user agreement for package download
+AT+WDSC=4,1 # activates user agreement for package install
+</pre><h1><a class="anchor" id="avConfigure_Connect"></a>
+Connect to the AirVantage server</h1>
+<p>At this point the target is ready to be connected to the AirVantage server. Use the api <a class="el" href="le__avc__interface_8h.html#aee17b1de43cf946b59a965e6077e7b03">le_avc_StartSession()</a> to start a session or use the <code>AT</code> command to connect the device to AirVantage.</p>
+<p>Steps to connect to the AirVantage server with AT commands:</p><ul>
+<li><code>ssh</code> to device: <code>ssh</code> <code>192.168.2.2</code> </li>
+<li>open an AT connection: <code>microcom -E /dev/ttyAT</code></li>
+<li>enable all notification: <code>AT+WDSI=4479</code> </li>
+<li>connect to the AirVantage server: <code>AT+WDSS=1</code>,1</li>
+</ul>
+<p>Example for WPX5XX/WP76XX/FX30 Customers: </p><pre class="fragment"># microcom -E /dev/ttyAT
+AT+WDSI=4479  # activates all AirVantage server notifications
+OK
+AT+WDSS=1,1   # starts a connection to the AirVantage server
+OK
++WDSI: 4      # displays the current state of authentication notification
++WDSI: 6      # displays that the session has succeeded and has started
++WDSI: 23,1   # displays that the target has successfully connected to the AirVantage Service
+</pre><p>For information on AT Commands download the AT Command Reference from your module provider.</p>
+<p><a href="https://source.sierrawireless.com/resources/airprime/software/airprime_wpx5xx_wp76xx_wp77xx_at_command_reference/">AirPrime WPX5XX/WP76XX AT Command Reference</a></p>
+<p>If you check on the AirVantage Web Admin Console you will see that the "Comm. Status" should be green and the Last Seen should indicate very recent.</p>
+<h1><a class="anchor" id="avConfigure_Frequency"></a>
+Configure Frequency of Connections</h1>
+<p>Within your Polling Timer, Hearbeat and Lifetime are all set the same and indicate how frequently the device connects to the AirVantage server.</p>
+<p>The Polling Timer can be enabled by setting it to a non-zero value either with <a class="el" href="le__avc__interface_8h.html#a774b5c0278c056ef0787f4e1ba9e7255">le_avc_SetPollingTimer()</a>, or by using the following AT commands:</p>
+<p>Example of setting the polling timer to 1 minute. </p><pre class="fragment"># microcom /dev/ttyAT
+AT+WDSC=3,1           # 3 specifies the polling timer, and 1 sets the number of minutes
+OK
+</pre><p>Retry timers are built into the AVC API to build resiliency into the system.</p>
+<p>Example Scenario: Let's say we set the polling timer to connect to the server every 24 hours. The mobile device may be in an area where there is a network loss that happens everyday and prevents the target from connecting. The device will never be able to establish a connection to the AirVantage server in this case because it's trying to connect to server only when there is no network. To prevent this Retry timers should be set at a variety of times enabling a greater chance of strong network connections.</p>
+<p>Retry Timers can be initiated by using either <a class="el" href="le__avc__interface_8h.html#aee17b1de43cf946b59a965e6077e7b03">le_avc_StartSession()</a> or by setting the polling timer. If the session fails, the retry timers can use up to 8 attempts to connect back to the AirVantage server.</p>
+<p>The retry timer can be set using <a class="el" href="le__avc__interface_8h.html#afeeb7e747be21527117014102fe80b19">le_avc_SetRetryTimers()</a> or by using the following AT commands:</p>
+<p>Example of setting the retry timer: </p><pre class="fragment"># microcom /dev/ttyAT
+AT+WDSC=4,15,60,240,480,1440,2880,0,0  # 4 specifies the retry timer
+OK
+</pre><p>Above command indicates that a retry will be attempted retried after 15 minutes, 1 hour, 4 hours, 8 hours, 1 day and 2 days, the last two retries are disabled.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
