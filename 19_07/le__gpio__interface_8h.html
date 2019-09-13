@@ -1,0 +1,714 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_gpio_interface.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.07.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src=""></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Legato Documentation</h2>
+<nav class="secondary">
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#typedef-members">Typedefs</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_gpio_interface.h File Reference</h1> </div>
+</div><div class="contents">
+<div class="textblock"><code>#include "legato.h"</code><br/>
+<code>#include "le_gpio_common.h"</code><br/>
+</div>
+<p><a href="le__gpio__interface_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a6ab847163ddc93d55ae7fb23e6da9f83"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#a6ab847163ddc93d55ae7fb23e6da9f83">le_gpio_DisconnectHandler_t</a>) (void *)</td></tr>
+<tr class="separator:a6ab847163ddc93d55ae7fb23e6da9f83"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a4201e8ba400539c1716635c85f235f45"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#a4201e8ba400539c1716635c85f235f45">le_gpio_ConnectService</a> (void)</td></tr>
+<tr class="separator:a4201e8ba400539c1716635c85f235f45"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:acaa2c0adb20561aff3c36812f0d64472"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#acaa2c0adb20561aff3c36812f0d64472">le_gpio_TryConnectService</a> (void)</td></tr>
+<tr class="separator:acaa2c0adb20561aff3c36812f0d64472"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:acb8abc63c098df063f889688d10c9389"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#acb8abc63c098df063f889688d10c9389">le_gpio_SetServerDisconnectHandler</a> (<a class="el" href="le__gpio__interface_8h.html#a6ab847163ddc93d55ae7fb23e6da9f83">le_gpio_DisconnectHandler_t</a> disconnectHandler, void *contextPtr)</td></tr>
+<tr class="separator:acb8abc63c098df063f889688d10c9389"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:adc225a1c41003b3dfd4f81149b7f919c"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#adc225a1c41003b3dfd4f81149b7f919c">le_gpio_DisconnectService</a> (void)</td></tr>
+<tr class="separator:adc225a1c41003b3dfd4f81149b7f919c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa9575365b0d7f3c63ab7a82f4106040b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#aa9575365b0d7f3c63ab7a82f4106040b">le_gpio_SetInput</a> (le_gpio_Polarity_t polarity)</td></tr>
+<tr class="separator:aa9575365b0d7f3c63ab7a82f4106040b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8b868ea1ec60fec2cc21a8f010f1ce24"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#a8b868ea1ec60fec2cc21a8f010f1ce24">le_gpio_SetPushPullOutput</a> (le_gpio_Polarity_t polarity, bool value)</td></tr>
+<tr class="separator:a8b868ea1ec60fec2cc21a8f010f1ce24"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a24ac042e9f77c27d490ac0f7c03e64f3"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#a24ac042e9f77c27d490ac0f7c03e64f3">le_gpio_SetTriStateOutput</a> (le_gpio_Polarity_t polarity)</td></tr>
+<tr class="separator:a24ac042e9f77c27d490ac0f7c03e64f3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae2f18371b5d1cec66dfc44d01951e3ac"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#ae2f18371b5d1cec66dfc44d01951e3ac">le_gpio_SetOpenDrainOutput</a> (le_gpio_Polarity_t polarity, bool value)</td></tr>
+<tr class="separator:ae2f18371b5d1cec66dfc44d01951e3ac"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8fcd5688f756766216f8ba003c6e2cb7"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#a8fcd5688f756766216f8ba003c6e2cb7">le_gpio_EnablePullUp</a> (void)</td></tr>
+<tr class="separator:a8fcd5688f756766216f8ba003c6e2cb7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab09de404e7e76c89709c1e5a41074c98"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#ab09de404e7e76c89709c1e5a41074c98">le_gpio_EnablePullDown</a> (void)</td></tr>
+<tr class="separator:ab09de404e7e76c89709c1e5a41074c98"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7b8f80ad137d6deda9d7568cbfe293db"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#a7b8f80ad137d6deda9d7568cbfe293db">le_gpio_DisableResistors</a> (void)</td></tr>
+<tr class="separator:a7b8f80ad137d6deda9d7568cbfe293db"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab9043b9f3cd91a8a6d168d5e998107bb"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#ab9043b9f3cd91a8a6d168d5e998107bb">le_gpio_Activate</a> (void)</td></tr>
+<tr class="separator:ab9043b9f3cd91a8a6d168d5e998107bb"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:afc2a7e73453babb24b114ab621959e21"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#afc2a7e73453babb24b114ab621959e21">le_gpio_Deactivate</a> (void)</td></tr>
+<tr class="separator:afc2a7e73453babb24b114ab621959e21"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a34b25c4717f044e74ecba8c624c1e51e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#a34b25c4717f044e74ecba8c624c1e51e">le_gpio_SetHighZ</a> (void)</td></tr>
+<tr class="separator:a34b25c4717f044e74ecba8c624c1e51e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:adaf4a736b849f8c76ce0cd029e9ea59d"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#adaf4a736b849f8c76ce0cd029e9ea59d">le_gpio_Read</a> (void)</td></tr>
+<tr class="separator:adaf4a736b849f8c76ce0cd029e9ea59d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae6fc799fa2d2497bb2fe158e3090649f"><td align="right" class="memItemLeft" valign="top">le_gpio_ChangeEventHandlerRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#ae6fc799fa2d2497bb2fe158e3090649f">le_gpio_AddChangeEventHandler</a> (le_gpio_Edge_t trigger, le_gpio_ChangeCallbackFunc_t handlerPtr, void *contextPtr, int32_t sampleMs)</td></tr>
+<tr class="separator:ae6fc799fa2d2497bb2fe158e3090649f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5fa8d6412e061f3bbe8f12689ced627c"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#a5fa8d6412e061f3bbe8f12689ced627c">le_gpio_RemoveChangeEventHandler</a> (le_gpio_ChangeEventHandlerRef_t handlerRef)</td></tr>
+<tr class="separator:a5fa8d6412e061f3bbe8f12689ced627c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a794351407853670c3425fc3b5b1011e9"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#a794351407853670c3425fc3b5b1011e9">le_gpio_SetEdgeSense</a> (le_gpio_Edge_t trigger)</td></tr>
+<tr class="separator:a794351407853670c3425fc3b5b1011e9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa5cb6c2f0efb3340945f8da25330b542"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#aa5cb6c2f0efb3340945f8da25330b542">le_gpio_DisableEdgeSense</a> (void)</td></tr>
+<tr class="separator:aa5cb6c2f0efb3340945f8da25330b542"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aabbf432ee71eb17dd0b5a8c5eb1120cd"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#aabbf432ee71eb17dd0b5a8c5eb1120cd">le_gpio_IsOutput</a> (void)</td></tr>
+<tr class="separator:aabbf432ee71eb17dd0b5a8c5eb1120cd"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a90faba34f78664444f2c5aad64ebbc7e"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#a90faba34f78664444f2c5aad64ebbc7e">le_gpio_IsInput</a> (void)</td></tr>
+<tr class="separator:a90faba34f78664444f2c5aad64ebbc7e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a87b175c8b9c53b335ee49a6397b84741"><td align="right" class="memItemLeft" valign="top">le_gpio_Edge_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#a87b175c8b9c53b335ee49a6397b84741">le_gpio_GetEdgeSense</a> (void)</td></tr>
+<tr class="separator:a87b175c8b9c53b335ee49a6397b84741"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a075e20d59c40a7ea1b76a649f8778ebd"><td align="right" class="memItemLeft" valign="top">le_gpio_Polarity_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#a075e20d59c40a7ea1b76a649f8778ebd">le_gpio_GetPolarity</a> (void)</td></tr>
+<tr class="separator:a075e20d59c40a7ea1b76a649f8778ebd"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aeef40c9bd485f20bcad72f7df8b67875"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#aeef40c9bd485f20bcad72f7df8b67875">le_gpio_IsActive</a> (void)</td></tr>
+<tr class="separator:aeef40c9bd485f20bcad72f7df8b67875"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac0c35d405d9bbdd18379d9e533f373fb"><td align="right" class="memItemLeft" valign="top">le_gpio_PullUpDown_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpio__interface_8h.html#ac0c35d405d9bbdd18379d9e533f373fb">le_gpio_GetPullUpDown</a> (void)</td></tr>
+<tr class="separator:ac0c35d405d9bbdd18379d9e533f373fb"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato <a class="el" href="c_gpio.html">GPIO</a> include file.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="a6ab847163ddc93d55ae7fb23e6da9f83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ab847163ddc93d55ae7fb23e6da9f83">◆ </a></span>le_gpio_DisconnectHandler_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_gpio_DisconnectHandler_t) (void *)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Type for handler called when a server disconnects. </p>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ab9043b9f3cd91a8a6d168d5e998107bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9043b9f3cd91a8a6d168d5e998107bb">◆ </a></span>le_gpio_Activate()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_gpio_Activate </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set output pin to active state.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Only valid for output pins. </dd></dl>
+</div>
+</div>
+<a id="ae6fc799fa2d2497bb2fe158e3090649f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6fc799fa2d2497bb2fe158e3090649f">◆ </a></span>le_gpio_AddChangeEventHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_gpio_ChangeEventHandlerRef_t le_gpio_AddChangeEventHandler </td>
+<td>(</td>
+<td class="paramtype">le_gpio_Edge_t </td>
+<td class="paramname"><em>trigger</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_gpio_ChangeCallbackFunc_t </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t </td>
+<td class="paramname"><em>sampleMs</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Add handler function for EVENT 'le_gpio_ChangeEvent'</p>
+<p>Register a callback function to be called when an input pin changes state.</p>
+<p>If the pin is not capable of interrupt-driven operation, then it will be sampled every sampleMs milliseconds. Otherwise, sampleMs will be ignored.</p>
+<p>If this fails, either because the handler cannot be registered, or setting the edge detection fails, then it will return a NULL reference. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">trigger</td><td>Change(s) that should trigger the callback to be called. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td>The callback function. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">sampleMs</td><td>If not interrupt capable, sample the input this often (ms). </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a4201e8ba400539c1716635c85f235f45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4201e8ba400539c1716635c85f235f45">◆ </a></span>le_gpio_ConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_gpio_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="afc2a7e73453babb24b114ab621959e21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc2a7e73453babb24b114ab621959e21">◆ </a></span>le_gpio_Deactivate()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_gpio_Deactivate </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set output pin to inactive state.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Only valid for output pins. </dd></dl>
+</div>
+</div>
+<a id="aa5cb6c2f0efb3340945f8da25330b542"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5cb6c2f0efb3340945f8da25330b542">◆ </a></span>le_gpio_DisableEdgeSense()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_gpio_DisableEdgeSense </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Turn off edge detection </p>
+</div>
+</div>
+<a id="a7b8f80ad137d6deda9d7568cbfe293db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b8f80ad137d6deda9d7568cbfe293db">◆ </a></span>le_gpio_DisableResistors()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_gpio_DisableResistors </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disable the pull-up and pull-down resistors. Does nothing if both are already disabled. </p>
+</div>
+</div>
+<a id="adc225a1c41003b3dfd4f81149b7f919c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc225a1c41003b3dfd4f81149b7f919c">◆ </a></span>le_gpio_DisconnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_gpio_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="ab09de404e7e76c89709c1e5a41074c98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab09de404e7e76c89709c1e5a41074c98">◆ </a></span>le_gpio_EnablePullDown()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_gpio_EnablePullDown </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Enable the pull-down resistor (disables pull-up if previously enabled). </p>
+</div>
+</div>
+<a id="a8fcd5688f756766216f8ba003c6e2cb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fcd5688f756766216f8ba003c6e2cb7">◆ </a></span>le_gpio_EnablePullUp()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_gpio_EnablePullUp </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Enable the pull-up resistor (disables pull-down if previously enabled). </p>
+</div>
+</div>
+<a id="a87b175c8b9c53b335ee49a6397b84741"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87b175c8b9c53b335ee49a6397b84741">◆ </a></span>le_gpio_GetEdgeSense()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_gpio_Edge_t le_gpio_GetEdgeSense </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the current value of edge sensing.</p>
+<dl class="section return"><dt>Returns</dt><dd>The current configured value</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>it is invalid to read the edge sense of an output </dd></dl>
+</div>
+</div>
+<a id="a075e20d59c40a7ea1b76a649f8778ebd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a075e20d59c40a7ea1b76a649f8778ebd">◆ </a></span>le_gpio_GetPolarity()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_gpio_Polarity_t le_gpio_GetPolarity </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the current value the pin polarity.</p>
+<dl class="section return"><dt>Returns</dt><dd>The current configured value </dd></dl>
+</div>
+</div>
+<a id="ac0c35d405d9bbdd18379d9e533f373fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0c35d405d9bbdd18379d9e533f373fb">◆ </a></span>le_gpio_GetPullUpDown()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_gpio_PullUpDown_t le_gpio_GetPullUpDown </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the current value of pull up and down resistors.</p>
+<dl class="section return"><dt>Returns</dt><dd>The current configured value </dd></dl>
+</div>
+</div>
+<a id="aeef40c9bd485f20bcad72f7df8b67875"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeef40c9bd485f20bcad72f7df8b67875">◆ </a></span>le_gpio_IsActive()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">bool le_gpio_IsActive </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Check if the pin is currently active.</p>
+<dl class="section return"><dt>Returns</dt><dd>true = active, false = inactive.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>this function can only be used on output pins </dd></dl>
+</div>
+</div>
+<a id="a90faba34f78664444f2c5aad64ebbc7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90faba34f78664444f2c5aad64ebbc7e">◆ </a></span>le_gpio_IsInput()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">bool le_gpio_IsInput </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Check if the pin is configured as an input.</p>
+<dl class="section return"><dt>Returns</dt><dd>true = input, false = output. </dd></dl>
+</div>
+</div>
+<a id="aabbf432ee71eb17dd0b5a8c5eb1120cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabbf432ee71eb17dd0b5a8c5eb1120cd">◆ </a></span>le_gpio_IsOutput()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">bool le_gpio_IsOutput </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Check if the pin is configured as an output.</p>
+<dl class="section return"><dt>Returns</dt><dd>true = output, false = input. </dd></dl>
+</div>
+</div>
+<a id="adaf4a736b849f8c76ce0cd029e9ea59d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaf4a736b849f8c76ce0cd029e9ea59d">◆ </a></span>le_gpio_Read()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">bool le_gpio_Read </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Read value of GPIO input pin.</p>
+<dl class="section return"><dt>Returns</dt><dd>true = active, false = inactive.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>It is invalid to read an output pin. </dd></dl>
+</div>
+</div>
+<a id="a5fa8d6412e061f3bbe8f12689ced627c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fa8d6412e061f3bbe8f12689ced627c">◆ </a></span>le_gpio_RemoveChangeEventHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_gpio_RemoveChangeEventHandler </td>
+<td>(</td>
+<td class="paramtype">le_gpio_ChangeEventHandlerRef_t </td>
+<td class="paramname"><em>handlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove handler function for EVENT 'le_gpio_ChangeEvent' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a794351407853670c3425fc3b5b1011e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a794351407853670c3425fc3b5b1011e9">◆ </a></span>le_gpio_SetEdgeSense()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_gpio_SetEdgeSense </td>
+<td>(</td>
+<td class="paramtype">le_gpio_Edge_t </td>
+<td class="paramname"><em>trigger</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the edge detection mode. This function can only be used when a handler is registered in order to prevent interrupts being generated and not handled </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">trigger</td><td>Change(s) that should trigger the callback to be called. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a34b25c4717f044e74ecba8c624c1e51e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34b25c4717f044e74ecba8c624c1e51e">◆ </a></span>le_gpio_SetHighZ()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_gpio_SetHighZ </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set output pin to high impedance state.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Only valid for tri-state or open-drain output pins. </dd></dl>
+</div>
+</div>
+<a id="aa9575365b0d7f3c63ab7a82f4106040b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9575365b0d7f3c63ab7a82f4106040b">◆ </a></span>le_gpio_SetInput()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_gpio_SetInput </td>
+<td>(</td>
+<td class="paramtype">le_gpio_Polarity_t </td>
+<td class="paramname"><em>polarity</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Pin polarities. State change event handler (callback). Edge transitions. Reference type used by Add/Remove functions for EVENT 'le_gpio_ChangeEvent' Pull up or down. Configure the pin as an input pin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">polarity</td><td>Active-high or active-low. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ae2f18371b5d1cec66dfc44d01951e3ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2f18371b5d1cec66dfc44d01951e3ac">◆ </a></span>le_gpio_SetOpenDrainOutput()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_gpio_SetOpenDrainOutput </td>
+<td>(</td>
+<td class="paramtype">le_gpio_Polarity_t </td>
+<td class="paramname"><em>polarity</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">bool </td>
+<td class="paramname"><em>value</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Configure the pin as an open-drain output pin. "High" is a high-impedance state, while "Low" pulls the pin to ground. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">polarity</td><td>Active-high or active-low. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Initial value to drive (true = active, false = inactive) </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a8b868ea1ec60fec2cc21a8f010f1ce24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b868ea1ec60fec2cc21a8f010f1ce24">◆ </a></span>le_gpio_SetPushPullOutput()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_gpio_SetPushPullOutput </td>
+<td>(</td>
+<td class="paramtype">le_gpio_Polarity_t </td>
+<td class="paramname"><em>polarity</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">bool </td>
+<td class="paramname"><em>value</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Configure the pin as a push-pull output pin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">polarity</td><td>Active-high or active-low. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Initial value to drive (true = active, false = inactive) </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="acb8abc63c098df063f889688d10c9389"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb8abc63c098df063f889688d10c9389">◆ </a></span>le_gpio_SetServerDisconnectHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void le_gpio_SetServerDisconnectHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__gpio__interface_8h.html#a6ab847163ddc93d55ae7fb23e6da9f83">le_gpio_DisconnectHandler_t</a> </td>
+<td class="paramname"><em>disconnectHandler</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set handler called when server disconnection is detected.</p>
+<p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
+</div>
+</div>
+<a id="a24ac042e9f77c27d490ac0f7c03e64f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24ac042e9f77c27d490ac0f7c03e64f3">◆ </a></span>le_gpio_SetTriStateOutput()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_gpio_SetTriStateOutput </td>
+<td>(</td>
+<td class="paramtype">le_gpio_Polarity_t </td>
+<td class="paramname"><em>polarity</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Configure the pin as a tri-state output pin.</p>
+<dl class="section note"><dt>Note</dt><dd>The initial state will be high-impedance. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">polarity</td><td>Active-high or active-low. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="acaa2c0adb20561aff3c36812f0d64472"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaa2c0adb20561aff3c36812f0d64472">◆ </a></span>le_gpio_TryConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_gpio_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

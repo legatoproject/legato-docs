@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Concepts  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.07.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Concepts.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a class="link-selected" href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Concepts </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>The Legato Application Framework is designed to simplify embedded IoT development and connect your applications to the cloud and network services. <b>But how do we do that?</b> We've developed a set of conventions and tools that let you easily hook up your custom apps to existing service apps (platform services) which then in turn hook up to the OS and hardware through an adapter. When you are developing your apps for a target you only need to worry about how to connect to services and send or receive data.</p>
+<p>This section explains all of our concepts and how to integrate the concepts into developing your apps and building your system. Refer to our <a class="el" href="aboutDocsGlossary.html">glossary</a> to define some of our basic terminology.</p>
+<h1>Develop </h1>
+<p>The built product of the Legato Application Framework is the Legato runtime environment which is created from a system. A system is how you configure and customize the Legato Runtime Environment for your target and define what apps and platform services that you want to use. Apps are collections of components and files that run in a secure environment called a sandbox. At the heart of every app is one or more components, the component is the collection of code or other files that are functionally related and need to exist in the same space. Components communicate with each other and/or other apps through interfaces.</p>
+<p>The following sections explain our strategies to use components and interfaces in developing your components, apps and systems:</p>
+<table class="doxtable">
+<tr>
+<th>Section </th><th>Description  </th></tr>
+<tr>
+<td><a class="el" href="conceptsEnvironment.html">Systems, Apps &amp; Components</a> </td><td>Overview of Systems, Apps and Components </td></tr>
+<tr>
+<td><a class="el" href="defFiles.html">Definition Files</a> </td><td>Use Definition Files to build systems, apps, and components </td></tr>
+<tr>
+<td><a class="el" href="conceptsKernelModule.html">Kernel Modules</a> </td><td>Learn about Kernel Modules within a Legato System </td></tr>
+<tr>
+<td><a class="el" href="conceptsComponents.html">Components</a> </td><td>Learn about components and how to integrate your code into one </td></tr>
+<tr>
+<td><a class="el" href="conceptsInterfaces.html">Interfaces</a> </td><td>Use interfaces to facilitate component and app communication </td></tr>
+<tr>
+<td><a class="el" href="conceptsIPC.html">Inter-process Communication</a> </td><td>Use IPC to communicate between different processes </td></tr>
+<tr>
+<td><a class="el" href="conceptsEvents.html">Event-driven Programming</a> </td><td>Use Event-driven Programming to trigger callback functions </td></tr>
+<tr>
+<td><a class="el" href="apiFiles.html">API Files</a> </td><td>Work with the API files to develop Apps </td></tr>
+<tr>
+<td><a class="el" href="ccodingStdsMain.html">C Language Standards</a> </td><td>Learn about the C Language Coding Standards used </td></tr>
+<tr>
+<td><a class="el" href="conceptsInternationalization.html">Internationalization</a> </td><td>Learn about our basic Internationalization standards </td></tr>
+</table>
+<h1>Runtime </h1>
+<p>Once you have created your components and apps you will be combining them into a system, and then installing that system onto a target. The runtime environment is the combination of your custom apps any platform services that you have included (or have been defaultly built into the system) and Legato Daemons that take care of the management of the target and the apps installed on the target.</p>
+<p>The following sections provide more details on the runtime architecture:</p>
+<table class="doxtable">
+<tr>
+<th>Section </th><th>Description  </th></tr>
+<tr>
+<td><a class="el" href="conceptsRuntimeArch.html">Runtime Architecture</a> </td><td>Learn about the daemons that administrate and monitor your apps </td></tr>
+<tr>
+<td><a class="el" href="conceptsSecurity.html">Security</a> </td><td>Learn about the Legato Security model </td></tr>
+<tr>
+<td><a class="el" href="conceptsConfig.html">App/System Configuration</a> </td><td>Learn about our Configuration Management model for systems and apps </td></tr>
+<tr>
+<td><a class="el" href="conceptsLogs.html">Logging</a> </td><td>Learn how Legato deals with logging </td></tr>
+<tr>
+<td><a class="el" href="conceptsUpdates.html">Updates</a> </td><td>Learn the different methods of updating your target </td></tr>
+<tr>
+<td><a class="el" href="conceptsPwrMgmt.html">Power Management</a> </td><td>Learn about power management strategies within apps </td></tr>
+</table>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

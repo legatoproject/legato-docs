@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Red/Black Tree API  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.07.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src=""></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Legato Documentation</h2>
+<nav class="secondary">
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Red/Black Tree API </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><a class="el" href="le__redBlackTree_8h.html">API Reference</a></p>
+<hr/>
+<p>A Red-Black Tree is a data structure representing a self-balancing binary search tree. Tree consists of nodes maintaining links to the parent, left and right nodes. Advantage over a linked-list is faster search based on the key comparison. Advantage over a hashtable is simplified memory management (no additional allocation within the library), better scalability up and down, and possibility to easily iterate the set in ascending/descending order.</p>
+<h1><a class="anchor" id="rbtree_createTree"></a>
+Creating and Initializing Red-Black Trees</h1>
+<p>To create and initialize an RB Tree the user must create an <a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> typed object and initialize it using <a class="el" href="le__redBlackTree_8h.html#accb91a387364f9e762c2c394e650af13">le_rbtree_InitTree()</a> routine. At this time the user has to provide a pointer to the comparator function, that provides a way to perform a comparison between objects. The tree <b>must</b> be initialized before it can be used.</p>
+<pre class="fragment"><div class="line"><span class="comment">// provide the comparator function</span></div><div class="line"><span class="keyword">static</span> <span class="keywordtype">int</span> compare(<span class="keyword">const</span> <span class="keywordtype">void</span>* a, <span class="keyword">const</span> <span class="keywordtype">void</span>* b)</div><div class="line">{</div><div class="line">   <span class="comment">// return negative, 0, or positive value</span></div><div class="line">}</div><div class="line"> </div><div class="line"><span class="comment">// Create the tree.</span></div><div class="line"><a class="code" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> MyTree;</div><div class="line"> </div><div class="line"><span class="comment">// Initialize the tree.</span></div><div class="line"><a class="code" href="le__redBlackTree_8h.html#accb91a387364f9e762c2c394e650af13">le_rbtree_InitTree</a>(&amp;MyTree, compare);</div></pre><!-- fragment --><p><b> Elements of <code><a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a></code> MUST NOT be accessed directly by the user. </b></p>
+<h1><a class="anchor" id="rbtree_createNode"></a>
+Creating and Accessing Nodes</h1>
+<p>Nodes can contain any data in any format and is defined and created by the user. The only requirement for nodes is that it must contain an <code><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a></code> link member. The link member must be initialized by calling <code><a class="el" href="le__redBlackTree_8h.html#aa0a97a9cd254093ba11f932f2d249641">le_rbtree_InitNode()</a></code> before it is added to the tree; at this time, pointer to the key of this object must be provided. The node can be added to the tree using the function <code><a class="el" href="le__redBlackTree_8h.html#add4f88e0d85e451fccc2c891f2a825cf">le_rbtree_Insert()</a></code>.</p>
+<pre class="fragment"><div class="line"><span class="comment">// The node may be defined like this.</span></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line">{</div><div class="line">     MyKeyType key;</div><div class="line">     dataType someUserData;</div><div class="line">     ...</div><div class="line">     <a class="code" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a> myLink;</div><div class="line">}</div><div class="line">MyNodeClass_t;</div><div class="line"> </div><div class="line"><span class="keywordtype">void</span> foo (<span class="keywordtype">void</span>)</div><div class="line">{</div><div class="line">    <span class="comment">// Create the node.  Get the memory from a memory pool previously created.</span></div><div class="line">    MyNodeClass_t* myNodePtr = <a class="code" href="le__mem_8h.html#af7c289c73d4182835a26a9099f3db359">le_mem_ForceAlloc</a>(MyNodePool);</div><div class="line"> </div><div class="line">    <span class="comment">// Initialize the node's link.</span></div><div class="line">    <a class="code" href="le__redBlackTree_8h.html#aa0a97a9cd254093ba11f932f2d249641">le_rbtree_InitNode</a>(&amp;MyTree, &amp;myNodePtr-&gt;key);</div><div class="line"> </div><div class="line">    <span class="comment">// Add the node to the tree by passing in the node's link.</span></div><div class="line">    <a class="code" href="le__redBlackTree_8h.html#add4f88e0d85e451fccc2c891f2a825cf">le_rbtree_Insert</a>(&amp;MyTree, &amp;myNodePtr-&gt;myLink);</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="rbtree_find"></a>
+Finding node in a Tree</h1>
+<p>To find the node in the tree by the given key, use <code><a class="el" href="le__redBlackTree_8h.html#a1993f0dc87f399ff0fe6998210bd892e">le_rbtree_Find()</a></code> function. To obtain the object itself, use the <code>CONTAINER_OF</code> macro defined in <a class="el" href="le__basics_8h.html">le_basics.h</a>. Here's a code sample using <code>CONTAINER_OF</code> to obtain the node:</p>
+<pre class="fragment"><div class="line"><span class="comment">// declare and initialize the key</span></div><div class="line">MyKeyType key = &lt;...&gt;;</div><div class="line"><span class="comment">// Assuming MyTree has been created and initialized and is not empty.</span></div><div class="line"><a class="code" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a>* linkPtr = <a class="code" href="le__redBlackTree_8h.html#a1993f0dc87f399ff0fe6998210bd892e">le_rbtree_Find</a>(&amp;MyTree, &amp;key);</div><div class="line"> </div><div class="line"><span class="comment">// Now we have the link but still need the node to access user data.</span></div><div class="line"><span class="comment">// We use CONTAINER_OF to get a pointer to the node given the node's link.</span></div><div class="line"><span class="keywordflow">if</span> (linkPtr != NULL)</div><div class="line">{</div><div class="line">    MyNodeClass_t* myNodePtr = <a class="code" href="le__basics_8h.html#a3616d3fd5b502150b643ddc769f71188">CONTAINER_OF</a>(linkPtr, MyNodeClass_t, myLink);</div><div class="line">}</div></pre><!-- fragment --><p>The user is responsible for creating and freeing memory for all nodes; the RB Tree module only manages the links in the nodes. The node must be removed from all trees before its memory can be freed.</p>
+<p><b>The elements of <code><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a></code> MUST NOT be accessed directly by the user.</b></p>
+<h1><a class="anchor" id="rbtree_traverse"></a>
+Traversing a Tree</h1>
+<p>Tree can be traversed in an ascending or descending order (in the sense of greater/lesser provided by the comparator function):</p>
+<pre class="fragment"><div class="line"><span class="comment">// Ascending order</span></div><div class="line"><a class="code" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a>* linkPtr;</div><div class="line"><span class="keywordflow">for</span> (linkPtr = <a class="code" href="le__redBlackTree_8h.html#ae88750409f2045159ecb08776b8811aa">le_rbtree_GetFirst</a>(&amp;MyTree);</div><div class="line">     linkPtr != NULL;</div><div class="line">     linkPtr = <a class="code" href="le__redBlackTree_8h.html#a5cfce72aff5e4535fdebefb075de7946">le_rbtree_GetNext</a>(&amp;MyTree, linkPtr))</div><div class="line">{</div><div class="line">    MyNodeClass_t* myNodePtr = <a class="code" href="le__basics_8h.html#a3616d3fd5b502150b643ddc769f71188">CONTAINER_OF</a>(linkPtr, MyNodeClass_t, myLink);</div><div class="line">}</div><div class="line"> </div><div class="line"><span class="comment">// Descending order</span></div><div class="line"><a class="code" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a>* linkPtr;</div><div class="line"><span class="keywordflow">for</span> (linkPtr = <a class="code" href="le__redBlackTree_8h.html#aaf066d4620acee2dd8f2acbae117634a">le_rbtree_GetLast</a>(&amp;MyTree);</div><div class="line">     linkPtr != NULL;</div><div class="line">     linkPtr = <a class="code" href="le__redBlackTree_8h.html#a4f1228d886d6e4227c085e2cad76acf0">le_rbtree_GetPrev</a>(&amp;MyTree, linkPtr))</div><div class="line">{</div><div class="line">    MyNodeClass_t* myNodePtr = <a class="code" href="le__basics_8h.html#a3616d3fd5b502150b643ddc769f71188">CONTAINER_OF</a>(linkPtr, MyNodeClass_t, myLink);</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="rbtree_remove"></a>
+Removing node from a Tree</h1>
+<p>To remove a node from a Tree, use <a class="el" href="le__redBlackTree_8h.html#afb88cc57d92c894596f37e9476123aaf">le_rbtree_RemoveByKey()</a> function: </p><pre class="fragment"><div class="line"><span class="comment">// Remove the node</span></div><div class="line"><a class="code" href="le__redBlackTree_8h.html#afb88cc57d92c894596f37e9476123aaf">le_rbtree_RemoveByKey</a>(&amp;MyTree, &amp;(myNodePtr-&gt;key));</div><div class="line"><span class="comment">// Free the object</span></div><div class="line"><a class="code" href="le__mem_8h.html#a6d8e3fe430bcb81efe97b57ce30ef2de">le_mem_Release</a>(myNodePtr);</div></pre><!-- fragment --><p>or <a class="el" href="le__redBlackTree_8h.html#a3b34dccab87ba6fedb1d7f1d49982fea">le_rbtree_Remove()</a> function: </p><pre class="fragment"><div class="line"><span class="comment">// Remove the node</span></div><div class="line"><a class="code" href="le__redBlackTree_8h.html#a3b34dccab87ba6fedb1d7f1d49982fea">le_rbtree_Remove</a>(&amp;MyTree, &amp;(myNodePtr-&gt;myLink));</div><div class="line"><span class="comment">// Free the object</span></div><div class="line"><a class="code" href="le__mem_8h.html#a6d8e3fe430bcb81efe97b57ce30ef2de">le_mem_Release</a>(myNodePtr);</div></pre><!-- fragment --><h1><a class="anchor" id="rbtree_synch"></a>
+Thread Safety and Re-Entrancy</h1>
+<p>All Red-Black Tree function calls are re-entrant and thread safe themselves, but if the nodes and/or Tree object are shared by multiple threads, explicit steps must be taken to maintain mutual exclusion of access. If you're accessing the same tree from multiple threads, you <em>must</em> use a <a class="el" href="c_mutex.html">mutex</a> or some other form of thread synchronization to ensure only one thread accesses the tree at a time.</p>
+<hr/>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
