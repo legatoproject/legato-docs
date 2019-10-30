@@ -1,0 +1,474 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_tty.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.09.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src=""></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Legato Documentation</h2>
+<nav class="secondary">
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#enum-members">Enumerations</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_tty.h File Reference</h1> </div>
+</div><div class="contents">
+<p><a href="le__tty_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a765b8ccd81c156c6b11340f05c66efe7"><td align="right" class="memItemLeft" valign="top"><a id="a765b8ccd81c156c6b11340f05c66efe7"></a>enum  </td><td class="memItemRight" valign="bottom"><b>tty_FlowControl_t</b> { <b>LE_TTY_FLOW_CONTROL_NONE</b> = 0, 
+<b>LE_TTY_FLOW_CONTROL_XON_XOFF</b> = 1, 
+<b>LE_TTY_FLOW_CONTROL_HARDWARE</b> = 2
+ }</td></tr>
+<tr class="separator:a765b8ccd81c156c6b11340f05c66efe7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a04be619b6aa8c2866fd107e51be30a13"><td align="right" class="memItemLeft" valign="top"><a id="a04be619b6aa8c2866fd107e51be30a13"></a>enum  </td><td class="memItemRight" valign="bottom"><b>tty_Speed_t</b> { <br/>
+  <b>LE_TTY_SPEED_0</b> = 0, 
+<b>LE_TTY_SPEED_50</b>, 
+<b>LE_TTY_SPEED_75</b>, 
+<b>LE_TTY_SPEED_110</b>, 
+<br/>
+  <b>LE_TTY_SPEED_134</b>, 
+<b>LE_TTY_SPEED_150</b>, 
+<b>LE_TTY_SPEED_200</b>, 
+<b>LE_TTY_SPEED_300</b>, 
+<br/>
+  <b>LE_TTY_SPEED_600</b>, 
+<b>LE_TTY_SPEED_1200</b>, 
+<b>LE_TTY_SPEED_1800</b>, 
+<b>LE_TTY_SPEED_2400</b>, 
+<br/>
+  <b>LE_TTY_SPEED_4800</b>, 
+<b>LE_TTY_SPEED_9600</b>, 
+<b>LE_TTY_SPEED_19200</b>, 
+<b>LE_TTY_SPEED_38400</b>, 
+<br/>
+  <b>LE_TTY_SPEED_57600</b>, 
+<b>LE_TTY_SPEED_115200</b>, 
+<b>LE_TTY_SPEED_230400</b>, 
+<b>LE_TTY_SPEED_460800</b>, 
+<br/>
+  <b>LE_TTY_SPEED_500000</b>, 
+<b>LE_TTY_SPEED_576000</b>, 
+<b>LE_TTY_SPEED_921600</b>, 
+<b>LE_TTY_SPEED_1000000</b>, 
+<br/>
+  <b>LE_TTY_SPEED_1152000</b>, 
+<b>LE_TTY_SPEED_1500000</b>, 
+<b>LE_TTY_SPEED_2000000</b>, 
+<b>LE_TTY_SPEED_2500000</b>, 
+<br/>
+  <b>LE_TTY_SPEED_3000000</b>, 
+<b>LE_TTY_SPEED_3500000</b>, 
+<b>LE_TTY_SPEED_4000000</b>
+<br/>
+ }</td></tr>
+<tr class="separator:a04be619b6aa8c2866fd107e51be30a13"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a93c3ad951903478014a91c721319951b"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="le__tty_8h.html#a93c3ad951903478014a91c721319951b">le_tty_Open</a> (const char *ttyDev, int flags)</td></tr>
+<tr class="separator:a93c3ad951903478014a91c721319951b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8e888c890956de70c594d26405133b98"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__tty_8h.html#a8e888c890956de70c594d26405133b98">le_tty_Close</a> (int fd)</td></tr>
+<tr class="separator:a8e888c890956de70c594d26405133b98"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5ade4aa1b77c8cd69016695adca64f3c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__tty_8h.html#a5ade4aa1b77c8cd69016695adca64f3c">le_tty_SetBaudRate</a> (int fd, tty_Speed_t ttyRate)</td></tr>
+<tr class="separator:a5ade4aa1b77c8cd69016695adca64f3c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a786626ed11391263f89e120b1b4de18c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__tty_8h.html#a786626ed11391263f89e120b1b4de18c">le_tty_GetBaudRate</a> (int fd, tty_Speed_t *ttyInRatePtr, tty_Speed_t *ttyOutRatePtr)</td></tr>
+<tr class="separator:a786626ed11391263f89e120b1b4de18c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af33173f45f89a5a17b47add063a2ad46"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__tty_8h.html#af33173f45f89a5a17b47add063a2ad46">le_tty_SetFraming</a> (int fd, char parity, int wordSize, int stopBits)</td></tr>
+<tr class="separator:af33173f45f89a5a17b47add063a2ad46"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a331cdf5d19135a4c4fc1ba8b3c3acf2a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__tty_8h.html#a331cdf5d19135a4c4fc1ba8b3c3acf2a">le_tty_SetFlowControl</a> (int fd, tty_FlowControl_t ttyFlowControl)</td></tr>
+<tr class="separator:a331cdf5d19135a4c4fc1ba8b3c3acf2a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a78cfc2ae600bca28eb48e8b40ccee358"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__tty_8h.html#a78cfc2ae600bca28eb48e8b40ccee358">le_tty_SetCanonical</a> (int fd)</td></tr>
+<tr class="separator:a78cfc2ae600bca28eb48e8b40ccee358"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7eae0319f1c4a064c8667f38610e059a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__tty_8h.html#a7eae0319f1c4a064c8667f38610e059a">le_tty_SetRaw</a> (int fd, int numChars, int timeout)</td></tr>
+<tr class="separator:a7eae0319f1c4a064c8667f38610e059a"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato <a class="el" href="c_tty.html">tty API</a> include file</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a8e888c890956de70c594d26405133b98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e888c890956de70c594d26405133b98">◆ </a></span>le_tty_Close()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_tty_Close </td>
+<td>(</td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>fd</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Close and unlock a serial port file descriptor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>File descriptor </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a786626ed11391263f89e120b1b4de18c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a786626ed11391263f89e120b1b4de18c">◆ </a></span>le_tty_GetBaudRate()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_tty_GetBaudRate </td>
+<td>(</td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>fd</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">tty_Speed_t * </td>
+<td class="paramname"><em>ttyInRatePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">tty_Speed_t * </td>
+<td class="paramname"><em>ttyOutRatePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get baud rate of serial port.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if successful = - LE_NOT_FOUND if speed is not supported by legato</li>
+<li>LE_FAULT for any other error </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>File Descriptor </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">ttyInRatePtr</td><td>input baud rate </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">ttyOutRatePtr</td><td>output baud rate </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a93c3ad951903478014a91c721319951b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93c3ad951903478014a91c721319951b">◆ </a></span>le_tty_Open()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">int le_tty_Open </td>
+<td>(</td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>ttyDev</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>flags</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Open a serial port device and locks it for exclusive use.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>Serial port file descriptor number on success.</li>
+<li>-1 on failure. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ttyDev</td><td>Path name </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">flags</td><td>flags used in open(2) </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a5ade4aa1b77c8cd69016695adca64f3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ade4aa1b77c8cd69016695adca64f3c">◆ </a></span>le_tty_SetBaudRate()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_tty_SetBaudRate </td>
+<td>(</td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>fd</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">tty_Speed_t </td>
+<td class="paramname"><em>ttyRate</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set baud rate of serial port.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if successful</li>
+<li>LE_UNSUPPORTED if value cannot be set</li>
+<li>LE_NOT_FOUND if value is not supported</li>
+<li>LE_FAULT for any other error </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>File Descriptor </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">ttyRate</td><td>Baud rate </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a78cfc2ae600bca28eb48e8b40ccee358"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78cfc2ae600bca28eb48e8b40ccee358">◆ </a></span>le_tty_SetCanonical()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_tty_SetCanonical </td>
+<td>(</td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>fd</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set serial port into terminal mode. Converts EOL characters to unix format, enables local echo, line mode, etc.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if successful</li>
+<li>LE_UNSUPPORTED if canonical mode cannot be set</li>
+<li>LE_FAULT for any other error </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>File Descriptor </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a331cdf5d19135a4c4fc1ba8b3c3acf2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a331cdf5d19135a4c4fc1ba8b3c3acf2a">◆ </a></span>le_tty_SetFlowControl()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_tty_SetFlowControl </td>
+<td>(</td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>fd</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">tty_FlowControl_t </td>
+<td class="paramname"><em>ttyFlowControl</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set flow control option on serial port. Flow control options are: LE_TTY_FLOW_CONTROL_NONE - flow control disabled LE_TTY_FLOW_CONTROL_XON_XOFF - software flow control (XON/XOFF) LE_TTY_FLOW_CONTROL_HARDWARE - hardware flow control (RTS/CTS)</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if successful</li>
+<li>LE_UNSUPPORTED if value cannot be set</li>
+<li>LE_NOT_FOUND if value is not supported</li>
+<li>LE_FAULT for any other error </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>File decriptor </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">ttyFlowControl</td><td>Flow control option </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="af33173f45f89a5a17b47add063a2ad46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af33173f45f89a5a17b47add063a2ad46">◆ </a></span>le_tty_SetFraming()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_tty_SetFraming </td>
+<td>(</td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>fd</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char </td>
+<td class="paramname"><em>parity</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>wordSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>stopBits</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set framing on serial port. Use human-readable characters/numbers such as 'N', 8, 1 to indicate parity, word size and stop bit settings.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if successful</li>
+<li>LE_UNSUPPORTED if value cannot be set</li>
+<li>LE_NOT_FOUND if value is not supported</li>
+<li>LE_FAULT for any other error </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>File Descriptor </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">parity</td><td>Parity ('N','O','E') </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">wordSize</td><td>Data bits (5,6,7,8) </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">stopBits</td><td>Stop bits (1,2) </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a7eae0319f1c4a064c8667f38610e059a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eae0319f1c4a064c8667f38610e059a">◆ </a></span>le_tty_SetRaw()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_tty_SetRaw </td>
+<td>(</td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>fd</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>numChars</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>timeout</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set serial port into raw (non-canonical) mode. Disables conversion of EOL characters, disables local echo, sets character mode, read timeouts, etc.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if successful</li>
+<li>LE_UNSUPPORTED if raw mode cannot be set</li>
+<li>LE_FAULT for any other error </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>File Descriptor </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">numChars</td><td>Number of bytes returned by read(2) when a read is performed. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>when a read(2) is performed return after that timeout. The timeout value is given with 1 decimal places. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

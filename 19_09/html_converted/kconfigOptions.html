@@ -1,0 +1,1527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Legato KConfig Options  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.09.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Tools.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a class="link-selected" href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Legato KConfig Options </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>Build-time configuration options. </p><hr/>
+<dl>
+<dt>Legato Configuration  </dt>
+<dd><hr/>
+<dl>
+<dt><code><a class="anchor" id="VIRT_TARGET_ARCH"></a>VIRT_TARGET_ARCH:</code> <em>Hidden. Only set by other selections.</em> </dt>
+<dd><b>Type:</b> <code>string</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"arm" if <a class="el" href="kconfigOptions.html#TARGET_VIRT_ARM">TARGET_VIRT_ARM</a> &amp;&amp; (<a class="el" href="kconfigOptions.html#TARGET_VIRT_ARM">TARGET_VIRT_ARM</a> || <a class="el" href="kconfigOptions.html#TARGET_VIRT_X86">TARGET_VIRT_X86</a>)</code> </li>
+<li>
+<code>"x86" if <a class="el" href="kconfigOptions.html#TARGET_VIRT_X86">TARGET_VIRT_X86</a> &amp;&amp; (<a class="el" href="kconfigOptions.html#TARGET_VIRT_ARM">TARGET_VIRT_ARM</a> || <a class="el" href="kconfigOptions.html#TARGET_VIRT_X86">TARGET_VIRT_X86</a>)</code> </li>
+</ul>
+<b>Depends on:</b><br/>
+<ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#TARGET_VIRT_ARM">TARGET_VIRT_ARM</a></code> </li>
+<li>
+<code><a class="el" href="kconfigOptions.html#TARGET_VIRT_X86">TARGET_VIRT_X86</a></code> </li>
+</ul>
+Set the name of the virtual target platform, if applicable. This value is determined by the target platform selection.  </dd>
+<dt>General Setup  </dt>
+<dd><hr/>
+<dl>
+<dt><code><a class="anchor" id="EXPERIMENTAL"></a>EXPERIMENTAL:</code> Prompt for experimental (alpha-quality) features  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"n"</code><br/>
+ Experimental features are usually new features that are being introduced for testing and feedback from a wider audience. They can be enabled to get a preview of new functionality. Be aware that experimental features are subject to change before being released as a regular feature. The use of experimental features in a production environment is strongly discouraged.  </dd>
+<dt><code>Target Hardware Platform</code> </dt>
+<dd><b>Default:</b> <code><a class="el" href="kconfigOptions.html#TARGET_LOCALHOST">TARGET_LOCALHOST</a></code><br/>
+<em>Choose one of:</em> <hr/>
+<dl>
+<dt><code><a class="anchor" id="TARGET_LOCALHOST"></a>TARGET_LOCALHOST:</code> Localhost (localhost)  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Run on local Linux host.  </dd>
+<dt><code><a class="anchor" id="TARGET_VIRT_X86"></a>TARGET_VIRT_X86:</code> Virtual x86 (virt-x86)  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Run on virtual x86 platform.  </dd>
+<dt><code><a class="anchor" id="TARGET_VIRT_ARM"></a>TARGET_VIRT_ARM:</code> Virtual ARM (virt-arm)  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Run on virtual ARM platform.  </dd>
+<dt><code><a class="anchor" id="TARGET_RASPI"></a>TARGET_RASPI:</code> Raspberry Pi (raspi)  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Run on a Raspberry Pi.  </dd>
+<dt><code><a class="anchor" id="TARGET_AR7"></a>TARGET_AR7:</code> SWI AR755x (ar7)  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Run on a Sierra Wireless AR755x.  </dd>
+<dt><code><a class="anchor" id="TARGET_AR758X"></a>TARGET_AR758X:</code> SWI AR758x (ar758x)  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Run on a Sierra Wireless AR758x.  </dd>
+<dt><code><a class="anchor" id="TARGET_AR759X"></a>TARGET_AR759X:</code> SWI AR759x (ar759x)  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Run on a Sierra Wireless AR759x.  </dd>
+<dt><code><a class="anchor" id="TARGET_AR86"></a>TARGET_AR86:</code> SWI AR86xx (ar86)  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Run on a Sierra Wireless AR86xx.  </dd>
+<dt><code><a class="anchor" id="TARGET_WP85"></a>TARGET_WP85:</code> SWI WP85xx (wp85)  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Run on a Sierra Wireless WP85xx.  </dd>
+<dt><code><a class="anchor" id="TARGET_WP750X"></a>TARGET_WP750X:</code> SWI WP750x (wp750x)  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Run on a Sierra Wireless WP750x.  </dd>
+<dt><code><a class="anchor" id="TARGET_WP76XX"></a>TARGET_WP76XX:</code> SWI WP76xx (wp76xx)  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Run on a Sierra Wireless WP76xx.  </dd>
+<dt><code><a class="anchor" id="TARGET_WP77XX"></a>TARGET_WP77XX:</code> SWI WP77xx (wp77xx)  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Run on a Sierra Wireless WP77xx.  </dd>
+<dt><code><a class="anchor" id="TARGET_CUSTOM"></a>TARGET_CUSTOM:</code> Custom  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Run on a custom hardware platform.  </dd>
+</dl>
+</dd>
+<dt><code>Target Operating System</code> </dt>
+<dd><b>Default:</b> <code><a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code><br/>
+<em>Choose one of:</em> <hr/>
+<dl>
+<dt><code><a class="anchor" id="LINUX"></a>LINUX:</code> Linux  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Run on Linux.  </dd>
+<dt><code><a class="anchor" id="CUSTOM_OS"></a>CUSTOM_OS:</code> Custom (EXPERIMENTAL)  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Depends on:</b><br/>
+<ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+</ul>
+Run on another operating system, such as a proprietary OS distribution. A custom framework adaptor is required in this case.  </dd>
+</dl>
+</dd>
+<dt><code><a class="anchor" id="RTOS"></a>RTOS:</code> RTOS  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"y" if <a class="el" href="kconfigOptions.html#CUSTOM_OS">CUSTOM_OS</a></code><br/>
+ Selected operating system is a real-time operating system (RTOS).  </dd>
+<dt><code><a class="anchor" id="POSIX"></a>POSIX:</code> POSIX compliant operating system  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+<li>
+<code>"n"</code> </li>
+</ul>
+Indicate Legato is running on a POSIX platform.  </dd>
+<dt><code><a class="anchor" id="NETWORK"></a>NETWORK:</code> Network stack  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"y"</code><br/>
+ Target platform has a network stack available. <hr/>
+<dl>
+<dt><code><a class="anchor" id="LWIP"></a>LWIP:</code> Using lwIP network stack (EXPERIMENTAL)  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#RTOS">RTOS</a> &amp;&amp; <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a> &amp;&amp; <a class="el" href="kconfigOptions.html#NETWORK">NETWORK</a> &amp;&amp; <a class="el" href="kconfigOptions.html#RTOS">RTOS</a></code> </li>
+<li>
+<code>"n" if <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a> &amp;&amp; <a class="el" href="kconfigOptions.html#NETWORK">NETWORK</a> &amp;&amp; <a class="el" href="kconfigOptions.html#RTOS">RTOS</a></code> </li>
+</ul>
+<b>Depends on:</b><br/>
+<ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#RTOS">RTOS</a></code> </li>
+</ul>
+Target platform is using the Lightweight IP (lwIP) network stack.  </dd>
+</dl>
+</dd>
+<dt><code><a class="anchor" id="FILESYSTEM"></a>FILESYSTEM:</code> File system  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"y"</code><br/>
+ Target platform has support for a file system.  </dd>
+<dt><code><a class="anchor" id="SDEF"></a>SDEF:</code> Default system definition file  </dt>
+<dd><b>Type:</b> <code>string</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"" if !"y"</code> </li>
+<li>
+<code>"modules/WiFi/wifi.sdef" if <a class="el" href="kconfigOptions.html#ENABLE_WIFI">ENABLE_WIFI</a></code> </li>
+<li>
+<code>"modules/Dualsys/ar758x.sdef" if <a class="el" href="kconfigOptions.html#TARGET_AR758X">TARGET_AR758X</a></code> </li>
+<li>
+<code>"modules/Dualsys/ar759x.sdef" if <a class="el" href="kconfigOptions.html#TARGET_AR759X">TARGET_AR759X</a></code> </li>
+<li>
+<code>"modules/Raspi/raspi.sdef" if <a class="el" href="kconfigOptions.html#TARGET_RASPI">TARGET_RASPI</a></code> </li>
+<li>
+<code>"localhost.sdef" if <a class="el" href="kconfigOptions.html#TARGET_LOCALHOST">TARGET_LOCALHOST</a></code> </li>
+<li>
+<code>"default_readonly.sdef" if <a class="el" href="kconfigOptions.html#READ_ONLY">READ_ONLY</a></code> </li>
+<li>
+<code>"default.sdef"</code> </li>
+</ul>
+Default Legato system definition (.sdef) file to use. This system is built along with the framework. Users may also later create other systems later using their own .sdef files.  </dd>
+<dt><code><a class="anchor" id="USE_CLANG"></a>USE_CLANG:</code> Use Clang for compilation  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"n"</code><br/>
+ Use Clang rather than GCC for compiling C and C++ sources.  </dd>
+<dt><code><a class="anchor" id="USE_CCACHE"></a>USE_CCACHE:</code> Use CCache  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>!"y"</code><br/>
+ Use CCache to speed up compilation times. <hr/>
+<dl>
+<dt><code><a class="anchor" id="CCACHE"></a>CCACHE:</code> CCache command  </dt>
+<dd><b>Type:</b> <code>string</code> <br/>
+<b>Default:</b> <code>"ccache" if <a class="el" href="kconfigOptions.html#USE_CCACHE">USE_CCACHE</a></code><br/>
+ CCache executable to use when compiling.  </dd>
+</dl>
+</dd>
+<dt><code><a class="anchor" id="READ_ONLY"></a>READ_ONLY:</code> Read-only image  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#TARGET_AR758X">TARGET_AR758X</a> || <a class="el" href="kconfigOptions.html#TARGET_AR759X">TARGET_AR759X</a></code> </li>
+<li>
+<code>"n"</code> </li>
+</ul>
+Generate a read-only image for the target, in addition to the default read-write image.  </dd>
+<dt><code><a class="anchor" id="STRIP_STAGING_TREE"></a>STRIP_STAGING_TREE:</code> Strip staging tree  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"y"</code><br/>
+ Strip files staged for the target image.  </dd>
+<dt><code><a class="anchor" id="DEBUG"></a>DEBUG:</code> Debug build  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"n"</code><br/>
+ Build with debug compiler flags turned on, and debugging code features enabled.  </dd>
+<dt><code><a class="anchor" id="TEST_COVERAGE"></a>TEST_COVERAGE:</code> Code coverage build  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"n"</code><br/>
+ Build with code coverage compiler flags turned on. <hr/>
+<dl>
+<dt><code><a class="anchor" id="TEST_COVERAGE_DIR"></a>TEST_COVERAGE_DIR:</code> On-target code coverage directory  </dt>
+<dd><b>Type:</b> <code>string</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"" if <a class="el" href="kconfigOptions.html#TARGET_LOCALHOST">TARGET_LOCALHOST</a> &amp;&amp; <a class="el" href="kconfigOptions.html#TEST_COVERAGE">TEST_COVERAGE</a></code> </li>
+<li>
+<code>"/mnt/flash/coverage" if <a class="el" href="kconfigOptions.html#TEST_COVERAGE">TEST_COVERAGE</a></code> </li>
+</ul>
+On-target directory to write runtime code coverage results to.  </dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>Framework  </dt>
+<dd><hr/>
+<dl>
+<dt><code><a class="anchor" id="CUSTOM_FA"></a>CUSTOM_FA:</code> Use custom framework adaptor (EXPERIMENTAL)  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#CUSTOM_OS">CUSTOM_OS</a> &amp;&amp; <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+<li>
+<code>"n" if <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+</ul>
+Customize the Legato framework adaptor for the target platform. <hr/>
+<dl>
+<dt><code><a class="anchor" id="CUSTOM_FA_PATH"></a>CUSTOM_FA_PATH:</code> Path to custom OS adaptor sources directory  </dt>
+<dd><b>Type:</b> <code>string</code> <br/>
+ Path of custom OS adaptor source directory relative to the legato/ root directory. This source directory should contain liblegato/ and include/ directories containing the source code needed to support the custom operating system.  </dd>
+</dl>
+</dd>
+<dt><code><a class="anchor" id="BUILD_TARGET_TOOLS"></a>BUILD_TARGET_TOOLS:</code> Build on-target command-line tools  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"n" if <a class="el" href="kconfigOptions.html#CUSTOM_OS">CUSTOM_OS</a></code> </li>
+<li>
+<code>"y"</code> </li>
+</ul>
+Include Legato's command-line tools (inspect, config, sdir, etc.) for the target. <hr/>
+<dl>
+<dt><code><a class="anchor" id="RTOS_TARGET_TOOL_INSPECT"></a>RTOS_TARGET_TOOL_INSPECT:</code> Include the inspect tool  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"y" if <a class="el" href="kconfigOptions.html#RTOS">RTOS</a> &amp;&amp; <a class="el" href="kconfigOptions.html#BUILD_TARGET_TOOLS">BUILD_TARGET_TOOLS</a></code><br/>
+<b>Depends on:</b><br/>
+<ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#RTOS">RTOS</a></code> </li>
+<li>
+<code><a class="el" href="kconfigOptions.html#BUILD_TARGET_TOOLS">BUILD_TARGET_TOOLS</a></code> </li>
+</ul>
+Select this if you want to build and install the "inspect" tool. This tool provides details of the state and resource usage of many Legato objects.  </dd>
+</dl>
+</dd>
+<dt><code><a class="anchor" id="RUNTIME_DIR"></a>RUNTIME_DIR:</code> Runtime directory  </dt>
+<dd><b>Type:</b> <code>string</code> <br/>
+<b>Default:</b> <code>"/tmp/legato" if <a class="el" href="kconfigOptions.html#POSIX">POSIX</a></code><br/>
+ Directory to use for runtime state files, such as UNIX domain sockets.  </dd>
+<dt><code><a class="anchor" id="SOTA"></a>SOTA:</code> Enable software-over-the-air (SOTA) updates  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#POSIX">POSIX</a></code> </li>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#POSIX">POSIX</a> &amp;&amp; <a class="el" href="kconfigOptions.html#ENABLE_AV_DATA">ENABLE_AV_DATA</a></code> </li>
+</ul>
+Enable support for SOTA updates. SOTA is not supported on non-POSIX systems. <hr/>
+<dl>
+<dt><code><a class="anchor" id="PROBATION_PERIOD"></a>PROBATION_PERIOD:</code> Update probation period  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>10 - 4294967 if <a class="el" href="kconfigOptions.html#SOTA">SOTA</a></code> </li>
+</ul>
+<b>Default:</b> <code>1800 if <a class="el" href="kconfigOptions.html#SOTA">SOTA</a></code><br/>
+ Default software update probationary period in seconds. After this period of time has elapsed with no failures, it is marked as good. This value can be overridden at runtime by the LE_PROBATION_MS environment variable.  </dd>
+</dl>
+</dd>
+<dt><code><a class="anchor" id="PYTHON"></a>PYTHON:</code> Enable Python support (EXPERIMENTAL)  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"n" if <a class="el" href="kconfigOptions.html#POSIX">POSIX</a> &amp;&amp; <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code><br/>
+<b>Depends on:</b><br/>
+<ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#POSIX">POSIX</a></code> </li>
+<li>
+<code><a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+</ul>
+Enable support for Python. Python is not supported on non-POSIX systems. <hr/>
+<dl>
+<dt><code><a class="anchor" id="PYTHON_EXECUTABLE"></a>PYTHON_EXECUTABLE:</code> Python executable  </dt>
+<dd><b>Type:</b> <code>string</code> <br/>
+<b>Default:</b> <code>"python2.7" if <a class="el" href="kconfigOptions.html#PYTHON">PYTHON</a></code><br/>
+ Python executable to use for building Python support. This may be set to an absolute path.  </dd>
+</dl>
+</dd>
+<dt><code><a class="anchor" id="JAVA"></a>JAVA:</code> Enable Java support (EXPERIMENTAL)  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"n" if <a class="el" href="kconfigOptions.html#POSIX">POSIX</a> &amp;&amp; <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code><br/>
+<b>Depends on:</b><br/>
+<ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#POSIX">POSIX</a></code> </li>
+<li>
+<code><a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+</ul>
+Enable support for Java. Java is not supported on non-POSIX systems. <hr/>
+<dl>
+<dt><code><a class="anchor" id="JDK_INCLUDE_DIR"></a>JDK_INCLUDE_DIR:</code> JDK include directory  </dt>
+<dd><b>Type:</b> <code>string</code> <br/>
+<b>Default:</b> <code>"" if <a class="el" href="kconfigOptions.html#JAVA">JAVA</a></code><br/>
+ Java Development Kit include directory to use when building Java support.  </dd>
+<dt><code><a class="anchor" id="EJDK_DIR"></a>EJDK_DIR:</code> Embedded Java Developer Kit directory  </dt>
+<dd><b>Type:</b> <code>string</code> <br/>
+<b>Default:</b> <code>"" if <a class="el" href="kconfigOptions.html#JAVA">JAVA</a></code><br/>
+ Path to Oracle's Embedded Java Developer Kit, needed if that JVM is to be bundled with the system.  </dd>
+</dl>
+</dd>
+<dt><code><a class="anchor" id="THREAD_REALTIME_ONLY"></a>THREAD_REALTIME_ONLY:</code> Use real-time priority for all threads  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"n"</code><br/>
+ Force Legato to use only real-time priorities for tasks.  </dd>
+<dt><code>Memory allocation failure behaviour</code> </dt>
+<dd><b>Default:</b> <code><a class="el" href="kconfigOptions.html#MEM_ALLOC_FORCE">MEM_ALLOC_FORCE</a></code><br/>
+<em>Choose one of:</em> <hr/>
+<dl>
+<dt><code><a class="anchor" id="MEM_ALLOC_FORCE"></a>MEM_ALLOC_FORCE:</code> Force  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Force allocation by expanding the pool onto the heap as necessary.  </dd>
+<dt><code><a class="anchor" id="MEM_ALLOC_ASSERT"></a>MEM_ALLOC_ASSERT:</code> Assert  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Abort the program with an error if the pool cannot satisfy the request.  </dd>
+</dl>
+</dd>
+<dt>Security Features  </dt>
+<dd><hr/>
+<dl>
+<dt><code><a class="anchor" id="ENABLE_SMACK"></a>ENABLE_SMACK:</code> Enable SMACK for access controls  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>!"n" if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a> &amp;&amp; !<a class="el" href="kconfigOptions.html#TARGET_LOCALHOST">TARGET_LOCALHOST</a> &amp;&amp; !<a class="el" href="kconfigOptions.html#TARGET_VIRT_X86">TARGET_VIRT_X86</a> &amp;&amp; !<a class="el" href="kconfigOptions.html#TARGET_VIRT_ARM">TARGET_VIRT_ARM</a> &amp;&amp; !<a class="el" href="kconfigOptions.html#TARGET_RASPI">TARGET_RASPI</a></code><br/>
+ Enable the Simplified Mandatory Access Control Kernel (SMACK) security module on Linux for access controls. <hr/>
+<dl>
+<dt><code><a class="anchor" id="SMACK_ONLYCAP"></a>SMACK_ONLYCAP:</code> Enable SMACK onlycap  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>!"y" if <a class="el" href="kconfigOptions.html#ENABLE_SMACK">ENABLE_SMACK</a></code><br/>
+ Require a specific SMACK label for CAP_MAC_ADMIN and CAP_MAC_OVERRIDE to be effective. The label is typically set in /smack/onlycap.  </dd>
+<dt><code><a class="anchor" id="SMACK_ATTR_NAME"></a>SMACK_ATTR_NAME:</code> SMACK attribute name  </dt>
+<dd><b>Type:</b> <code>string</code> <br/>
+<b>Default:</b> <code>"security.@ref SMACK64" if <a class="el" href="kconfigOptions.html#ENABLE_SMACK">ENABLE_SMACK</a></code><br/>
+ Name of the Legato SMACK attribute.  </dd>
+<dt><code><a class="anchor" id="SMACK_ATTR_VALUE"></a>SMACK_ATTR_VALUE:</code> SMACK attribute value  </dt>
+<dd><b>Type:</b> <code>string</code> <br/>
+<b>Default:</b> <code>"_" if <a class="el" href="kconfigOptions.html#ENABLE_SMACK">ENABLE_SMACK</a></code><br/>
+ Value of the Legato SMACK attribute.  </dd>
+</dl>
+</dd>
+<dt><code><a class="anchor" id="ENABLE_IMA"></a>ENABLE_IMA:</code> Enable IMA for file integrity checking  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"n" if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a> &amp;&amp; !<a class="el" href="kconfigOptions.html#TARGET_LOCALHOST">TARGET_LOCALHOST</a></code><br/>
+<b>Depends on:</b><br/>
+<ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+</ul>
+Enable the Integrity Measurement Architecture (IMA) on Linux to prevent accidental or malicious file system changes. <hr/>
+<dl>
+<dt><code><a class="anchor" id="IMA_PRIVATE_KEY"></a>IMA_PRIVATE_KEY:</code> IMA private key location  </dt>
+<dd><b>Type:</b> <code>string</code> <br/>
+<b>Default:</b> <code>"" if <a class="el" href="kconfigOptions.html#ENABLE_IMA">ENABLE_IMA</a></code><br/>
+ File to load the IMA private key from.  </dd>
+<dt><code><a class="anchor" id="IMA_PUBLIC_CERT"></a>IMA_PUBLIC_CERT:</code> IMA public certificate location  </dt>
+<dd><b>Type:</b> <code>string</code> <br/>
+<b>Default:</b> <code>"" if <a class="el" href="kconfigOptions.html#ENABLE_IMA">ENABLE_IMA</a></code><br/>
+ File to load the IMA public certificate from.  </dd>
+<dt><code><a class="anchor" id="IMA_SMACK"></a>IMA_SMACK:</code> SMACK label for IMA  </dt>
+<dd><b>Type:</b> <code>string</code> <br/>
+<b>Default:</b> <code>"imaLegato" if <a class="el" href="kconfigOptions.html#ENABLE_SMACK">ENABLE_SMACK</a> &amp;&amp; <a class="el" href="kconfigOptions.html#ENABLE_IMA">ENABLE_IMA</a></code><br/>
+<b>Depends on:</b><br/>
+<ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#ENABLE_SMACK">ENABLE_SMACK</a></code> </li>
+<li>
+<code><a class="el" href="kconfigOptions.html#ENABLE_IMA">ENABLE_IMA</a></code> </li>
+</ul>
+SMACK label to use for IMA purposes.  </dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>Performance Tuning  </dt>
+<dd><hr/>
+<dl>
+<dt><code><a class="anchor" id="REDUCE_FOOTPRINT"></a>REDUCE_FOOTPRINT:</code> Reduce memory and storage use where possible  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"n"</code><br/>
+ Try to reduce the memory and storage footprint of Legato. This may use alternate data structures which are optimized for size and reduce the scale of some tests. Selecting this option may result in lower performance and slower applications.  </dd>
+<dt><code><a class="anchor" id="STATIC_THREAD_STACKS"></a>STATIC_THREAD_STACKS:</code> Statically allocate thread stacks  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"n" if <a class="el" href="kconfigOptions.html#RTOS">RTOS</a></code><br/>
+ Allocate stack space for Legato threads from static memory (bss) rather than from the heap.  </dd>
+<dt><code><a class="anchor" id="MEM_POOLS"></a>MEM_POOLS:</code> Use memory pools  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"y"</code><br/>
+ Use memory pools for dynamic memory allocation. Memory pools help prevent memory fragmentation, but require that the pools be sized appropriately for the application. Disabling this option will still allocate memory using the memory pool interface (le_mem), but switches the internal behaviour to use malloc and free on a per-block basis. This allows tools like Valgrind to accurately track the allocations and de-allocations at the cost of potential memory fragmentation. <hr/>
+<dl>
+<dt><code><a class="anchor" id="MAX_EVENT_POOL_SIZE"></a>MAX_EVENT_POOL_SIZE:</code> Maximum event pool size  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 65535 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code> </li>
+</ul>
+<b>Default:</b> <code>30 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code><br/>
+ The maximum number of objects in the process-wide event pool, from which the event objects are allocated.  </dd>
+<dt><code><a class="anchor" id="MAX_HANDLER_POOL_SIZE"></a>MAX_HANDLER_POOL_SIZE:</code> Maximum event handler pool size  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 65535 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code> </li>
+</ul>
+<b>Default:</b> <code>15 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code><br/>
+ The maximum number of objects in the process-wide handler pool, from which all handler objects are allocated.  </dd>
+<dt><code><a class="anchor" id="MAX_QUEUED_FUNCTION_POOL_SIZE"></a>MAX_QUEUED_FUNCTION_POOL_SIZE:</code> Maximum queued event function pool size  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 65535 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code> </li>
+</ul>
+<b>Default:</b> <code>15 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code><br/>
+ The maximum number of objects in the process-wide queued function report pool, from which Queued Function reports are allocated.  </dd>
+<dt><code><a class="anchor" id="MAX_REPORT_POOL_SIZE"></a>MAX_REPORT_POOL_SIZE:</code> Maximum event report pool size  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 65535 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code> </li>
+</ul>
+<b>Default:</b> <code>1 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code><br/>
+ The maximum number of objects in a per event ID report pool.  </dd>
+<dt><code><a class="anchor" id="MAX_FD_MONITOR_POOL_SIZE"></a>MAX_FD_MONITOR_POOL_SIZE:</code> Maximum file descriptor monitor pool size  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>2 - 65535 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code> </li>
+</ul>
+<b>Default:</b> <code>10 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code><br/>
+ The maximum number of objects in the process-wide FD monitor pool, from which all FD monitor objects are allocated.  </dd>
+<dt><code><a class="anchor" id="MAX_SUB_POOLS_POOL_SIZE"></a>MAX_SUB_POOLS_POOL_SIZE:</code> Maximum memory pool sub-pools  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>0 - 65535 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code> </li>
+</ul>
+<b>Default:</b> <code>8 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code><br/>
+ The maximum number of sub-pool objects in the memory sub-pools pool. These are control structures used for managing the subdivision of memory pools.  </dd>
+<dt><code><a class="anchor" id="MAX_MUTEX_POOL_SIZE"></a>MAX_MUTEX_POOL_SIZE:</code> Maximum mutex pool size  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>4 - 65535 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code> </li>
+</ul>
+<b>Default:</b> <code>20 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code><br/>
+ The maximum number of mutex objects in the process-wide mutex pool, from which all Legato mutexes are allocated.  </dd>
+<dt><code><a class="anchor" id="MAX_SEM_POOL_SIZE"></a>MAX_SEM_POOL_SIZE:</code> Maximum semaphore pool size  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>2 - 65535 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code> </li>
+</ul>
+<b>Default:</b> <code>64 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code><br/>
+ The maximum number of semaphore objects in the process-wide semaphore pool, from which all Legato semaphores are allocated.  </dd>
+<dt><code><a class="anchor" id="MAX_THREAD_POOL_SIZE"></a>MAX_THREAD_POOL_SIZE:</code> Maximum thread pool size  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 65535 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code> </li>
+</ul>
+<b>Default:</b> <code>20 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code><br/>
+ The maximum number of thread objects in the process-wide thread pool, from which all Legato threads are allocated.  </dd>
+<dt><code><a class="anchor" id="MAX_TIMER_POOL_SIZE"></a>MAX_TIMER_POOL_SIZE:</code> Maximum timer pool size  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 65535 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code> </li>
+</ul>
+<b>Default:</b> <code>40 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code><br/>
+ The maximum number of timer objects in the process-wide timer pool, from which all Legato timers are allocated.  </dd>
+<dt><code><a class="anchor" id="MAX_PATH_ITERATOR_POOL_SIZE"></a>MAX_PATH_ITERATOR_POOL_SIZE:</code> Maximum path iterator count  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>0 - 65535 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code> </li>
+</ul>
+<b>Default:</b> <code>10 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code><br/>
+ The maximum number of path iterator in the process-wide iterator pools, from which all Legato path iterators are allocated.  </dd>
+<dt><code><a class="anchor" id="MAX_MSG_LOCAL_CLIENT_SESSION_POOL_SIZE"></a> MAX_MSG_LOCAL_CLIENT_SESSION_POOL_SIZE:</code> Maximum local client messaging sessions  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>0 - 65535 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code> </li>
+</ul>
+<b>Defaults:</b> <ul>
+<li>
+<code>50 if <a class="el" href="kconfigOptions.html#RTOS">RTOS</a> &amp;&amp; <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code> </li>
+<li>
+<code>0 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code> </li>
+</ul>
+The maximum number of simultaneous messaging sessions supported with local clients.  </dd>
+<dt><code><a class="anchor" id="MAX_ARG_OPTIONS"></a>MAX_ARG_OPTIONS:</code> Maximum number of command line options  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>0 - 65535 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code> </li>
+</ul>
+<b>Defaults:</b> <ul>
+<li>
+<code>16 if <a class="el" href="kconfigOptions.html#RTOS">RTOS</a> &amp;&amp; <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code> </li>
+<li>
+<code>64 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code> </li>
+</ul>
+Total number of command line options that can be handled by an app. On RTOS, this pool is a shared resource for all apps.  </dd>
+<dt><code><a class="anchor" id="MAX_ARG_POSITIONAL_CALLBACKS"></a>MAX_ARG_POSITIONAL_CALLBACKS:</code> Maximum number of positional argument callbacks  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>0 - 65535 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code> </li>
+</ul>
+<b>Defaults:</b> <ul>
+<li>
+<code>8 if <a class="el" href="kconfigOptions.html#RTOS">RTOS</a> &amp;&amp; <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code> </li>
+<li>
+<code>128 if <a class="el" href="kconfigOptions.html#MEM_POOLS">MEM_POOLS</a></code> </li>
+</ul>
+Total number of command line positional arguments that can be handled by an app. On RTOS, this pool is a shared resource for all apps.  </dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>Diagnostic Features  </dt>
+<dd><hr/>
+<dl>
+<dt><code>Static log level filter</code> </dt>
+<dd><b>Defaults:</b> <ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#LOG_STATIC_FILTER_INFO">LOG_STATIC_FILTER_INFO</a> if <a class="el" href="kconfigOptions.html#REDUCE_FOOTPRINT">REDUCE_FOOTPRINT</a></code> </li>
+<li>
+<code><a class="el" href="kconfigOptions.html#LOG_STATIC_FILTER_DEBUG">LOG_STATIC_FILTER_DEBUG</a></code> </li>
+</ul>
+<em>Choose one of:</em> <hr/>
+<dl>
+<dt><code><a class="anchor" id="LOG_STATIC_FILTER_DEBUG"></a>LOG_STATIC_FILTER_DEBUG:</code> Debug  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Include all statements up to and including debug level.  </dd>
+<dt><code><a class="anchor" id="LOG_STATIC_FILTER_INFO"></a>LOG_STATIC_FILTER_INFO:</code> Info  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Include all statements up to and including info level.  </dd>
+<dt><code><a class="anchor" id="LOG_STATIC_FILTER_WARN"></a>LOG_STATIC_FILTER_WARN:</code> Warning  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Include all statements up to and including warning level.  </dd>
+<dt><code><a class="anchor" id="LOG_STATIC_FILTER_ERR"></a>LOG_STATIC_FILTER_ERR:</code> Error  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Include all statements up to and including error level.  </dd>
+<dt><code><a class="anchor" id="LOG_STATIC_FILTER_CRIT"></a>LOG_STATIC_FILTER_CRIT:</code> Critical  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Include all statements up to and including critical level.  </dd>
+<dt><code><a class="anchor" id="LOG_STATIC_FILTER_EMERG"></a>LOG_STATIC_FILTER_EMERG:</code> Emergency  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Include only emergency-level log statements.  </dd>
+</dl>
+</dd>
+<dt><code><a class="anchor" id="ENABLE_SEGV_HANDLER"></a>ENABLE_SEGV_HANDLER:</code> Enable SIGSEGV handler  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"y" if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code><br/>
+ When a segmentation fault occurs, use signal derivation and sigsetjmp()/siglongjmp() to try and survive the invalid memory access long enough to generate a backtrace. This handler relies on undefined behaviour of sigsetjmp() and is therefore not guaranteed to work.  </dd>
+<dt><code><a class="anchor" id="ENABLE_BACKTRACE"></a>ENABLE_BACKTRACE:</code> Enable Legato assertion backtraces  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"y"</code><br/>
+ Print backtraces when a Legato assertion is triggered. This can be helpful in debugging errors.  </dd>
+<dt><code><a class="anchor" id="USE_GUARD_BAND"></a>USE_GUARD_BAND:</code> Enable memory guard bands  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"y"</code><br/>
+ Insert chunks of memory into each allocated memory block before and after the user data portion. These "guard bands" are filled with a special pattern that is unlikely to occur in normal data. Whenever a block is allocated or released, the guard bands are checked for corruption and any corruption is reported. <hr/>
+<dl>
+<dt><code><a class="anchor" id="NUM_GUARD_BAND_WORDS"></a>NUM_GUARD_BAND_WORDS:</code> Number of guard band words  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 8 if <a class="el" href="kconfigOptions.html#USE_GUARD_BAND">USE_GUARD_BAND</a></code> </li>
+</ul>
+<b>Defaults:</b> <ul>
+<li>
+<code>1 if <a class="el" href="kconfigOptions.html#REDUCE_FOOTPRINT">REDUCE_FOOTPRINT</a> &amp;&amp; <a class="el" href="kconfigOptions.html#USE_GUARD_BAND">USE_GUARD_BAND</a></code> </li>
+<li>
+<code>8 if <a class="el" href="kconfigOptions.html#USE_GUARD_BAND">USE_GUARD_BAND</a></code> </li>
+</ul>
+The number of words in each guard band. This number of words will be inserted before and after every memory allocation, increasing the allocation size in words by NUM_GUARD_BAND_WORDS * 2.  </dd>
+</dl>
+</dd>
+<dt><code><a class="anchor" id="MEM_POOL_STATS"></a>MEM_POOL_STATS:</code> Track memory pool statistics  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"n" if <a class="el" href="kconfigOptions.html#REDUCE_FOOTPRINT">REDUCE_FOOTPRINT</a></code> </li>
+<li>
+<code>"y"</code> </li>
+</ul>
+Track memory pool statistics which are not needed during runtime. These are: - Number of overflows - Number of allocations - Maximum blocks used  </dd>
+<dt><code><a class="anchor" id="LOG_FUNCTION_NAMES"></a>LOG_FUNCTION_NAMES:</code> Log function names  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"n" if <a class="el" href="kconfigOptions.html#REDUCE_FOOTPRINT">REDUCE_FOOTPRINT</a></code> </li>
+<li>
+<code>"y"</code> </li>
+</ul>
+Include the function name where a log message originated in the message preamble.  </dd>
+<dt><code><a class="anchor" id="THREAD_SETNAME"></a>THREAD_SETNAME:</code> Set names of threads created from Legato  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"y"</code><br/>
+ Use Legato thread names as the names for underlying OS threads as well. This has no effect if the OS does not allow setting thread names. If Legato thread names are disabled, this will just set the name to "&lt;legato&gt;."  </dd>
+<dt><code><a class="anchor" id="NAMES_ENABLED"></a>NAMES_ENABLED:</code> Enable names in Legato objects  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"y"</code><br/>
+ Add name fields to Legato objects (mutexes, threads, memory pools, etc) for logging, debugging, and tracing purposes. Turning this off will reduce RAM usage at the expense of traceability. <hr/>
+<dl>
+<dt><code><a class="anchor" id="FD_MONITOR_NAMES_ENABLED"></a>FD_MONITOR_NAMES_ENABLED:</code> Enable names in file descriptor monitors  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"n" if <a class="el" href="kconfigOptions.html#REDUCE_FOOTPRINT">REDUCE_FOOTPRINT</a> &amp;&amp; <a class="el" href="kconfigOptions.html#NAMES_ENABLED">NAMES_ENABLED</a></code> </li>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#NAMES_ENABLED">NAMES_ENABLED</a></code> </li>
+</ul>
+Add a name field to Legato file descriptor monitors.  </dd>
+<dt><code><a class="anchor" id="SEM_NAMES_ENABLED"></a>SEM_NAMES_ENABLED:</code> Enable names in semaphores  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"n" if <a class="el" href="kconfigOptions.html#REDUCE_FOOTPRINT">REDUCE_FOOTPRINT</a> &amp;&amp; <a class="el" href="kconfigOptions.html#NAMES_ENABLED">NAMES_ENABLED</a></code> </li>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#NAMES_ENABLED">NAMES_ENABLED</a></code> </li>
+</ul>
+Add a name field to Legato semaphores.  </dd>
+<dt><code><a class="anchor" id="MUTEX_NAMES_ENABLED"></a>MUTEX_NAMES_ENABLED:</code> Enable names in mutexes  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"n" if <a class="el" href="kconfigOptions.html#REDUCE_FOOTPRINT">REDUCE_FOOTPRINT</a> &amp;&amp; <a class="el" href="kconfigOptions.html#NAMES_ENABLED">NAMES_ENABLED</a></code> </li>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#NAMES_ENABLED">NAMES_ENABLED</a></code> </li>
+</ul>
+Add a name field to Legato mutexes.  </dd>
+<dt><code><a class="anchor" id="THREAD_NAMES_ENABLED"></a>THREAD_NAMES_ENABLED:</code> Enable names in threads  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"y" if <a class="el" href="kconfigOptions.html#NAMES_ENABLED">NAMES_ENABLED</a></code><br/>
+ Add a name field to Legato threads.  </dd>
+<dt><code><a class="anchor" id="MEM_POOL_NAMES_ENABLED"></a>MEM_POOL_NAMES_ENABLED:</code> Enable names in memory pools  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"y" if <a class="el" href="kconfigOptions.html#NAMES_ENABLED">NAMES_ENABLED</a></code><br/>
+ Add a name field to Legato memory pools. <hr/>
+<dl>
+<dt><code><a class="anchor" id="MEM_TRACE"></a>MEM_TRACE:</code> Enable memory pool tracing  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"n" if <a class="el" href="kconfigOptions.html#MEM_POOL_NAMES_ENABLED">MEM_POOL_NAMES_ENABLED</a></code><br/>
+ If enabled, the memory subsystem will create a trace point for every memory pool created. The name of the tracepoint will be the same of the pool, and is of the form "component.poolName".  </dd>
+</dl>
+</dd>
+<dt><code><a class="anchor" id="TIMER_NAMES_ENABLED"></a>TIMER_NAMES_ENABLED:</code> Enable names in timers  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"n" if <a class="el" href="kconfigOptions.html#REDUCE_FOOTPRINT">REDUCE_FOOTPRINT</a> &amp;&amp; <a class="el" href="kconfigOptions.html#NAMES_ENABLED">NAMES_ENABLED</a></code> </li>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#NAMES_ENABLED">NAMES_ENABLED</a></code> </li>
+</ul>
+Add a name field to Legato timers.  </dd>
+<dt><code><a class="anchor" id="EVENT_NAMES_ENABLED"></a>EVENT_NAMES_ENABLED:</code> Enable names in events  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"n" if <a class="el" href="kconfigOptions.html#REDUCE_FOOTPRINT">REDUCE_FOOTPRINT</a> &amp;&amp; <a class="el" href="kconfigOptions.html#NAMES_ENABLED">NAMES_ENABLED</a></code> </li>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#NAMES_ENABLED">NAMES_ENABLED</a></code> </li>
+</ul>
+Add a name field to Legato event IDs.  </dd>
+<dt><code><a class="anchor" id="HASHMAP_NAMES_ENABLED"></a>HASHMAP_NAMES_ENABLED:</code> Enable names in hashmaps  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"n" if <a class="el" href="kconfigOptions.html#REDUCE_FOOTPRINT">REDUCE_FOOTPRINT</a> &amp;&amp; <a class="el" href="kconfigOptions.html#NAMES_ENABLED">NAMES_ENABLED</a></code> </li>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#NAMES_ENABLED">NAMES_ENABLED</a></code> </li>
+</ul>
+Add a name field to Legato hashmaps. Disabling this also disables hashmap tracing.  </dd>
+<dt><code><a class="anchor" id="SAFE_REF_NAMES_ENABLED"></a>SAFE_REF_NAMES_ENABLED:</code> Enable names in safe references  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"n" if <a class="el" href="kconfigOptions.html#REDUCE_FOOTPRINT">REDUCE_FOOTPRINT</a> &amp;&amp; <a class="el" href="kconfigOptions.html#NAMES_ENABLED">NAMES_ENABLED</a></code> </li>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#NAMES_ENABLED">NAMES_ENABLED</a></code> </li>
+</ul>
+Add a name field to Legato safe references.  </dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>Daemon Setup  </dt>
+<dd><hr/>
+<dl>
+<dt><code><a class="anchor" id="WDOG_FRAMEWORK"></a>WDOG_FRAMEWORK:</code> Enable Legato watchdog on framework services  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"y"</code><br/>
+ The watchdog observes the Legato framework daemons and, if one deadlocks, restarts the system.  </dd>
+<dt>Supervisor  </dt>
+<dd><hr/>
+<dl>
+<dt><code><a class="anchor" id="SUPERV_NICE_LEVEL"></a>SUPERV_NICE_LEVEL:</code> Nice level  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>-20 - 19 if <a class="el" href="kconfigOptions.html#POSIX">POSIX</a></code> </li>
+</ul>
+<b>Default:</b> <code>-19 if <a class="el" href="kconfigOptions.html#POSIX">POSIX</a></code><br/>
+ The nice level of the Legato Supervisor, which forks other Legato processes.  </dd>
+<dt><code><a class="anchor" id="SUPERV_APP_TMPFS_SIZE"></a>SUPERV_APP_TMPFS_SIZE:</code> App tmpfs size  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Default:</b> <code>90112 if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code><br/>
+ The size in bytes of the tmpfs partition created for each sandboxed App.  </dd>
+</dl>
+</dd>
+<dt>Service Directory  </dt>
+<dd><hr/>
+<dl>
+<dt><code><a class="anchor" id="SVCDIR_SERVER_SOCKET_NAME"></a>SVCDIR_SERVER_SOCKET_NAME:</code> Service directory server socket name  </dt>
+<dd><b>Type:</b> <code>string</code> <br/>
+<b>Default:</b> <code>"serviceDirectoryServer"</code><br/>
+ Name of the Service Directory's server UNIX domain socket. The full path will be this name appended to the runtime directory path.  </dd>
+<dt><code><a class="anchor" id="SVCDIR_CLIENT_SOCKET_NAME"></a>SVCDIR_CLIENT_SOCKET_NAME:</code> Service directory client socket name  </dt>
+<dd><b>Type:</b> <code>string</code> <br/>
+<b>Default:</b> <code>"serviceDirectoryClient"</code><br/>
+ Name of the Service Directory's client UNIX domain socket. The full path will be this name appended to the runtime directory path.  </dd>
+</dl>
+</dd>
+<dt>Config Tree  </dt>
+<dd><hr/>
+<dl>
+<dt><code><a class="anchor" id="ENABLE_CONFIG_TREE"></a>ENABLE_CONFIG_TREE:</code> Enable Config Tree  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"y"</code><br/>
+ Enable the Config Tree for storing settings. The Config Tree is always enabled on Linux.  </dd>
+<dt><code><a class="anchor" id="CFGTREE_MAX_USER_POOL_SIZE"></a>CFGTREE_MAX_USER_POOL_SIZE:</code> Maximum user pool size  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 65535 if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a> &amp;&amp; <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+</ul>
+<b>Default:</b> <code>31 if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a> &amp;&amp; <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code><br/>
+<b>Depends on:</b><br/>
+<ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+<li>
+<code><a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+</ul>
+The maximum number of user objects in the configTree user pool.  </dd>
+<dt><code><a class="anchor" id="CFGTREE_MAX_DSTRING_POOL_SIZE"></a>CFGTREE_MAX_DSTRING_POOL_SIZE:</code> Maximum dynamic string pool size  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 65535 if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+</ul>
+<b>Defaults:</b> <ul>
+<li>
+<code>3000 if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+<li>
+<code>30 if <a class="el" href="kconfigOptions.html#RTOS">RTOS</a> &amp;&amp; <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+</ul>
+The maximum number of dynamic string objects in the configTree string pool.  </dd>
+<dt><code><a class="anchor" id="CFGTREE_MAX_ITERATOR_POOL_SIZE"></a> CFGTREE_MAX_ITERATOR_POOL_SIZE:</code> Maximum config iterator pool size  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 65535 if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+</ul>
+<b>Default:</b> <code>20 if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code><br/>
+ The maximum number of iterator objects in the configTree iterator pool.  </dd>
+<dt><code><a class="anchor" id="CFGTREE_MAX_UPDATE_POOL_SIZE"></a>CFGTREE_MAX_UPDATE_POOL_SIZE:</code> Maximum update pool size  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 65535 if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+</ul>
+<b>Default:</b> <code>3 if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code><br/>
+ The maximum number of iterator objects in the configTree iterator pool. This determines the maximum number of concurrent configTree updates.  </dd>
+<dt><code><a class="anchor" id="CFGTREE_MAX_NODE_POOL_SIZE"></a>CFGTREE_MAX_NODE_POOL_SIZE:</code> Maximum config node pool size  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 65535 if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+</ul>
+<b>Default:</b> <code>100 if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code><br/>
+ The maximum number of node objects in the configTree node pool.  </dd>
+<dt><code><a class="anchor" id="CFGTREE_MAX_TREE_POOL_SIZE"></a>CFGTREE_MAX_TREE_POOL_SIZE:</code> Maximum config tree pool size  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 65535 if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+</ul>
+<b>Default:</b> <code>31 if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code><br/>
+ The maximum number of tree objects in the configTree tree pool.  </dd>
+<dt><code><a class="anchor" id="CFGTREE_MAX_HANDLER_POOL_SIZE"></a>CFGTREE_MAX_HANDLER_POOL_SIZE:</code> Maximum node event handler pool size  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 65535 if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+</ul>
+<b>Default:</b> <code>31 if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code><br/>
+ The maximum number of node event handler objects in the configTree handler pool.  </dd>
+<dt><code><a class="anchor" id="CFGTREE_MAX_BINARY_DATA_POOL_SIZE"></a> CFGTREE_MAX_BINARY_DATA_POOL_SIZE:</code> Maximum binary data buffer pool size  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 65535 if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+</ul>
+<b>Default:</b> <code>31 if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code><br/>
+ The maximum number of binary data buffers in the configTree binary data buffer pool.  </dd>
+<dt><code><a class="anchor" id="CFGTREE_MAX_ENCODED_STRING_POOL_SIZE"></a> CFGTREE_MAX_ENCODED_STRING_POOL_SIZE:</code> Maximum encoded string buffer pool size  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 65535 if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+</ul>
+<b>Default:</b> <code>31 if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code><br/>
+ The maximum number of encoded string buffers in the configTree encoded string buffer pool.  </dd>
+<dt><code><a class="anchor" id="CFGTREE_MAX_TREE_ITERATOR_POOL_SIZE"></a> CFGTREE_MAX_TREE_ITERATOR_POOL_SIZE:</code> Maximum tree iterator pool size  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 65535 if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+</ul>
+<b>Default:</b> <code>11 if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code><br/>
+ The maximum number of tree iterators in the configTree tree iterator pool.  </dd>
+</dl>
+</dd>
+<dt>Watchdog Daemon  </dt>
+<dd><hr/>
+<dl>
+<dt><code><a class="anchor" id="WDOG_ENABLE_EXTERNAL"></a>WDOG_ENABLE_EXTERNAL:</code> Enable external watchdog  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"y" if (<a class="el" href="kconfigOptions.html#TARGET_WP750X">TARGET_WP750X</a> || <a class="el" href="kconfigOptions.html#TARGET_WP85">TARGET_WP85</a>) &amp;&amp; <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+<li>
+<code>"n" if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+</ul>
+Kick an external hardware or software watchdog from the Legato watchdog daemon. <hr/>
+<dl>
+<dt><code><a class="anchor" id="WDOG_PA_MODULE"></a>WDOG_PA_MODULE:</code> Kernel module for external watchdog  </dt>
+<dd><b>Type:</b> <code>string</code> <br/>
+<b>Default:</b> <code>"softdog" if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a> &amp;&amp; <a class="el" href="kconfigOptions.html#WDOG_ENABLE_EXTERNAL">WDOG_ENABLE_EXTERNAL</a></code><br/>
+<b>Depends on:</b><br/>
+<ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+<li>
+<code><a class="el" href="kconfigOptions.html#WDOG_ENABLE_EXTERNAL">WDOG_ENABLE_EXTERNAL</a></code> </li>
+</ul>
+Name of the kernel module to load in order to enable the external watchdog.  </dd>
+<dt><code><a class="anchor" id="WDOG_PA_DEVICE"></a>WDOG_PA_DEVICE:</code> External watchdog device  </dt>
+<dd><b>Type:</b> <code>string</code> <br/>
+<b>Default:</b> <code>"/dev/watchdog" if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a> &amp;&amp; <a class="el" href="kconfigOptions.html#WDOG_ENABLE_EXTERNAL">WDOG_ENABLE_EXTERNAL</a></code><br/>
+<b>Depends on:</b><br/>
+<ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+<li>
+<code><a class="el" href="kconfigOptions.html#WDOG_ENABLE_EXTERNAL">WDOG_ENABLE_EXTERNAL</a></code> </li>
+</ul>
+Name of the device to use to kick the external watchdog.  </dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>RPC  </dt>
+<dd><hr/>
+<dl>
+<dt><code><a class="anchor" id="RPC"></a>RPC:</code> Enable RPC Proxy infrastructure (EXPERIMENTAL)  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"n" if <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code><br/>
+ Select this to enable the RPC Proxy infrastructure (EXPERIMENTAL). WARNING: Enabling this feature will break backwards compatibility with existing IPC bindings and applications. <hr/>
+<dl>
+<dt><code><a class="anchor" id="RPC_PROXY_LIBRARY"></a>RPC_PROXY_LIBRARY:</code> Enable RPC Proxy as a library component  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"n" if <a class="el" href="kconfigOptions.html#RPC">RPC</a> &amp;&amp; <a class="el" href="kconfigOptions.html#POSIX">POSIX</a> &amp;&amp; <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code><br/>
+<b>Depends on:</b><br/>
+<ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+</ul>
+Select this to build the RPC Proxy as a library component that can be linked into an application or executable file.  </dd>
+<dt><code><a class="anchor" id="RPC_RUNTIME_CONFIG_TREE"></a>RPC_RUNTIME_CONFIG_TREE:</code> Use ConfigTree to store RPC Run-time configuration  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#ENABLE_CONFIG_TREE">ENABLE_CONFIG_TREE</a> &amp;&amp; <a class="el" href="kconfigOptions.html#RPC">RPC</a> &amp;&amp; <a class="el" href="kconfigOptions.html#ENABLE_CONFIG_TREE">ENABLE_CONFIG_TREE</a> &amp;&amp; <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+<li>
+<code>"n" if <a class="el" href="kconfigOptions.html#RPC">RPC</a> &amp;&amp; <a class="el" href="kconfigOptions.html#ENABLE_CONFIG_TREE">ENABLE_CONFIG_TREE</a> &amp;&amp; <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+</ul>
+<b>Depends on:</b><br/>
+<ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+</ul>
+Select this to enable the RPC Proxy to store dynamic run-time configuration in the Configuration Tree.  </dd>
+</dl>
+</dd>
+<dt><code><a class="anchor" id="RPC_PROXY_SERVICE_BINDINGS_MAX_NUM"></a> RPC_PROXY_SERVICE_BINDINGS_MAX_NUM:</code> Maximum number of RPC service bindings  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>0 - 30 if <a class="el" href="kconfigOptions.html#RPC">RPC</a> &amp;&amp; <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+</ul>
+<b>Default:</b> <code>10 if <a class="el" href="kconfigOptions.html#RPC">RPC</a> &amp;&amp; <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code><br/>
+<b>Depends on:</b><br/>
+<ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#RPC">RPC</a></code> </li>
+<li>
+<code><a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+</ul>
+The maximum number of simultaneous RPC service bindings.  </dd>
+<dt><code><a class="anchor" id="RPC_PROXY_MSG_OUT_PARAMETER_MAX_NUM"></a> RPC_PROXY_MSG_OUT_PARAMETER_MAX_NUM:</code> Maximum number of response message parameters  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>0 - 32 if <a class="el" href="kconfigOptions.html#RPC">RPC</a> &amp;&amp; <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+</ul>
+<b>Default:</b> <code>32 if <a class="el" href="kconfigOptions.html#RPC">RPC</a> &amp;&amp; <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code><br/>
+<b>Depends on:</b><br/>
+<ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#RPC">RPC</a></code> </li>
+<li>
+<code><a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+</ul>
+The maximum number of "out" parameters per response message.  </dd>
+<dt><code><a class="anchor" id="RPC_PROXY_MAX_MESSAGE"></a>RPC_PROXY_MAX_MESSAGE:</code> Maximum size of a RPC message  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>0 - 4096 if <a class="el" href="kconfigOptions.html#RPC">RPC</a> &amp;&amp; <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+</ul>
+<b>Default:</b> <code>1024 if <a class="el" href="kconfigOptions.html#RPC">RPC</a> &amp;&amp; <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code><br/>
+<b>Depends on:</b><br/>
+<ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#RPC">RPC</a></code> </li>
+<li>
+<code><a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+</ul>
+The maximum size of a RPC message that can be sent and received between RPC-enabled systems.  </dd>
+<dt><code><a class="anchor" id="RPC_PROXY_NETWORK_KEEPALIVE_SERVICE_INTERVAL"></a> RPC_PROXY_NETWORK_KEEPALIVE_SERVICE_INTERVAL:</code> Frequency of RPC Keep-Alive network service (in seconds)  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 4294967295 if <a class="el" href="kconfigOptions.html#RPC">RPC</a> &amp;&amp; <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+</ul>
+<b>Default:</b> <code>120 if <a class="el" href="kconfigOptions.html#RPC">RPC</a> &amp;&amp; <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code><br/>
+<b>Depends on:</b><br/>
+<ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#RPC">RPC</a></code> </li>
+<li>
+<code><a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+</ul>
+The Frequency of Keep-Alice service, used to monitor the health of a remote RPC- enabled system.  </dd>
+<dt><code><a class="anchor" id="RPC_PROXY_NETWORK_KEEPALIVE_TIMEOUT_TIMER_INTERVAL"></a> RPC_PROXY_NETWORK_KEEPALIVE_TIMEOUT_TIMER_INTERVAL:</code> RPC Keep-Alive time-out period (in seconds)  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 4294967295 if <a class="el" href="kconfigOptions.html#RPC">RPC</a> &amp;&amp; <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+</ul>
+<b>Default:</b> <code>30 if <a class="el" href="kconfigOptions.html#RPC">RPC</a> &amp;&amp; <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code><br/>
+<b>Depends on:</b><br/>
+<ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#RPC">RPC</a></code> </li>
+<li>
+<code><a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+</ul>
+The length of time the RPC Proxy will wait before declaring a remote RPC-enabled system as unreachable (DOWN).  </dd>
+<dt><code><a class="anchor" id="RPC_PROXY_NETWORK_CONNECTION_RETRY_TIMER_INTERVAL"></a> RPC_PROXY_NETWORK_CONNECTION_RETRY_TIMER_INTERVAL:</code> Network connection retry timer (in seconds)  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 4294967295 if <a class="el" href="kconfigOptions.html#RPC">RPC</a> &amp;&amp; <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+</ul>
+<b>Default:</b> <code>15 if <a class="el" href="kconfigOptions.html#RPC">RPC</a> &amp;&amp; <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code><br/>
+<b>Depends on:</b><br/>
+<ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#RPC">RPC</a></code> </li>
+<li>
+<code><a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+</ul>
+The length of time the RPC Proxy will wait before attempting to re-connect to a remote RPC-enabled system.  </dd>
+<dt><code><a class="anchor" id="RPC_PROXY_CONNECT_SERVICE_REQUEST_TIMER_INTERVAL"></a> RPC_PROXY_CONNECT_SERVICE_REQUEST_TIMER_INTERVAL:</code> RPC Connect-Service time-out period (in seconds)  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 4294967295 if <a class="el" href="kconfigOptions.html#RPC">RPC</a> &amp;&amp; <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+</ul>
+<b>Default:</b> <code>15 if <a class="el" href="kconfigOptions.html#RPC">RPC</a> &amp;&amp; <a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code><br/>
+<b>Depends on:</b><br/>
+<ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#RPC">RPC</a></code> </li>
+<li>
+<code><a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+</ul>
+The length of time the RPC Proxy will wait before abandoning a pending connect- service request.  </dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>Services  </dt>
+<dd><hr/>
+<dl>
+<dt><code><a class="anchor" id="SERVICES_WATCHDOG"></a>SERVICES_WATCHDOG:</code> Enable watchdog for Legato services  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"y"</code><br/>
+ The services watchdog ensures that Legato processes are restarted if they deadlock.  </dd>
+<dt>AirVantage Connector  </dt>
+<dd><hr/>
+<dl>
+<dt><code>AirVantage Connector application</code> </dt>
+<dd><b>Defaults:</b> <ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#APP_AVC_LEGACY">APP_AVC_LEGACY</a> if <a class="el" href="kconfigOptions.html#TARGET_AR7">TARGET_AR7</a> || <a class="el" href="kconfigOptions.html#TARGET_AR86">TARGET_AR86</a></code> </li>
+<li>
+<code><a class="el" href="kconfigOptions.html#APP_AVC_LWM2MCORE">APP_AVC_LWM2MCORE</a></code> </li>
+</ul>
+<em>Choose one of:</em> <hr/>
+<dl>
+<dt><code><a class="anchor" id="APP_AVC_LEGACY"></a>APP_AVC_LEGACY:</code> legacy  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Legacy AVC implementation. Not for new devices.  </dd>
+<dt><code><a class="anchor" id="APP_AVC_LWM2MCORE"></a>APP_AVC_LWM2MCORE:</code> lwm2mcore  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ AVC implementation based on LWM2MCore.  </dd>
+</dl>
+</dd>
+<dt><code><a class="anchor" id="AVC_FEATURE_OBSERVE"></a>AVC_FEATURE_OBSERVE:</code> Enable LWM2M observe  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#TARGET_WP85">TARGET_WP85</a></code> </li>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#TARGET_WP750X">TARGET_WP750X</a></code> </li>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#TARGET_WP76XX">TARGET_WP76XX</a></code> </li>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#TARGET_WP77XX">TARGET_WP77XX</a></code> </li>
+<li>
+<code>"n"</code> </li>
+</ul>
+Enable LWM2M observe.  </dd>
+<dt><code><a class="anchor" id="AVC_FEATURE_AVMS_CONFIG"></a>AVC_FEATURE_AVMS_CONFIG:</code> Enable AVMS configuration  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#TARGET_WP85">TARGET_WP85</a></code> </li>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#TARGET_WP750X">TARGET_WP750X</a></code> </li>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#TARGET_WP76XX">TARGET_WP76XX</a></code> </li>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#TARGET_WP77XX">TARGET_WP77XX</a></code> </li>
+<li>
+<code>"n"</code> </li>
+</ul>
+Enable AVMS configuration.  </dd>
+<dt><code><a class="anchor" id="ENABLE_AV_DATA"></a>ENABLE_AV_DATA:</code> Enable AV Data  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"n" if <a class="el" href="kconfigOptions.html#RTOS">RTOS</a></code> </li>
+<li>
+<code>"y"</code> </li>
+</ul>
+Select this to enable support for AV Data features. <hr/>
+<dl>
+<dt><code>SOTA:</code> Enable software-over-the-air (SOTA) updates  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#POSIX">POSIX</a></code> </li>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#POSIX">POSIX</a> &amp;&amp; <a class="el" href="kconfigOptions.html#ENABLE_AV_DATA">ENABLE_AV_DATA</a></code> </li>
+</ul>
+<b>Depends on:</b><br/>
+<ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#POSIX">POSIX</a></code> </li>
+<li>
+<code><a class="el" href="kconfigOptions.html#ENABLE_AV_DATA">ENABLE_AV_DATA</a></code> </li>
+</ul>
+Select this to enable support for SOTA updates. SOTA is not supported on non- POSIX systems.  </dd>
+</dl>
+</dd>
+<dt><code><a class="anchor" id="ENABLE_AV_SMS_COUNT"></a>ENABLE_AV_SMS_COUNT:</code> Enable AV SMS counting support for LWM2M resources lwm2m.7.0.x  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"n" if <a class="el" href="kconfigOptions.html#RTOS">RTOS</a></code> </li>
+<li>
+<code>"y"</code> </li>
+</ul>
+When checked, SMS monitoring/counting is enabled and LWM2M resources lwm2m.7.0.x return valid statistic values related to SMS counting.  </dd>
+</dl>
+</dd>
+<dt>AT Service  </dt>
+<dd><hr/>
+<dl>
+<dt><code><a class="anchor" id="ATSERVER_DEVICE_POOL_SIZE"></a>ATSERVER_DEVICE_POOL_SIZE:</code> Define the maximal number of AT server devices  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Default:</b> <code>2</code><br/>
+</dd>
+<dt><code><a class="anchor" id="ATSERVER_USER_ERRORS"></a>ATSERVER_USER_ERRORS:</code> Enable user-defined AT errors  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+<li>
+<code>"n"</code> </li>
+</ul>
+Allow setting user-defined error strings in AT server. Enabling this increases the memory consumption of the AT server.  </dd>
+<dt><code><a class="anchor" id="ATSERVER_TEXT_API"></a>ATSERVER_TEXT_API:</code> Enable text API  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#POSIX">POSIX</a></code> </li>
+<li>
+<code>"n"</code> </li>
+</ul>
+Allow use of text API.  </dd>
+</dl>
+</dd>
+<dt>Port Service  </dt>
+<dd><hr/>
+<dl>
+<dt><code><a class="anchor" id="PORT_CONFIG_IS_STATIC"></a>PORT_CONFIG_IS_STATIC:</code> The ports configuration is static  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#CUSTOM_OS">CUSTOM_OS</a></code> </li>
+<li>
+<code>"n" if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+</ul>
+Allow to choose if the ports configuration is statically defined.  </dd>
+<dt><code><a class="anchor" id="PORT_JSON_CONFIG_FILE"></a>PORT_JSON_CONFIG_FILE:</code> Path to json file for Port configuration  </dt>
+<dd><b>Type:</b> <code>string</code> <br/>
+<b>Default:</b> <code>"/legato/systems/current/apps/portService/read-
+                only/usr/local/share/PortConfigurationFile.json" if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code><br/>
+ Do not modify the default value.  </dd>
+</dl>
+</dd>
+<dt>Modem Service  </dt>
+<dd><hr/>
+<dl>
+<dt><code><a class="anchor" id="ENABLE_ECALL"></a>ENABLE_ECALL:</code> Enable eCall support  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"y"</code><br/>
+ Enable PAN European eCall or Russian ERA GLONASS emergency calling support.  </dd>
+<dt><code><a class="anchor" id="MDM_HAS_SMSC_INFORMATION"></a>MDM_HAS_SMSC_INFORMATION:</code> Has SMSC information  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"y"</code><br/>
+ Support SMSC (Short Message Service Centre) information in modem services. Some terminals do not include the SMSC information in the PDU format string and in those cases, this value must be deselected.  </dd>
+<dt><code><a class="anchor" id="SIM_ENABLE_AUTOSWITCH"></a>SIM_ENABLE_AUTOSWITCH:</code> Enable SIM auto switch support  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#TARGET_WP76XX">TARGET_WP76XX</a> &amp;&amp; QMI</code> </li>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#TARGET_WP77XX">TARGET_WP77XX</a> &amp;&amp; QMI</code> </li>
+<li>
+<code>"n" if QMI</code> </li>
+</ul>
+Enable SIM auto switch support.  </dd>
+<dt><code><a class="anchor" id="MODEM_DAEMON_PREFERRED_NETWORK"></a>MODEM_DAEMON_PREFERRED_NETWORK:</code> Enable preferred network management API  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"y" if <a class="el" href="kconfigOptions.html#POSIX">POSIX</a></code><br/>
+ Allow managing preferred networks via Legato API.  </dd>
+<dt><code><a class="anchor" id="ENABLE_PCI_SCAN"></a>ENABLE_PCI_SCAN:</code> Enable use of PCI scan related APIs  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+<li>
+<code>"n"</code> </li>
+</ul>
+Allow managing PCI scan information via Legato API.  </dd>
+<dt><code><a class="anchor" id="ENABLE_TIME_TO_OS"></a>ENABLE_TIME_TO_OS:</code> Enable provide time and date to OS  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#LINUX">LINUX</a></code> </li>
+<li>
+<code>"n"</code> </li>
+</ul>
+Allow the modem service to provide time information to the OS.  </dd>
+<dt><code><a class="anchor" id="ENABLE_SIM_WAKEUP_FALLBACK"></a>ENABLE_SIM_WAKEUP_FALLBACK:</code> Enable SIM fallback options  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"n"</code><br/>
+ Allow the setting of SIM fallback options for device wakeup/ initialization.  </dd>
+</dl>
+</dd>
+<dt>Secure Storage  </dt>
+<dd><hr/>
+<dl>
+<dt><code><a class="anchor" id="ENABLE_SECSTORE_ADMIN"></a>ENABLE_SECSTORE_ADMIN:</code> Enable secure storage administration API  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"n"</code><br/>
+ Allow administrative control of the Legato secure storage system. This permits reading, writing, and deleting secure storage files and should be used with caution.  </dd>
+</dl>
+</dd>
+<dt>Positioning Service  </dt>
+<dd><hr/>
+<dl>
+<dt><code><a class="anchor" id="POSITIONING_ACTIVATION_MAX"></a>POSITIONING_ACTIVATION_MAX:</code> Define the maximum number of concurrent positioning activation requests  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Default:</b> <code>13</code><br/>
+</dd>
+<dt><code><a class="anchor" id="ENABLE_GNSS_ACQUISITION_RATE_SETTING"></a> ENABLE_GNSS_ACQUISITION_RATE_SETTING:</code> Allow GNSS acquisition rate to be set via Legato API  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"y"</code><br/>
+</dd>
+</dl>
+</dd>
+<dt><code><a class="anchor" id="FEATURE_SPISVC"></a>FEATURE_SPISVC:</code> Enable SPI service  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#TARGET_WP85">TARGET_WP85</a></code> </li>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#TARGET_WP750X">TARGET_WP750X</a></code> </li>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#TARGET_WP76XX">TARGET_WP76XX</a></code> </li>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#TARGET_WP77XX">TARGET_WP77XX</a></code> </li>
+<li>
+<code>"n"</code> </li>
+</ul>
+Enable the SPI service to allow devices to use SPI-attached peripherals.  </dd>
+<dt><code><a class="anchor" id="SMS_SERVICE_ENABLED"></a>SMS_SERVICE_ENABLED:</code> Enable SMS Service  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Default:</b> <code>"y" if <a class="el" href="kconfigOptions.html#POSIX">POSIX</a></code><br/>
+ Enable SMS Service, which is not supported on RTOS systems.  </dd>
+</dl>
+</dd>
+<dt>Components  </dt>
+<dd><hr/>
+<dl>
+<dt>FTP Client  </dt>
+<dd><hr/>
+<dl>
+<dt><code><a class="anchor" id="FTPCLIENT_SESSION_MAX"></a>FTPCLIENT_SESSION_MAX:</code> Maximum number simultaneous FTP client sessions  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 1024 if <a class="el" href="kconfigOptions.html#LWIP">LWIP</a></code> </li>
+</ul>
+<b>Default:</b> <code>2 if <a class="el" href="kconfigOptions.html#LWIP">LWIP</a></code><br/>
+ Maximum number of simultaneous FTP client sessions permitted. This value is used for sizing memory pools.  </dd>
+<dt><code><a class="anchor" id="FTPCLIENT_EVENT_MAX"></a>FTPCLIENT_EVENT_MAX:</code> Size of FTP client asynchronous event queue  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 1024 if <a class="el" href="kconfigOptions.html#LWIP">LWIP</a></code> </li>
+</ul>
+<b>Default:</b> <code>8 if <a class="el" href="kconfigOptions.html#LWIP">LWIP</a></code><br/>
+ Maximum number of FTP client events that can be queued at once.  </dd>
+<dt><code><a class="anchor" id="FTPCLIENT_BUFFER_SIZE"></a>FTPCLIENT_BUFFER_SIZE:</code> Size of FTP client data buffers  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>8 - 65536 if <a class="el" href="kconfigOptions.html#LWIP">LWIP</a></code> </li>
+</ul>
+<b>Default:</b> <code>256 if <a class="el" href="kconfigOptions.html#LWIP">LWIP</a></code><br/>
+ Size in bytes of the data buffers used to queue up chunks of data for sending or receiving.  </dd>
+<dt><code><a class="anchor" id="FTPCLIENT_SERVER_NAME_MAX"></a>FTPCLIENT_SERVER_NAME_MAX:</code> Maximum size of server name  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>2 - 1024 if <a class="el" href="kconfigOptions.html#LWIP">LWIP</a></code> </li>
+</ul>
+<b>Default:</b> <code>64 if <a class="el" href="kconfigOptions.html#LWIP">LWIP</a></code><br/>
+ Maximum size of FTP server name. This size includes the terminating NUL character.  </dd>
+<dt><code><a class="anchor" id="FTPCLIENT_USER_NAME_MAX"></a>FTPCLIENT_USER_NAME_MAX:</code> Maximum size of user name  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>2 - 1024 if <a class="el" href="kconfigOptions.html#LWIP">LWIP</a></code> </li>
+</ul>
+<b>Default:</b> <code>32 if <a class="el" href="kconfigOptions.html#LWIP">LWIP</a></code><br/>
+ Maximum size of FTP user name. This size includes the terminating NUL character.  </dd>
+<dt><code><a class="anchor" id="FTPCLIENT_PASSWORD_MAX"></a>FTPCLIENT_PASSWORD_MAX:</code> Maximum size of user name  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>2 - 1024 if <a class="el" href="kconfigOptions.html#LWIP">LWIP</a></code> </li>
+</ul>
+<b>Default:</b> <code>32 if <a class="el" href="kconfigOptions.html#LWIP">LWIP</a></code><br/>
+ Maximum size of FTP password. This size includes the terminating NUL character.  </dd>
+</dl>
+</dd>
+<dt>Socket Library  </dt>
+<dd><hr/>
+<dl>
+<dt><code><a class="anchor" id="SOCKET_LIB_SESSION_MAX"></a>SOCKET_LIB_SESSION_MAX:</code> Maximum number of simultaneous sockets  </dt>
+<dd><b>Type:</b> <code>int</code> <br/>
+<b>Range:</b> <br/>
+<ul>
+<li>
+<code>1 - 1024</code> </li>
+</ul>
+<b>Defaults:</b> <ul>
+<li>
+<code>2 if <a class="el" href="kconfigOptions.html#RTOS">RTOS</a></code> </li>
+<li>
+<code>4</code> </li>
+</ul>
+Maximum number of simultaneous sockets. This value is used for sizing memory pools.  </dd>
+<dt><code>SSL Encryption Library</code> </dt>
+<dd><b>Defaults:</b> <ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#SOCKET_LIB_USE_MBEDTLS">SOCKET_LIB_USE_MBEDTLS</a> if <a class="el" href="kconfigOptions.html#RTOS">RTOS</a></code> </li>
+<li>
+<code><a class="el" href="kconfigOptions.html#SOCKET_LIB_USE_OPENSSL">SOCKET_LIB_USE_OPENSSL</a></code> </li>
+</ul>
+<em>Choose one of:</em> <hr/>
+<dl>
+<dt><code><a class="anchor" id="SOCKET_LIB_USE_OPENSSL"></a>SOCKET_LIB_USE_OPENSSL:</code> OpenSSL  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Use OpenSSL for SSL encryption in socket library.  </dd>
+<dt><code><a class="anchor" id="SOCKET_LIB_USE_MBEDTLS"></a>SOCKET_LIB_USE_MBEDTLS:</code> mbedTLS  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Depends on:</b><br/>
+<ul>
+<li>
+<code><a class="el" href="kconfigOptions.html#EXPERIMENTAL">EXPERIMENTAL</a></code> </li>
+</ul>
+Use mbedTLS for SSL encryption in socket library.  </dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>Modules  </dt>
+<dd><hr/>
+<dl>
+<dt><code><a class="anchor" id="ENABLE_WIFI"></a>ENABLE_WIFI:</code> Enable WiFi  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#TARGET_WP750X">TARGET_WP750X</a></code> </li>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#TARGET_WP85">TARGET_WP85</a></code> </li>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#TARGET_WP76XX">TARGET_WP76XX</a></code> </li>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#TARGET_WP77XX">TARGET_WP77XX</a></code> </li>
+<li>
+<code>"n"</code> </li>
+</ul>
+Enable Legato WiFi support. <hr/>
+<dl>
+<dt><code>Wifi Platform Adaptor</code> </dt>
+<dd><b>Default:</b> <code><a class="el" href="kconfigOptions.html#WIFI_PA_TI">WIFI_PA_TI</a> if <a class="el" href="kconfigOptions.html#ENABLE_WIFI">ENABLE_WIFI</a></code><br/>
+<em>Choose one of:</em> <hr/>
+<dl>
+<dt><code><a class="anchor" id="WIFI_PA_TI"></a>WIFI_PA_TI:</code> TI  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Platform adaptor for TI wireless module, such as that on the mangOH WiFi IoT card.  </dd>
+<dt><code><a class="anchor" id="WIFI_PA_TI_SIMU"></a>WIFI_PA_TI_SIMU:</code> TI simulator  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+ Platform adaptor running a simulated TI Access Point.  </dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>Documentation  </dt>
+<dd><hr/>
+<dl>
+<dt><code><a class="anchor" id="EXTERNAL_DOCS"></a>EXTERNAL_DOCS:</code> Include external documentation  </dt>
+<dd><b>Type:</b> <code>bool</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"y" if <a class="el" href="kconfigOptions.html#ENABLE_WIFI">ENABLE_WIFI</a></code> </li>
+<li>
+<code>"n"</code> </li>
+</ul>
+Include external Doxygen documentation in the Legato documentation build. <hr/>
+<dl>
+<dt><code><a class="anchor" id="EXTERNAL_DOCS_ROOT"></a>EXTERNAL_DOCS_ROOT:</code> External documentation root  </dt>
+<dd><b>Type:</b> <code>string</code> <br/>
+<b>Defaults:</b> <ul>
+<li>
+<code>"modules/WiFi" if <a class="el" href="kconfigOptions.html#ENABLE_WIFI">ENABLE_WIFI</a> &amp;&amp; <a class="el" href="kconfigOptions.html#EXTERNAL_DOCS">EXTERNAL_DOCS</a></code> </li>
+<li>
+<code>"" if <a class="el" href="kconfigOptions.html#EXTERNAL_DOCS">EXTERNAL_DOCS</a></code> </li>
+</ul>
+Root directory to search for external documentation.  </dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

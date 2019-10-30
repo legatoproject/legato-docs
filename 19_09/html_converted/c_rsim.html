@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Remote SIM service  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.09.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Remote SIM service </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><a class="el" href="le__rsim__interface_8h.html">API Reference</a></p>
+<hr/>
+<p>The remote SIM (RSIM) service allows using a remote SIM instead of the internal SIM cards.</p>
+<p>This service allows a user application to convey APDU requests to the remote SIM and APDU responses to the modem through the RSIM service. The link between the application and the RSIM service is based on the SIM Access Profile (SAP) specification: the user application must therefore implement a remote SIM server supporting this specification to handle the remote SIM card.</p>
+<div class="plantumlgraph">
+<img src="le_rsim_Overview.png"/>
+</div>
+<dl class="section note"><dt>Note</dt><dd>The remote SIM Server application is not part of the Legato implementation and should be developed by the user.</dd></dl>
+<h1><a class="anchor" id="le_rsim_binding"></a>
+IPC interfaces binding</h1>
+<p>All the functions of this API are provided by the <b>modemService</b> application service.</p>
+<p>Here's a code sample binding to Data Connection services: </p><pre class="fragment">bindings:
+{
+   clientExe.clientComponent.le_rsim -&gt; modemService.le_rsim
+}
+</pre><h1><a class="anchor" id="le_rsim_Communication"></a>
+Communication</h1>
+<p>The communication between the application and the remote SIM service uses the SIM Access Profile (SAP) protocol.</p>
+<p>The latest <a href="https://www.bluetooth.org/DocMan/handlers/DownloadDoc.ashx?doc_id=158740">V11r00 SAP specification</a> is supported by the remote SIM service. All client-mandatory features and some optional features are supported. The table below summarizes all SAP messages supported by the remote SIM service. </p><table class="doxtable">
+<tr>
+<th>Feature </th><th>Associated SAP messages </th><th>Support in SAP client </th><th>RSIM support </th></tr>
+<tr>
+<td rowspan="5">Connection management </td><td>CONNECT_REQ </td><td rowspan="5">Mandatory </td><td>Supported </td></tr>
+<tr>
+<td>CONNECT_RESP </td><td>Supported </td></tr>
+<tr>
+<td>DISCONNECT_REQ </td><td>Supported </td></tr>
+<tr>
+<td>DISCONNECT_RESP </td><td>Supported </td></tr>
+<tr>
+<td>DISCONNECT_IND </td><td>Supported </td></tr>
+<tr>
+<td rowspan="2">Transfer APDU </td><td>TRANSFER_APDU_REQ </td><td rowspan="2">Mandatory </td><td>Supported </td></tr>
+<tr>
+<td>TRANSFER_APDU_RESP </td><td>Supported </td></tr>
+<tr>
+<td rowspan="2">Transfer ATR </td><td>TRANSFER_ATR_REQ </td><td rowspan="2">Mandatory </td><td>Supported </td></tr>
+<tr>
+<td>TRANSFER_ATR_RESP </td><td>Supported </td></tr>
+<tr>
+<td rowspan="2">Power SIM off </td><td>POWER_SIM_OFF_REQ </td><td rowspan="2">Optional </td><td>Supported </td></tr>
+<tr>
+<td>POWER_SIM_OFF_RESP </td><td>Supported </td></tr>
+<tr>
+<td rowspan="2">Power SIM on </td><td>POWER_SIM_ON_REQ </td><td rowspan="2">Mandatory </td><td>Supported </td></tr>
+<tr>
+<td>POWER_SIM_ON_RESP </td><td>Supported </td></tr>
+<tr>
+<td rowspan="2">Reset SIM </td><td>RESET_SIM_REQ </td><td rowspan="2">Optional </td><td>Supported </td></tr>
+<tr>
+<td>RESET_SIM_RESP </td><td>Supported </td></tr>
+<tr>
+<td>Report Status </td><td>STATUS_IND </td><td>Mandatory </td><td>Supported </td></tr>
+<tr>
+<td rowspan="2">Transfer Card Reader Status </td><td>TRANSFER_CARD_READER_STATUS_REQ </td><td rowspan="2">Optional </td><td>Not supported </td></tr>
+<tr>
+<td>TRANSFER_CARD_READER_STATUS_RESP </td><td>Not supported </td></tr>
+<tr>
+<td>Error handling </td><td>ERROR_RESP </td><td>Mandatory </td><td>Supported </td></tr>
+<tr>
+<td rowspan="2">Set Transport Protocol </td><td>SET_TRANSPORT_PROTOCOL_REQ </td><td rowspan="2">Optional </td><td>Not supported </td></tr>
+<tr>
+<td>SET_TRANSPORT_PROTOCOL_RESP </td><td>Not supported </td></tr>
+</table>
+<p>The application must register a handler function with <a class="el" href="le__rsim__interface_8h.html#a7c525d3f8a02a4ca14e4fb723b6cc673">le_rsim_AddMessageHandler()</a> in order to receive the SAP messages sent by the remote SIM service. Registering the handler indicates that the remote SIM server is ready to receive messages and that a remote SIM card is available. The handler can be deregistered through the <a class="el" href="le__rsim__interface_8h.html#ad488fe9d57c161a8c17ac60bda891817">le_rsim_RemoveMessageHandler()</a> function when it is not needed anymore.</p>
+<p>The application can send SAP messages to the remote SIM service with the <a class="el" href="le__rsim__interface_8h.html#ace5e9e861ab59d4ec8e6198b827a5c28">le_rsim_SendMessage()</a> function. Message sending is an asynchronous process: a callback can therefore be passed to <a class="el" href="le__rsim__interface_8h.html#ace5e9e861ab59d4ec8e6198b827a5c28">le_rsim_SendMessage()</a> in order to receive the sending result for this message.</p>
+<dl class="section warning"><dt>Warning</dt><dd>The remote SIM service supports only one remote SIM card and can therefore be connected with only one application.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>The remote SIM service has to be supported by the modem to be used: check your platform documentation.</li>
+<li>The remote SIM card should be selected in order to use the remote SIM service.</li>
+<li>As runtime switch is not currently supported, the switch between local and remote SIM card requires a platform reset to take effect.</li>
+</ul>
+</dd></dl>
+<p>A sample code of a basic remote SIM server is available in the following page:</p><ul>
+<li><a class="el" href="c_rsimTest.html">Sample code</a></li>
+</ul>
+<hr/>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

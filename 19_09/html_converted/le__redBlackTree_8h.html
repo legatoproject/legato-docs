@@ -1,0 +1,536 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_redBlackTree.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.09.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src=""></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Legato Documentation</h2>
+<nav class="secondary">
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#nested-classes">Data Structures</a> |
+<a href="#typedef-members">Typedefs</a> |
+<a href="#enum-members">Enumerations</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_redBlackTree.h File Reference</h1> </div>
+</div><div class="contents">
+<p><a href="le__redBlackTree_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a85d7ebf6275045625e51f63d76f2ad1a"><td align="right" class="memItemLeft" valign="top">typedef int(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__redBlackTree_8h.html#a85d7ebf6275045625e51f63d76f2ad1a">le_rbtree_CompareFunc_t</a>) (const void *key1Ptr, const void *key2Ptr)</td></tr>
+<tr class="separator:a85d7ebf6275045625e51f63d76f2ad1a"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a298934eddcf725d3adc6b9b6231053da"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__redBlackTree_8h.html#a298934eddcf725d3adc6b9b6231053da">le_rbtree_Color_t</a> { <b>LE_RBTREE_NO_COLOR</b>, 
+<b>LE_RBTREE_BLACK</b>, 
+<b>LE_RBTREE_RED</b>
+ }</td></tr>
+<tr class="separator:a298934eddcf725d3adc6b9b6231053da"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:accb91a387364f9e762c2c394e650af13"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__redBlackTree_8h.html#accb91a387364f9e762c2c394e650af13">le_rbtree_InitTree</a> (<a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> *treePtr, <a class="el" href="le__redBlackTree_8h.html#a85d7ebf6275045625e51f63d76f2ad1a">le_rbtree_CompareFunc_t</a> compFn)</td></tr>
+<tr class="separator:accb91a387364f9e762c2c394e650af13"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa0a97a9cd254093ba11f932f2d249641"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__redBlackTree_8h.html#aa0a97a9cd254093ba11f932f2d249641">le_rbtree_InitNode</a> (<a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a> *linkPtr, void *keyPtr)</td></tr>
+<tr class="separator:aa0a97a9cd254093ba11f932f2d249641"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:add4f88e0d85e451fccc2c891f2a825cf"><td align="right" class="memItemLeft" valign="top"><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__redBlackTree_8h.html#add4f88e0d85e451fccc2c891f2a825cf">le_rbtree_Insert</a> (<a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> *treePtr, <a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a> *newLinkPtr)</td></tr>
+<tr class="separator:add4f88e0d85e451fccc2c891f2a825cf"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1993f0dc87f399ff0fe6998210bd892e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__redBlackTree_8h.html#a1993f0dc87f399ff0fe6998210bd892e">le_rbtree_Find</a> (<a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> *treePtr, void *keyPtr)</td></tr>
+<tr class="separator:a1993f0dc87f399ff0fe6998210bd892e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3b34dccab87ba6fedb1d7f1d49982fea"><td align="right" class="memItemLeft" valign="top"><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__redBlackTree_8h.html#a3b34dccab87ba6fedb1d7f1d49982fea">le_rbtree_Remove</a> (<a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> *treePtr, <a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a> *linkPtr)</td></tr>
+<tr class="separator:a3b34dccab87ba6fedb1d7f1d49982fea"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:afb88cc57d92c894596f37e9476123aaf"><td align="right" class="memItemLeft" valign="top"><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__redBlackTree_8h.html#afb88cc57d92c894596f37e9476123aaf">le_rbtree_RemoveByKey</a> (<a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> *treePtr, void *keyPtr)</td></tr>
+<tr class="separator:afb88cc57d92c894596f37e9476123aaf"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae88750409f2045159ecb08776b8811aa"><td align="right" class="memItemLeft" valign="top"><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__redBlackTree_8h.html#ae88750409f2045159ecb08776b8811aa">le_rbtree_GetFirst</a> (const <a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> *treePtr)</td></tr>
+<tr class="separator:ae88750409f2045159ecb08776b8811aa"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aaf066d4620acee2dd8f2acbae117634a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__redBlackTree_8h.html#aaf066d4620acee2dd8f2acbae117634a">le_rbtree_GetLast</a> (const <a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> *treePtr)</td></tr>
+<tr class="separator:aaf066d4620acee2dd8f2acbae117634a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5cfce72aff5e4535fdebefb075de7946"><td align="right" class="memItemLeft" valign="top"><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__redBlackTree_8h.html#a5cfce72aff5e4535fdebefb075de7946">le_rbtree_GetNext</a> (const <a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> *treePtr, <a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a> *currentLinkPtr)</td></tr>
+<tr class="separator:a5cfce72aff5e4535fdebefb075de7946"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4f1228d886d6e4227c085e2cad76acf0"><td align="right" class="memItemLeft" valign="top"><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__redBlackTree_8h.html#a4f1228d886d6e4227c085e2cad76acf0">le_rbtree_GetPrev</a> (const <a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> *treePtr, <a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a> *currentLinkPtr)</td></tr>
+<tr class="separator:a4f1228d886d6e4227c085e2cad76acf0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0e51ce66b6433f979fbd9ee2eb45c889"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="le__redBlackTree_8h.html#a0e51ce66b6433f979fbd9ee2eb45c889">le_rbtree_IsEmpty</a> (const <a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> *treePtr)</td></tr>
+<tr class="separator:a0e51ce66b6433f979fbd9ee2eb45c889"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac76984667db4c948a7caf91c55ec87cc"><td align="right" class="memItemLeft" valign="top">size_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__redBlackTree_8h.html#ac76984667db4c948a7caf91c55ec87cc">le_rbtree_Size</a> (const <a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> *treePtr)</td></tr>
+<tr class="separator:ac76984667db4c948a7caf91c55ec87cc"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato <a class="el" href="c_redBlackTree.html">Red/Black Tree API</a> include file.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="a85d7ebf6275045625e51f63d76f2ad1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85d7ebf6275045625e51f63d76f2ad1a">◆ </a></span>le_rbtree_CompareFunc_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef int(* le_rbtree_CompareFunc_t) (const void *key1Ptr, const void *key2Ptr)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This is a comparator function to compare objects in a tree.</p>
+<dl class="section return"><dt>Returns</dt><dd>negative, 0, positive number if the first key is less, equal, or greater than the second one. </dd></dl>
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a298934eddcf725d3adc6b9b6231053da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a298934eddcf725d3adc6b9b6231053da">◆ </a></span>le_rbtree_Color_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">enum <a class="el" href="le__redBlackTree_8h.html#a298934eddcf725d3adc6b9b6231053da">le_rbtree_Color_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Color type for Red-Black tree. </p>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a1993f0dc87f399ff0fe6998210bd892e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1993f0dc87f399ff0fe6998210bd892e">◆ </a></span>le_rbtree_Find()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a>* le_rbtree_Find </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> * </td>
+<td class="paramname"><em>treePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>keyPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Find object in the tree for the given key.</p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the Node found in the tree. NULL if not found. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">treePtr</td><td>Tree to get the object from. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">keyPtr</td><td>Pointer to the key to be retrieved </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ae88750409f2045159ecb08776b8811aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae88750409f2045159ecb08776b8811aa">◆ </a></span>le_rbtree_GetFirst()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a>* le_rbtree_GetFirst </td>
+<td>(</td>
+<td class="paramtype">const <a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> * </td>
+<td class="paramname"><em>treePtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the first (smallest) node in the tree.</p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the node if successful. NULL if the tree is empty. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">treePtr</td><td>Tree to get the object from. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aaf066d4620acee2dd8f2acbae117634a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf066d4620acee2dd8f2acbae117634a">◆ </a></span>le_rbtree_GetLast()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a>* le_rbtree_GetLast </td>
+<td>(</td>
+<td class="paramtype">const <a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> * </td>
+<td class="paramname"><em>treePtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the last (greatest) node in the tree.</p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the Node if successful. NULL if the tree is empty. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">treePtr</td><td>Tree to get the object from. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a5cfce72aff5e4535fdebefb075de7946"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cfce72aff5e4535fdebefb075de7946">◆ </a></span>le_rbtree_GetNext()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a>* le_rbtree_GetNext </td>
+<td>(</td>
+<td class="paramtype">const <a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> * </td>
+<td class="paramname"><em>treePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a> * </td>
+<td class="paramname"><em>currentLinkPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Returns the node next to currentLinkPtr without removing it from the tree. User must ensure that currentLinkPtr is in the tree.</p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the next link if successful. NULL if there is no node greater than the currentLinkPtr. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">treePtr</td><td>Tree to get the object from. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">currentLinkPtr</td><td>Current node pointer. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a4f1228d886d6e4227c085e2cad76acf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f1228d886d6e4227c085e2cad76acf0">◆ </a></span>le_rbtree_GetPrev()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a>* le_rbtree_GetPrev </td>
+<td>(</td>
+<td class="paramtype">const <a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> * </td>
+<td class="paramname"><em>treePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a> * </td>
+<td class="paramname"><em>currentLinkPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Returns the node previous to currentLinkPtr without removing it from the tree. User must ensure that currentLinkPtr is in the tree.</p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the previous link if successful. NULL if there is no node smaller than the currentLinkPtr. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">treePtr</td><td>Tree containing currentLinkPtr. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">currentLinkPtr</td><td>Get the link that is relative to this link. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aa0a97a9cd254093ba11f932f2d249641"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0a97a9cd254093ba11f932f2d249641">◆ </a></span>le_rbtree_InitNode()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_rbtree_InitNode </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a> * </td>
+<td class="paramname"><em>linkPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>keyPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Initialize the Node Link. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in,out]</td><td class="paramname">linkPtr</td><td>Node link pointer. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">keyPtr</td><td>Key pointer. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="accb91a387364f9e762c2c394e650af13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accb91a387364f9e762c2c394e650af13">◆ </a></span>le_rbtree_InitTree()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_rbtree_InitTree </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> * </td>
+<td class="paramname"><em>treePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__redBlackTree_8h.html#a85d7ebf6275045625e51f63d76f2ad1a">le_rbtree_CompareFunc_t</a> </td>
+<td class="paramname"><em>compFn</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Initialize the Red-Black Tree. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">treePtr</td><td>Pointer to the tree object. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">compFn</td><td>Pointer to the comparator function. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="add4f88e0d85e451fccc2c891f2a825cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add4f88e0d85e451fccc2c891f2a825cf">◆ </a></span>le_rbtree_Insert()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a>* le_rbtree_Insert </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> * </td>
+<td class="paramname"><em>treePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a> * </td>
+<td class="paramname"><em>newLinkPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Insert a new node in the tree. If Node with matching key is already in the tree, does nothing (no update).</p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the Node inserted in the tree. NULL if the node already exists in the tree (duplicate). </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">treePtr</td><td>Tree to insert into. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">newLinkPtr</td><td>New link to add. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a0e51ce66b6433f979fbd9ee2eb45c889"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e51ce66b6433f979fbd9ee2eb45c889">◆ </a></span>le_rbtree_IsEmpty()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">bool le_rbtree_IsEmpty </td>
+<td>(</td>
+<td class="paramtype">const <a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> * </td>
+<td class="paramname"><em>treePtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Tests if the Tree is empty.</p>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if empty, false otherwise. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">treePtr</td><td>Tree containing currentLinkPtr. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a3b34dccab87ba6fedb1d7f1d49982fea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b34dccab87ba6fedb1d7f1d49982fea">◆ </a></span>le_rbtree_Remove()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a>* le_rbtree_Remove </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> * </td>
+<td class="paramname"><em>treePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a> * </td>
+<td class="paramname"><em>linkPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Removes the specified node from the tree.</p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the node removed from the tree. NULL if not found. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">treePtr</td><td>Tree to remove from. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">linkPtr</td><td>Link to remove. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="afb88cc57d92c894596f37e9476123aaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb88cc57d92c894596f37e9476123aaf">◆ </a></span>le_rbtree_RemoveByKey()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a>* le_rbtree_RemoveByKey </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> * </td>
+<td class="paramname"><em>treePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>keyPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Removes the specified node from the tree by the specified key.</p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the node removed from the tree. NULL if not found. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">treePtr</td><td>Tree to remove from. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">keyPtr</td><td>Pointer to the key to be removed </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ac76984667db4c948a7caf91c55ec87cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac76984667db4c948a7caf91c55ec87cc">◆ </a></span>le_rbtree_Size()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">size_t le_rbtree_Size </td>
+<td>(</td>
+<td class="paramtype">const <a class="el" href="structle__rbtree__Tree__t.html">le_rbtree_Tree_t</a> * </td>
+<td class="paramname"><em>treePtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Calculates size of the Tree.</p>
+<dl class="section return"><dt>Returns</dt><dd>The number of elementskeys in the Tree. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">treePtr</td><td>Tree containing currentLinkPtr. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

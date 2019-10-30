@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>AT Commands Server  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.09.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">AT Commands Server </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><a class="el" href="le__atServer__interface_8h.html">API Reference</a></p>
+<p>The AT commands Server handles AT commands' subscriptions on a requested serial device. The server is compliant with 3GPP 27.007, paragraphs 4.0, 4.1 and 4.2, and V25 ter, paragraphs 5.3, 5.4.</p>
+<h1><a class="anchor" id="le_atServer_binding"></a>
+IPC interfaces binding</h1>
+<p>All the functions of this API are provided by the <b>atService</b>.</p>
+<p>Here's a code sample binding to the AT commands server: </p><pre class="fragment">bindings:
+{
+  atServerTest.atServerTestComp.le_atServer -&gt; atService.le_atServer
+}
+</pre><h1><a class="anchor" id="atServer_syntax"></a>
+AT command syntax</h1>
+<h2><a class="anchor" id="atServer_Syntax"></a>
+Syntax rules</h2>
+<p>To be interpreted, the command line sent to the AT commands server must start by the pattern "AT" (mean ATtention command).<br/>
+ Lowercase characters are changed to their uppercase equivalents. Only characters between quotes are not replaced.</p>
+<p>The supported command formats are:</p><ul>
+<li>Basic syntax command:<ul>
+<li>using the format AT&lt;command&gt;[&lt;number&gt;]<br/>
+ The command name is composed of one or several of those characters: A to Z, &amp; and \.</li>
+<li>the syntax of S command is also supported, like:<ul>
+<li>ATS&lt;parameter_number&gt;?</li>
+<li>ATS&lt;parameter_number&gt;=&lt;value&gt;</li>
+</ul>
+</li>
+<li>D command is supported. The characters which don't belong to the following list are ignore:<ul>
+<li>V.250 dialing digits: 0 1 2 3 4 5 6 7 8 9 * # + A B C D</li>
+<li>V.250 modifier characters: , T P ! W @</li>
+<li>V.250 semicolon character: ;</li>
+<li>GSM/UMTS modifier characters:<ul>
+<li>I or i for CLIR supplementary service subscription (I=invocation, i=suppression)</li>
+<li>G or g for CUG supplementary service subscription (G=invocation, g=suppression)</li>
+<li>Direct dialing from phonebook: &gt; (if follow by a string, it has to be put between quote)</li>
+</ul>
+</li>
+</ul>
+All characters after the "D" are considered part of The D command parameter up to a semicolon or the end of command line. <br/>
+</li>
+</ul>
+</li>
+<li>Extended command format, with the following format:<ul>
+<li>action command with no parameters: AT+&lt;name&gt;</li>
+<li>parameter command: AT+&lt;name&gt;=&lt;value1&gt;[,&lt;value2&gt;[,&lt;value3&gt;[...]]]<br/>
+ Values must be separated by a coma. Some values may be optional: in that case, optional value can be omitted in the AT command (e.g. AT+ABCD=,1).<br/>
+ A value is a string composed of one or several of the following characters: 0 to 9, A to F, H, h, *, #, +, -. To set a value with other characters, the value has to be set between quote.</li>
+<li>test command (determine the supported values): AT+&lt;name&gt;=?</li>
+<li>read command (determine the current values, or stored values): AT+&lt;name&gt;?[&lt;value&gt;]<br/>
+ An optional parameter is supported.</li>
+</ul>
+</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>'+' AT command starting character shall be replaced by other symbol, not included into a to z, A to Z, &amp; and \.</dd></dl>
+<h2><a class="anchor" id="atServer_concate"></a>
+Concatenating commands</h2>
+<p>Basic syntax command can be concatenated without a separator:<br/>
+ ATE1V1S95=47S0=0</p>
+<p>Additional commands (extended syntax command or basic syntax command) can be added after an extended syntax command with the insertion of a semicolon at the end of the command:<br/>
+ AT+CMDA=&lt;param1&gt;,&lt;param2&gt;;+CMDB?;+CMDC=?<br/>
+ AT+CMDA=&lt;param1&gt;,&lt;param2&gt;;E1V1</p>
+<p>Extended syntax command can be concatenated after basic syntax commands without a separator:<br/>
+ ATE1V1+CMD=&lt;param1&gt;</p>
+<h1><a class="anchor" id="atServer_binding"></a>
+Device Binding</h1>
+<p><a class="el" href="le__atServer__interface_8h.html#a7b59aee923ee8d0032e0c7cb9d7ffea5">le_atServer_Open()</a> must be called to bind the file descriptor of the device with the AT commands server. Note that a socket can also be bound. Multiple devices can be bound. A file descriptor can be unbound using <a class="el" href="le__atServer__interface_8h.html#ad2fcae1e47c5dc3efb333f65f81a5eef">le_atServer_Close()</a>.</p>
+<p>The server can be suspended using <a class="el" href="le__atServer__interface_8h.html#ac7d8d30fc10da9b641ae74e6afcf662e">le_atServer_Suspend()</a> in order to use the opened fd for other purposes like starting a PPP service on the opened fd. For that a fd dup needs to be done before opening a server session. When needed, the server can be resumed using <a class="el" href="le__atServer__interface_8h.html#a0e47de20e11a8ba2c280e999776e22fb">le_atServer_Resume()</a>. Make sure to close the fd when the application exists or you may get too many open files error.</p>
+<p>used before opening a server session </p>
+<h1><a class="anchor" id="atServer_subscription"></a>
+Subscription</h1>
+<p>A new AT command can be added into the parser using <a class="el" href="le__atServer__interface_8h.html#ad013f01db3faf2c7afe5627e1c4aae75">le_atServer_Create()</a>, and it can be deleted using <a class="el" href="le__atServer__interface_8h.html#a2cbdff4ae86ac055f21301aff36ec12c">le_atServer_Delete()</a>. <a class="el" href="le__atServer__interface_8h.html#afdef81e1283dc1485362533af3df343f">le_atServer_EnableEcho()</a> allows the user to enable echo on a selected device. <a class="el" href="le__atServer__interface_8h.html#a9a329f04df29340ff0e4fcdea244608d">le_atServer_DisableEcho()</a> allows the user to disable echo on a selected device.</p>
+<h1><a class="anchor" id="atServer_handler"></a>
+Handler</h1>
+<p>To handle the AT command, the application has to subscribe a handler using <a class="el" href="le__atServer__interface_8h.html#a6473ee190af7fcaf93b6578b4f4d8890">le_atServer_AddCommandHandler()</a>. It can be removed with <a class="el" href="le__atServer__interface_8h.html#a33ad84305e25b36449ed156a7a64491d">le_atServer_RemoveCommandHandler()</a>.</p>
+<p>The called handler (le_atServer_CommandHandlerRef_t prototype) can use <a class="el" href="le__atServer__interface_8h.html#aea9d502514234b728b0250d1bb2f4ec9">le_atServer_GetCommandName()</a> to retrieve the received AT command string.</p>
+<p>The device used to execute the AT command can be retrieve thanks to <a class="el" href="le__atServer__interface_8h.html#aeebff4006acfd2164eea138ecf1f2e4c">le_atServer_GetDevice()</a>.</p>
+<p>It can also call <a class="el" href="le__atServer__interface_8h.html#a2a7ebca3ad28f1351d8e20c3be6cca9c">le_atServer_GetParameter()</a> to retrieve parameters of the AT command. This function gets the string sending through the AT command. If the parameter was sent between quotes, the quotes are removed. This API can be used for both formats:</p><ul>
+<li>In case of a basic format command (AT&lt;command&gt;[&lt;number&gt;]), if exists, the &lt;number&gt; can be retrieved at the index 0. For S command specific format (ATS&lt;parameter_number&gt;=&lt;value&gt;), the &lt;parameter_number&gt; is retrieved at the index 0, the &lt;value&gt; parameter at the index 1.</li>
+<li>In case of an extended format command, parameters are retrieved thanks to their indexes, starting from 0. If the parameter is missed (e.g. "AT+CMD=,1"), the getting value is an empty string (i.e. '\0' with null length).</li>
+</ul>
+<p>The handler receives in argument the type of the AT command (of le_atServer_Type_t type). Even if these types are specific to the extended format commands according to the standards, they are also applicable here to basic format commands to detect commands with parameters, or read values (e.g. ATS&lt;parameter_number&gt;?).</p>
+<dl class="section note"><dt>Note</dt><dd>If the parameter is parsed with quotes, the quotes are removed when retrieving the parameter value using <a class="el" href="le__atServer__interface_8h.html#a2a7ebca3ad28f1351d8e20c3be6cca9c">le_atServer_GetParameter()</a> API. If a parmeter is not parsed with quotes, that parameter is converted to uppercase equivalent.</dd></dl>
+<h2><a class="anchor" id="atServer_RegistrationHandler"></a>
+Registration Handler</h2>
+<p>The AT command handling mechanism may rely on an intermediate handler to reroute the AT commands to the atServer. <a class="el" href="le__atServer__interface_8h.html#ad8b6936f012c66f4026040a0882b6331">le_atServer_AddCmdRegistrationHandler()</a> installs such a registration handler that will be called each time a new command is subscribed by an application with <a class="el" href="le__atServer__interface_8h.html#a6473ee190af7fcaf93b6578b4f4d8890">le_atServer_AddCommandHandler()</a>.</p>
+<h1><a class="anchor" id="atServer_responses"></a>
+Responses</h1>
+<h2><a class="anchor" id="intermediateRsp"></a>
+Intermediate response</h2>
+<p>The application has can send intermediate responses through <a class="el" href="le__atServer__interface_8h.html#ad7faba1f1f505de0b11557a03d966d5b">le_atServer_SendIntermediateResponse()</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>If <a class="el" href="le__atServer__interface_8h.html#ad7faba1f1f505de0b11557a03d966d5b">le_atServer_SendIntermediateResponse()</a> return LE_FAULT, the final response have to be sent.</dd></dl>
+<h2><a class="anchor" id="finalResultCode"></a>
+Final result code</h2>
+<p>The application must return a final result code using <a class="el" href="le__atServer__interface_8h.html#ad3f175c366a50d92f8011d7062bdd147">le_atServer_SendFinalResultCode()</a>. The corresponding device will be locked until the final response is sent.</p>
+<p>If no answer is sent, the device will not accept any new AT commands (an error will be returned).</p>
+<p><a class="el" href="le__atServer__interface_8h.html#ad3f175c366a50d92f8011d7062bdd147">le_atServer_SendFinalResultCode()</a> takes as arguments the AT command reference, a pattern (which is the prefix of the final response), a final response type as defined in le_atServer_FinalRsp_t and an error code identifier.</p>
+<p>The final response type permits to the AT command Server to continue or stop the parsing of concatenated commands: if one command is failed, next commands are not executed, the final result of the concatenated AT command is the last error.</p>
+<h2><a class="anchor" id="finalRsp"></a>
+Final response</h2>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000008">Deprecated:</a></b></dt><dd><a class="el" href="le__atServer__interface_8h.html#a14c57753f986e5eb4928ea2eb350d9d9">le_atServer_SendFinalResponse()</a> should not be used anymore and will be removed soon. It has been replaced by <a class="el" href="le__atServer__interface_8h.html#ad3f175c366a50d92f8011d7062bdd147">le_atServer_SendFinalResultCode()</a>.</dd></dl>
+<p>In all cases, the application must send a final response using <a class="el" href="le__atServer__interface_8h.html#a14c57753f986e5eb4928ea2eb350d9d9">le_atServer_SendFinalResponse()</a>. The corresponding device will be locked until the final response is sent.</p>
+<p>If no answer is sent, the device will not accept any new AT commands (an error will be returned).</p>
+<p><a class="el" href="le__atServer__interface_8h.html#a14c57753f986e5eb4928ea2eb350d9d9">le_atServer_SendFinalResponse()</a> has to inform of the result thanks to the argument of le_atServer_FinalRsp_t type. This argument permits to the AT command Server to:</p><ul>
+<li>create the result string if no custom string is provided</li>
+<li>continue or stop the parsing of concatenated commands: if one command is failed, next commands are not executed, the final result of the concatenated AT command is the last error.</li>
+</ul>
+<h2><a class="anchor" id="unsolicitedRsp"></a>
+Unsolicited response</h2>
+<p>The application can also send unsolicited responses to warn a host application using <a class="el" href="le__atServer__interface_8h.html#a003f02f3b6096b8b9965fad2be0f3056">le_atServer_SendUnsolicitedResponse()</a>.</p>
+<p>This response is sent when no AT command is being processing on the device (i.e. unsolicited response is sent between the latest final response and the next reception of an AT command).</p>
+<p>If an unsolicited response is sent when an AT command is in progress, the unsolicited response is buffered and sent as soon as the device becomes available (i.e., the processing AT command sends its final response).</p>
+<h1><a class="anchor" id="atServer_errors"></a>
+Error codes</h1>
+<p><a class="el" href="le__atServer__interface_8h.html#a8acfe50e0c112ca835e5298ab197c44d">le_atServer_EnableExtendedErrorCodes()</a> allows the user to use extended error codes on a selected device. When this mode is enabled, numerical codes are displayed when an error occurs. <a class="el" href="le__atServer__interface_8h.html#a7e619aca889fb7c4ffd0bc46faa464b1">le_atServer_EnableVerboseErrorCodes()</a> allows the user to enable verbose error codes on a selected device. Thus, instead of numerical codes, error are actually displayed as verbose messages. <a class="el" href="le__atServer__interface_8h.html#aaf4fce1a181272837e35337b0debdf4a">le_atServer_DisableExtendedErrorCodes()</a> allows the user to disable the current error mode namely extended error codes or verbose error codes on a selected device.</p>
+<p>User can create custom error codes using <a class="el" href="le__atServer__interface_8h.html#a3397ba6f66ac70fc1c5be1c3c0551190">le_atServer_CreateErrorCode()</a> by providing an error code identifier and a specific pattern. The pattern is a prefix of the final response string. Standard error codes use the patterns "+CME ERROR: " and "+CMS ERROR: " for instance. These standard patterns are defined in the following macros: CME_ERROR and CMS_ERROR. The code identifier should be equal or higher than 512 as the range [0, 511] is reserved for standard error codes defined in 3GPP 27.007 9.2 and TS 127.005 3.2.5.</p>
+<p><a class="el" href="le__atServer__interface_8h.html#a3397ba6f66ac70fc1c5be1c3c0551190">le_atServer_CreateErrorCode()</a> returns a reference which can be used to attach a custom verbose message to the error codes by calling <a class="el" href="le__atServer__interface_8h.html#a3ca7e4073f47db50fe97f171012b6b33">le_atServer_SetVerboseErrorCode()</a>. <a class="el" href="le__atServer__interface_8h.html#a7130c65365ad3b021eccb67103535a6f">le_atServer_DeleteErrorCode()</a> allows the user to drop an already registered error code.</p>
+<h1><a class="anchor" id="Text"></a>
+Text</h1>
+<p><a class="el" href="le__atServer__interface_8h.html#ae6adec2d9f46c1241ba66d7c46b63c02">le_atServer_GetTextAsync()</a> allows the user to register a le_atServer_GetTextCallback_t callback to retrieve text and sends a prompt &lt;CR&gt;&lt;LF&gt;&lt;greater_than&gt;&lt;SPACE&gt; on the current command's device.</p>
+<p>It will receive at max LE_ATDEFS_TEXT_MAX_LEN bytes. If Esc Key is hit then the command is canceled and an empty buffer is returned with result set to LE_OK. If Ctrl+z is hit then the received buffer is returned and the result is set to LE_OK. In case of a read error, an empty buffer is returned with result set to LE_IO_ERROR;</p>
+<p>Example:</p>
+<p>AT+CMGS="+85291234567" </p><blockquote class="doxtable">
+<p>&lt;ESC&gt; </p>
+</blockquote>
+<p>OK</p>
+<p>AT+CMGS="+85291234567" </p><blockquote class="doxtable">
+<p>It is easy to send text messages. &lt;CTRL-Z&gt; </p>
+</blockquote>
+<p>+CMGS: 5</p>
+<p>OK</p>
+<h1><a class="anchor" id="atServer_bridge"></a>
+Bridge</h1>
+<p>A second file descriptor can be used thanks to <a class="el" href="le__atServer__interface_8h.html#a95ee0e0371e4c6a92148a1d3c4b6c073">le_atServer_OpenBridge()</a> to send all unknown AT commands to an alternative device (such as the modem). For all devices linked to that bridge using <a class="el" href="le__atServer__interface_8h.html#a3aa1a2e61fdc1b918fe6886e7986fff1">le_atServer_AddDeviceToBridge()</a>, unknown commands will be sent through that file descriptor.</p>
+<p>The bridge only works with AT commands that have the following terminal responses:</p><ul>
+<li>"OK"</li>
+<li>"NO CARRIER"</li>
+<li>"NO DIALTONE"</li>
+<li>"BUSY"</li>
+<li>"NO ANSWSER"</li>
+<li>"ERROR"</li>
+<li>"+CME ERROR"</li>
+<li>"+CMS ERROR"</li>
+</ul>
+<p>AT commands executed through the bridge do not support text mode (e.g.; +CMGS) or data mode (e.g.; ATD*99***1#). Sending these commands through the bridge may lock the Legato AT commands parser.</p>
+<div class="image">
+<img alt="atCommandsParserBridge.png" src="atCommandsParserBridge.png"/>
+</div>
+<dl class="section note"><dt>Note</dt><dd>AT commands server is opened on the file descriptor fd1 using <a class="el" href="le__atServer__interface_8h.html#a7b59aee923ee8d0032e0c7cb9d7ffea5">le_atServer_Open()</a> API. AT commands server is bridged on the file descriptor fd2 using <a class="el" href="le__atServer__interface_8h.html#a95ee0e0371e4c6a92148a1d3c4b6c073">le_atServer_OpenBridge()</a> API.</dd></dl>
+<p>A device can be remove from a bridge thanks to <a class="el" href="le__atServer__interface_8h.html#aec9a70dac50f4d5ecd7aa7025c328cd0">le_atServer_RemoveDeviceFromBridge()</a> API. A bridge can be closed using <a class="el" href="le__atServer__interface_8h.html#ab21d9b3843f5f229643c55181d460890">le_atServer_CloseBridge()</a> API.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Some modem AT commands may conflict with Legato APIs; using both may cause problems that can be difficult to diagnose. The modem AT commands should be avoided whenever possible, and should only be used with great care.</dd></dl>
+<p>The application can send an unsolicited on all opened device, or only one on a dedicated device.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
