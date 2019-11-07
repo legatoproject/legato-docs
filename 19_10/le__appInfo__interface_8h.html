@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_appInfo_interface.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.10.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src=""></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Legato Documentation</h2>
+<nav class="secondary">
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#typedef-members">Typedefs</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_appInfo_interface.h File Reference</h1> </div>
+</div><div class="contents">
+<div class="textblock"><code>#include "legato.h"</code><br/>
+<code>#include "<a class="el" href="le__limit__interface_8h_source.html">le_limit_interface.h</a>"</code><br/>
+<code>#include "le_appInfo_common.h"</code><br/>
+</div>
+<p><a href="le__appInfo__interface_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:adf4c8d228bcc0a41c85ab2717291944c"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__appInfo__interface_8h.html#adf4c8d228bcc0a41c85ab2717291944c">le_appInfo_DisconnectHandler_t</a>) (void *)</td></tr>
+<tr class="separator:adf4c8d228bcc0a41c85ab2717291944c"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a74808a1cf4401f8bb24dd5dbdb4f4e26"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__appInfo__interface_8h.html#a74808a1cf4401f8bb24dd5dbdb4f4e26">le_appInfo_ConnectService</a> (void)</td></tr>
+<tr class="separator:a74808a1cf4401f8bb24dd5dbdb4f4e26"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0878c56dfbc55500975631ac89d442f7"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__appInfo__interface_8h.html#a0878c56dfbc55500975631ac89d442f7">le_appInfo_TryConnectService</a> (void)</td></tr>
+<tr class="separator:a0878c56dfbc55500975631ac89d442f7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a903e8c59257f4971d48cdc8552b7b03d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__appInfo__interface_8h.html#a903e8c59257f4971d48cdc8552b7b03d">le_appInfo_SetServerDisconnectHandler</a> (<a class="el" href="le__appInfo__interface_8h.html#adf4c8d228bcc0a41c85ab2717291944c">le_appInfo_DisconnectHandler_t</a> disconnectHandler, void *contextPtr)</td></tr>
+<tr class="separator:a903e8c59257f4971d48cdc8552b7b03d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6f91858dcc2d8a4333f5a9bf953a081c"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__appInfo__interface_8h.html#a6f91858dcc2d8a4333f5a9bf953a081c">le_appInfo_DisconnectService</a> (void)</td></tr>
+<tr class="separator:a6f91858dcc2d8a4333f5a9bf953a081c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a820c89ccbd83d5475a49af9476fe73db"><td align="right" class="memItemLeft" valign="top">le_appInfo_State_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__appInfo__interface_8h.html#a820c89ccbd83d5475a49af9476fe73db">le_appInfo_GetState</a> (const char *LE_NONNULL appName)</td></tr>
+<tr class="separator:a820c89ccbd83d5475a49af9476fe73db"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa9c2899c625121bbbdf8d2b5477d8228"><td align="right" class="memItemLeft" valign="top">le_appInfo_ProcState_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__appInfo__interface_8h.html#aa9c2899c625121bbbdf8d2b5477d8228">le_appInfo_GetProcState</a> (const char *LE_NONNULL appName, const char *LE_NONNULL procName)</td></tr>
+<tr class="separator:aa9c2899c625121bbbdf8d2b5477d8228"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a389829ed72ba4c85efafe95f3960296d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__appInfo__interface_8h.html#a389829ed72ba4c85efafe95f3960296d">le_appInfo_GetName</a> (int32_t pid, char *appName, size_t appNameSize)</td></tr>
+<tr class="separator:a389829ed72ba4c85efafe95f3960296d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a40e4a61d67be7296fa6e82e0f14e6f1c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__appInfo__interface_8h.html#a40e4a61d67be7296fa6e82e0f14e6f1c">le_appInfo_GetHash</a> (const char *LE_NONNULL appName, char *hashStr, size_t hashStrSize)</td></tr>
+<tr class="separator:a40e4a61d67be7296fa6e82e0f14e6f1c"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato <a class="el" href="c_appInfo.html">Application Information API</a> include file.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="adf4c8d228bcc0a41c85ab2717291944c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf4c8d228bcc0a41c85ab2717291944c">◆ </a></span>le_appInfo_DisconnectHandler_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_appInfo_DisconnectHandler_t) (void *)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Type for handler called when a server disconnects. </p>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a74808a1cf4401f8bb24dd5dbdb4f4e26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74808a1cf4401f8bb24dd5dbdb4f4e26">◆ </a></span>le_appInfo_ConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_appInfo_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="a6f91858dcc2d8a4333f5a9bf953a081c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f91858dcc2d8a4333f5a9bf953a081c">◆ </a></span>le_appInfo_DisconnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_appInfo_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="a40e4a61d67be7296fa6e82e0f14e6f1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40e4a61d67be7296fa6e82e0f14e6f1c">◆ </a></span>le_appInfo_GetHash()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_appInfo_GetHash </td>
+<td>(</td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>appName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>hashStr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>hashStrSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the application hash as a hexidecimal string. The application hash is a unique hash of the current version of the application.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if the application has was successfully retrieved. LE_OVERFLOW if the application hash could not fit in the provided buffer. LE_NOT_FOUND if the application is not installed. LE_FAULT if there was an error.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the application name pointer is null or if its string is empty or of bad format it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">appName</td><td>Application name. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">hashStr</td><td>Hash string. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">hashStrSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a389829ed72ba4c85efafe95f3960296d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a389829ed72ba4c85efafe95f3960296d">◆ </a></span>le_appInfo_GetName()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_appInfo_GetName </td>
+<td>(</td>
+<td class="paramtype">int32_t </td>
+<td class="paramname"><em>pid</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>appName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>appNameSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the application name of the process with the specified PID.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if the application name was successfully found. LE_OVERFLOW if the application name could not fit in the provided buffer. LE_NOT_FOUND if the process is not part of an application. LE_FAULT if there was an error. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">pid</td><td>PID of the process. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">appName</td><td>Application name. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">appNameSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aa9c2899c625121bbbdf8d2b5477d8228"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9c2899c625121bbbdf8d2b5477d8228">◆ </a></span>le_appInfo_GetProcState()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_appInfo_ProcState_t le_appInfo_GetProcState </td>
+<td>(</td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>appName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>procName</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the state of the specified process in an application. This function only works for configured processes that the Supervisor starts directly.</p>
+<dl class="section return"><dt>Returns</dt><dd>The state of the specified process.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the application or process names pointers are null or if their strings are empty or of bad format it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">appName</td><td>Application name. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">procName</td><td>Process name. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a820c89ccbd83d5475a49af9476fe73db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a820c89ccbd83d5475a49af9476fe73db">◆ </a></span>le_appInfo_GetState()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_appInfo_State_t le_appInfo_GetState </td>
+<td>(</td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>appName</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Application states. Process states. Gets the state of the specified application. The state of unknown applications is STOPPED.</p>
+<dl class="section return"><dt>Returns</dt><dd>The state of the specified application.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the application name pointer is null or if its string is empty or of bad format it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">appName</td><td>Application name. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a903e8c59257f4971d48cdc8552b7b03d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a903e8c59257f4971d48cdc8552b7b03d">◆ </a></span>le_appInfo_SetServerDisconnectHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void le_appInfo_SetServerDisconnectHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__appInfo__interface_8h.html#adf4c8d228bcc0a41c85ab2717291944c">le_appInfo_DisconnectHandler_t</a> </td>
+<td class="paramname"><em>disconnectHandler</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set handler called when server disconnection is detected.</p>
+<p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
+</div>
+</div>
+<a id="a0878c56dfbc55500975631ac89d442f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0878c56dfbc55500975631ac89d442f7">◆ </a></span>le_appInfo_TryConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_appInfo_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

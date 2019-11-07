@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Tools  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.10.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Tools.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a class="link-selected" href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Tools </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>To download, install and configure your development environment, Legato recommends using <a class="el" href="toolsLeaf.html">Leaf</a>. Leaf is a a stand alone tool that will set up and customize your development environment and get you developing quickly. Leaf is also <b>profile</b> <b>aware</b>, meaning that you can easily switch to a new version of Legato or a different target and automatically update your dev environment to use the environment variables and toolchain specific to that profile.</p>
+<p>Alternatively, you can clone the source code from our <a class="el" href="toolsGerrit.html">Gerrit</a> server but you must set up your development environment <a class="el" href="basicBuild.html">manually</a>.</p>
+<p>To configure the Legato Application Framework we provide a <a class="el" href="toolsKconfig.html">Kconfig menu system</a> to enable or disable Framework features.</p>
+<table class="doxtable">
+<tr>
+<th>Section </th><th>Description  </th></tr>
+<tr>
+<td><a class="el" href="toolsLeaf.html">Leaf</a> </td><td>Download, Install and Configure your development environment </td></tr>
+<tr>
+<td><a class="el" href="toolsGerrit.html">Gerrit</a> </td><td>Clone the source code of both Legato and the Linux Distros </td></tr>
+<tr>
+<td><a class="el" href="toolsKconfig.html">KConfig</a> </td><td>Configure the Legato Application Framework </td></tr>
+</table>
+<dl class="section note"><dt>Note</dt><dd>If you change options within Kconfig you must rebuild the framework by running <code>make</code> <code></code> &lt;target&gt;.</dd></dl>
+<p>Once you've set up your development environment, Legato contains Tools that will help you configure and diagnose your target or dev machine and build Systems, Apps and Components for Legato.</p>
+<table class="doxtable">
+<tr>
+<th>Section </th><th>Description  </th></tr>
+<tr>
+<td><a class="el" href="toolsTarget.html">Target Tools</a> </td><td>Tools that run on the target device </td></tr>
+<tr>
+<td><a class="el" href="toolsTargetMgmt.html">Target Management Tools</a> </td><td>Tools for managing target devices (run on Linux dev machine) </td></tr>
+<tr>
+<td><a class="el" href="toolsBuild.html">Build Tools</a> </td><td>Tools for building software (run on Linux dev machine) </td></tr>
+</table>
+<dl class="section note"><dt>Note</dt><dd>When using Leaf workspace manager all the environment configuration is done for your target, and you are able to build for multiple targets by switching profiles. There is no need to run <code>bin/legs</code> or other shell configuration steps. Running <code>leaf</code> <code>shell</code> will drop you into a configurable environment that automatically runs any of the Target Management or Build Tools.</dd></dl>
+<p>If you have downloaded, installed and configured your environment manually; before running tools on your development machine you will need to configure your shell.</p>
+<h1>Manually Configure a Shell (without Leaf) </h1>
+<p>Some of the Legato tools need certain environment variables to be set. <a class="el" href="toolsLeaf.html">Leaf</a> will take care of the environment set up for you or if you have set up your environment manually there are two ways to set up your shell's environment:</p><ul>
+<li>run bin/legs</li>
+<li>source bin/configlegatoenv</li>
+</ul>
+<p>Both of these files reside in the bin directory under your legato root directory (where the legato framework is installed). If the bin directory is missing or empty, it's because the framework has not been <a class="el" href="basicBuildMake.html">built</a> yet.</p>
+<h2>bin/legs </h2>
+<p>You can run an interactive bash shell configured for Legato by running <code>legs</code> (short for "legato shell") <em>every</em> time you open a new shell.</p>
+<pre class="fragment"><div class="line">$ bin/legs</div></pre><!-- fragment --><p>After running <code>legs</code>, <code>exit</code> the shell at any time to terminate <code>legs</code> and restore your shell's environment.</p>
+<dl class="section warning"><dt>Warning</dt><dd>If you have two Legato framework versions installed on your PC, to switch versions you <b>MUST</b> <code>exit</code> out of <code>legs</code> and run the <code>legs</code> script again from the other version.</dd></dl>
+<h2>bin/configlegatoenv </h2>
+<p>Use <code>configlegatoenv</code> as alternative to <code>bin/legs</code>:</p>
+<pre class="fragment"><div class="line">$ source bin/configlegatoenv</div></pre><!-- fragment --><p>configlegatoenv does not spawn an new shell, instead it imports the Legato configuration within your current shell session. This is useful if you want to use bash alternatives like <code>zsh</code>.</p>
+<dl class="section warning"><dt>Warning</dt><dd>If you have two Legato framework versions installed on your PC, to switch versions you <b>MUST</b> <code>source</code> the <code>configlegatoenv</code> script from the other version.</dd></dl>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
