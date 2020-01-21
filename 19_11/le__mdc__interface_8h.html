@@ -1,0 +1,1971 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_mdc_interface.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.11.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src=""></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Legato Documentation</h2>
+<nav class="secondary">
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#typedef-members">Typedefs</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_mdc_interface.h File Reference</h1> </div>
+</div><div class="contents">
+<div class="textblock"><code>#include "legato.h"</code><br/>
+<code>#include "le_mdc_common.h"</code><br/>
+</div>
+<p><a href="le__mdc__interface_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ad2a1308da1853759827c5998c7e97f04"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#ad2a1308da1853759827c5998c7e97f04">le_mdc_DisconnectHandler_t</a>) (void *)</td></tr>
+<tr class="separator:ad2a1308da1853759827c5998c7e97f04"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a2a841ce582ce97f62df6334717b49fcb"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a2a841ce582ce97f62df6334717b49fcb">le_mdc_ConnectService</a> (void)</td></tr>
+<tr class="separator:a2a841ce582ce97f62df6334717b49fcb"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac93bebcbe5364e7313a168e9502c30b6"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#ac93bebcbe5364e7313a168e9502c30b6">le_mdc_TryConnectService</a> (void)</td></tr>
+<tr class="separator:ac93bebcbe5364e7313a168e9502c30b6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8b054b13d96f897ae7eadff87a8cd226"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a8b054b13d96f897ae7eadff87a8cd226">le_mdc_SetServerDisconnectHandler</a> (<a class="el" href="le__mdc__interface_8h.html#ad2a1308da1853759827c5998c7e97f04">le_mdc_DisconnectHandler_t</a> disconnectHandler, void *contextPtr)</td></tr>
+<tr class="separator:a8b054b13d96f897ae7eadff87a8cd226"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3ce7efc114de8b91a7ad61cb6f6f47c8"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a3ce7efc114de8b91a7ad61cb6f6f47c8">le_mdc_DisconnectService</a> (void)</td></tr>
+<tr class="separator:a3ce7efc114de8b91a7ad61cb6f6f47c8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a594c85c1ccb56ddfbaf36496f35f681e"><td align="right" class="memItemLeft" valign="top">le_mdc_SessionStateHandlerRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a594c85c1ccb56ddfbaf36496f35f681e">le_mdc_AddSessionStateHandler</a> (le_mdc_ProfileRef_t profileRef, le_mdc_SessionStateHandlerFunc_t handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:a594c85c1ccb56ddfbaf36496f35f681e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af223a193b73ce6f870947557f69136dc"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#af223a193b73ce6f870947557f69136dc">le_mdc_RemoveSessionStateHandler</a> (le_mdc_SessionStateHandlerRef_t handlerRef)</td></tr>
+<tr class="separator:af223a193b73ce6f870947557f69136dc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ada19c2a399ba8c0aa038e27c21689472"><td align="right" class="memItemLeft" valign="top">le_mdc_MtPdpSessionStateHandlerRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#ada19c2a399ba8c0aa038e27c21689472">le_mdc_AddMtPdpSessionStateHandler</a> (le_mdc_SessionStateHandlerFunc_t handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:ada19c2a399ba8c0aa038e27c21689472"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a68b03606241ea2215e076966a7c08d99"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a68b03606241ea2215e076966a7c08d99">le_mdc_RemoveMtPdpSessionStateHandler</a> (le_mdc_MtPdpSessionStateHandlerRef_t handlerRef)</td></tr>
+<tr class="separator:a68b03606241ea2215e076966a7c08d99"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a638b693cd5f644fa5c24f81e1e36483c"><td align="right" class="memItemLeft" valign="top">le_mdc_ProfileRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a638b693cd5f644fa5c24f81e1e36483c">le_mdc_GetProfile</a> (uint32_t index)</td></tr>
+<tr class="separator:a638b693cd5f644fa5c24f81e1e36483c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a108f7c3db74a377c2ae5482543d4e0d9"><td align="right" class="memItemLeft" valign="top">uint32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a108f7c3db74a377c2ae5482543d4e0d9">le_mdc_GetProfileIndex</a> (le_mdc_ProfileRef_t profileRef)</td></tr>
+<tr class="separator:a108f7c3db74a377c2ae5482543d4e0d9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2cb08d5c3e6c43297d80448891719649"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a2cb08d5c3e6c43297d80448891719649">le_mdc_StartSession</a> (le_mdc_ProfileRef_t profileRef)</td></tr>
+<tr class="separator:a2cb08d5c3e6c43297d80448891719649"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa03d6e31263ddf8bf1d94b183c9934d9"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#aa03d6e31263ddf8bf1d94b183c9934d9">le_mdc_StartSessionAsync</a> (le_mdc_ProfileRef_t profileRef, le_mdc_SessionHandlerFunc_t handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:aa03d6e31263ddf8bf1d94b183c9934d9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a53453f85065c3cace0922150b7e3d869"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a53453f85065c3cace0922150b7e3d869">le_mdc_StopSession</a> (le_mdc_ProfileRef_t profileRef)</td></tr>
+<tr class="separator:a53453f85065c3cace0922150b7e3d869"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac5b357f7437c9e253fa17b2511fa14ef"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#ac5b357f7437c9e253fa17b2511fa14ef">le_mdc_StopSessionAsync</a> (le_mdc_ProfileRef_t profileRef, le_mdc_SessionHandlerFunc_t handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:ac5b357f7437c9e253fa17b2511fa14ef"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae3b49edad910960b84a9012ecc33c66a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#ae3b49edad910960b84a9012ecc33c66a">le_mdc_RejectMtPdpSession</a> (le_mdc_ProfileRef_t profileRef)</td></tr>
+<tr class="separator:ae3b49edad910960b84a9012ecc33c66a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:add91c364e8b3e4e82a0ce64e480c016b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#add91c364e8b3e4e82a0ce64e480c016b">le_mdc_GetSessionState</a> (le_mdc_ProfileRef_t profileRef, le_mdc_ConState_t *connectionStatePtr)</td></tr>
+<tr class="separator:add91c364e8b3e4e82a0ce64e480c016b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4c22a8691d6e6a69270a7ed6ab9974af"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a4c22a8691d6e6a69270a7ed6ab9974af">le_mdc_GetInterfaceName</a> (le_mdc_ProfileRef_t profileRef, char *interfaceName, size_t interfaceNameSize)</td></tr>
+<tr class="separator:a4c22a8691d6e6a69270a7ed6ab9974af"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0b5e11efda06472fc6c525101fceafe6"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a0b5e11efda06472fc6c525101fceafe6">le_mdc_GetIPv4Address</a> (le_mdc_ProfileRef_t profileRef, char *ipAddr, size_t ipAddrSize)</td></tr>
+<tr class="separator:a0b5e11efda06472fc6c525101fceafe6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a290cff563b19ee4891bcd5c8908c54f9"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a290cff563b19ee4891bcd5c8908c54f9">le_mdc_GetIPv4GatewayAddress</a> (le_mdc_ProfileRef_t profileRef, char *gatewayAddr, size_t gatewayAddrSize)</td></tr>
+<tr class="separator:a290cff563b19ee4891bcd5c8908c54f9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0dd0dcf60d647388fa3e1973917a6161"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a0dd0dcf60d647388fa3e1973917a6161">le_mdc_GetIPv4DNSAddresses</a> (le_mdc_ProfileRef_t profileRef, char *dns1AddrStr, size_t dns1AddrStrSize, char *dns2AddrStr, size_t dns2AddrStrSize)</td></tr>
+<tr class="separator:a0dd0dcf60d647388fa3e1973917a6161"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a73ef38d4d2399580d552b12c62f1c508"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a73ef38d4d2399580d552b12c62f1c508">le_mdc_GetIPv6Address</a> (le_mdc_ProfileRef_t profileRef, char *ipAddr, size_t ipAddrSize)</td></tr>
+<tr class="separator:a73ef38d4d2399580d552b12c62f1c508"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3bb60671304e2b4d3b23d8e623f9940c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a3bb60671304e2b4d3b23d8e623f9940c">le_mdc_GetIPv6GatewayAddress</a> (le_mdc_ProfileRef_t profileRef, char *gatewayAddr, size_t gatewayAddrSize)</td></tr>
+<tr class="separator:a3bb60671304e2b4d3b23d8e623f9940c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad9cb7d3299620d9dcde551cec45389a1"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#ad9cb7d3299620d9dcde551cec45389a1">le_mdc_GetIPv6DNSAddresses</a> (le_mdc_ProfileRef_t profileRef, char *dns1AddrStr, size_t dns1AddrStrSize, char *dns2AddrStr, size_t dns2AddrStrSize)</td></tr>
+<tr class="separator:ad9cb7d3299620d9dcde551cec45389a1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa3912e94864a6e5862e07f58b3772cba"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#aa3912e94864a6e5862e07f58b3772cba">le_mdc_IsIPv4</a> (le_mdc_ProfileRef_t profileRef)</td></tr>
+<tr class="separator:aa3912e94864a6e5862e07f58b3772cba"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:adde11de0b17b2c937acca6355b6fba11"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#adde11de0b17b2c937acca6355b6fba11">le_mdc_IsIPv6</a> (le_mdc_ProfileRef_t profileRef)</td></tr>
+<tr class="separator:adde11de0b17b2c937acca6355b6fba11"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1b17bb87b347162013b5ad608cdcda2d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a1b17bb87b347162013b5ad608cdcda2d">le_mdc_GetDataBearerTechnology</a> (le_mdc_ProfileRef_t profileRef, le_mdc_DataBearerTechnology_t *downlinkDataBearerTechPtrPtr, le_mdc_DataBearerTechnology_t *uplinkDataBearerTechPtrPtr)</td></tr>
+<tr class="separator:a1b17bb87b347162013b5ad608cdcda2d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aaad833c105f7d0ae77f18195d6739080"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#aaad833c105f7d0ae77f18195d6739080">le_mdc_GetBytesCounters</a> (uint64_t *rxBytesPtr, uint64_t *txBytesPtr)</td></tr>
+<tr class="separator:aaad833c105f7d0ae77f18195d6739080"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a63636b2779d2ee6a6520ebfb2d26666c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a63636b2779d2ee6a6520ebfb2d26666c">le_mdc_ResetBytesCounter</a> (void)</td></tr>
+<tr class="separator:a63636b2779d2ee6a6520ebfb2d26666c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1d6007bc8f84e5e4869af4af11b7363f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a1d6007bc8f84e5e4869af4af11b7363f">le_mdc_StopBytesCounter</a> (void)</td></tr>
+<tr class="separator:a1d6007bc8f84e5e4869af4af11b7363f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a30f390941d98c9e9c4144a5e035da3aa"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a30f390941d98c9e9c4144a5e035da3aa">le_mdc_StartBytesCounter</a> (void)</td></tr>
+<tr class="separator:a30f390941d98c9e9c4144a5e035da3aa"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a73e66a7a63dc95d7f261fc2a26470386"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a73e66a7a63dc95d7f261fc2a26470386">le_mdc_SetPDP</a> (le_mdc_ProfileRef_t profileRef, le_mdc_Pdp_t pdp)</td></tr>
+<tr class="separator:a73e66a7a63dc95d7f261fc2a26470386"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0a51125579f1d5009dac03c79ddff498"><td align="right" class="memItemLeft" valign="top">le_mdc_Pdp_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a0a51125579f1d5009dac03c79ddff498">le_mdc_GetPDP</a> (le_mdc_ProfileRef_t profileRef)</td></tr>
+<tr class="separator:a0a51125579f1d5009dac03c79ddff498"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae8ebd11b9cb9afb9b6b5745903f50156"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#ae8ebd11b9cb9afb9b6b5745903f50156">le_mdc_SetAPN</a> (le_mdc_ProfileRef_t profileRef, const char *LE_NONNULL apnStr)</td></tr>
+<tr class="separator:ae8ebd11b9cb9afb9b6b5745903f50156"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad44bd756fd5cbfd43a5b348054786a4d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#ad44bd756fd5cbfd43a5b348054786a4d">le_mdc_SetDefaultAPN</a> (le_mdc_ProfileRef_t profileRef)</td></tr>
+<tr class="separator:ad44bd756fd5cbfd43a5b348054786a4d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:afc0c149bfa4455f3e9a8ccc06f0c5fed"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#afc0c149bfa4455f3e9a8ccc06f0c5fed">le_mdc_GetAPN</a> (le_mdc_ProfileRef_t profileRef, char *apnStr, size_t apnStrSize)</td></tr>
+<tr class="separator:afc0c149bfa4455f3e9a8ccc06f0c5fed"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9f69d0751927b5ead6c756202179b222"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a9f69d0751927b5ead6c756202179b222">le_mdc_SetAuthentication</a> (le_mdc_ProfileRef_t profileRef, le_mdc_Auth_t type, const char *LE_NONNULL userName, const char *LE_NONNULL password)</td></tr>
+<tr class="separator:a9f69d0751927b5ead6c756202179b222"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3f83b1b922271091e3f1da418a4f39ca"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a3f83b1b922271091e3f1da418a4f39ca">le_mdc_GetAuthentication</a> (le_mdc_ProfileRef_t profileRef, le_mdc_Auth_t *typePtr, char *userName, size_t userNameSize, char *password, size_t passwordSize)</td></tr>
+<tr class="separator:a3f83b1b922271091e3f1da418a4f39ca"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a790602f1b17d7bf9626a51eac5599439"><td align="right" class="memItemLeft" valign="top">uint32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a790602f1b17d7bf9626a51eac5599439">le_mdc_NumProfiles</a> (void)</td></tr>
+<tr class="separator:a790602f1b17d7bf9626a51eac5599439"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2ea0573e6e9cd16c04e95146f2b2e693"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a2ea0573e6e9cd16c04e95146f2b2e693">le_mdc_GetProfileFromApn</a> (const char *LE_NONNULL apnStr, le_mdc_ProfileRef_t *profileRefPtr)</td></tr>
+<tr class="separator:a2ea0573e6e9cd16c04e95146f2b2e693"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:afe73f44c23b1bd120dd82a85b36c6059"><td align="right" class="memItemLeft" valign="top">le_mdc_DisconnectionReason_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#afe73f44c23b1bd120dd82a85b36c6059">le_mdc_GetDisconnectionReason</a> (le_mdc_ProfileRef_t profileRef)</td></tr>
+<tr class="separator:afe73f44c23b1bd120dd82a85b36c6059"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3e3a92b0f5e3edab9400412170517a62"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a3e3a92b0f5e3edab9400412170517a62">le_mdc_GetPlatformSpecificDisconnectionCode</a> (le_mdc_ProfileRef_t profileRef)</td></tr>
+<tr class="separator:a3e3a92b0f5e3edab9400412170517a62"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a438ff354100b5020ace1059635b740b4"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a438ff354100b5020ace1059635b740b4">le_mdc_GetPlatformSpecificFailureConnectionReason</a> (le_mdc_ProfileRef_t profileRef, int32_t *failureTypePtr, int32_t *failureCodePtr)</td></tr>
+<tr class="separator:a438ff354100b5020ace1059635b740b4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1549b75fa09dea4ae8ed58df762a70cc"><td align="right" class="memItemLeft" valign="top">le_mdc_DisconnectionReason_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a1549b75fa09dea4ae8ed58df762a70cc">le_mdc_GetDisconnectionReasonExt</a> (le_mdc_ProfileRef_t profileRef, le_mdc_Pdp_t pdpType)</td></tr>
+<tr class="separator:a1549b75fa09dea4ae8ed58df762a70cc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7d7d4d322afeba7ee2621bf8c66b873b"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a7d7d4d322afeba7ee2621bf8c66b873b">le_mdc_GetPlatformSpecificDisconnectionCodeExt</a> (le_mdc_ProfileRef_t profileRef, le_mdc_Pdp_t pdpType)</td></tr>
+<tr class="separator:a7d7d4d322afeba7ee2621bf8c66b873b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3c4ece83ef7f0e5a91e8382f7594bac9"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a3c4ece83ef7f0e5a91e8382f7594bac9">le_mdc_GetPlatformSpecificFailureConnectionReasonExt</a> (le_mdc_ProfileRef_t profileRef, le_mdc_Pdp_t pdpType, int32_t *failureTypePtr, int32_t *failureCodePtr)</td></tr>
+<tr class="separator:a3c4ece83ef7f0e5a91e8382f7594bac9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a56cd547a4e2b9cc98c1f0d052aeb92e6"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a56cd547a4e2b9cc98c1f0d052aeb92e6">le_mdc_MapProfileOnNetworkInterface</a> (le_mdc_ProfileRef_t profileRef, const char *LE_NONNULL interfaceName)</td></tr>
+<tr class="separator:a56cd547a4e2b9cc98c1f0d052aeb92e6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7ed1e44a5e2fdb27be052a53412cbbd1"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mdc__interface_8h.html#a7ed1e44a5e2fdb27be052a53412cbbd1">le_mdc_GetProfileList</a> (le_mdc_ProfileInfo_t *profileListPtr, size_t *profileListSizePtr)</td></tr>
+<tr class="separator:a7ed1e44a5e2fdb27be052a53412cbbd1"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato <a class="el" href="c_mdc.html">Modem Data Control</a> include file.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="ad2a1308da1853759827c5998c7e97f04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2a1308da1853759827c5998c7e97f04">◆ </a></span>le_mdc_DisconnectHandler_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_mdc_DisconnectHandler_t) (void *)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Type for handler called when a server disconnects. </p>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ada19c2a399ba8c0aa038e27c21689472"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada19c2a399ba8c0aa038e27c21689472">◆ </a></span>le_mdc_AddMtPdpSessionStateHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_mdc_MtPdpSessionStateHandlerRef_t le_mdc_AddMtPdpSessionStateHandler </td>
+<td>(</td>
+<td class="paramtype">le_mdc_SessionStateHandlerFunc_t </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Add handler function for EVENT 'le_mdc_MtPdpSessionState'</p>
+<p>This event provides information on data session connection state changes for the given profileRef. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a594c85c1ccb56ddfbaf36496f35f681e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a594c85c1ccb56ddfbaf36496f35f681e">◆ </a></span>le_mdc_AddSessionStateHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_mdc_SessionStateHandlerRef_t le_mdc_AddSessionStateHandler </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_mdc_SessionStateHandlerFunc_t </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference to a modem data connection profile. Enumeration of data bearer technologies. Enumeration of Packet Data Protocol. Authentication bit mask. Enumeration of connection state. Enumeration of the possible reasons for the disconnection. Handler for Data session connection state changes. Handler for MT-PDP Data session connection state changes. Handler for asynchronous session start and stop result response Reference type used by Add/Remove functions for EVENT 'le_mdc_SessionState' Reference type used by Add/Remove functions for EVENT 'le_mdc_MtPdpSessionState' This is the structure with info about a given cellular data profile Add handler function for EVENT 'le_mdc_SessionState'</p>
+<p>This event provides information on data session connection state changes for the given profileRef. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>The profile object of interest </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a2a841ce582ce97f62df6334717b49fcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a841ce582ce97f62df6334717b49fcb">◆ </a></span>le_mdc_ConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_mdc_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="a3ce7efc114de8b91a7ad61cb6f6f47c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ce7efc114de8b91a7ad61cb6f6f47c8">◆ </a></span>le_mdc_DisconnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_mdc_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="afc0c149bfa4455f3e9a8ccc06f0c5fed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc0c149bfa4455f3e9a8ccc06f0c5fed">◆ </a></span>le_mdc_GetAPN()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_GetAPN </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>apnStr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>apnStrSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the Access Point Name (APN) for the given profile.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_BAD_PARAMETER if an input parameter is not valid</li>
+<li>LE_OVERFLOW if the APN is is too long</li>
+<li>LE_FAULT on failed</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid profile object is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Query this profile object </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">apnStr</td><td>The Access Point Name </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">apnStrSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a3f83b1b922271091e3f1da418a4f39ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f83b1b922271091e3f1da418a4f39ca">◆ </a></span>le_mdc_GetAuthentication()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_GetAuthentication </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_mdc_Auth_t * </td>
+<td class="paramname"><em>typePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>userName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>userNameSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>password</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>passwordSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get authentication property</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_BAD_PARAMETER if an input parameter is not valid</li>
+<li>LE_OVERFLOW userName or password are too small</li>
+<li>LE_FAULT on failed</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid profile object is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Query this profile object </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">typePtr</td><td>Authentication type </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">userName</td><td>UserName used by authentication </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">userNameSize</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">password</td><td>Password used by authentication </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">passwordSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aaad833c105f7d0ae77f18195d6739080"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaad833c105f7d0ae77f18195d6739080">◆ </a></span>le_mdc_GetBytesCounters()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_GetBytesCounters </td>
+<td>(</td>
+<td class="paramtype">uint64_t * </td>
+<td class="paramname"><em>rxBytesPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint64_t * </td>
+<td class="paramname"><em>txBytesPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get number of bytes received/transmitted without error since the last reset.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT for all other errors</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>The process exits, if an invalid pointer is given </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">rxBytesPtr</td><td>bytes amount received since the last counter reset </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">txBytesPtr</td><td>bytes amount transmitted since the last counter reset </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a1b17bb87b347162013b5ad608cdcda2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b17bb87b347162013b5ad608cdcda2d">◆ </a></span>le_mdc_GetDataBearerTechnology()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_GetDataBearerTechnology </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_mdc_DataBearerTechnology_t * </td>
+<td class="paramname"><em>downlinkDataBearerTechPtrPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_mdc_DataBearerTechnology_t * </td>
+<td class="paramname"><em>uplinkDataBearerTechPtrPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the Data Bearer Technology for the given profile, if the data session is connected.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT for all other errors</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid profile object is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Query this profile object </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">downlinkDataBearerTechPtrPtr</td><td>downlink data bearer technology </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">uplinkDataBearerTechPtrPtr</td><td>uplink data bearer technology </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="afe73f44c23b1bd120dd82a85b36c6059"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe73f44c23b1bd120dd82a85b36c6059">◆ </a></span>le_mdc_GetDisconnectionReason()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_mdc_DisconnectionReason_t le_mdc_GetDisconnectionReason </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Called to get the disconnection reason.</p>
+<dl class="section return"><dt>Returns</dt><dd>The disconnection reason.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000013">Deprecated:</a></b></dt><dd>This function is deprecated, le_mdc_GetDisconnectionReasonExt should be used for the new code. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>profile reference </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a1549b75fa09dea4ae8ed58df762a70cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1549b75fa09dea4ae8ed58df762a70cc">◆ </a></span>le_mdc_GetDisconnectionReasonExt()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_mdc_DisconnectionReason_t le_mdc_GetDisconnectionReasonExt </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_mdc_Pdp_t </td>
+<td class="paramname"><em>pdpType</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Called to get the disconnection reason.</p>
+<dl class="section return"><dt>Returns</dt><dd>The disconnection reason.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The return value le_mdc_DisconnectionReason_t might be limited by the platform. Please refer to the platform documentation <a class="el" href="platformConstraintsMdc.html">Modem Control platform constraints</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd>
+<dd>
+For IPv4v6 mode, pdpType specifies which session's disconnect reason to get(IPv4 or IPv6 session). For IPv4 and IPv6 mode, pdpType is ignored because there is only one session for IPv4 and IPv6 mode. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>profile reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">pdpType</td><td>pdp type of session </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a4c22a8691d6e6a69270a7ed6ab9974af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c22a8691d6e6a69270a7ed6ab9974af">◆ </a></span>le_mdc_GetInterfaceName()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_GetInterfaceName </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>interfaceName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>interfaceNameSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the network interface name, if the data session is connected.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_OVERFLOW if the interface name would not fit in interfaceNameStr</li>
+<li>LE_FAULT for all other errors</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid profile object is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Query this profile object </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">interfaceName</td><td>The name of the network interface </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">interfaceNameSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a0b5e11efda06472fc6c525101fceafe6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b5e11efda06472fc6c525101fceafe6">◆ </a></span>le_mdc_GetIPv4Address()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_GetIPv4Address </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>ipAddr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>ipAddrSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the IPv4 address for the given profile, if the data session is connected and has an IPv4 address.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_OVERFLOW if the IP address would not fit in ipAddrStr</li>
+<li>LE_FAULT for all other errors</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid profile object is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Query this profile object </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">ipAddr</td><td>The IP address in dotted format </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">ipAddrSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a0dd0dcf60d647388fa3e1973917a6161"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dd0dcf60d647388fa3e1973917a6161">◆ </a></span>le_mdc_GetIPv4DNSAddresses()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_GetIPv4DNSAddresses </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>dns1AddrStr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>dns1AddrStrSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>dns2AddrStr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>dns2AddrStrSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the primary/secondary DNS v4 addresses for the given profile, if the data session is connected and has an IPv4 address.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_OVERFLOW if the IP address would not fit in buffer</li>
+<li>LE_FAULT for all other errors</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>If only one DNS address is available, then it will be returned, and an empty string will be returned for the unavailable address</li>
+<li>The process exits, if an invalid profile object is given </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Query this profile object </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">dns1AddrStr</td><td>The primary DNS IP address in dotted format </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">dns1AddrStrSize</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">dns2AddrStr</td><td>The secondary DNS IP address in dotted format </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">dns2AddrStrSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a290cff563b19ee4891bcd5c8908c54f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a290cff563b19ee4891bcd5c8908c54f9">◆ </a></span>le_mdc_GetIPv4GatewayAddress()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_GetIPv4GatewayAddress </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>gatewayAddr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>gatewayAddrSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the gateway IPv4 address for the given profile, if the data session is connected and has an IPv4 address.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_OVERFLOW if the IP address would not fit in gatewayAddrStr</li>
+<li>LE_FAULT for all other errors</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid profile object is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Query this profile object </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">gatewayAddr</td><td>The gateway IP address in dotted format </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">gatewayAddrSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a73ef38d4d2399580d552b12c62f1c508"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73ef38d4d2399580d552b12c62f1c508">◆ </a></span>le_mdc_GetIPv6Address()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_GetIPv6Address </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>ipAddr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>ipAddrSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the IPv6 address for the given profile, if the data session is connected and has an IPv6 address.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_OVERFLOW if the IP address would not fit in ipAddrStr</li>
+<li>LE_FAULT for all other errors</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid profile object is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Query this profile object </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">ipAddr</td><td>The IP address in dotted format </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">ipAddrSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ad9cb7d3299620d9dcde551cec45389a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9cb7d3299620d9dcde551cec45389a1">◆ </a></span>le_mdc_GetIPv6DNSAddresses()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_GetIPv6DNSAddresses </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>dns1AddrStr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>dns1AddrStrSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>dns2AddrStr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>dns2AddrStrSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the primary/secondary DNS v6 addresses, if the data session is connected and has an IPv6 address.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_OVERFLOW if the IP address can't fit in buffer</li>
+<li>LE_FAULT for all other errors</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>If only one DNS address is available, it will be returned, and an empty string will be returned for the unavailable address.</li>
+<li>The process exits, if an invalid profile object is given </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Query this profile object </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">dns1AddrStr</td><td>The primary DNS IP address in dotted format </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">dns1AddrStrSize</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">dns2AddrStr</td><td>The secondary DNS IP address in dotted format </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">dns2AddrStrSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a3bb60671304e2b4d3b23d8e623f9940c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bb60671304e2b4d3b23d8e623f9940c">◆ </a></span>le_mdc_GetIPv6GatewayAddress()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_GetIPv6GatewayAddress </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>gatewayAddr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>gatewayAddrSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the gateway IPv6 address for the given profile, if the data session is connected and has an IPv6 address.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_OVERFLOW if the IP address would not fit in gatewayAddrStr</li>
+<li>LE_FAULT for all other errors</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid profile object is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Query this profile object </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">gatewayAddr</td><td>The gateway IP address in dotted format </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">gatewayAddrSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a0a51125579f1d5009dac03c79ddff498"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a51125579f1d5009dac03c79ddff498">◆ </a></span>le_mdc_GetPDP()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_mdc_Pdp_t le_mdc_GetPDP </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the Packet Data Protocol (PDP) for the given profile.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>packet data protocol value</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid profile object is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Query this profile object </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a3e3a92b0f5e3edab9400412170517a62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e3a92b0f5e3edab9400412170517a62">◆ </a></span>le_mdc_GetPlatformSpecificDisconnectionCode()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">int32_t le_mdc_GetPlatformSpecificDisconnectionCode </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Called to get the platform specific disconnection code.</p>
+<p>Refer to <a class="el" href="platformConstraintsSpecificErrorCodes.html">Platform specific error codes</a> for platform specific disconnection code description.</p>
+<dl class="section return"><dt>Returns</dt><dd>The platform specific disconnection code.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000014">Deprecated:</a></b></dt><dd>This function is deprecated, le_mdc_GetPlatformSpecificDisconnectionCodeExt should be used for the new code. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>profile reference </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a7d7d4d322afeba7ee2621bf8c66b873b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d7d4d322afeba7ee2621bf8c66b873b">◆ </a></span>le_mdc_GetPlatformSpecificDisconnectionCodeExt()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">int32_t le_mdc_GetPlatformSpecificDisconnectionCodeExt </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_mdc_Pdp_t </td>
+<td class="paramname"><em>pdpType</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Called to get the platform specific disconnection code.</p>
+<p>Refer to <a class="el" href="platformConstraintsSpecificErrorCodes.html">Platform specific error codes</a> for platform specific disconnection code description.</p>
+<dl class="section return"><dt>Returns</dt><dd>The platform specific disconnection code.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd>
+<dd>
+For IPv4v6 mode, pdpType specifies which session's disconnect reason to get(IPv4 or IPv6 session). For IPv4 and IPv6 mode, pdpType is ignored because there is only one session for IPv4 and IPv6 mode. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>profile reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">pdpType</td><td>pdp type of session </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a438ff354100b5020ace1059635b740b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a438ff354100b5020ace1059635b740b4">◆ </a></span>le_mdc_GetPlatformSpecificFailureConnectionReason()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_mdc_GetPlatformSpecificFailureConnectionReason </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t * </td>
+<td class="paramname"><em>failureTypePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t * </td>
+<td class="paramname"><em>failureCodePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Called to get the platform specific connection failure reason.</p>
+<p>Refer to <a class="el" href="platformConstraintsSpecificErrorCodes.html">Platform specific error codes</a> for platform specific connection failure types and code descriptions.</p>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000015">Deprecated:</a></b></dt><dd>This function is deprecated, le_mdc_GetPlatformSpecificFailureConnectionReasonExt should be used for new code. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>profile reference </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">failureTypePtr</td><td>platform specific failure type </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">failureCodePtr</td><td>platform specific failure code </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a3c4ece83ef7f0e5a91e8382f7594bac9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c4ece83ef7f0e5a91e8382f7594bac9">◆ </a></span>le_mdc_GetPlatformSpecificFailureConnectionReasonExt()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_mdc_GetPlatformSpecificFailureConnectionReasonExt </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_mdc_Pdp_t </td>
+<td class="paramname"><em>pdpType</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t * </td>
+<td class="paramname"><em>failureTypePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t * </td>
+<td class="paramname"><em>failureCodePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Called to get the platform specific connection failure reason.</p>
+<p>Refer to <a class="el" href="platformConstraintsSpecificErrorCodes.html">Platform specific error codes</a> for platform specific connection failure types and code descriptions.</p>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd>
+<dd>
+For IPv4v6 mode, pdpType specifies which session's disconnect reason to get(IPv4 or IPv6 session). For IPv4 and IPv6 mode, pdpType is ignored because there is only one session for IPv4 and IPv6 mode. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>profile reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">pdpType</td><td>pdp type of session </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">failureTypePtr</td><td>platform specific failure type </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">failureCodePtr</td><td>platform specific failure code </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a638b693cd5f644fa5c24f81e1e36483c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a638b693cd5f644fa5c24f81e1e36483c">◆ </a></span>le_mdc_GetProfile()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_mdc_ProfileRef_t le_mdc_GetProfile </td>
+<td>(</td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>index</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get Profile Reference for index</p>
+<dl class="section note"><dt>Note</dt><dd>Create a new profile if the profile's index can't be found.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>0 is not a valid index.</dd>
+<dd>
+Ensure to check the list of supported data profiles for your specific platform.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>Reference to the data profile</li>
+<li>NULL if the profile index does not exist </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>index of the profile. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a2ea0573e6e9cd16c04e95146f2b2e693"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ea0573e6e9cd16c04e95146f2b2e693">◆ </a></span>le_mdc_GetProfileFromApn()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_GetProfileFromApn </td>
+<td>(</td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>apnStr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_mdc_ProfileRef_t * </td>
+<td class="paramname"><em>profileRefPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get a profile selected by its APN</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_BAD_PARAMETER if an input parameter is not valid</li>
+<li>LE_NOT_FOUND if the requested APN is not found </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">apnStr</td><td>The Access Point Name </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">profileRefPtr</td><td>profile reference </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a108f7c3db74a377c2ae5482543d4e0d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a108f7c3db74a377c2ae5482543d4e0d9">◆ </a></span>le_mdc_GetProfileIndex()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">uint32_t le_mdc_GetProfileIndex </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the index for the given Profile.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>index of the profile in the modem</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid profile object is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Query this profile object </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a7ed1e44a5e2fdb27be052a53412cbbd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ed1e44a5e2fdb27be052a53412cbbd1">◆ </a></span>le_mdc_GetProfileList()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_GetProfileList </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileInfo_t * </td>
+<td class="paramname"><em>profileListPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>profileListSizePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the list of available profiles</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>list of available profiles</li>
+<li>LE_OK if the retrieval is successful; otherwise, some error code </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">profileListPtr</td><td>list of available profiles </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">profileListSizePtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="add91c364e8b3e4e82a0ce64e480c016b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add91c364e8b3e4e82a0ce64e480c016b">◆ </a></span>le_mdc_GetSessionState()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_GetSessionState </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_mdc_ConState_t * </td>
+<td class="paramname"><em>connectionStatePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the current data session state.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_BAD_PARAMETER if an input parameter is not valid</li>
+<li>LE_FAULT on failure</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid profile object is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Query this profile object </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">connectionStatePtr</td><td>The data session state </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aa3912e94864a6e5862e07f58b3772cba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3912e94864a6e5862e07f58b3772cba">◆ </a></span>le_mdc_IsIPv4()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">bool le_mdc_IsIPv4 </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Allow the caller to know if the given profile is actually supporting IPv4, if the data session is connected.</p>
+<dl class="section return"><dt>Returns</dt><dd>TRUE if PDP type is IPv4, FALSE otherwise.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Query this profile object </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="adde11de0b17b2c937acca6355b6fba11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adde11de0b17b2c937acca6355b6fba11">◆ </a></span>le_mdc_IsIPv6()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">bool le_mdc_IsIPv6 </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Allow the caller to know if the given profile is actually supporting IPv6, if the data session is connected.</p>
+<dl class="section return"><dt>Returns</dt><dd>TRUE if PDP type is IPv6, FALSE otherwise.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Query this profile object </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a56cd547a4e2b9cc98c1f0d052aeb92e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56cd547a4e2b9cc98c1f0d052aeb92e6">◆ </a></span>le_mdc_MapProfileOnNetworkInterface()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_MapProfileOnNetworkInterface </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>interfaceName</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Map a profile on a network interface</p>
+<ul>
+<li><dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_UNSUPPORTED if not supported by the target</li>
+<li>LE_FAULT for all other errors </li>
+</ul>
+</dd></dl>
+</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Profile reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">interfaceName</td><td>Network interface name </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a790602f1b17d7bf9626a51eac5599439"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a790602f1b17d7bf9626a51eac5599439">◆ </a></span>le_mdc_NumProfiles()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">uint32_t le_mdc_NumProfiles </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the number of profiles on the modem.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>number of profiles existing on modem </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a id="ae3b49edad910960b84a9012ecc33c66a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3b49edad910960b84a9012ecc33c66a">◆ </a></span>le_mdc_RejectMtPdpSession()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_RejectMtPdpSession </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reject MT-PDP profile data session.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_BAD_PARAMETER if the input parameter is not valid</li>
+<li>LE_UNSUPPORTED if not supported by the target</li>
+<li>LE_FAULT for other failures</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid profile object is given</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The MT-PDP context activation feature is not supported on all platforms. Please refer to <a class="el" href="platformConstraintsMdc.html#MT-PDP_context">Mobile Terminated PDP context</a> section for full details. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Reject MT-PDP data session for this profile object </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a68b03606241ea2215e076966a7c08d99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68b03606241ea2215e076966a7c08d99">◆ </a></span>le_mdc_RemoveMtPdpSessionStateHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_mdc_RemoveMtPdpSessionStateHandler </td>
+<td>(</td>
+<td class="paramtype">le_mdc_MtPdpSessionStateHandlerRef_t </td>
+<td class="paramname"><em>handlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove handler function for EVENT 'le_mdc_MtPdpSessionState' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="af223a193b73ce6f870947557f69136dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af223a193b73ce6f870947557f69136dc">◆ </a></span>le_mdc_RemoveSessionStateHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_mdc_RemoveSessionStateHandler </td>
+<td>(</td>
+<td class="paramtype">le_mdc_SessionStateHandlerRef_t </td>
+<td class="paramname"><em>handlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove handler function for EVENT 'le_mdc_SessionState' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a63636b2779d2ee6a6520ebfb2d26666c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63636b2779d2ee6a6520ebfb2d26666c">◆ </a></span>le_mdc_ResetBytesCounter()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_ResetBytesCounter </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reset received/transmitted data flow statistics</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT for all other errors </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a id="ae8ebd11b9cb9afb9b6b5745903f50156"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8ebd11b9cb9afb9b6b5745903f50156">◆ </a></span>le_mdc_SetAPN()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_SetAPN </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>apnStr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the Access Point Name (APN) for the given profile.</p>
+<p>The APN must be an ASCII string.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_BAD_PARAMETER if an input parameter is not valid</li>
+<li>LE_FAULT if the data session is currently connected for the given profile</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If APN is too long (max APN_NAME_MAX_LEN digits), it is a fatal error, the function will not return.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The maximum APN length might be limited by the platform. Please refer to the platform documentation <a class="el" href="platformConstraintsMdc.html">Modem Control platform constraints</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid profile object is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Query this profile object </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">apnStr</td><td>The Access Point Name </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a9f69d0751927b5ead6c756202179b222"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f69d0751927b5ead6c756202179b222">◆ </a></span>le_mdc_SetAuthentication()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_SetAuthentication </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_mdc_Auth_t </td>
+<td class="paramname"><em>type</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>userName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>password</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set authentication property</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>The process exits, if userName or password are NULL when type is not PA_MDC_AUTH_NONE</li>
+<li>The process exits, if an invalid profile object is given </li>
+</ul>
+</dd>
+<dd>
+If userName is too long (max USER_NAME_MAX_LEN digits), it is a fatal error, the function will not return. </dd>
+<dd>
+If password is too long (max PASSWORD_NAME_MAX_LEN digits), it is a fatal error, the function will not return. </dd>
+<dd>
+Both PAP and CHAP authentication can be set for 3GPP network: in this case, the device decides which authentication procedure is performed. For example, the device can have a policy to select the most secure authentication mechanism. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Query this profile object </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>Authentication type </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">userName</td><td>UserName used by authentication </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">password</td><td>Password used by authentication </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ad44bd756fd5cbfd43a5b348054786a4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad44bd756fd5cbfd43a5b348054786a4d">◆ </a></span>le_mdc_SetDefaultAPN()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_SetDefaultAPN </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the Access Point Name (APN) for the given profile according to the SIM identification number (ICCID). If no APN is found using the ICCID, fall back on the home network (MCC/MNC) to determine the default APN.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_BAD_PARAMETER if an input parameter is not valid</li>
+<li>LE_FAULT for all other errors</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits if an invalid profile object is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Query this profile object </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a73e66a7a63dc95d7f261fc2a26470386"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73e66a7a63dc95d7f261fc2a26470386">◆ </a></span>le_mdc_SetPDP()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_SetPDP </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_mdc_Pdp_t </td>
+<td class="paramname"><em>pdp</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the Packet Data Protocol (PDP) for the given profile.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_BAD_PARAMETER if the PDP is not supported</li>
+<li>LE_FAULT if the data session is currently connected for the given profile</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid profile object is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Query this profile object </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">pdp</td><td>The Packet Data Protocol </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a8b054b13d96f897ae7eadff87a8cd226"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b054b13d96f897ae7eadff87a8cd226">◆ </a></span>le_mdc_SetServerDisconnectHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void le_mdc_SetServerDisconnectHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__mdc__interface_8h.html#ad2a1308da1853759827c5998c7e97f04">le_mdc_DisconnectHandler_t</a> </td>
+<td class="paramname"><em>disconnectHandler</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set handler called when server disconnection is detected.</p>
+<p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
+</div>
+</div>
+<a id="a30f390941d98c9e9c4144a5e035da3aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30f390941d98c9e9c4144a5e035da3aa">◆ </a></span>le_mdc_StartBytesCounter()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_StartBytesCounter </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Start collecting received/transmitted data flow statistics</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT for all other errors </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a id="a2cb08d5c3e6c43297d80448891719649"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cb08d5c3e6c43297d80448891719649">◆ </a></span>le_mdc_StartSession()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_StartSession </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Start profile data session.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_BAD_PARAMETER if input parameter is incorrect</li>
+<li>LE_DUPLICATE if the data session is already connected for the given profile</li>
+<li>LE_TIMEOUT for session start timeout</li>
+<li>LE_FAULT for other failures</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid profile object is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Start data session for this profile object </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aa03d6e31263ddf8bf1d94b183c9934d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa03d6e31263ddf8bf1d94b183c9934d9">◆ </a></span>le_mdc_StartSessionAsync()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_mdc_StartSessionAsync </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_mdc_SessionHandlerFunc_t </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Start profile data session.</p>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid profile object is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Start data session for this profile object </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td>Handler for start data session result </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a1d6007bc8f84e5e4869af4af11b7363f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d6007bc8f84e5e4869af4af11b7363f">◆ </a></span>le_mdc_StopBytesCounter()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_StopBytesCounter </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Stop collecting received/transmitted data flow statistics</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT for all other errors </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a id="a53453f85065c3cace0922150b7e3d869"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53453f85065c3cace0922150b7e3d869">◆ </a></span>le_mdc_StopSession()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_StopSession </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Stop profile data session.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_BAD_PARAMETER if the input parameter is not valid</li>
+<li>LE_FAULT for other failures</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid profile object is given</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The MT-PDP context activation feature is not supported on all platforms. Please refer to <a class="el" href="platformConstraintsMdc.html#MT-PDP_context">Mobile Terminated PDP context</a> section for full details. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Stop data session for this profile object </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ac5b357f7437c9e253fa17b2511fa14ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5b357f7437c9e253fa17b2511fa14ef">◆ </a></span>le_mdc_StopSessionAsync()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_mdc_StopSessionAsync </td>
+<td>(</td>
+<td class="paramtype">le_mdc_ProfileRef_t </td>
+<td class="paramname"><em>profileRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_mdc_SessionHandlerFunc_t </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Stop profile data session.</p>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid profile object is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">profileRef</td><td>Stop data session for this profile object </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td>Handler for stop data session result </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ac93bebcbe5364e7313a168e9502c30b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac93bebcbe5364e7313a168e9502c30b6">◆ </a></span>le_mdc_TryConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mdc_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

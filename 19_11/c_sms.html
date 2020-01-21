@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>SMS  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.11.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">SMS </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><a class="el" href="le__sms__interface_8h.html">API Reference</a></p>
+<hr/>
+<p>This file contains data structures and prototypes definitions for high level SMS APIs.</p>
+<p>SMS is a common way to communicate in the M2M world.</p>
+<p>It's an easy, fast way to send a small amount of data (e.g., sensor values for gas telemetry). Usually, the radio module requests small power resources to send or receive a message. It's often a good way to wake-up a device that was disconnected from the network or that was operating in low power mode.</p>
+<h1><a class="anchor" id="le_sms_binding"></a>
+IPC interfaces binding</h1>
+<p>All the functions of this API are provided by the <b>modemService</b>.</p>
+<p>Here's a code sample binding to modem services: </p><pre class="fragment">bindings:
+{
+   clientExe.clientComponent.le_sms -&gt; modemService.le_sms
+}
+</pre><h1><a class="anchor" id="le_sms_ops_creating_msg"></a>
+Creating a Message object</h1>
+<p>There are 3 kinds of supported messages: text messages, binary messages, and PDU messages.</p>
+<p>You must create a Message object by calling <code><a class="el" href="le__sms__interface_8h.html#a668abcbcff2f1f3c5cdf799315a81058">le_sms_Create()</a></code> before using the message APIs. It automatically allocates needed resources for the Message object, which is referenced by <code>le_sms_MsgRef_t</code> type.</p>
+<p>When the Message object is no longer needed, call <code><a class="el" href="le__sms__interface_8h.html#aca1691010c88995cb47225f2889910fa">le_sms_Delete()</a></code> to free all allocated resources associated with the object.</p>
+<h1><a class="anchor" id="le_sms_ops_deleting_msg"></a>
+Deleting a Message object</h1>
+<p>To delete a Message object, call <a class="el" href="le__sms__interface_8h.html#aca1691010c88995cb47225f2889910fa">le_sms_Delete()</a>. This frees all the resources allocated for the Message object. If several users own the Message object (e.g., several handler functions registered for SMS message reception), the Message object will be deleted only after the last user deletes the Message object.</p>
+<h1><a class="anchor" id="le_sms_ops_sending"></a>
+Sending a message</h1>
+<p>To send a message, create an <code>le_sms_MsgRef_t</code> object by calling the <code><a class="el" href="le__sms__interface_8h.html#a668abcbcff2f1f3c5cdf799315a81058">le_sms_Create()</a></code> function. Then, set all the needed parameters for the message:</p><ul>
+<li>Destination telephone number with <a class="el" href="le__sms__interface_8h.html#a6fda3e193c9662c394412816ae508c23">le_sms_SetDestination()</a>;</li>
+<li>Text content with <a class="el" href="le__sms__interface_8h.html#aa5468a01069d8c8d03e5204453560d9a">le_sms_SetText()</a>, the total length are set as well with this API, maximum 160 characters as only the 7-bit alphabet is supported.</li>
+<li>Binary content with <a class="el" href="le__sms__interface_8h.html#ad135130755ab2979a265f65178a3ae0d">le_sms_SetBinary()</a>, total length is set with this API, maximum 140 bytes.</li>
+<li>PDU content with <a class="el" href="le__sms__interface_8h.html#a0fc5c9da622cc48ef5f9d908dbcbbf92">le_sms_SetPDU()</a>, total length is set with this API, max 36 (header) + 140 (payload) bytes long.</li>
+<li>UCS2 content (16-bit format) with <a class="el" href="le__sms__interface_8h.html#ac351541bd51f008551a55ea645e31599">le_sms_SetUCS2()</a>, total length is set with this API, maximum 70 characters (140 bytes).</li>
+</ul>
+<p>When the Msg object is ready, call <code><a class="el" href="le__sms__interface_8h.html#ab7dee7d2c74cfcadd9ea0d5fe1786dfc">le_sms_Send()</a></code> to transmit it.</p>
+<p><code><a class="el" href="le__sms__interface_8h.html#ab7dee7d2c74cfcadd9ea0d5fe1786dfc">le_sms_Send()</a></code> is a blocking function with a maximum timeout set to 240 seconds, it will return once the Modem has given back a positive or negative answer to the sending operation. The return of <code><a class="el" href="le__sms__interface_8h.html#ab7dee7d2c74cfcadd9ea0d5fe1786dfc">le_sms_Send()</a></code> API provides definitive status of the sending operation. TP-Validity-Period(TP-VP) parameter value indicates the time period for which the short message is valid, i.e. for how long the Service Center (SC) shall guarantee its existence in the SC memory before delivery to the recipient has been carried out. The default validity period(TP-VP) is set to 7 days for MO SMS.</p>
+<p>When a message sending has failed and returned LE_FAULT, call <a class="el" href="le__sms__interface_8h.html#a9ee511af99c91383344debf532fae1ae">le_sms_GetErrorCode()</a> to retrieve the 3GPP message error code or <a class="el" href="le__sms__interface_8h.html#a46afe91bbded617ad444ea29a9dd910a">le_sms_Get3GPP2ErrorCode()</a> to retrieve the 3GPP2 message error code. If LE_SMS_ERROR_3GPP_PLATFORM_SPECIFIC or LE_SMS_ERROR_3GPP2_PLATFORM_SPECIFIC values is returned, call <a class="el" href="le__sms__interface_8h.html#a9cfbc2131df38f99272a71bf05cb1254">le_sms_GetPlatformSpecificErrorCode()</a> to retrieve the platform specific error code.</p>
+<p>Please refer to <a class="el" href="platformConstraintsSpecificErrorCodes.html">Platform specific error codes</a> for platform specific error code description.</p>
+<p>Please refer to <a class="el" href="c_smsSampleMO.html">Sample code for Mobile Originated SMS message</a> page to get an example of SMS message sending.</p>
+<h1><a class="anchor" id="le_sms_ops_async_sending"></a>
+Sending asynchronously a message</h1>
+<p>To send an asynchronous message, <a class="el" href="le__sms__interface_8h.html#a0ba61dcf10157e9982702373577c6b45">le_sms_SendAsync()</a> API can be called instead of <a class="el" href="le__sms__interface_8h.html#ab7dee7d2c74cfcadd9ea0d5fe1786dfc">le_sms_Send()</a>. <a class="el" href="le__sms__interface_8h.html#a0ba61dcf10157e9982702373577c6b45">le_sms_SendAsync()</a> is a non-blocking function, it queues the message to the SMS pool and returns immediatly. Then, Legato will internally attempt to send the SMS with a maximum timeout set to 240 seconds for each SMS in the pool. This function is usefull to stack a set of messages without blocking the user application. Moreover, a handler can be specified to <a class="el" href="le__sms__interface_8h.html#a0ba61dcf10157e9982702373577c6b45">le_sms_SendAsync()</a> API in order to keep track of the transmission status.</p>
+<p>The default validity period(TP-VP) is set to 7 days for MO SMS.</p>
+<p>A text message can be sent with one simple function: <a class="el" href="le__sms__interface_8h.html#a275932e7f318db06cd1d1cbc8e3f573f">le_sms_SendText()</a>. You only have to pass the three following parameters:</p><ul>
+<li>the destination telephone number.</li>
+<li>the text message, the total length are set as well with this function, maximum 160 characters as only the 7-bit alphabet is supported.</li>
+<li>the callback function to get a notification indicating the sending result: LE_SMS_SENT, LE_SMS_SENDING_FAILED or LE_SMS_SENDING_TIMEOUT. The default validity period(TP-VP) is set to 7 days for MO SMS.</li>
+</ul>
+<p>A PDU message can be sent using the <a class="el" href="le__sms__interface_8h.html#a6c45951342396e9c4bc0e995b4e70784">le_sms_SendPdu()</a> functions. The parameters to give are:</p><ul>
+<li>the PDU content, total length is set with this API, maximum 176 bytes long = 36 (header) + 140 (payload).</li>
+<li>the callback function to get a notification indicating the sending result: LE_SMS_SENT, LE_SMS_SENDING_FAILED or LE_SMS_SENDING_TIMEOUT. The default validity period(TP-VP) is set to 7 days for MO SMS.</li>
+</ul>
+<p>When a message sending has failed, call <a class="el" href="le__sms__interface_8h.html#a9ee511af99c91383344debf532fae1ae">le_sms_GetErrorCode()</a> to retrieve the 3GPP message error code or <a class="el" href="le__sms__interface_8h.html#a46afe91bbded617ad444ea29a9dd910a">le_sms_Get3GPP2ErrorCode()</a> to retrieve the 3GPP2 message error code. If LE_SMS_ERROR_3GPP_PLATFORM_SPECIFIC or LE_SMS_ERROR_3GPP2_PLATFORM_SPECIFIC values is returned, call <a class="el" href="le__sms__interface_8h.html#a9cfbc2131df38f99272a71bf05cb1254">le_sms_GetPlatformSpecificErrorCode()</a> to retrieve the platform specific error code.</p>
+<p>Message object is never deleted regardless of the sending result. Caller has to delete it. Message object once used for sending the message can not be reused to send another message regardless of success or failure. New object has to be created for new message.</p>
+<h1><a class="anchor" id="le_sms_ops_receiving"></a>
+Receiving a message</h1>
+<p>To receive SMS messages, register a handler function to obtain incoming messages. Use <code><a class="el" href="le__sms__interface_8h.html#a844d595f3ae8d170b2fff80d854abb8d">le_sms_AddRxMessageHandler()</a></code> to register that handler.</p>
+<p>The handler must satisfy the following prototype: <code>typedef</code> void (*le_sms_RxMessageHandlerFunc_t)(le_sms_MsgRef_t msg).</p>
+<p>When a new incoming message is received, a Message object is automatically created and the handler is called. This Message object is Read-Only, any calls of a le_sms_SetXXX API will return a LE_NOT_PERMITTED error.</p>
+<p>Use the following APIs to retrieve message information and data from the Message object:</p><ul>
+<li><a class="el" href="le__sms__interface_8h.html#a5c2b8ce7043b4732c7b0ede7c5d7118c">le_sms_GetFormat()</a> - determine if it is a binary or a text message.</li>
+<li><a class="el" href="le__sms__interface_8h.html#aa4651e8dc97aa01df80ed6d9a7a486c6">le_sms_GetSenderTel()</a> - get the sender's Telephone number.</li>
+<li><a class="el" href="le__sms__interface_8h.html#af018ca1bc2085a48e4b6d4691bef3cc7">le_sms_GetTimeStamp()</a> - get the timestamp sets by the Service Center.</li>
+<li><a class="el" href="le__sms__interface_8h.html#a6165464dd3502b3c76b79b32206ba10f">le_sms_GetUserdataLen()</a> - get the message content (text, binary or UCS2) length.</li>
+<li><a class="el" href="le__sms__interface_8h.html#abb89b302e564f3d55d604bb0c0dda022">le_sms_GetPDULen()</a> - get the PDU message length.</li>
+<li><a class="el" href="le__sms__interface_8h.html#aebf0c28efce6ec0b9616ffa8ecb80782">le_sms_GetText()</a> - get the message text.</li>
+<li><a class="el" href="le__sms__interface_8h.html#adafdc63a36a6a50c8e942bf69958789f">le_sms_GetUCS2()</a> - get the UCS2 message content (16-bit format).</li>
+<li><a class="el" href="le__sms__interface_8h.html#af652a15437db583f333257ff5cef808d">le_sms_GetBinary()</a> - get the message binary content.</li>
+<li><a class="el" href="le__sms__interface_8h.html#a77555788d56f73fa52f56904cd39cd2f">le_sms_GetPDU()</a> - get the message PDU data.</li>
+<li><a class="el" href="le__sms__interface_8h.html#a2a63c6b5179025a80fb86c7f188e1eb7">le_sms_GetType()</a> - get the message type.</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>- If two (or more) registered handler functions exist, they are all called and get a different message object reference.</dd>
+<dd>
+- For incoming SMS, if the returned format is LE_SMS_FORMAT_PDU, the PDU length can be retrieved by calling <a class="el" href="le__sms__interface_8h.html#abb89b302e564f3d55d604bb0c0dda022">le_sms_GetPDULen()</a> and the content can be read by <a class="el" href="le__sms__interface_8h.html#a77555788d56f73fa52f56904cd39cd2f">le_sms_GetPDU()</a>.</dd></dl>
+<p>If a succession of messages is received, a new Message object is created for each, and the handler is called for each new message.</p>
+<p>Uninstall the handler function by calling <code><a class="el" href="le__sms__interface_8h.html#a469a4d08b9ccb8b61ed7b8294e6ee3ef">le_sms_RemoveRxMessageHandler()</a></code>. </p><dl class="section note"><dt>Note</dt><dd><code><a class="el" href="le__sms__interface_8h.html#a469a4d08b9ccb8b61ed7b8294e6ee3ef">le_sms_RemoveRxMessageHandler()</a></code> API does not delete the Message Object. The caller has to delete it.</dd></dl>
+<p>Please refer to <a class="el" href="c_smsSampleMT.html">Sample code for Mobile Terminated SMS message</a> page to get an example of SMS message reception handling.</p>
+<h1><a class="anchor" id="le_sms_ops_sms_storage"></a>
+Receiving a full SMS storage indication</h1>
+<p>To receive a SMS full storage status, the application has to register a handler function. Use <code><a class="el" href="le__sms__interface_8h.html#a1ae7c04f5de9245489956e62bd607430">le_sms_AddFullStorageEventHandler()</a></code> to register that handler.</p>
+<p>The handler must satisfy the following prototype: <code>typedef</code> void (*le_sms_FullStorageEventFunc_t)(le_sms_Storage_t storage).</p>
+<p>Uninstall the handler function by calling <code><a class="el" href="le__sms__interface_8h.html#ad4f895d18ab6a6456c0914c7f4bfb8b7">le_sms_RemoveFullStorageEventHandler()</a></code>.</p>
+<p>Please refer to <a class="el" href="c_smsSampleMT.html">Sample code for Mobile Terminated SMS message</a> page to get an example of SMS storage indication handling.</p>
+<h1><a class="anchor" id="le_sms_ops_listing"></a>
+Listing  messages recorded in storage area</h1>
+<p>Call <code><a class="el" href="le__sms__interface_8h.html#aee4328f9e417108fa16794cc135073d0">le_sms_CreateRxMsgList()</a></code> to create a List object that lists the received messages present in the storage area, which is referenced by <code>le_sms_MsgListRef_t</code> type.</p>
+<p>If messages are not present, the <a class="el" href="le__sms__interface_8h.html#aee4328f9e417108fa16794cc135073d0">le_sms_CreateRxMsgList()</a> returns NULL.</p>
+<p>Once the list is available, call <code><a class="el" href="le__sms__interface_8h.html#a934253dee33a6090656876cff853b2c6">le_sms_GetFirst()</a></code> to get the first message from the list, and then call <code><a class="el" href="le__sms__interface_8h.html#ac3b6a30a6d4e4f21749b536184b836ec">le_sms_GetNext()</a></code> API to get the next message.</p>
+<p>Call <code><a class="el" href="le__sms__interface_8h.html#a4027c05c4ee7552ab0e081caa315c8a2">le_sms_DeleteList()</a></code> to free all allocated resources associated with the List object.</p>
+<p>Call <code><a class="el" href="le__sms__interface_8h.html#ae1843c72eca77cd6da94cb686e5c2ae8">le_sms_GetStatus()</a></code> to read the status of a message (Received Read, Received Unread).</p>
+<p>To finish, you can also modify the received status of a message with <code><a class="el" href="le__sms__interface_8h.html#a3dbd11952804520512fed270d183461d">le_sms_MarkRead()</a></code> and <code><a class="el" href="le__sms__interface_8h.html#a6ef04e331af6563b79e77bb51b28bc55">le_sms_MarkUnread()</a></code>.</p>
+<h1><a class="anchor" id="le_sms_ops_deleting"></a>
+Deleting a message from the storage area</h1>
+<p><code><a class="el" href="le__sms__interface_8h.html#aff755186b683b94ba2788b48e28284a3">le_sms_DeleteFromStorage()</a></code> deletes the message from the storage area. Message is identified with <code>le_sms_MsgRef_t</code> object. The API returns an error if the deletion cannot be performed or if it is a broadcast or a non stored message.</p>
+<dl class="section note"><dt>Note</dt><dd>If several users own the Message object on new reception (e.g., several handler functions registered for SMS message reception), the Message will be deleted from the storage area only after the last user deletes the Message object reference (not necessary from storage). API returns always LE_OK in this case.</dd>
+<dd>
+If one client creates a list and deletes all sms from storage, other clients won’t see sms stored If they have not created a sms list too. Sms List creation locks and delays sms deletion from storage until all references have been deleted.</dd></dl>
+<h1><a class="anchor" id="le_sms_ops_broadcast"></a>
+SMS Cell Broadcast</h1>
+<p>The Cell Broadcast service permits a number of unacknowledged general messages to be broadcast to all receivers within a particular region. Cell Broadcast messages are broadcast to defined geographical areas known as cell broadcast areas. These areas may comprise of one or more cells, or may comprise the entire PLMN.</p>
+<p>GSM or UMTS SMS cell broadcast service can be activated or deactivated with <a class="el" href="le__sms__interface_8h.html#a4607c63f325465d078514b5682347c7f">le_sms_ActivateCellBroadcast()</a> and <a class="el" href="le__sms__interface_8h.html#aa57c2f717c71b33e93f278673a7806e9">le_sms_DeactivateCellBroadcast()</a> APIs.</p>
+<p>CDMA cell broadcast service can be activated or deactivated with <a class="el" href="le__sms__interface_8h.html#a45a160fea5a8f6cd195e3aff33830602">le_sms_ActivateCdmaCellBroadcast()</a> and <a class="el" href="le__sms__interface_8h.html#a26d43a50652431063e0a8e4d88fdba86">le_sms_DeactivateCdmaCellBroadcast()</a> APIs.</p>
+<p>Cell broadcast message receptions are notify by the SMS handler like a SMS message reception, but there are neither stored in SIM nor in the modem. So <a class="el" href="le__sms__interface_8h.html#aff755186b683b94ba2788b48e28284a3">le_sms_DeleteFromStorage()</a> can't be used but the message reference shall be delete with <a class="el" href="le__sms__interface_8h.html#aca1691010c88995cb47225f2889910fa">le_sms_Delete()</a>.</p>
+<ul>
+<li><a class="el" href="le__sms__interface_8h.html#a5c2b8ce7043b4732c7b0ede7c5d7118c">le_sms_GetFormat()</a> - determine if it is a binary or a text message.</li>
+<li><a class="el" href="le__sms__interface_8h.html#a6165464dd3502b3c76b79b32206ba10f">le_sms_GetUserdataLen()</a> - get the message content (text, binary or UCS2) length.</li>
+<li><a class="el" href="le__sms__interface_8h.html#abb89b302e564f3d55d604bb0c0dda022">le_sms_GetPDULen()</a> - get the PDU message received length.</li>
+<li><a class="el" href="le__sms__interface_8h.html#aebf0c28efce6ec0b9616ffa8ecb80782">le_sms_GetText()</a> - get the message text.</li>
+<li><a class="el" href="le__sms__interface_8h.html#af652a15437db583f333257ff5cef808d">le_sms_GetBinary()</a> - get the message binary content.</li>
+<li><a class="el" href="le__sms__interface_8h.html#adafdc63a36a6a50c8e942bf69958789f">le_sms_GetUCS2()</a> - get the UCS2 message content (16-bit format).</li>
+<li><a class="el" href="le__sms__interface_8h.html#a77555788d56f73fa52f56904cd39cd2f">le_sms_GetPDU()</a> - get the message PDU data received length.</li>
+<li><a class="el" href="le__sms__interface_8h.html#aa28c1d04ff19b88100b766737610b128">le_sms_GetCellBroadcastId()</a> - get the message identifier received (3GPP 23.41).</li>
+<li><a class="el" href="le__sms__interface_8h.html#aa3e075b4a9396b2e4af233e4543f40bd">le_sms_GetCellBroadcastSerialNumber()</a> get the message Serial Number received (3GPP 23.41).</li>
+</ul>
+<p>A sample code that implements a function for SMS Cell Broadcast reception can be found in <b>smsCBTest.c</b> file (please refer to <a class="el" href="c_smsCbSample.html">Sample code for SMS Cell Broadcast reception</a> page).</p>
+<p><b>Serial</b> <b>Number</b> </p>
+<p>Cell Broadcast Serial Number parameter is a 16-bit integer which identifies a particular CBS message from the source and type indicated by the Message Identifier and is altered every time the CBS message with a given Message Identifier is changed.</p>
+<p>The two bytes of the Serial Number field are divided into a 2-bit Geographical Scope (GS) indicator, a 10-bit Message Code and a 4-bit Update Number as shown below:</p>
+<ul>
+<li>GS code (bit 14 and 15): The Geographical Scope (GS) indicates the geographical area over which the Message Code is unique, and the display mode.</li>
+<li>Message Code (bit 4 to 13) : The Message Code differentiates between CBS messages from the same source and type (i.e. with the same Message Identifier). Message Codes are for allocation by PLMN operators. The Message Code identifies different message themes. For example, let the value for the Message Identifier be "Automotive Association" (= source), "Traffic Reports" (= type). Then "Crash on A1 J5" could be one value for the message code, "Cow on A32 J4" could be another, and "Slow vehicle on M3 J3" yet another.</li>
+<li>Update Number (bit 0 to 3) : The Update Number indicates a change of the message content of the same CBS message, i.e. the CBS message with the same Message Identifier, Geographical Scope, and Message Code.</li>
+</ul>
+<p>Serial Number fields meaning are defined in the 3GPP 23.041 (9.4.1.2.1 Serial Number).</p>
+<p><b>Message</b> <b>Identifier</b> </p>
+<p>Message Identifier parameter identifies the source and type of the CBS message. For example, "Automotive Association" (= source), "Traffic Reports" (= type) could correspond to one value. A number of CBS messages may originate from the same source and/or be of the same type. These will be distinguished by the Serial Number.</p>
+<p>Message identifier meaning ranges are defined in the 3GPP 23.041 (9.4.1.2.2 Message Identifier).</p>
+<h1><a class="anchor" id="le_sms_ops_broadcast_configuration"></a>
+SMS Cell Broadcast configuration</h1>
+<p>GSM or UMTS Cell broadcast Message identifiers range can be added or removed with <a class="el" href="le__sms__interface_8h.html#aae87dacecc438ea9182d370895e5cb3f">le_sms_AddCellBroadcastIds()</a> and <a class="el" href="le__sms__interface_8h.html#a656fefe815bb965e10087ee65b59faa0">le_sms_RemoveCellBroadcastIds()</a> APIs. All Message identifiers can be removed with <a class="el" href="le__sms__interface_8h.html#ae3333cbf700035067f2dae8ea0e564d0">le_sms_ClearCellBroadcastIds()</a> API.</p>
+<p>CDMA Cell broadcast Service categories can be added or removed with <a class="el" href="le__sms__interface_8h.html#ad57196114a634f36b057a9cfbcb7d58a">le_sms_AddCdmaCellBroadcastServices()</a> and <a class="el" href="le__sms__interface_8h.html#ae7c58d4ed9ff586d2403232b0cda99e7">le_sms_RemoveCdmaCellBroadcastServices()</a> APIs. All Service categories can be removed with <a class="el" href="le__sms__interface_8h.html#ac737aaab68b6fa1d51a21b518ad112a9">le_sms_ClearCdmaCellBroadcastServices()</a> API.</p>
+<h1><a class="anchor" id="le_sms_ops_statusReport"></a>
+SMS Status Report</h1>
+<p>SMS Status Report may be sent by the SMS Center (SMSC) to inform the originating device about the final outcome of the message delivery.</p>
+<p>SMS Status Report can be activated or deactivated for outgoing messages with <a class="el" href="le__sms__interface_8h.html#abb90bbe4ce17b1b8d029d25a6e6cc2de">le_sms_EnableStatusReport()</a> and <a class="el" href="le__sms__interface_8h.html#af9c9679ca63f412c1c2a1165eb293d51">le_sms_DisableStatusReport()</a>. The current activation state can be retrieved with <a class="el" href="le__sms__interface_8h.html#a301b97fc1568ad3f2699846bde5f71b4">le_sms_IsStatusReportEnabled()</a>.</p>
+<p>The reception of a SMS Status Report is notified by the SMS handler like a SMS message reception, but the message is neither stored in SIM nor in the modem. So <a class="el" href="le__sms__interface_8h.html#aff755186b683b94ba2788b48e28284a3">le_sms_DeleteFromStorage()</a> can't be used, but the message reference shall be delete with <a class="el" href="le__sms__interface_8h.html#aca1691010c88995cb47225f2889910fa">le_sms_Delete()</a>. Received SMS Status Reports are identified by a specific type: LE_SMS_TYPE_STATUS_REPORT.</p>
+<p>The different elements of the SMS Status Report can be retrieved with the following APIs:</p><ul>
+<li><a class="el" href="le__sms__interface_8h.html#aa69393d6233b862f1196e6f65d0c45ba">le_sms_GetTpMr()</a> gives the Message Reference, defined in 3GPP TS 23.040 section 9.2.3.6.</li>
+<li><a class="el" href="le__sms__interface_8h.html#acbcc4f0517d19ea9b01813ae5da068c7">le_sms_GetTpRa()</a> gives the Recipient Address, defined in 3GPP TS 23.040 section 9.2.3.14, and the Recipient Address Type of Address, defined in 3GPP TS 24.011 section 8.2.5.2.</li>
+<li><a class="el" href="le__sms__interface_8h.html#a7420855708637a4c35d36a20d1f5146d">le_sms_GetTpScTs()</a> gives the Service Centre Time Stamp, defined in 3GPP TS 23.040 section 9.2.3.11.</li>
+<li><a class="el" href="le__sms__interface_8h.html#ae3f6f7e4d53e171b3d8c62dcec9cc0c6">le_sms_GetTpDt()</a> gives the Discharge Time, defined in 3GPP TS 23.040 section 9.2.3.13.</li>
+<li><a class="el" href="le__sms__interface_8h.html#a8ef30b42f4e23f568cde8b60abe05709">le_sms_GetTpSt()</a> gives the Status, defined in 3GPP TS 23.040 section 9.2.3.15.</li>
+</ul>
+<h1><a class="anchor" id="le_sms_ops_configuration"></a>
+SMS configuration</h1>
+<p>Modem SMS Center Address can be set or get with <a class="el" href="le__sms__interface_8h.html#ac26c1b63cd99291dcb912ca98c0eb153">le_sms_SetSmsCenterAddress()</a> and <a class="el" href="le__sms__interface_8h.html#ae46b8ea579c788950049948edf1110b6">le_sms_GetSmsCenterAddress()</a> functions</p>
+<h1><a class="anchor" id="le_sms_ops_storage_configuration"></a>
+Preferred SMS storage configuration</h1>
+<p>Preferred SMS storage for incoming messages can be set or get with <a class="el" href="le__sms__interface_8h.html#a05e4196eb01d4d36ed2412c6eedc406e">le_sms_SetPreferredStorage()</a> and <a class="el" href="le__sms__interface_8h.html#a5275b917903dbd1d782867f42d256c55">le_sms_GetPreferredStorage()</a> functions.</p>
+<h1><a class="anchor" id="le_sms_ops_statistics"></a>
+SMS statistics</h1>
+<p>The number of SMS successfully sent or received through the Legato API can be counted. This feature is activated by default. <a class="el" href="le__sms__interface_8h.html#ade1b38b464c14cca08cd1fc330a6d8e3">le_sms_GetCount()</a> allows retrieving the message count for each SMS type (cf. le_sms_Type_t).</p>
+<p><a class="el" href="le__sms__interface_8h.html#aa5651e6a979fc08bed6908d817337021">le_sms_StopCount()</a> stops the message counting and <a class="el" href="le__sms__interface_8h.html#a6acd2a2bf763a97ec30ceaedb15195eb">le_sms_StartCount()</a> restarts it. <a class="el" href="le__sms__interface_8h.html#af45c0dd18248c98b5e5313f707b67bfa">le_sms_ResetCount()</a> can be used to reset the message counters.</p>
+<dl class="section note"><dt>Note</dt><dd>The activation state of this feature is persistent even after a reboot of the platform.</dd></dl>
+<h1><a class="anchor" id="le_sms_ops_samples"></a>
+Sample codes</h1>
+<p>A sample code that implements a function for Mobile Originated SMS message can be found in <b>smsMO.c</b> file (please refer to <a class="el" href="c_smsSampleMO.html">Sample code for Mobile Originated SMS message</a> page).</p>
+<p>A sample code that implements a function for Mobile Terminated SMS message can be found in <b>smsMT.c</b> file (please refer to <a class="el" href="c_smsSampleMT.html">Sample code for Mobile Terminated SMS message</a> page).</p>
+<p>These two samples can be easily compiled and run into the <b>sms</b> app, to install and use this app:</p>
+<pre class="fragment">$ make ar7
+$ bin/instapp  build/ar7/bin/samples/sms.ar7 &lt;ipaddress&gt;
+</pre><p> where ipaddress is the address of your target device.</p>
+<p>Then on your target, just run: </p><pre class="fragment">$ app start sms
+</pre><p>The sample replies to the sender by the message "Message from &lt;phone number&gt; received". Where "phone number" is the sender's phone number.</p>
+<p>Sample code for that application can be seen in the following pages:</p><ul>
+<li><a class="el" href="c_smsSampleMO.html">Sample code for Mobile Originated SMS message</a> <br/>
+</li>
+<li><a class="el" href="c_smsSampleMT.html">Sample code for Mobile Terminated SMS message</a></li>
+</ul>
+<hr/>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

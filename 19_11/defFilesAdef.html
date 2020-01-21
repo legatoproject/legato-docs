@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Application Definition .adef  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.11.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Concepts.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a class="link-selected" href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Application Definition .adef </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>This topic provides details about Legato's Application Definition file.</p>
+<p>See <a class="el" href="conceptsSecurity.html">Security</a> for details on how to conceptsSecuritySandboxUse and understand <a class="el" href="conceptsSecuritySandboxLimits.html#conceptsSecuritySandboxLimits_app">app</a> and <a class="el" href="conceptsSecuritySandboxLimits.html#conceptsSecuritySandboxLimits_process">process</a> limits.</p>
+<p><code>.adef</code> files can contain these sections:</p>
+<h1><a class="anchor" id="defFilesAdef_bindings"></a>
+bindings</h1>
+<p>Bindings allow client-side IPC API interfaces (listed in the <em>requires</em> sections of Component.cdef files) to be bound to server-side interfaces (listed in the <em>provides</em> sections of Component.cdef files).</p>
+<p>This gives direct control over how IPC interfaces are interconnected so reusable components and/or apps can be bound (wired) together to form a working system.</p>
+<p>Bindings can be between two interfaces inside the same app (internal binding), or can be between a client-side interface in an app and a server-side interface provided by another app (or non-app user).</p>
+<p>Interface instances inside the app use the executable name, component name, and the service instance name separated by a period (‘.’).</p>
+<p>The client interface always appears first with an arrow (<code> -&gt; </code>) to separate the client interface from the server interface.</p>
+<p>Here's a code sample binding <code>clientExe.clientComponent.clientInterface</code> to <code>serverExe.serverComponent.serverInterface</code>:</p>
+<pre class="fragment"><div class="line">bindings:</div><div class="line">{</div><div class="line">    clientExe.clientComponent.clientInterface -&gt; serverExe.serverComponent.serverInterface</div><div class="line">}</div></pre><!-- fragment --><p>External services provided by other apps use the app name and the service name, separated by a period ('.'):</p>
+<pre class="fragment"><div class="line">bindings:</div><div class="line">{</div><div class="line">    clientExe.clientComponent.clientInterface -&gt; otherApp.serverInterface</div><div class="line">}</div></pre><!-- fragment --><p>To bind to a service provided by a non-app user, the app name is replaced by a user name inside angle brackets:</p>
+<pre class="fragment"><div class="line">bindings:</div><div class="line">{</div><div class="line">    clientExe.clientComponent.clientInterface -&gt; &lt;root&gt;.serverInterface</div><div class="line">}</div></pre><!-- fragment --><p>If client-side code was built using the <a class="el" href="buildToolsifgen.html">ifgen</a> tool, the code built using <a class="el" href="buildToolsmkcomp.html">mkcomp</a> or <a class="el" href="buildToolsmkexe.html">mkexe</a> and the pre-built executable was added to the app using a <code>requires:</code> or <code>bundles:</code> section then the tool reading your <code></code>.adef file won't know about the client-side interface.</p>
+<p>You will need to use the following work-around to bind the interfaces:</p>
+<pre class="fragment"><div class="line">bindings:</div><div class="line">{</div><div class="line">    *.le_data -&gt; dataConnectionService.le_data</div><div class="line">}</div></pre><!-- fragment --><p>This would bind any unknown client-side <code>le_data</code> interfaces in the current app to the <code>le_data</code> server-side interface on the <code>dataConnectionService</code> app.</p>
+<p>If server-side code was built using the <a class="el" href="buildToolsifgen.html">ifgen</a> tool and a compiler or using the mk tools and this executable was added to your app using a <code>requires:</code> or <code>bundles:</code> section, the tool reading your <code></code>.adef file won't know about the server-side interface. Use this work-around if you need to bind to one of those interfaces inside your own app:</p>
+<pre class="fragment"><div class="line">bindings:</div><div class="line">{</div><div class="line">    clientExe.clientComponent.clientInterface -&gt; *.le_data</div><div class="line">}</div></pre><!-- fragment --><p>This would bind the known client-side interface <code>clientExe.clientComponent.clientInterface</code> to the unknown server-side <code>le_data</code> interface served by a pre-built executable inside the current app.</p>
+<h1><a class="anchor" id="defFilesAdef_bundles"></a>
+bundles</h1>
+<p>Lists additional files or directories to be copied from the build host into the app so they’re available to the app at runtime (e.g., audio files, web pages, executable scripts or programs built using some external build system).</p>
+<pre class="fragment"><div class="line">bundles:</div><div class="line">{</div><div class="line">    file:</div><div class="line">    {</div><div class="line">        <span class="comment">// Include the web server executable (built using some other build tool) in the app's /bin.</span></div><div class="line">        [x] 3rdParty/webServer/bin/wwwServ  /bin/</div><div class="line"> </div><div class="line">        <span class="comment">// Put the company logo into the app's /var/www/ for read-only access by the web server.</span></div><div class="line">        images/abcCorpLogo.jpg  /var/www/</div><div class="line"> </div><div class="line">        <span class="comment">// Make the appropriate welcome page for the product appear at /var/www/index.html.</span></div><div class="line">        webContent/$PRODUCT_ID/welcome.html  /var/www/index.html</div><div class="line"> </div><div class="line">        <span class="comment">// Create a file to record persistent custom audio messages into.</span></div><div class="line">        [w] audio/defaultMessage.wav  /usr/share/sounds/customMessage.wav</div><div class="line">    }</div><div class="line"> </div><div class="line">    dir:</div><div class="line">    {</div><div class="line">        <span class="comment">// Recursively bundle the directory containing all the audio files into the app.</span></div><div class="line">        <span class="comment">// It will appear to the app read-only under /usr/share/sounds/.</span></div><div class="line">        audio   /usr/share/sounds</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>If the directory that you bundle into the app is empty, the directory will not be copied over.</p>
+<p>Three things need to be specified for each file or directory:</p><ul>
+<li>access permissions</li>
+<li>build system path</li>
+<li>target path</li>
+</ul>
+<p><b>Access permissions</b> - any combination of one or more of the following letters, enclosed in square brackets:</p><ul>
+<li>r = readable</li>
+<li>w = writeable</li>
+<li>x = executable</li>
+</ul>
+<p>If permissions values are not specified, then read-only ([r]) is the default.</p>
+<dl class="section note"><dt>Note</dt><dd>For security reasons, files and directories cannot be both writable and executable.</dd></dl>
+<p>Directories always have executable permission set so they can be traversed. Setting the <code>[x]</code> permission in the <code>dir:</code> subsection causes the files under the directory to be made executable.</p>
+<p>Setting <code>[w]</code> in the <code>dir:</code> subsection causes all files under that directory to be writable, but the directory itself will not be writable.</p>
+<dl class="section note"><dt>Note</dt><dd>Check with your module vendor to see if your target supports disk quotas. If not, directories in the persistent (flash) file system are never made writable because the on-target flash file system does not support usage quotas (yet).</dd></dl>
+<p><b>Build system path</b> - file system path on the build PC where the file is located at build time.</p>
+<p>The path can be relative to the directory where the <code></code>.adef file is located.</p>
+<dl class="section note"><dt>Note</dt><dd>Environment variables can be used inside these paths.</dd></dl>
+<p><b>Target path</b> - file system path on the target where the file will appear at runtime.</p>
+<p>It's an absolute path inside the app's sandbox file system.</p>
+<p>If the path ends with '/', it means the directory path where the source object (file or directory) will be copied. The destination object will have the same name as the source object.</p>
+<p>If the path doesn't end in a '/', it's a full destination object path. The destination object could have a different name than the source object.</p>
+<dl class="section note"><dt>Note</dt><dd>If the app is running unsandboxed, the bundled files and directories can be found in their installation location under <code>/legato/systems/current/apps/xxxx</code>, (if the system is running, else current is replaced by the newest system index) where xxxx is replaced by the app name.</dd></dl>
+<p><b>Quoting Paths</b></p>
+<p>File paths can be enclosed in quotation marks (either single ' or double "). This is required when the file path contains spaces or comment start sequences </p><pre class="fragment"><div class="line"><span class="stringliteral">"//"</span> or  <span class="stringliteral">"/*"</span></div></pre><!-- fragment --><p><b>File Ownership and Set-UID Bits</b></p>
+<p>When the app is installed on a target: <br/>
+</p><ul>
+<li>the owner and group are set to <code>root</code> on all files in the app.</li>
+<li>the <code>setuid</code> bit is cleared on everything in the app.</li>
+</ul>
+<p><b>Overriding .cdef</b></p>
+<p>If a file is bundled by a component's .cdef file and another file is bundled to the same target path by the .adef, then the file specified by the .adef will be bundled into the app.</p>
+<p>If a directory is bundled by a component's .cdef file and another directory is bundled to the same target path by the .adef, then the two directories will be merged into the bundle, where conflicts are resolved by omitting the file from the directory specified by the .cdef.</p>
+<h1><a class="anchor" id="defFilesAdef_components"></a>
+components</h1>
+<p>Allows components to be included in an app without being built into an executable (see <a class="el" href="defFilesAdef.html#defFilesAdef_executables">executables</a>). This can be useful if:</p><ul>
+<li>the component doesn't contain any source code files</li>
+<li>the component's source files are run using an interpreter (such as shell scripts)</li>
+<li>the component contains executables that are built using a different build system prior to building the app</li>
+</ul>
+<p>The <code>components</code> section contains a list of file system paths to component directories.</p>
+<p>For example,</p>
+<pre class="fragment"><div class="line">components:</div><div class="line">{</div><div class="line">    $SOURCE_ROOT/audioFiles  <span class="comment">// &lt;-- component containing just audio files.</span></div><div class="line"> </div><div class="line">    path/to/audioPlayer <span class="comment">// &lt;-- component that bundles audioExe built using another build system.</span></div><div class="line">}</div><div class="line"> </div><div class="line">processes:</div><div class="line">{</div><div class="line">    run:</div><div class="line">    {</div><div class="line">        (audioExe)</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><dl class="section note"><dt>Note</dt><dd>If a component is included in an <a class="el" href="defFilesAdef.html#defFilesAdef_executables">executable</a>, then it isn't necessary to include that component in a <code>components:</code> section.</dd></dl>
+<h1><a class="anchor" id="defFilesAdef_cpuShare"></a>
+cpuShare</h1>
+<p>Specifies the relative cpu share for an app.</p>
+<p>Cpu share calculates the cpu percentage for a process relative to all other processes in the system. New cgroups and processes default value is <b>1024</b> if not otherwise configured. The actual percentage of the cpu allocated to a process is calculated like this:</p>
+<p>(share value of process) / (sum of shares from all processes contending for the cpu)</p>
+<p>All processes within a cgroup share the available cpu percentage share for that cgroup like this:</p>
+<ul>
+<li>cgroupA is configured with the default share value, 1024.</li>
+<li>cgroupB is configured with 512 as its share value.</li>
+<li>cgroupC is configured with 2048 as its share value.</li>
+<li>cgroupA has one process running.</li>
+<li>cgroupB has two processes running.</li>
+<li>cgroupC has one process running.</li>
+</ul>
+<p>This assumes all processes in cgroupA, cgroupB and cgroupC are running and not blocked waiting for an I/O or timer event, and another system process is also running.</p>
+<p>Sum of all shares (including the one system process) is 1024 + 512 + 2048 + 1024 = 4608</p>
+<p>The process in cgroupA will get 1024/4608 = 22% of the cpu. The two processes in cgroupB will share 512/4608 = 11% of the cpu, each process getting 5.5%. The process in cgroupC will get 2048/4608 = 44% of the cpu. The system process will get 1024/4608 = 22% of the cpu.</p>
+<pre class="fragment"><div class="line">cpuShare: 512</div></pre><!-- fragment --><p>Although apps aren't limited to running inside a sandbox (i.e., unsandboxed apps), the Supervisor still enforces limits. Ensure <code>cpuShare</code> values are set high enough for unsanboxed apps. Also see <a class="el" href="defFilesAdef.html#defFilesAdef_processMaxFileBytes">maxFileBytes</a>.</p>
+<h1><a class="anchor" id="defFilesAdef_executables"></a>
+executables</h1>
+<p>Lists executables to be constructed and moved to the <code>bin</code> directory inside the app.</p>
+<p>An executable’s content is specified as a list of components.</p>
+<pre class="fragment"><div class="line">executables:</div><div class="line">{</div><div class="line">    myExe = ( myComponent otherComponent )</div><div class="line">}</div></pre><!-- fragment --><p>Each component included in an executable will be built and linked into the executable and its <code>COMPONENT_INIT</code> function will be run at process start-up. The component’s runtime files (shared libraries, source code, etc.) will be packaged inside the app to be installed on the target.</p>
+<p>The mechanisms used to construct executables and components depend on the type of content and the target device.</p>
+<p>C and C++ files will be compiled and linked using the appropriate compiler tool chain based on the target.</p>
+<p>(In the future) Java code will be compiled to Java bytecode, and interpreted code, such as Python code will be simply copied into the app.</p>
+<dl class="section note"><dt>Note</dt><dd>There may be incompatibilities between components that prevent them from being included in the same executable (e.g., Java component and C components in the same executable together). The build tools will advise if there's a problem.</dd></dl>
+<h1><a class="anchor" id="defFilesAdef_groups"></a>
+groups</h1>
+<p>Add an app's user to groups on the target system.</p>
+<pre class="fragment"><div class="line">groups:</div><div class="line">{</div><div class="line">    www-data</div><div class="line">    modem</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="defFilesAdef_maxFileSystemBytes"></a>
+maxFileSystemBytes</h1>
+<p>Specifies the maximum amount of RAM that can be consumed by an app's temporary (volatile) file system at runtime.</p>
+<p>Default is <b>128K</b> </p>
+<pre class="fragment"><div class="line">maxFileSystemBytes: 120K</div></pre><!-- fragment --><dl class="section note"><dt>Note</dt><dd>The file system size will also be limited by the <code>maxMemoryBytes</code> limit.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>maxFileSystemBytes is not currently supported on Linux OS's and setting this variable will have no effect on the target.</dd></dl>
+<h1><a class="anchor" id="defFilesAdef_maxMemoryBytes"></a>
+maxMemoryBytes</h1>
+<p>Specifies the maximum amount of memory (in bytes) that all processes in an app can share. Default is <b>40960K</b> (40MB).</p>
+<pre class="fragment"><div class="line">maxMemoryBytes: 1000K</div></pre><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Will be rounded to the nearest memory page boundary.</dd></dl>
+<h1><a class="anchor" id="defFilesAdef_maxMQueueBytes"></a>
+maxMQueueBytes</h1>
+<p>Specifies the maximum number of bytes that can be allocated for POSIX MQueues. Default is <b>512</b>.</p>
+<pre class="fragment"><div class="line">maxMQueueBytes: 16K</div></pre><!-- fragment --><h1><a class="anchor" id="defFilesAdef_maxQueuedSignals"></a>
+maxQueuedSignals</h1>
+<p>Specifies the maximum number of signals that can be waiting for delivery to processes in the app.</p>
+<p>This limit will only be enforced when using <code>sigqueue()</code> to send a signal. Signals sent using <code>kill()</code> are limited to at most one of each type of signal anyway.</p>
+<p>Default is <b>100</b>.</p>
+<pre class="fragment"><div class="line">maxQueuedSignals: 200</div></pre><!-- fragment --><h1><a class="anchor" id="defFilesAdef_maxThreads"></a>
+maxThreads</h1>
+<p>Specifies the maximum number of threads allowed to run at one time: an integer number.</p>
+<dl class="section note"><dt>Note</dt><dd>A single-threaded process (a running program that doesn't start any threads other than the one running the <code>main()</code> function) counts as one thread.</dd></dl>
+<p>If <code>fork()</code> calls or <code>pthread_create()</code> calls start failing with error code <code>EAGAIN</code> (seen in strace output as <code>clone()</code> system calls), then you are probably running into this limit.</p>
+<p>Default is <b>20</b>.</p>
+<pre class="fragment"><div class="line">maxThreads: 4</div></pre><!-- fragment --><h1><a class="anchor" id="defFilesAdef_maxSecureStorageBytes"></a>
+maxSecureStorage Bytes</h1>
+<p>Specifies the maximum number of bytes that can be stored in Secure Storage.</p>
+<p>Default is <b>8K</b>.</p>
+<pre class="fragment"><div class="line">maxSecureStorageBytes: 4K</div></pre><!-- fragment --><h1><a class="anchor" id="defFilesAdef_pools"></a>
+pools</h1>
+<dl class="section warning"><dt>Warning</dt><dd>This feature not yet implemented.</dd></dl>
+<p>Sets the number of memory pool blocks in a <a class="el" href="c_memory.html">memory pool</a> in a given component in a given process.</p>
+<p>This overrides any setting for the same pool in the <a class="el" href="defFilesCdef.html#defFilesCdef_pools">pools: section of the Component.cdef file</a>.</p>
+<pre class="fragment"><div class="line">pools:</div><div class="line">{</div><div class="line">    myProc.myComponent.myPool = 100</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="defFilesAdef_process"></a>
+processes</h1>
+<p>A <code>processes</code> section specifies processes to run when the app is started including environment variables, command-line arguments, limits, and fault handling actions.</p>
+<p>The <code>processes</code> section is divided into subsections.</p>
+<p>If different processes have different variables, they must be in separate <code>processes:</code> sections.</p>
+<pre class="fragment"><div class="line">processes:</div><div class="line">{</div><div class="line">    <span class="comment">// Start up these processes when the app starts</span></div><div class="line">    run:</div><div class="line">    {</div><div class="line">        myProc1 = ( myExe --foo -b 43 )</div><div class="line">        myProc2 = ( myExe --bar -b 92 )</div><div class="line">        ( myExe2 <span class="stringliteral">"Hello, world."</span> )  <span class="comment">// If no proc name is specified, uses the exe name by default.</span></div><div class="line">    }</div><div class="line"> </div><div class="line">    <span class="comment">// Env var settings (name = value) for all processes in this section.</span></div><div class="line">    envVars:</div><div class="line">    {</div><div class="line">        LE_LOG_LEVEL = DEBUG</div><div class="line">    }</div><div class="line"> </div><div class="line">    priority: medium    <span class="comment">// Starting (and maximum) scheduling priority.</span></div><div class="line">                        <span class="comment">// Process can only lower its priority from here.</span></div><div class="line"> </div><div class="line">    maxCoreDumpFileBytes: 100K  <span class="comment">// Maximum size of core dump files.</span></div><div class="line">    maxFileBytes: 50K           <span class="comment">// Files are not allowed to grow bigger than this.</span></div><div class="line">    maxLockedMemoryBytes: 32K   <span class="comment">// Can't mlock() more than this many bytes.</span></div><div class="line">    maxFileDescriptors: 20      <span class="comment">// Can't have more than this number of FDs open at the same time.</span></div><div class="line">}</div><div class="line"> </div><div class="line">processes:</div><div class="line">{</div><div class="line">    run:</div><div class="line">    {</div><div class="line">        ( realTimeExe )</div><div class="line">    }</div><div class="line"> </div><div class="line">    priority: rt10   <span class="comment">// Allow real-time scheduling (max priority 10) for processes in this section.</span></div><div class="line"> </div><div class="line">    <span class="comment">/*-- Exception handling policy for processes in this section. --*/</span></div><div class="line">    faultAction: restart   <span class="comment">// Restart the process if it fails.</span></div><div class="line">}</div></pre><!-- fragment --><h2><a class="anchor" id="defFilesAdef_processRun"></a>
+run</h2>
+<p>Names a process to be started by the Supervisor when the app is started. Also specifies executable and command-line arguments.</p>
+<pre class="fragment"><div class="line">run:</div><div class="line">{</div><div class="line">    myProc1 = ( myExe --foo -b 43 )</div><div class="line">}</div></pre><!-- fragment --><p>Process name and command-line arguments are optional.</p>
+<pre class="fragment"><div class="line">run:</div><div class="line">{</div><div class="line">    ( myExe )</div><div class="line">}</div></pre><!-- fragment --><p>If the process name isn't specified, then the process will be given the same name as the executable it's running (e.g. <code>myExe</code>)</p>
+<p>A given executable can be launched multiple times; each process needs a unique name. </p><pre class="fragment"><div class="line">run:</div><div class="line">{</div><div class="line">    process1 = ( myExe )</div><div class="line">    process2 = ( myExe )</div><div class="line">}</div></pre><!-- fragment --><p>Command-line arguments passed to the process when started can appear after the executable name. </p><pre class="fragment"><div class="line">run:</div><div class="line">{</div><div class="line">    ( myExe --foo )</div><div class="line">}</div></pre><!-- fragment --><pre class="fragment"><div class="line">run:</div><div class="line">{</div><div class="line">    ( myExe --bar  <span class="comment">// Note that the command-line can be broken into multiple lines for readability.</span></div><div class="line">            --toto ) <span class="comment">// And it can be commented too.</span></div><div class="line">}</div></pre><!-- fragment --><p>Executable names can be the ones listed in the app’s <code>executables:</code> section. They can also be the names of files that are bundled into the app with <code>[x]</code> (executable) permission.</p>
+<p>Quotation marks (either single <b>'</b> or double <b>"</b>) can be used if white-space (spaces, tabs, <code>//</code>, etc.) is needed inside a command-line argument, or if an empty argument is needed ("").</p>
+<h2><a class="anchor" id="defFilesAdef_processEnvVars"></a>
+envVars</h2>
+<p>Environment variables appear as name = value pairs. First is the environment variable name and second is the variable value.</p>
+<p>Enclose the value in quotation marks (either single ' or double ") if white-space is required:</p>
+<pre class="fragment"><div class="line">envVars:</div><div class="line">{</div><div class="line">    LE_LOG_LEVEL = DEBUG</div><div class="line">    MESSAGE = <span class="stringliteral">"The quick brown fox jumped over the lazy dog."</span></div><div class="line">}</div></pre><!-- fragment --><h2><a class="anchor" id="defFilesAdef_processFaultAction"></a>
+faultAction</h2>
+<p>Specifies the action the Supervisor should take when the process terminates with a non-zero exit code or because of an un-caught signal (e.g., SIGSEGV, SIGBUS, SIGKILL).</p>
+<p>Possible values are:</p>
+<ul>
+<li><code>ignore</code> - Supervisor just logs a warning message; no further action taken.</li>
+<li><code>restart</code> - log a critical message and restart the process.</li>
+<li><code>restartApp</code> - log a critical message and restart the entire app.</li>
+<li><code>stopApp</code> - log a critical message and terminate the entire app (send all processes the SIGTERM signal, followed shortly by SIGKILL).</li>
+<li><code>reboot</code> - log an emergency message and reboot the system.</li>
+</ul>
+<p>Default is <b>ignore</b>.</p>
+<pre class="fragment"><div class="line">faultAction: restart</div></pre><!-- fragment --><h2><a class="anchor" id="defFilesAdef_processPriority"></a>
+priority</h2>
+<p>Specifies the starting (and maximum) scheduling priority. A running app process can only lower its priority from this point. Once it has lowered its priority, it can't raise it again (e.g., if the process starts at medium priority and reduces to low priority, it can't go back to medium priority). The default is <b>medium</b>.</p>
+<p>Values:</p><ul>
+<li><b>idle</b> - for low priority processes that get CPU time only if no other processes are waiting.</li>
+<li><b>low</b>, <b>medium</b>, <b>high</b> - intended for normal processes that contend for the CPU. Processes with these priorities don't preempt each other, but their priorities affect how they're inserted into the scheduling queue (high to low).</li>
+<li><b>rt1</b> to <b>rt32</b> - intended for (soft) realtime processes. A higher realtime priority will preempt a lower realtime priority (ie. rt2 would preempt rt1). Processes with any realtime priority will preempt processes with high, medium, low and idle priorities.</li>
+</ul>
+<dl class="section warning"><dt>Warning</dt><dd>Processes assigned realtime priorities preempt Legato framework processes. Ensure that your design relinquishes the CPU appropriately. Processes assigned a realtime priority aren't constrained by an app's cpu share even if the process later changes to a non-realtime priority. This also applies to all threads the process spawns.</dd></dl>
+<pre class="fragment"><div class="line">priority: medium</div></pre><!-- fragment --><h2><a class="anchor" id="defFilesAdef_processMaxCoreDumpFileBytes"></a>
+maxCoreDumpFileBytes</h2>
+<p>Specifies the maximum size (in bytes) of core dump files that can be generated by processes.</p>
+<p>Default is <b>8K</b> </p>
+<dl class="section note"><dt>Note</dt><dd>Core dump file size is limited by <a class="el" href="defFilesAdef.html#defFilesAdef_processMaxFileBytes">maxFileBytes</a>. If the the core file is generated in the sandbox's temporary runtime file system, it 'll also be limited by <a class="el" href="defFilesAdef.html#defFilesAdef_maxFileSystemBytes">maxFileSystemBytes</a>.</dd></dl>
+<pre class="fragment"><div class="line">maxCoreDumpFileBytes: 100K</div><div class="line">maxFileBytes: 100K</div><div class="line">maxFileSystemBytes: 200K</div></pre><!-- fragment --><h2><a class="anchor" id="defFilesAdef_processMaxFileBytes"></a>
+maxFileBytes</h2>
+<p>Specifies the maximum size processes can make files. The <em>K</em> suffix permits specifying in kilobytes (multiples of 1024 bytes).</p>
+<p>Default is <b>88K</b> </p>
+<pre class="fragment"><div class="line">maxFileBytes: 200K</div></pre><!-- fragment --><p>Exceeding this limit results in a <code>SIGXFSZ</code> signal sent to the process. By default, this kills the process, but it can be blocked or caught to receive an error with <code>errno</code> set to <code>EFBIG</code>.</p>
+<p>Although apps aren't limited to running inside a sandbox (i.e., unsandboxed apps), the Supervisor still enforces limits. Ensure <code>maxFileBytes</code> values are set high enough for unsanboxed apps. Also see <a class="el" href="defFilesAdef.html#defFilesAdef_cpuShare">cpuShare</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>If the file is in the sandbox's temporary runtime file system, the file size will also be limited by <a class="el" href="defFilesAdef.html#defFilesAdef_maxFileSystemBytes">maxFileSystemBytes</a> and <a class="el" href="defFilesAdef.html#defFilesAdef_maxMemoryBytes">maxMemoryBytes</a>. <br/>
+</dd></dl>
+<h2><a class="anchor" id="defFilesAdef_processMaxFileDescriptors"></a>
+maxFileDescriptors</h2>
+<p>Specifies the maximum number of file descriptors a process can have open at one time.</p>
+<p>Default is <b>256</b> </p>
+<pre class="fragment"><div class="line">maxFileDescriptors: 100</div></pre><!-- fragment --><h2><a class="anchor" id="defFilesAdef_processMaxLockedMemoryBytes"></a>
+maxLockedMemoryBytes</h2>
+<p>Specifies the maximum bytes of memory the process can lock into physical RAM (e.g., using <code>mlock()</code> ).</p>
+<p>Can't be higher than <a class="el" href="defFilesAdef.html#defFilesAdef_maxMemoryBytes">maxMemoryBytes</a>.</p>
+<p>Default is <b>8K</b> </p>
+<pre class="fragment"><div class="line">maxLockedMemoryBytes: 100K</div></pre><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Also limits the maximum number of bytes of shared memory the app can lock into memory using <code>shmctl()</code>.</dd></dl>
+<h2><a class="anchor" id="defFilesAdef_processMaxStackBytes"></a>
+maxStackBytes</h2>
+<p>Specifies the maximum bytes of memory the process uses for its stack.</p>
+<p>This value must be less than <a class="el" href="defFilesAdef.html#defFilesAdef_maxMemoryBytes">maxMemoryBytes</a>.</p>
+<p>The default is determined by the OS.</p>
+<pre class="fragment"><div class="line">maxStackBytes: 800K</div></pre><!-- fragment --><h2><a class="anchor" id="defFilesAdef_processwatchdogAction"></a>
+watchdogAction</h2>
+<p>Specifies the action the Supervisor should take when a <b>process</b> that is subscribed to the <a class="el" href="conceptsRuntimeArch.html#conceptsRuntimeArch_watchdog">watchdog daemon</a> fails to kick the watchdog before the process reaches it's timeout value.</p>
+<p>Possible watchdog actions:</p><ul>
+<li><code>ignore</code> - Supervisor just logs a warning message; no further action taken.</li>
+<li><code>restart</code> - log a critical message and restart the process.</li>
+<li><code>restartApp</code> - log a critical message and restart the entire app.</li>
+<li><code>stop</code> - Supervisor terminates the process if it's still running.</li>
+<li><code>stopApp</code> - log a critical message and terminate the entire app (send all processes the SIGTERM signal, followed shortly by SIGKILL).</li>
+<li><code>reboot</code> - log an emergency message and reboot the system.</li>
+</ul>
+<p>If a watchdog action has not been supplied, the default action is <b>restart</b>.</p>
+<h2><a class="anchor" id="defFilesAdef_processwatchdogTimeout"></a>
+watchdogTimeout</h2>
+<p>Specifies the timeout length (in milliseconds) for watchdogs called by processes in the enclosing processes section.</p>
+<p>To register a process with the watchdog daemon call <code><a class="el" href="le__wdog__interface_8h.html#a43d5abc5c44309942efbe7b9c25d811f">le_wdog_Kick()</a></code> from within the process. The watchdog daemon then starts the timer, if the process fails to call <code><a class="el" href="le__wdog__interface_8h.html#a43d5abc5c44309942efbe7b9c25d811f">le_wdog_Kick()</a></code> within the given timeout, the Supervisor is notified will take the action specified in <a class="el" href="defFilesAdef.html#defFilesAdef_processwatchdogAction">watchdogAction</a></p>
+<pre class="fragment"><div class="line">watchdogTimeout: 10000 <span class="comment">// Process must call le_wdog_Kick() at least every 10 seconds.</span></div></pre><!-- fragment --><p>To disable the watchdog for a given process set the <code>watchdogTimeout</code> to <code>never:</code> </p>
+<pre class="fragment"><div class="line">watchdogTimeout: never  <span class="comment">// Disable watchdog for these processes.</span></div></pre><!-- fragment --><h1><a class="anchor" id="defFilesAdef_extern"></a>
+extern</h1>
+<p>Externs indicate which of your app's IPC API interfaces should be made available for binding to the IPC API interfaces of other apps. (The binding is preferably done in <a class="el" href="defFilesSdef.html#defFilesSdef_bindings">a .sdef file's bindings section</a>, but may also be done in <a class="el" href="defFilesAdef.html#defFilesAdef_bindings">a .adef file's bindings section</a>.)</p>
+<p>For example,</p>
+<pre class="fragment"><div class="line"><span class="keyword">extern</span>:</div><div class="line">{</div><div class="line">    aliasName = exeName.componentName.interfaceName</div><div class="line">}</div></pre><!-- fragment --><p>This also creates an alias for each interface that doesn't include any internal implementation details of your app.</p>
+<p>Inside your app, its interfaces are identified using the names of the executables and components that implement them. Exposing these details outside your app can create maintainability problems later (see <a href="https://en.wikipedia.org/wiki/Information_hiding">https://en.wikipedia.org/wiki/Information_hiding</a>).</p>
+<p>Externally, the interface will be identified using the app name and the external alias (<code>appName.aliasName</code>), thereby hiding from other apps the details of which executable and component implements the interface. Encapsulating the app's implementation details allows them to be changed later without affecting other apps that communicate with this app. Only if an app's external interface changes would any other app be affected.</p>
+<p>Use period characters ('.') to seperate components of an interface. (E.g., executables, components, interface names.) External aliases must not contain any period characters ('.').</p>
+<p>When the external alias has the same name that the component uses as the interface name, it's possible to save time by omitting the <code>aliasName =</code> part. For example,</p>
+<pre class="fragment"><div class="line"><span class="keyword">extern</span>:</div><div class="line">{</div><div class="line">    exeName.componentName.interfaceName</div><div class="line">}</div></pre><!-- fragment --><p>This is equivalent to</p>
+<pre class="fragment"><div class="line"><span class="keyword">extern</span>:</div><div class="line">{</div><div class="line">    interfaceName = exeName.componentName.interfaceName</div><div class="line">}</div></pre><!-- fragment --><h2><a class="anchor" id="defFilesAdef_externServer"></a>
+Server-side Example</h2>
+<p>This code sample declares the <code>temperature</code> interface on the <code>thermistor</code> component in the <code>sensor</code> executable should be made into a bindable external server-side interface (service) called <code>spaceTemp:</code> </p>
+<pre class="fragment"><div class="line"><span class="keyword">extern</span>:</div><div class="line">{</div><div class="line">    spaceTemp = sensor.thermistor.temperature</div><div class="line">}</div></pre><!-- fragment --><p>If the app was called <em>thermometer</em>, then other apps could bind their client-side interfaces to <code>thermometer.spaceTemp</code> to receive temperature readings from this sensor app.</p>
+<h2><a class="anchor" id="defFilesAdef_externClient"></a>
+Client-side Example</h2>
+<p>This code sample declares that the <code>temperature</code> interface on the <code>tempInput</code> component in the <code>controller</code> executable should be made into a bindable external interface:</p>
+<pre class="fragment"><div class="line"><span class="keyword">extern</span>:</div><div class="line">{</div><div class="line">    controller.tempInput.temperature</div><div class="line">}</div></pre><!-- fragment --><p>If this app were called thermostat, then to outsiders (e.g., in a <code></code>.sdef file or another app's <code></code>.adef file), the interface would be called <code>thermostat.temperature</code>.</p>
+<h2><a class="anchor" id="defFilesAdef_externBinding"></a>
+Binding Example</h2>
+<p>To bind the client-side interface to the server-side interface (service) defined above, a <code></code>.sdef file could contain the following:</p>
+<pre class="fragment"><div class="line">bindings:</div><div class="line">{</div><div class="line">    thermostat.temperature -&gt; thermometer.spaceTemp</div><div class="line">}</div></pre><!-- fragment --><h2><a class="anchor" id="defFilesAdef_externRequiresProvides"></a>
+requires and provides</h2>
+<p>The <code>requires:</code> and <code>provides:</code> subsections within the <code>extern:</code> section are used only when apps contain pre-built binary executables that have Legato IPC API interfaces. For example, when someone uses <a class="el" href="buildToolsifgen.html">ifgen</a> to generate code that they compile into an executable and add to their app using a <code>bundles:</code> section in a <code></code>.cdef or <code></code>.adef file, then the Legato build tools (<a class="el" href="buildToolsmkapp.html">mkapp</a> or <a class="el" href="buildToolsmksys.html">mksys</a>) can't tell that this executable has IPC interfaces available for binding.</p>
+<dl class="section note"><dt>Note</dt><dd><code>requires:</code> and <code>provides:</code> subsections are generated by <a class="el" href="buildToolsmkapp.html">mkapp</a> when the <code>--bin-pack</code> command-line option is used to generate a pre-built binary version of an app. While the <code>requires:</code> and <code>provides:</code> subsections <em>can</em> be used within the <code>extern:</code> section in situations like the example given above, they are not normally used in hand-coded <code></code>.adef files.</dd></dl>
+<pre class="fragment"><div class="line"><span class="keyword">extern</span>:</div><div class="line">{</div><div class="line">    provides:</div><div class="line">    {</div><div class="line">        spaceTemp = $CURDIR/interfaces/temperature.api</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>Service "spaceTemp" implements the IPC API defined in <code>interfaces/temperature.api</code> under the directory containing the <code></code>.adef file.</p>
+<pre class="fragment"><div class="line"><span class="keyword">extern</span>:</div><div class="line">{</div><div class="line">    requires:</div><div class="line">    {</div><div class="line">        temperature = $CURDIR/interfaces/temperature.api</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>The app has a client-side interface called "temperature" that requires a service that implements the IPC API defined in <code>interfaces/temperature.api</code> under the directory containing the app's <code></code>.adef file. The app's "temperature" interface must be bound to a service that implements this temperature API using a <code>bindings:</code> section in a <code></code>.sdef file</p>
+<pre class="fragment"><div class="line">bindings:</div><div class="line">{</div><div class="line">    clientApp.temperature -&gt; serverApp.spaceTemp</div><div class="line">}</div></pre><!-- fragment --><p>or elsewhere in the app's <code></code>.adef file</p>
+<pre class="fragment"><div class="line">bindings:</div><div class="line">{</div><div class="line">    *.temperature -&gt; serverApp.spaceTemp</div><div class="line">}</div></pre><!-- fragment --><p>Client-side pre-built interfaces can be marked "optional" to tell <a class="el" href="buildToolsmksys.html">mksys</a> not to generate an error if the interface is not bound to anything.</p>
+<pre class="fragment"><div class="line"><span class="keyword">extern</span>:</div><div class="line">{</div><div class="line">    requires:</div><div class="line">    {</div><div class="line">        temperature = $CURDIR/interfaces/temperature.api [optional]</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="defFilesAdef_requires"></a>
+requires</h1>
+<p>The <code>requires:</code> section specifies things the app needs from its runtime environment.</p>
+<p>It can contain various subsections.</p>
+<h2><a class="anchor" id="defFilesAdef_requiresConfigTree"></a>
+configTree</h2>
+<p>Declares the app requires access to a specified configuration tree. Each app has its own configuration tree named after the app. There's also a system configuration tree that contains privileged system data.</p>
+<p>By default, an app only has read access to its own configuration tree.</p>
+<p>Apps can be granted read access or both read and write access to trees using an optional access permission specifier:</p>
+<ul>
+<li><code>[r]</code> - grant read-only access</li>
+<li><code>[w]</code> - grant read and write access</li>
+</ul>
+<p>If access is granted to a tree, but the access mode ([r] or [w]) isn't specified, only read permission will be granted.</p>
+<p>A special tree name "." can be used to refer to the app's own configuration data tree.</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    configTree:</div><div class="line">    {</div><div class="line">        [w] .       <span class="comment">// I need write access to my configuration data.</span></div><div class="line">        otherApp    <span class="comment">// I need read access to another app's configuration data.</span></div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>Because config data can be saved to flash storage, granting write access to a config tree can make it possible for the app to wear out your flash device. Granting an untrusted app write access to another app's config settings creates a security hole, because it makes it possible for the untrusted app to interfere with the other app's operation. It's especially dangerous to grant write access to the system tree, because it's possible to completely compromise the target device. Even read access may be dangerous if any kind of security key, including PIN and PUK codes, are kept in the system tree. Don't give apps direct access to the <code>system tree</code>.</dd></dl>
+<h2><a class="anchor" id="defFilesAdef_requiresDir"></a>
+dir</h2>
+<p>Used to declare directories located on the target outside of the app that are to be made accessible to the app.</p>
+<p>The location inside the app's sandbox where the directory will appear is also specified.</p>
+<p>Things listed here are expected to be found on the target at runtime. They are not copied into the app at build time; they are made accessible to the app inside of its sandbox at runtime.</p>
+<p>Three things need to be specified for each directory:</p><ul>
+<li>access permissions</li>
+<li>source path</li>
+<li>destination path</li>
+</ul>
+<p><b>Access permissions</b> - any combination of one or more of the following letters, enclosed in square brackets:</p><ul>
+<li>r = readable</li>
+<li>w = writeable</li>
+<li>x = executable</li>
+</ul>
+<p>If permissions values are not specified, then the directory will be mounted into the sandbox without modifying any permissions. Applications can mount any directories except for the legato directory (/mnt/flash/legato or /legato).</p>
+<p>Specifying the permission values on a directory will only modify the permission of the directory. Any subdirectory and files will remain the same.</p>
+<p>Also specifying the permission value on directories is only allowed in two locations:</p><ul>
+<li>Any directory under /home/root/</li>
+<li>Any directory under /mnt/flash/ except /legato</li>
+</ul>
+<p><b>Source path</b>is the path to the directory <b>outside</b> of the app. This must be an absolute path (beginning with "/") and can never end in a "/".</p>
+<p><b>Destination path</b> is the absolute path <b>inside</b> the app’s sandbox where the directory will appear at runtime.</p>
+<p>Paths can be enclosed in quotation marks (either single ' or double "). This is required when it contains spaces or character sequences that would start comments.</p>
+<p>If the destination path ends in a "/", the name from the source is appended to it. Otherwise, only the destination path is used. That means <code>/foo/bar</code> /baz will appear as <code>/baz</code> inside the sandbox, and <code>/foo/bar</code> /baz/ will appear as <code>/baz/bar</code> inside the sandbox.</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    dir:</div><div class="line">    {</div><div class="line">        <span class="comment">// I need access to /proc for debugging.</span></div><div class="line">        /proc   /</div><div class="line"> </div><div class="line">        <span class="comment">// For now, I want access to all executables and libraries in /bin and /lib.</span></div><div class="line">        <span class="comment">// Later I'll remove this and replace with just the files I really need in the field.</span></div><div class="line">        <span class="comment">// Also, I don't want to hide the stuff that the tools automatically bundle into my app's</span></div><div class="line">        <span class="comment">// /bin and /lib for me, so I'll make the root file system's /bin and /lib accessible as</span></div><div class="line">        <span class="comment">// my app's /usr/bin and /usr/lib.</span></div><div class="line">        /bin    /usr/bin</div><div class="line">        /lib    /usr/lib</div><div class="line"> </div><div class="line">        <span class="comment">// I need permissions to create a file in /home/root/myTestDir</span></div><div class="line">        <span class="comment">// Execute is needed since we need to search a directory before creating the file.</span></div><div class="line">        [rwx] /home/root/myTestDir    /myTestDir</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>Any time anything is made accessible from inside an app sandbox, the security risks must be considered carefully. Ask yourself if access to the object can be exploited by the app (or a hacker who has broken into the app) to access sensitive information or launch a denial-of-service attack on other apps within the target device or other devices connected to the target device?</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>It's not possible to put anything inside of a directory that was mapped into the app from outside of the sandbox. If you <em>require</em> <code>/bin</code> to appear at <code>/usr/bin</code>, you can't then <em>bundle</em> a file into <code>/usr/bin</code> or <em>require</em> something to appear in <code>/usr/bin</code>; that would have an effect on the contents of the /bin directory outside of the app.</dd>
+<dd>
+If an access to the directory /dev/shm is required, it should be listed in this subsection as below mentioned, because it is treated like a directory even if it is located in /dev. <pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    dir:</div><div class="line">    {</div><div class="line">        /dev/shm    /dev/shm</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --></dd>
+<dd>
+If your <code>requires:</code> dir: section includes /dev/shm then, inside your legato application after calling: shm_open (sharedMemRegion, ...) you have to run: chmod ("/dev/shm/sharedMemRegion", S_IRWXU | S_IRWXG | S_IRWXO);</dd></dl>
+<h2><a class="anchor" id="defFilesAdef_requiresFile"></a>
+file</h2>
+<p>Declares:</p><ul>
+<li>specific files located on the target outside of the app, but made accessible to the app.</li>
+<li>location inside the app's sandbox where the file will appear.</li>
+</ul>
+<p>Things listed in <code>requires</code> are expected to be found on the target at runtime. They're not copied into the app at build time; they are made accessible to the app inside of its sandbox at runtime.</p>
+<p>Each entry consists of:</p><ul>
+<li>access permissions</li>
+<li>source path</li>
+<li>destination path</li>
+</ul>
+<p><b>Access permissions</b> - any combination of one or more of the following letters, enclosed in square brackets:</p><ul>
+<li>r = readable</li>
+<li>w = writeable</li>
+<li>x = executable</li>
+</ul>
+<p>If permission values are not specified, then the file will be mounted into the sandbox without modifying any permissions.</p>
+<p>A file path can be enclosed in quotation marks (either single ' or double "). This is required when it contains spaces or character sequences that would start comments.</p>
+<p>The first path can't end in a '/'.</p>
+<p>If the second path ends in a '/', then it's specifying the directory where the object appears, and the object has the same name inside the sandbox as it has outside the sandbox.</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    file:</div><div class="line">    {</div><div class="line">        <span class="comment">// I get character stream input from outside via a named pipe (read-only)</span></div><div class="line">        /var/run/someNamedPipe  /var/run/</div><div class="line"> </div><div class="line">        <span class="comment">// I need to be able to play back audio files installed in /usr/local/share/audio.</span></div><div class="line">        <span class="stringliteral">"/usr/local/share/audio/error message.wav"</span> /usr/share/audio/</div><div class="line">        <span class="stringliteral">'/usr/local/share/audio/success message.wav'</span> /usr/share/audio/</div><div class="line"> </div><div class="line">        <span class="comment">// Need to write to log.txt. Read is required to open the file.</span></div><div class="line">        [rw] /home/root/myFiles/log.txt      /usr/myFiles/</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>It's also possible to give the object a different names inside and outside of the sandbox by adding a name to the end of the second path.</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    file:</div><div class="line">    {</div><div class="line">        <span class="comment">// Program uses /var/run/someNamedPipe which it calls /var/run/externalPipe.</span></div><div class="line">        /var/run/someNamedPipe  /var/run/externalPipe</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>When something is accessible from inside an app sandbox, there are potential security risks (e.g., access to the object could be exploited by the app, or hacker, to access sensitive information or launch a denial-of-service attack on other apps within the target device or other devices connected to the target device).</dd></dl>
+<p>If apps require access to shared memory located into /dev/shm, these entries need to be declared inside this section to have the right access and the correct SMACK label set by the supervisor. Apps that create the shared memory do not need to explicitly state them in the <code>requires:</code> section. This is only need for apps that want to access another apps shared memory.</p>
+<p>For example, appA will create the shared memory files /dev/shm/appShm00 and /dev/shm/shamem. If a second app, called appB wants to access to these files, it needs to define them inside its <code>appB.adef</code> as shown below:</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    file:</div><div class="line">    {</div><div class="line">        <span class="comment">// Import the shared memory /dev/shm/appShm00 and /dev/shm/shamem into the appB.</span></div><div class="line">        /dev/shm/appShm00  /dev/shm/appShm00</div><div class="line">        /dev/shm/shamem    /dev/shm/shamem</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><h2><a class="anchor" id="defFilesAdef_requiresDevice"></a>
+device</h2>
+<p>Declares:</p><ul>
+<li>device files that reside on the target outside of the app, but made accessible to the app.</li>
+<li>location inside the app's sandbox where the file will appear.</li>
+<li>access permissions the app is given to the device file.</li>
+</ul>
+<p>Things listed in <code>requires</code> are expected to be found on the target at runtime. They're not copied into the app at build time; they are made accessible to the app inside of its sandbox at runtime.</p>
+<p>Each entry consists of two file system paths and a set of optional access permissions:</p>
+<ul>
+<li>access permissions, readable ([r]) and/or writeable ([w]). Executable isn't allowed on device files. If permission values are not specified, then read-only ([r]) is the default.</li>
+<li>path to the object in the file system outside of the app, which must be an absolute path (beginning with ‘/’). This must be a path to a valid character or block device file.</li>
+<li>absolute file system path inside the app’s sandbox where the object will appear at runtime.</li>
+</ul>
+<p>A file path can be enclosed in quotation marks (either single ' or double "). This is required when it contains spaces or character sequences that would start comments.</p>
+<p>The first path can't end in a '/'.</p>
+<p>If the second path ends in a '/', then it's specifying the directory where the object appears, and the object has the same name inside the sandbox as it has outside the sandbox.</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    device:</div><div class="line">    {</div><div class="line">        <span class="comment">// I get read-only access to the SPI port.</span></div><div class="line">        [r]     /dev/sierra_spi   /dev/sierra_spi</div><div class="line"> </div><div class="line">        <span class="comment">// I get read-only access to the NMEA port.</span></div><div class="line">                /dev/nmea         /dev/nmea</div><div class="line"> </div><div class="line">        <span class="comment">// I get read and write access to the I2C port.</span></div><div class="line">        [rw]    /dev/sierra_i2c   /dev/</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>Note that if a hot-plug device is unplugged and plugged back in, the app must be restarted before it can access the device.</p>
+<p>It's also possible to give the object a different names inside and outside of the sandbox by adding a name to the end of the second path.</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    device:</div><div class="line">    {</div><div class="line">        /dev/ttyS0  /dev/port1     <span class="comment">// Program uses /dev/port1, but UART0 is called /dev/ttyS0.</span></div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>When something is accessible from inside an app sandbox, there are potential security risks (e.g., access to the object could be exploited by the app, or hacker, to access sensitive information or launch a denial-of-service attack on other apps within the target device or other devices connected to the target device).</dd>
+<dd>
+This section is experimental. Future releases of may not support this section.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If an access to the directory <code>/dev/shm</code> is required, it should be listed in the subsection <code>dir:</code> because it is treated like a directory even if it is located in <code>/dev</code>.</dd></dl>
+<h2><a class="anchor" id="defFilesAdef_requireskm"></a>
+kernelModules</h2>
+<p>Your app may depend on one or more kernel modules to load before the app starts. Use <code>kernelModules:</code> section to declare the app dependencies on kernel modules. Each entry is a path to another <a class="el" href="defFilesMdef.html">.mdef</a> definition file. This section marks that the app has a requirement on a kernel module but does not add the kernel module to the Legato system. The kernel module needs to be <b>explicitly</b> <b>added</b> to kernelModules: section of your systems <a class="el" href="defFilesSdef.html">.sdef</a>. After the kernel modules are added to the sdef, the modules will be bundled as a part of the application and installed with the Legato system. The listed modules will be installed before the app starts. In the example below, hello and world kernel modules will be installed before the app starts.</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    kernelModules:</div><div class="line">    {</div><div class="line">       $CURDIR/kernelmodule/hello</div><div class="line">       $CURDIR/kernelmodule/world [optional]</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>In case a module fails to load, the fault handler kicks in which triggers the fault action of each process in the app (see <a class="el" href="defFilesAdef.html#defFilesAdef_processFaultAction">faultAction</a>) in order to attempt the recovery of the app. The faultAction values relevant for an app with kernel modules dependencies are:</p><ul>
+<li>restartApp - log a critical message and restart the entire app.</li>
+<li>stopApp - log a critical message and terminate the entire app.</li>
+<li>reboot - log an emergency message and reboot the system.</li>
+</ul>
+<p>If the fault action for each process must not be triggered when a module fails to load, the module must be marked as optional by using '[optional]' tag. In the above example, world is an optional module.</p>
+<h1><a class="anchor" id="defFilesAdef_sandboxed"></a>
+sandboxed</h1>
+<p>Specifies if the app will be launched inside a sandbox.</p>
+<p>Permitted content in this section is:</p>
+<ul>
+<li><b>true</b> - app will be run inside of a sandbox.</li>
+<li><b>false</b> - app won't be run in a sandbox.</li>
+</ul>
+<p>The default is <b>true</b>.</p>
+<p>If an app is unsandboxed (app isn't inside of a sandbox), it can see the target device's real root file system. A sandboxed app can't see the target's real root file system; a sandboxed app has a separate root file system, which it can't leave.</p>
+<p>Each app has its own user and primary group IDs. The app's user name and primary group name are both <code>appxxxx"</code>, where the <code>xxxx</code> is the name of the app.</p>
+<p>User and/or group will be automatically created if missing for the specified app, but only users and groups of sandboxed apps will automatically be deleted when those apps are uninstalled.</p>
+<pre class="fragment"><div class="line">sandboxed: <span class="keyword">false</span></div></pre><!-- fragment --><h1><a class="anchor" id="defFilesAdef_start"></a>
+start</h1>
+<p>Specifies if the app should start automatically at start-up:</p><ul>
+<li><b>auto</b> starts automatically by the Supervisor.</li>
+<li><b>manual"</b> starts through manual prompt to the Supervisor. Default is <b>auto</b>.</li>
+</ul>
+<pre class="fragment"><div class="line">start: <span class="keyword">auto</span></div></pre><!-- fragment --><h1><a class="anchor" id="defFilesAdef_version"></a>
+version</h1>
+<p>Optional field that specifies a string to use as the app's version string.</p>
+<pre class="fragment"><div class="line">version: 0.3a</div></pre><!-- fragment --><dl class="section note"><dt>Note</dt><dd><ul>
+<li>The <b><code>--append-to-version</code></b> option to <a class="el" href="buildToolsmkapp.html">mkapp</a> can be used to add to the app's version string.</li>
+<li><b><code>app foo version</code></b> can be run on-target to get the version string of the app called "foo".</li>
+</ul>
+</dd></dl>
+<h1><a class="anchor" id="defFilesAdef_watchdogAction"></a>
+watchdogAction</h1>
+<p>Specifies the action the Supervisor should take when any app's process fails to kick the <a class="el" href="conceptsRuntimeArch.html#conceptsRuntimeArch_watchdog">watchdog daemon</a> before the app reaches it's timeout value. If a specific action need to be taken for individual processes then that should be set in the <a class="el" href="defFilesAdef.html#defFilesAdef_processwatchdogAction">watchdogAction</a> .</p>
+<p>Possible watchdog actions:</p><ul>
+<li><code>ignore</code> - Supervisor just logs a warning message; no further action taken.</li>
+<li><code>restart</code> - log a critical message and restart the process.</li>
+<li><code>restartApp</code> - log a critical message and restart the entire app.</li>
+<li><code>stop</code> - Supervisor terminates the process if it's still running.</li>
+<li><code>stopApp</code> - log a critical message and terminate the entire app (send all processes the SIGTERM signal, followed shortly by SIGKILL).</li>
+<li><code>reboot</code> - log an emergency message and reboot the system.</li>
+</ul>
+<p>If a watchdog action has not been supplied, the default action is <b>restart</b>.</p>
+<p>To register a process with the watchdog daemon call <code><a class="el" href="le__wdog__interface_8h.html#a43d5abc5c44309942efbe7b9c25d811f">le_wdog_Kick()</a></code> from within the process. The watchdog daemon then starts the timer, if the process fails to call <code><a class="el" href="le__wdog__interface_8h.html#a43d5abc5c44309942efbe7b9c25d811f">le_wdog_Kick()</a></code> within the given timeout, the Supervisor is notified will take the action specified in <a class="el" href="defFilesAdef.html#defFilesAdef_processwatchdogAction">watchdogAction</a></p>
+<h1><a class="anchor" id="defFilesAdef_watchdogTimeout"></a>
+watchdogTimeout</h1>
+<p>Specifies the timeout length (in milliseconds) for watchdogs called by an app.</p>
+<p>To register an app with the watchdog daemon call <code><a class="el" href="le__wdog__interface_8h.html#a43d5abc5c44309942efbe7b9c25d811f">le_wdog_Kick()</a></code> from within the app. The watchdog daemon then starts the timer, if the process fails to call <code><a class="el" href="le__wdog__interface_8h.html#a43d5abc5c44309942efbe7b9c25d811f">le_wdog_Kick()</a></code> within the given timeout, the Supervisor is notified will take the action specified in <a class="el" href="defFilesAdef.html#defFilesAdef_watchdogAction">watchdogAction</a></p>
+<pre class="fragment"><div class="line">watchdogTimeout: 10000 <span class="comment">// Process will call le_wdog_Kick() every 10 seconds.</span></div></pre><!-- fragment --><p>To disable the watchdog for a given process set the <code>watchdogTimeout</code> to <code>never:</code> </p>
+<pre class="fragment"><div class="line">watchdogTimeout: never  <span class="comment">// Disable watchdog for these processes.</span></div></pre><!-- fragment --><h1><a class="anchor" id="defFilesAdef_maxWatchdogTimeout"></a>
+maxWatchdogTimeout</h1>
+<p>The <code>maxWatchdogTimeout</code> section should be set for critical services. Setting the <code>maxWatchdogTimeout</code> will invoke a recovery procedure that will:</p><ul>
+<li>first try to perform the watchdogAction to recover the hung process.</li>
+<li>wait for the <code>maxWatchdogTimeout</code> value to elapse again.</li>
+<li>if the process is still not started then the target will be rebooted.</li>
+</ul>
+<p>The <code>maxWatchdogTimeout</code> starts counting on system boot. The app can't be stopped longer than the timeout given in <code>maxWatchdogTimeout</code>. If it is the system will try and "recover itself" and may reboot the target.</p>
+<p>The <code>maxWatchdogTimeout</code> value can not be set to <code>never</code>, if you wish to disable it, remove the <code>maxWatchdogTimeout</code> from the app's .adef and reinstall the app.</p>
+<p>If a <code>maxWatchdogTimeout</code> is set then <a class="el" href="le__wdog__interface_8h.html#a041aed268270e1c3668b6ff28bee8fd7">le_wdog_Timeout()</a> can not exceed the <code>maxWatchdogTimeout</code> value.</p>
+<dl class="section warning"><dt>Warning</dt><dd><code>watchdogActions</code> <b>ignore</b>, <b>stop</b> and <b>stopApp</b> should not be used when a <code>maxWatchdogTimeout</code> is configured.</dd></dl>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Legato RPC  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.11.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Experimental_Features.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a class="link-selected" href="experimentalMain.html">Experimental Features</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Legato RPC </h1> </div>
+</div><div class="contents">
+<div class="textblock"><dl class="section warning"><dt>Warning</dt><dd>EXPERIMENTAL</dd></dl>
+<p>Legato RPC provides a framework to support remote-procedural calls (commonly referred to as "RPC") between two Legato systems. Using RPC bindings, a Legato service is provisioned across two remote systems resulting in the client application, deployed on one system, being bound to the server application, deployed on a second system.</p>
+<p>From the perspective of the client and server applications, there is no difference between a locally provided service (IPC) and a remotely provided service (RPC). They are unaware that the service is provisioned across two remote systems.</p>
+<div class="image">
+<img alt="getStartedRPC-Overview.png" src="getStartedRPC-Overview.png"/>
+</div>
+<p>Defining a Legato service to be a RPC service requires,</p><ul>
+<li>Declaring which applications and interfaces can be exported from a system. See <a class="el" href="defFilesSdef.html#defFilesSdef_extern">extern</a> for further information.</li>
+<li>Declaring how communication to a remote system is implemented. See <a class="el" href="defFilesSdef.html#defFilesSdef_links">links</a> for further information.</li>
+</ul>
+<h1><a class="anchor" id="getStartedRPC_DyanmicConfiguration"></a>
+Run-time Configuration</h1>
+<p>The Legato RPC framework depends on some of its configuration (<a class="el" href="getStartedRPC.html#getStartedRPC_bindings">RPC Bindings</a> and <a class="el" href="getStartedRPC.html#getStartedRPC_systems">RPC Systems</a>) to be defined at run-time. In particular, the run-time configuration provides specific details about the RPC bindings and the remote system network connection configuration. The run-time configuration can be thought of as the 'routing' configuration for Legato RPC Services. It may change or vary over time and, therefore, cannot be defined statically at build time.</p>
+<h2><a class="anchor" id="getStartedRPC_bindings"></a>
+RPC Bindings</h2>
+<p>To specify the remote system on which a Legato RPC service is provisioned/bound, the Legato RPC framework requires a RPC binding to be defined. RPC bindings are run-time or set-up specific configuration, and must therefore be manually defined during the system set-up.</p>
+<p>Location and format are, as follows:</p>
+<pre class="fragment">rpcProxy/
+  bindings/
+    &lt;interfaceName&gt;/
+      systemName&lt;string&gt; == &lt;systemName&gt;
+      remoteService&lt;string&gt; == &lt;remote interfaceName&gt;
+</pre><p>where,</p>
+<ul>
+<li><b>interfaceName</b> is the network interface-Name. Must match the interface alias-name specified, at built time, in the "extern:" section of the .sdef file.</li>
+<li><b>systemName</b> is the alias-name of the remote system. Must match the system alias-name specified in the <a class="el" href="getStartedRPC.html#getStartedRPC_systems">RPC Systems</a>.</li>
+<li><b>remote interfaceName</b> is the network interface-name that has been exported by a remote system (i.e. specified in the remote system's "extern:" sections of the .sdef file). It must match exactly in order for the RPC framework to connect the RPC service.</li>
+</ul>
+<h2><a class="anchor" id="getStartedRPC_systems"></a>
+RPC Systems</h2>
+<p>The RPC Systems contains the network configuration details to enable connecting to a remote system. As with RPC bindings, RPC systems are run-time or set-up specific configuration, and must therefore be manually defined during the system set-up. Because the implementation of the network communication plug-in will vary depending on the nature of the underlying communication technology, the RPC Systems configuration will also vary and depend on the specific technology.</p>
+<p>Location and format are, as follows:</p>
+<pre class="fragment">rpcProxy/
+  systems/
+    &lt;systemName&gt;/
+      &lt;linkName&gt;/
+        &lt;arg0&gt; == &lt;arg0 string&gt;
+        &lt;arg1&gt; == &lt;arg1 string&gt;
+        ....
+</pre><p>where,</p>
+<ul>
+<li><b>systemName</b> is the alias-name of the remote system. Must match system alias-name specified in the <a class="el" href="getStartedRPC.html#getStartedRPC_bindings">RPC Bindings</a>.</li>
+<li><b>linkName</b> is the link-name alias defining the network communication to a remote system. Must match the link alias-name specified, at build time, in the <a class="el" href="defFilesSdef.html#defFilesSdef_links">links</a>.</li>
+<li><b>argX</b> is a command-line argument vector for specify configuration data specific for a communication technology.</li>
+</ul>
+<h2><a class="anchor" id="getStartedRPC_rpctool"></a>
+RPC Configuration Tool</h2>
+<p>To specify the RPC Bindings and Systems, a <a class="el" href="getStartedRPCConfigurationTool.html">Legato RPC Configuration Tool</a> has been provided.</p>
+<h1><a class="anchor" id="getStartedRPC_status"></a>
+Status</h1>
+<p>RPC is an EXPERIMENTAL Alpha-quality feature that is actively under development, and may be subject to future changes, which may not be backwards compatible.</p>
+<p>As an Alpha-quality feature, the RPC framework may be unstable or incomplete, and may contain bugs or other related issues.</p>
+<p>Please use at your own discretion.</p>
+<p>Feedback can be provided through our Legato Forum, forum.legato.io.</p>
+<h2><a class="anchor" id="getStartRPC_restrictionStatus"></a>
+Restrictions and Limitations</h2>
+<ul>
+<li>Legato RPC is currently restricted to a two (2) system network.</li>
+<li>A brand new Legato target system will NOT contain any RPC run-time configuration.</li>
+<li>RPC run-time configuration must be set-up/changed, using the <a class="el" href="getStartedRPCConfigurationTool.html">Legato RPC Configuration Tool</a>, before a RPC services can start.</li>
+<li>Changes to the RPC run-time configuration will only take effect after (1) a system restart or (2) a RPC Proxy application restart.</li>
+<li>Currently, only a single implementation of the <a class="el" href="le__comm_8h.html">le_comm.h</a> is available for use, <b>networkSocket</b>.</li>
+<li>The <b>networkSocket</b> le_comm implementation currently supports TCP/IPv4 sockets only.</li>
+<li>IP Address assignment and network reachability must be established outside of the RPC framework (i.e. the <b>networkSocket</b> expects the remote system to be reachable at the Network layer).</li>
+</ul>
+<h2><a class="anchor" id="getStartRPC_testStatus"></a>
+Test Status</h2>
+<p>Legato RPC has been tested for the following use-cases:</p>
+<ul>
+<li>Linux &lt;--&gt; Linux</li>
+</ul>
+<h1><a class="anchor" id="getStartedRPC_sampleApplication"></a>
+Sample Application</h1>
+<p>To help demonstate the concepts of RPC, a sample application has been provided. <a class="el" href="sampleApps_helloRpc.html">Hello RPC</a></p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

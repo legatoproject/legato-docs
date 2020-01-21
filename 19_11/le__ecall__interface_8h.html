@@ -1,0 +1,2369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_ecall_interface.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.11.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src=""></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Legato Documentation</h2>
+<nav class="secondary">
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#typedef-members">Typedefs</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_ecall_interface.h File Reference</h1> </div>
+</div><div class="contents">
+<div class="textblock"><code>#include "legato.h"</code><br/>
+<code>#include "<a class="el" href="le__mdmDefs__interface_8h_source.html">le_mdmDefs_interface.h</a>"</code><br/>
+<code>#include "<a class="el" href="le__mcc__interface_8h_source.html">le_mcc_interface.h</a>"</code><br/>
+<code>#include "le_ecall_common.h"</code><br/>
+</div>
+<p><a href="le__ecall__interface_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ae5e72936e106717ebb389a45a2e92f9f"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#ae5e72936e106717ebb389a45a2e92f9f">le_ecall_DisconnectHandler_t</a>) (void *)</td></tr>
+<tr class="separator:ae5e72936e106717ebb389a45a2e92f9f"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ab1863bdc62d46e8cf945b3e2fa92f556"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#ab1863bdc62d46e8cf945b3e2fa92f556">le_ecall_ConnectService</a> (void)</td></tr>
+<tr class="separator:ab1863bdc62d46e8cf945b3e2fa92f556"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab546b43bee315c4cfc2d5697cad3cf4b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#ab546b43bee315c4cfc2d5697cad3cf4b">le_ecall_TryConnectService</a> (void)</td></tr>
+<tr class="separator:ab546b43bee315c4cfc2d5697cad3cf4b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac9fbd6d85a41722a409dafc26352cb44"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#ac9fbd6d85a41722a409dafc26352cb44">le_ecall_SetServerDisconnectHandler</a> (<a class="el" href="le__ecall__interface_8h.html#ae5e72936e106717ebb389a45a2e92f9f">le_ecall_DisconnectHandler_t</a> disconnectHandler, void *contextPtr)</td></tr>
+<tr class="separator:ac9fbd6d85a41722a409dafc26352cb44"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3a4b00c07659de15e5e31da7d2703fd9"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a3a4b00c07659de15e5e31da7d2703fd9">le_ecall_DisconnectService</a> (void)</td></tr>
+<tr class="separator:a3a4b00c07659de15e5e31da7d2703fd9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a042d52c84b5b679ab32dd814c5b0be9e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a042d52c84b5b679ab32dd814c5b0be9e">le_ecall_ForceOnlyMode</a> (void)</td></tr>
+<tr class="separator:a042d52c84b5b679ab32dd814c5b0be9e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad468828b0024de378d91ea9c30fd6f3f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#ad468828b0024de378d91ea9c30fd6f3f">le_ecall_ForcePersistentOnlyMode</a> (void)</td></tr>
+<tr class="separator:ad468828b0024de378d91ea9c30fd6f3f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a924114fa7fab10c3f351766a76134f34"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a924114fa7fab10c3f351766a76134f34">le_ecall_ExitOnlyMode</a> (void)</td></tr>
+<tr class="separator:a924114fa7fab10c3f351766a76134f34"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8e245065491b14f46405e415ea17b6b8"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a8e245065491b14f46405e415ea17b6b8">le_ecall_GetConfiguredOperationMode</a> (le_ecall_OpMode_t *opModePtr)</td></tr>
+<tr class="separator:a8e245065491b14f46405e415ea17b6b8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a453b64579f2884f1d26981bca38a201c"><td align="right" class="memItemLeft" valign="top">le_ecall_StateChangeHandlerRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a453b64579f2884f1d26981bca38a201c">le_ecall_AddStateChangeHandler</a> (le_ecall_StateChangeHandlerFunc_t handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:a453b64579f2884f1d26981bca38a201c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa2eb6eb76611d78e27b71426b2160cb1"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#aa2eb6eb76611d78e27b71426b2160cb1">le_ecall_RemoveStateChangeHandler</a> (le_ecall_StateChangeHandlerRef_t handlerRef)</td></tr>
+<tr class="separator:aa2eb6eb76611d78e27b71426b2160cb1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aad7fa3b34d9d72a2f1d4baa681ba25cc"><td align="right" class="memItemLeft" valign="top">le_ecall_CallRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#aad7fa3b34d9d72a2f1d4baa681ba25cc">le_ecall_Create</a> (void)</td></tr>
+<tr class="separator:aad7fa3b34d9d72a2f1d4baa681ba25cc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af1221deb68c46912748f65505b3e4919"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#af1221deb68c46912748f65505b3e4919">le_ecall_Delete</a> (le_ecall_CallRef_t ecallRef)</td></tr>
+<tr class="separator:af1221deb68c46912748f65505b3e4919"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1b492b42490b319fcc228e52f8694307"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a1b492b42490b319fcc228e52f8694307">le_ecall_SetSystemStandard</a> (le_ecall_SystemStandard_t systemStandard)</td></tr>
+<tr class="separator:a1b492b42490b319fcc228e52f8694307"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:abfb468cf1e977e9b2444d13617322331"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#abfb468cf1e977e9b2444d13617322331">le_ecall_GetSystemStandard</a> (le_ecall_SystemStandard_t *systemStandardPtr)</td></tr>
+<tr class="separator:abfb468cf1e977e9b2444d13617322331"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4d698cd7bde3b33e191453d31bc7c9d1"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a4d698cd7bde3b33e191453d31bc7c9d1">le_ecall_SetMsdVersion</a> (uint32_t msdVersion)</td></tr>
+<tr class="separator:a4d698cd7bde3b33e191453d31bc7c9d1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4875975bc3f3c8fb78b43ae40322eedd"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a4875975bc3f3c8fb78b43ae40322eedd">le_ecall_GetMsdVersion</a> (uint32_t *msdVersionPtr)</td></tr>
+<tr class="separator:a4875975bc3f3c8fb78b43ae40322eedd"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a291bd0a938266981a8cb6eb836c45b37"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a291bd0a938266981a8cb6eb836c45b37">le_ecall_SetVehicleType</a> (le_ecall_MsdVehicleType_t vehicleType)</td></tr>
+<tr class="separator:a291bd0a938266981a8cb6eb836c45b37"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab7cdf7de011b9c8edaec790b360dded6"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#ab7cdf7de011b9c8edaec790b360dded6">le_ecall_GetVehicleType</a> (le_ecall_MsdVehicleType_t *vehicleTypePtr)</td></tr>
+<tr class="separator:ab7cdf7de011b9c8edaec790b360dded6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aca95cc7f1d44d3acef601ea97714f748"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#aca95cc7f1d44d3acef601ea97714f748">le_ecall_SetVIN</a> (const char *LE_NONNULL vin)</td></tr>
+<tr class="separator:aca95cc7f1d44d3acef601ea97714f748"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:acc26551a121b769ca0b358a8b6c47694"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#acc26551a121b769ca0b358a8b6c47694">le_ecall_GetVIN</a> (char *vin, size_t vinSize)</td></tr>
+<tr class="separator:acc26551a121b769ca0b358a8b6c47694"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:abb9c569b53f8c35b878c7c9ca159e1df"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#abb9c569b53f8c35b878c7c9ca159e1df">le_ecall_SetPropulsionType</a> (le_ecall_PropulsionTypeBitMask_t propulsionType)</td></tr>
+<tr class="separator:abb9c569b53f8c35b878c7c9ca159e1df"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aea86cec8465c43f4cc71ac3c7879965a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#aea86cec8465c43f4cc71ac3c7879965a">le_ecall_GetPropulsionType</a> (le_ecall_PropulsionTypeBitMask_t *propulsionTypePtr)</td></tr>
+<tr class="separator:aea86cec8465c43f4cc71ac3c7879965a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a00d3dbc99884375cf2487d6640767c40"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a00d3dbc99884375cf2487d6640767c40">le_ecall_SetMsdTxMode</a> (le_ecall_MsdTxMode_t mode)</td></tr>
+<tr class="separator:a00d3dbc99884375cf2487d6640767c40"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4319df67dc451fecb72e4e60ba7b6f6e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a4319df67dc451fecb72e4e60ba7b6f6e">le_ecall_GetMsdTxMode</a> (le_ecall_MsdTxMode_t *modePtr)</td></tr>
+<tr class="separator:a4319df67dc451fecb72e4e60ba7b6f6e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2b56b7b7fd7f936c144d30eba7815908"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a2b56b7b7fd7f936c144d30eba7815908">le_ecall_SetMsdPosition</a> (le_ecall_CallRef_t ecallRef, bool isTrusted, int32_t latitude, int32_t longitude, int32_t direction)</td></tr>
+<tr class="separator:a2b56b7b7fd7f936c144d30eba7815908"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af3cfea09eea1b1ba39648798070ad139"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#af3cfea09eea1b1ba39648798070ad139">le_ecall_SetMsdPositionN1</a> (le_ecall_CallRef_t ecallRef, int32_t latitudeDeltaN1, int32_t longitudeDeltaN1)</td></tr>
+<tr class="separator:af3cfea09eea1b1ba39648798070ad139"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6b25b9b242ba114f31ae2f853070bf11"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a6b25b9b242ba114f31ae2f853070bf11">le_ecall_SetMsdPositionN2</a> (le_ecall_CallRef_t ecallRef, int32_t latitudeDeltaN2, int32_t longitudeDeltaN2)</td></tr>
+<tr class="separator:a6b25b9b242ba114f31ae2f853070bf11"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8c009bb03d61dcd0ffbd9e986b692a85"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a8c009bb03d61dcd0ffbd9e986b692a85">le_ecall_SetMsdPassengersCount</a> (le_ecall_CallRef_t ecallRef, uint32_t paxCount)</td></tr>
+<tr class="separator:a8c009bb03d61dcd0ffbd9e986b692a85"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7d8d8c1e1f49af2f6145836975d20aeb"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a7d8d8c1e1f49af2f6145836975d20aeb">le_ecall_ImportMsd</a> (le_ecall_CallRef_t ecallRef, const uint8_t *msdPtr, size_t msdSize)</td></tr>
+<tr class="separator:a7d8d8c1e1f49af2f6145836975d20aeb"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:adc9610dae7a6ba87c064f8dd271a57b4"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#adc9610dae7a6ba87c064f8dd271a57b4">le_ecall_ExportMsd</a> (le_ecall_CallRef_t ecallRef, uint8_t *msdPtr, size_t *msdSizePtr)</td></tr>
+<tr class="separator:adc9610dae7a6ba87c064f8dd271a57b4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a344e4c29208e576e81dda113f786529e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a344e4c29208e576e81dda113f786529e">le_ecall_SendMsd</a> (le_ecall_CallRef_t ecallRef)</td></tr>
+<tr class="separator:a344e4c29208e576e81dda113f786529e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa25256eeacefcf00c14763ef294c7667"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#aa25256eeacefcf00c14763ef294c7667">le_ecall_StartAutomatic</a> (le_ecall_CallRef_t ecallRef)</td></tr>
+<tr class="separator:aa25256eeacefcf00c14763ef294c7667"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab106c3ca87fc8dd8239d2849df932122"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#ab106c3ca87fc8dd8239d2849df932122">le_ecall_StartManual</a> (le_ecall_CallRef_t ecallRef)</td></tr>
+<tr class="separator:ab106c3ca87fc8dd8239d2849df932122"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa5d23a1bea370b1ae29fc52d7a89d947"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#aa5d23a1bea370b1ae29fc52d7a89d947">le_ecall_StartTest</a> (le_ecall_CallRef_t ecallRef)</td></tr>
+<tr class="separator:aa5d23a1bea370b1ae29fc52d7a89d947"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a85800c86f9709fb7baa7219cc762181c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a85800c86f9709fb7baa7219cc762181c">le_ecall_End</a> (le_ecall_CallRef_t ecallRef)</td></tr>
+<tr class="separator:a85800c86f9709fb7baa7219cc762181c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7881e794b9249222edde10f76d7663c9"><td align="right" class="memItemLeft" valign="top">le_ecall_State_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a7881e794b9249222edde10f76d7663c9">le_ecall_GetState</a> (le_ecall_CallRef_t ecallRef)</td></tr>
+<tr class="separator:a7881e794b9249222edde10f76d7663c9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:abf9c09914c55cdbe72df1433f60f6e51"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#abf9c09914c55cdbe72df1433f60f6e51">le_ecall_SetPsapNumber</a> (const char *LE_NONNULL psap)</td></tr>
+<tr class="separator:abf9c09914c55cdbe72df1433f60f6e51"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a959c53f03bb85f1071fcf7cb58e3067e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a959c53f03bb85f1071fcf7cb58e3067e">le_ecall_GetPsapNumber</a> (char *psap, size_t psapSize)</td></tr>
+<tr class="separator:a959c53f03bb85f1071fcf7cb58e3067e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a034c442fd7c6650ed956822a561c0104"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a034c442fd7c6650ed956822a561c0104">le_ecall_UseUSimNumbers</a> (void)</td></tr>
+<tr class="separator:a034c442fd7c6650ed956822a561c0104"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a66e454e84db7d337d76bc867b57891a1"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a66e454e84db7d337d76bc867b57891a1">le_ecall_SetNadDeregistrationTime</a> (uint16_t deregTime)</td></tr>
+<tr class="separator:a66e454e84db7d337d76bc867b57891a1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0f24b673049d51baf132ace25e2fa161"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a0f24b673049d51baf132ace25e2fa161">le_ecall_GetNadDeregistrationTime</a> (uint16_t *deregTimePtr)</td></tr>
+<tr class="separator:a0f24b673049d51baf132ace25e2fa161"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af90a8602d4b1d0cacaa3971c508dd188"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#af90a8602d4b1d0cacaa3971c508dd188">le_ecall_SetIntervalBetweenDialAttempts</a> (uint16_t pause)</td></tr>
+<tr class="separator:af90a8602d4b1d0cacaa3971c508dd188"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3a24ae5a007d0c43db2bc55caa43c19d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a3a24ae5a007d0c43db2bc55caa43c19d">le_ecall_GetIntervalBetweenDialAttempts</a> (uint16_t *pausePtr)</td></tr>
+<tr class="separator:a3a24ae5a007d0c43db2bc55caa43c19d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a15127a7b0500796257795aaf64acd1e2"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a15127a7b0500796257795aaf64acd1e2">le_ecall_SetEraGlonassManualDialAttempts</a> (uint16_t attempts)</td></tr>
+<tr class="separator:a15127a7b0500796257795aaf64acd1e2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a836aaf195c0648d41f4a13f8c7ced736"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a836aaf195c0648d41f4a13f8c7ced736">le_ecall_SetEraGlonassAutoDialAttempts</a> (uint16_t attempts)</td></tr>
+<tr class="separator:a836aaf195c0648d41f4a13f8c7ced736"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6c934a9e5aad11eb6f009a6bf34fca19"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a6c934a9e5aad11eb6f009a6bf34fca19">le_ecall_SetEraGlonassDialDuration</a> (uint16_t duration)</td></tr>
+<tr class="separator:a6c934a9e5aad11eb6f009a6bf34fca19"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a766335710ff6df5ad505a364b2166256"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a766335710ff6df5ad505a364b2166256">le_ecall_SetEraGlonassFallbackTime</a> (uint16_t duration)</td></tr>
+<tr class="separator:a766335710ff6df5ad505a364b2166256"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:adadc9139b30fa22966c1db433fcd6890"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#adadc9139b30fa22966c1db433fcd6890">le_ecall_SetEraGlonassAutoAnswerTime</a> (uint16_t autoAnswerTime)</td></tr>
+<tr class="separator:adadc9139b30fa22966c1db433fcd6890"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4bae312dbda82a777eee2c29ca002fcd"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a4bae312dbda82a777eee2c29ca002fcd">le_ecall_SetEraGlonassMSDMaxTransmissionTime</a> (uint16_t msdMaxTransTime)</td></tr>
+<tr class="separator:a4bae312dbda82a777eee2c29ca002fcd"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a184d79d22654450606130bb84b6907b1"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a184d79d22654450606130bb84b6907b1">le_ecall_SetEraGlonassPostTestRegistrationTime</a> (uint16_t postTestRegTime)</td></tr>
+<tr class="separator:a184d79d22654450606130bb84b6907b1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a579169dbcb91369caa156d2c0e3462c1"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a579169dbcb91369caa156d2c0e3462c1">le_ecall_GetEraGlonassManualDialAttempts</a> (uint16_t *attemptsPtr)</td></tr>
+<tr class="separator:a579169dbcb91369caa156d2c0e3462c1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af8beed56bd3be9bee8a771e05c498ac8"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#af8beed56bd3be9bee8a771e05c498ac8">le_ecall_GetEraGlonassAutoDialAttempts</a> (uint16_t *attemptsPtr)</td></tr>
+<tr class="separator:af8beed56bd3be9bee8a771e05c498ac8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:afeb92d26dd8a2c092e96b07f3dc0391d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#afeb92d26dd8a2c092e96b07f3dc0391d">le_ecall_GetEraGlonassDialDuration</a> (uint16_t *durationPtr)</td></tr>
+<tr class="separator:afeb92d26dd8a2c092e96b07f3dc0391d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab9407c8d384161c4682c64a693489f6d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#ab9407c8d384161c4682c64a693489f6d">le_ecall_GetEraGlonassFallbackTime</a> (uint16_t *durationPtr)</td></tr>
+<tr class="separator:ab9407c8d384161c4682c64a693489f6d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0a50ac779e302ecf93de0e157f4d28f4"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a0a50ac779e302ecf93de0e157f4d28f4">le_ecall_GetEraGlonassAutoAnswerTime</a> (uint16_t *autoAnswerTimePtr)</td></tr>
+<tr class="separator:a0a50ac779e302ecf93de0e157f4d28f4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a71ed86be46e4a394ff2e49d2e3b5346f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a71ed86be46e4a394ff2e49d2e3b5346f">le_ecall_GetEraGlonassMSDMaxTransmissionTime</a> (uint16_t *msdMaxTransTimePtr)</td></tr>
+<tr class="separator:a71ed86be46e4a394ff2e49d2e3b5346f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aaaba61357cfe615e90246c16f710a804"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#aaaba61357cfe615e90246c16f710a804">le_ecall_GetEraGlonassPostTestRegistrationTime</a> (uint16_t *postTestRegTimePtr)</td></tr>
+<tr class="separator:aaaba61357cfe615e90246c16f710a804"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a577f3dcd16e53c8a14295ec58c6d2b9a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a577f3dcd16e53c8a14295ec58c6d2b9a">le_ecall_SetMsdEraGlonassCrashSeverity</a> (le_ecall_CallRef_t ecallRef, uint32_t crashSeverity)</td></tr>
+<tr class="separator:a577f3dcd16e53c8a14295ec58c6d2b9a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:addb2874aacaffba2731354c4ac9428bf"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#addb2874aacaffba2731354c4ac9428bf">le_ecall_ResetMsdEraGlonassCrashSeverity</a> (le_ecall_CallRef_t ecallRef)</td></tr>
+<tr class="separator:addb2874aacaffba2731354c4ac9428bf"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a51ad61edf379cfe07f03fbd71b56df9d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a51ad61edf379cfe07f03fbd71b56df9d">le_ecall_SetMsdEraGlonassDiagnosticResult</a> (le_ecall_CallRef_t ecallRef, le_ecall_DiagnosticResultBitMask_t diagnosticResultMask)</td></tr>
+<tr class="separator:a51ad61edf379cfe07f03fbd71b56df9d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad3e06b90843a480d68dc99ead29ae8d0"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#ad3e06b90843a480d68dc99ead29ae8d0">le_ecall_ResetMsdEraGlonassDiagnosticResult</a> (le_ecall_CallRef_t ecallRef)</td></tr>
+<tr class="separator:ad3e06b90843a480d68dc99ead29ae8d0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a08c613df57d34eb2a1309738bced5d76"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a08c613df57d34eb2a1309738bced5d76">le_ecall_SetMsdEraGlonassCrashInfo</a> (le_ecall_CallRef_t ecallRef, le_ecall_CrashInfoBitMask_t crashInfoMask)</td></tr>
+<tr class="separator:a08c613df57d34eb2a1309738bced5d76"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab883aa41416ada9746acfbb75a0039a8"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#ab883aa41416ada9746acfbb75a0039a8">le_ecall_ResetMsdEraGlonassCrashInfo</a> (le_ecall_CallRef_t ecallRef)</td></tr>
+<tr class="separator:ab883aa41416ada9746acfbb75a0039a8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aba15bc78d2e03b5bf8c16ee366fb39b9"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#aba15bc78d2e03b5bf8c16ee366fb39b9">le_ecall_SetMsdEraGlonassCoordinateSystemType</a> (le_ecall_CallRef_t ecallRef, le_ecall_MsdCoordinateType_t coordinateSystemType)</td></tr>
+<tr class="separator:aba15bc78d2e03b5bf8c16ee366fb39b9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7ca8cd2cfbf76310d1e65d34dfc3b220"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a7ca8cd2cfbf76310d1e65d34dfc3b220">le_ecall_ResetMsdEraGlonassCoordinateSystemType</a> (le_ecall_CallRef_t ecallRef)</td></tr>
+<tr class="separator:a7ca8cd2cfbf76310d1e65d34dfc3b220"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a771b2ef399a8fbf3b80c4eb11152c06a"><td align="right" class="memItemLeft" valign="top">le_mcc_TerminationReason_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a771b2ef399a8fbf3b80c4eb11152c06a">le_ecall_GetTerminationReason</a> (le_ecall_CallRef_t ecallRef)</td></tr>
+<tr class="separator:a771b2ef399a8fbf3b80c4eb11152c06a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8ffb7fb207537ea4574823285ebb6ca1"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a8ffb7fb207537ea4574823285ebb6ca1">le_ecall_GetPlatformSpecificTerminationCode</a> (le_ecall_CallRef_t ecallRef)</td></tr>
+<tr class="separator:a8ffb7fb207537ea4574823285ebb6ca1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6a11608c7146d2178634cea59ce90831"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__ecall__interface_8h.html#a6a11608c7146d2178634cea59ce90831">le_ecall_TerminateRegistration</a> (void)</td></tr>
+<tr class="separator:a6a11608c7146d2178634cea59ce90831"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato <a class="el" href="c_ecall.html">eCall</a> include file.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="ae5e72936e106717ebb389a45a2e92f9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5e72936e106717ebb389a45a2e92f9f">◆ </a></span>le_ecall_DisconnectHandler_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_ecall_DisconnectHandler_t) (void *)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Type for handler called when a server disconnects. </p>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a453b64579f2884f1d26981bca38a201c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a453b64579f2884f1d26981bca38a201c">◆ </a></span>le_ecall_AddStateChangeHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_ecall_StateChangeHandlerRef_t le_ecall_AddStateChangeHandler </td>
+<td>(</td>
+<td class="paramtype">le_ecall_StateChangeHandlerFunc_t </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Add handler function for EVENT 'le_ecall_StateChange'</p>
+<p>This event provides information on eCall state changes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ab1863bdc62d46e8cf945b3e2fa92f556"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1863bdc62d46e8cf945b3e2fa92f556">◆ </a></span>le_ecall_ConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_ecall_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="aad7fa3b34d9d72a2f1d4baa681ba25cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad7fa3b34d9d72a2f1d4baa681ba25cc">◆ </a></span>le_ecall_Create()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_ecall_CallRef_t le_ecall_Create </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Create a new eCall object</p>
+<p>The eCall is not actually established at this point. It's still up to the caller to call le_ecall_Start() when ready.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>A reference to the new Call object.</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>On failure, the process exits; you don't have to worry about checking the returned reference for validity. </dd></dl>
+</div>
+</div>
+<a id="af1221deb68c46912748f65505b3e4919"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1221deb68c46912748f65505b3e4919">◆ </a></span>le_ecall_Delete()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_ecall_Delete </td>
+<td>(</td>
+<td class="paramtype">le_ecall_CallRef_t </td>
+<td class="paramname"><em>ecallRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Call to free up a call reference.</p>
+<dl class="section note"><dt>Note</dt><dd>This will free the reference, but not necessarily stop an active eCall. If there are other holders of this reference the eCall will remain active. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ecallRef</td><td>eCall reference </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a3a4b00c07659de15e5e31da7d2703fd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a4b00c07659de15e5e31da7d2703fd9">◆ </a></span>le_ecall_DisconnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_ecall_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="a85800c86f9709fb7baa7219cc762181c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85800c86f9709fb7baa7219cc762181c">◆ </a></span>le_ecall_End()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_End </td>
+<td>(</td>
+<td class="paramtype">le_ecall_CallRef_t </td>
+<td class="paramname"><em>ecallRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>End the current eCall session</p>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>During an automatic eCall session, it is not possible to end the ongoing session until LE_ECALL_STATE_STOPPED event is notified.</li>
+<li>For manual session, it is possible to end the ongoing session if the eCall is not connected (LE_ECALL_STATE_CONNECTED not yet received) and after LE_ECALL_STATE_STOPPED event is notified.</li>
+<li>Using this API doesn't affect the NAD deregistration mechanism. However, it disables the call auto answer function if already running.</li>
+</ul>
+</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_BAD_PARAMETER bad eCall reference</li>
+<li>LE_FAULT for other failures</li>
+<li>LE_UNSUPPORTED Not supported on this platform </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ecallRef</td><td>eCall reference </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a924114fa7fab10c3f351766a76134f34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a924114fa7fab10c3f351766a76134f34">◆ </a></span>le_ecall_ExitOnlyMode()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_ExitOnlyMode </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function exits from eCall Only mode. It configures the eCall operation mode to Normal mode, the modem uses the default operation mode at power up (or after U/SIM hotswap). The modem behaves following the U/SIM eCall operation mode; for example the U/SIM can be configured only for eCall, or a combination of eCall and commercial service provision.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT for other failures</li>
+<li>LE_UNSUPPORTED Not supported on this platform </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a id="adc9610dae7a6ba87c064f8dd271a57b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc9610dae7a6ba87c064f8dd271a57b4">◆ </a></span>le_ecall_ExportMsd()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_ExportMsd </td>
+<td>(</td>
+<td class="paramtype">le_ecall_CallRef_t </td>
+<td class="paramname"><em>ecallRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>msdPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>msdSizePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Export the encoded MSD.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_OVERFLOW The encoded MSD length exceeds the user's buffer length.</li>
+<li>LE_NOT_FOUND No encoded MSD is available.</li>
+<li>LE_BAD_PARAMETER bad eCall reference.</li>
+<li>LE_FAULT for other failures.</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ecallRef</td><td>eCall reference </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">msdPtr</td><td>the encoded MSD </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">msdSizePtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a042d52c84b5b679ab32dd814c5b0be9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a042d52c84b5b679ab32dd814c5b0be9e">◆ </a></span>le_ecall_ForceOnlyMode()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_ForceOnlyMode </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference returned by Create function and used by other functions Configured operation modes. Configure which standard to follow for the eCall, either PAN European eCall or ERA GLONASS. eCall session states. eCall MSD transmission mode. eCall MSD vehicle type Propulsion type Bit Mask Diagnostic result Bit Mask (64 bits) Crash information Bit Mask (16 bits) indicating the type of road accident. eCall MSD coordinate system type Handler for eCall state changes. Reference type used by Add/Remove functions for EVENT 'le_ecall_StateChange' This function configures the eCall operation mode to eCall only, only emergency number can be used to start an eCall session. The modem doesn't try to register on the Cellular network. This function forces the modem to behave as eCall only mode whatever U/SIM operation mode. The change doesn't persist over power cycles. This function can be called before making an eCall.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT for other failures</li>
+<li>LE_UNSUPPORTED Not supported on this platform </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a id="ad468828b0024de378d91ea9c30fd6f3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad468828b0024de378d91ea9c30fd6f3f">◆ </a></span>le_ecall_ForcePersistentOnlyMode()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_ForcePersistentOnlyMode </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Same as <a class="el" href="le__ecall__interface_8h.html#a042d52c84b5b679ab32dd814c5b0be9e">le_ecall_ForceOnlyMode()</a>, but the change persists over power cycles.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT for other failures</li>
+<li>LE_UNSUPPORTED Not supported on this platform </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a id="a8e245065491b14f46405e415ea17b6b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e245065491b14f46405e415ea17b6b8">◆ </a></span>le_ecall_GetConfiguredOperationMode()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_GetConfiguredOperationMode </td>
+<td>(</td>
+<td class="paramtype">le_ecall_OpMode_t * </td>
+<td class="paramname"><em>opModePtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the configured Operation mode.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT for other failures</li>
+<li>LE_UNSUPPORTED Not supported on this platform</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">opModePtr</td><td>Operation mode </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a0a50ac779e302ecf93de0e157f4d28f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a50ac779e302ecf93de0e157f4d28f4">◆ </a></span>le_ecall_GetEraGlonassAutoAnswerTime()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_GetEraGlonassAutoAnswerTime </td>
+<td>(</td>
+<td class="paramtype">uint16_t * </td>
+<td class="paramname"><em>autoAnswerTimePtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the ECALL_AUTO_ANSWER_TIME time.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT on execution failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">autoAnswerTimePtr</td><td>The ECALL_AUTO_ANSWER_TIME time value (in minutes) </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="af8beed56bd3be9bee8a771e05c498ac8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8beed56bd3be9bee8a771e05c498ac8">◆ </a></span>le_ecall_GetEraGlonassAutoDialAttempts()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_GetEraGlonassAutoDialAttempts </td>
+<td>(</td>
+<td class="paramtype">uint16_t * </td>
+<td class="paramname"><em>attemptsPtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the ECALL_AUTO_DIAL_ATTEMPTS value.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT on failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">attemptsPtr</td><td>the ECALL_AUTO_DIAL_ATTEMPTS value </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="afeb92d26dd8a2c092e96b07f3dc0391d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afeb92d26dd8a2c092e96b07f3dc0391d">◆ </a></span>le_ecall_GetEraGlonassDialDuration()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_GetEraGlonassDialDuration </td>
+<td>(</td>
+<td class="paramtype">uint16_t * </td>
+<td class="paramname"><em>durationPtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the ECALL_DIAL_DURATION time.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT on failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">durationPtr</td><td>the ECALL_DIAL_DURATION time value (in seconds) </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ab9407c8d384161c4682c64a693489f6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9407c8d384161c4682c64a693489f6d">◆ </a></span>le_ecall_GetEraGlonassFallbackTime()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_GetEraGlonassFallbackTime </td>
+<td>(</td>
+<td class="paramtype">uint16_t * </td>
+<td class="paramname"><em>durationPtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the ECALL_CCFT time.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT on failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">durationPtr</td><td>the ECALL_CCFT time value (in minutes) </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a579169dbcb91369caa156d2c0e3462c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a579169dbcb91369caa156d2c0e3462c1">◆ </a></span>le_ecall_GetEraGlonassManualDialAttempts()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_GetEraGlonassManualDialAttempts </td>
+<td>(</td>
+<td class="paramtype">uint16_t * </td>
+<td class="paramname"><em>attemptsPtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the ECALL_MANUAL_DIAL_ATTEMPTS value.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT on failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">attemptsPtr</td><td>the ECALL_MANUAL_DIAL_ATTEMPTS value </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a71ed86be46e4a394ff2e49d2e3b5346f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71ed86be46e4a394ff2e49d2e3b5346f">◆ </a></span>le_ecall_GetEraGlonassMSDMaxTransmissionTime()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_GetEraGlonassMSDMaxTransmissionTime </td>
+<td>(</td>
+<td class="paramtype">uint16_t * </td>
+<td class="paramname"><em>msdMaxTransTimePtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the ECALL_MSD_MAX_TRANSMISSION_TIME time.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT on failure</li>
+<li>LE_UNSUPPORTED if the function is not supported by the target </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">msdMaxTransTimePtr</td><td>The ECALL_MSD_MAX_TRANSMISSION_TIME time value (in seconds) </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aaaba61357cfe615e90246c16f710a804"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaba61357cfe615e90246c16f710a804">◆ </a></span>le_ecall_GetEraGlonassPostTestRegistrationTime()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_GetEraGlonassPostTestRegistrationTime </td>
+<td>(</td>
+<td class="paramtype">uint16_t * </td>
+<td class="paramname"><em>postTestRegTimePtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the ERA-GLONASS ECALL_POST_TEST_REGISTRATION_TIME time.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT on failure</li>
+<li>LE_UNSUPPORTED if the function is not supported by the target </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">postTestRegTimePtr</td><td>The ECALL_POST_TEST_REGISTRATION_TIME time value (in seconds). </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a3a24ae5a007d0c43db2bc55caa43c19d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a24ae5a007d0c43db2bc55caa43c19d">◆ </a></span>le_ecall_GetIntervalBetweenDialAttempts()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_GetIntervalBetweenDialAttempts </td>
+<td>(</td>
+<td class="paramtype">uint16_t * </td>
+<td class="paramname"><em>pausePtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the minimum interval value between dial attempts.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT for other failures </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">pausePtr</td><td>the minimum interval value in seconds </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a4319df67dc451fecb72e4e60ba7b6f6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4319df67dc451fecb72e4e60ba7b6f6e">◆ </a></span>le_ecall_GetMsdTxMode()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_GetMsdTxMode </td>
+<td>(</td>
+<td class="paramtype">le_ecall_MsdTxMode_t * </td>
+<td class="paramname"><em>modePtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the push/pull transmission mode.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT for other failures</li>
+<li>LE_UNSUPPORTED Not supported on this platform</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">modePtr</td><td>Transmission mode </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a4875975bc3f3c8fb78b43ae40322eedd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4875975bc3f3c8fb78b43ae40322eedd">◆ </a></span>le_ecall_GetMsdVersion()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_GetMsdVersion </td>
+<td>(</td>
+<td class="paramtype">uint32_t * </td>
+<td class="paramname"><em>msdVersionPtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the MSD version.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT for other failures</li>
+<li>LE_BAD_PARAMETER parameter is NULL </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">msdVersionPtr</td><td>Msd version </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a0f24b673049d51baf132ace25e2fa161"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f24b673049d51baf132ace25e2fa161">◆ </a></span>le_ecall_GetNadDeregistrationTime()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_GetNadDeregistrationTime </td>
+<td>(</td>
+<td class="paramtype">uint16_t * </td>
+<td class="paramname"><em>deregTimePtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the NAD (network access device) deregistration time value.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT on failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">deregTimePtr</td><td>the NAD (network access device) deregistration time value </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a8ffb7fb207537ea4574823285ebb6ca1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ffb7fb207537ea4574823285ebb6ca1">◆ </a></span>le_ecall_GetPlatformSpecificTerminationCode()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">int32_t le_ecall_GetPlatformSpecificTerminationCode </td>
+<td>(</td>
+<td class="paramtype">le_ecall_CallRef_t </td>
+<td class="paramname"><em>ecallRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Called to get the platform specific termination code.</p>
+<dl class="section return"><dt>Returns</dt><dd>The platform specific termination code.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ecallRef</td><td>eCall reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aea86cec8465c43f4cc71ac3c7879965a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea86cec8465c43f4cc71ac3c7879965a">◆ </a></span>le_ecall_GetPropulsionType()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_GetPropulsionType </td>
+<td>(</td>
+<td class="paramtype">le_ecall_PropulsionTypeBitMask_t * </td>
+<td class="paramname"><em>propulsionTypePtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the propulsion stored. Note that a vehicle may have more than one propulsion type.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_NOT_FOUND if the value is not set.</li>
+<li>LE_FAULT for other failures</li>
+<li>LE_BAD_PARAMETER parameter is NULL </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">propulsionTypePtr</td><td>bitmask </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a959c53f03bb85f1071fcf7cb58e3067e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a959c53f03bb85f1071fcf7cb58e3067e">◆ </a></span>le_ecall_GetPsapNumber()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_GetPsapNumber </td>
+<td>(</td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>psap</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>psapSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the Public Safely Answering Point telephone number set with <a class="el" href="le__ecall__interface_8h.html#abf9c09914c55cdbe72df1433f60f6e51">le_ecall_SetPsapNumber()</a> function.</p>
+<dl class="section note"><dt>Note</dt><dd>That PSAP number is not applied to Manually or Automatically initiated eCall. For those modes, an emergency call is launched.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>This function doesn't read the U/SIM content.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_FAULT On failures or if <a class="el" href="le__ecall__interface_8h.html#abf9c09914c55cdbe72df1433f60f6e51">le_ecall_SetPsapNumber()</a> has never been called before</li>
+<li>- LE_OVERFLOW Retrieved PSAP number is too long for the out parameter</li>
+<li>LE_UNSUPPORTED Not supported on this platform</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the passed PSAP pointer is NULL, a fatal error is raised and the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">psap</td><td>Public Safely Answering Point telephone number </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">psapSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a7881e794b9249222edde10f76d7663c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7881e794b9249222edde10f76d7663c9">◆ </a></span>le_ecall_GetState()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_ecall_State_t le_ecall_GetState </td>
+<td>(</td>
+<td class="paramtype">le_ecall_CallRef_t </td>
+<td class="paramname"><em>ecallRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the current state for the given eCall</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>The current state for the given eCall</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid eCall reference is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ecallRef</td><td>eCall reference </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="abfb468cf1e977e9b2444d13617322331"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfb468cf1e977e9b2444d13617322331">◆ </a></span>le_ecall_GetSystemStandard()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_GetSystemStandard </td>
+<td>(</td>
+<td class="paramtype">le_ecall_SystemStandard_t * </td>
+<td class="paramname"><em>systemStandardPtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the system standard.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT for other failures</li>
+<li>LE_BAD_PARAMETER parameter is NULL </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">systemStandardPtr</td><td>System Standard </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a771b2ef399a8fbf3b80c4eb11152c06a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a771b2ef399a8fbf3b80c4eb11152c06a">◆ </a></span>le_ecall_GetTerminationReason()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_mcc_TerminationReason_t le_ecall_GetTerminationReason </td>
+<td>(</td>
+<td class="paramtype">le_ecall_CallRef_t </td>
+<td class="paramname"><em>ecallRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Called to get the termination reason.</p>
+<dl class="section return"><dt>Returns</dt><dd>The termination reason.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ecallRef</td><td>eCall reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ab7cdf7de011b9c8edaec790b360dded6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7cdf7de011b9c8edaec790b360dded6">◆ </a></span>le_ecall_GetVehicleType()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_GetVehicleType </td>
+<td>(</td>
+<td class="paramtype">le_ecall_MsdVehicleType_t * </td>
+<td class="paramname"><em>vehicleTypePtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the Vehicled Type.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_BAD_PARAMETER parameter is NULL</li>
+<li>LE_FAULT for other failures </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">vehicleTypePtr</td><td>Vehicle type </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="acc26551a121b769ca0b358a8b6c47694"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc26551a121b769ca0b358a8b6c47694">◆ </a></span>le_ecall_GetVIN()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_GetVIN </td>
+<td>(</td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>vin</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>vinSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the VIN (Vehicle Identification Number).</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_NOT_FOUND if the value is not set.</li>
+<li>LE_BAD_PARAMETER parameter is NULL or to small</li>
+<li>LE_FAULT for other failures </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">vin</td><td>VIN is gotten with a null termination. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">vinSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a7d8d8c1e1f49af2f6145836975d20aeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d8d8c1e1f49af2f6145836975d20aeb">◆ </a></span>le_ecall_ImportMsd()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_ImportMsd </td>
+<td>(</td>
+<td class="paramtype">le_ecall_CallRef_t </td>
+<td class="paramname"><em>ecallRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>msdPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>msdSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Import an already prepared MSD.</p>
+<p>MSD is transmitted only after an emergency call has been established.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_OVERFLOW The imported MSD length exceeds the MSD_MAX_LEN maximum length.</li>
+<li>LE_BAD_PARAMETER bad eCall reference</li>
+<li>LE_FAULT for other failures</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>On failure, the process exits; you don't have to worry about checking the returned reference for validity. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ecallRef</td><td>eCall reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">msdPtr</td><td>the prepared MSD </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">msdSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aa2eb6eb76611d78e27b71426b2160cb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2eb6eb76611d78e27b71426b2160cb1">◆ </a></span>le_ecall_RemoveStateChangeHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_ecall_RemoveStateChangeHandler </td>
+<td>(</td>
+<td class="paramtype">le_ecall_StateChangeHandlerRef_t </td>
+<td class="paramname"><em>handlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove handler function for EVENT 'le_ecall_StateChange' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a7ca8cd2cfbf76310d1e65d34dfc3b220"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ca8cd2cfbf76310d1e65d34dfc3b220">◆ </a></span>le_ecall_ResetMsdEraGlonassCoordinateSystemType()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_ResetMsdEraGlonassCoordinateSystemType </td>
+<td>(</td>
+<td class="paramtype">le_ecall_CallRef_t </td>
+<td class="paramname"><em>ecallRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reset the ERA-GLONASS coordinate system type. Therefore that optional parameter is not included in the MSD message.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_DUPLICATE an MSD has been already imported</li>
+<li>LE_BAD_PARAMETER bad eCall reference</li>
+<li>LE_FAULT on other failures </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ecallRef</td><td>eCall reference </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ab883aa41416ada9746acfbb75a0039a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab883aa41416ada9746acfbb75a0039a8">◆ </a></span>le_ecall_ResetMsdEraGlonassCrashInfo()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_ResetMsdEraGlonassCrashInfo </td>
+<td>(</td>
+<td class="paramtype">le_ecall_CallRef_t </td>
+<td class="paramname"><em>ecallRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reset the ERA-GLONASS crash type bit mask. Optional parameter is not included in the MSD message.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_DUPLICATE an MSD has been already imported</li>
+<li>LE_BAD_PARAMETER bad eCall reference</li>
+<li>LE_FAULT on other failures </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ecallRef</td><td>eCall reference </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="addb2874aacaffba2731354c4ac9428bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addb2874aacaffba2731354c4ac9428bf">◆ </a></span>le_ecall_ResetMsdEraGlonassCrashSeverity()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_ResetMsdEraGlonassCrashSeverity </td>
+<td>(</td>
+<td class="paramtype">le_ecall_CallRef_t </td>
+<td class="paramname"><em>ecallRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reset the ERA-GLONASS crash severity parameter. Therefore that optional parameter is not included in the MSD message.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_DUPLICATE an MSD has been already imported</li>
+<li>LE_BAD_PARAMETER bad eCall reference</li>
+<li>LE_FAULT on other failures </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ecallRef</td><td>eCall reference </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ad3e06b90843a480d68dc99ead29ae8d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3e06b90843a480d68dc99ead29ae8d0">◆ </a></span>le_ecall_ResetMsdEraGlonassDiagnosticResult()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_ResetMsdEraGlonassDiagnosticResult </td>
+<td>(</td>
+<td class="paramtype">le_ecall_CallRef_t </td>
+<td class="paramname"><em>ecallRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reset the ERA-GLONASS diagnostic result bit mask. Optional parameter is not included in the MSD message.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_DUPLICATE an MSD has been already imported</li>
+<li>LE_BAD_PARAMETER bad eCall reference</li>
+<li>LE_FAULT on other failures </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ecallRef</td><td>eCall reference </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a344e4c29208e576e81dda113f786529e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a344e4c29208e576e81dda113f786529e">◆ </a></span>le_ecall_SendMsd()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SendMsd </td>
+<td>(</td>
+<td class="paramtype">le_ecall_CallRef_t </td>
+<td class="paramname"><em>ecallRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Send the MSD.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_BAD_PARAMETER bad eCall reference</li>
+<li>LE_FAULT for other failures</li>
+<li>LE_UNSUPPORTED Not supported on this platform</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>On failure, the process exits, so you don't have to worry about checking the returned reference for validity. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ecallRef</td><td>eCall reference </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="adadc9139b30fa22966c1db433fcd6890"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adadc9139b30fa22966c1db433fcd6890">◆ </a></span>le_ecall_SetEraGlonassAutoAnswerTime()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetEraGlonassAutoAnswerTime </td>
+<td>(</td>
+<td class="paramtype">uint16_t </td>
+<td class="paramname"><em>autoAnswerTime</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the ECALL_AUTO_ANSWER_TIME time, the time interval wherein IVDS responds to incoming calls automatically after emergency call completion.</p>
+<dl class="section note"><dt>Note</dt><dd>Default value of auto answer time is 20 minutes. Maximum value is 720 minutes.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT on failure</li>
+<li>LE_UNSUPPORTED if the function is not supported by the target </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">autoAnswerTime</td><td>The ECALL_AUTO_ANSWER_TIME time value (in minutes) </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a836aaf195c0648d41f4a13f8c7ced736"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a836aaf195c0648d41f4a13f8c7ced736">◆ </a></span>le_ecall_SetEraGlonassAutoDialAttempts()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetEraGlonassAutoDialAttempts </td>
+<td>(</td>
+<td class="paramtype">uint16_t </td>
+<td class="paramname"><em>attempts</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the ECALL_AUTO_DIAL_ATTEMPTS value. If a dial attempt under automatic emergency call initiation failed, it should be repeated maximally ECALL_AUTO_DIAL_ATTEMPTS-1 times within the maximal time limit of ECALL_DIAL_DURATION. The default value is 10. Redial attempts stop once the call has been cleared down correctly, or if counter/timer reached their limits.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT on failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">attempts</td><td>the ECALL_AUTO_DIAL_ATTEMPTS value </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a6c934a9e5aad11eb6f009a6bf34fca19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c934a9e5aad11eb6f009a6bf34fca19">◆ </a></span>le_ecall_SetEraGlonassDialDuration()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetEraGlonassDialDuration </td>
+<td>(</td>
+<td class="paramtype">uint16_t </td>
+<td class="paramname"><em>duration</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the ECALL_DIAL_DURATION time. It's the maximum time the IVS have to connect the emergency call to the PSAP, including all redial attempts. If the call is not connected within this time (or ManualDialAttempts/AutoDialAttempts dial attempts), it will stop.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT on failure</li>
+<li>LE_UNSUPPORTED if the function is not supported by the target </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">duration</td><td>the ECALL_DIAL_DURATION time value (in seconds) </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a766335710ff6df5ad505a364b2166256"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a766335710ff6df5ad505a364b2166256">◆ </a></span>le_ecall_SetEraGlonassFallbackTime()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetEraGlonassFallbackTime </td>
+<td>(</td>
+<td class="paramtype">uint16_t </td>
+<td class="paramname"><em>duration</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the ECALL_CCFT time. It's the maximum delay before initiating an an automatic call termination. When the delay is reached and IVS NAD didn't receive a call clear-down indication then the call is immediatly terminated.</p>
+<dl class="section note"><dt>Note</dt><dd>Allowed range of values is 1 to 720 minutes.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT on failure</li>
+<li>LE_UNSUPPORTED if the function is not supported by the target </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">duration</td><td>the ECALL_CCFT time value (in minutes) </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a15127a7b0500796257795aaf64acd1e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15127a7b0500796257795aaf64acd1e2">◆ </a></span>le_ecall_SetEraGlonassManualDialAttempts()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetEraGlonassManualDialAttempts </td>
+<td>(</td>
+<td class="paramtype">uint16_t </td>
+<td class="paramname"><em>attempts</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the ECALL_MANUAL_DIAL_ATTEMPTS value. If a dial attempt under manual emergency call initiation failed, it should be repeated maximally ECALL_MANUAL_DIAL_ATTEMPTS-1 times within the maximal time limit of ECALL_DIAL_DURATION. The default value is 10. Redial attempts stop once the call has been cleared down correctly, or if counter/timer reached their limits.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT on failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">attempts</td><td>the ECALL_MANUAL_DIAL_ATTEMPTS value </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a4bae312dbda82a777eee2c29ca002fcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bae312dbda82a777eee2c29ca002fcd">◆ </a></span>le_ecall_SetEraGlonassMSDMaxTransmissionTime()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetEraGlonassMSDMaxTransmissionTime </td>
+<td>(</td>
+<td class="paramtype">uint16_t </td>
+<td class="paramname"><em>msdMaxTransTime</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the ECALL_MSD_MAX_TRANSMISSION_TIME time, the time period for MSD transmission.</p>
+<dl class="section note"><dt>Note</dt><dd>Default value of MSD transmission time is 20 seconds.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT on failure</li>
+<li>LE_UNSUPPORTED if the function is not supported by the target </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">msdMaxTransTime</td><td>The ECALL_MSD_MAX_TRANSMISSION_TIME time value (in seconds) </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a184d79d22654450606130bb84b6907b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a184d79d22654450606130bb84b6907b1">◆ </a></span>le_ecall_SetEraGlonassPostTestRegistrationTime()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetEraGlonassPostTestRegistrationTime </td>
+<td>(</td>
+<td class="paramtype">uint16_t </td>
+<td class="paramname"><em>postTestRegTime</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the ERA-GLONASS ECALL_POST_TEST_REGISTRATION_TIME time.</p>
+<p>After completion of transmission of test diagnostics results in an eCall test session, the in-vehicle system remains registered on the network for the period of time defined by the ECALL_POST_TEST_REGISTRATION_TIME value.</p>
+<dl class="section note"><dt>Note</dt><dd>The ECALL_POST_TEST_REGISTRATION_TIME setting takes effect immediately and is persistent to reset.</dd>
+<dd>
+An ECALL_POST_TEST_REGISTRATION_TIME value of zero means the IVS doesn't remain registered after completion of transmission of test (diagnostics) results.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT on failure</li>
+<li>LE_UNSUPPORTED if the function is not supported by the target </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">postTestRegTime</td><td>The ECALL_POST_TEST_REGISTRATION_TIME time value (in seconds) </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="af90a8602d4b1d0cacaa3971c508dd188"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af90a8602d4b1d0cacaa3971c508dd188">◆ </a></span>le_ecall_SetIntervalBetweenDialAttempts()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetIntervalBetweenDialAttempts </td>
+<td>(</td>
+<td class="paramtype">uint16_t </td>
+<td class="paramname"><em>pause</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the minimum interval value between dial attempts.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT for other failures </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">pause</td><td>the minimum interval value in seconds </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aba15bc78d2e03b5bf8c16ee366fb39b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba15bc78d2e03b5bf8c16ee366fb39b9">◆ </a></span>le_ecall_SetMsdEraGlonassCoordinateSystemType()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetMsdEraGlonassCoordinateSystemType </td>
+<td>(</td>
+<td class="paramtype">le_ecall_CallRef_t </td>
+<td class="paramname"><em>ecallRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_ecall_MsdCoordinateType_t </td>
+<td class="paramname"><em>coordinateSystemType</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the ERA-GLONASS coordinate system type.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_DUPLICATE an MSD has been already imported</li>
+<li>LE_BAD_PARAMETER bad eCall reference</li>
+<li>LE_FAULT on other failures </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ecallRef</td><td>eCall reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">coordinateSystemType</td><td>the ERA-GLONASS coordinate system type </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a08c613df57d34eb2a1309738bced5d76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08c613df57d34eb2a1309738bced5d76">◆ </a></span>le_ecall_SetMsdEraGlonassCrashInfo()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetMsdEraGlonassCrashInfo </td>
+<td>(</td>
+<td class="paramtype">le_ecall_CallRef_t </td>
+<td class="paramname"><em>ecallRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_ecall_CrashInfoBitMask_t </td>
+<td class="paramname"><em>crashInfoMask</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the ERA-GLONASS crash type bit mask</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_DUPLICATE an MSD has been already imported</li>
+<li>LE_BAD_PARAMETER bad eCall reference</li>
+<li>LE_FAULT on other failures </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ecallRef</td><td>eCall reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">crashInfoMask</td><td>ERA-GLONASS crash type bit mask. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a577f3dcd16e53c8a14295ec58c6d2b9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a577f3dcd16e53c8a14295ec58c6d2b9a">◆ </a></span>le_ecall_SetMsdEraGlonassCrashSeverity()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetMsdEraGlonassCrashSeverity </td>
+<td>(</td>
+<td class="paramtype">le_ecall_CallRef_t </td>
+<td class="paramname"><em>ecallRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>crashSeverity</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the ERA-GLONASS crash severity parameter.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_DUPLICATE an MSD has been already imported</li>
+<li>LE_BAD_PARAMETER bad eCall reference</li>
+<li>LE_FAULT on other failures </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ecallRef</td><td>eCall reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">crashSeverity</td><td>the ERA-GLONASS crash severity parameter </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a51ad61edf379cfe07f03fbd71b56df9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51ad61edf379cfe07f03fbd71b56df9d">◆ </a></span>le_ecall_SetMsdEraGlonassDiagnosticResult()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetMsdEraGlonassDiagnosticResult </td>
+<td>(</td>
+<td class="paramtype">le_ecall_CallRef_t </td>
+<td class="paramname"><em>ecallRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_ecall_DiagnosticResultBitMask_t </td>
+<td class="paramname"><em>diagnosticResultMask</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the ERA-GLONASS diagnostic result using a bit mask.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_DUPLICATE an MSD has been already imported</li>
+<li>LE_BAD_PARAMETER bad eCall reference</li>
+<li>LE_FAULT on other failures </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ecallRef</td><td>eCall reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">diagnosticResultMask</td><td>ERA-GLONASS diagnostic result bit mask. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a8c009bb03d61dcd0ffbd9e986b692a85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c009bb03d61dcd0ffbd9e986b692a85">◆ </a></span>le_ecall_SetMsdPassengersCount()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetMsdPassengersCount </td>
+<td>(</td>
+<td class="paramtype">le_ecall_CallRef_t </td>
+<td class="paramname"><em>ecallRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>paxCount</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the number of passengers transmitted by the MSD.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_DUPLICATE an MSD has been already imported</li>
+<li>LE_BAD_PARAMETER bad eCall reference</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid eCall reference is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ecallRef</td><td>eCall reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">paxCount</td><td>number of passengers </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a2b56b7b7fd7f936c144d30eba7815908"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b56b7b7fd7f936c144d30eba7815908">◆ </a></span>le_ecall_SetMsdPosition()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetMsdPosition </td>
+<td>(</td>
+<td class="paramtype">le_ecall_CallRef_t </td>
+<td class="paramname"><em>ecallRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">bool </td>
+<td class="paramname"><em>isTrusted</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t </td>
+<td class="paramname"><em>latitude</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t </td>
+<td class="paramname"><em>longitude</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t </td>
+<td class="paramname"><em>direction</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the position transmitted by the MSD.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_DUPLICATE an MSD has been already imported</li>
+<li>LE_BAD_PARAMETER bad input parameter</li>
+<li>LE_FAULT on other failures</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid eCall reference is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ecallRef</td><td>eCall reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">isTrusted</td><td>true if the position is accurate, false otherwise </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">latitude</td><td>latitude in degrees with 6 decimal places, positive North. Maximum value is +90 degrees (+90000000), minimum value is -90 degrees (-90000000). </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">longitude</td><td>longitude in degrees with 6 decimal places, positive East. Maximum value is +180 degrees (+180000000), minimum value is -180 degrees (-180000000). </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">direction</td><td>direction of the vehicle from magnetic north (0 to 358, clockwise) in 2-degrees unit. Valid range is 0 to 179. If direction of travel is invalid or unknown, the value 0xFF shall be used. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="af3cfea09eea1b1ba39648798070ad139"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3cfea09eea1b1ba39648798070ad139">◆ </a></span>le_ecall_SetMsdPositionN1()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetMsdPositionN1 </td>
+<td>(</td>
+<td class="paramtype">le_ecall_CallRef_t </td>
+<td class="paramname"><em>ecallRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t </td>
+<td class="paramname"><em>latitudeDeltaN1</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t </td>
+<td class="paramname"><em>longitudeDeltaN1</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the position Delta N-1 from position set in <a class="el" href="le__ecall__interface_8h.html#a2b56b7b7fd7f936c144d30eba7815908">le_ecall_SetMsdPosition()</a> transmitted by the MSD.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_DUPLICATE an MSD has been already imported</li>
+<li>LE_BAD_PARAMETER bad input parameter</li>
+<li>LE_FAULT on other failures</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid eCall reference is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ecallRef</td><td>eCall reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">latitudeDeltaN1</td><td>longitude delta from position set in SetMsdPosition 1 Unit = 100 miliarcseconds, which is approximately 3m maximum value: 511 = 0 0'51.100'' (+- 1580m) minimum value: -512 = -0 0'51.200'' (+- -1583m) </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">longitudeDeltaN1</td><td>longitude delta from position set in SetMsdPosition 1 Unit = 100 miliarcseconds, which is approximately 3m maximum value: 511 = 0 0'51.100'' (+-1580m) minimum value: -512 = -0 0'51.200'' (+- -1583m) ) </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a6b25b9b242ba114f31ae2f853070bf11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b25b9b242ba114f31ae2f853070bf11">◆ </a></span>le_ecall_SetMsdPositionN2()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetMsdPositionN2 </td>
+<td>(</td>
+<td class="paramtype">le_ecall_CallRef_t </td>
+<td class="paramname"><em>ecallRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t </td>
+<td class="paramname"><em>latitudeDeltaN2</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t </td>
+<td class="paramname"><em>longitudeDeltaN2</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the position Delta N-2 from position set in <a class="el" href="le__ecall__interface_8h.html#af3cfea09eea1b1ba39648798070ad139">le_ecall_SetMsdPositionN1()</a> transmitted by the MSD.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_DUPLICATE an MSD has been already imported</li>
+<li>LE_BAD_PARAMETER bad input parameter</li>
+<li>LE_FAULT on other failures</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid eCall reference is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ecallRef</td><td>eCall reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">latitudeDeltaN2</td><td>longitude delta from position set in SetMsdPositionN1 1 Unit = 100 miliarcseconds, which is approximately 3m maximum value: 511 = 0 0'51.100'' (+-1580m) minimum value: -512 = -0 0'51.200'' (+- -1583m) </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">longitudeDeltaN2</td><td>longitude delta from position set in SetMsdPositionN1 1 Unit = 100 miliarcseconds, which is approximately 3m maximum value: 511 = 0 0'51.100'' (+-1580m) minimum value: -512 = -0 0'51.200'' (+- -1583m) ) </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a00d3dbc99884375cf2487d6640767c40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00d3dbc99884375cf2487d6640767c40">◆ </a></span>le_ecall_SetMsdTxMode()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetMsdTxMode </td>
+<td>(</td>
+<td class="paramtype">le_ecall_MsdTxMode_t </td>
+<td class="paramname"><em>mode</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the push/pull transmission mode.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT for other failures</li>
+<li>LE_UNSUPPORTED Not supported on this platform </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>Transmission mode </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a4d698cd7bde3b33e191453d31bc7c9d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d698cd7bde3b33e191453d31bc7c9d1">◆ </a></span>le_ecall_SetMsdVersion()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetMsdVersion </td>
+<td>(</td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>msdVersion</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the MSDs version. Default value is 1</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT for other failures </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">msdVersion</td><td>Msd version </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a66e454e84db7d337d76bc867b57891a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66e454e84db7d337d76bc867b57891a1">◆ </a></span>le_ecall_SetNadDeregistrationTime()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetNadDeregistrationTime </td>
+<td>(</td>
+<td class="paramtype">uint16_t </td>
+<td class="paramname"><em>deregTime</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the NAD (network access device) deregistration time value. After termination of an emergency call the in-vehicle system remains registered on the network for the period of time, defined by the installation parameter NAD (network access device) deregistration time.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT on failure</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The formula to calculate NAD deregistration time for PAN_EUROPEAN is as below: ECallConfiguration.nad_deregistration_time = (deregTime+59)/60; </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">deregTime</td><td>the NAD (network access device) deregistration time value (in minutes). </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="abb9c569b53f8c35b878c7c9ca159e1df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb9c569b53f8c35b878c7c9ca159e1df">◆ </a></span>le_ecall_SetPropulsionType()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetPropulsionType </td>
+<td>(</td>
+<td class="paramtype">le_ecall_PropulsionTypeBitMask_t </td>
+<td class="paramname"><em>propulsionType</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the propulsion type. Note that a vehicle may have more than one propulsion type.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT for other failures </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">propulsionType</td><td>bitmask </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="abf9c09914c55cdbe72df1433f60f6e51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf9c09914c55cdbe72df1433f60f6e51">◆ </a></span>le_ecall_SetPsapNumber()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetPsapNumber </td>
+<td>(</td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>psap</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the Public Safely Answering Point telephone number.</p>
+<dl class="section note"><dt>Note</dt><dd>That PSAP number is not applied to Manually or Automatically initiated eCall. For those modes, an emergency call is launched.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>This function doesn't modify the U/SIM content.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_FAULT For other failures</li>
+<li>LE_UNSUPPORTED Not supported on this platform</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If PSAP number is empty or too long (max LE_MDMDEFS_PHONE_NUM_MAX_LEN digits), it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">psap</td><td>Public Safely Answering Point number </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ac9fbd6d85a41722a409dafc26352cb44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9fbd6d85a41722a409dafc26352cb44">◆ </a></span>le_ecall_SetServerDisconnectHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void le_ecall_SetServerDisconnectHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__ecall__interface_8h.html#ae5e72936e106717ebb389a45a2e92f9f">le_ecall_DisconnectHandler_t</a> </td>
+<td class="paramname"><em>disconnectHandler</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set handler called when server disconnection is detected.</p>
+<p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
+</div>
+</div>
+<a id="a1b492b42490b319fcc228e52f8694307"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b492b42490b319fcc228e52f8694307">◆ </a></span>le_ecall_SetSystemStandard()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetSystemStandard </td>
+<td>(</td>
+<td class="paramtype">le_ecall_SystemStandard_t </td>
+<td class="paramname"><em>systemStandard</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the system standard. Default is PAN EUROPEAN</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT for other failures </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">systemStandard</td><td>System standard </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a291bd0a938266981a8cb6eb836c45b37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a291bd0a938266981a8cb6eb836c45b37">◆ </a></span>le_ecall_SetVehicleType()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetVehicleType </td>
+<td>(</td>
+<td class="paramtype">le_ecall_MsdVehicleType_t </td>
+<td class="paramname"><em>vehicleType</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the Vehicled Type Default value is 0</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT for other failures </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">vehicleType</td><td>Vehicle type </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aca95cc7f1d44d3acef601ea97714f748"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca95cc7f1d44d3acef601ea97714f748">◆ </a></span>le_ecall_SetVIN()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_SetVIN </td>
+<td>(</td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>vin</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the VIN (Vehicle Identification Number).</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_BAD_PARAMETER parameter is NULL.</li>
+<li>LE_FAULT for other failures </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">vin</td><td>VIN (Vehicle Identification Number) </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aa25256eeacefcf00c14763ef294c7667"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa25256eeacefcf00c14763ef294c7667">◆ </a></span>le_ecall_StartAutomatic()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_StartAutomatic </td>
+<td>(</td>
+<td class="paramtype">le_ecall_CallRef_t </td>
+<td class="paramname"><em>ecallRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Start an automatic eCall session</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_BUSY an eCall session is already in progress</li>
+<li>LE_BAD_PARAMETER bad eCall reference</li>
+<li>LE_FAULT for other failures</li>
+<li>LE_UNSUPPORTED Not supported on this platform</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid eCall reference is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ecallRef</td><td>eCall reference </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ab106c3ca87fc8dd8239d2849df932122"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab106c3ca87fc8dd8239d2849df932122">◆ </a></span>le_ecall_StartManual()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_StartManual </td>
+<td>(</td>
+<td class="paramtype">le_ecall_CallRef_t </td>
+<td class="paramname"><em>ecallRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Start a manual eCall session</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_BUSY an eCall session is already in progress</li>
+<li>LE_BAD_PARAMETER bad eCall reference</li>
+<li>LE_FAULT for other failures</li>
+<li>LE_UNSUPPORTED Not supported on this platform</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid eCall reference is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ecallRef</td><td>eCall reference </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aa5d23a1bea370b1ae29fc52d7a89d947"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5d23a1bea370b1ae29fc52d7a89d947">◆ </a></span>le_ecall_StartTest()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_StartTest </td>
+<td>(</td>
+<td class="paramtype">le_ecall_CallRef_t </td>
+<td class="paramname"><em>ecallRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Start a test eCall session</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_BUSY an eCall session is already in progress</li>
+<li>LE_BAD_PARAMETER bad eCall reference</li>
+<li>LE_FAULT for other failures</li>
+<li>LE_UNSUPPORTED Not supported on this platform</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The process exits, if an invalid eCall reference is given </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ecallRef</td><td>eCall reference </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a6a11608c7146d2178634cea59ce90831"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a11608c7146d2178634cea59ce90831">◆ </a></span>le_ecall_TerminateRegistration()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_TerminateRegistration </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Terminate NAD registered on the network. After termination of an emergency call the in-vehicle system remains registered on the network for a period of time, this API will deregister device from network in this period.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT on failure</li>
+<li>LE_UNSUPPORTED if the function is not supported by the target </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a id="ab546b43bee315c4cfc2d5697cad3cf4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab546b43bee315c4cfc2d5697cad3cf4b">◆ </a></span>le_ecall_TryConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a id="a034c442fd7c6650ed956822a561c0104"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a034c442fd7c6650ed956822a561c0104">◆ </a></span>le_ecall_UseUSimNumbers()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_ecall_UseUSimNumbers </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>When modem is in ECALL_FORCED_PERSISTENT_ONLY_MODE or ECALL_ONLY_MODE, this function can be called to request the modem to read the number to dial from the FDN/SDN of the U/SIM.</p>
+<dl class="section note"><dt>Note</dt><dd>If FDN directory is updated with new dial numbers, be sure that the SIM card is refreshed.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT for other failures </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
