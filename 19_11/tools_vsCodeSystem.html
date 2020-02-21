@@ -2,7 +2,7 @@
 <html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<title>Experimental Features  - Legato Docs</title>
+<title>vsCode Legato System View  - Legato Docs</title>
 <meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
 <meta content="legato, iot" name="keywords"/>
 <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
@@ -19,7 +19,7 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
-<script src="tocs/Build_Apps_Experimental_Features.json"></script>
+<script src="tocs/Build_Apps_Get_Started.json"></script>
 </head>
 <body>
 <noscript>
@@ -44,7 +44,7 @@
 <a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a class="link-selected" href="experimentalMain.html">Experimental Features</a>
+<a class="link-selected" href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -60,30 +60,27 @@
 <div class="content">
 <div class="header">
 <div class="headertitle">
-<h1 class="title">Experimental Features </h1> </div>
+<h1 class="title">vsCode Legato System View </h1> </div>
 </div><div class="contents">
-<div class="textblock"><p>Major new features in the Legato Application Framework are introduced as experimental features at first. This allows you to play around with them and test them out in a developmental capacity without having it affect production targets. Once the feature is "broken in" and fully tested we will release it as a production read feature.</p>
-<p>Each new feature will have it's own set of documentation that will walk you through:</p><ul>
-<li><b>Getting</b> <b>Started</b> - how to install/enable the new feature in Legato</li>
-<li><b>Concepts</b> - Overview and Architecture information about the feature</li>
-<li><b>API</b> <b>Guides</b> - Links and information on using the APIs exposed with the new feature</li>
-<li><b>Tools</b> - Links and documentation on any tools included with the new feature.</li>
-<li><b>HowTo</b> - Documentation and sample apps demonstrating the new feature.</li>
-</ul>
-<p>The following are our current list of new experimental features in Legato</p>
-<table class="doxtable">
-<tr>
-<th>Feature </th><th>Description </th><th>Maturity </th><th>First Release Version  </th></tr>
-<tr>
-<td><a class="el" href="legatoServicesDCS.html">Data Channel Service</a> </td><td>New data connect service to replace the current data service </td><td>Alpha </td><td>Legato 18.10.0 </td></tr>
-<tr>
-<td><a class="el" href="conceptsRPC.html">Remote-procedure Call</a> </td><td>Legato RPC framework </td><td>Alpha </td><td>Legato 19.04.0 </td></tr>
-</table>
-<p>Maturity Descriptions:</p><ul>
-<li><b>Alpha</b> - the feature is still under development and should not be used on production targets as the underlying functionality as well as the APIs may change in future releases.</li>
-<li><b>Beta</b> - the feature is complete and being tested. Final bugs and issues are being resolved; functionality and APIs are stable and will not change at this point.</li>
-</ul>
-<p>Any feedback on these features is welcomed, please post on the <a href="https://forum.legato.io">Legato forum.</a></p>
+<div class="textblock"><p>The Legato system view provides a logical view of a Legato System. It provides a way to view systems, apps, components and interfaces in a cohesive system that will be installed onto your target.</p>
+<p>The view provides commands to add, remove and modify the definition files in your system. For information on how to add sections to the definition files refer to <a class="el" href="defFiles.html">Definition Files</a>.</p>
+<p>Systems tie together all the apps and components within your Legato System.</p>
+<p>System | |_ your apps (.adef) | |_ api (.api) | |_ c code (.c) | |_ included apps - apps included from other .sdef (.adef) |_ api (.api)</p>
+<h1><a class="anchor" id="tools_vsCodeSystem_addApp"></a>
+Add</h1>
+<p><code>Add</code> will search your workspace folder and provide a list of <code></code>.adef or <code></code>.cdef files to add to your system. Adding an app through the system view will save you time and automatically add any search paths that are needed into your <code></code>.sdef or <code></code>.adef.</p>
+<h1><a class="anchor" id="tools_vsCodeSystem_newApp"></a>
+New</h1>
+<p><code>New</code> <code>will</code> add a new application or component based on a simple template and create the starting <code></code>.cdef and <code></code>.c files needed to start off an application. It will also automatically add the app into the system (.sdef) and set up any needed search paths.</p>
+<p>Adding a new component will create the folders and <code></code>.cdef file and a start <code></code>.c file to add in your custom code and logic into the system.</p>
+<h1><a class="anchor" id="tools_vsCodeSystem_rename"></a>
+Rename</h1>
+<p>Once you've selected or created a system, app or component, you can view the <code></code>.xdef file by clicking on the name of the <code></code>.sdef and then choosing the <code>Rename</code> option. This will rename the <code></code>.xdef and update all other <code></code>.xdef files within your system.</p>
+<h1><a class="anchor" id="tools_vsCodeSystem_remove"></a>
+Remove</h1>
+<p><code>remove</code> will remove the app or component from your system and any associated references within the <code></code>.xdefs within your system.</p>
+<p>At this time the remove app or component only works with apps/components that have been created with the Legato Plugin for vsCode. We are working to extend the tools to enhance this feature to work with all apps/components.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This does not remove the app or the component from your workspace directory, if you wish to delete the files, manually delete them through the File Explorer view.</dd></dl>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
 </div></div>
 <br clear="left"/>

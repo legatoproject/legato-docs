@@ -2,7 +2,7 @@
 <html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<title>Experimental Features  - Legato Docs</title>
+<title>vsCode .xdef menu  - Legato Docs</title>
 <meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
 <meta content="legato, iot" name="keywords"/>
 <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
@@ -19,7 +19,7 @@
         <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
-<script src="tocs/Build_Apps_Experimental_Features.json"></script>
+<script src="tocs/Build_Apps_Get_Started.json"></script>
 </head>
 <body>
 <noscript>
@@ -44,7 +44,7 @@
 <a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
 <h2>/ Build Apps</h2>
 <nav class="secondary">
-<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a class="link-selected" href="experimentalMain.html">Experimental Features</a>
+<a class="link-selected" href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a>
 </nav>
 <nav class="ui-front">
 <i class="fa fa-search" id="search-icon"></i>
@@ -60,30 +60,21 @@
 <div class="content">
 <div class="header">
 <div class="headertitle">
-<h1 class="title">Experimental Features </h1> </div>
+<h1 class="title">vsCode .xdef menu </h1> </div>
 </div><div class="contents">
-<div class="textblock"><p>Major new features in the Legato Application Framework are introduced as experimental features at first. This allows you to play around with them and test them out in a developmental capacity without having it affect production targets. Once the feature is "broken in" and fully tested we will release it as a production read feature.</p>
-<p>Each new feature will have it's own set of documentation that will walk you through:</p><ul>
-<li><b>Getting</b> <b>Started</b> - how to install/enable the new feature in Legato</li>
-<li><b>Concepts</b> - Overview and Architecture information about the feature</li>
-<li><b>API</b> <b>Guides</b> - Links and information on using the APIs exposed with the new feature</li>
-<li><b>Tools</b> - Links and documentation on any tools included with the new feature.</li>
-<li><b>HowTo</b> - Documentation and sample apps demonstrating the new feature.</li>
-</ul>
-<p>The following are our current list of new experimental features in Legato</p>
-<table class="doxtable">
-<tr>
-<th>Feature </th><th>Description </th><th>Maturity </th><th>First Release Version  </th></tr>
-<tr>
-<td><a class="el" href="legatoServicesDCS.html">Data Channel Service</a> </td><td>New data connect service to replace the current data service </td><td>Alpha </td><td>Legato 18.10.0 </td></tr>
-<tr>
-<td><a class="el" href="conceptsRPC.html">Remote-procedure Call</a> </td><td>Legato RPC framework </td><td>Alpha </td><td>Legato 19.04.0 </td></tr>
-</table>
-<p>Maturity Descriptions:</p><ul>
-<li><b>Alpha</b> - the feature is still under development and should not be used on production targets as the underlying functionality as well as the APIs may change in future releases.</li>
-<li><b>Beta</b> - the feature is complete and being tested. Final bugs and issues are being resolved; functionality and APIs are stable and will not change at this point.</li>
-</ul>
-<p>Any feedback on these features is welcomed, please post on the <a href="https://forum.legato.io">Legato forum.</a></p>
+<div class="textblock"><p>The definition menu (.Xdef menu) indexes your workspace to display definition files that are able to be built and installed on a target. (i.e., .sdef and .adef files)</p>
+<div class="image">
+<img alt="tools_vsCodeDefinition_xdefMenu.png" src="tools_vsCodeDefinition_xdefMenu.png"/>
+</div>
+<p>Selecting a definition file will set the application or system as to what gets built and installed on your target when you use the <code>Legato: Build and install</code> task (Ctrl + Shift + B).</p>
+<p>tools_vsCodeDefinitionApps Application Build and Installs</p>
+<p>If you wish you build and install a single application select the appropriate .adef file from the list.</p>
+<p>Press <code>Ctrl + Shift + B</code> to open the Build menu. Either Choose, <b>Legato: Build and install</b> (to build and install the app on your target) or build to create an .update file that contains the app.</p>
+<h1><a class="anchor" id="tools_vsCodeDefinitionSystem"></a>
+System Build and Installs</h1>
+<p>Selecting a System definition file (.sdef) will build the system and install it on your target.</p>
+<dl class="section note"><dt>Note</dt><dd>To have all the default Legato applications you must make sure that #include $LEGATO_ROOT/default.sdef is included in your sdef. It is there by default if you create a system using the IDE templates.</dd></dl>
+<p>Press <b>Ctrl + Shift + B</b> to display the Build menu. Choose <code>Legato: Build and install</code> (to build and install the app on your target) or <code>Legato: Build</code> to create an .update file that contains all the apps and configuration to update the read/write partition on your target.</p>
 <p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
 </div></div>
 <br clear="left"/>
