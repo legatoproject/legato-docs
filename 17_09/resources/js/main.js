@@ -36,7 +36,7 @@ try {
 
 ga('create', 'UA-99839286-1', 'auto');
 ga('send', 'pageview');
-
+ga('set', 'anonymizeIp', true);
 
 
 /****** DOM STUFF *********/
