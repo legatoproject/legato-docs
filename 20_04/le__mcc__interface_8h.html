@@ -1,0 +1,831 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_mcc_interface.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="20.04.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src=""></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Legato Documentation</h2>
+<nav class="secondary">
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#typedef-members">Typedefs</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_mcc_interface.h File Reference</h1> </div>
+</div><div class="contents">
+<div class="textblock"><code>#include "legato.h"</code><br/>
+<code>#include "<a class="el" href="le__mdmDefs__interface_8h_source.html">le_mdmDefs_interface.h</a>"</code><br/>
+<code>#include "le_mcc_common.h"</code><br/>
+</div>
+<p><a href="le__mcc__interface_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:af2c47cb3ce4a009bb33723f509f22597"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#af2c47cb3ce4a009bb33723f509f22597">le_mcc_DisconnectHandler_t</a>) (void *)</td></tr>
+<tr class="separator:af2c47cb3ce4a009bb33723f509f22597"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ac639c6d7ea04e8a82782fbed1765ff71"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#ac639c6d7ea04e8a82782fbed1765ff71">le_mcc_ConnectService</a> (void)</td></tr>
+<tr class="separator:ac639c6d7ea04e8a82782fbed1765ff71"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1858a08c8d944abc96b8fa92bc297ba5"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#a1858a08c8d944abc96b8fa92bc297ba5">le_mcc_TryConnectService</a> (void)</td></tr>
+<tr class="separator:a1858a08c8d944abc96b8fa92bc297ba5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a224ca742ef599058ddd5a2d02785e1e9"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#a224ca742ef599058ddd5a2d02785e1e9">le_mcc_SetServerDisconnectHandler</a> (<a class="el" href="le__mcc__interface_8h.html#af2c47cb3ce4a009bb33723f509f22597">le_mcc_DisconnectHandler_t</a> disconnectHandler, void *contextPtr)</td></tr>
+<tr class="separator:a224ca742ef599058ddd5a2d02785e1e9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a19d524087a3ab345616fca3f8c08be33"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#a19d524087a3ab345616fca3f8c08be33">le_mcc_DisconnectService</a> (void)</td></tr>
+<tr class="separator:a19d524087a3ab345616fca3f8c08be33"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a42130fc6b1d69413a387e3292117b3d3"><td align="right" class="memItemLeft" valign="top">le_mcc_CallRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#a42130fc6b1d69413a387e3292117b3d3">le_mcc_Create</a> (const char *LE_NONNULL phoneNumPtr)</td></tr>
+<tr class="separator:a42130fc6b1d69413a387e3292117b3d3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1a016e6443df2d3ee99113649f4f34ae"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#a1a016e6443df2d3ee99113649f4f34ae">le_mcc_Delete</a> (le_mcc_CallRef_t callRef)</td></tr>
+<tr class="separator:a1a016e6443df2d3ee99113649f4f34ae"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a72a32869bb23864b3e86c606368bed70"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#a72a32869bb23864b3e86c606368bed70">le_mcc_Start</a> (le_mcc_CallRef_t callRef)</td></tr>
+<tr class="separator:a72a32869bb23864b3e86c606368bed70"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a07e4856dffdbf887f51879e39ec43e42"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#a07e4856dffdbf887f51879e39ec43e42">le_mcc_IsConnected</a> (le_mcc_CallRef_t callRef)</td></tr>
+<tr class="separator:a07e4856dffdbf887f51879e39ec43e42"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6b5922dc325e4f45c90b2ecfd0f0a74f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#a6b5922dc325e4f45c90b2ecfd0f0a74f">le_mcc_GetRemoteTel</a> (le_mcc_CallRef_t callRef, char *telPtr, size_t telPtrSize)</td></tr>
+<tr class="separator:a6b5922dc325e4f45c90b2ecfd0f0a74f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab16921abc02e0569b129f4a7d92bf3c9"><td align="right" class="memItemLeft" valign="top">le_mcc_TerminationReason_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#ab16921abc02e0569b129f4a7d92bf3c9">le_mcc_GetTerminationReason</a> (le_mcc_CallRef_t callRef)</td></tr>
+<tr class="separator:ab16921abc02e0569b129f4a7d92bf3c9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a68b9b8ed1b221924dcea1be0fd610a54"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#a68b9b8ed1b221924dcea1be0fd610a54">le_mcc_GetPlatformSpecificTerminationCode</a> (le_mcc_CallRef_t callRef)</td></tr>
+<tr class="separator:a68b9b8ed1b221924dcea1be0fd610a54"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a598349c6ccfa151dbd1d2f2a9c293ca4"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#a598349c6ccfa151dbd1d2f2a9c293ca4">le_mcc_Answer</a> (le_mcc_CallRef_t callRef)</td></tr>
+<tr class="separator:a598349c6ccfa151dbd1d2f2a9c293ca4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7b9567715a3cd30c83a3b6886eeb2044"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#a7b9567715a3cd30c83a3b6886eeb2044">le_mcc_HangUp</a> (le_mcc_CallRef_t callRef)</td></tr>
+<tr class="separator:a7b9567715a3cd30c83a3b6886eeb2044"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a38ac8543a579ecc81430c121a64bd346"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#a38ac8543a579ecc81430c121a64bd346">le_mcc_HangUpAll</a> (void)</td></tr>
+<tr class="separator:a38ac8543a579ecc81430c121a64bd346"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a54093f7d51cae9a186a97aa799ac3ddc"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#a54093f7d51cae9a186a97aa799ac3ddc">le_mcc_GetCallerIdRestrict</a> (le_mcc_CallRef_t callRef, <a class="el" href="le__basics_8h.html#ae2138c90c41d30e2d510be01d8b374da">le_onoff_t</a> *clirStatusPtrPtr)</td></tr>
+<tr class="separator:a54093f7d51cae9a186a97aa799ac3ddc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6b7fda9b1d0f0208a99b4bdcafe97538"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#a6b7fda9b1d0f0208a99b4bdcafe97538">le_mcc_SetCallerIdRestrict</a> (le_mcc_CallRef_t callRef, <a class="el" href="le__basics_8h.html#ae2138c90c41d30e2d510be01d8b374da">le_onoff_t</a> clirStatus)</td></tr>
+<tr class="separator:a6b7fda9b1d0f0208a99b4bdcafe97538"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab826cf4b9e3911e659a90d483081e7fe"><td align="right" class="memItemLeft" valign="top">le_mcc_CallEventHandlerRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#ab826cf4b9e3911e659a90d483081e7fe">le_mcc_AddCallEventHandler</a> (le_mcc_CallEventHandlerFunc_t handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:ab826cf4b9e3911e659a90d483081e7fe"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa7682ff49924db10aefee547fcb0b4d8"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#aa7682ff49924db10aefee547fcb0b4d8">le_mcc_RemoveCallEventHandler</a> (le_mcc_CallEventHandlerRef_t handlerRef)</td></tr>
+<tr class="separator:aa7682ff49924db10aefee547fcb0b4d8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac637e687387a5b8cf9c5b02cbb7816fa"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#ac637e687387a5b8cf9c5b02cbb7816fa">le_mcc_SetCallWaitingService</a> (bool active)</td></tr>
+<tr class="separator:ac637e687387a5b8cf9c5b02cbb7816fa"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:acdf73f5a2e498ee201d8a11c416de29b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#acdf73f5a2e498ee201d8a11c416de29b">le_mcc_GetCallWaitingService</a> (bool *activePtr)</td></tr>
+<tr class="separator:acdf73f5a2e498ee201d8a11c416de29b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a62626d9db0d9bf56fb2660d9acfdfcc5"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#a62626d9db0d9bf56fb2660d9acfdfcc5">le_mcc_ActivateCall</a> (le_mcc_CallRef_t callRef)</td></tr>
+<tr class="separator:a62626d9db0d9bf56fb2660d9acfdfcc5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab2df0040963d964f360cb2b7148f9277"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#ab2df0040963d964f360cb2b7148f9277">le_mcc_SetAmrWbCapability</a> (bool enable)</td></tr>
+<tr class="separator:ab2df0040963d964f360cb2b7148f9277"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3762311b9860dc66c52b00f4324dc140"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__mcc__interface_8h.html#a3762311b9860dc66c52b00f4324dc140">le_mcc_GetAmrWbCapability</a> (bool *enabledPtr)</td></tr>
+<tr class="separator:a3762311b9860dc66c52b00f4324dc140"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato <a class="el" href="c_mcc.html">Modem Call Control</a> include file.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="af2c47cb3ce4a009bb33723f509f22597"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2c47cb3ce4a009bb33723f509f22597">◆ </a></span>le_mcc_DisconnectHandler_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_mcc_DisconnectHandler_t) (void *)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Type for handler called when a server disconnects. </p>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a62626d9db0d9bf56fb2660d9acfdfcc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62626d9db0d9bf56fb2660d9acfdfcc5">◆ </a></span>le_mcc_ActivateCall()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mcc_ActivateCall </td>
+<td>(</td>
+<td class="paramtype">le_mcc_CallRef_t </td>
+<td class="paramname"><em>callRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function activates the specified call. Other calls are placed on hold.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeed.</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">callRef</td><td>The call reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ab826cf4b9e3911e659a90d483081e7fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab826cf4b9e3911e659a90d483081e7fe">◆ </a></span>le_mcc_AddCallEventHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_mcc_CallEventHandlerRef_t le_mcc_AddCallEventHandler </td>
+<td>(</td>
+<td class="paramtype">le_mcc_CallEventHandlerFunc_t </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Add handler function for EVENT 'le_mcc_CallEvent'</p>
+<p>Register an event handler that will be notified when an call's event occurs.</p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the new event handler object.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>It is a fatal error if this function does succeed. If this function fails, it will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a598349c6ccfa151dbd1d2f2a9c293ca4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a598349c6ccfa151dbd1d2f2a9c293ca4">◆ </a></span>le_mcc_Answer()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mcc_Answer </td>
+<td>(</td>
+<td class="paramtype">le_mcc_CallRef_t </td>
+<td class="paramname"><em>callRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Answers incoming call.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_TIMEOUT No response was received from the Modem. </dd>
+<dd>
+LE_OK The function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd>
+<dd>
+A call waiting call must be answered using SetCallActive() API. This API doesn't manage call waiting supplementary service. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">callRef</td><td>The call reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ac639c6d7ea04e8a82782fbed1765ff71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac639c6d7ea04e8a82782fbed1765ff71">◆ </a></span>le_mcc_ConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_mcc_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="a42130fc6b1d69413a387e3292117b3d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42130fc6b1d69413a387e3292117b3d3">◆ </a></span>le_mcc_Create()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_mcc_CallRef_t le_mcc_Create </td>
+<td>(</td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>phoneNumPtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Enumeration of the possible events that may be reported to a call event handler. Enumeration of the possible reasons for call termination. Reference type for managing active calls. Handler for call state changes.</p>
+<dl class="section note"><dt>Note</dt><dd>The callRef has to be deleted using <a class="el" href="le__mcc__interface_8h.html#a1a016e6443df2d3ee99113649f4f34ae">le_mcc_Delete()</a> when LE_MCC_TERMINATED event is received, except if is has to be used for a future usage (with le_mcc_profile handler for instance, or dialing again the same number). Reference type used by Add/Remove functions for EVENT 'le_mcc_CallEvent' Create a call reference.</dd>
+<dd>
+Return NULL if call reference can't be created</dd>
+<dd>
+If destination number is too long (max LE_MDMDEFS_PHONE_NUM_MAX_LEN digits), it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">phoneNumPtr</td><td>The target number we are going to call. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a1a016e6443df2d3ee99113649f4f34ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a016e6443df2d3ee99113649f4f34ae">◆ </a></span>le_mcc_Delete()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mcc_Delete </td>
+<td>(</td>
+<td class="paramtype">le_mcc_CallRef_t </td>
+<td class="paramname"><em>callRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Call to free up a call reference.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeed.</li>
+<li>LE_NOT_FOUND The call reference was not found.</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">callRef</td><td>The call object to free. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a19d524087a3ab345616fca3f8c08be33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19d524087a3ab345616fca3f8c08be33">◆ </a></span>le_mcc_DisconnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_mcc_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="a3762311b9860dc66c52b00f4324dc140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3762311b9860dc66c52b00f4324dc140">◆ </a></span>le_mcc_GetAmrWbCapability()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mcc_GetAmrWbCapability </td>
+<td>(</td>
+<td class="paramtype">bool * </td>
+<td class="paramname"><em>enabledPtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function gets the audio AMR Wideband capability.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_UNAVAILABLE The service is not available.</li>
+<li>LE_FAULT On any other failure. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">enabledPtr</td><td>True if AMR Wideband capability is enabled, false otherwise. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a54093f7d51cae9a186a97aa799ac3ddc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54093f7d51cae9a186a97aa799ac3ddc">◆ </a></span>le_mcc_GetCallerIdRestrict()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mcc_GetCallerIdRestrict </td>
+<td>(</td>
+<td class="paramtype">le_mcc_CallRef_t </td>
+<td class="paramname"><em>callRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__basics_8h.html#ae2138c90c41d30e2d510be01d8b374da">le_onoff_t</a> * </td>
+<td class="paramname"><em>clirStatusPtrPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function return the Calling Line Identification Restriction (CLIR) status on the specific call.</p>
+<p>The output parameter is updated with the CLIR status.</p><ul>
+<li>LE_ON Disable presentation of own phone number to remote.</li>
+<li>LE_OFF Enable presentation of own phone number to remote.</li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeed.</li>
+<li>LE_NOT_FOUND The call reference was not found.</li>
+<li>LE_UNAVAILABLE CLIR status was not set. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">callRef</td><td>The call reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">clirStatusPtrPtr</td><td>the Calling Line Identification Restriction (CLIR) status </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="acdf73f5a2e498ee201d8a11c416de29b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdf73f5a2e498ee201d8a11c416de29b">◆ </a></span>le_mcc_GetCallWaitingService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mcc_GetCallWaitingService </td>
+<td>(</td>
+<td class="paramtype">bool * </td>
+<td class="paramname"><em>activePtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function gets the call waiting service status.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeed.</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">activePtr</td><td>The call waiting activation. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a68b9b8ed1b221924dcea1be0fd610a54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68b9b8ed1b221924dcea1be0fd610a54">◆ </a></span>le_mcc_GetPlatformSpecificTerminationCode()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">int32_t le_mcc_GetPlatformSpecificTerminationCode </td>
+<td>(</td>
+<td class="paramtype">le_mcc_CallRef_t </td>
+<td class="paramname"><em>callRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Called to get the platform specific termination code.</p>
+<p>Refer to <a class="el" href="platformConstraintsSpecificErrorCodes.html">Platform specific error codes</a> for platform specific termination code description.</p>
+<dl class="section return"><dt>Returns</dt><dd>The platform specific termination code.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">callRef</td><td>The call reference to read from. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a6b5922dc325e4f45c90b2ecfd0f0a74f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b5922dc325e4f45c90b2ecfd0f0a74f">◆ </a></span>le_mcc_GetRemoteTel()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mcc_GetRemoteTel </td>
+<td>(</td>
+<td class="paramtype">le_mcc_CallRef_t </td>
+<td class="paramname"><em>callRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>telPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>telPtrSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Read out the remote party telephone number associated with the call.</p>
+<p>Output parameter is updated with the telephone number. If the Telephone number string length exceeds the value of 'len' parameter, the LE_OVERFLOW error code is returned and 'telPtr' is used until 'len-1' characters and a null-character is implicitly appended at the end of 'telPtr'. Note that 'len' sould be at least equal to LE_MDMDEFS_PHONE_NUM_MAX_BYTES, otherwise LE_OVERFLOW error code will be common.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OVERFLOW The Telephone number length exceed the maximum length. </dd>
+<dd>
+LE_OK The function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">callRef</td><td>The call reference to read from. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">telPtr</td><td>The telephone number string. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">telPtrSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ab16921abc02e0569b129f4a7d92bf3c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab16921abc02e0569b129f4a7d92bf3c9">◆ </a></span>le_mcc_GetTerminationReason()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_mcc_TerminationReason_t le_mcc_GetTerminationReason </td>
+<td>(</td>
+<td class="paramtype">le_mcc_CallRef_t </td>
+<td class="paramname"><em>callRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Called to get the termination reason.</p>
+<dl class="section return"><dt>Returns</dt><dd>The termination reason.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">callRef</td><td>The call reference to read from. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a7b9567715a3cd30c83a3b6886eeb2044"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b9567715a3cd30c83a3b6886eeb2044">◆ </a></span>le_mcc_HangUp()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mcc_HangUp </td>
+<td>(</td>
+<td class="paramtype">le_mcc_CallRef_t </td>
+<td class="paramname"><em>callRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect, or hang up, the specifed call. Any active call handlers will be notified.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT The function failed. </dd>
+<dd>
+LE_TIMEOUT No response was received from the Modem. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd>
+<dd>
+this API can also be used to disconnect a waiting or on hold call. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">callRef</td><td>The call to end. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a38ac8543a579ecc81430c121a64bd346"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38ac8543a579ecc81430c121a64bd346">◆ </a></span>le_mcc_HangUpAll()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mcc_HangUpAll </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function will disconnect, or hang up all the ongoing calls. Any active call handlers will be notified.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT The function failed. </dd>
+<dd>
+LE_TIMEOUT No response was received from the Modem. </dd>
+<dd>
+LE_OK The function succeeded. </dd></dl>
+</div>
+</div>
+<a id="a07e4856dffdbf887f51879e39ec43e42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07e4856dffdbf887f51879e39ec43e42">◆ </a></span>le_mcc_IsConnected()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">bool le_mcc_IsConnected </td>
+<td>(</td>
+<td class="paramtype">le_mcc_CallRef_t </td>
+<td class="paramname"><em>callRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Allow the caller to know if the given call is actually connected or not.</p>
+<dl class="section return"><dt>Returns</dt><dd>TRUE if the call is connected, FALSE otherwise.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">callRef</td><td>The call reference to read. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aa7682ff49924db10aefee547fcb0b4d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7682ff49924db10aefee547fcb0b4d8">◆ </a></span>le_mcc_RemoveCallEventHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_mcc_RemoveCallEventHandler </td>
+<td>(</td>
+<td class="paramtype">le_mcc_CallEventHandlerRef_t </td>
+<td class="paramname"><em>handlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove handler function for EVENT 'le_mcc_CallEvent' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ab2df0040963d964f360cb2b7148f9277"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2df0040963d964f360cb2b7148f9277">◆ </a></span>le_mcc_SetAmrWbCapability()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mcc_SetAmrWbCapability </td>
+<td>(</td>
+<td class="paramtype">bool </td>
+<td class="paramname"><em>enable</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function enables/disables the audio AMR Wideband capability.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_UNAVAILABLE The service is not available.</li>
+<li>LE_FAULT On any other failure.</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The capability setting takes effect immediately and is not persistent to reset. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>True enables the AMR Wideband capability, false disables it. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a6b7fda9b1d0f0208a99b4bdcafe97538"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b7fda9b1d0f0208a99b4bdcafe97538">◆ </a></span>le_mcc_SetCallerIdRestrict()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mcc_SetCallerIdRestrict </td>
+<td>(</td>
+<td class="paramtype">le_mcc_CallRef_t </td>
+<td class="paramname"><em>callRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__basics_8h.html#ae2138c90c41d30e2d510be01d8b374da">le_onoff_t</a> </td>
+<td class="paramname"><em>clirStatus</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function set the Calling Line Identification Restriction (CLIR) status on the specific call. By default the CLIR status is not set.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeed.</li>
+<li>LE_NOT_FOUND The call reference was not found. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">callRef</td><td>The call reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">clirStatus</td><td>The Calling Line Identification Restriction (CLIR) status. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ac637e687387a5b8cf9c5b02cbb7816fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac637e687387a5b8cf9c5b02cbb7816fa">◆ </a></span>le_mcc_SetCallWaitingService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mcc_SetCallWaitingService </td>
+<td>(</td>
+<td class="paramtype">bool </td>
+<td class="paramname"><em>active</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function activates or deactivates the call waiting service.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeed.</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">active</td><td>The call waiting activation. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a224ca742ef599058ddd5a2d02785e1e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a224ca742ef599058ddd5a2d02785e1e9">◆ </a></span>le_mcc_SetServerDisconnectHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void le_mcc_SetServerDisconnectHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__mcc__interface_8h.html#af2c47cb3ce4a009bb33723f509f22597">le_mcc_DisconnectHandler_t</a> </td>
+<td class="paramname"><em>disconnectHandler</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set handler called when server disconnection is detected.</p>
+<p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
+</div>
+</div>
+<a id="a72a32869bb23864b3e86c606368bed70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72a32869bb23864b3e86c606368bed70">◆ </a></span>le_mcc_Start()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mcc_Start </td>
+<td>(</td>
+<td class="paramtype">le_mcc_CallRef_t </td>
+<td class="paramname"><em>callRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Start a call attempt.</p>
+<p>Asynchronous due to possible time to connect.</p>
+<p>As the call attempt proceeds, the profile's registered call event handler receives events.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeed.</li>
+<li>LE_BUSY The call is already in progress</li>
+</ul>
+</dd></dl>
+<ul>
+<li><dl class="section note"><dt>Note</dt><dd>As this is an asynchronous call, a successful only confirms a call has been started. Don't assume a call has been successful yet.</dd>
+<dd>
+If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">callRef</td><td>Reference to the call object. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a1858a08c8d944abc96b8fa92bc297ba5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1858a08c8d944abc96b8fa92bc297ba5">◆ </a></span>le_mcc_TryConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_mcc_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

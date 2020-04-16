@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Kernel Module Definition .mdef  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="20.04.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Concepts.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a class="link-selected" href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Kernel Module Definition .mdef </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>This topic provides details about Legato AF's Kernel Module Definition file.</p>
+<p>The <code></code>.mdef files support 2 methods of building drivers within the Legato AF.</p><ol type="1">
+<li>Using <code>pre-built</code> to bundle kernel module binary files.</li>
+<li>Using <code>sources</code> to make and bundle .c files into a kernel object.</li>
+</ol>
+<p>Each method will bundle the kernel module into the system definition (when called in the .sdef) and will be installed on the target when the system is updated.</p>
+<dl class="section note"><dt>Note</dt><dd>The <code></code>.mdef must contain <b>either</b> a <code>source</code> or a <code>preBuilt</code> section, not both.</dd></dl>
+<p><code></code>.mdef files contain the following sections:</p>
+<h1><a class="anchor" id="defFilesMdef_sources"></a>
+sources</h1>
+<p>The <code>sources:</code> section specifies the path of the source code that is required to build the kernel module binary file. This will build a <code></code>.ko file from the source</p>
+<p>Building a driver using <code>sources:</code> </p>
+<pre class="fragment"><div class="line">sources:</div><div class="line">{</div><div class="line">    mangoh_iot.c</div><div class="line">    green.c</div><div class="line">    eeprom.c</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="defFilesMdef_preBuilt"></a>
+preBuilt</h1>
+<p>The <code>preBuilt:</code> section specifies the path to the pre-built kernel module binary file. The module binary file specified must have an extension <code></code>.ko.</p>
+<p>Building a kernel module binary file from <code>/path/to/module/hello</code>.ko:</p>
+<pre class="fragment"><div class="line">preBuilt:</div><div class="line">{</div><div class="line">    /path/to/kernel/module/hello.ko</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="defFilesMdef_externalBuild"></a>
+externalBuild</h1>
+<p>Specifies a list of commands required to build a kernel module using an external build process. These commands will be executed in order by the shell.</p>
+<p>If <code>externalBuild:</code> section is used in a module, the <code>sources:</code> section cannot be used.</p>
+<p>A common use is to create a Makefile and to run the Makefile using an external build process. To use the module built from externalBuild section, list the module object in the preBuilt section.</p>
+<p>For example, suppose hello.ko module is built using a Makefile. Specify the make command in the externalBuild section and list the built module object in the preBuilt section.</p>
+<pre class="fragment"><div class="line">externalBuild:</div><div class="line">{</div><div class="line">    <span class="stringliteral">"make -f $CURDIR/Makefile"</span></div><div class="line">}</div><div class="line"> </div><div class="line">preBuilt:</div><div class="line">{</div><div class="line">    $CURDIR/hello.ko</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="defFilesMdef_params"></a>
+params</h1>
+<p>The optional <code>params:</code> section lists all module parameters that must be provided to the <code>insmod</code> command.</p>
+<p>The following code sample will execute this command <code>insmod &lt;module&gt; param1=value1 param2=value2 …</code>: </p><pre class="fragment"><div class="line">params:</div><div class="line">{</div><div class="line">    param1 = <span class="stringliteral">"value1"</span></div><div class="line">    param2 = <span class="stringliteral">"value2"</span></div><div class="line">    …</div><div class="line">}</div></pre><!-- fragment --><p>The mandatory quotes (" ") around each parameter value indicate a string type.</p>
+<h1><a class="anchor" id="defFilesMdef_flags"></a>
+flags</h1>
+<p>The optional <code>cflags:</code> and <code>ldflags:</code> can be added to list all options that need to be passed to the compiler and linker during the driver build. </p><pre class="fragment"><div class="line">cflags:</div><div class="line">{</div><div class="line"><span class="stringliteral">"-I/path/to/custom/includes"</span></div><div class="line">}</div><div class="line"> </div><div class="line">ldflags:</div><div class="line">{</div><div class="line"><span class="stringliteral">"-L/path/to/custom/libs"</span></div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="defFilesMdef_load"></a>
+load</h1>
+<p>Specifies if the module should load automatically at start-up:</p><ul>
+<li><b>auto</b> loads automatically by the Supervisor at Legato start-up.</li>
+<li><b>manual</b> loads when the dependent app starts. Default is <b>auto</b>.</li>
+</ul>
+<pre class="fragment"><div class="line">load: manual</div></pre><!-- fragment --><p>If an app is set to manual start and the app depends on a kernel module set to manual then the module will be installed only when the app is triggered to start and the module will be removed when the app is triggered to stop. For example, if app helloWorld depends on module alpha (which is set to manual load), then alpha will be installed only when helloWorld is started using <code>app</code> <code>start</code> <code>helloWorld</code> and alpha will be removed when helloWorld is stopped using <code>app</code> <code>stop</code> <code>helloWorld</code>.</p>
+<h1><a class="anchor" id="defFilesMdef_bundles"></a>
+bundles</h1>
+<p>Kernel modules might need additional files to work correctly. Examples of files that you would bundle with a kernel module may be binaries or firmware images. You can add files and directories in <code>bundles:</code> section that will be bundled with the kernel module and will be copied from the build host to the target such that they are available to the module at runtime. You can then configure the files using a script when loading and unloading the module.</p>
+<pre class="fragment"><div class="line">bundles:</div><div class="line">{</div><div class="line">    file:</div><div class="line">    {</div><div class="line">        $CURDIR/bin/a.bin /bin/a.bin</div><div class="line">        $CURDIR/firmware/b.img /firmware/b.img</div><div class="line">    }</div><div class="line"> </div><div class="line">    dir:</div><div class="line">    {</div><div class="line">        $CURDIR/dir/  /dir</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>The build system path and target path needs to be specified for each of the files or directories. The build system path is on your <b>dev</b> <b>machine</b> where the file is located at build time. The target path is the file system path on the target where the file will appear at runtime. If the path ends with '/', it means the directory path where the source object (file or directory) will be copied. The destination object will have the same name as the source object. The default file path on the target is located at /legato/systems/current/modules/files/modulename/.</p>
+<h1><a class="anchor" id="defFilesMdef_scripts"></a>
+scripts</h1>
+<p>Lists the installation and removal scripts for the kernel module. It is <b>mandatory</b> to add a <code>scripts:</code> section if you have additional files bundled. The scripts must include <code>insmod</code> and <code>rmmod</code> to handle installation and removal of the modules othewise the modules will not be loaded or unloaded.</p>
+<pre class="fragment">scripts:
+{
+    install:  $CURDIR/scripts/install.sh
+    remove:   $CURDIR/scripts/remove.sh
+}
+</pre><p><code>install:</code> specifies the build system path of the module installation script where the script is located at build time.</p>
+<p><code>remove:</code> specifies the build system path of the module removal script where the script is located at build time. The default script file path on the target is located at /legato/system/current/modules/files/modulename/scripts/.</p>
+<p>Example of install.sh: </p><pre class="fragment">#!/bin/sh
+
+KO_PATH=$1
+
+insmod $KO_PATH id="first" port=0x330
+</pre><p>Example of remove.sh: </p><pre class="fragment">#!/bin/sh
+
+KO_PATH=$1
+
+rmmod $KO_PATH
+</pre><dl class="section warning"><dt>Warning</dt><dd>The installation script must handle the loading of the module using <code>insmod</code> and the removal script must handle the unloading of the module using <code>rmmod</code>.</dd></dl>
+<h1><a class="anchor" id="defFilesMdef_requires"></a>
+requires</h1>
+<p>The <code>requires:</code> section specifies various requirements the module needs from its runtime environment.</p>
+<h2><a class="anchor" id="defFilesMdef_requireskm"></a>
+kernelModules</h2>
+<p>Your module may depend on one or more kernel modules to load before it loads. <code>kernelModules:</code> section declares a list of kernel modules that a module depends on. Each entry is a path to another <a class="el" href="defFilesMdef.html">.mdef</a> definition file. This section marks that the module has a requirement on a kernel module but does not add the kernel module to the Legato system. The kernel module needs to be <b>explicitly</b> <b>added</b> to kernelModules: section of your systems <a class="el" href="defFilesSdef.html">.sdef</a>. After the kernel modules are added to the sdef, the modules will be bundled as a part of the parent module and installed with the Legato system. The listed modules will be installed before the parent module itself is installed. In the example below, hello and world kernel modules will be installed before its parent module is installed.</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    kernelModules:</div><div class="line">    {</div><div class="line">       $CURDIR/kernelmodule/hello</div><div class="line">       $CURDIR/kernelmodule/world</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>hello module might further depend on alpha module and the following requires section needs to be added to the hello module. In such case, alpha module will be loaded before hello module is loaded.</p>
+<p>Example of requires: kernelModules: section of hello module:</p>
+<pre class="fragment"><div class="line">requires:</div><div class="line">{</div><div class="line">    kernelModules:</div><div class="line">    {</div><div class="line">       $CURDIR/kernelmodule/alpha [optional]</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>If a kernel module is marked as optional using '[optional]' tag, module load failure is ignored and no fault recovery action is taken. In the above example, module alpha is optional.</p>
+<p>If a module is dependent on an app and is not specified as optional in the adef then fault handler kicks in which triggers fault action of each process in the app.</p>
+<p>If a module is added at the system level in sdef and is not optional then the Legato framework restarts when module fails to load in order to attempt recovery. Please note that for the same module with module dependencies, optional tag for the modules must be the same specified in both sdef and mdef.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Cyclic dependency must be avoided when designing the kernel module hierarchy. For instance, if module 'a.mdef' is dependent on module 'x.mdef' at some point in the hierarchy then module 'x.mdef' must never be dependent on module 'a.mdef' at any point.</dd></dl>
+<h1><a class="anchor" id="defFilesMdef_kernelModule"></a>
+kernelModule</h1>
+<p>A module definition file can contain multiple source files which can be build into multiple kernel module objects instead of just building one kernel module object. Instead of creating multiple mdef files and generating module objects separately, in many cases it might be convenient to list the module objects in a single mdef and specify common module depencencies if applicable. This reduces the number of mdef files to maintain and provide an efficient way to generate multiple module objects using single mdef.</p>
+<p><code>kernelModule:</code> section defines a kernel module with the name of the kernel module in <code>name:</code> sub-section and the list of corresponding source files in <code>sources:</code> section. The list of dependency modules are listed using <code>requires:</code> kernelModules: section.</p>
+<pre class="fragment"><div class="line">myModule.mdef</div><div class="line"> </div><div class="line">kernelModule:</div><div class="line">{</div><div class="line">    name: myModuleA</div><div class="line">    sources:</div><div class="line">    {</div><div class="line">        myModuleA1.c</div><div class="line">        myModuleA2.c</div><div class="line">    }</div><div class="line">}</div><div class="line"> </div><div class="line"> </div><div class="line">kernelModule:</div><div class="line">{</div><div class="line">    name: myModuleB</div><div class="line">    sources:</div><div class="line">    {</div><div class="line">        myModuleB.c</div><div class="line">    }</div><div class="line"> </div><div class="line">    requires:</div><div class="line">    {</div><div class="line">        kernelModules:</div><div class="line">        {</div><div class="line">            myModuleA  <span class="comment">// myModuleB depends on kernel module defined above</span></div><div class="line">            alpha      <span class="comment">// myModuleB depends on another Legato kernel module</span></div><div class="line">        }</div><div class="line">    }</div><div class="line">}</div><div class="line"> </div><div class="line">requires:</div><div class="line">{</div><div class="line">    kernelModules:</div><div class="line">    {</div><div class="line">        beta   <span class="comment">// myModuleA and myModuleB both have dependency on beta</span></div><div class="line">        gamma  <span class="comment">// myModuleA and myModuleB both have dependency on gamma</span></div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><p>myModule.mdef generates two kernel module object files: 'myModuleA.ko' and 'myModuleB.ko'. Both the modules have dependency on beta and gamma modules. myModuleB depends on myModuleA and alpha modules.</p>
+<p>Please note that if the names of kernel modules are not explicity provided using <code>name:</code> section then default names are generated using the mdef filename and incrementing number appended to the end of the filename. In <code>myModule.mdef</code> file, if names 'myModuleA' and 'myModuleB' are not explicitly provided then ko files with default names 'myModule1.ko' and 'myModule2.ko' are generated. This is also true when one of the sub module is named and the other is not. For example, if myModuleB name is not specified then ko files 'myModuleA.ko' and 'myModule1.ko' are generated.</p>
+<p>If a kernel module is a dependency to another module, provide a name for the kernel module so that it can always be referred by the specified name. In <code>myModule.mdef</code> file, provide a name for the first module i.e. myModuleA as the second module depends on myModuleA. Whereas, naming myModuleB might be optional as no other module is dependent on it.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

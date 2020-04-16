@@ -1,0 +1,1278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_iks_interface.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="20.04.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src=""></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Legato Documentation</h2>
+<nav class="secondary">
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#typedef-members">Typedefs</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_iks_interface.h File Reference</h1> </div>
+</div><div class="contents">
+<div class="textblock"><code>#include "legato.h"</code><br/>
+<code>#include "le_iks_common.h"</code><br/>
+</div>
+<p><a href="le__iks__interface_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ab8c1502ff2f6b0850fe65267864ad4d1"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#ab8c1502ff2f6b0850fe65267864ad4d1">le_iks_DisconnectHandler_t</a>) (void *)</td></tr>
+<tr class="separator:ab8c1502ff2f6b0850fe65267864ad4d1"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:afcffa22c66ff309d60f3bb9020893102"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#afcffa22c66ff309d60f3bb9020893102">le_iks_ConnectService</a> (void)</td></tr>
+<tr class="separator:afcffa22c66ff309d60f3bb9020893102"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a391e942dcacb83386c792bb33fe80325"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#a391e942dcacb83386c792bb33fe80325">le_iks_TryConnectService</a> (void)</td></tr>
+<tr class="separator:a391e942dcacb83386c792bb33fe80325"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae9f3624944ed1f2d4c72ca794177d2e6"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#ae9f3624944ed1f2d4c72ca794177d2e6">le_iks_SetServerDisconnectHandler</a> (<a class="el" href="le__iks__interface_8h.html#ab8c1502ff2f6b0850fe65267864ad4d1">le_iks_DisconnectHandler_t</a> disconnectHandler, void *contextPtr)</td></tr>
+<tr class="separator:ae9f3624944ed1f2d4c72ca794177d2e6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae9d6b0f546ba66da3054d137343275ec"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#ae9d6b0f546ba66da3054d137343275ec">le_iks_DisconnectService</a> (void)</td></tr>
+<tr class="separator:ae9d6b0f546ba66da3054d137343275ec"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1ceb90d5573db12ebb9cacddfc4a6ed9"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#a1ceb90d5573db12ebb9cacddfc4a6ed9">le_iks_SetModuleId</a> (const char *LE_NONNULL idPtr, uint64_t keyRef)</td></tr>
+<tr class="separator:a1ceb90d5573db12ebb9cacddfc4a6ed9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab6917fa27a56f739467b4ed7d7101cd8"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#ab6917fa27a56f739467b4ed7d7101cd8">le_iks_GetModuleId</a> (char *idPtr, size_t idPtrSize)</td></tr>
+<tr class="separator:ab6917fa27a56f739467b4ed7d7101cd8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af4bae11cd4b15c3b91cc9cc0db639a0d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#af4bae11cd4b15c3b91cc9cc0db639a0d">le_iks_DeleteModuleId</a> (const uint8_t *authCmdPtr, size_t authCmdSize)</td></tr>
+<tr class="separator:af4bae11cd4b15c3b91cc9cc0db639a0d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae815a6ee32c6ab841ed584456177c53f"><td align="right" class="memItemLeft" valign="top">uint64_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#ae815a6ee32c6ab841ed584456177c53f">le_iks_GetKey</a> (const char *LE_NONNULL keyId)</td></tr>
+<tr class="separator:ae815a6ee32c6ab841ed584456177c53f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a38053aea34cfcd42fd73fbfcb96faa60"><td align="right" class="memItemLeft" valign="top">uint64_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#a38053aea34cfcd42fd73fbfcb96faa60">le_iks_CreateKey</a> (const char *LE_NONNULL keyId, le_iks_KeyUsage_t keyUsage)</td></tr>
+<tr class="separator:a38053aea34cfcd42fd73fbfcb96faa60"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2cf1044878b663ec46c49b449b26bbd8"><td align="right" class="memItemLeft" valign="top">uint64_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#a2cf1044878b663ec46c49b449b26bbd8">le_iks_CreateKeyByType</a> (const char *LE_NONNULL keyId, le_iks_KeyType_t keyType, uint32_t keySize)</td></tr>
+<tr class="separator:a2cf1044878b663ec46c49b449b26bbd8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:adfa531d68d241953caefec584de44f84"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#adfa531d68d241953caefec584de44f84">le_iks_GetKeyType</a> (uint64_t keyRef, le_iks_KeyType_t *keyTypePtr)</td></tr>
+<tr class="separator:adfa531d68d241953caefec584de44f84"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a365a065b7fce5aa4008a6257cdb71e79"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#a365a065b7fce5aa4008a6257cdb71e79">le_iks_GetKeySize</a> (uint64_t keyRef, uint32_t *keySizePtr)</td></tr>
+<tr class="separator:a365a065b7fce5aa4008a6257cdb71e79"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab47d70ecab9783f4007e1b98c842b1c4"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#ab47d70ecab9783f4007e1b98c842b1c4">le_iks_IsKeySizeValid</a> (le_iks_KeyType_t keyType, uint32_t keySize)</td></tr>
+<tr class="separator:ab47d70ecab9783f4007e1b98c842b1c4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4a3d41f4a9a38a31c8097396b1dddeea"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#a4a3d41f4a9a38a31c8097396b1dddeea">le_iks_HasKeyValue</a> (uint64_t keyRef)</td></tr>
+<tr class="separator:a4a3d41f4a9a38a31c8097396b1dddeea"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aaf90d0ae35ef083914ae8881465e643b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#aaf90d0ae35ef083914ae8881465e643b">le_iks_SetKeyUpdateKey</a> (uint64_t keyRef, uint64_t updateKeyRef)</td></tr>
+<tr class="separator:aaf90d0ae35ef083914ae8881465e643b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:acee01f3d5956c96aa67b142c7deddd42"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#acee01f3d5956c96aa67b142c7deddd42">le_iks_GenKeyValue</a> (uint64_t keyRef, const uint8_t *authCmdPtr, size_t authCmdSize)</td></tr>
+<tr class="separator:acee01f3d5956c96aa67b142c7deddd42"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ace8e3b913b4b79a7e06c377602786758"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#ace8e3b913b4b79a7e06c377602786758">le_iks_ProvisionKeyValue</a> (uint64_t keyRef, const uint8_t *provPackagePtr, size_t provPackageSize)</td></tr>
+<tr class="separator:ace8e3b913b4b79a7e06c377602786758"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a33ec6dc63bb6c4350e04161c779cb68f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#a33ec6dc63bb6c4350e04161c779cb68f">le_iks_SaveKey</a> (uint64_t keyRef)</td></tr>
+<tr class="separator:a33ec6dc63bb6c4350e04161c779cb68f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a52ee2694fe11f1a3dbdd8674513215ce"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#a52ee2694fe11f1a3dbdd8674513215ce">le_iks_DeleteKey</a> (uint64_t keyRef, const uint8_t *authCmdPtr, size_t authCmdSize)</td></tr>
+<tr class="separator:a52ee2694fe11f1a3dbdd8674513215ce"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a35625b66c201334470440ac16ea11591"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#a35625b66c201334470440ac16ea11591">le_iks_GetPubKeyValue</a> (uint64_t keyRef, uint8_t *bufPtr, size_t *bufSizePtr)</td></tr>
+<tr class="separator:a35625b66c201334470440ac16ea11591"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1db410c54ab06b6bda60d7c5d550d0b8"><td align="right" class="memItemLeft" valign="top">uint64_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#a1db410c54ab06b6bda60d7c5d550d0b8">le_iks_GetDigest</a> (const char *LE_NONNULL digestId)</td></tr>
+<tr class="separator:a1db410c54ab06b6bda60d7c5d550d0b8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7aa1e7b63f41adb961d57f12d053470b"><td align="right" class="memItemLeft" valign="top">uint64_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#a7aa1e7b63f41adb961d57f12d053470b">le_iks_CreateDigest</a> (const char *LE_NONNULL digestId, uint32_t digestSize)</td></tr>
+<tr class="separator:a7aa1e7b63f41adb961d57f12d053470b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a951e8d1d606dd5e531417008f2a25813"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#a951e8d1d606dd5e531417008f2a25813">le_iks_GetDigestSize</a> (uint64_t digestRef, uint32_t *digestSizePtr)</td></tr>
+<tr class="separator:a951e8d1d606dd5e531417008f2a25813"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4516037586e1fefcd6a2b66c9be60087"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#a4516037586e1fefcd6a2b66c9be60087">le_iks_SetDigestUpdateKey</a> (uint64_t digestRef, uint64_t updateKeyRef)</td></tr>
+<tr class="separator:a4516037586e1fefcd6a2b66c9be60087"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7c0f67d9af515c5a01db3b0f259765c5"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#a7c0f67d9af515c5a01db3b0f259765c5">le_iks_ProvisionDigest</a> (uint64_t digestRef, const uint8_t *provPackagePtr, size_t provPackageSize)</td></tr>
+<tr class="separator:a7c0f67d9af515c5a01db3b0f259765c5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:afe89d702fa63e01e901641cd527d9dce"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#afe89d702fa63e01e901641cd527d9dce">le_iks_SaveDigest</a> (uint64_t digestRef)</td></tr>
+<tr class="separator:afe89d702fa63e01e901641cd527d9dce"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1de587825df9192ecefc44294fd59a0b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#a1de587825df9192ecefc44294fd59a0b">le_iks_DeleteDigest</a> (uint64_t digestRef, const uint8_t *authCmdPtr, size_t authCmdSize)</td></tr>
+<tr class="separator:a1de587825df9192ecefc44294fd59a0b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa417c8e53a4d3303859d0b454213386d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#aa417c8e53a4d3303859d0b454213386d">le_iks_GetDigestValue</a> (uint64_t digestRef, uint8_t *bufPtr, size_t *bufSizePtr)</td></tr>
+<tr class="separator:aa417c8e53a4d3303859d0b454213386d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a08d572912b2af5c36f8cd5ec67bb969c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#a08d572912b2af5c36f8cd5ec67bb969c">le_iks_GetUpdateAuthChallenge</a> (uint64_t keyRef, uint8_t *bufPtr, size_t *bufSizePtr)</td></tr>
+<tr class="separator:a08d572912b2af5c36f8cd5ec67bb969c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af5d41f10beb59e9f1f6bddea62b8fe2b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#af5d41f10beb59e9f1f6bddea62b8fe2b">le_iks_GetProvisionKey</a> (uint8_t *bufPtr, size_t *bufSizePtr)</td></tr>
+<tr class="separator:af5d41f10beb59e9f1f6bddea62b8fe2b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae8f40e258546ea903a150391355fbbe4"><td align="right" class="memItemLeft" valign="top">uint64_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#ae8f40e258546ea903a150391355fbbe4">le_iks_CreateSession</a> (uint64_t keyRef)</td></tr>
+<tr class="separator:ae8f40e258546ea903a150391355fbbe4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aaf0e47ad7062f789432ce1a8e6e41b5b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__interface_8h.html#aaf0e47ad7062f789432ce1a8e6e41b5b">le_iks_DeleteSession</a> (uint64_t sessionRef)</td></tr>
+<tr class="separator:aaf0e47ad7062f789432ce1a8e6e41b5b"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato <a class="el" href="c_iks.html">IoT Keystore Key Management API</a> API</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="ab8c1502ff2f6b0850fe65267864ad4d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8c1502ff2f6b0850fe65267864ad4d1">◆ </a></span>le_iks_DisconnectHandler_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_iks_DisconnectHandler_t) (void *)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Type for handler called when a server disconnects. </p>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="afcffa22c66ff309d60f3bb9020893102"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcffa22c66ff309d60f3bb9020893102">◆ </a></span>le_iks_ConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_iks_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="a7aa1e7b63f41adb961d57f12d053470b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7aa1e7b63f41adb961d57f12d053470b">◆ </a></span>le_iks_CreateDigest()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">uint64_t le_iks_CreateDigest </td>
+<td>(</td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>digestId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>digestSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Creates a new digest.</p>
+<p>New digests initially have no value. Digest values can be set using <a class="el" href="le__iks__interface_8h.html#a7c0f67d9af515c5a01db3b0f259765c5">le_iks_ProvisionDigest()</a>.</p>
+<p>Created digests initially only exist in non-persistent memory, call <a class="el" href="le__iks__interface_8h.html#afe89d702fa63e01e901641cd527d9dce">le_iks_SaveDigest()</a> to save to persistent storage.</p>
+<p>Digest IDs may only consist of alphanumeric characters, the underscore '_' and hyphen '-'.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the digest if successful. 0 if there was an error. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">digestId</td><td>Identifier string. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">digestSize</td><td>Digest size. Must be &lt;= MAX_DIGEST_SIZE. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a38053aea34cfcd42fd73fbfcb96faa60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38053aea34cfcd42fd73fbfcb96faa60">◆ </a></span>le_iks_CreateKey()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">uint64_t le_iks_CreateKey </td>
+<td>(</td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>keyId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_iks_KeyUsage_t </td>
+<td class="paramname"><em>keyUsage</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Creates a new key.</p>
+<p>This is a convenient way to create a key for a specific usage. This function will choose a default key type to satisfy the specified usage.</p>
+<p>New keys initially have no value and cannot be used. Key values can be set using either <a class="el" href="le__iks__interface_8h.html#acee01f3d5956c96aa67b142c7deddd42">le_iks_GenKeyValue()</a> or <a class="el" href="le__iks__interface_8h.html#ace8e3b913b4b79a7e06c377602786758">le_iks_ProvisionKeyValue()</a>.</p>
+<p>Created keys initially only exist in non-persistent memory, call <a class="el" href="le__iks__interface_8h.html#a33ec6dc63bb6c4350e04161c779cb68f">le_iks_SaveKey()</a> to save the key to persistent memory.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the key if successful. 0 if the keyId is already being used or is invalid or the keyUsage is invalid. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">keyId</td><td>Identifier string. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">keyUsage</td><td>Key usage. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a2cf1044878b663ec46c49b449b26bbd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cf1044878b663ec46c49b449b26bbd8">◆ </a></span>le_iks_CreateKeyByType()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">uint64_t le_iks_CreateKeyByType </td>
+<td>(</td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>keyId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_iks_KeyType_t </td>
+<td class="paramname"><em>keyType</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>keySize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Creates a new key of a specific type.</p>
+<p>New keys initially have no value and cannot be used. Key values can be set using either <a class="el" href="le__iks__interface_8h.html#acee01f3d5956c96aa67b142c7deddd42">le_iks_GenKeyValue()</a> or <a class="el" href="le__iks__interface_8h.html#ace8e3b913b4b79a7e06c377602786758">le_iks_ProvisionKeyValue()</a>.</p>
+<p>Created keys initially only exist in non-persistent memory, call <a class="el" href="le__iks__interface_8h.html#a33ec6dc63bb6c4350e04161c779cb68f">le_iks_SaveKey()</a> to save the key to persistent memory.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the key if successful. 0 if the keyId is already being used or if there was some other error. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">keyId</td><td>Identifier string. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">keyType</td><td>Key type. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">keySize</td><td>Key size in bytes. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ae8f40e258546ea903a150391355fbbe4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8f40e258546ea903a150391355fbbe4">◆ </a></span>le_iks_CreateSession()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">uint64_t le_iks_CreateSession </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>keyRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Create a session.</p>
+<dl class="section return"><dt>Returns</dt><dd>A session reference if successful. 0 if the key reference is invalid or does not contain a key value. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">keyRef</td><td>Key to use for this session. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a1de587825df9192ecefc44294fd59a0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1de587825df9192ecefc44294fd59a0b">◆ </a></span>le_iks_DeleteDigest()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_DeleteDigest </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>digestRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>authCmdPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>authCmdSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Delete a digest.</p>
+<p>If the specified digest has an assigned update key then the authCmdPtr must contain a delete digest command and a valid authentication challenge, obtained by <a class="el" href="le__iks__interface_8h.html#a08d572912b2af5c36f8cd5ec67bb969c">le_iks_GetUpdateAuthChallenge()</a> and is signed with the update private key. If the command is valid and authentic then the digest will be deleted.</p>
+<p>If the specified digest does not have an assigned update key then then authCmdPtr is ignored.</p>
+<dl class="section note"><dt>Note</dt><dd>See the comment block at the top of this page for the authenticated command format.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the digest reference is invalid LE_UNSUPPORTED if underlying resource does not support this operation. LE_FAULT if the digest has an update key and the authCmdPtr is not valid. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">digestRef</td><td>Digest reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">authCmdPtr</td><td>Authenticated command buffer. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">authCmdSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a52ee2694fe11f1a3dbdd8674513215ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52ee2694fe11f1a3dbdd8674513215ce">◆ </a></span>le_iks_DeleteKey()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_DeleteKey </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>keyRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>authCmdPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>authCmdSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Delete key.</p>
+<p>If the specified key has an assigned update key then the authCmdPtr must contain a delete key command and a valid authentication challenge, obtained by <a class="el" href="le__iks__interface_8h.html#a08d572912b2af5c36f8cd5ec67bb969c">le_iks_GetUpdateAuthChallenge()</a>, and is signed with the update private key. If the command is valid and authentic then the key will be deleted.</p>
+<p>If the specified key does not have an assigned update key then then authCmdPtr is ignored.</p>
+<dl class="section warning"><dt>Warning</dt><dd>When deleting an update key, it is a good idea to delete all keys that depend on the update key first. Otherwise the dependent keys will be left non-updatable.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>See the comment block at the top of this page for the authenticated command format.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the key reference is invalid. LE_UNSUPPORTED if underlying resource does not support this operation. LE_FAULT if the key has an update key and the authCmdPtr is not valid. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">keyRef</td><td>Key reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">authCmdPtr</td><td>Authenticated command buffer. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">authCmdSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="af4bae11cd4b15c3b91cc9cc0db639a0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4bae11cd4b15c3b91cc9cc0db639a0d">◆ </a></span>le_iks_DeleteModuleId()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_DeleteModuleId </td>
+<td>(</td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>authCmdPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>authCmdSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Deletes the module ID.</p>
+<p>This function is only possible if an update key was set when the module ID was set. The authCmdPtr must contain a valid delete module ID command. If the command is valid and authentic then the module ID is deleted. Once the module ID is deleted a new module ID may be set.</p>
+<dl class="section note"><dt>Note</dt><dd>See the comment block at the top of this page for the authenticated command format.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_NOT_FOUND if the module ID has not been set. LE_UNSUPPORTED if underlying resource does not support this operation. LE_FAULT if there is no assigned update key or the authCmdPtr is not valid or if there was an internal error. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">authCmdPtr</td><td>Authenticated command buffer. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">authCmdSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aaf0e47ad7062f789432ce1a8e6e41b5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf0e47ad7062f789432ce1a8e6e41b5b">◆ </a></span>le_iks_DeleteSession()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_DeleteSession </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>sessionRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Delete a session.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the session reference is invalid. LE_UNSUPPORTED if underlying resource does not support this operation. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">sessionRef</td><td>Session reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ae9d6b0f546ba66da3054d137343275ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9d6b0f546ba66da3054d137343275ec">◆ </a></span>le_iks_DisconnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_iks_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="acee01f3d5956c96aa67b142c7deddd42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acee01f3d5956c96aa67b142c7deddd42">◆ </a></span>le_iks_GenKeyValue()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_GenKeyValue </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>keyRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>authCmdPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>authCmdSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Generate a key value.</p>
+<p>If the specified key has an assigned update key then the authCmdPtr must contain a generate key command and a valid authentication challenge, obtained by <a class="el" href="le__iks__interface_8h.html#a08d572912b2af5c36f8cd5ec67bb969c">le_iks_GetUpdateAuthChallenge()</a>, and is signed with the update private key. If the command is valid and authentic then a new key value is generated replacing the old value.</p>
+<p>If the specified key does not have an update key then the authCmdPtr is ignored.</p>
+<p>Public keys cannot be generated using this function. They must be provisioned using <a class="el" href="le__iks__interface_8h.html#ace8e3b913b4b79a7e06c377602786758">le_iks_ProvisionKeyValue()</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>See the comment block at the top of this page for the authenticated command format.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the key reference is invalid or if the key is a public key. LE_UNSUPPORTED if underlying resource does not support this operation. LE_FAULT if there is an update key set and the authCmdPtr does not contain a valid authenticated command, or if there was an internal error. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">keyRef</td><td>Key reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">authCmdPtr</td><td>Authenticated command buffer. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">authCmdSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a1db410c54ab06b6bda60d7c5d550d0b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1db410c54ab06b6bda60d7c5d550d0b8">◆ </a></span>le_iks_GetDigest()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">uint64_t le_iks_GetDigest </td>
+<td>(</td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>digestId</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Gets a reference to a digest.</p>
+<p>Digest IDs may only consist of alphanumeric characters, the underscore '_' and hyphen '-'.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the digest. 0 if the digest could not be found. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">digestId</td><td>Identifier string. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a951e8d1d606dd5e531417008f2a25813"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a951e8d1d606dd5e531417008f2a25813">◆ </a></span>le_iks_GetDigestSize()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_GetDigestSize </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>digestRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t * </td>
+<td class="paramname"><em>digestSizePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the digest size in bytes.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the digest reference is invalid. LE_UNSUPPORTED if underlying resource does not support this operation. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">digestRef</td><td>Digest reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">digestSizePtr</td><td>Digest size. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aa417c8e53a4d3303859d0b454213386d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa417c8e53a4d3303859d0b454213386d">◆ </a></span>le_iks_GetDigestValue()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_GetDigestValue </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>digestRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>bufPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>bufSizePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the digest value.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the digest reference is invalid. LE_NOT_FOUND if the digest reference does not have a value. LE_OVERFLOW if the supplied buffer is too small to hold the digest value. LE_UNSUPPORTED if underlying resource does not support this operation. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">digestRef</td><td>Digest reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">bufPtr</td><td>Buffer to hold the digest value. </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">bufSizePtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ae815a6ee32c6ab841ed584456177c53f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae815a6ee32c6ab841ed584456177c53f">◆ </a></span>le_iks_GetKey()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">uint64_t le_iks_GetKey </td>
+<td>(</td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>keyId</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Gets a reference to a key.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the key. 0 if the key could not be found. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">keyId</td><td>Identifier string. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a365a065b7fce5aa4008a6257cdb71e79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a365a065b7fce5aa4008a6257cdb71e79">◆ </a></span>le_iks_GetKeySize()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_GetKeySize </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>keyRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t * </td>
+<td class="paramname"><em>keySizePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the key size in bytes.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the key reference is invalid LE_UNSUPPORTED if underlying resource does not support this operation. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">keyRef</td><td>Key reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">keySizePtr</td><td>Key size. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="adfa531d68d241953caefec584de44f84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfa531d68d241953caefec584de44f84">◆ </a></span>le_iks_GetKeyType()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_GetKeyType </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>keyRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_iks_KeyType_t * </td>
+<td class="paramname"><em>keyTypePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the key type.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the key reference is invalid LE_UNSUPPORTED if underlying resource does not support this operation. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">keyRef</td><td>Key reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">keyTypePtr</td><td>Key type. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ab6917fa27a56f739467b4ed7d7101cd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6917fa27a56f739467b4ed7d7101cd8">◆ </a></span>le_iks_GetModuleId()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_GetModuleId </td>
+<td>(</td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>idPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>idPtrSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the module ID.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_NOT_FOUND if the module ID has not been set. LE_BAD_PARAMETER if bufPtr is NULL. LE_OVERFLOW if the buffer is too small to hold the entire module ID. LE_UNSUPPORTED if underlying resource does not support this operation. LE_FAULT if there was an internal error. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">idPtr</td><td>Module ID. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">idPtrSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="af5d41f10beb59e9f1f6bddea62b8fe2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5d41f10beb59e9f1f6bddea62b8fe2b">◆ </a></span>le_iks_GetProvisionKey()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_GetProvisionKey </td>
+<td>(</td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>bufPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>bufSizePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the provisioning key. This is a public key that is internally generated by the IOT Key Store and used to encrypt symmetric and private keys for provisioning into the IOT Key Store. This key can only be used for this purpose.</p>
+<dl class="section note"><dt>Note</dt><dd>The key is provided in ASN.1 structured DER encoded format. Refer to the comment at the top of this file for details of the file format.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_OVERFLOW if the supplied buffer is too small. LE_UNSUPPORTED if underlying resource does not support this operation. LE_FAULT if there is an internal error. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">bufPtr</td><td>Buffer to hold the provisioning key. </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">bufSizePtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a35625b66c201334470440ac16ea11591"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35625b66c201334470440ac16ea11591">◆ </a></span>le_iks_GetPubKeyValue()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_GetPubKeyValue </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>keyRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>bufPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>bufSizePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the public portion of an asymmetric key.</p>
+<p>The output will be in:</p><ul>
+<li>PKCS #1 format (DER encoded) for RSA keys.</li>
+<li>ECPoint format defined in RFC5480 for ECC keys.</li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the key reference is invalid or if the key is not an asymmetric key. LE_NOT_FOUND if the key reference does not have a value. LE_UNSUPPORTED if underlying resource does not support this operation. LE_OVERFLOW if the supplied buffer is too small to hold the key value. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">keyRef</td><td>Key reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">bufPtr</td><td>Buffer to hold key value. </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">bufSizePtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a08d572912b2af5c36f8cd5ec67bb969c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08d572912b2af5c36f8cd5ec67bb969c">◆ </a></span>le_iks_GetUpdateAuthChallenge()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_GetUpdateAuthChallenge </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>keyRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>bufPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>bufSizePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get update authentication challenge.</p>
+<p>This challenge code must be included in any update commands created using the specified update key.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the update key reference is invalid. LE_UNSUPPORTED if underlying resource does not support this operation. LE_FAULT if there is an internal error. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">keyRef</td><td>Key reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">bufPtr</td><td>Buffer to hold the authentication challenge. Assumed to be CHALLENGE_SIZE bytes. </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">bufSizePtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a4a3d41f4a9a38a31c8097396b1dddeea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a3d41f4a9a38a31c8097396b1dddeea">◆ </a></span>le_iks_HasKeyValue()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_HasKeyValue </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>keyRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Checks if the key has a value.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if the key has a value. LE_BAD_PARAMETER if the key reference is invalid. LE_NOT_FOUND if the key has no value. LE_UNSUPPORTED if underlying resource does not support this operation. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">keyRef</td><td>Key reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ab47d70ecab9783f4007e1b98c842b1c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab47d70ecab9783f4007e1b98c842b1c4">◆ </a></span>le_iks_IsKeySizeValid()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_IsKeySizeValid </td>
+<td>(</td>
+<td class="paramtype">le_iks_KeyType_t </td>
+<td class="paramname"><em>keyType</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>keySize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Checks if the key size is valid.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if the key size is valid. LE_OUT_OF_RANGE if the key size is invalid. LE_UNSUPPORTED if underlying resource does not support this operation. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">keyType</td><td>Key type. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">keySize</td><td>Key size. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a7c0f67d9af515c5a01db3b0f259765c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c0f67d9af515c5a01db3b0f259765c5">◆ </a></span>le_iks_ProvisionDigest()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_ProvisionDigest </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>digestRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>provPackagePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>provPackageSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Provision a digest value.</p>
+<p>The provisioning package, provPackagePtr, must contain the digest value to provision.</p>
+<p>If the specified digest does not have an assigned update key then the provPackagePtr is treated as a buffer containing the digest value.</p>
+<p>If the specified digest has an assigned update key then the provPackagePtr must also contain a valid authentication challenge and be signed with the assigned update key.</p>
+<dl class="section note"><dt>Note</dt><dd>See the comment block at the top of this page for the provisioning package format.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the digest reference is invalid or if the digest value is too long. LE_UNSUPPORTED if underlying resource does not support this operation. LE_FAULT if the provPackagePtr does not have a valid signature or if there was an internal error. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">digestRef</td><td>Digest reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">provPackagePtr</td><td>Provisioning package. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">provPackageSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ace8e3b913b4b79a7e06c377602786758"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace8e3b913b4b79a7e06c377602786758">◆ </a></span>le_iks_ProvisionKeyValue()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_ProvisionKeyValue </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>keyRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>provPackagePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>provPackageSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Provision a key value.</p>
+<p>The provisioning package, provPackagePtr, must contain the key value to provision.</p>
+<p>Private key provisioning is not currently supported.</p>
+<p>If the key is a symmetric then the key value must be encrypted with the provisioning key. If the key is a public key the key value must be provided in plaintext.</p>
+<p>If the specified key does not have an assigned update key then the provPackagePtr is treated as a buffer containing the key value.</p>
+<p>If the specified key has an assigned update key then the provPackagePtr must also contain a valid authentication challenge and be signed with the assigned update key.</p>
+<dl class="section note"><dt>Note</dt><dd>See the comment block at the top of this page for the provisioning package format.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the key reference is invalid. LE_UNSUPPORTED if underlying resource does not support this operation. LE_FAULT if the provPackagePtr is not validly encrypted and/or signed or if there was an internal error. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">keyRef</td><td>Key reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">provPackagePtr</td><td>Provisioning package. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">provPackageSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="afe89d702fa63e01e901641cd527d9dce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe89d702fa63e01e901641cd527d9dce">◆ </a></span>le_iks_SaveDigest()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_SaveDigest </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>digestRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Saves a digest to persistent storage.</p>
+<dl class="section note"><dt>Note</dt><dd>Previously saved digests that have been updated do not need to be re-saved.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the digest reference is invalid LE_UNSUPPORTED if underlying resource does not support this operation. LE_FAULT if the digest is already in persistent storage or if there was an internal error. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">digestRef</td><td>Digest reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a33ec6dc63bb6c4350e04161c779cb68f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33ec6dc63bb6c4350e04161c779cb68f">◆ </a></span>le_iks_SaveKey()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_SaveKey </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>keyRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Saves a key to persistent storage.</p>
+<dl class="section note"><dt>Note</dt><dd>Previously saved keys that have been updated do not need to be re-saved.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the key reference is invalid. LE_UNSUPPORTED if underlying resource does not support this operation. LE_FAULT if the key is already in persistent storage or if there was an internal error. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">keyRef</td><td>Key reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a4516037586e1fefcd6a2b66c9be60087"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4516037586e1fefcd6a2b66c9be60087">◆ </a></span>le_iks_SetDigestUpdateKey()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_SetDigestUpdateKey </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>digestRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>updateKeyRef</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set an update key for the specified digest. The update key must be of type KEY_TYPE_KEY_UPDATE. The update key can be used at a later time to perform authenticated updates of the specified digest. The same update key may be used for multiple keys and digests.</p>
+<dl class="section note"><dt>Note</dt><dd>Once an update key is assigned the digest parameters can no longer be modified except through an authenticated update process.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>It is strongly recommended to save the update key before assigning it to other keys/digests. Otherwise a sudden power loss could leave the update key reference pointing to a non-existing update key allowing a new update key to be created with the same ID but a different (unintended) value.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the digest reference is invalid or if the update key reference is invalid or does not have a value. LE_UNSUPPORTED if underlying resource does not support this operation. LE_FAULT if an update key has already been set or if there was an internal error. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">digestRef</td><td>Digest reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">updateKeyRef</td><td>Reference to an update key. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aaf90d0ae35ef083914ae8881465e643b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf90d0ae35ef083914ae8881465e643b">◆ </a></span>le_iks_SetKeyUpdateKey()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_SetKeyUpdateKey </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>keyRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>updateKeyRef</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set an update key for the specified key. The update key must be of type KEY_TYPE_KEY_UPDATE. The update key can be used at a later time to perform authenticated updates of the specified key. The same update key may be used for multiple keys and digests.</p>
+<dl class="section note"><dt>Note</dt><dd>Once an update key is assigned the key parameters can no longer be modified except through an authenticated update process.</dd></dl>
+<p>Update keys can be assigned to themselves or other update keys.</p>
+<dl class="section warning"><dt>Warning</dt><dd>It is strongly recommended to save the update key before assigning it to other keys/digests. Otherwise a sudden power loss could leave the update key reference pointing to a non-existing update key allowing a new update key to be created with the same ID but a different (unintended) value.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the key reference is invalid or if the update key reference is invalid or does not have a value. LE_UNSUPPORTED if underlying resource does not support this operation. LE_FAULT if an update key has already been set or if there was an internal error. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">keyRef</td><td>Key reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">updateKeyRef</td><td>Reference to an update key. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a1ceb90d5573db12ebb9cacddfc4a6ed9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ceb90d5573db12ebb9cacddfc4a6ed9">◆ </a></span>le_iks_SetModuleId()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_SetModuleId </td>
+<td>(</td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>idPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>keyRef</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Key usage. This type can be used to conveniently create keys for different usages. IOT Key Store will select a default key type for the specified usage. Key types Hash function identifiers.</p>
+<dl class="section warning"><dt>Warning</dt><dd>The values in this enum must not be changed. The list may be amended but binary compatibility requires that the actual values never change. Sets the module ID. This module ID may be used to uniquely identify the module, device or chip that this instance of the IOT Key Store is running in. The module ID is not secret and should generally not change for the life of the module.</dd></dl>
+<p>An update key can be set to delete the module ID. If the update key is not set then the module ID may be viewed as OTP (one-time programmable).</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the update key reference is invalid or if idPtr NULL or is invalid. LE_UNSUPPORTED if underlying resource does not support this operation. LE_FAULT if the module ID has already been set or if there was an internal error. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">idPtr</td><td>Module ID. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">keyRef</td><td>Key reference. NULL if not used. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ae9f3624944ed1f2d4c72ca794177d2e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9f3624944ed1f2d4c72ca794177d2e6">◆ </a></span>le_iks_SetServerDisconnectHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void le_iks_SetServerDisconnectHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__iks__interface_8h.html#ab8c1502ff2f6b0850fe65267864ad4d1">le_iks_DisconnectHandler_t</a> </td>
+<td class="paramname"><em>disconnectHandler</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set handler called when server disconnection is detected.</p>
+<p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
+</div>
+</div>
+<a id="a391e942dcacb83386c792bb33fe80325"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a391e942dcacb83386c792bb33fe80325">◆ </a></span>le_iks_TryConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Platform" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Supported functions on AT-command based platforms  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="20.04.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Platform_Platform_Constraints.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink selected" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Platform</h2>
+<nav class="secondary">
+<a class="link-selected" href="platformConstraints.html">Platform Constraints</a><a href="basicTarget.html">Configure SWI Target</a><a href="raspbianMain.html">Configure Raspberry Pi</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Supported functions on AT-command based platforms </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><b><a class="el" href="c_info.html">Modem Information</a> :</b></p><ul>
+<li><a class="el" href="le__info__interface_8h.html#ab3121512fdb89b67e2a892707a4f0b30">le_info_GetImei()</a></li>
+<li><a class="el" href="le__info__interface_8h.html#acde97300eedb261f4f456fba2c770935">le_info_GetFirmwareVersion()</a></li>
+<li><a class="el" href="le__info__interface_8h.html#aaa2f254bbfcec747c66103d28f65d314">le_info_GetDeviceModel()</a></li>
+<li><a class="el" href="le__info__interface_8h.html#a94b60d7b13674b4253bebaa52401747d">le_info_GetManufacturerName()</a></li>
+</ul>
+<p><b><a class="el" href="c_mcc.html">Modem Call Control</a> :</b></p><ul>
+<li><a class="el" href="le__mcc__interface_8h.html#a42130fc6b1d69413a387e3292117b3d3">le_mcc_Create()</a></li>
+<li><a class="el" href="le__mcc__interface_8h.html#a1a016e6443df2d3ee99113649f4f34ae">le_mcc_Delete()</a></li>
+<li><a class="el" href="le__mcc__interface_8h.html#a72a32869bb23864b3e86c606368bed70">le_mcc_Start()</a></li>
+<li><a class="el" href="le__mcc__interface_8h.html#a07e4856dffdbf887f51879e39ec43e42">le_mcc_IsConnected()</a></li>
+<li><a class="el" href="le__mcc__interface_8h.html#a6b5922dc325e4f45c90b2ecfd0f0a74f">le_mcc_GetRemoteTel()</a></li>
+<li><a class="el" href="le__mcc__interface_8h.html#ab16921abc02e0569b129f4a7d92bf3c9">le_mcc_GetTerminationReason()</a></li>
+<li><a class="el" href="le__mcc__interface_8h.html#a598349c6ccfa151dbd1d2f2a9c293ca4">le_mcc_Answer()</a></li>
+<li><a class="el" href="le__mcc__interface_8h.html#a7b9567715a3cd30c83a3b6886eeb2044">le_mcc_HangUp()</a></li>
+<li><a class="el" href="le__mcc__interface_8h.html#a38ac8543a579ecc81430c121a64bd346">le_mcc_HangUpAll()</a></li>
+<li><a class="el" href="le__mcc__interface_8h.html#ab826cf4b9e3911e659a90d483081e7fe">le_mcc_AddCallEventHandler()</a></li>
+<li><a class="el" href="le__mcc__interface_8h.html#aa7682ff49924db10aefee547fcb0b4d8">le_mcc_RemoveCallEventHandler()</a></li>
+</ul>
+<p><b><a class="el" href="c_mdc.html">Modem Data Control</a> :</b></p><ul>
+<li><a class="el" href="le__mdc__interface_8h.html#a638b693cd5f644fa5c24f81e1e36483c">le_mdc_GetProfile()</a></li>
+<li><a class="el" href="le__mdc__interface_8h.html#a108f7c3db74a377c2ae5482543d4e0d9">le_mdc_GetProfileIndex()</a></li>
+<li><a class="el" href="le__mdc__interface_8h.html#a2ea0573e6e9cd16c04e95146f2b2e693">le_mdc_GetProfileFromApn()</a></li>
+<li><a class="el" href="le__mdc__interface_8h.html#a0a51125579f1d5009dac03c79ddff498">le_mdc_GetPDP()</a></li>
+<li><a class="el" href="le__mdc__interface_8h.html#afc0c149bfa4455f3e9a8ccc06f0c5fed">le_mdc_GetAPN()</a></li>
+<li><a class="el" href="le__mdc__interface_8h.html#a3f83b1b922271091e3f1da418a4f39ca">le_mdc_GetAuthentication()</a></li>
+<li><a class="el" href="le__mdc__interface_8h.html#a73e66a7a63dc95d7f261fc2a26470386">le_mdc_SetPDP()</a></li>
+<li><a class="el" href="le__mdc__interface_8h.html#ae8ebd11b9cb9afb9b6b5745903f50156">le_mdc_SetAPN()</a></li>
+<li><a class="el" href="le__mdc__interface_8h.html#a9f69d0751927b5ead6c756202179b222">le_mdc_SetAuthentication()</a></li>
+<li><a class="el" href="le__mdc__interface_8h.html#a2cb08d5c3e6c43297d80448891719649">le_mdc_StartSession()</a> (only IPv4)</li>
+<li><a class="el" href="le__mdc__interface_8h.html#aa03d6e31263ddf8bf1d94b183c9934d9">le_mdc_StartSessionAsync()</a></li>
+<li><a class="el" href="le__mdc__interface_8h.html#aa3912e94864a6e5862e07f58b3772cba">le_mdc_IsIPv4()</a></li>
+<li><a class="el" href="le__mdc__interface_8h.html#adde11de0b17b2c937acca6355b6fba11">le_mdc_IsIPv6()</a></li>
+<li><a class="el" href="le__mdc__interface_8h.html#a53453f85065c3cace0922150b7e3d869">le_mdc_StopSession()</a></li>
+<li><a class="el" href="le__mdc__interface_8h.html#ac5b357f7437c9e253fa17b2511fa14ef">le_mdc_StopSessionAsync()</a></li>
+<li><a class="el" href="le__mdc__interface_8h.html#add91c364e8b3e4e82a0ce64e480c016b">le_mdc_GetSessionState()</a></li>
+<li><a class="el" href="le__mdc__interface_8h.html#a4c22a8691d6e6a69270a7ed6ab9974af">le_mdc_GetInterfaceName()</a></li>
+<li><a class="el" href="le__mdc__interface_8h.html#a0b5e11efda06472fc6c525101fceafe6">le_mdc_GetIPv4Address()</a></li>
+<li><a class="el" href="le__mdc__interface_8h.html#a290cff563b19ee4891bcd5c8908c54f9">le_mdc_GetIPv4GatewayAddress()</a></li>
+<li><a class="el" href="le__mdc__interface_8h.html#a0dd0dcf60d647388fa3e1973917a6161">le_mdc_GetIPv4DNSAddresses()</a></li>
+<li><a class="el" href="le__mdc__interface_8h.html#a594c85c1ccb56ddfbaf36496f35f681e">le_mdc_AddSessionStateHandler()</a></li>
+<li><a class="el" href="le__mdc__interface_8h.html#af223a193b73ce6f870947557f69136dc">le_mdc_RemoveSessionStateHandler()</a></li>
+</ul>
+<p><b><a class="el" href="c_mrc.html">Modem Radio Control</a> :</b></p><ul>
+<li><a class="el" href="le__mrc__interface_8h.html#a78bd27d92337e2122320f41bcaa5480f">le_mrc_SetRadioPower()</a></li>
+<li><a class="el" href="le__mrc__interface_8h.html#aac51332c6c84e460746eb1ad45c064d6">le_mrc_GetRadioPower()</a></li>
+<li><a class="el" href="le__mrc__interface_8h.html#a929745b84719754d28f539540f71a552">le_mrc_AddNetRegStateEventHandler()</a></li>
+<li><a class="el" href="le__mrc__interface_8h.html#a619adffdee5b1760348a1aa1331ac108">le_mrc_RemoveNetRegStateEventHandler()</a></li>
+<li><a class="el" href="le__mrc__interface_8h.html#a4f11e27862fef384c0023f5b538e543d">le_mrc_GetNetRegState()</a></li>
+<li><a class="el" href="le__mrc__interface_8h.html#a717aa0f4e4dc9a83b6adc2f26f3f0258">le_mrc_GetSignalQual()</a></li>
+<li><a class="el" href="le__mrc__interface_8h.html#a45fe1941f520c1e4a23b2794dd2a8232">le_mrc_GetCurrentNetworkName()</a></li>
+<li><a class="el" href="le__mrc__interface_8h.html#ac1a0c4fad80538c7df63176576e1d9a3">le_mrc_GetCurrentNetworkMccMnc()</a></li>
+<li><a class="el" href="le__mrc__interface_8h.html#acb434a9f91afb5b6639baf3678ee9388">le_mrc_SetAutomaticRegisterMode()</a></li>
+<li><a class="el" href="le__mrc__interface_8h.html#a9ad2729c28e97ae450f7aee0865197f6">le_mrc_GetRegisterMode()</a></li>
+<li><a class="el" href="le__mrc__interface_8h.html#a3ad9533c467cec0902d5d165bb32d67b">le_mrc_GetRadioAccessTechInUse()</a></li>
+<li><a class="el" href="le__mrc__interface_8h.html#a2d4abd391bc69c218538f5d8e1be4e01">le_mrc_SetRatPreferences()</a></li>
+<li><a class="el" href="le__mrc__interface_8h.html#ae9fa8655738c63e392c8dcc862bdb1d5">le_mrc_GetRatPreferences()</a></li>
+<li><a class="el" href="le__mrc__interface_8h.html#ad3662723a7ed47cf45d9a2eaaa1fb16e">le_mrc_MeasureSignalMetrics()</a> (only signal strength)</li>
+<li><a class="el" href="le__mrc__interface_8h.html#a20addd98ee6cb07f9ee1a45be01b5203">le_mrc_DeleteSignalMetrics()</a> (only signal strength)</li>
+<li><a class="el" href="le__mrc__interface_8h.html#a5564bace31c937bcef096e597f33d3a4">le_mrc_GetRatOfSignalMetrics()</a> (only signal strength)</li>
+<li><a class="el" href="le__mrc__interface_8h.html#a9d7243b29bf4c705c4eba83fa3799582">le_mrc_GetGsmSignalMetrics()</a> (only signal strength)</li>
+<li><a class="el" href="le__mrc__interface_8h.html#a456648564abfc8e9711b60a5d8bddc9b">le_mrc_GetUmtsSignalMetrics()</a> (only signal strength)</li>
+<li><a class="el" href="le__mrc__interface_8h.html#a7cb0a206729c652692701cd24226d34f">le_mrc_GetBandCapabilities()</a></li>
+</ul>
+<p><b><a class="el" href="c_sim.html">SIM</a> :</b></p><ul>
+<li><a class="el" href="le__sim__interface_8h.html#a7b43e4e8713af665657e15ae0f5bc1e8">le_sim_GetICCID()</a></li>
+<li><a class="el" href="le__sim__interface_8h.html#acc0f801f268630ea496377077a366374">le_sim_GetIMSI()</a></li>
+<li><a class="el" href="le__sim__interface_8h.html#ace457890856d3692ecb4176f0e892558">le_sim_IsReady()</a></li>
+<li><a class="el" href="le__sim__interface_8h.html#aa3255a29cec4358c5e0d68b9ac62ff88">le_sim_IsPresent()</a></li>
+<li><a class="el" href="le__sim__interface_8h.html#a16b06f266471d81f772e5439ec570144">le_sim_GetState()</a></li>
+<li><a class="el" href="le__sim__interface_8h.html#a8e296a7cd35edd99cb1dc21232e280dd">le_sim_AddNewStateHandler()</a></li>
+<li><a class="el" href="le__sim__interface_8h.html#a0286578e9aa46ba864df1878263b9f84">le_sim_RemoveNewStateHandler()</a></li>
+<li><a class="el" href="le__sim__interface_8h.html#ac9cafacb5affb0b531534e3fc547ebd2">le_sim_EnterPIN()</a></li>
+<li><a class="el" href="le__sim__interface_8h.html#a234634c9789cdbc8f76629a2272bd2dd">le_sim_Unblock()</a></li>
+<li><a class="el" href="le__sim__interface_8h.html#a50b6ce8bae5a073307d1d12550b22c1e">le_sim_ChangePIN()</a></li>
+<li><a class="el" href="le__sim__interface_8h.html#a6fab9b258f5af39645b9a200ed202a27">le_sim_Lock()</a></li>
+<li><a class="el" href="le__sim__interface_8h.html#a4397d51c42ba894f0fa4206341a0dc64">le_sim_Unlock()</a></li>
+<li><a class="el" href="le__sim__interface_8h.html#a2fa95e7fdaaff2fd000e676b9cc34344">le_sim_GetHomeNetworkOperator()</a></li>
+</ul>
+<p><b><a class="el" href="c_sms.html">SMS</a> :</b></p><ul>
+<li><a class="el" href="le__sms__interface_8h.html#a668abcbcff2f1f3c5cdf799315a81058">le_sms_Create()</a></li>
+<li>le_sms_SetTimeout()</li>
+<li><a class="el" href="le__sms__interface_8h.html#aca1691010c88995cb47225f2889910fa">le_sms_Delete()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#a5c2b8ce7043b4732c7b0ede7c5d7118c">le_sms_GetFormat()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#a2a63c6b5179025a80fb86c7f188e1eb7">le_sms_GetType()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#a6fda3e193c9662c394412816ae508c23">le_sms_SetDestination()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#aa4651e8dc97aa01df80ed6d9a7a486c6">le_sms_GetSenderTel()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#af018ca1bc2085a48e4b6d4691bef3cc7">le_sms_GetTimeStamp()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#a6165464dd3502b3c76b79b32206ba10f">le_sms_GetUserdataLen()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#abb89b302e564f3d55d604bb0c0dda022">le_sms_GetPDULen()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#adafdc63a36a6a50c8e942bf69958789f">le_sms_GetUCS2()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#aa5468a01069d8c8d03e5204453560d9a">le_sms_SetText()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#ad135130755ab2979a265f65178a3ae0d">le_sms_SetBinary()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#a0fc5c9da622cc48ef5f9d908dbcbbf92">le_sms_SetPDU()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#ac351541bd51f008551a55ea645e31599">le_sms_SetUCS2()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#aebf0c28efce6ec0b9616ffa8ecb80782">le_sms_GetText()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#af652a15437db583f333257ff5cef808d">le_sms_GetBinary()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#a77555788d56f73fa52f56904cd39cd2f">le_sms_GetPDU()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#a0ba61dcf10157e9982702373577c6b45">le_sms_SendAsync()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#ab7dee7d2c74cfcadd9ea0d5fe1786dfc">le_sms_Send()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#a275932e7f318db06cd1d1cbc8e3f573f">le_sms_SendText()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#a6c45951342396e9c4bc0e995b4e70784">le_sms_SendPdu()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#a844d595f3ae8d170b2fff80d854abb8d">le_sms_AddRxMessageHandler()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#a469a4d08b9ccb8b61ed7b8294e6ee3ef">le_sms_RemoveRxMessageHandler()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#aee4328f9e417108fa16794cc135073d0">le_sms_CreateRxMsgList()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#a4027c05c4ee7552ab0e081caa315c8a2">le_sms_DeleteList()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#a934253dee33a6090656876cff853b2c6">le_sms_GetFirst()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#ac3b6a30a6d4e4f21749b536184b836ec">le_sms_GetNext()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#ae1843c72eca77cd6da94cb686e5c2ae8">le_sms_GetStatus()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#aff755186b683b94ba2788b48e28284a3">le_sms_DeleteFromStorage()</a></li>
+<li><a class="el" href="le__sms__interface_8h.html#ae46b8ea579c788950049948edf1110b6">le_sms_GetSmsCenterAddress()</a></li>
+</ul>
+<hr/>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

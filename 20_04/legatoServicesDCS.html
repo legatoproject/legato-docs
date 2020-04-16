@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Data Channel Service  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="20.04.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Data Channel Service </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>A data connection is needed for applications that exchange data with devices where SMS messages are insufficient or not possible. The data connection can be established over a mobile network, WiFi or a fixed link (e.g., ethernet). The data connection service provides a basic API for requesting and releasing a data connection.</p>
+<p>The Data Channel Service (DCS) provides an interface for a client application to configure and use the available data channels on its target.</p>
+<p>"Data channel" is a generic term meant to include and cover the data "connection", "link", or similiar, named for and established by various connectivity technologies as a communication channel or pipe for sending and receiving data packets on a network or with another endpoint. DCS's currently supported connectivity technologies are cellular and WiFi, both of which would bring up the network layer for their connections and employ IP addressing and routing to communicate.</p>
+<dl class="section note"><dt>Note</dt><dd>This interface does not support a data connection over a fixed link.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The dependency between the <code>cellNetService</code> and <code>dataConnectionService</code> has been removed. A data connection request will no longer ensure that the radio is on, or verify that the SIM is valid and unlocked.</dd></dl>
+<p>The following diagram illustrates at the overview level where the DCS interfaces are relative to client applications and the physical technologies underneath, as well as what the "channel", "connection", "technology", etc., terminologies refer to.</p>
+<div class="image">
+<img alt="legatoServicesDCSOverview.png" src="legatoServicesDCSOverview.png"/>
+</div>
+<p>The Data Channel Service contains two sets of APIs:</p><ul>
+<li><code>le_data.api</code> - legacy API interface that has been supported prior Legato Release 18.10.</li>
+<li><code>le_dcs.api</code> and <code>le_net.api</code> - new API interfaces that are currently in experimental state.</li>
+</ul>
+<h1><a class="anchor" id="legatoServicesDCS_GS"></a>
+Getting Started</h1>
+<p>This service is automatically included in the Legato Framework by including <code>default.sdef</code> in your system and the service loads automatically on startup.</p>
+<p>The following line in the <code>default.sdef</code> is responsible for adding the Data Channel Service to your system: </p><pre class="fragment">apps: {
+   $LEGATO_ROOT/apps/platformServices/dataConnectionService
+}
+</pre><h2><a class="anchor" id="legatoServicesDCS_GSLegacyDCS"></a>
+le_data vs le_dcs</h2>
+<p>The <b>new</b> interfaces <code>le_dcs</code> and <code>le_net</code> consist of an expanded architecture for supporting multiple active data channels of the same or different technologies which the legacy <code>le_data</code> interface doesn't have. They offer flexible choices to client applications over which specific technology and data channel to pick, and the querying capability to learn about all the choices available. Unlike them, the legacy <code>le_dcs.api</code> supports only one single channel on a device at any time and offers no choices over which technology and channel to select.</p>
+<p>Please refer to the diagram above to see how multiple active data connections can now be supported in the <code>le_dcs</code> architecture.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Any client application that continues to use the <code>le_data</code> interface needs to beware of the new reality that multiple data channels could have been active if some others have started them via the <code>le_dcs</code> interface. The one that it has started might not have the device's default gateway and DNS server addresses set on its network interface, because although these network configurations would be automatically inserted by the <code>le_data</code> interface, some other data channel that got established later via <code>le_dcs</code> and <code>le_net</code> could have set these configurations onto another network interface instead. Thus, the network admin of any Legato device on which both <code>le_data</code> and <code>le_dcs</code> plus <code>le_net</code> would be used together has to understand the network topology and manage its routing configurations properly at any time.</dd></dl>
+<h1><a class="anchor" id="legatoServicesDCS_API"></a>
+DCS APIs</h1>
+<p>The Data Channel Service now provides the following API interfaces for managing and operating over network connections.</p>
+<table class="doxtable">
+<tr>
+<th>API Guide </th><th>API Reference </th><th>File Name </th><th>Description  </th></tr>
+<tr>
+<td><a class="el" href="c_le_dcs.html">le_dcs Interface</a> </td><td><a class="el" href="le__dcs__interface_8h.html">le_dcs_interface.h</a> </td><td><code>le_dcs.api</code> </td><td>Provides multi-connection data channel services </td></tr>
+<tr>
+<td><a class="el" href="c_le_net.html">le_net Interface</a> </td><td><a class="el" href="le__net__interface_8h.html">le_net_interface.h</a> </td><td><code>le_net.api</code> </td><td>Provides network services to data channels managed by <code>le_dcs</code> </td></tr>
+<tr>
+<td><a class="el" href="c_le_data.html">le_data Interface</a> </td><td><a class="el" href="le__data__interface_8h.html">le_data_interface.h</a> </td><td><code>le_data.api</code> </td><td>Provides data channel services to a single data connection </td></tr>
+</table>
+<h1><a class="anchor" id="legatoServicesDCS_Binding"></a>
+IPC Interface Binding to DCS</h1>
+<p>For an application to be able to use the <code>le_dcs</code> and <code>le_net</code> APIs, it needs to perform the bindings in the application's .adef as done below: </p><pre class="fragment">  bindings:
+   {
+      clientExe.clientComponent.le_dcs -&gt; dataConnectionService.le_dcs
+      clientExe.clientComponent.le_net -&gt; dataConnectionService.le_net
+   }
+</pre><h2><a class="anchor" id="legatoServicesDCS_API_AppImplement"></a>
+App Implementation</h2>
+<p>The Data Channel Service is implemented by the <b>dataConnectionService</b> that relies on the following services for connection technologies:</p><ul>
+<li><a class="el" href="legatoServicesModem.html">modemService</a></li>
+<li><a class="el" href="legatoServicesWiFi.html">wifiClient</a></li>
+</ul>
+<p>When an application needs to use such connection technologies, it has to create IPC bindings and service connections to them as done in the following sample.</p>
+<p>To create IPC bindings: </p><pre class="fragment">  bindings:
+   {
+      clientExe.clientComponent.le_mdc -&gt; modemService.le_mdc
+      clientExe.clientComponent.le_wifiClient -&gt; &lt;root&gt;.le_wifiClient
+   }
+</pre><p>The necessary IPC binding for using le_data is likewise.</p>
+<p>To create service connections, in the application's <a class="el" href="le__eventLoop_8h.html#abdb9187a56836a93d19cc793cbd4b7ec" title="Compose component initialization function prototype. ">COMPONENT_INIT()</a> code: </p><pre class="fragment">    le_mdc_ConnectService();
+    le_wifiClient_ConnectService();
+</pre><h1><a class="anchor" id="legatoServicesDCS__HowTo"></a>
+How Tos &amp; Samples</h1>
+<ul>
+<li><a class="el" href="howToDCSMigration.html">Migration tips</a> from le_data to le_dcs.</li>
+<li><a class="el" href="sampleApps_gpsApp.html">Sample apps using le_dcs</a>. Please search through the code there for API calls to <code>le_dcs</code> and <code>le_net</code>.</li>
+<li><a class="el" href="c_le_data.html#le_data_sample">Sample code using le_data</a>.</li>
+</ul>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
