@@ -245,9 +245,9 @@ function fetchSearchResults(search_query, callback, context) {
                 for (i = 0; i < hits.length; i++) {
                     var result = new Object();
                     if (window.location.protocol == "file:")
-                        result.value = hits[i].id; // don't do highlighting on local filesystem, since we can't do url rewrites
+                        result.value = hits[i].fields.id; // don't do highlighting on local filesystem, since we can't do url rewrites
                     else // append search query as a url parameter (for highlighting)
-                        result.value = addParameter(hits[i].id, 'sq', search_query, false);
+                        result.value = addParameter(hits[i].fields.id, 'sq', search_query, false);
                     result.filename = hits[i].id;
                     result.cat = hits[i].fields.category;
                     if (result.cat === undefined)
