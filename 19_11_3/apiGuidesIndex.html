@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>API Index  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.11.3" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">API Index </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>A simple interface definition language (IDL) similar to C is provided to help define APIs so they can be used in multiple, different programming languages. See <a class="el" href="apiFiles.html">API Files</a>.</p>
+<p>The following is a directory of all API's that are included by the Framework and by including <code>default.sdef</code> within your system.</p>
+<h1><a class="anchor" id="apiGuidesIndex_daemons"></a>
+Legato Daemon APIs</h1>
+<p>The Legato AF Daemons provide full-featured interface access to configure and control services and Apps:</p>
+<table class="doxtable">
+<tr>
+<th>Daemon </th><th>API Guide </th><th>API Reference </th><th>File Name </th><th>Description  </th></tr>
+<tr>
+<td>configTree </td><td><a class="el" href="c_config.html">Config Tree API</a> </td><td><a class="el" href="le__cfg__interface_8h.html">le_cfg_interface.h</a> </td><td><code>le_cfg.api</code> </td><td>Functions to read and write data into the App's Tree </td></tr>
+<tr>
+<td>configTree </td><td><a class="el" href="c_configAdmin.html">Config Tree Admin API</a> </td><td><a class="el" href="le__cfgAdmin__interface_8h.html">le_cfgAdmin_interface.h</a> </td><td><code>le_cfgAdmin.api</code> </td><td>Tools to facilitate the administration of App's Trees </td></tr>
+<tr>
+<td>supervisor </td><td><a class="el" href="c_appCtrl.html">App Control API</a> </td><td><a class="el" href="le__appCtrl__interface_8h.html">le_appCtrl_interface.h</a> </td><td><code>le_appCtrl.api</code> </td><td>Control Legato apps </td></tr>
+<tr>
+<td>supervisor </td><td><a class="el" href="c_appInfo.html">Application Information API</a> </td><td><a class="el" href="le__appInfo__interface_8h.html">le_appInfo_interface.h</a> </td><td><code>le_appInfo.api</code> </td><td>Legato app info retrieval </td></tr>
+<tr>
+<td>supervisor </td><td><a class="el" href="c_framework.html">Framework Control API</a> </td><td><a class="el" href="le__framework__interface_8h.html">le_framework_interface.h</a> </td><td><code>le_framework.api</code> </td><td>Control the Legato Framework </td></tr>
+<tr>
+<td>supervisor </td><td><a class="el" href="c_kernelModule.html">Linux Kernel Module API</a> </td><td><a class="el" href="le__kernelModule__interface_8h_source.html">le_kernelModule_interface.h</a> </td><td><code>le_kernelModule.api</code> </td><td>Module load and unload </td></tr>
+<tr>
+<td>update </td><td><a class="el" href="c_update.html">Update API</a> </td><td><a class="el" href="le__update__interface_8h.html">le_update_interface.h</a> </td><td><code>le_update.api</code> </td><td>Control the update daemon on the target </td></tr>
+<tr>
+<td>update </td><td><a class="el" href="c_updateCtrl.html">Update Control API</a> </td><td><a class="el" href="le__updateCtrl__interface_8h.html">le_updateCtrl_interface.h</a> </td><td><code>le_updateCtrl.api</code> </td><td>Tools to facilitate the administration of the update daemon </td></tr>
+<tr>
+<td>update </td><td><a class="el" href="c_le_instStat.html">Install Status API</a> </td><td><a class="el" href="le__instStat__interface_8h.html">le_instStat_interface.h</a> </td><td><code>le_instStat.api</code> </td><td>Notifications when apps are installed and uninstalled </td></tr>
+<tr>
+<td>watchdog </td><td><a class="el" href="c_wdog.html">Watchdog Service</a> </td><td><a class="el" href="le__wdog__interface_8h.html">le_wdog_interface.h</a> </td><td><code>le_wdog.api</code> </td><td>Monitor critical applications and services for deadlocks and other similar faults </td></tr>
+</table>
+<h1><a class="anchor" id="apiGuidesIndex_platformServices"></a>
+Platform Service APIs</h1>
+<p>Platform Services provide full-featured interface access to system and modem resources:</p>
+<p>Location: <code>$LEGATO_ROOT/interfaces</code> </p>
+<table class="doxtable">
+<tr>
+<th>Service </th><th>API Guide </th><th>API Reference </th><th>File Name </th><th>Description  </th></tr>
+<tr>
+<td>AirVantage </td><td><a class="el" href="c_le_avc.html">AirVantage Connector API</a> </td><td><a class="el" href="le__avc__interface_8h.html">le_avc_interface.h</a> </td><td><code>le_avc.api</code> </td><td>Control and configure upgrade and network settings </td></tr>
+<tr>
+<td>AirVantage </td><td><a class="el" href="c_le_avdata.html">AirVantage Data API</a> </td><td><a class="el" href="le__avdata__interface_8h.html">le_avdata_interface.h</a> </td><td><code>le_avdata.api</code> </td><td>Send and receive data from the AirVantage Server </td></tr>
+<tr>
+<td>Audio </td><td><a class="el" href="c_audio.html">Audio</a> </td><td><a class="el" href="le__audio__interface_8h.html">le_audio_interface.h</a> </td><td><code>le_audio.api</code> </td><td>Handles audio interfaces including play and record supported formats </td></tr>
+<tr>
+<td>Cellular Network </td><td><a class="el" href="c_le_cellnet.html">Cellular Network</a> </td><td><a class="el" href="le__cellnet__interface_8h.html">le_cellnet_interface.h</a> </td><td><code>le_cellnet.api</code> </td><td>Ensures that the modem is registered on the network when an user application makes a request for network access </td></tr>
+<tr>
+<td>Data Connection </td><td><a class="el" href="c_le_data.html">Data Connection</a> </td><td><a class="el" href="le__data__interface_8h.html">le_data_interface.h</a> </td><td><code>le_data.api</code> </td><td>Creates and manages a single data connection on the cellular network </td></tr>
+<tr>
+<td>GPIO </td><td><a class="el" href="c_gpio.html">GPIO</a> </td><td><a class="el" href="le__gpio__interface_8h.html">le_gpio_interface.h</a> </td><td><code>le_gpio.api</code> </td><td>Controls general-purpose digital input/output pins </td></tr>
+<tr>
+<td>Modem </td><td><a class="el" href="c_adc.html">ADC Channel API</a> </td><td><a class="el" href="le__adc__interface_8h.html">le_adc_interface.h</a> </td><td><code>le_adc.api</code> </td><td>Analog to digital converter </td></tr>
+<tr>
+<td>Modem </td><td><a class="el" href="c_antenna.html">Antenna Monitoring</a> </td><td><a class="el" href="le__antenna__interface_8h.html">le_antenna_interface.h</a> </td><td><code>le_antenna.api</code> </td><td>Antenna diagnostics </td></tr>
+<tr>
+<td>Modem </td><td><a class="el" href="c_ecall.html">eCall</a> </td><td><a class="el" href="le__ecall__interface_8h.html">le_ecall_interface.h</a> </td><td><code>le_ecall.api</code> </td><td>EU auto accident assistance program </td></tr>
+<tr>
+<td>Modem </td><td><a class="el" href="c_ips.html">Input Power Supply Monitoring API</a> </td><td><a class="el" href="le__ips__interface_8h.html">le_ips_interface.h</a> </td><td><code>le_ips.api</code> </td><td>Input voltage data </td></tr>
+<tr>
+<td>Modem </td><td><a class="el" href="c_lpt.html">Low Power Technologies</a> </td><td><a class="el" href="le__lpt__interface_8h.html">le_lpt_interface.h</a> </td><td><code>le_lpt.api</code> </td><td>Control modem low power technologies </td></tr>
+<tr>
+<td>Modem </td><td><a class="el" href="c_mcc.html">Modem Call Control</a> </td><td><a class="el" href="le__mcc__interface_8h.html">le_mcc_interface.h</a> </td><td><code>le_mcc.api</code> </td><td>Control voice calls </td></tr>
+<tr>
+<td>Modem </td><td><a class="el" href="c_mdc.html">Modem Data Control</a> </td><td><a class="el" href="le__mdc__interface_8h.html">le_mdc_interface.h</a> </td><td><code>le_mdc.api</code> </td><td>Control modem data connections </td></tr>
+<tr>
+<td>Modem </td><td><a class="el" href="c_info.html">Modem Information</a> </td><td><a class="el" href="le__info__interface_8h.html">le_info_interface.h</a> </td><td><code>le_info.api</code> </td><td>Retrieve modem data information </td></tr>
+<tr>
+<td>Modem </td><td><a class="el" href="c_mrc.html">Modem Radio Control</a> </td><td><a class="el" href="le__mrc__interface_8h.html">le_mrc_interface.h</a> </td><td><code>le_mrc.api</code> </td><td>Modem radio controls </td></tr>
+<tr>
+<td>Modem </td><td><a class="el" href="c_rsim.html">Remote SIM service</a> </td><td><a class="el" href="le__rsim__interface_8h.html">le_rsim_interface.h</a> </td><td><code>le_rsim.api</code> </td><td>Remote SIM service </td></tr>
+<tr>
+<td>Modem </td><td><a class="el" href="c_riPin.html">Ring Indicator Signal</a> </td><td><a class="el" href="le__riPin__interface_8h.html">le_riPin_interface.h</a> </td><td><code>le_riPin.api</code> </td><td>Ring indicator for host wakeup </td></tr>
+<tr>
+<td>Modem </td><td><a class="el" href="c_sim.html">SIM</a> </td><td><a class="el" href="le__sim__interface_8h.html">le_sim_interface.h</a> </td><td><code>le_sim.api</code> </td><td>SIM access </td></tr>
+<tr>
+<td>Modem </td><td><a class="el" href="c_temp.html">Temperature Monitoring</a> </td><td><a class="el" href="le__temp__interface_8h.html">le_temp_interface.h</a> </td><td><code>le_temp.api</code> </td><td>Temperature monitoring </td></tr>
+<tr>
+<td>Modem </td><td><a class="el" href="c_rtc.html">User Timebase</a> </td><td><a class="el" href="le__rtc__interface_8h.html">le_rtc_interface.h</a> </td><td><code>le_rtc.api</code> </td><td>Set user time base for RTC </td></tr>
+<tr>
+<td>Positioning </td><td><a class="el" href="c_gnss.html">GNSS</a> </td><td><a class="el" href="le__gnss__interface_8h.html">le_gnss_interface.h</a> </td><td><code>le_gnss.api</code> </td><td>GNSS device control </td></tr>
+<tr>
+<td>Positioning </td><td><a class="el" href="c_pos.html">Positioning</a> </td><td><a class="el" href="le__pos__interface_8h.html">le_pos_interface.h</a> </td><td><code>le_pos.api</code> </td><td>Device physical position/movement </td></tr>
+<tr>
+<td>Power </td><td><a class="el" href="c_pm.html">Power Manager</a> </td><td><a class="el" href="le__pm__interface_8h.html">le_pm_interface.h</a> </td><td><code>le_pm.api</code> </td><td>Device power management </td></tr>
+<tr>
+<td>Power </td><td><a class="el" href="c_ulpm.html">Ultra Low Power Mode</a> </td><td><a class="el" href="le__ulpm__interface_8h.html">le_ulpm_interface.h</a> </td><td><code>le_ulpm.api</code> </td><td>Ultra-low device power management </td></tr>
+<tr>
+<td>Power </td><td><a class="el" href="c_bootReason.html">Boot Reason Query</a> </td><td><a class="el" href="le__bootReason__interface_8h.html">le_bootReason_interface.h</a> </td><td><code>le_bootReason.api</code> </td><td>Device power management </td></tr>
+<tr>
+<td>SecStore </td><td><a class="el" href="c_secStore.html">Secure Storage</a> </td><td><a class="el" href="le__secStore__interface_8h.html">le_secStore_interface.h</a> </td><td><code>le_secStore.api</code> </td><td>secure storage access </td></tr>
+<tr>
+<td>SecStore </td><td><a class="el" href="c_secStoreAdmin.html">Secure Storage Admin</a> </td><td><a class="el" href="secStoreAdmin__interface_8h.html">secStoreAdmin_interface.h</a> </td><td><code>le_secStoreAdmin.api</code> </td><td>secure storage admin control </td></tr>
+<tr>
+<td>SMS </td><td><a class="el" href="c_sms.html">SMS</a> </td><td><a class="el" href="le__sms__interface_8h.html">le_sms_interface.h</a> </td><td><code>le_sms.api</code> </td><td>SMS messaging </td></tr>
+<tr>
+<td>SMS </td><td><a class="el" href="c_smsInbox.html">SMS Inbox</a> </td><td><a class="el" href="le__smsInbox1__interface_8h.html">le_smsInbox1_interface.h</a> </td><td><code>le_smsInbox1.api</code> </td><td>SMS Inbox Service </td></tr>
+<tr>
+<td>SPI </td><td><a class="el" href="c_spi.html">SPI</a> </td><td><a class="el" href="le__spi__interface_8h.html">le_spi_interface.h</a> </td><td><code>le_spi.api</code> </td><td>Serial Port Interface </td></tr>
+<tr>
+<td>VoiceCall </td><td><a class="el" href="c_le_voicecall.html">Voice Call Service</a> </td><td><a class="el" href="le__voicecall__interface_8h.html">le_voicecall_interface.h</a> </td><td><code>le_voicecall.api</code> </td><td>Controls the voice call service </td></tr>
+<tr>
+<td>WiFi </td><td><a class="el" href="c_le_wifi_ap.html">WiFi Access Point Service</a> </td><td><a class="el" href="le__wifiAp__interface_8h.html">le_wifiAp_interface.h</a> </td><td><code>le_wifiAp.api</code> </td><td>Create an access point that clients can connect to </td></tr>
+<tr>
+<td>WiFi </td><td><a class="el" href="c_le_wifi_client.html">WiFi Client Service</a> </td><td><a class="el" href="le__wifiClient__interface_8h.html">le_wifiClient_interface.h</a> </td><td><code>le_wifiClient.api</code> </td><td>Connect to a WiFi access point. </td></tr>
+<tr>
+<td>AT </td><td><a class="el" href="c_atClient.html">AT Commands Client</a> </td><td><a class="el" href="le__atClient__interface_8h.html">le_atClient_interface.h</a> </td><td><code>le_atClient.api</code> </td><td>AT commands client </td></tr>
+<tr>
+<td>AT </td><td><a class="el" href="c_atServer.html">AT Commands Server</a> </td><td><a class="el" href="le__atServer__interface_8h.html">le_atServer_interface.h</a> </td><td><code>le_atServer.api</code> </td><td>AT commands server </td></tr>
+<tr>
+<td>Port </td><td><a class="el" href="c_port.html">Port Service</a> </td><td><a class="el" href="le__port__interface_8h.html">le_port_interface.h</a> </td><td><code>le_port.api</code> </td><td>Port service </td></tr>
+</table>
+<h1><a class="anchor" id="apiGuidesIndex_libLegato"></a>
+Legato C APIs</h1>
+<p>Lib Legato available APIs to provide more functionality to your Legato C Code and extend C.</p>
+<p>Location: <code>$LEGATO_ROOT/framework/include</code> </p>
+<table class="doxtable">
+<tr>
+<th>API Guide </th><th>API Reference </th><th>File Name </th><th>Description  </th></tr>
+<tr>
+<td><a class="el" href="c_args.html">Command Line Arguments API</a> </td><td><a class="el" href="le__args_8h.html">le_args.h</a> </td><td><code><a class="el" href="le__args_8h.html">le_args.h</a></code> </td><td>Provides the ability to add arguments from the command line </td></tr>
+<tr>
+<td><a class="el" href="c_atomFile.html">Atomic File Operation API</a> </td><td><a class="el" href="le__atomFile_8h.html">le_atomFile.h</a> </td><td><code><a class="el" href="le__atomFile_8h.html">le_atomFile.h</a></code> </td><td>Provides atomic file access mechanism that can be used to perform file operation (specially file write) in atomic fashion </td></tr>
+<tr>
+<td><a class="el" href="c_basics.html">Basic Type and Constant Definitions</a> </td><td><a class="el" href="le__basics_8h.html">le_basics.h</a> </td><td><code><a class="el" href="le__basics_8h.html">le_basics.h</a></code> </td><td>Provides error codes, portable integer types, and helpful macros that make things easier to use </td></tr>
+<tr>
+<td><a class="el" href="c_clock.html">System Clock API</a> </td><td><a class="el" href="le__clock_8h.html">le_clock.h</a> </td><td><code><a class="el" href="le__clock_8h.html">le_clock.h</a></code> </td><td>Gets/sets date and/or time values, and performs conversions between these values. </td></tr>
+<tr>
+<td><a class="el" href="c_crc.html">CRC32 API</a> </td><td><a class="el" href="le__crc_8h.html">le_crc.h</a> </td><td><code><a class="el" href="le__crc_8h.html">le_crc.h</a></code> </td><td>Provides the ability to compute the CRC of a binary buffer </td></tr>
+<tr>
+<td><a class="el" href="c_dir.html">Directory API</a> </td><td><a class="el" href="le__dir_8h.html">le_dir.h</a> </td><td><code><a class="el" href="le__dir_8h.html">le_dir.h</a></code> </td><td>Provides functions to control directories </td></tr>
+<tr>
+<td><a class="el" href="c_doublyLinkedList.html">Doubly Linked List API</a> </td><td><a class="el" href="le__doublyLinkedList_8h.html">le_doublyLinkedList.h</a> </td><td><code><a class="el" href="le__doublyLinkedList_8h.html">le_doublyLinkedList.h</a></code> </td><td>Provides a data structure that consists of data elements with links to the next node and previous nodes </td></tr>
+<tr>
+<td><a class="el" href="c_eventLoop.html">Event Loop API</a> </td><td><a class="el" href="le__eventLoop_8h.html">le_eventLoop.h</a> </td><td><code><a class="el" href="le__eventLoop_8h.html">le_eventLoop.h</a></code> </td><td>Provides event loop functions to support the event-driven programming model </td></tr>
+<tr>
+<td><a class="el" href="c_fdMonitor.html">File Descriptor Monitor API</a> </td><td><a class="el" href="le__fdMonitor_8h.html">le_fdMonitor.h</a> </td><td><code><a class="el" href="le__fdMonitor_8h.html">le_fdMonitor.h</a></code> </td><td>Provides monitoring of file descriptors, reporting, and related events </td></tr>
+<tr>
+<td><a class="el" href="c_flock.html">File Locking API</a> </td><td><a class="el" href="le__fileLock_8h.html">le_fileLock.h</a> </td><td><code><a class="el" href="le__fileLock_8h.html">le_fileLock.h</a></code> </td><td>Provides file locking, a form of IPC used to synchronize multiple processes' access to common files </td></tr>
+<tr>
+<td><a class="el" href="c_fs.html">File System service</a> </td><td>le_fs.h </td><td><code>le_fs.h</code> </td><td>Provides a way to access the file system across different platforms </td></tr>
+<tr>
+<td><a class="el" href="c_hashmap.html">HashMap API</a> </td><td><a class="el" href="le__hashmap_8h.html">le_hashmap.h</a> </td><td><code><a class="el" href="le__hashmap_8h.html">le_hashmap.h</a></code> </td><td>Provides creating, iterating and tracing functions for a hashmap </td></tr>
+<tr>
+<td><a class="el" href="c_hex.html">Hex string API</a> </td><td><a class="el" href="le__hex_8h.html">le_hex.h</a> </td><td><code><a class="el" href="le__hex_8h.html">le_hex.h</a></code> </td><td>Provides conversion between Hex and Binary strings </td></tr>
+<tr>
+<td><a class="el" href="c_json.html">JSON Parsing API</a> </td><td><a class="el" href="le__json_8h.html">le_json.h</a> </td><td><code><a class="el" href="le__json_8h.html">le_json.h</a></code> </td><td>Provides fast parsing of a JSON data stream with very little memory required </td></tr>
+<tr>
+<td><a class="el" href="c_logging.html">Logging API</a> </td><td><a class="el" href="le__log_8h.html">le_log.h</a> </td><td><code><a class="el" href="le__log_8h.html">le_log.h</a></code> </td><td>Provides a toolkit allowing code to be instrumented with error, warning, informational, and debugging messages </td></tr>
+<tr>
+<td><a class="el" href="c_memory.html">Dynamic Memory Allocation API</a> </td><td><a class="el" href="le__mem_8h.html">le_mem.h</a> </td><td><code><a class="el" href="le__mem_8h.html">le_mem.h</a></code> </td><td>Provides functions to create, allocate and release data from a memory pool </td></tr>
+<tr>
+<td><a class="el" href="c_messaging.html">Low-level Messaging API</a> </td><td><a class="el" href="le__messaging_8h.html">le_messaging.h</a> </td><td><code><a class="el" href="le__messaging_8h.html">le_messaging.h</a></code> </td><td>Provides support to low level messaging within Legato </td></tr>
+<tr>
+<td><a class="el" href="c_mutex.html">Mutex API</a> </td><td><a class="el" href="le__mutex_8h.html">le_mutex.h</a> </td><td><code><a class="el" href="le__mutex_8h.html">le_mutex.h</a></code> </td><td>Provides standard mutex functionality with added diagnostics capabilities </td></tr>
+<tr>
+<td><a class="el" href="c_pack.html">Low-level Pack/Unpack API</a> </td><td><a class="el" href="le__pack_8h_source.html">le_pack.h</a> </td><td><code><a class="el" href="le__pack_8h_source.html">le_pack.h</a></code> </td><td>Provides low-level pack/unpack functions to support the higher level IPC messaging system </td></tr>
+<tr>
+<td><a class="el" href="c_path.html">Path API</a> </td><td><a class="el" href="le__path_8h.html">le_path.h</a> </td><td><code><a class="el" href="le__path_8h.html">le_path.h</a></code> </td><td>Provides support for UTF-8 null-terminated strings and multi-character separators </td></tr>
+<tr>
+<td><a class="el" href="c_pathIter.html">Path Iterator API</a> </td><td><a class="el" href="le__pathIter_8h.html">le_pathIter.h</a> </td><td><code><a class="el" href="le__pathIter_8h.html">le_pathIter.h</a></code> </td><td>Iterate over paths, traverse the path node-by-node, or create and combine paths together </td></tr>
+<tr>
+<td><a class="el" href="c_rand.html">Random Number API</a> </td><td><a class="el" href="le__rand_8h.html">le_rand.h</a> </td><td><code><a class="el" href="le__rand_8h.html">le_rand.h</a></code> </td><td>Used for cryptographic purposes such as encryption keys, initialization vectors, etc. </td></tr>
+<tr>
+<td><a class="el" href="c_safeRef.html">Safe References API</a> </td><td><a class="el" href="le__safeRef_8h.html">le_safeRef.h</a> </td><td><code><a class="el" href="le__safeRef_8h.html">le_safeRef.h</a></code> </td><td>Protect from damaged or stale references being used by clients </td></tr>
+<tr>
+<td><a class="el" href="c_semaphore.html">Semaphore API</a> </td><td><a class="el" href="le__semaphore_8h.html">le_semaphore.h</a> </td><td><code><a class="el" href="le__semaphore_8h.html">le_semaphore.h</a></code> </td><td>Provides standard semaphore functionality, but with added diagnostic capabilities </td></tr>
+<tr>
+<td><a class="el" href="c_signals.html">Signals API</a> </td><td><a class="el" href="le__signals_8h.html">le_signals.h</a> </td><td><code><a class="el" href="le__signals_8h.html">le_signals.h</a></code> </td><td>Provides software interrupts for running processes or threads </td></tr>
+<tr>
+<td><a class="el" href="c_singlyLinkedList.html">Singly Linked List API</a> </td><td><a class="el" href="le__singlyLinkedList_8h.html">le_singlyLinkedList.h</a> </td><td><code><a class="el" href="le__singlyLinkedList_8h.html">le_singlyLinkedList.h</a></code> </td><td>Provides a data structure consisting of a group of nodes linked together linearly </td></tr>
+<tr>
+<td><a class="el" href="c_test.html">Unit Testing API</a> </td><td><a class="el" href="le__test_8h.html">le_test.h</a> </td><td><code><a class="el" href="le__test_8h.html">le_test.h</a></code> </td><td>Provides macros that are used to simplify unit testing </td></tr>
+<tr>
+<td><a class="el" href="c_threading.html">Thread Control API</a> </td><td>le_thread.h </td><td><code>le_thread.h</code> </td><td>Provides controls for creating, ending and joining threads </td></tr>
+<tr>
+<td><a class="el" href="c_timer.html">Timer API</a> </td><td><a class="el" href="le__timer_8h.html">le_timer.h</a> </td><td><code><a class="el" href="le__timer_8h.html">le_timer.h</a></code> </td><td>Provides functions for managing and using timers </td></tr>
+<tr>
+<td><a class="el" href="c_tty.html">tty API</a> </td><td><a class="el" href="le__tty_8h.html">le_tty.h</a> </td><td><code><a class="el" href="le__tty_8h.html">le_tty.h</a></code> </td><td>Provides routines to configure serial ports </td></tr>
+<tr>
+<td><a class="el" href="c_utf8.html">UTF-8 String Handling API</a> </td><td><a class="el" href="le__utf8_8h.html">le_utf8.h</a> </td><td><code><a class="el" href="le__utf8_8h.html">le_utf8.h</a></code> </td><td>Provides safe and easy to use string handling functions for null-terminated strings with UTF-8 encoding </td></tr>
+</table>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

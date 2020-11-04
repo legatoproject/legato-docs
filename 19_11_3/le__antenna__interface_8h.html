@@ -1,0 +1,649 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_antenna_interface.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.11.3" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src=""></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Legato Documentation</h2>
+<nav class="secondary">
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#typedef-members">Typedefs</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_antenna_interface.h File Reference</h1> </div>
+</div><div class="contents">
+<div class="textblock"><code>#include "legato.h"</code><br/>
+<code>#include "le_antenna_common.h"</code><br/>
+</div>
+<p><a href="le__antenna__interface_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a7d9368fbde60fd8f9338ec40ad54995d"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__antenna__interface_8h.html#a7d9368fbde60fd8f9338ec40ad54995d">le_antenna_DisconnectHandler_t</a>) (void *)</td></tr>
+<tr class="separator:a7d9368fbde60fd8f9338ec40ad54995d"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:abbeb26bfdc5b212145f46a63e6e666d1"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__antenna__interface_8h.html#abbeb26bfdc5b212145f46a63e6e666d1">le_antenna_ConnectService</a> (void)</td></tr>
+<tr class="separator:abbeb26bfdc5b212145f46a63e6e666d1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a3b0f2ee5e63f3b391af3ec95fbd54d16"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__antenna__interface_8h.html#a3b0f2ee5e63f3b391af3ec95fbd54d16">le_antenna_TryConnectService</a> (void)</td></tr>
+<tr class="separator:a3b0f2ee5e63f3b391af3ec95fbd54d16"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab054c82f436f894c128586476004cde5"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__antenna__interface_8h.html#ab054c82f436f894c128586476004cde5">le_antenna_SetServerDisconnectHandler</a> (<a class="el" href="le__antenna__interface_8h.html#a7d9368fbde60fd8f9338ec40ad54995d">le_antenna_DisconnectHandler_t</a> disconnectHandler, void *contextPtr)</td></tr>
+<tr class="separator:ab054c82f436f894c128586476004cde5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6266700b7b863b89d27d99364f29df19"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__antenna__interface_8h.html#a6266700b7b863b89d27d99364f29df19">le_antenna_DisconnectService</a> (void)</td></tr>
+<tr class="separator:a6266700b7b863b89d27d99364f29df19"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af768fcc154de42aecd549ff10e600a65"><td align="right" class="memItemLeft" valign="top">le_antenna_ObjRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__antenna__interface_8h.html#af768fcc154de42aecd549ff10e600a65">le_antenna_Request</a> (le_antenna_Type_t antennaType)</td></tr>
+<tr class="separator:af768fcc154de42aecd549ff10e600a65"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7df2d56b7f495fa32ed3fd2063ae0f9e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__antenna__interface_8h.html#a7df2d56b7f495fa32ed3fd2063ae0f9e">le_antenna_GetType</a> (le_antenna_ObjRef_t antennaRef, le_antenna_Type_t *antennaTypePtr)</td></tr>
+<tr class="separator:a7df2d56b7f495fa32ed3fd2063ae0f9e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0ccc004b9cd6927614b5b37565117f7a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__antenna__interface_8h.html#a0ccc004b9cd6927614b5b37565117f7a">le_antenna_SetShortLimit</a> (le_antenna_ObjRef_t antennaRef, uint32_t shortLimit)</td></tr>
+<tr class="separator:a0ccc004b9cd6927614b5b37565117f7a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ade26bb9f34339b6fbd392460069bc8bc"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__antenna__interface_8h.html#ade26bb9f34339b6fbd392460069bc8bc">le_antenna_GetShortLimit</a> (le_antenna_ObjRef_t antennaRef, uint32_t *shortLimitPtr)</td></tr>
+<tr class="separator:ade26bb9f34339b6fbd392460069bc8bc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a436108eac97dbe9b6857ddc364243a9f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__antenna__interface_8h.html#a436108eac97dbe9b6857ddc364243a9f">le_antenna_SetOpenLimit</a> (le_antenna_ObjRef_t antennaRef, uint32_t openLimit)</td></tr>
+<tr class="separator:a436108eac97dbe9b6857ddc364243a9f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a79a575dbf942be4830cb87ce15853c2b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__antenna__interface_8h.html#a79a575dbf942be4830cb87ce15853c2b">le_antenna_GetOpenLimit</a> (le_antenna_ObjRef_t antennaRef, uint32_t *openLimitPtr)</td></tr>
+<tr class="separator:a79a575dbf942be4830cb87ce15853c2b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af45f8554ec619e0bea2e17cc8ab5d348"><td align="right" class="memItemLeft" valign="top">le_antenna_StatusEventHandlerRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__antenna__interface_8h.html#af45f8554ec619e0bea2e17cc8ab5d348">le_antenna_AddStatusEventHandler</a> (le_antenna_ObjRef_t antennaRef, le_antenna_StatusHandlerFunc_t handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:af45f8554ec619e0bea2e17cc8ab5d348"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a041b25a9e5b00b5a0348987f0a558e59"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__antenna__interface_8h.html#a041b25a9e5b00b5a0348987f0a558e59">le_antenna_RemoveStatusEventHandler</a> (le_antenna_StatusEventHandlerRef_t handlerRef)</td></tr>
+<tr class="separator:a041b25a9e5b00b5a0348987f0a558e59"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8d183e0c6168566527bd233f3fb07802"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__antenna__interface_8h.html#a8d183e0c6168566527bd233f3fb07802">le_antenna_GetStatus</a> (le_antenna_ObjRef_t antennaRef, le_antenna_Status_t *statusPtr)</td></tr>
+<tr class="separator:a8d183e0c6168566527bd233f3fb07802"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a691370edf658b655a0f72b285dc5d00a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__antenna__interface_8h.html#a691370edf658b655a0f72b285dc5d00a">le_antenna_SetExternalAdc</a> (le_antenna_ObjRef_t antennaRef, int8_t adcId)</td></tr>
+<tr class="separator:a691370edf658b655a0f72b285dc5d00a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a095510ac1da6efaf15db134321a012b3"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__antenna__interface_8h.html#a095510ac1da6efaf15db134321a012b3">le_antenna_GetExternalAdc</a> (le_antenna_ObjRef_t antennaRef, int8_t *adcIdPtr)</td></tr>
+<tr class="separator:a095510ac1da6efaf15db134321a012b3"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato <a class="el" href="c_antenna.html">Antenna Monitoring</a> include file.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="a7d9368fbde60fd8f9338ec40ad54995d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d9368fbde60fd8f9338ec40ad54995d">◆ </a></span>le_antenna_DisconnectHandler_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_antenna_DisconnectHandler_t) (void *)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Type for handler called when a server disconnects. </p>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="af45f8554ec619e0bea2e17cc8ab5d348"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af45f8554ec619e0bea2e17cc8ab5d348">◆ </a></span>le_antenna_AddStatusEventHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_antenna_StatusEventHandlerRef_t le_antenna_AddStatusEventHandler </td>
+<td>(</td>
+<td class="paramtype">le_antenna_ObjRef_t </td>
+<td class="paramname"><em>antennaRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_antenna_StatusHandlerFunc_t </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Add handler function for EVENT 'le_antenna_StatusEvent'</p>
+<p>This event provides information on antenna status for the given antennaRef. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">antennaRef</td><td>antenna reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="abbeb26bfdc5b212145f46a63e6e666d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbeb26bfdc5b212145f46a63e6e666d1">◆ </a></span>le_antenna_ConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_antenna_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="a6266700b7b863b89d27d99364f29df19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6266700b7b863b89d27d99364f29df19">◆ </a></span>le_antenna_DisconnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_antenna_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="a095510ac1da6efaf15db134321a012b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a095510ac1da6efaf15db134321a012b3">◆ </a></span>le_antenna_GetExternalAdc()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_antenna_GetExternalAdc </td>
+<td>(</td>
+<td class="paramtype">le_antenna_ObjRef_t </td>
+<td class="paramname"><em>antennaRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int8_t * </td>
+<td class="paramname"><em>adcIdPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the external ADC used to monitor the requested antenna.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_NOT_FOUND if the antenna reference is unknown</li>
+<li>LE_UNSUPPORTED request not supported</li>
+<li>LE_FAULT on other failure</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the returned ADC index is "-1", it means no external ADC are used to monitor the requested antenna. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">antennaRef</td><td>antenna reference </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">adcIdPtr</td><td>ADC index used to monitor the requested antenna </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a79a575dbf942be4830cb87ce15853c2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79a575dbf942be4830cb87ce15853c2b">◆ </a></span>le_antenna_GetOpenLimit()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_antenna_GetOpenLimit </td>
+<td>(</td>
+<td class="paramtype">le_antenna_ObjRef_t </td>
+<td class="paramname"><em>antennaRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t * </td>
+<td class="paramname"><em>openLimitPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the ADC value used to detect an open circuit.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_NOT_FOUND if the antenna reference is unknown</li>
+<li>LE_FAULT on other failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">antennaRef</td><td>antenna reference </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">openLimitPtr</td><td>ADC value used to detect an open circuit </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ade26bb9f34339b6fbd392460069bc8bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade26bb9f34339b6fbd392460069bc8bc">◆ </a></span>le_antenna_GetShortLimit()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_antenna_GetShortLimit </td>
+<td>(</td>
+<td class="paramtype">le_antenna_ObjRef_t </td>
+<td class="paramname"><em>antennaRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t * </td>
+<td class="paramname"><em>shortLimitPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the ADC value used to detect a short circuit.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_NOT_FOUND if the antenna reference is unknown</li>
+<li>LE_FAULT on other failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">antennaRef</td><td>antenna reference </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">shortLimitPtr</td><td>ADC value used to detect a short circuit </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a8d183e0c6168566527bd233f3fb07802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d183e0c6168566527bd233f3fb07802">◆ </a></span>le_antenna_GetStatus()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_antenna_GetStatus </td>
+<td>(</td>
+<td class="paramtype">le_antenna_ObjRef_t </td>
+<td class="paramname"><em>antennaRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_antenna_Status_t * </td>
+<td class="paramname"><em>statusPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the antenna status.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_NOT_FOUND if the antenna reference is unknown</li>
+<li>LE_UNSUPPORTED if the antenna detection is not supported</li>
+<li>LE_FAULT on other failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">antennaRef</td><td>antenna reference </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">statusPtr</td><td>antenna status </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a7df2d56b7f495fa32ed3fd2063ae0f9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7df2d56b7f495fa32ed3fd2063ae0f9e">◆ </a></span>le_antenna_GetType()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_antenna_GetType </td>
+<td>(</td>
+<td class="paramtype">le_antenna_ObjRef_t </td>
+<td class="paramname"><em>antennaRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">le_antenna_Type_t * </td>
+<td class="paramname"><em>antennaTypePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the antenna type.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_NOT_FOUND if the antenna reference is unknown</li>
+<li>LE_BAD_PARAMETER if an invalid reference provided. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">antennaRef</td><td>antenna reference </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">antennaTypePtr</td><td>allocated antenna type </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a041b25a9e5b00b5a0348987f0a558e59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a041b25a9e5b00b5a0348987f0a558e59">◆ </a></span>le_antenna_RemoveStatusEventHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_antenna_RemoveStatusEventHandler </td>
+<td>(</td>
+<td class="paramtype">le_antenna_StatusEventHandlerRef_t </td>
+<td class="paramname"><em>handlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove handler function for EVENT 'le_antenna_StatusEvent' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="af768fcc154de42aecd549ff10e600a65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af768fcc154de42aecd549ff10e600a65">◆ </a></span>le_antenna_Request()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_antenna_ObjRef_t le_antenna_Request </td>
+<td>(</td>
+<td class="paramtype">le_antenna_Type_t </td>
+<td class="paramname"><em>antennaType</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference type for an antenna diagnostic. Antenna type. Antenna status Handler for antenna status. Reference type used by Add/Remove functions for EVENT 'le_antenna_StatusEvent' Requested the antenna monitoring.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>Reference to the antenna object.</li>
+<li>NULL on failure. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">antennaType</td><td>antenna to be monitored </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a691370edf658b655a0f72b285dc5d00a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a691370edf658b655a0f72b285dc5d00a">◆ </a></span>le_antenna_SetExternalAdc()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_antenna_SetExternalAdc </td>
+<td>(</td>
+<td class="paramtype">le_antenna_ObjRef_t </td>
+<td class="paramname"><em>antennaRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int8_t </td>
+<td class="paramname"><em>adcId</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the external ADC used to monitor the requested antenna.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_NOT_FOUND if the antenna reference is unknown</li>
+<li>LE_UNSUPPORTED request not supported</li>
+<li>LE_FAULT on other failure</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The same external ADC may not be selected for both antennas at the same time. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">antennaRef</td><td>antenna reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">adcId</td><td>ADC index used to monitor the requested antenna </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a436108eac97dbe9b6857ddc364243a9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a436108eac97dbe9b6857ddc364243a9f">◆ </a></span>le_antenna_SetOpenLimit()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_antenna_SetOpenLimit </td>
+<td>(</td>
+<td class="paramtype">le_antenna_ObjRef_t </td>
+<td class="paramname"><em>antennaRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>openLimit</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the ADC value used to detect an open circuit.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_NOT_FOUND if the antenna reference is unknown</li>
+<li>LE_FAULT on other failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">antennaRef</td><td>antenna reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">openLimit</td><td>ADC value used to detect an open circuit </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ab054c82f436f894c128586476004cde5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab054c82f436f894c128586476004cde5">◆ </a></span>le_antenna_SetServerDisconnectHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void le_antenna_SetServerDisconnectHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__antenna__interface_8h.html#a7d9368fbde60fd8f9338ec40ad54995d">le_antenna_DisconnectHandler_t</a> </td>
+<td class="paramname"><em>disconnectHandler</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set handler called when server disconnection is detected.</p>
+<p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
+</div>
+</div>
+<a id="a0ccc004b9cd6927614b5b37565117f7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ccc004b9cd6927614b5b37565117f7a">◆ </a></span>le_antenna_SetShortLimit()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_antenna_SetShortLimit </td>
+<td>(</td>
+<td class="paramtype">le_antenna_ObjRef_t </td>
+<td class="paramname"><em>antennaRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>shortLimit</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the ADC value used to detect a short circuit.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_NOT_FOUND if the antenna reference is unknown</li>
+<li>LE_FAULT on other failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">antennaRef</td><td>antenna reference </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">shortLimit</td><td>ADC value used to detect a short circuit </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a3b0f2ee5e63f3b391af3ec95fbd54d16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b0f2ee5e63f3b391af3ec95fbd54d16">◆ </a></span>le_antenna_TryConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_antenna_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

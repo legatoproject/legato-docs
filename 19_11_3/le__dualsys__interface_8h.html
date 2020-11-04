@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_dualsys_interface.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.11.3" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src=""></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Legato Documentation</h2>
+<nav class="secondary">
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#typedef-members">Typedefs</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_dualsys_interface.h File Reference</h1> </div>
+</div><div class="contents">
+<div class="textblock"><code>#include "legato.h"</code><br/>
+<code>#include "le_dualsys_common.h"</code><br/>
+</div>
+<p><a href="le__dualsys__interface_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a3d767591c9fe0e31a056be7ff392dbde"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__dualsys__interface_8h.html#a3d767591c9fe0e31a056be7ff392dbde">le_dualsys_DisconnectHandler_t</a>) (void *)</td></tr>
+<tr class="separator:a3d767591c9fe0e31a056be7ff392dbde"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a889e0a47d09145a5daabd9a9609ea56b"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__dualsys__interface_8h.html#a889e0a47d09145a5daabd9a9609ea56b">le_dualsys_ConnectService</a> (void)</td></tr>
+<tr class="separator:a889e0a47d09145a5daabd9a9609ea56b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ace514348d888c86998a9af350f55aeba"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__dualsys__interface_8h.html#ace514348d888c86998a9af350f55aeba">le_dualsys_TryConnectService</a> (void)</td></tr>
+<tr class="separator:ace514348d888c86998a9af350f55aeba"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7631b2485533d170d178983a33ba51bd"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__dualsys__interface_8h.html#a7631b2485533d170d178983a33ba51bd">le_dualsys_SetServerDisconnectHandler</a> (<a class="el" href="le__dualsys__interface_8h.html#a3d767591c9fe0e31a056be7ff392dbde">le_dualsys_DisconnectHandler_t</a> disconnectHandler, void *contextPtr)</td></tr>
+<tr class="separator:a7631b2485533d170d178983a33ba51bd"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1f95754a7b46abfdd3a5916987f37aa5"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__dualsys__interface_8h.html#a1f95754a7b46abfdd3a5916987f37aa5">le_dualsys_DisconnectService</a> (void)</td></tr>
+<tr class="separator:a1f95754a7b46abfdd3a5916987f37aa5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a23b892b1c6785094e7adf096a4eece70"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__dualsys__interface_8h.html#a23b892b1c6785094e7adf096a4eece70">le_dualsys_DisableSyncBeforeUpdate</a> (bool isDisabled)</td></tr>
+<tr class="separator:a23b892b1c6785094e7adf096a4eece70"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a333e42eb7703071817cd1fde3def8ce7"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__dualsys__interface_8h.html#a333e42eb7703071817cd1fde3def8ce7">le_dualsys_SetSystem</a> (le_dualsys_System_t systemMask)</td></tr>
+<tr class="separator:a333e42eb7703071817cd1fde3def8ce7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ada5eedff83c28236bafcf0a9bf85ae54"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__dualsys__interface_8h.html#ada5eedff83c28236bafcf0a9bf85ae54">le_dualsys_GetCurrentSystem</a> (le_dualsys_System_t *systemMaskPtr)</td></tr>
+<tr class="separator:ada5eedff83c28236bafcf0a9bf85ae54"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato <a class="el" href="c_le_dualsys.html">Dual Systems Update API</a> include file.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="a3d767591c9fe0e31a056be7ff392dbde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d767591c9fe0e31a056be7ff392dbde">◆ </a></span>le_dualsys_DisconnectHandler_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_dualsys_DisconnectHandler_t) (void *)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Type for handler called when a server disconnects. </p>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a889e0a47d09145a5daabd9a9609ea56b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a889e0a47d09145a5daabd9a9609ea56b">◆ </a></span>le_dualsys_ConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_dualsys_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="a23b892b1c6785094e7adf096a4eece70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23b892b1c6785094e7adf096a4eece70">◆ </a></span>le_dualsys_DisableSyncBeforeUpdate()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_dualsys_DisableSyncBeforeUpdate </td>
+<td>(</td>
+<td class="paramtype">bool </td>
+<td class="paramname"><em>isDisabled</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>System Define on which system 1 or 2 belong the partition group (0 = system 1, 1 = system 2) Disable (true) or enable (false) the synchronisation check before performing an update. The default behavior at startup is always to have the check enabled. It remains enabled until this service is called with the value true. To re-enable the synchronization check call this service with the value false.</p>
+<dl class="section note"><dt>Note</dt><dd>Upgrading some partitions without performing a sync before may let the whole system into a unworkable state. THIS IS THE RESPONSABILITY OF THE CALLER TO KNOW WHAT IMAGES ARE ALREADY FLASHED INTO THE UPDATE SYSTEM.</dd>
+<dd>
+Fuction must be called after each target reboot or updateDaemon restart</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_UNSUPPORTED The feature is not supported</li>
+<li>LE_FAULT On failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">isDisabled</td><td>State of sync check : true (disable) or false (enable) </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a1f95754a7b46abfdd3a5916987f37aa5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f95754a7b46abfdd3a5916987f37aa5">◆ </a></span>le_dualsys_DisconnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_dualsys_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="ada5eedff83c28236bafcf0a9bf85ae54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada5eedff83c28236bafcf0a9bf85ae54">◆ </a></span>le_dualsys_GetCurrentSystem()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_dualsys_GetCurrentSystem </td>
+<td>(</td>
+<td class="paramtype">le_dualsys_System_t * </td>
+<td class="paramname"><em>systemMaskPtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the current "system" in use.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK On success</li>
+<li>LE_FAULT On failure</li>
+<li>LE_UNSUPPORTED The feature is not supported </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">systemMaskPtr</td><td>Sub-system bitmask for "modem/lk/linux" partitions </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a7631b2485533d170d178983a33ba51bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7631b2485533d170d178983a33ba51bd">◆ </a></span>le_dualsys_SetServerDisconnectHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void le_dualsys_SetServerDisconnectHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__dualsys__interface_8h.html#a3d767591c9fe0e31a056be7ff392dbde">le_dualsys_DisconnectHandler_t</a> </td>
+<td class="paramname"><em>disconnectHandler</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set handler called when server disconnection is detected.</p>
+<p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
+</div>
+</div>
+<a id="a333e42eb7703071817cd1fde3def8ce7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a333e42eb7703071817cd1fde3def8ce7">◆ </a></span>le_dualsys_SetSystem()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_dualsys_SetSystem </td>
+<td>(</td>
+<td class="paramtype">le_dualsys_System_t </td>
+<td class="paramname"><em>systemMask</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Define a new "system" by setting the three sub-systems. This system will become the current system in use after the reset performed by this service, if no error are reported.</p>
+<dl class="section note"><dt>Note</dt><dd>On success, a device reboot is initiated without returning any value.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_FAULT On failure</li>
+<li>LE_UNSUPPORTED The feature is not supported </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">systemMask</td><td>Sub-system bitmask for "modem/lk/linux" partitions </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ace514348d888c86998a9af350f55aeba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace514348d888c86998a9af350f55aeba">◆ </a></span>le_dualsys_TryConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_dualsys_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client-specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

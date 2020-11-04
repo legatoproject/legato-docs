@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Platform" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Build Platform  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.11.3" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Platform.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink selected" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Platform</h2>
+<nav class="secondary">
+<a href="platformConstraints.html">Platform Constraints</a><a href="basicTarget.html">Configure SWI Target</a><a href="raspbianMain.html">Configure Raspberry Pi</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Build Platform </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>The Legato Application Framework works with a supporting platform to connect your applications to the cloud. <b> User Applications, Platform Services, Platform Adapters and the Application Framework </b> are built into a Runtime Environment that provides a cohesive system to run and monitor your applications and send and receive data from external sources.</p>
+<div class="image">
+<img alt="LegatoOverviewTarget.png" src="LegatoOverviewTarget.png"/>
+</div>
+<p>Module Vendors provide the <b> Firmware, OS, Toolchain, Platform Adapters, Platform Services and a base Legato Runtime Environment </b> to ease the burden of getting started with your target. Developers install the <b> Legato Application Framework (source code, build tools and APIs) </b> and the target device's build specific toolchain on a development machine to start developing and building user apps.</p>
+<p>Your target device comes pre-loaded with a default Legato Runtime Environment, OS and Firmware pre-loaded. Check with your target device vendor for updates.</p>
+<h1>Firmware </h1>
+<p>Each target device needs Firmware specific to its module and is provided by the Vendor. Firmware may contain telecom firmware, carrier specific configuration and other software that can't be customized or configured by a user.</p>
+<h1>OS and Toolchains </h1>
+<h2>Operating System </h2>
+<p>The Legato AF is designed to run on top of an embedded Linux Distribution. Each vendor maintains it's own customized Linux Distribution that contains a customized kernel and drivers to work within the constraints of the target device.</p>
+<p>Sierra Wireless modules use an embedded Linux distribution created using the <a href="https://www.yoctoproject.org/">Yocto Project</a>.</p>
+<p>Raspberry Pi use <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian</a>, its own Linux Distribution.</p>
+<h2>Toolchains </h2>
+<p>Toolchains include all the tools and libraries needed to build the runtime environment for a target device. The toolchain is specific to the Linux Distribution and the Module so each module that you are building for must have its own toolchain installed. <a class="el" href="basicBuildToolchain.html">Install the Toolchain</a> Toolchains can be downloaded from your vendor, or are automatically installed and configured with <a class="el" href="confLeaf.html">Leaf Workspace Manager</a>.</p>
+<table class="doxtable">
+<tr>
+<th>Module </th><th>Download Site  </th></tr>
+<tr>
+<td>WPX5XX </td><td><a href="https://source.sierrawireless.com/resources/airprime/software/wpx5xx/wpx5xx-firmware-latest-release-components/">WPX5XX Firmware Download Page</a> </td></tr>
+<tr>
+<td>WP76XX </td><td><a href="https://source.sierrawireless.com/resources/airprime/software/wp76xx/wp76xx-firmware-latest-release-components/">WP76XX Firmware Download Page</a> </td></tr>
+<tr>
+<td>WP77XX </td><td><a href="https://source.sierrawireless.com/resources/airprime/software/wp77xx/wp77xx-firmware-latest-release-components/">WP76XX Firmware Download Page</a> </td></tr>
+<tr>
+<td>Raspberry Pi </td><td>Clone from github: (git clone)<a href="https://github.com/raspberrypi/tools">https://github.com/raspberrypi/tools</a> </td></tr>
+<tr>
+<td>All AR Modules </td><td>See your FAE to download and install the toolchain for your module </td></tr>
+</table>
+<h1>Platform Services and Platform Adapters </h1>
+<p>Platform Services are a set of applications that are included with the Legato Application Framework. They configure features on the target device and expose APIs that developers can use to bind to their applications and use those features. The Platform Services are generally created by the vendors but can be customized or added on to by any developer. <a class="el" href="legatoServices.html">Platform Services</a> provide APIs to include services like location sensing, audio connections, cellular and data network connections into your applications. To use the API within your application your application must be built into a system that includes the Platform Service and your application. Many of the Platform Services are included in the default build for each target device.</p>
+<p>Platform Adapters are code that is specifically created for a target device that provides specific communication functions. It calls the function needed to perform the operation on the target including opening sockets and formatting packets. Where the Platform Service is designed to be generic, the Platform Adapters contain the target specific code. At build time the Legato AF system knows how to build the appropriate Platform Adapter for the target. This enables developers to build apps for multiple different types of targets and lets the build system include the Platform Adapters needed to build the application for each model of target.</p>
+<div class="image">
+<img alt="LegatoServicesFlow.png" src="LegatoServicesFlow.png"/>
+</div>
+<p>For example, if a developer wants to use GNSS (Global Positioning System) within their application they need to include <code>positioningService</code> app in their target's build and then bind to the <code>le_gnss</code> API within their app. The <code>positionService</code> app knows how to talk to the Platform Adapter <code>le_pa_gnss</code> which then communicates with the OS and Firmware to provide the required information to the developers application. The developer can use the functions in the API without having to know how to communicate directly with the GNSS hardware peripherals or it's driver firmware.</p>
+<dl class="section note"><dt>Note</dt><dd>Not all functions in an API are supported by all Platforms. Visit our list of <a class="el" href="platformConstraints.html">Platform Constraints</a> to make sure that function you are implementing are supported by your target.</dd></dl>
+<h1>Setup and Configure </h1>
+<p>For further information and help on setting up and configuring specific modules:</p>
+<table class="doxtable">
+<tr>
+<th>Section </th><th>Description  </th></tr>
+<tr>
+<td><a class="el" href="confLeaf.html">Leaf Workspace Manager</a> </td><td>Use Leaf to download, install and configure your development environment </td></tr>
+<tr>
+<td><a class="el" href="basicTarget.html">Configure SWI Target</a> </td><td>Configure Sierra Wireless Targets </td></tr>
+<tr>
+<td><a class="el" href="raspbianMain.html">Configure Raspberry Pi</a> </td><td>Configure Raspbian for the Legato Application Framework </td></tr>
+</table>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
