@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>helloWorld  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="20.08.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Get_Started.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a class="link-selected" href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">helloWorld </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>This starting tutorial will walk you through creating <code>Hello</code> <code>World</code> by:</p>
+<ul>
+<li><a class="el" href="getStartedHW.html#getStartedHW_component">Create a Component</a></li>
+<li><a class="el" href="getStartedHW.html#getStartedHW_adef">Bundle the Component into an Exe and then an App</a></li>
+<li><a class="el" href="getStartedHW.html#getStartedHW_buildApp">Install the System onto a Target</a></li>
+<li><a class="el" href="getStartedHW.html#getStartedHW_usage">Test the App</a></li>
+</ul>
+<p>Walking through this tutorial will introduce you to the basic concepts that make up the Legato Application Framework.</p>
+<h1><a class="anchor" id="getStartedHW_sampleDir"></a>
+Sample Directories and Files</h1>
+<p>Apps have a hierarchy of folders and files, with the base folder being the name of the app. Each component is encapsulated in it's own subdirectory and will include the <code></code>.c files and a <a class="el" href="defFilesCdef.html">Component Definition .cdef</a> (more on how to create def files in a bit). The app directory will include an <a class="el" href="defFilesAdef.html">Application Definition .adef</a>, which is used to combine all the components into executables and configure the process for the executable as well as define the configuration for your app.</p>
+<p>Example directory structure for <code>Hello</code> <code>World:</code> </p><pre class="fragment">helloWorld/
+├── helloComponent/
+│   ├── Component.cdef
+│   └── helloWorld.c
+└── helloWorld.adef
+</pre><h1><a class="anchor" id="getStartedHW_component"></a>
+Create Component</h1>
+<p>Creating a component will walk you through: <a class="el" href="getStartedHW.html#getStartedHW_componentCreateDir">Create Directory</a>, <a class="el" href="getStartedHW.html#getStartedHW_componentC">Create C Source File</a>, and <a class="el" href="getStartedHW.html#getStartedHW_componentCdef">Create cdef File</a></p>
+<h2><a class="anchor" id="getStartedHW_componentCreateDir"></a>
+Create Directory</h2>
+<p>Create a directory for your component: the directory name will become the component name (this is done for ease of organization and becomes important when you are including multiple components):</p>
+<pre class="fragment"><div class="line">$ mkdir helloComponent</div></pre><!-- fragment --><h2><a class="anchor" id="getStartedHW_componentC"></a>
+Create C Source File</h2>
+<p>This looks similar to the original C <code>helloWorld</code> program from Kernighan's and Richie's "The C Programming Language", except that:</p><ul>
+<li>#include &lt;stdio.h&gt; is replaced with #include "legato.h"</li>
+<li>main() is replaced with COMPONENT_INIT</li>
+</ul>
+<p>Create the file for helloWorld:</p>
+<pre class="fragment"><div class="line">$ vim helloComponent/helloWorld.c  # use any editor of your choosing</div></pre><!-- fragment --><h3><a class="anchor" id="getStartedHW_includes"></a>
+Include legato.h</h3>
+<p>First you must include <a class="el" href="c_APIs.html">legato.h</a>. <a class="el" href="c_APIs.html">legato.h</a> is the main legato library, and includes stdio.h along with other system headers and Legato Framework headers. It reduces the amount of time you have to spend including header files to get access to the functions and data types that you need. <a class="el" href="c_APIs.html">List of includes</a> in "legato.h".</p>
+<p>Also <code>include "interfaces.h"</code>. interfaces.h is a C header file that automatically includes all client and server interface definition that your client imports and exports. If you need to import or export any other API you will need to explicitly include "interfaces.h" into your C or C++ code. It is not used in helloWorld now, but it is a Legato best practice to include it in all of your Legato Component C or C++ code.</p>
+<pre class="fragment"><div class="line"><span class="preprocessor">#include "<a class="code" href="legato_8h.html">legato.h</a>"</span></div><div class="line"><span class="preprocessor">#include "interfaces.h"</span></div></pre><!-- fragment --><h3><a class="anchor" id="getStartedHW_componentInit"></a>
+Component Initializer</h3>
+<p>The <code>COMPONENT_INIT</code> macro is used to identify your <b> component initializer</b>. Every component must have a component initializer.</p>
+<p>By using component initializers instead of having each component implement their own main() function, it's possible to run multiple components in the same executable and even share a thread between those components.</p>
+<dl class="section note"><dt>Note</dt><dd>The main process thread (the main() function auto-generated by the build tools) will automatically call the component's initializer at the appropriate time during the process start-up sequence (based on the inter-dependencies between components). If component A is used by component B, then component A's initializer will be run before component B's initializer. Then component B can safely call the API functions of component A knowing that component A has already been initialized. This won't work if both components depend on each other (directly or indirectly through other components). That's one reason why dependency loops are not permitted between components. The framework will detect inter-component dependency loops at build time and terminate the build.</dd></dl>
+<p>Component initializers don't take any parameters and don't return anything, but they must return in order to enable the event loop. Unless it experiences a fatal error, in which case it <b> must terminate the process </b> with a non-zero exit code (which can be done using <code><a class="el" href="le__log_8h.html#a54b4b07f5396e19a8d9fca74238f4795">LE_FATAL()</a></code>, <code><a class="el" href="le__log_8h.html#ac0dbbef91dc0fed449d0092ff0557b39">LE_ASSERT()</a></code>, etc. ).</p>
+<dl class="section note"><dt>Note</dt><dd>If a component's initializer doesn't return, the process will not be able to finish initializing all the components that have been deployed to it and the process's main thread will never process any events that are queued to it.</dd></dl>
+<p>In our "Hello World" example, we use our component initializer to print <code>Hello</code> World! to the log using <code><a class="el" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808" title="Informational message. Normally expected. ">LE_INFO()</a></code>. The component initializer will run <code><a class="el" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808" title="Informational message. Normally expected. ">LE_INFO()</a></code> at start-up. <code><a class="el" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808" title="Informational message. Normally expected. ">LE_INFO()</a></code> logs a message at the INFO severity level.</p>
+<p>Add the following lines to <code>helloWorld.c:</code> </p><pre class="fragment"><div class="line"><a class="code" href="le__eventLoop_8h.html#abdb9187a56836a93d19cc793cbd4b7ec">COMPONENT_INIT</a></div><div class="line">{</div><div class="line">    <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"Hello world!"</span>);</div><div class="line">}</div></pre><!-- fragment --><p>Your helloWorld.c should look like this:</p>
+<pre class="fragment"><div class="line"><span class="preprocessor">#include "<a class="code" href="legato_8h.html">legato.h</a>"</span></div><div class="line"><span class="preprocessor">#include "interfaces.h"</span></div><div class="line"> </div><div class="line"><a class="code" href="le__eventLoop_8h.html#abdb9187a56836a93d19cc793cbd4b7ec">COMPONENT_INIT</a></div><div class="line">{</div><div class="line">    <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"Hello world!"</span>);</div><div class="line">}</div></pre><!-- fragment --><p>That is all that our helloWorld component needs. You can now close and save the file.</p>
+<p>The build tools figure out what language the source code is written in by looking at the filename extension. So, because our file <code>helloWorld.c</code> ends in <code></code>.c, the build tools will try to use a C compiler to compile it into a library when helloWorld.c gets included in an executable.</p>
+<h2><a class="anchor" id="getStartedHW_componentCdef"></a>
+Create cdef File</h2>
+<p>Legato definition files (.sdef, .adef, .cdef and .mdef) are used as instructions to the Build Tools (mk tools) and tell the mk tools how to bind the components, apps and systems together to create the Legato Runtime Environment which then gets installed on a target.</p>
+<p><a class="el" href="defFilesCdef.html">Component definition files</a> are used to specify the external interfaces and internal content of the components as well as defining the requirements from the system for the component (e.g; What access does the component need, what API will the component access, what external files will it access). Each component must have a corresponding Component.cdef, which must be included in the same folder as the rest of the component code.</p>
+<p>Create a <code>cdef</code> file called <code>Component.cdef:</code> </p>
+<pre class="fragment"><div class="line">$ vim helloComponent/Component.cdef</div></pre><!-- fragment --><p>Since our helloWorld component doesn't have any external interfaces and we will be using all the default build locations we can create a simple <code></code>.cdef file and only need to define the <code>sources:</code> </p>
+<p>Add the following to your <code>Component.cdef</code> file and then save and exit. </p><pre class="fragment"><div class="line">sources:</div><div class="line">{</div><div class="line">    helloWorld.c</div><div class="line">}</div></pre><!-- fragment --><p><b>You have now successfully created your first Legato Component. Congratulations!</b></p>
+<h1><a class="anchor" id="getStartedHW_adef"></a>
+Create App</h1>
+<p>Next lets turn your helloWorld component into an App. Apps are the execution environment for your code, they contain one ore more executables that run together in a "Sandbox". Your executables are made by combining one or more components. Processes are the running executables that are actively running in memory. Apps may expose external API's but generally contain all the components, executables, setting and files to run within it's own environment.</p>
+<p>The <a class="el" href="defFilesAdef.html">Application Definition .adef</a> builds the instructions to tell the mktools how to build your app. In the helloWorld app we need to tell the mktools to create an executable out of the <code>helloComponent</code> component and then tells the app to run that executable in a process.</p>
+<p>Create a <code></code>.adef file called <code>helloWorld.adef:</code> </p>
+<pre class="fragment"><div class="line">$ vim helloWorld.adef</div></pre><!-- fragment --><p>First we are going to define an executable named helloWorld for the helloComponent Component. This turns your source code into an executable binary.</p>
+<pre class="fragment"><div class="line">executables:</div><div class="line">{</div><div class="line">    helloWorld = ( helloComponent )</div><div class="line">}</div></pre><!-- fragment --><p>Next we need to tell the app to start the helloWorld executable within a process.</p>
+<pre class="fragment"><div class="line">processes:</div><div class="line">{</div><div class="line">    run:</div><div class="line">    {</div><div class="line">        ( helloWorld )</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><dl class="section note"><dt>Note</dt><dd>If your executable has multiple components, add more components inside the parentheses after the executable name: "helloWorld = ( helloComponent helloSun helloMoon )".</dd></dl>
+<p>For this example your .adef file will look like the following:</p>
+<pre class="fragment"><div class="line">executables:</div><div class="line">{</div><div class="line">    helloWorld = ( helloComponent )</div><div class="line">}</div><div class="line"> </div><div class="line">processes:</div><div class="line">{</div><div class="line">    run:</div><div class="line">    {</div><div class="line">        ( helloWorld )</div><div class="line">    }</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="getStartedHW_buildApp"></a>
+Build App</h1>
+<p>Now that all your files are created and you have provided a <code></code>.cdef and an <code></code>.adef for your app you are ready to use the <a class="el" href="toolsBuild.html">Build Tools</a> mktools to build your app into a binary and deploy it on your target.</p>
+<p>You should have the following directory structure for your app:</p>
+<pre class="fragment">helloWorld/
+├── helloComponent/
+│   ├── Component.cdef
+│   └── helloWorld.c
+└── helloWorld.adef
+</pre><dl class="section note"><dt>Note</dt><dd>If you didn't install your development environment with <a class="el" href="toolsLeaf.html">Leaf</a>, before you run <code>mkapp</code> make sure that you have <a class="el" href="basicBuildMake.html">configured the Framework</a> for a specific target and have run <code>bin/legs</code> or sourced <code>bin/configlegatoenv</code>.</dd></dl>
+<p><code>mkapp</code> is the tool that is used to build the app into a binary package that can then be installed on your target. It is important to specify the target that you are building for as <code>mkapp</code> will include all the libraries and dependencies that are needed for your specific target.</p>
+<dl class="section note"><dt>Note</dt><dd>If you do not use the -t option mkapp will build for the default, localhost which is only used for testing purposes.</dd></dl>
+<p>From the <code>helloWorld</code> directory run the following command (the target in this example is the wp85):</p>
+<pre class="fragment">$ mkapp -t &lt;target&gt; helloWorld.adef
+</pre><p>Output: </p><pre class="fragment">$ mkapp -t wp750x helloWorld.adef
+[9/9] Packaging app
+</pre><p>A new directory <code>_build_helloWorld</code> and an update file will be created in your <code>helloWorld</code> directory.</p>
+<pre class="fragment">├── _build_helloWorld/
+│   └── wp85
+│       ...
+├── helloComponent/
+│   ├── Component.cdef
+│   └── helloWorld.c
+├── helloWorld.adef
+└── helloWorld.wp85.update
+</pre><p>The <code>_build</code> directory is the intermediate directory where the complier will place all staging files created during the build process. It can be removed after helloWorld.wp85.update has successfully been created, though it is helpful in troubleshooting build problems.</p>
+<p><code>helloWorld.wp85.update</code> is the package that is needed to install <code>helloWorld</code> onto your target.</p>
+<h1><a class="anchor" id="getStartedHW_instTarget"></a>
+Install App to Target</h1>
+<p>Use <code>app</code> install to install the app on your target, the <code>app</code> command is available both on your dev machine and target but when using from your dev machine you must supply the IP address of your target:</p>
+<pre class="fragment"><div class="line">$ app install helloWorld.&lt;target&gt;.update &lt;ip addr&gt;</div></pre><!-- fragment --><p>The Framework supports an environment variable called DEST_IP, if you set this to the IP of your target most target machine commands will default to using DEST_IP and you will not have to enter in your IP address every time. To set DEST_IP: </p><pre class="fragment">$ export DEST_IP=192.168.2.2  # or the IP of your target
+</pre><p>Now you can update your target by typing: </p><pre class="fragment">$ app install helloWorld.wp85.update   # add the target IP to the command if DEST_IP is not set
+</pre><h1><a class="anchor" id="getStartedHW_usage"></a>
+Test helloWorld</h1>
+<p>The helloWorld app logs <code>Hello</code> world! to the syslog every time the app is started. To test this out we need to use the <code>logread</code> command to tail the logs.</p>
+<p>SSH to your target: </p><pre class="fragment">$ ssh root@192.168.2.2
+</pre><p>Run logread (on your target): </p><pre class="fragment"># logread -f | grep helloWorld
+</pre><p>From your workspace: (you must have <code>configlegatoenv</code> sourced, or run <code>bin/legs</code> and have <code>DEST_IP</code> set) </p><pre class="fragment">$ app status                            # check that &lt;appName&gt; is listed
+$ app start &lt;appName&gt;                   # e.g., app start helloWorld
+</pre><p>In the log you should be able to see logging statements similar to:</p>
+<pre class="fragment"># logread -f | grep "helloWorld"
+&lt;TIME&gt; &lt;target&gt; user.info Legato:  INFO | supervisor[465]/supervisor T=main | app.c CreateTmpFs() 1204 | Mounted tmpfs at /legato/systems/current/appsWriteable/helloWorld/tmp.
+&lt;TIME&gt; &lt;target&gt; user.info Legato:  INFO | supervisor[465]/supervisor T=main | app.c CreateFileLink() 1504 | Created file link '/tmp/legato/serviceDirectoryServer' to '/legato/systems/current/appsWriteable/helloWorld/tmp/legato/serviceDirectoryServer'.
+&lt;TIME&gt; &lt;target&gt; user.info Legato:  INFO | supervisor[465]/supervisor T=main | app.c CreateFileLink() 1504 | Created file link '/tmp/legato/serviceDirectoryClient' to '/legato/systems/current/appsWriteable/helloWorld/tmp/legato/serviceDirectoryClient'.
+&lt;TIME&gt; &lt;target&gt; user.debug Legato:  DBUG | _UNKNOWN_[1518]/&lt;invalid&gt; T=main | _componentMain.c _helloWorldComponent_Init() 26 | Initializing helloWorldComponent component library.
+&lt;TIME&gt; &lt;target&gt; user.info Legato:  INFO | helloWorld[1518]/helloWorldComponent T=main | helloWorldComponent.c _helloWorldComponent_COMPONENT_INIT() 5 | Hello, world.
+</pre><p>Stop the App (if needed): </p><pre class="fragment">$ app stop helloWorld                   # add the target IP if DEST_IP not set
+</pre><p>Run <code>app</code> <code>--help</code> for all options on controlling apps on your target from your dev machine.</p>
+<p><code>app</code> <code>list</code> - lists all the installed apps on the target <code>app</code> <code>remove</code> &lt;appName&gt; removes the app from the target</p>
+<p>Next we are going to add a second app, communicate between the two apps and build the apps into a system.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

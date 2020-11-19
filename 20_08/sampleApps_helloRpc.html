@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Hello RPC  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="20.08.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Experimental_Features.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a class="link-selected" href="experimentalMain.html">Experimental Features</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Hello RPC </h1> </div>
+</div><div class="contents">
+<div class="textblock"><dl class="section warning"><dt>Warning</dt><dd>EXPERIMENTAL</dd></dl>
+<p>The Hello RPC sample app directory contains sample applications for demonstrating remote-procedure calls between two Legato systems, using RPC bindings. As with IPC bindings, RPC bindings are defined using Legato <a class="el" href="apiFiles.html">API Files</a>.</p>
+<p>Go to the <a href="https://github.com/legatoproject/legato-af/tree/master/apps/sample/helloRpc">sample app code</a>.</p>
+<p>Instructions: </p><pre class="fragment">Overview
+========
+RPC is an EXPERIMENTAL Alpha-quality feature that is actively under development,
+and may be subject to future changes, which may not be backwards compatible.
+
+As an Alpha-quality feature, the RPC framework may be unstable or incomplete,
+and may contain bugs or other related issues.
+
+Please use at your own discretion.
+
+Feedback can be provided through our Legato Forum, forum.legato.io.
+
+
+
+HelloRpc Sample Applications
+============================
+
+Contains sample applications for demonstrating Legato RPC bindings.
+Consists of:
+(1) two Client applications (printClient and printClientExtended),
+(2) two Server applications (printServer and printServerExtended),
+(3) two corresponding definition API files (printer.api and printerExtended.api), and
+(4) two corresponding System Definition files (helloRpc-Alice.sdef and helloRpc-Bob.sdef).
+
+The sample applications allow two RPC bindings to be created,
+one using a combination of printClient/printServer/printer.api, and
+the other using a combination of printClientExtended/printServerExtended/printerExtended.api.
+
+RPC Bindings
+------------
+The helloRpc definition files will result in the following RPC bindings
+being created:
+
+    Bob.bobClient -&gt; Alice.bobServer
+    Alice.aliceClient -&gt; Bob.aliceServer
+
+
+Network Topology
+----------------
+To create RPC bindings, you will require:
+
+(1) Two Legato systems that are networked together using TCP/IP.
+(2) The two systems must be reachable by one another.
+(3) TCP Port # 54323 (or equivalent) to be open and accessible.
+    NOTE: This is configurable (see Configuration section).
+
+
+Definition Files
+----------------
+Two System Definition files have been provided in the helloRpc directory:
+
+helloRpc-Alice.sdef - for building System "Alice", and
+helloRpc-Bob.sdef - for building System "Bob".
+
+The RPC framework is built using extensions available in the System Definition
+(.sdef) file.  Two new sections, "extern:" and "links:", are provided to define
+the RPC configuration.
+
+(1) "extern:" - Used to export the interface from the system.
+    This enables an interface to partake in a RPC binding.
+
+    extern:
+    {
+        bobServer = printServer.printer
+        aliceClient = printClientExtended.printerExtended
+    }
+
+
+(2) "links:" - Used to define the implementation of the RPC
+    Communication API (commonly referred to as le_comm).
+    The le_comm API plugin provides a specific networking implementation.
+    A default implementation, called Network Socket
+    ($LEGATO_ROOT/components/networkSocket) has been provided for your
+    convenience.
+
+    links:
+    {
+        LinkToBob = (networkSocket)
+    }
+
+
+KConfig
+-------
+The RPC feature is currently an EXPERIMENTAL Alpha-quality feature.
+To enable RPC, please enable the EXPERIMENTAL KConfig flag,
+as well as, the RPC feature KConfig flags located under the
+Framework configuration menu.
+
+            [*] Enable RPC Proxy infrastructure (EXPERIMENTAL)
+            [ ]   Enable RPC Proxy as a library component
+
+
+Once enabled, a clean rebuild of your base Legato framework will be required.
+That is:
+
+    cd legato
+    make clean
+    make &lt;target&gt;
+
+
+Please note:
+(1) Library component support is currently not supported (WIP).
+
+
+Build Systems
+-------------
+The helloRpc Makefile will generate two system update images,
+one for "Alice", the other for "Bob".
+Each system image will include the default Legato framework,
+the RPC Proxy application,
+and the helloRpc client and server sample applications.
+To build, use the following commands:
+
+    cd legato/apps/sample/helloRpc
+    make clean
+    make &lt;target&gt;
+
+To download the system update images:
+
+    update helloRpc-Alice.&lt;target&gt;.update &lt;IP Address of "Alice"&gt;
+    update helloRpc-Bob.&lt;target&gt;.update &lt;IP Address of "Bob"&gt;
+
+
+Run-time Configuration
+----------------------
+To activate a RPC binding, it must be added to the system run-time
+configuration, using the RPC Configuration tool (rpctool).
+
+On System "Alice",
+
+    // Define the RPC bindings
+    rpctool set binding bobServer Bob bobClient
+    rpctool set binding aliceClient Bob aliceServer
+
+    // Define the System network-link configuration
+    // Assuming System "Bob" has an IP address of 192.168.3.2
+    // with a TCP Port # 54323
+    rpctool set link Bob LinkToBob address 192.168.3.2
+    rpctool set link Bob LinkToBob port 54323
+
+
+On System "Bob" (assuming an IP Address of 192.168.3.2),
+
+    // Define the RPC bindings
+    rpctool set binding bobClient Alice bobServer
+    rpctool set binding aliceServer Alice aliceClient
+
+    // Define the System network-link configuration
+    // Assuming System "Alice" has an IP address of 192.168.2.2
+    // with a TCP Port # 54323
+    rpctool set link Alice LinkToAlice address 192.168.2.2
+    rpctool set link Alice LinkToAlice port 54323
+
+
+To list all configured bindings and system links,
+use the following command:
+
+    rpctool list bindings
+    rpctool list links
+
+
+NOTE:  Will require the rpcProxy application to be restart in order for it
+       take effect.
+</pre><p>See <br/>
+<a class="el" href="getStartedRPC.html">Legato RPC</a></p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

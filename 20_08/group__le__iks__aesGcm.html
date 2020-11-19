@@ -1,0 +1,810 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_iks_aesGcm API Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="20.08.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#files">Files</a> |
+<a href="#define-members">Macros</a> |
+<a href="#typedef-members">Typedefs</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_iks_aesGcm API Reference</h1> </div>
+</div><div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:le__iks__aesGcm__common_8h"><td align="right" class="memItemLeft" valign="top">file  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__aesGcm__common_8h.html">le_iks_aesGcm_common.h</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:le__iks__aesGcm__interface_8h"><td align="right" class="memItemLeft" valign="top">file  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__iks__aesGcm__interface_8h.html">le_iks_aesGcm_interface.h</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga9e6dcc03c8a5ce11c4c1c6b4c6973234"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__iks__aesGcm.html#ga9e6dcc03c8a5ce11c4c1c6b4c6973234">LE_IKS_AESGCM_NONCE_SIZE</a>   12</td></tr>
+<tr class="separator:ga9e6dcc03c8a5ce11c4c1c6b4c6973234"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga3bb40c7044053fd921735f6e9fc95e16"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__iks__aesGcm.html#ga3bb40c7044053fd921735f6e9fc95e16">LE_IKS_AESGCM_TAG_SIZE</a>   16</td></tr>
+<tr class="separator:ga3bb40c7044053fd921735f6e9fc95e16"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:gab85a3595b5f508ac3d567d1b3b551862"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__iks__aesGcm.html#gab85a3595b5f508ac3d567d1b3b551862">le_iks_aesGcm_DisconnectHandler_t</a>) (void *)</td></tr>
+<tr class="separator:gab85a3595b5f508ac3d567d1b3b551862"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga6b567cf09490d968d96a8024e6220162"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__iks__aesGcm.html#ga6b567cf09490d968d96a8024e6220162">le_iks_aesGcm_ConnectService</a> (void)</td></tr>
+<tr class="separator:ga6b567cf09490d968d96a8024e6220162"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gab7bc709d5f1d13f5963354921b283cad"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__iks__aesGcm.html#gab7bc709d5f1d13f5963354921b283cad">le_iks_aesGcm_TryConnectService</a> (void)</td></tr>
+<tr class="separator:gab7bc709d5f1d13f5963354921b283cad"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gabb5a241975ea2b349b386a34d31811e6"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__iks__aesGcm.html#gabb5a241975ea2b349b386a34d31811e6">le_iks_aesGcm_SetServerDisconnectHandler</a> (<a class="el" href="group__le__iks__aesGcm.html#gab85a3595b5f508ac3d567d1b3b551862">le_iks_aesGcm_DisconnectHandler_t</a> disconnectHandler, void *contextPtr)</td></tr>
+<tr class="separator:gabb5a241975ea2b349b386a34d31811e6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gadd1446cf362a82984fe4097177b204c0"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__iks__aesGcm.html#gadd1446cf362a82984fe4097177b204c0">le_iks_aesGcm_DisconnectService</a> (void)</td></tr>
+<tr class="separator:gadd1446cf362a82984fe4097177b204c0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaab3e993db5ece905f1832321d0bace96"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__iks__aesGcm.html#gaab3e993db5ece905f1832321d0bace96">le_iks_aesGcm_EncryptPacket</a> (uint64_t keyRef, uint8_t *noncePtr, size_t *nonceSizePtr, const uint8_t *aadPtr, size_t aadSize, const uint8_t *plaintextPtr, size_t plaintextSize, uint8_t *ciphertextPtr, size_t *ciphertextSizePtr, uint8_t *tagPtr, size_t *tagSizePtr)</td></tr>
+<tr class="separator:gaab3e993db5ece905f1832321d0bace96"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga4ca381e5ddc2ac47dd56ed019bb0aa15"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__iks__aesGcm.html#ga4ca381e5ddc2ac47dd56ed019bb0aa15">le_iks_aesGcm_DecryptPacket</a> (uint64_t keyRef, const uint8_t *noncePtr, size_t nonceSize, const uint8_t *aadPtr, size_t aadSize, const uint8_t *ciphertextPtr, size_t ciphertextSize, uint8_t *plaintextPtr, size_t *plaintextSizePtr, const uint8_t *tagPtr, size_t tagSize)</td></tr>
+<tr class="separator:ga4ca381e5ddc2ac47dd56ed019bb0aa15"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gae01359be934d29b25c860778590ad96c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__iks__aesGcm.html#gae01359be934d29b25c860778590ad96c">le_iks_aesGcm_StartEncrypt</a> (uint64_t session, uint8_t *noncePtr, size_t *nonceSizePtr)</td></tr>
+<tr class="separator:gae01359be934d29b25c860778590ad96c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gac5328536cb9d0e333dedd96c2cf55764"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__iks__aesGcm.html#gac5328536cb9d0e333dedd96c2cf55764">le_iks_aesGcm_ProcessAad</a> (uint64_t session, const uint8_t *aadPtr, size_t aadSize)</td></tr>
+<tr class="separator:gac5328536cb9d0e333dedd96c2cf55764"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gab7b840debaace9abede30b272241c894"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__iks__aesGcm.html#gab7b840debaace9abede30b272241c894">le_iks_aesGcm_Encrypt</a> (uint64_t session, const uint8_t *plaintextChunkPtr, size_t plaintextChunkSize, uint8_t *ciphertextChunkPtr, size_t *ciphertextChunkSizePtr)</td></tr>
+<tr class="separator:gab7b840debaace9abede30b272241c894"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga8e9023624afc4cc8697b6d87cb25b0ce"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__iks__aesGcm.html#ga8e9023624afc4cc8697b6d87cb25b0ce">le_iks_aesGcm_DoneEncrypt</a> (uint64_t session, uint8_t *tagPtr, size_t *tagSizePtr)</td></tr>
+<tr class="separator:ga8e9023624afc4cc8697b6d87cb25b0ce"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga8084871d2dd7cdf15206c91821b789e5"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__iks__aesGcm.html#ga8084871d2dd7cdf15206c91821b789e5">le_iks_aesGcm_StartDecrypt</a> (uint64_t session, const uint8_t *noncePtr, size_t nonceSize)</td></tr>
+<tr class="separator:ga8084871d2dd7cdf15206c91821b789e5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga68513a8dc29a9ee3663c9bda5a0cbd2c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__iks__aesGcm.html#ga68513a8dc29a9ee3663c9bda5a0cbd2c">le_iks_aesGcm_Decrypt</a> (uint64_t session, const uint8_t *ciphertextChunkPtr, size_t ciphertextChunkSize, uint8_t *plaintextChunkPtr, size_t *plaintextChunkSizePtr)</td></tr>
+<tr class="separator:ga68513a8dc29a9ee3663c9bda5a0cbd2c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga942ac6d1f67572ce70f26f84b0b9df76"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__iks__aesGcm.html#ga942ac6d1f67572ce70f26f84b0b9df76">le_iks_aesGcm_DoneDecrypt</a> (uint64_t session, const uint8_t *tagPtr, size_t tagSize)</td></tr>
+<tr class="separator:ga942ac6d1f67572ce70f26f84b0b9df76"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga9e6dcc03c8a5ce11c4c1c6b4c6973234"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9e6dcc03c8a5ce11c4c1c6b4c6973234">◆ </a></span>LE_IKS_AESGCM_NONCE_SIZE</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_IKS_AESGCM_NONCE_SIZE   12</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Nonce sizes in bytes. </p>
+</div>
+</div>
+<a id="ga3bb40c7044053fd921735f6e9fc95e16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3bb40c7044053fd921735f6e9fc95e16">◆ </a></span>LE_IKS_AESGCM_TAG_SIZE</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_IKS_AESGCM_TAG_SIZE   16</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Tag sizes in bytes. </p>
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="gab85a3595b5f508ac3d567d1b3b551862"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab85a3595b5f508ac3d567d1b3b551862">◆ </a></span>le_iks_aesGcm_DisconnectHandler_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_iks_aesGcm_DisconnectHandler_t) (void *)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Type for handler called when a server disconnects. </p>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga6b567cf09490d968d96a8024e6220162"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6b567cf09490d968d96a8024e6220162">◆ </a></span>le_iks_aesGcm_ConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_iks_aesGcm_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client Specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="ga68513a8dc29a9ee3663c9bda5a0cbd2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga68513a8dc29a9ee3663c9bda5a0cbd2c">◆ </a></span>le_iks_aesGcm_Decrypt()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_aesGcm_Decrypt </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>session</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>ciphertextChunkPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>ciphertextChunkSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>plaintextChunkPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>plaintextChunkSizePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Decrypt a chunk of ciphertext. <a class="el" href="group__le__iks__aesGcm.html#ga8084871d2dd7cdf15206c91821b789e5">le_iks_aesGcm_StartDecrypt()</a> must have been previously called to start either a decryption process.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the session reference is invalid or if the key type is invalid or if plaintextChunkPtr or ciphertextChunkPtr is NULL. LE_OUT_OF_RANGE if textSize is too big. LE_UNSUPPORTED if underlying resource does not support this operation. LE_FAULT if a decryption process has not started. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">session</td><td>Session reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">ciphertextChunkPtr</td><td>Ciphertext chunk. NULL if not used. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">ciphertextChunkSize</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">plaintextChunkPtr</td><td>Buffer to hold the plaintext chunk. </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">plaintextChunkSizePtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga4ca381e5ddc2ac47dd56ed019bb0aa15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4ca381e5ddc2ac47dd56ed019bb0aa15">◆ </a></span>le_iks_aesGcm_DecryptPacket()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_aesGcm_DecryptPacket </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>keyRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>noncePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>nonceSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>aadPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>aadSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>ciphertextPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>ciphertextSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>plaintextPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>plaintextSizePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>tagPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>tagSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Decrypt and verify the integrity of a packet with AES in GCM mode.</p>
+<p>This function performs an integrity check of the AAD and the ciphertext and if the integrity passes provides the decrypted plaintext.</p>
+<p>The plaintext size is the same as the ciphertext size and it is assumed that the plaintextPtr buffer is at least ciphertextSize bytes long.</p>
+<p>The nonce, AAD, ciphertext and tag must be the values produced during encryption.</p>
+<hr/>
+<h2>| nonce, AAD, ciphertext, tag | </h2>
+<p>| V </p><hr/>
+<h2>| plaintext | </h2>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_OUT_OF_RANGE if either the aadSize or ciphertextSize is too large. LE_BAD_PARAMETER if the key reference is invalid or if the key type is invalid or if either noncePtr, tagPtr, plaintextPtr or ciphertextPtr is NULL when they shouldn't be. LE_UNSUPPORTED if underlying resource does not support this operation. LE_FAULT if the integrity check failed. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">keyRef</td><td>Key reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">noncePtr</td><td>Nonce used to encrypt the packet. Assumed to be NONCE_SIZE bytes. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">nonceSize</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">aadPtr</td><td>Additional authenticated data (AAD). NULL if not used. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">aadSize</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">ciphertextPtr</td><td>Ciphertext. NULL if not used. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">ciphertextSize</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">plaintextPtr</td><td>Buffer to hold the plaintext. </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">plaintextSizePtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">tagPtr</td><td>Buffer to hold the authentication tag. Assumed to be TAG_SIZE. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">tagSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gadd1446cf362a82984fe4097177b204c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadd1446cf362a82984fe4097177b204c0">◆ </a></span>le_iks_aesGcm_DisconnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_iks_aesGcm_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client Specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="ga942ac6d1f67572ce70f26f84b0b9df76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga942ac6d1f67572ce70f26f84b0b9df76">◆ </a></span>le_iks_aesGcm_DoneDecrypt()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_aesGcm_DoneDecrypt </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>session</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>tagPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>tagSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Complete decryption and verify the integrity.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the session reference is invalid or if the key type is invalid or if tagPtr is NULL. LE_UNSUPPORTED if underlying resource does not support this operation. LE_FAULT if a decryption process has not started or no data (AAD and ciphertext) has been processed or the integrity check failed. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">session</td><td>Session reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">tagPtr</td><td>Buffer to hold the authentication tag. Assumed to be TAG_SIZE. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">tagSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga8e9023624afc4cc8697b6d87cb25b0ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8e9023624afc4cc8697b6d87cb25b0ce">◆ </a></span>le_iks_aesGcm_DoneEncrypt()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_aesGcm_DoneEncrypt </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>session</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>tagPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>tagSizePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Complete encryption and calculate the authentication tag.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the session reference is invalid or if the key type is invalid or if tagPtr is NULL. LE_UNSUPPORTED if underlying resource does not support this operation. LE_FAULT if an encryption process has not started or no data (AAD and plaintext) has been processed. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">session</td><td>Session reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">tagPtr</td><td>Buffer to hold the authentication tag. Assumed to be TAG_SIZE. </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">tagSizePtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gab7b840debaace9abede30b272241c894"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab7b840debaace9abede30b272241c894">◆ </a></span>le_iks_aesGcm_Encrypt()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_aesGcm_Encrypt </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>session</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>plaintextChunkPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>plaintextChunkSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>ciphertextChunkPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>ciphertextChunkSizePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Encrypt a chunk of plaintext. <a class="el" href="group__le__iks__aesGcm.html#gae01359be934d29b25c860778590ad96c">le_iks_aesGcm_StartEncrypt()</a> must have been previously called to start an encryption process.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the session reference is invalid or if the key type is invalid or if plaintextChunkPtr or ciphertextChunkPtr is NULL. LE_OUT_OF_RANGE if textSize is too big. LE_UNSUPPORTED if underlying resource does not support this operation. LE_FAULT if an encryption process has not started. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">session</td><td>Session reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">plaintextChunkPtr</td><td>Plaintext. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">plaintextChunkSize</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">ciphertextChunkPtr</td><td>Buffer to hold the ciphertext. </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">ciphertextChunkSizePtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gaab3e993db5ece905f1832321d0bace96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaab3e993db5ece905f1832321d0bace96">◆ </a></span>le_iks_aesGcm_EncryptPacket()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_aesGcm_EncryptPacket </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>keyRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>noncePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>nonceSizePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>aadPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>aadSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>plaintextPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>plaintextSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>ciphertextPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>ciphertextSizePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>tagPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>tagSizePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Encrypt and integrity protect a packet with AES in GCM mode.</p>
+<p>GCM is an AEAD (Authenticated Encryption with Associated Data) which means that it provides both confidentiality and integrity protection for plaintext data and provides integrity protection for associated data. The associated data, also referred to as Additional Authenticated Data (AAD), is not encrypted but is integrity protected. The output of the encryption is a randomly chosen nonce, the ciphertext corresponding to the plaintext and an authentication tag. The authentication tag integrity protects the nonce, AAD and the ciphertext.</p>
+<hr/>
+<h2>| AAD, plaintext | </h2>
+<p>| V </p><hr/>
+<h2>| nonce, ciphertext, tag | </h2>
+<p>This is especially useful in communication protocols where a packet's payload needs to be secret but the packet's header must be readable. In this case the packet's header is the AAD.</p>
+<p>The AAD and plaintext are optional but they cannot both be omitted. If the AAD is omitted then confidentiality and integrity is provided for just the plaintext. If the plaintext is omitted then integrity protection is provided for just the AAD.</p>
+<p>The ciphertext size is the same as the plaintext size and it is assumed that the ciphertextPtr buffer is at least plaintextSize bytes long.</p>
+<p>The tag size is always LE_IKS_AES_GCM_TAG_SIZE bytes and it is assumed that the tagPtr buffer is large enough to hold the tag.</p>
+<p>A random nonce is chosen for each invocation of this function. The nonce is passed out to the caller via noncePtr and is assumed to always be LE_IKS_AES_GCM_NONCE_SIZE bytes. The nonce does not need to be kept secret and can be passed in the clear.</p>
+<p>Nonce values must be unique for each invocation for the lifetime of the key. In other words a (key, nonce) pair must be unique for every invocation for all time and for all users in the world. This is a critical security requirement but can be difficult to satisfy that is why keys should be rotated frequently.</p>
+<p>Repeated nonces in GCM are particularly problematic as they can be used to recover the integrity key.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_OUT_OF_RANGE if either the aadSize or plaintextSize is the wrong size. LE_BAD_PARAMETER if the key reference is invalid or if the key type is invalid or if either noncePtr, tagPtr, plaintextPtr or ciphertextPtr is NULL when they shouldn't be. LE_UNSUPPORTED if underlying resource does not support this operation. LE_FAULT if there was an internal error. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">keyRef</td><td>Key reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">noncePtr</td><td>Buffer to hold the nonce. Assumed to be NONCE_SIZE bytes. </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">nonceSizePtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">aadPtr</td><td>Additional authenticated data (AAD). NULL if not used. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">aadSize</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">plaintextPtr</td><td>Plaintext. NULL if not used. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">plaintextSize</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">ciphertextPtr</td><td>Buffer to hold the ciphertext. </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">ciphertextSizePtr</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">tagPtr</td><td>Buffer to hold the authentication tag. Assumed to be TAG_SIZE. </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">tagSizePtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gac5328536cb9d0e333dedd96c2cf55764"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac5328536cb9d0e333dedd96c2cf55764">◆ </a></span>le_iks_aesGcm_ProcessAad()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_aesGcm_ProcessAad </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>session</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>aadPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>aadSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Process a chunk of AAD (Additional Authenticated Data). Either <a class="el" href="group__le__iks__aesGcm.html#gae01359be934d29b25c860778590ad96c">le_iks_aesGcm_StartEncrypt()</a> or <a class="el" href="group__le__iks__aesGcm.html#ga8084871d2dd7cdf15206c91821b789e5">le_iks_aesGcm_StartDecrypt()</a> must have been previously called to start either an encryption or decryption process.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the session reference is invalid or if the key type is invalid or if aadChunkPtr is NULL. LE_OUT_OF_RANGE if aadChunkSize is too big. LE_UNSUPPORTED if underlying resource does not support this operation. LE_FAULT if an encryption or decryption process was not started or plaintext/ciphertext processing has already started. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">session</td><td>Session reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">aadPtr</td><td>Additional authenticated data (AAD). NULL if not used. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">aadSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gabb5a241975ea2b349b386a34d31811e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabb5a241975ea2b349b386a34d31811e6">◆ </a></span>le_iks_aesGcm_SetServerDisconnectHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void le_iks_aesGcm_SetServerDisconnectHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__iks__aesGcm.html#gab85a3595b5f508ac3d567d1b3b551862">le_iks_aesGcm_DisconnectHandler_t</a> </td>
+<td class="paramname"><em>disconnectHandler</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set handler called when server disconnection is detected.</p>
+<p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
+</div>
+</div>
+<a id="ga8084871d2dd7cdf15206c91821b789e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8084871d2dd7cdf15206c91821b789e5">◆ </a></span>le_iks_aesGcm_StartDecrypt()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_aesGcm_StartDecrypt </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>session</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>noncePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>nonceSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Starts a process to decrypt and verify the integrity of a long packet with AES in GCM mode. This function is useful for decrypting and verifying packets that are larger than MAX_PACKET_SIZE. Calling this function will cancel any previously started process using the same session.</p>
+<p>To decrypt a long packet the following sequence should be used:</p>
+<p><a class="el" href="group__le__iks__aesGcm.html#ga8084871d2dd7cdf15206c91821b789e5">le_iks_aesGcm_StartDecrypt()</a> // Start the decryption process. <a class="el" href="group__le__iks__aesGcm.html#gac5328536cb9d0e333dedd96c2cf55764">le_iks_aesGcm_ProcessAad()</a> // Call zero or more times until all AAD data is processed. <a class="el" href="group__le__iks__aesGcm.html#ga68513a8dc29a9ee3663c9bda5a0cbd2c">le_iks_aesGcm_Decrypt()</a> // Call zero or more times until all ciphertext is decrypted. <a class="el" href="group__le__iks__aesGcm.html#ga942ac6d1f67572ce70f26f84b0b9df76">le_iks_aesGcm_DoneDecrypt()</a> // Complete decryption process.</p>
+<dl class="section warning"><dt>Warning</dt><dd>While decrypting long packets in this 'streaming' fashion plaintext chunks are released to the caller before they are verified for integrity. Ie. the caller will not know the plaintext is correct until <a class="el" href="group__le__iks__aesGcm.html#ga942ac6d1f67572ce70f26f84b0b9df76">le_iks_aesGcm_DoneDecrypt()</a> is called. The caller therefore must not release or make use of any plaintext chunks until after <a class="el" href="group__le__iks__aesGcm.html#ga942ac6d1f67572ce70f26f84b0b9df76">le_iks_aesGcm_DoneDecrypt()</a> returns with LE_OK.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the session reference is invalid or if the key type is not valid or if noncePtr is NULL. LE_UNSUPPORTED if underlying resource does not support this operation. LE_FAULT if there was an internal error. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">session</td><td>Session reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">noncePtr</td><td>Nonce used to encrypt the packet. Assumed to be NONCE_SIZE bytes. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">nonceSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gae01359be934d29b25c860778590ad96c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae01359be934d29b25c860778590ad96c">◆ </a></span>le_iks_aesGcm_StartEncrypt()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_aesGcm_StartEncrypt </td>
+<td>(</td>
+<td class="paramtype">uint64_t </td>
+<td class="paramname"><em>session</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>noncePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>nonceSizePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Starts a process to encrypt and integrity protect a long packet with AES in GCM mode. This function is useful for encrypting and integrity protecting packets that are larger than MAX_PACKET_SIZE. Calling this function will cancel any previously started process using the same session.</p>
+<p>To encrypt a long packet the following sequence should be used:</p>
+<p><a class="el" href="group__le__iks__aesGcm.html#gae01359be934d29b25c860778590ad96c">le_iks_aesGcm_StartEncrypt()</a> // Start the encryption process. <a class="el" href="group__le__iks__aesGcm.html#gac5328536cb9d0e333dedd96c2cf55764">le_iks_aesGcm_ProcessAad()</a> // Call zero or more times until all AAD data is processed. <a class="el" href="group__le__iks__aesGcm.html#gab7b840debaace9abede30b272241c894">le_iks_aesGcm_Encrypt()</a> // Call zero or more times until all plaintext is encrypted. <a class="el" href="group__le__iks__aesGcm.html#ga8e9023624afc4cc8697b6d87cb25b0ce">le_iks_aesGcm_DoneEncrypt()</a> // Complete process and obtain authentication tag.</p>
+<p>All AAD must be processed before plaintext processing begins.</p>
+<p>A random nonce is chosen for each invocation of this function. The nonce is passed out to the caller via noncePtr and is assumed to always be AES_GCM_NONCE_SIZE bytes. The nonce does not need to be kept secret and can be passed in the clear.</p>
+<p>Nonce values must be unique for each invocation for the lifetime of the key. In other words a (key, nonce) pair must be unique for every invocation for all time and for all users in the world. This is a critical security requirement but can be difficult to satisfy. Therefore keys should be rotated frequently.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_BAD_PARAMETER if the session reference is invalid or if the key type is invalid or if noncePtr is NULL. LE_UNSUPPORTED if underlying resource does not support this operation. LE_FAULT if there was an internal error. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">session</td><td>Session reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">noncePtr</td><td>Buffer to hold the nonce. Assumed to be NONCE_SIZE bytes. </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">nonceSizePtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gab7bc709d5f1d13f5963354921b283cad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab7bc709d5f1d13f5963354921b283cad">◆ </a></span>le_iks_aesGcm_TryConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_iks_aesGcm_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client Specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

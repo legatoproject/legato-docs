@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_gpioCfg API Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="20.08.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#files">Files</a> |
+<a href="#define-members">Macros</a> |
+<a href="#typedef-members">Typedefs</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_gpioCfg API Reference</h1> </div>
+</div><div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:le__gpioCfg__interface_8h"><td align="right" class="memItemLeft" valign="top">file  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpioCfg__interface_8h.html">le_gpioCfg_interface.h</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:le__gpioCfg__common_8h"><td align="right" class="memItemLeft" valign="top">file  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpioCfg__common_8h.html">le_gpioCfg_common.h</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:le__gpioCfg__interface_8h"><td align="right" class="memItemLeft" valign="top">file  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__gpioCfg__interface_8h.html">le_gpioCfg_interface.h</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga5ccd60950c3f4a7ee6f2f7c21f7f8ff2"><td align="right" class="memItemLeft" valign="top"><a id="ga5ccd60950c3f4a7ee6f2f7c21f7f8ff2"></a>
+#define </td><td class="memItemRight" valign="bottom"><b>LE_GPIOCFG_MAX_GPIO_LIST_SIZE</b>   64</td></tr>
+<tr class="separator:ga5ccd60950c3f4a7ee6f2f7c21f7f8ff2"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga21e290c98ce1557d34a75cd8c10c548b"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__gpioCfg.html#ga21e290c98ce1557d34a75cd8c10c548b">le_gpioCfg_DisconnectHandler_t</a>) (void *)</td></tr>
+<tr class="separator:ga21e290c98ce1557d34a75cd8c10c548b"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga55f935a464bc539f609630a13e78d9f8"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__gpioCfg.html#ga55f935a464bc539f609630a13e78d9f8">le_gpioCfg_ConnectService</a> (void)</td></tr>
+<tr class="separator:ga55f935a464bc539f609630a13e78d9f8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga17108c236e5f1fc11cd8c408e71fa235"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__gpioCfg.html#ga17108c236e5f1fc11cd8c408e71fa235">le_gpioCfg_TryConnectService</a> (void)</td></tr>
+<tr class="separator:ga17108c236e5f1fc11cd8c408e71fa235"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaaef37442eba71315454fa7f49899211d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__gpioCfg.html#gaaef37442eba71315454fa7f49899211d">le_gpioCfg_SetServerDisconnectHandler</a> (<a class="el" href="group__le__gpioCfg.html#ga21e290c98ce1557d34a75cd8c10c548b">le_gpioCfg_DisconnectHandler_t</a> disconnectHandler, void *contextPtr)</td></tr>
+<tr class="separator:gaaef37442eba71315454fa7f49899211d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga8bddb4c21677e63cfa4e5e2021d06df8"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__gpioCfg.html#ga8bddb4c21677e63cfa4e5e2021d06df8">le_gpioCfg_DisconnectService</a> (void)</td></tr>
+<tr class="separator:ga8bddb4c21677e63cfa4e5e2021d06df8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gab2500f50a6627939f788460411565ec1"><td align="right" class="memItemLeft" valign="top">uint32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__gpioCfg.html#gab2500f50a6627939f788460411565ec1">le_gpioCfg_GetTotalPinNumber</a> (void)</td></tr>
+<tr class="separator:gab2500f50a6627939f788460411565ec1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaf8fdd3d7758efeb6ad5dc09d0aa812f6"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__gpioCfg.html#gaf8fdd3d7758efeb6ad5dc09d0aa812f6">le_gpioCfg_IsAvailable</a> (uint32_t gpioId)</td></tr>
+<tr class="separator:gaf8fdd3d7758efeb6ad5dc09d0aa812f6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gadbbb0d22bfe50dc14743a1a817d419d8"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__gpioCfg.html#gadbbb0d22bfe50dc14743a1a817d419d8">le_gpioCfg_GetSupportedGpioList</a> (uint32_t *retListPtr, size_t *retListSizePtr)</td></tr>
+<tr class="separator:gadbbb0d22bfe50dc14743a1a817d419d8"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ga21e290c98ce1557d34a75cd8c10c548b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga21e290c98ce1557d34a75cd8c10c548b">◆ </a></span>le_gpioCfg_DisconnectHandler_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_gpioCfg_DisconnectHandler_t) (void *)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Type for handler called when a server disconnects. </p>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga55f935a464bc539f609630a13e78d9f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga55f935a464bc539f609630a13e78d9f8">◆ </a></span>le_gpioCfg_ConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_gpioCfg_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client Specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="ga8bddb4c21677e63cfa4e5e2021d06df8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8bddb4c21677e63cfa4e5e2021d06df8">◆ </a></span>le_gpioCfg_DisconnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_gpioCfg_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client Specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="gadbbb0d22bfe50dc14743a1a817d419d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadbbb0d22bfe50dc14743a1a817d419d8">◆ </a></span>le_gpioCfg_GetSupportedGpioList()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_gpioCfg_GetSupportedGpioList </td>
+<td>(</td>
+<td class="paramtype">uint32_t * </td>
+<td class="paramname"><em>retListPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>retListSizePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get list of supported GPIOs. If GPIO01, GPIO03 and GPIO05 are supported, the returned list will look like {1, 5, 7}</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_FAULT on failure </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">retListPtr</td><td>User allocated buffer where results will be stored </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">retListSizePtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gab2500f50a6627939f788460411565ec1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab2500f50a6627939f788460411565ec1">◆ </a></span>le_gpioCfg_GetTotalPinNumber()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">uint32_t le_gpioCfg_GetTotalPinNumber </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the current number of GPIO pins in the system</p>
+<dl class="section return"><dt>Returns</dt><dd>The current configured value </dd></dl>
+</div>
+</div>
+<a id="gaf8fdd3d7758efeb6ad5dc09d0aa812f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf8fdd3d7758efeb6ad5dc09d0aa812f6">◆ </a></span>le_gpioCfg_IsAvailable()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">bool le_gpioCfg_IsAvailable </td>
+<td>(</td>
+<td class="paramtype">uint32_t </td>
+<td class="paramname"><em>gpioId</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the current number of GPIO pins in the system</p>
+<dl class="section return"><dt>Returns</dt><dd>The current configured value </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">gpioId</td><td>GPIO ID being examined </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gaaef37442eba71315454fa7f49899211d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaef37442eba71315454fa7f49899211d">◆ </a></span>le_gpioCfg_SetServerDisconnectHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void le_gpioCfg_SetServerDisconnectHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__gpioCfg.html#ga21e290c98ce1557d34a75cd8c10c548b">le_gpioCfg_DisconnectHandler_t</a> </td>
+<td class="paramname"><em>disconnectHandler</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set handler called when server disconnection is detected.</p>
+<p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
+</div>
+</div>
+<a id="ga17108c236e5f1fc11cd8c408e71fa235"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga17108c236e5f1fc11cd8c408e71fa235">◆ </a></span>le_gpioCfg_TryConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_gpioCfg_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client Specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

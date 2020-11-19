@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Dev Studio to VSCode  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="20.08.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Get_Started.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a class="link-selected" href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Dev Studio to VSCode </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>What does this mean for Developer Studio?</p>
+<p>Developer Studio is the previous IDE that was used to create and debug Legato systems. Developer Studio has served us well for the last 10 years but we couldn’t easily tie in the Developer Studio workflow with the Legato workflow in a consistent way that was easy to maintain for current and future features.</p>
+<p>Support for Developer Studio has ended and the Legato plugin for VSCode is now the currently supported IDE.</p>
+<div class="image">
+<img alt="vsCode_devStudioTimeline.png" src="vsCode_devStudioTimeline.png"/>
+</div>
+<h1><a class="anchor" id="tools_vsCodeMigrate_DevStudio"></a>
+Move apps to VSCode</h1>
+<p>Moving your apps created in Developer Studio to VSCode is a fairly straight forward process. You will need to repeat the following process for each app you are migrating over.</p>
+<p>If you have system specific settings you will need to copy those over from the .sdef that was created in Developer Studio to the .sdef that is created in VSCode.</p>
+<dl class="section note"><dt>Note</dt><dd>This procedure assumes that you have not set up a VSCode folder already and are starting from scratch. If you already have a vsCode configured with a Leaf profile and a system skip to step X.</dd></dl>
+<p><code>1</code>. Copy your app(s) and all components needed into a folder you wish to set up as your VSCode workspace.</p>
+<p><code>2</code>. Install VSCode and set up a Leaf Profile by following <a class="el" href="tools_vsCodeInstall.html">Install the Legato Plugin for VSCode</a> .</p>
+<dl class="section note"><dt>Note</dt><dd>make sure that you "Create a new System" when prompted. This will be the basis for the configuration for your VSCode project and creates an <a class="el" href="defFilesSdef.html">System Definition .sdef</a> for your target.</dd></dl>
+<p><code>3</code>. Use the Legato System View to add the app(s) that you created with Developer Studio.</p>
+<div class="image">
+<img alt="tools_vsCodeMigrate_AddApp.png" src="tools_vsCodeMigrate_AddApp.png"/>
+</div>
+<blockquote class="doxtable">
+<p>Select the application that you wish to include. </p>
+</blockquote>
+<div class="image">
+<img alt="tools_vsCodeMigrate_ModifyApp.png" src="tools_vsCodeMigrate_ModifyApp.png"/>
+</div>
+<blockquote class="doxtable">
+<p>Customize anything that needs to be done to the application. </p>
+</blockquote>
+<dl class="section note"><dt>Note</dt><dd>Repeat for any additional applications.</dd></dl>
+<p>Once you have a system with all your apps can configuration set properly for your target you can then build and install your system on the target.</p>
+<p><code>4</code>. Use <b>Ctrl + Shift + B</b> to open the Build Menu and choose <b>Legato: Build and Install</b> to trigger the system build and install your apps onto the target for testing.</p>
+<h1><a class="anchor" id="tools_vsCodeMigrate_Troubleshooting"></a>
+Troubleshooting</h1>
+<p>Some of the configuration options may have to be adapted from Developer Studio to VSCode. If you added specific include paths or custom macro definitions in Developer Studio you will have to readd those settings to the relevant section (i.e.; cflags, cxxflags or ldflags) in the <a class="el" href="defFilesCdef.html">Component Definition .cdef</a></p>
+<h1><a class="anchor" id="tools_vsCodeMigrate_Windows"></a>
+Windows Support</h1>
+<p>At this time we can not officially support an IDE on Windows. The Legato Application Framework needs to be built within an Linux environment.</p>
+<p>Your options are to:</p>
+<ol type="1">
+<li>Install a Linux VM on your Windows machine for Legato Development. We recommend using the pre-configured <a href="https://mangoh.io/setting-up-vm">mangOh Virtual Machine.</a></li>
+<li><b>EXPERIMENTAL</b> - WSL (Windows Subsystem for Linux) is an option for Windows 10 users that allows you to install a Linux Kernel within Windows and use the Linux Features.</li>
+</ol>
+<p>At this time Microsoft has released WSL version 1.0 and while the Legato Application Framework sucessfully builds within WSL 1.0 it is slow and build times can take up to 10 minutes.</p>
+<p>WSL 2.0 is set to be released Spring of 2020 and provides Windows with a fullLinux Kernel and provides good performance for building the Legato Application Framework.</p>
+<p>To try out the Legato Application Framework with WSL check out these <a href="https://forum.legato.io/t/run-leaf-vscode-in-windows-environment-without-vm-experimental/4757">experimental instructions</a> to install Visual Studio Code and the Legato Application Framework.</p>
+<dl class="section note"><dt>Note</dt><dd>Once we finish testing and confirm good results with WSL 2.0 and Legato we will support this as an option for IDE development.</dd></dl>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

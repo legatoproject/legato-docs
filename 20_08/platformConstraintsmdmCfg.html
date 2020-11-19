@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Platform" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Modem  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="20.08.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+        <script src="resources/js/html5shiv.js"></script>
+        <script src="resources/js/respond.js"></script>
+        <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Platform_Platform_Constraints.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink selected" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Platform</h2>
+<nav class="secondary">
+<a class="link-selected" href="platformConstraints.html">Platform Constraints</a><a href="basicTarget.html">Configure SWI Target</a><a href="raspbianMain.html">Configure Raspberry Pi</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Modem </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>Following APIs would be impacted to backup and restore the modem configuration for AR759x and AR758x platforms.</p>
+<p><a class="el" href="group__le__antenna.html#ga0ccc004b9cd6927614b5b37565117f7a">le_antenna_SetShortLimit()</a> <a class="el" href="group__le__antenna.html#ga436108eac97dbe9b6857ddc364243a9f">le_antenna_SetOpenLimit()</a> <a class="el" href="group__le__audio.html#ga393a26f6cff7fe05c1813fcafeef50f3">le_audio_RecordFile()</a> <a class="el" href="group__le__audio.html#ga65f11540e6af03a3494b6b9be76ba5fc">le_audio_SetGain()</a> <a class="el" href="group__le__audio.html#ga64e7ebe776e83d10deb42415e185d68a">le_audio_SetPlatformSpecificGain()</a> <a class="el" href="group__le__audio.html#ga8526af295a5fe34cbb79f6b6d5c99f6a">le_audio_SetProfile()</a> <a class="el" href="group__le__audio.html#gadad24547293481964039efe56bc14e2b">le_audio_Unmute()</a> <a class="el" href="group__le__audio.html#ga147e97c49dbc003f63df78f97d5fca32">le_audio_Mute()</a> <a class="el" href="group__le__ecall.html#gabf9c09914c55cdbe72df1433f60f6e51">le_ecall_SetPsapNumber()</a> <a class="el" href="group__le__ecall.html#ga034c442fd7c6650ed956822a561c0104">le_ecall_UseUSimNumbers()</a> <a class="el" href="group__le__ecall.html#ga66e454e84db7d337d76bc867b57891a1">le_ecall_SetNadDeregistrationTime()</a> <a class="el" href="group__le__ecall.html#gad468828b0024de378d91ea9c30fd6f3f">le_ecall_ForcePersistentOnlyMode()</a> <a class="el" href="group__le__gnss.html#ga3474bb912febeca6e258c6039144f39f">le_gnss_EnableExtendedEphemerisFile()</a> <a class="el" href="group__le__gnss.html#ga49d596f01c010f7828c949f1436246df">le_gnss_DisableExtendedEphemerisFile()</a> <a class="el" href="group__le__gnss.html#ga6dbdc58f23e480e65ea16c583ef5340f">le_gnss_SetConstellation()</a> <a class="el" href="group__le__gnss.html#ga92e3a26e2ba3c220a282fad8817c41be">le_gnss_SetSuplServerUrl()</a> <a class="el" href="group__le__gnss.html#gaa702703bbeebbefd65dd51b1f9fd4ce5">le_gnss_ForceColdRestart()</a> <a class="el" href="group__le__gnss.html#ga1f5b3008db50d34c7962fb73c306f3d1">le_gnss_ForceWarmRestart()</a> <a class="el" href="group__le__gnss.html#ga18219097f3e8c8e6e613462a5467f546">le_gnss_ForceFactoryRestart()</a> <a class="el" href="group__le__gnss.html#ga85bda68acc951ee14f5678dd8d1b532f">le_gnss_InjectSuplCertificate()</a> <a class="el" href="group__le__gnss.html#gaec8d50c209ce21a979b7e9f552353aec">le_gnss_DeleteSuplCertificate()</a> <a class="el" href="group__le__gnss.html#gaea1811e39dfae1516b08404adfbaec22">le_gnss_LoadExtendedEphemerisFile()</a> <a class="el" href="group__le__gnss.html#gab9253e29d74cae6e962dcc8b94f0e3c1">le_gnss_SetNmeaSentences()</a> <a class="el" href="group__le__gnss.html#ga78982eb8669530eef1bbc79ff79347e4">le_gnss_SetMinElevation()</a> <a class="el" href="group__le__riPin.html#ga2cdbeb7aa773f498780058bea06c6553">le_riPin_TakeRingSignal()</a> <a class="el" href="group__le__mcc.html#gac637e687387a5b8cf9c5b02cbb7816fa">le_mcc_SetCallWaitingService()</a> <a class="el" href="group__le__mdc.html#gae8ebd11b9cb9afb9b6b5745903f50156">le_mdc_SetAPN()</a> <a class="el" href="group__le__mdc.html#ga9f69d0751927b5ead6c756202179b222">le_mdc_SetAuthentication()</a> <a class="el" href="group__le__mdc.html#gad44bd756fd5cbfd43a5b348054786a4d">le_mdc_SetDefaultAPN()</a> <a class="el" href="group__le__mdc.html#ga73e66a7a63dc95d7f261fc2a26470386">le_mdc_SetPDP()</a> le_gpioPinx_Activate() le_gpioPinx_Deactivate() le_gpioPinx_SetEdgeSense() le_gpioPinx_SetInput() le_gpioPinx_SetPushPullOutput le_gpioPinx_EnablePullUp() le_gpioPinx_EnablePullDown() le_gpioPinx_DisableEdgeSense() <a class="el" href="group__le__ips.html#gab019313758c21f7a390f7a6061583121">le_ips_SetVoltageThresholds()</a> <a class="el" href="group__le__secStore.html#ga67ef7540ad79e9621a18acdf2d3427ae">le_secStore_Write()</a> <a class="el" href="group__le__secStore.html#ga5d5c156d080e4e4f40fcf7e46c2790e7">le_secStore_Delete()</a> <a class="el" href="group__le__mrc.html#ga78bd27d92337e2122320f41bcaa5480f">le_mrc_SetRadioPower()</a></p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
