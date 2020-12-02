@@ -1,5 +1,5 @@
-var invoke_url = "https://search.legato.io/docs"; // cloudsearch api master endpoint
-var restrict_to_ctx = false; // restrict search to current context?
+var invokeUrl = "https://search.legato.io/docs"; // cloudsearch api master endpoint
+var restrictToContext = false; // restrict search to current context?
 
 
 
@@ -82,6 +82,14 @@ function updateSearchHighlight() {
 
 var legatoVersion;
 
+function getLegatoVersion() {
+    if (legatoVersion === undefined) {
+        legatoVersion = $("meta[name='legato-version']").attr("content");
+    }
+    return legatoVersion;
+}
+
+
 $(document).ready(function() {
     noSH = $.cookie("no-sh");
     // don't replace searchbox if it already contains something (from going back a page)
@@ -93,9 +101,6 @@ $(document).ready(function() {
             return jQuery(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
         };
     });
-
-    legatoVersion = $("meta[name='legato-version']").attr("content");
-
 
     /*** highlight previous search query on page ****/
     if (sq !== undefined) {
@@ -202,7 +207,7 @@ $(document).ready(function() {
 
 /**
  * Fetches search results from the backend.
- * @param search_query - The string to be searched.
+ * @param searchQuery - The string to be searched.
  * @param callback - The callback that handles the results.
  * @param context - A context string (e.g. "Build Apps") that can be either be set
  *                  to restrict search results, or left empty to search all contexts.
@@ -210,20 +215,20 @@ $(document).ready(function() {
 
 var searchResultCache = {};
 
-function fetchSearchResults(search_query, callback, context) {
-    if (searchResultCache[search_query]) {
-        callback(searchResultCache[search_query]);
+function fetchSearchResults(searchQuery, callback, context) {
+    if (searchResultCache[searchQuery]) {
+        callback(searchResultCache[searchQuery]);
         return;
     }
     $.ajax({
-        url: invoke_url,
+        url: invokeUrl,
         dataType: "json",
         data: {
-            q: search_query,
+            q: searchQuery,
             size: 25,
             // restrict search results to current release and context
             //only include "context:" filter if context isnt empty
-            fq: "release:'" + legatoVersion + "'" +
+            fq: "release:'" + getLegatoVersion() + "'" +
                 (context != "" ? " context:'" + context + "'" : ""),
             sort: "_score desc",
             return: "category,title,context,id",
@@ -236,7 +241,7 @@ function fetchSearchResults(search_query, callback, context) {
             var results = []
             if (hits.length == 0) {
                 // if there aren't any results even with a wildcard, let the user know
-                if (search_query.trim().endsWith("*"))
+                if (searchQuery.trim().endsWith("*"))
                     results.push({
                         value: "javascript:void(0);",
                         label: "No results found :("
@@ -247,7 +252,7 @@ function fetchSearchResults(search_query, callback, context) {
                     if (window.location.protocol == "file:")
                         result.value = hits[i].fields.id; // don't do highlighting on local filesystem, since we can't do url rewrites
                     else // append search query as a url parameter (for highlighting)
-                        result.value = addParameter(hits[i].fields.id, 'sq', search_query, false);
+                        result.value = addParameter(hits[i].fields.id, 'sq', searchQuery, false);
                     result.filename = hits[i].id;
                     result.cat = hits[i].fields.category;
                     if (result.cat === undefined)
@@ -259,14 +264,14 @@ function fetchSearchResults(search_query, callback, context) {
                     results.push(result);
                 }
             // if query doesnt end with wildcard, do a prefix search as well, and then call the callback with both sets of results together
-            if (!search_query.trim().endsWith("*")) fetchSearchResults(search_query + "*", function(results2) {
+            if (!searchQuery.trim().endsWith("*")) fetchSearchResults(searchQuery + "*", function(results2) {
                 var results3 = uniqueSearchResults(results.concat(results2));
-                searchResultCache[search_query] = results3;
+                searchResultCache[searchQuery] = results3;
                 callback(results3);
             }, context);
             else {
                 //otherwise just call the callback
-                searchResultCache[search_query] = results;
+                searchResultCache[searchQuery] = results;
                 callback(results);
             }
 
@@ -283,7 +288,7 @@ function setupAutocomplete() {
         delay: 400,
         autoFocus: true,
         source: function(request, response) {
-            fetchSearchResults(request.term, response, restrict_to_ctx ? ctx : "");
+            fetchSearchResults(request.term, response, restrictToContext ? ctx : "");
         },
 
         minLength: 1,
