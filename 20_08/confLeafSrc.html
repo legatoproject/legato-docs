@@ -14,9 +14,9 @@
 <link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
 <link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
 <!--[if IE]>
-        <script src="resources/js/html5shiv.js"></script>
-        <script src="resources/js/respond.js"></script>
-        <![endif]-->
+    <script src="resources/js/html5shiv.js"></script>
+    <script src="resources/js/respond.js"></script>
+  <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
 <script src="tocs/Build_Apps_Get_Started.json"></script>
@@ -64,33 +64,35 @@
 </div><div class="contents">
 <div class="textblock"><p>The initial package that you download contains a <b>pre-built</b> version of the Legato Application Framework, meaning that it contains all the source code that you need and make has already been run for the target that you downloaded the package for. (i.e.; if you download a wp76 package, then make will already be run for the wp76). This means that the build tools and other Legato tools are available for you to use as soon as the package gets installed and you use <code>leaf</code> <code>shell</code>.</p>
 <p>If you need want to contribute back to the legato project or need a tracked version of the source code you can switch from using the pre-built version to the source code.</p>
-<p>Before downloading the source code you must set up an account on Legato's Gerrit instance and set up ssh keys on your development machine.</p>
-<h1><a class="anchor" id="confLeafSrc_Gerrit"></a>
-Legato's Gerrit</h1>
-<p>These steps only need to be done the first time you are connecting your development machine to Legato Gerrit.</p>
-<p>Visit <a href="https://gerrit.legato.io">https://gerrit.legato.io</a></p>
-<p>If you don't have an account click <b>Register</b> and create an account with AirVantage. In the future you will be able to use existing accounts created on source.sierrawireless.com and other Sierra sites.</p>
-<p>Once you have an account click on <b>Sign</b> <b>In</b> and enter in your user name and password.</p>
-<p>After you have successfully signed in click your user id in the right hand corner and choose Settings</p>
-<p>Under the Profile settings enter in a user name (it must be unique for the site). This will be the user name you use to connect to Gerrit through leaf.</p>
+<p>Before downloading the source code you must set up an account on [GitHub)[<a href="https://github.com">https://github.com</a>], accept the license at <a href="https://swi-license.legato.io">https://swi-license.legato.io</a> , and set up an SSH identity on your development machine.</p>
+<h1><a class="anchor" id="confLeafSrc_GitHub"></a>
+GitHub</h1>
+<p>These steps only need to be done the first time you are connecting your development machine to GitHub.</p>
+<p>Visit <a href="https://github.com">https://github.com</a></p>
+<p>If you don't have an account click <b>Sign up</b> and create a user account.</p>
+<p>Once you have an account click on <b>Sign in</b> and enter in your user name and password.</p>
+<p>After you have successfully signed in, you will need to associate an SSH key with your account. The settings are available at <a href="https://github.com/settings/keys">https://github.com/settings/keys</a> , but you can also access it by clicking on your user avatar in the right hand corner and choosing <b>Settings</b> . Then, on the left menu, click on <b>SSH and GPG keys</b>,</p>
 <p>Next, if you have not created RSA keys for your linux development machine before follow these steps:</p><ul>
 <li>From the Terminal or Git Bash, run <code>ssh-keygen</code> </li>
 <li>Confirm the default path <code></code>.ssh/id_rsa</li>
 <li>Enter a passphrase (recommended) or leave it blank. Remember this passphrase, as you will need it to unlock the key whenever you use it.</li>
-<li>Open <code>~/</code>.ssh/id_rsa.pub and copy &amp; paste the contents into the box labeled New SSH Key, then click on <b>Add New SSH Key</b>.</li>
+<li>Click on <b>New SSH key</b></li>
+<li>Open <code>~/</code>.ssh/id_rsa.pub and copy &amp; paste the contents into the box labeled <code>Key</code>, then provide a short description in <code>Title</code> and click on <b>Add New SSH key</b>.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd><code>id_rsa.pub</code> is your public key and can be shared, while the key contained in id_rsa is your private key and should be kept secret.</dd></dl>
-<p>If you already have a <code>~/</code>.ssh/id_rsa.pub created, open it and copy &amp; paste the contents into the box labeled <b>New SSH Key</b>, then click on <b>Add New SSH Key</b>.</p>
-<p>Your account is now set up for ssh authentication to Legato's Gerrit server and you are ready to download the tracked source code.</p>
-<p>For more details on manually cloning the source code see <a class="el" href="toolsGerrit.html">Gerrit</a>.</p>
+<dl class="section note"><dt>Note</dt><dd><code>id_rsa.pub</code> is your public key and can be shared, while the key contained in id_rsa is your private key and should be kept secret. It should be treated with the same amount of care as a password.</dd></dl>
+<p>If you already have a <code>~/</code>.ssh/id_rsa.pub created, go to <a href="https://github.com/settings/keys">https://github.com/settings/keys</a> and register a new key by clicking on <b>New SSH key</b>, then copy &amp; paste the content of the file in <code>Key</code>. Finally, name that key in <code>Title</code>, and click <b>Add SSH key</b>.</p>
+<p>Your account is now set up for SSH authentication to GitHub.</p>
+<p>To make it possible for your account to access private repositories, go to <a href="https://swi-license.legato.io">https://swi-license.legato.io</a> . Follow the instructions, and if you choose to accept the license, your GitHub user will be placed in the <code>legatoproject</code> organisation.</p>
+<p>You can check that access was granted successfuly by accessing <a href="https://github.com/legatoproject/test-access/">https://github.com/legatoproject/test-access/</a> .</p>
+<p>For more details on manually cloning the source code see <a class="el" href="toolsGitHub.html">GitHub</a>.</p>
 <h1><a class="anchor" id="confLeafSrc_Switch"></a>
 Switch to the Source Code</h1>
 <h2><a class="anchor" id="confLeafSrc_SwitchLegato"></a>
 Legato Sources</h2>
 <p>To switch from the pre-built Legato Application Framework to the tracked Legato Source code make sure you are in your leaf workspace directory and enter the following command: </p><pre class="fragment">$ leaf getsrc legato
 </pre><dl class="section note"><dt>Note</dt><dd>If you wish to use the legato source code for all leaf profiles add the <code>--workspace</code> option to the end of your command. i.e., <code>leaf</code> <code>getsrc</code> <code>legato</code> --<code>workspace</code> </dd></dl>
-<p>You will then be prompted to add your gerrit user account (that was created in the first step) and choose a directory to sync the source code to.</p>
-<p>If at any reason the sync stops or times out you can run <code>leaf</code> <code>getsrc</code> <code>legato</code> again to re-sync from Gerrit (it picks up where it left off).</p>
+<p>You will then be prompted to choose a directory to sync the source code to.</p>
+<p>If at any reason the sync stops or times out you can run <code>leaf</code> <code>getsrc</code> <code>legato</code> again to re-sync from GitHub (it picks up where it left off).</p>
 <p>To switch back and to use the pre-build version of Legato, disable the source in leaf. This does not delete the source directory, it re-configures leaf to use the original pre-build version of Legato that was downloaded with your SDK. </p><pre class="fragment">$ leaf getsrc legato --disable
 </pre><h2><a class="anchor" id="confLeafSrc_SwitchLinux"></a>
 Linux Sources</h2>

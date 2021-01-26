@@ -14,9 +14,9 @@
 <link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
 <link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
 <!--[if IE]>
-        <script src="resources/js/html5shiv.js"></script>
-        <script src="resources/js/respond.js"></script>
-        <![endif]-->
+    <script src="resources/js/html5shiv.js"></script>
+    <script src="resources/js/respond.js"></script>
+  <![endif]-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="resources/js/main.js"></script>
 <script src="tocs/Build_Apps_Tools.json"></script>
@@ -230,15 +230,15 @@ Default Legato system definition (.sdef) file to use. This system is built along
 <dd><b>Type:</b> <code>bool</code> <br/>
 <b>Defaults:</b> <ul>
 <li>
-<code>"n" if !"y"</code> </li>
+<code>"y" if !"n"</code> </li>
 <li>
-<code>!"y"</code> </li>
+<code>!"n"</code> </li>
 </ul>
 Use CCache to speed up compilation times. <hr/>
 <dl>
 <dt><code><a class="anchor" id="CCACHE"></a>CCACHE:</code> CCache command  </dt>
 <dd><b>Type:</b> <code>string</code> <br/>
-<b>Default:</b> <code>"ccache" if <a class="el" href="kconfigOptions.html#USE_CCACHE">USE_CCACHE</a></code><br/>
+<b>Default:</b> <code>"/ws/sccache/sccache" if <a class="el" href="kconfigOptions.html#USE_CCACHE">USE_CCACHE</a></code><br/>
  CCache executable to use when compiling.  </dd>
 </dl>
 </dd>
@@ -261,7 +261,7 @@ Generate a read-only image for the target, in addition to the default read-write
  Build with debug compiler flags turned on, and debugging code features enabled.  </dd>
 <dt><code><a class="anchor" id="TEST_COVERAGE"></a>TEST_COVERAGE:</code> Code coverage build  </dt>
 <dd><b>Type:</b> <code>bool</code> <br/>
-<b>Default:</b> <code>"n"</code><br/>
+<b>Default:</b> <code>"y"</code><br/>
  Build with code coverage compiler flags turned on. <hr/>
 <dl>
 <dt><code><a class="anchor" id="TEST_COVERAGE_DIR"></a>TEST_COVERAGE_DIR:</code> On-target code coverage directory  </dt>

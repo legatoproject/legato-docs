@@ -394,16 +394,19 @@ setupTree = function(data) {
             page += "#" + anchor; // page = filename.html#section
 
         // find node of current page and select it
-        $tree.tree('getTree').iterate(
-            function(node, level) {
-                if (node.href === page) {
-                    $tree.tree('openNode', node);
-                    $tree.tree('selectNode', node);
-                    return false;
+        var currentTree = $tree.tree('getTree');
+        if (currentTree) {
+            $tree.tree('getTree').iterate(
+                function(node, level) {
+                    if (node.href === page) {
+                        $tree.tree('openNode', node);
+                        $tree.tree('selectNode', node);
+                        return false;
+                    }
+                    return true;
                 }
-                return true;
-            }
-        );
+            );
+        }
         $('#tree1').tree('setOption', 'slide', true); // now that only the user will be opening nodes, we can turn the animation back on.
         // needed when clicking an anchor, and thus staying on the same page
         $tree.bind(
