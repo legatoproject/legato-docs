@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Platform" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Configure Cell Modems  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.11.4" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+    <script src="resources/js/html5shiv.js"></script>
+    <script src="resources/js/respond.js"></script>
+  <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Platform_Configure_SWI_Target.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink selected" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Platform</h2>
+<nav class="secondary">
+<a href="platformConstraints.html">Platform Constraints</a><a class="link-selected" href="basicTarget.html">Configure SWI Target</a><a href="raspbianMain.html">Configure Raspberry Pi</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Configure Cell Modems </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>To connect your Target to a Cell Network you must have an active sim card inserted into the target.</p>
+<p>All commands to configure the target are done with the <a class="el" href="toolsTarget_cm.html">cm</a> tool.</p>
+<h1><a class="anchor" id="targetModemConf"></a>
+Configure Cell Connection</h1>
+<p>Run <code>cm</code> <code>info</code> to display the info about the sim including the FSN (serial number) and IMEI.</p>
+<pre class="fragment"># cm info
+Device:     WP8548
+IMEI:       123456789101112
+FSN:        123456789
+Firmware:   SWI9X15Y_07.11.18.00 r33561 CARMD-EV-FRMWR1 2016/11/18 10:03:20
+Bootloader: SWI9X15Y_07.11.18.00 r33561 CARMD-EV-FRMWR1 2016/11/18 10:03:20
+priIdPn:    XXXXXXX
+priIdRev:   0X.XX
+skuId:      XXXXXXX
+</pre><p>Next, run <code>cm</code> <code>radio</code> to display info about the mobile network that the SIM is registered on.</p>
+<pre class="fragment"># cm radio
+Power:      ON
+Current Network Operator: &lt;your network operator&gt;
+Status:     UMTS network (LE_MRC_RAT_UMTS)
+Signal:     Strong signal strength (4)
+</pre><p>You will need to manually set the APN for your SIM card. Contact your Mobile carrier to find the APN settings that you will need.</p>
+<p>Run <code>cm</code> <code>data</code> to display the current connection data and APN settings (APN should be blank).</p>
+<pre class="fragment"># cm data
+Index:      1
+APN:
+PDP Type:   IPV4
+Connected:  no
+Auth type:  CHAP
+User name:
+</pre><p>To update the APN run:</p>
+<pre class="fragment"># cm data apn &lt;your apn&gt;
+# cm data                           # displays the settings for verification
+</pre><dl class="section note"><dt>Note</dt><dd>If your Mobile Carrier supports different APN's for 3G and LTE make sure your settings correspond to the correct network. For example, the WP8548 module only supports 3G and the APN for the 3G network needs to be used.</dd></dl>
+<h1><a class="anchor" id="targetModemConnect"></a>
+Connect to a Mobile Network</h1>
+<p>Run <code>cm</code> <code>data</code> <code>connect</code> &amp;</p>
+<dl class="section note"><dt>Note</dt><dd>It may take a few minutes to connect; '&amp;' will run the process in the background.</dd></dl>
+<p>Once the device is connected the target will display: </p><pre class="fragment">Connected through interface 'rmnet0' </pre><h1><a class="anchor" id="targetModemDisconnect"></a>
+Disconnect to a Mobile Network</h1>
+<p>To disconnect, terminate the <code>cm</code> <code>data</code> <code>connect</code> background process by sending it a <code>SIGTERM</code> or <code>SIGINT</code> signal. This can be done using <code>kill</code> (SIGTERM) or by bringing the process back to the foreground and hitting <code>CTRL-C</code> (SIGINT).</p>
+<pre class="fragment"># kill %1
+#
+[1]+ Terminated           cm data connect
+#
+</pre><p>OR</p>
+<pre class="fragment"># fg
+cm data connect
+^C
+#
+</pre><p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

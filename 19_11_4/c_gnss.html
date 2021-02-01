@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GNSS  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.11.4" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+    <script src="resources/js/html5shiv.js"></script>
+    <script src="resources/js/respond.js"></script>
+  <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">GNSS </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><a class="el" href="le__gnss__interface_8h.html">API Reference</a> <br/>
+<a class="el" href="platformConstraintsGnss.html">GNSS platform constraints</a> <br/>
+<a class="el" href="howToGNSS.html">How To Use GNSS</a> <br/>
+<a class="el" href="toolsTarget_gnss.html">GNSS target tool</a> <br/>
+</p>
+<hr/>
+<p>This API provides access to the GNSS device.</p>
+<p>GNSS or Global Navigation Satellite System is a satellite navigation system with global coverage.</p>
+<p>This API provides function to configure the GNSS device and retrieve position information.</p>
+<h1><a class="anchor" id="le_gnss_binding"></a>
+IPC interfaces binding</h1>
+<p>All the functions of this API are provided by the <b>positioningService</b> application service.</p>
+<p>Here's a code sample binding to Positioning services: </p><pre class="fragment"> bindings:
+ {
+    clientExe.clientComponent.le_gnss -&gt; positioningService.le_gnss
+ }</pre><h1><a class="anchor" id="le_gnss_ControlApi"></a>
+GNSS Control API</h1>
+<h2><a class="anchor" id="le_gnss_EnableDisable"></a>
+Enable/Disable GNSS device</h2>
+<p>The application can enable/disable the GNSS device with the <a class="el" href="le__gnss__interface_8h.html#a8e1d96b1b64055b298a74cad1acfbbf8">le_gnss_Enable()</a> / <a class="el" href="le__gnss__interface_8h.html#aa2cd87c616f968370e9e2113570437ea">le_gnss_Disable()</a> functions. By default the GNSS device is enabled for the positioningService application service. Also see <a class="el" href="howToGNSS.html">Manage GNSS</a>.</p>
+<p>A sample code can be seen in the following page:</p><ul>
+<li><a class="el" href="c_gnssSampleCodeEnableDisable.html">Sample code for Enable/Disable GNSS device</a></li>
+</ul>
+<h2><a class="anchor" id="le_gnss_StartStop"></a>
+Start/Stop GNSS device</h2>
+<p>The application shall start the GNSS device calling <a class="el" href="le__gnss__interface_8h.html#add90639835a531c4b9d15554e4f3ba16">le_gnss_Start()</a> function. The other starting functions that allow to start or restart the GNSS devices in particular modes (see <a class="el" href="c_gnss.html#le_gnss_StartingMode">Starting mode</a>) are only used for test purposes and allow start performance measurement. The application shall stop the GNSS device calling <a class="el" href="le__gnss__interface_8h.html#a93d63fdc76dbced071956b87de2abff7">le_gnss_Stop()</a> function.</p>
+<p>A diagram of GNSS device state machine showing how to use the different starting fonctions can be seen at <a class="el" href="howToGNSS.html">Manage GNSS</a>.</p>
+<p>A sample code can be seen in the following page:</p><ul>
+<li><a class="el" href="c_gnssSampleCodeStartStop.html">Sample code for Start/Stop GNSS device</a></li>
+</ul>
+<h3><a class="anchor" id="le_gnss_StartingMode"></a>
+Starting mode</h3>
+<p>Starting modes are used only for test purposes and allow start performance measurement. </p><dl class="section note"><dt>Note</dt><dd>For more information about start performances, please refer to your specific platform documentation.</dd></dl>
+<h3><a class="anchor" id="le_gnss_startMode"></a>
+Start the GNSS device in the specified starting mode</h3>
+<p>The <a class="el" href="le__gnss__interface_8h.html#ac2db678758584ad192d919923d7fb2b4">le_gnss_StartMode()</a> function clears the <a class="el" href="c_gnss.html#le_gnss_Data">GNSS data</a> according to the starting mode and starts the GNSS device. In HOT mode, no data are cleared, the GNSS is started with its available data. It is equivalent to <a class="el" href="le__gnss__interface_8h.html#add90639835a531c4b9d15554e4f3ba16">le_gnss_Start()</a> function. In WARM mode, GNSS is started after the Ephemeris are cleared. In COLD mode, GNSS is started after all data are cleared except Almanac and in Factory mode GNSS is started after default data are set.</p>
+<h3><a class="anchor" id="le_gnss_ForceHotRestart"></a>
+Restart the GNSS device in HOT mode</h3>
+<p>The <a class="el" href="le__gnss__interface_8h.html#a29ff5b1e5bada1a9d15d19b3a0d2d4d1">le_gnss_ForceHotRestart()</a> function performs a "HOT" restart of the GNSS device. The current GNSS session is stopped, then started using the available <a class="el" href="c_gnss.html#le_gnss_Data">GNSS data</a>. Please refer to <a class="el" href="c_gnss.html#le_gnss_APIcallsRequirements">API calls Requirements</a>. Also see <a class="el" href="howToGNSS.html">Manage GNSS</a>.</p>
+<h3><a class="anchor" id="le_gnss_ForceWarmRestart"></a>
+Restart the GNSS device in WARM mode</h3>
+<p>The <a class="el" href="le__gnss__interface_8h.html#a1f5b3008db50d34c7962fb73c306f3d1">le_gnss_ForceWarmRestart()</a> function performs a "WARM" restart of the GNSS device. The current GNSS session is stopped, then started using the available <a class="el" href="c_gnss.html#le_gnss_Data">GNSS data</a>. Please refer to <a class="el" href="c_gnss.html#le_gnss_APIcallsRequirements">API calls Requirements</a>. Also see <a class="el" href="howToGNSS.html">Manage GNSS</a>.  This API has a platform dependent feature. Please refer to <a class="el" href="platformConstraintsGnss.html#platformConstraintsGnss_WarmRestart">GNSS WARM restart</a> for further details.</p>
+<h3><a class="anchor" id="le_gnss_ForceColdRestart"></a>
+Restart the GNSS device in COLD mode</h3>
+<p>The <a class="el" href="le__gnss__interface_8h.html#aa702703bbeebbefd65dd51b1f9fd4ce5">le_gnss_ForceColdRestart()</a> function performs a "COLD" restart of the GNSS device. The current GNSS session is stopped, then started using the available <a class="el" href="c_gnss.html#le_gnss_Data">GNSS data</a>. Please refer to <a class="el" href="c_gnss.html#le_gnss_APIcallsRequirements">API calls Requirements</a>. Also see <a class="el" href="howToGNSS.html">Manage GNSS</a>.</p>
+<h3><a class="anchor" id="le_gnss_ForceFactoryRestart"></a>
+Restart the GNSS device in FACTORY mode</h3>
+<p>The <a class="el" href="le__gnss__interface_8h.html#a18219097f3e8c8e6e613462a5467f546">le_gnss_ForceFactoryRestart()</a> function performs a "FACTORY" restart of the GNSS device. The current GNSS session is stopped, then started using the available <a class="el" href="c_gnss.html#le_gnss_Data">GNSS data</a>. Please refer to <a class="el" href="c_gnss.html#le_gnss_APIcallsRequirements">API calls Requirements</a>. Also see <a class="el" href="howToGNSS.html">Manage GNSS</a>.</p>
+<h3><a class="anchor" id="le_gnss_Data"></a>
+GNSS data</h3>
+<p>The following table describes the <b>minimum</b> required data for those starting modes:</p>
+<table class="doxtable">
+<tr>
+<th>GNSS Data / Starting mode </th><th>HOT </th><th>WARM </th><th>COLD </th><th>FACTORY  </th></tr>
+<tr>
+<td>Broadcasted Ephemeris </td><td>Used </td><td></td><td></td><td></td></tr>
+<tr>
+<td>Extended Ephemeris </td><td>Used(1) </td><td>Used(2) </td><td>Used(2) </td><td>Removed (3) </td></tr>
+<tr>
+<td>Approximate Time and Position </td><td>Used </td><td>Used </td><td></td><td></td></tr>
+<tr>
+<td>Almanac </td><td>Used </td><td>Used </td><td>Used </td><td>Used (Factory) </td></tr>
+</table>
+<p>For example, a requested HOT start without valid broadcasted ephemeris will be treated as a WARM start.</p>
+<dl class="section note"><dt>Note</dt><dd>(1) Extended Ephemeris can be used if Broadcasted Ephemeris are not valid. The Extended Ephemeris could be loaded using the <a class="el" href="le__gnss__interface_8h.html#aea1811e39dfae1516b08404adfbaec22">le_gnss_LoadExtendedEphemerisFile()</a> function. </dd>
+<dd>
+(2) Extended Ephemeris is used if the Extended Ephemeris file is loaded and valid. </dd>
+<dd>
+(3) Extended Ephemeris are removed when a FACTORY start is requested. The Extended Ephemeris could be loaded again using the <a class="el" href="le__gnss__interface_8h.html#aea1811e39dfae1516b08404adfbaec22">le_gnss_LoadExtendedEphemerisFile()</a> function.</dd></dl>
+<h3><a class="anchor" id="SettingConfiguration"></a>
+Setting configuration</h3>
+<dl class="section warning"><dt>Warning</dt><dd>The GNSS setting configuration depends on the platform. Please refer to <a class="el" href="platformConstraintsGnss.html#platformConstraintsGnss_SettingConfiguration">Setting configuration</a> section for full details.</dd></dl>
+<h3><a class="anchor" id="le_gnss_TTFF"></a>
+Time To First Fix (TTFF)</h3>
+<p>The <a class="el" href="le__gnss__interface_8h.html#a6b2fbb3902c9fd3336b5940b2abacb12">le_gnss_GetTtff()</a> function provides the TTFF (first between 2-Dimensional or 3-Dimensional position fix) of the last position fix. The GNSS fix position is calculated by the GNSS engine. Its state can be retrieved by <a class="el" href="le__gnss__interface_8h.html#a0a0df2ffe42b6277f43af0e52e617339">le_gnss_GetPositionState()</a> function. The GNSS fix position states are given by le_gnss_FixState_t enum. </p><dl class="section note"><dt>Note</dt><dd>The "estimated" fix is obtained when less than 3 Satellites Vehicle (SV) are used to establish the fix. It includes the case when no SVs are used.</dd></dl>
+<p>Please refer to <a class="el" href="c_gnss.html#le_gnss_APIcallsRequirements">API calls Requirements</a>. Also see <a class="el" href="howToGNSS.html">Manage GNSS</a>.</p>
+<p>A sample code can be seen in the following page:</p><ul>
+<li><a class="el" href="c_gnssSampleCodeReStart.html">Sample code for restart GNSS device and get TTFF</a></li>
+</ul>
+<h3><a class="anchor" id="le_gnss_InjectUtcTime"></a>
+Inject UTC time</h3>
+<p>The <a class="el" href="le__gnss__interface_8h.html#ab058224c242c97d458fcc8ad03b1f1c9">le_gnss_InjectUtcTime()</a> function injects the UTC time into the location engine. Providing an accurate UTC time reduces the time to find the first fix. </p><dl class="section note"><dt>Note</dt><dd>It is mandatory to enable the 'Extended Ephemeris' file injection into the GNSS device with <a class="el" href="le__gnss__interface_8h.html#a3474bb912febeca6e258c6039144f39f">le_gnss_EnableExtendedEphemerisFile()</a> before injecting time with le_gnss_InjectUtcTime API. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Your GNSS device may require a restart to take into account the enabling of the 'Extended Ephemeris' file injection. Please refer to your platform documentation <a class="el" href="platformConstraintsGnss.html#platformConstraintsGnss_SettingConfiguration">Setting configuration</a> for further details.</dd></dl>
+<h2><a class="anchor" id="le_gnss_AcquisitionRate"></a>
+Acquisition rate</h2>
+<p>The GNSS position is computed and delivered each acquisition rate. The acquisition rate defines the time interval that must elapse between two final GPS positions calculation and reports. Its default value is 1 second. The application can configure/retreive the GNSS device acquisition rate with the <a class="el" href="le__gnss__interface_8h.html#a75d96ec7ac6e0d6b58525e4c523d3b2c">le_gnss_SetAcquisitionRate()</a> / <a class="el" href="le__gnss__interface_8h.html#acfa9b25ac13f601921bd9123a1d0daba">le_gnss_GetAcquisitionRate()</a> functions.</p>
+<p>Please refer to <a class="el" href="c_gnss.html#le_gnss_APIcallsRequirements">API calls Requirements</a>.</p>
+<h2><a class="anchor" id="le_gnss_EnableDisableExternalLna"></a>
+Control EXT_GPS_LNA_EN signal</h2>
+<p>The <a class="el" href="le__gnss__interface_8h.html#ac875dea948d6911b3110ab12441271d0">le_gnss_EnableExternalLna()</a> function enables the EXT_GPS_LNA_EN signal. The pin is set high when the GNSS state is active, and set low when the GNSS state is inactive.</p>
+<p>The <a class="el" href="le__gnss__interface_8h.html#a07a2596dff1fb919fe09498f8a48e4a9">le_gnss_DisableExternalLna()</a> function disables the EXT_GPS_LNA_EN signal. The pin remains off regardless of the GNSS state.</p>
+<p>Please refer to <a class="el" href="c_gnss.html#le_gnss_APIcallsRequirements">API calls Requirements</a>.</p>
+<p>A sample code can be seen in the following page:</p><ul>
+<li><a class="el" href="c_gnssSampleCodeAcquisitionRate.html">Sample code for GNSS acquisition rate configuration</a></li>
+</ul>
+<h2><a class="anchor" id="le_gnss_SetGetConstellation"></a>
+GNSS constellation selection</h2>
+<p>The <a class="el" href="le__gnss__interface_8h.html#a6dbdc58f23e480e65ea16c583ef5340f">le_gnss_SetConstellation()</a> function selects the GNSS constellation(s) used in solution. If all GNSS constellations are disabled, the GNSS engine is disabled.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Your GNSS device may require a restart to take into account this change. Please refer to your platform documentation <a class="el" href="platformConstraintsGnss.html#platformConstraintsGnss_SettingConfiguration">Setting configuration</a> for further details.</dd></dl>
+<p>Combinations of constellation for GPS, GLONASS, BDS, GALILEO and QZSS satellites are currently supported. Constellation for SBAS satellites is not supported.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Some constellation types are unsupported depending on the platform. Please refer to <a class="el" href="platformConstraintsGnss.html#platformConstraintsGnss_ConstellationType">Constellation type</a> section for full details.</dd></dl>
+<p>All supported GNSS constellations are enabled by default. The <a class="el" href="le__gnss__interface_8h.html#a150835481ab3751e3ab1821362e34e84">le_gnss_GetConstellation()</a> function gets the GNSS constellation(s) enabled to be used in solution.</p>
+<p>le_gnss_SetConstellationArea sets the area for a GNSS constellation. le_gnss_GetConstellationArea gets the area for a GNSS constellation.</p>
+<p>A sample code can be seen in the following page:</p><ul>
+<li><a class="el" href="c_gnssSampleCodeConstellation.html">Sample code for GNSS constellation selection</a></li>
+</ul>
+<p>The <a class="el" href="le__gnss__interface_8h.html#a842d7fb44e7d3a9a5395e0a14da872fd">le_gnss_GetSupportedConstellations()</a> function gets a bit mask of the constellations supported on the platform.</p>
+<h2><a class="anchor" id="le_gnss_SetGetMinElevation"></a>
+GNSS minimum elevation selection</h2>
+<p>The <a class="el" href="le__gnss__interface_8h.html#a78982eb8669530eef1bbc79ff79347e4">le_gnss_SetMinElevation()</a> function sets the GNSS minimum elevation. Satellites with elevation lower than the minimum elevation will be ignored.</p>
+<p>The <a class="el" href="le__gnss__interface_8h.html#ad8476e020a2eb0188703e78eed5818da">le_gnss_GetMinElevation()</a> function gets the GNSS minimum elevation.</p>
+<p>A sample code can be seen in the following page:</p><ul>
+<li><a class="el" href="c_gnssSampleCodeMinElevation.html">Sample code for GNSS minimum elevation</a></li>
+</ul>
+<h2><a class="anchor" id="le_gnss_NmeaSentences"></a>
+NMEA sentences selection</h2>
+<p>The <a class="el" href="le__gnss__interface_8h.html#ab9253e29d74cae6e962dcc8b94f0e3c1">le_gnss_SetNmeaSentences()</a> function selects the enabled NMEA sentences in the <a class="el" href="c_gnss.html#le_gnss_NMEA">NMEA Flow</a> with a bit mask. The supported values are listed in le_gnss_NmeaBitMask_t.</p>
+<dl class="section note"><dt>Note</dt><dd>This function may be subject to limitations depending on the platform. Please refer to the <a class="el" href="platformConstraintsGnss.html">GNSS platform constraints</a> page.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Your GNSS device may require a restart to take into account this change. Please refer to your platform documentation <a class="el" href="platformConstraintsGnss.html#platformConstraintsGnss_SettingConfiguration">Setting configuration</a> for further details.</dd>
+<dd>
+Some NMEA sentences are unsupported depending on the platform. Please refer to <a class="el" href="platformConstraintsGnss.html#platformConstraintsGnss_nmeaMask">Enabled NMEA sentences</a> section for full details.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>All supported NMEA sentences are enabled by default.</dd></dl>
+<p>The <a class="el" href="le__gnss__interface_8h.html#a985845ac33d35c34ac3099b6557ca8ea">le_gnss_GetNmeaSentences()</a> function gets the bit mask of the enabled NMEA sentences in the <a class="el" href="c_gnss.html#le_gnss_NMEA">NMEA Flow</a>.</p>
+<p>The <a class="el" href="le__gnss__interface_8h.html#ad0116f3f3c78493fe399228ac251d392">le_gnss_GetSupportedNmeaSentences()</a> function gets a bit mask of the NMEA sentences supported on the platform.</p>
+<p>Please refer to <a class="el" href="c_gnss.html#le_gnss_APIcallsRequirements">API calls Requirements</a>.</p>
+<p>A sample code can be seen in the following page:</p><ul>
+<li><a class="el" href="c_gnssSampleCodeNmeaSentences.html">Sample code for GNSS NMEA sentences selection</a></li>
+</ul>
+<h2><a class="anchor" id="le_gnss_GetMinMaxNmeaRate"></a>
+Get the supported NMEA rates</h2>
+<p>The <a class="el" href="le__gnss__interface_8h.html#aba1d5bdec5ba0c812a8c0d952793c0f4">le_gnss_GetMinNmeaRate()</a> function gets the minimum NMEA rate supported on the platform in milliseconds.</p>
+<p>The <a class="el" href="le__gnss__interface_8h.html#a7faa3eba62c594c765badc708466feff">le_gnss_GetMaxNmeaRate()</a> function gets the maximum NMEA rate supported on the platform in milliseconds.</p>
+<h2><a class="anchor" id="le_gnss_APIcallsRequirements"></a>
+API calls Requirements</h2>
+<p>The following table shows the pre-requisites when using the GNSS service API function set. ''LE_OK or error code'' means the function is authorized in the corresponding state, the request is performed and the result is returned; otherwise the returned error is indicated for each state</p><table class="doxtable">
+<tr>
+<th>Function / GNSS state </th><th>UNINITIALIZED </th><th>READY </th><th>ACTIVE </th><th>DISABLED  </th></tr>
+<tr>
+<td><a class="el" href="le__gnss__interface_8h.html#add90639835a531c4b9d15554e4f3ba16">le_gnss_Start()</a> </td><td>LE_NOT_PERMITTED </td><td>LE_OK or error code </td><td>LE_DUPLICATE </td><td>LE_NOT_PERMITTED </td></tr>
+<tr>
+<td><a class="el" href="le__gnss__interface_8h.html#a93d63fdc76dbced071956b87de2abff7">le_gnss_Stop()</a> </td><td>LE_NOT_PERMITTED </td><td>LE_DUPLICATE </td><td>LE_OK or error code </td><td>LE_NOT_PERMITTED </td></tr>
+<tr>
+<td><a class="el" href="le__gnss__interface_8h.html#a29ff5b1e5bada1a9d15d19b3a0d2d4d1">le_gnss_ForceHotRestart()</a> </td><td>LE_NOT_PERMITTED </td><td>LE_NOT_PERMITTED </td><td>LE_OK or error code </td><td>LE_NOT_PERMITTED </td></tr>
+<tr>
+<td><a class="el" href="le__gnss__interface_8h.html#a1f5b3008db50d34c7962fb73c306f3d1">le_gnss_ForceWarmRestart()</a> </td><td>LE_NOT_PERMITTED </td><td>LE_NOT_PERMITTED </td><td>LE_OK or error code </td><td>LE_NOT_PERMITTED </td></tr>
+<tr>
+<td><a class="el" href="le__gnss__interface_8h.html#aa702703bbeebbefd65dd51b1f9fd4ce5">le_gnss_ForceColdRestart()</a> </td><td>LE_NOT_PERMITTED </td><td>LE_NOT_PERMITTED </td><td>LE_OK or error code </td><td>LE_NOT_PERMITTED </td></tr>
+<tr>
+<td><a class="el" href="le__gnss__interface_8h.html#a18219097f3e8c8e6e613462a5467f546">le_gnss_ForceFactoryRestart()</a> </td><td>LE_NOT_PERMITTED </td><td>LE_NOT_PERMITTED </td><td>LE_OK or error code </td><td>LE_NOT_PERMITTED </td></tr>
+<tr>
+<td><a class="el" href="le__gnss__interface_8h.html#aa2cd87c616f968370e9e2113570437ea">le_gnss_Disable()</a> </td><td>LE_NOT_PERMITTED </td><td>LE_OK or error code </td><td>LE_NOT_PERMITTED </td><td>LE_DUPLICATE </td></tr>
+<tr>
+<td><a class="el" href="le__gnss__interface_8h.html#a8e1d96b1b64055b298a74cad1acfbbf8">le_gnss_Enable()</a> </td><td>LE_NOT_PERMITTED </td><td>LE_DUPLICATE </td><td>LE_DUPLICATE </td><td>LE_OK or error code </td></tr>
+<tr>
+<td><a class="el" href="le__gnss__interface_8h.html#a6dbdc58f23e480e65ea16c583ef5340f">le_gnss_SetConstellation()</a> </td><td>LE_NOT_PERMITTED </td><td>LE_OK or error code </td><td>LE_NOT_PERMITTED </td><td>LE_NOT_PERMITTED </td></tr>
+<tr>
+<td><a class="el" href="le__gnss__interface_8h.html#a150835481ab3751e3ab1821362e34e84">le_gnss_GetConstellation()</a> </td><td>LE_NOT_PERMITTED </td><td>LE_OK or error code </td><td>LE_NOT_PERMITTED </td><td>LE_NOT_PERMITTED </td></tr>
+<tr>
+<td><a class="el" href="le__gnss__interface_8h.html#a954fcc8ecae822195e30a2af5e93fd0e">le_gnss_SetConstellationArea()</a> </td><td>LE_NOT_PERMITTED </td><td>LE_OK or error code </td><td>LE_NOT_PERMITTED </td><td>LE_NOT_PERMITTED </td></tr>
+<tr>
+<td><a class="el" href="le__gnss__interface_8h.html#a2904b06453428ad1d71609f06b440e08">le_gnss_GetConstellationArea()</a> </td><td>LE_NOT_PERMITTED </td><td>LE_OK or error code </td><td>LE_NOT_PERMITTED </td><td>LE_NOT_PERMITTED </td></tr>
+<tr>
+<td><a class="el" href="le__gnss__interface_8h.html#a6b2fbb3902c9fd3336b5940b2abacb12">le_gnss_GetTtff()</a> </td><td>LE_NOT_PERMITTED </td><td>LE_OK or error code </td><td>LE_OK or error code </td><td>LE_NOT_PERMITTED </td></tr>
+<tr>
+<td><a class="el" href="le__gnss__interface_8h.html#a75d96ec7ac6e0d6b58525e4c523d3b2c">le_gnss_SetAcquisitionRate()</a> </td><td>LE_NOT_PERMITTED </td><td>LE_OK or error code </td><td>LE_NOT_PERMITTED </td><td>LE_NOT_PERMITTED </td></tr>
+<tr>
+<td><a class="el" href="le__gnss__interface_8h.html#acfa9b25ac13f601921bd9123a1d0daba">le_gnss_GetAcquisitionRate()</a> </td><td>LE_NOT_PERMITTED </td><td>LE_OK or error code </td><td>LE_NOT_PERMITTED </td><td>LE_NOT_PERMITTED </td></tr>
+<tr>
+<td><a class="el" href="le__gnss__interface_8h.html#ab9253e29d74cae6e962dcc8b94f0e3c1">le_gnss_SetNmeaSentences()</a> </td><td>LE_NOT_PERMITTED </td><td>LE_OK or error code </td><td>LE_NOT_PERMITTED </td><td>LE_NOT_PERMITTED </td></tr>
+<tr>
+<td><a class="el" href="le__gnss__interface_8h.html#a985845ac33d35c34ac3099b6557ca8ea">le_gnss_GetNmeaSentences()</a> </td><td>LE_NOT_PERMITTED </td><td>LE_OK or error code </td><td>LE_NOT_PERMITTED </td><td>LE_NOT_PERMITTED </td></tr>
+<tr>
+<td><a class="el" href="le__gnss__interface_8h.html#ac875dea948d6911b3110ab12441271d0">le_gnss_EnableExternalLna()</a> </td><td>LE_NOT_PERMITTED </td><td>LE_OK or error code </td><td>LE_NOT_PERMITTED </td><td>LE_NOT_PERMITTED </td></tr>
+<tr>
+<td><a class="el" href="le__gnss__interface_8h.html#a07a2596dff1fb919fe09498f8a48e4a9">le_gnss_DisableExternalLna()</a> </td><td>LE_NOT_PERMITTED </td><td>LE_OK or error code </td><td>LE_NOT_PERMITTED </td><td>LE_NOT_PERMITTED </td></tr>
+</table>
+<p>Also see <a class="el" href="howToGNSS.html">Manage GNSS</a>.</p>
+<h1><a class="anchor" id="le_gnss_Information"></a>
+GNSS position information</h1>
+<p><a class="el" href="c_gnss.html#le_gnss_NMEA">NMEA Flow</a></p>
+<p><a class="el" href="c_gnss.html#le_gnss_GetInfo">Get position information</a></p>
+<p><a class="el" href="c_gnss.html#le_gnss_GetLeapSeconds">Get leap seconds event information</a></p>
+<h2><a class="anchor" id="le_gnss_NMEA"></a>
+NMEA Flow</h2>
+<p>The National Marine Electronics Association (NMEA) standard defines an electrical interface and data protocol for communications between marine instrumentation.</p>
+<p>The NMEA-0183, scope of this document, defines a set of frame prefixed by $GP (concerning Global Positioning System), $GL (concerning GLONASS) and $GN (concerning combination of navigation systems). For more details about NMEA standards, please refer to <a href="http://www.nmea.org/">http://www.nmea.org/</a>.</p>
+<p>That NMEA frames flow can be retrieved from the "/dev/nmea" device folder, using for example the shell command $<em> cat /dev/nmea | grep '$G'</em></p>
+<h2><a class="anchor" id="le_gnss_GetInfo"></a>
+Get position information</h2>
+<p>The position information is referenced to a position sample object.</p>
+<p>An application can register a handler to be notified of the updated position each <a class="el" href="c_gnss.html#le_gnss_AcquisitionRate">Acquisition rate</a>, returning a position sample object.</p>
+<p>The GNSS information commonly used such as device state, position, time and date, satellites information and accuracy can be queried using the following functions:</p><ul>
+<li><a class="el" href="le__gnss__interface_8h.html#a097601f67898305de45d190e857c6b55">le_gnss_GetState()</a></li>
+<li><a class="el" href="le__gnss__interface_8h.html#a0a0df2ffe42b6277f43af0e52e617339">le_gnss_GetPositionState()</a></li>
+<li><a class="el" href="le__gnss__interface_8h.html#ada100f53f9ad9f3df852fcc6639c15bc">le_gnss_GetLocation()</a></li>
+<li><a class="el" href="le__gnss__interface_8h.html#a5cc278268a4e75c5e2a5f8c1ffb64fa9">le_gnss_GetAltitude()</a></li>
+<li><a class="el" href="le__gnss__interface_8h.html#a29602d1e12325d0076802af0db7f23ca">le_gnss_GetDate()</a></li>
+<li><a class="el" href="le__gnss__interface_8h.html#a0d014a96fc8b15b736d04747d51082d9">le_gnss_GetTime()</a></li>
+<li><a class="el" href="le__gnss__interface_8h.html#a4e9966df8185978aaef75399d5aff2d3">le_gnss_GetGpsTime()</a></li>
+<li><a class="el" href="le__gnss__interface_8h.html#a9e2b23f2420e53ca86f48a0f0c43f2d0">le_gnss_GetGpsLeapSeconds()</a></li>
+<li><a class="el" href="le__gnss__interface_8h.html#a38c21e7f7f7da5481f67e118fb3ea89c">le_gnss_GetEpochTime()</a></li>
+<li><a class="el" href="le__gnss__interface_8h.html#ad41698ff4a68651b9fb81b862d4274f6">le_gnss_GetTimeAccuracy()</a></li>
+<li><a class="el" href="le__gnss__interface_8h.html#a483fba8fc6b0fa116bcbd889af95fc4f">le_gnss_GetHorizontalSpeed()</a></li>
+<li><a class="el" href="le__gnss__interface_8h.html#a37a370cec19610be1f99d9c9db291a1e">le_gnss_GetVerticalSpeed()</a></li>
+<li><a class="el" href="le__gnss__interface_8h.html#aabc2432ec207a1e6cb74d444407aad11">le_gnss_GetDirection()</a></li>
+<li><a class="el" href="le__gnss__interface_8h.html#a08654437579b3e033ba1c54c860febab">le_gnss_GetSatellitesInfo()</a></li>
+<li><a class="el" href="le__gnss__interface_8h.html#a4ea5971e6495429ab28c41207cba37d7">le_gnss_GetSbasConstellationCategory()</a></li>
+<li><a class="el" href="le__gnss__interface_8h.html#a5ae945ad1921b621e9631e4286f40784">le_gnss_GetSatellitesStatus()</a></li>
+<li><a class="el" href="le__gnss__interface_8h.html#a70504e7c542d626aa07948d8330020c7">le_gnss_GetDop()</a></li>
+<li><a class="el" href="le__gnss__interface_8h.html#a87cbadea6fe7ebd8ef74d45bdeef1416">le_gnss_GetDilutionOfPrecision()</a></li>
+<li><a class="el" href="le__gnss__interface_8h.html#a59727ef079dc93dfadef75dd6a021cd0">le_gnss_GetAltitudeOnWgs84()</a></li>
+<li><a class="el" href="le__gnss__interface_8h.html#a0f47ace8d52f0a525a6abfccc24a11ec">le_gnss_GetMagneticDeviation()</a></li>
+</ul>
+<p><a class="el" href="le__gnss__interface_8h.html#a4cfa7d0e69ad462f09af7d6a596cbea5">le_gnss_SetDataResolution()</a> function can be called to configure the resolution of position data type per client session. Currently, three data types are supported:</p><ul>
+<li>Vertical position accuracy provided by <a class="el" href="le__gnss__interface_8h.html#a5cc278268a4e75c5e2a5f8c1ffb64fa9">le_gnss_GetAltitude()</a>.</li>
+<li>Vertical speed accuracy provided by <a class="el" href="le__gnss__interface_8h.html#a37a370cec19610be1f99d9c9db291a1e">le_gnss_GetVerticalSpeed()</a>.</li>
+<li>Horizontal speed accuracy provided by <a class="el" href="le__gnss__interface_8h.html#a483fba8fc6b0fa116bcbd889af95fc4f">le_gnss_GetHorizontalSpeed()</a>. Each data type can be set with a resolution from 0 to 3 decimal place.</li>
+</ul>
+<p>For example, to get the vertical position accuracy with a resolution of 2 decimal places, <a class="el" href="le__gnss__interface_8h.html#a4cfa7d0e69ad462f09af7d6a596cbea5">le_gnss_SetDataResolution()</a> function is called with vertical position accuracy set as data type and 2 decimal place is set as resolution, then <a class="el" href="le__gnss__interface_8h.html#a5cc278268a4e75c5e2a5f8c1ffb64fa9">le_gnss_GetAltitude()</a> function is called.</p>
+<dl class="section note"><dt>Note</dt><dd>If <a class="el" href="le__gnss__interface_8h.html#a4cfa7d0e69ad462f09af7d6a596cbea5">le_gnss_SetDataResolution()</a> function is not called, the position data types are received in their default accuracies.</dd></dl>
+<p><a class="el" href="le__gnss__interface_8h.html#af32fd94e35e4df94b65c84740c5dbf42">le_gnss_ConvertDataCoordinateSystem()</a> function can be called to convert a location data value from a coordinate system to another. Currently it is possible to convert the following data types:</p><ul>
+<li>Latitude</li>
+<li>Longitude</li>
+<li>Altitude</li>
+</ul>
+<p>System coordinates source and destination are currently:</p><ul>
+<li>Coordinate system WGS84</li>
+<li>Coordinate system PZ90</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>Only conversion from WGS84 coordinate system to PZ90 coordinate system is currently supported. </dd>
+<dd>
+The altitude in coordinate system WGS84 is obtained by <a class="el" href="le__gnss__interface_8h.html#a59727ef079dc93dfadef75dd6a021cd0">le_gnss_GetAltitudeOnWgs84()</a> function.</dd></dl>
+<p>A sample code using le_gnss_ConvertDataCoordinate() function can be seen in the following page:</p><ul>
+<li><a class="el" href="c_gnssSampleCodePosition.html">Sample code for GNSS position information</a></li>
+</ul>
+<p><a class="el" href="le__gnss__interface_8h.html#a87cbadea6fe7ebd8ef74d45bdeef1416">le_gnss_GetDilutionOfPrecision()</a> gets the DOP parameters (Dilution Of Precision) with a resolution of 3 decimal places by default. This resolution can be modified by calling the <code><a class="el" href="le__gnss__interface_8h.html#ae7345052efc38f199989aafcd27224e2">le_gnss_SetDopResolution()</a></code> function first.</p>
+<p>As <code><a class="el" href="le__gnss__interface_8h.html#ae7345052efc38f199989aafcd27224e2">le_gnss_SetDopResolution()</a></code> sets the resolution per client session, <code><a class="el" href="le__gnss__interface_8h.html#ae7345052efc38f199989aafcd27224e2">le_gnss_SetDopResolution()</a></code> and <code><a class="el" href="le__gnss__interface_8h.html#a87cbadea6fe7ebd8ef74d45bdeef1416">le_gnss_GetDilutionOfPrecision()</a></code> functions should be called in the same thread or client session.</p>
+<p>A sample code can be seen in the following page:</p><ul>
+<li><a class="el" href="c_gnssSampleCodePosition.html">Sample code for GNSS position information</a></li>
+</ul>
+<p>The handler can be managed using <a class="el" href="le__gnss__interface_8h.html#ac300457f532757caf79d60b6dba60d67">le_gnss_AddPositionHandler()</a> and <a class="el" href="le__gnss__interface_8h.html#a3c257c3c2d2f8d54402a91f685924fd5">le_gnss_RemovePositionHandler()</a>. When a position is computed, the handler is called.</p>
+<p>The application has to release each position sample object received by the handler, using the <a class="el" href="le__gnss__interface_8h.html#a89cdf0fb25e8204befc65db7aa6837db">le_gnss_ReleaseSampleRef()</a>.</p>
+<p>A sample code can be seen in the following page:</p><ul>
+<li><a class="el" href="c_gnssSampleCodePosition.html">Sample code for GNSS position information</a></li>
+</ul>
+<h2><a class="anchor" id="le_gnss_GetLeapSeconds"></a>
+Get leap seconds event information</h2>
+<p>The leap seconds event information is retrieved by calling <a class="el" href="le__gnss__interface_8h.html#ae229252be4b992584735e3db4ed74a18">le_gnss_GetLeapSeconds()</a> API. The result includes current GPS time, current leap seconds, next leap second event time, and next leap seconds.</p>
+<p>Insertion of each UTC leap second is usually decided about six months in advance by the International Earth Rotation and Reference Systems Service (IERS).</p>
+<h1><a class="anchor" id="le_gnss_Assisted_GNSS"></a>
+Assisted GNSS</h1>
+<p><a class="el" href="c_gnss.html#le_gnss_Assisted_GNSS_EE">Server based Extended Ephemeris</a> <a class="el" href="c_gnss.html#le_gnss_Assisted_GNSS_UP">3GPP User Plane (OMA SUPL)</a></p>
+<h2><a class="anchor" id="le_gnss_Assisted_GNSS_EE"></a>
+Server based Extended Ephemeris</h2>
+<p>With <a class="el" href="le__gnss__interface_8h.html#aea1811e39dfae1516b08404adfbaec22">le_gnss_LoadExtendedEphemerisFile()</a> , you can load an 'Extended Ephemeris' file into the GNSS device from the filesystem. You have to download the file before loading it. </p><dl class="section warning"><dt>Warning</dt><dd>Ensure to check that the downloaded file is supported for your specific platform.</dd></dl>
+<p>With <a class="el" href="le__gnss__interface_8h.html#a9b0e90a4b9e62c9826c70f37128b5fd5">le_gnss_GetExtendedEphemerisValidity()</a>, you will to get the validity of the last injected Extended Ephemeris.</p>
+<p>You can enable/disable the use of the 'Extended Ephemeris' file into the GNSS device with <a class="el" href="le__gnss__interface_8h.html#a3474bb912febeca6e258c6039144f39f">le_gnss_EnableExtendedEphemerisFile()</a> / <a class="el" href="le__gnss__interface_8h.html#a49d596f01c010f7828c949f1436246df">le_gnss_DisableExtendedEphemerisFile()</a> functions. </p><dl class="section warning"><dt>Warning</dt><dd>Ensure to check configuration capabilities for your specific platform. A reboot must be required if your platform doesn't allow run-time configuration.</dd></dl>
+<p>A sample code can be seen in the following page:</p><ul>
+<li><a class="el" href="c_gnssSampleCodeXtra.html">Sample code for GNSS Server based Extended Ephemeris</a></li>
+</ul>
+<h2><a class="anchor" id="le_gnss_Assisted_GNSS_UP"></a>
+3GPP User Plane (OMA SUPL)</h2>
+<p>That 3GPP User Plane A-GNSS (Assisted GNSS) protocol is defined by two different standardization bodies, 3GPP and Open Mobile Alliance (OMA). For more information, please refer to the standard.</p>
+<p>Both MS-Assisted and MS-Based position determination methods are supported in the User Plane.</p>
+<p>In MS-Assisted mode, the MS (Mobile Station) measures the signals from the GNSS satellites , then returns the retrieved GNSS data to the SUPL (Secure User Plan Location) server, where the position calculation is performed.</p>
+<p>In MS-Based mode, the MS gets the assistance data from the SUPL (Secure User Plan Location) server. The MS measures the signals from the GNSS satellites and makes the position calculation.</p>
+<p>The data transport over User Plan is done using the TCP/IP protocol.</p>
+<p>The Assisted-GNSS mode can be configured thru the <a class="el" href="le__gnss__interface_8h.html#a5d74c2ad91a504a1d0ac35b4f4f2c382">le_gnss_SetSuplAssistedMode()</a> function.</p>
+<p>The supported modes are the following:</p><ul>
+<li>Standalone mode: That 3GPP User Plane A-GNSS feature is deactivated.</li>
+<li>MS-Based mode</li>
+<li>MS-Assisted mode</li>
+</ul>
+<p>Moreover, the <a class="el" href="le__gnss__interface_8h.html#a2b5eb5e1efbc31683e717dd7181ff1d3">le_gnss_GetSuplAssistedMode()</a> function reads the configured Assisted-GNSS mode.</p>
+<p>The SUPL server is configured using the <a class="el" href="le__gnss__interface_8h.html#a92e3a26e2ba3c220a282fad8817c41be">le_gnss_SetSuplServerUrl()</a> function. That function sets the SUPL server URL and optionally the port number.</p>
+<p>The SUPL certificate to be used in A-GNSS sessions is injected through the <a class="el" href="le__gnss__interface_8h.html#a85bda68acc951ee14f5678dd8d1b532f">le_gnss_InjectSuplCertificate()</a> function and deleted through the <a class="el" href="le__gnss__interface_8h.html#aec8d50c209ce21a979b7e9f552353aec">le_gnss_DeleteSuplCertificate()</a> function. The SUPL certificate lenght given as parameter to <a class="el" href="le__gnss__interface_8h.html#a85bda68acc951ee14f5678dd8d1b532f">le_gnss_InjectSuplCertificate()</a> must be less than LE_GNSS_SUPL_CERTIFICATE_MAX_LEN.</p>
+<hr/>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

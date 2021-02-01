@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Updates  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.11.4" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+    <script src="resources/js/html5shiv.js"></script>
+    <script src="resources/js/respond.js"></script>
+  <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Concepts.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a class="link-selected" href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Updates </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p>The Legato Application Framework is designed to solve many difficult problems surrounding updating software on devices operating in the field:</p><ul>
+<li>Atomic update of libraries, executables, resource files, and configuration settings.</li>
+<li>Autonomous recovery from failed update attempts (e.g., due to power loss or connection loss).</li>
+<li>Autonomous roll-back when newly updated software fails.</li>
+<li>Reduce flash consumption by sharing read-only app files that are the same in different software versions.</li>
+</ul>
+<p>Legato's primary <a class="el" href="legatoServicesUpdate.html">Update</a> Service uses <code>update</code> pack files that contain all software/firmware update instructions and associated data (e.g., libraries, executables, resource files).</p>
+<p>Legato also supports <a class="el" href="legatoServicesAirVantage.html">AirVantage Service</a> to remotely update target devices in the field.</p>
+<h1><a class="anchor" id="conceptsUpdates_Structure"></a>
+System Structure</h1>
+<p>On a Legato enabled module the Legato runtime files reside in two places</p><ul>
+<li><code>/legato</code> - the overlay version of the runtime environment</li>
+<li><code>/mnt/flash/legato</code> - the base read-only version of the runtime environment.</li>
+</ul>
+<h2><a class="anchor" id="conceptsUpdates_Base"></a>
+Base Read-Only System</h2>
+<p>The base read-only version of the runtime environment is typically the version of Legato that gets installed in the factory as part of the original software installation and gets replaced with a firmware update.</p>
+<p>If the overlay version of the runtime environment ever gets corrupted, the factory install version of Legato will replace the faulty version. If a new version of Legato is installed through the <code></code>.cwe install process, that new version of Legato will then replace and become the new base version.</p>
+<p>Legato is never actively run from <code>/mnt/flash/legato</code> but instead gets installed under /legato as the current system.</p>
+<h2><a class="anchor" id="conceptsUpdates_Overlay"></a>
+Overlay Read-Write System</h2>
+<p>The primary subdirectories of <code>/legato</code> are <code>/legato/apps</code> and <code>/legato/systems</code>.</p>
+<p>Under <code>/legato/systems</code> is a list of installed Legato systems. The running system is under <code>/legato/systems/current</code>. If there are any previous systems available, they are listed under their index. Every time a Legato system is updated, the new version of the system gets a new index.</p>
+<p>For example, if a system is index # 5, then it's files would be under <code>/legato/systems/5</code> </p>
+<p>To see what system is currently running and the state enter <code> legato status</code> on your target.</p>
+<p>The top level directory structure of the runtime environment:</p>
+<table class="doxtable">
+<tr>
+<th>Item </th><th>Description  </th></tr>
+<tr>
+<td><code>apps/</code> </td><td>Directory of the apps in the current system </td></tr>
+<tr>
+<td><code>appsWriteable/</code> </td><td>Directory where the application writable files are stored. The application sandboxes are also run from this location. </td></tr>
+<tr>
+<td><code>bin/</code> </td><td>Legato tools for working with the system from the command line and the runtime itself. </td></tr>
+<tr>
+<td><code>config/</code> </td><td>The configuration database. </td></tr>
+<tr>
+<td><code>lib/</code> </td><td>Libraries used by the system tools. </td></tr>
+<tr>
+<td><code>modules/</code> </td><td>Kernel modules installed with the system. </td></tr>
+<tr>
+<td><code>index</code> </td><td>File that records the index # of this system. </td></tr>
+<tr>
+<td><code>info.properties</code> </td><td>Stores the md5 hash of the system. </td></tr>
+<tr>
+<td><code>status</code> </td><td>This systems status, if the system is good, bad, or being tried in probation. </td></tr>
+<tr>
+<td><code>version</code> </td><td>The version information for this system. </td></tr>
+</table>
+<p>It is possible to have multiple systems under <code>/legato/systems</code> for instance, upgrading from one version of Legato to another. Often many individual apps are the same between Legato versions and so could be shared between systems. <code>/legato/apps</code> acts as a cache where each app is stored under it's md5 hash. The subdirectories under <code>/legato/systems/current/apps</code> are symlinks to the application directories under <code>/legato/apps</code>.</p>
+<h2><a class="anchor" id="conceptsUpdates_OldSystems"></a>
+Previous Systems</h2>
+<p>Non-current systems, are all stored under their numeric index. Unless in the middle of an upgrade the only system under <code>/legato/systems</code> will be the current system. While the system is updating the the <code>/legato/systems</code> directory will contain the current and previous systems.</p>
+<h1><a class="anchor" id="conceptsUpdates_Process"></a>
+Update Process</h1>
+<p>Installation and removal of Legato application and systems participate in update and rollback. When an application or system is installed the system is monitored for problems. If too many errors are encountered, the whole system is rolled back to where it was before the update occurred.</p>
+<p>Updates are atomic in the sense that the update is either fully applied, or not applied at all. The update system prevents partial updates. If a update fails in the middle of installing, the system is rolled back to the previous system.</p>
+<p>In a <code></code>.update file. The update is broken down into multiple parts as follows:</p>
+<pre class="fragment"> |-----------------------------|
+ | Update Command              |
+ |-----------------------------|
+ | tar.gz: Core system files   |
+ |-----------------------------|
+ | App Update Command          |
+ |-----------------------------|
+ | tar.gz Application 1 files  |
+ |-----------------------------|
+ | ...                         |
+ |-----------------------------|
+ | App Update Command          |
+ |-----------------------------|
+ | tar.gz Application x, files |
+</pre><p>The <code></code>.update file contains system update command, followed by the compressed system files. These system files are extracted to <code>/legato/systems/unpack</code>. After the system files each of the applications in that system are packed as an app update command followed by the app's files.</p>
+<p>When applying app updates, either alone or as part of a system update, each application is extracted to the temporary app unpack directory: <code>/legato/apps/unpack</code> </p>
+<p>When a system update is installed, old systems are deleted. (Outside of the read-only base legato layer, it only makes sense to keep around 1 system that has been marked good.)</p>
+<p>After old systems are purged, the app cache is scanned and any orphaned applications are also cleared out.</p>
+<p>When applications are installed they are moved from their unpack directory into the app cache. For applications that are being installed new, their writable data is copied under the appsWriteable directory in the system the app is a part of. Applications that are being upgraded over a previous system will have it's writable files migrated to the new system.</p>
+<p>The current system's config data is migrated over to the new system and used as a base line for the new system.</p>
+<p>Once all new applications are installed and writable data copied over, the new system is given it's index, one greater than the last system installed. The new system is moved from the unpack directory to a new directory under the new systems index number.</p>
+<p>If the new system index is determined to be 5, the system will be moved from <code>/legato/systems/unpack</code> to <code>/legato/systems/5</code>.</p>
+<p>Legato is now rebooted and the start process then takes over. It searches for the newest system index and determines that this system has been newly installed. So the current system is renamed to it's index and the new system is made current. Older system are moved from <code>/legato/systems/current</code> to <code>/legato/systems/4</code>. The new system is then renamed from <code>/legato/systems/5</code> to /legato/systems/current. Once the systems are moved, the new current system is booted.</p>
+<p>On first boot, all important configuration is imported into the system tree. Any application private config data is left alone having been migrated from the previous system.</p>
+<p>At this point the system enters probation, Once the probation timer expires, (the default being 30 minutes,) the new system is marked good.</p>
+<p>If the system reboots too many times during probation or encounters other problems it is rolled back to either the last system to have been marked good, or to the golden master image if no good system is available.</p>
+<h1><a class="anchor" id="conceptsUpdates_Rollback"></a>
+Rollback Process</h1>
+<p>When a rollback is called for, the current system is marked bad. Legato then reboots itself and begins the rollback process.</p>
+<p>The start program will detect that the current system is bad and will proceed to look for a viable system to replace it. If our current system is index 5, and the previous good system is 4 our newer system is deleted, and the older system is renamed from <code>/legato/systems/4</code> to <code>/legato/systems/current</code>. When the older system is restored all configuration data reverts to how it was when that system snapshot was taken. If any changes happened to applications config or writable files since the new system version was installed, these changes are lost.</p>
+<p>If no good system can be found, the factory gold image is used as the restore point.</p>
+<p>Finally, the restored image is booted and as it's already marked good, no probation for the restored system occurs.</p>
+<h1><a class="anchor" id="conceptsUpdates_FileDiff"></a>
+Supported File Extensions</h1>
+<p>The <code>update</code> service handles files of the following types:</p><ul>
+<li><code></code>.update</li>
+<li><code></code>.cwe</li>
+<li><code></code>.spk</li>
+</ul>
+<h2><a class="anchor" id="conceptsUpdates_FileDiff_Update"></a>
+.update Files</h2>
+<p>Update files are built by the <a class="el" href="toolsBuild.html">Legato build tools</a> and are the primary method of updating Systems and Apps on a target. <code></code>.update files are the only update packs that use the runtime environments update and rollback feature.</p>
+<p>The Raspberry Pi and Virtual Target only support <code></code>.update files.</p>
+<dl class="section note"><dt>Note</dt><dd>It is possible to bundle a <code></code>.cwe or <code></code>.spk file into a .update file. However these bundled updates are still passed off to the modem for handling.</dd></dl>
+<h2><a class="anchor" id="conceptsUpdates_FileDiff_Cwe"></a>
+.cwe .spk Files</h2>
+<p>These files are Sierra Wireless specific and are processed by the modem firmware. Legato platforms like the Virtual Target and the Raspberry Pi do not support <code></code>.cwe file based updates.</p>
+<p>On a Sierra modules, the modem core manages the modules partition structure. The Linux system, Legato Application Framework, and user applications all run on the application core. Updates that change the modem are packaged up in <code></code>.cwe files, and are passed to the modem through the <code>fwupdate</code> service.</p>
+<p>The <code></code>.cwe instructs the modem to replace the contents of one partition with the contents of the given file. <code>cwe</code> files are primarily used to package up filesystem images.</p>
+<p>On a typical Sierra module, you will find at least 4 partitions, User, Legato Master, Linux, and Modem. The modem partition isn't even visible from user applications or the Linux system. For security, all other partitions but the User partition are handled as read-only on the application side.</p>
+<div class="image">
+<img alt="getStarted-Update.png" src="getStarted-Update.png"/>
+</div>
+<p>If you want to update the Linux system image or the Legato master image it has to be packaged up as a <code></code>.cwe file. .cwe updates are an all or nothing approach, the whole filesystem is replaced during this update. The runtime environment is installed on the user partition to enable apps to be able to read and write files, alter config, etc. See the section <a class="el" href="conceptsUpdates.html#conceptsUpdates_Structure">System Structure</a> for more details on how Legato makes use of the read-only and writable partitions to provide update and rollback.</p>
+<p>The user partition is usually ignored by .cwe files. This is because it is up to the runtime environment and applications are installed in this partition.</p>
+<dl class="section note"><dt>Note</dt><dd>It is possible to create a <code></code>.cwe file that instructs the modem to format the user partition. This is usually used in addition with <code></code>.spk files. Contact Sierra Wireless for specifics on how to create a <code></code>.cwe file that formats the user partition.</dd></dl>
+<p><code></code>.spk files package up multiple <code></code>.cwe files into one package. The <code></code>.spk update file provides a way to update the Legato gold master, update Linux, and the modem firmware in one step.</p>
+<h1><a class="anchor" id="conceptsUpdates_BestPractices"></a>
+Best Practices</h1>
+<p>Legato updates and rollbacks only modify files under @/legato. The golden image is never modified and when that image is made current it isn't copied to under <code>/legato</code> but instead symlinks are created to point to the master image.</p>
+<p>If you need to keep data outside of the Legato rollback process. Then the best idea is to store this outside of <code>/legato</code>.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
