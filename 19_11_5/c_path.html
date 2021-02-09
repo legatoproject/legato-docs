@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Path API  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.11.5" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+    <script src="resources/js/html5shiv.js"></script>
+    <script src="resources/js/respond.js"></script>
+  <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Path API </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><a class="el" href="le__path_8h.html">API Reference</a></p>
+<hr/>
+<p>Paths are text strings that contain nodes separated by character separators. Paths are used in many common applications like file system addressing, URLs, etc. so being able to parse them is quite important.</p>
+<p>The Path API is intended for general purpose use and supports UTF-8 null-terminated strings and multi-character separators.</p>
+<h1><a class="anchor" id="c_path_dirAndBasename"></a>
+Directory and Basename</h1>
+<p>The function <code><a class="el" href="le__path_8h.html#a0b0ff4c06db44de9bf4f40b9f5388785">le_path_GetDir()</a></code> is a convenient way to get the path's directory without having to create an iterator. The directory is the portion of the path up to and including the last separator. <a class="el" href="le__path_8h.html#a0b0ff4c06db44de9bf4f40b9f5388785">le_path_GetDir()</a> does not modify the path in anyway (i.e., consecutive paths are left as is), except to drop the node after the last separator.</p>
+<p>The function <a class="el" href="le__path_8h.html#aa58d208512dd5b9b2dc0ea6d5c963c25">le_path_GetBasenamePtr()</a> is an efficient and convenient function for accessing the last node in the path without having to create an iterator. The returned pointer points to the character following the last separator in the path. Because the basename is actually a portion of the path string, not a copy, any changes to the returned basename will also affect the original path string.</p>
+<h1><a class="anchor" id="c_path_threads"></a>
+Thread Safety</h1>
+<p>All the functions in this API are thread safe and reentrant unless of course the path iterators or the buffers passed into the functions are shared between threads. If the path iterators or buffers are shared by multiple threads then some other mechanism must be used to ensure these functions are thread safe.</p>
+<hr/>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. license. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
