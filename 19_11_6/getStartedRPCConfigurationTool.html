@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Legato RPC Configuration Tool  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="19.11.6" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+    <script src="resources/js/html5shiv.js"></script>
+    <script src="resources/js/respond.js"></script>
+  <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src=""></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Legato Documentation</h2>
+<nav class="secondary">
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Legato RPC Configuration Tool </h1> </div>
+</div><div class="contents">
+<div class="textblock"><dl class="section warning"><dt>Warning</dt><dd>EXPERIMENTAL</dd></dl>
+<p>To configure the <a class="el" href="getStartedRPC.html#getStartedRPC_bindings">RPC Bindings</a> and <a class="el" href="getStartedRPC.html#getStartedRPC_systems">RPC Systems</a>, the Legato RPC provides a RPC Configration tool.</p>
+<h1><a class="anchor" id="getStatredRPC_rpcTool"></a>
+Command Syntax</h1>
+<pre class="fragment">NAME:
+    rpctool - RPC Configuration command-line tool.
+
+SYNOPSIS:
+    rpctool set binding &lt;serviceName&gt; &lt;systemName&gt; &lt;remoteServiceName&gt;
+    rpctool get binding &lt;serviceName&gt;
+    rpctool reset binding &lt;serviceName&gt;
+    rpctool list bindings
+    rpctool set link &lt;systemName&gt; &lt;linkName&gt; &lt;nodeName&gt; &lt;nodeValue&gt;
+    rpctool get link
+    rpctool reset link &lt;systemName&gt; &lt;linkName&gt;
+    rpctool list links
+    rpctool help
+    rpctool -h
+    rpctool --help
+
+DESCRIPTION:
+    rpctool set binding &lt;serviceName&gt; &lt;systemName&gt; &lt;remoteServiceName&gt;
+            Sets the RPC binding for the specified service-name with the
+            system-name and remote service-name.
+
+    rpctool get binding &lt;serviceName&gt;
+            Retrieves the system-name and service-name for the specified
+            service-name.
+
+    rpctool reset binding &lt;serviceName&gt;
+            Resets the RPC binding for a given service-name.
+
+    rpctool list bindings
+            Lists all RPC bindings configured in the system.
+
+    rpctool set link &lt;systemName&gt; &lt;linkName&gt; &lt;nodeName&gt; &lt;nodeValue&gt;
+            Sets the RPC link for the specified system-name and link-name
+            with the node-name and node-value.
+
+    rpctool get link &lt;systemName&gt; &lt;linkName&gt; &lt;nodeName&gt;
+            Retrieves the node-value for the specified system-name,
+            link-name, and node-name.
+
+    rpctool reset link &lt;systemName&gt; &lt;linkName&gt;
+            Resets the RPC link for the specifed system-name and link-name.
+
+    rpctool list links
+            Lists all RPC links configured in the system.
+
+    rpctool help
+    rpctool -h
+    rpctool --help
+           Print this help text and exit.
+
+    All output is always sent to stdout and error messages to stderr.</pre><p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
