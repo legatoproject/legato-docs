@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Stream Media API  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="20.08.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+    <script src="resources/js/html5shiv.js"></script>
+    <script src="resources/js/respond.js"></script>
+  <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_Get_Started.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a class="link-selected" href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Stream Media API </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><a class="el" href="streamMedia__interface_8h.html">API Reference</a> <br/>
+</p><hr/>
+<dl class="section warning"><dt>Warning</dt><dd>This interface is experimental and unsupported.</dd></dl>
+<p>The Stream Media API handles media streaming interfaces with real-time protocols like RTP.</p>
+<p>The Real-time Transport Protocol is used to stream audio over IP/Ethernet. It is used to transport any audio stream through an IP or Ethernet network.</p>
+<p>The RTP protocol is augmented by a control protocol called Real-Time Transport Control Protocol (RTCP), which provides monitoring capabilities on the data delivery and minimum control functionality.</p>
+<p>More information on the protocol can be found in <a href="https://tools.ietf.org/pdf/rfc3550.pdf">RFC-3550</a>. A description of the RTP/AVP profile, which describes generic audio and video conferences, can be found in <a href="https://tools.ietf.org/pdf/rfc3551.pdf">RFC-3551</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>The RTP interface does not provide the full Audio/Video Profile (AVP) profile : it can only handle a singlecast audio session.</dd></dl>
+<p>Typically, the RTP interface can be used to redirect an audio call coming from an audio interface through an IP network. For example, an IP audio server (Legato platform) would retrieve audio from any audio interface (e.g. a Modem voice call), and connect it to the RTP interface that sends the data through an IP network. The data would be received by an IP client (PC, smartphone, Legato platform) that is able to decode the audio stream.</p>
+<div class="image">
+<img alt="AudioOverIP.png" src="AudioOverIP.png"/>
+</div>
+<p>In order to start a RTP session, information on the local and remote IP address are required to set up UDP sockets. The local port corresponds to the UDP socket on which RTP packets will be sent and received, and the remote address and port correspond to the IP address and port on which RTP packets should be sent.</p>
+<h1><a class="anchor" id="streamMedia_binding"></a>
+IPC interfaces binding</h1>
+<p>All the functions of this API are provided by the <b>streamMedia</b> sample service.</p>
+<p>Here's a code sample binding to streamMedia service: </p><pre class="fragment">bindings:
+{
+   clientExe.clientComponent.streamMedia -&gt; streamMedia.streamMedia
+}
+</pre><h1><a class="anchor" id="streamMedia_interfaces"></a>
+Open/Close an Audio Interface</h1>
+<p>The following functions let you select the desired interface attributes:</p><ul>
+<li><a class="el" href="group__streamMedia.html#gaae91ec9ec540b41c84c1feffd40ed47f">streamMedia_OpenAudioRtpRx()</a>: return an Audio Stream Reference of the digitized audio signal coming from a RTP socket.</li>
+<li><a class="el" href="group__streamMedia.html#ga4521dbbb0f1296026fb4055487157fe7">streamMedia_OpenAudioRtpTx()</a>: return an Audio Stream Reference of the digitized audio signal routed to a RTP socket.</li>
+</ul>
+<h1><a class="anchor" id="streamMedia_rtp"></a>
+RTP</h1>
+<p>The <a class="el" href="group__streamMedia.html#gaae91ec9ec540b41c84c1feffd40ed47f">streamMedia_OpenAudioRtpRx()</a> and <a class="el" href="group__streamMedia.html#ga4521dbbb0f1296026fb4055487157fe7">streamMedia_OpenAudioRtpTx()</a> functions allow the application to set up a RTP session.</p>
+<p>After opening and connecting a RTP interface, it has to be started using <a class="el" href="group__streamMedia.html#ga6fda400c0ebf46c7fc70bc2093d7cf8b">streamMedia_Start()</a>.</p>
+<p>You can also register a handler function for RTCP packet reception management.</p>
+<p><a class="el" href="group__streamMedia.html#ga574ded86be6fafba6a2ee30c41350e94">streamMedia_AddRtcpHandler()</a> function installs a handler for RTCP Packet reception.</p>
+<p><a class="el" href="group__streamMedia.html#ga1e6f1d4ba0fb3f13101d0a61c1c20168">streamMedia_RemoveRtcpHandler()</a> function removes the RTCP handler function.</p>
+<p>The <a class="el" href="group__streamMedia.html#ga16e827dba1aba9371d5daca229ba1afa">streamMedia_SendRtcpSdes()</a> and <a class="el" href="group__streamMedia.html#gadc641d91ad5ee1df5c3f7e9b80bd4acb">streamMedia_SendRtcpBye()</a> functions allow the application to send RTCP Session Description (SDES) or BYE packet.</p>
+<p>The RTCP SDES packet can be used to mark the beginning of the RTP session. It is composed of several optional text fields that can provide information about the user's name, email address, etc... See <a class="el" href="group__streamMedia.html#ga16e827dba1aba9371d5daca229ba1afa">streamMedia_SendRtcpSdes()</a> for more details.</p>
+<p>The RTCP BYE packet can be used to mark the end of the RTP session. It is possible to specify the reason. See <a class="el" href="group__streamMedia.html#gadc641d91ad5ee1df5c3f7e9b80bd4acb">streamMedia_SendRtcpBye()</a> for more details.</p>
+<p>More information on the RTCP SDES and BYE packets can be found in <a href="https://tools.ietf.org/pdf/rfc3550.pdf">RFC-3550</a>.</p>
+<p>Before disconnecting and closing a RTP interface, it has to be stopped using <a class="el" href="group__streamMedia.html#gaf38d378186a4f8a207ff585e7ffc33e9">streamMedia_Stop()</a>. Then, after disconnecting the interface from the connector, <a class="el" href="group__streamMedia.html#ga37bd0d6a6c7c5a4be40d8d76bd379da3">streamMedia_Close()</a> is called to close it.</p>
+<dl class="section note"><dt>Note</dt><dd>The RTP interface requires one more UDP socket in order to send and receive RTCP packets. The RTCP UDP socket port number is automatically set to the local RTP port plus one.</dd></dl>
+<h1><a class="anchor" id="streamMedia_code"></a>
+Sample code</h1>
+<p>The following samples illustrate the case described in the image above. It consists of two different devices that communicate through RTP over an IP network. One device handles a modem voice call, and the other one handles the microphone and speaker.</p>
+<dl class="section warning"><dt>Warning</dt><dd>The following codes show a basic example of how to transmit audio through RTP between two peers. Quality of service is not provided in those samples. They just show how the streamMedia API should work and how it should be used.</dd></dl>
+<p>This first sample code is related to the RTP peer that handles the modem voice call.</p>
+<pre class="fragment"><div class="line"><span class="comment">// Peer 1 : connection between a modem voice call and a RTP session.</span></div><div class="line"> </div><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> MyCallEventHandler</div><div class="line">(</div><div class="line">    <a class="code" href="group__le__mcc.html#ga8ae6dac3ca12854884d63e17d5388a7a">le_mcc_CallRef_t</a>   callRef,</div><div class="line">    <a class="code" href="group__le__mcc.html#gaefc4679ffa76d0e04c578572c22f06cf">le_mcc_Event_t</a>     callEvent,</div><div class="line">    <span class="keywordtype">void</span>*              contextPtr</div><div class="line">)</div><div class="line">{</div><div class="line">    <span class="keywordflow">if</span> (callEvent == <a class="code" href="group__le__mcc.html#ggaefc4679ffa76d0e04c578572c22f06cfa38b7c4ab21fa9828be8169372e41ae98">LE_MCC_EVENT_TERMINATED</a>)</div><div class="line">    {</div><div class="line">        <a class="code" href="group__le__mcc.html#gabda706f723ba619f9bc460bcc9a4960d">le_mcc_TerminationReason_t</a> term = <a class="code" href="group__le__mcc.html#gab16921abc02e0569b129f4a7d92bf3c9">le_mcc_GetTerminationReason</a>(callRef);</div><div class="line">        <a class="code" href="group__le__mcc.html#ga1a016e6443df2d3ee99113649f4f34ae">le_mcc_Delete</a>(callRef);</div><div class="line">        DisconnectAllAudio(); <span class="comment">// Not showed here, would disconnect all audio.</span></div><div class="line">    }</div><div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (callEvent == <a class="code" href="group__le__mcc.html#ggaefc4679ffa76d0e04c578572c22f06cfab37936f33d31259ea0c16169ba852bd0">LE_MCC_EVENT_INCOMING</a>)</div><div class="line">    {</div><div class="line">        <a class="code" href="group__le__mcc.html#ga598349c6ccfa151dbd1d2f2a9c293ca4">le_mcc_Answer</a>(callRef);</div><div class="line">    }</div><div class="line">    <span class="keywordflow">else</span></div><div class="line">    {</div><div class="line">        <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"Other Call event.%d"</span>, callEvent);</div><div class="line">    }</div><div class="line">}</div><div class="line"> </div><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> MyRtcpEventHandler</div><div class="line">(</div><div class="line">    <a class="code" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a>          streamRef,</div><div class="line">    <a class="code" href="group__streamMedia.html#gac31267c2639cdbb49a53830b4b3d4f53">streamMedia_RtcpEvent_t</a>    event,</div><div class="line">    <span class="keywordtype">void</span>*                         contextPtr</div><div class="line">)</div><div class="line">{</div><div class="line">    <span class="keywordflow">switch</span> (event)</div><div class="line">    {</div><div class="line">        <span class="keywordflow">case</span> <a class="code" href="group__streamMedia.html#ggac31267c2639cdbb49a53830b4b3d4f53ab7e8ee1030d37d58fb890420cbb3af29">STREAMMEDIA_RTCP_BYE</a>:</div><div class="line">            DisconnectAllAudio(); <span class="comment">// Not showed here, would disconnect all audio.</span></div><div class="line">            <span class="keywordflow">break</span>;</div><div class="line">        <span class="keywordflow">default</span>:</div><div class="line">            <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"Other event"</span>);</div><div class="line">            <span class="keywordflow">break</span>;</div><div class="line">    }</div><div class="line">}</div><div class="line"> </div><div class="line"><span class="keywordtype">void</span> ConnectModemToRtp</div><div class="line">(</div><div class="line">    <span class="keywordtype">void</span></div><div class="line">)</div><div class="line">{</div><div class="line">    <span class="keyword">static</span> <a class="code" href="group__le__audio.html#gab819480f4ce3f36e62b6a4e327668304">le_audio_ConnectorRef_t</a>  audioInputConnectorRef = NULL;</div><div class="line">    <span class="keyword">static</span> <a class="code" href="group__le__audio.html#gab819480f4ce3f36e62b6a4e327668304">le_audio_ConnectorRef_t</a>  audioOutputConnectorRef = NULL;</div><div class="line">    <span class="keyword">static</span> <a class="code" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a>     rtpInRef = NULL;</div><div class="line">    <span class="keyword">static</span> <a class="code" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a>     rtpOutRef = NULL;</div><div class="line">    <span class="keyword">static</span> <a class="code" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a>     mdmRxAudioRef = NULL;</div><div class="line">    <span class="keyword">static</span> <a class="code" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a>     mdmTxAudioRef = NULL;</div><div class="line">    <span class="keyword">static</span> <a class="code" href="group__le__mcc.html#ga8ae6dac3ca12854884d63e17d5388a7a">le_mcc_CallRef_t</a>         callRef = NULL;</div><div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span>*                     remoteAddress = <span class="stringliteral">"10.40.58.2"</span>;</div><div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span>*                     destinationNumber = <span class="stringliteral">"0123456789"</span>;</div><div class="line">    <span class="keywordtype">int</span>                             localPort = 4000;</div><div class="line">    <span class="keywordtype">int</span>                             remotePort = 4000;</div><div class="line"> </div><div class="line">    rtpInRef = <a class="code" href="group__streamMedia.html#gaae91ec9ec540b41c84c1feffd40ed47f">streamMedia_OpenAudioRtpRx</a>(localPort);</div><div class="line">    rtpOutRef = <a class="code" href="group__streamMedia.html#ga4521dbbb0f1296026fb4055487157fe7">streamMedia_OpenAudioRtpTx</a>(localPort, remoteAddress, remotePort);</div><div class="line"> </div><div class="line">    mdmRxAudioRef = <a class="code" href="group__le__audio.html#gae3ed568ba4d2763ea77e17e77b20ff02">le_audio_OpenModemVoiceRx</a>();</div><div class="line">    mdmTxAudioRef = <a class="code" href="group__le__audio.html#gad745f008bb04873c817da7af3daf783d">le_audio_OpenModemVoiceTx</a>();</div><div class="line"> </div><div class="line">    audioInputConnectorRef = <a class="code" href="group__le__audio.html#ga570aaf85086f00aca592acfbaaa237be">le_audio_CreateConnector</a>();</div><div class="line">    audioOutputConnectorRef = <a class="code" href="group__le__audio.html#ga570aaf85086f00aca592acfbaaa237be">le_audio_CreateConnector</a>();</div><div class="line"> </div><div class="line">    <a class="code" href="group__le__audio.html#ga338df65b2fb1ae0140d86880adbcf0de">le_audio_Connect</a>(audioOutputConnectorRef, mdmTxAudioRef);</div><div class="line">    <a class="code" href="group__le__audio.html#ga338df65b2fb1ae0140d86880adbcf0de">le_audio_Connect</a>(audioInputConnectorRef, mdmRxAudioRef);</div><div class="line"> </div><div class="line">    <a class="code" href="group__le__audio.html#ga338df65b2fb1ae0140d86880adbcf0de">le_audio_Connect</a>(audioOutputConnectorRef, rtpInRef);</div><div class="line">    <a class="code" href="group__streamMedia.html#ga6fda400c0ebf46c7fc70bc2093d7cf8b">streamMedia_Start</a>(rtpInRef);</div><div class="line"> </div><div class="line">    <a class="code" href="group__le__audio.html#ga338df65b2fb1ae0140d86880adbcf0de">le_audio_Connect</a>(audioInputConnectorRef, rtpOutRef);</div><div class="line">    <a class="code" href="group__streamMedia.html#ga6fda400c0ebf46c7fc70bc2093d7cf8b">streamMedia_Start</a>(rtpOutRef);</div><div class="line"> </div><div class="line">    <a class="code" href="group__streamMedia.html#ga574ded86be6fafba6a2ee30c41350e94">streamMedia_AddRtcpHandler</a>(rtpInRef, MyRtcpEventHandler, NULL);</div><div class="line"> </div><div class="line">    <a class="code" href="group__le__mcc.html#gab826cf4b9e3911e659a90d483081e7fe">le_mcc_AddCallEventHandler</a>(MyCallEventHandler, NULL);</div><div class="line">    callRef=<a class="code" href="group__le__mcc.html#ga42130fc6b1d69413a387e3292117b3d3">le_mcc_Create</a>(destinationNumber);</div><div class="line">    <a class="code" href="group__le__mcc.html#ga72a32869bb23864b3e86c606368bed70">le_mcc_Start</a>(callRef);</div><div class="line">}</div></pre><!-- fragment --><p>This sample code shows how to connect RTP to microphone and speaker.</p>
+<pre class="fragment"><div class="line"><span class="comment">// Peer 2 : connection between a RTP session and microphone and speaker.</span></div><div class="line"> </div><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> MyRtcpEventHandler</div><div class="line">(</div><div class="line">    <a class="code" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a>          streamRef,</div><div class="line">    <a class="code" href="group__streamMedia.html#gac31267c2639cdbb49a53830b4b3d4f53">streamMedia_RtcpEvent_t</a>    event,</div><div class="line">    <span class="keywordtype">void</span>*                         contextPtr</div><div class="line">)</div><div class="line">{</div><div class="line">    <span class="keywordflow">switch</span> (event)</div><div class="line">    {</div><div class="line">        <span class="keywordflow">case</span> <a class="code" href="group__streamMedia.html#ggac31267c2639cdbb49a53830b4b3d4f53ab7e8ee1030d37d58fb890420cbb3af29">STREAMMEDIA_RTCP_BYE</a>:</div><div class="line">            DisconnectAllAudio(); <span class="comment">// Not showed here, would disconnect all audio.</span></div><div class="line">            <span class="keywordflow">break</span>;</div><div class="line">        <span class="keywordflow">default</span>:</div><div class="line">            <a class="code" href="le__log_8h.html#a23e6d206faa64f612045d688cdde5808">LE_INFO</a>(<span class="stringliteral">"Other event"</span>);</div><div class="line">            <span class="keywordflow">break</span>;</div><div class="line">    }</div><div class="line">}</div><div class="line"> </div><div class="line"><span class="keywordtype">void</span> RecordFileFromRtp</div><div class="line">(</div><div class="line">    <span class="keywordtype">void</span></div><div class="line">)</div><div class="line">{</div><div class="line">    <span class="keyword">static</span> <a class="code" href="group__le__audio.html#gab819480f4ce3f36e62b6a4e327668304">le_audio_ConnectorRef_t</a>  audioInputConnectorRef = NULL;</div><div class="line">    <span class="keyword">static</span> <a class="code" href="group__le__audio.html#gab819480f4ce3f36e62b6a4e327668304">le_audio_ConnectorRef_t</a>  audioOutputConnectorRef = NULL;</div><div class="line">    <span class="keyword">static</span> <a class="code" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a>     rtpInRef = NULL;</div><div class="line">    <span class="keyword">static</span> <a class="code" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a>     rtpOutRef = NULL;</div><div class="line">    <span class="keyword">static</span> <a class="code" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a>     micAudioRef = NULL;</div><div class="line">    <span class="keyword">static</span> <a class="code" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a>     speakerAudioRef = NULL;</div><div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span>*                     remoteAddress = <span class="stringliteral">"10.40.58.2"</span>;</div><div class="line">    <span class="keywordtype">int</span>                             localPort = 4000;</div><div class="line">    <span class="keywordtype">int</span>                             remotePort = 4000;</div><div class="line"> </div><div class="line">    rtpInRef = <a class="code" href="group__streamMedia.html#gaae91ec9ec540b41c84c1feffd40ed47f">streamMedia_OpenAudioRtpRx</a>(localPort);</div><div class="line">    rtpOutRef = <a class="code" href="group__streamMedia.html#ga4521dbbb0f1296026fb4055487157fe7">streamMedia_OpenAudioRtpTx</a>(localPort, remoteAddress, remotePort);</div><div class="line"> </div><div class="line">    micAudioRef = <a class="code" href="group__le__audio.html#ga74f1ef979329f6c2bd56ea622f4d05b2">le_audio_OpenMic</a>();</div><div class="line">    speakerAudioRef = <a class="code" href="group__le__audio.html#ga5c19afce44021c4abf6193707317f8de">le_audio_OpenSpeaker</a>();</div><div class="line"> </div><div class="line">    audioInputConnectorRef = <a class="code" href="group__le__audio.html#ga570aaf85086f00aca592acfbaaa237be">le_audio_CreateConnector</a>();</div><div class="line">    audioOutputConnectorRef = <a class="code" href="group__le__audio.html#ga570aaf85086f00aca592acfbaaa237be">le_audio_CreateConnector</a>();</div><div class="line"> </div><div class="line">    <a class="code" href="group__le__audio.html#ga338df65b2fb1ae0140d86880adbcf0de">le_audio_Connect</a>(audioOutputConnectorRef, speakerAudioRef);</div><div class="line">    <a class="code" href="group__le__audio.html#ga338df65b2fb1ae0140d86880adbcf0de">le_audio_Connect</a>(audioInputConnectorRef, micAudioRef);</div><div class="line"> </div><div class="line">    <a class="code" href="group__le__audio.html#ga338df65b2fb1ae0140d86880adbcf0de">le_audio_Connect</a>(audioOutputConnectorRef, rtpInRef);</div><div class="line">    <a class="code" href="group__streamMedia.html#ga6fda400c0ebf46c7fc70bc2093d7cf8b">streamMedia_Start</a>(rtpInRef);</div><div class="line"> </div><div class="line">    <a class="code" href="group__le__audio.html#ga338df65b2fb1ae0140d86880adbcf0de">le_audio_Connect</a>(audioInputConnectorRef, rtpOutRef);</div><div class="line">    <a class="code" href="group__streamMedia.html#ga6fda400c0ebf46c7fc70bc2093d7cf8b">streamMedia_Start</a>(rtpOutRef);</div><div class="line"> </div><div class="line">    <a class="code" href="group__streamMedia.html#ga574ded86be6fafba6a2ee30c41350e94">streamMedia_AddRtcpHandler</a>(rtpInRef, MyRtcpEventHandler, NULL);</div><div class="line">}</div></pre><!-- fragment --><h1><a class="anchor" id="streamMedia_warning"></a>
+Known limitations</h1>
+<p>The RTP interface must be connected and disconnected in this specific order :</p><ul>
+<li>First connect the RTP reception stream, and then the transmission one.</li>
+<li>When disconnecting it, start by the transmission stream, and then disconnect the reception one.</li>
+</ul>
+<p>The streamMedia API provided by the streamMedia sample application is not suitable for real-time communication applications because of the too high latency. A delay of 500 ms has been measured on a one-sided RTP session (RTP transmission only) on a WP85 module. Thus, the "Audio over IP" use case described above shows a latency of more than one second due to the two-sided RTP session (transmission on one module and reception on the other). However, the streamMedia API can be used for any streaming purposes where a delay of one second is acceptable.</p>
+<p>The streamMedia application has been tested on WP85 and AR8652.</p>
+<hr/>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

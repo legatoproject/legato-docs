@@ -1,0 +1,721 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Reference" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_clock.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="20.08.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+    <script src="resources/js/html5shiv.js"></script>
+    <script src="resources/js/respond.js"></script>
+  <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Reference_le_clock.h.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Reference</h2>
+<nav class="secondary">
+<a href="common__interface_8h_source.html">common_interface.h</a><a href="defn__interface_8h_source.html">defn_interface.h</a><a href="example__interface_8h_source.html">example_interface.h</a><a href="le__adc__common_8h.html">le_adc_common.h</a><a href="le__adc__interface_8h.html">le_adc_interface.h</a><a href="le__antenna__common_8h.html">le_antenna_common.h</a><a href="le__antenna__interface_8h.html">le_antenna_interface.h</a><a href="le__apiFeatures_8h.html">le_apiFeatures.h</a><a href="le__appCtrl__common_8h.html">le_appCtrl_common.h</a><a href="le__appCtrl__interface_8h.html">le_appCtrl_interface.h</a><a href="le__appInfo__common_8h.html">le_appInfo_common.h</a><a href="le__appInfo__interface_8h.html">le_appInfo_interface.h</a><a href="le__args_8h.html">le_args.h</a><a href="le__atClient__common_8h.html">le_atClient_common.h</a><a href="le__atClient__interface_8h.html">le_atClient_interface.h</a><a href="le__atDefs__common_8h.html">le_atDefs_common.h</a><a href="le__atDefs__interface_8h.html">le_atDefs_interface.h</a><a href="le__atomFile_8h.html">le_atomFile.h</a><a href="le__atomic_8h_source.html">le_atomic.h</a><a href="le__atServer__common_8h.html">le_atServer_common.h</a><a href="le__atServer__interface_8h.html">le_atServer_interface.h</a><a href="le__audio__common_8h.html">le_audio_common.h</a><a href="le__audio__interface_8h.html">le_audio_interface.h</a><a href="le__avc__common_8h.html">le_avc_common.h</a><a href="le__avc__interface_8h.html">le_avc_interface.h</a><a href="le__avdata__common_8h.html">le_avdata_common.h</a><a href="le__avdata__interface_8h.html">le_avdata_interface.h</a><a href="le__backtrace_8h.html">le_backtrace.h</a><a href="le__base64_8h.html">le_base64.h</a><a href="le__basics_8h.html">le_basics.h</a><a href="le__bootReason__common_8h.html">le_bootReason_common.h</a><a href="le__bootReason__interface_8h.html">le_bootReason_interface.h</a><a href="le__cdata_8h.html">le_cdata.h</a><a href="le__cellnet__common_8h.html">le_cellnet_common.h</a><a href="le__cellnet__interface_8h.html">le_cellnet_interface.h</a><a href="le__cfg__common_8h.html">le_cfg_common.h</a><a href="le__cfg__interface_8h.html">le_cfg_interface.h</a><a href="le__cfgAdmin__common_8h.html">le_cfgAdmin_common.h</a><a href="le__cfgAdmin__interface_8h.html">le_cfgAdmin_interface.h</a><a href="le__clkSync__common_8h.html">le_clkSync_common.h</a><a href="le__clkSync__interface_8h.html">le_clkSync_interface.h</a><a class="link-selected" href="le__clock_8h.html">le_clock.h</a><a href="le__comm_8h.html">le_comm.h</a><a href="le__crc_8h.html">le_crc.h</a><a href="le__data__common_8h.html">le_data_common.h</a><a href="le__data__interface_8h.html">le_data_interface.h</a><a href="le__dcs__common_8h.html">le_dcs_common.h</a><a href="le__dcs__interface_8h.html">le_dcs_interface.h</a><a href="le__dir_8h.html">le_dir.h</a><a href="le__doublyLinkedList_8h.html">le_doublyLinkedList.h</a><a href="le__dualsys__common_8h.html">le_dualsys_common.h</a><a href="le__dualsys__interface_8h.html">le_dualsys_interface.h</a><a href="le__ecall__common_8h.html">le_ecall_common.h</a><a href="le__ecall__interface_8h.html">le_ecall_interface.h</a><a href="le__eventLoop_8h.html">le_eventLoop.h</a><a href="le__fd_8h.html">le_fd.h</a><a href="le__fd__linux_8h.html">le_fd_linux.h</a><a href="le__fdMonitor_8h.html">le_fdMonitor.h</a><a href="le__fileLock_8h.html">le_fileLock.h</a><a href="le__flash__common_8h.html">le_flash_common.h</a><a href="le__flash__interface_8h.html">le_flash_interface.h</a><a href="le__framework__common_8h.html">le_framework_common.h</a><a href="le__framework__interface_8h.html">le_framework_interface.h</a><a href="le__fs_8h_source.html">le_fs.h</a><a href="le__fs__linux_8h_source.html">le_fs_linux.h</a><a href="le__fwupdate__common_8h.html">le_fwupdate_common.h</a><a href="le__fwupdate__interface_8h.html">le_fwupdate_interface.h</a><a href="le__gnss__common_8h.html">le_gnss_common.h</a><a href="le__gnss__interface_8h.html">le_gnss_interface.h</a><a href="le__gpio__common_8h.html">le_gpio_common.h</a><a href="le__gpio__interface_8h.html">le_gpio_interface.h</a><a href="le__gpioCfg__common_8h.html">le_gpioCfg_common.h</a><a href="le__gpioCfg__interface_8h.html">le_gpioCfg_interface.h</a><a href="le__hashmap_8h.html">le_hashmap.h</a><a href="le__hex_8h.html">le_hex.h</a><a href="le__iks__aesCbc__common_8h.html">le_iks_aesCbc_common.h</a><a href="le__iks__aesCbc__interface_8h.html">le_iks_aesCbc_interface.h</a><a href="le__iks__aesCmac__common_8h.html">le_iks_aesCmac_common.h</a><a href="le__iks__aesCmac__interface_8h.html">le_iks_aesCmac_interface.h</a><a href="le__iks__aesGcm__common_8h.html">le_iks_aesGcm_common.h</a><a href="le__iks__aesGcm__interface_8h.html">le_iks_aesGcm_interface.h</a><a href="le__iks__aesMilenage__common_8h.html">le_iks_aesMilenage_common.h</a><a href="le__iks__aesMilenage__interface_8h.html">le_iks_aesMilenage_interface.h</a><a href="le__iks__common_8h.html">le_iks_common.h</a><a href="le__iks__ecc__common_8h.html">le_iks_ecc_common.h</a><a href="le__iks__ecc__interface_8h.html">le_iks_ecc_interface.h</a><a href="le__iks__hmac__common_8h.html">le_iks_hmac_common.h</a><a href="le__iks__hmac__interface_8h.html">le_iks_hmac_interface.h</a><a href="le__iks__interface_8h.html">le_iks_interface.h</a><a href="le__iks__rsa__common_8h.html">le_iks_rsa_common.h</a><a href="le__iks__rsa__interface_8h.html">le_iks_rsa_interface.h</a><a href="le__info__common_8h.html">le_info_common.h</a><a href="le__info__interface_8h.html">le_info_interface.h</a><a href="le__instStat__common_8h.html">le_instStat_common.h</a><a href="le__instStat__interface_8h.html">le_instStat_interface.h</a><a href="le__ips__common_8h.html">le_ips_common.h</a><a href="le__ips__interface_8h.html">le_ips_interface.h</a><a href="le__json_8h.html">le_json.h</a><a href="le__kernelModule__common_8h.html">le_kernelModule_common.h</a><a href="le__kernelModule__interface_8h.html">le_kernelModule_interface.h</a><a href="le__limit__common_8h.html">le_limit_common.h</a><a href="le__limit__interface_8h.html">le_limit_interface.h</a><a href="le__log_8h.html">le_log.h</a><a href="le__lpt__common_8h.html">le_lpt_common.h</a><a href="le__lpt__interface_8h.html">le_lpt_interface.h</a><a href="le__mcc__common_8h.html">le_mcc_common.h</a><a href="le__mcc__interface_8h.html">le_mcc_interface.h</a><a href="le__mdc__common_8h.html">le_mdc_common.h</a><a href="le__mdc__interface_8h.html">le_mdc_interface.h</a><a href="le__mdmDefs__common_8h.html">le_mdmDefs_common.h</a><a href="le__mdmDefs__interface_8h.html">le_mdmDefs_interface.h</a><a href="le__mem_8h.html">le_mem.h</a><a href="le__messaging_8h.html">le_messaging.h</a><a href="le__mrc__common_8h.html">le_mrc_common.h</a><a href="le__mrc__interface_8h.html">le_mrc_interface.h</a><a href="le__mutex_8h.html">le_mutex.h</a><a href="le__net__common_8h.html">le_net_common.h</a><a href="le__net__interface_8h.html">le_net_interface.h</a><a href="le__pack_8h_source.html">le_pack.h</a><a href="le__path_8h.html">le_path.h</a><a href="le__pathIter_8h.html">le_pathIter.h</a><a href="le__pm__common_8h.html">le_pm_common.h</a><a href="le__pm__interface_8h.html">le_pm_interface.h</a><a href="le__port__common_8h.html">le_port_common.h</a><a href="le__port__interface_8h.html">le_port_interface.h</a><a href="le__pos__common_8h.html">le_pos_common.h</a><a href="le__pos__interface_8h.html">le_pos_interface.h</a><a href="le__posCtrl__common_8h.html">le_posCtrl_common.h</a><a href="le__posCtrl__interface_8h.html">le_posCtrl_interface.h</a><a href="le__print_8h.html">le_print.h</a><a href="le__process_8h.html">le_process.h</a><a href="le__rand_8h.html">le_rand.h</a><a href="le__redBlackTree_8h.html">le_redBlackTree.h</a><a href="le__riPin__common_8h.html">le_riPin_common.h</a><a href="le__riPin__interface_8h.html">le_riPin_interface.h</a><a href="le__rsim__common_8h.html">le_rsim_common.h</a><a href="le__rsim__interface_8h.html">le_rsim_interface.h</a><a href="le__rtc__common_8h.html">le_rtc_common.h</a><a href="le__rtc__interface_8h.html">le_rtc_interface.h</a><a href="le__safeRef_8h.html">le_safeRef.h</a><a href="le__secStore__common_8h.html">le_secStore_common.h</a><a href="le__secStore__interface_8h.html">le_secStore_interface.h</a><a href="le__semaphore_8h.html">le_semaphore.h</a><a href="le__signals_8h.html">le_signals.h</a><a href="le__sim__common_8h.html">le_sim_common.h</a><a href="le__sim__interface_8h.html">le_sim_interface.h</a><a href="le__singlyLinkedList_8h.html">le_singlyLinkedList.h</a><a href="le__sms__common_8h.html">le_sms_common.h</a><a href="le__sms__interface_8h.html">le_sms_interface.h</a><a href="le__smsInbox1__common_8h.html">le_smsInbox1_common.h</a><a href="le__smsInbox1__interface_8h.html">le_smsInbox1_interface.h</a><a href="le__spi__common_8h.html">le_spi_common.h</a><a href="le__spi__interface_8h.html">le_spi_interface.h</a><a href="le__temp__common_8h.html">le_temp_common.h</a><a href="le__temp__interface_8h.html">le_temp_interface.h</a><a href="le__test_8h.html">le_test.h</a><a href="le__thread_8h.html">le_thread.h</a><a href="le__thread__linux_8h_source.html">le_thread_linux.h</a><a href="le__timer_8h.html">le_timer.h</a><a href="le__tty_8h.html">le_tty.h</a><a href="le__ulpm__common_8h.html">le_ulpm_common.h</a><a href="le__ulpm__interface_8h.html">le_ulpm_interface.h</a><a href="le__update__common_8h.html">le_update_common.h</a><a href="le__update__interface_8h.html">le_update_interface.h</a><a href="le__updateCtrl__common_8h.html">le_updateCtrl_common.h</a><a href="le__updateCtrl__interface_8h.html">le_updateCtrl_interface.h</a><a href="le__utf8_8h.html">le_utf8.h</a><a href="le__voicecall__common_8h.html">le_voicecall_common.h</a><a href="le__voicecall__interface_8h.html">le_voicecall_interface.h</a><a href="le__wdog__common_8h.html">le_wdog_common.h</a><a href="le__wdog__interface_8h.html">le_wdog_interface.h</a><a href="le__wifiAp__common_8h.html">le_wifiAp_common.h</a><a href="le__wifiAp__interface_8h.html">le_wifiAp_interface.h</a><a href="le__wifiClient__common_8h.html">le_wifiClient_common.h</a><a href="le__wifiClient__interface_8h.html">le_wifiClient_interface.h</a><a href="le__wifiDefs__common_8h.html">le_wifiDefs_common.h</a><a href="le__wifiDefs__interface_8h.html">le_wifiDefs_interface.h</a><a href="legato_8h.html">legato.h</a><a href="legato__linux_8h.html">legato_linux.h</a><a href="secStoreAdmin__common_8h.html">secStoreAdmin_common.h</a><a href="secStoreAdmin__interface_8h.html">secStoreAdmin_interface.h</a><a href="streamMedia__common_8h.html">streamMedia_common.h</a><a href="streamMedia__interface_8h.html">streamMedia_interface.h</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#nested-classes">Data Structures</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_clock.h File Reference</h1> </div>
+</div><div class="contents">
+<p><a href="le__clock_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">String Formats</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>Pre-defined formats for converting time to string format. These pre-defined formats use the conversion specifiers from strftime(). </p>
+</div></td></tr>
+<tr class="memitem:af9a6489508554d27a4f927227e2eeb7c"><td align="right" class="memItemLeft" valign="top"><a id="af9a6489508554d27a4f927227e2eeb7c"></a>
+#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__clock_8h.html#af9a6489508554d27a4f927227e2eeb7c">LE_CLK_STRING_FORMAT_DATE_TIME</a>   "%c"</td></tr>
+<tr class="memdesc:af9a6489508554d27a4f927227e2eeb7c"><td class="mdescLeft"> </td><td class="mdescRight">Preferred date and time format for current locale, e.g. "Mon Jan 21 13:37:05 2013". <br/></td></tr>
+<tr class="separator:af9a6489508554d27a4f927227e2eeb7c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aff1e2aba0e4cf5d71a6a5cf50d13063a"><td align="right" class="memItemLeft" valign="top"><a id="aff1e2aba0e4cf5d71a6a5cf50d13063a"></a>
+#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__clock_8h.html#aff1e2aba0e4cf5d71a6a5cf50d13063a">LE_CLK_STRING_FORMAT_DATE</a>   "%x"</td></tr>
+<tr class="memdesc:aff1e2aba0e4cf5d71a6a5cf50d13063a"><td class="mdescLeft"> </td><td class="mdescRight">Preferred date format for current locale, e.g. "01/21/13". <br/></td></tr>
+<tr class="separator:aff1e2aba0e4cf5d71a6a5cf50d13063a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a175eba3b01c5e3985ab04bea854dd491"><td align="right" class="memItemLeft" valign="top"><a id="a175eba3b01c5e3985ab04bea854dd491"></a>
+#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__clock_8h.html#a175eba3b01c5e3985ab04bea854dd491">LE_CLK_STRING_FORMAT_TIME</a>   "%X"</td></tr>
+<tr class="memdesc:a175eba3b01c5e3985ab04bea854dd491"><td class="mdescLeft"> </td><td class="mdescRight">Preferred time format for current locale, e.g. "13:37:05". <br/></td></tr>
+<tr class="separator:a175eba3b01c5e3985ab04bea854dd491"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a298619d8c1d8f107cb03b8600f09a42b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__clock_8h.html#a298619d8c1d8f107cb03b8600f09a42b">le_clk_GetRelativeTime</a> (void)</td></tr>
+<tr class="separator:a298619d8c1d8f107cb03b8600f09a42b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a33197dbd676a37b8c4d5de8f93edc1ee"><td align="right" class="memItemLeft" valign="top"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__clock_8h.html#a33197dbd676a37b8c4d5de8f93edc1ee">le_clk_GetAbsoluteTime</a> (void)</td></tr>
+<tr class="separator:a33197dbd676a37b8c4d5de8f93edc1ee"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6f4bda0268cd9349b6eb81ae350575fc"><td align="right" class="memItemLeft" valign="top"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__clock_8h.html#a6f4bda0268cd9349b6eb81ae350575fc">le_clk_Add</a> (<a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> timeA, <a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> timeB)</td></tr>
+<tr class="separator:a6f4bda0268cd9349b6eb81ae350575fc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac4a550ee8aa5fad9c81a33024946660a"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="le__clock_8h.html#ac4a550ee8aa5fad9c81a33024946660a">le_clk_GreaterThan</a> (<a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> timeA, <a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> timeB)</td></tr>
+<tr class="separator:ac4a550ee8aa5fad9c81a33024946660a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a164476582afdec88bdd48ad5255dce17"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="le__clock_8h.html#a164476582afdec88bdd48ad5255dce17">le_clk_Equal</a> (<a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> timeA, <a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> timeB)</td></tr>
+<tr class="separator:a164476582afdec88bdd48ad5255dce17"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac5b5ec6f462d598f4e5aa081224725ac"><td align="right" class="memItemLeft" valign="top"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__clock_8h.html#ac5b5ec6f462d598f4e5aa081224725ac">le_clk_Sub</a> (<a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> timeA, <a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> timeB)</td></tr>
+<tr class="separator:ac5b5ec6f462d598f4e5aa081224725ac"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a77961175ee422b1418a18eece5192c9c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__clock_8h.html#a77961175ee422b1418a18eece5192c9c">le_clk_Multiply</a> (<a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> timeA, int scaleFactor)</td></tr>
+<tr class="separator:a77961175ee422b1418a18eece5192c9c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5392b8eb7d45ce86c0842a0a69975059"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__clock_8h.html#a5392b8eb7d45ce86c0842a0a69975059">le_clk_GetUTCDateTimeString</a> (const char *formatSpecStrPtr, char *destStrPtr, size_t destSize, size_t *numBytesPtr)</td></tr>
+<tr class="separator:a5392b8eb7d45ce86c0842a0a69975059"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6f37c2a2171eac23ddc306de1fd55f5c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__clock_8h.html#a6f37c2a2171eac23ddc306de1fd55f5c">le_clk_GetLocalDateTimeString</a> (const char *formatSpecStrPtr, char *destStrPtr, size_t destSize, size_t *numBytesPtr)</td></tr>
+<tr class="separator:a6f37c2a2171eac23ddc306de1fd55f5c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae06285727609683956c22f6af2937f64"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__clock_8h.html#ae06285727609683956c22f6af2937f64">le_clk_ConvertToUTCString</a> (<a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> time, const char *formatSpecStrPtr, char *destStrPtr, size_t destSize, size_t *numBytesPtr)</td></tr>
+<tr class="separator:ae06285727609683956c22f6af2937f64"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a62c3e4ca5b0862938aea139f30846884"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__clock_8h.html#a62c3e4ca5b0862938aea139f30846884">le_clk_ConvertToLocalTimeString</a> (<a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> time, const char *formatSpecStrPtr, char *destStrPtr, size_t destSize, size_t *numBytesPtr)</td></tr>
+<tr class="separator:a62c3e4ca5b0862938aea139f30846884"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4eccd60ca4f915c546f811d3574864a8"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__clock_8h.html#a4eccd60ca4f915c546f811d3574864a8">le_clk_SetAbsoluteTime</a> (<a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> absoluteTime)</td></tr>
+<tr class="separator:a4eccd60ca4f915c546f811d3574864a8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5a0a20afa8ebac7763a2ecb798dd1121"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> <a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__clock_8h.html#a5a0a20afa8ebac7763a2ecb798dd1121">le_clk_ConvertToTime</a> (const char *formatSpecStrPtr, const char *srcStrPtr, <a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> *timePtr)</td></tr>
+<tr class="separator:a5a0a20afa8ebac7763a2ecb798dd1121"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ace39700e3ff651f3d54cff23d4597f91"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> <a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__clock_8h.html#ace39700e3ff651f3d54cff23d4597f91">le_clk_SetUTCDateTimeString</a> (const char *formatSpecStrPtr, const char *srcStrPtr)</td></tr>
+<tr class="separator:ace39700e3ff651f3d54cff23d4597f91"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab1b6ceda4bf6044f85edc851bc511619"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__clock_8h.html#ab1b6ceda4bf6044f85edc851bc511619">le_clk_SetTimezoneFile</a> (const int32_t timezoneOffsetSeconds, const uint8_t dstOffsetHours)</td></tr>
+<tr class="separator:ab1b6ceda4bf6044f85edc851bc511619"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato <a class="el" href="c_clock.html">System Clock API</a> include file.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a6f4bda0268cd9349b6eb81ae350575fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f4bda0268cd9349b6eb81ae350575fc">◆ </a></span>le_clk_Add()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> le_clk_Add </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> </td>
+<td class="paramname"><em>timeA</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> </td>
+<td class="paramname"><em>timeB</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Add two time values together, and return the result.</p>
+<dl class="section return"><dt>Returns</dt><dd>Sum of the two time values </dd></dl>
+</div>
+</div>
+<a id="a62c3e4ca5b0862938aea139f30846884"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62c3e4ca5b0862938aea139f30846884">◆ </a></span>le_clk_ConvertToLocalTimeString()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_clk_ConvertToLocalTimeString </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> </td>
+<td class="paramname"><em>time</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>formatSpecStrPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>destStrPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>destSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>numBytesPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Generate a printable string representation of a given absolute date/time value as a local time (with timezone offset applied).</p>
+<p>The formatted date/time string, including NULL-terminator, will be copied to the destination buffer, provided it fits, and the number of bytes copied (not including the NULL-terminator) will be returned in numBytesPtr.</p>
+<p>If the formatted date/time string does not fit in the destination buffer, then the contents of the destination buffer are undefined, and the value returned in numBytesPtr is zero.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the formatted string was copied to destStrPtr</li>
+<li>LE_OVERFLOW if the formatted string would not fit in destStrPtr </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">time</td><td>date/time to convert </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">formatSpecStrPtr</td><td>Format specifier string, using conversion specifiers defined for strftime(). </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">destStrPtr</td><td>Destination for the formatted date/time string </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">destSize</td><td>Size of the destination buffer in bytes. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">numBytesPtr</td><td>Number of bytes copied, not including NULL-terminator. Parameter can be set to NULL if the number of bytes copied is not needed. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a5a0a20afa8ebac7763a2ecb798dd1121"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a0a20afa8ebac7763a2ecb798dd1121">◆ </a></span>le_clk_ConvertToTime()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> <a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_clk_ConvertToTime </td>
+<td>(</td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>formatSpecStrPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>srcStrPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> * </td>
+<td class="paramname"><em>timePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Generate an absolute date/time value as UTC time representation of a given printable string representation (no timezone offset applied).</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the conversion was successful</li>
+<li>LE_BAD_PARAMETER if an invalid parameter is provided</li>
+<li>LE_FAULT if an error occurred </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">formatSpecStrPtr</td><td>Format specifier string, using conversion specifiers defined for strptime(). </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">srcStrPtr</td><td>Formatted date/time string. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">timePtr</td><td>Converted date/time. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ae06285727609683956c22f6af2937f64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae06285727609683956c22f6af2937f64">◆ </a></span>le_clk_ConvertToUTCString()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_clk_ConvertToUTCString </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> </td>
+<td class="paramname"><em>time</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>formatSpecStrPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>destStrPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>destSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>numBytesPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Generate a printable string representation of a given absolute date/time value as UTC time (no timezone offset applied).</p>
+<p>The formatted date/time string, including NULL-terminator, will be copied to the destination buffer, provided it fits, and the number of bytes copied (not including the NULL-terminator) will be returned in numBytesPtr.</p>
+<p>If the formatted date/time string does not fit in the destination buffer, the contents of the destination buffer will be undefined and the value returned in numBytesPtr will be zero.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the formatted string was copied to destStrPtr</li>
+<li>LE_OVERFLOW if the formatted string would not fit in destStrPtr </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">time</td><td>date/time to convert </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">formatSpecStrPtr</td><td>Format specifier string, using conversion specifiers defined for strftime(). </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">destStrPtr</td><td>Destination for the formatted date/time string </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">destSize</td><td>Size of the destination buffer in bytes. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">numBytesPtr</td><td>Number of bytes copied, not including NULL-terminator. Parameter can be set to NULL if the number of bytes copied is not needed. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a164476582afdec88bdd48ad5255dce17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a164476582afdec88bdd48ad5255dce17">◆ </a></span>le_clk_Equal()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">bool le_clk_Equal </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> </td>
+<td class="paramname"><em>timeA</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> </td>
+<td class="paramname"><em>timeB</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Compare two time values.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>TRUE if TimeA == TimeB</li>
+<li>FALSE otherwise </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a id="a33197dbd676a37b8c4d5de8f93edc1ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33197dbd676a37b8c4d5de8f93edc1ee">◆ </a></span>le_clk_GetAbsoluteTime()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> le_clk_GetAbsoluteTime </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get absolute time since the Epoch, 1970-01-01 00:00:00 +0000 (UTC).</p>
+<dl class="section return"><dt>Returns</dt><dd>Absolute time in seconds/microseconds</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Absolute time includes any time that the processor is suspended. </dd></dl>
+</div>
+</div>
+<a id="a6f37c2a2171eac23ddc306de1fd55f5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f37c2a2171eac23ddc306de1fd55f5c">◆ </a></span>le_clk_GetLocalDateTimeString()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_clk_GetLocalDateTimeString </td>
+<td>(</td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>formatSpecStrPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>destStrPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>destSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>numBytesPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the Local date/time as a formatted string.</p>
+<p>The formatted date/time string, including NULL-terminator, will be copied to the destination buffer, provided it fits, and the number of bytes copied (not including the NULL-terminator) will be returned in numBytesPtr.</p>
+<p>If the formatted date/time string does not fit in the destination buffer, then the contents of the destination buffer will be undefined, and the value returned in numBytesPtr will be zero.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the formatted string was copied to destStrPtr.</li>
+<li>LE_OVERFLOW if the formatted string would not fit in destStrPtr. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">formatSpecStrPtr</td><td>Format specifier string, using conversion specifiers defined for strftime(). </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">destStrPtr</td><td>Destination for the formatted date/time string </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">destSize</td><td>Size of the destination buffer in bytes. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">numBytesPtr</td><td>Number of bytes copied, not including NULL-terminator. Parameter can be set to NULL if the number of bytes copied is not needed. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a298619d8c1d8f107cb03b8600f09a42b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a298619d8c1d8f107cb03b8600f09a42b">◆ </a></span>le_clk_GetRelativeTime()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> le_clk_GetRelativeTime </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get relative time since a fixed but unspecified starting point.</p>
+<dl class="section return"><dt>Returns</dt><dd>Relative time in seconds/microseconds</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Relative time includes any time that the processor is suspended. </dd></dl>
+</div>
+</div>
+<a id="a5392b8eb7d45ce86c0842a0a69975059"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5392b8eb7d45ce86c0842a0a69975059">◆ </a></span>le_clk_GetUTCDateTimeString()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_clk_GetUTCDateTimeString </td>
+<td>(</td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>formatSpecStrPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>destStrPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>destSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>numBytesPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the UTC date/time as a formatted string.</p>
+<p>The formatted date/time string, including NULL-terminator, will be copied to the destination buffer, provided it fits, and the number of bytes copied (not including the NULL-terminator) will be returned in numBytesPtr.</p>
+<p>If the formatted date/time string does not fit in the destination buffer, the contents of the destination buffer will be undefined and the value returned in numBytesPtr will be zero.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the formatted string was copied to destStrPtr</li>
+<li>LE_OVERFLOW if the formatted string would not fit in destStrPtr </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">formatSpecStrPtr</td><td>Format specifier string, using conversion specifiers defined for strftime(). </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">destStrPtr</td><td>Destination for the formatted date/time string </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">destSize</td><td>Size of the destination buffer in bytes. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">numBytesPtr</td><td>Number of bytes copied, not including NULL-terminator. Parameter can be set to NULL if the number of bytes copied is not needed. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ac4a550ee8aa5fad9c81a33024946660a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4a550ee8aa5fad9c81a33024946660a">◆ </a></span>le_clk_GreaterThan()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">bool le_clk_GreaterThan </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> </td>
+<td class="paramname"><em>timeA</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> </td>
+<td class="paramname"><em>timeB</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Compare two time values.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>TRUE if TimeA &gt; TimeB</li>
+<li>FALSE otherwise </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a id="a77961175ee422b1418a18eece5192c9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77961175ee422b1418a18eece5192c9c">◆ </a></span>le_clk_Multiply()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> le_clk_Multiply </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> </td>
+<td class="paramname"><em>timeA</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>scaleFactor</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Multiply the time by a scale factor, and return the result</p>
+<dl class="section return"><dt>Returns</dt><dd>Time multiplied by scale factor </dd></dl>
+</div>
+</div>
+<a id="a4eccd60ca4f915c546f811d3574864a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eccd60ca4f915c546f811d3574864a8">◆ </a></span>le_clk_SetAbsoluteTime()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_clk_SetAbsoluteTime </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> </td>
+<td class="paramname"><em>absoluteTime</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set absolute time since the Epoch, 1970-01-01 00:00:00 +0000 (UTC).</p>
+<dl class="section note"><dt>Note</dt><dd>Only unsandboxed application can set the date/time.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the function succeeded</li>
+<li>LE_BAD_PARAMETER if an invalid parameter is provided</li>
+<li>LE_NOT_PERMITTED if the operation is not permitted</li>
+<li>LE_FAULT if an error occurred </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">absoluteTime</td><td>Absolute time in seconds/microseconds </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ab1b6ceda4bf6044f85edc851bc511619"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1b6ceda4bf6044f85edc851bc511619">◆ </a></span>le_clk_SetTimezoneFile()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_clk_SetTimezoneFile </td>
+<td>(</td>
+<td class="paramtype">const int32_t </td>
+<td class="paramname"><em>timezoneOffsetSeconds</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t </td>
+<td class="paramname"><em>dstOffsetHours</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the timezone information</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the time is correctly set</li>
+<li>LE_FAULT if an error occurred</li>
+<li>LE_UNSUPPORTED if the function is not supported </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">timezoneOffsetSeconds</td><td>Timezone offset in seconds </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">dstOffsetHours</td><td>Daylight savings adjustment in hours </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ace39700e3ff651f3d54cff23d4597f91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace39700e3ff651f3d54cff23d4597f91">◆ </a></span>le_clk_SetUTCDateTimeString()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> <a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_clk_SetUTCDateTimeString </td>
+<td>(</td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>formatSpecStrPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>srcStrPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the UTC date/time as a formatted string.</p>
+<dl class="section note"><dt>Note</dt><dd>Only unsandboxed application can set the date/time.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the time is correctly set</li>
+<li>LE_BAD_PARAMETER if an invalid parameter is provided</li>
+<li>LE_NOT_PERMITTED if the operation is not permitted</li>
+<li>LE_FAULT if an error occurred </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">formatSpecStrPtr</td><td>Format specifier string, using conversion specifiers defined for strptime(). </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">srcStrPtr</td><td>Formatted date/time string. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ac5b5ec6f462d598f4e5aa081224725ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5b5ec6f462d598f4e5aa081224725ac">◆ </a></span>le_clk_Sub()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> le_clk_Sub </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> </td>
+<td class="paramname"><em>timeA</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="structle__clk__Time__t.html">le_clk_Time_t</a> </td>
+<td class="paramname"><em>timeB</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Subtract two time values, and return the result.</p>
+<dl class="section return"><dt>Returns</dt><dd>Result of (timeA - timeB) </dd></dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

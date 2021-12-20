@@ -1,0 +1,1857 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Reference" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_messaging.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="20.08.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+    <script src="resources/js/html5shiv.js"></script>
+    <script src="resources/js/respond.js"></script>
+  <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Reference_le_messaging.h.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Reference</h2>
+<nav class="secondary">
+<a href="common__interface_8h_source.html">common_interface.h</a><a href="defn__interface_8h_source.html">defn_interface.h</a><a href="example__interface_8h_source.html">example_interface.h</a><a href="le__adc__common_8h.html">le_adc_common.h</a><a href="le__adc__interface_8h.html">le_adc_interface.h</a><a href="le__antenna__common_8h.html">le_antenna_common.h</a><a href="le__antenna__interface_8h.html">le_antenna_interface.h</a><a href="le__apiFeatures_8h.html">le_apiFeatures.h</a><a href="le__appCtrl__common_8h.html">le_appCtrl_common.h</a><a href="le__appCtrl__interface_8h.html">le_appCtrl_interface.h</a><a href="le__appInfo__common_8h.html">le_appInfo_common.h</a><a href="le__appInfo__interface_8h.html">le_appInfo_interface.h</a><a href="le__args_8h.html">le_args.h</a><a href="le__atClient__common_8h.html">le_atClient_common.h</a><a href="le__atClient__interface_8h.html">le_atClient_interface.h</a><a href="le__atDefs__common_8h.html">le_atDefs_common.h</a><a href="le__atDefs__interface_8h.html">le_atDefs_interface.h</a><a href="le__atomFile_8h.html">le_atomFile.h</a><a href="le__atomic_8h_source.html">le_atomic.h</a><a href="le__atServer__common_8h.html">le_atServer_common.h</a><a href="le__atServer__interface_8h.html">le_atServer_interface.h</a><a href="le__audio__common_8h.html">le_audio_common.h</a><a href="le__audio__interface_8h.html">le_audio_interface.h</a><a href="le__avc__common_8h.html">le_avc_common.h</a><a href="le__avc__interface_8h.html">le_avc_interface.h</a><a href="le__avdata__common_8h.html">le_avdata_common.h</a><a href="le__avdata__interface_8h.html">le_avdata_interface.h</a><a href="le__backtrace_8h.html">le_backtrace.h</a><a href="le__base64_8h.html">le_base64.h</a><a href="le__basics_8h.html">le_basics.h</a><a href="le__bootReason__common_8h.html">le_bootReason_common.h</a><a href="le__bootReason__interface_8h.html">le_bootReason_interface.h</a><a href="le__cdata_8h.html">le_cdata.h</a><a href="le__cellnet__common_8h.html">le_cellnet_common.h</a><a href="le__cellnet__interface_8h.html">le_cellnet_interface.h</a><a href="le__cfg__common_8h.html">le_cfg_common.h</a><a href="le__cfg__interface_8h.html">le_cfg_interface.h</a><a href="le__cfgAdmin__common_8h.html">le_cfgAdmin_common.h</a><a href="le__cfgAdmin__interface_8h.html">le_cfgAdmin_interface.h</a><a href="le__clkSync__common_8h.html">le_clkSync_common.h</a><a href="le__clkSync__interface_8h.html">le_clkSync_interface.h</a><a href="le__clock_8h.html">le_clock.h</a><a href="le__comm_8h.html">le_comm.h</a><a href="le__crc_8h.html">le_crc.h</a><a href="le__data__common_8h.html">le_data_common.h</a><a href="le__data__interface_8h.html">le_data_interface.h</a><a href="le__dcs__common_8h.html">le_dcs_common.h</a><a href="le__dcs__interface_8h.html">le_dcs_interface.h</a><a href="le__dir_8h.html">le_dir.h</a><a href="le__doublyLinkedList_8h.html">le_doublyLinkedList.h</a><a href="le__dualsys__common_8h.html">le_dualsys_common.h</a><a href="le__dualsys__interface_8h.html">le_dualsys_interface.h</a><a href="le__ecall__common_8h.html">le_ecall_common.h</a><a href="le__ecall__interface_8h.html">le_ecall_interface.h</a><a href="le__eventLoop_8h.html">le_eventLoop.h</a><a href="le__fd_8h.html">le_fd.h</a><a href="le__fd__linux_8h.html">le_fd_linux.h</a><a href="le__fdMonitor_8h.html">le_fdMonitor.h</a><a href="le__fileLock_8h.html">le_fileLock.h</a><a href="le__flash__common_8h.html">le_flash_common.h</a><a href="le__flash__interface_8h.html">le_flash_interface.h</a><a href="le__framework__common_8h.html">le_framework_common.h</a><a href="le__framework__interface_8h.html">le_framework_interface.h</a><a href="le__fs_8h_source.html">le_fs.h</a><a href="le__fs__linux_8h_source.html">le_fs_linux.h</a><a href="le__fwupdate__common_8h.html">le_fwupdate_common.h</a><a href="le__fwupdate__interface_8h.html">le_fwupdate_interface.h</a><a href="le__gnss__common_8h.html">le_gnss_common.h</a><a href="le__gnss__interface_8h.html">le_gnss_interface.h</a><a href="le__gpio__common_8h.html">le_gpio_common.h</a><a href="le__gpio__interface_8h.html">le_gpio_interface.h</a><a href="le__gpioCfg__common_8h.html">le_gpioCfg_common.h</a><a href="le__gpioCfg__interface_8h.html">le_gpioCfg_interface.h</a><a href="le__hashmap_8h.html">le_hashmap.h</a><a href="le__hex_8h.html">le_hex.h</a><a href="le__iks__aesCbc__common_8h.html">le_iks_aesCbc_common.h</a><a href="le__iks__aesCbc__interface_8h.html">le_iks_aesCbc_interface.h</a><a href="le__iks__aesCmac__common_8h.html">le_iks_aesCmac_common.h</a><a href="le__iks__aesCmac__interface_8h.html">le_iks_aesCmac_interface.h</a><a href="le__iks__aesGcm__common_8h.html">le_iks_aesGcm_common.h</a><a href="le__iks__aesGcm__interface_8h.html">le_iks_aesGcm_interface.h</a><a href="le__iks__aesMilenage__common_8h.html">le_iks_aesMilenage_common.h</a><a href="le__iks__aesMilenage__interface_8h.html">le_iks_aesMilenage_interface.h</a><a href="le__iks__common_8h.html">le_iks_common.h</a><a href="le__iks__ecc__common_8h.html">le_iks_ecc_common.h</a><a href="le__iks__ecc__interface_8h.html">le_iks_ecc_interface.h</a><a href="le__iks__hmac__common_8h.html">le_iks_hmac_common.h</a><a href="le__iks__hmac__interface_8h.html">le_iks_hmac_interface.h</a><a href="le__iks__interface_8h.html">le_iks_interface.h</a><a href="le__iks__rsa__common_8h.html">le_iks_rsa_common.h</a><a href="le__iks__rsa__interface_8h.html">le_iks_rsa_interface.h</a><a href="le__info__common_8h.html">le_info_common.h</a><a href="le__info__interface_8h.html">le_info_interface.h</a><a href="le__instStat__common_8h.html">le_instStat_common.h</a><a href="le__instStat__interface_8h.html">le_instStat_interface.h</a><a href="le__ips__common_8h.html">le_ips_common.h</a><a href="le__ips__interface_8h.html">le_ips_interface.h</a><a href="le__json_8h.html">le_json.h</a><a href="le__kernelModule__common_8h.html">le_kernelModule_common.h</a><a href="le__kernelModule__interface_8h.html">le_kernelModule_interface.h</a><a href="le__limit__common_8h.html">le_limit_common.h</a><a href="le__limit__interface_8h.html">le_limit_interface.h</a><a href="le__log_8h.html">le_log.h</a><a href="le__lpt__common_8h.html">le_lpt_common.h</a><a href="le__lpt__interface_8h.html">le_lpt_interface.h</a><a href="le__mcc__common_8h.html">le_mcc_common.h</a><a href="le__mcc__interface_8h.html">le_mcc_interface.h</a><a href="le__mdc__common_8h.html">le_mdc_common.h</a><a href="le__mdc__interface_8h.html">le_mdc_interface.h</a><a href="le__mdmDefs__common_8h.html">le_mdmDefs_common.h</a><a href="le__mdmDefs__interface_8h.html">le_mdmDefs_interface.h</a><a href="le__mem_8h.html">le_mem.h</a><a class="link-selected" href="le__messaging_8h.html">le_messaging.h</a><a href="le__mrc__common_8h.html">le_mrc_common.h</a><a href="le__mrc__interface_8h.html">le_mrc_interface.h</a><a href="le__mutex_8h.html">le_mutex.h</a><a href="le__net__common_8h.html">le_net_common.h</a><a href="le__net__interface_8h.html">le_net_interface.h</a><a href="le__pack_8h_source.html">le_pack.h</a><a href="le__path_8h.html">le_path.h</a><a href="le__pathIter_8h.html">le_pathIter.h</a><a href="le__pm__common_8h.html">le_pm_common.h</a><a href="le__pm__interface_8h.html">le_pm_interface.h</a><a href="le__port__common_8h.html">le_port_common.h</a><a href="le__port__interface_8h.html">le_port_interface.h</a><a href="le__pos__common_8h.html">le_pos_common.h</a><a href="le__pos__interface_8h.html">le_pos_interface.h</a><a href="le__posCtrl__common_8h.html">le_posCtrl_common.h</a><a href="le__posCtrl__interface_8h.html">le_posCtrl_interface.h</a><a href="le__print_8h.html">le_print.h</a><a href="le__process_8h.html">le_process.h</a><a href="le__rand_8h.html">le_rand.h</a><a href="le__redBlackTree_8h.html">le_redBlackTree.h</a><a href="le__riPin__common_8h.html">le_riPin_common.h</a><a href="le__riPin__interface_8h.html">le_riPin_interface.h</a><a href="le__rsim__common_8h.html">le_rsim_common.h</a><a href="le__rsim__interface_8h.html">le_rsim_interface.h</a><a href="le__rtc__common_8h.html">le_rtc_common.h</a><a href="le__rtc__interface_8h.html">le_rtc_interface.h</a><a href="le__safeRef_8h.html">le_safeRef.h</a><a href="le__secStore__common_8h.html">le_secStore_common.h</a><a href="le__secStore__interface_8h.html">le_secStore_interface.h</a><a href="le__semaphore_8h.html">le_semaphore.h</a><a href="le__signals_8h.html">le_signals.h</a><a href="le__sim__common_8h.html">le_sim_common.h</a><a href="le__sim__interface_8h.html">le_sim_interface.h</a><a href="le__singlyLinkedList_8h.html">le_singlyLinkedList.h</a><a href="le__sms__common_8h.html">le_sms_common.h</a><a href="le__sms__interface_8h.html">le_sms_interface.h</a><a href="le__smsInbox1__common_8h.html">le_smsInbox1_common.h</a><a href="le__smsInbox1__interface_8h.html">le_smsInbox1_interface.h</a><a href="le__spi__common_8h.html">le_spi_common.h</a><a href="le__spi__interface_8h.html">le_spi_interface.h</a><a href="le__temp__common_8h.html">le_temp_common.h</a><a href="le__temp__interface_8h.html">le_temp_interface.h</a><a href="le__test_8h.html">le_test.h</a><a href="le__thread_8h.html">le_thread.h</a><a href="le__thread__linux_8h_source.html">le_thread_linux.h</a><a href="le__timer_8h.html">le_timer.h</a><a href="le__tty_8h.html">le_tty.h</a><a href="le__ulpm__common_8h.html">le_ulpm_common.h</a><a href="le__ulpm__interface_8h.html">le_ulpm_interface.h</a><a href="le__update__common_8h.html">le_update_common.h</a><a href="le__update__interface_8h.html">le_update_interface.h</a><a href="le__updateCtrl__common_8h.html">le_updateCtrl_common.h</a><a href="le__updateCtrl__interface_8h.html">le_updateCtrl_interface.h</a><a href="le__utf8_8h.html">le_utf8.h</a><a href="le__voicecall__common_8h.html">le_voicecall_common.h</a><a href="le__voicecall__interface_8h.html">le_voicecall_interface.h</a><a href="le__wdog__common_8h.html">le_wdog_common.h</a><a href="le__wdog__interface_8h.html">le_wdog_interface.h</a><a href="le__wifiAp__common_8h.html">le_wifiAp_common.h</a><a href="le__wifiAp__interface_8h.html">le_wifiAp_interface.h</a><a href="le__wifiClient__common_8h.html">le_wifiClient_common.h</a><a href="le__wifiClient__interface_8h.html">le_wifiClient_interface.h</a><a href="le__wifiDefs__common_8h.html">le_wifiDefs_common.h</a><a href="le__wifiDefs__interface_8h.html">le_wifiDefs_interface.h</a><a href="legato_8h.html">legato.h</a><a href="legato__linux_8h.html">legato_linux.h</a><a href="secStoreAdmin__common_8h.html">secStoreAdmin_common.h</a><a href="secStoreAdmin__interface_8h.html">secStoreAdmin_interface.h</a><a href="streamMedia__common_8h.html">streamMedia_common.h</a><a href="streamMedia__interface_8h.html">streamMedia_interface.h</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#nested-classes">Data Structures</a> |
+<a href="#define-members">Macros</a> |
+<a href="#typedef-members">Typedefs</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_messaging.h File Reference</h1> </div>
+</div><div class="contents">
+<div class="textblock"><code>#include "<a class="el" href="le__semaphore_8h_source.html">le_semaphore.h</a>"</code><br/>
+</div>
+<p><a href="le__messaging_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structle__msg__Service.html">le_msg_ServiceRef_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structle__msg__Message.html">le_msg_MessageRef_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structle__msg__LocalReceiver__t.html">le_msg_LocalReceiver_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structle__msg__LocalService__t.html">le_msg_LocalService_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structle__msg__LocalMessage__t.html">le_msg_LocalMessage_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a1a2c215fe3736302cd3d7ffa156d2eb9"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a1a2c215fe3736302cd3d7ffa156d2eb9">LE_MSG_LOCAL_HEADER_SIZE</a>   sizeof(<a class="el" href="structle__msg__LocalMessage__t.html">le_msg_LocalMessage_t</a>)</td></tr>
+<tr class="separator:a1a2c215fe3736302cd3d7ffa156d2eb9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a24a72ef8cd95d79b40cacc008b8e1b5f"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a24a72ef8cd95d79b40cacc008b8e1b5f">LE_KILL_CLIENT</a>(formatString, ...)</td></tr>
+<tr class="separator:a24a72ef8cd95d79b40cacc008b8e1b5f"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ac05e9b3268f8fb5776adab6fe11410e5"><td align="right" class="memItemLeft" valign="top">typedef struct le_msg_Protocol * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#ac05e9b3268f8fb5776adab6fe11410e5">le_msg_ProtocolRef_t</a></td></tr>
+<tr class="separator:ac05e9b3268f8fb5776adab6fe11410e5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a67826f96880f776bda0a3b9117304b45"><td align="right" class="memItemLeft" valign="top">typedef struct le_msg_Interface * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a67826f96880f776bda0a3b9117304b45">le_msg_InterfaceRef_t</a></td></tr>
+<tr class="separator:a67826f96880f776bda0a3b9117304b45"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:abf4d6c5113e22dc8ccefb48938fba7b8"><td align="right" class="memItemLeft" valign="top">typedef struct le_msg_ClientInterface * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#abf4d6c5113e22dc8ccefb48938fba7b8">le_msg_ClientInterfaceRef_t</a></td></tr>
+<tr class="separator:abf4d6c5113e22dc8ccefb48938fba7b8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aebfc01e15b430a5b4f3038a5bd518904"><td align="right" class="memItemLeft" valign="top">typedef struct le_msg_Session * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a></td></tr>
+<tr class="separator:aebfc01e15b430a5b4f3038a5bd518904"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af86eb84f7043287aafb0a130a9eacf95"><td align="right" class="memItemLeft" valign="top">typedef struct le_msg_SessionEventHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#af86eb84f7043287aafb0a130a9eacf95">le_msg_SessionEventHandlerRef_t</a></td></tr>
+<tr class="separator:af86eb84f7043287aafb0a130a9eacf95"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2db32a8ef90eced02789aee366c9dda2"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a2db32a8ef90eced02789aee366c9dda2">le_msg_SessionEventHandler_t</a>) (<a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> sessionRef, void *contextPtr)</td></tr>
+<tr class="separator:a2db32a8ef90eced02789aee366c9dda2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9aa36465329fb00e85fb3cbdf034298a"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a9aa36465329fb00e85fb3cbdf034298a">le_msg_ReceiveHandler_t</a>) (le_msg_MessageRef_t msgRef, void *contextPtr)</td></tr>
+<tr class="separator:a9aa36465329fb00e85fb3cbdf034298a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a70cf756e252bb377e0443bcf89f66805"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a70cf756e252bb377e0443bcf89f66805">le_msg_ResponseCallback_t</a>) (le_msg_MessageRef_t msgRef, void *contextPtr)</td></tr>
+<tr class="separator:a70cf756e252bb377e0443bcf89f66805"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a95d008427b3ce030679b7b22ff47a8b6"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> <a class="el" href="le__messaging_8h.html#ac05e9b3268f8fb5776adab6fe11410e5">le_msg_ProtocolRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a95d008427b3ce030679b7b22ff47a8b6">le_msg_GetProtocolRef</a> (const char *protocolId, size_t largestMsgSize)</td></tr>
+<tr class="separator:a95d008427b3ce030679b7b22ff47a8b6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a6b59db5e766c27e5ace1baa3e7d8ec56"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> const char * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a6b59db5e766c27e5ace1baa3e7d8ec56">le_msg_GetProtocolIdStr</a> (<a class="el" href="le__messaging_8h.html#ac05e9b3268f8fb5776adab6fe11410e5">le_msg_ProtocolRef_t</a> protocolRef)</td></tr>
+<tr class="separator:a6b59db5e766c27e5ace1baa3e7d8ec56"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab3b9bddc1dad4729d924fedd7ec38bc4"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> size_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#ab3b9bddc1dad4729d924fedd7ec38bc4">le_msg_GetProtocolMaxMsgSize</a> (<a class="el" href="le__messaging_8h.html#ac05e9b3268f8fb5776adab6fe11410e5">le_msg_ProtocolRef_t</a> protocolRef)</td></tr>
+<tr class="separator:ab3b9bddc1dad4729d924fedd7ec38bc4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1ecb8a8e109bb106f0f1482955582369"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> <a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a1ecb8a8e109bb106f0f1482955582369">le_msg_CreateSession</a> (<a class="el" href="le__messaging_8h.html#ac05e9b3268f8fb5776adab6fe11410e5">le_msg_ProtocolRef_t</a> protocolRef, const char *interfaceName)</td></tr>
+<tr class="separator:a1ecb8a8e109bb106f0f1482955582369"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7030a34e7ef399918d6bf1f58159e7ca"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a7030a34e7ef399918d6bf1f58159e7ca">le_msg_CreateLocalSession</a> (<a class="el" href="structle__msg__LocalService__t.html">le_msg_LocalService_t</a> *servicePtr)</td></tr>
+<tr class="separator:a7030a34e7ef399918d6bf1f58159e7ca"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af1cee25c7f367a0fd0173c8a0d5e0a50"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#af1cee25c7f367a0fd0173c8a0d5e0a50">le_msg_SetSessionContextPtr</a> (<a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> sessionRef, void *contextPtr)</td></tr>
+<tr class="separator:af1cee25c7f367a0fd0173c8a0d5e0a50"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab9c6e9ca3b7f204b0262f56172469d32"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#ab9c6e9ca3b7f204b0262f56172469d32">le_msg_GetSessionContextPtr</a> (<a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> sessionRef)</td></tr>
+<tr class="separator:ab9c6e9ca3b7f204b0262f56172469d32"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8d950c4b07741177d2c0927c31e3e29f"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a8d950c4b07741177d2c0927c31e3e29f">le_msg_DeleteSession</a> (<a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> sessionRef)</td></tr>
+<tr class="separator:a8d950c4b07741177d2c0927c31e3e29f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac726cc93219d326e1b10a7d13a0f4f65"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#ac726cc93219d326e1b10a7d13a0f4f65">le_msg_SetSessionRecvHandler</a> (<a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> sessionRef, <a class="el" href="le__messaging_8h.html#a9aa36465329fb00e85fb3cbdf034298a">le_msg_ReceiveHandler_t</a> handlerFunc, void *contextPtr)</td></tr>
+<tr class="separator:ac726cc93219d326e1b10a7d13a0f4f65"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac686ce69204be41a471017572e393431"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#ac686ce69204be41a471017572e393431">le_msg_SetSessionCloseHandler</a> (<a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> sessionRef, <a class="el" href="le__messaging_8h.html#a2db32a8ef90eced02789aee366c9dda2">le_msg_SessionEventHandler_t</a> handlerFunc, void *contextPtr)</td></tr>
+<tr class="separator:ac686ce69204be41a471017572e393431"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5fe3dc9cc90ef47fff4380c83344ca01"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a5fe3dc9cc90ef47fff4380c83344ca01">le_msg_GetSessionCloseHandler</a> (<a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> sessionRef, <a class="el" href="le__messaging_8h.html#a2db32a8ef90eced02789aee366c9dda2">le_msg_SessionEventHandler_t</a> *handlerFunc, void **contextPtr)</td></tr>
+<tr class="separator:a5fe3dc9cc90ef47fff4380c83344ca01"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a574d37960a07c4fc2bde310408619cff"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a574d37960a07c4fc2bde310408619cff">le_msg_OpenSession</a> (<a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> sessionRef, <a class="el" href="le__messaging_8h.html#a2db32a8ef90eced02789aee366c9dda2">le_msg_SessionEventHandler_t</a> callbackFunc, void *contextPtr)</td></tr>
+<tr class="separator:a574d37960a07c4fc2bde310408619cff"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8c6480e3708e20e1f9da032a93c80bc0"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a8c6480e3708e20e1f9da032a93c80bc0">le_msg_OpenSessionSync</a> (<a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> sessionRef)</td></tr>
+<tr class="separator:a8c6480e3708e20e1f9da032a93c80bc0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2ee1410da1dc345c86d6958b6cdda5e1"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a2ee1410da1dc345c86d6958b6cdda5e1">le_msg_TryOpenSessionSync</a> (<a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> sessionRef)</td></tr>
+<tr class="separator:a2ee1410da1dc345c86d6958b6cdda5e1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1af0671de74160d99be5bfe212c39369"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a1af0671de74160d99be5bfe212c39369">le_msg_CloseSession</a> (<a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> sessionRef)</td></tr>
+<tr class="separator:a1af0671de74160d99be5bfe212c39369"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af65ef635f94803e29de04cc1d38966b1"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#af65ef635f94803e29de04cc1d38966b1">le_msg_CloseSessionLocked</a> (<a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> sessionRef)</td></tr>
+<tr class="separator:af65ef635f94803e29de04cc1d38966b1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:adb1f4ec556753ac9d903db1547d13af8"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> <a class="el" href="le__messaging_8h.html#ac05e9b3268f8fb5776adab6fe11410e5">le_msg_ProtocolRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#adb1f4ec556753ac9d903db1547d13af8">le_msg_GetSessionProtocol</a> (<a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> sessionRef)</td></tr>
+<tr class="separator:adb1f4ec556753ac9d903db1547d13af8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a712825695bde89d4ad65b66856428afc"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> <a class="el" href="le__messaging_8h.html#a67826f96880f776bda0a3b9117304b45">le_msg_InterfaceRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a712825695bde89d4ad65b66856428afc">le_msg_GetSessionInterface</a> (<a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> sessionRef)</td></tr>
+<tr class="separator:a712825695bde89d4ad65b66856428afc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8c04f9cad0a768b4922a9987df84b65f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a8c04f9cad0a768b4922a9987df84b65f">le_msg_GetClientUserId</a> (<a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> sessionRef, uid_t *userIdPtr)</td></tr>
+<tr class="separator:a8c04f9cad0a768b4922a9987df84b65f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a4fe4cb3d7a13f0b999aeb20eb5107f8b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a4fe4cb3d7a13f0b999aeb20eb5107f8b">le_msg_GetClientProcessId</a> (<a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> sessionRef, pid_t *processIdPtr)</td></tr>
+<tr class="separator:a4fe4cb3d7a13f0b999aeb20eb5107f8b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae17fcad4c9bc442dfb2403a50b5143a4"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#ae17fcad4c9bc442dfb2403a50b5143a4">le_msg_GetClientUserCreds</a> (<a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> sessionRef, uid_t *userIdPtr, pid_t *processIdPtr)</td></tr>
+<tr class="separator:ae17fcad4c9bc442dfb2403a50b5143a4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8293a69f256b98cbce5b9990ea3520f3"><td align="right" class="memItemLeft" valign="top">le_msg_MessageRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a8293a69f256b98cbce5b9990ea3520f3">le_msg_CreateMsg</a> (<a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> sessionRef)</td></tr>
+<tr class="separator:a8293a69f256b98cbce5b9990ea3520f3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a93be4a4e628d079f9f53db30f2e78b28"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a93be4a4e628d079f9f53db30f2e78b28">le_msg_AddRef</a> (le_msg_MessageRef_t msgRef)</td></tr>
+<tr class="separator:a93be4a4e628d079f9f53db30f2e78b28"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:afc508c24d0b6933e8fbc4e0410d50271"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#afc508c24d0b6933e8fbc4e0410d50271">le_msg_ReleaseMsg</a> (le_msg_MessageRef_t msgRef)</td></tr>
+<tr class="separator:afc508c24d0b6933e8fbc4e0410d50271"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8b0824781c030b9ed6f8be48e4d20419"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a8b0824781c030b9ed6f8be48e4d20419">le_msg_NeedsResponse</a> (le_msg_MessageRef_t msgRef)</td></tr>
+<tr class="separator:a8b0824781c030b9ed6f8be48e4d20419"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a32d1c7ffd913db8546f6f1bd5cce58c4"><td align="right" class="memItemLeft" valign="top">void * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a32d1c7ffd913db8546f6f1bd5cce58c4">le_msg_GetPayloadPtr</a> (le_msg_MessageRef_t msgRef)</td></tr>
+<tr class="separator:a32d1c7ffd913db8546f6f1bd5cce58c4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac12a43d9266aa931762e54ab0026693f"><td align="right" class="memItemLeft" valign="top">size_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#ac12a43d9266aa931762e54ab0026693f">le_msg_GetMaxPayloadSize</a> (le_msg_MessageRef_t msgRef)</td></tr>
+<tr class="separator:ac12a43d9266aa931762e54ab0026693f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a43459773ce8a9febf0f2e66681e40e91"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a43459773ce8a9febf0f2e66681e40e91">le_msg_SetFd</a> (le_msg_MessageRef_t msgRef, int fd)</td></tr>
+<tr class="separator:a43459773ce8a9febf0f2e66681e40e91"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1eff9dd7f93de58f5678ad3d6e0b734d"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a1eff9dd7f93de58f5678ad3d6e0b734d">le_msg_GetFd</a> (le_msg_MessageRef_t msgRef)</td></tr>
+<tr class="separator:a1eff9dd7f93de58f5678ad3d6e0b734d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a073de097d281475c44a445b927fbb929"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a073de097d281475c44a445b927fbb929">le_msg_Send</a> (le_msg_MessageRef_t msgRef)</td></tr>
+<tr class="separator:a073de097d281475c44a445b927fbb929"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a253088f1b852575b60d7732ca7afc79b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a253088f1b852575b60d7732ca7afc79b">le_msg_GetSession</a> (le_msg_MessageRef_t msgRef)</td></tr>
+<tr class="separator:a253088f1b852575b60d7732ca7afc79b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5440ae06a89b60ed04e9de5601496608"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a5440ae06a89b60ed04e9de5601496608">le_msg_RequestResponse</a> (le_msg_MessageRef_t msgRef, <a class="el" href="le__messaging_8h.html#a70cf756e252bb377e0443bcf89f66805">le_msg_ResponseCallback_t</a> handlerFunc, void *contextPtr)</td></tr>
+<tr class="separator:a5440ae06a89b60ed04e9de5601496608"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa3cf113b26b154697ccef270dafe8798"><td align="right" class="memItemLeft" valign="top">le_msg_MessageRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#aa3cf113b26b154697ccef270dafe8798">le_msg_RequestSyncResponse</a> (le_msg_MessageRef_t msgRef)</td></tr>
+<tr class="separator:aa3cf113b26b154697ccef270dafe8798"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac4545833ad2da9bb4cc5d18125f7d9f2"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#ac4545833ad2da9bb4cc5d18125f7d9f2">le_msg_Respond</a> (le_msg_MessageRef_t msgRef)</td></tr>
+<tr class="separator:ac4545833ad2da9bb4cc5d18125f7d9f2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aaba5055997ab8f26815237f509888b05"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> le_msg_ServiceRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#aaba5055997ab8f26815237f509888b05">le_msg_CreateService</a> (<a class="el" href="le__messaging_8h.html#ac05e9b3268f8fb5776adab6fe11410e5">le_msg_ProtocolRef_t</a> protocolRef, const char *interfaceName)</td></tr>
+<tr class="separator:aaba5055997ab8f26815237f509888b05"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1573dad8e3d40e5e504d0e279f10d32f"><td align="right" class="memItemLeft" valign="top">le_msg_ServiceRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a1573dad8e3d40e5e504d0e279f10d32f">le_msg_InitLocalService</a> (<a class="el" href="structle__msg__LocalService__t.html">le_msg_LocalService_t</a> *servicePtr, const char *serviceNameStr, <a class="el" href="le__mem_8h.html#a44a896f6a0a1a8c733e8038eb332989e">le_mem_PoolRef_t</a> messagingPoolRef)</td></tr>
+<tr class="separator:a1573dad8e3d40e5e504d0e279f10d32f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a783a92b571e0d3df11d2ebbd446fabf6"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a783a92b571e0d3df11d2ebbd446fabf6">le_msg_DeleteService</a> (le_msg_ServiceRef_t serviceRef)</td></tr>
+<tr class="separator:a783a92b571e0d3df11d2ebbd446fabf6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ac5e22099e2a5a8d1cbd9bffb0fdd8f87"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> <a class="el" href="le__messaging_8h.html#af86eb84f7043287aafb0a130a9eacf95">le_msg_SessionEventHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#ac5e22099e2a5a8d1cbd9bffb0fdd8f87">le_msg_AddServiceOpenHandler</a> (le_msg_ServiceRef_t serviceRef, <a class="el" href="le__messaging_8h.html#a2db32a8ef90eced02789aee366c9dda2">le_msg_SessionEventHandler_t</a> handlerFunc, void *contextPtr)</td></tr>
+<tr class="separator:ac5e22099e2a5a8d1cbd9bffb0fdd8f87"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a426dfbae396599d80e52902165368907"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__messaging_8h.html#af86eb84f7043287aafb0a130a9eacf95">le_msg_SessionEventHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a426dfbae396599d80e52902165368907">le_msg_AddServiceCloseHandler</a> (le_msg_ServiceRef_t serviceRef, <a class="el" href="le__messaging_8h.html#a2db32a8ef90eced02789aee366c9dda2">le_msg_SessionEventHandler_t</a> handlerFunc, void *contextPtr)</td></tr>
+<tr class="separator:a426dfbae396599d80e52902165368907"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a712ce9a7667a851199c6d3f34c9e450c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a712ce9a7667a851199c6d3f34c9e450c">le_msg_RemoveServiceHandler</a> (<a class="el" href="le__messaging_8h.html#af86eb84f7043287aafb0a130a9eacf95">le_msg_SessionEventHandlerRef_t</a> handlerRef)</td></tr>
+<tr class="separator:a712ce9a7667a851199c6d3f34c9e450c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a21c2e57ad1ffbbdfedd3987c468e3130"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a21c2e57ad1ffbbdfedd3987c468e3130">le_msg_SetServiceRecvHandler</a> (le_msg_ServiceRef_t serviceRef, <a class="el" href="le__messaging_8h.html#a9aa36465329fb00e85fb3cbdf034298a">le_msg_ReceiveHandler_t</a> handlerFunc, void *contextPtr)</td></tr>
+<tr class="separator:a21c2e57ad1ffbbdfedd3987c468e3130"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aebdea76c4670725bc2c83a77e3f303f2"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#aebdea76c4670725bc2c83a77e3f303f2">le_msg_SetServiceContextPtr</a> (le_msg_ServiceRef_t serviceRef, void *contextPtr)</td></tr>
+<tr class="separator:aebdea76c4670725bc2c83a77e3f303f2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a92fbe98e736d422439dc508b55e6540f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a92fbe98e736d422439dc508b55e6540f">le_msg_GetServiceContextPtr</a> (le_msg_ServiceRef_t serviceRef)</td></tr>
+<tr class="separator:a92fbe98e736d422439dc508b55e6540f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad3ff11d1962840f879d9c8fe7054de0c"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#ad3ff11d1962840f879d9c8fe7054de0c">le_msg_AdvertiseService</a> (le_msg_ServiceRef_t serviceRef)</td></tr>
+<tr class="separator:ad3ff11d1962840f879d9c8fe7054de0c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:abafe2d7066c8eac0b9ef50e2a3cc009a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#abafe2d7066c8eac0b9ef50e2a3cc009a">le_msg_HideService</a> (le_msg_ServiceRef_t serviceRef)</td></tr>
+<tr class="separator:abafe2d7066c8eac0b9ef50e2a3cc009a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a735e99a9520d15e8a43cf3a68a14f0eb"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> const char * </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a735e99a9520d15e8a43cf3a68a14f0eb">le_msg_GetInterfaceName</a> (<a class="el" href="le__messaging_8h.html#a67826f96880f776bda0a3b9117304b45">le_msg_InterfaceRef_t</a> interfaceRef)</td></tr>
+<tr class="separator:a735e99a9520d15e8a43cf3a68a14f0eb"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1bdb7695712afa529a06dbd34a57701a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> <a class="el" href="le__messaging_8h.html#ac05e9b3268f8fb5776adab6fe11410e5">le_msg_ProtocolRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a1bdb7695712afa529a06dbd34a57701a">le_msg_GetInterfaceProtocol</a> (<a class="el" href="le__messaging_8h.html#a67826f96880f776bda0a3b9117304b45">le_msg_InterfaceRef_t</a> interfaceRef)</td></tr>
+<tr class="separator:a1bdb7695712afa529a06dbd34a57701a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2007f56df1f818119e3188a1a2a902d6"><td align="right" class="memItemLeft" valign="top">le_msg_MessageRef_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__messaging_8h.html#a2007f56df1f818119e3188a1a2a902d6">le_msg_GetServiceRxMsg</a> (void)</td></tr>
+<tr class="separator:a2007f56df1f818119e3188a1a2a902d6"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato <a class="el" href="c_messaging.html">Low-level Messaging API</a> include file.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a24a72ef8cd95d79b40cacc008b8e1b5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24a72ef8cd95d79b40cacc008b8e1b5f">◆ </a></span>LE_KILL_CLIENT</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_KILL_CLIENT</td>
+<td>(</td>
+<td class="paramtype"> </td>
+<td class="paramname">formatString, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"> </td>
+<td class="paramname"><em>...</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<b>Value:</b><pre class="fragment"><div class="line">{ \</div><div class="line">    le_msg_MessageRef_t msgRef = <a class="code" href="le__messaging_8h.html#a2007f56df1f818119e3188a1a2a902d6">le_msg_GetServiceRxMsg</a>(); \</div><div class="line">    LE_FATAL_IF(msgRef == NULL, formatString, ##__VA_ARGS__); \</div><div class="line">    LE_EMERG(formatString, ##__VA_ARGS__); \</div><div class="line">    le_msg_CloseSession(<a class="code" href="le__messaging_8h.html#a253088f1b852575b60d7732ca7afc79b">le_msg_GetSession</a>(msgRef)); \</div><div class="line">}</div><div class="ttc" id="le__messaging_8h_html_a2007f56df1f818119e3188a1a2a902d6"><div class="ttname"><a href="le__messaging_8h.html#a2007f56df1f818119e3188a1a2a902d6">le_msg_GetServiceRxMsg</a></div><div class="ttdeci">le_msg_MessageRef_t le_msg_GetServiceRxMsg(void)</div></div>
+<div class="ttc" id="le__messaging_8h_html_a253088f1b852575b60d7732ca7afc79b"><div class="ttname"><a href="le__messaging_8h.html#a253088f1b852575b60d7732ca7afc79b">le_msg_GetSession</a></div><div class="ttdeci">le_msg_SessionRef_t le_msg_GetSession(le_msg_MessageRef_t msgRef)</div></div>
+</pre><!-- fragment --><p>Logs an error message (at EMERGENCY level) and:</p><ul>
+<li>if the caller is running a server-side IPC function, kills the connection to the client and returns.</li>
+<li>if the caller is not running a server-side IPC function, kills the caller (doesn't return). </li>
+</ul>
+</div>
+</div>
+<a id="a1a2c215fe3736302cd3d7ffa156d2eb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a2c215fe3736302cd3d7ffa156d2eb9">◆ </a></span>LE_MSG_LOCAL_HEADER_SIZE</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_MSG_LOCAL_HEADER_SIZE   sizeof(<a class="el" href="structle__msg__LocalMessage__t.html">le_msg_LocalMessage_t</a>)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Size of local message header (needs to be added to size of message in local message pools). </p>
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="abf4d6c5113e22dc8ccefb48938fba7b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf4d6c5113e22dc8ccefb48938fba7b8">◆ </a></span>le_msg_ClientInterfaceRef_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_msg_ClientInterface* <a class="el" href="le__messaging_8h.html#abf4d6c5113e22dc8ccefb48938fba7b8">le_msg_ClientInterfaceRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference to a client's service instance. </p>
+</div>
+</div>
+<a id="a67826f96880f776bda0a3b9117304b45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67826f96880f776bda0a3b9117304b45">◆ </a></span>le_msg_InterfaceRef_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_msg_Interface* <a class="el" href="le__messaging_8h.html#a67826f96880f776bda0a3b9117304b45">le_msg_InterfaceRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference to an interface's service instance. </p>
+</div>
+</div>
+<a id="ac05e9b3268f8fb5776adab6fe11410e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac05e9b3268f8fb5776adab6fe11410e5">◆ </a></span>le_msg_ProtocolRef_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_msg_Protocol* <a class="el" href="le__messaging_8h.html#ac05e9b3268f8fb5776adab6fe11410e5">le_msg_ProtocolRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference to a protocol. </p>
+</div>
+</div>
+<a id="a9aa36465329fb00e85fb3cbdf034298a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aa36465329fb00e85fb3cbdf034298a">◆ </a></span>le_msg_ReceiveHandler_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(*  le_msg_ReceiveHandler_t) (le_msg_MessageRef_t msgRef, void *contextPtr)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Receive handler function prototype.</p>
+<p>See <a class="el" href="le__messaging_8h.html#ac726cc93219d326e1b10a7d13a0f4f65">le_msg_SetSessionRecvHandler()</a> and <a class="el" href="le__messaging_8h.html#a21c2e57ad1ffbbdfedd3987c468e3130">le_msg_SetServiceRecvHandler()</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramname">msgRef</td><td>[in] Reference to the received message. Don't forget to release this using <a class="el" href="le__messaging_8h.html#afc508c24d0b6933e8fbc4e0410d50271">le_msg_ReleaseMsg()</a> when you're finished with it.</td></tr>
+<tr><td class="paramname">contextPtr</td><td>[in] Opaque contextPtr value provided when the handler was registered. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a70cf756e252bb377e0443bcf89f66805"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70cf756e252bb377e0443bcf89f66805">◆ </a></span>le_msg_ResponseCallback_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(*  le_msg_ResponseCallback_t) (le_msg_MessageRef_t msgRef, void *contextPtr)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Asynchronous response callback function prototype.</p>
+<p>See <a class="el" href="le__messaging_8h.html#a5440ae06a89b60ed04e9de5601496608">le_msg_RequestResponse()</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramname">msgRef</td><td>[in] Reference to the received response message, or NULL if the transaction failed and no response was received. If not NULL, don't forget to release it by calling <a class="el" href="le__messaging_8h.html#afc508c24d0b6933e8fbc4e0410d50271">le_msg_ReleaseMsg()</a> when you're finished with it.</td></tr>
+<tr><td class="paramname">contextPtr</td><td>[in] Opaque contextPtr value passed to <a class="el" href="le__messaging_8h.html#a5440ae06a89b60ed04e9de5601496608">le_msg_RequestResponse()</a>. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a2db32a8ef90eced02789aee366c9dda2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2db32a8ef90eced02789aee366c9dda2">◆ </a></span>le_msg_SessionEventHandler_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(*  le_msg_SessionEventHandler_t) (<a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> sessionRef, void *contextPtr)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Handler function prototype for handlers that take session references as their arguments.</p>
+<p>See <a class="el" href="le__messaging_8h.html#ac686ce69204be41a471017572e393431">le_msg_SetSessionCloseHandler()</a>, <a class="el" href="le__messaging_8h.html#ac5e22099e2a5a8d1cbd9bffb0fdd8f87">le_msg_AddServiceOpenHandler()</a>, and <a class="el" href="le__messaging_8h.html#a426dfbae396599d80e52902165368907">le_msg_AddServiceCloseHandler()</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramname">sessionRef</td><td>[in] Reference to the session that experienced the event.</td></tr>
+<tr><td class="paramname">contextPtr</td><td>[in] Opaque contextPtr value provided when the handler was registered. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="af86eb84f7043287aafb0a130a9eacf95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af86eb84f7043287aafb0a130a9eacf95">◆ </a></span>le_msg_SessionEventHandlerRef_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_msg_SessionEventHandler* <a class="el" href="le__messaging_8h.html#af86eb84f7043287aafb0a130a9eacf95">le_msg_SessionEventHandlerRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference to a handler (call-back) function for events that can occur on a service (such as opening and closing of sessions and receipt of messages). </p>
+</div>
+</div>
+<a id="aebfc01e15b430a5b4f3038a5bd518904"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebfc01e15b430a5b4f3038a5bd518904">◆ </a></span>le_msg_SessionRef_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_msg_Session* <a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference to a client-server session. </p>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a93be4a4e628d079f9f53db30f2e78b28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93be4a4e628d079f9f53db30f2e78b28">◆ </a></span>le_msg_AddRef()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_msg_AddRef </td>
+<td>(</td>
+<td class="paramtype">le_msg_MessageRef_t </td>
+<td class="paramname"><em>msgRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Adds to the reference count on a message object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">msgRef</td><td>Reference to the message. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a426dfbae396599d80e52902165368907"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a426dfbae396599d80e52902165368907">◆ </a></span>le_msg_AddServiceCloseHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__messaging_8h.html#af86eb84f7043287aafb0a130a9eacf95">le_msg_SessionEventHandlerRef_t</a> le_msg_AddServiceCloseHandler </td>
+<td>(</td>
+<td class="paramtype">le_msg_ServiceRef_t </td>
+<td class="paramname"><em>serviceRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#a2db32a8ef90eced02789aee366c9dda2">le_msg_SessionEventHandler_t</a> </td>
+<td class="paramname"><em>handlerFunc</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Registers a function to be called whenever one of this service's sessions is closed by the client.</p>
+<dl class="section note"><dt>Note</dt><dd>Server-only function. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">serviceRef</td><td>Reference to the service. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerFunc</td><td>Handler function. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td>Opaque pointer value to pass to handler. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ac5e22099e2a5a8d1cbd9bffb0fdd8f87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5e22099e2a5a8d1cbd9bffb0fdd8f87">◆ </a></span>le_msg_AddServiceOpenHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> <a class="el" href="le__messaging_8h.html#af86eb84f7043287aafb0a130a9eacf95">le_msg_SessionEventHandlerRef_t</a> le_msg_AddServiceOpenHandler </td>
+<td>(</td>
+<td class="paramtype">le_msg_ServiceRef_t </td>
+<td class="paramname"><em>serviceRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#a2db32a8ef90eced02789aee366c9dda2">le_msg_SessionEventHandler_t</a> </td>
+<td class="paramname"><em>handlerFunc</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Registers a function to be called when clients open sessions with this service.</p>
+<dl class="section note"><dt>Note</dt><dd>Server-only function. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">serviceRef</td><td>Reference to the service. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerFunc</td><td>Handler function. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td>Opaque pointer value to pass to handler. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ad3ff11d1962840f879d9c8fe7054de0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3ff11d1962840f879d9c8fe7054de0c">◆ </a></span>le_msg_AdvertiseService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_msg_AdvertiseService </td>
+<td>(</td>
+<td class="paramtype">le_msg_ServiceRef_t </td>
+<td class="paramname"><em>serviceRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Makes a given service available for clients to find.</p>
+<dl class="section note"><dt>Note</dt><dd>Server-only function. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">serviceRef</td><td>Reference to the service. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a1af0671de74160d99be5bfe212c39369"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1af0671de74160d99be5bfe212c39369">◆ </a></span>le_msg_CloseSession()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_msg_CloseSession </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> </td>
+<td class="paramname"><em>sessionRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Terminates a session. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">sessionRef</td><td>Reference to the session. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="af65ef635f94803e29de04cc1d38966b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af65ef635f94803e29de04cc1d38966b1">◆ </a></span>le_msg_CloseSessionLocked()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_msg_CloseSessionLocked </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> </td>
+<td class="paramname"><em>sessionRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Terminates a session, already having acquired the Mutex lock. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">sessionRef</td><td>Reference to the session. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a7030a34e7ef399918d6bf1f58159e7ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7030a34e7ef399918d6bf1f58159e7ca">◆ </a></span>le_msg_CreateLocalSession()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> le_msg_CreateLocalSession </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="structle__msg__LocalService__t.html">le_msg_LocalService_t</a> * </td>
+<td class="paramname"><em>servicePtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Create a session that will always use message boxes to talk to a service in the same process space.</p>
+<dl class="section return"><dt>Returns</dt><dd>Session reference. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">servicePtr</td><td>Reference to the service. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a8293a69f256b98cbce5b9990ea3520f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8293a69f256b98cbce5b9990ea3520f3">◆ </a></span>le_msg_CreateMsg()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_msg_MessageRef_t le_msg_CreateMsg </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> </td>
+<td class="paramname"><em>sessionRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Creates a message to be sent over a given session.</p>
+<dl class="section return"><dt>Returns</dt><dd>Message reference.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>Function never returns on failure, there's no need to check the return code.</li>
+<li>If you see warnings on message pools expanding, then you may be forgetting to release the messages you have received.</li>
+<li>In full API this can be called by either client or server, otherwise it can only be called by the client. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">sessionRef</td><td>Reference to the session. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aaba5055997ab8f26815237f509888b05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaba5055997ab8f26815237f509888b05">◆ </a></span>le_msg_CreateService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> le_msg_ServiceRef_t le_msg_CreateService </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#ac05e9b3268f8fb5776adab6fe11410e5">le_msg_ProtocolRef_t</a> </td>
+<td class="paramname"><em>protocolRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>interfaceName</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Creates a service that is accessible using a protocol.</p>
+<p>Mailbox services should be created statically.</p>
+<dl class="section return"><dt>Returns</dt><dd>Service reference. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">protocolRef</td><td>Reference to the protocol to be used. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">interfaceName</td><td>Server-side interface name. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a1ecb8a8e109bb106f0f1482955582369"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ecb8a8e109bb106f0f1482955582369">◆ </a></span>le_msg_CreateSession()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> <a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> le_msg_CreateSession </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#ac05e9b3268f8fb5776adab6fe11410e5">le_msg_ProtocolRef_t</a> </td>
+<td class="paramname"><em>protocolRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>interfaceName</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Creates a session that will make use of a protocol to talk to a service on a given client interface.</p>
+<dl class="section note"><dt>Note</dt><dd>This doesn't actually attempt to open the session. It just creates the session object, allowing the client the opportunity to register handlers for the session before attempting to open it using <a class="el" href="le__messaging_8h.html#a574d37960a07c4fc2bde310408619cff">le_msg_OpenSession()</a>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Session reference. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">protocolRef</td><td>Reference to the protocol to be used. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">interfaceName</td><td>Name of the client-side interface. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a783a92b571e0d3df11d2ebbd446fabf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a783a92b571e0d3df11d2ebbd446fabf6">◆ </a></span>le_msg_DeleteService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void le_msg_DeleteService </td>
+<td>(</td>
+<td class="paramtype">le_msg_ServiceRef_t </td>
+<td class="paramname"><em>serviceRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Deletes a service. Any open sessions will be terminated.</p>
+<dl class="section note"><dt>Note</dt><dd>Server-only function. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">serviceRef</td><td>Reference to the service. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a8d950c4b07741177d2c0927c31e3e29f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d950c4b07741177d2c0927c31e3e29f">◆ </a></span>le_msg_DeleteSession()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_msg_DeleteSession </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> </td>
+<td class="paramname"><em>sessionRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Deletes a session. This will end the session and free up any resources associated with it. Any pending request-response transactions in this session will be terminated. If the far end has registered a session close handler callback, it will be called.</p>
+<dl class="section note"><dt>Note</dt><dd>Function is only used by clients. On the server side, sessions are automatically deleted when they close. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">sessionRef</td><td>Reference to the session. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a4fe4cb3d7a13f0b999aeb20eb5107f8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fe4cb3d7a13f0b999aeb20eb5107f8b">◆ </a></span>le_msg_GetClientProcessId()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_msg_GetClientProcessId </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> </td>
+<td class="paramname"><em>sessionRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">pid_t * </td>
+<td class="paramname"><em>processIdPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Fetches the user PID of the client at the far end of a given IPC session.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This function can only be called for the server-side of a session.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_CLOSED if the session has closed. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">sessionRef</td><td>Reference to the session. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">processIdPtr</td><td>Ptr to where the result is to be stored on success. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ae17fcad4c9bc442dfb2403a50b5143a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae17fcad4c9bc442dfb2403a50b5143a4">◆ </a></span>le_msg_GetClientUserCreds()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_msg_GetClientUserCreds </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> </td>
+<td class="paramname"><em>sessionRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uid_t * </td>
+<td class="paramname"><em>userIdPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">pid_t * </td>
+<td class="paramname"><em>processIdPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Fetches the user credentials of the client at the far end of a given IPC session.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This function can only be called for the server-side of a session.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_CLOSED if the session has closed. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">sessionRef</td><td>Reference to the session. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">userIdPtr</td><td>Ptr to where the uid is to be stored on success. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">processIdPtr</td><td>Ptr to where the pid is to be stored on success. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a8c04f9cad0a768b4922a9987df84b65f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c04f9cad0a768b4922a9987df84b65f">◆ </a></span>le_msg_GetClientUserId()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_msg_GetClientUserId </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> </td>
+<td class="paramname"><em>sessionRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uid_t * </td>
+<td class="paramname"><em>userIdPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Fetches the user ID of the client at the far end of a given IPC session.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This function can only be called for the server-side of a session.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK if successful. LE_CLOSED if the session has closed. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">sessionRef</td><td>Reference to the session. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">userIdPtr</td><td>Ptr to where the result is to be stored on success. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a1eff9dd7f93de58f5678ad3d6e0b734d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1eff9dd7f93de58f5678ad3d6e0b734d">◆ </a></span>le_msg_GetFd()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">int le_msg_GetFd </td>
+<td>(</td>
+<td class="paramtype">le_msg_MessageRef_t </td>
+<td class="paramname"><em>msgRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Fetches a received file descriptor from the message.</p>
+<dl class="section return"><dt>Returns</dt><dd>The file descriptor, or -1 if no file descriptor was sent with this message or if the fd was already fetched from the message. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">msgRef</td><td>Reference to the message. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a735e99a9520d15e8a43cf3a68a14f0eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a735e99a9520d15e8a43cf3a68a14f0eb">◆ </a></span>le_msg_GetInterfaceName()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> const char* le_msg_GetInterfaceName </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#a67826f96880f776bda0a3b9117304b45">le_msg_InterfaceRef_t</a> </td>
+<td class="paramname"><em>interfaceRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Fetches a pointer to the name of an interface.</p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to a null-terminated string.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Pointer returned will remain valid only until the interface is deleted. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">interfaceRef</td><td>Reference to the interface. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a1bdb7695712afa529a06dbd34a57701a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bdb7695712afa529a06dbd34a57701a">◆ </a></span>le_msg_GetInterfaceProtocol()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> <a class="el" href="le__messaging_8h.html#ac05e9b3268f8fb5776adab6fe11410e5">le_msg_ProtocolRef_t</a> le_msg_GetInterfaceProtocol </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#a67826f96880f776bda0a3b9117304b45">le_msg_InterfaceRef_t</a> </td>
+<td class="paramname"><em>interfaceRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Fetches a reference to the protocol supported by a specified interface.</p>
+<dl class="section return"><dt>Returns</dt><dd>Protocol reference. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">interfaceRef</td><td>Reference to the interface. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ac12a43d9266aa931762e54ab0026693f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac12a43d9266aa931762e54ab0026693f">◆ </a></span>le_msg_GetMaxPayloadSize()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">size_t le_msg_GetMaxPayloadSize </td>
+<td>(</td>
+<td class="paramtype">le_msg_MessageRef_t </td>
+<td class="paramname"><em>msgRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the size, in bytes, of the message payload memory buffer.</p>
+<dl class="section return"><dt>Returns</dt><dd>The size, in bytes. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">msgRef</td><td>Reference to the message. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a32d1c7ffd913db8546f6f1bd5cce58c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32d1c7ffd913db8546f6f1bd5cce58c4">◆ </a></span>le_msg_GetPayloadPtr()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void* le_msg_GetPayloadPtr </td>
+<td>(</td>
+<td class="paramtype">le_msg_MessageRef_t </td>
+<td class="paramname"><em>msgRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Gets a pointer to the message payload memory buffer.</p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the payload buffer.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Be careful not to overflow this buffer. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">msgRef</td><td>Reference to the message. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a6b59db5e766c27e5ace1baa3e7d8ec56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b59db5e766c27e5ace1baa3e7d8ec56">◆ </a></span>le_msg_GetProtocolIdStr()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> const char* le_msg_GetProtocolIdStr </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#ac05e9b3268f8fb5776adab6fe11410e5">le_msg_ProtocolRef_t</a> </td>
+<td class="paramname"><em>protocolRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the unique identifier string of the protocol.</p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the protocol identifier (null-terminated, UTF-8 string). </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">protocolRef</td><td>Reference to the protocol. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ab3b9bddc1dad4729d924fedd7ec38bc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3b9bddc1dad4729d924fedd7ec38bc4">◆ </a></span>le_msg_GetProtocolMaxMsgSize()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> size_t le_msg_GetProtocolMaxMsgSize </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#ac05e9b3268f8fb5776adab6fe11410e5">le_msg_ProtocolRef_t</a> </td>
+<td class="paramname"><em>protocolRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the protocol's maximum message size.</p>
+<dl class="section return"><dt>Returns</dt><dd>The size, in bytes. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">protocolRef</td><td>Reference to the protocol. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a95d008427b3ce030679b7b22ff47a8b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95d008427b3ce030679b7b22ff47a8b6">◆ </a></span>le_msg_GetProtocolRef()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> <a class="el" href="le__messaging_8h.html#ac05e9b3268f8fb5776adab6fe11410e5">le_msg_ProtocolRef_t</a> le_msg_GetProtocolRef </td>
+<td>(</td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>protocolId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>largestMsgSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Gets a reference to refer to a particular version of a particular protocol.</p>
+<dl class="section return"><dt>Returns</dt><dd>Protocol reference. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">protocolId</td><td>String uniquely identifying the the protocol and version. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">largestMsgSize</td><td>Size (in bytes) of the largest message in the protocol. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a92fbe98e736d422439dc508b55e6540f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92fbe98e736d422439dc508b55e6540f">◆ </a></span>le_msg_GetServiceContextPtr()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void* le_msg_GetServiceContextPtr </td>
+<td>(</td>
+<td class="paramtype">le_msg_ServiceRef_t </td>
+<td class="paramname"><em>serviceRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Fetches the opaque context value (void pointer) associated with a specified service using <a class="el" href="le__messaging_8h.html#aebdea76c4670725bc2c83a77e3f303f2">le_msg_SetServiceContextPtr()</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>Context pointer value, or NULL if <a class="el" href="le__messaging_8h.html#aebdea76c4670725bc2c83a77e3f303f2">le_msg_SetServiceContextPtr()</a> was never called for this service.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Server-only function. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">serviceRef</td><td>Reference to the service. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a2007f56df1f818119e3188a1a2a902d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2007f56df1f818119e3188a1a2a902d6">◆ </a></span>le_msg_GetServiceRxMsg()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_msg_MessageRef_t le_msg_GetServiceRxMsg </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Check if the calling thread is currently running a Service's message receive handler; if so, return a reference to the message object being handled.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the message being handled, or NULL if no Service message receive handler is currently running. </dd></dl>
+</div>
+</div>
+<a id="a253088f1b852575b60d7732ca7afc79b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a253088f1b852575b60d7732ca7afc79b">◆ </a></span>le_msg_GetSession()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> le_msg_GetSession </td>
+<td>(</td>
+<td class="paramtype">le_msg_MessageRef_t </td>
+<td class="paramname"><em>msgRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Gets a reference to the session to which a given message belongs.</p>
+<dl class="section return"><dt>Returns</dt><dd>Session reference. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">msgRef</td><td>Reference to the message. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a5fe3dc9cc90ef47fff4380c83344ca01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fe3dc9cc90ef47fff4380c83344ca01">◆ </a></span>le_msg_GetSessionCloseHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_msg_GetSessionCloseHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> </td>
+<td class="paramname"><em>sessionRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#a2db32a8ef90eced02789aee366c9dda2">le_msg_SessionEventHandler_t</a> * </td>
+<td class="paramname"><em>handlerFunc</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void ** </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the handler callback function to be called when the session is closed from the other end. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">sessionRef</td><td>Reference to the session. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">handlerFunc</td><td>Handler function. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">contextPtr</td><td>Opaque pointer value to pass to the handler. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ab9c6e9ca3b7f204b0262f56172469d32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9c6e9ca3b7f204b0262f56172469d32">◆ </a></span>le_msg_GetSessionContextPtr()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void* le_msg_GetSessionContextPtr </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> </td>
+<td class="paramname"><em>sessionRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Fetches the opaque context value (void pointer) that was set earlier using <a class="el" href="le__messaging_8h.html#af1cee25c7f367a0fd0173c8a0d5e0a50">le_msg_SetSessionContextPtr()</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>Context Ptr value passed into <a class="el" href="le__messaging_8h.html#af1cee25c7f367a0fd0173c8a0d5e0a50">le_msg_SetSessionContextPtr()</a>, or NULL if <a class="el" href="le__messaging_8h.html#af1cee25c7f367a0fd0173c8a0d5e0a50">le_msg_SetSessionContextPtr()</a> has not been called for this session yet. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">sessionRef</td><td>Reference to the session. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a712825695bde89d4ad65b66856428afc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a712825695bde89d4ad65b66856428afc">◆ </a></span>le_msg_GetSessionInterface()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> <a class="el" href="le__messaging_8h.html#a67826f96880f776bda0a3b9117304b45">le_msg_InterfaceRef_t</a> le_msg_GetSessionInterface </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> </td>
+<td class="paramname"><em>sessionRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Fetches a reference to the interface that is associated with a given session.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the interface. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">sessionRef</td><td>Reference to the session. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="adb1f4ec556753ac9d903db1547d13af8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb1f4ec556753ac9d903db1547d13af8">◆ </a></span>le_msg_GetSessionProtocol()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> <a class="el" href="le__messaging_8h.html#ac05e9b3268f8fb5776adab6fe11410e5">le_msg_ProtocolRef_t</a> le_msg_GetSessionProtocol </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> </td>
+<td class="paramname"><em>sessionRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Fetches a reference to the protocol that is being used for a given session.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the protocol. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">sessionRef</td><td>Reference to the session. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="abafe2d7066c8eac0b9ef50e2a3cc009a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abafe2d7066c8eac0b9ef50e2a3cc009a">◆ </a></span>le_msg_HideService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void le_msg_HideService </td>
+<td>(</td>
+<td class="paramtype">le_msg_ServiceRef_t </td>
+<td class="paramname"><em>serviceRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Makes a specified service unavailable for clients to find without terminating any ongoing sessions.</p>
+<dl class="section note"><dt>Note</dt><dd>Server-only function. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">serviceRef</td><td>Reference to the service. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a1573dad8e3d40e5e504d0e279f10d32f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1573dad8e3d40e5e504d0e279f10d32f">◆ </a></span>le_msg_InitLocalService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_msg_ServiceRef_t le_msg_InitLocalService </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="structle__msg__LocalService__t.html">le_msg_LocalService_t</a> * </td>
+<td class="paramname"><em>servicePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>serviceNameStr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__mem_8h.html#a44a896f6a0a1a8c733e8038eb332989e">le_mem_PoolRef_t</a> </td>
+<td class="paramname"><em>messagingPoolRef</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Initialize a mailbox service.</p>
+<p>This must be called before any client can connect to the service, for example in COMPONENT_INIT before any other threads are created. </p>
+</div>
+</div>
+<a id="a8b0824781c030b9ed6f8be48e4d20419"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b0824781c030b9ed6f8be48e4d20419">◆ </a></span>le_msg_NeedsResponse()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">bool le_msg_NeedsResponse </td>
+<td>(</td>
+<td class="paramtype">le_msg_MessageRef_t </td>
+<td class="paramname"><em>msgRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Checks whether a message requires a response or not.</p>
+<dl class="section note"><dt>Note</dt><dd>This is intended for use on the server side only.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>TRUE if the message needs to be responded to using <a class="el" href="le__messaging_8h.html#ac4545833ad2da9bb4cc5d18125f7d9f2">le_msg_Respond()</a>.</li>
+<li>FALSE if the message doesn't need to be responded to, and should be disposed of using <a class="el" href="le__messaging_8h.html#afc508c24d0b6933e8fbc4e0410d50271">le_msg_ReleaseMsg()</a> when it's no longer needed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">msgRef</td><td>Reference to the message. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a574d37960a07c4fc2bde310408619cff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a574d37960a07c4fc2bde310408619cff">◆ </a></span>le_msg_OpenSession()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_msg_OpenSession </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> </td>
+<td class="paramname"><em>sessionRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#a2db32a8ef90eced02789aee366c9dda2">le_msg_SessionEventHandler_t</a> </td>
+<td class="paramname"><em>callbackFunc</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Opens a session with a service, providing a function to be called-back when the session is open.</p>
+<p>Asynchronous sessions are not supported by mailbox sessions.</p>
+<dl class="section note"><dt>Note</dt><dd>Only clients open sessions. Servers must patiently wait for clients to open sessions with them.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>If the client and server don't agree on the maximum message size for the protocol, a fatal error will be logged and the client process will be killed. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">sessionRef</td><td>Reference to the session. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">callbackFunc</td><td>Function to be called when open. NULL if no notification is needed. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td>Opaque value to pass to the callback. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a8c6480e3708e20e1f9da032a93c80bc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c6480e3708e20e1f9da032a93c80bc0">◆ </a></span>le_msg_OpenSessionSync()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_msg_OpenSessionSync </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> </td>
+<td class="paramname"><em>sessionRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Synchronously open a session with a service. Blocks until the session is open.</p>
+<p>This function logs a fatal error and terminates the calling process if unsuccessful.</p>
+<dl class="section note"><dt>Note</dt><dd>Only clients open sessions. Servers must patiently wait for clients to open sessions with them.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>If the client and server do not agree on the maximum message size for the protocol, a fatal error will be logged and the client process will be killed. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">sessionRef</td><td>Reference to the session. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="afc508c24d0b6933e8fbc4e0410d50271"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc508c24d0b6933e8fbc4e0410d50271">◆ </a></span>le_msg_ReleaseMsg()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_msg_ReleaseMsg </td>
+<td>(</td>
+<td class="paramtype">le_msg_MessageRef_t </td>
+<td class="paramname"><em>msgRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Releases a message object, decrementing its reference count. If the reference count has reached zero, the message object is deleted. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">msgRef</td><td>Reference to the message. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a712ce9a7667a851199c6d3f34c9e450c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a712ce9a7667a851199c6d3f34c9e450c">◆ </a></span>le_msg_RemoveServiceHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void le_msg_RemoveServiceHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#af86eb84f7043287aafb0a130a9eacf95">le_msg_SessionEventHandlerRef_t</a> </td>
+<td class="paramname"><em>handlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove a function previously registered by le_msg_AddServiceOpenHandler or le_msg_AddServiceCloseHandler.</p>
+<dl class="section note"><dt>Note</dt><dd>This is a server-only function. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerRef</td><td>Reference to a previously call of <a class="el" href="le__messaging_8h.html#a426dfbae396599d80e52902165368907">le_msg_AddServiceCloseHandler()</a> </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a5440ae06a89b60ed04e9de5601496608"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5440ae06a89b60ed04e9de5601496608">◆ </a></span>le_msg_RequestResponse()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_msg_RequestResponse </td>
+<td>(</td>
+<td class="paramtype">le_msg_MessageRef_t </td>
+<td class="paramname"><em>msgRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#a70cf756e252bb377e0443bcf89f66805">le_msg_ResponseCallback_t</a> </td>
+<td class="paramname"><em>handlerFunc</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Requests a response from a server by sending it a request. Doesn't block. Instead, provides a callback function to be called when the response arrives or the transaction terminates without a response (due to the session terminating or the server deleting the request without responding).</p>
+<p>Async response not supported with mailbox API</p>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>The thread attached to the session (i.e., thread created by the session) will trigger the callback from its main event loop. This means if that thread doesn't run its main event loop, it won't trigger the callback.</li>
+<li>Function can only be used on the client side of a session. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">msgRef</td><td>Reference to the request message. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerFunc</td><td>Function to be called when transaction done. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td>Opaque value to be passed to handler function. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aa3cf113b26b154697ccef270dafe8798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3cf113b26b154697ccef270dafe8798">◆ </a></span>le_msg_RequestSyncResponse()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">le_msg_MessageRef_t le_msg_RequestSyncResponse </td>
+<td>(</td>
+<td class="paramtype">le_msg_MessageRef_t </td>
+<td class="paramname"><em>msgRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Requests a response from a server by sending it a request. Blocks until the response arrives or until the transaction terminates without a response (i.e., if the session terminates or the server deletes the request without responding).</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the response message, or NULL if the transaction terminated without a response.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>To prevent deadlocks, this function can only be used on the client side of a session. Servers can't use this function.</li>
+<li>To prevent race conditions, only the client thread attached to the session (the thread that created the session) is allowed to perform a synchronous request-response transaction.</li>
+</ul>
+</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd><ul>
+<li>The calling (client) thread will be blocked until the server responds, so no other event handling will happen in that client thread until the response is received (or the server dies). This function should only be used when the server is certain to respond quickly enough to ensure that it will not cause any event response time deadlines to be missed by the client. Consider using <a class="el" href="le__messaging_8h.html#a5440ae06a89b60ed04e9de5601496608">le_msg_RequestResponse()</a> instead.</li>
+<li>If this function is used when the client and server are in the same thread, then the message will be discarded and NULL will be returned. This is a deadlock prevention measure. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">msgRef</td><td>Reference to the request message. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ac4545833ad2da9bb4cc5d18125f7d9f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4545833ad2da9bb4cc5d18125f7d9f2">◆ </a></span>le_msg_Respond()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_msg_Respond </td>
+<td>(</td>
+<td class="paramtype">le_msg_MessageRef_t </td>
+<td class="paramname"><em>msgRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Sends a response back to the client that send the request message.</p>
+<p>Takes a reference to the request message. Copy the response payload (if any) into the same payload buffer that held the request payload, then call <a class="el" href="le__messaging_8h.html#ac4545833ad2da9bb4cc5d18125f7d9f2">le_msg_Respond()</a>.</p>
+<p>The messaging system will delete the message automatically when it's finished sending the response.</p>
+<dl class="section note"><dt>Note</dt><dd>Function can only be used on the server side of a session. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">msgRef</td><td>Reference to the request message. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a073de097d281475c44a445b927fbb929"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a073de097d281475c44a445b927fbb929">◆ </a></span>le_msg_Send()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_msg_Send </td>
+<td>(</td>
+<td class="paramtype">le_msg_MessageRef_t </td>
+<td class="paramname"><em>msgRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Sends a message. No response expected. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">msgRef</td><td>Reference to the message. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a43459773ce8a9febf0f2e66681e40e91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43459773ce8a9febf0f2e66681e40e91">◆ </a></span>le_msg_SetFd()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_msg_SetFd </td>
+<td>(</td>
+<td class="paramtype">le_msg_MessageRef_t </td>
+<td class="paramname"><em>msgRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>fd</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the file descriptor to be sent with this message.</p>
+<p>This file descriptor will be closed when the message is sent (or when it's deleted without being sent).</p>
+<p>At most one file descriptor is allowed to be sent per message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">msgRef</td><td>Reference to the message. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>File descriptor. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aebdea76c4670725bc2c83a77e3f303f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebdea76c4670725bc2c83a77e3f303f2">◆ </a></span>le_msg_SetServiceContextPtr()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void le_msg_SetServiceContextPtr </td>
+<td>(</td>
+<td class="paramtype">le_msg_ServiceRef_t </td>
+<td class="paramname"><em>serviceRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Associates an opaque context value (void pointer) with a given service that can be retrieved later using <a class="el" href="le__messaging_8h.html#a92fbe98e736d422439dc508b55e6540f">le_msg_GetServiceContextPtr()</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>Server-only function. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">serviceRef</td><td>Reference to the service. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td>Opaque value to be returned by <a class="el" href="le__messaging_8h.html#a92fbe98e736d422439dc508b55e6540f">le_msg_GetServiceContextPtr()</a>. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a21c2e57ad1ffbbdfedd3987c468e3130"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21c2e57ad1ffbbdfedd3987c468e3130">◆ </a></span>le_msg_SetServiceRecvHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_msg_SetServiceRecvHandler </td>
+<td>(</td>
+<td class="paramtype">le_msg_ServiceRef_t </td>
+<td class="paramname"><em>serviceRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#a9aa36465329fb00e85fb3cbdf034298a">le_msg_ReceiveHandler_t</a> </td>
+<td class="paramname"><em>handlerFunc</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Registers a function to be called when messages are received from clients via sessions that they have open with this service.</p>
+<dl class="section note"><dt>Note</dt><dd>Server-only function. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">serviceRef</td><td>Reference to the service. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerFunc</td><td>Handler function. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td>Opaque pointer value to pass to the handler. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ac686ce69204be41a471017572e393431"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac686ce69204be41a471017572e393431">◆ </a></span>le_msg_SetSessionCloseHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void le_msg_SetSessionCloseHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> </td>
+<td class="paramname"><em>sessionRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#a2db32a8ef90eced02789aee366c9dda2">le_msg_SessionEventHandler_t</a> </td>
+<td class="paramname"><em>handlerFunc</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the handler callback function to be called when the session is closed from the other end. A local termination of the session will not trigger this callback.</p>
+<p>The handler function will be called by the Legato event loop of the thread that created the session.</p>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>If this isn't set on the client side, the framework assumes the client is not designed to recover from the server terminating the session, and the client process will terminate if the session is terminated by the server.</li>
+<li>This is a client-only function. Servers are expected to use <a class="el" href="le__messaging_8h.html#a426dfbae396599d80e52902165368907">le_msg_AddServiceCloseHandler()</a> instead. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">sessionRef</td><td>Reference to the session. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerFunc</td><td>Handler function. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td>Opaque pointer value to pass to handler. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="af1cee25c7f367a0fd0173c8a0d5e0a50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1cee25c7f367a0fd0173c8a0d5e0a50">◆ </a></span>le_msg_SetSessionContextPtr()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void le_msg_SetSessionContextPtr </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> </td>
+<td class="paramname"><em>sessionRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Sets an opaque context value (void pointer) that can be retrieved from that session later using <a class="el" href="le__messaging_8h.html#ab9c6e9ca3b7f204b0262f56172469d32">le_msg_GetSessionContextPtr()</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">sessionRef</td><td>Reference to the session. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td>Opaque value to be returned by <a class="el" href="le__messaging_8h.html#ab9c6e9ca3b7f204b0262f56172469d32">le_msg_GetSessionContextPtr()</a>. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ac726cc93219d326e1b10a7d13a0f4f65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac726cc93219d326e1b10a7d13a0f4f65">◆ </a></span>le_msg_SetSessionRecvHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_msg_SetSessionRecvHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> </td>
+<td class="paramname"><em>sessionRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#a9aa36465329fb00e85fb3cbdf034298a">le_msg_ReceiveHandler_t</a> </td>
+<td class="paramname"><em>handlerFunc</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the receive handler callback function to be called when a non-response message arrives on this session.</p>
+<p>The handler function will be called by the Legato event loop of the thread that created the session.</p>
+<dl class="section note"><dt>Note</dt><dd>This is a client-only function. Servers are expected to use <a class="el" href="le__messaging_8h.html#a21c2e57ad1ffbbdfedd3987c468e3130">le_msg_SetServiceRecvHandler()</a> instead. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">sessionRef</td><td>Reference to the session. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerFunc</td><td>Handler function. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td>Opaque pointer value to pass to the handler. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a2ee1410da1dc345c86d6958b6cdda5e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ee1410da1dc345c86d6958b6cdda5e1">◆ </a></span>le_msg_TryOpenSessionSync()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_msg_TryOpenSessionSync </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="le__messaging_8h.html#aebfc01e15b430a5b4f3038a5bd518904">le_msg_SessionRef_t</a> </td>
+<td class="paramname"><em>sessionRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Synchronously open a session with a service. Does not wait for the session to become available if not available..</p>
+<p><a class="el" href="le__messaging_8h.html#a2ee1410da1dc345c86d6958b6cdda5e1">le_msg_TryOpenSessionSync()</a> differs from <a class="el" href="le__messaging_8h.html#a8c6480e3708e20e1f9da032a93c80bc0">le_msg_OpenSessionSync()</a> in that <a class="el" href="le__messaging_8h.html#a2ee1410da1dc345c86d6958b6cdda5e1">le_msg_TryOpenSessionSync()</a> will not wait for a server session to become available if it's not already available at the time of the call. That is, if the client's interface is not bound to any service, or if the service that it's bound to is not currently advertised by the server, then <a class="el" href="le__messaging_8h.html#a2ee1410da1dc345c86d6958b6cdda5e1">le_msg_TryOpenSessionSync()</a> will return an error code, while <a class="el" href="le__messaging_8h.html#a8c6480e3708e20e1f9da032a93c80bc0">le_msg_OpenSessionSync()</a> will wait until the binding is created or the server advertises the service (or both).</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the session was successfully opened.</li>
+<li>LE_NOT_FOUND if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached.</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Only clients open sessions. Servers' must patiently wait for clients to open sessions with them.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>If the client and server do not agree on the maximum message size for the protocol, a fatal error will be logged and the client process will be killed. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">sessionRef</td><td>Reference to the session. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

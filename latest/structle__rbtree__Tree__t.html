@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Reference" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_rbtree_Tree_t Struct Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="20.08.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+    <script src="resources/js/html5shiv.js"></script>
+    <script src="resources/js/respond.js"></script>
+  <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Reference_le_redBlackTree.h.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Reference</h2>
+<nav class="secondary">
+<a href="common__interface_8h_source.html">common_interface.h</a><a href="defn__interface_8h_source.html">defn_interface.h</a><a href="example__interface_8h_source.html">example_interface.h</a><a href="le__adc__common_8h.html">le_adc_common.h</a><a href="le__adc__interface_8h.html">le_adc_interface.h</a><a href="le__antenna__common_8h.html">le_antenna_common.h</a><a href="le__antenna__interface_8h.html">le_antenna_interface.h</a><a href="le__apiFeatures_8h.html">le_apiFeatures.h</a><a href="le__appCtrl__common_8h.html">le_appCtrl_common.h</a><a href="le__appCtrl__interface_8h.html">le_appCtrl_interface.h</a><a href="le__appInfo__common_8h.html">le_appInfo_common.h</a><a href="le__appInfo__interface_8h.html">le_appInfo_interface.h</a><a href="le__args_8h.html">le_args.h</a><a href="le__atClient__common_8h.html">le_atClient_common.h</a><a href="le__atClient__interface_8h.html">le_atClient_interface.h</a><a href="le__atDefs__common_8h.html">le_atDefs_common.h</a><a href="le__atDefs__interface_8h.html">le_atDefs_interface.h</a><a href="le__atomFile_8h.html">le_atomFile.h</a><a href="le__atomic_8h_source.html">le_atomic.h</a><a href="le__atServer__common_8h.html">le_atServer_common.h</a><a href="le__atServer__interface_8h.html">le_atServer_interface.h</a><a href="le__audio__common_8h.html">le_audio_common.h</a><a href="le__audio__interface_8h.html">le_audio_interface.h</a><a href="le__avc__common_8h.html">le_avc_common.h</a><a href="le__avc__interface_8h.html">le_avc_interface.h</a><a href="le__avdata__common_8h.html">le_avdata_common.h</a><a href="le__avdata__interface_8h.html">le_avdata_interface.h</a><a href="le__backtrace_8h.html">le_backtrace.h</a><a href="le__base64_8h.html">le_base64.h</a><a href="le__basics_8h.html">le_basics.h</a><a href="le__bootReason__common_8h.html">le_bootReason_common.h</a><a href="le__bootReason__interface_8h.html">le_bootReason_interface.h</a><a href="le__cdata_8h.html">le_cdata.h</a><a href="le__cellnet__common_8h.html">le_cellnet_common.h</a><a href="le__cellnet__interface_8h.html">le_cellnet_interface.h</a><a href="le__cfg__common_8h.html">le_cfg_common.h</a><a href="le__cfg__interface_8h.html">le_cfg_interface.h</a><a href="le__cfgAdmin__common_8h.html">le_cfgAdmin_common.h</a><a href="le__cfgAdmin__interface_8h.html">le_cfgAdmin_interface.h</a><a href="le__clkSync__common_8h.html">le_clkSync_common.h</a><a href="le__clkSync__interface_8h.html">le_clkSync_interface.h</a><a href="le__clock_8h.html">le_clock.h</a><a href="le__comm_8h.html">le_comm.h</a><a href="le__crc_8h.html">le_crc.h</a><a href="le__data__common_8h.html">le_data_common.h</a><a href="le__data__interface_8h.html">le_data_interface.h</a><a href="le__dcs__common_8h.html">le_dcs_common.h</a><a href="le__dcs__interface_8h.html">le_dcs_interface.h</a><a href="le__dir_8h.html">le_dir.h</a><a href="le__doublyLinkedList_8h.html">le_doublyLinkedList.h</a><a href="le__dualsys__common_8h.html">le_dualsys_common.h</a><a href="le__dualsys__interface_8h.html">le_dualsys_interface.h</a><a href="le__ecall__common_8h.html">le_ecall_common.h</a><a href="le__ecall__interface_8h.html">le_ecall_interface.h</a><a href="le__eventLoop_8h.html">le_eventLoop.h</a><a href="le__fd_8h.html">le_fd.h</a><a href="le__fd__linux_8h.html">le_fd_linux.h</a><a href="le__fdMonitor_8h.html">le_fdMonitor.h</a><a href="le__fileLock_8h.html">le_fileLock.h</a><a href="le__flash__common_8h.html">le_flash_common.h</a><a href="le__flash__interface_8h.html">le_flash_interface.h</a><a href="le__framework__common_8h.html">le_framework_common.h</a><a href="le__framework__interface_8h.html">le_framework_interface.h</a><a href="le__fs_8h_source.html">le_fs.h</a><a href="le__fs__linux_8h_source.html">le_fs_linux.h</a><a href="le__fwupdate__common_8h.html">le_fwupdate_common.h</a><a href="le__fwupdate__interface_8h.html">le_fwupdate_interface.h</a><a href="le__gnss__common_8h.html">le_gnss_common.h</a><a href="le__gnss__interface_8h.html">le_gnss_interface.h</a><a href="le__gpio__common_8h.html">le_gpio_common.h</a><a href="le__gpio__interface_8h.html">le_gpio_interface.h</a><a href="le__gpioCfg__common_8h.html">le_gpioCfg_common.h</a><a href="le__gpioCfg__interface_8h.html">le_gpioCfg_interface.h</a><a href="le__hashmap_8h.html">le_hashmap.h</a><a href="le__hex_8h.html">le_hex.h</a><a href="le__iks__aesCbc__common_8h.html">le_iks_aesCbc_common.h</a><a href="le__iks__aesCbc__interface_8h.html">le_iks_aesCbc_interface.h</a><a href="le__iks__aesCmac__common_8h.html">le_iks_aesCmac_common.h</a><a href="le__iks__aesCmac__interface_8h.html">le_iks_aesCmac_interface.h</a><a href="le__iks__aesGcm__common_8h.html">le_iks_aesGcm_common.h</a><a href="le__iks__aesGcm__interface_8h.html">le_iks_aesGcm_interface.h</a><a href="le__iks__aesMilenage__common_8h.html">le_iks_aesMilenage_common.h</a><a href="le__iks__aesMilenage__interface_8h.html">le_iks_aesMilenage_interface.h</a><a href="le__iks__common_8h.html">le_iks_common.h</a><a href="le__iks__ecc__common_8h.html">le_iks_ecc_common.h</a><a href="le__iks__ecc__interface_8h.html">le_iks_ecc_interface.h</a><a href="le__iks__hmac__common_8h.html">le_iks_hmac_common.h</a><a href="le__iks__hmac__interface_8h.html">le_iks_hmac_interface.h</a><a href="le__iks__interface_8h.html">le_iks_interface.h</a><a href="le__iks__rsa__common_8h.html">le_iks_rsa_common.h</a><a href="le__iks__rsa__interface_8h.html">le_iks_rsa_interface.h</a><a href="le__info__common_8h.html">le_info_common.h</a><a href="le__info__interface_8h.html">le_info_interface.h</a><a href="le__instStat__common_8h.html">le_instStat_common.h</a><a href="le__instStat__interface_8h.html">le_instStat_interface.h</a><a href="le__ips__common_8h.html">le_ips_common.h</a><a href="le__ips__interface_8h.html">le_ips_interface.h</a><a href="le__json_8h.html">le_json.h</a><a href="le__kernelModule__common_8h.html">le_kernelModule_common.h</a><a href="le__kernelModule__interface_8h.html">le_kernelModule_interface.h</a><a href="le__limit__common_8h.html">le_limit_common.h</a><a href="le__limit__interface_8h.html">le_limit_interface.h</a><a href="le__log_8h.html">le_log.h</a><a href="le__lpt__common_8h.html">le_lpt_common.h</a><a href="le__lpt__interface_8h.html">le_lpt_interface.h</a><a href="le__mcc__common_8h.html">le_mcc_common.h</a><a href="le__mcc__interface_8h.html">le_mcc_interface.h</a><a href="le__mdc__common_8h.html">le_mdc_common.h</a><a href="le__mdc__interface_8h.html">le_mdc_interface.h</a><a href="le__mdmDefs__common_8h.html">le_mdmDefs_common.h</a><a href="le__mdmDefs__interface_8h.html">le_mdmDefs_interface.h</a><a href="le__mem_8h.html">le_mem.h</a><a href="le__messaging_8h.html">le_messaging.h</a><a href="le__mrc__common_8h.html">le_mrc_common.h</a><a href="le__mrc__interface_8h.html">le_mrc_interface.h</a><a href="le__mutex_8h.html">le_mutex.h</a><a href="le__net__common_8h.html">le_net_common.h</a><a href="le__net__interface_8h.html">le_net_interface.h</a><a href="le__pack_8h_source.html">le_pack.h</a><a href="le__path_8h.html">le_path.h</a><a href="le__pathIter_8h.html">le_pathIter.h</a><a href="le__pm__common_8h.html">le_pm_common.h</a><a href="le__pm__interface_8h.html">le_pm_interface.h</a><a href="le__port__common_8h.html">le_port_common.h</a><a href="le__port__interface_8h.html">le_port_interface.h</a><a href="le__pos__common_8h.html">le_pos_common.h</a><a href="le__pos__interface_8h.html">le_pos_interface.h</a><a href="le__posCtrl__common_8h.html">le_posCtrl_common.h</a><a href="le__posCtrl__interface_8h.html">le_posCtrl_interface.h</a><a href="le__print_8h.html">le_print.h</a><a href="le__process_8h.html">le_process.h</a><a href="le__rand_8h.html">le_rand.h</a><a class="link-selected" href="le__redBlackTree_8h.html">le_redBlackTree.h</a><a href="le__riPin__common_8h.html">le_riPin_common.h</a><a href="le__riPin__interface_8h.html">le_riPin_interface.h</a><a href="le__rsim__common_8h.html">le_rsim_common.h</a><a href="le__rsim__interface_8h.html">le_rsim_interface.h</a><a href="le__rtc__common_8h.html">le_rtc_common.h</a><a href="le__rtc__interface_8h.html">le_rtc_interface.h</a><a href="le__safeRef_8h.html">le_safeRef.h</a><a href="le__secStore__common_8h.html">le_secStore_common.h</a><a href="le__secStore__interface_8h.html">le_secStore_interface.h</a><a href="le__semaphore_8h.html">le_semaphore.h</a><a href="le__signals_8h.html">le_signals.h</a><a href="le__sim__common_8h.html">le_sim_common.h</a><a href="le__sim__interface_8h.html">le_sim_interface.h</a><a href="le__singlyLinkedList_8h.html">le_singlyLinkedList.h</a><a href="le__sms__common_8h.html">le_sms_common.h</a><a href="le__sms__interface_8h.html">le_sms_interface.h</a><a href="le__smsInbox1__common_8h.html">le_smsInbox1_common.h</a><a href="le__smsInbox1__interface_8h.html">le_smsInbox1_interface.h</a><a href="le__spi__common_8h.html">le_spi_common.h</a><a href="le__spi__interface_8h.html">le_spi_interface.h</a><a href="le__temp__common_8h.html">le_temp_common.h</a><a href="le__temp__interface_8h.html">le_temp_interface.h</a><a href="le__test_8h.html">le_test.h</a><a href="le__thread_8h.html">le_thread.h</a><a href="le__thread__linux_8h_source.html">le_thread_linux.h</a><a href="le__timer_8h.html">le_timer.h</a><a href="le__tty_8h.html">le_tty.h</a><a href="le__ulpm__common_8h.html">le_ulpm_common.h</a><a href="le__ulpm__interface_8h.html">le_ulpm_interface.h</a><a href="le__update__common_8h.html">le_update_common.h</a><a href="le__update__interface_8h.html">le_update_interface.h</a><a href="le__updateCtrl__common_8h.html">le_updateCtrl_common.h</a><a href="le__updateCtrl__interface_8h.html">le_updateCtrl_interface.h</a><a href="le__utf8_8h.html">le_utf8.h</a><a href="le__voicecall__common_8h.html">le_voicecall_common.h</a><a href="le__voicecall__interface_8h.html">le_voicecall_interface.h</a><a href="le__wdog__common_8h.html">le_wdog_common.h</a><a href="le__wdog__interface_8h.html">le_wdog_interface.h</a><a href="le__wifiAp__common_8h.html">le_wifiAp_common.h</a><a href="le__wifiAp__interface_8h.html">le_wifiAp_interface.h</a><a href="le__wifiClient__common_8h.html">le_wifiClient_common.h</a><a href="le__wifiClient__interface_8h.html">le_wifiClient_interface.h</a><a href="le__wifiDefs__common_8h.html">le_wifiDefs_common.h</a><a href="le__wifiDefs__interface_8h.html">le_wifiDefs_interface.h</a><a href="legato_8h.html">legato.h</a><a href="legato__linux_8h.html">legato_linux.h</a><a href="secStoreAdmin__common_8h.html">secStoreAdmin_common.h</a><a href="secStoreAdmin__interface_8h.html">secStoreAdmin_interface.h</a><a href="streamMedia__common_8h.html">streamMedia_common.h</a><a href="streamMedia__interface_8h.html">streamMedia_interface.h</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#pub-attribs">Data Fields</a> </div>
+<div class="headertitle">
+<h1 class="title">le_rbtree_Tree_t Struct Reference</h1> </div>
+</div><div class="contents">
+<p><code>#include &lt;<a class="el" href="le__redBlackTree_8h_source.html">le_redBlackTree.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:adfc3d36cb0f347995e449ee4d02e0724"><td align="right" class="memItemLeft" valign="top"><a id="adfc3d36cb0f347995e449ee4d02e0724"></a>
+<a class="el" href="structle__rbtree__Node__t.html">le_rbtree_Node_t</a> * </td><td class="memItemRight" valign="bottom"><a class="el" href="structle__rbtree__Tree__t.html#adfc3d36cb0f347995e449ee4d02e0724">root</a></td></tr>
+<tr class="memdesc:adfc3d36cb0f347995e449ee4d02e0724"><td class="mdescLeft"> </td><td class="mdescRight">Root tree node. <br/></td></tr>
+<tr class="separator:adfc3d36cb0f347995e449ee4d02e0724"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa864fc5bd4cdf4997d9492c49a14967a"><td align="right" class="memItemLeft" valign="top"><a id="aa864fc5bd4cdf4997d9492c49a14967a"></a>
+size_t </td><td class="memItemRight" valign="bottom"><a class="el" href="structle__rbtree__Tree__t.html#aa864fc5bd4cdf4997d9492c49a14967a">size</a></td></tr>
+<tr class="memdesc:aa864fc5bd4cdf4997d9492c49a14967a"><td class="mdescLeft"> </td><td class="mdescRight">Number of elements in the tree. <br/></td></tr>
+<tr class="separator:aa864fc5bd4cdf4997d9492c49a14967a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0193faca88fe84d108eded75715080a7"><td align="right" class="memItemLeft" valign="top"><a id="a0193faca88fe84d108eded75715080a7"></a>
+<a class="el" href="le__redBlackTree_8h.html#a85d7ebf6275045625e51f63d76f2ad1a">le_rbtree_CompareFunc_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="structle__rbtree__Tree__t.html#a0193faca88fe84d108eded75715080a7">compFn</a></td></tr>
+<tr class="memdesc:a0193faca88fe84d108eded75715080a7"><td class="mdescLeft"> </td><td class="mdescRight">Key comparison function. <br/></td></tr>
+<tr class="separator:a0193faca88fe84d108eded75715080a7"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This is the RBTree object. User must initialize it by calling le_rbtree_InitTree.</p>
+<dl class="section warning"><dt>Warning</dt><dd>User MUST NOT access the contents of this structure directly. </dd></dl>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<li><a class="el" href="le__redBlackTree_8h_source.html">le_redBlackTree.h</a></li>
+</ul>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

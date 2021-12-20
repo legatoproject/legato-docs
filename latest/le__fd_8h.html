@@ -1,0 +1,437 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Reference" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_fd.h File Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="20.08.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+    <script src="resources/js/html5shiv.js"></script>
+    <script src="resources/js/respond.js"></script>
+  <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Reference_le_fd.h.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Reference</h2>
+<nav class="secondary">
+<a href="common__interface_8h_source.html">common_interface.h</a><a href="defn__interface_8h_source.html">defn_interface.h</a><a href="example__interface_8h_source.html">example_interface.h</a><a href="le__adc__common_8h.html">le_adc_common.h</a><a href="le__adc__interface_8h.html">le_adc_interface.h</a><a href="le__antenna__common_8h.html">le_antenna_common.h</a><a href="le__antenna__interface_8h.html">le_antenna_interface.h</a><a href="le__apiFeatures_8h.html">le_apiFeatures.h</a><a href="le__appCtrl__common_8h.html">le_appCtrl_common.h</a><a href="le__appCtrl__interface_8h.html">le_appCtrl_interface.h</a><a href="le__appInfo__common_8h.html">le_appInfo_common.h</a><a href="le__appInfo__interface_8h.html">le_appInfo_interface.h</a><a href="le__args_8h.html">le_args.h</a><a href="le__atClient__common_8h.html">le_atClient_common.h</a><a href="le__atClient__interface_8h.html">le_atClient_interface.h</a><a href="le__atDefs__common_8h.html">le_atDefs_common.h</a><a href="le__atDefs__interface_8h.html">le_atDefs_interface.h</a><a href="le__atomFile_8h.html">le_atomFile.h</a><a href="le__atomic_8h_source.html">le_atomic.h</a><a href="le__atServer__common_8h.html">le_atServer_common.h</a><a href="le__atServer__interface_8h.html">le_atServer_interface.h</a><a href="le__audio__common_8h.html">le_audio_common.h</a><a href="le__audio__interface_8h.html">le_audio_interface.h</a><a href="le__avc__common_8h.html">le_avc_common.h</a><a href="le__avc__interface_8h.html">le_avc_interface.h</a><a href="le__avdata__common_8h.html">le_avdata_common.h</a><a href="le__avdata__interface_8h.html">le_avdata_interface.h</a><a href="le__backtrace_8h.html">le_backtrace.h</a><a href="le__base64_8h.html">le_base64.h</a><a href="le__basics_8h.html">le_basics.h</a><a href="le__bootReason__common_8h.html">le_bootReason_common.h</a><a href="le__bootReason__interface_8h.html">le_bootReason_interface.h</a><a href="le__cdata_8h.html">le_cdata.h</a><a href="le__cellnet__common_8h.html">le_cellnet_common.h</a><a href="le__cellnet__interface_8h.html">le_cellnet_interface.h</a><a href="le__cfg__common_8h.html">le_cfg_common.h</a><a href="le__cfg__interface_8h.html">le_cfg_interface.h</a><a href="le__cfgAdmin__common_8h.html">le_cfgAdmin_common.h</a><a href="le__cfgAdmin__interface_8h.html">le_cfgAdmin_interface.h</a><a href="le__clkSync__common_8h.html">le_clkSync_common.h</a><a href="le__clkSync__interface_8h.html">le_clkSync_interface.h</a><a href="le__clock_8h.html">le_clock.h</a><a href="le__comm_8h.html">le_comm.h</a><a href="le__crc_8h.html">le_crc.h</a><a href="le__data__common_8h.html">le_data_common.h</a><a href="le__data__interface_8h.html">le_data_interface.h</a><a href="le__dcs__common_8h.html">le_dcs_common.h</a><a href="le__dcs__interface_8h.html">le_dcs_interface.h</a><a href="le__dir_8h.html">le_dir.h</a><a href="le__doublyLinkedList_8h.html">le_doublyLinkedList.h</a><a href="le__dualsys__common_8h.html">le_dualsys_common.h</a><a href="le__dualsys__interface_8h.html">le_dualsys_interface.h</a><a href="le__ecall__common_8h.html">le_ecall_common.h</a><a href="le__ecall__interface_8h.html">le_ecall_interface.h</a><a href="le__eventLoop_8h.html">le_eventLoop.h</a><a class="link-selected" href="le__fd_8h.html">le_fd.h</a><a href="le__fd__linux_8h.html">le_fd_linux.h</a><a href="le__fdMonitor_8h.html">le_fdMonitor.h</a><a href="le__fileLock_8h.html">le_fileLock.h</a><a href="le__flash__common_8h.html">le_flash_common.h</a><a href="le__flash__interface_8h.html">le_flash_interface.h</a><a href="le__framework__common_8h.html">le_framework_common.h</a><a href="le__framework__interface_8h.html">le_framework_interface.h</a><a href="le__fs_8h_source.html">le_fs.h</a><a href="le__fs__linux_8h_source.html">le_fs_linux.h</a><a href="le__fwupdate__common_8h.html">le_fwupdate_common.h</a><a href="le__fwupdate__interface_8h.html">le_fwupdate_interface.h</a><a href="le__gnss__common_8h.html">le_gnss_common.h</a><a href="le__gnss__interface_8h.html">le_gnss_interface.h</a><a href="le__gpio__common_8h.html">le_gpio_common.h</a><a href="le__gpio__interface_8h.html">le_gpio_interface.h</a><a href="le__gpioCfg__common_8h.html">le_gpioCfg_common.h</a><a href="le__gpioCfg__interface_8h.html">le_gpioCfg_interface.h</a><a href="le__hashmap_8h.html">le_hashmap.h</a><a href="le__hex_8h.html">le_hex.h</a><a href="le__iks__aesCbc__common_8h.html">le_iks_aesCbc_common.h</a><a href="le__iks__aesCbc__interface_8h.html">le_iks_aesCbc_interface.h</a><a href="le__iks__aesCmac__common_8h.html">le_iks_aesCmac_common.h</a><a href="le__iks__aesCmac__interface_8h.html">le_iks_aesCmac_interface.h</a><a href="le__iks__aesGcm__common_8h.html">le_iks_aesGcm_common.h</a><a href="le__iks__aesGcm__interface_8h.html">le_iks_aesGcm_interface.h</a><a href="le__iks__aesMilenage__common_8h.html">le_iks_aesMilenage_common.h</a><a href="le__iks__aesMilenage__interface_8h.html">le_iks_aesMilenage_interface.h</a><a href="le__iks__common_8h.html">le_iks_common.h</a><a href="le__iks__ecc__common_8h.html">le_iks_ecc_common.h</a><a href="le__iks__ecc__interface_8h.html">le_iks_ecc_interface.h</a><a href="le__iks__hmac__common_8h.html">le_iks_hmac_common.h</a><a href="le__iks__hmac__interface_8h.html">le_iks_hmac_interface.h</a><a href="le__iks__interface_8h.html">le_iks_interface.h</a><a href="le__iks__rsa__common_8h.html">le_iks_rsa_common.h</a><a href="le__iks__rsa__interface_8h.html">le_iks_rsa_interface.h</a><a href="le__info__common_8h.html">le_info_common.h</a><a href="le__info__interface_8h.html">le_info_interface.h</a><a href="le__instStat__common_8h.html">le_instStat_common.h</a><a href="le__instStat__interface_8h.html">le_instStat_interface.h</a><a href="le__ips__common_8h.html">le_ips_common.h</a><a href="le__ips__interface_8h.html">le_ips_interface.h</a><a href="le__json_8h.html">le_json.h</a><a href="le__kernelModule__common_8h.html">le_kernelModule_common.h</a><a href="le__kernelModule__interface_8h.html">le_kernelModule_interface.h</a><a href="le__limit__common_8h.html">le_limit_common.h</a><a href="le__limit__interface_8h.html">le_limit_interface.h</a><a href="le__log_8h.html">le_log.h</a><a href="le__lpt__common_8h.html">le_lpt_common.h</a><a href="le__lpt__interface_8h.html">le_lpt_interface.h</a><a href="le__mcc__common_8h.html">le_mcc_common.h</a><a href="le__mcc__interface_8h.html">le_mcc_interface.h</a><a href="le__mdc__common_8h.html">le_mdc_common.h</a><a href="le__mdc__interface_8h.html">le_mdc_interface.h</a><a href="le__mdmDefs__common_8h.html">le_mdmDefs_common.h</a><a href="le__mdmDefs__interface_8h.html">le_mdmDefs_interface.h</a><a href="le__mem_8h.html">le_mem.h</a><a href="le__messaging_8h.html">le_messaging.h</a><a href="le__mrc__common_8h.html">le_mrc_common.h</a><a href="le__mrc__interface_8h.html">le_mrc_interface.h</a><a href="le__mutex_8h.html">le_mutex.h</a><a href="le__net__common_8h.html">le_net_common.h</a><a href="le__net__interface_8h.html">le_net_interface.h</a><a href="le__pack_8h_source.html">le_pack.h</a><a href="le__path_8h.html">le_path.h</a><a href="le__pathIter_8h.html">le_pathIter.h</a><a href="le__pm__common_8h.html">le_pm_common.h</a><a href="le__pm__interface_8h.html">le_pm_interface.h</a><a href="le__port__common_8h.html">le_port_common.h</a><a href="le__port__interface_8h.html">le_port_interface.h</a><a href="le__pos__common_8h.html">le_pos_common.h</a><a href="le__pos__interface_8h.html">le_pos_interface.h</a><a href="le__posCtrl__common_8h.html">le_posCtrl_common.h</a><a href="le__posCtrl__interface_8h.html">le_posCtrl_interface.h</a><a href="le__print_8h.html">le_print.h</a><a href="le__process_8h.html">le_process.h</a><a href="le__rand_8h.html">le_rand.h</a><a href="le__redBlackTree_8h.html">le_redBlackTree.h</a><a href="le__riPin__common_8h.html">le_riPin_common.h</a><a href="le__riPin__interface_8h.html">le_riPin_interface.h</a><a href="le__rsim__common_8h.html">le_rsim_common.h</a><a href="le__rsim__interface_8h.html">le_rsim_interface.h</a><a href="le__rtc__common_8h.html">le_rtc_common.h</a><a href="le__rtc__interface_8h.html">le_rtc_interface.h</a><a href="le__safeRef_8h.html">le_safeRef.h</a><a href="le__secStore__common_8h.html">le_secStore_common.h</a><a href="le__secStore__interface_8h.html">le_secStore_interface.h</a><a href="le__semaphore_8h.html">le_semaphore.h</a><a href="le__signals_8h.html">le_signals.h</a><a href="le__sim__common_8h.html">le_sim_common.h</a><a href="le__sim__interface_8h.html">le_sim_interface.h</a><a href="le__singlyLinkedList_8h.html">le_singlyLinkedList.h</a><a href="le__sms__common_8h.html">le_sms_common.h</a><a href="le__sms__interface_8h.html">le_sms_interface.h</a><a href="le__smsInbox1__common_8h.html">le_smsInbox1_common.h</a><a href="le__smsInbox1__interface_8h.html">le_smsInbox1_interface.h</a><a href="le__spi__common_8h.html">le_spi_common.h</a><a href="le__spi__interface_8h.html">le_spi_interface.h</a><a href="le__temp__common_8h.html">le_temp_common.h</a><a href="le__temp__interface_8h.html">le_temp_interface.h</a><a href="le__test_8h.html">le_test.h</a><a href="le__thread_8h.html">le_thread.h</a><a href="le__thread__linux_8h_source.html">le_thread_linux.h</a><a href="le__timer_8h.html">le_timer.h</a><a href="le__tty_8h.html">le_tty.h</a><a href="le__ulpm__common_8h.html">le_ulpm_common.h</a><a href="le__ulpm__interface_8h.html">le_ulpm_interface.h</a><a href="le__update__common_8h.html">le_update_common.h</a><a href="le__update__interface_8h.html">le_update_interface.h</a><a href="le__updateCtrl__common_8h.html">le_updateCtrl_common.h</a><a href="le__updateCtrl__interface_8h.html">le_updateCtrl_interface.h</a><a href="le__utf8_8h.html">le_utf8.h</a><a href="le__voicecall__common_8h.html">le_voicecall_common.h</a><a href="le__voicecall__interface_8h.html">le_voicecall_interface.h</a><a href="le__wdog__common_8h.html">le_wdog_common.h</a><a href="le__wdog__interface_8h.html">le_wdog_interface.h</a><a href="le__wifiAp__common_8h.html">le_wifiAp_common.h</a><a href="le__wifiAp__interface_8h.html">le_wifiAp_interface.h</a><a href="le__wifiClient__common_8h.html">le_wifiClient_common.h</a><a href="le__wifiClient__interface_8h.html">le_wifiClient_interface.h</a><a href="le__wifiDefs__common_8h.html">le_wifiDefs_common.h</a><a href="le__wifiDefs__interface_8h.html">le_wifiDefs_interface.h</a><a href="legato_8h.html">legato.h</a><a href="legato__linux_8h.html">legato_linux.h</a><a href="secStoreAdmin__common_8h.html">secStoreAdmin_common.h</a><a href="secStoreAdmin__interface_8h.html">secStoreAdmin_interface.h</a><a href="streamMedia__common_8h.html">streamMedia_common.h</a><a href="streamMedia__interface_8h.html">streamMedia_interface.h</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_fd.h File Reference</h1> </div>
+</div><div class="contents">
+<p><a href="le__fd_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a635b360fbcfb6fd83963a392f92a1790"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fd_8h.html#a635b360fbcfb6fd83963a392f92a1790">le_fd_Open</a> (const char *pathName, int flags,...)</td></tr>
+<tr class="separator:a635b360fbcfb6fd83963a392f92a1790"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0b9d49353a502d9057887bc395a27450"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fd_8h.html#a0b9d49353a502d9057887bc395a27450">le_fd_Close</a> (int fd)</td></tr>
+<tr class="separator:a0b9d49353a502d9057887bc395a27450"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a15aa335795aff09867ee9c88cfe543cc"><td align="right" class="memItemLeft" valign="top">ssize_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fd_8h.html#a15aa335795aff09867ee9c88cfe543cc">le_fd_Read</a> (int fd, void *bufPtr, size_t count)</td></tr>
+<tr class="separator:a15aa335795aff09867ee9c88cfe543cc"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aca79b8c0e3668582da4269cc1b922120"><td align="right" class="memItemLeft" valign="top">ssize_t </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fd_8h.html#aca79b8c0e3668582da4269cc1b922120">le_fd_Write</a> (int fd, const void *bufPtr, size_t count)</td></tr>
+<tr class="separator:aca79b8c0e3668582da4269cc1b922120"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:afd06ecb6a756089e9e102ed8db6e7bba"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fd_8h.html#afd06ecb6a756089e9e102ed8db6e7bba">le_fd_Ioctl</a> (int fd, int request, void *bufPtr)</td></tr>
+<tr class="separator:afd06ecb6a756089e9e102ed8db6e7bba"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a022fea8cbe10653328daaaaf1194220d"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fd_8h.html#a022fea8cbe10653328daaaaf1194220d">le_fd_MkFifo</a> (const char *pathname, mode_t mode)</td></tr>
+<tr class="separator:a022fea8cbe10653328daaaaf1194220d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9078e361f3fbc8e7c1450bb7435e31d7"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fd_8h.html#a9078e361f3fbc8e7c1450bb7435e31d7">le_fd_MkPipe</a> (const char *pathname, mode_t mode)</td></tr>
+<tr class="separator:a9078e361f3fbc8e7c1450bb7435e31d7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5d1a5b6a2479749897af4451535bb4e7"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fd_8h.html#a5d1a5b6a2479749897af4451535bb4e7">le_fd_Dup</a> (int oldfd)</td></tr>
+<tr class="separator:a5d1a5b6a2479749897af4451535bb4e7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab254dd85e83f260b56d96a44fcae5488"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="le__fd_8h.html#ab254dd85e83f260b56d96a44fcae5488">le_fd_Fcntl</a> (int fd, int cmd,...)</td></tr>
+<tr class="separator:ab254dd85e83f260b56d96a44fcae5488"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legato <a class="el" href="c_fd.html">File Descriptor API</a> include file.</p>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a0b9d49353a502d9057887bc395a27450"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b9d49353a502d9057887bc395a27450">◆ </a></span>le_fd_Close()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">int le_fd_Close </td>
+<td>(</td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>fd</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Close a resource referred to by the file descriptor.</p>
+<dl class="section return"><dt>Returns</dt><dd>Zero on success, or -1 if an error occurred. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>File descriptor </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a5d1a5b6a2479749897af4451535bb4e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d1a5b6a2479749897af4451535bb4e7">◆ </a></span>le_fd_Dup()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">int le_fd_Dup </td>
+<td>(</td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>oldfd</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Create a copy of the file descriptor.</p>
+<dl class="section return"><dt>Returns</dt><dd>On success return the new descriptor, or -1 if an error occurred and errno is set. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">oldfd</td><td>File descriptor </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ab254dd85e83f260b56d96a44fcae5488"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab254dd85e83f260b56d96a44fcae5488">◆ </a></span>le_fd_Fcntl()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">int le_fd_Fcntl </td>
+<td>(</td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>fd</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>cmd</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"> </td>
+<td class="paramname"><em>...</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Manipulate a file descriptor.</p>
+<p>Implements a subset of the commands supported by fcntl(2).</p>
+<p>The following subcommands are guaranteed to be implemented on all platforms:</p><ul>
+<li>F_GETFL</li>
+<li>F_SETFL </li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>File descriptor </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">cmd</td><td>Command </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="afd06ecb6a756089e9e102ed8db6e7bba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd06ecb6a756089e9e102ed8db6e7bba">◆ </a></span>le_fd_Ioctl()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">int le_fd_Ioctl </td>
+<td>(</td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>fd</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>request</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>bufPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Send a request to the resource referred to by the file descriptor.</p>
+<dl class="section return"><dt>Returns</dt><dd>Zero on success, or -1 if an error occurred. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>File descriptor </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">request</td><td>Device dependent request code </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">bufPtr</td><td>Pointer to request dependent data buffer </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a022fea8cbe10653328daaaaf1194220d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a022fea8cbe10653328daaaaf1194220d">◆ </a></span>le_fd_MkFifo()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">int le_fd_MkFifo </td>
+<td>(</td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>pathname</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">mode_t </td>
+<td class="paramname"><em>mode</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Make a FIFO.</p>
+<dl class="section return"><dt>Returns</dt><dd>Zero on success, or -1 if an error occurred and errno is set. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">pathname</td><td>pathname of the fifo </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>permissions of the file </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a9078e361f3fbc8e7c1450bb7435e31d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9078e361f3fbc8e7c1450bb7435e31d7">◆ </a></span>le_fd_MkPipe()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">int le_fd_MkPipe </td>
+<td>(</td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>pathname</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">mode_t </td>
+<td class="paramname"><em>mode</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Make a Pipe for bi-direction communication.</p>
+<dl class="section return"><dt>Returns</dt><dd>The new file descriptor, or -1 if an error occurred. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">pathname</td><td>pathname of the fifo </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>permissions of the file </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a635b360fbcfb6fd83963a392f92a1790"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a635b360fbcfb6fd83963a392f92a1790">◆ </a></span>le_fd_Open()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">int le_fd_Open </td>
+<td>(</td>
+<td class="paramtype">const char * </td>
+<td class="paramname"><em>pathName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>flags</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"> </td>
+<td class="paramname"><em>...</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Create or open an existing resource.</p>
+<dl class="section return"><dt>Returns</dt><dd>The new file descriptor, or -1 if an error occurred. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">pathName</td><td>Pathname to the resource. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">flags</td><td>Resource access flags. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="a15aa335795aff09867ee9c88cfe543cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15aa335795aff09867ee9c88cfe543cc">◆ </a></span>le_fd_Read()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">ssize_t le_fd_Read </td>
+<td>(</td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>fd</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>bufPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>count</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Attempts to read up to count bytes from the resource referred to by the file descriptor.</p>
+<p>The data is read at the current offset.</p>
+<dl class="section return"><dt>Returns</dt><dd>On success, the number of bytes read is returned, otherwise -1 is returned. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>File descriptor </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">bufPtr</td><td>Buffer to store read data into </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">count</td><td>Number of bytes to read </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="aca79b8c0e3668582da4269cc1b922120"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca79b8c0e3668582da4269cc1b922120">◆ </a></span>le_fd_Write()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">ssize_t le_fd_Write </td>
+<td>(</td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>fd</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const void * </td>
+<td class="paramname"><em>bufPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>count</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Write up to count bytes to the resource referred to by the file descriptor.</p>
+<p>The data is written at the current offset.</p>
+<dl class="section return"><dt>Returns</dt><dd>On success, the number of bytes written is returned, otherwise -1 is returned. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>File descriptor </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">bufPtr</td><td>Buffer containing data to be written </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">count</td><td>Number of bytes to write </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

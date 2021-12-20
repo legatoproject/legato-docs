@@ -1,0 +1,1603 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_wifiClient API Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="20.08.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+    <script src="resources/js/html5shiv.js"></script>
+    <script src="resources/js/respond.js"></script>
+  <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#nested-classes">Data Structures</a> |
+<a href="#files">Files</a> |
+<a href="#define-members">Macros</a> |
+<a href="#typedef-members">Typedefs</a> |
+<a href="#enum-members">Enumerations</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_wifiClient API Reference</h1> </div>
+</div><div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td align="right" class="memItemLeft" valign="top">struct  </td><td class="memItemRight" valign="bottom"><a class="el" href="structle__wifiClient__EventInd__t.html">le_wifiClient_EventInd_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:le__wifiClient__common_8h"><td align="right" class="memItemLeft" valign="top">file  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__wifiClient__common_8h.html">le_wifiClient_common.h</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:le__wifiClient__interface_8h"><td align="right" class="memItemLeft" valign="top">file  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__wifiClient__interface_8h.html">le_wifiClient_interface.h</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga5f807aa9567a15b43c395ebfd8e7025d"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga5f807aa9567a15b43c395ebfd8e7025d">LE_WIFICLIENT_NO_SIGNAL_STRENGTH</a>   32767</td></tr>
+<tr class="separator:ga5f807aa9567a15b43c395ebfd8e7025d"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga5a5709045b59550dbb52ff13a7d24c1e"><td align="right" class="memItemLeft" valign="top">typedef struct le_wifiClient_AccessPoint * </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a></td></tr>
+<tr class="separator:ga5a5709045b59550dbb52ff13a7d24c1e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga9f0e7b68a7565841c17a5ef18c7bf8e9"><td align="right" class="memItemLeft" valign="top">typedef struct le_wifiClient_NewEventHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga9f0e7b68a7565841c17a5ef18c7bf8e9">le_wifiClient_NewEventHandlerRef_t</a></td></tr>
+<tr class="separator:ga9f0e7b68a7565841c17a5ef18c7bf8e9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga901853832a45a1590dc02cbd2fd5972f"><td align="right" class="memItemLeft" valign="top">typedef struct le_wifiClient_ConnectionEventHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga901853832a45a1590dc02cbd2fd5972f">le_wifiClient_ConnectionEventHandlerRef_t</a></td></tr>
+<tr class="separator:ga901853832a45a1590dc02cbd2fd5972f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gab29be536910c43d33f1cb16eafa8db09"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#gab29be536910c43d33f1cb16eafa8db09">le_wifiClient_NewEventHandlerFunc_t</a>) (<a class="el" href="group__le__wifiClient.html#ga1b776321e539bab3bc6a07078545bca4">le_wifiClient_Event_t</a> event, void *contextPtr)</td></tr>
+<tr class="separator:gab29be536910c43d33f1cb16eafa8db09"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga56644407c192efb88bea65c24315ae86"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga56644407c192efb88bea65c24315ae86">le_wifiClient_ConnectionEventHandlerFunc_t</a>) (const <a class="el" href="structle__wifiClient__EventInd__t.html">le_wifiClient_EventInd_t</a> *LE_NONNULL wifiEventIndPtr, void *contextPtr)</td></tr>
+<tr class="separator:ga56644407c192efb88bea65c24315ae86"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga3af55fd9ba100daa30957a334fc914a1"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga3af55fd9ba100daa30957a334fc914a1">le_wifiClient_DisconnectHandler_t</a>) (void *)</td></tr>
+<tr class="separator:ga3af55fd9ba100daa30957a334fc914a1"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ga1b776321e539bab3bc6a07078545bca4"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga1b776321e539bab3bc6a07078545bca4">le_wifiClient_Event_t</a> { <a class="el" href="group__le__wifiClient.html#gga1b776321e539bab3bc6a07078545bca4a7311dd6562fef67d5c5defbd9dcbc6d2">LE_WIFICLIENT_EVENT_CONNECTED</a> = 0, 
+<a class="el" href="group__le__wifiClient.html#gga1b776321e539bab3bc6a07078545bca4a72b538a3446d73b0da95db84de318747">LE_WIFICLIENT_EVENT_DISCONNECTED</a> = 1, 
+<a class="el" href="group__le__wifiClient.html#gga1b776321e539bab3bc6a07078545bca4a4202d7b05f16eb80f8b7adfafcef3973">LE_WIFICLIENT_EVENT_SCAN_DONE</a> = 2, 
+<a class="el" href="group__le__wifiClient.html#gga1b776321e539bab3bc6a07078545bca4a57ca43d25c0c9e641abc24613fc6f256">LE_WIFICLIENT_EVENT_SCAN_FAILED</a> = 3
+ }</td></tr>
+<tr class="separator:ga1b776321e539bab3bc6a07078545bca4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga4efd1f0df12c8c05c8783caf81d02152"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga4efd1f0df12c8c05c8783caf81d02152">le_wifiClient_DisconnectionCause_t</a> { <br/>
+  <a class="el" href="group__le__wifiClient.html#gga4efd1f0df12c8c05c8783caf81d02152aa819e72cf6ec701ed5b5cd01c1ceb63c">LE_WIFICLIENT_UNKNOWN_CAUSE</a> = 0, 
+<a class="el" href="group__le__wifiClient.html#gga4efd1f0df12c8c05c8783caf81d02152a0a83ebcb73ac01d1eeeb52f87ca38de7">LE_WIFICLIENT_CLIENT_REQUEST</a> = 1, 
+<a class="el" href="group__le__wifiClient.html#gga4efd1f0df12c8c05c8783caf81d02152a9bf98d346cbc4d4644bc867b80f97ebd">LE_WIFICLIENT_HARDWARE_DETACHED</a> = 2, 
+<a class="el" href="group__le__wifiClient.html#gga4efd1f0df12c8c05c8783caf81d02152aa3736e8ce4df54fa36e9f4e4292c066d">LE_WIFICLIENT_HARDWARE_STOP</a> = 3, 
+<br/>
+  <a class="el" href="group__le__wifiClient.html#gga4efd1f0df12c8c05c8783caf81d02152ad6aab3042c997243a6692694757e7a01">LE_WIFICLIENT_BEACON_LOSS</a> = 4, 
+<a class="el" href="group__le__wifiClient.html#gga4efd1f0df12c8c05c8783caf81d02152a23bca5897c50135d4988c5fee031e559">LE_WIFICLIENT_BY_AP</a> = 5
+<br/>
+ }</td></tr>
+<tr class="separator:ga4efd1f0df12c8c05c8783caf81d02152"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga3acda5a68db1e0d601ee840a94542304"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga3acda5a68db1e0d601ee840a94542304">le_wifiClient_SecurityProtocol_t</a> { <br/>
+  <a class="el" href="group__le__wifiClient.html#gga3acda5a68db1e0d601ee840a94542304a0df423da0c6b49513cb96ee4476f2918">LE_WIFICLIENT_SECURITY_NONE</a> = 0, 
+<a class="el" href="group__le__wifiClient.html#gga3acda5a68db1e0d601ee840a94542304a6888abeacdecf791e9740e1d3bc47770">LE_WIFICLIENT_SECURITY_WEP</a> = 1, 
+<a class="el" href="group__le__wifiClient.html#gga3acda5a68db1e0d601ee840a94542304af1017ecca4ff45fc4756a4229f5dd84a">LE_WIFICLIENT_SECURITY_WPA_PSK_PERSONAL</a> = 2, 
+<a class="el" href="group__le__wifiClient.html#gga3acda5a68db1e0d601ee840a94542304a95fcb79f29f693818b19f49e7f143c5f">LE_WIFICLIENT_SECURITY_WPA2_PSK_PERSONAL</a> = 3, 
+<br/>
+  <a class="el" href="group__le__wifiClient.html#gga3acda5a68db1e0d601ee840a94542304ad1cd8a78f66b2de2d4f5b8e6ac95258d">LE_WIFICLIENT_SECURITY_WPA_EAP_PEAP0_ENTERPRISE</a> = 4, 
+<a class="el" href="group__le__wifiClient.html#gga3acda5a68db1e0d601ee840a94542304a1ce1df4f4a0ac898a93d9685b0ccd4f2">LE_WIFICLIENT_SECURITY_WPA2_EAP_PEAP0_ENTERPRISE</a> = 5
+<br/>
+ }</td></tr>
+<tr class="separator:ga3acda5a68db1e0d601ee840a94542304"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga52c89399324d721dbdfc5c9e544ae3e0"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga52c89399324d721dbdfc5c9e544ae3e0">le_wifiClient_ConnectService</a> (void)</td></tr>
+<tr class="separator:ga52c89399324d721dbdfc5c9e544ae3e0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga243dcff9fd6d824021f5ddc0e307a24d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga243dcff9fd6d824021f5ddc0e307a24d">le_wifiClient_TryConnectService</a> (void)</td></tr>
+<tr class="separator:ga243dcff9fd6d824021f5ddc0e307a24d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga01ce606de35b8a70010d2c44e8f11327"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga01ce606de35b8a70010d2c44e8f11327">le_wifiClient_SetServerDisconnectHandler</a> (<a class="el" href="group__le__wifiClient.html#ga3af55fd9ba100daa30957a334fc914a1">le_wifiClient_DisconnectHandler_t</a> disconnectHandler, void *contextPtr)</td></tr>
+<tr class="separator:ga01ce606de35b8a70010d2c44e8f11327"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga51b946756e7be9eaf870bc433ad14ba0"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga51b946756e7be9eaf870bc433ad14ba0">le_wifiClient_DisconnectService</a> (void)</td></tr>
+<tr class="separator:ga51b946756e7be9eaf870bc433ad14ba0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga55aaafbc0a0b4a70faafb50f6babf482"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__le__wifiClient.html#ga9f0e7b68a7565841c17a5ef18c7bf8e9">le_wifiClient_NewEventHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga55aaafbc0a0b4a70faafb50f6babf482">le_wifiClient_AddNewEventHandler</a> (<a class="el" href="group__le__wifiClient.html#gab29be536910c43d33f1cb16eafa8db09">le_wifiClient_NewEventHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:ga55aaafbc0a0b4a70faafb50f6babf482"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga023148da14e0148a91e980b4c71aa801"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga023148da14e0148a91e980b4c71aa801">le_wifiClient_RemoveNewEventHandler</a> (<a class="el" href="group__le__wifiClient.html#ga9f0e7b68a7565841c17a5ef18c7bf8e9">le_wifiClient_NewEventHandlerRef_t</a> handlerRef)</td></tr>
+<tr class="separator:ga023148da14e0148a91e980b4c71aa801"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gab5f0ff24c861aeac85138fbf901f4a48"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__le__wifiClient.html#ga901853832a45a1590dc02cbd2fd5972f">le_wifiClient_ConnectionEventHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#gab5f0ff24c861aeac85138fbf901f4a48">le_wifiClient_AddConnectionEventHandler</a> (<a class="el" href="group__le__wifiClient.html#ga56644407c192efb88bea65c24315ae86">le_wifiClient_ConnectionEventHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:gab5f0ff24c861aeac85138fbf901f4a48"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gad88ac3e6af6402cb9aec4d8b431945e2"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#gad88ac3e6af6402cb9aec4d8b431945e2">le_wifiClient_RemoveConnectionEventHandler</a> (<a class="el" href="group__le__wifiClient.html#ga901853832a45a1590dc02cbd2fd5972f">le_wifiClient_ConnectionEventHandlerRef_t</a> handlerRef)</td></tr>
+<tr class="separator:gad88ac3e6af6402cb9aec4d8b431945e2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaf637c17f5b8331b598dcf6c57b9260ad"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#gaf637c17f5b8331b598dcf6c57b9260ad">le_wifiClient_Start</a> (void)</td></tr>
+<tr class="separator:gaf637c17f5b8331b598dcf6c57b9260ad"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga6431441065021f5a1ae8c6873b8e3b49"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga6431441065021f5a1ae8c6873b8e3b49">le_wifiClient_Stop</a> (void)</td></tr>
+<tr class="separator:ga6431441065021f5a1ae8c6873b8e3b49"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaf478b542f65242095c05e1ee61160e2a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#gaf478b542f65242095c05e1ee61160e2a">le_wifiClient_Scan</a> (void)</td></tr>
+<tr class="separator:gaf478b542f65242095c05e1ee61160e2a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga284c452c5bd4309e096b6f89a8da653e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga284c452c5bd4309e096b6f89a8da653e">le_wifiClient_GetFirstAccessPoint</a> (void)</td></tr>
+<tr class="separator:ga284c452c5bd4309e096b6f89a8da653e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gab566a61f36b25118f9f38d62863361d2"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#gab566a61f36b25118f9f38d62863361d2">le_wifiClient_GetNextAccessPoint</a> (void)</td></tr>
+<tr class="separator:gab566a61f36b25118f9f38d62863361d2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gade417976a142b6e71df49bd8761e9833"><td align="right" class="memItemLeft" valign="top">int16_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#gade417976a142b6e71df49bd8761e9833">le_wifiClient_GetSignalStrength</a> (<a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> accessPointRef)</td></tr>
+<tr class="separator:gade417976a142b6e71df49bd8761e9833"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaa206aff65e9b77878b28b5a4e37d3367"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#gaa206aff65e9b77878b28b5a4e37d3367">le_wifiClient_GetBssid</a> (<a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> accessPointRef, char *bssid, size_t bssidSize)</td></tr>
+<tr class="separator:gaa206aff65e9b77878b28b5a4e37d3367"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaa726f6cb7f78e9ed962a6c6d3ae75a91"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#gaa726f6cb7f78e9ed962a6c6d3ae75a91">le_wifiClient_GetSsid</a> (<a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> accessPointRef, uint8_t *ssidPtr, size_t *ssidSizePtr)</td></tr>
+<tr class="separator:gaa726f6cb7f78e9ed962a6c6d3ae75a91"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga6df6164da20849e69ab1d162700447b4"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga6df6164da20849e69ab1d162700447b4">le_wifiClient_GetCurrentConnection</a> (<a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> *apRefPtr)</td></tr>
+<tr class="separator:ga6df6164da20849e69ab1d162700447b4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga398b877814bde1cd3054f2f59d0f6b8b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga398b877814bde1cd3054f2f59d0f6b8b">le_wifiClient_SetPassphrase</a> (<a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> accessPointRef, const char *LE_NONNULL PassPhrase)</td></tr>
+<tr class="separator:ga398b877814bde1cd3054f2f59d0f6b8b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga7f870ae9f3e454646b3bd0427fd4713a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga7f870ae9f3e454646b3bd0427fd4713a">le_wifiClient_SetPreSharedKey</a> (<a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> accessPointRef, const char *LE_NONNULL PreSharedKey)</td></tr>
+<tr class="separator:ga7f870ae9f3e454646b3bd0427fd4713a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga930b040b50e1ec22f6cf3e95f7d9ee29"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga930b040b50e1ec22f6cf3e95f7d9ee29">le_wifiClient_SetSecurityProtocol</a> (<a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> accessPointRef, <a class="el" href="group__le__wifiClient.html#ga3acda5a68db1e0d601ee840a94542304">le_wifiClient_SecurityProtocol_t</a> securityProtocol)</td></tr>
+<tr class="separator:ga930b040b50e1ec22f6cf3e95f7d9ee29"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga362429a884a24cf6e33415e111f0b522"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga362429a884a24cf6e33415e111f0b522">le_wifiClient_SetUserCredentials</a> (<a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> accessPointRef, const char *LE_NONNULL userName, const char *LE_NONNULL password)</td></tr>
+<tr class="separator:ga362429a884a24cf6e33415e111f0b522"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaeba2b94da0d5f9739268cf8750d739bb"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#gaeba2b94da0d5f9739268cf8750d739bb">le_wifiClient_SetWepKey</a> (<a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> accessPointRef, const char *LE_NONNULL wepKey)</td></tr>
+<tr class="separator:gaeba2b94da0d5f9739268cf8750d739bb"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga1d150a261039641255c6fce638f91c97"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga1d150a261039641255c6fce638f91c97">le_wifiClient_SetHiddenNetworkAttribute</a> (<a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> accessPointRef, bool hidden)</td></tr>
+<tr class="separator:ga1d150a261039641255c6fce638f91c97"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga96542be7e54ff8373aa0d8b0f5e540c7"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga96542be7e54ff8373aa0d8b0f5e540c7">le_wifiClient_Create</a> (const uint8_t *SsidPtr, size_t SsidSize)</td></tr>
+<tr class="separator:ga96542be7e54ff8373aa0d8b0f5e540c7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga2c48c60833ffa79ce80bf99c7c68aa47"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga2c48c60833ffa79ce80bf99c7c68aa47">le_wifiClient_Delete</a> (<a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> accessPointRef)</td></tr>
+<tr class="separator:ga2c48c60833ffa79ce80bf99c7c68aa47"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga17963642c794a003627dde66776ba225"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga17963642c794a003627dde66776ba225">le_wifiClient_Connect</a> (<a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> accessPointRef)</td></tr>
+<tr class="separator:ga17963642c794a003627dde66776ba225"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gad1cec776a08ced9160748fa0f0d70556"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#gad1cec776a08ced9160748fa0f0d70556">le_wifiClient_Disconnect</a> (void)</td></tr>
+<tr class="separator:gad1cec776a08ced9160748fa0f0d70556"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga8f803a131b2c5fde66048bc74446b3e1"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga8f803a131b2c5fde66048bc74446b3e1">le_wifiClient_LoadSsid</a> (const uint8_t *ssidPtr, size_t ssidSize, <a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> *apRefPtr)</td></tr>
+<tr class="separator:ga8f803a131b2c5fde66048bc74446b3e1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga1a4328452a9c9811eae5505cc84862a4"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga1a4328452a9c9811eae5505cc84862a4">le_wifiClient_ConfigureWep</a> (const uint8_t *ssidPtr, size_t ssidSize, const uint8_t *wepKeyPtr, size_t wepKeySize)</td></tr>
+<tr class="separator:ga1a4328452a9c9811eae5505cc84862a4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga0527c4e9a2f0b8778019ee4632639ca7"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga0527c4e9a2f0b8778019ee4632639ca7">le_wifiClient_ConfigurePsk</a> (const uint8_t *ssidPtr, size_t ssidSize, <a class="el" href="group__le__wifiClient.html#ga3acda5a68db1e0d601ee840a94542304">le_wifiClient_SecurityProtocol_t</a> protocol, const uint8_t *passPhrasePtr, size_t passPhraseSize, const uint8_t *pskPtr, size_t pskSize)</td></tr>
+<tr class="separator:ga0527c4e9a2f0b8778019ee4632639ca7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaf8aae1930aca6101ef39ba7d936371be"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#gaf8aae1930aca6101ef39ba7d936371be">le_wifiClient_ConfigureEap</a> (const uint8_t *ssidPtr, size_t ssidSize, <a class="el" href="group__le__wifiClient.html#ga3acda5a68db1e0d601ee840a94542304">le_wifiClient_SecurityProtocol_t</a> protocol, const uint8_t *usernamePtr, size_t usernameSize, const uint8_t *passwordPtr, size_t passwordSize)</td></tr>
+<tr class="separator:gaf8aae1930aca6101ef39ba7d936371be"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga650d9ba57a7f4c425097c26d63885600"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga650d9ba57a7f4c425097c26d63885600">le_wifiClient_RemoveSsidSecurityConfigs</a> (const uint8_t *ssidPtr, size_t ssidSize)</td></tr>
+<tr class="separator:ga650d9ba57a7f4c425097c26d63885600"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga50b2adc04b17cce817991f13a54ad781"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga50b2adc04b17cce817991f13a54ad781">le_wifiClient_GetCurrentSignalStrength</a> (int16_t *signalStrengthPtr)</td></tr>
+<tr class="separator:ga50b2adc04b17cce817991f13a54ad781"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gab9b84f2d169e724a2c9065823c8954e8"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#gab9b84f2d169e724a2c9065823c8954e8">le_wifiClient_GetRxData</a> (uint64_t *rxDataPtr)</td></tr>
+<tr class="separator:gab9b84f2d169e724a2c9065823c8954e8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga4772c5f2328f674bdc6064536649379a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__wifiClient.html#ga4772c5f2328f674bdc6064536649379a">le_wifiClient_GetTxData</a> (uint64_t *txDataPtr)</td></tr>
+<tr class="separator:ga4772c5f2328f674bdc6064536649379a"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga5f807aa9567a15b43c395ebfd8e7025d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5f807aa9567a15b43c395ebfd8e7025d">◆ </a></span>LE_WIFICLIENT_NO_SIGNAL_STRENGTH</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_WIFICLIENT_NO_SIGNAL_STRENGTH   32767</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Value for no signal strength. </p>
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ga5a5709045b59550dbb52ff13a7d24c1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5a5709045b59550dbb52ff13a7d24c1e">◆ </a></span>le_wifiClient_AccessPointRef_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_wifiClient_AccessPoint* <a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference type for AccessPoint that is returned by the WiFi Scan. </p>
+</div>
+</div>
+<a id="ga56644407c192efb88bea65c24315ae86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga56644407c192efb88bea65c24315ae86">◆ </a></span>le_wifiClient_ConnectionEventHandlerFunc_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_wifiClient_ConnectionEventHandlerFunc_t) (const <a class="el" href="structle__wifiClient__EventInd__t.html">le_wifiClient_EventInd_t</a> *LE_NONNULL wifiEventIndPtr, void *contextPtr)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Handler for WiFi Client connection changes </p>
+</div>
+</div>
+<a id="ga901853832a45a1590dc02cbd2fd5972f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga901853832a45a1590dc02cbd2fd5972f">◆ </a></span>le_wifiClient_ConnectionEventHandlerRef_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_wifiClient_ConnectionEventHandler* <a class="el" href="group__le__wifiClient.html#ga901853832a45a1590dc02cbd2fd5972f">le_wifiClient_ConnectionEventHandlerRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference type used by Add/Remove functions for EVENT 'le_wifiClient_ConnectionEvent' </p>
+</div>
+</div>
+<a id="ga3af55fd9ba100daa30957a334fc914a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3af55fd9ba100daa30957a334fc914a1">◆ </a></span>le_wifiClient_DisconnectHandler_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_wifiClient_DisconnectHandler_t) (void *)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Type for handler called when a server disconnects. </p>
+</div>
+</div>
+<a id="gab29be536910c43d33f1cb16eafa8db09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab29be536910c43d33f1cb16eafa8db09">◆ </a></span>le_wifiClient_NewEventHandlerFunc_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_wifiClient_NewEventHandlerFunc_t) (<a class="el" href="group__le__wifiClient.html#ga1b776321e539bab3bc6a07078545bca4">le_wifiClient_Event_t</a> event, void *contextPtr)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Handler for WiFi Client changes </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000013">Deprecated:</a></b></dt><dd><a class="el" href="group__le__wifiClient.html#ga55aaafbc0a0b4a70faafb50f6babf482">le_wifiClient_AddNewEventHandler()</a> will be removed in near future. It is replaced by <a class="el" href="group__le__wifiClient.html#gab5f0ff24c861aeac85138fbf901f4a48">le_wifiClient_AddConnectionEventHandler()</a>. </dd></dl>
+</div>
+</div>
+<a id="ga9f0e7b68a7565841c17a5ef18c7bf8e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9f0e7b68a7565841c17a5ef18c7bf8e9">◆ </a></span>le_wifiClient_NewEventHandlerRef_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_wifiClient_NewEventHandler* <a class="el" href="group__le__wifiClient.html#ga9f0e7b68a7565841c17a5ef18c7bf8e9">le_wifiClient_NewEventHandlerRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference type used by Add/Remove functions for EVENT 'le_wifiClient_NewEvent' </p>
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ga4efd1f0df12c8c05c8783caf81d02152"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4efd1f0df12c8c05c8783caf81d02152">◆ </a></span>le_wifiClient_DisconnectionCause_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">enum <a class="el" href="group__le__wifiClient.html#ga4efd1f0df12c8c05c8783caf81d02152">le_wifiClient_DisconnectionCause_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>WiFi Client disconnect cause type enum. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga4efd1f0df12c8c05c8783caf81d02152aa819e72cf6ec701ed5b5cd01c1ceb63c"></a>LE_WIFICLIENT_UNKNOWN_CAUSE </td><td class="fielddoc"><p>Default value, could be connected. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga4efd1f0df12c8c05c8783caf81d02152a0a83ebcb73ac01d1eeeb52f87ca38de7"></a>LE_WIFICLIENT_CLIENT_REQUEST </td><td class="fielddoc"><p>WiFi Client request to disconnect. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga4efd1f0df12c8c05c8783caf81d02152a9bf98d346cbc4d4644bc867b80f97ebd"></a>LE_WIFICLIENT_HARDWARE_DETACHED </td><td class="fielddoc"><p>WiFi card is detached. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga4efd1f0df12c8c05c8783caf81d02152aa3736e8ce4df54fa36e9f4e4292c066d"></a>LE_WIFICLIENT_HARDWARE_STOP </td><td class="fielddoc"><p>WiFi driver has been removed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga4efd1f0df12c8c05c8783caf81d02152ad6aab3042c997243a6692694757e7a01"></a>LE_WIFICLIENT_BEACON_LOSS </td><td class="fielddoc"><p>Beacon loss due to poor SINR. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga4efd1f0df12c8c05c8783caf81d02152a23bca5897c50135d4988c5fee031e559"></a>LE_WIFICLIENT_BY_AP </td><td class="fielddoc"><p>Disconnected by AP. </p>
+</td></tr>
+</table>
+</div>
+</div>
+<a id="ga1b776321e539bab3bc6a07078545bca4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1b776321e539bab3bc6a07078545bca4">◆ </a></span>le_wifiClient_Event_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">enum <a class="el" href="group__le__wifiClient.html#ga1b776321e539bab3bc6a07078545bca4">le_wifiClient_Event_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>WiFi Client Events. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga1b776321e539bab3bc6a07078545bca4a7311dd6562fef67d5c5defbd9dcbc6d2"></a>LE_WIFICLIENT_EVENT_CONNECTED </td><td class="fielddoc"><p>WiFi Client Connected. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga1b776321e539bab3bc6a07078545bca4a72b538a3446d73b0da95db84de318747"></a>LE_WIFICLIENT_EVENT_DISCONNECTED </td><td class="fielddoc"><p>WiFi Client Disconnected. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga1b776321e539bab3bc6a07078545bca4a4202d7b05f16eb80f8b7adfafcef3973"></a>LE_WIFICLIENT_EVENT_SCAN_DONE </td><td class="fielddoc"><p>WiFi Scan result for available Access Points available. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga1b776321e539bab3bc6a07078545bca4a57ca43d25c0c9e641abc24613fc6f256"></a>LE_WIFICLIENT_EVENT_SCAN_FAILED </td><td class="fielddoc"><p>WiFi Scan failed. </p>
+</td></tr>
+</table>
+</div>
+</div>
+<a id="ga3acda5a68db1e0d601ee840a94542304"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3acda5a68db1e0d601ee840a94542304">◆ </a></span>le_wifiClient_SecurityProtocol_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">enum <a class="el" href="group__le__wifiClient.html#ga3acda5a68db1e0d601ee840a94542304">le_wifiClient_SecurityProtocol_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>WiFi Client Security Protocol for connection </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga3acda5a68db1e0d601ee840a94542304a0df423da0c6b49513cb96ee4476f2918"></a>LE_WIFICLIENT_SECURITY_NONE </td><td class="fielddoc"><p>no security. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga3acda5a68db1e0d601ee840a94542304a6888abeacdecf791e9740e1d3bc47770"></a>LE_WIFICLIENT_SECURITY_WEP </td><td class="fielddoc"><p>Using WEP. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga3acda5a68db1e0d601ee840a94542304af1017ecca4ff45fc4756a4229f5dd84a"></a>LE_WIFICLIENT_SECURITY_WPA_PSK_PERSONAL </td><td class="fielddoc"><p>Using WPA. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga3acda5a68db1e0d601ee840a94542304a95fcb79f29f693818b19f49e7f143c5f"></a>LE_WIFICLIENT_SECURITY_WPA2_PSK_PERSONAL </td><td class="fielddoc"><p>Using WPA2. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga3acda5a68db1e0d601ee840a94542304ad1cd8a78f66b2de2d4f5b8e6ac95258d"></a>LE_WIFICLIENT_SECURITY_WPA_EAP_PEAP0_ENTERPRISE </td><td class="fielddoc"><p>Using WPA Enterprise. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga3acda5a68db1e0d601ee840a94542304a1ce1df4f4a0ac898a93d9685b0ccd4f2"></a>LE_WIFICLIENT_SECURITY_WPA2_EAP_PEAP0_ENTERPRISE </td><td class="fielddoc"><p>Using WPA2 Enterprise. </p>
+</td></tr>
+</table>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="gab5f0ff24c861aeac85138fbf901f4a48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab5f0ff24c861aeac85138fbf901f4a48">◆ </a></span>le_wifiClient_AddConnectionEventHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="group__le__wifiClient.html#ga901853832a45a1590dc02cbd2fd5972f">le_wifiClient_ConnectionEventHandlerRef_t</a> le_wifiClient_AddConnectionEventHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__wifiClient.html#ga56644407c192efb88bea65c24315ae86">le_wifiClient_ConnectionEventHandlerFunc_t</a> </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Add handler function for EVENT 'le_wifiClient_ConnectionEvent'</p>
+<p>This event provide information on WiFi Client connection event changes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga55aaafbc0a0b4a70faafb50f6babf482"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga55aaafbc0a0b4a70faafb50f6babf482">◆ </a></span>le_wifiClient_AddNewEventHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="group__le__wifiClient.html#ga9f0e7b68a7565841c17a5ef18c7bf8e9">le_wifiClient_NewEventHandlerRef_t</a> le_wifiClient_AddNewEventHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__wifiClient.html#gab29be536910c43d33f1cb16eafa8db09">le_wifiClient_NewEventHandlerFunc_t</a> </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference type for AccessPoint that is returned by the WiFi Scan. WiFi Client Events. WiFi Client disconnect cause type enum. WiFi Client Security Protocol for connection Handler for WiFi Client changes </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000015">Deprecated:</a></b></dt><dd><a class="el" href="group__le__wifiClient.html#ga55aaafbc0a0b4a70faafb50f6babf482">le_wifiClient_AddNewEventHandler()</a> will be removed in near future. It is replaced by <a class="el" href="group__le__wifiClient.html#gab5f0ff24c861aeac85138fbf901f4a48">le_wifiClient_AddConnectionEventHandler()</a>. </dd></dl>
+<p>Reference type used by Add/Remove functions for EVENT 'le_wifiClient_NewEvent' WiFi event indication structure. The disconnectionCause only applies to event EVENT_DISCONNECTED. Handler for WiFi Client connection changes Reference type used by Add/Remove functions for EVENT 'le_wifiClient_ConnectionEvent' Add handler function for EVENT 'le_wifiClient_NewEvent'</p>
+<p>This event provide information on WiFi Client event changes. NewEvent will be deprecated. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gaf8aae1930aca6101ef39ba7d936371be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf8aae1930aca6101ef39ba7d936371be">◆ </a></span>le_wifiClient_ConfigureEap()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_wifiClient_ConfigureEap </td>
+<td>(</td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>ssidPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>ssidSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="group__le__wifiClient.html#ga3acda5a68db1e0d601ee840a94542304">le_wifiClient_SecurityProtocol_t</a> </td>
+<td class="paramname"><em>protocol</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>usernamePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>usernameSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>passwordPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>passwordSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Configure the given SSID to use EAP and the given EAP username and password in the respective input arguments. The protocol input is mandatory and has to be set to either LE_WIFICLIENT_SECURITY_WPA_EAP_PEAP0_ENTERPRISE or LE_WIFICLIENT_SECURITY_WPA2_EAP_PEAP0_ENTERPRISE. Besides, both the username and password inputs are mandatory.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Succeeded to configure the given EAP username and password for the given SSID.</li>
+<li>LE_FAULT Failed to configure.</li>
+<li>LE_BAD_PARAMETER Invalid parameter. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ssidPtr</td><td>SSID which configs are to be installed </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">ssidSize</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">protocol</td><td>security protocol WPA-EAP or WPA2-EAP </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">usernamePtr</td><td>EAP username used for this SSID </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">usernameSize</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">passwordPtr</td><td>EAP password used for this SSID </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">passwordSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga0527c4e9a2f0b8778019ee4632639ca7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0527c4e9a2f0b8778019ee4632639ca7">◆ </a></span>le_wifiClient_ConfigurePsk()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_wifiClient_ConfigurePsk </td>
+<td>(</td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>ssidPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>ssidSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="group__le__wifiClient.html#ga3acda5a68db1e0d601ee840a94542304">le_wifiClient_SecurityProtocol_t</a> </td>
+<td class="paramname"><em>protocol</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>passPhrasePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>passPhraseSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>pskPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>pskSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Configure the given SSID to use PSK and the given pass-phrase or pre-shared key in the respective input arguments. The protocol input is mandatory and has to be set to either LE_WIFICLIENT_SECURITY_WPA_PSK_PERSONAL or LE_WIFICLIENT_SECURITY_WPA2_PSK_PERSONAL. Besides, it's mandatory to have at least one of the pass-phrase and pre-shared key supplied. If both are provided as input, the pass-phrase has precedence and will be used. But it fails to authenticate, a second attempt using the provided pre-shared key will not be done.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Succeeded to configure the given pass-phrase or pre-shared key for the given SSID.</li>
+<li>LE_FAULT Failed to configure.</li>
+<li>LE_BAD_PARAMETER Invalid parameter. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ssidPtr</td><td>SSID which configs are to be installed </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">ssidSize</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">protocol</td><td>security protocol WPA-PSK or WPA2-PSK </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">passPhrasePtr</td><td>pass-phrase used for this SSID </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">passPhraseSize</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">pskPtr</td><td>pre-shared key used for this SSID </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">pskSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga1a4328452a9c9811eae5505cc84862a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1a4328452a9c9811eae5505cc84862a4">◆ </a></span>le_wifiClient_ConfigureWep()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_wifiClient_ConfigureWep </td>
+<td>(</td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>ssidPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>ssidSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>wepKeyPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>wepKeySize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Configure the given SSID to use WEP and the given WEP key in the respective input argument. The WEP key is a mandatory input to be provided.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Succeeded to configure the givwn WEP key for the given SSID.</li>
+<li>LE_FAULT Failed to configure.</li>
+<li>LE_BAD_PARAMETER Invalid parameter. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ssidPtr</td><td>SSID which configs are to be installed </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">ssidSize</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">wepKeyPtr</td><td>WEP key used for this SSID </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">wepKeySize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga17963642c794a003627dde66776ba225"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga17963642c794a003627dde66776ba225">◆ </a></span>le_wifiClient_Connect()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_wifiClient_Connect </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> </td>
+<td class="paramname"><em>accessPointRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect to the WiFi Access Point. All authentication must be set prior to calling this function.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeeded.</li>
+<li>LE_BAD_PARAMETER Invalid parameter.</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>For PSK credentials see <a class="el" href="group__le__wifiClient.html#ga398b877814bde1cd3054f2f59d0f6b8b">le_wifiClient_SetPassphrase()</a> or <a class="el" href="group__le__wifiClient.html#ga7f870ae9f3e454646b3bd0427fd4713a">le_wifiClient_SetPreSharedKey()</a> . </dd>
+<dd>
+For WPA-Enterprise credentials see <a class="el" href="group__le__wifiClient.html#ga362429a884a24cf6e33415e111f0b522">le_wifiClient_SetUserCredentials()</a> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">accessPointRef</td><td>WiFi Access Point reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga52c89399324d721dbdfc5c9e544ae3e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga52c89399324d721dbdfc5c9e544ae3e0">◆ </a></span>le_wifiClient_ConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_wifiClient_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client Specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="ga96542be7e54ff8373aa0d8b0f5e540c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga96542be7e54ff8373aa0d8b0f5e540c7">◆ </a></span>le_wifiClient_Create()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> le_wifiClient_Create </td>
+<td>(</td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>SsidPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>SsidSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function creates a reference to an Access Point given its SSID. If an Access Point is hidden, it will not show up in the scan. So, its SSID must be known in advance in order to create a reference.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>AccessPoint reference to the current Access Point.</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function fails if called while scan is running. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">SsidPtr</td><td>The SSID as a octet array. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">SsidSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga2c48c60833ffa79ce80bf99c7c68aa47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2c48c60833ffa79ce80bf99c7c68aa47">◆ </a></span>le_wifiClient_Delete()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_wifiClient_Delete </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> </td>
+<td class="paramname"><em>accessPointRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Deletes an accessPointRef.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeeded.</li>
+<li>LE_BAD_PARAMETER Invalid parameter.</li>
+<li>LE_BUSY Function called during scan.</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The handle becomes invalid after it has been deleted. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">accessPointRef</td><td>WiFi Access Point reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gad1cec776a08ced9160748fa0f0d70556"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad1cec776a08ced9160748fa0f0d70556">◆ </a></span>le_wifiClient_Disconnect()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_wifiClient_Disconnect </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect from the current connected WiFi Access Point.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeeded.</li>
+<li>LE_FAULT Function failed. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a id="ga51b946756e7be9eaf870bc433ad14ba0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga51b946756e7be9eaf870bc433ad14ba0">◆ </a></span>le_wifiClient_DisconnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_wifiClient_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client Specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="gaa206aff65e9b77878b28b5a4e37d3367"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa206aff65e9b77878b28b5a4e37d3367">◆ </a></span>le_wifiClient_GetBssid()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_wifiClient_GetBssid </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> </td>
+<td class="paramname"><em>accessPointRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>bssid</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>bssidSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the Basic Service set identifier (BSSID) of the AccessPoint</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK Function succeeded. LE_FAULT Function failed. LE_BAD_PARAMETER Invalid parameter. LE_OVERFLOW bssid buffer is too small to contain the BSSID. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">accessPointRef</td><td>WiFi Access Point reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">bssid</td><td>The BSSID </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">bssidSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga6df6164da20849e69ab1d162700447b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6df6164da20849e69ab1d162700447b4">◆ </a></span>le_wifiClient_GetCurrentConnection()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_wifiClient_GetCurrentConnection </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> * </td>
+<td class="paramname"><em>apRefPtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the currently selected connection to be established</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK upon successful retrieval of the selected SSID to be connected</li>
+<li>LE_FAULT upon failure to retrieve it </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">apRefPtr</td><td>currently selected connection's AP reference </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga50b2adc04b17cce817991f13a54ad781"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga50b2adc04b17cce817991f13a54ad781">◆ </a></span>le_wifiClient_GetCurrentSignalStrength()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_wifiClient_GetCurrentSignalStrength </td>
+<td>(</td>
+<td class="paramtype">int16_t * </td>
+<td class="paramname"><em>signalStrengthPtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the signal strength from the Access Point which is currently connecting. signalStrength in dBm. Example -30 = -30dBm. If no signal is available, signalStrength will return LE_WIFICLIENT_NO_SIGNAL_STRENGTH.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_FAULT The function failed.</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The function returns the signal strength as reported at the time of the scan. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">signalStrengthPtr</td><td>WiFi signal strength. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga284c452c5bd4309e096b6f89a8da653e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga284c452c5bd4309e096b6f89a8da653e">◆ </a></span>le_wifiClient_GetFirstAccessPoint()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> le_wifiClient_GetFirstAccessPoint </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the first WiFi Access Point found.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>WiFi Access Point reference if ok.</li>
+<li>NULL If no Access Point reference available. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a id="gab566a61f36b25118f9f38d62863361d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab566a61f36b25118f9f38d62863361d2">◆ </a></span>le_wifiClient_GetNextAccessPoint()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> le_wifiClient_GetNextAccessPoint </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the next WiFi Access Point. Will return the Access Points in the order of found. This function must be called in the same context as the GetFirstAccessPoint</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>WiFi Access Point reference if ok.</li>
+<li>NULL If no Access Point reference available. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a id="gab9b84f2d169e724a2c9065823c8954e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab9b84f2d169e724a2c9065823c8954e8">◆ </a></span>le_wifiClient_GetRxData()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_wifiClient_GetRxData </td>
+<td>(</td>
+<td class="paramtype">uint64_t * </td>
+<td class="paramname"><em>rxDataPtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the RX data from the Access Point, RX data is in bytes. Example 1024 = 1024 bytes</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_FAULT The function failed.</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The function returns the RX data following by "iw wlan0 link" command. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">rxDataPtr</td><td>WiFi bytes of data received. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gade417976a142b6e71df49bd8761e9833"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gade417976a142b6e71df49bd8761e9833">◆ </a></span>le_wifiClient_GetSignalStrength()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">int16_t le_wifiClient_GetSignalStrength </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> </td>
+<td class="paramname"><em>accessPointRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the signal strength of the AccessPoint</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>Signal strength in dBm. Example -30 = -30dBm</li>
+<li>If no signal available it will return LE_WIFICLIENT_NO_SIGNAL_STRENGTH</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The function returns the signal strength as reported at the time of the scan. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">accessPointRef</td><td>WiFi Access Point reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gaa726f6cb7f78e9ed962a6c6d3ae75a91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa726f6cb7f78e9ed962a6c6d3ae75a91">◆ </a></span>le_wifiClient_GetSsid()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_wifiClient_GetSsid </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> </td>
+<td class="paramname"><em>accessPointRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>ssidPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>ssidSizePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the Service set identification (SSID) of the AccessPoint</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK Function succeeded. LE_FAULT Function failed. LE_BAD_PARAMETER Invalid parameter. LE_OVERFLOW ssid buffer is too small to contain the SSID.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The SSID does not have to be human readable ASCII values, but often is. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">accessPointRef</td><td>WiFi Access Point reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">ssidPtr</td><td>The SSID returned as a octet array. </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">ssidSizePtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga4772c5f2328f674bdc6064536649379a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4772c5f2328f674bdc6064536649379a">◆ </a></span>le_wifiClient_GetTxData()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_wifiClient_GetTxData </td>
+<td>(</td>
+<td class="paramtype">uint64_t * </td>
+<td class="paramname"><em>txDataPtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the TX data from the Access Point, TX data is in bytes. Example 1024 = 1024 bytes</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_FAULT The function failed.</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The function returns the TX data following by "iw wlan0 link" command. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">txDataPtr</td><td>WiFi bytes of data transmitted. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga8f803a131b2c5fde66048bc74446b3e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8f803a131b2c5fde66048bc74446b3e1">◆ </a></span>le_wifiClient_LoadSsid()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_wifiClient_LoadSsid </td>
+<td>(</td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>ssidPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>ssidSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> * </td>
+<td class="paramname"><em>apRefPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Load the given SSID's configurations as it is selected as the connection to be established, after creating for it an AP reference</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeeded.</li>
+<li>LE_FAULT Function failed.</li>
+<li>LE_BAD_PARAMETER Invalid parameter. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ssidPtr</td><td>SSID which configs are to be installed </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">ssidSize</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">apRefPtr</td><td>reference to be created </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gad88ac3e6af6402cb9aec4d8b431945e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad88ac3e6af6402cb9aec4d8b431945e2">◆ </a></span>le_wifiClient_RemoveConnectionEventHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_wifiClient_RemoveConnectionEventHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__wifiClient.html#ga901853832a45a1590dc02cbd2fd5972f">le_wifiClient_ConnectionEventHandlerRef_t</a> </td>
+<td class="paramname"><em>handlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove handler function for EVENT 'le_wifiClient_ConnectionEvent' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga023148da14e0148a91e980b4c71aa801"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga023148da14e0148a91e980b4c71aa801">◆ </a></span>le_wifiClient_RemoveNewEventHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_wifiClient_RemoveNewEventHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__wifiClient.html#ga9f0e7b68a7565841c17a5ef18c7bf8e9">le_wifiClient_NewEventHandlerRef_t</a> </td>
+<td class="paramname"><em>handlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove handler function for EVENT 'le_wifiClient_NewEvent' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga650d9ba57a7f4c425097c26d63885600"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga650d9ba57a7f4c425097c26d63885600">◆ </a></span>le_wifiClient_RemoveSsidSecurityConfigs()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_wifiClient_RemoveSsidSecurityConfigs </td>
+<td>(</td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>ssidPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>ssidSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove and clear Wifi's security configurations to use with the given SSID from the config tree and secured store. This includes the security protocol and all the username, password, passphrase, pre-shared key, key, etc., previously configured via le_wifiClient_Configure APIs for WEP, PSK and EAP.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK upon success to deconfigure the given SSID's configured user credentials; LE_FAULT otherwise </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">ssidPtr</td><td>SSID which user credentials to be deconfigured </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">ssidSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gaf478b542f65242095c05e1ee61160e2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf478b542f65242095c05e1ee61160e2a">◆ </a></span>le_wifiClient_Scan()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_wifiClient_Scan </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Start Scanning for WiFi Access points Will result in event LE_WIFICLIENT_EVENT_SCAN_DONE when the scan results are available.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeeded.</li>
+<li>LE_FAULT Function failed.</li>
+<li>LE_BUSY Scan already running. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a id="ga1d150a261039641255c6fce638f91c97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1d150a261039641255c6fce638f91c97">◆ </a></span>le_wifiClient_SetHiddenNetworkAttribute()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_wifiClient_SetHiddenNetworkAttribute </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> </td>
+<td class="paramname"><em>accessPointRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">bool </td>
+<td class="paramname"><em>hidden</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function specifies whether the target Access Point is hiding its presence from clients or not. When an Access Point is hidden, it cannot be discovered by a scan process.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeeded.</li>
+<li>LE_BAD_PARAMETER Invalid parameter.</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>By default, this attribute is not set which means that the client is unable to connect to a hidden access point. When enabled, the client will be able to connect to the access point whether it is hidden or not. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">accessPointRef</td><td>WiFi Access Point reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">hidden</td><td>If TRUE, the WIFI client will be able to connect to a hidden access point. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga398b877814bde1cd3054f2f59d0f6b8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga398b877814bde1cd3054f2f59d0f6b8b">◆ </a></span>le_wifiClient_SetPassphrase()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_wifiClient_SetPassphrase </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> </td>
+<td class="paramname"><em>accessPointRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>PassPhrase</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the passphrase used to generate the PSK.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeeded.</li>
+<li>LE_FAULT Function failed.</li>
+<li>LE_BAD_PARAMETER Invalid parameter.</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The difference between <a class="el" href="group__le__wifiClient.html#ga7f870ae9f3e454646b3bd0427fd4713a">le_wifiClient_SetPreSharedKey()</a> and this function </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">accessPointRef</td><td>WiFi Access Point reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">PassPhrase</td><td>pass-phrase for PSK </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga7f870ae9f3e454646b3bd0427fd4713a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7f870ae9f3e454646b3bd0427fd4713a">◆ </a></span>le_wifiClient_SetPreSharedKey()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_wifiClient_SetPreSharedKey </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> </td>
+<td class="paramname"><em>accessPointRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>PreSharedKey</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the Pre Shared Key, PSK.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeeded.</li>
+<li>LE_FAULT Function failed.</li>
+<li>LE_BAD_PARAMETER Invalid parameter.</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This is one way to authenticate against the access point. The other one is provided by the le_wifiClient_SetPassPhrase() function. Both ways are exclusive and are effective only when used with WPA-personal authentication. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">accessPointRef</td><td>WiFi Access Point reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">PreSharedKey</td><td>PSK. Note the difference between PSK and Pass Phrase. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga930b040b50e1ec22f6cf3e95f7d9ee29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga930b040b50e1ec22f6cf3e95f7d9ee29">◆ </a></span>le_wifiClient_SetSecurityProtocol()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_wifiClient_SetSecurityProtocol </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> </td>
+<td class="paramname"><em>accessPointRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="group__le__wifiClient.html#ga3acda5a68db1e0d601ee840a94542304">le_wifiClient_SecurityProtocol_t</a> </td>
+<td class="paramname"><em>securityProtocol</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the security protocol for connection</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeeded.</li>
+<li>LE_FAULT Function failed.</li>
+<li>LE_BAD_PARAMETER Invalid parameter. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">accessPointRef</td><td>WiFi Access Point reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">securityProtocol</td><td>Security Mode </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga01ce606de35b8a70010d2c44e8f11327"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga01ce606de35b8a70010d2c44e8f11327">◆ </a></span>le_wifiClient_SetServerDisconnectHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void le_wifiClient_SetServerDisconnectHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__wifiClient.html#ga3af55fd9ba100daa30957a334fc914a1">le_wifiClient_DisconnectHandler_t</a> </td>
+<td class="paramname"><em>disconnectHandler</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set handler called when server disconnection is detected.</p>
+<p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
+</div>
+</div>
+<a id="ga362429a884a24cf6e33415e111f0b522"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga362429a884a24cf6e33415e111f0b522">◆ </a></span>le_wifiClient_SetUserCredentials()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_wifiClient_SetUserCredentials </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> </td>
+<td class="paramname"><em>accessPointRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>userName</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>password</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>WPA-Enterprise requires a username and password to authenticate. This function sets these parameters.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeeded.</li>
+<li>LE_FAULT Function failed.</li>
+<li>LE_BAD_PARAMETER Invalid parameter. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">accessPointRef</td><td>WiFi Access Point reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">userName</td><td>UserName used for WPA-Enterprise. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">password</td><td>Password used for WPA-Enterprise. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gaeba2b94da0d5f9739268cf8750d739bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeba2b94da0d5f9739268cf8750d739bb">◆ </a></span>le_wifiClient_SetWepKey()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_wifiClient_SetWepKey </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__wifiClient.html#ga5a5709045b59550dbb52ff13a7d24c1e">le_wifiClient_AccessPointRef_t</a> </td>
+<td class="paramname"><em>accessPointRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>wepKey</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set the WEP key (WEP)</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeeded.</li>
+<li>LE_FAULT Function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">accessPointRef</td><td>WiFi Access Point reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">wepKey</td><td>The WEP key </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gaf637c17f5b8331b598dcf6c57b9260ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf637c17f5b8331b598dcf6c57b9260ad">◆ </a></span>le_wifiClient_Start()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_wifiClient_Start </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Start the WIFI device.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeeded.</li>
+<li>LE_FAULT Function failed.</li>
+<li>LE_BUSY The WIFI device is already started. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a id="ga6431441065021f5a1ae8c6873b8e3b49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6431441065021f5a1ae8c6873b8e3b49">◆ </a></span>le_wifiClient_Stop()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_wifiClient_Stop </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Stop the WIFI device.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeeded.</li>
+<li>LE_FAULT Function failed.</li>
+<li>LE_DUPLICATE The WIFI device is already stopped. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a id="ga243dcff9fd6d824021f5ddc0e307a24d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga243dcff9fd6d824021f5ddc0e307a24d">◆ </a></span>le_wifiClient_TryConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_wifiClient_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client Specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
