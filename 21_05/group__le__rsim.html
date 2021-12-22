@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_rsim API Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="21.05.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+    <script src="resources/js/html5shiv.js"></script>
+    <script src="resources/js/respond.js"></script>
+  <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a><a href="migrationGuide.html">Linux 4.14 Migration Guide</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#files">Files</a> |
+<a href="#define-members">Macros</a> |
+<a href="#typedef-members">Typedefs</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_rsim API Reference</h1> </div>
+</div><div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:le__rsim__common_8h"><td align="right" class="memItemLeft" valign="top">file  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__rsim__common_8h.html">le_rsim_common.h</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:le__rsim__interface_8h"><td align="right" class="memItemLeft" valign="top">file  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__rsim__interface_8h.html">le_rsim_interface.h</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga6e8b290ec4404fd2a7b6c119d82dc9ef"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__rsim.html#ga6e8b290ec4404fd2a7b6c119d82dc9ef">LE_RSIM_MAX_MSG_SIZE</a>   1024</td></tr>
+<tr class="separator:ga6e8b290ec4404fd2a7b6c119d82dc9ef"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga17cc74b7183e4fe32685b3692612ff3b"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__rsim.html#ga17cc74b7183e4fe32685b3692612ff3b">LE_RSIM_MIN_MSG_SIZE</a>   200</td></tr>
+<tr class="separator:ga17cc74b7183e4fe32685b3692612ff3b"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga5da55c94a0910d5334e680d824dc7fa2"><td align="right" class="memItemLeft" valign="top">typedef struct le_rsim_MessageHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__rsim.html#ga5da55c94a0910d5334e680d824dc7fa2">le_rsim_MessageHandlerRef_t</a></td></tr>
+<tr class="separator:ga5da55c94a0910d5334e680d824dc7fa2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaf409f56fe26a0499ea5739798b2e3d3e"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__rsim.html#gaf409f56fe26a0499ea5739798b2e3d3e">le_rsim_MessageHandlerFunc_t</a>) (const uint8_t *messagePtr, size_t messageSize, void *contextPtr)</td></tr>
+<tr class="separator:gaf409f56fe26a0499ea5739798b2e3d3e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga8bd89de6790f60e0c8ea5feeb69ec745"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__rsim.html#ga8bd89de6790f60e0c8ea5feeb69ec745">le_rsim_CallbackHandlerFunc_t</a>) (uint8_t messageId, <a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> result, void *contextPtr)</td></tr>
+<tr class="separator:ga8bd89de6790f60e0c8ea5feeb69ec745"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga56327e6f93bf7e779ec0cb635bfe6c09"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__rsim.html#ga56327e6f93bf7e779ec0cb635bfe6c09">le_rsim_DisconnectHandler_t</a>) (void *)</td></tr>
+<tr class="separator:ga56327e6f93bf7e779ec0cb635bfe6c09"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gab02ad25a7a83160a0fb36a06c8604439"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__rsim.html#gab02ad25a7a83160a0fb36a06c8604439">le_rsim_ConnectService</a> (void)</td></tr>
+<tr class="separator:gab02ad25a7a83160a0fb36a06c8604439"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga33fbaad0ed1ffb3d6e1b228eeb60aef7"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__rsim.html#ga33fbaad0ed1ffb3d6e1b228eeb60aef7">le_rsim_TryConnectService</a> (void)</td></tr>
+<tr class="separator:ga33fbaad0ed1ffb3d6e1b228eeb60aef7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga135a7f1af6d68ffadaa9ce8a3ec61303"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__rsim.html#ga135a7f1af6d68ffadaa9ce8a3ec61303">le_rsim_SetServerDisconnectHandler</a> (<a class="el" href="group__le__rsim.html#ga56327e6f93bf7e779ec0cb635bfe6c09">le_rsim_DisconnectHandler_t</a> disconnectHandler, void *contextPtr)</td></tr>
+<tr class="separator:ga135a7f1af6d68ffadaa9ce8a3ec61303"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga06b5243134a443fa93b8566f80a8ff33"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__rsim.html#ga06b5243134a443fa93b8566f80a8ff33">le_rsim_DisconnectService</a> (void)</td></tr>
+<tr class="separator:ga06b5243134a443fa93b8566f80a8ff33"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga7c525d3f8a02a4ca14e4fb723b6cc673"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__le__rsim.html#ga5da55c94a0910d5334e680d824dc7fa2">le_rsim_MessageHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__rsim.html#ga7c525d3f8a02a4ca14e4fb723b6cc673">le_rsim_AddMessageHandler</a> (<a class="el" href="group__le__rsim.html#gaf409f56fe26a0499ea5739798b2e3d3e">le_rsim_MessageHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:ga7c525d3f8a02a4ca14e4fb723b6cc673"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gad488fe9d57c161a8c17ac60bda891817"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__rsim.html#gad488fe9d57c161a8c17ac60bda891817">le_rsim_RemoveMessageHandler</a> (<a class="el" href="group__le__rsim.html#ga5da55c94a0910d5334e680d824dc7fa2">le_rsim_MessageHandlerRef_t</a> handlerRef)</td></tr>
+<tr class="separator:gad488fe9d57c161a8c17ac60bda891817"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gace5e9e861ab59d4ec8e6198b827a5c28"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__rsim.html#gace5e9e861ab59d4ec8e6198b827a5c28">le_rsim_SendMessage</a> (const uint8_t *messagePtr, size_t messageSize, <a class="el" href="group__le__rsim.html#ga8bd89de6790f60e0c8ea5feeb69ec745">le_rsim_CallbackHandlerFunc_t</a> callbackPtr, void *contextPtr)</td></tr>
+<tr class="separator:gace5e9e861ab59d4ec8e6198b827a5c28"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga6e8b290ec4404fd2a7b6c119d82dc9ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6e8b290ec4404fd2a7b6c119d82dc9ef">◆ </a></span>LE_RSIM_MAX_MSG_SIZE</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_RSIM_MAX_MSG_SIZE   1024</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remote SIM maximal message size </p>
+</div>
+</div>
+<a id="ga17cc74b7183e4fe32685b3692612ff3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga17cc74b7183e4fe32685b3692612ff3b">◆ </a></span>LE_RSIM_MIN_MSG_SIZE</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_RSIM_MIN_MSG_SIZE   200</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remote SIM minimal message size</p>
+<dl class="section note"><dt>Note</dt><dd>This minimal length is set to ensure that the communication with the remote SIM server can be effective. </dd></dl>
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ga8bd89de6790f60e0c8ea5feeb69ec745"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8bd89de6790f60e0c8ea5feeb69ec745">◆ </a></span>le_rsim_CallbackHandlerFunc_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_rsim_CallbackHandlerFunc_t) (uint8_t messageId, <a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> result, void *contextPtr)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Handler for message sending result </p>
+</div>
+</div>
+<a id="ga56327e6f93bf7e779ec0cb635bfe6c09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga56327e6f93bf7e779ec0cb635bfe6c09">◆ </a></span>le_rsim_DisconnectHandler_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_rsim_DisconnectHandler_t) (void *)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Type for handler called when a server disconnects. </p>
+</div>
+</div>
+<a id="gaf409f56fe26a0499ea5739798b2e3d3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf409f56fe26a0499ea5739798b2e3d3e">◆ </a></span>le_rsim_MessageHandlerFunc_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_rsim_MessageHandlerFunc_t) (const uint8_t *messagePtr, size_t messageSize, void *contextPtr)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Handler for message notification </p>
+</div>
+</div>
+<a id="ga5da55c94a0910d5334e680d824dc7fa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5da55c94a0910d5334e680d824dc7fa2">◆ </a></span>le_rsim_MessageHandlerRef_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_rsim_MessageHandler* <a class="el" href="group__le__rsim.html#ga5da55c94a0910d5334e680d824dc7fa2">le_rsim_MessageHandlerRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference type used by Add/Remove functions for EVENT 'le_rsim_Message' </p>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga7c525d3f8a02a4ca14e4fb723b6cc673"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7c525d3f8a02a4ca14e4fb723b6cc673">◆ </a></span>le_rsim_AddMessageHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="group__le__rsim.html#ga5da55c94a0910d5334e680d824dc7fa2">le_rsim_MessageHandlerRef_t</a> le_rsim_AddMessageHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__rsim.html#gaf409f56fe26a0499ea5739798b2e3d3e">le_rsim_MessageHandlerFunc_t</a> </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Handler for message notification Handler for message sending result Reference type used by Add/Remove functions for EVENT 'le_rsim_Message' Add handler function for EVENT 'le_rsim_Message'</p>
+<p>This event is used to notify and send a message </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gab02ad25a7a83160a0fb36a06c8604439"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab02ad25a7a83160a0fb36a06c8604439">◆ </a></span>le_rsim_ConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_rsim_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client Specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="ga06b5243134a443fa93b8566f80a8ff33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga06b5243134a443fa93b8566f80a8ff33">◆ </a></span>le_rsim_DisconnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_rsim_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client Specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="gad488fe9d57c161a8c17ac60bda891817"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad488fe9d57c161a8c17ac60bda891817">◆ </a></span>le_rsim_RemoveMessageHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_rsim_RemoveMessageHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__rsim.html#ga5da55c94a0910d5334e680d824dc7fa2">le_rsim_MessageHandlerRef_t</a> </td>
+<td class="paramname"><em>handlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove handler function for EVENT 'le_rsim_Message' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gace5e9e861ab59d4ec8e6198b827a5c28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gace5e9e861ab59d4ec8e6198b827a5c28">◆ </a></span>le_rsim_SendMessage()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_rsim_SendMessage </td>
+<td>(</td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>messagePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>messageSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="group__le__rsim.html#ga8bd89de6790f60e0c8ea5feeb69ec745">le_rsim_CallbackHandlerFunc_t</a> </td>
+<td class="paramname"><em>callbackPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function is called by the application to send a message to the Legato remote SIM service</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeeded</li>
+<li>LE_BAD_PARAMETER Message is too long</li>
+</ul>
+</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The sending process is asynchronous: only the message length is checked by this function before returning a result. A callback function should be passed as a parameter in order to be notified of the message sending result. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">messagePtr</td><td>Message to send </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">messageSize</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">callbackPtr</td><td>Callback for sending result </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga135a7f1af6d68ffadaa9ce8a3ec61303"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga135a7f1af6d68ffadaa9ce8a3ec61303">◆ </a></span>le_rsim_SetServerDisconnectHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void le_rsim_SetServerDisconnectHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__rsim.html#ga56327e6f93bf7e779ec0cb635bfe6c09">le_rsim_DisconnectHandler_t</a> </td>
+<td class="paramname"><em>disconnectHandler</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set handler called when server disconnection is detected.</p>
+<p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
+</div>
+</div>
+<a id="ga33fbaad0ed1ffb3d6e1b228eeb60aef7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga33fbaad0ed1ffb3d6e1b228eeb60aef7">◆ </a></span>le_rsim_TryConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_rsim_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client Specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

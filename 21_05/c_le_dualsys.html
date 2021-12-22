@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Dual Systems Update API  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="21.05.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+    <script src="resources/js/html5shiv.js"></script>
+    <script src="resources/js/respond.js"></script>
+  <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a><a href="migrationGuide.html">Linux 4.14 Migration Guide</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">Dual Systems Update API </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><a class="el" href="le__dualsys__interface_8h.html">API Reference</a></p>
+<p>Dual systems are systems composed with two set of partitions: one is said "ACTIVE", so currently in use, and the other said "UPDATE", so not used but ready-to-use.</p>
+<p>On dual systems, when Legato updates an image through the le_fwupdate API, it works on the UPDATE system. And then an "install" command performs a switch from UPDATE to ACTIVE after a reboot: The new ACTIVE system is used. The UPDATE partition becomes ready for a new update or for roll-back if the new ACTIVE fails to start properly.</p>
+<p>In each set, three sub-systems are defined:</p><ul>
+<li>The "modem" group for all binaries and filesystem related to modem core,</li>
+<li>The "lk" group for the LK bootloader,</li>
+<li>The "linux" group the kernel, rootfs and legato partitions.</li>
+</ul>
+<h1><a class="anchor" id="le_dualsys_binding"></a>
+IPC interfaces binding</h1>
+<p>All the functions of this API are provided by the <b>le_dualsys</b> service.</p>
+<p>Here's a code sample binding to the le_dualsys service: </p><pre class="fragment">bindings:
+{
+   clientExe.clientComponent.le_dualsys -&gt; fwupdateService.le_dualsys
+}
+</pre><dl class="section warning"><dt>Warning</dt><dd>All of these APIs are only available for all dual systems platforms. Please refer to the Product Technical Specification document of your platform for further details. Please refer to platformConstraintsFwUpdate for details.</dd></dl>
+<h1><a class="anchor" id="le_dualsys_DisableSyncBeforeUpdate"></a>
+Disable the check of sync before updating</h1>
+<p>It is possible to force the update of any partition even if the systems are not synchronized. This is done by calling le_fwupdate_DisableSyncBeforeUpdate() with the value true. If the value is false, the synchronization will be mandatory before performing an update. Note that the synchronization is automatically done by calling the function <a class="el" href="group__le__fwupdate.html#ga481234992a0fbc18f97c88f68dc00837">le_fwupdate_InitDownload()</a> when the synchronization check is enabled.</p>
+<h1><a class="anchor" id="le_dualsys_system"></a>
+Defining a System</h1>
+<p>It is possible to define a system by calling <a class="el" href="group__le__dualsys.html#ga333e42eb7703071817cd1fde3def8ce7">le_dualsys_SetSystem()</a>. This function takes three values, one for the modem sub-system, one for the lk sub-system and one for the linux sub-system. The values are one of 0 for system 1 or 1 for system 2. When set, the system will be usable after the next reset. If no error is encountered, this function will perform a reset.</p>
+<p>It is possible the get the last defined system by calling the le_dualsys_GetSystem(). This function returns the values for the three sub-systems. This system is updated accordingly the last system set by <a class="el" href="group__le__dualsys.html#ga333e42eb7703071817cd1fde3def8ce7">le_dualsys_SetSystem()</a>.</p>
+<p>It is possible to get the current active system by calling <a class="el" href="group__le__dualsys.html#gada5eedff83c28236bafcf0a9bf85ae54">le_dualsys_GetCurrentSystem()</a>. This function returns the values for the three sub-systems. If <a class="el" href="group__le__dualsys.html#ga333e42eb7703071817cd1fde3def8ce7">le_dualsys_SetSystem()</a> is called before <a class="el" href="group__le__dualsys.html#gada5eedff83c28236bafcf0a9bf85ae54">le_dualsys_GetCurrentSystem()</a>, the returned values may differ as they represent the current system in use.</p>
+<hr/>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>IoT Keystore Key Management API  - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="21.05.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+    <script src="resources/js/html5shiv.js"></script>
+    <script src="resources/js/respond.js"></script>
+  <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src=""></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Legato Documentation</h2>
+<nav class="secondary">
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="headertitle">
+<h1 class="title">IoT Keystore Key Management API </h1> </div>
+</div><div class="contents">
+<div class="textblock"><p><a class="el" href="le__iks__interface_8h.html">API Reference</a></p>
+<hr/>
+<p>IOT Key Store's key and digest management API.</p>
+<p>The IOT Key Store can be used to store cryptographic keys as well as cryptographic hash digests. This module provides APIs for creating, configuring, updating and saving keys and digests.</p>
+<p>Keys can be created with either <a class="el" href="group__le__iks.html#ga2b5136fe50498b4118065773ab8fbcbc">le_iks_CreateKey()</a> or <a class="el" href="group__le__iks.html#ga1ff593f81c7aca74eb12c7ba2930da29">le_iks_CreateKeyByType()</a>.</p>
+<p>A newly created key does not have a key value. A key value can either be generated using <a class="el" href="group__le__iks.html#gacee01f3d5956c96aa67b142c7deddd42">le_iks_GenKeyValue()</a> or provisioned using <a class="el" href="group__le__iks.html#gace8e3b913b4b79a7e06c377602786758">le_iks_ProvisionKeyValue()</a>.</p>
+<p>Keys are initially created in non-persistent memory only and can be saved to persistent storage using <a class="el" href="group__le__iks.html#ga33ec6dc63bb6c4350e04161c779cb68f">le_iks_SaveKey()</a>. Short-lived, ephemeral keys should not be saved to persistent storage.</p>
+<p>Previously, created keys can be retrieved using the <a class="el" href="group__le__iks.html#ga7053047070fdd362b00dc3c3155934d3">le_iks_GetKey()</a> function.</p>
+<p>Key modifications (using <a class="el" href="group__le__iks.html#gacee01f3d5956c96aa67b142c7deddd42">le_iks_GenKeyValue()</a>, <a class="el" href="group__le__iks.html#gace8e3b913b4b79a7e06c377602786758">le_iks_ProvisionKeyValue()</a>, etc.) and deletions (<a class="el" href="group__le__iks.html#ga52ee2694fe11f1a3dbdd8674513215ce">le_iks_DeleteKey()</a>) may be performed freely unless the key is assigned an update key.</p>
+<p>Once an update key is assigned, key modification and deletion may only be performed using an authenticated command that is signed with the private portion of the update key. The private portion of the update key should be held securely off target. To ensure freshness and uniqueness of authenticated commands an authentication challenge must be obtained using <a class="el" href="group__le__iks.html#ga08d572912b2af5c36f8cd5ec67bb969c">le_iks_GetUpdateAuthChallenge()</a> and incorporated into the command. The authentication challenges are specific to each update key and is refreshed only once a challenge is consumed.</p>
+<p>Private and symmetric key values cannot be read out of the IOT Key Store while public key values can be extracted with <a class="el" href="group__le__iks.html#ga35625b66c201334470440ac16ea11591">le_iks_GetPubKeyValue()</a>.</p>
+<p>Digest management is very similar to key management and most of the functions are analogous to the key management functions.</p>
+<p>Key and digest identifiers may only contain alphanumeric characters, the hyphen '-' and underscore '_' characters.</p>
+<hr/>
+<p class="copyright">Copyright (C) Sierra Wireless Inc. </p>
+</div></div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

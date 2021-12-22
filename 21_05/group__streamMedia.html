@@ -1,0 +1,689 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>streamMedia API Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="21.05.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+    <script src="resources/js/html5shiv.js"></script>
+    <script src="resources/js/respond.js"></script>
+  <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a><a href="migrationGuide.html">Linux 4.14 Migration Guide</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#files">Files</a> |
+<a href="#define-members">Macros</a> |
+<a href="#typedef-members">Typedefs</a> |
+<a href="#enum-members">Enumerations</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">streamMedia API Reference</h1> </div>
+</div><div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:streamMedia__common_8h"><td align="right" class="memItemLeft" valign="top">file  </td><td class="memItemRight" valign="bottom"><a class="el" href="streamMedia__common_8h.html">streamMedia_common.h</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:streamMedia__interface_8h"><td align="right" class="memItemLeft" valign="top">file  </td><td class="memItemRight" valign="bottom"><a class="el" href="streamMedia__interface_8h.html">streamMedia_interface.h</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gaa74fa8cf824775885a7fda965b473141"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__streamMedia.html#gaa74fa8cf824775885a7fda965b473141">STREAMMEDIA_MAX_IP_LENGTH</a>   15</td></tr>
+<tr class="separator:gaa74fa8cf824775885a7fda965b473141"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga64148947a62436e9d57c9e202e6ef499"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__streamMedia.html#ga64148947a62436e9d57c9e202e6ef499">STREAMMEDIA_MAX_BYE_REASON_LENGTH</a>   255</td></tr>
+<tr class="separator:ga64148947a62436e9d57c9e202e6ef499"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga5cdb0e5799818b79d8cee67148c7bdc1"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__streamMedia.html#ga5cdb0e5799818b79d8cee67148c7bdc1">STREAMMEDIA_MAX_SDES_FIELD_LENGTH</a>   255</td></tr>
+<tr class="separator:ga5cdb0e5799818b79d8cee67148c7bdc1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga3c9f1f29b8c0ef0f2a2aa37c939997c1"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__streamMedia.html#ga3c9f1f29b8c0ef0f2a2aa37c939997c1">STREAMMEDIA_DEFAULT_RTP_PORT</a>   4000</td></tr>
+<tr class="separator:ga3c9f1f29b8c0ef0f2a2aa37c939997c1"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga5045065175e7a868d02d07dcf45314c0"><td align="right" class="memItemLeft" valign="top">typedef struct streamMedia_RtcpHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="group__streamMedia.html#ga5045065175e7a868d02d07dcf45314c0">streamMedia_RtcpHandlerRef_t</a></td></tr>
+<tr class="separator:ga5045065175e7a868d02d07dcf45314c0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga02bf732f125fb769b02bb9f9d77783be"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="group__streamMedia.html#ga02bf732f125fb769b02bb9f9d77783be">streamMedia_RtcpHandlerFunc_t</a>) (<a class="el" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> streamRef, <a class="el" href="group__streamMedia.html#gac31267c2639cdbb49a53830b4b3d4f53">streamMedia_RtcpEvent_t</a> event, void *contextPtr)</td></tr>
+<tr class="separator:ga02bf732f125fb769b02bb9f9d77783be"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga95cc07879f0c048d96c6ea68f610ff59"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="group__streamMedia.html#ga95cc07879f0c048d96c6ea68f610ff59">streamMedia_DisconnectHandler_t</a>) (void *)</td></tr>
+<tr class="separator:ga95cc07879f0c048d96c6ea68f610ff59"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:gac31267c2639cdbb49a53830b4b3d4f53"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="group__streamMedia.html#gac31267c2639cdbb49a53830b4b3d4f53">streamMedia_RtcpEvent_t</a> { <br/>
+  <a class="el" href="group__streamMedia.html#ggac31267c2639cdbb49a53830b4b3d4f53a9880ef921fb1aea434487623ec965ea2">STREAMMEDIA_RTCP_SDES</a> = 0, 
+<a class="el" href="group__streamMedia.html#ggac31267c2639cdbb49a53830b4b3d4f53ab7e8ee1030d37d58fb890420cbb3af29">STREAMMEDIA_RTCP_BYE</a> = 1, 
+<a class="el" href="group__streamMedia.html#ggac31267c2639cdbb49a53830b4b3d4f53a1fd41e7e651c3a7a24c5b097b50e681d">STREAMMEDIA_RTCP_SR</a> = 2, 
+<a class="el" href="group__streamMedia.html#ggac31267c2639cdbb49a53830b4b3d4f53a3939f46763c80b367c76aac029af8952">STREAMMEDIA_RTCP_RR</a> = 3, 
+<br/>
+  <a class="el" href="group__streamMedia.html#ggac31267c2639cdbb49a53830b4b3d4f53a9ef00e0f72c7b3a88478bbc07fbbae09">STREAMMEDIA_RTCP_APP</a> = 4
+<br/>
+ }</td></tr>
+<tr class="separator:gac31267c2639cdbb49a53830b4b3d4f53"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gafb795dfd4c2f6b59b84f503b8d32626e"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__streamMedia.html#gafb795dfd4c2f6b59b84f503b8d32626e">streamMedia_ConnectService</a> (void)</td></tr>
+<tr class="separator:gafb795dfd4c2f6b59b84f503b8d32626e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga152f116c4941d1f369adcaed81672f40"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__streamMedia.html#ga152f116c4941d1f369adcaed81672f40">streamMedia_TryConnectService</a> (void)</td></tr>
+<tr class="separator:ga152f116c4941d1f369adcaed81672f40"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gac7907010f13b94f5ba0c3ab55fa3f927"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__streamMedia.html#gac7907010f13b94f5ba0c3ab55fa3f927">streamMedia_SetServerDisconnectHandler</a> (<a class="el" href="group__streamMedia.html#ga95cc07879f0c048d96c6ea68f610ff59">streamMedia_DisconnectHandler_t</a> disconnectHandler, void *contextPtr)</td></tr>
+<tr class="separator:gac7907010f13b94f5ba0c3ab55fa3f927"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga3333799e0e87b8153aee56931f624f7c"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__streamMedia.html#ga3333799e0e87b8153aee56931f624f7c">streamMedia_DisconnectService</a> (void)</td></tr>
+<tr class="separator:ga3333799e0e87b8153aee56931f624f7c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaae91ec9ec540b41c84c1feffd40ed47f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__streamMedia.html#gaae91ec9ec540b41c84c1feffd40ed47f">streamMedia_OpenAudioRtpRx</a> (int32_t localPort)</td></tr>
+<tr class="separator:gaae91ec9ec540b41c84c1feffd40ed47f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga4521dbbb0f1296026fb4055487157fe7"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__streamMedia.html#ga4521dbbb0f1296026fb4055487157fe7">streamMedia_OpenAudioRtpTx</a> (int32_t localPort, const char *LE_NONNULL remoteIpAddress, int32_t remotePort)</td></tr>
+<tr class="separator:ga4521dbbb0f1296026fb4055487157fe7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga6fda400c0ebf46c7fc70bc2093d7cf8b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__streamMedia.html#ga6fda400c0ebf46c7fc70bc2093d7cf8b">streamMedia_Start</a> (<a class="el" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> streamRef)</td></tr>
+<tr class="separator:ga6fda400c0ebf46c7fc70bc2093d7cf8b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaf38d378186a4f8a207ff585e7ffc33e9"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__streamMedia.html#gaf38d378186a4f8a207ff585e7ffc33e9">streamMedia_Stop</a> (<a class="el" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> streamRef)</td></tr>
+<tr class="separator:gaf38d378186a4f8a207ff585e7ffc33e9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga16e827dba1aba9371d5daca229ba1afa"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__streamMedia.html#ga16e827dba1aba9371d5daca229ba1afa">streamMedia_SendRtcpSdes</a> (<a class="el" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> streamRef, const char *LE_NONNULL cname, const char *LE_NONNULL name, const char *LE_NONNULL email, const char *LE_NONNULL phone, const char *LE_NONNULL loc, const char *LE_NONNULL tool, const char *LE_NONNULL note)</td></tr>
+<tr class="separator:ga16e827dba1aba9371d5daca229ba1afa"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gadc641d91ad5ee1df5c3f7e9b80bd4acb"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__streamMedia.html#gadc641d91ad5ee1df5c3f7e9b80bd4acb">streamMedia_SendRtcpBye</a> (<a class="el" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> streamRef, const char *LE_NONNULL reason)</td></tr>
+<tr class="separator:gadc641d91ad5ee1df5c3f7e9b80bd4acb"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga37bd0d6a6c7c5a4be40d8d76bd379da3"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__streamMedia.html#ga37bd0d6a6c7c5a4be40d8d76bd379da3">streamMedia_Close</a> (<a class="el" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> streamRef)</td></tr>
+<tr class="separator:ga37bd0d6a6c7c5a4be40d8d76bd379da3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga574ded86be6fafba6a2ee30c41350e94"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__streamMedia.html#ga5045065175e7a868d02d07dcf45314c0">streamMedia_RtcpHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__streamMedia.html#ga574ded86be6fafba6a2ee30c41350e94">streamMedia_AddRtcpHandler</a> (<a class="el" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> streamRef, <a class="el" href="group__streamMedia.html#ga02bf732f125fb769b02bb9f9d77783be">streamMedia_RtcpHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:ga574ded86be6fafba6a2ee30c41350e94"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga1e6f1d4ba0fb3f13101d0a61c1c20168"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__streamMedia.html#ga1e6f1d4ba0fb3f13101d0a61c1c20168">streamMedia_RemoveRtcpHandler</a> (<a class="el" href="group__streamMedia.html#ga5045065175e7a868d02d07dcf45314c0">streamMedia_RtcpHandlerRef_t</a> handlerRef)</td></tr>
+<tr class="separator:ga1e6f1d4ba0fb3f13101d0a61c1c20168"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga3c9f1f29b8c0ef0f2a2aa37c939997c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3c9f1f29b8c0ef0f2a2aa37c939997c1">◆ </a></span>STREAMMEDIA_DEFAULT_RTP_PORT</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define STREAMMEDIA_DEFAULT_RTP_PORT   4000</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>The default RTP port. </p>
+</div>
+</div>
+<a id="ga64148947a62436e9d57c9e202e6ef499"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga64148947a62436e9d57c9e202e6ef499">◆ </a></span>STREAMMEDIA_MAX_BYE_REASON_LENGTH</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define STREAMMEDIA_MAX_BYE_REASON_LENGTH   255</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>The maximum length of the optional RTCP BYE packet reason string length. </p>
+</div>
+</div>
+<a id="gaa74fa8cf824775885a7fda965b473141"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa74fa8cf824775885a7fda965b473141">◆ </a></span>STREAMMEDIA_MAX_IP_LENGTH</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define STREAMMEDIA_MAX_IP_LENGTH   15</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>The maximum length of the textual representation of an IP address. </p>
+</div>
+</div>
+<a id="ga5cdb0e5799818b79d8cee67148c7bdc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5cdb0e5799818b79d8cee67148c7bdc1">◆ </a></span>STREAMMEDIA_MAX_SDES_FIELD_LENGTH</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define STREAMMEDIA_MAX_SDES_FIELD_LENGTH   255</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>The maximum length of a RTCP SDES packet field string length. </p>
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ga95cc07879f0c048d96c6ea68f610ff59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga95cc07879f0c048d96c6ea68f610ff59">◆ </a></span>streamMedia_DisconnectHandler_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* streamMedia_DisconnectHandler_t) (void *)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Type for handler called when a server disconnects. </p>
+</div>
+</div>
+<a id="ga02bf732f125fb769b02bb9f9d77783be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga02bf732f125fb769b02bb9f9d77783be">◆ </a></span>streamMedia_RtcpHandlerFunc_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* streamMedia_RtcpHandlerFunc_t) (<a class="el" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> streamRef, <a class="el" href="group__streamMedia.html#gac31267c2639cdbb49a53830b4b3d4f53">streamMedia_RtcpEvent_t</a> event, void *contextPtr)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Handler for RTCP packet reception. </p>
+</div>
+</div>
+<a id="ga5045065175e7a868d02d07dcf45314c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5045065175e7a868d02d07dcf45314c0">◆ </a></span>streamMedia_RtcpHandlerRef_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct streamMedia_RtcpHandler* <a class="el" href="group__streamMedia.html#ga5045065175e7a868d02d07dcf45314c0">streamMedia_RtcpHandlerRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference type used by Add/Remove functions for EVENT 'streamMedia_Rtcp' </p>
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="gac31267c2639cdbb49a53830b4b3d4f53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac31267c2639cdbb49a53830b4b3d4f53">◆ </a></span>streamMedia_RtcpEvent_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">enum <a class="el" href="group__streamMedia.html#gac31267c2639cdbb49a53830b4b3d4f53">streamMedia_RtcpEvent_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>RTCP packet reception events, related to the RTCP packet type. See <a href="https://tools.ietf.org/pdf/rfc3550.pdf">RFC-3550</a> for more details. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggac31267c2639cdbb49a53830b4b3d4f53a9880ef921fb1aea434487623ec965ea2"></a>STREAMMEDIA_RTCP_SDES </td><td class="fielddoc"><p>RTCP Session Description packet has been received. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggac31267c2639cdbb49a53830b4b3d4f53ab7e8ee1030d37d58fb890420cbb3af29"></a>STREAMMEDIA_RTCP_BYE </td><td class="fielddoc"><p>RTCP BYE packet has been received. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggac31267c2639cdbb49a53830b4b3d4f53a1fd41e7e651c3a7a24c5b097b50e681d"></a>STREAMMEDIA_RTCP_SR </td><td class="fielddoc"><p>RTCP Sender Report packet has been received. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggac31267c2639cdbb49a53830b4b3d4f53a3939f46763c80b367c76aac029af8952"></a>STREAMMEDIA_RTCP_RR </td><td class="fielddoc"><p>RTCP Receiver Report packet has been received. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggac31267c2639cdbb49a53830b4b3d4f53a9ef00e0f72c7b3a88478bbc07fbbae09"></a>STREAMMEDIA_RTCP_APP </td><td class="fielddoc"><p>RTCP Application-specific packet has been received. </p>
+</td></tr>
+</table>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga574ded86be6fafba6a2ee30c41350e94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga574ded86be6fafba6a2ee30c41350e94">◆ </a></span>streamMedia_AddRtcpHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="group__streamMedia.html#ga5045065175e7a868d02d07dcf45314c0">streamMedia_RtcpHandlerRef_t</a> streamMedia_AddRtcpHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="group__streamMedia.html#ga02bf732f125fb769b02bb9f9d77783be">streamMedia_RtcpHandlerFunc_t</a> </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Add handler function for EVENT 'streamMedia_Rtcp'</p>
+<p>This event provides information on RTCP packet type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga37bd0d6a6c7c5a4be40d8d76bd379da3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga37bd0d6a6c7c5a4be40d8d76bd379da3">◆ </a></span>streamMedia_Close()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void streamMedia_Close </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> </td>
+<td class="paramname"><em>streamRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Close an RTP stream. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gafb795dfd4c2f6b59b84f503b8d32626e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafb795dfd4c2f6b59b84f503b8d32626e">◆ </a></span>streamMedia_ConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void streamMedia_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client Specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="ga3333799e0e87b8153aee56931f624f7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3333799e0e87b8153aee56931f624f7c">◆ </a></span>streamMedia_DisconnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void streamMedia_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client Specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="gaae91ec9ec540b41c84c1feffd40ed47f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaae91ec9ec540b41c84c1feffd40ed47f">◆ </a></span>streamMedia_OpenAudioRtpRx()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> streamMedia_OpenAudioRtpRx </td>
+<td>(</td>
+<td class="paramtype">int32_t </td>
+<td class="paramname"><em>localPort</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>RTCP packet reception events, related to the RTCP packet type. See <a href="https://tools.ietf.org/pdf/rfc3550.pdf">RFC-3550</a> for more details. Handler for RTCP packet reception. Reference type used by Add/Remove functions for EVENT 'streamMedia_Rtcp' Open the received audio stream of the RTP interface.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the input audio stream, NULL if the function fails. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">localPort</td><td>The local UDP socket port for the RTP session. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga4521dbbb0f1296026fb4055487157fe7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4521dbbb0f1296026fb4055487157fe7">◆ </a></span>streamMedia_OpenAudioRtpTx()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> streamMedia_OpenAudioRtpTx </td>
+<td>(</td>
+<td class="paramtype">int32_t </td>
+<td class="paramname"><em>localPort</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>remoteIpAddress</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">int32_t </td>
+<td class="paramname"><em>remotePort</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Open the transmitted audio stream of the RTP interface.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the output audio stream, NULL if the function fails. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">localPort</td><td>The local UDP socket port for the RTP session. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">remoteIpAddress</td><td>The IP address of the remote peer. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">remotePort</td><td>The port of the remote peer. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga1e6f1d4ba0fb3f13101d0a61c1c20168"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1e6f1d4ba0fb3f13101d0a61c1c20168">◆ </a></span>streamMedia_RemoveRtcpHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void streamMedia_RemoveRtcpHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__streamMedia.html#ga5045065175e7a868d02d07dcf45314c0">streamMedia_RtcpHandlerRef_t</a> </td>
+<td class="paramname"><em>handlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove handler function for EVENT 'streamMedia_Rtcp' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gadc641d91ad5ee1df5c3f7e9b80bd4acb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadc641d91ad5ee1df5c3f7e9b80bd4acb">◆ </a></span>streamMedia_SendRtcpBye()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> streamMedia_SendRtcpBye </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>reason</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Send a RTCP BYE packet using <a href="http://www.pjsip.org/pjmedia/docs/html/group__PJMED__RTCP.htm#
+ga9eb25597d5815cee68fe7fdc3b4cd9e9">pjmedia_rtcp_build_rtcp_bye()</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_OK Function succeeded. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">reason</td><td>The optional BYE reason. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga16e827dba1aba9371d5daca229ba1afa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga16e827dba1aba9371d5daca229ba1afa">◆ </a></span>streamMedia_SendRtcpSdes()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> streamMedia_SendRtcpSdes </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> </td>
+<td class="paramname"><em>streamRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>cname</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>name</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>email</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>phone</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>loc</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>tool</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>note</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Send a RTCP Session Description packet (SDES) using <a href="http://www.pjsip.org/pjmedia/docs/html/group__PJMED__RTCP.htm#
+ga8ddca87e2b3ab0b02635edd66d7de748">pjmedia_rtcp_build_rtcp_sdes()</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_OK Function succeeded. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">cname</td><td>The optional source canonical name. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The optional source name. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">email</td><td>The optional source email. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">phone</td><td>The optional source phone. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">loc</td><td>The optional source location. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">tool</td><td>The optional source tool. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">note</td><td>The optional source note. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gac7907010f13b94f5ba0c3ab55fa3f927"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac7907010f13b94f5ba0c3ab55fa3f927">◆ </a></span>streamMedia_SetServerDisconnectHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void streamMedia_SetServerDisconnectHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__streamMedia.html#ga95cc07879f0c048d96c6ea68f610ff59">streamMedia_DisconnectHandler_t</a> </td>
+<td class="paramname"><em>disconnectHandler</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set handler called when server disconnection is detected.</p>
+<p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
+</div>
+</div>
+<a id="ga6fda400c0ebf46c7fc70bc2093d7cf8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6fda400c0ebf46c7fc70bc2093d7cf8b">◆ </a></span>streamMedia_Start()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> streamMedia_Start </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> </td>
+<td class="paramname"><em>streamRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Start the RTP stream. This must be called after connecting the RTP interface to start RTP reception or transmission.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_OK Function succeeded. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gaf38d378186a4f8a207ff585e7ffc33e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf38d378186a4f8a207ff585e7ffc33e9">◆ </a></span>streamMedia_Stop()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> streamMedia_Stop </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__audio.html#ga9a46ff5a5afa61f1bc76120ab9e4da0a">le_audio_StreamRef_t</a> </td>
+<td class="paramname"><em>streamRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Stop the RTP stream.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed. </dd>
+<dd>
+LE_OK Function succeeded. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">streamRef</td><td>Audio stream reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga152f116c4941d1f369adcaed81672f40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga152f116c4941d1f369adcaed81672f40">◆ </a></span>streamMedia_TryConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> streamMedia_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client Specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>

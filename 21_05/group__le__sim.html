@@ -1,0 +1,3002 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html data-context="Build Apps" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>le_sim API Reference - Legato Docs</title>
+<meta content="legato™ is an open source Linux-based embedded platform designed to simplify connected IoT application development" name="description"/>
+<meta content="legato, iot" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="21.05.0" name="legato-version"/>
+<link href="resources/images/legato.ico" rel="shortcut icon"/>
+<link href="resources/images/legato.ico" rel="icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="resources/images/legato.ico" rel="apple-touch-icon" type="image/x-icon"/>
+<link href="resources/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="resources/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+    <script src="resources/js/html5shiv.js"></script>
+    <script src="resources/js/respond.js"></script>
+  <![endif]-->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="tocs/Build_Apps_API_Guides.json"></script>
+</head>
+<body>
+<noscript>
+<input class="modal-closing-trick" id="modal-closing-trick" type="checkbox"/>
+<div id="nojs">
+<label for="modal-closing-trick">
+<span>You seem to not have Javascript <a href="http://enable-javascript.com">enabled</a>, so site functionality like the search and navigation tree won't work.</span>
+</label>
+</div>
+</noscript>
+<div class="wrapper">
+<div class="fa fa-bars documentation" id="menu-trigger"></div>
+<div id="top">
+<header>
+<nav>
+<a class="navlink" href="/">Introduction</a><a class="navlink selected" href="buildAppsMain.html">Build Apps</a><a class="navlink" href="buildPlatformMain.html">Build Platform</a><a class="navlink" href="aboutMain.html">About</a>
+</nav>
+</header>
+</div>
+<div class="white" id="menudocumentation">
+<header>
+<a href="/"> <img alt="Back to Legato Homepage" id="logo" src="resources/images/legato_logo.png"/></a>
+<h2>/ Build Apps</h2>
+<nav class="secondary">
+<a href="getStarted.html">Get Started</a><a href="concepts.html">Concepts</a><a class="link-selected" href="apiGuidesMain.html">API Guides</a><a href="tools.html">Tools</a><a href="howToMain.html">How To</a><a href="experimentalMain.html">Experimental Features</a><a href="migrationGuide.html">Linux 4.14 Migration Guide</a>
+</nav>
+<nav class="ui-front">
+<i class="fa fa-search" id="search-icon"></i>
+<input id="searchbox" placeholder="Search"/>
+</nav>
+</header>
+</div>
+<div id="resizable">
+<div id="left">
+<div id="tree1"></div>
+</div>
+</div>
+<div class="content">
+<div class="header">
+<div class="summary">
+<a href="#files">Files</a> |
+<a href="#define-members">Macros</a> |
+<a href="#typedef-members">Typedefs</a> |
+<a href="#enum-members">Enumerations</a> |
+<a href="#func-members">Functions</a> </div>
+<div class="headertitle">
+<h1 class="title">le_sim API Reference</h1> </div>
+</div><div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:le__sim__common_8h"><td align="right" class="memItemLeft" valign="top">file  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sim__common_8h.html">le_sim_common.h</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:le__sim__interface_8h"><td align="right" class="memItemLeft" valign="top">file  </td><td class="memItemRight" valign="bottom"><a class="el" href="le__sim__interface_8h.html">le_sim_interface.h</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga072e9b594642fe6d4a2dd24c375ae0e2"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga072e9b594642fe6d4a2dd24c375ae0e2">LE_SIM_PIN_MIN_LEN</a>   4</td></tr>
+<tr class="separator:ga072e9b594642fe6d4a2dd24c375ae0e2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gad2e7d02474310221f6815561ea02659f"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gad2e7d02474310221f6815561ea02659f">LE_SIM_PIN_MAX_LEN</a>   8</td></tr>
+<tr class="separator:gad2e7d02474310221f6815561ea02659f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaceddc12f8f1ec75fc733daa77991ce16"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gaceddc12f8f1ec75fc733daa77991ce16">LE_SIM_PIN_MAX_BYTES</a>   9</td></tr>
+<tr class="separator:gaceddc12f8f1ec75fc733daa77991ce16"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga25221b5f13960a83652a69494ef90115"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga25221b5f13960a83652a69494ef90115">LE_SIM_PUK_MAX_LEN</a>   8</td></tr>
+<tr class="separator:ga25221b5f13960a83652a69494ef90115"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gace26b9554dca416872a157003f5b93c1"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gace26b9554dca416872a157003f5b93c1">LE_SIM_PUK_MAX_BYTES</a>   9</td></tr>
+<tr class="separator:gace26b9554dca416872a157003f5b93c1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga51403752e70df40cd0472afa1914e7e3"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga51403752e70df40cd0472afa1914e7e3">LE_SIM_ICCID_LEN</a>   20</td></tr>
+<tr class="separator:ga51403752e70df40cd0472afa1914e7e3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga70c33c93f96c8376220b123909654d61"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga70c33c93f96c8376220b123909654d61">LE_SIM_ICCID_BYTES</a>   21</td></tr>
+<tr class="separator:ga70c33c93f96c8376220b123909654d61"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga233b68cf33721539c2bf3ba52bbd7ff2"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga233b68cf33721539c2bf3ba52bbd7ff2">LE_SIM_IMSI_LEN</a>   15</td></tr>
+<tr class="separator:ga233b68cf33721539c2bf3ba52bbd7ff2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaf25612258426b8b806ab4128e5b055b6"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gaf25612258426b8b806ab4128e5b055b6">LE_SIM_IMSI_BYTES</a>   16</td></tr>
+<tr class="separator:gaf25612258426b8b806ab4128e5b055b6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gab54084e23152ffffad76b8cdfec91bf2"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gab54084e23152ffffad76b8cdfec91bf2">LE_SIM_APDU_MAX_BYTES</a>   255</td></tr>
+<tr class="separator:gab54084e23152ffffad76b8cdfec91bf2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga155be383d76069564b6ced6c18b8b712"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga155be383d76069564b6ced6c18b8b712">LE_SIM_RESPONSE_MAX_BYTES</a>   256</td></tr>
+<tr class="separator:ga155be383d76069564b6ced6c18b8b712"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga869290ea48dc472465345af6e3f1ed65"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga869290ea48dc472465345af6e3f1ed65">LE_SIM_FILE_ID_LEN</a>   4</td></tr>
+<tr class="separator:ga869290ea48dc472465345af6e3f1ed65"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaf172bc75589c693533af5cf55e33555e"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gaf172bc75589c693533af5cf55e33555e">LE_SIM_FILE_ID_BYTES</a>   5</td></tr>
+<tr class="separator:gaf172bc75589c693533af5cf55e33555e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga5674824ab605e6e521544a887c4ce024"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga5674824ab605e6e521544a887c4ce024">LE_SIM_DATA_MAX_BYTES</a>   100</td></tr>
+<tr class="separator:ga5674824ab605e6e521544a887c4ce024"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga1e28c18e1e1c28123ced4d9485b7f5c6"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga1e28c18e1e1c28123ced4d9485b7f5c6">LE_SIM_PATH_MAX_LEN</a>   100</td></tr>
+<tr class="separator:ga1e28c18e1e1c28123ced4d9485b7f5c6"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaad33f4de709b3b095fddbf8956e82d5a"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gaad33f4de709b3b095fddbf8956e82d5a">LE_SIM_PATH_MAX_BYTES</a>   101</td></tr>
+<tr class="separator:gaad33f4de709b3b095fddbf8956e82d5a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga7353f82a791e8dd933ee802efa111966"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga7353f82a791e8dd933ee802efa111966">LE_SIM_EID_LEN</a>   32</td></tr>
+<tr class="separator:ga7353f82a791e8dd933ee802efa111966"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga276b1619d8c45072da5572addb52e91f"><td align="right" class="memItemLeft" valign="top">#define </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga276b1619d8c45072da5572addb52e91f">LE_SIM_EID_BYTES</a>   33</td></tr>
+<tr class="separator:ga276b1619d8c45072da5572addb52e91f"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga89e0e915bca44f009ab8e117f387f59c"><td align="right" class="memItemLeft" valign="top">typedef struct le_sim_FPLMNList * </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga89e0e915bca44f009ab8e117f387f59c">le_sim_FPLMNListRef_t</a></td></tr>
+<tr class="separator:ga89e0e915bca44f009ab8e117f387f59c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga2762b1c04a51b185890700b0fa94f92d"><td align="right" class="memItemLeft" valign="top">typedef struct le_sim_NewStateHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga2762b1c04a51b185890700b0fa94f92d">le_sim_NewStateHandlerRef_t</a></td></tr>
+<tr class="separator:ga2762b1c04a51b185890700b0fa94f92d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga63b49462e8defff03a6b46acf9e7bf17"><td align="right" class="memItemLeft" valign="top">typedef struct le_sim_ProfileUpdateHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga63b49462e8defff03a6b46acf9e7bf17">le_sim_ProfileUpdateHandlerRef_t</a></td></tr>
+<tr class="separator:ga63b49462e8defff03a6b46acf9e7bf17"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga3d8f90603c8f5ff03b30fe9fabdf37f2"><td align="right" class="memItemLeft" valign="top">typedef struct le_sim_SimToolkitEventHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga3d8f90603c8f5ff03b30fe9fabdf37f2">le_sim_SimToolkitEventHandlerRef_t</a></td></tr>
+<tr class="separator:ga3d8f90603c8f5ff03b30fe9fabdf37f2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga39c3602e2923f475b105342222e0baa8"><td align="right" class="memItemLeft" valign="top">typedef struct le_sim_IccidChangeHandler * </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga39c3602e2923f475b105342222e0baa8">le_sim_IccidChangeHandlerRef_t</a></td></tr>
+<tr class="separator:ga39c3602e2923f475b105342222e0baa8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga9b29d688e7fac86082c1a2664278a573"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga9b29d688e7fac86082c1a2664278a573">le_sim_NewStateHandlerFunc_t</a>) (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, <a class="el" href="group__le__sim.html#ga21b9bb7d5e5e7ece213e00738a5bae41">le_sim_States_t</a> simState, void *contextPtr)</td></tr>
+<tr class="separator:ga9b29d688e7fac86082c1a2664278a573"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gabf3a1d4a091a05e315499b6ffc749220"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gabf3a1d4a091a05e315499b6ffc749220">le_sim_ProfileUpdateHandlerFunc_t</a>) (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, <a class="el" href="group__le__sim.html#ga7c53ab7f9f004387ef41e80df1121da2">le_sim_StkEvent_t</a> stkEvent, void *contextPtr)</td></tr>
+<tr class="separator:gabf3a1d4a091a05e315499b6ffc749220"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga6762190a9e0fbdb76df4ec8dcee1c0f7"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga6762190a9e0fbdb76df4ec8dcee1c0f7">le_sim_SimToolkitEventHandlerFunc_t</a>) (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, <a class="el" href="group__le__sim.html#ga7c53ab7f9f004387ef41e80df1121da2">le_sim_StkEvent_t</a> stkEvent, void *contextPtr)</td></tr>
+<tr class="separator:ga6762190a9e0fbdb76df4ec8dcee1c0f7"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gae586c30581e95c718b53d068266fcf7e"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gae586c30581e95c718b53d068266fcf7e">le_sim_IccidChangeHandlerFunc_t</a>) (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, const char *LE_NONNULL iccid, void *contextPtr)</td></tr>
+<tr class="separator:gae586c30581e95c718b53d068266fcf7e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga6fa2570cf1e666e33cd56ba1d819e4a8"><td align="right" class="memItemLeft" valign="top">typedef void(* </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga6fa2570cf1e666e33cd56ba1d819e4a8">le_sim_DisconnectHandler_t</a>) (void *)</td></tr>
+<tr class="separator:ga6fa2570cf1e666e33cd56ba1d819e4a8"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ga21b9bb7d5e5e7ece213e00738a5bae41"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga21b9bb7d5e5e7ece213e00738a5bae41">le_sim_States_t</a> { <br/>
+  <a class="el" href="group__le__sim.html#gga21b9bb7d5e5e7ece213e00738a5bae41a86aea853ae5fcc1a2e3c8d352d8689d3">LE_SIM_INSERTED</a> = 0, 
+<a class="el" href="group__le__sim.html#gga21b9bb7d5e5e7ece213e00738a5bae41a813e26946372fbc3960aa97713b6ca2f">LE_SIM_ABSENT</a> = 1, 
+<a class="el" href="group__le__sim.html#gga21b9bb7d5e5e7ece213e00738a5bae41aa7f1f6c3391e32af8ce3ba2242276d64">LE_SIM_READY</a> = 2, 
+<a class="el" href="group__le__sim.html#gga21b9bb7d5e5e7ece213e00738a5bae41af83b91131d516ad3756781108000515a">LE_SIM_BLOCKED</a> = 3, 
+<br/>
+  <a class="el" href="group__le__sim.html#gga21b9bb7d5e5e7ece213e00738a5bae41a944435801d6359050dc37092396ca951">LE_SIM_BUSY</a> = 4, 
+<a class="el" href="group__le__sim.html#gga21b9bb7d5e5e7ece213e00738a5bae41affe6278346f2d16ba331f900b58f1ce9">LE_SIM_POWER_DOWN</a> = 5, 
+<a class="el" href="group__le__sim.html#gga21b9bb7d5e5e7ece213e00738a5bae41ad82522676bf094ea402a0311356e434f">LE_SIM_STATE_UNKNOWN</a> = 6
+<br/>
+ }</td></tr>
+<tr class="separator:ga21b9bb7d5e5e7ece213e00738a5bae41"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gab1229013db24597218365dc41ed5571b"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gab1229013db24597218365dc41ed5571b">le_sim_SimMode_t</a> { <br/>
+  <a class="el" href="group__le__sim.html#ggab1229013db24597218365dc41ed5571baf7c599ca3821b85359dc89feb310be29">LE_SIM_FORCE_EXTERNAL</a> = 0, 
+<a class="el" href="group__le__sim.html#ggab1229013db24597218365dc41ed5571ba33afc71671b902054a4813ea832dbcb7">LE_SIM_FORCE_INTERNAL</a> = 1, 
+<a class="el" href="group__le__sim.html#ggab1229013db24597218365dc41ed5571ba6da9256cc698ff7aed3b6574cd4176ec">LE_SIM_PRESENCE_EXTERNAL</a> = 2, 
+<a class="el" href="group__le__sim.html#ggab1229013db24597218365dc41ed5571ba9587bb09c4cf8fa952a6fef8f58e2a57">LE_SIM_PREF_EXTERNAL</a> = 3, 
+<br/>
+  <b>LE_SIM_SIMMODE_MAX</b> = 4
+<br/>
+ }</td></tr>
+<tr class="separator:gab1229013db24597218365dc41ed5571b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaace49df88426119626fb1ef4e544ccdd"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> { <br/>
+  <a class="el" href="group__le__sim.html#ggaace49df88426119626fb1ef4e544ccddac9d9805213bfb9ae4d299aa70097846a">LE_SIM_EMBEDDED</a> = 0, 
+<a class="el" href="group__le__sim.html#ggaace49df88426119626fb1ef4e544ccdda4270fb44e8fa7876f337864675b42f2d">LE_SIM_EXTERNAL_SLOT_1</a> = 1, 
+<a class="el" href="group__le__sim.html#ggaace49df88426119626fb1ef4e544ccdda6b2b54f914c9723b30357645d90dc048">LE_SIM_EXTERNAL_SLOT_2</a> = 2, 
+<a class="el" href="group__le__sim.html#ggaace49df88426119626fb1ef4e544ccdda8221404a7978e95798f480917acc7f2d">LE_SIM_REMOTE</a> = 3, 
+<br/>
+  <a class="el" href="group__le__sim.html#ggaace49df88426119626fb1ef4e544ccdda534c8eb8cf0d79b444b18d5d1dd373df">LE_SIM_UNSPECIFIED</a> = 4, 
+<b>LE_SIM_ID_MAX</b> = 5
+<br/>
+ }</td></tr>
+<tr class="separator:gaace49df88426119626fb1ef4e544ccdd"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gac9719aa7561f79bc0b51eca9447ff37e"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gac9719aa7561f79bc0b51eca9447ff37e">le_sim_Manufacturer_t</a> { <br/>
+  <a class="el" href="group__le__sim.html#ggac9719aa7561f79bc0b51eca9447ff37ea6ba110dea48603ce2d8af48321bd5ae9">LE_SIM_OBERTHUR</a> = 0, 
+<a class="el" href="group__le__sim.html#ggac9719aa7561f79bc0b51eca9447ff37ea463b0b396f8c8f3b1dff4c1b6facb451">LE_SIM_GEMALTO</a> = 1, 
+<a class="el" href="group__le__sim.html#ggac9719aa7561f79bc0b51eca9447ff37ea1037fc81733b1666116328faa4f335ef">LE_SIM_G_AND_D</a> = 2, 
+<a class="el" href="group__le__sim.html#ggac9719aa7561f79bc0b51eca9447ff37ea00b929700255479a7c285328af3e16ee">LE_SIM_MORPHO</a> = 3, 
+<br/>
+  <a class="el" href="group__le__sim.html#ggac9719aa7561f79bc0b51eca9447ff37eac2e78ae119b4266460b29ce1dc6c7079">LE_SIM_VALID</a> = 4, 
+<b>LE_SIM_MANUFACTURER_MAX</b> = 5
+<br/>
+ }</td></tr>
+<tr class="separator:gac9719aa7561f79bc0b51eca9447ff37e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gac1a708ba305c36e33383073ec7f0e331"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gac1a708ba305c36e33383073ec7f0e331">le_sim_Command_t</a> { <br/>
+  <a class="el" href="group__le__sim.html#ggac1a708ba305c36e33383073ec7f0e331aa2d4ea6bc380cab183fb215911a39f14">LE_SIM_READ_RECORD</a> = 0, 
+<a class="el" href="group__le__sim.html#ggac1a708ba305c36e33383073ec7f0e331ae4a619ba58f2cd503103b397b717b16f">LE_SIM_READ_BINARY</a> = 1, 
+<a class="el" href="group__le__sim.html#ggac1a708ba305c36e33383073ec7f0e331a73f253861a66d9f1689fbdb97263019e">LE_SIM_UPDATE_RECORD</a> = 2, 
+<a class="el" href="group__le__sim.html#ggac1a708ba305c36e33383073ec7f0e331a68f83c3e207642ec4153b67c51cd3cd6">LE_SIM_UPDATE_BINARY</a> = 3, 
+<br/>
+  <a class="el" href="group__le__sim.html#ggac1a708ba305c36e33383073ec7f0e331a882fe099761cbf51a4a7bc82cc6cfaa6">LE_SIM_COMMAND_MAX</a> = 4
+<br/>
+ }</td></tr>
+<tr class="separator:gac1a708ba305c36e33383073ec7f0e331"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga7c53ab7f9f004387ef41e80df1121da2"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga7c53ab7f9f004387ef41e80df1121da2">le_sim_StkEvent_t</a> { <a class="el" href="group__le__sim.html#gga7c53ab7f9f004387ef41e80df1121da2a7207480abc036ae29469da1801033b2d">LE_SIM_OPEN_CHANNEL</a> = 0, 
+<a class="el" href="group__le__sim.html#gga7c53ab7f9f004387ef41e80df1121da2a4e4be9cfce6ef2e0832d707820cd106d">LE_SIM_REFRESH</a> = 1, 
+<a class="el" href="group__le__sim.html#gga7c53ab7f9f004387ef41e80df1121da2aa086ea0a94ca7065b6baf974e11ed707">LE_SIM_STK_EVENT_MAX</a> = 2
+ }</td></tr>
+<tr class="separator:ga7c53ab7f9f004387ef41e80df1121da2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gacf932502f1fa004dfcdd72ea2049d4eb"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gacf932502f1fa004dfcdd72ea2049d4eb">le_sim_StkRefreshMode_t</a> { <br/>
+  <a class="el" href="group__le__sim.html#ggacf932502f1fa004dfcdd72ea2049d4ebaf08281b0eeb9cea577becb2bee6c7296">LE_SIM_REFRESH_INIT_FULL_FCN</a> = 0, 
+<a class="el" href="group__le__sim.html#ggacf932502f1fa004dfcdd72ea2049d4eba21c6e7506012a3f5973bb9d697153225">LE_SIM_REFRESH_FCN</a> = 1, 
+<a class="el" href="group__le__sim.html#ggacf932502f1fa004dfcdd72ea2049d4eba386a0396fc93adcfa7b58cf5dbe41fee">LE_SIM_REFRESH_INIT_FCN</a> = 2, 
+<a class="el" href="group__le__sim.html#ggacf932502f1fa004dfcdd72ea2049d4ebab254b9966b37ccc2b89c86accd53bb52">LE_SIM_REFRESH_INIT</a> = 3, 
+<br/>
+  <a class="el" href="group__le__sim.html#ggacf932502f1fa004dfcdd72ea2049d4eba096f6c6a6bc15921801cd02be7d8cc37">LE_SIM_REFRESH_RESET</a> = 4, 
+<a class="el" href="group__le__sim.html#ggacf932502f1fa004dfcdd72ea2049d4eba2753a3ae1c7ab574ae69e16ba8f3607e">LE_SIM_REFRESH_APP_RESET</a> = 5, 
+<a class="el" href="group__le__sim.html#ggacf932502f1fa004dfcdd72ea2049d4eba2dcf59591ae522687b4bec1fbff210ff">LE_SIM_REFRESH_SESSION_RESET</a> = 6, 
+<a class="el" href="group__le__sim.html#ggacf932502f1fa004dfcdd72ea2049d4ebae16245017d227c9d29c8ec35c6d0b668">LE_SIM_REFRESH_STEERING_OF_ROAMING</a> = 7, 
+<br/>
+  <a class="el" href="group__le__sim.html#ggacf932502f1fa004dfcdd72ea2049d4eba8d93101b6401f50033eebe5733f7ff0c">LE_SIM_REFRESH_STEERING_OF_ROAMING_IWLAN</a> = 8, 
+<a class="el" href="group__le__sim.html#ggacf932502f1fa004dfcdd72ea2049d4ebad211a3a855100a001b7db4fc126dd680">LE_SIM_REFRESH_EUICC_PROFILE_CHANGE</a> = 9, 
+<a class="el" href="group__le__sim.html#ggacf932502f1fa004dfcdd72ea2049d4eba9ba27424d0f215c0d0908b6e956f3e8d">LE_SIM_REFRESH_MODE_MAX</a> = 10
+<br/>
+ }</td></tr>
+<tr class="separator:gacf932502f1fa004dfcdd72ea2049d4eb"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga99369a750db46ea1a5acb8cde0eef690"><td align="right" class="memItemLeft" valign="top">enum  </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga99369a750db46ea1a5acb8cde0eef690">le_sim_StkRefreshStage_t</a> { <a class="el" href="group__le__sim.html#gga99369a750db46ea1a5acb8cde0eef690a8d38c80c4a899969e6e8e5147bc9bad1">LE_SIM_STAGE_WAITING_FOR_OK</a> = 0, 
+<a class="el" href="group__le__sim.html#gga99369a750db46ea1a5acb8cde0eef690a5c6c140af833785098bb439973cea8d1">LE_SIM_STAGE_END_WITH_SUCCESS</a> = 1, 
+<a class="el" href="group__le__sim.html#gga99369a750db46ea1a5acb8cde0eef690ac8daa11e1b9d61425e29c10f28639dc9">LE_SIM_STAGE_END_WITH_FAILURE</a> = 2, 
+<a class="el" href="group__le__sim.html#gga99369a750db46ea1a5acb8cde0eef690aa21696394e964bd0aacb1a59c3a5afa3">LE_SIM_STAGE_MAX</a> = 3
+ }</td></tr>
+<tr class="separator:ga99369a750db46ea1a5acb8cde0eef690"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga84a7ff3ace6afa68bce12b85c18f9bf0"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga84a7ff3ace6afa68bce12b85c18f9bf0">le_sim_ConnectService</a> (void)</td></tr>
+<tr class="separator:ga84a7ff3ace6afa68bce12b85c18f9bf0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga66b944460c1c96a68a896c38d752f7f2"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga66b944460c1c96a68a896c38d752f7f2">le_sim_TryConnectService</a> (void)</td></tr>
+<tr class="separator:ga66b944460c1c96a68a896c38d752f7f2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga1d9e5d3357d2e0a11d6c099ab3a6b36c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga1d9e5d3357d2e0a11d6c099ab3a6b36c">le_sim_SetServerDisconnectHandler</a> (<a class="el" href="group__le__sim.html#ga6fa2570cf1e666e33cd56ba1d819e4a8">le_sim_DisconnectHandler_t</a> disconnectHandler, void *contextPtr)</td></tr>
+<tr class="separator:ga1d9e5d3357d2e0a11d6c099ab3a6b36c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga482f43deb99536a88bc873382012ff1b"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga482f43deb99536a88bc873382012ff1b">le_sim_DisconnectService</a> (void)</td></tr>
+<tr class="separator:ga482f43deb99536a88bc873382012ff1b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga8e296a7cd35edd99cb1dc21232e280dd"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__le__sim.html#ga2762b1c04a51b185890700b0fa94f92d">le_sim_NewStateHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga8e296a7cd35edd99cb1dc21232e280dd">le_sim_AddNewStateHandler</a> (<a class="el" href="group__le__sim.html#ga9b29d688e7fac86082c1a2664278a573">le_sim_NewStateHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:ga8e296a7cd35edd99cb1dc21232e280dd"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga0286578e9aa46ba864df1878263b9f84"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga0286578e9aa46ba864df1878263b9f84">le_sim_RemoveNewStateHandler</a> (<a class="el" href="group__le__sim.html#ga2762b1c04a51b185890700b0fa94f92d">le_sim_NewStateHandlerRef_t</a> handlerRef)</td></tr>
+<tr class="separator:ga0286578e9aa46ba864df1878263b9f84"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga94458aae91c311867bd8b3960c507aef"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__le__sim.html#ga63b49462e8defff03a6b46acf9e7bf17">le_sim_ProfileUpdateHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga94458aae91c311867bd8b3960c507aef">le_sim_AddProfileUpdateHandler</a> (<a class="el" href="group__le__sim.html#gabf3a1d4a091a05e315499b6ffc749220">le_sim_ProfileUpdateHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:ga94458aae91c311867bd8b3960c507aef"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gadf121cdefbf69dc983cc856a57b5ed7d"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gadf121cdefbf69dc983cc856a57b5ed7d">le_sim_RemoveProfileUpdateHandler</a> (<a class="el" href="group__le__sim.html#ga63b49462e8defff03a6b46acf9e7bf17">le_sim_ProfileUpdateHandlerRef_t</a> handlerRef)</td></tr>
+<tr class="separator:gadf121cdefbf69dc983cc856a57b5ed7d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga85577728a34d70801cbb4deb8efd75d5"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__le__sim.html#ga3d8f90603c8f5ff03b30fe9fabdf37f2">le_sim_SimToolkitEventHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga85577728a34d70801cbb4deb8efd75d5">le_sim_AddSimToolkitEventHandler</a> (<a class="el" href="group__le__sim.html#ga6762190a9e0fbdb76df4ec8dcee1c0f7">le_sim_SimToolkitEventHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:ga85577728a34d70801cbb4deb8efd75d5"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga2485840533f80632a61096b1d7c5d8f2"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga2485840533f80632a61096b1d7c5d8f2">le_sim_RemoveSimToolkitEventHandler</a> (<a class="el" href="group__le__sim.html#ga3d8f90603c8f5ff03b30fe9fabdf37f2">le_sim_SimToolkitEventHandlerRef_t</a> handlerRef)</td></tr>
+<tr class="separator:ga2485840533f80632a61096b1d7c5d8f2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gafc1b8e2aa1b36ed116e9fae4a9a66057"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__le__sim.html#ga39c3602e2923f475b105342222e0baa8">le_sim_IccidChangeHandlerRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gafc1b8e2aa1b36ed116e9fae4a9a66057">le_sim_AddIccidChangeHandler</a> (<a class="el" href="group__le__sim.html#gae586c30581e95c718b53d068266fcf7e">le_sim_IccidChangeHandlerFunc_t</a> handlerPtr, void *contextPtr)</td></tr>
+<tr class="separator:gafc1b8e2aa1b36ed116e9fae4a9a66057"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gad357ed6124852a92bb30d59227fc5ec2"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gad357ed6124852a92bb30d59227fc5ec2">le_sim_RemoveIccidChangeHandler</a> (<a class="el" href="group__le__sim.html#ga39c3602e2923f475b105342222e0baa8">le_sim_IccidChangeHandlerRef_t</a> handlerRef)</td></tr>
+<tr class="separator:gad357ed6124852a92bb30d59227fc5ec2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga0a83a3cc07818b42a3b2996fd4d6ffb8"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__le__sim.html#gab1229013db24597218365dc41ed5571b">le_sim_SimMode_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga0a83a3cc07818b42a3b2996fd4d6ffb8">le_sim_GetSimMode</a> (void)</td></tr>
+<tr class="separator:ga0a83a3cc07818b42a3b2996fd4d6ffb8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga4c9e3ded0485f14c66e4d51763f2de57"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga4c9e3ded0485f14c66e4d51763f2de57">le_sim_GetSelectedCard</a> (void)</td></tr>
+<tr class="separator:ga4c9e3ded0485f14c66e4d51763f2de57"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga91a0f0399c89e466b9a8ccfab6de129d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga91a0f0399c89e466b9a8ccfab6de129d">le_sim_SelectCard</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId)</td></tr>
+<tr class="separator:ga91a0f0399c89e466b9a8ccfab6de129d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga7b43e4e8713af665657e15ae0f5bc1e8"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga7b43e4e8713af665657e15ae0f5bc1e8">le_sim_GetICCID</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, char *iccid, size_t iccidSize)</td></tr>
+<tr class="separator:ga7b43e4e8713af665657e15ae0f5bc1e8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga069ff8cf1d16a1b639c893619a618c10"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga069ff8cf1d16a1b639c893619a618c10">le_sim_GetEID</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, char *eid, size_t eidSize)</td></tr>
+<tr class="separator:ga069ff8cf1d16a1b639c893619a618c10"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gacc0f801f268630ea496377077a366374"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gacc0f801f268630ea496377077a366374">le_sim_GetIMSI</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, char *imsi, size_t imsiSize)</td></tr>
+<tr class="separator:gacc0f801f268630ea496377077a366374"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaa3255a29cec4358c5e0d68b9ac62ff88"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gaa3255a29cec4358c5e0d68b9ac62ff88">le_sim_IsPresent</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId)</td></tr>
+<tr class="separator:gaa3255a29cec4358c5e0d68b9ac62ff88"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gace457890856d3692ecb4176f0e892558"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gace457890856d3692ecb4176f0e892558">le_sim_IsReady</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId)</td></tr>
+<tr class="separator:gace457890856d3692ecb4176f0e892558"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gac9cafacb5affb0b531534e3fc547ebd2"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gac9cafacb5affb0b531534e3fc547ebd2">le_sim_EnterPIN</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, const char *LE_NONNULL pin)</td></tr>
+<tr class="separator:gac9cafacb5affb0b531534e3fc547ebd2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga50b6ce8bae5a073307d1d12550b22c1e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga50b6ce8bae5a073307d1d12550b22c1e">le_sim_ChangePIN</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, const char *LE_NONNULL oldpin, const char *LE_NONNULL newpin)</td></tr>
+<tr class="separator:ga50b6ce8bae5a073307d1d12550b22c1e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga8886dbb94aa732883ec5a67ddd345f98"><td align="right" class="memItemLeft" valign="top">int32_t </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga8886dbb94aa732883ec5a67ddd345f98">le_sim_GetRemainingPINTries</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId)</td></tr>
+<tr class="separator:ga8886dbb94aa732883ec5a67ddd345f98"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga285eeaa3c5e1977abbe49682145f3d35"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga285eeaa3c5e1977abbe49682145f3d35">le_sim_GetRemainingPUKTries</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, uint32_t *remainingPukTriesPtrPtr)</td></tr>
+<tr class="separator:ga285eeaa3c5e1977abbe49682145f3d35"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga4397d51c42ba894f0fa4206341a0dc64"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga4397d51c42ba894f0fa4206341a0dc64">le_sim_Unlock</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, const char *LE_NONNULL pin)</td></tr>
+<tr class="separator:ga4397d51c42ba894f0fa4206341a0dc64"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga6fab9b258f5af39645b9a200ed202a27"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga6fab9b258f5af39645b9a200ed202a27">le_sim_Lock</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, const char *LE_NONNULL pin)</td></tr>
+<tr class="separator:ga6fab9b258f5af39645b9a200ed202a27"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga234634c9789cdbc8f76629a2272bd2dd"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga234634c9789cdbc8f76629a2272bd2dd">le_sim_Unblock</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, const char *LE_NONNULL puk, const char *LE_NONNULL newpin)</td></tr>
+<tr class="separator:ga234634c9789cdbc8f76629a2272bd2dd"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga16b06f266471d81f772e5439ec570144"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__le__sim.html#ga21b9bb7d5e5e7ece213e00738a5bae41">le_sim_States_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga16b06f266471d81f772e5439ec570144">le_sim_GetState</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId)</td></tr>
+<tr class="separator:ga16b06f266471d81f772e5439ec570144"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga5964edfe6070d40e0518c0a5d25aa628"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga5964edfe6070d40e0518c0a5d25aa628">le_sim_GetSubscriberPhoneNumber</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, char *phoneNumberStr, size_t phoneNumberStrSize)</td></tr>
+<tr class="separator:ga5964edfe6070d40e0518c0a5d25aa628"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga2fa95e7fdaaff2fd000e676b9cc34344"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga2fa95e7fdaaff2fd000e676b9cc34344">le_sim_GetHomeNetworkOperator</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, char *nameStr, size_t nameStrSize)</td></tr>
+<tr class="separator:ga2fa95e7fdaaff2fd000e676b9cc34344"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga6bab381ed34046b553145bfbe53dfa3c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga6bab381ed34046b553145bfbe53dfa3c">le_sim_GetHomeNetworkMccMnc</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, char *mccPtr, size_t mccPtrSize, char *mncPtr, size_t mncPtrSize)</td></tr>
+<tr class="separator:ga6bab381ed34046b553145bfbe53dfa3c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaa856f5e094e8182c8d0b07761e309549"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gaa856f5e094e8182c8d0b07761e309549">le_sim_LocalSwapToEmergencyCallSubscription</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, <a class="el" href="group__le__sim.html#gac9719aa7561f79bc0b51eca9447ff37e">le_sim_Manufacturer_t</a> manufacturer)</td></tr>
+<tr class="separator:gaa856f5e094e8182c8d0b07761e309549"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga51b535750b66c4cf460e3c8c72f3658d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga51b535750b66c4cf460e3c8c72f3658d">le_sim_LocalSwapToCommercialSubscription</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, <a class="el" href="group__le__sim.html#gac9719aa7561f79bc0b51eca9447ff37e">le_sim_Manufacturer_t</a> manufacturer)</td></tr>
+<tr class="separator:ga51b535750b66c4cf460e3c8c72f3658d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga837cdc0fe30761f4339f846a0b44c5f1"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga837cdc0fe30761f4339f846a0b44c5f1">le_sim_IsEmergencyCallSubscriptionSelected</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, bool *isEcsPtr)</td></tr>
+<tr class="separator:ga837cdc0fe30761f4339f846a0b44c5f1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga8cc75a17466446c19c5bd941b1360e0e"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga8cc75a17466446c19c5bd941b1360e0e">le_sim_AcceptSimToolkitCommand</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId)</td></tr>
+<tr class="separator:ga8cc75a17466446c19c5bd941b1360e0e"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga8cbdc50d62ddd5ea80386d27e16d954f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga8cbdc50d62ddd5ea80386d27e16d954f">le_sim_RejectSimToolkitCommand</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId)</td></tr>
+<tr class="separator:ga8cbdc50d62ddd5ea80386d27e16d954f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga82331254a8f94c20c01a9962a488a29f"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga82331254a8f94c20c01a9962a488a29f">le_sim_GetSimToolkitRefreshMode</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, <a class="el" href="group__le__sim.html#gacf932502f1fa004dfcdd72ea2049d4eb">le_sim_StkRefreshMode_t</a> *refreshModePtr)</td></tr>
+<tr class="separator:ga82331254a8f94c20c01a9962a488a29f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga81bd3909308a1456225e59f1f36e73e3"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga81bd3909308a1456225e59f1f36e73e3">le_sim_GetSimToolkitRefreshStage</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, <a class="el" href="group__le__sim.html#ga99369a750db46ea1a5acb8cde0eef690">le_sim_StkRefreshStage_t</a> *refreshStagePtr)</td></tr>
+<tr class="separator:ga81bd3909308a1456225e59f1f36e73e3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gad59f8ec574f4eab0cfae070a1e593298"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gad59f8ec574f4eab0cfae070a1e593298">le_sim_SendApdu</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, const uint8_t *commandApduPtr, size_t commandApduSize, uint8_t *responseApduPtr, size_t *responseApduSizePtr)</td></tr>
+<tr class="separator:gad59f8ec574f4eab0cfae070a1e593298"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga8bbaea044b44f8b0ebff67bf98de816a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga8bbaea044b44f8b0ebff67bf98de816a">le_sim_SendCommand</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, <a class="el" href="group__le__sim.html#gac1a708ba305c36e33383073ec7f0e331">le_sim_Command_t</a> command, const char *LE_NONNULL fileIdentifier, uint8_t p1, uint8_t p2, uint8_t p3, const uint8_t *dataPtr, size_t dataSize, const char *LE_NONNULL path, uint8_t *sw1Ptr, uint8_t *sw2Ptr, uint8_t *responsePtr, size_t *responseSizePtr)</td></tr>
+<tr class="separator:ga8bbaea044b44f8b0ebff67bf98de816a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gab517d13e9c51c925820319abaf014e36"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gab517d13e9c51c925820319abaf014e36">le_sim_SetAutomaticSelection</a> (bool enable)</td></tr>
+<tr class="separator:gab517d13e9c51c925820319abaf014e36"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga867e4561a313aa91fa5dc9181a6603c0"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga867e4561a313aa91fa5dc9181a6603c0">le_sim_GetAutomaticSelection</a> (bool *enablePtr)</td></tr>
+<tr class="separator:ga867e4561a313aa91fa5dc9181a6603c0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaaed2544651545d68845f3596fd5d448b"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gaaed2544651545d68845f3596fd5d448b">le_sim_Reset</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId)</td></tr>
+<tr class="separator:gaaed2544651545d68845f3596fd5d448b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gac9657cb9b3af960910988ce23c8fc31a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__le__sim.html#ga89e0e915bca44f009ab8e117f387f59c">le_sim_FPLMNListRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gac9657cb9b3af960910988ce23c8fc31a">le_sim_CreateFPLMNList</a> (void)</td></tr>
+<tr class="separator:gac9657cb9b3af960910988ce23c8fc31a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga9c425b48c314ce4ec85bc2954aedf238"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga9c425b48c314ce4ec85bc2954aedf238">le_sim_AddFPLMNOperator</a> (<a class="el" href="group__le__sim.html#ga89e0e915bca44f009ab8e117f387f59c">le_sim_FPLMNListRef_t</a> FPLMNListRef, const char *LE_NONNULL mcc, const char *LE_NONNULL mnc)</td></tr>
+<tr class="separator:ga9c425b48c314ce4ec85bc2954aedf238"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaa0eaa48a1c29cd8f3d64e866823ca2ca"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gaa0eaa48a1c29cd8f3d64e866823ca2ca">le_sim_WriteFPLMNList</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, <a class="el" href="group__le__sim.html#ga89e0e915bca44f009ab8e117f387f59c">le_sim_FPLMNListRef_t</a> FPLMNListRef)</td></tr>
+<tr class="separator:gaa0eaa48a1c29cd8f3d64e866823ca2ca"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga09ab2e629232e35ffbc0007dca0923e9"><td align="right" class="memItemLeft" valign="top"><a class="el" href="group__le__sim.html#ga89e0e915bca44f009ab8e117f387f59c">le_sim_FPLMNListRef_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga09ab2e629232e35ffbc0007dca0923e9">le_sim_ReadFPLMNList</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId)</td></tr>
+<tr class="separator:ga09ab2e629232e35ffbc0007dca0923e9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gacdc45e95cbcbff57f3dd0dc6e1967d39"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gacdc45e95cbcbff57f3dd0dc6e1967d39">le_sim_GetFirstFPLMNOperator</a> (<a class="el" href="group__le__sim.html#ga89e0e915bca44f009ab8e117f387f59c">le_sim_FPLMNListRef_t</a> FPLMNListRef, char *mccPtr, size_t mccPtrSize, char *mncPtr, size_t mncPtrSize)</td></tr>
+<tr class="separator:gacdc45e95cbcbff57f3dd0dc6e1967d39"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gaf7069f351aca77efe7dcfe1519df21c8"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gaf7069f351aca77efe7dcfe1519df21c8">le_sim_GetNextFPLMNOperator</a> (<a class="el" href="group__le__sim.html#ga89e0e915bca44f009ab8e117f387f59c">le_sim_FPLMNListRef_t</a> FPLMNListRef, char *mccPtr, size_t mccPtrSize, char *mncPtr, size_t mncPtrSize)</td></tr>
+<tr class="separator:gaf7069f351aca77efe7dcfe1519df21c8"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gac96338b9c989602b32e1d8555eb33a0b"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gac96338b9c989602b32e1d8555eb33a0b">le_sim_DeleteFPLMNList</a> (<a class="el" href="group__le__sim.html#ga89e0e915bca44f009ab8e117f387f59c">le_sim_FPLMNListRef_t</a> FPLMNListRef)</td></tr>
+<tr class="separator:gac96338b9c989602b32e1d8555eb33a0b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga88e2de9b9079e142b7a11bbb43bd95be"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga88e2de9b9079e142b7a11bbb43bd95be">le_sim_OpenLogicalChannel</a> (uint8_t *channelPtrPtr)</td></tr>
+<tr class="separator:ga88e2de9b9079e142b7a11bbb43bd95be"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gac3f55bd37c4b1df143bec93883fd1467"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gac3f55bd37c4b1df143bec93883fd1467">le_sim_CloseLogicalChannel</a> (uint8_t channel)</td></tr>
+<tr class="separator:gac3f55bd37c4b1df143bec93883fd1467"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:gac6bddf340beb65e2d9bdde307694cbb1"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#gac6bddf340beb65e2d9bdde307694cbb1">le_sim_SendApduOnChannel</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, uint8_t channel, const uint8_t *commandApduPtr, size_t commandApduSize, uint8_t *responseApduPtr, size_t *responseApduSizePtr)</td></tr>
+<tr class="separator:gac6bddf340beb65e2d9bdde307694cbb1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ga158c30712c4fd0afc06e66591eb89a6c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="group__le__sim.html#ga158c30712c4fd0afc06e66591eb89a6c">le_sim_SetPower</a> (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, <a class="el" href="le__basics_8h.html#ae2138c90c41d30e2d510be01d8b374da">le_onoff_t</a> power)</td></tr>
+<tr class="separator:ga158c30712c4fd0afc06e66591eb89a6c"><td class="memSeparator" colspan="2"> </td></tr>
+</table>
+<a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="gab54084e23152ffffad76b8cdfec91bf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab54084e23152ffffad76b8cdfec91bf2">◆ </a></span>LE_SIM_APDU_MAX_BYTES</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_APDU_MAX_BYTES   255</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>APDU length </p>
+</div>
+</div>
+<a id="ga5674824ab605e6e521544a887c4ce024"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5674824ab605e6e521544a887c4ce024">◆ </a></span>LE_SIM_DATA_MAX_BYTES</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_DATA_MAX_BYTES   100</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>SIM data command length </p>
+</div>
+</div>
+<a id="ga276b1619d8c45072da5572addb52e91f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga276b1619d8c45072da5572addb52e91f">◆ </a></span>LE_SIM_EID_BYTES</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_EID_BYTES   33</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>eUICC identifier (EID) length One extra byte is added for the null character. </p>
+</div>
+</div>
+<a id="ga7353f82a791e8dd933ee802efa111966"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7353f82a791e8dd933ee802efa111966">◆ </a></span>LE_SIM_EID_LEN</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_EID_LEN   32</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>eUICC identifier (EID) length </p>
+</div>
+</div>
+<a id="gaf172bc75589c693533af5cf55e33555e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf172bc75589c693533af5cf55e33555e">◆ </a></span>LE_SIM_FILE_ID_BYTES</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_FILE_ID_BYTES   5</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>SIM file identifier length One extra byte is added for the null character. </p>
+</div>
+</div>
+<a id="ga869290ea48dc472465345af6e3f1ed65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga869290ea48dc472465345af6e3f1ed65">◆ </a></span>LE_SIM_FILE_ID_LEN</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_FILE_ID_LEN   4</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>SIM file identifier length </p>
+</div>
+</div>
+<a id="ga70c33c93f96c8376220b123909654d61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga70c33c93f96c8376220b123909654d61">◆ </a></span>LE_SIM_ICCID_BYTES</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_ICCID_BYTES   21</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>ICCID length One extra byte is added for the null character. </p>
+</div>
+</div>
+<a id="ga51403752e70df40cd0472afa1914e7e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga51403752e70df40cd0472afa1914e7e3">◆ </a></span>LE_SIM_ICCID_LEN</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_ICCID_LEN   20</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>ICCID length According to GSM Phase 1 </p>
+</div>
+</div>
+<a id="gaf25612258426b8b806ab4128e5b055b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf25612258426b8b806ab4128e5b055b6">◆ </a></span>LE_SIM_IMSI_BYTES</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_IMSI_BYTES   16</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>IMSI length One extra byte is added for the null character. </p>
+</div>
+</div>
+<a id="ga233b68cf33721539c2bf3ba52bbd7ff2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga233b68cf33721539c2bf3ba52bbd7ff2">◆ </a></span>LE_SIM_IMSI_LEN</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_IMSI_LEN   15</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>IMSI length </p>
+</div>
+</div>
+<a id="gaad33f4de709b3b095fddbf8956e82d5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaad33f4de709b3b095fddbf8956e82d5a">◆ </a></span>LE_SIM_PATH_MAX_BYTES</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_PATH_MAX_BYTES   101</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>SIM file path length One extra byte is added for the null character. </p>
+</div>
+</div>
+<a id="ga1e28c18e1e1c28123ced4d9485b7f5c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1e28c18e1e1c28123ced4d9485b7f5c6">◆ </a></span>LE_SIM_PATH_MAX_LEN</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_PATH_MAX_LEN   100</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>SIM file path length </p>
+</div>
+</div>
+<a id="gaceddc12f8f1ec75fc733daa77991ce16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaceddc12f8f1ec75fc733daa77991ce16">◆ </a></span>LE_SIM_PIN_MAX_BYTES</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_PIN_MAX_BYTES   9</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Maximum PIN length (8 digits) One extra byte is added for the null character. </p>
+</div>
+</div>
+<a id="gad2e7d02474310221f6815561ea02659f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad2e7d02474310221f6815561ea02659f">◆ </a></span>LE_SIM_PIN_MAX_LEN</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_PIN_MAX_LEN   8</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Maximum PIN length (8 digits) </p>
+</div>
+</div>
+<a id="ga072e9b594642fe6d4a2dd24c375ae0e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga072e9b594642fe6d4a2dd24c375ae0e2">◆ </a></span>LE_SIM_PIN_MIN_LEN</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_PIN_MIN_LEN   4</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Minimum PIN length (4 digits) </p>
+</div>
+</div>
+<a id="gace26b9554dca416872a157003f5b93c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gace26b9554dca416872a157003f5b93c1">◆ </a></span>LE_SIM_PUK_MAX_BYTES</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_PUK_MAX_BYTES   9</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>PUK length (8 digits) One extra byte is added for the null character. </p>
+</div>
+</div>
+<a id="ga25221b5f13960a83652a69494ef90115"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga25221b5f13960a83652a69494ef90115">◆ </a></span>LE_SIM_PUK_MAX_LEN</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_PUK_MAX_LEN   8</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>PUK length (8 digits) </p>
+</div>
+</div>
+<a id="ga155be383d76069564b6ced6c18b8b712"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga155be383d76069564b6ced6c18b8b712">◆ </a></span>LE_SIM_RESPONSE_MAX_BYTES</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define LE_SIM_RESPONSE_MAX_BYTES   256</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>SIM response length </p>
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ga6fa2570cf1e666e33cd56ba1d819e4a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6fa2570cf1e666e33cd56ba1d819e4a8">◆ </a></span>le_sim_DisconnectHandler_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_sim_DisconnectHandler_t) (void *)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Type for handler called when a server disconnects. </p>
+</div>
+</div>
+<a id="ga89e0e915bca44f009ab8e117f387f59c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga89e0e915bca44f009ab8e117f387f59c">◆ </a></span>le_sim_FPLMNListRef_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_sim_FPLMNList* <a class="el" href="group__le__sim.html#ga89e0e915bca44f009ab8e117f387f59c">le_sim_FPLMNListRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference type for FPLMN list. </p>
+</div>
+</div>
+<a id="gae586c30581e95c718b53d068266fcf7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae586c30581e95c718b53d068266fcf7e">◆ </a></span>le_sim_IccidChangeHandlerFunc_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_sim_IccidChangeHandlerFunc_t) (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, const char *LE_NONNULL iccid, void *contextPtr)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Handler for ICCID change events. </p>
+</div>
+</div>
+<a id="ga39c3602e2923f475b105342222e0baa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga39c3602e2923f475b105342222e0baa8">◆ </a></span>le_sim_IccidChangeHandlerRef_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_sim_IccidChangeHandler* <a class="el" href="group__le__sim.html#ga39c3602e2923f475b105342222e0baa8">le_sim_IccidChangeHandlerRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference type used by Add/Remove functions for EVENT 'le_sim_IccidChange' </p>
+</div>
+</div>
+<a id="ga9b29d688e7fac86082c1a2664278a573"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9b29d688e7fac86082c1a2664278a573">◆ </a></span>le_sim_NewStateHandlerFunc_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_sim_NewStateHandlerFunc_t) (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, <a class="el" href="group__le__sim.html#ga21b9bb7d5e5e7ece213e00738a5bae41">le_sim_States_t</a> simState, void *contextPtr)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Handler for sim state changes. </p>
+</div>
+</div>
+<a id="ga2762b1c04a51b185890700b0fa94f92d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2762b1c04a51b185890700b0fa94f92d">◆ </a></span>le_sim_NewStateHandlerRef_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_sim_NewStateHandler* <a class="el" href="group__le__sim.html#ga2762b1c04a51b185890700b0fa94f92d">le_sim_NewStateHandlerRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference type used by Add/Remove functions for EVENT 'le_sim_NewState' </p>
+</div>
+</div>
+<a id="gabf3a1d4a091a05e315499b6ffc749220"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabf3a1d4a091a05e315499b6ffc749220">◆ </a></span>le_sim_ProfileUpdateHandlerFunc_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_sim_ProfileUpdateHandlerFunc_t) (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, <a class="el" href="group__le__sim.html#ga7c53ab7f9f004387ef41e80df1121da2">le_sim_StkEvent_t</a> stkEvent, void *contextPtr)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Handler for profile update events. </p>
+</div>
+</div>
+<a id="ga63b49462e8defff03a6b46acf9e7bf17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga63b49462e8defff03a6b46acf9e7bf17">◆ </a></span>le_sim_ProfileUpdateHandlerRef_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_sim_ProfileUpdateHandler* <a class="el" href="group__le__sim.html#ga63b49462e8defff03a6b46acf9e7bf17">le_sim_ProfileUpdateHandlerRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference type used by Add/Remove functions for EVENT 'le_sim_ProfileUpdate' </p>
+</div>
+</div>
+<a id="ga6762190a9e0fbdb76df4ec8dcee1c0f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6762190a9e0fbdb76df4ec8dcee1c0f7">◆ </a></span>le_sim_SimToolkitEventHandlerFunc_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef void(* le_sim_SimToolkitEventHandlerFunc_t) (<a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> simId, <a class="el" href="group__le__sim.html#ga7c53ab7f9f004387ef41e80df1121da2">le_sim_StkEvent_t</a> stkEvent, void *contextPtr)</td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Handler for Sim Toolkit Events. </p>
+</div>
+</div>
+<a id="ga3d8f90603c8f5ff03b30fe9fabdf37f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3d8f90603c8f5ff03b30fe9fabdf37f2">◆ </a></span>le_sim_SimToolkitEventHandlerRef_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">typedef struct le_sim_SimToolkitEventHandler* <a class="el" href="group__le__sim.html#ga3d8f90603c8f5ff03b30fe9fabdf37f2">le_sim_SimToolkitEventHandlerRef_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference type used by Add/Remove functions for EVENT 'le_sim_SimToolkitEvent' </p>
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="gac1a708ba305c36e33383073ec7f0e331"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac1a708ba305c36e33383073ec7f0e331">◆ </a></span>le_sim_Command_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">enum <a class="el" href="group__le__sim.html#gac1a708ba305c36e33383073ec7f0e331">le_sim_Command_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>SIM commands. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggac1a708ba305c36e33383073ec7f0e331aa2d4ea6bc380cab183fb215911a39f14"></a>LE_SIM_READ_RECORD </td><td class="fielddoc"><p>Read a file record. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggac1a708ba305c36e33383073ec7f0e331ae4a619ba58f2cd503103b397b717b16f"></a>LE_SIM_READ_BINARY </td><td class="fielddoc"><p>Read a transparent elementary file. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggac1a708ba305c36e33383073ec7f0e331a73f253861a66d9f1689fbdb97263019e"></a>LE_SIM_UPDATE_RECORD </td><td class="fielddoc"><p>Update a file record. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggac1a708ba305c36e33383073ec7f0e331a68f83c3e207642ec4153b67c51cd3cd6"></a>LE_SIM_UPDATE_BINARY </td><td class="fielddoc"><p>Update a transparent elementary file. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggac1a708ba305c36e33383073ec7f0e331a882fe099761cbf51a4a7bc82cc6cfaa6"></a>LE_SIM_COMMAND_MAX </td><td class="fielddoc"><p>Max value. </p>
+</td></tr>
+</table>
+</div>
+</div>
+<a id="gaace49df88426119626fb1ef4e544ccdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaace49df88426119626fb1ef4e544ccdd">◆ </a></span>le_sim_Id_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">enum <a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>SIM identifiers. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggaace49df88426119626fb1ef4e544ccddac9d9805213bfb9ae4d299aa70097846a"></a>LE_SIM_EMBEDDED </td><td class="fielddoc"><p>Embedded SIM. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaace49df88426119626fb1ef4e544ccdda4270fb44e8fa7876f337864675b42f2d"></a>LE_SIM_EXTERNAL_SLOT_1 </td><td class="fielddoc"><p>SIM inserted in external slot 1. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaace49df88426119626fb1ef4e544ccdda6b2b54f914c9723b30357645d90dc048"></a>LE_SIM_EXTERNAL_SLOT_2 </td><td class="fielddoc"><p>SIM inserted in external slot 2. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaace49df88426119626fb1ef4e544ccdda8221404a7978e95798f480917acc7f2d"></a>LE_SIM_REMOTE </td><td class="fielddoc"><p>Remote SIM. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaace49df88426119626fb1ef4e544ccdda534c8eb8cf0d79b444b18d5d1dd373df"></a>LE_SIM_UNSPECIFIED </td><td class="fielddoc"><p>le_sim APIs are executed on the currently selected SIM. Use this identifier when automatic SIM selection is enabled. </p>
+</td></tr>
+</table>
+</div>
+</div>
+<a id="gac9719aa7561f79bc0b51eca9447ff37e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac9719aa7561f79bc0b51eca9447ff37e">◆ </a></span>le_sim_Manufacturer_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">enum <a class="el" href="group__le__sim.html#gac9719aa7561f79bc0b51eca9447ff37e">le_sim_Manufacturer_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Card Manufacturer. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggac9719aa7561f79bc0b51eca9447ff37ea6ba110dea48603ce2d8af48321bd5ae9"></a>LE_SIM_OBERTHUR </td><td class="fielddoc"><p>Oberthur. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggac9719aa7561f79bc0b51eca9447ff37ea463b0b396f8c8f3b1dff4c1b6facb451"></a>LE_SIM_GEMALTO </td><td class="fielddoc"><p>Gemalto. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggac9719aa7561f79bc0b51eca9447ff37ea1037fc81733b1666116328faa4f335ef"></a>LE_SIM_G_AND_D </td><td class="fielddoc"><p>G&amp;D. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggac9719aa7561f79bc0b51eca9447ff37ea00b929700255479a7c285328af3e16ee"></a>LE_SIM_MORPHO </td><td class="fielddoc"><p>Morpho. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggac9719aa7561f79bc0b51eca9447ff37eac2e78ae119b4266460b29ce1dc6c7079"></a>LE_SIM_VALID </td><td class="fielddoc"><p>Valid. </p>
+</td></tr>
+</table>
+</div>
+</div>
+<a id="gab1229013db24597218365dc41ed5571b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab1229013db24597218365dc41ed5571b">◆ </a></span>le_sim_SimMode_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">enum <a class="el" href="group__le__sim.html#gab1229013db24597218365dc41ed5571b">le_sim_SimMode_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>SIM selection modes </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggab1229013db24597218365dc41ed5571baf7c599ca3821b85359dc89feb310be29"></a>LE_SIM_FORCE_EXTERNAL </td><td class="fielddoc"><p>Force to select external SIM. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggab1229013db24597218365dc41ed5571ba33afc71671b902054a4813ea832dbcb7"></a>LE_SIM_FORCE_INTERNAL </td><td class="fielddoc"><p>Select internal SIM if present. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggab1229013db24597218365dc41ed5571ba6da9256cc698ff7aed3b6574cd4176ec"></a>LE_SIM_PRESENCE_EXTERNAL </td><td class="fielddoc"><p>The presence of an external SIM will be ignored. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggab1229013db24597218365dc41ed5571ba9587bb09c4cf8fa952a6fef8f58e2a57"></a>LE_SIM_PREF_EXTERNAL </td><td class="fielddoc"><p>Select external SIM if present, else select internal SIM. </p>
+</td></tr>
+</table>
+</div>
+</div>
+<a id="ga21b9bb7d5e5e7ece213e00738a5bae41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga21b9bb7d5e5e7ece213e00738a5bae41">◆ </a></span>le_sim_States_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">enum <a class="el" href="group__le__sim.html#ga21b9bb7d5e5e7ece213e00738a5bae41">le_sim_States_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>SIM states. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga21b9bb7d5e5e7ece213e00738a5bae41a86aea853ae5fcc1a2e3c8d352d8689d3"></a>LE_SIM_INSERTED </td><td class="fielddoc"><p>SIM card is inserted and locked. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga21b9bb7d5e5e7ece213e00738a5bae41a813e26946372fbc3960aa97713b6ca2f"></a>LE_SIM_ABSENT </td><td class="fielddoc"><p>SIM card is absent. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga21b9bb7d5e5e7ece213e00738a5bae41aa7f1f6c3391e32af8ce3ba2242276d64"></a>LE_SIM_READY </td><td class="fielddoc"><p>SIM card is inserted and unlocked. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga21b9bb7d5e5e7ece213e00738a5bae41af83b91131d516ad3756781108000515a"></a>LE_SIM_BLOCKED </td><td class="fielddoc"><p>SIM card is blocked. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga21b9bb7d5e5e7ece213e00738a5bae41a944435801d6359050dc37092396ca951"></a>LE_SIM_BUSY </td><td class="fielddoc"><p>SIM card is busy. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga21b9bb7d5e5e7ece213e00738a5bae41affe6278346f2d16ba331f900b58f1ce9"></a>LE_SIM_POWER_DOWN </td><td class="fielddoc"><p>SIM card is powered down. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga21b9bb7d5e5e7ece213e00738a5bae41ad82522676bf094ea402a0311356e434f"></a>LE_SIM_STATE_UNKNOWN </td><td class="fielddoc"><p>Unknown SIM state. </p>
+</td></tr>
+</table>
+</div>
+</div>
+<a id="ga7c53ab7f9f004387ef41e80df1121da2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7c53ab7f9f004387ef41e80df1121da2">◆ </a></span>le_sim_StkEvent_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">enum <a class="el" href="group__le__sim.html#ga7c53ab7f9f004387ef41e80df1121da2">le_sim_StkEvent_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>SIM Toolkit events. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga7c53ab7f9f004387ef41e80df1121da2a7207480abc036ae29469da1801033b2d"></a>LE_SIM_OPEN_CHANNEL </td><td class="fielddoc"><p>SIM card asks to open a logical channel. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga7c53ab7f9f004387ef41e80df1121da2a4e4be9cfce6ef2e0832d707820cd106d"></a>LE_SIM_REFRESH </td><td class="fielddoc"><p>SIM card asks for a refresh. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga7c53ab7f9f004387ef41e80df1121da2aa086ea0a94ca7065b6baf974e11ed707"></a>LE_SIM_STK_EVENT_MAX </td><td class="fielddoc"><p>Unknown SIM Toolkit event. </p>
+</td></tr>
+</table>
+</div>
+</div>
+<a id="gacf932502f1fa004dfcdd72ea2049d4eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacf932502f1fa004dfcdd72ea2049d4eb">◆ </a></span>le_sim_StkRefreshMode_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">enum <a class="el" href="group__le__sim.html#gacf932502f1fa004dfcdd72ea2049d4eb">le_sim_StkRefreshMode_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>SIM Toolkit Refresh modes, defined in ETSI TS 102 223 sections 6.4.7 and 8.6. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggacf932502f1fa004dfcdd72ea2049d4ebaf08281b0eeb9cea577becb2bee6c7296"></a>LE_SIM_REFRESH_INIT_FULL_FCN </td><td class="fielddoc"><p>Initialization and Full File Change Notification. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggacf932502f1fa004dfcdd72ea2049d4eba21c6e7506012a3f5973bb9d697153225"></a>LE_SIM_REFRESH_FCN </td><td class="fielddoc"><p>File Change Notification. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggacf932502f1fa004dfcdd72ea2049d4eba386a0396fc93adcfa7b58cf5dbe41fee"></a>LE_SIM_REFRESH_INIT_FCN </td><td class="fielddoc"><p>Initialization and File Change Notification. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggacf932502f1fa004dfcdd72ea2049d4ebab254b9966b37ccc2b89c86accd53bb52"></a>LE_SIM_REFRESH_INIT </td><td class="fielddoc"><p>Initialization. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggacf932502f1fa004dfcdd72ea2049d4eba096f6c6a6bc15921801cd02be7d8cc37"></a>LE_SIM_REFRESH_RESET </td><td class="fielddoc"><p>SIM reset. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggacf932502f1fa004dfcdd72ea2049d4eba2753a3ae1c7ab574ae69e16ba8f3607e"></a>LE_SIM_REFRESH_APP_RESET </td><td class="fielddoc"><p>Application reset. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggacf932502f1fa004dfcdd72ea2049d4eba2dcf59591ae522687b4bec1fbff210ff"></a>LE_SIM_REFRESH_SESSION_RESET </td><td class="fielddoc"><p>Session reset. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggacf932502f1fa004dfcdd72ea2049d4ebae16245017d227c9d29c8ec35c6d0b668"></a>LE_SIM_REFRESH_STEERING_OF_ROAMING </td><td class="fielddoc"><p>Steering of Roaming as defined in 3GPP TS 23.122. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggacf932502f1fa004dfcdd72ea2049d4eba8d93101b6401f50033eebe5733f7ff0c"></a>LE_SIM_REFRESH_STEERING_OF_ROAMING_IWLAN </td><td class="fielddoc"><p>Steering of Roaming for I-WLAN as defined in 3GPP TS 24.234. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggacf932502f1fa004dfcdd72ea2049d4ebad211a3a855100a001b7db4fc126dd680"></a>LE_SIM_REFRESH_EUICC_PROFILE_CHANGE </td><td class="fielddoc"><p>eUICC Profile State Change. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggacf932502f1fa004dfcdd72ea2049d4eba9ba27424d0f215c0d0908b6e956f3e8d"></a>LE_SIM_REFRESH_MODE_MAX </td><td class="fielddoc"><p>Invalid SIM Toolkit Refresh mode. </p>
+</td></tr>
+</table>
+</div>
+</div>
+<a id="ga99369a750db46ea1a5acb8cde0eef690"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga99369a750db46ea1a5acb8cde0eef690">◆ </a></span>le_sim_StkRefreshStage_t</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">enum <a class="el" href="group__le__sim.html#ga99369a750db46ea1a5acb8cde0eef690">le_sim_StkRefreshStage_t</a></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>SIM Toolkit Refresh stages. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga99369a750db46ea1a5acb8cde0eef690a8d38c80c4a899969e6e8e5147bc9bad1"></a>LE_SIM_STAGE_WAITING_FOR_OK </td><td class="fielddoc"><p>Waiting for OK to refresh. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga99369a750db46ea1a5acb8cde0eef690a5c6c140af833785098bb439973cea8d1"></a>LE_SIM_STAGE_END_WITH_SUCCESS </td><td class="fielddoc"><p>Refresh succeeded. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga99369a750db46ea1a5acb8cde0eef690ac8daa11e1b9d61425e29c10f28639dc9"></a>LE_SIM_STAGE_END_WITH_FAILURE </td><td class="fielddoc"><p>Refresh failed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga99369a750db46ea1a5acb8cde0eef690aa21696394e964bd0aacb1a59c3a5afa3"></a>LE_SIM_STAGE_MAX </td><td class="fielddoc"><p>Invalid SIM Toolkit Refresh stage. </p>
+</td></tr>
+</table>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga8cc75a17466446c19c5bd941b1360e0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8cc75a17466446c19c5bd941b1360e0e">◆ </a></span>le_sim_AcceptSimToolkitCommand()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_AcceptSimToolkitCommand </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Accept the last SIM Toolkit command.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga9c425b48c314ce4ec85bc2954aedf238"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9c425b48c314ce4ec85bc2954aedf238">◆ </a></span>le_sim_AddFPLMNOperator()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_AddFPLMNOperator </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#ga89e0e915bca44f009ab8e117f387f59c">le_sim_FPLMNListRef_t</a> </td>
+<td class="paramname"><em>FPLMNListRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>mcc</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>mnc</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Add FPLMN network into the newly created FPLMN list. If the FPLMNListRef, mcc or mnc is not valid then this function will kill the calling client.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_FAULT Function failed.</li>
+<li>LE_OK Function succeeded.</li>
+<li>LE_OVERFLOW If FPLMN operator can not be inserted into FPLMN list. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">FPLMNListRef</td><td>FPLMN list reference. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">mcc</td><td>Mobile Country Code. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">mnc</td><td>Mobile Network Code. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gafc1b8e2aa1b36ed116e9fae4a9a66057"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafc1b8e2aa1b36ed116e9fae4a9a66057">◆ </a></span>le_sim_AddIccidChangeHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="group__le__sim.html#ga39c3602e2923f475b105342222e0baa8">le_sim_IccidChangeHandlerRef_t</a> le_sim_AddIccidChangeHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gae586c30581e95c718b53d068266fcf7e">le_sim_IccidChangeHandlerFunc_t</a> </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Add handler function for EVENT 'le_sim_IccidChange'</p>
+<p>This event provides information on ICCID </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga8e296a7cd35edd99cb1dc21232e280dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8e296a7cd35edd99cb1dc21232e280dd">◆ </a></span>le_sim_AddNewStateHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="group__le__sim.html#ga2762b1c04a51b185890700b0fa94f92d">le_sim_NewStateHandlerRef_t</a> le_sim_AddNewStateHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#ga9b29d688e7fac86082c1a2664278a573">le_sim_NewStateHandlerFunc_t</a> </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reference type for FPLMN list. SIM states. SIM selection modes SIM identifiers. Card Manufacturer. SIM commands. SIM Toolkit events. SIM Toolkit Refresh modes, defined in ETSI TS 102 223 sections 6.4.7 and 8.6. SIM Toolkit Refresh stages. Handler for sim state changes. Reference type used by Add/Remove functions for EVENT 'le_sim_NewState' Handler for profile update events. Reference type used by Add/Remove functions for EVENT 'le_sim_ProfileUpdate' Handler for Sim Toolkit Events. Reference type used by Add/Remove functions for EVENT 'le_sim_SimToolkitEvent' Handler for ICCID change events. Reference type used by Add/Remove functions for EVENT 'le_sim_IccidChange' Add handler function for EVENT 'le_sim_NewState'</p>
+<p>This event provides information on sim state changes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga94458aae91c311867bd8b3960c507aef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga94458aae91c311867bd8b3960c507aef">◆ </a></span>le_sim_AddProfileUpdateHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="group__le__sim.html#ga63b49462e8defff03a6b46acf9e7bf17">le_sim_ProfileUpdateHandlerRef_t</a> le_sim_AddProfileUpdateHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gabf3a1d4a091a05e315499b6ffc749220">le_sim_ProfileUpdateHandlerFunc_t</a> </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Add handler function for EVENT 'le_sim_ProfileUpdate'</p>
+<p>This event provides information on profile update </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga85577728a34d70801cbb4deb8efd75d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga85577728a34d70801cbb4deb8efd75d5">◆ </a></span>le_sim_AddSimToolkitEventHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="group__le__sim.html#ga3d8f90603c8f5ff03b30fe9fabdf37f2">le_sim_SimToolkitEventHandlerRef_t</a> le_sim_AddSimToolkitEventHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#ga6762190a9e0fbdb76df4ec8dcee1c0f7">le_sim_SimToolkitEventHandlerFunc_t</a> </td>
+<td class="paramname"><em>handlerPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Add handler function for EVENT 'le_sim_SimToolkitEvent'</p>
+<p>This event provides information on Sim Toolkit application. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerPtr</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">contextPtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga50b6ce8bae5a073307d1d12550b22c1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga50b6ce8bae5a073307d1d12550b22c1e">◆ </a></span>le_sim_ChangePIN()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_ChangePIN </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>oldpin</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>newpin</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Change the PIN code.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_NOT_FOUND Function failed to select the SIM card for this operation. </dd>
+<dd>
+LE_UNDERFLOW PIN code is/are not long enough (min 4 digits). </dd>
+<dd>
+LE_FAULT Function failed to change the PIN code. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If PIN code is too long (max 8 digits), it is a fatal error, the function will not return.</dd>
+<dd>
+If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">oldpin</td><td>The old PIN code. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">newpin</td><td>The new PIN code. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gac3f55bd37c4b1df143bec93883fd1467"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac3f55bd37c4b1df143bec93883fd1467">◆ </a></span>le_sim_CloseLogicalChannel()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_CloseLogicalChannel </td>
+<td>(</td>
+<td class="paramtype">uint8_t </td>
+<td class="paramname"><em>channel</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Close a logical channel on the SIM card.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeeded.</li>
+<li>LE_FAULT Function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>The number of the logical channel to close. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga84a7ff3ace6afa68bce12b85c18f9bf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga84a7ff3ace6afa68bce12b85c18f9bf0">◆ </a></span>le_sim_ConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_sim_ConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Connect the current client thread to the service providing this API. Block until the service is available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client Specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="gac9657cb9b3af960910988ce23c8fc31a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac9657cb9b3af960910988ce23c8fc31a">◆ </a></span>le_sim_CreateFPLMNList()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="group__le__sim.html#ga89e0e915bca44f009ab8e117f387f59c">le_sim_FPLMNListRef_t</a> le_sim_CreateFPLMNList </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Create empty FPLMN list to insert FPLMN operators.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>Reference to the List object.</li>
+<li>Null pointer if not able to create list reference. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a id="gac96338b9c989602b32e1d8555eb33a0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac96338b9c989602b32e1d8555eb33a0b">◆ </a></span>le_sim_DeleteFPLMNList()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_sim_DeleteFPLMNList </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#ga89e0e915bca44f009ab8e117f387f59c">le_sim_FPLMNListRef_t</a> </td>
+<td class="paramname"><em>FPLMNListRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Delete the FPLMN list created by <a class="el" href="group__le__sim.html#ga09ab2e629232e35ffbc0007dca0923e9">le_sim_ReadFPLMNList()</a> or <a class="el" href="group__le__sim.html#gac9657cb9b3af960910988ce23c8fc31a">le_sim_CreateFPLMNList()</a>. If the FPLMNListRef is not valid then this function will kill the calling client.</p>
+<dl class="section note"><dt>Note</dt><dd>On failure, the process exits, so you don't have to worry about checking the returned reference for validity. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">FPLMNListRef</td><td>FPLMN list reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga482f43deb99536a88bc873382012ff1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga482f43deb99536a88bc873382012ff1b">◆ </a></span>le_sim_DisconnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_sim_DisconnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Disconnect the current client thread from the service providing this API.</p>
+<p>Normally, this function doesn't need to be called. After this function is called, there's no longer a connection to the service, and the functions in this API can't be used. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client Specific Functions</a>.</p>
+<p>This function is created automatically. </p>
+</div>
+</div>
+<a id="gac9cafacb5affb0b531534e3fc547ebd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac9cafacb5affb0b531534e3fc547ebd2">◆ </a></span>le_sim_EnterPIN()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_EnterPIN </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>pin</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to enter the PIN code.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_BAD_PARAMETER The parameters are invalid. </dd>
+<dd>
+LE_NOT_FOUND The function failed to select the SIM card for this operation. </dd>
+<dd>
+LE_UNDERFLOW The PIN code is not long enough (min 4 digits). </dd>
+<dd>
+LE_FAULT The function failed to enter the PIN code. </dd>
+<dd>
+LE_OK The function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If PIN code is too long (max 8 digits), it is a fatal error, the function will not return.</dd>
+<dd>
+If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">pin</td><td>The PIN code. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga867e4561a313aa91fa5dc9181a6603c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga867e4561a313aa91fa5dc9181a6603c0">◆ </a></span>le_sim_GetAutomaticSelection()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_GetAutomaticSelection </td>
+<td>(</td>
+<td class="paramtype">bool * </td>
+<td class="paramname"><em>enablePtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the automatic SIM selection</p>
+<dl class="section note"><dt>Note</dt><dd>When enabled, automatic SIM selection uses the following rule: If an external SIM is inserted in slot 1 then select it. Otherwise, fall back to the internal SIM card.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeeded.</li>
+<li>LE_FAULT Function failed to execute.</li>
+<li>LE_BAD_PARAMETER Invalid parameter.</li>
+<li>LE_UNSUPPORTED The platform does not support this operation. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">enablePtr</td><td>True if the feature is enabled. False otherwise. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga069ff8cf1d16a1b639c893619a618c10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga069ff8cf1d16a1b639c893619a618c10">◆ </a></span>le_sim_GetEID()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_GetEID </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>eid</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>eidSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Retrieves the identifier for the embedded Universal Integrated Circuit Card identifier (EID) (32 digits)</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK EID was successfully retrieved. </dd>
+<dd>
+LE_OVERFLOW eidPtr buffer was too small for the EID. </dd>
+<dd>
+LE_BAD_PARAMETER Invalid parameters. </dd>
+<dd>
+LE_FAULT The EID could not be retrieved.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd><a class="el" href="group__le__sim.html#ga069ff8cf1d16a1b639c893619a618c10">le_sim_GetEID()</a> function is platform dependent. Please refer to the <a class="el" href="platformConstraintsSim.html#platformConstraintsSim_EID">EID</a> section for full details. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">eid</td><td>EID </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">eidSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gacdc45e95cbcbff57f3dd0dc6e1967d39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacdc45e95cbcbff57f3dd0dc6e1967d39">◆ </a></span>le_sim_GetFirstFPLMNOperator()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_GetFirstFPLMNOperator </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#ga89e0e915bca44f009ab8e117f387f59c">le_sim_FPLMNListRef_t</a> </td>
+<td class="paramname"><em>FPLMNListRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>mccPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>mccPtrSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>mncPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>mncPtrSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Read the first FPLMN network from the list of FPLMN objects retrieved with <a class="el" href="group__le__sim.html#ga09ab2e629232e35ffbc0007dca0923e9">le_sim_ReadFPLMNList()</a>. If the FPLMNListRef, mccPtr or mncPtr is not valid then this function will kill the calling client.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_FAULT Function failed.</li>
+<li>LE_OK Function succeeded.</li>
+<li>LE_OVERFLOW MCC/MNC string size is greater than string length parameter which has been given into this function. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">FPLMNListRef</td><td>FPLMN list reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">mccPtr</td><td>Mobile Country Code. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">mccPtrSize</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">mncPtr</td><td>Mobile Network Code. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">mncPtrSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga6bab381ed34046b553145bfbe53dfa3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6bab381ed34046b553145bfbe53dfa3c">◆ </a></span>le_sim_GetHomeNetworkMccMnc()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_GetHomeNetworkMccMnc </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>mccPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>mccPtrSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>mncPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>mncPtrSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to get the Home Network MCC MNC.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_NOT_FOUND if Home Network has not been provisioned</li>
+<li>LE_FAULT for unexpected error</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">mccPtr</td><td>Mobile Country Code </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">mccPtrSize</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">mncPtr</td><td>Mobile Network Code </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">mncPtrSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga2fa95e7fdaaff2fd000e676b9cc34344"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2fa95e7fdaaff2fd000e676b9cc34344">◆ </a></span>le_sim_GetHomeNetworkOperator()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_GetHomeNetworkOperator </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>nameStr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>nameStrSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to get the Home Network Name information.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_OVERFLOW if the Home Network Name can't fit in nameStr</li>
+<li>LE_BAD_PARAMETER if a parameter is invalid</li>
+<li>LE_FAULT on any other failure</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return.</dd>
+<dd>
+The home network name can be given even if the device is not registered on the network. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">nameStr</td><td>the home network Name </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">nameStrSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga7b43e4e8713af665657e15ae0f5bc1e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7b43e4e8713af665657e15ae0f5bc1e8">◆ </a></span>le_sim_GetICCID()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_GetICCID </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>iccid</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>iccidSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Retrieves the integrated circuit card identifier (ICCID) of the SIM card (20 digits)</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK ICCID was successfully retrieved. </dd>
+<dd>
+LE_OVERFLOW iccidPtr buffer was too small for the ICCID. </dd>
+<dd>
+LE_BAD_PARAMETER Invalid parameters. </dd>
+<dd>
+LE_FAULT The ICCID could not be retrieved.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">iccid</td><td>ICCID </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">iccidSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gacc0f801f268630ea496377077a366374"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacc0f801f268630ea496377077a366374">◆ </a></span>le_sim_GetIMSI()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_GetIMSI </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>imsi</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>imsiSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Retrieves the identification number (IMSI) of the SIM card. (max 15 digits)</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OVERFLOW The imsiPtr buffer was too small for the IMSI. </dd>
+<dd>
+LE_BAD_PARAMETER The parameters are invalid. </dd>
+<dd>
+LE_FAULT The function failed. </dd>
+<dd>
+LE_TIMEOUT No response was received. </dd>
+<dd>
+LE_OK The function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">imsi</td><td>IMSI </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">imsiSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gaf7069f351aca77efe7dcfe1519df21c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf7069f351aca77efe7dcfe1519df21c8">◆ </a></span>le_sim_GetNextFPLMNOperator()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_GetNextFPLMNOperator </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#ga89e0e915bca44f009ab8e117f387f59c">le_sim_FPLMNListRef_t</a> </td>
+<td class="paramname"><em>FPLMNListRef</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>mccPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>mccPtrSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>mncPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>mncPtrSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Read the next FPLMN network from the list of FPLMN objects retrieved with <a class="el" href="group__le__sim.html#ga09ab2e629232e35ffbc0007dca0923e9">le_sim_ReadFPLMNList()</a>. If the FPLMNListRef, mccPtr or mncPtr is not valid then this function will kill the calling client.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_FAULT Function failed.</li>
+<li>LE_OK Function succeeded.</li>
+<li>LE_OVERFLOW MCC/MNC string size is greater than string length parameter which has been given into this function. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">FPLMNListRef</td><td>FPLMN list reference. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">mccPtr</td><td>Mobile Country Code. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">mccPtrSize</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">mncPtr</td><td>Mobile Network Code. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">mncPtrSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga8886dbb94aa732883ec5a67ddd345f98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8886dbb94aa732883ec5a67ddd345f98">◆ </a></span>le_sim_GetRemainingPINTries()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">int32_t le_sim_GetRemainingPINTries </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the number of remaining PIN insertion tries.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_NOT_FOUND The function failed to select the SIM card for this operation. </dd>
+<dd>
+LE_BAD_PARAMETER Invalid SIM identifier. </dd>
+<dd>
+LE_FAULT The function failed to get the number of remaining PIN insertion tries. </dd>
+<dd>
+A positive value The function succeeded. The number of remaining PIN insertion tries. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga285eeaa3c5e1977abbe49682145f3d35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga285eeaa3c5e1977abbe49682145f3d35">◆ </a></span>le_sim_GetRemainingPUKTries()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_GetRemainingPUKTries </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint32_t * </td>
+<td class="paramname"><em>remainingPukTriesPtrPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the number of remaining PUK insertion tries.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK On success. </dd>
+<dd>
+LE_NOT_FOUND The function failed to select the SIM card for this operation. </dd>
+<dd>
+LE_BAD_PARAMETER Invalid SIM identifier. </dd>
+<dd>
+LE_FAULT The function failed to get the number of remaining PUK insertion tries.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing an null pointer to this function, it is a fatal error and the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">remainingPukTriesPtrPtr</td><td>The number of remaining PUK insertion tries. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga4c9e3ded0485f14c66e4d51763f2de57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4c9e3ded0485f14c66e4d51763f2de57">◆ </a></span>le_sim_GetSelectedCard()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> le_sim_GetSelectedCard </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the current selected card.</p>
+<dl class="section return"><dt>Returns</dt><dd>Number of the current selected SIM card. </dd></dl>
+</div>
+</div>
+<a id="ga0a83a3cc07818b42a3b2996fd4d6ffb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0a83a3cc07818b42a3b2996fd4d6ffb8">◆ </a></span>le_sim_GetSimMode()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="group__le__sim.html#gab1229013db24597218365dc41ed5571b">le_sim_SimMode_t</a> le_sim_GetSimMode </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the current selected sim Mode.</p>
+<dl class="section return"><dt>Returns</dt><dd>Sim selection Mode </dd></dl>
+</div>
+</div>
+<a id="ga82331254a8f94c20c01a9962a488a29f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga82331254a8f94c20c01a9962a488a29f">◆ </a></span>le_sim_GetSimToolkitRefreshMode()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_GetSimToolkitRefreshMode </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gacf932502f1fa004dfcdd72ea2049d4eb">le_sim_StkRefreshMode_t</a> * </td>
+<td class="paramname"><em>refreshModePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Retrieve the mode of the last SIM Toolkit Refresh command. The modes are defined in ETSI TS 102 223 sections 6.4.7 and 8.6.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_BAD_PARAMETER A parameter is invalid.</li>
+<li>LE_UNAVAILABLE The last SIM Toolkit command is not a Refresh command.</li>
+<li>LE_FAULT The function failed.</li>
+<li>LE_UNSUPPORTED The platform does not support this operation. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">refreshModePtr</td><td>The Refresh mode. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga81bd3909308a1456225e59f1f36e73e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga81bd3909308a1456225e59f1f36e73e3">◆ </a></span>le_sim_GetSimToolkitRefreshStage()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_GetSimToolkitRefreshStage </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#ga99369a750db46ea1a5acb8cde0eef690">le_sim_StkRefreshStage_t</a> * </td>
+<td class="paramname"><em>refreshStagePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Retrieve the stage of the last SIM Toolkit Refresh command.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_BAD_PARAMETER A parameter is invalid.</li>
+<li>LE_UNAVAILABLE The last SIM Toolkit command is not a Refresh command.</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">refreshStagePtr</td><td>The Refresh stage. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga16b06f266471d81f772e5439ec570144"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga16b06f266471d81f772e5439ec570144">◆ </a></span>le_sim_GetState()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="group__le__sim.html#ga21b9bb7d5e5e7ece213e00738a5bae41">le_sim_States_t</a> le_sim_GetState </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the SIM state.</p>
+<dl class="section return"><dt>Returns</dt><dd>Current SIM state.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga5964edfe6070d40e0518c0a5d25aa628"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5964edfe6070d40e0518c0a5d25aa628">◆ </a></span>le_sim_GetSubscriberPhoneNumber()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_GetSubscriberPhoneNumber </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">char * </td>
+<td class="paramname"><em>phoneNumberStr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>phoneNumberStrSize</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Get the SIM Phone Number.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_OVERFLOW if the Phone Number can't fit in phoneNumberStr</li>
+<li>LE_BAD_PARAMETER if a parameter is invalid</li>
+<li>LE_FAULT on any other failure</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">phoneNumberStr</td><td>The phone Number. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">phoneNumberStrSize</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga837cdc0fe30761f4339f846a0b44c5f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga837cdc0fe30761f4339f846a0b44c5f1">◆ </a></span>le_sim_IsEmergencyCallSubscriptionSelected()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_IsEmergencyCallSubscriptionSelected </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">bool * </td>
+<td class="paramname"><em>isEcsPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to get the current subscription.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_BAD_PARAMETER invalid SIM identifier or null ECS pointer is passed</li>
+<li>LE_NOT_FOUND cannot determine the current selected subscription</li>
+<li>LE_FAULT for unexpected errors</li>
+</ul>
+</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>There is no standard method to interrogate the current selected subscription. The returned value of this function is based on the last executed local swap command. This means that this function will always return LE_NOT_FOUND error at Legato startup. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">isEcsPtr</td><td>true if Emergency Call Subscription (ECS) is selected, false if Commercial Subscription is selected </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gaa3255a29cec4358c5e0d68b9ac62ff88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa3255a29cec4358c5e0d68b9ac62ff88">◆ </a></span>le_sim_IsPresent()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">bool le_sim_IsPresent </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Verify if the SIM card is present or not.</p>
+<dl class="section return"><dt>Returns</dt><dd>true SIM card is present. </dd>
+<dd>
+false SIM card is absent</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gace457890856d3692ecb4176f0e892558"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gace457890856d3692ecb4176f0e892558">◆ </a></span>le_sim_IsReady()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">bool le_sim_IsReady </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Verify if the SIM is ready (PIN code correctly inserted or not required).</p>
+<dl class="section return"><dt>Returns</dt><dd>true PIN is correctly inserted or not required. </dd>
+<dd>
+false PIN must be inserted</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga51b535750b66c4cf460e3c8c72f3658d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga51b535750b66c4cf460e3c8c72f3658d">◆ </a></span>le_sim_LocalSwapToCommercialSubscription()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_LocalSwapToCommercialSubscription </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gac9719aa7561f79bc0b51eca9447ff37e">le_sim_Manufacturer_t</a> </td>
+<td class="paramname"><em>manufacturer</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to request the multi-profile eUICC to swap back to commercial subscription and to refresh. The User's application must wait for eUICC reboot to be finished and network connection available.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_BAD_PARAMETER invalid SIM identifier</li>
+<li>LE_BUSY when a profile swap is already in progress</li>
+<li>LE_FAULT for unexpected error</li>
+<li>LE_DUPLICATE for duplicate operation</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Please ensure that the eUICC is selected using <a class="el" href="group__le__sim.html#ga91a0f0399c89e466b9a8ccfab6de129d">le_sim_SelectCard()</a> and in a ready state before attempting a profile swap.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>If you use a Morpho or Oberthur card, the SIM_REFRESH PRO-ACTIVE command must be accepted with <a class="el" href="group__le__sim.html#ga8cc75a17466446c19c5bd941b1360e0e">le_sim_AcceptSimToolkitCommand()</a> in order to complete the profile swap procedure. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">manufacturer</td><td>The card manufacturer. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gaa856f5e094e8182c8d0b07761e309549"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa856f5e094e8182c8d0b07761e309549">◆ </a></span>le_sim_LocalSwapToEmergencyCallSubscription()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_LocalSwapToEmergencyCallSubscription </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gac9719aa7561f79bc0b51eca9447ff37e">le_sim_Manufacturer_t</a> </td>
+<td class="paramname"><em>manufacturer</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>This function must be called to request the multi-profile eUICC to swap to ECS and to refresh. The User's application must wait for eUICC reboot to be finished and network connection available.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK on success</li>
+<li>LE_BAD_PARAMETER invalid SIM identifier</li>
+<li>LE_BUSY when a profile swap is already in progress</li>
+<li>LE_FAULT for unexpected error</li>
+<li>LE_DUPLICATE for duplicate operation</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Please ensure that the eUICC is selected using <a class="el" href="group__le__sim.html#ga91a0f0399c89e466b9a8ccfab6de129d">le_sim_SelectCard()</a> and in a ready state before attempting a profile swap.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>If you use a Morpho or Oberthur card, the SIM_REFRESH PRO-ACTIVE command must be accepted with <a class="el" href="group__le__sim.html#ga8cc75a17466446c19c5bd941b1360e0e">le_sim_AcceptSimToolkitCommand()</a> in order to complete the profile swap procedure. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">manufacturer</td><td>The card manufacturer. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga6fab9b258f5af39645b9a200ed202a27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6fab9b258f5af39645b9a200ed202a27">◆ </a></span>le_sim_Lock()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_Lock </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>pin</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Lock the SIM card: it enables the request of the PIN code.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_NOT_FOUND Function failed to select the SIM card for this operation. </dd>
+<dd>
+LE_UNDERFLOW PIN code is not long enough (min 4 digits). </dd>
+<dd>
+LE_FAULT The function failed to unlock the SIM card. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If PIN code is too long (max 8 digits), it is a fatal error, the function will not return.</dd>
+<dd>
+If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">pin</td><td>The PIN code. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga88e2de9b9079e142b7a11bbb43bd95be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga88e2de9b9079e142b7a11bbb43bd95be">◆ </a></span>le_sim_OpenLogicalChannel()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_OpenLogicalChannel </td>
+<td>(</td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>channelPtrPtr</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Open a logical channel on the SIM card.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeeded.</li>
+<li>LE_BAD_PARAMETER Invalid parameter.</li>
+<li>LE_FAULT Function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[out]</td><td class="paramname">channelPtrPtr</td><td>The number of the opened logical channel. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga09ab2e629232e35ffbc0007dca0923e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga09ab2e629232e35ffbc0007dca0923e9">◆ </a></span>le_sim_ReadFPLMNList()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="group__le__sim.html#ga89e0e915bca44f009ab8e117f387f59c">le_sim_FPLMNListRef_t</a> le_sim_ReadFPLMNList </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Read FPLMN list from the SIM.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>Reference to the List object.</li>
+<li>Null pointer if FPLMN list is not able to read from the SIM. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga8cbdc50d62ddd5ea80386d27e16d954f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8cbdc50d62ddd5ea80386d27e16d954f">◆ </a></span>le_sim_RejectSimToolkitCommand()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_RejectSimToolkitCommand </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reject the last SIM Toolkit command.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK The function succeeded.</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gad357ed6124852a92bb30d59227fc5ec2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad357ed6124852a92bb30d59227fc5ec2">◆ </a></span>le_sim_RemoveIccidChangeHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_sim_RemoveIccidChangeHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#ga39c3602e2923f475b105342222e0baa8">le_sim_IccidChangeHandlerRef_t</a> </td>
+<td class="paramname"><em>handlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove handler function for EVENT 'le_sim_IccidChange' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga0286578e9aa46ba864df1878263b9f84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0286578e9aa46ba864df1878263b9f84">◆ </a></span>le_sim_RemoveNewStateHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_sim_RemoveNewStateHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#ga2762b1c04a51b185890700b0fa94f92d">le_sim_NewStateHandlerRef_t</a> </td>
+<td class="paramname"><em>handlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove handler function for EVENT 'le_sim_NewState' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gadf121cdefbf69dc983cc856a57b5ed7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadf121cdefbf69dc983cc856a57b5ed7d">◆ </a></span>le_sim_RemoveProfileUpdateHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_sim_RemoveProfileUpdateHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#ga63b49462e8defff03a6b46acf9e7bf17">le_sim_ProfileUpdateHandlerRef_t</a> </td>
+<td class="paramname"><em>handlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove handler function for EVENT 'le_sim_ProfileUpdate' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga2485840533f80632a61096b1d7c5d8f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2485840533f80632a61096b1d7c5d8f2">◆ </a></span>le_sim_RemoveSimToolkitEventHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void le_sim_RemoveSimToolkitEventHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#ga3d8f90603c8f5ff03b30fe9fabdf37f2">le_sim_SimToolkitEventHandlerRef_t</a> </td>
+<td class="paramname"><em>handlerRef</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Remove handler function for EVENT 'le_sim_SimToolkitEvent' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">handlerRef</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gaaed2544651545d68845f3596fd5d448b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaed2544651545d68845f3596fd5d448b">◆ </a></span>le_sim_Reset()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_Reset </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Reset the SIM.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_FAULT Function failed.</li>
+<li>LE_OK Function succeeded. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga91a0f0399c89e466b9a8ccfab6de129d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga91a0f0399c89e466b9a8ccfab6de129d">◆ </a></span>le_sim_SelectCard()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_SelectCard </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Select a SIM.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_FAULT Function failed to select the requested SIM </dd>
+<dd>
+LE_OK Function succeeded. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gad59f8ec574f4eab0cfae070a1e593298"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad59f8ec574f4eab0cfae070a1e593298">◆ </a></span>le_sim_SendApdu()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_SendApdu </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>commandApduPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>commandApduSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>responseApduPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>responseApduSizePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Send APDU command to the SIM.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeeded.</li>
+<li>LE_FAULT The function failed.</li>
+<li>LE_BAD_PARAMETER A parameter is invalid.</li>
+<li>LE_NOT_FOUND The function failed to select the SIM card for this operation. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">commandApduPtr</td><td>APDU command. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">commandApduSize</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">responseApduPtr</td><td>SIM response. </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">responseApduSizePtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gac6bddf340beb65e2d9bdde307694cbb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac6bddf340beb65e2d9bdde307694cbb1">◆ </a></span>le_sim_SendApduOnChannel()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_SendApduOnChannel </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t </td>
+<td class="paramname"><em>channel</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>commandApduPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>commandApduSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>responseApduPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>responseApduSizePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Send APDU command on a dedicated logical channel.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeeded.</li>
+<li>LE_BAD_PARAMETER A parameter is invalid.</li>
+<li>LE_NOT_FOUND The function failed to select the SIM card for this operation.</li>
+<li>LE_FAULT The function failed. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>The logical channel number. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">commandApduPtr</td><td>APDU command. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">commandApduSize</td><td></td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">responseApduPtr</td><td>SIM response. </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">responseApduSizePtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga8bbaea044b44f8b0ebff67bf98de816a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8bbaea044b44f8b0ebff67bf98de816a">◆ </a></span>le_sim_SendCommand()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_SendCommand </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gac1a708ba305c36e33383073ec7f0e331">le_sim_Command_t</a> </td>
+<td class="paramname"><em>command</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>fileIdentifier</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t </td>
+<td class="paramname"><em>p1</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t </td>
+<td class="paramname"><em>p2</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t </td>
+<td class="paramname"><em>p3</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const uint8_t * </td>
+<td class="paramname"><em>dataPtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t </td>
+<td class="paramname"><em>dataSize</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>path</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>sw1Ptr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>sw2Ptr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">uint8_t * </td>
+<td class="paramname"><em>responsePtr</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">size_t * </td>
+<td class="paramname"><em>responseSizePtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Send a command to the SIM.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeeded.</li>
+<li>LE_FAULT The function failed.</li>
+<li>LE_BAD_PARAMETER A parameter is invalid.</li>
+<li>LE_NOT_FOUND - The function failed to select the SIM card for this operation<ul>
+<li>The requested SIM file is not found</li>
+</ul>
+</li>
+<li>LE_OVERFLOW Response buffer is too small to copy the SIM answer.</li>
+<li>LE_UNSUPPORTED The platform does not support this operation. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">command</td><td>The SIM command. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">fileIdentifier</td><td>File identifier </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">p1</td><td>Parameter P1 passed to the SIM </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">p2</td><td>Parameter P2 passed to the SIM </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">p3</td><td>Parameter P3 passed to the SIM </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">dataPtr</td><td>data command. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">dataSize</td><td></td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>path of the elementary file </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">sw1Ptr</td><td>Status Word 1 received from the SIM </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">sw2Ptr</td><td>Status Word 2 received from the SIM </td></tr>
+<tr><td class="paramdir">[out]</td><td class="paramname">responsePtr</td><td>SIM response. </td></tr>
+<tr><td class="paramdir">[in,out]</td><td class="paramname">responseSizePtr</td><td></td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gab517d13e9c51c925820319abaf014e36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab517d13e9c51c925820319abaf014e36">◆ </a></span>le_sim_SetAutomaticSelection()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_SetAutomaticSelection </td>
+<td>(</td>
+<td class="paramtype">bool </td>
+<td class="paramname"><em>enable</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Enable or disable the automatic SIM selection</p>
+<dl class="section note"><dt>Note</dt><dd>Automatic SIM selection uses the following rule: If an external SIM is inserted in slot 1 then select it. Otherwise, fall back to the internal SIM card.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK Function succeeded.</li>
+<li>LE_FAULT Function failed to execute. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>True if the feature needs to be enabled. False otherwise. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga158c30712c4fd0afc06e66591eb89a6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga158c30712c4fd0afc06e66591eb89a6c">◆ </a></span>le_sim_SetPower()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_SetPower </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="le__basics_8h.html#ae2138c90c41d30e2d510be01d8b374da">le_onoff_t</a> </td>
+<td class="paramname"><em>power</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Power up or down the current SIM.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_OK Function succeeded. </dd>
+<dd>
+LE_FAULT Function failed.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>For SIM power cycle operation, it must wait until SIM state is LE_SIM_POWER_DOWN before powering on the SIM, otherwise power up SIM will fail. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">power</td><td>The power state. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga1d9e5d3357d2e0a11d6c099ab3a6b36c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1d9e5d3357d2e0a11d6c099ab3a6b36c">◆ </a></span>le_sim_SetServerDisconnectHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__apiFeatures_8h.html#a410b5eb5dc002cff21fffc3d61d29532">LE_FULL_API</a> void le_sim_SetServerDisconnectHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#ga6fa2570cf1e666e33cd56ba1d819e4a8">le_sim_DisconnectHandler_t</a> </td>
+<td class="paramname"><em>disconnectHandler</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">void * </td>
+<td class="paramname"><em>contextPtr</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Set handler called when server disconnection is detected.</p>
+<p>When a server connection is lost, call this handler then exit with LE_FATAL. If a program wants to continue without exiting, it should call longjmp() from inside the handler. </p>
+</div>
+</div>
+<a id="ga66b944460c1c96a68a896c38d752f7f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga66b944460c1c96a68a896c38d752f7f2">◆ </a></span>le_sim_TryConnectService()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_TryConnectService </td>
+<td>(</td>
+<td class="paramtype">void </td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Try to connect the current client thread to the service providing this API. Return with an error if the service is not available.</p>
+<p>For each thread that wants to use this API, either ConnectService or TryConnectService must be called before any other functions in this API. Normally, ConnectService is automatically called for the main thread, but not for any other thread. For details, see <a class="el" href="apiFilesC.html#apiFilesC_client">Client Specific Functions</a>.</p>
+<p>This function is created automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_OK if the client connected successfully to the service.</li>
+<li>LE_UNAVAILABLE if the server is not currently offering the service to which the client is bound.</li>
+<li>LE_NOT_PERMITTED if the client interface is not bound to any service (doesn't have a binding).</li>
+<li>LE_COMM_ERROR if the Service Directory cannot be reached. </li>
+</ul>
+</dd></dl>
+</div>
+</div>
+<a id="ga234634c9789cdbc8f76629a2272bd2dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga234634c9789cdbc8f76629a2272bd2dd">◆ </a></span>le_sim_Unblock()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_Unblock </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>puk</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>newpin</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Unblock the SIM card.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_NOT_FOUND Function failed to select the SIM card for this operation. </dd>
+<dd>
+LE_UNDERFLOW PIN code is not long enough (min 4 digits). </dd>
+<dd>
+LE_BAD_PARAMETER Invalid SIM identifier. </dd>
+<dd>
+LE_OUT_OF_RANGE PUK code length is not correct (8 digits). </dd>
+<dd>
+LE_FAULT The function failed to unlock the SIM card. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If new PIN or puk code are too long (max 8 digits), it is a fatal error, the function will not return.</dd>
+<dd>
+If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">puk</td><td>The PUK code. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">newpin</td><td>The PIN code. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="ga4397d51c42ba894f0fa4206341a0dc64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4397d51c42ba894f0fa4206341a0dc64">◆ </a></span>le_sim_Unlock()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_Unlock </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype">const char *LE_NONNULL </td>
+<td class="paramname"><em>pin</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Unlock the SIM card: it disables the request of the PIN code.</p>
+<dl class="section return"><dt>Returns</dt><dd>LE_NOT_FOUND Function failed to select the SIM card for this operation. </dd>
+<dd>
+LE_UNDERFLOW PIN code is not long enough (min 4 digits). </dd>
+<dd>
+LE_FAULT The function failed to unlock the SIM card. </dd>
+<dd>
+LE_OK Function succeeded.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If PIN code is too long (max 8 digits), it is a fatal error, the function will not return.</dd>
+<dd>
+If the caller is passing a bad pointer into this function, it is a fatal error, the function will not return. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">pin</td><td>The PIN code. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<a id="gaa0eaa48a1c29cd8f3d64e866823ca2ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa0eaa48a1c29cd8f3d64e866823ca2ca">◆ </a></span>le_sim_WriteFPLMNList()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="le__basics_8h.html#a1cca095ed6ebab24b57a636382a6c86c">le_result_t</a> le_sim_WriteFPLMNList </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#gaace49df88426119626fb1ef4e544ccdd">le_sim_Id_t</a> </td>
+<td class="paramname"><em>simId</em>, </td>
+</tr>
+<tr>
+<td class="paramkey"></td>
+<td></td>
+<td class="paramtype"><a class="el" href="group__le__sim.html#ga89e0e915bca44f009ab8e117f387f59c">le_sim_FPLMNListRef_t</a> </td>
+<td class="paramname"><em>FPLMNListRef</em> </td>
+</tr>
+<tr>
+<td></td>
+<td>)</td>
+<td></td><td></td>
+</tr>
+</table>
+</div><div class="memdoc">
+<p>Write FPLMN list into the SIM. If the FPLMNListRef is not valid then this function will kill the calling client.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>LE_FAULT Function failed.</li>
+<li>LE_OK Function succeeded. </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramdir">[in]</td><td class="paramname">simId</td><td>The SIM identifier. </td></tr>
+<tr><td class="paramdir">[in]</td><td class="paramname">FPLMNListRef</td><td>FPLMN list reference. </td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<br clear="left"/>
+</div>
+</div>
+<link href="resources/css/jqtree.css" rel="stylesheet" type="text/css"/>
+<script src="resources/js/tree.jquery.js" type="text/javascript"></script>
+<script src="resources/js/jquery.cookie.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link href="resources/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+<script src="resources/js/perfect-scrollbar.jquery.min.js"></script>
+</body>
+</html>
